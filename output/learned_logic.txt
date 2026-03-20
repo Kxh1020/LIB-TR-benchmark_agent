@@ -1,0 +1,137 @@
+## 1) Question Stem Construction (how to frame the scenario)
+
+1. **Anchor the stem in a concrete test context.**
+   - Specify abuse type (nail penetration, indentation, bending, overcharge, external heating, reduced pressure, confined space).
+   - Specify cell format/chemistry (21700/18650/pouch/prismatic; LFP/NCM811/etc.).
+
+2. **State controlled variables explicitly and keep them few.**
+   - Example controls: SOC fixed, heating power fixed, same chamber setup, same geometry.
+   - Mention what is varied (pressure, indenter shape, penetration mode, squeeze force, PCM type).
+
+3. **Give observational channels but not conclusions.**
+   - Mention measured signals (voltage fluctuations, surface vs internal temperature, pressure peaks, venting, gas composition, force–indentation curve stages, imaging).
+   - Avoid telling the mechanism; let options propose interpretations.
+
+4. **Use “engineering reasoning” prompts when data are partial.**
+   - If stem lacks numbers, explicitly invite “based on fundamental electro-thermal / transport / combustion / fire dynamics principles”.
+
+5. **Define operational criteria/thresholds inside the stem.**
+   - Provide a criterion like “TR when self-heating rate > X” or “failure threshold defined by voltage loss after rest and no TR”.
+
+6. **Include at least one asymmetry that blocks pattern-matching.**
+   - Examples: internal vs surface temperature mismatch; repeated ISC pulses that self-terminate; semi-confined vs open space; axial vs radial penetration.
+
+7. **Use multi-select stems frequently for coupled phenomena.**
+   - Reserve single-choice for one key causal link (e.g., dominant heat source, strongest interface).
+
+---
+
+## 2) Evidence-to-Question Transformation (turning facts into reasoning tasks)
+
+8. **Convert observations into “supported vs not supported” claims.**
+   - Ask “consistent with findings/engineering reasoning” rather than “true”.
+
+9. **Force constraint satisfaction across multiple statements.**
+   - Each option should touch a different constraint (electrical current, resistance evolution, heat transfer, chemistry, mechanics, sensing fidelity).
+
+10. **Ask about directionality/trends, not raw facts.**
+   - Monotonic vs non-monotonic relations (pressure vs flame height, squeeze force vs surface temperature peak, SOC vs onset temperature).
+
+11. **Translate mechanisms into measurable proxies.**
+   - Example: “RISC below threshold ⇒ TR possible”; “CID activation ⇒ stepwise voltage drop”; “inflection point ⇒ irreversible damage onset”.
+
+12. **Use comparative reasoning between methods/configurations.**
+   - Compare triggering methods (heating plate/rod/coil), geometries (axial/radial), environments (air/N2; OS/SCS), materials (PCM types, cathode chemistries).
+
+13. **Embed a “what explains X?” subtask in option set.**
+   - Provide a phenomenon (double pressure peak, current drop, voltage fluctuation) and have options propose competing explanations.
+
+14. **For chemistry items, filter by “directly produces species Y”.**
+   - Ask to select reactions that directly generate H₂/CO₂/CO/CH₄/C₂H₄, explicitly excluding side categories (radical termination, gas-phase oxidation).
+
+---
+
+## 3) Distractor Design Archetypes (plausible wrong options)
+
+15. **Overgeneralization distractors.**
+   - Use “always/inevitably/only/necessarily” to create tempting but falsifiable extremes.
+
+16. **Single-factor fallacy distractors.**
+   - Claim one variable dominates (e.g., “penetration depth is the key factor regardless of SOC”, “pressure alone determines risk”).
+
+17. **Condition-violation distractors.**
+   - State something generally true but incompatible with the stem’s conditions (e.g., assuming surface temperature equals internal hot spot; assuming forced convection always matters).
+
+18. **Mechanism-confusion distractors.**
+   - Mix correct entities with wrong causal direction (e.g., separator melting is endothermic but claimed to directly reduce TR; cathode structure “strengthens” with SOC).
+
+19. **Proxy-misinterpretation distractors.**
+   - Treat an instrument readout as a direct proof of a different quantity:
+     - MTS increase ⇒ “cell number increased”
+     - Highest concentration at vent outlet ⇒ “maximum combustion risk always there”
+     - Voltage alone ⇒ “reliably detects every ISC event”
+
+20. **Monotonicity traps.**
+   - Offer monotonic claims where the intended reasoning allows peaks/saturation (PCM thickness “always” helps; conductivity “no saturation”; flame height “highest at lowest pressure”).
+
+21. **Terminology distractors in reaction-selection questions.**
+   - Include reactions that produce the target gas only indirectly, or require excluded pathways (radical termination, gas-phase oxidation), or are balanced but irrelevant to “primary internal reactions”.
+
+22. **Near-correct distractors (partially true).**
+   - One clause correct, second clause wrong; forces careful parsing.
+
+---
+
+## 4) Reasoning Requirements (what solvers must do)
+
+23. **Causal electro-thermal reasoning.**
+   - Link resistance → current → Joule heating → localized temperature rise → TR threshold.
+
+24. **Coupled multiphysics reasoning.**
+   - Require interaction of mechanics (rupture/delamination), electrical (ISC type), thermal (heat dissipation), and chemistry (exothermic reactions).
+
+25. **Signal interpretation reasoning.**
+   - Decide which signals are early-warning vs lagging (gas vs temperature/pressure), and when surface measurements misrepresent internal state.
+
+26. **Comparative mechanism reasoning.**
+   - Same outcome (TR) via different triggers; identify what changes (short development mode) vs what stays (underlying mechanism).
+
+27. **Thermodynamic + kinetic reasoning.**
+   - Separate “heat release potential” from “trigger/onset sensitivity” (activation energy trends, heating-rate effects).
+
+28. **Exclusion reasoning (necessary vs sufficient).**
+   - E.g., “ISC may be trigger but not main heat source”; “TR can occur without ISC under oxygen release pathways”.
+
+29. **Combustion/fluid reasoning under confinement.**
+   - Use ventilation/void volume/pressure effects to reason about accumulation, flammability, deflagration vs sustained combustion.
+
+---
+
+## 5) Difficulty Control (how to tune hardness)
+
+30. **Control difficulty by how much quantitative detail is withheld.**
+   - Harder: no numbers; rely on sign/trend/threshold logic.
+   - Easier: include explicit threshold definitions (e.g., TR criterion, force threshold, RISC critical).
+
+31. **Increase difficulty via multi-select with mixed truth density.**
+   - Include 2–5 correct options; ensure wrong options are not obviously absurd.
+
+32. **Remove keyword cues by distributing vocabulary.**
+   - Avoid repeating unique phrases from stem in the correct option only; use shared terminology across options.
+
+33. **Use “paired contrasts” to force discrimination.**
+   - Provide two options differing only by one modifier (monotonic vs non-monotonic; internal vs surface; early vs late stage).
+
+34. **Include cross-domain distractors to prevent rote recall.**
+   - Example: combine electrochemistry with heat transfer; sensor physics with battery failure; CFD hazard metrics with flammability rules.
+
+35. **Gate single-choice items with a clearly defined target.**
+   - Use single-choice when the stem logically implies one dominant mechanism (e.g., which reaction dominates heat; which interface strongest).
+
+36. **Keep options locally plausible by matching the stem’s scale.**
+   - If stem emphasizes “early stage”, include distractors about “late-stage dominance” and vice versa.
+
+37. **Add one “meta-method” option in modeling/measurement questions.**
+   - E.g., “model fits data ⇒ physically correct” (tempting but wrong), or “screening rule quantifies severity” (overreach).
+
+These rules can be implemented directly in a generator: pick an abuse scenario + controlled variables + observable signals, define a threshold or comparison, then write options spanning correct causal consequences and the distractor archetypes above.

@@ -1,0 +1,492 @@
+{
+  "\u5de5\u7a0b\u9632\u62a411": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A liquid\u2013PCM hybrid battery thermal management system (BTMS) targets keeping a cylindrical-cell pack in 20\u201350\u00b0C with pack temperature difference \u0394T < 5\u00b0C. The PCM melts at 41\u201344\u00b0C. Coolant is pure water in channels; at 0.12 m/s the maximum Reynolds number is 477.7 (laminar). Which conclusions are justified under these stated conditions?",
+          "options": [
+            "A The 0.12 m/s coolant flow must be laminar in the channels.",
+            "B Because the flow is laminar, \u0394T < 5\u00b0C will necessarily be satisfied.",
+            "C A phase-change temperature near 41\u201344\u00b0C can act as a buffering range within the 20\u201350\u00b0C target.",
+            "D Water as coolant ensures the pack stays within 20\u201350\u00b0C regardless of heat generation.",
+            "E Evidence is insufficient to conclude what coolant flow rate is required to meet \u0394T < 5\u00b0C."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Re=477.7 at 0.12 m/s is far below 2300, so laminar is supported.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a411:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Laminar flow alone does not guarantee the pack-level \u0394T requirement is met.",
+              "error_type": "single-factor fallacy",
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a411:C001",
+                "\u5de5\u7a0b\u9632\u62a411:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "PCM melting near 41\u201344\u00b0C sits inside the 20\u201350\u00b0C target, so it can buffer near that range.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a411:C001",
+                "\u5de5\u7a0b\u9632\u62a411:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Coolant identity does not ensure temperature limits independent of heat load and design details.",
+              "error_type": "unsupported guarantee",
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a411:C001",
+                "\u5de5\u7a0b\u9632\u62a411:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "No relationship is given between flow rate and achieving \u0394T < 5\u00b0C, so required flow cannot be concluded.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a411:C001",
+                "\u5de5\u7a0b\u9632\u62a411:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Boundary between flow-regime evidence and thermal-performance claims",
+          "primary_boundary": "Laminar confirmation does not imply \u0394T compliance",
+          "intended_error_modes": [
+            "single-factor fallacy",
+            "guarantee-from-design-detail",
+            "confusing target with achieved performance"
+          ],
+          "disallowed_extrapolations": [
+            "Inferring \u0394T/temperature compliance from laminar flow alone",
+            "Claiming coolant choice guarantees performance"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A hybrid BTMS is proposed for 26,650 cylindrical lithium cells (26 mm diameter, 65 mm height) using paraffin PCM-A-42 and pure water coolant. The PCM melts at 41\u201344\u00b0C with latent heat 270,200 J/kg. The pack design objective is 20\u201350\u00b0C with \u0394T < 5\u00b0C. Which statements are supported without adding unstated assumptions?",
+          "options": [
+            "A The PCM selected has a phase change temperature range of 41\u201344\u00b0C and latent heat 270,200 J/kg.",
+            "B The PCM\u2019s phase change temperature is outside the stated optimal pack temperature range.",
+            "C This BTMS is proposed specifically for 26,650 cells with 26 mm diameter and 65 mm height.",
+            "D Using this PCM necessarily forces the maximum pack temperature to remain below 44\u00b0C.",
+            "E Because latent heat is high, \u0394T < 5\u00b0C will always be met for any operating condition.",
+            "F Pure water is used as the coolant in the proposed system."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The phase change temperature and latent heat values are explicitly specified for the PCM.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a411:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "41\u201344\u00b0C lies within 20\u201350\u00b0C, not outside it.",
+              "error_type": "contradiction to provided bounds",
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a411:C001",
+                "\u5de5\u7a0b\u9632\u62a411:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "The system is stated as proposed for 26,650 cells with given dimensions.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a411:C002"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "PCM melting range does not ensure pack maximum temperature stays below it under all heat loads.",
+              "error_type": "unsupported guarantee",
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a411:C001",
+                "\u5de5\u7a0b\u9632\u62a411:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Latent heat magnitude alone cannot guarantee a universal \u0394T bound across operating conditions.",
+              "error_type": "overgeneralization",
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a411:C001",
+                "\u5de5\u7a0b\u9632\u62a411:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Coolant is explicitly stated to be pure water.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a411:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Separating stated parameters from implied performance",
+          "primary_boundary": "Material properties do not ensure system temperature limits",
+          "intended_error_modes": [
+            "overgeneralization",
+            "property-to-performance leap",
+            "range miscomparison"
+          ],
+          "disallowed_extrapolations": [
+            "Guaranteeing Tmax or \u0394T from PCM latent heat alone",
+            "Asserting universal compliance under any duty cycle"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "You are reviewing a claim: \u201cSince the coolant flow is laminar at 0.12 m/s and the PCM melts at 41\u201344\u00b0C, the pack will meet the 20\u201350\u00b0C target and \u0394T < 5\u00b0C.\u201d Provide a closed-book critique stating what parts are supported and what cannot be concluded from the given information."
+        },
+        "ground_truth": {
+          "gold_answer": "Supported: the target temperature band (20\u201350\u00b0C) and \u0394T < 5\u00b0C are design goals; the PCM melts at 41\u201344\u00b0C with stated latent heat; coolant is pure water; at 0.12 m/s Re\u2248477.7 so flow is laminar. Not supported: that laminar flow plus PCM properties guarantees meeting the temperature band or \u0394T limit, or that 0.12 m/s is sufficient/required to achieve them.",
+          "must_include": [
+            "Laminar at 0.12 m/s from Re\u2248477.7",
+            "Target is 20\u201350\u00b0C with \u0394T < 5\u00b0C",
+            "PCM melts at 41\u201344\u00b0C",
+            "Cannot guarantee meeting targets from given facts"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming performance guarantees (\u0394T/Tmax) without heat-load and geometry data",
+            "Inferring required flow rate to meet \u0394T < 5\u00b0C"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Critiquing over-claims from limited thermal/fluid evidence",
+          "primary_boundary": "Design objectives are not demonstrated outcomes",
+          "intended_error_modes": [
+            "treating targets as achieved",
+            "guarantee-from-laminarity",
+            "ignoring missing heat-load details"
+          ]
+        }
+      }
+    ]
+  },
+  "\u5de5\u7a0b\u9632\u62a412": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A 16-cell 18650 battery module is designed with a thermal management goal: keep all cell temperatures between 20\u201350 \u00b0C and the maximum cell-to-cell temperature difference within 5 \u00b0C during operation. Which statements are necessarily correct judgments about this goal statement?",
+          "options": [
+            "A The control objective defines both an absolute temperature band and a uniformity constraint.",
+            "B Meeting the uniformity constraint necessarily guarantees the absolute temperature band is met.",
+            "C Meeting the absolute temperature band does not, by itself, ensure the uniformity constraint is met.",
+            "D If the average module temperature is 35 \u00b0C, the objective is necessarily satisfied.",
+            "E Evidence is insufficient to infer any constraint values or their meaning."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The goal explicitly sets a 20\u201350 \u00b0C range and a \u22645 \u00b0C temperature-difference limit.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a412:C1"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "A small temperature spread can still occur entirely above 50 \u00b0C or below 20 \u00b0C.",
+              "error_type": "logic_nonsequitur",
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a412:C1"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "All cells can be within 20\u201350 \u00b0C while still differing by more than 5 \u00b0C.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a412:C1"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Average temperature alone cannot bound max temperature or cell-to-cell temperature difference.",
+              "error_type": "proxy_misinterpretation",
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a412:C1"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The constraint values and intended meaning are explicitly stated in the goal.",
+              "error_type": "refusal_when_supported",
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a412:C1"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Separating absolute limits from uniformity constraints",
+          "primary_boundary": "No inference from averages to extrema",
+          "intended_error_modes": [
+            "conflating necessary and sufficient conditions",
+            "proxy-metric misuse",
+            "invalid refusal"
+          ],
+          "disallowed_extrapolations": [
+            "inferring safety or lifetime from thermal targets"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A BTMS uses paraffin PCM labeled RT44HC with a melting temperature of 41\u201344 \u00b0C. The BTMS temperature objective is 20\u201350 \u00b0C with \u22645 \u00b0C cell-to-cell difference. Which statements can be concluded from these specifications alone?",
+          "options": [
+            "A PCM will undergo phase change during operation if any local region reaches 41\u201344 \u00b0C.",
+            "B Using this PCM necessarily ensures the module never exceeds 50 \u00b0C.",
+            "C The PCM melting range lies within the desired operating temperature band.",
+            "D If the PCM fully melts, the module must be violating the temperature uniformity limit.",
+            "E Evidence is insufficient to conclude whether the PCM melting range is inside the objective band."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Reaching the melting range implies phase change occurs locally, independent of system performance.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a412:C5"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "A PCM melting point alone cannot guarantee peak temperature control without load/geometry details.",
+              "error_type": "system_level_guarantee",
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a412:C1"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "41\u201344 \u00b0C lies between 20 \u00b0C and 50 \u00b0C, so it is inside the stated band.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a412:C1",
+                "\u5de5\u7a0b\u9632\u62a412:C5"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "PCM melting extent does not necessarily imply >5 \u00b0C cell-to-cell temperature difference.",
+              "error_type": "unsupported_causal_claim",
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a412:C1",
+                "\u5de5\u7a0b\u9632\u62a412:C5"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Both the band and the melting range are specified, so inclusion can be concluded.",
+              "error_type": "refusal_when_supported",
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a412:C1",
+                "\u5de5\u7a0b\u9632\u62a412:C5"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Interpreting material property vs system performance",
+          "primary_boundary": "Property does not guarantee peak temperature",
+          "intended_error_modes": [
+            "equating phase change with compliance",
+            "system-level guarantee from component data",
+            "invalid refusal"
+          ],
+          "disallowed_extrapolations": [
+            "inferring cooling capacity or time-to-overheat"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery module contains 16 identical 18650 cells (each: 3.7 V nominal, 2.0 Ah, 45 m\u03a9 internal resistance). A BTMS has overall size 97\u00d797\u00d765 mm and includes nine parallel liquid-cooling channels (inner diameter 4 mm, outer diameter 6 mm). Which conclusions are justified without additional assumptions?",
+          "options": [
+            "A The module nominal energy is 16\u00d7(3.7 V\u00d72.0 Ah) regardless of series/parallel arrangement.",
+            "B The module necessarily has 59.2 V nominal because it has 16 cells.",
+            "C With nine channels arranged in parallel, the coolant must split into nine branches somewhere in the manifolding.",
+            "D Evidence is insufficient to conclude the electrical configuration (series/parallel) of the 16 cells.",
+            "E The BTMS size necessarily implies each cell is directly contacted by at least one cooling channel."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "C",
+            "D"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "Total energy depends on series/parallel configuration; 16 cells don\u2019t fix pack voltage and Ah simultaneously.",
+              "error_type": "configuration_extrapolation",
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a412:C2"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "59.2 V requires 16 in series; the configuration is not stated.",
+              "error_type": "unsupported_assumption",
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a412:C2"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Parallel channels imply multiple flow paths; supplying them requires a split across channels.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a412:C4"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Only cell count and per-cell ratings are given; series/parallel wiring is not specified.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a412:C2"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Overall dimensions do not determine internal layout or whether every cell is directly adjacent to a channel.",
+              "error_type": "geometry_overreach",
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a412:C3",
+                "\u5de5\u7a0b\u9632\u62a412:C4"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Avoiding pack-level inference from cell count",
+          "primary_boundary": "Unknown electrical and geometric topology",
+          "intended_error_modes": [
+            "assuming series string by default",
+            "treating dimensions as contact proof",
+            "overcomputing without configuration"
+          ],
+          "disallowed_extrapolations": [
+            "inferring flow rate, pressure drop, or heat removal"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "You are reviewing a BTMS concept with these stated specs: operating control objective is 20\u201350 \u00b0C with max cell-to-cell temperature difference \u22645 \u00b0C; PCM is paraffin RT44HC melting at 41\u201344 \u00b0C; nine parallel liquid-cooling channels (4 mm ID, 6 mm OD) in a 97\u00d797\u00d765 mm BTMS; module has 16 identical 18650 cells (3.7 V, 2.0 Ah, 45 m\u03a9). Give two conclusions that are supported and two conclusions that cannot be justified from these specs alone."
+        },
+        "ground_truth": {
+          "gold_answer": "Supported: (1) The thermal objective sets both an absolute band (20\u201350 \u00b0C) and a uniformity limit (\u22645 \u00b0C). (2) The PCM melting range (41\u201344 \u00b0C) lies within that band. Not justified: (1) That the design will keep temperatures below 50 \u00b0C under real loads/duty cycles. (2) The 16-cell electrical configuration (e.g., 16s) or resulting pack voltage/energy without wiring details.",
+          "must_include": [
+            "States both temperature band and \u0394T limit",
+            "PCM melting range is within 20\u201350 \u00b0C",
+            "Cannot guarantee peak temperature compliance",
+            "Cannot infer 16-cell series/parallel configuration"
+          ],
+          "disallowed_extrapolations": [
+            "predicting cooling performance, flow rate, or safety outcomes",
+            "inferring exact pack voltage/energy without configuration"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Supported vs not-supported conclusions from specs",
+          "primary_boundary": "No performance guarantees from design intent",
+          "intended_error_modes": [
+            "treating targets as achieved performance",
+            "inferring wiring topology",
+            "system-level guarantee from component properties"
+          ]
+        }
+      }
+    ]
+  }
+}
