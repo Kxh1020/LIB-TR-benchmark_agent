@@ -1,0 +1,319 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A 21700-format NCA cell at approximately 97% SOC undergoes thermal runaway in a test configuration where both the top and bottom vents are functional. The top vent activates at just under 20 bar internal pressure, after which internal pressure drops rapidly to ambient and internal temperature falls to approximately 55°C. During the subsequent thermal runaway phase, the bottom vent also activates. In a parallel test with an otherwise identical cell at 99% SOC, the bottom vent fails to open during thermal runaway. An engineer compares the two tests and makes the following claims about the test with the non-functioning bottom vent. Which of the following claims are supported by the described evidence?",
+        "options": [
+          "A. The secondary internal pressure peak in the test with the non-functioning bottom vent will be substantially higher than in the test where both vents function.",
+          "B. The thermal runaway onset temperature in the 99% SOC cell will be lower than in the 97% SOC cell, independent of vent behavior.",
+          "C. The cell mass remaining after thermal runaway will be greater in the test where the bottom vent fails to open than in the test where it functions normally.",
+          "D. The initial top-vent activation pressure is primarily determined by vent failure mode rather than by SOC.",
+          "E. The temperature drop observed when the top vent activates is caused by the release of hot gases from the cell interior.",
+          "F. The higher secondary pressure peak in the test with the non-functioning bottom vent confirms that the bottom vent failure accelerates the initial onset of thermal runaway."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence shows that when the bottom vent did not activate, the secondary internal gas pressure peak reached approximately 28.74 bar versus approximately 4.19–4.54 bar when both vents functioned, directly supporting this claim.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+186+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Evidence explicitly shows that higher SOC corresponds to lower thermal runaway onset temperature (99% SOC → 166°C, 97% SOC → 178°C, 95% SOC → 195°C). This relationship is stated as a surface measurement observation and is independent of vent behavior in the evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+186+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "This is counterintuitive but wrong. When the bottom vent failed to open, restricted gas release led to dramatically greater mass loss (cell dropped to 12.78 g vs. ~28 g when both vents functioned). Restricted venting does not conserve cell mass; it leads to more violent ejection of material. This option appears conservative and physically plausible but contradicts the evidence.",
+            "error_type": "causal_overclaim_reversed",
+            "evidence_refs": [
+              "TR_Mechanism+186+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence shows top-vent activation pressure was highly consistent (~19.84–19.96 bar) across all three tests regardless of vent configuration or SOC variation, indicating it is a cell design threshold, not determined by vent failure mode.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Mechanism+186+UnknownJournal:C001"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The evidence directly states that the temperature decrease upon top vent activation is caused by the release of hot gases from the cell.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+186+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The bottom vent failure affects the secondary pressure dynamics during thermal runaway, not the onset. The onset temperature is governed by SOC. Attributing earlier onset to vent failure mode is a causal overclaim not supported by the evidence.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Mechanism+186+UnknownJournal:C003",
+              "TR_Mechanism+186+UnknownJournal:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinguishing between vent-configuration effects on secondary pressure and mass loss versus SOC effects on onset temperature, while avoiding causal confusion between vent failure and onset timing.",
+        "primary_boundary": "Bottom vent failure increases secondary pressure peak and increases mass loss (not decreases it); onset temperature is governed by SOC independently of vent behavior.",
+        "intended_error_modes": [
+          "Assuming restricted venting conserves cell mass (intuitive but wrong)",
+          "Attributing onset temperature change to vent configuration rather than SOC",
+          "Attributing top-vent activation pressure to vent failure mode"
+        ],
+        "disallowed_extrapolations": [
+          "Generalizing vent behavior effects to other cell formats or chemistries",
+          "Claiming vent failure mode controls initial activation pressure"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A prismatic LFP battery module is configured so that individual cells can be heated from different surfaces. Tests are conducted under three heating configurations: heating applied to the large flat face of the cell, heating applied to the side edge, and heating applied to the bottom edge. The thermal conductivity of the cell perpendicular to the electrode layers is approximately twenty times lower than the conductivity parallel to those layers. An engineer evaluates the thermal runaway propagation behavior and gas generation across these configurations. Which of the following conclusions are supported?",
+        "options": [
+          "A. Under large surface heating, voltage drop occurs later in the internal propagation sequence than under side or bottom heating, because the low cross-plane conductivity delays uniform temperature elevation across all electrode layers.",
+          "B. The propagation velocity under side heating and bottom heating will differ by more than a factor of three, since the thermal conductivity anisotropy favors one direction strongly over the other.",
+          "C. Large surface heating produces more than twice the gas volume of side or bottom heating, and this is consistent with greater mass loss under large surface heating.",
+          "D. Side and bottom heating produce higher peak temperatures on the large cell surface than large surface heating, which is counterintuitive given that the heating source is not directly applied to that surface.",
+          "E. The lower propagation velocity under large surface heating implies that this configuration is always safer for module-level thermal management, regardless of gas generation.",
+          "F. The voltage drop timing difference between heating modes reflects a difference in how quickly internal short circuit conditions develop across the electrode stack."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence states voltage drop under large surface heating occurs at the end of the internal propagation stage, while under side and bottom heating it occurs at the initial stage due to near-simultaneous internal short circuit of all core layers. The low cross-plane conductivity means heat penetrates slowly through the electrode stack under large surface heating, delaying uniform temperature elevation and thus delaying simultaneous short circuit.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+187+UnknownJournal:C003",
+              "TR_Mechanism+187+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence shows side heating and bottom heating propagation velocities are comparable (2.035 vs. 1.942 mm/s), not differing by more than a factor of three. The anisotropy argument is plausible but contradicted by the measured similarity between these two modes.",
+            "error_type": "overgeneralization_of_anisotropy",
+            "evidence_refs": [
+              "TR_Mechanism+187+UnknownJournal:C001",
+              "TR_Mechanism+187+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "While large surface heating does produce more than twice the gas volume, the evidence states that side and bottom heating exhibit less mass loss than large surface heating. Greater gas volume under large surface heating is therefore associated with greater mass loss, not less, making the conjunction in this option internally contradicted by the evidence.",
+            "error_type": "mechanism_confusion",
+            "evidence_refs": [
+              "TR_Mechanism+187+UnknownJournal:C005",
+              "TR_Mechanism+187+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence explicitly states that side and bottom heating produce higher peak temperature and temperature increment on the large surface compared to large surface heating. This is counterintuitive because the heat source is not directly applied to the large surface in those configurations, yet the high in-plane conductivity rapidly distributes heat across the electrode layers to the large surface.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+187+UnknownJournal:C004",
+              "TR_Mechanism+187+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "This is a conservative-appearing but incorrect distractor. Lower propagation velocity does not make a configuration categorically safer at module level because large surface heating also produces more than twice the gas volume, which is a critical module-level hazard. A single-metric safety conclusion ignores the multi-factor nature of thermal runaway risk.",
+            "error_type": "scope_expansion_single_metric",
+            "evidence_refs": [
+              "TR_Mechanism+187+UnknownJournal:C001",
+              "TR_Mechanism+187+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The evidence states that under side and bottom heating, voltage drop occurs at the initial stage of internal propagation due to almost simultaneous internal short circuit of all core layers, while under large surface heating it occurs at the end. This directly reflects a difference in the rate and simultaneity of internal short circuit development across the electrode stack.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+187+UnknownJournal:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Reasoning about how thermal conductivity anisotropy controls propagation velocity, voltage drop timing, peak temperature distribution, and gas generation across different heating configurations, and avoiding single-metric safety generalizations.",
+        "primary_boundary": "Side and bottom heating velocities are comparable despite anisotropy; large surface heating produces more gas and more mass loss but slower propagation; peak temperature on large surface is paradoxically higher under side/bottom heating.",
+        "intended_error_modes": [
+          "Assuming anisotropy creates large velocity difference between side and bottom heating",
+          "Assuming lower propagation velocity implies categorical module-level safety advantage",
+          "Misassociating gas volume with mass loss direction"
+        ],
+        "disallowed_extrapolations": [
+          "Generalizing heating-mode effects to other cell geometries or chemistries",
+          "Using single propagation velocity metric to rank overall thermal runaway hazard"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A lithium-sulfur cell uses a lithium metal anode and a liquid aprotic electrolyte. During cycling, sulfur reduction generates polysulfide intermediates. High-order polysulfides dissolve in the electrolyte and react parasitically with the lithium anode, while low-order polysulfides remain insoluble. An engineer evaluates two anode pretreatment strategies: (i) pretreatment of the lithium surface with AlI3 before cell assembly, and (ii) both pretreatment of the lithium surface with AlI3 and addition of AlI3 to the electrolyte during operation. Impedance measurements in a polysulfide-rich environment show that untreated lithium reaches approximately 250% of its initial impedance after 72 hours, while AlI3-pretreated lithium reaches only 145% of initial impedance over the same period. At 2 mA/cm2, Coulombic efficiency rises from approximately 70% to approximately 92% with pretreatment alone. Which of the following conclusions are supported?",
+        "options": [
+          "A. The impedance increase in untreated lithium exposed to polysulfide-rich electrolyte is consistent with progressive parasitic reaction between dissolved high-order polysulfides and the anode surface.",
+          "B. AlI3 pretreatment alone is sufficient to suppress dendrite-induced separator penetration under all practical cycling conditions in this cell chemistry.",
+          "C. Adding AlI3 to the electrolyte beyond the pretreatment step can raise Coulombic efficiency above 97% by the 100th cycle at moderate rates, suggesting the electrolyte-phase additive provides a benefit beyond surface pretreatment alone.",
+          "D. The Coulombic efficiency improvement from pretreatment at 2 mA/cm2 demonstrates that the pretreated surface layer remains stable under elevated current density conditions relative to untreated lithium.",
+          "E. Because low-order polysulfides are insoluble, they do not contribute to parasitic anode reactions and therefore the primary electrochemical degradation pathway involves only high-order polysulfide species.",
+          "F. The reduction in impedance growth with AlI3 pretreatment proves that dendrite formation is fully eliminated, since dendrites are the primary cause of impedance rise in this system."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence states that high-order polysulfides dissolve and cause parasitic reaction with the Li anode. The rapid impedance rise in untreated lithium in a polysulfide-rich environment is mechanistically consistent with this parasitic interfacial reaction progressively degrading the anode surface.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+188+UnknownJournal:C005",
+              "TR_Mechanism+188+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "This is a conservative-appearing overclaim. The evidence shows pretreatment reduces impedance growth and improves Coulombic efficiency, but does not establish that dendrite-induced separator penetration is suppressed under all practical conditions. The evidence scope is limited to specific test conditions and does not support a universal safety claim.",
+            "error_type": "scope_expansion_universal_claim",
+            "evidence_refs": [
+              "TR_Mechanism+188+UnknownJournal:C001",
+              "TR_Mechanism+188+UnknownJournal:C002",
+              "TR_Mechanism+188+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence explicitly states that when AlI3 is additionally introduced to the electrolyte beyond pretreatment, both capacity and Coulombic efficiency rise, with CE exceeding 97% by the 100th cycle at 0.5C. This directly supports the claim that the electrolyte additive provides benefit beyond pretreatment alone.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+188+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "At 2 mA/cm2, Coulombic efficiency rises from ~70% to ~92% with pretreatment. This improvement at elevated current density, where dendrite formation and parasitic reactions are more pronounced, is consistent with the pretreated surface layer maintaining relative stability compared to untreated lithium under these more demanding conditions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+188+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "While the evidence states low-order polysulfides are insoluble and high-order polysulfides cause parasitic anode reactions, the evidence does not state that low-order species contribute zero degradation through any pathway. The conclusion that the primary degradation pathway involves only high-order species is supported, but asserting low-order species contribute nothing to any degradation mechanism is an overclaim beyond the evidence scope.",
+            "error_type": "scope_expansion_beyond_evidence",
+            "evidence_refs": [
+              "TR_Mechanism+188+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence shows AlI3 pretreatment reduces impedance growth but does not state that dendrites are the primary cause of impedance rise in this system, nor that dendrite formation is fully eliminated. The impedance rise is consistent with parasitic polysulfide-anode reactions as well. Attributing impedance rise solely to dendrites and claiming full elimination is an unsupported causal overclaim.",
+            "error_type": "causal_overclaim_and_mechanism_substitution",
+            "evidence_refs": [
+              "TR_Mechanism+188+UnknownJournal:C001",
+              "TR_Mechanism+188+UnknownJournal:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinguishing between admissible mechanistic inferences from impedance and Coulombic efficiency data versus overclaims about complete dendrite suppression or universal safety under all conditions in Li-S cells.",
+        "primary_boundary": "Pretreatment reduces but does not eliminate parasitic reactions; impedance reduction does not prove complete dendrite elimination; low-order polysulfide insolubility does not establish zero contribution to all degradation pathways.",
+        "intended_error_modes": [
+          "Overclaiming complete dendrite suppression from impedance reduction data",
+          "Generalizing pretreatment efficacy to all practical cycling conditions",
+          "Treating insolubility of low-order polysulfides as proof of zero degradation contribution"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding full dendrite elimination from partial impedance improvement",
+          "Applying pretreatment results to conditions beyond those tested"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery engineer is designing a module using prismatic LFP cells and must choose between two thermal management layouts. In Layout A, the primary heat exchange surface is the large flat face of each cell. In Layout B, heat is managed through the side edges of the cells. The engineer notes that the thermal conductivity of the cell perpendicular to the electrode layers is approximately twenty times lower than the conductivity parallel to those layers. During a thermal runaway event in a single cell, the engineer observes that Layout B produces higher peak temperatures on the large cell surface and less mass loss than Layout A, even though the thermal runaway propagates roughly seven times faster in Layout B. The engineer concludes that Layout A is unambiguously safer at the module level because it produces slower propagation. Identify the specific flaw in this conclusion and explain, using the observed behavioral differences between the two layouts, why the engineer's single-metric reasoning is insufficient for a module-level safety judgment."
+      },
+      "ground_truth": {
+        "gold_answer": "The engineer's conclusion is flawed because it uses propagation velocity as the sole safety metric while ignoring that large surface heating (Layout A) produces more than twice the gas volume of side heating (Layout B). At the module level, gas generation is a critical hazard because it drives pressure buildup, venting events, and potential ignition of flammable gases in the module enclosure. Layout A's slower propagation velocity does not offset its substantially greater gas production. Furthermore, Layout B's higher peak temperature on the large surface and lower mass loss indicate that more of the cell's energy is retained internally and dissipated thermally rather than ejected as gas and particulate matter, which changes the nature of the hazard rather than simply reducing it. A module-level safety judgment requires evaluating both propagation velocity and gas generation together, and these two metrics point in opposite directions for the two layouts. The conclusion that Layout A is unambiguously safer is therefore not supported because it ignores the gas volume hazard, which is more than twice as large in Layout A.",
+        "must_include": [
+          "Large surface heating produces more than twice the gas volume of side heating",
+          "Gas generation is a module-level hazard independent of propagation velocity",
+          "Propagation velocity alone is insufficient as a single safety metric",
+          "The two metrics point in opposite directions, making an unambiguous ranking inadmissible"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming Layout B is unambiguously safer based on gas volume alone",
+          "Asserting that higher peak temperature in Layout B makes it categorically more dangerous",
+          "Generalizing conclusions to cell chemistries or geometries not described in the evidence"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Recognizing that thermal runaway safety at module level requires multi-metric evaluation and that a single-metric conclusion based on propagation velocity is inadmissible when gas generation trends in the opposite direction.",
+        "primary_boundary": "Propagation velocity and gas generation trade off between heating configurations; neither metric alone supports an unambiguous module-level safety ranking.",
+        "intended_error_modes": [
+          "Accepting propagation velocity as a sufficient single safety metric",
+          "Ignoring gas generation as a module-level hazard",
+          "Reversing the error by claiming Layout B is unambiguously safer based on gas volume alone"
+        ]
+      }
+    }
+  ]
+}

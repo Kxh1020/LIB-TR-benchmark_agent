@@ -1,0 +1,243 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A seven-cell lithium-ion mini-module undergoes nail penetration of a single cell under two conditions: (1) air-cooled baseline and (2) active dielectric immersion cooling at 2 LPM and 25°C inlet temperature. In the baseline case, all cell thermocouples exceed 1000°C within 20 seconds and module voltage drops to 0 V within seconds. In the immersion-cooled case, peak temperatures remain below 400°C near the penetrated cell, most surface temperatures return below 100°C within 60–90 seconds, and two non-penetrated cells retain voltages above 4.1 V post-test. However, coolant flow rate drops to near zero approximately two minutes after penetration due to bulk vaporization of the dielectric fluid. An engineer must evaluate which conclusions about the immersion cooling strategy are admissible based on this outcome. Which of the following conclusions are supported?",
+        "options": [
+          "A. The immersion cooling system suppressed thermal runaway propagation to the majority of non-penetrated cells, as evidenced by retained cell voltages and the approximately tenfold reduction in module mass loss.",
+          "B. The immersion cooling system eliminated the thermal runaway event in the penetrated cell, because peak temperatures remained below the threshold associated with full thermal runaway.",
+          "C. The loss of coolant flow at approximately two minutes represents a failure of the cooling system's sustained protection capability, meaning the system cannot be relied upon to maintain thermal control beyond that point without fluid replenishment.",
+          "D. The temperature reduction achieved by immersion cooling was primarily due to increased thermal mass of the module rather than active heat removal by the circulating fluid.",
+          "E. The retention of functional voltage in two of seven cells after the test is consistent with partial propagation arrest, but does not confirm that those cells experienced no electrochemical degradation.",
+          "F. Because silicone oil provides a larger thermal runaway onset delay than fluorinated fluids in single-cell overcharge tests, silicone oil would have produced superior propagation suppression in this nail penetration scenario.",
+          "G. The approximately 24-gram mass loss in the immersion-cooled case versus more than 260 grams in the baseline case indicates that the immersion fluid substantially limited the ejection or combustion of cell materials beyond the initially penetrated cell."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Two of seven cells retained near-nominal voltages (4.1 V and 4.2 V), and module mass loss was approximately 24.4 g versus more than 260 g in the baseline. These jointly support the conclusion that propagation to the majority of non-penetrated cells was suppressed. The tenfold characterization is a minimal arithmetic inference from the stated values.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+182+Volume_6_Energy:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The penetrated cell (Cell #1) was the initiation site and thermocouples near it exceeded 200°C; the evidence does not state that the penetrated cell itself avoided thermal runaway, only that propagation to most neighbors was limited. Concluding that the penetrated cell avoided thermal runaway is an unsupported overclaim.",
+            "error_type": "Causal overclaim; scope expansion beyond stated evidence",
+            "evidence_refs": [
+              "TR_Protection+182+Volume_6_Energy:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that coolant flow dropped to near zero after two minutes due to bulk vaporization. This is a documented loss of active cooling capability. Concluding that sustained protection beyond this point requires fluid replenishment is a minimal and directly supported engineering implication.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+182+Volume_6_Energy:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence explicitly attributes the rapid heat dissipation to the continuously circulating dielectric fluid, not to thermal mass. This option substitutes a different mechanism (thermal mass) for the one supported by the evidence (active convective removal by circulating fluid).",
+            "error_type": "Mechanism substitution",
+            "evidence_refs": [
+              "TR_Protection+182+Volume_6_Energy:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Retained voltage is a macroscopic indicator of cell integrity but does not directly measure internal electrochemical state. The conclusion that propagation was partially arrested is supported, but inferring zero degradation in those cells exceeds what voltage measurement alone can confirm. This is a measurement scope limitation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+182+Volume_6_Energy:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The silicone oil onset delay data comes from single-cell overcharge tests. The nail penetration scenario involves a different abuse mode, different heat generation pathway, and critically, silicone oil was shown to produce strong explosions and severe flames in overcharge tests with LTO cells, indicating it is not universally superior. Transferring the onset delay ranking from overcharge to nail penetration is an unsupported regime transfer.",
+            "error_type": "Regime transfer beyond stated conditions; scope expansion",
+            "evidence_refs": [
+              "TR_Protection+183+World_Electric_Vehicle_Journal:C001",
+              "TR_Protection+183+World_Electric_Vehicle_Journal:C003"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "The approximately tenfold difference in mass loss (24.4 g vs. more than 260 g) directly supports the conclusion that the immersion fluid substantially limited material ejection or combustion beyond the penetrated cell. This is a direct minimal inference from the stated mass loss comparison.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+182+Volume_6_Energy:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of conclusions about immersion cooling effectiveness and its limitations under nail penetration abuse, including mechanism attribution and measurement scope",
+        "primary_boundary": "Immersion cooling demonstrably suppressed propagation but did not eliminate the initiating cell's thermal event, and its active cooling capability was time-limited by coolant vaporization",
+        "intended_error_modes": [
+          "Mechanism substitution (thermal mass vs. active convection)",
+          "Regime transfer from overcharge to nail penetration for fluid ranking",
+          "Overclaiming elimination of thermal runaway in the penetrated cell",
+          "Treating voltage retention as proof of zero internal degradation"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring that the penetrated cell avoided thermal runaway because neighbors were protected",
+          "Transferring single-cell overcharge fluid rankings to nail penetration scenarios",
+          "Claiming sustained cooling beyond coolant vaporization without replenishment"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is comparing two dielectric immersion fluids—PFPE170 and silicone oil—for use in a battery pack thermal management and safety system. In single-cell overcharge tests at 100% SOC and 4C rate, silicone oil delays thermal runaway onset by 103 seconds relative to open-air conditions, while PFPE170 delays it by 107 seconds. However, in the same overcharge tests, silicone oil immersion results in strong explosions and severe flame generation from both the battery and the fluid, while PFPE170 suppresses battery flames entirely. In a separate pack-level test, cells adjacent to a thermally runaway cell in PFPE170 reach maximum surface temperatures of 62.5°C and 57°C, compared to 160.7°C and 92.3°C in open-air conditions. The engineer must decide which fluid is more appropriate for a safety-critical pack application. Which of the following statements are admissible conclusions from this evidence?",
+        "options": [
+          "A. Silicone oil's larger thermal runaway onset delay relative to PFPE170 in single-cell tests does not make it the safer choice for pack applications, because its flammability under abuse conditions introduces a hazard that outweighs the marginal delay advantage.",
+          "B. PFPE170 is the more appropriate fluid for pack safety because it combines a thermal runaway onset delay comparable to silicone oil with the absence of a flash point or fire point, and it demonstrably limits thermal propagation to adjacent cells.",
+          "C. Because PFPE170 suppresses battery flames entirely while PFPE270 only prevents flame propagation, PFPE170 should be considered universally superior to all fluorinated fluids for any battery chemistry and abuse mode.",
+          "D. The 4-second difference in thermal runaway onset delay between PFPE170 and silicone oil is the primary factor distinguishing their safety performance in pack applications.",
+          "E. The pack-level temperature data for PFPE170 supports the conclusion that immersion in this fluid can substantially reduce the thermal load on cells adjacent to a thermally runaway cell, though it does not confirm that those cells are protected from all forms of degradation.",
+          "F. The explosion and flame generation observed with silicone oil in overcharge tests indicates that silicone oil actively accelerates thermal runaway onset, contradicting the measured onset delay data."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "This is a counterintuitive but correct conclusion. Silicone oil has a marginally smaller onset delay (103 s vs. 107 s) but produces explosions and severe flames, making it the more dangerous fluid despite its comparable delay. The reasoning requires recognizing that onset delay is not the only safety-relevant metric and that flammability of the fluid itself is a critical hazard.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+183+World_Electric_Vehicle_Journal:C001",
+              "TR_Protection+183+World_Electric_Vehicle_Journal:C003",
+              "TR_Protection+183+World_Electric_Vehicle_Journal:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "PFPE170 has the largest onset delay (107 s), has no flash point or fire point, suppresses battery flames entirely, and limits adjacent cell temperatures to 62.5°C and 57°C. All of these claims are directly supported by the evidence and together justify the conclusion for pack safety applications.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+183+World_Electric_Vehicle_Journal:C002",
+              "TR_Protection+183+World_Electric_Vehicle_Journal:C004",
+              "TR_Protection+183+World_Electric_Vehicle_Journal:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The comparison between PFPE170 and PFPE270 is established only for LTO cells at 100% SOC and 4C overcharge. Claiming universal superiority across all battery chemistries and abuse modes is an unsupported overgeneralization beyond the stated experimental conditions.",
+            "error_type": "Overgeneralization across chemistry and abuse mode",
+            "evidence_refs": [
+              "TR_Protection+183+World_Electric_Vehicle_Journal:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "This option appears cautious by focusing on a specific measured difference, but it is incorrect because it assigns primacy to the onset delay difference when the evidence clearly shows that flammability behavior (explosion and flame generation with silicone oil) is the dominant safety-differentiating factor between the two fluids. This is a conservative-appearing but mechanistically wrong distractor.",
+            "error_type": "Ignoring dominant mechanism; attributing system outcome to a secondary variable",
+            "evidence_refs": [
+              "TR_Protection+183+World_Electric_Vehicle_Journal:C001",
+              "TR_Protection+183+World_Electric_Vehicle_Journal:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The pack-level temperature data directly supports reduced thermal load on adjacent cells (62.5°C and 57°C vs. 160.7°C and 92.3°C). The qualification that this does not confirm protection from all degradation forms is appropriate given that surface temperature is an indirect indicator and internal electrochemical state was not directly measured.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+183+World_Electric_Vehicle_Journal:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence shows silicone oil delays onset (103 s) but produces explosions after the initial overcharge and cell bottom loss sequence. The explosion is a post-onset event, not evidence that silicone oil accelerates onset. Attributing the explosion to onset acceleration contradicts the measured delay data and confuses post-runaway behavior with onset triggering.",
+            "error_type": "Mechanism confusion; conflating post-runaway behavior with onset acceleration",
+            "evidence_refs": [
+              "TR_Protection+183+World_Electric_Vehicle_Journal:C001",
+              "TR_Protection+183+World_Electric_Vehicle_Journal:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-metric safety comparison of dielectric fluids where onset delay ranking contradicts overall safety ranking due to flammability behavior",
+        "primary_boundary": "Onset delay is not the sole determinant of fluid safety suitability; fluid flammability under abuse conditions is a dominant hazard that can outweigh a marginal delay advantage",
+        "intended_error_modes": [
+          "Selecting the fluid with the longer onset delay as universally safer",
+          "Treating onset delay as the primary safety metric while ignoring flammability",
+          "Overgeneralizing PFPE170 vs. PFPE270 comparison to all chemistries",
+          "Confusing post-runaway explosion behavior with onset acceleration"
+        ],
+        "disallowed_extrapolations": [
+          "Universal fluid ranking across all battery chemistries and abuse modes",
+          "Inferring that silicone oil accelerates thermal runaway onset from its post-onset explosion behavior",
+          "Claiming onset delay difference is the primary safety differentiator when flammability data is available"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery module uses PFPE170 dielectric immersion cooling. During a single-cell thermal runaway event triggered by overcharge, the immersion fluid delays the onset of thermal runaway in the affected cell and suppresses flames from the battery. Adjacent cells reach maximum surface temperatures of approximately 62°C. An engineer proposes replacing PFPE170 with silicone oil on the grounds that silicone oil provides a longer thermal runaway onset delay in single-cell overcharge tests and therefore offers superior protection. Identify the primary technical flaw in this proposal, explain the mechanism by which the proposed substitution could worsen overall pack safety, and state what aspect of safety performance the engineer's reasoning fails to account for."
+      },
+      "ground_truth": {
+        "gold_answer": "The primary flaw is that the engineer uses thermal runaway onset delay as the sole safety metric while ignoring the flammability behavior of the fluid itself under abuse conditions. Silicone oil produces strong explosions and severe flame generation from both the battery and the fluid during overcharge abuse, whereas PFPE170 has no flash point or fire point and suppresses battery flames entirely. The mechanism by which substitution worsens safety is: once thermal runaway occurs in the initiating cell, the silicone oil itself becomes a fuel source and participates in the combustion event, creating a hazard that extends beyond the battery cell to the surrounding fluid volume. This can dramatically increase the severity of the thermal event and the risk of propagation. The engineer's reasoning fails to account for the flammability and combustion behavior of the immersion fluid under the abuse conditions it will experience, treating onset delay as a proxy for total safety performance when the post-onset behavior of the fluid is the dominant safety-differentiating factor in this scenario.",
+        "must_include": [
+          "Silicone oil produces explosions and flames from the fluid itself under overcharge abuse conditions",
+          "PFPE170 has no flash point or fire point, preventing fluid participation in combustion",
+          "Onset delay alone is insufficient as a safety metric when fluid flammability is a relevant hazard",
+          "The fluid becoming a fuel source is the mechanism by which substitution worsens pack safety",
+          "Post-onset or post-runaway behavior of the fluid is the critical missing consideration"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming silicone oil always causes worse outcomes than PFPE170 under all abuse modes and chemistries",
+          "Claiming PFPE170 prevents thermal runaway entirely in the affected cell",
+          "Claiming the onset delay difference between the two fluids is negligible or irrelevant in all contexts",
+          "Generalizing the conclusion to battery chemistries or abuse modes not covered by the evidence"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Recognition that a single-metric safety comparison (onset delay) is insufficient when a second safety-critical property (fluid flammability) contradicts the ranking implied by the first metric",
+        "primary_boundary": "Onset delay ranking does not determine overall safety ranking when the fluid itself becomes a hazard under the abuse conditions being evaluated; the flammability of silicone oil under overcharge conditions is the dominant differentiating factor",
+        "intended_error_modes": [
+          "Accepting onset delay as the primary or sole safety metric",
+          "Failing to recognize that the immersion fluid's own flammability is a system-level hazard",
+          "Confusing the delay of thermal runaway onset with suppression of post-runaway hazards",
+          "Treating single-cell test results as directly transferable to pack-level safety conclusions without accounting for fluid behavior"
+        ]
+      }
+    }
+  ]
+}

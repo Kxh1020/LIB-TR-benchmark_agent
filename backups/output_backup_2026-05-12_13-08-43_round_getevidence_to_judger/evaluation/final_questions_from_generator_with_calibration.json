@@ -1,0 +1,529 @@
+{
+  "TR_Gasventing+122+Journal_of_Power_Sources__TR_Gasventing+123+Journal_of_Power_Sources__TR_Gasventing+153+Process_Safety_and_Environmental_Protection": {
+    "mcqs": [
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "NMC-811 21700 cells are tested at 5% and 100% SOC under identical heating conditions. The window to detect vent gas before thermal runaway is 262 s at 5% SOC and 142 s at 100% SOC. Thermal runaway initiates up to 60\u00b0C lower at 100% SOC. Gas volume increases 3\u20135 fold from 25% to 100% SOC. Which conclusions are supported by this evidence?",
+          "options": [
+            "A. Higher SOC simultaneously reduces detection warning time, lowers the thermal runaway onset temperature, and increases total gas volume produced.",
+            "B. The reduction in warning time at higher SOC is caused solely by the increased gas volume, which accelerates pressure-driven venting.",
+            "C. At 100% SOC, an engineer relying on temperature threshold monitoring alone may receive less warning than at 5% SOC because runaway initiates at a lower temperature.",
+            "D. Because methane constitutes over 87% of safety vent gas at 100% SOC, the flammability hazard from venting is negligible at lower SOC levels.",
+            "E. The 3\u20135 fold increase in gas volume from 25% to 100% SOC implies a proportional increase in peak cell temperature during thermal runaway.",
+            "F. The shorter detection window at 100% SOC means gas-based early warning systems provide less time to intervene compared to 5% SOC under the same test protocol."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "All three effects\u2014shorter detection window, lower onset temperature, higher gas volume\u2014are individually evidenced and co-occur with increasing SOC.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+123+Journal_of_Power_Sources:C002",
+                "TR_Gasventing+123+Journal_of_Power_Sources:C003",
+                "TR_Gasventing+123+Journal_of_Power_Sources:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Evidence identifies the shorter window as a measured outcome but does not establish increased gas volume as its sole cause; causal mechanism is not evidenced.",
+              "error_type": "causal overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+123+Journal_of_Power_Sources:C002",
+                "TR_Gasventing+123+Journal_of_Power_Sources:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Thermal runaway onset up to 60\u00b0C lower at 100% SOC means a temperature-threshold alarm set for 5% SOC conditions provides less margin at 100% SOC.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+123+Journal_of_Power_Sources:C003"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Evidence reports CH4 fraction at specific SOC levels but does not support a claim that flammability hazard is negligible at lower SOC; total volume also differs.",
+              "error_type": "boundary overreach",
+              "evidence_refs": [
+                "TR_Gasventing+123+Journal_of_Power_Sources:C001",
+                "TR_Gasventing+123+Journal_of_Power_Sources:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Gas volume and peak temperature are distinct variables; the evidence does not establish a proportional relationship between them.",
+              "error_type": "causal overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+123+Journal_of_Power_Sources:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Detection window is 120 s shorter at 100% SOC than 5% SOC under the same protocol, directly reducing intervention time for gas-based warning systems.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+123+Journal_of_Power_Sources:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-variable SOC effect on detection window, onset temperature, and gas volume, and their independent versus joint implications for safety",
+          "primary_boundary": "Results are for NMC-811 21700 cells under the specific described test protocol; causal mechanisms between variables are not established by the evidence",
+          "intended_error_modes": [
+            "causal overclaim",
+            "boundary overreach",
+            "scale transfer overclaim"
+          ],
+          "disallowed_extrapolations": [
+            "Inferring that gas volume causes the shorter warning window",
+            "Inferring negligible flammability at low SOC from CH4 fraction alone",
+            "Inferring proportional peak temperature from gas volume"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "An NCM622 battery module is tested in a closed space at varying SOC levels. No thermal runaway occurs below 25% SOC. Above 50% SOC, combustible gas explosive limits range from 7.64% to 56.19%. As SOC decreases, CO2 content increases while C2H4 and CO decrease; H2 and CH4 fractions remain unchanged. Approximately 90% of thermal runaway energy heats residual and venting particles; 10% is sufficient to trigger propagation. Which statements are supported?",
+          "options": [
+            "A. Reducing SOC below 25% eliminates thermal runaway risk in this module under closed-space conditions, based on the reported threshold.",
+            "B. Because H2 and CH4 fractions are SOC-independent, total H2 and CH4 molar quantities are also SOC-independent.",
+            "C. At SOC above 50%, the wide explosive range (7.64%\u201356.19%) indicates that even partial gas release into a confined space could produce a flammable mixture.",
+            "D. The 90%/10% energy partition implies that inter-cell propagation in this module requires only a small fraction of the total thermal runaway energy, making propagation feasible even with moderate thermal barriers.",
+            "E. The increase in CO2 fraction with decreasing SOC implies that lower-SOC cells generate more total CO2 moles than higher-SOC cells.",
+            "F. Gas composition shifts with SOC (higher CO2, lower C2H4 and CO at lower SOC) suggest that the dominant gas-generating reactions change with SOC, even though total gas volume also decreases."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "C",
+            "D",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "Evidence states no thermal runaway occurred below 25% SOC in closed space for this module; it does not eliminate risk universally or under all conditions.",
+              "error_type": "boundary overreach",
+              "evidence_refs": [
+                "TR_Gasventing+153+Process_Safety_and_Environmental_Protection:C001"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Total gas volume decreases substantially with SOC; constant fraction of a smaller total means absolute molar quantities of H2 and CH4 also decrease.",
+              "error_type": "causal overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+153+Process_Safety_and_Environmental_Protection:C002",
+                "TR_Gasventing+153+Process_Safety_and_Environmental_Protection:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Explosive limits 7.64%\u201356.19% at SOC above 50% indicate a wide flammable concentration range, so partial gas release in confined space can create ignitable mixtures.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+153+Process_Safety_and_Environmental_Protection:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Only 10% of total thermal runaway energy is sufficient to trigger propagation; this means propagation threshold is a small fraction of available energy, supporting feasibility with moderate barriers.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+153+Process_Safety_and_Environmental_Protection:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Higher CO2 fraction combined with much lower total gas volume at lower SOC does not guarantee more total CO2 moles; fraction and absolute quantity are distinct.",
+              "error_type": "causal overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+153+Process_Safety_and_Environmental_Protection:C002",
+                "TR_Gasventing+153+Process_Safety_and_Environmental_Protection:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "SOC-dependent shifts in CO2 (up), C2H4 and CO (down) fractions alongside unchanged H2 and CH4 fractions indicate reaction pathway weighting changes with SOC.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+153+Process_Safety_and_Environmental_Protection:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Distinguishing fraction versus absolute quantity, boundary conditions of the no-runaway threshold, energy partition implications for propagation, and composition-shift interpretation",
+          "primary_boundary": "No-runaway threshold applies to this NCM622 module in closed space only; fraction constancy does not imply absolute quantity constancy when total volume changes",
+          "intended_error_modes": [
+            "boundary overreach",
+            "causal overclaim",
+            "scale transfer overclaim"
+          ],
+          "disallowed_extrapolations": [
+            "Universal elimination of TR risk below 25% SOC",
+            "Constant absolute H2/CH4 moles inferred from constant fraction",
+            "More total CO2 inferred from higher CO2 fraction at lower SOC"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "An engineer is designing a gas-based early warning system for a battery pack containing NMC-811 21700 cells that may operate at SOC levels ranging from 5% to 100%. The engineer also considers whether hydrogen (H2) sensors should be prioritized for safety venting detection. Using evidence about vent gas composition, detection window duration, and SOC dependence, explain: (1) which gas species is most appropriate as the primary detection target during safety venting, and (2) what design constraint the SOC operating range imposes on the warning system response time. Identify one claim you cannot make from this evidence alone."
+        },
+        "ground_truth": {
+          "gold_answer": "Methane (CH4) is the most appropriate primary detection target: it constitutes 93.1% of safety vent gas at 25% SOC and 87.1% at 100% SOC, making it the dominant species across the SOC range. H2 is not detected during safety venting of NMC-811 cells, so H2 sensors would not provide early warning of venting events. The SOC operating range imposes a critical response-time constraint: the detection window before thermal runaway shrinks from 262 s at 5% SOC to 142 s at 100% SOC\u2014a 120 s reduction. The system must therefore be designed to respond within 142 s at maximum SOC. One claim that cannot be made: the evidence does not establish that CH4 fraction or the detection window values apply to other cell chemistries or formats beyond NMC-811 21700 cells under the tested conditions.",
+          "must_include": [
+            "CH4 (methane) as the primary detection target species",
+            "H2 not detected during safety venting of NMC-811 cells",
+            "Detection window of 142 s at 100% SOC as the binding design constraint",
+            "Detection window reduction of 120 s from 5% to 100% SOC",
+            "At least one explicit boundary on extrapolation (chemistry, format, or test condition)"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming H2 sensors are useful for venting detection in NMC-811 cells based on general electrolyte decomposition literature",
+            "Claiming the 142 s window applies to other chemistries or cell formats",
+            "Claiming CH4 dominance implies other combustible gases are absent or that flammability risk is low",
+            "Asserting that the detection window values establish a causal mechanism linking SOC to venting timing"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Selection of appropriate sensor target species from composition evidence combined with SOC-dependent detection window as a binding design constraint",
+          "primary_boundary": "Gas composition and detection window data are specific to NMC-811 21700 cells under the reported test protocol; H2 absence is an experimental finding, not a universal electrochemical prediction",
+          "intended_error_modes": [
+            "mechanism substitution (prioritizing H2 based on literature mechanisms rather than experimental absence)",
+            "boundary overreach (applying NMC-811 results to other chemistries)",
+            "causal overclaim (asserting mechanism for shorter detection window)"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Gasventing+22+Journal_of_Energy_Storage__TR_Gasventing+6+Journal_of_Energy_Storage__TR_Gasventing+7+Journal_of_Energy_Storage": {
+    "mcqs": [],
+    "short_answers": []
+  },
+  "TR_Mechanism+59+UnknownJournal__TR_Mechanism+60+Battery_Energy__TR_Mechanism+61+UnknownJournal": {
+    "mcqs": [
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "In prismatic LFP batteries, external pressure of 0.1 MPa raises TR onset temperature (maximizing onset delay), while 0.2 MPa most reduces total gas generation. Gas composition analysis shows H2 at 68.5% of total gas at 0 MPa, shifting to predominantly heavier hydrocarbons at 0.1\u20130.2 MPa. Upper explosive limit (UEL) is consistently higher at 0 MPa. Which conclusions are supported?",
+          "options": [
+            "A. 0.1 MPa is the optimal pressure for minimizing explosion risk because it maximizes TR onset delay.",
+            "B. 0 MPa presents greater explosion risk than 0.1 or 0.2 MPa, evidenced by consistently higher UEL at 0 MPa.",
+            "C. The shift from H2-dominant to hydrocarbon-dominant gas composition under pressure indicates that electrolyte decomposition reactions are suppressed and replaced by SEI-related reactions.",
+            "D. There is a design trade-off: 0.1 MPa optimizes TR onset delay while 0.2 MPa optimizes gas suppression; neither pressure simultaneously maximizes both safety metrics.",
+            "E. Because 0.2 MPa reduces total gas yield by 53%, it also minimizes explosion risk more than 0 MPa.",
+            "F. At 0 MPa, H2 comprising 68.5% of total gas and highest UEL together indicate greater flammability hazard, but this does not imply that 0.2 MPa is safe from explosion risk beyond the tested range."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "D",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "0.1 MPa maximizes onset delay but UEL data shows 0 MPa has highest explosion risk; onset delay and explosion risk are distinct metrics not directly linked.",
+              "error_type": "causal overclaim",
+              "evidence_refs": [
+                "TR_Mechanism+59+UnknownJournal:C009",
+                "TR_Mechanism+59+UnknownJournal:C017"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "UEL is consistently higher at 0 MPa than at 0.1 or 0.2 MPa, directly indicating greater explosion risk at 0 MPa.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+59+UnknownJournal:C009"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Gas composition shift toward hydrocarbons under pressure is reported, but attributing it to SEI reaction replacement of electrolyte decomposition is not supported; earlier venting explains composition differences.",
+              "error_type": "mechanism substitution",
+              "evidence_refs": [
+                "TR_Mechanism+59+UnknownJournal:C007",
+                "TR_Mechanism+59+UnknownJournal:C008"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Evidence explicitly identifies 0.1 MPa as maximizing onset delay and 0.2 MPa as optimizing gas suppression, confirming a design trade-off between the two metrics.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+59+UnknownJournal:C017"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Lower total gas yield at 0.2 MPa does not directly equate to lower UEL or explosion risk; UEL depends on gas composition, not only total volume.",
+              "error_type": "causal overclaim",
+              "evidence_refs": [
+                "TR_Mechanism+59+UnknownJournal:C003",
+                "TR_Mechanism+59+UnknownJournal:C009"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Correctly identifies 0 MPa hazard from H2 proportion and UEL, while appropriately limiting the conclusion to the tested range per evidence boundary.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+59+UnknownJournal:C007",
+                "TR_Mechanism+59+UnknownJournal:C009",
+                "TR_Mechanism+59+UnknownJournal:C016"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Distinguishing explosion risk (UEL-based) from gas volume reduction, and recognizing the pressure-optimization trade-off between onset delay and gas suppression",
+          "primary_boundary": "UEL and total gas yield are distinct safety metrics; conclusions are bounded to the 0\u20130.2 MPa tested range",
+          "intended_error_modes": [
+            "causal overclaim",
+            "mechanism substitution",
+            "boundary overreach"
+          ],
+          "disallowed_extrapolations": [
+            "Equating lower total gas yield with lower explosion risk",
+            "Extending findings beyond the 0\u20130.2 MPa tested range"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A battery engineer is designing a nail penetration safety protocol for LFP cells and must choose between a steel nail and a ceramic nail for standardized testing. The engineer also needs to decide whether to test at 50% SOC or 90% SOC. Using evidence about nail material properties, SOC thresholds, and thermal runaway mechanisms, explain: (1) how nail electrical conductivity interacts with SOC to determine thermal runaway intensity, and (2) what distinct hazard ceramic nails introduce that steel nails do not, even though ceramic nails are electrically non-conductive. Restrict your answer to the evidence-supported mechanisms."
+        },
+        "ground_truth": {
+          "gold_answer": "At high SOC (>75%), nails with higher electrical and thermal conductivity enhance internal Joule heat release, intensifying thermal runaway; at low SOC (<50%), the same high-conductivity nails dissipate heat externally, weakening thermal runaway intensity. This means the nail conductivity effect reverses direction depending on SOC, so a steel nail at 90% SOC amplifies runaway while the same nail at 50% SOC mitigates it. Separately, ceramic nails\u2014despite being electrically non-conductive and thus unable to carry short-circuit current\u2014are more likely to trigger higher-temperature thermal runaway flames than steel nails, increasing fire risk through a distinct mechanism unrelated to Joule heating. Therefore, ceramic nails introduce a flame temperature hazard that cannot be inferred from their electrical properties alone, and steel nail behavior cannot be generalized across SOC levels.",
+          "must_include": [
+            "Nail conductivity effect reverses between low SOC (<50%) and high SOC (>75%)",
+            "High conductivity intensifies runaway at high SOC via enhanced Joule heat release",
+            "High conductivity weakens runaway at low SOC via heat dissipation",
+            "Ceramic nails increase fire risk by triggering higher-temperature flames",
+            "Ceramic nail flame hazard is distinct from electrical short-circuit current mechanism"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming ceramic nails are safer overall because they lack electrical conductivity",
+            "Applying the high-SOC conductivity intensification effect to low-SOC conditions",
+            "Asserting that steel nails always increase or always decrease thermal runaway risk regardless of SOC",
+            "Extending conclusions beyond the nail materials and SOC ranges described in the evidence"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "SOC-dependent reversal of nail conductivity effect on thermal runaway intensity, combined with the distinct flame-temperature hazard introduced by ceramic nails",
+          "primary_boundary": "Conductivity effect direction is SOC-dependent (reversal at ~50\u201375% SOC boundary); ceramic nail hazard is fire-temperature-based, not current-based",
+          "intended_error_modes": [
+            "regime transfer error",
+            "mechanism substitution",
+            "causal overclaim from non-conductivity to overall safety"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Mechanism+62+UnknownJournal__TR_Mechanism+66+UnknownJournal__TR_Mechanism+69+UnknownJournal": {
+    "mcqs": [],
+    "short_answers": []
+  },
+  "TR_Modelling+101+Applied_Energy__TR_Modelling+131+Energy__TR_Modelling+14+Journal_of_Energy_Storage": {
+    "mcqs": [],
+    "short_answers": []
+  },
+  "TR_Modelling+38+IEEE_Transactions_on_Transportation_Electrification__TR_Modelling+87+The_Innovation__TR_Modelling+9+Journal_of_Energy_Storage": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A lithium-ion cell undergoes separator shrinkage, producing a broad-scale internal short circuit (ISC) that raises cell temperature to above 300\u00b0C. An engineer argues that the dominant heat source driving thermal runaway is Joule heating from the ISC current. Which of the following statements are consistent with established evidence about ISC heat contribution and thermal runaway mechanisms?",
+          "options": [
+            "A. Joule heat from ISC is always the dominant heat source because ISC directly delivers electrical energy into the cell interior.",
+            "B. Even when ISC is induced, sharply increased battery resistance can limit Joule heat, making ISC a minor contributor to total thermal runaway heat generation.",
+            "C. Chemical crosstalk between cathode oxygen released during decomposition and anode materials can generate heat and trigger thermal runaway independently of ISC severity.",
+            "D. ISC functions as a triggering mechanism that raises temperature sufficiently to initiate exothermic chemical reactions, which then dominate heat generation.",
+            "E. Cathode material decomposition and massive oxygen release occur before ISC is established and are therefore unrelated to separator shrinkage.",
+            "F. The Joule heat from ISC scales proportionally with short-circuit current and is unaffected by changes in internal resistance during the event."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "C",
+            "D"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "Evidence explicitly states ISC Joule heat may be limited by increased resistance and contributes minimally to TR heat generation.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Modelling+87+The_Innovation:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Directly supported: sharply increased battery resistance limits Joule heat from ISC, making its TR heat contribution minimal.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+87+The_Innovation:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Supported: chemical crosstalk between cathode oxygen and anode can directly generate heat and trigger TR without severe ISC.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+87+The_Innovation:C003"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Consistent with evidence: ISC raises temperature triggering TR reactions; ISC is triggering factor while chemical reactions dominate heat.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+38+IEEE_Transactions_on_Transportation_Electrification:C003",
+                "TR_Modelling+87+The_Innovation:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Evidence states cathode decomposition and oxygen release follow separator-shrinkage ISC temperature rise, not precede it.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Modelling+87+The_Innovation:C002"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Evidence shows internal resistance increases sharply during ISC, which limits current and Joule heat; proportional scaling is unsupported.",
+              "error_type": "unsupported_monotonicity",
+              "evidence_refs": [
+                "TR_Modelling+87+The_Innovation:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Distinguishing ISC as a triggering mechanism versus dominant heat source, and recognizing resistance-limited Joule heat",
+          "primary_boundary": "ISC Joule heat contribution is condition-dependent and may be minimal due to resistance increase; chemical reactions dominate TR heat",
+          "intended_error_modes": [
+            "causal_overclaim",
+            "mechanism_substitution",
+            "unsupported_monotonicity"
+          ],
+          "disallowed_extrapolations": [
+            "ISC Joule heat is always dominant",
+            "cathode decomposition is independent of ISC temperature rise"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A researcher proposes using a purely data-driven machine learning model trained on calorimetry data from one lithium iron phosphate chemistry at a fixed SOC to predict thermal runaway behavior across different chemistries, SOC levels, and states of health. The model achieves excellent fit on its training dataset. Identify two distinct reasons why this approach has fundamental limitations, and explain the physical or methodological basis for each limitation."
+        },
+        "ground_truth": {
+          "gold_answer": "First, thermodynamic parameters from calorimetry are specific to one chemical system and state because thermal runaway performance is influenced by materials, SOC, and SOH. Applying parameters calibrated on one chemistry and SOC to other systems constitutes an unsupported regime transfer; the underlying reaction kinetics and heat release profiles differ across chemistries and charge states. Second, purely data-driven models may fail outside their training data range and can produce unphysical predictions because they do not encode the underlying physical mechanisms governing thermal runaway. Excellent training-set fit confirms empirical interpolation accuracy but does not validate that the model captures the correct causal mechanisms, meaning extrapolation to new conditions or chemistries is unreliable.",
+          "must_include": [
+            "calorimetry parameters are specific to one chemical system or state",
+            "TR performance depends on materials, SOC, and SOH",
+            "purely data-driven models may fail outside training data range",
+            "data-driven models can produce unphysical predictions by neglecting physical mechanisms",
+            "training fit does not imply physical correctness or valid extrapolation"
+          ],
+          "disallowed_extrapolations": [
+            "Data-driven models are always unreliable regardless of training domain",
+            "Calorimetry data is universally transferable if the same cell format is used",
+            "High training accuracy guarantees adequate safety margin predictions"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Distinguishing regime-transfer limitations of calorimetry-derived parameters from the mechanistic-validity gap of purely data-driven models",
+          "primary_boundary": "Calorimetry parameters are chemistry/SOC/SOH-specific; data-driven models without physical constraints cannot reliably extrapolate",
+          "intended_error_modes": [
+            "scale_transfer_overclaim",
+            "causal_overclaim",
+            "boundary_overreach"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Propagation+4+Applied_Energy__TR_Propagation+5+Applied_Energy__TR_Propagation+6+eTransportation": {
+    "mcqs": [],
+    "short_answers": []
+  },
+  "TR_Protection+127+Journal_of_Energy_Storage__TR_Protection+131+Journal_of_Energy_Storage__TR_Protection+135+Journal_of_Energy_Storage": {
+    "mcqs": [],
+    "short_answers": []
+  },
+  "TR_Protection+136+Journal_of_Energy_Storage__TR_Protection+137+Journal_of_Energy_Storage__TR_Protection+140+Journal_of_Energy_Storage": {
+    "mcqs": [],
+    "short_answers": []
+  },
+  "TR_Protection+30+Chemical_Engineering_Journal__TR_Protection+78+Energy__TR_Protection+9+Energy": {
+    "mcqs": [],
+    "short_answers": []
+  },
+  "TR_trigger+129+Energy__TR_trigger+158+Journal_of_Energy_Storage__TR_trigger+197+Journal_of_Energy_Storage": {
+    "mcqs": [],
+    "short_answers": []
+  },
+  "TR_trigger+208+Journal_of_Energy_Storage__TR_trigger+217+Process_Safety_and_Environmental_Protection__TR_trigger+36+Journal_of_Energy_Storage": {
+    "mcqs": [],
+    "short_answers": []
+  }
+}

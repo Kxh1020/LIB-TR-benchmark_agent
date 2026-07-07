@@ -1,0 +1,99 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "During a battery thermal runaway event, venting gas is released at 120°C into a space where the gas-air mixture reaches stoichiometric conditions. A safety engineer claims that because the ignition energy at this temperature is the lowest measured in the dataset, any realistic ignition source in the environment should be assumed sufficient to cause ignition, and no further energy threshold analysis is needed. A second engineer argues that the threshold still matters because not all sources deliver energy above 0.063 mJ. Which positions are defensible?",
+        "options": [
+          "A. The second engineer's position is defensible: 0.063 mJ is a finite, non-negligible threshold, and sources delivering less energy remain insufficient to ignite the mixture.",
+          "B. The first engineer's position is defensible only if it is established that all realistic ignition sources in the environment deliver energy exceeding 0.063 mJ, which is a site-specific determination not resolved by the temperature data alone.",
+          "C. Because ignition energy decreases linearly with temperature and 120°C is the highest measured temperature, the ignition energy at any temperature above 120°C must be below 0.063 mJ, confirming the first engineer's concern is valid for higher-temperature scenarios.",
+          "D. The first engineer's claim that no further threshold analysis is needed is not admissible, because the evidence establishes a specific threshold value rather than zero ignition energy.",
+          "E. The linear decrease in ignition energy with temperature means that at sufficiently elevated temperatures the threshold approaches zero, making the first engineer's practical assumption conservative rather than incorrect.",
+          "F. Both engineers are partially correct: the threshold is finite and source-specific analysis is required, but the reduced threshold at 120°C does meaningfully expand the set of sources capable of causing ignition compared to 30°C."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "0.063 mJ is a measured finite threshold; sources below this value remain insufficient, directly supporting the second engineer.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The temperature data establishes the threshold but not whether site sources exceed it; site-specific determination is required for the first engineer's claim.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C001",
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Extrapolating the linear fit above 120°C is outside the evidence boundary; no data supports predictions beyond the measured range.",
+            "error_type": "scope expansion beyond evidence boundary",
+            "evidence_refs": [
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence shows a specific nonzero threshold at 120°C; claiming no threshold analysis is needed contradicts the evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Appears conservative but incorrectly extends linear trend to imply near-zero threshold at unspecified high temperatures, which is unsupported extrapolation.",
+            "error_type": "conservative but incorrect — unjustified extrapolation framed as conservatism",
+            "evidence_refs": [
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Both positions have valid components: threshold is finite requiring source analysis, but lower threshold at 120°C expands the ignitable source set relative to 30°C.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C001",
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of safety engineering claims based on finite ignition energy thresholds and limits of temperature-trend extrapolation",
+        "primary_boundary": "Linear trend is evidence-supported only within 30–120°C; the threshold at 120°C is finite and nonzero, making 'no threshold analysis needed' inadmissible",
+        "intended_error_modes": [
+          "extrapolating linear trend above measured range",
+          "treating lowest measured value as effectively zero",
+          "framing unsupported extrapolation as conservative engineering judgment"
+        ],
+        "disallowed_extrapolations": [
+          "Predicting sub-0.063 mJ thresholds above 120°C",
+          "Treating linear trend as implying zero ignition energy at any reachable temperature"
+        ]
+      }
+    }
+  ],
+  "short_answers": []
+}

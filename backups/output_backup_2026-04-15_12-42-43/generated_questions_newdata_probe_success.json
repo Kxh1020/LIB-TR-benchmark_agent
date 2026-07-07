@@ -1,0 +1,326 @@
+{
+  "TR_Protection+134+Journal_of_Energy_Storage__TR_Protection+204+Case_Studies_in_Thermal_Engineering__TR_Protection+205+Journal_of_Energy_Storage": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A parallel-connected 18650 NCM battery pack is subjected to a high-current overcharge event at approximately 3C rate. The pack includes cells both with and without current interrupt devices (CIDs). Engineers observe that CID-equipped cells interrupt current but several still progress to combustion, while the cell lacking a CID reaches thermal runaway significantly faster. Which conclusions about the role of CIDs under this condition are admissible?",
+          "options": [
+            "A. The CID provides a meaningful delay to thermal runaway onset under high-rate overcharge, even though it cannot prevent the eventual escalation of internal side reactions.",
+            "B. The CID's current interruption function is sufficient to prevent thermal runaway at high charging rates, provided it activates before the battery voltage reaches the overcharge ceiling.",
+            "C. The absence of a CID eliminates the only available current interruption mechanism, causing earlier thermal runaway onset compared to CID-equipped cells under the same high-rate overcharge.",
+            "D. At high overcharge rates, the rate of internal heat and gas accumulation can outpace the protective response of the CID, rendering it unable to fully suppress thermal runaway.",
+            "E. Because CID-equipped cells still experience combustion at 3C, the CID provides no measurable protective benefit under any overcharge condition.",
+            "F. The probability of combustion at 3C overcharge rate is high enough that CID presence alone should not be treated as a sufficient safeguard against thermal runaway at that rate."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "D",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "CID-equipped cells outlasted the no-CID cell, confirming delay even without prevention under high-rate overcharge.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+134+Journal_of_Energy_Storage:C003",
+                "TR_Protection+134+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Evidence shows CID-equipped cells still combusted at 3C; current interruption alone is insufficient to prevent thermal runaway at high rates.",
+              "error_type": "protective_mechanism_overclaim",
+              "evidence_refs": [
+                "TR_Protection+134+Journal_of_Energy_Storage:C002",
+                "TR_Protection+134+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Cell_7 without CID exploded at 424 s, significantly earlier than CID-equipped cells, confirming CID absence accelerates onset.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+134+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Evidence explicitly states internal reaction rate exceeds CID response speed under high-rate overcharge, preventing full suppression.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+134+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Overgeneralizes from high-rate failure; CID successfully prevented thermal runaway under low-current overcharge in all tested cells.",
+              "error_type": "overgeneralization_across_regimes",
+              "evidence_refs": [
+                "TR_Protection+134+Journal_of_Energy_Storage:C001"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "80% combustion probability at 3C with CID present supports that CID alone is an insufficient safeguard at that rate.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+134+Journal_of_Energy_Storage:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Regime-dependent effectiveness of CID protection under low vs. high overcharge current rates",
+          "primary_boundary": "CID prevents thermal runaway under low-rate overcharge but cannot suppress it under high-rate overcharge due to reaction rate exceeding device response speed",
+          "intended_error_modes": [
+            "protective_mechanism_overclaim",
+            "overgeneralization_from_high_rate_failure_to_all_conditions",
+            "ignoring_regime_transition"
+          ],
+          "disallowed_extrapolations": [
+            "CID sufficiency at high rate",
+            "CID uselessness at all rates",
+            "voltage threshold as sole CID trigger criterion"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery module uses phase change material (PCM) with thermal conductivity of 0.28 W/(m\u00b7K) and 4 mm thickness. Engineers consider two independent upgrades: (i) increasing PCM thermal conductivity to 12.0 W/(m\u00b7K), and (ii) increasing PCM liquidus temperature from 310 K to 340 K. A single trigger cell undergoes thermal runaway. Which statements about the thermal outcomes of these upgrades are admissible?",
+          "options": [
+            "A. Upgrade (i) can reduce the trigger cell peak temperature sufficiently to inhibit the positive electrode active material reaction with solvent, whereas the baseline conductivity cannot achieve this.",
+            "B. Upgrade (ii) will substantially reduce the trigger cell peak temperature because a higher melting point PCM stores more latent heat before transitioning.",
+            "C. Upgrade (i) is more effective than upgrade (ii) at reducing peak cell temperature during thermal runaway, because thermal conductivity governs heat removal rate while liquidus temperature has only marginal influence under rapid thermal runaway conditions.",
+            "D. Upgrade (ii) prevents thermal runaway propagation to adjacent cells because the higher liquidus temperature increases the total energy absorbed before PCM is fully melted.",
+            "E. At 4 mm PCM thickness, further increasing thickness to 6 mm or beyond would provide diminishing returns on peak temperature reduction, suggesting thickness is already near a saturation threshold.",
+            "F. Upgrade (i) alone guarantees that no adjacent cell undergoes thermal runaway, because reducing peak temperature below electrolyte decomposition onset eliminates all heat transfer pathways."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "At kp=12.0 W/(m\u00b7K), Tmax drops to 417 K, below the positive material-solvent reaction threshold; at 0.28 W/(m\u00b7K), Tmax is 704 K, above it.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+204+Case_Studies_in_Thermal_Engineering:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Evidence shows liquidus temperature increase from 310 to 340 K causes only non-significant changes in peak temperature due to rapid TR dynamics.",
+              "error_type": "mechanism_confusion_latent_heat_vs_conductivity",
+              "evidence_refs": [
+                "TR_Protection+204+Case_Studies_in_Thermal_Engineering:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Conductivity increase produces large Tmax reductions; liquidus increase produces only slight changes because TR speed allows most PCM to melt regardless.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+204+Case_Studies_in_Thermal_Engineering:C003",
+                "TR_Protection+204+Case_Studies_in_Thermal_Engineering:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Evidence shows liquidus temperature changes produce non-significant effects on propagation metrics; propagation prevention is not supported for upgrade (ii).",
+              "error_type": "protective_mechanism_overclaim",
+              "evidence_refs": [
+                "TR_Protection+204+Case_Studies_in_Thermal_Engineering:C005"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Evidence states that at d\u22656 mm, Tmax and T2min no longer change significantly, indicating saturation; 4 mm is within the diminishing-return transition zone.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+204+Case_Studies_in_Thermal_Engineering:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Reducing Tmax suppresses reactions but does not eliminate all heat transfer pathways; adjacent cell propagation depends on multiple factors beyond peak temperature alone.",
+              "error_type": "causal_overclaim_single_variable",
+              "evidence_refs": [
+                "TR_Protection+204+Case_Studies_in_Thermal_Engineering:C002",
+                "TR_Protection+204+Case_Studies_in_Thermal_Engineering:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Differential effectiveness of PCM conductivity vs. liquidus temperature on thermal runaway suppression, and PCM thickness saturation behavior",
+          "primary_boundary": "Conductivity governs heat removal rate and produces large Tmax changes; liquidus temperature has marginal effect under rapid TR because most PCM melts regardless",
+          "intended_error_modes": [
+            "mechanism_confusion_latent_heat_vs_conductivity",
+            "protective_mechanism_overclaim",
+            "causal_overclaim_single_variable",
+            "ignoring_regime_dependent_saturation"
+          ],
+          "disallowed_extrapolations": [
+            "liquidus temperature as primary propagation control parameter",
+            "conductivity upgrade as complete propagation prevention guarantee"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A lithium-ion battery array undergoes thermal runaway in one cell. Without intervention, all remaining cells reach thermal runaway within 5 seconds. Engineers test two water spray strategies: continuous spray (20 s effective duration) and intermittent spray at two different cycling periods\u2014both at the same duty cycle of 0.5. The 5-second period intermittent spray fails to prevent propagation; the 2-second period spray prevents propagation by holding a neighboring cell surface near 100\u00b0C. Which conclusions are admissible?",
+          "options": [
+            "A. The failure of the 5-second period spray despite equal duty cycle to the 2-second period spray demonstrates that total water volume delivered is not the sole determinant of propagation suppression.",
+            "B. Continuous spray with 20 s duration is the most effective strategy tested because it delivers the highest total heat dissipation over the suppression window.",
+            "C. The 2-second period spray succeeds because its average cooling power during the approximately 5-second propagation interval is sufficient to keep the neighboring cell below its critical temperature.",
+            "D. Intermittent spray with a 5-second period fails because its off-phase duration matches or exceeds the propagation interval, allowing the neighboring cell to accumulate sufficient heat between spray pulses.",
+            "E. Continuous spray prevents thermal runaway propagation by delivering sustained cooling that eliminates the thermal gradient between cells.",
+            "F. Suppression effectiveness depends on cooling power delivered during the critical propagation window, not merely on total energy removed over the full intervention duration."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "D",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Equal duty cycle but different outcomes confirm total volume is insufficient; temporal distribution of cooling power determines outcome.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+205+Journal_of_Energy_Storage:C004",
+                "TR_Protection+205+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Continuous spray delayed but did not prevent propagation; 2-second period spray prevented it, making continuous spray not the most effective despite higher total dissipation.",
+              "error_type": "causal_overclaim_total_heat_dissipation",
+              "evidence_refs": [
+                "TR_Protection+205+Journal_of_Energy_Storage:C003",
+                "TR_Protection+205+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "The 2-second period spray maintained cell #3 near 100\u00b0C, well below the ~195\u00b0C critical threshold, consistent with sufficient average cooling power during the 5-second window.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+205+Journal_of_Energy_Storage:C002",
+                "TR_Protection+205+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "A 5-second period spray has an off-phase of 2.5 s at DC=0.5; given the ~5 s propagation interval, the off-phase allows sufficient heat accumulation to drive the cell toward critical temperature.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+205+Journal_of_Energy_Storage:C002",
+                "TR_Protection+205+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Continuous spray did not prevent propagation; cell #3 eventually reached critical temperature at 197 s, so thermal gradient elimination is not achieved.",
+              "error_type": "protective_mechanism_overclaim",
+              "evidence_refs": [
+                "TR_Protection+205+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Evidence explicitly states suppression capability depends on cooling power during the suppression stage, not only total heat dissipation.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+205+Journal_of_Energy_Storage:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Role of instantaneous cooling power vs. total heat dissipation in thermal runaway propagation suppression, and interaction with the critical propagation time window",
+          "primary_boundary": "Suppression requires sufficient average cooling power during the ~5 s propagation interval; total energy delivered over a longer window is insufficient if instantaneous power is inadequate during that window",
+          "intended_error_modes": [
+            "causal_overclaim_total_heat_dissipation",
+            "protective_mechanism_overclaim_continuous_spray",
+            "ignoring_temporal_distribution_of_cooling"
+          ],
+          "disallowed_extrapolations": [
+            "continuous spray as propagation prevention",
+            "duty cycle alone as sufficient design parameter",
+            "thermal gradient elimination as mechanism of suppression"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A battery module engineer is comparing two design choices for preventing thermal runaway propagation: (A) using a PCM layer with high thermal conductivity between cells, and (B) deploying a water spray system with intermittent activation. Both are intended to protect neighboring cells after one trigger cell undergoes thermal runaway. The engineer assumes that as long as total heat absorbed or removed over the full event duration is maximized, propagation will be prevented. Identify the specific flaw in this assumption, explain the physical mechanism that makes the assumption incorrect, and state what design parameter each strategy must satisfy to reliably prevent propagation."
+        },
+        "ground_truth": {
+          "gold_answer": "The assumption is flawed because propagation prevention depends on the rate of heat removal during the critical propagation window, not total energy removed over the full event. For PCM, what matters is whether thermal conductivity is high enough to reduce the neighboring cell peak temperature below reaction-triggering thresholds during the rapid thermal runaway event; a PCM with low conductivity may absorb sufficient total energy but fail to remove heat fast enough to prevent the cell from reaching critical temperature. For water spray, what matters is average cooling power during the short propagation interval (approximately 5 seconds); a spray system delivering the same total water volume over a longer period but with insufficient instantaneous power during that window will fail to prevent propagation even though total heat dissipation is equal or greater. The correct design parameters are: for PCM, thermal conductivity sufficient to suppress peak temperature below critical reaction thresholds; for spray, spray period short enough that average cooling power during the propagation interval keeps the neighboring cell below its critical temperature.",
+          "must_include": [
+            "rate of heat removal during the propagation window, not total energy, governs suppression",
+            "PCM thermal conductivity must be sufficient to reduce peak temperature below reaction thresholds",
+            "spray cooling power during the critical interval must keep neighboring cell below critical temperature",
+            "equal total heat dissipation does not guarantee equal suppression effectiveness"
+          ],
+          "disallowed_extrapolations": [
+            "claiming PCM thickness alone determines propagation prevention without reference to conductivity",
+            "claiming any continuous spray prevents propagation",
+            "claiming total water volume or total PCM latent heat is the controlling design parameter",
+            "generalizing the 5-second propagation interval to all battery chemistries or configurations"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Distinction between instantaneous cooling power during the propagation window and total heat dissipation as the governing parameter for propagation suppression in both PCM and spray strategies",
+          "primary_boundary": "Total energy absorbed is not equivalent to suppression effectiveness; temporal rate of heat removal during the critical window determines whether neighboring cell temperature is controlled below critical threshold",
+          "intended_error_modes": [
+            "confusing total heat dissipation with suppression effectiveness",
+            "ignoring the time-rate constraint imposed by the short propagation interval",
+            "treating PCM latent heat capacity as the primary design variable instead of thermal conductivity",
+            "treating spray duty cycle or total volume as sufficient design parameters"
+          ]
+        }
+      }
+    ]
+  }
+}

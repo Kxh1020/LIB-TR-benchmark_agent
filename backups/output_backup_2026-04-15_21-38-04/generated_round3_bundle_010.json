@@ -1,0 +1,325 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery module uses a flame retardant encapsulated in microcapsules with polymer shells. The polymer shell degradation begins at 120°C and is largely complete by 150°C. A separate design uses stearic acid (melting point 72°C) as the encapsulant material instead of a polymer shell. Both designs are evaluated against a baseline where no thermal management is applied and the first cell vents at 95°C. An engineer claims the stearic acid design addresses a fundamental limitation of the polymer shell design. Which of the following statements are supported by reasoning from these conditions?",
+        "options": [
+          "A. The polymer shell design releases flame retardant after the battery has already entered a temperature range where separator shrinkage and internal short circuit are likely to have begun, because the shell degradation onset exceeds the temperature at which abnormal heat generation initiates.",
+          "B. The stearic acid design releases flame retardant before the no-TM venting threshold of 95°C is reached, enabling intervention at the earliest detectable stage of thermal onset.",
+          "C. The polymer shell design is ineffective because its degradation temperature range overlaps with the microcapsule weight loss exceeding 70%, which prevents any meaningful flame retardant delivery.",
+          "D. Replacing polymer shells with stearic acid necessarily eliminates the risk of thermal runaway propagation to adjacent cells, because early flame retardant release suppresses the primary heat source.",
+          "E. The stearic acid design may improve ionic conductivity relative to direct flame retardant addition into the electrolyte, because the encapsulation prevents the flame retardant from contacting the separator during normal operation.",
+          "F. The polymer shell design can still elevate the thermal runaway onset temperature above the no-TM baseline, even though its release is delayed relative to stearic acid encapsulation."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "E",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The polymer shell degradation onset is 120°C, which is above the onset temperature of abnormal heat generation. The evidence states that the high melting point of polymer shells causes delayed release and thermal inertia that further increases battery temperature, causing separator shrinkage and short circuit. This chain is directly supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+207+Energy_Storage_Materials:C001",
+              "TR_Protection+206+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Stearic acid melts at 72°C, which is below the 95°C no-TM venting threshold. The evidence states its melting point is close to the onset temperature of abnormal heat generation, enabling prompt release at the early stage. This supports intervention before the no-TM venting event.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+207+Energy_Storage_Materials:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The evidence shows that passive FEPC (microcapsule-based) release still elevated TR onset temperature by 35°C above the no-TM baseline, demonstrating meaningful effectiveness. The 70% weight loss rate describes the degradation profile, not an ineffectiveness claim. This option incorrectly conflates the degradation profile with functional failure.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Protection+206+Journal_of_Energy_Storage:C001",
+              "TR_Protection+206+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence does not support elimination of TR propagation risk. Even proactive release only delayed TR onset by 80 s and reduced mass loss ratio by 18%. Claiming elimination of propagation risk is an unsupported overclaim beyond the evidence scope.",
+            "error_type": "protective_mechanism_overclaim",
+            "evidence_refs": [
+              "TR_Protection+206+Journal_of_Energy_Storage:C003",
+              "TR_Protection+206+Journal_of_Energy_Storage:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The evidence shows that direct addition of TEP flame retardant into the electrolyte at 5% and 10% concentrations decreased ionic conductivity of the PP separator from 0.42 to 0.26 and 0.15 mS/cm respectively, while the PCM-encapsulated design achieved 0.65 mS/cm. Encapsulation prevents separator contact during normal operation, supporting this inference.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+207+Energy_Storage_Materials:C003",
+              "TR_Protection+207+Energy_Storage_Materials:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The passive TM approach (microcapsule/polymer shell based) elevated TR onset temperature by 35°C above the no-TM baseline. This is a counterintuitive correct option because the polymer shell design has a known delayed-release limitation, yet it still provides measurable protection. The evidence directly supports this.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+206+Journal_of_Energy_Storage:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Comparative admissibility of conclusions about polymer shell vs. PCM-based encapsulation for flame retardant release timing and downstream effects on ionic conductivity and TR onset temperature",
+        "primary_boundary": "Polymer shell delay causes post-onset release but still provides measurable protection; stearic acid enables pre-onset release; neither design eliminates propagation risk",
+        "intended_error_modes": [
+          "protective_mechanism_overclaim",
+          "causal_overclaim_from_degradation_profile",
+          "ignoring_residual_effectiveness_of_delayed_release"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming polymer shell design is fully ineffective",
+          "Claiming stearic acid design eliminates TR propagation",
+          "Inferring system-level safety from component-level ionic conductivity improvement"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An NCM523/graphite prismatic cell undergoes adiabatic thermal runaway testing. During the initial heating stage (approximately 60–120°C), a pressure sensor external to the cell records a measurable decrease in ambient pressure before any gas generation from electrochemical decomposition reactions is detected. After thermal runaway is triggered, the cell exhibits a sequence of stable venting, jet fire, and a persistent low-intensity combustion phase. A sub-atmospheric gas extraction system operating at 0.098 MPa is applied during a thermal runaway propagation (TRP) test involving multiple cells. Compared to TRP without gas extraction, the triggering time of each cell is extended by 50 s and the maximum temperature of the second cell is reduced by 50.7°C. Which of the following conclusions are admissible given these conditions?",
+        "options": [
+          "A. The ambient pressure decrease during 60–120°C heating is caused by electrolyte vapor adsorption into porous electrode materials, and this signal precedes gas generation from decomposition reactions, making it usable as an early failure warning.",
+          "B. The persistent low-intensity combustion phase after jet fire is sustained primarily by electrolyte retained within electrode structures rather than by gases vented during the initial stage, because most gas content stabilizes after TR triggering.",
+          "C. The 50 s extension in triggering time under sub-atmospheric extraction at the TRP level is larger than the 40 s extension measured at the single-cell level under the same extraction pressure, indicating that inter-cell thermal coupling amplifies the benefit of gas extraction.",
+          "D. The reduction in maximum temperature of the second cell under sub-atmospheric extraction can be fully attributed to the removal of combustible gases, because oxygen availability is the sole determinant of combustion intensity in this configuration.",
+          "E. The temporary self-extinguishing observed before the persistent combustion phase occurs because oxygen is locally depleted by intense combustion, and re-ignition follows as oxygen flows back along concentration gradients.",
+          "F. The ambient pressure decrease signal is sufficient to identify which specific electrochemical decomposition reaction has initiated inside the cell, because the pressure drop magnitude scales with reaction enthalpy."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that the ambient pressure decrease during initial heating is caused by electrolyte vapor adsorption by porous electrode materials and that this signal can be used for failure warning. The mechanism precedes decomposition gas generation, supporting the early warning claim.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+208+Energy_Storage_Materials:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The evidence states that most gas content remains stable after TR triggering, and that electrolytes immersed in electrode pieces provide fuel for the Remaining fire phenomenon after stable venting and jet fire. This supports the conclusion that persistent combustion is fueled by electrode-retained electrolyte rather than by initially vented gases.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+208+Energy_Storage_Materials:C002",
+              "TR_Protection+208+Energy_Storage_Materials:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The 50 s extension is measured at the TRP (multi-cell) level and the 40 s extension at the single-cell level, but these tests were conducted under different conditions (different ambient temperature, heating power, and system configuration). The evidence does not support attributing the difference to inter-cell thermal coupling amplification; the comparison is not controlled.",
+            "error_type": "unsupported_causal_attribution_across_different_test_conditions",
+            "evidence_refs": [
+              "TR_Protection+208+Energy_Storage_Materials:C006",
+              "TR_Protection+208+Energy_Storage_Materials:C007"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence identifies both fuel extraction (electrolyte) and oxygen extraction as contributors to reduced combustion intensity under sub-atmospheric conditions. Attributing the temperature reduction solely to combustible gas removal and treating oxygen as the sole determinant is an unsupported single-factor overclaim.",
+            "error_type": "single_variable_causal_overclaim",
+            "evidence_refs": [
+              "TR_Protection+208+Energy_Storage_Materials:C006",
+              "TR_Protection+208+Energy_Storage_Materials:C007"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The evidence states that intense combustion consumes oxygen causing temporary extinguishing without jet fire, and that re-burn occurs as generated and environmental oxygen flows back along concentration gradients. This directly supports the described mechanism.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+208+Energy_Storage_Materials:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence identifies the pressure decrease mechanism as electrolyte vapor adsorption, a physical process, not a decomposition reaction. The evidence does not support using pressure drop magnitude to identify specific electrochemical reactions or link it to reaction enthalpy. This is a scope expansion beyond what the signal can diagnose.",
+            "error_type": "measurement_scope_overclaim",
+            "evidence_refs": [
+              "TR_Protection+208+Energy_Storage_Materials:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of diagnostic and mechanistic conclusions from ambient pressure signals, combustion phase sequencing, and sub-atmospheric extraction effects in NCM523/graphite TR testing",
+        "primary_boundary": "Pressure decrease is a physical adsorption signal usable for early warning but cannot identify specific reactions; persistent combustion is fuel-driven not gas-driven; cross-test-condition comparison of triggering time differences is not controlled",
+        "intended_error_modes": [
+          "measurement_scope_overclaim",
+          "single_variable_causal_overclaim",
+          "unsupported_cross_condition_comparison"
+        ],
+        "disallowed_extrapolations": [
+          "Using pressure drop magnitude to identify decomposition reactions",
+          "Attributing TRP vs single-cell triggering time difference to inter-cell coupling without controlled comparison",
+          "Claiming oxygen is the sole combustion determinant"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A designer is evaluating two thermal management strategies for a lithium-ion battery module: Strategy P (passive release, where flame retardant is released when a threshold is crossed by ambient heating) and Strategy Q (proactive release, where flame retardant is released earlier based on a predictive trigger). Experimental data show that Strategy P delays TR onset by 30 s and increases TR completion time by 26 s, while Strategy Q delays TR onset by 80 s and increases TR completion time by 58 s. Strategy Q also reduces mass loss ratio by 18% compared to 6% for Strategy P, using the same 180 g of flame retardant. The designer proposes that Strategy Q should always be preferred because it outperforms Strategy P on every measured metric. A second engineer argues that the choice between P and Q depends on factors not captured by these metrics alone. Which of the following statements are admissible given the evidence?",
+        "options": [
+          "A. Strategy Q provides greater delay of TR onset and greater reduction in mass loss than Strategy P under the tested conditions, and both strategies provide measurable improvement over no thermal management.",
+          "B. The second engineer's position is supportable because the evidence characterizes performance under specific test conditions and does not establish whether Strategy Q's predictive trigger mechanism maintains its advantage across different abuse modes or battery chemistries.",
+          "C. Because Strategy Q reduces mass loss ratio by 18% versus 6% for Strategy P, Strategy Q reduces the hazard to neighboring cells by a factor of three, making it categorically superior for module-level safety.",
+          "D. The TR completion time increase under Strategy Q (58 s) is more than double that of Strategy P (26 s), which implies that the rate of energy release during TR is reduced by more than half under Strategy Q.",
+          "E. Both strategies use the same quantity of flame retardant, so the performance difference between P and Q must be attributable solely to the timing of release rather than to the total amount of suppressant delivered.",
+          "F. Strategy P's smaller delay in TR onset compared to Strategy Q is consistent with a later release time relative to the onset of abnormal heat generation, which reduces the window during which the flame retardant can act before the runaway becomes self-sustaining."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "E",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence directly states the delay and mass loss values for both strategies and the comparison to no-TM baseline. This is a straightforward admissible summary of the evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+206+Journal_of_Energy_Storage:C003",
+              "TR_Protection+206+Journal_of_Energy_Storage:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The evidence is derived from specific test conditions. The second engineer's position is admissible because the evidence does not characterize performance across different abuse modes or chemistries, and the stem conditions do not establish universality. This is a conservative but correctly scoped admissibility judgment.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+206+Journal_of_Energy_Storage:C003",
+              "TR_Protection+206+Journal_of_Energy_Storage:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The ratio of mass loss reductions (18% vs 6%) does not translate linearly into a factor-of-three reduction in hazard to neighboring cells. Hazard to neighboring cells depends on heat flux, gas composition, and ejection dynamics, not solely on mass loss ratio. This is a scope expansion and causal overclaim.",
+            "error_type": "causal_overclaim_and_scope_expansion",
+            "evidence_refs": [
+              "TR_Protection+206+Journal_of_Energy_Storage:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "TR completion time increase describes the duration extension, not the rate of energy release. A longer completion time does not imply a halving of energy release rate; the relationship between completion time and energy release rate is not established in the evidence and depends on the shape of the thermal profile, not just the duration.",
+            "error_type": "incorrect_functional_form_inference",
+            "evidence_refs": [
+              "TR_Protection+206+Journal_of_Energy_Storage:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that both strategies use 180 g of FEPC. Since the quantity is controlled, the performance difference between P and Q is attributable to the timing of release. This is a valid controlled-variable inference.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+206+Journal_of_Energy_Storage:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Strategy P releases later than Strategy Q relative to the onset of abnormal heat generation. A later release reduces the intervention window before TR becomes self-sustaining. This is a mechanistically supported inference from the timing difference and is counterintuitive in that it frames Strategy P's smaller delay as a direct consequence of release timing rather than suppressant quantity.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+206+Journal_of_Energy_Storage:C003",
+              "TR_Protection+207+Energy_Storage_Materials:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of comparative conclusions between passive and proactive flame retardant release strategies, including scope limits, causal attribution, and mechanism-based inference from timing differences",
+        "primary_boundary": "Performance superiority of Strategy Q is established under tested conditions but cannot be universalized; mass loss ratio difference does not translate to proportional hazard reduction; timing difference is the valid controlled variable",
+        "intended_error_modes": [
+          "proportional_hazard_overclaim",
+          "incorrect_rate_inference_from_duration",
+          "universalization_beyond_test_conditions"
+        ],
+        "disallowed_extrapolations": [
+          "Factor-of-three hazard reduction from mass loss ratio",
+          "Rate of energy release inference from completion time ratio",
+          "Universal superiority of Strategy Q across all conditions"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A lithium-ion battery module design team is comparing two flame retardant encapsulation approaches. In Approach X, the encapsulant material melts at 72°C, which is close to the temperature at which abnormal heat generation begins in the battery. In Approach Y, the encapsulant is a polymer that begins to degrade at 120°C. The team observes that Approach Y still elevates the thermal runaway onset temperature above the no-thermal-management baseline, but by a smaller margin than Approach X. A junior engineer proposes that Approach Y should be abandoned because its release temperature is too high to intervene before thermal runaway becomes self-sustaining. A senior engineer disagrees and argues that Approach Y retains value despite its delayed release. Additionally, the team is evaluating whether the encapsulation approach affects battery performance during normal operation, specifically ionic conductivity at the separator. Explain: (1) the mechanistic basis for why Approach Y still provides measurable thermal runaway protection despite releasing flame retardant after abnormal heat generation has begun; (2) why Approach X's encapsulation strategy is expected to maintain higher ionic conductivity during normal operation compared to directly dissolving the flame retardant in the electrolyte at equivalent concentration; and (3) one condition under which Approach Y's delayed release could become a safety liability rather than a benefit, based on the physical sequence of events during thermal runaway."
+      },
+      "ground_truth": {
+        "gold_answer": "(1) Even though Approach Y releases flame retardant after the onset of abnormal heat generation, the flame retardant is delivered before the thermal runaway becomes fully uncontrolled. The evidence shows that microcapsule-based (polymer shell) passive release elevated TR onset temperature by 35°C above the no-TM baseline, demonstrating that partial intervention during the rising temperature phase can still absorb heat, slow the temperature rise, and delay the onset of uncontrolled runaway. The flame retardant acts on the thermal trajectory even if it does not prevent the initial heat generation event. (2) When flame retardant such as TEP is dissolved directly in the electrolyte, it contacts the separator and reduces ionic conductivity proportionally to its concentration (e.g., from 0.42 to 0.26 mS/cm at 5% and to 0.15 mS/cm at 10%). Encapsulation in a PCM material such as stearic acid prevents the flame retardant from contacting the separator during normal operation, so the separator retains its baseline ionic conductivity. The PCM-encapsulated design achieved 0.65 mS/cm, higher than either direct-addition concentration tested. (3) Approach Y becomes a safety liability if the delayed release allows the battery temperature to reach the range where separator thermal shrinkage and internal short circuit occur before the flame retardant is delivered. The evidence states that thermal inertia after polymer shell melting further increases battery temperature and causes separator shrinkage, leading to serious short circuit. If the polymer shell degradation onset (120°C) is reached only after the separator has already begun to shrink, the flame retardant release may arrive too late to prevent the short circuit that accelerates runaway, making the delayed release not merely less effective but potentially contributing to a more severe failure mode.",
+        "must_include": [
+          "Approach Y still elevates TR onset temperature above no-TM baseline despite delayed release (35°C increase supported by evidence)",
+          "Direct flame retardant addition to electrolyte reduces ionic conductivity proportionally to concentration; encapsulation prevents separator contact during normal operation",
+          "PCM-encapsulated design achieves higher ionic conductivity than direct addition at equivalent or higher concentration",
+          "Delayed release in Approach Y can allow temperature to reach separator shrinkage range before intervention, causing short circuit that accelerates runaway"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming Approach Y is equally effective as Approach X",
+          "Claiming encapsulation completely eliminates flame retardant contact with separator under all conditions",
+          "Claiming Approach Y prevents thermal runaway propagation to neighboring cells",
+          "Asserting that ionic conductivity improvement from encapsulation translates directly to equivalent electrochemical performance under abuse conditions"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-mechanism reasoning connecting release timing to TR protection effectiveness, encapsulation strategy to normal-operation ionic conductivity, and delayed release to a specific failure mode liability",
+        "primary_boundary": "Delayed release still provides measurable protection but creates a specific liability when temperature exceeds separator shrinkage threshold before release; encapsulation benefit is specific to normal operation separator contact prevention",
+        "intended_error_modes": [
+          "Concluding Approach Y is fully ineffective because release is delayed",
+          "Failing to connect ionic conductivity benefit to the physical separation mechanism during normal operation",
+          "Failing to identify the separator shrinkage threshold as the specific condition converting Approach Y's delay into a liability"
+        ]
+      }
+    }
+  ]
+}

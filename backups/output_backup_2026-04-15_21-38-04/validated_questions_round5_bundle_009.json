@@ -1,0 +1,318 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is characterizing 18650 Li(Ni0.5Co0.2Mn0.3)O2 cells at four overcharge states: 92%, 100%, 108%, and 116% SOC. Under adiabatic conditions, the onset temperature of exothermic reaction increases monotonically from 92% to 116% SOC, while the maximum temperature reached during thermal runaway also increases over the same range. The initial DC internal resistance also increases monotonically with SOC across all four levels. After 1000 cycles at 0.5C, capacity retention at 92% and 100% SOC are nearly identical (~70%), while retention at 108% and 116% SOC drops sharply to ~50% and ~32%, respectively. Which of the following conclusions are admissible given these observations?",
+        "options": [
+          "A. A higher onset temperature of exothermic reaction at elevated SOC does not indicate greater thermal safety; the higher maximum temperature reached indicates that more energy is available for release, making higher SOC cells more hazardous despite the delayed onset.",
+          "B. The near-identical capacity retention between 92% and 100% SOC after 1000 cycles implies that operating at 92% SOC offers no electrochemical degradation advantage over 100% SOC under these cycling conditions.",
+          "C. Because the onset temperature of exothermic reaction increases with SOC, thermal runaway becomes progressively harder to trigger at higher overcharge states, and therefore 116% SOC cells present a lower thermal risk than 92% SOC cells.",
+          "D. The monotonic increase in DC internal resistance with SOC is sufficient to explain the accelerated capacity fade observed at 108% and 116% SOC, without invoking additional degradation mechanisms.",
+          "E. The surface temperature differential of approximately 10°C between 116% and 100% SOC cells under adiabatic charge-discharge is consistent with the higher stored energy at 116% SOC, but this surface measurement alone cannot confirm the internal thermal state during cycling.",
+          "F. The sharp divergence in capacity retention above 100% SOC, combined with the monotonic resistance increase, suggests a threshold-like degradation regime is entered above nominal charge, distinct from the behavior seen at or below 100% SOC."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence shows onset temperature increases with SOC (C003) but maximum temperature also increases with SOC (C004). A higher onset temperature does not mean lower hazard when the maximum energy release is also higher. This is counterintuitive but supported: delayed onset combined with higher TMax means greater severity once runaway begins.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+179+Energy_Reports:C003",
+              "TR_Dynamics+179+Energy_Reports:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that capacity retention at 92% SOC (70.5%) and 100% SOC (69.9%) differ by less than 1 percentage point after 1000 cycles, supporting the conclusion that no meaningful electrochemical degradation advantage exists between these two levels under these conditions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+179+Energy_Reports:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "This option commits a causal overclaim by interpreting higher onset temperature as reduced thermal risk. The evidence shows that higher SOC produces both higher onset temperature AND higher maximum temperature, meaning the overall hazard severity increases. The onset temperature trend cannot be isolated to conclude lower risk.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Dynamics+179+Energy_Reports:C003",
+              "TR_Dynamics+179+Energy_Reports:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence shows resistance increases monotonically with SOC (C001), but the capacity retention data (C002) shows a threshold-like collapse above 100% SOC rather than a smooth monotonic degradation. Attributing the accelerated fade solely to resistance increase ignores the non-monotonic character of the degradation pattern and overstates the explanatory scope of a single variable.",
+            "error_type": "single_variable_overclaim",
+            "evidence_refs": [
+              "TR_Dynamics+179+Energy_Reports:C001",
+              "TR_Dynamics+179+Energy_Reports:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "While the ~10°C surface temperature difference is consistent with higher stored energy at 116% SOC (C005, C004), the claim that surface measurement cannot confirm internal thermal state is a conservative-sounding hedge. However, the evidence does not establish a limitation on surface measurement accuracy for internal state inference in this context; the option introduces a measurement scope limitation not supported by the evidence bundle, making it an unsupported extrapolation.",
+            "error_type": "unsupported_scope_limitation",
+            "evidence_refs": [
+              "TR_Dynamics+179+Energy_Reports:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The capacity retention data shows near-identical degradation at 92% and 100% SOC but sharp divergence at 108% and 116% SOC, combined with monotonically increasing resistance. This pattern is consistent with a threshold-like regime change above 100% SOC, distinguishable from the sub-100% behavior. This conclusion is admissible from the combined evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+179+Energy_Reports:C001",
+              "TR_Dynamics+179+Energy_Reports:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinguishing between onset temperature trend and overall thermal hazard severity; identifying threshold-like degradation regimes from combined resistance and capacity data",
+        "primary_boundary": "Higher onset temperature of exothermic reaction does not imply lower thermal hazard when maximum temperature also increases; onset and severity must be evaluated jointly",
+        "intended_error_modes": [
+          "causal_overclaim from onset temperature trend",
+          "single-variable attribution of capacity fade",
+          "conservative but incorrect scope limitation on surface measurement"
+        ],
+        "disallowed_extrapolations": [
+          "Generalizing onset temperature increase to reduced thermal risk",
+          "Attributing all capacity fade to resistance increase alone",
+          "Inferring internal thermal state from surface temperature without evidence support"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery modeling team is parameterizing a physics-based model for two cell chemistries: a high-energy NMC/graphite cell and an LFP cell. For the NMC/graphite cell, a data-driven optimization approach achieves a voltage RMSE of 9 mV under 2C constant-current discharge, compared to 50.1 mV from a conventional experimental identification approach. The capacity error from the data-driven method is 3.4 mAh versus 74.2 mAh from the experimental method. The team also observes that for the NMC/graphite cell, electrolyte- and separator-related parameters show relatively low sensitivity in the optimization. During training, weighting the 2C discharge profile more heavily reduces overfitting and lowers validation error, while weighting the pulse profile more heavily causes significant overfitting. The team now considers applying the same data-driven framework to the LFP cell. Which of the following conclusions are admissible?",
+        "options": [
+          "A. The substantially lower capacity error of the data-driven method compared to experimental identification for the NMC/graphite cell is admissible evidence that the data-driven approach is superior for capacity estimation in that specific cell chemistry and test condition.",
+          "B. The low sensitivity of electrolyte- and separator-related parameters observed for the NMC/graphite cell can be expected to hold for the LFP cell, since both are lithium-ion chemistries operating under similar current rates.",
+          "C. Applying the same parameter weighting strategy—favoring the 2C discharge profile—to the LFP cell may not achieve comparable voltage error reduction, because the flat OCV curve of LFP reduces the sensitivity of capacity-related parameters relative to the NMC/graphite case.",
+          "D. The overfitting observed under pulse-profile weighting indicates that pulse profiles contain insufficient dynamic information to constrain any model parameter, and therefore pulse profiles should be excluded from all future training datasets.",
+          "E. For the NMC/graphite cell, the low sensitivity of electrolyte- and separator-related parameters implies that those parameters have negligible physical influence on cell performance under all operating conditions.",
+          "F. The voltage RMSE improvement from 50.1 mV to 9 mV under 2C discharge does not guarantee equivalent accuracy improvement under real-world drive cycle conditions, since the evidence indicates a different RMSE ratio applies under drive cycle validation."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence directly supports that the data-driven approach achieves 3.4 mAh capacity error versus 74.2 mAh for experimental identification (C002), and 9 mV versus 50.1 mV voltage RMSE under 2C discharge (C001). The conclusion is scoped to the specific cell and condition, making it admissible.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+180+Energy_Storage_Materials:C001",
+              "TR_Dynamics+180+Energy_Storage_Materials:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The evidence explicitly states that the low sensitivity of electrolyte- and separator-related parameters is specific to the high-energy cell and 'will not be the same for high-power cells' (C003). Extending this to LFP based on shared lithium-ion chemistry ignores the cell-type dependence stated in the evidence.",
+            "error_type": "overgeneralization_across_chemistry",
+            "evidence_refs": [
+              "TR_Dynamics+180+Energy_Storage_Materials:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence states that the flat OCV curve in LFP cells reduces the sensitivity of capacity-related parameters significantly (C004). Since the data-driven optimization relies on sensitivity to identify parameters, reduced sensitivity in LFP would undermine the same strategy's effectiveness, making this conclusion admissible.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+180+Energy_Storage_Materials:C004",
+              "TR_Dynamics+180+Energy_Storage_Materials:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence shows pulse-profile weighting causes overfitting (C005), but this does not imply pulse profiles contain no useful information. Overfitting indicates the profile over-constrains certain parameters relative to others, not that it is informationally vacuous. The conclusion that pulse profiles should be excluded from all training is an unjustified generalization.",
+            "error_type": "causal_overclaim_from_overfitting",
+            "evidence_refs": [
+              "TR_Dynamics+180+Energy_Storage_Materials:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Low sensitivity in the optimization context means those parameters do not strongly influence the objective function under the tested conditions for this cell type. This is a condition-specific optimization property, not a statement about physical influence under all conditions. The option conflates optimization sensitivity with physical significance.",
+            "error_type": "scope_expansion_from_sensitivity_to_physical_influence",
+            "evidence_refs": [
+              "TR_Dynamics+180+Energy_Storage_Materials:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The evidence reports that the RMSE ratio under 2C discharge is 17.9% (9/50.1 mV), while under real-world drive cycles it is 42.9% (12.7 mV). The improvement is real but smaller under drive cycle conditions, supporting the conclusion that 2C discharge accuracy does not guarantee equivalent improvement under drive cycle validation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+180+Energy_Storage_Materials:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of cross-chemistry and cross-condition generalization of data-driven parameterization results; distinguishing optimization sensitivity from physical significance",
+        "primary_boundary": "Sensitivity relationships and performance advantages observed for NMC/graphite cells under specific training conditions are not transferable to LFP cells or other operating conditions without additional justification",
+        "intended_error_modes": [
+          "overgeneralization across chemistry types",
+          "conflating optimization sensitivity with physical influence",
+          "inferring pulse profile uselessness from overfitting observation"
+        ],
+        "disallowed_extrapolations": [
+          "Applying NMC/graphite sensitivity structure to LFP",
+          "Concluding pulse profiles have no informational value from overfitting result",
+          "Assuming 2C discharge accuracy predicts drive cycle accuracy"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery testing laboratory collects OCV characterization data for a lithium-ion cell population at temperatures ranging from −25°C to 50°C. All cells are fully charged at 25°C at C/30 rate to 4.2 V before testing. The OCV protocol involves a C/30 discharge to 3 V, a 30-second rest, then a C/30 charge back to 4.2 V. During screening, some cells exhibit unusually low charge/discharge capacities and are classified as non-functional and excluded. The remaining cells proceed to OCV characterization across the full temperature range. An engineer proposes using this dataset to build a state-of-charge estimation model for a battery management system. Which of the following statements about the admissibility of conclusions from this dataset are correct?",
+        "options": [
+          "A. The C/30 rate is appropriate for OCV characterization because at sufficiently low current, the measured terminal voltage closely approximates the equilibrium open circuit voltage, minimizing resistive voltage drop contributions.",
+          "B. The 30-second rest between discharge and charge at C/30 rate is sufficient to guarantee that the cell has reached electrochemical equilibrium before the subsequent charge step, making the measured voltage a true OCV.",
+          "C. The exclusion of cells with unusually low capacity before OCV characterization introduces a selection bias: the resulting dataset represents only cells meeting an implicit health threshold, and conclusions drawn from it may not apply to degraded cells in the field.",
+          "D. Because all cells were fully charged at 25°C before testing, the OCV data collected at −25°C reflects the equilibrium voltage of a cell whose initial lithium distribution was established at 25°C, not at −25°C, which may affect the accuracy of OCV characterization at low temperatures.",
+          "E. The dataset spanning −25°C to 50°C is sufficient to characterize OCV behavior across all operating temperatures relevant to automotive battery management systems, since this range covers standard environmental extremes.",
+          "F. The C/30 rate protocol produces data suitable for OCV characterization, but the same dataset cannot be directly used to characterize dynamic impedance or rate-dependent voltage behavior without additional test protocols."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence states that C/30 rate data is suitable for OCV characterization (C001). The engineering mechanism is that low current minimizes the IR drop, allowing terminal voltage to approximate equilibrium OCV. This is a minimal engineering implication consistent with the evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+178+Data_in_Brief:C001"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The evidence specifies a 30-second rest (C004), but 30 seconds is a short rest period for a lithium-ion cell at C/30 rate. The evidence describes this as the protocol used, not as sufficient for full electrochemical equilibrium. Claiming this rest guarantees true OCV is an overclaim not supported by the evidence; it conflates protocol description with equilibrium verification.",
+            "error_type": "protocol_description_to_equilibrium_guarantee_overclaim",
+            "evidence_refs": [
+              "TR_Dynamics+178+Data_in_Brief:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence states that cells with unusually low capacity were excluded (C005). This is a selection criterion that removes degraded cells from the dataset. The conclusion that this introduces a selection bias limiting applicability to degraded cells is a direct and admissible implication of this exclusion criterion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+178+Data_in_Brief:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "While the concern about lithium distribution established at 25°C affecting low-temperature OCV is physically plausible, the evidence does not provide information about whether this effect is significant or how the protocol addresses it. This option introduces a mechanism not supported or contradicted by the evidence, making it an unsupported extrapolation rather than an admissible conclusion.",
+            "error_type": "unsupported_mechanism_introduction",
+            "evidence_refs": [
+              "TR_Dynamics+178+Data_in_Brief:C002",
+              "TR_Dynamics+178+Data_in_Brief:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The evidence defines the temperature range tested (C002) but makes no claim about whether this range covers all automotive BMS requirements. Concluding sufficiency for automotive applications requires a comparison with automotive standards not present in the evidence. This is a scope expansion beyond what the evidence supports.",
+            "error_type": "scope_expansion_to_application_domain",
+            "evidence_refs": [
+              "TR_Dynamics+178+Data_in_Brief:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that C/30 data is suitable for OCV characterization (C001), not for dynamic impedance or rate-dependent characterization. Using the same dataset for impedance characterization would require different protocols (e.g., pulse tests, EIS). This is a direct admissibility boundary from the evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+178+Data_in_Brief:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility boundaries of OCV characterization data for BMS model development; distinguishing protocol description from equilibrium guarantee; identifying selection bias from cell exclusion",
+        "primary_boundary": "C/30 OCV data is admissible for equilibrium voltage characterization only; exclusion of low-capacity cells limits dataset representativeness; 30-second rest is a protocol step, not an equilibrium guarantee",
+        "intended_error_modes": [
+          "conflating rest period with equilibrium guarantee",
+          "scope expansion to automotive application sufficiency",
+          "introducing unsupported low-temperature lithium distribution mechanism"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming 30-second rest guarantees electrochemical equilibrium",
+          "Asserting temperature range sufficiency for all automotive applications",
+          "Inferring dynamic impedance characterization from OCV protocol data"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "An engineer is designing a training protocol for a data-driven battery model parameterization framework applied to a high-energy NMC/graphite cell. The engineer observes that when the training objective weights the pulse discharge profile more heavily, the model fits training data well but produces high voltage error on a separate validation drive cycle profile. When the 2C constant-current discharge profile is weighted more heavily, validation error decreases continuously with iterations. The engineer also notes that for this cell chemistry, electrolyte- and separator-related parameters show low sensitivity in the optimization. The engineer now plans to apply the same framework to an LFP cell and expects identical parameter sensitivity behavior. Identify two distinct errors in the engineer's reasoning about the LFP application, and for each error, explain the specific mechanism or evidence-based principle that makes the expectation inadmissible."
+      },
+      "ground_truth": {
+        "gold_answer": "Error 1: The engineer incorrectly assumes that the low sensitivity of electrolyte- and separator-related parameters observed for the high-energy NMC/graphite cell will transfer to the LFP cell. The evidence explicitly states that this sensitivity relationship is specific to the high-energy cell type and will not be the same for other cell types (including high-power cells). LFP cells have different internal structure and operating characteristics, so parameter sensitivity cannot be assumed identical. Error 2: The engineer fails to account for the flat OCV curve characteristic of LFP chemistry. The evidence states that a flat OCV curve in LFP cells significantly reduces the sensitivity of capacity-related parameters compared to NMC/graphite cells. Since the data-driven optimization relies on parameter sensitivity to identify model parameters from voltage data, reduced sensitivity in LFP would degrade the framework's ability to accurately estimate capacity-related parameters, undermining the assumption that the same approach will achieve comparable accuracy.",
+        "must_include": [
+          "sensitivity of electrolyte- and separator-related parameters is cell-type specific and does not transfer from NMC/graphite to LFP",
+          "flat OCV curve in LFP reduces sensitivity of capacity-related parameters",
+          "reduced parameter sensitivity in LFP undermines the data-driven optimization effectiveness for capacity estimation"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming LFP cells cannot be parameterized by data-driven methods at all",
+          "Asserting that pulse profile weighting behavior observed for NMC/graphite will differ for LFP without evidence basis",
+          "Introducing cell degradation mechanisms not present in the evidence"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Cross-chemistry admissibility of parameter sensitivity structure and OCV-curve-dependent optimization effectiveness",
+        "primary_boundary": "Parameter sensitivity relationships established for high-energy NMC/graphite cells are explicitly not transferable to other cell types; LFP flat OCV curve creates a distinct sensitivity reduction for capacity parameters",
+        "intended_error_modes": [
+          "overgeneralization of sensitivity structure across chemistries",
+          "ignoring OCV curve shape as a determinant of optimization sensitivity",
+          "treating data-driven framework performance as chemistry-independent"
+        ]
+      }
+    }
+  ]
+}

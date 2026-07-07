@@ -1,0 +1,38 @@
+{
+  "mcqs": [],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery module uses a thermal insulation layer between cells to prevent thermal runaway propagation (TRP). At an insulation thickness of 0.6 mm, TRP is stopped in a brick-type module configuration but continues in an in-line configuration. When the thickness is increased to 0.7 mm, TRP is stopped in both configurations. A new scenario is introduced: the 0.7 mm insulation layer develops a small localized defect during service. An engineer argues that because 0.7 mm was sufficient to stop TRP in both configurations without defects, the defect will only slightly degrade performance and TRP will still be prevented. Critically evaluate this argument. In your answer, explain (1) what physical consequence the localized defect introduces that is not present in the intact-insulation case, and (2) why this consequence means the engineer's argument may underestimate the risk, referencing the relationship between local heat accumulation and the threshold required to prevent TRP."
+      },
+      "ground_truth": {
+        "gold_answer": "The engineer's argument is not fully admissible. A localized insulation defect does not simply reduce the insulation performance proportionally. The defect introduces a specific physical consequence not present in the intact case: local failure of the insulation strategy initially causes small-scale thermal runaway within the local region of the defect. This localized TR event generates additional heat that accumulates in that region, creating a higher local thermal load than would exist with intact insulation. Because of this heat accumulation, the threshold parameter required to prevent TRP (whether expressed as insulation thickness, dissipation coefficient, or heat release fraction) must be higher than in the no-defect case. Therefore, a thickness of 0.7 mm that was sufficient to prevent TRP with intact insulation may no longer be sufficient when a defect is present, because the effective thermal load has increased beyond what the intact-insulation scenario assumed. The engineer's argument underestimates the risk by treating the defect as a simple linear degradation of insulation performance rather than recognizing that it introduces a new heat generation event that raises the prevention threshold.",
+        "must_include": [
+          "Localized insulation defect causes small-scale TR within the local region of the defect",
+          "This local TR contributes to additional heat accumulation in the affected area",
+          "The heat accumulation raises the threshold parameter required to prevent TRP",
+          "A thickness sufficient for intact insulation may be insufficient when local TR heat accumulation is present",
+          "The engineer's argument treats the defect as a proportional degradation rather than a threshold-raising event"
+        ],
+        "disallowed_extrapolations": [
+          "The defect guarantees full TRP to all adjacent cells",
+          "Any defect, regardless of size, eliminates all protective benefit of the insulation layer",
+          "The 0.7 mm threshold applies universally regardless of local failure conditions",
+          "The in-line vs. brick configuration difference is relevant to the defect scenario without additional evidence"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Understanding that localized insulation failure introduces a new heat generation mechanism (local TR) that raises the propagation-prevention threshold, rather than simply reducing insulation effectiveness proportionally.",
+        "primary_boundary": "The 0.7 mm threshold was established for intact insulation; local defects introduce additional heat accumulation that changes the effective threshold condition, making the original threshold potentially insufficient.",
+        "intended_error_modes": [
+          "Treating insulation defect as proportional performance degradation rather than a threshold-raising mechanism",
+          "Assuming the intact-insulation threshold applies unchanged to the defect scenario",
+          "Overclaiming that any defect guarantees TRP",
+          "Ignoring the causal chain: defect → local TR → heat accumulation → raised prevention threshold"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "mcqs": [],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A pouch cell at 100% SOC is penetrated by an 8 mm nail. Post-test inspection shows the separator was not melted. A second identical cell is penetrated by a 3 mm nail under otherwise identical conditions. The engineer observes that the 8 mm nail produced a higher initial temperature rise rate and a higher peak temperature than the 3 mm nail, but both cells had peak temperatures below 403.1 K. The engineer concludes that because the 8 mm nail caused more severe thermal response, it must have triggered additional reaction pathways beyond those activated by the 3 mm nail, and therefore the 8 mm nail test is more useful for evaluating separator integrity under extreme reaction conditions.\n\nIdentify the specific reasoning error in the engineer's conclusion, explain which reaction pathways are admissible under the observed temperature conditions for both nail sizes, and state what the intact separator post-test actually indicates about the thermal events that occurred."
+      },
+      "ground_truth": {
+        "gold_answer": "The engineer's reasoning error is inferring that a higher peak temperature within the same sub-403.1 K range activates additional reaction pathways beyond those activated at lower temperatures within that range. Because both tests produced peak temperatures below 403.1 K, both cells experienced the same set of admissible reactions: SEI decomposition (363.1–393.1 K) and the reaction between anode electrode materials and electrolyte (approximately 373.1 K). Electrolyte thermal decomposition (473.1–573.1 K) and separator melting were not reached in either test. The intact separator confirms that peak temperatures did not reach the separator melting threshold, and the absence of shrinkage or melting is consistent with temperatures remaining below 403.1 K in both cases. The 8 mm nail produced a higher peak temperature and faster initial rise, but this difference in magnitude within the sub-403.1 K regime does not cross any reaction threshold that would activate qualitatively different reaction pathways. Therefore, the claim that the 8 mm test activated additional pathways is inadmissible; both tests are bounded by the same reaction window, and the 8 mm test does not provide information about separator behavior under conditions where separator-activating temperatures would be reached.",
+        "must_include": [
+          "Both tests remained below 403.1 K peak temperature",
+          "Admissible reactions for both tests: SEI decomposition and anode-electrolyte reaction only",
+          "Electrolyte decomposition and separator melting thresholds were not reached in either test",
+          "Intact separator confirms temperatures did not reach separator melting threshold",
+          "Higher peak temperature within the same sub-threshold range does not activate qualitatively different reaction pathways",
+          "The engineer's error is inferring qualitatively different reaction pathways from a quantitative temperature difference that does not cross a reaction threshold"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming the 8 mm nail test activates cathode decomposition reactions",
+          "Inferring that nail diameter controls which reactions occur independent of temperature thresholds",
+          "Concluding that the 8 mm test is more informative about separator integrity under extreme conditions when temperatures did not approach separator melting threshold",
+          "Generalizing nail diameter effects to conditions where temperatures exceed 403.1 K"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Reaction pathway admissibility as determined by temperature thresholds, and the reasoning error of inferring qualitative mechanistic differences from quantitative differences within the same thermal regime",
+        "primary_boundary": "All peak temperatures below 403.1 K bound admissible reactions to SEI decomposition and anode-electrolyte reaction regardless of nail diameter; crossing a reaction threshold requires reaching that threshold temperature, not merely a higher temperature within the sub-threshold range",
+        "intended_error_modes": [
+          "Inferring additional reaction pathways from higher temperature within the same sub-threshold regime",
+          "Conflating quantitative severity increase with qualitative mechanism change",
+          "Treating nail diameter as a direct determinant of reaction pathways rather than temperature as the determinant"
+        ]
+      }
+    }
+  ]
+}

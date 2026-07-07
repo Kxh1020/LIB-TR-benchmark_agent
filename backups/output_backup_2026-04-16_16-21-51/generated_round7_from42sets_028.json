@@ -1,0 +1,325 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Battery vent gas (BVG) is released into a confined space at equivalence ratio φ = 0.5. An engineer proposes using either N2 or CO2 as an inerting agent to completely suppress explosion risk. The space has a fixed total diluent injection capacity. Given the differential inhibition thresholds of these two agents at this equivalence ratio, which of the following conclusions about the selection and sufficiency of the inerting strategy are admissible?",
+        "options": [
+          "A. CO2 achieves complete inhibition at a lower volumetric concentration than N2 at φ = 0.5, making it the more efficient inerting agent per unit volume injected under these conditions.",
+          "B. N2 is preferred over CO2 for BVG inerting because its higher required threshold concentration implies a stronger physical dilution effect that is more reliable across all equivalence ratios.",
+          "C. If the maximum achievable diluent concentration in the space is 40%, CO2 can achieve complete inhibition but N2 cannot at φ = 0.5.",
+          "D. The difference in inhibition thresholds between N2 and CO2 implies that CO2 acts solely through oxygen displacement, while N2 acts through a different mechanism.",
+          "E. A system designed with N2 at 45% concentration would provide a safety margin above the complete inhibition threshold for BVG at φ = 0.5.",
+          "F. Because CO2 requires a lower concentration for complete inhibition than N2, a system using CO2 at 30% concentration provides equivalent protection to N2 at 50% for all BVG compositions."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence directly supports CO2 threshold (>30%) being lower than N2 threshold (>50%) at φ=0.5, confirming greater volumetric efficiency.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+144+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Higher required threshold does not imply greater reliability; the claim generalizes across all equivalence ratios beyond the stated evidence scope.",
+            "error_type": "overgeneralization_and_mechanism_confusion",
+            "evidence_refs": [
+              "TR_Gasventing+144+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "At φ=0.5, CO2 requires >30% and N2 requires >50%; at 40% capacity, CO2 crosses its threshold but N2 does not, making this a valid admissibility judgment.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+144+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence establishes differential thresholds but does not attribute them to distinct mechanisms; inferring sole oxygen-displacement for CO2 is an unsupported causal overclaim.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+144+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "N2 requires more than 50% for complete inhibition; 45% is below this threshold and provides no safety margin—it fails to achieve complete inhibition.",
+            "error_type": "condition_violation",
+            "evidence_refs": [
+              "TR_Gasventing+144+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Equivalence at φ=0.5 does not extend to all BVG compositions; generalizing equivalence across all conditions violates the stated scope of the evidence.",
+            "error_type": "overgeneralization",
+            "evidence_refs": [
+              "TR_Gasventing+144+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of inerting agent selection based on differential inhibition thresholds at a specified equivalence ratio",
+        "primary_boundary": "Threshold comparison is valid only at φ=0.5; mechanism attribution and cross-composition generalization are not supported",
+        "intended_error_modes": [
+          "overgeneralization across equivalence ratios",
+          "causal mechanism attribution from threshold data alone",
+          "threshold boundary violation for N2 at 45%"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring mechanism type from threshold magnitude",
+          "Extending φ=0.5 equivalence to all BVG compositions",
+          "Treating higher threshold as reliability indicator"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "BVG is ignited under two distinct conditions at φ = 0.5: first as a premixed gas, then under an air jet impingement scenario. In the jet condition, peak explosion pressure increases substantially, the rate of pressure rise increases by more than an order of magnitude, and the time to reach peak explosion pressure decreases dramatically compared to premixed conditions. A safety engineer is evaluating CO2 suppression requirements for both scenarios. Which conclusions are admissible?",
+        "options": [
+          "A. The air jet condition amplifies explosion severity through turbulence-enhanced flame acceleration, so a CO2 concentration sufficient for premixed inhibition is not necessarily sufficient under jet conditions.",
+          "B. Because the jet condition increases peak pressure and pressure rise rate while decreasing explosion time, the CO2 inhibition threshold must also increase under jet conditions relative to premixed conditions.",
+          "C. A CO2 concentration of 32% would achieve complete inhibition under premixed conditions at φ = 0.5 but would be insufficient under jet conditions.",
+          "D. The jet-induced increase in explosion hazard metrics confirms that turbulent mixing is the sole mechanism governing BVG explosion severity, and CO2 acts only by reducing turbulence intensity.",
+          "E. Since jet conditions require a higher CO2 threshold than premixed conditions, designing a suppression system to the premixed threshold provides adequate safety margin for all BVG release scenarios.",
+          "F. Under jet conditions, the explosion time decreasing from 746 ms to 135 ms indicates that any suppression system must deliver its full agent concentration before ignition rather than relying on post-ignition suppression.",
+          "G. The increase in explosion hazard under jet conditions is consistent with the requirement for a higher CO2 threshold, and both observations together support that the jet effect enhances the reactivity of the BVG mixture."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Jet conditions demonstrably increase explosion severity metrics; the higher CO2 threshold under jet conditions confirms premixed-sufficient concentration is inadequate for jet scenarios.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+144+Journal_of_Loss_Prevention_in_the_Process_Industries:C003",
+              "TR_Gasventing+144+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Evidence directly shows CO2 threshold rises from >30% premixed to >35% under jet at φ=0.5, consistent with increased severity requiring greater suppression.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+144+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "32% exceeds the premixed threshold (>30%) but falls below the jet threshold (>35%), making this a valid boundary-straddling admissibility judgment.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+144+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence does not attribute jet enhancement solely to turbulence, nor does it support CO2 acting only through turbulence reduction; this is an unsupported mechanism attribution.",
+            "error_type": "causal_overclaim_and_mechanism_substitution",
+            "evidence_refs": [
+              "TR_Gasventing+144+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Premixed threshold is lower than jet threshold; designing to the lower threshold leaves jet scenarios unprotected—this appears conservative but is mechanistically wrong.",
+            "error_type": "conservative_but_incorrect_scope_error",
+            "evidence_refs": [
+              "TR_Gasventing+144+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence describes explosion timescales but does not establish that post-ignition suppression is infeasible; this extrapolates a timing observation into a system design requirement not supported by the evidence.",
+            "error_type": "unsupported_system_level_extrapolation",
+            "evidence_refs": [
+              "TR_Gasventing+144+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "The co-occurrence of higher severity metrics and higher inhibition threshold under jet conditions is internally consistent and supports the conclusion that jet conditions enhance mixture reactivity.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+144+Journal_of_Loss_Prevention_in_the_Process_Industries:C003",
+              "TR_Gasventing+144+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Regime-dependent CO2 inhibition requirements under premixed vs. jet conditions and admissibility of suppression system design conclusions",
+        "primary_boundary": "Premixed-derived thresholds do not transfer to jet conditions; mechanism attribution beyond inert dilution is unsupported",
+        "intended_error_modes": [
+          "applying premixed threshold to jet scenario",
+          "sole-mechanism attribution for turbulence",
+          "system design extrapolation from timing data alone"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring that CO2 acts through turbulence reduction",
+          "Concluding premixed threshold provides safety margin for jet scenarios",
+          "Deriving pre-ignition delivery requirements from explosion timescale alone"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "In a battery enclosure scenario at φ = 0.6, graphite dust at 100 g/m³ is co-present with BVG. CO2 is introduced as a suppression agent. Experimental data show that CO2 reduces peak explosion pressure in the hybrid dust-gas mixture by a greater absolute amount and percentage than it reduces peak pressure in BVG-only scenarios under jet conditions. The proposed mechanism involves both CO2 inert dilution of BVG and heat absorption by unburned graphite particles. An engineer must assess whether CO2 suppression system sizing based on BVG-only jet tests would be conservative or non-conservative for the hybrid scenario.",
+        "options": [
+          "A. Sizing based on BVG-only jet tests would be non-conservative for hybrid scenarios because the hybrid mixture produces higher absolute peak pressures that require more CO2 to suppress.",
+          "B. The greater CO2 inhibition effectiveness in the hybrid scenario compared to BVG-only jet conditions means that a CO2 concentration sufficient for BVG-only jet suppression would also be sufficient for hybrid suppression at the same equivalence ratio.",
+          "C. The enhanced inhibition in the hybrid case arises partly from graphite particles absorbing combustion heat, meaning the graphite itself contributes to suppression—a mechanism absent in BVG-only tests.",
+          "D. Because CO2 suppression is more effective in the hybrid scenario, a suppression system sized for BVG-only jet conditions at φ = 0.6 is conservative with respect to the hybrid scenario.",
+          "E. The dual-mechanism inhibition in the hybrid scenario (CO2 inert effect plus graphite heat absorption) implies that removing graphite dust from the enclosure would reduce CO2 suppression effectiveness for the gas phase alone.",
+          "F. The evidence that CO2 reduces hybrid explosion pressure more effectively than BVG-only jet pressure supports that graphite dust, despite being a fuel source, acts as a net inhibitor under CO2 suppression conditions at this concentration."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "C",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "Greater absolute suppression does not imply non-conservatism; if CO2 is more effective in hybrid conditions, BVG-only sizing may still be sufficient or conservative.",
+            "error_type": "causal_overclaim_ignoring_relative_effectiveness",
+            "evidence_refs": [
+              "TR_Gasventing+144+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Greater CO2 effectiveness in hybrid conditions means BVG-only jet threshold provides at least equivalent suppression for the hybrid case at the same equivalence ratio.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+144+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence explicitly identifies unburned graphite heat absorption as a contributing suppression mechanism, which is absent in BVG-only tests.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+144+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "If CO2 is more effective against hybrid mixtures, BVG-only sizing is conservative (over-specified) for hybrid scenarios—a counterintuitive but evidence-supported conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+144+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Removing graphite removes a suppression contributor in the hybrid case, but this does not imply CO2 effectiveness on the gas phase alone is reduced; it simply removes an additive effect.",
+            "error_type": "mechanism_confusion_causal_direction",
+            "evidence_refs": [
+              "TR_Gasventing+144+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Evidence shows graphite, despite being combustible, produces net inhibition under these CO2 suppression conditions due to heat absorption by unburned particles, supporting this counterintuitive conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+144+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of conservative sizing judgment when suppression effectiveness is higher in the more complex hybrid scenario than in the simpler reference scenario",
+        "primary_boundary": "Greater suppression effectiveness in hybrid conditions makes BVG-only sizing conservative, not non-conservative; graphite acts as net inhibitor under stated conditions only",
+        "intended_error_modes": [
+          "assuming higher absolute pressure requires more CO2",
+          "confusing graphite removal with CO2 effectiveness reduction",
+          "ignoring that greater effectiveness inverts conservatism direction"
+        ],
+        "disallowed_extrapolations": [
+          "Generalizing graphite-as-inhibitor beyond 100 g/m³ at φ=0.6 under CO2 suppression",
+          "Inferring CO2 mechanism changes in hybrid vs. BVG-only scenarios"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery safety engineer is designing a CO2 suppression system for a battery room where BVG may be released. Two release scenarios are considered: (1) a slow, diffusion-dominated release producing a near-premixed gas cloud at φ = 0.8, and (2) a high-pressure jet release producing a turbulent jet at φ = 0.5. The engineer has data showing that at φ = 0.8, increasing CO2 from 5% to 25% reduces peak explosion pressure by approximately 47% and reduces the maximum rate of pressure rise by over 90%, while explosion time increases by nearly 590%. At φ = 0.5 under jet conditions, complete inhibition requires CO2 exceeding 35%, while premixed conditions at φ = 0.5 require only CO2 exceeding 30%. Explain which scenario drives the suppression system design requirement, what CO2 concentration target is appropriate, and identify one mechanism-based reason why the rate of pressure rise is disproportionately more sensitive to CO2 concentration than peak pressure is under the φ = 0.8 premixed scenario."
+      },
+      "ground_truth": {
+        "gold_answer": "The jet release scenario at φ = 0.5 drives the design requirement because it demands the highest CO2 concentration for complete inhibition (exceeding 35%), compared to premixed conditions at φ = 0.5 (>30%) or the φ = 0.8 premixed scenario where 25% CO2 does not achieve complete inhibition but substantially reduces severity. The CO2 target should exceed 35% to ensure complete inhibition under the most demanding jet condition. Regarding disproportionate sensitivity: the rate of pressure rise reflects flame propagation speed, which depends exponentially on chain-branching reaction rates. CO2 preferentially disrupts chain-branching kinetics and absorbs heat that sustains flame acceleration, so even moderate CO2 additions collapse the rapid pressure rise phase while residual combustion still produces near-similar final pressures. Peak pressure is governed by total energy release, which requires more complete suppression to reduce significantly.",
+        "must_include": [
+          "jet scenario at φ = 0.5 sets the design requirement due to highest CO2 threshold (>35%)",
+          "CO2 target must exceed 35% for complete inhibition under jet conditions",
+          "rate of pressure rise is more sensitive to CO2 than peak pressure because it reflects flame acceleration kinetics rather than total energy release",
+          "CO2 affects flame propagation rate or chain-branching reactions more strongly than it affects total combustion enthalpy"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming 25% CO2 achieves complete inhibition at φ = 0.8",
+          "Asserting that the φ = 0.8 scenario drives design requirements",
+          "Stating CO2 acts solely through oxygen dilution without referencing kinetic or thermal mechanisms",
+          "Generalizing the disproportionate sensitivity relationship to all equivalence ratios or all diluents"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-scenario suppression system design sizing and mechanism-based explanation of differential metric sensitivity to CO2 concentration",
+        "primary_boundary": "Design is driven by the scenario requiring the highest CO2 threshold; disproportionate sensitivity of pressure rise rate vs. peak pressure must be explained through flame kinetics or thermal mechanism, not simple dilution",
+        "intended_error_modes": [
+          "selecting φ = 0.8 as design driver due to higher equivalence ratio",
+          "conflating partial reduction in severity with complete inhibition",
+          "attributing CO2 effect solely to oxygen displacement without kinetic reasoning",
+          "ignoring that jet conditions require higher threshold than premixed at same equivalence ratio"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,321 @@
+{
+  "TR_Modelling+38+IEEE_Transactions_on_Transportation_Electrification__TR_Modelling+87+The_Innovation__TR_Modelling+9+Journal_of_Energy_Storage": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A lithium iron phosphate cell is being overcharged at moderate rate starting from 50% SOC. Monitoring instrumentation records cell surface temperature and terminal voltage continuously. An engineer observes that after voltage crosses 4.2 V, surface temperature rises slowly for a period before eventually rising sharply once voltage exceeds 5.2 V. The engineer proposes using the sharp voltage change as the primary early-warning signal for thermal runaway. Which of the following conclusions about this detection strategy and the underlying physical progression are admissible?",
+          "options": [
+            "A. The slow surface temperature rise between 4.2 V and 5.2 V does not imply that internal thermal runaway processes are absent during that interval.",
+            "B. Relying solely on a sharp voltage change as the primary detection signal is likely to provide sufficient lead time to prevent thermal runaway, because voltage changes precede internal temperature escalation.",
+            "C. The sharp surface temperature rise above 5.2 V marks a transition in the progression of thermal runaway, not the initiation of all internal exothermic activity.",
+            "D. Gas generation during overcharging can occur before the surface temperature rise becomes sharp, indicating that internal state changes may precede the sharp surface thermal signal.",
+            "E. Because surface temperature changes slowly between 4.2 V and 5.2 V, no significant electrochemical or chemical changes are occurring inside the cell during that interval.",
+            "F. The voltage threshold of 5.2 V that marks the transition to rapid temperature rise applies equally to cells at different SOC levels and different charging rates without modification."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "D"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The evidence states that when voltage signal undergoes sudden change, thermal runaway inside the battery has already occurred for some time. This implies internal processes precede the observable surface signal, so slow surface temperature rise does not imply internal quiescence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+9+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The evidence explicitly states that by the time voltage undergoes a sudden change, thermal runaway inside has already been underway for some time, making voltage-only detection insufficient for very early warning. This option directly contradicts that limitation.",
+              "error_type": "causal overclaim / ignoring measurement scope limitation",
+              "evidence_refs": [
+                "TR_Modelling+9+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "The evidence defines the threshold at 5.2 V or 50\u00b0C as the early-mid stage of thermal runaway, indicating this is a stage transition, not the point of initiation of all exothermic activity. This is consistent with the multi-stage progression described.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+9+Journal_of_Energy_Storage:C002",
+                "TR_Modelling+9+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Evidence reports gas generation at 53\u00b0C surface temperature and 120% SOC in LFP overcharging experiments. The sharp surface temperature rise begins at 5.2 V, and gas generation was detected at conditions that can precede or coincide with the sharp thermal signal, indicating internal state changes may precede the sharp surface signal.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+9+Journal_of_Energy_Storage:C004",
+                "TR_Modelling+9+Journal_of_Energy_Storage:C002"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "This is a conservative-sounding but incorrect inference. The slow surface temperature rise reflects measurement surface lag and does not imply internal inactivity. The evidence supports that internal thermal runaway can be underway before external signals become dramatic.",
+              "error_type": "measurement scope distractor / surface-to-internal extrapolation error",
+              "evidence_refs": [
+                "TR_Modelling+9+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The evidence states that thermal runaway performance is influenced by SOC and charging rate, and that at higher charging rates the slow temperature rise stage is shorter. Applying a fixed voltage threshold universally across SOC and rate conditions is an unsupported overgeneralization.",
+              "error_type": "overgeneralization across conditions",
+              "evidence_refs": [
+                "TR_Modelling+9+Journal_of_Energy_Storage:C003",
+                "TR_Modelling+87+The_Innovation:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of voltage-based thermal runaway detection and interpretation of multi-stage overcharge progression in LFP cells",
+          "primary_boundary": "Surface voltage and temperature signals are lagging indicators of internal thermal runaway; the sharp voltage change marks a stage transition, not initiation of all internal activity",
+          "intended_error_modes": [
+            "Treating surface signal as contemporaneous with internal state",
+            "Overgeneralizing voltage threshold across SOC and rate conditions",
+            "Inferring internal quiescence from slow surface temperature rise"
+          ],
+          "disallowed_extrapolations": [
+            "Assuming voltage detection provides sufficient lead time for prevention",
+            "Applying LFP-specific voltage thresholds to other chemistries without qualification",
+            "Concluding that slow surface temperature rise implies no internal exothermic activity"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A coupled mechanical-electrochemical-thermal model is used to simulate nail penetration of a lithium-ion cell at two different states of charge: 30% SOC and 90% SOC. The model uses a threshold separation distance between current collectors to determine when internal short circuit (ISC) is activated, and this threshold is set to increase with SOC. The anode layer is also known to become denser and stiffer at higher SOC. An engineer compares the simulation outputs and observes that the ISC is triggered earlier in the deformation sequence at 90% SOC than at 30% SOC. Which of the following statements about this model behavior and its physical basis are admissible?",
+          "options": [
+            "A. The earlier ISC onset at higher SOC is a direct consequence of the model setting a larger threshold separation distance at higher SOC, not solely a consequence of mechanical property changes in the anode.",
+            "B. The increased stiffness of the anode at higher SOC means the current collectors reach the critical separation distance at a smaller applied displacement, which is the sole cause of earlier ISC onset.",
+            "C. The model's representation of ISC onset is consistent with the physical expectation that higher SOC cells are more susceptible to short circuit under the same mechanical loading.",
+            "D. Because the anode becomes denser and stiffer at higher SOC, the cell absorbs more mechanical energy before ISC onset, which should delay rather than advance ISC onset at higher SOC.",
+            "E. The simulation results for nail penetration from this model cannot be directly extended to predict force-electrical-thermal response under axial compression loading.",
+            "F. The short-circuit resistance parameter used in the model after ISC onset is independent of SOC and therefore does not affect the thermal response comparison between the two SOC conditions."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The evidence explicitly states that the threshold r is set to increase as SOC increases, meaning the model encodes earlier ISC onset at higher SOC through this parameter choice. Attributing the earlier onset solely to mechanical property changes would ignore the model's explicit parameterization.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+38+IEEE_Transactions_on_Transportation_Electrification:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "While anode stiffness does increase with SOC, claiming this is the sole cause ignores that the threshold r itself is explicitly set to increase with SOC in the model. The earlier ISC is a combined model design choice and physical property effect, not attributable to a single mechanism.",
+              "error_type": "single-variable causal overclaim / mechanism substitution",
+              "evidence_refs": [
+                "TR_Modelling+38+IEEE_Transactions_on_Transportation_Electrification:C003",
+                "TR_Modelling+38+IEEE_Transactions_on_Transportation_Electrification:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "The evidence states that the higher the SOC, the sooner ISC occurs, and the model is parameterized accordingly. This is consistent with the physical expectation that higher SOC cells are more susceptible to ISC under mechanical loading.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+38+IEEE_Transactions_on_Transportation_Electrification:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "This is a counterintuitive but incorrect distractor. While increased stiffness might naively suggest more resistance to deformation, the evidence supports that higher SOC leads to earlier ISC, not later. The denser anode layer's stiffness does not delay ISC; the physical and model evidence both point toward earlier onset at higher SOC.",
+              "error_type": "mechanism inversion / ignoring multi-factor interaction",
+              "evidence_refs": [
+                "TR_Modelling+38+IEEE_Transactions_on_Transportation_Electrification:C003",
+                "TR_Modelling+38+IEEE_Transactions_on_Transportation_Electrification:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "The evidence explicitly states that due to model limitations, the model cannot simulate the force-electrical-thermal response under axial compression. This is a direct model scope limitation that prevents extension to axial loading scenarios.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+38+IEEE_Transactions_on_Transportation_Electrification:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The evidence does not state that the short-circuit resistance Rs is independent of SOC. The model uses Rs to simulate ISC, and since thermal response depends on both when ISC is triggered and how it evolves, assuming Rs independence to dismiss SOC effects on thermal response is an unsupported assumption.",
+              "error_type": "unsupported assumption / ignoring condition dependence",
+              "evidence_refs": [
+                "TR_Modelling+38+IEEE_Transactions_on_Transportation_Electrification:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Mechanism basis for SOC-dependent ISC onset in coupled mechanical-electrochemical-thermal models and model scope limitations",
+          "primary_boundary": "Earlier ISC at higher SOC is encoded through both model parameterization (threshold r) and physical anode properties; model scope does not extend to axial compression",
+          "intended_error_modes": [
+            "Attributing earlier ISC solely to mechanical stiffness change",
+            "Inverting the stiffness-ISC relationship to predict delayed onset",
+            "Ignoring explicit model scope limitations for axial loading"
+          ],
+          "disallowed_extrapolations": [
+            "Extending nail penetration model results to axial compression scenarios",
+            "Attributing ISC onset timing to a single physical variable"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "During thermal runaway investigation of a high-energy lithium-ion cell, two competing pathways are identified as potential contributors to heat generation: (1) joule heating from an internal short circuit, and (2) direct exothermic reactions between oxygen released from cathode decomposition and anode material. The cell reaches temperatures above 300\u00b0C during the event. An engineer must assess which heat generation pathway conclusions are defensible and which safety design implications are admissible based on these observations. Which of the following statements are admissible?",
+          "options": [
+            "A. The joule heating contribution from the internal short circuit may be substantially reduced if battery resistance increases sharply after short circuit initiation, even when a short circuit is present.",
+            "B. Cathode material decomposition and oxygen release at temperatures above 300\u00b0C can contribute to thermal runaway progression independently of whether a severe internal short circuit is sustained.",
+            "C. Eliminating the possibility of internal short circuit formation is sufficient to prevent thermal runaway in cells capable of reaching temperatures above 300\u00b0C.",
+            "D. The observation that cell temperature reaches 300\u00b0C or higher is sufficient to confirm that joule heating from internal short circuit was the dominant heat source.",
+            "E. Thermodynamic parameters characterizing the exothermic reactions involved in thermal runaway, measured for one cell chemistry and SOC, should not be applied without qualification to cells of different chemistry or SOC.",
+            "F. Because chemical crosstalk between cathode oxygen and anode generates heat directly, any safety strategy that focuses only on suppressing internal short circuit formation will fully address the thermal runaway risk from oxygen-mediated reactions."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The evidence explicitly states that even if ISC is induced, joule heat from ISC may be limited by sharply increased battery resistance, contributing minimally to thermal runaway heat generation. This is a counterintuitive but evidence-supported conclusion.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+87+The_Innovation:C006"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "The evidence states that chemical crosstalk between cathode oxygen and anode can directly generate heat and trigger thermal runaway without severe ISC. At temperatures above 300\u00b0C, cathode decomposition and oxygen release are active, supporting this conclusion.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+87+The_Innovation:C001",
+                "TR_Modelling+87+The_Innovation:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "This appears cautious but is incorrect. The evidence demonstrates that thermal runaway can be triggered by chemical crosstalk between cathode oxygen and anode without severe ISC. Eliminating ISC does not eliminate the oxygen-mediated heat generation pathway.",
+              "error_type": "protective mechanism overclaim / ignoring competing mechanism",
+              "evidence_refs": [
+                "TR_Modelling+87+The_Innovation:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Reaching 300\u00b0C or higher is consistent with cathode decomposition and oxygen release, but does not confirm joule heating as the dominant source. The evidence shows joule heating can be minimal even when ISC occurs, and oxygen-mediated reactions are an alternative dominant pathway.",
+              "error_type": "causal overclaim / measurement scope distractor",
+              "evidence_refs": [
+                "TR_Modelling+87+The_Innovation:C001",
+                "TR_Modelling+87+The_Innovation:C006"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "The evidence explicitly states that thermodynamic parameters from calorimetry tests are specific to one chemical system or state, as thermal runaway performance is influenced by materials, SOC, and SOH. Direct transfer across chemistries or states is not supported.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+87+The_Innovation:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The evidence states that chemical crosstalk can trigger thermal runaway without severe ISC. A safety strategy focused only on ISC suppression would not address this independent oxygen-mediated heat generation pathway, making this claim inadmissible.",
+              "error_type": "protective mechanism overclaim / ignoring competing mechanism",
+              "evidence_refs": [
+                "TR_Modelling+87+The_Innovation:C005",
+                "TR_Modelling+87+The_Innovation:C006"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of heat generation pathway attribution and safety strategy scope in high-temperature thermal runaway",
+          "primary_boundary": "ISC joule heating can be minimal due to resistance increase; oxygen-mediated chemical crosstalk is an independent thermal runaway trigger not addressed by ISC-only safety strategies",
+          "intended_error_modes": [
+            "Assuming ISC elimination is sufficient for thermal runaway prevention",
+            "Attributing 300\u00b0C temperature to joule heating as dominant source",
+            "Treating ISC-focused safety measures as comprehensive"
+          ],
+          "disallowed_extrapolations": [
+            "Concluding that ISC is always the dominant heat source at high temperatures",
+            "Generalizing calorimetry parameters across chemistries and SOC states"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A battery safety engineer is designing a thermal runaway early-warning system for a lithium iron phosphate battery pack used in an electric vehicle. The engineer proposes a single-signal detection approach based exclusively on monitoring terminal voltage for sudden changes. A colleague argues that this approach has a fundamental timing limitation and suggests supplementing it with gas detection. Using your understanding of the overcharge-induced thermal runaway progression in LFP cells and the relationship between observable surface signals and internal cell states, explain: (1) why terminal voltage change alone is insufficient as an early-warning signal, (2) what physical event gas detection can identify that voltage monitoring cannot provide in time, and (3) whether the voltage threshold marking the transition to rapid surface temperature rise can be assumed constant across all operating conditions for LFP cells. Justify each point mechanistically."
+        },
+        "ground_truth": {
+          "gold_answer": "(1) Terminal voltage undergoes a sudden change only after thermal runaway has already been underway inside the cell for a significant period. By the time the voltage signal becomes diagnostic, the internal exothermic progression is already advanced, leaving insufficient time for effective intervention. Voltage is a lagging surface indicator of an internal state that has already transitioned. (2) Gas generation in LFP overcharging has been observed at surface temperatures around 53\u00b0C and SOC around 120%, which can occur before or concurrent with the onset of sharp surface temperature rise that marks the early-mid stage of thermal runaway. Gas detection can therefore identify an internal state change \u2014 specifically the onset of electrolyte decomposition or other gas-generating reactions \u2014 at a point in the progression when voltage has not yet shown a dramatic change, providing earlier warning than voltage alone. (3) The voltage threshold cannot be assumed constant across all operating conditions. At higher charging rates, the slow temperature rise stage is shorter and thermal runaway occurs faster, meaning the progression from initial voltage deviation to the rapid temperature rise stage is compressed in time. Additionally, thermal runaway performance is influenced by SOC and state of health, so thermodynamic parameters and transition thresholds are specific to a given chemical system and state. Applying a fixed voltage threshold universally would be an unsupported generalization.",
+          "must_include": [
+            "Voltage change is a lagging indicator; internal thermal runaway has already progressed by the time voltage changes suddenly",
+            "Gas generation can occur before sharp surface temperature rise, providing earlier indication of internal state change",
+            "Charging rate affects the duration of the slow temperature rise stage and therefore the timing of thermal runaway progression",
+            "Thermal runaway parameters including transition thresholds are SOC- and chemistry-dependent and cannot be universally applied"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming gas detection alone is sufficient to prevent thermal runaway",
+            "Asserting that the 5.2 V threshold applies to all lithium-ion chemistries",
+            "Concluding that voltage monitoring provides no useful information, only that it is insufficient as a sole early-warning signal",
+            "Applying LFP-specific thresholds to NMC or other cathode chemistries without qualification"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-signal early-warning strategy for overcharge-induced thermal runaway: timing limitations of voltage detection, role of gas detection, and condition-dependence of transition thresholds",
+          "primary_boundary": "Voltage is a lagging indicator; gas detection accesses an earlier stage of internal progression; transition thresholds are condition-specific and not universally transferable",
+          "intended_error_modes": [
+            "Treating voltage change as a contemporaneous indicator of internal thermal runaway onset",
+            "Assuming a single voltage threshold applies universally across rates and SOC",
+            "Overlooking that gas generation precedes the sharp thermal signal and thus provides earlier warning"
+          ]
+        }
+      }
+    ]
+  }
+}

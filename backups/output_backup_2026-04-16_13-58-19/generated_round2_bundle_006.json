@@ -1,0 +1,335 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery module engineer is evaluating two propagation-prevention strategies for a pack where thermal runaway (TR) is triggered at 469°C in adjacent cells. Strategy A inserts a 1 mm thermal resistant layer (thermal conductivity ≤ 0.2 W m⁻¹ K⁻¹) between batteries. Strategy B increases the heat dissipation coefficient to 80 W m⁻² K⁻¹ at the cell surfaces. Both strategies are evaluated independently under the same initial TR event in Bat 1. A third scenario is then considered: Strategy A is applied but the insulating layer develops a localized material defect, reducing its effective resistance in a small region. Which of the following conclusions are admissible given the described conditions?",
+        "options": [
+          "A. Both Strategy A and Strategy B independently prevent TR propagation to Bat 2 under the stated conditions, but they do so through physically distinct mechanisms.",
+          "B. Under Strategy A with a localized insulation defect, TR propagation to Bat 2 is guaranteed because any breach of the insulation layer eliminates its protective function entirely.",
+          "C. Under Strategy A with a localized insulation defect, the defect may first cause small-scale TR within the local region, which increases local heat accumulation and raises the threshold required to prevent further propagation.",
+          "D. Strategy B prevents TR propagation because 80 W m⁻² K⁻¹ exceeds the threshold at which the maximum temperature reached by the front and back edges of Bat 2 remains below the TR triggering temperature.",
+          "E. If Strategy A delays but does not prevent TR propagation from Bat 1 to Bat 2, the subsequent propagation from Bat 2 to Bat 3 will necessarily be slower due to the thermal energy consumed in the delay.",
+          "F. The two strategies are mutually exclusive: applying both simultaneously would not provide additional protection beyond whichever strategy alone is stronger.",
+          "G. Strategy A with a 1 mm layer at 0.2 W m⁻¹ K⁻¹ limits the maximum temperature at the edges of Bat 2 to a value that remains below the TR triggering temperature, confirming propagation prevention."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Strategy A works by reducing conductive heat transfer through a resistive layer (C004 of paper 181), while Strategy B works by increasing convective heat dissipation from cell surfaces (C003 of paper 181). Both independently prevent propagation under their respective thresholds, but the physical pathways differ—conduction barrier vs. enhanced dissipation. This conclusion is admissible and requires mechanism-level distinction.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+181+Applied_Energy:C003",
+              "TR_Modelling+181+Applied_Energy:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "A localized defect does not necessarily eliminate all protection. Evidence states that local insulation failure leads to small-scale TR within the local scope and raises the threshold needed to prevent propagation—it does not assert that propagation to Bat 2 is guaranteed. This is a causal overclaim that ignores the partial-protection regime.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Modelling+180+Applied_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence explicitly states that local insulation failure leads to small-scale TR within the local scope, contributing to larger heat accumulation and raising the parameter threshold needed to prevent TRP. This is a counterintuitive but evidence-supported conclusion: partial protection can worsen the propagation threat by concentrating heat.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+180+Applied_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence states that TR propagation is prevented when hdis exceeds 70 W m⁻² K⁻¹ because the maximum temperature at Bat 2 edges reaches only 249°C, below the triggering temperature. At 80 W m⁻² K⁻¹ (above 70), the same logic applies. The reasoning chain is: higher dissipation → lower peak temperature at Bat 2 → below TTR,ARC → propagation prevented.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+181+Applied_Energy:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "This is a conservative-sounding but mechanistically incorrect option. Evidence states that a delay in TR propagation from Bat 1 to Bat 2 leads to a higher temperature in Bat 2, which causes faster (not slower) propagation from Bat 2 to Bat 3. The delay allows more heat accumulation in Bat 2, accelerating the next propagation step.",
+            "error_type": "mechanism_reversal",
+            "evidence_refs": [
+              "TR_Modelling+181+Applied_Energy:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "No evidence supports mutual exclusivity of the two strategies or that combining them provides no additional benefit. This is an unsupported system-level claim. The evidence only characterizes each strategy independently; combined behavior is outside the evidentiary scope, but the claim of mutual exclusivity is not supported.",
+            "error_type": "unsupported_extrapolation",
+            "evidence_refs": [
+              "TR_Modelling+181+Applied_Energy:C003",
+              "TR_Modelling+181+Applied_Energy:C004"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "Evidence directly states that with thermal conductivity ≤ 0.2 W m⁻¹ K⁻¹ for a 1 mm layer, the maximum temperature at Bat 2 edges reaches only 226°C, which is below TTR,ARC, confirming propagation prevention. This is a direct but non-trivial admissibility judgment requiring the solver to connect the layer specification to the temperature outcome to the propagation condition.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+181+Applied_Energy:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of propagation-prevention conclusions under two independent strategies and under partial insulation failure, including the counterintuitive acceleration effect of delayed propagation.",
+        "primary_boundary": "Partial insulation failure does not guarantee propagation but raises the prevention threshold; delayed propagation accelerates subsequent propagation rather than slowing it.",
+        "intended_error_modes": [
+          "Causal overclaim: assuming any insulation breach eliminates protection entirely (Option B)",
+          "Mechanism reversal: assuming delay in propagation slows subsequent steps rather than accelerating them (Option E)",
+          "Unsupported system-level claim: asserting mutual exclusivity of independent strategies (Option F)"
+        ],
+        "disallowed_extrapolations": [
+          "Combining both strategies provides no benefit beyond the stronger one alone",
+          "Any localized insulation defect guarantees full TR propagation",
+          "Delayed propagation always reduces risk to downstream cells"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery pack thermal management engineer is designing an air-cooled module using metal foam inserts. The module operates in an environment where the mass flow rate of cooling air is constrained to a low value due to fan power limits. The engineer observes that the downstream batteries in the module run significantly hotter than upstream batteries. A colleague proposes that increasing the metal foam density (which further increases flow resistance) will improve temperature uniformity across the module because the extended heat transfer area will dominate over the flow resistance penalty. Evaluate which of the following statements about this design scenario are admissible.",
+        "options": [
+          "A. The temperature gradient from upstream to downstream batteries is primarily caused by the cooling air progressively absorbing heat along the flow path, reducing its effective cooling capacity for downstream cells.",
+          "B. At low mass flow rate, increasing metal foam density is likely to worsen temperature uniformity because the flow resistance increase further reduces the already limited cooling air velocity, degrading the temperature difference performance.",
+          "C. Metal foam's primary thermal benefit—extending the convective heat transfer area by approximately an order of magnitude—is sufficient to guarantee temperature uniformity regardless of mass flow rate.",
+          "D. The colleague's proposal may be valid at high mass flow rates where flow resistance penalties are less dominant, but at the stated low mass flow rate condition, the flow resistance effect on temperature difference is a known concern.",
+          "E. The downstream temperature elevation is a consequence of the battery module geometry and cannot be mitigated by any air-side thermal management modification.",
+          "F. Maintaining the battery temperature difference within 5°C is a recognized performance target, and the described low-flow-rate metal foam configuration presents a specific risk of violating this target due to the interaction between flow resistance and cooling capacity degradation along the flow path."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence explicitly states that downstream temperatures are higher because cooling air continuously absorbs heat along the flow path, causing its cooling capacity to decline. This is a direct causal mechanism supported by evidence C005 of paper 179.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+179+Applied_Thermal_Engineering:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Evidence states that at low mass flow rate, flow resistance across metal foam increases significantly, causing relatively poor temperature difference performance. Increasing foam density would further increase flow resistance, compounding the existing problem at low flow rates. This requires two-step reasoning: foam density → flow resistance → temperature difference degradation at low flow.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+179+Applied_Thermal_Engineering:C004",
+              "TR_Modelling+179+Applied_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Evidence states metal foam extends heat transfer area by ~10-fold and significantly reduces maximum temperature, but it also explicitly identifies that at low mass flow rate, the flow resistance increase causes poor temperature difference. The area benefit does not override the flow resistance penalty unconditionally. This is a condition-violation distractor—the claim is valid in general but violates the low-flow-rate constraint stated in the stem.",
+            "error_type": "condition_violation",
+            "evidence_refs": [
+              "TR_Modelling+179+Applied_Thermal_Engineering:C003",
+              "TR_Modelling+179+Applied_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The evidence identifies the flow resistance problem specifically at low mass flow rate, implying the effect is regime-dependent. At higher flow rates, resistance penalties are proportionally less impactful. This regime-dependent conclusion is admissible and requires the solver to recognize the flow-rate dependence of the resistance-cooling trade-off.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+179+Applied_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The evidence describes the downstream heating phenomenon as caused by cooling air heat absorption—a mechanism that can in principle be addressed by air-side modifications (e.g., flow reversal, multi-inlet designs, or increased flow rate). Claiming no air-side modification can help is an unsupported absolute claim that goes beyond the evidence.",
+            "error_type": "unsupported_absolute_claim",
+            "evidence_refs": [
+              "TR_Modelling+179+Applied_Thermal_Engineering:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Evidence establishes that the temperature difference target is 5°C (C001, paper 179) and that low mass flow rate with metal foam causes poor temperature difference performance (C004, paper 179), and that downstream temperatures are significantly higher than upstream (C005, paper 179). Combining these three evidence claims, the described configuration presents a specific risk of exceeding the 5°C target. This is a multi-hop admissible conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+179+Applied_Thermal_Engineering:C001",
+              "TR_Modelling+179+Applied_Thermal_Engineering:C004",
+              "TR_Modelling+179+Applied_Thermal_Engineering:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Regime-dependent interaction between metal foam flow resistance and cooling capacity at low mass flow rate, and its implications for temperature uniformity targets.",
+        "primary_boundary": "Metal foam's heat transfer area benefit does not override the flow resistance penalty at low mass flow rate; the net effect on temperature uniformity is regime-dependent.",
+        "intended_error_modes": [
+          "Condition violation: claiming area benefit dominates regardless of flow rate (Option C)",
+          "Unsupported absolute claim: asserting no air-side modification can address downstream heating (Option E)",
+          "Single-mechanism reasoning: ignoring the coupling between flow resistance and temperature uniformity"
+        ],
+        "disallowed_extrapolations": [
+          "Metal foam guarantees temperature uniformity under all operating conditions",
+          "Downstream temperature elevation is geometry-only and cannot be addressed by flow management"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "In a multi-battery pack, thermal runaway (TR) is initiated in Bat 1. Two design interventions are being compared to protect Bat 2 and Bat 3. Intervention X raises the TR triggering temperature threshold of the cells (TTR,ARC) from its baseline value to above 469°C. Intervention Y applies a passive heat dissipation enhancement that raises the heat dissipation coefficient to 80 W m⁻² K⁻¹. A safety engineer notes that Intervention X, while effective at preventing TR in Bat 2, may have an unintended consequence for Bat 3 if it only delays rather than prevents TR propagation to Bat 2. The engineer also considers a third option, Intervention Z, which reduces the total heat energy released during TR of Bat 1 to 75% or less of its original value. Which of the following statements are admissible?",
+        "options": [
+          "A. Intervention X prevents TR propagation to Bat 2 because raising TTR,ARC above 469°C ensures the maximum temperature reached at Bat 2's edges never reaches the triggering threshold under the described conditions.",
+          "B. Intervention Y prevents TR propagation to Bat 2 because 80 W m⁻² K⁻¹ exceeds the minimum dissipation threshold required to keep Bat 2 edge temperatures below TTR,ARC.",
+          "C. If Intervention X is only partially effective and delays rather than prevents TR propagation to Bat 2, the propagation time from Bat 2 to Bat 3 will be longer than in the unprotected baseline case.",
+          "D. Intervention Z prevents TR propagation by reducing the heat input available to drive Bat 2 above its triggering temperature, and this is admissible because reducing heat release to 75% or less of its original value is identified as a sufficient condition for propagation prevention.",
+          "E. Among the three interventions, only Intervention X addresses the root cause of TR propagation because it modifies the cell's intrinsic triggering threshold rather than managing heat transfer externally.",
+          "F. Interventions Y and Z prevent TR propagation through different physical pathways—Y by increasing heat removal from Bat 2's surfaces and Z by reducing heat generation at the source—but both are admissible as propagation-prevention strategies under the stated threshold conditions."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence states that TR propagation to Bat 2 is prevented when TTR,ARC is raised above 469°C, because the maximum temperature at Bat 2 edges never reaches TTR,ARC. This is a direct threshold-based admissible conclusion requiring the solver to connect the threshold value to the prevention mechanism.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+181+Applied_Energy:C001"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Evidence states TR propagation is prevented when hdis exceeds 70 W m⁻² K⁻¹, with Bat 2 edge temperature reaching only 249°C. At 80 W m⁻² K⁻¹, the threshold condition is satisfied. The reasoning chain: 80 > 70 W m⁻² K⁻¹ → Bat 2 temperature stays below TTR,ARC → propagation prevented.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+181+Applied_Energy:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "This is a conservative-sounding but mechanistically incorrect option. Evidence explicitly states that a delay in TR propagation from Bat 1 to Bat 2 leads to a higher temperature in Bat 2, which causes faster (not slower) propagation from Bat 2 to Bat 3. The delay allows heat accumulation in Bat 2, shortening D2→3. This counterintuitive result is evidence-supported and contradicts the intuitive expectation that delay always reduces subsequent risk.",
+            "error_type": "mechanism_reversal",
+            "evidence_refs": [
+              "TR_Modelling+181+Applied_Energy:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence states TR propagation is prevented when the heat energy released during TR is reduced to 75% or less of its original value. Intervention Z directly satisfies this condition. The mechanism chain is: reduced heat release → lower heat input to Bat 2 → Bat 2 edge temperature stays below TTR,ARC → propagation prevented.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+181+Applied_Energy:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The claim that only Intervention X addresses the 'root cause' is an unsupported evaluative hierarchy. The evidence supports all three interventions as valid propagation-prevention strategies without ranking them by mechanism type or designating one as addressing the root cause. This is an unsupported scope expansion that introduces a value judgment not present in the evidence.",
+            "error_type": "unsupported_hierarchy_claim",
+            "evidence_refs": [
+              "TR_Modelling+181+Applied_Energy:C001",
+              "TR_Modelling+181+Applied_Energy:C003",
+              "TR_Modelling+181+Applied_Energy:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Intervention Y operates by increasing heat dissipation from Bat 2 surfaces (hdis mechanism), while Intervention Z operates by reducing heat generation at the Bat 1 source (DHe mechanism). Both satisfy their respective threshold conditions for propagation prevention. The conclusion that both are admissible through distinct pathways is supported by combining C003 and C005 of paper 181. This requires multi-mechanism reasoning.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+181+Applied_Energy:C003",
+              "TR_Modelling+181+Applied_Energy:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of three distinct TR propagation-prevention strategies and the counterintuitive consequence of delayed (vs. prevented) propagation on downstream cell risk.",
+        "primary_boundary": "Delayed TR propagation to Bat 2 accelerates (not decelerates) subsequent propagation to Bat 3 due to heat accumulation; this is the primary counterintuitive boundary.",
+        "intended_error_modes": [
+          "Mechanism reversal: assuming delay always reduces downstream risk (Option C)",
+          "Unsupported hierarchy: claiming one intervention addresses root cause while others do not (Option E)",
+          "Single-mechanism reasoning: failing to recognize that multiple independent pathways can each satisfy propagation-prevention conditions"
+        ],
+        "disallowed_extrapolations": [
+          "Delayed propagation is always safer than faster propagation for downstream cells",
+          "Modifying intrinsic cell properties is categorically superior to heat transfer management for TR prevention"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery module uses a thermal insulation layer between cells to prevent thermal runaway propagation (TRP). At an insulation thickness of 0.6 mm, TRP is stopped in a brick-type module configuration but continues in an in-line configuration. When the thickness is increased to 0.7 mm, TRP is stopped in both configurations. A new scenario is introduced: the 0.7 mm insulation layer develops a small localized defect during service. An engineer argues that because 0.7 mm was sufficient to stop TRP in both configurations without defects, the defect will only slightly degrade performance and TRP will still be prevented. Critically evaluate this argument. In your answer, explain (1) what physical consequence the localized defect introduces that is not present in the intact-insulation case, and (2) why this consequence means the engineer's argument may underestimate the risk, referencing the relationship between local heat accumulation and the threshold required to prevent TRP."
+      },
+      "ground_truth": {
+        "gold_answer": "The engineer's argument is not fully admissible. A localized insulation defect does not simply reduce the insulation performance proportionally. The defect introduces a specific physical consequence not present in the intact case: local failure of the insulation strategy initially causes small-scale thermal runaway within the local region of the defect. This localized TR event generates additional heat that accumulates in that region, creating a higher local thermal load than would exist with intact insulation. Because of this heat accumulation, the threshold parameter required to prevent TRP (whether expressed as insulation thickness, dissipation coefficient, or heat release fraction) must be higher than in the no-defect case. Therefore, a thickness of 0.7 mm that was sufficient to prevent TRP with intact insulation may no longer be sufficient when a defect is present, because the effective thermal load has increased beyond what the intact-insulation scenario assumed. The engineer's argument underestimates the risk by treating the defect as a simple linear degradation of insulation performance rather than recognizing that it introduces a new heat generation event that raises the prevention threshold.",
+        "must_include": [
+          "Localized insulation defect causes small-scale TR within the local region of the defect",
+          "This local TR contributes to additional heat accumulation in the affected area",
+          "The heat accumulation raises the threshold parameter required to prevent TRP",
+          "A thickness sufficient for intact insulation may be insufficient when local TR heat accumulation is present",
+          "The engineer's argument treats the defect as a proportional degradation rather than a threshold-raising event"
+        ],
+        "disallowed_extrapolations": [
+          "The defect guarantees full TRP to all adjacent cells",
+          "Any defect, regardless of size, eliminates all protective benefit of the insulation layer",
+          "The 0.7 mm threshold applies universally regardless of local failure conditions",
+          "The in-line vs. brick configuration difference is relevant to the defect scenario without additional evidence"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Understanding that localized insulation failure introduces a new heat generation mechanism (local TR) that raises the propagation-prevention threshold, rather than simply reducing insulation effectiveness proportionally.",
+        "primary_boundary": "The 0.7 mm threshold was established for intact insulation; local defects introduce additional heat accumulation that changes the effective threshold condition, making the original threshold potentially insufficient.",
+        "intended_error_modes": [
+          "Treating insulation defect as proportional performance degradation rather than a threshold-raising mechanism",
+          "Assuming the intact-insulation threshold applies unchanged to the defect scenario",
+          "Overclaiming that any defect guarantees TRP",
+          "Ignoring the causal chain: defect → local TR → heat accumulation → raised prevention threshold"
+        ]
+      }
+    }
+  ]
+}

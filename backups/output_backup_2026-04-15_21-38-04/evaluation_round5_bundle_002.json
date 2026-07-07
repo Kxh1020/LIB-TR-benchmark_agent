@@ -1,0 +1,44 @@
+[
+  {
+    "decision": "ACCEPT",
+    "scores": {
+      "D1": 8,
+      "D2": 8,
+      "D3": 8,
+      "D4": 7,
+      "D5": 8,
+      "Total": 39,
+      "MinDim": 7
+    },
+    "reason": "The item cleanly tests boundary-aware interpretation of different diagnostics (trigger surface temperature, internal vs surface peaks, injection duration, and propagation time) without requiring external facts, and the correct choices are tightly supported by the stated observations. Decoys are largely single-fault and engineering-plausible, primarily targeting common proxy/scale-transfer mistakes, though option phrasing sometimes introduces mild cueing and two decoys rely on similar “overinterpreting trigger temperature” logic, slightly reducing discriminative separation.",
+    "qid": "Q2"
+  },
+  {
+    "decision": "ACCEPT",
+    "scores": {
+      "D1": 8,
+      "D2": 8,
+      "D3": 9,
+      "D4": 8,
+      "D5": 8,
+      "Total": 41,
+      "MinDim": 8
+    },
+    "reason": "The item cleanly tests boundary-aware admissibility of mechanistic/safety inferences from a fixed observation set (discharge-rate effects, propagation metrics, and heat-transfer partitioning), with correct choices staying within what those observations warrant. Decoys are engineering-plausible and mostly fail via single, identifiable overclaims (sufficiency/only-variable), producing meaningful discrimination without relying on stylistic cues. Some correct options (E, F) can be solved with near-tautological arithmetic/logic, slightly reducing the need for deeper domain judgment and thus the discriminative signal.",
+    "qid": "Q3"
+  },
+  {
+    "decision": "REVISE",
+    "scores": {
+      "D1": 8,
+      "D2": 3,
+      "D3": 8,
+      "D4": 7,
+      "D5": 7,
+      "Total": 33,
+      "MinDim": 3
+    },
+    "reason": "The prompt targets a clear multi-step mechanistic explanation (SOC → delayed ISC → higher stage-transition/venting temperature → pressure-rate dynamics → gasket collapse → jelly roll ejection) and explicitly asks for the counterintuitive reconciliation, which gives it strong diagnostic potential. However, as a SHORT_ANSWER item it provides no option structure, making decoy craftsmanship inapplicable and limiting controlled discrimination; additionally, key terms like “pressure rate acceleration” and the precise meaning of “higher temperatures at each stage transition” may admit multiple plausible narratives without tighter boundary cues. Overall it is conceptually strong but would benefit from added constraints/rubric specificity to reduce ambiguity and improve consistent scoring across experts.",
+    "qid": "S1"
+  }
+]

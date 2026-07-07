@@ -1,0 +1,329 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A lithium-ion battery is subjected to controlled external heating. Cooling at 293.15 K is applied to the bottom of the negative electrode region. The battery has not yet reached the temperature range at which the SEI membrane begins to decompose exothermically (353.15–393.15 K). An engineer proposes that applying the cooling earlier within this pre-SEI-decomposition window will produce a stronger suppression effect than applying it just before the threshold. A second engineer argues that once thermal runaway is triggered, the dominant heat source is the positive electrode reaction, so cooling directed at the negative electrode is addressing the wrong target. Which of the following conclusions are supported by the described conditions and the underlying mechanisms?",
+        "options": [
+          "A. The timing of cooling application within the pre-SEI-decomposition window does not affect whether thermal runaway is suppressed, because the suppression mechanism operates by inhibiting the negative electrode material reaction regardless of when cooling begins in that window.",
+          "B. Cooling at 293.15 K applied after SEI decomposition has begun can still reliably suppress thermal runaway by the same mechanism, since the negative electrode reaction has not yet peaked.",
+          "C. Because the positive electrode reaction generates approximately three times the heat of the negative electrode reaction during thermal runaway, redirecting cooling to the positive electrode region would be more effective at suppression than cooling the negative electrode before SEI decomposition.",
+          "D. The fact that the positive electrode reaction is the dominant heat source during full thermal runaway does not invalidate cooling the negative electrode before SEI decomposition, because the suppression target at that stage is the negative electrode reaction that triggers the cascade.",
+          "E. Thermal runaway initiation under 473.15 K external heating is driven by the negative electrode material reaction, making the negative electrode the appropriate intervention target in the pre-SEI-decomposition stage.",
+          "F. The exothermic decomposition of the SEI membrane between 353.15 and 393.15 K is the primary heat source that directly drives the battery to thermal runaway without requiring subsequent electrode reactions."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence states that when cooling at 293.15 K is applied before SEI decomposition starts, the advance time has no effect on the suppression outcome. The mechanism is suppression of the negative electrode material reaction, and timing within that pre-threshold window is irrelevant to success.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+201+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The evidence specifies that effective suppression requires cooling to be applied before SEI decomposition starts. Applying cooling after SEI decomposition has begun is outside the stated boundary for reliable suppression; the evidence does not support this extension.",
+            "error_type": "Condition violation distractor — correct for a different regime than stated",
+            "evidence_refs": [
+              "TR_Mechanism+201+UnknownJournal:C002",
+              "TR_Mechanism+201+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Although the positive electrode reaction generates ~3x the heat of the negative electrode reaction during full thermal runaway, the suppression strategy targets the pre-SEI-decomposition stage where the negative electrode reaction is the trigger. Redirecting cooling to the positive electrode at this stage ignores the causal sequence: suppressing the trigger (negative electrode reaction) prevents the cascade from reaching the stage where positive electrode dominance matters.",
+            "error_type": "Mechanism confusion — correct heat-source comparison applied to wrong stage of the sequence",
+            "evidence_refs": [
+              "TR_Mechanism+201+UnknownJournal:C002",
+              "TR_Mechanism+201+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "This is counterintuitive but correct. The positive electrode dominance is a feature of fully developed thermal runaway. The pre-SEI-decomposition cooling works by suppressing the negative electrode reaction that initiates the cascade, so the positive electrode's larger heat contribution during runaway does not undermine the logic of early negative electrode cooling. The two facts apply to different stages.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+201+UnknownJournal:C002",
+              "TR_Mechanism+201+UnknownJournal:C003",
+              "TR_Mechanism+201+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Evidence directly states that thermal runaway is triggered by heat generation of the negative electrode material reaction under 473.15 K heating, making the negative electrode the appropriate target for pre-cascade intervention.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+201+UnknownJournal:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence identifies SEI decomposition as a trigger that initiates subsequent exothermic reactions leading to thermal runaway, not as the primary heat source that directly drives runaway. The cascade requires subsequent electrode reactions; SEI decomposition is the initiating event, not the dominant energy source.",
+            "error_type": "Causal overclaim — attributes the full runaway outcome to the initiating reaction alone",
+            "evidence_refs": [
+              "TR_Mechanism+203+UnknownJournal:C001",
+              "TR_Mechanism+201+UnknownJournal:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Stage-dependent intervention logic: distinguishing the trigger mechanism from the dominant heat source during full thermal runaway, and understanding why pre-SEI-decomposition cooling targets the negative electrode regardless of positive electrode dominance later.",
+        "primary_boundary": "Cooling effectiveness is conditioned on being applied before SEI decomposition onset; the positive electrode's heat dominance applies to the fully developed runaway stage, not the initiation stage.",
+        "intended_error_modes": [
+          "Applying full-runaway heat-source ranking to the pre-cascade intervention stage",
+          "Extending pre-SEI cooling efficacy to post-SEI-decomposition conditions",
+          "Treating SEI decomposition as the primary heat source rather than the cascade trigger"
+        ],
+        "disallowed_extrapolations": [
+          "Cooling after SEI decomposition onset is equally effective",
+          "Positive electrode cooling is superior at all stages because it is the dominant heat source during runaway",
+          "SEI decomposition alone drives thermal runaway without subsequent electrode reactions"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Three battery chemistries — LFP, LMO, and NCM — are subjected to thermal runaway testing. The following observations are recorded: (1) Before reaching uncontrollable temperature, LFP releases the most gas in molar terms among the three. (2) For LFP, the fraction of total gas volume attributable to gas release reactions (as opposed to electrolyte volatilization) is approximately 29%, while for LMO it is approximately 75% and for NCM approximately 55%. (3) During the stage of uncontrollable redox reaction, pressure change is 2–9 times larger than the combined pressure change of all earlier stages. (4) The NCM battery exhibits the greatest total pressure change during thermal runaway, approximately 4.3 times that of LFP. An engineer assessing structural containment risk must determine which mechanisms drive pressure buildup in each chemistry and whether the dominant source is the same across chemistries. Which conclusions are admissible given these observations?",
+        "options": [
+          "A. LFP generates more pre-runaway gas than LMO or NCM, yet its total pressure change during thermal runaway is substantially lower than NCM's, which is consistent with gas release being the dominant structural pressure source for LFP while impact force dominates for NCM.",
+          "B. Because LFP releases the most molar gas before uncontrollable temperature is reached, it presents the greatest structural containment risk of the three chemistries across the full thermal runaway event.",
+          "C. The safety venting of LMO is primarily driven by gas release reactions rather than electrolyte volatilization, a conclusion that follows directly from the high fraction of venting attributable to gas release in that chemistry.",
+          "D. The 2–9 times pressure amplification during the uncontrollable redox stage applies uniformly across all three chemistries, so the dominant pressure mechanism in that stage is the same for LFP, LMO, and NCM.",
+          "E. For NCM, the large total pressure change relative to LFP is more consistent with impact force being the dominant structural change mechanism than with gas release alone, given the chemistry-specific dominance patterns.",
+          "F. The difference in safety venting mechanism between LFP and the other two chemistries implies that thermal management strategies effective for LFP electrolyte volatilization control would not necessarily address the primary venting driver in LMO or NCM batteries."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "LFP releases 0.094 mol pre-runaway gas (most among three), yet NCM has 4.3× LFP's total pressure change. This is consistent with evidence that gas release is the main structural pressure source for LFP while impact force dominates for LMO and NCM. The apparent paradox (more early gas, less total pressure) is resolved by the mechanism difference.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+202+UnknownJournal:C001",
+              "TR_Mechanism+202+UnknownJournal:C003",
+              "TR_Mechanism+202+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Pre-runaway gas volume does not determine total structural containment risk across the full event. LFP has the most pre-runaway gas but the lowest total pressure change. Impact force in LMO and NCM during the uncontrollable stage dominates structural risk. This is a conservative-appearing but incorrect distractor that conflates early gas release with overall risk.",
+            "error_type": "Scope expansion — extrapolating pre-runaway gas quantity to full-event structural risk without accounting for stage IV impact force contribution",
+            "evidence_refs": [
+              "TR_Mechanism+202+UnknownJournal:C001",
+              "TR_Mechanism+202+UnknownJournal:C003",
+              "TR_Mechanism+202+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "75.2% of LMO venting gas is attributable to gas release reactions, directly supporting the conclusion that LMO safety venting is primarily driven by gas release rather than electrolyte volatilization.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+202+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The 2–9 times pressure amplification in stage IV describes the general magnitude range across batteries, but the evidence distinguishes that the dominant mechanism differs by chemistry: gas release for LFP, impact force for LMO and NCM. Stating that the dominant mechanism is the same for all three violates the chemistry-specific causal distinction.",
+            "error_type": "Overgeneralization — applying a pressure magnitude range uniformly while ignoring chemistry-specific mechanism dominance",
+            "evidence_refs": [
+              "TR_Mechanism+202+UnknownJournal:C004",
+              "TR_Mechanism+202+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "NCM has the greatest total pressure change (4.3× LFP), and evidence states that impact force is the dominant cause of structural change and pressure increase for NCM. The large pressure differential relative to LFP is consistent with impact force dominance, not gas release alone.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+202+UnknownJournal:C003",
+              "TR_Mechanism+202+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "LFP venting is primarily from electrolyte volatilization (only 29.1% from gas release), while LMO and NCM venting is primarily from gas release reactions. A strategy targeting electrolyte volatilization would address LFP's primary venting driver but not the dominant driver in LMO or NCM, making cross-chemistry strategy transfer inadmissible without modification.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+202+UnknownJournal:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Chemistry-specific mechanism dominance for pressure buildup and safety venting; distinguishing pre-runaway gas quantity from full-event structural risk; recognizing that the same pressure magnitude range can arise from different dominant mechanisms.",
+        "primary_boundary": "Pre-runaway gas volume does not determine total structural risk; mechanism dominance differs by chemistry and must not be generalized across LFP, LMO, and NCM.",
+        "intended_error_modes": [
+          "Equating highest pre-runaway gas release with highest overall containment risk",
+          "Applying a pressure amplification factor uniformly across chemistries without acknowledging mechanism differences",
+          "Assuming a single thermal management strategy transfers across chemistries with different venting drivers"
+        ],
+        "disallowed_extrapolations": [
+          "Pre-runaway gas quantity predicts total pressure change ranking",
+          "Stage IV pressure amplification implies the same dominant mechanism for all chemistries",
+          "LFP venting control strategies are directly applicable to LMO or NCM"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery cell is cycled under constant charge/discharge conditions. The SEI layer on the negative electrode grows rapidly during early charge cycles due to diffusion limitation. As cycling continues, the layer thickens, its resistance increases, and the growth rate slows. Separately, a cell from the same batch operated at 1C rate does not generate sufficient heat to trigger SEI decomposition, while a cell operated at 2C rate does exhibit SEI decomposition effects. The SEI decomposition temperature range is known to be 353.15–393.15 K, and SEI decomposition is understood to trigger subsequent exothermic reactions leading to thermal runaway. A capacity fade is observed in cells with significant SEI growth, causing affected cells to reach cutoff voltage earlier than others. Which of the following conclusions are admissible given these conditions?",
+        "options": [
+          "A. The transition from diffusion-limited to kinetics-limited SEI growth implies that capacity fade rate will also slow as the SEI layer thickens, because the same resistance increase that slows SEI growth also reduces the rate of cyclable lithium consumption.",
+          "B. At 1C rate, the absence of SEI decomposition effects means the cell is operating safely with respect to thermal runaway risk, regardless of how many cycles have been completed.",
+          "C. The earlier cutoff voltage reached by heavily SEI-affected cells is a consequence of reduced cyclable lithium rather than a change in the electrochemical rate capability of the electrode.",
+          "D. Operating at 2C rather than 1C increases thermal runaway risk primarily because higher current generates more heat, which can raise cell temperature into the SEI decomposition range and initiate the exothermic cascade.",
+          "E. Because SEI growth rate decreases as the layer thickens, a cell that has undergone many cycles presents lower thermal runaway risk than a fresh cell when both are operated at the same C rate, since the reduced SEI growth rate means less ongoing heat generation from SEI formation.",
+          "F. The rate of heat release from SEI decomposition, once initiated, increases exponentially with temperature rather than linearly, meaning that once the decomposition temperature range is entered, the process self-accelerates rather than reaching a stable rate."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "The evidence links the slowing of SEI growth to increased layer resistance, but does not establish that capacity fade rate slows by the same mechanism or at the same rate. Capacity fade results from cyclable lithium reduction, and the relationship between SEI growth rate and lithium consumption rate is not stated to be directly proportional. This is a plausible but unsupported causal chain extension.",
+            "error_type": "Unsupported causal chain extension from SEI growth rate to capacity fade rate",
+            "evidence_refs": [
+              "TR_Mechanism+203+UnknownJournal:C005",
+              "TR_Mechanism+203+UnknownJournal:C006"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The evidence states that 1C rate does not generate sufficient heat to trigger SEI decomposition, but this is a condition-specific observation about heat generation, not a general safety guarantee. It does not account for other abuse conditions, accumulated damage, or elevated ambient temperature. Concluding safety regardless of cycle count is an inadmissible overgeneralization from a single operating condition observation. This is a conservative-appearing but incorrect distractor.",
+            "error_type": "Overgeneralization — extending a single-condition result to a universal safety claim",
+            "evidence_refs": [
+              "TR_Mechanism+203+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The evidence attributes earlier cutoff voltage to capacity fade from cyclable lithium reduction. However, stating that this is due to reduced cyclable lithium rather than rate capability change presents a false dichotomy that is not fully supported. The evidence identifies cyclable lithium reduction as the cause but does not rule out rate capability contributions. More critically, the option's framing implies a clean mechanistic exclusion that the evidence does not establish.",
+            "error_type": "Causal exclusion claim beyond evidence scope",
+            "evidence_refs": [
+              "TR_Mechanism+203+UnknownJournal:C006"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence states that 2C rate was required to observe SEI decomposition effects because higher C rates generate more heat due to higher current flow. SEI decomposition triggers subsequent exothermic reactions leading to thermal runaway. The mechanism chain — higher current → more heat → temperature enters SEI decomposition range → cascade initiated — is directly supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+203+UnknownJournal:C004",
+              "TR_Mechanism+203+UnknownJournal:C001"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "This is a counterintuitive-appearing but incorrect option. While SEI growth rate decreases with layer thickness, the thermal runaway risk is not primarily determined by ongoing SEI formation heat but by the decomposition of the existing SEI layer once temperature thresholds are reached. A thicker, more established SEI layer still decomposes exothermically if the temperature range is entered. The evidence does not support the conclusion that reduced growth rate implies reduced thermal runaway risk.",
+            "error_type": "Mechanism confusion — conflating SEI formation heat with SEI decomposition risk",
+            "evidence_refs": [
+              "TR_Mechanism+203+UnknownJournal:C001",
+              "TR_Mechanism+203+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Evidence explicitly states that the rate of SEI decomposition reaction and heat release increases exponentially with temperature due to the activation energy barrier mechanism. This means once the decomposition temperature range is entered, the process self-accelerates rather than proceeding at a constant rate.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+203+UnknownJournal:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinguishing SEI formation heat from SEI decomposition risk; understanding exponential self-acceleration of decomposition once initiated; recognizing that reduced SEI growth rate does not reduce decomposition-triggered runaway risk.",
+        "primary_boundary": "SEI growth rate slowing does not reduce thermal runaway risk from SEI decomposition; the decomposition risk depends on temperature reaching the threshold range, not on ongoing formation rate.",
+        "intended_error_modes": [
+          "Conflating SEI formation rate with SEI decomposition hazard",
+          "Treating 1C safety observation as a universal safety guarantee across all conditions",
+          "Extending the growth-rate-to-capacity-fade relationship without evidence support",
+          "Assuming linear rather than exponential heat release from SEI decomposition"
+        ],
+        "disallowed_extrapolations": [
+          "Reduced SEI growth rate implies reduced thermal runaway risk",
+          "1C safe operation guarantees safety regardless of accumulated cycling history",
+          "SEI formation heat is the primary driver of thermal runaway risk rather than SEI decomposition heat"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery engineer is designing a thermal management intervention for a lithium-ion cell that is being externally heated toward thermal runaway. The engineer knows that: (1) thermal runaway is initiated by the negative electrode material reaction under the heating conditions; (2) the SEI membrane decomposes exothermically within a specific temperature range before the negative electrode reaction dominates; (3) once full thermal runaway develops, the positive electrode reaction generates approximately three times the heat of the negative electrode reaction; (4) cooling at 293.15 K applied to the negative electrode region before SEI decomposition begins reliably suppresses thermal runaway, and the timing of application within that pre-decomposition window does not affect the outcome. The engineer proposes two alternative intervention strategies: Strategy X applies cooling to the positive electrode region at the onset of full thermal runaway, targeting the dominant heat source at that stage. Strategy Y applies cooling to the negative electrode region before SEI decomposition begins, targeting the initiating reaction. Explain which strategy is more likely to suppress thermal runaway and why, specifically addressing why the positive electrode's larger heat contribution during full runaway does not make Strategy X superior to Strategy Y."
+      },
+      "ground_truth": {
+        "gold_answer": "Strategy Y is more likely to suppress thermal runaway. The suppression mechanism of cooling the negative electrode before SEI decomposition begins is to inhibit the negative electrode material reaction, which is the trigger for the thermal runaway cascade. By interrupting the cascade at its initiation point, the subsequent stages — including the stage at which the positive electrode reaction dominates — are prevented from occurring. Strategy X targets the positive electrode at the stage of full thermal runaway, but by that point the cascade is already in progress and the system is in an uncontrollable state. The positive electrode's ~3× heat contribution is a feature of the fully developed runaway, not of the initiation stage. Cooling the dominant heat source during runaway does not address the trigger mechanism and therefore cannot reliably suppress the event. The critical insight is that the causal sequence matters: suppressing the trigger (negative electrode reaction, pre-SEI-decomposition) prevents the system from ever reaching the stage where positive electrode dominance is relevant. Strategy X addresses the wrong stage of the sequence, while Strategy Y addresses the correct stage.",
+        "must_include": [
+          "Strategy Y is more effective because it targets the initiating reaction before the cascade begins",
+          "Cooling the negative electrode before SEI decomposition suppresses the negative electrode material reaction that triggers thermal runaway",
+          "By the time full thermal runaway develops (Strategy X's intervention point), the cascade is already underway and cannot be reliably stopped by targeting the positive electrode",
+          "The positive electrode's larger heat contribution is relevant only during fully developed runaway, not during the initiation stage",
+          "The causal sequence — negative electrode reaction triggers cascade — is the reason stage-of-intervention matters more than heat-source magnitude"
+        ],
+        "disallowed_extrapolations": [
+          "Strategy X can suppress thermal runaway if applied with sufficient cooling capacity",
+          "The timing of Strategy Y within the pre-SEI-decomposition window affects its effectiveness",
+          "Cooling the positive electrode at any stage is equivalent in effectiveness to cooling the negative electrode before SEI decomposition",
+          "The three-times heat ratio implies the positive electrode is always the correct intervention target"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Stage-dependent intervention logic: understanding that the causal position of a reaction in the thermal runaway sequence determines intervention effectiveness, independent of the heat magnitude that reaction contributes during fully developed runaway.",
+        "primary_boundary": "Intervention effectiveness is determined by whether the target is the trigger mechanism at the correct stage, not by the magnitude of heat generation of the targeted reaction during full runaway.",
+        "intended_error_modes": [
+          "Selecting Strategy X because the positive electrode is the dominant heat source during runaway",
+          "Failing to recognize that targeting the dominant heat source during full runaway does not prevent the cascade from having already started",
+          "Treating heat magnitude as the primary criterion for intervention target selection rather than causal position in the sequence"
+        ]
+      }
+    }
+  ]
+}

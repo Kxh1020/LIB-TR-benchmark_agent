@@ -1,0 +1,132 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "During thermal runaway testing of 280Ah LiFePO4 prismatic cells, cells at 0%, 25%, and 50% SOC all show a temperature rise followed by a subsequent decrease after prolonged heating, with peak temperatures of 77°C, 92.3°C, and 251.1°C respectively. Cells above 50% SOC exhibit full thermal runaway. The Flammability Hazard Index ranks as 50% SOC > 75% SOC > 25% SOC. An engineer must assess safety implications for a storage system operating between 30% and 60% SOC. Which conclusions are admissible?",
+        "options": [
+          "A. Restricting operating SOC to below 50% eliminates thermal runaway risk for this cell chemistry under the tested heating conditions.",
+          "B. A cell stored at 50% SOC that does not progress to full thermal runaway under prolonged heating may still generate vent gas with a higher flammability hazard index than a cell at 75% SOC.",
+          "C. Because the 50% SOC cell reached 251.1°C without full thermal runaway, its vent gas flammability risk is necessarily lower than that of a 75% SOC cell that undergoes complete thermal runaway.",
+          "D. The non-monotonic behavior of the Flammability Hazard Index with SOC means that reducing SOC from 75% to 50% does not reduce the flammability hazard of emitted gases.",
+          "E. The critical threshold behavior at 50% SOC implies that cells operating near this boundary require flammability hazard assessment independent of thermal runaway occurrence.",
+          "F. Since cells below 50% SOC do not exhibit full thermal runaway, gas emission volumes at those SOC levels are negligible and pose no meaningful flammability concern."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "D",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "Evidence shows 50% SOC itself is the critical threshold; operating below it reduces but the evidence does not support 'eliminates' TR risk under all conditions.",
+            "error_type": "protective mechanism overclaim / absolute-language boundary violation",
+            "evidence_refs": [
+              "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C008"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "FHI at 50% SOC exceeds that at 75% SOC; a 50% SOC cell that vents without full TR can still produce gas with higher FHI than a 75% SOC cell.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "This inverts the FHI ordering; 50% SOC vent gas has higher FHI than 75% SOC, so lower peak temperature does not imply lower flammability hazard.",
+            "error_type": "causal overclaim / condition violation",
+            "evidence_refs": [
+              "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "FHI is higher at 50% than 75% SOC; reducing from 75% to 50% increases flammability hazard, confirming non-monotonic behavior.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The threshold at 50% SOC and non-monotonic FHI behavior require flammability assessment even when full TR does not occur.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C005",
+              "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C008"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Cells at 25% SOC still produce vent gas with LFL of 10–15% and RF ~43.7%; absence of full TR does not imply negligible flammability concern.",
+            "error_type": "scope expansion / protective mechanism overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C006",
+              "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C010"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Decoupling of thermal runaway occurrence from flammability hazard ranking; non-monotonic FHI behavior and its safety implications",
+        "primary_boundary": "Absence of full thermal runaway does not imply low flammability hazard; FHI is non-monotonic with SOC and must be assessed independently",
+        "intended_error_modes": [
+          "equating no-TR outcome with no flammability risk",
+          "assuming FHI increases monotonically with SOC",
+          "treating 50% SOC threshold as a safe lower bound"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming SOC restriction below 50% eliminates TR risk under all conditions",
+          "Inferring flammability hazard rank from thermal severity alone"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A safety engineer is designing a ventilation and fire suppression protocol for a battery energy storage system using 280Ah LiFePO4 prismatic cells. The system operates across a range of SOC levels. The engineer proposes that the highest flammability hazard from vent gas emissions occurs at the highest operational SOC, and therefore the suppression system should be sized for the 75% SOC worst-case scenario. Using engineering reasoning about vent gas composition and flammability properties, evaluate whether this proposal is justified, and identify what the evidence-supported worst-case scenario should be for two distinct flammability metrics."
+      },
+      "ground_truth": {
+        "gold_answer": "The proposal is not justified. While 75% SOC produces the largest gas volume and highest thermal severity, flammability hazard does not increase monotonically with SOC. The Flammability Hazard Index is highest at 50% SOC, not 75% SOC, making 50% SOC the worst case for overall flammability hazard. For ignition risk (lower flammability limit), 75% SOC vent gas has a lower LFL (~5%) than 25% or 50% SOC gas (10–15%), making 75% SOC the worst case for ease of ignition. However, for deflagration risk and flammable range width, 50% SOC is the worst case: its upper flammability limit (55–65%) far exceeds that of 75% SOC (4.7–6.6%), and its flammable range (~48.5%) is the widest. The suppression system should therefore be sized considering 50% SOC as the primary worst case for deflagration and overall flammability hazard, while also accounting for the lower ignition threshold at 75% SOC.",
+        "must_include": [
+          "FHI is highest at 50% SOC, not 75% SOC",
+          "flammability hazard does not increase monotonically with SOC",
+          "75% SOC has the lowest LFL (~5%), indicating easiest ignition",
+          "50% SOC has the widest flammable range and highest deflagration risk",
+          "UFL at 75% SOC (4.7–6.6%) is far lower than at 50% SOC (55–65%)",
+          "the proposal to use 75% SOC as the sole worst case is not supported"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming 75% SOC is the worst case for all flammability metrics",
+          "Claiming flammable range increases monotonically with SOC or gas volume",
+          "Recommending a specific suppression system design parameter not derivable from the evidence",
+          "Asserting that 50% SOC cells cannot produce dangerous vent gas because they may not reach full thermal runaway"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Non-monotonic relationship between SOC and multiple distinct flammability metrics; correct identification of worst-case SOC conditions for different hazard types",
+        "primary_boundary": "Thermal severity and gas volume do not determine flammability hazard ranking; FHI, LFL, UFL, and flammable range must each be evaluated independently against SOC",
+        "intended_error_modes": [
+          "assuming highest SOC equals highest flammability hazard for all metrics",
+          "conflating gas production volume with flammable range",
+          "failing to distinguish ignition risk (LFL-driven) from deflagration risk (UFL/RF-driven)"
+        ]
+      }
+    }
+  ]
+}

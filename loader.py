@@ -1,4 +1,5 @@
 from pathlib import Path
+import json
 
 from pdfminer.high_level import extract_text
 
@@ -53,10 +54,15 @@ def load_human_questions(project_root: Path) -> dict:
     human_questions_path = (
         DATA_PATHS["human_questions"]
         if project_root == DATA_PATHS["human_questions"].parent.parent
-        else project_root / "data" / "human_questions.txt"
+        else project_root / "data" / "human_questions.json"
+    )
+    # Keep downstream interface unchanged: provide a single text blob.
+    human_questions_text = json.dumps(
+        json.loads(human_questions_path.read_text(encoding="utf-8")),
+        ensure_ascii=False,
     )
     return {
-        "human_questions_text": load_text(human_questions_path),
+        "human_questions_text": human_questions_text,
     }
 
 

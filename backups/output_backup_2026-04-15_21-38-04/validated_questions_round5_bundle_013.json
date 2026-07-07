@@ -1,0 +1,238 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is evaluating two NMC cathode formulations at high mass loading. Formulation A uses a high carbon black content with CB:B > 1 and high calendering stress. Formulation B uses a reduced carbon black content with CB:B = 1 and no calendering. The engineer observes that at 5C discharge, Formulation B yields nearly zero specific discharge capacity, while Formulation A performs substantially better. The engineer then proposes that the performance gap is primarily attributable to electronic resistance differences, and that applying moderate calendering to Formulation B would recover most of its capacity at 5C. Which of the following conclusions are admissible given the described conditions?",
+        "options": [
+          "A. The near-zero capacity of Formulation B at 5C is consistent with both elevated electronic resistance from reduced carbon black content and absence of calendering-induced densification, making it inadmissible to attribute the failure to a single factor.",
+          "B. Increasing calendering stress on Formulation B would necessarily recover its 5C capacity to match Formulation A, because calendering is the dominant variable controlling high-rate performance at high mass loading.",
+          "C. The electronic resistance increase from reducing carbon black content is a contributing factor to Formulation B's degraded high-rate performance, but the claim that moderate calendering alone recovers most capacity is not fully supported without knowing whether ionic transport limitations are also active at the relevant calendering level.",
+          "D. At high mass loading and non-calendered conditions, the specific discharge capacity approaching zero at 5C indicates that ionic conductivity limitations are the sole governing mechanism, since electronic resistance effects are negligible at high mass loading.",
+          "E. The performance difference between Formulation A and Formulation B at 5C is consistent with the combined effect of lower electronic conductivity and absence of calendering, but the proportional contribution of each factor cannot be determined from the described conditions alone.",
+          "F. Because ionic conductivity limitations become significant only beyond a specific calendering stress threshold for NMC, a non-calendered high-mass-loading electrode is unlikely to be limited by ion transport, and the near-zero capacity must therefore be attributed primarily to electronic resistance."
+        ],
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Both reduced carbon black content and absence of calendering independently increase specific electronic resistance and reduce capacity at high mass loading. Attributing failure to a single factor violates the multi-factor interaction supported by the evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+192+UnknownJournal:C001",
+              "TR_Dynamics+192+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The evidence shows calendering improves capacity, but does not support the claim that moderate calendering alone would bring Formulation B to match Formulation A, especially given the compounding effect of reduced carbon black. This is a causal overclaim.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Dynamics+192+UnknownJournal:C002",
+              "TR_Dynamics+192+UnknownJournal:C001"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Electronic resistance from reduced carbon black is a supported contributing factor. However, ionic transport limitations become significant beyond a specific calendering threshold for NMC; a non-calendered electrode is not necessarily below that threshold in terms of porosity effects, and the claim about moderate calendering recovering most capacity requires knowing the operative regime.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+192+UnknownJournal:C001",
+              "TR_Dynamics+192+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence does not support attributing near-zero capacity solely to ionic conductivity at non-calendered conditions. In fact, the ionic conductivity threshold evidence refers to over-calendering, not under-calendering. Electronic resistance from low carbon black content is a supported mechanism at high mass loading.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Dynamics+192+UnknownJournal:C001",
+              "TR_Dynamics+192+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The combined effect of lower electronic conductivity and absence of calendering is consistent with near-zero capacity at 5C for high mass loading. The proportional contribution of each factor is not separable from the described conditions, making this a correctly bounded conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+192+UnknownJournal:C001",
+              "TR_Dynamics+192+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The ionic conductivity threshold evidence describes over-calendering as the regime where ion transport becomes limiting, not under-calendering. A non-calendered electrode is not necessarily free from ion transport issues due to high mass loading and low densification. The reasoning inverts the direction of the threshold effect.",
+            "error_type": "condition_violation",
+            "evidence_refs": [
+              "TR_Dynamics+192+UnknownJournal:C003",
+              "TR_Dynamics+192+UnknownJournal:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-factor attribution of capacity failure at high mass loading under combined electronic resistance and calendering conditions",
+        "primary_boundary": "The evidence supports multi-factor interaction between carbon black content and calendering; neither factor alone is sufficient to explain or recover performance, and ionic transport threshold evidence applies to over-calendering, not under-calendering.",
+        "intended_error_modes": [
+          "causal_overclaim attributing failure to single factor",
+          "mechanism_substitution confusing ionic and electronic resistance regimes",
+          "condition_violation inverting the direction of the calendering threshold"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming moderate calendering alone recovers Formulation B capacity to match Formulation A",
+          "Attributing near-zero capacity solely to ionic conductivity at non-calendered conditions",
+          "Treating the over-calendering ionic threshold as applicable to under-calendered electrodes"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is comparing NMC and LMO cathode chemistries across a range of C-rates and calendering conditions. At low C-rates, NMC shows higher specific discharge capacity than LMO. At high C-rates, LMO shows higher specific discharge capacity than NMC. The engineer observes that increasing calendering stress shifts the C-rate at which LMO becomes superior toward higher values. The engineer also notes that for NMC at high mass loading, non-calendered cells approach zero specific discharge capacity at 5C, while low mass loading non-calendered cells show roughly 50% deterioration relative to the high-calendering configuration. The engineer proposes that for a high-power application requiring consistent 5C delivery, LMO with high calendering is always preferable to NMC regardless of mass loading. Which of the following assessments are supported?",
+        "options": [
+          "A. The crossover C-rate behavior means that at sufficiently low C-rates, NMC can outperform LMO even at high calendering stress, so a blanket preference for LMO at all C-rates is not supported.",
+          "B. The engineer's proposal that LMO with high calendering is always preferable for 5C delivery is admissible because the crossover C-rate shifts toward higher values with increasing calendering, implying LMO superiority extends over a wider range.",
+          "C. At high mass loading and non-calendered conditions, NMC's near-zero capacity at 5C makes it unsuitable for high-power delivery in that configuration, but this does not establish LMO's superiority at 5C under all mass loading and calendering combinations.",
+          "D. Increasing calendering stress improves cell-to-cell consistency for both chemistries, with the largest improvement occurring between non-calendered and medium calendering levels, which is a secondary benefit relevant to manufacturing quality but does not determine which chemistry is preferable at 5C.",
+          "E. Because ionic conductivity limitations for NMC become significant only beyond a specific calendering threshold, NMC cells calendered below that threshold are not limited by ion transport at 5C, and their capacity at 5C is therefore governed solely by electronic resistance.",
+          "F. The shift of the crossover C-rate toward higher values with increasing calendering implies that at sufficiently high calendering stress, NMC could become superior to LMO even at high C-rates."
+        ],
+        "correct_options": [
+          "A",
+          "C",
+          "D"
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The crossover C-rate evidence directly establishes that NMC outperforms LMO at low C-rates. A blanket preference for LMO at all C-rates contradicts this evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+192+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Shifting the crossover C-rate toward higher values means LMO's superiority at high C-rates is preserved or extended, but this does not make LMO always preferable at all C-rates. At low C-rates, NMC remains superior. The 'always preferable' claim is an overgeneralization.",
+            "error_type": "overgeneralization",
+            "evidence_refs": [
+              "TR_Dynamics+192+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The near-zero capacity of NMC at high mass loading and non-calendered conditions at 5C is evidence-supported. However, this specific configuration result cannot be generalized to all mass loading and calendering combinations, making the bounded conclusion admissible.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+192+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The evidence supports that calendering reduces cell-to-cell variability with the largest improvement between non-calendered and medium calendering. This is a manufacturing quality benefit that is real but distinct from the C-rate performance comparison.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+192+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The evidence states ionic conductivity limitations become significant beyond a specific calendering threshold, but this does not imply that below that threshold, electronic resistance is the sole governing mechanism. Other factors, including mass loading effects, remain active. This is a scope expansion error.",
+            "error_type": "scope_expansion",
+            "evidence_refs": [
+              "TR_Dynamics+192+UnknownJournal:C003",
+              "TR_Dynamics+192+UnknownJournal:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence states that increasing calendering shifts the crossover C-rate toward higher values, meaning LMO's advantage at high C-rates is maintained or extended. This does not imply NMC would become superior at high C-rates with high calendering — the direction of the shift is opposite to what this option claims.",
+            "error_type": "directional_inversion",
+            "evidence_refs": [
+              "TR_Dynamics+192+UnknownJournal:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of chemistry-selection recommendations across C-rate, mass loading, and calendering conditions",
+        "primary_boundary": "Crossover C-rate behavior means NMC vs. LMO preference is regime-dependent; blanket recommendations violate this boundary. Calendering threshold for ionic transport does not eliminate other limiting mechanisms.",
+        "intended_error_modes": [
+          "overgeneralization: LMO always preferable at 5C regardless of conditions",
+          "scope_expansion: below ionic threshold implies electronic resistance is sole mechanism",
+          "directional_inversion: misreading crossover shift direction"
+        ],
+        "disallowed_extrapolations": [
+          "LMO is always preferable to NMC at 5C regardless of mass loading or calendering",
+          "Below the ionic conductivity threshold, electronic resistance is the only limiting mechanism",
+          "High calendering makes NMC superior to LMO at high C-rates"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A lithium-ion cell reaches a state where its internal temperature and pressure are at their maximum values, the cooling system is no longer functioning, and venting with flammable gas release is increasing over time. An engineer states that the cell is in a recoverable condition because the explosion has not yet occurred. A second engineer argues that once this state is reached, the progression toward gas ignition and pressure release by explosion is determined by the thermally autocatalytic nature of the reaction sequence, and that the absence of an explosion at the moment of observation does not indicate recoverability. Using the relationship between cooling capacity loss, thermally autocatalytic reaction behavior, and the role of LiPF6 decomposition in controlling the reaction sequence, explain which engineer's assessment is better supported and identify the specific mechanism that makes the pre-explosion state non-recoverable under the described conditions."
+      },
+      "ground_truth": {
+        "gold_answer": "The second engineer's assessment is better supported. Once maximum internal temperature and pressure are reached, cooling capacity is null, and flammable gas venting is increasing, the system is in a state where the thermally autocatalytic runaway of a series of reactions is already driving the progression. The absence of explosion at the moment of observation reflects only that the critical point — where gas catches fire and pressure is released by explosion — has not yet been reached, not that the system is recoverable. The mechanism making this state non-recoverable is the thermally autocatalytic character of the reaction sequence: each reaction step generates heat that accelerates subsequent steps, and with cooling capacity at zero, there is no barrier to interrupt this self-reinforcing progression. Additionally, LiPF6 decomposition controls the series of runaway reactions independent of cathode chemistry, meaning the reaction sequence is driven by the electrolyte salt decomposition pathway which, once initiated under these conditions, proceeds without an external control mechanism to arrest it. The first engineer's reasoning incorrectly treats the pre-explosion state as a stable or recoverable condition, ignoring that the autocatalytic mechanism and null cooling capacity together define a trajectory toward explosion rather than a steady state.",
+        "must_include": [
+          "thermally autocatalytic nature of the reaction sequence as the non-recoverability mechanism",
+          "null cooling capacity removes the barrier that could interrupt the sequence",
+          "LiPF6 decomposition controls the reaction sequence independent of cathode chemistry",
+          "pre-explosion state reflects trajectory toward explosion, not a recoverable steady state",
+          "second engineer's assessment is better supported"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming that explosion can be prevented once maximum temperature and pressure are reached with null cooling",
+          "Attributing non-recoverability solely to cathode chemistry rather than the electrolyte-driven autocatalytic sequence",
+          "Claiming that LiPF6 decomposition is the only heat source without acknowledging the autocatalytic coupling"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of recoverability judgment in Criticality Class V conditions, integrating autocatalytic mechanism, cooling barrier loss, and LiPF6 role",
+        "primary_boundary": "The pre-explosion state under null cooling and maximum temperature/pressure is not a recoverable condition because the thermally autocatalytic mechanism is self-sustaining without a cooling barrier; the absence of explosion is a temporal observation, not a safety indicator.",
+        "intended_error_modes": [
+          "treating absence of explosion as evidence of recoverability",
+          "attributing non-recoverability to cathode chemistry rather than electrolyte-driven autocatalytic sequence",
+          "ignoring the coupling between null cooling capacity and autocatalytic reaction progression"
+        ]
+      }
+    }
+  ]
+}

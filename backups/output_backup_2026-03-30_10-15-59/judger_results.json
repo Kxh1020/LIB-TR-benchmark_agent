@@ -1,0 +1,294 @@
+{
+  "产气机理__产气机理2__产气机理3": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Internal temperature; discriminate by whether internal temperature begins a self-accelerating rise (dT/dt increasing despite constant external heating), indicating onset of runaway, versus only modest, heating-rate-limited increase consistent with early decomposition/gassing.",
+      "gold_answer": "Choose internal temperature (or, if not feasible, a proxy for self-heating like pressure rate-of-rise tied to rapid gas generation) because runaway is defined by internally accelerating heat generation: overheating triggers TR and decomposition reactions produce more heat/gas. Surface temperature or voltage alone cannot bound internal hot spots; early gas at ~110°C can come from LiPF6/SEI-related processes without implying runaway. The discrimination logic must hinge on detecting internal self-acceleration (dT/dt increasing without added external heating), not merely presence of gas.",
+      "score": 1.0,
+      "reason": "Selects internal temperature and uses correct discrimination logic based on detecting self-accelerating internal heating (increasing dT/dt not explained by external heating) versus modest, externally limited rise consistent with early gassing. Matches the key criterion distinguishing decomposition/gassing from runaway."
+    }
+  ],
+  "工程防护策略1-001__工程防护策略1-002__工程防护策略1-003": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C"
+      ],
+      "gold_answer": [
+        "A",
+        "C"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B"
+      ],
+      "gold_answer": [
+        "A",
+        "B"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Support with conditions: Evidence supports that adding an immiscible, separator‑wetting additive can localize at/within the separator and modify interfacial wetting/transport in a way that can reduce the severity of abuse reactions, including lowering or delaying peak heat generation/temperature rise during abusive events, while still allowing acceptable ion transport under normal cycling if concentration/viscosity are controlled.\n\nNot supported: The evidence does not demonstrate that such an additive prevents pack‑level fires, guarantees elimination of internal shorts, or ensures no thermal runaway propagation. It also does not prove protection under all abuse modes (crush, nail, external heating, overcharge) or across full‑size cells/packs, where venting, gas generation, mechanical damage, and module thermal coupling dominate outcomes. Therefore the additive can be justified as a cell‑level abuse‑severity mitigant, not as a definitive fire‑prevention or short‑circuit‑proofing solution.",
+      "gold_answer": "Supported: the additive can form a blocking layer in the separator that suppresses Li+ transport, and tests show large reductions in peak temperature during penetration/impact while 1C cycling behavior can remain nearly unchanged. Not supported: concluding it prevents internal shorts from forming, or guaranteeing pack-level fire prevention/crash safety; cell-level peak-temperature reduction and transport suppression do not establish those scale/regime claims.",
+      "score": 0.92,
+      "reason": "Matches the gold on the key supported points (separator-localized/wetting additive forming a barrier that suppresses transport and reduces peak temperature in abuse while keeping normal cycling acceptable) and the key boundary (cannot claim elimination of internal shorts or guarantee pack-level fire/crash safety). Minor loss of specificity: it doesn’t explicitly state a “blocking layer suppresses Li+ transport” or cite penetration/impact as the tested abuse modes as clearly as the gold."
+    }
+  ],
+  "建模预测71__建模预测94__建模预测95": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "D"
+      ],
+      "gold_answer": [
+        "A",
+        "D"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Rule-set using only cell surface temperature T and rise-rate dT/dt:\n1) Normal: T < 60°C AND dT/dt < 0.02°C/s.\n2) Self-heating onset (stage i): declare when (T ≥ 60°C AND dT/dt ≥ 0.02°C/s) persists for ≥30 s, OR when dT/dt increases by ≥0.02°C/s above its 5-min baseline while T ≥ 40°C for ≥30 s.\n3) TR trigger (stage ii): declare when any of the following persists for ≥10 s: (a) T ≥ 120°C, OR (b) dT/dt ≥ 0.2°C/s, OR (c) T ≥ 90°C AND dT/dt ≥ 0.1°C/s.\n4) Post-trigger propagation risk to neighbor (stage iii): declare “high propagation risk” when stage (ii) is true AND (T ≥ 150°C OR dT/dt ≥ 0.5°C/s) for ≥10 s; declare “critical propagation risk” when (T ≥ 200°C OR dT/dt ≥ 1.0°C/s) for ≥5 s. If risk is high/critical, command mitigation (isolation/cooling/shutdown) assuming adjacent cell at risk.\n\nLimitations (non-unique diagnosis with only T and dT/dt):\nA) The controller cannot uniquely distinguish internal exothermic self-heating from external heating (heater contact, ambient/hot gas exposure) that produces similar T and dT/dt.\nB) The controller cannot uniquely identify the internal failure mode (SEI breakdown vs separator damage vs vent/combustion) or SOC/state-of-health effects; the same thresholds can occur for different mechanisms.\nC) Surface T and dT/dt may lag core temperature; a cell can be in internal runaway while surface signals are delayed, so “stage” classification may be late or ambiguous.\nD) Propagation risk to a neighbor cannot be uniquely inferred without geometry, spacing, and thermal contact; the same cell T/dT/dt can correspond to very different heat flux to adjacent cells.",
+      "gold_answer": "Defensible rules: (i) declare self-heating onset when measured temperature rise-rate exceeds a chosen empirical threshold (T1 criterion). (ii) declare TR trigger only when temperature transitions from a stable/slowly varying level into a quasi-exponential, self-sustaining rise (T2 behavior), not merely from T1. (iii) for propagation risk, treat it as increasing when thermal coupling is stronger (lower equivalent thermal resistance via smaller spacing) and/or ambient temperature is higher; near a coupling-resistance threshold, small changes can shift propagation mode. Limitations: surface measurements may not equal jellyroll temperature, so ISC at separator melting cannot be uniquely inferred; crossing reaction temperature thresholds does not by itself prove TR trigger; timing between cells does not uniquely identify coupling resistance or mechanism.",
+      "score": 0.7,
+      "reason": "Meets (i) by defining self-heating onset via a dT/dt threshold and includes multiple valid non-identifiability limitations (surface vs core lag, external vs internal heating, mechanism ambiguity, geometry unknown). However, (ii) is not aligned with the gold: it declares TR trigger mainly by absolute T or dT/dt thresholds rather than explicitly requiring a transition into a quasi-exponential/self-sustaining rise, and it risks the disallowed idea that crossing temperature thresholds alone indicates trigger. For (iii), it notes spacing/thermal contact affects propagation risk, but does not incorporate ambient temperature dependence into the rule-set itself."
+    }
+  ],
+  "机械滥用2__机械滥用3__机械滥用4": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C"
+      ],
+      "gold_answer": [
+        "A",
+        "C"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C"
+      ],
+      "gold_answer": [
+        "A",
+        "C"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "External overheating at 100% SOC, because it maximizes stored energy and promotes temperature-driven runaway propagation, making it a conservative single-condition screen to rank worst-case thermal runaway severity for the design change without implying it represents all abuse hazards.",
+      "gold_answer": "Choose nail penetration at 100% SOC. Evidence indicates (i) for NCM811, nail penetration produces more severe TR than external overheating, and (ii) higher SOC produces much higher peak temperatures and SOC effect is more significant than penetration depth. This makes 100% SOC + nail a defensible worst-severity screen, while explicitly noting it does not eliminate the need to assess other triggers at pack level.",
+      "score": 0.4,
+      "reason": "Gets the 100% SOC (conservative SOC choice) and includes a limitation about not covering all hazards, but chooses external overheating instead of the gold-required nail penetration and lacks the key justification that nail is more severe than overheating for NCM811."
+    }
+  ],
+  "气体排放65__气体排放79__气体排放81": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "D"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "D"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Critique: The claim that adding CO2 always reduces flammability hazard is not defensible because the apparent flammability limits depend on the ignition criterion (≥7% pressure rise), and the given constraint says that with increasing CO2 both LFL and UFL can increase; thus CO2 addition can shift the flammable range rather than monotonically suppress it, and the effect is not universally beneficial. Bounded conclusion: Increasing CO2 fraction can change the measured flammability limits (including increasing LFL and UFL) under the stated test definition, so any benefit must be evaluated case-by-case for the specific mixture and CO2 level rather than assumed.",
+      "gold_answer": "Critique: the proposal overclaims monotonic hazard reduction. Evidence shows CO2 can raise LFL (harder to ignite at low fuel) but can also raise UFL, potentially widening the flammable window depending on mixture state; “universally beneficial” is not admissible. Also, the conclusion is limited to the tested ignition criterion and conditions. Bounded conclusion: under the specified vessel test, increasing CO2 can increase LFL and can also increase UFL; therefore CO2 addition does not guarantee a narrower flammable range or lower flammability risk.",
+      "score": 1.0,
+      "reason": "Matches all required points: notes CO2 can increase both LFL and UFL, so hazard reduction/narrowing isn’t guaranteed, and explicitly bounds conclusions to the stated vessel/≥7% pressure-rise ignition criterion and test conditions."
+    }
+  ],
+  "热失控传播行为1__热失控传播行为2__热失控传播行为3": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C"
+      ],
+      "gold_answer": [
+        "A",
+        "C"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "D"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C"
+      ],
+      "gold_answer": [
+        "A",
+        "C"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Visible white smoke from the safety valve, because the multi-cue definition is trying to avoid declaring TR based on a placement-dependent, delayed, and ambiguous external manifestation; smoke/vent appearance depends on venting path and observation conditions and can occur after (or without clearly indicating) the internal onset of runaway, making it unreliable for comparing heater placements on the same cell.",
+      "gold_answer": "Least defensible to use alone is the visible white-smoke cue. The multi-cue definition requires concurrent fast temperature rise and sustained mass loss in addition to smoke, implying smoke alone is an ambiguous proxy (venting/visibility/jetting can vary with heating placement) and could mis-rank onset compared with energetic internal escalation. Using only smoke risks conflating venting intensity/observability with the underlying runaway transition that the rate and mass-loss criteria jointly capture.",
+      "score": 1.0,
+      "reason": "Correctly identifies visible white smoke as least defensible and explains it is a placement/observability-dependent, ambiguous proxy that the multi-cue definition combines with temperature rise and mass loss to avoid misclassifying/misranking TR onset."
+    }
+  ],
+  "热失控动力学1__热失控动力学2__热失控动力学3": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C"
+      ],
+      "gold_answer": [
+        "A",
+        "C"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B"
+      ],
+      "gold_answer": [
+        "A",
+        "B"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Lower ambient pressure likely promotes earlier gas release/venting and higher internal convective loss (less external heat transfer to surroundings but stronger evaporative/pressure-relief cooling during venting), so the cell may tolerate a higher temperature before self-heating becomes uncontrollable (higher Ttr). However, once venting begins, the reduced external backpressure can cause more rapid depressurization, faster electrolyte loss/oxygen access and separator drying/shrinkage, so the transition from first vent to runaway can accelerate (shorter tinterval). Safety interpretation: low pressure does not mean reduced hazard—runaway may start later in temperature but provide less warning time after initial venting. Implication: treat any venting event as an immediate escalation trigger and shorten detection-to-mitigation response time (e.g., faster shutdown/ventilation/suppression) under low-pressure conditions.",
+      "gold_answer": "An admissible interpretation is that lower pressure shifts the onset condition (higher measured Ttr) while accelerating escalation after venting (shorter tinterval), so risk cannot be judged from Ttr alone. The post-vent window for detection/mitigation shrinks at low pressure even if onset occurs at a higher temperature. A defensible hazard-management implication is to treat vent detection as higher urgency and design mitigation/venting controls for a shorter response time under low-pressure environments.",
+      "score": 0.8,
+      "reason": "Matches the core safety interpretation: higher Ttr at low pressure does not imply overall safer, and shorter tinterval means a reduced post-vent response window; gives a correct hazard-management implication (treat venting as urgent/shorter mitigation time). However, it overreaches with specific mechanistic claims (e.g., oxygen access, separator drying/shrinkage, convective/evaporative cooling) that are not supported by only the two reported metrics and are flagged as disallowed causal attribution."
+    }
+  ]
+}

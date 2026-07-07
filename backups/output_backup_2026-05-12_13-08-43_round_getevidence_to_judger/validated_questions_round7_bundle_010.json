@@ -1,0 +1,115 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is comparing the fire and explosion hazard of NMC and LFP pouch cells during thermal runaway (TR) triggered by thermal abuse at full charge. NMC cells reach peak temperatures of 505–548°C and NMC vent gas shows laminar burning velocity (Su) of 222.6 cm/s during the venting phase but only 77.2 cm/s during the TR phase. LFP cells reach only 278–286°C and do not ignite. The engineer concludes that NMC cells pose a greater combined thermal and combustion hazard in every respect. Which options correctly evaluate this conclusion?",
+        "options": [
+          "A. The conclusion is fully supported because NMC peak temperatures and Su values both exceed LFP values across all phases.",
+          "B. The conclusion overstates the case: LFP TR-phase Su (105.9 cm/s) exceeds NMC TR-phase Su (77.2 cm/s), meaning LFP vent gas is more reactive during the TR phase despite lower cell temperatures.",
+          "C. The conclusion is partially correct for thermal hazard but incorrect for combustion hazard ranking during the TR phase, since LFP TR-phase vent gas burns faster than NMC TR-phase vent gas.",
+          "D. LFP cells pose a lower explosion hazard than NMC cells in all phases because their lower peak temperature prevents H2 generation.",
+          "E. The phase-specific Su inversion between LFP and NMC during TR arises because H2 release timing differs: LFP releases H2 at TR onset driving higher TR-phase Su, while NMC venting-phase H2 dominates its Su profile.",
+          "F. Because LFP cells do not ignite during TR regardless of SOC, their vent gas Su values are irrelevant to practical hazard assessment.",
+          "G. Using only a global averaged BVG composition to compare NMC and LFP hazard would underestimate the peak Su for both chemistries relative to phase-specific analysis."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "C",
+          "E",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "LFP TR-phase Su (105.9 cm/s) exceeds NMC TR-phase Su (77.2 cm/s); the ranking reverses in the TR phase.",
+            "error_type": "overgeneralization",
+            "evidence_refs": [
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C006",
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C007"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "LFP TR-phase Su 105.9 cm/s exceeds NMC TR-phase Su 77.2 cm/s; the engineer's universal ranking is not supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C006",
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C007"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "NMC thermal hazard exceeds LFP, but LFP TR-phase vent gas Su exceeds NMC TR-phase Su; the conclusion is partially incorrect.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C004",
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C006",
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C007"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "LFP TR-phase Su exceeds NMC TR-phase Su; lower temperature does not eliminate H2-driven combustion hazard in the TR phase.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C007",
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C010"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "H2 release at TR onset drives LFP TR-phase Su; NMC venting-phase H2 dominance explains its Su profile inversion across phases.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C006",
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C007",
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C010"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Non-ignition of the cell does not preclude vent gas explosion hazard in the surrounding environment; Su remains a relevant hazard metric.",
+            "error_type": "scope_expansion_error",
+            "evidence_refs": [
+              "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C004",
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C007"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "Phase-specific Su maxima exceed global averaged values; using only global composition underestimates peak hazard for both chemistries.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C015"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Phase-specific Su ranking inversion between LFP and NMC and its mechanistic basis",
+        "primary_boundary": "LFP TR-phase Su exceeds NMC TR-phase Su despite lower LFP cell temperatures; H2 release timing governs the inversion",
+        "intended_error_modes": [
+          "overgeneralization of NMC superiority across all phases",
+          "causal overclaim that lower temperature eliminates LFP combustion hazard",
+          "scope error treating cell non-ignition as eliminating vent gas hazard"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding LFP is safer than NMC in all combustion hazard dimensions",
+          "Using global BVG composition as equivalent to phase-specific analysis"
+        ]
+      }
+    }
+  ],
+  "short_answers": []
+}

@@ -1,0 +1,361 @@
+{
+  "TR_Protection+127+Journal_of_Energy_Storage__TR_Protection+131+Journal_of_Energy_Storage__TR_Protection+135+Journal_of_Energy_Storage": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery module engineer is comparing two insulation strategies for limiting thermal runaway propagation between cylindrical cells. Strategy A uses a nanofiber insulation layer between cells. Strategy B uses a composite of the same nanofiber material combined with a phase change material (PCM). Under identical trigger conditions, Strategy A extended the average thermal spreading time per cell by approximately 7-fold compared to an uninsulated baseline, while Strategy B prevented thermal runaway from spreading beyond the first cell entirely. The engineer proposes the following conclusions about the two strategies. Which of the following conclusions are supported by the described outcomes?",
+          "options": [
+            "A. Strategy A reduces the rate of thermal energy transfer between adjacent cells but cannot reduce the total energy transferred sufficiently to prevent the neighboring cell from eventually reaching thermal runaway.",
+            "B. Strategy A and Strategy B both prevent thermal runaway propagation; Strategy B simply achieves this outcome faster.",
+            "C. The zero-propagation outcome of Strategy B implies that the PCM component absorbs or redirects enough thermal energy to prevent the neighboring cell from crossing its thermal runaway threshold, which Strategy A alone cannot accomplish.",
+            "D. Because Strategy A already extends spreading time by 7-fold, doubling the nanofiber layer thickness would be sufficient to achieve the same zero-propagation result as Strategy B without requiring PCM.",
+            "E. The 7-fold improvement from Strategy A is sufficient to classify the module as thermally safe under all operating conditions.",
+            "F. Strategy B's zero-propagation result is specific to the module configuration tested and cannot be generalized to modules with different cell chemistries or form factors without further evidence.",
+            "G. The difference in outcome between Strategy A and Strategy B indicates that slowing thermal transfer rate alone is not the governing factor for zero propagation; a mechanism that limits total heat delivery to the neighboring cell is required."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "F",
+            "G"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The evidence explicitly states that nanofiber insulation slows thermal transfer but cannot reduce it sufficiently to prevent neighboring cells from eventually reaching thermal runaway, consistent with this conclusion.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+127+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Strategy A does not prevent propagation at all; it only slows it. The claim that both strategies prevent propagation is factually wrong based on the evidence.",
+              "error_type": "mechanism confusion \u2014 conflates slowing with preventing",
+              "evidence_refs": [
+                "TR_Protection+127+Journal_of_Energy_Storage:C003",
+                "TR_Protection+127+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "The zero-propagation result from the composite PCM strategy, absent from the nanofiber-only strategy, implies the PCM component provides a qualitatively different mechanism \u2014 limiting total thermal delivery rather than merely slowing transfer rate. This is a minimal engineering implication from the contrast between C003 and C005.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+127+Journal_of_Energy_Storage:C003",
+                "TR_Protection+127+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "The evidence shows that even a 7.36-fold improvement from nanofiber insulation still fails to prevent propagation. There is no evidence that increasing nanofiber thickness alone can achieve zero propagation; the PCM provides a qualitatively different mechanism. This is an unsupported extrapolation.",
+              "error_type": "unsupported extrapolation \u2014 assumes quantitative scaling of nanofiber can substitute for PCM mechanism",
+              "evidence_refs": [
+                "TR_Protection+127+Journal_of_Energy_Storage:C003",
+                "TR_Protection+127+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The 7-fold improvement describes a relative metric under the tested conditions. Generalizing this to 'thermally safe under all operating conditions' is an inadmissible scope expansion not supported by the evidence.",
+              "error_type": "overgeneralization \u2014 scope expansion beyond tested conditions",
+              "evidence_refs": [
+                "TR_Protection+127+Journal_of_Energy_Storage:C002"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "The zero-propagation result was demonstrated for a specific module configuration. Generalizing it to different chemistries or form factors without further evidence is not supported; this conservative boundary statement is admissible.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+127+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Correct",
+              "justification": "The contrast between Strategy A (slows transfer, fails to prevent propagation) and Strategy B (prevents propagation entirely) demonstrates that rate reduction alone is insufficient; a mechanism limiting total heat delivery is required. This is a direct mechanistic inference from the evidence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+127+Journal_of_Energy_Storage:C003",
+                "TR_Protection+127+Journal_of_Energy_Storage:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Distinguishing between slowing thermal transfer rate and preventing total heat delivery as mechanisms for zero thermal runaway propagation",
+          "primary_boundary": "Nanofiber insulation can slow but not prevent propagation; PCM composite achieves zero propagation through a qualitatively different mechanism \u2014 the boundary is between rate reduction and total energy limitation",
+          "intended_error_modes": [
+            "Conflating slowing propagation with preventing it (Option B)",
+            "Assuming quantitative scaling of a mechanism that is qualitatively insufficient (Option D)",
+            "Overgeneralizing a tested outcome to all operating conditions (Option E)"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming nanofiber thickness increase alone can achieve zero propagation",
+            "Generalizing zero-propagation result to all cell chemistries or module configurations",
+            "Treating 7-fold improvement as a universal safety certification"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A thermal management engineer is designing a forced-gas cooling system to suppress thermal runaway propagation in a densely packed battery module operating at a 3C discharge rate. Three candidate cooling gases are under consideration: air, nitrogen, and argon. The system operates at ambient pressure of 1 bar and flow speed of 0.5 m/s. The engineer knows that argon has higher density than air but lower heat capacity, while nitrogen has both higher heat capacity and lower density than argon. The engineer must select a gas and set a minimum convective heat transfer coefficient target. Which of the following conclusions are admissible given these conditions?",
+          "options": [
+            "A. Argon should be selected over nitrogen because its higher density produces greater convective momentum, which is the dominant factor in suppressing thermal runaway propagation at this flow speed.",
+            "B. Nitrogen is preferable to argon for suppressing thermal runaway propagation because heat capacity exerts a more significant influence on cooling rate than density under these conditions.",
+            "C. At 0.5 m/s flow speed and 1 bar, a convective heat transfer coefficient of 40 W/m\u00b2\u00b7K is sufficient to completely suppress thermal runaway propagation at 3C discharge rate.",
+            "D. Increasing ambient pressure from 1 bar to 3 bar while maintaining 0.5 m/s flow speed and 3C discharge rate can completely suppress thermal runaway propagation, even without changing the cooling gas.",
+            "E. Switching from air to nitrogen at fixed flow speed and pressure guarantees complete suppression of thermal runaway propagation regardless of discharge rate.",
+            "F. The superiority of nitrogen over argon for thermal runaway suppression is attributable to nitrogen's higher heat capacity compensating for its lower density relative to argon.",
+            "G. At 1 bar and 0.5 m/s, complete suppression of thermal runaway propagation at 3C discharge rate requires either increasing pressure to at least 3 bar or increasing flow speed to achieve a convective coefficient above 40 W/m\u00b2\u00b7K."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "D",
+            "F",
+            "G"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "The evidence explicitly states that despite argon's higher density, its lower heat capacity exerts a more significant influence on cooling rate, making argon inferior to nitrogen. Attributing dominance to density-driven convective momentum contradicts the evidence.",
+              "error_type": "mechanism confusion \u2014 inverts the relative importance of density vs. heat capacity",
+              "evidence_refs": [
+                "TR_Protection+131+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "The evidence directly states that argon's lower heat capacity exerts a more significant influence on cooling rate than its higher density, making nitrogen superior. This is an admissible conclusion.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+131+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "The 40 W/m\u00b2\u00b7K threshold for complete suppression was established under 2C discharge rate conditions. At 3C discharge rate, this threshold may not be sufficient. Applying the 2C threshold to 3C conditions violates a stated regime boundary.",
+              "error_type": "condition violation \u2014 applies threshold from a different discharge rate regime",
+              "evidence_refs": [
+                "TR_Protection+131+Journal_of_Energy_Storage:C001"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "The evidence states that at 3C discharge rate and 0.5 m/s flow speed, increasing pressure to 3 bar completely inhibited propagation. This is a direct evidence-supported conclusion under the stated conditions.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+131+Journal_of_Energy_Storage:C002"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The evidence supports nitrogen's superiority over argon under the tested conditions but does not establish that nitrogen guarantees complete suppression regardless of discharge rate. This is an inadmissible generalization across discharge rate regimes.",
+              "error_type": "overgeneralization \u2014 removes discharge rate constraint from a condition-dependent conclusion",
+              "evidence_refs": [
+                "TR_Protection+131+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "The evidence attributes nitrogen's superiority to its higher heat capacity compensating for lower density relative to argon, consistent with the stated mechanism. This is an admissible mechanistic conclusion.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+131+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Correct",
+              "justification": "At 1 bar and 0.5 m/s, the conditions do not meet the 40 W/m\u00b2\u00b7K threshold (which requires ~1 m/s) nor the 3-bar pressure threshold. Therefore, complete suppression at 3C requires increasing either pressure to 3 bar or flow speed to achieve the threshold coefficient. This is a multi-step admissibility inference from combining C001 and C002.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+131+Journal_of_Energy_Storage:C001",
+                "TR_Protection+131+Journal_of_Energy_Storage:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-factor interaction between cooling gas properties, pressure, flow speed, and discharge rate in suppressing thermal runaway propagation",
+          "primary_boundary": "The 40 W/m\u00b2\u00b7K suppression threshold applies at 2C, not necessarily at 3C; pressure-based suppression at 3 bar applies specifically at 3C and 0.5 m/s \u2014 these are regime-specific thresholds",
+          "intended_error_modes": [
+            "Applying a discharge-rate-specific threshold to a different discharge rate (Option C)",
+            "Inverting the relative importance of density vs. heat capacity for argon (Option A)",
+            "Overgeneralizing nitrogen's advantage across all discharge rates (Option E)"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming 40 W/m\u00b2\u00b7K guarantees suppression at discharge rates above 2C",
+            "Claiming nitrogen guarantees suppression regardless of discharge rate or pressure",
+            "Treating density as the dominant cooling factor over heat capacity"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "An engineer is evaluating the use of Ba(OH)\u2082\u00b78H\u2082O microcapsules incorporated into NCM811/graphite pouch cells as a thermal runaway mitigation strategy. The microcapsules have a polymer shell that ruptures above 120\u00b0C, releasing water that reacts with lithiated graphite. The engineer observes the following: at 4 g/Ah dosage, the maximum thermal runaway temperature is reduced substantially and the time to trigger thermal runaway is longer than at 0 g/Ah. At 6 g/Ah dosage, the maximum temperature is only marginally lower than at 4 g/Ah, but the time to trigger thermal runaway is shorter than at 4 g/Ah. Cycling tests show that encapsulated microcapsules at 4 g/Ah maintain capacity retention comparable to the baseline cell, while unencapsulated Ba(OH)\u2082\u00b78H\u2082O causes rapid capacity loss within the first few cycles. Which of the following conclusions are admissible?",
+          "options": [
+            "A. Increasing microcapsule dosage beyond 4 g/Ah reliably improves all safety-relevant metrics, since higher dosage provides more water for reaction with lithiated graphite.",
+            "B. The encapsulation of Ba(OH)\u2082\u00b78H\u2082O is necessary for preserving electrochemical performance during normal cycling, because direct contact between the active material and cell components causes irreversible degradation.",
+            "C. The reduction in thermal runaway trigger time observed at 6 g/Ah relative to 4 g/Ah is consistent with excessive microcapsule content promoting low-temperature side reactions near the shell rupture temperature, which accelerates the onset of thermal runaway.",
+            "D. Because the microcapsule shell ruptures above 120\u00b0C and SEI decomposition begins at 74\u00b0C, the microcapsules cannot intervene in the earliest stage of thermal runaway initiation and their protective effect is limited to reactions occurring above 120\u00b0C.",
+            "E. The marginal decrease in maximum temperature from 4 g/Ah to 6 g/Ah, combined with the shortened trigger time at 6 g/Ah, indicates that 4 g/Ah represents a more favorable operating point than 6 g/Ah when both peak temperature and trigger time are considered together.",
+            "F. The water released from microcapsules primarily reduces thermal runaway severity by reacting with the cathode material, since cathode decomposition is the dominant heat source in NCM811 cells.",
+            "G. The comparable cycling performance between the encapsulated microcapsule cell and the baseline demonstrates that the encapsulation strategy preserves normal electrochemical function, but does not confirm that the microcapsules remain structurally intact and fully functional after extended cycling."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "C",
+            "D",
+            "E",
+            "G"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "The evidence explicitly shows diminishing returns in maximum temperature reduction and a counterintuitive shortening of trigger time at 6 g/Ah. Increasing dosage does not reliably improve all safety metrics; trigger time worsens at 6 g/Ah.",
+              "error_type": "unjustified monotonicity \u2014 assumes all safety metrics improve with dosage",
+              "evidence_refs": [
+                "TR_Protection+135+Journal_of_Energy_Storage:C004",
+                "TR_Protection+135+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "The evidence shows that unencapsulated Ba(OH)\u2082\u00b78H\u2082O causes capacity retention to drop to 5.56% by the 9th cycle, while encapsulated microcapsules maintain ~97% retention. Encapsulation is therefore necessary to prevent direct electrochemical degradation.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+135+Journal_of_Energy_Storage:C006",
+                "TR_Protection+135+Journal_of_Energy_Storage:C010"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "The evidence attributes the shortened trigger time at 6 g/Ah to excessive microcapsule content accelerating low-temperature side reactions near 120\u00b0C involving lithiated graphite. This mechanistic attribution is directly supported.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+135+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "SEI decomposition begins at 74\u00b0C and the microcapsule shell ruptures above 120\u00b0C. Therefore, the microcapsules cannot intervene in the initial SEI-triggered self-heating stage. This is a mechanistic boundary conclusion supported by combining the two temperature thresholds.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+135+Journal_of_Energy_Storage:C001",
+                "TR_Protection+131+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "The evidence shows only a marginal 10.1\u00b0C further reduction in maximum temperature from 4 to 6 g/Ah, while trigger time decreases at 6 g/Ah. Considering both metrics together, 4 g/Ah is a more favorable operating point \u2014 this is a multi-factor trade-off conclusion supported by the evidence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+135+Journal_of_Energy_Storage:C004",
+                "TR_Protection+135+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The evidence shows that the water from microcapsules reacts with lithiated graphite (anode), reducing anode reaction enthalpy by 30.1% and suppressing subsequent anode-electrolyte reactions. There is no evidence that cathode reaction is the primary target or that cathode decomposition is the mechanism addressed.",
+              "error_type": "mechanism substitution \u2014 attributes the protective mechanism to the wrong electrode",
+              "evidence_refs": [
+                "TR_Protection+135+Journal_of_Energy_Storage:C007",
+                "TR_Protection+135+Journal_of_Energy_Storage:C008"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Correct",
+              "justification": "Comparable cycling performance confirms electrochemical function is preserved, but cycling tests do not directly measure microcapsule structural integrity or whether the capsules remain thermally responsive after cycling. This is an admissible scope-limitation statement.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+135+Journal_of_Energy_Storage:C010"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-metric trade-off analysis of microcapsule dosage and the boundary between electrochemical safety and thermal safety mechanisms",
+          "primary_boundary": "Increasing microcapsule dosage is non-monotonic across safety metrics \u2014 maximum temperature improves with diminishing returns while trigger time worsens above 4 g/Ah; the microcapsule activation temperature (120\u00b0C) creates a lower boundary below which no intervention occurs",
+          "intended_error_modes": [
+            "Assuming all safety metrics improve monotonically with dosage (Option A)",
+            "Attributing the water-based protective mechanism to the cathode rather than the anode (Option F)",
+            "Treating cycling performance equivalence as confirmation of full microcapsule functional integrity (partial trap in G)"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming microcapsules intervene in SEI decomposition at 74\u00b0C",
+            "Claiming higher dosage universally improves all thermal runaway metrics",
+            "Attributing the primary protective reaction to cathode decomposition"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A battery module uses a composite insulation layer consisting of a nanofiber material combined with a phase change material (PCM) between cells. This configuration prevents thermal runaway from propagating beyond the first cell. A second module uses only the nanofiber material without PCM; it slows thermal spreading significantly but thermal runaway eventually occurs in all cells. An engineer proposes replacing the composite layer with a thicker nanofiber-only layer, arguing that sufficient thickness will achieve the same zero-propagation result. Separately, a forced-gas cooling system using argon is proposed as a backup suppression mechanism, with the engineer arguing that argon's higher density relative to nitrogen makes it the superior cooling gas. Identify the specific mechanistic flaw in each of the two engineering proposals and explain why each proposal fails to achieve its stated objective based on the physical mechanisms involved."
+        },
+        "ground_truth": {
+          "gold_answer": "Proposal 1 (thicker nanofiber layer): The flaw is that nanofiber insulation only slows the rate of thermal transfer between cells but cannot reduce the total thermal energy delivered to the neighboring cell below the threshold required to trigger thermal runaway. The zero-propagation outcome of the composite layer is achieved because the PCM component provides a qualitatively different mechanism \u2014 absorbing or redirecting sufficient thermal energy to prevent the neighboring cell from crossing its thermal runaway threshold. Simply increasing nanofiber thickness increases the time delay but does not change the fundamental outcome: eventually, enough energy accumulates in the neighboring cell to trigger thermal runaway. The governing factor for zero propagation is not transfer rate but total energy delivery, which nanofiber alone cannot limit regardless of thickness. Proposal 2 (argon over nitrogen): The flaw is that the engineer prioritizes density as the dominant cooling property, but the evidence shows that heat capacity exerts a more significant influence on cooling rate than density for these gases. Although argon has higher density than nitrogen, its lower heat capacity makes it a less effective cooling medium. Nitrogen's higher heat capacity allows it to absorb more thermal energy per unit mass per degree of temperature rise, making it superior for suppressing thermal runaway propagation despite its lower density. Selecting argon based on density alone ignores the dominant physical property governing heat removal in this application.",
+          "must_include": [
+            "Nanofiber insulation slows thermal transfer rate but cannot prevent total energy delivery to neighboring cell",
+            "PCM provides a qualitatively different mechanism that limits total heat delivery, not just rate",
+            "Zero propagation requires limiting total energy, not merely slowing transfer rate",
+            "Argon's lower heat capacity is the dominant factor reducing its cooling effectiveness relative to nitrogen",
+            "Heat capacity is more significant than density for cooling rate in this context",
+            "Nitrogen is superior to argon despite argon's higher density"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming that any specific nanofiber thickness can achieve zero propagation",
+            "Claiming that nitrogen guarantees complete suppression under all conditions",
+            "Attributing the PCM mechanism to any specific chemical reaction not stated in the evidence",
+            "Generalizing the argon vs. nitrogen comparison to flow regimes or pressures not specified"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Mechanistic distinction between rate-limiting and energy-limiting protection strategies, and the role of heat capacity vs. density in gas-phase cooling effectiveness",
+          "primary_boundary": "Rate reduction (nanofiber) vs. total energy limitation (PCM composite) as qualitatively different mechanisms; heat capacity dominance over density in gas cooling effectiveness",
+          "intended_error_modes": [
+            "Assuming quantitative scaling of nanofiber thickness can substitute for PCM mechanism",
+            "Prioritizing gas density over heat capacity as the governing cooling property",
+            "Conflating slowing propagation with preventing propagation"
+          ]
+        }
+      }
+    ]
+  }
+}

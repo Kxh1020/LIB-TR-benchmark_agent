@@ -1,0 +1,319 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An 18650 NCA cell and an 18650 LMO cell are both charged to 100% SOC and subjected to identical external heating in an open chamber. The NCA cell undergoes thermal runaway with measurable flame temperatures. The LMO cell undergoes violent explosions before a stable flame regime is established. An engineer attempts to apply the same empirical prediction equations developed from these tests to estimate TRonset for both chemistries at 50% SOC. Which of the following conclusions about this application are admissible?",
+        "options": [
+          "A. The empirical equations may be applied to NCA at 50% SOC with expected prediction error below 10%, because the equations were validated for NCA across the tested SOC range under the stated test conditions.",
+          "B. The empirical equations may be applied to LMO at 50% SOC with comparable accuracy to NCA, because LMO showed well-defined TRonset values at all SOC levels.",
+          "C. The violent explosions observed in LMO samples introduce unpredictable variability that disqualifies LMO from the empirical equation framework, even though LMO does exhibit measurable TRonset values.",
+          "D. Because LMO has the lowest TRonset among the three chemistries, its TRonset is the easiest to predict empirically and the equations should be most accurate for LMO.",
+          "E. The empirical equations for NCA are inapplicable at 50% SOC because the largest prediction errors occur at lower SOC values, making mid-range SOC predictions unreliable.",
+          "F. Applying the NCA equation at 50% SOC is admissible under the stated boundary conditions, but extending the same equation to a forced-air or enclosed-chamber configuration would exceed the validated scope."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Equations validated for NCA 18650 in open chamber; error below 10% across SOC range including mid-range.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+135+Fire_Safety_Journal:C006",
+              "TR_Gasventing+135+Fire_Safety_Journal:C007"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "LMO is explicitly excluded from the empirical framework due to violent explosions causing large discrepancy.",
+            "error_type": "scope expansion beyond stated limitation",
+            "evidence_refs": [
+              "TR_Gasventing+135+Fire_Safety_Journal:C007"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "LMO exclusion is due to explosion-induced variability, not absence of TRonset values; the distinction is admissible.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+135+Fire_Safety_Journal:C003",
+              "TR_Gasventing+135+Fire_Safety_Journal:C007"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Lower TRonset does not simplify empirical prediction; LMO's violent behavior is the disqualifying factor, not its TRonset magnitude.",
+            "error_type": "mechanism confusion: conflating TRonset magnitude with predictability",
+            "evidence_refs": [
+              "TR_Gasventing+135+Fire_Safety_Journal:C003",
+              "TR_Gasventing+135+Fire_Safety_Journal:C007"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Largest errors occur at lower SOC but remain below 10%; 50% SOC is not excluded from the valid application range.",
+            "error_type": "condition violation: misapplying lower-SOC error trend to mid-SOC",
+            "evidence_refs": [
+              "TR_Gasventing+135+Fire_Safety_Journal:C006"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Equations are bounded to open chamber, no forced air, 18650 form factor; other configurations exceed validated scope.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+135+Fire_Safety_Journal:C007"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of empirical TRonset equations under stated boundary conditions and chemistry-specific limitations",
+        "primary_boundary": "LMO excluded due to violent explosions; NCA/LCO equations valid only under specific test geometry and environment",
+        "intended_error_modes": [
+          "Assuming lower TRonset implies easier prediction (D)",
+          "Assuming LMO TRonset measurability implies equation applicability (B)",
+          "Misreading lower-SOC error magnitude as mid-SOC inapplicability (E)"
+        ],
+        "disallowed_extrapolations": [
+          "Extending NCA/LCO equations to forced-air or enclosed configurations",
+          "Applying equations to LMO at any SOC",
+          "Treating prediction error trend as a disqualifying criterion for mid-SOC"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "During external heating tests on 18650 cells, the smoke number (FSN) measured during the venting phase increases monotonically with SOC for both NCA and LCO. However, during the explosion phase, the FSN trend reverses after 50% SOC. Separately, LCO at 100% SOC (9.01 Wh) does not rupture the test canister, while LMO at 100% SOC (12.34 Wh) does. An engineer is assessing smoke and structural hazard at varying SOC. Which conclusions are admissible?",
+        "options": [
+          "A. For NCA and LCO, venting-phase smoke output can be used as a monotonic SOC indicator up to 100% SOC, but explosion-phase smoke output cannot serve this function above 50% SOC.",
+          "B. The reversal of FSN trend above 50% SOC during explosion indicates that higher SOC cells produce less hazardous smoke overall, making them safer from a smoke exposure standpoint.",
+          "C. Canister rupture behavior is determined by stored energy content rather than cathode chemistry alone, since two cells of different chemistry but different energy content showed different rupture outcomes.",
+          "D. Because LMO ruptured the canister and LCO did not, LMO cells are always more structurally hazardous than LCO cells regardless of SOC or energy content.",
+          "E. The FSN reversal above 50% SOC during explosion is consistent with violent explosion effects dispersing or diluting particulate matter rather than indicating reduced combustion severity.",
+          "F. The canister rupture data alone is sufficient to establish a universal energy threshold above which all 18650 chemistries will rupture containment structures."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Venting FSN increases monotonically with SOC; explosion FSN reverses after 50% SOC, breaking monotonicity for that phase.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+135+Fire_Safety_Journal:C008"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "FSN reversal is caused by violent explosion effects, not reduced combustion severity; overall hazard is not reduced.",
+            "error_type": "causal overclaim: misattributing measurement artifact to reduced hazard",
+            "evidence_refs": [
+              "TR_Gasventing+135+Fire_Safety_Journal:C008"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "LCO (9.01 Wh) did not rupture; LMO (12.34 Wh) did; energy content differentiates rupture outcome across chemistries.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+135+Fire_Safety_Journal:C009"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Rupture comparison is at 100% SOC with different energy contents; universalizing across all SOC and energy levels is unsupported.",
+            "error_type": "overgeneralization: extending single-condition comparison to universal claim",
+            "evidence_refs": [
+              "TR_Gasventing+135+Fire_Safety_Journal:C009"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Evidence states violent explosion lowers FSN values above 50% SOC; dispersion/dilution mechanism is consistent with this.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+135+Fire_Safety_Journal:C008"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Only two data points at 100% SOC for two chemistries; insufficient to establish a universal energy threshold for all chemistries.",
+            "error_type": "scope expansion: system-level universal threshold from two-point comparison",
+            "evidence_refs": [
+              "TR_Gasventing+135+Fire_Safety_Journal:C009"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Regime-dependent FSN behavior and energy-content-based rupture admissibility judgment",
+        "primary_boundary": "FSN monotonicity holds only during venting phase; rupture conclusion bounded to stated energy values and 100% SOC",
+        "intended_error_modes": [
+          "Interpreting FSN reversal as reduced hazard rather than measurement artifact of violent explosion (B)",
+          "Universalizing chemistry-based rupture comparison across all SOC (D)",
+          "Extrapolating two-point energy-rupture data to a universal threshold (F)"
+        ],
+        "disallowed_extrapolations": [
+          "Universal energy threshold for canister rupture across all chemistries",
+          "Overall safety ranking from explosion-phase FSN alone",
+          "Chemistry-based structural hazard ranking independent of energy content"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery module contains 18650 cells with inter-cell gaps smaller than 20 mm. During thermal runaway of one cell, flame temperatures are highest at a position 20 mm above the cell top. The safety vent of an NCA cell cracks when surface temperature reaches 135–165°C, while TRonset for NCA at 100% SOC is approximately 147°C. An engineer evaluates propagation risk and vent activation sequencing. Which statements are admissible?",
+        "options": [
+          "A. In a module with inter-cell gaps below 20 mm, the peak flame region of a burning cell directly overlaps with the physical location of neighboring cells, supporting a propagation pathway through flame impingement.",
+          "B. For NCA cells at 100% SOC, the safety vent may activate before thermal runaway onset is reached, since the vent crack temperature range overlaps with and extends below TRonset.",
+          "C. Because the vent crack temperature range for NCA (135–165°C) is entirely below TRonset (147°C), venting always precedes thermal runaway in NCA cells at all SOC levels.",
+          "D. The 20 mm flame temperature measurement position serves as a conservative lower bound for propagation risk assessment in modules where gaps are smaller than 20 mm.",
+          "E. Flame impingement on neighboring cells in a sub-20 mm gap module is a sufficient condition to guarantee thermal runaway propagation, regardless of neighboring cell SOC.",
+          "F. The overlap between vent crack temperature range and TRonset for NCA at 100% SOC means that vent activation and thermal runaway onset cannot be temporally separated based on surface temperature measurement alone."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Peak flame at 20 mm exceeds typical module gaps; flame region physically reaches neighboring cell positions in sub-20 mm configurations.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+135+Fire_Safety_Journal:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "NCA vent range 135–165°C; TRonset at 100% SOC ~147°C; lower bound of vent range (135°C) is below TRonset, so vent may activate before TR.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+135+Fire_Safety_Journal:C004",
+              "TR_Gasventing+135+Fire_Safety_Journal:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Vent range is not entirely below TRonset; upper bound (165°C) exceeds TRonset (147°C), and SOC dependence means this does not hold at all SOC levels.",
+            "error_type": "overgeneralization: ignoring range overlap and SOC dependence",
+            "evidence_refs": [
+              "TR_Gasventing+135+Fire_Safety_Journal:C004",
+              "TR_Gasventing+135+Fire_Safety_Journal:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "20 mm is the position of peak flame, not a lower bound; gaps smaller than 20 mm place neighbors inside the hottest zone, increasing not bounding risk.",
+            "error_type": "mechanism confusion: misinterpreting peak flame position as a conservative safety bound",
+            "evidence_refs": [
+              "TR_Gasventing+135+Fire_Safety_Journal:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Flame impingement creates a propagation pathway but sufficiency depends on neighboring cell SOC and thermal properties; not guaranteed regardless of SOC.",
+            "error_type": "causal overclaim: treating necessary condition as sufficient",
+            "evidence_refs": [
+              "TR_Gasventing+135+Fire_Safety_Journal:C005",
+              "TR_Gasventing+135+Fire_Safety_Journal:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Overlapping temperature ranges for vent activation and TRonset mean surface temperature alone cannot distinguish which event occurred first.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+135+Fire_Safety_Journal:C004",
+              "TR_Gasventing+135+Fire_Safety_Journal:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Propagation risk from flame geometry and temporal sequencing of vent activation versus thermal runaway onset",
+        "primary_boundary": "20 mm is peak flame position not a safety bound; vent and TRonset ranges overlap, preventing surface-temperature-based sequencing",
+        "intended_error_modes": [
+          "Treating 20 mm flame position as a conservative lower bound for safety (D)",
+          "Universalizing vent-before-TR sequencing across all SOC levels (C)",
+          "Treating flame impingement as sufficient for propagation regardless of neighbor SOC (E)"
+        ],
+        "disallowed_extrapolations": [
+          "Guaranteed propagation from flame impingement alone",
+          "Universal vent-before-TR ordering at all SOC",
+          "20 mm as a conservative safety gap threshold"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "An 18650 LMO cell at 100% SOC and an 18650 LCO cell at 100% SOC are both externally heated under identical open-chamber conditions. The LMO cell undergoes violent explosions and ruptures the test canister; the LCO cell does not rupture the canister. Both cells show decreasing TRonset with increasing SOC. An engineer proposes that because LMO has the lowest TRonset among tested chemistries, it should be treated as the most hazardous chemistry in all fire safety assessments. Evaluate whether this proposal is fully admissible, partially admissible, or inadmissible, and explain the specific reasoning boundaries that govern your judgment."
+      },
+      "ground_truth": {
+        "gold_answer": "The proposal is only partially admissible. LMO's lowest TRonset supports a conclusion that it initiates thermal runaway at lower temperatures than NCA or LCO under the tested conditions, which is a legitimate hazard indicator. However, treating LMO as universally most hazardous in all fire safety assessments overextends this finding in two ways. First, TRonset is one hazard dimension; canister rupture behavior is driven by stored energy content (LMO at 12.34 Wh vs. LCO at 9.01 Wh at 100% SOC), not cathode chemistry alone, so a lower-energy LMO cell at reduced SOC might not exceed the rupture threshold that a higher-energy cell of another chemistry would. Second, the violent explosions in LMO samples disqualify it from the empirical prediction framework applicable to NCA and LCO, meaning LMO's behavior is less predictable, not simply more hazardous in a monotonic sense. A complete fire safety assessment must account for energy content, SOC, and the specific failure mode (explosion vs. stable burning), none of which are captured by TRonset ranking alone.",
+        "must_include": [
+          "LMO lowest TRonset is a valid but partial hazard indicator",
+          "Canister rupture is governed by stored energy content, not chemistry alone",
+          "LMO exclusion from empirical equations reflects unpredictability, not simply greater hazard magnitude",
+          "Universal hazard ranking from TRonset alone is inadmissible without accounting for energy content and SOC"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming LMO is always most hazardous regardless of SOC or energy content",
+          "Treating TRonset as the sole determinant of fire safety hazard ranking",
+          "Inferring that LMO's exclusion from empirical equations means it is safer or less studied"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-dimensional hazard admissibility: TRonset ranking versus energy-content-driven rupture behavior and predictability limitations",
+        "primary_boundary": "TRonset ranking is chemistry-specific and condition-bounded; rupture hazard is energy-content-dependent; LMO unpredictability is distinct from monotonic hazard magnitude",
+        "intended_error_modes": [
+          "Conflating lowest TRonset with universally highest hazard across all metrics",
+          "Ignoring energy content as the rupture-determining variable",
+          "Misinterpreting LMO's exclusion from empirical equations as a simple hazard amplifier"
+        ]
+      }
+    }
+  ]
+}

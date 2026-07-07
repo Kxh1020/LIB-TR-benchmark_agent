@@ -1,0 +1,316 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery energy storage enclosure experiences thermal runaway in several NCA cells, releasing vent gas into a partly confined space. An engineer must assess explosion hazard severity. The vent gas mixture is known to have a laminar burning velocity exceeding that of typical hydrocarbons. Explosion pressure measurements from a partly confined geometry under various vent gas release profiles range from 90 kPa to 270 kPa (gauge). Which conclusions about the explosion hazard characterization are admissible?",
+        "options": [
+          "A. The elevated laminar burning velocity relative to hydrocarbons indicates that standard hydrocarbon-based explosion pressure models will underestimate peak pressures for NCA vent gas mixtures in confined geometries.",
+          "B. Because the reported pressure range spans a factor of three, the explosion pressure in any specific partly confined geometry can be bounded to within 10% using the reported range alone.",
+          "C. The wide reported pressure range implies that vent gas release profile is a controlling variable for explosion pressure outcome, not merely a secondary influence.",
+          "D. A laminar burning velocity above typical hydrocarbons is sufficient to conclude that NCA vent gas presents a deflagration-to-detonation transition risk in all enclosure geometries.",
+          "E. The reported explosion pressure range applies specifically to partly confined conditions; extrapolating these values directly to fully confined or open geometries is not supported by the stated evidence.",
+          "F. Since laminar burning velocity exceeds that of hydrocarbons, the mixture's flammability limits must also be wider than those of hydrocarbons."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Higher LBV than hydrocarbons directly implies hydrocarbon-calibrated models will underpredict pressure, a minimal engineering implication.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+134+Fire_Safety_Journal:C001",
+              "TR_Gasventing+134+Fire_Safety_Journal:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "A threefold pressure range across varied release profiles cannot bound any specific geometry to within 10%; this overstates precision of the reported range.",
+            "error_type": "numerical_exaggeration_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+134+Fire_Safety_Journal:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Pressure spanning 90–270 kPa across various release profiles directly supports release profile as a controlling variable, not a minor one.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+134+Fire_Safety_Journal:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "LBV elevation above hydrocarbons does not imply DDT risk in all geometries; DDT depends on confinement, geometry, and run-up distance not addressed by the evidence.",
+            "error_type": "scope_expansion_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+134+Fire_Safety_Journal:C001"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Evidence is explicitly from partly confined geometry; applying these values to fully confined or open geometries violates the stated experimental boundary.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+134+Fire_Safety_Journal:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "LBV and flammability limits are distinct properties; evidence supports only LBV comparison, not flammability limit width.",
+            "error_type": "mechanism_confusion_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+134+Fire_Safety_Journal:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of explosion hazard conclusions from LBV and pressure range evidence under defined confinement conditions",
+        "primary_boundary": "Partly confined geometry constraint limits direct extrapolation; LBV elevation supports model underprediction but not DDT universality",
+        "intended_error_modes": [
+          "scope_expansion beyond confinement type",
+          "conflating LBV with flammability limits",
+          "overstating precision of a range measurement"
+        ],
+        "disallowed_extrapolations": [
+          "DDT risk from LBV alone",
+          "flammability limit width from LBV data",
+          "pressure bounding to 10% from a threefold range"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A CFD model is used to predict explosion pressure in a 1-m channel filled with Li-ion vent gas. Experiments at equivalence ratio 1.08 yield a maximum pressure of 1.36 kPa (gauge). The CFD simulation predicts 1.45 kPa (gauge) at equivalence ratio 1.0. Separately, the simulation fails to reproduce pressure and flame front velocity oscillations observed as the flame approaches the channel opening. An engineer must judge which aspects of the simulation are validated and which are not.",
+        "options": [
+          "A. The CFD model can be considered validated for peak explosion pressure prediction within the tested channel geometry, since predicted and measured peak pressures agree within approximately 7%.",
+          "B. Because the simulation underpredicts peak pressure relative to experiment at a slightly different equivalence ratio, the model systematically underestimates explosion hazard across all equivalence ratios.",
+          "C. The failure to reproduce oscillatory behavior near the channel opening means the simulation cannot be relied upon to predict dynamic pressure loading on structures located near the vent opening.",
+          "D. Agreement in peak pressure magnitude alone is sufficient to validate the model for predicting flame propagation dynamics throughout the entire channel.",
+          "E. The discrepancy in equivalence ratio between peak pressure predictions (1.0 vs. 1.08) indicates the model's stoichiometric sensitivity differs from the experiment, which is a limitation relevant to mixture composition uncertainty.",
+          "F. Since peak pressures differ by less than 10%, the oscillation prediction failure is inconsequential for any engineering application of this model."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "1.36 vs 1.45 kPa is approximately 7% difference; peak pressure agreement in the tested geometry supports limited validation for that quantity.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+134+Fire_Safety_Journal:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The simulation predicts higher pressure than experiment at a different equivalence ratio; this is not a systematic underprediction across all equivalence ratios.",
+            "error_type": "overgeneralization_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+134+Fire_Safety_Journal:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Oscillations near the channel opening are not reproduced; dynamic pressure loads at that location cannot be reliably predicted by this model.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+134+Fire_Safety_Journal:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Peak pressure agreement does not validate flame propagation dynamics; oscillation failure explicitly shows dynamic behavior is not captured.",
+            "error_type": "measurement_scope_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+134+Fire_Safety_Journal:C003",
+              "TR_Gasventing+134+Fire_Safety_Journal:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Peak pressure occurring at different equivalence ratios in simulation vs. experiment indicates differing stoichiometric sensitivity, relevant when mixture composition is uncertain.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+134+Fire_Safety_Journal:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Oscillation failure is consequential for applications requiring dynamic load prediction near the vent opening, regardless of peak pressure agreement magnitude.",
+            "error_type": "conservative_but_wrong_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+134+Fire_Safety_Journal:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Scope of CFD model validation: what is and is not supported by peak pressure agreement when dynamic behavior is not reproduced",
+        "primary_boundary": "Peak pressure agreement validates only that quantity in that geometry; oscillation failure invalidates dynamic predictions near the opening",
+        "intended_error_modes": [
+          "conflating peak pressure validation with full dynamic validation",
+          "overgeneralizing directional error across equivalence ratios",
+          "dismissing oscillation failure based on magnitude agreement"
+        ],
+        "disallowed_extrapolations": [
+          "systematic underprediction across all equivalence ratios",
+          "full flame dynamics validation from peak pressure alone",
+          "inconsequentiality of oscillation failure for all applications"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer applies the Gülder equation to predict laminar burning velocities of Li-ion vent gas mixtures at elevated temperature (650 K). At this temperature, the equation underpredicts velocities on both the lean and rich sides, with a standard deviation of error of 338 mm/s and an R² of 0.66. The engineer must decide how to use these predictions in a safety assessment for an NCA battery installation. Which judgments are admissible?",
+        "options": [
+          "A. At 650 K, the Gülder equation predictions carry sufficient uncertainty that using them as conservative lower bounds for LBV in a safety assessment is not justified without additional correction.",
+          "B. An R² of 0.66 at 650 K indicates the equation captures the majority of LBV variance at that temperature, so its predictions are adequate for all engineering safety purposes.",
+          "C. Because underprediction occurs on both the lean and rich sides at 650 K, a safety assessment relying on Gülder equation outputs at this temperature will systematically underestimate explosion hazard across the flammable range.",
+          "D. The standard deviation of error of 338 mm/s is large relative to the reported NCA LBV range of 200–1100 mm/s, meaning individual predictions at 650 K may be unreliable for specific equivalence ratios.",
+          "E. The poor fit at 650 K implies the equation is equally unreliable at all other temperatures, so it should be rejected for vent gas LBV prediction entirely.",
+          "F. The underprediction on both lean and rich sides at 650 K is consistent with the equation failing to capture a combustion mechanism that becomes significant at elevated temperature."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Underprediction on both sides with high SDE means Gülder outputs are not conservative lower bounds; using them as such would underestimate hazard.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+134+Fire_Safety_Journal:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "R²=0.66 leaves 34% variance unexplained; combined with SDE of 338 mm/s, this is not adequate for all safety purposes—a conservative-sounding but incorrect claim.",
+            "error_type": "conservative_but_wrong_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+134+Fire_Safety_Journal:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Underprediction on both lean and rich sides means the equation underestimates LBV across the flammable range at 650 K, systematically underestimating hazard.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+134+Fire_Safety_Journal:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "SDE of 338 mm/s spans roughly 30% of the full NCA LBV range (200–1100 mm/s), making individual equivalence-ratio predictions unreliable.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+134+Fire_Safety_Journal:C004",
+              "TR_Gasventing+134+Fire_Safety_Journal:C001"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence addresses only 650 K performance; concluding the equation is unreliable at all temperatures extrapolates beyond the stated evidence.",
+            "error_type": "overgeneralization_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+134+Fire_Safety_Journal:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "While mechanistically plausible, the evidence does not identify which combustion mechanism causes the underprediction; this is an unsupported causal attribution.",
+            "error_type": "causal_overclaim_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+134+Fire_Safety_Journal:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of using Gülder equation LBV predictions at 650 K for safety assessment given documented underprediction and high error",
+        "primary_boundary": "Evidence constrains conclusions to 650 K behavior; SDE and R² jointly define reliability limits for individual predictions",
+        "intended_error_modes": [
+          "treating R²=0.66 as adequate for all safety purposes",
+          "overgeneralizing 650 K failure to all temperatures",
+          "unsupported mechanistic attribution of underprediction cause"
+        ],
+        "disallowed_extrapolations": [
+          "equation reliability at temperatures other than 650 K",
+          "specific combustion mechanism responsible for underprediction",
+          "adequacy of R²=0.66 for safety-critical applications"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A safety engineer is designing a ventilation and explosion mitigation strategy for an NCA battery room. Available data include: (1) NCA vent gas laminar burning velocities between 0.2 and 1.1 m/s, exceeding typical hydrocarbons; (2) explosion pressures of 90–270 kPa (gauge) measured in a partly confined geometry under varied vent gas release profiles; (3) a CFD model that agrees with measured peak explosion pressure to within approximately 7% in a 1-m channel but fails to reproduce pressure and flame front velocity oscillations near the channel opening. Identify two specific limitations that constrain how these data can be used in the safety design, and explain the engineering consequence of each limitation."
+      },
+      "ground_truth": {
+        "gold_answer": "Limitation 1: The explosion pressure range (90–270 kPa gauge) was measured only in a partly confined geometry with varied release profiles. The threefold spread means the result cannot be directly applied to the target room geometry (which may be differently confined) without additional testing or analysis; using the upper bound conservatively is defensible but using the range to bound a specific scenario to a narrow pressure window is not supported. Limitation 2: The CFD model fails to reproduce oscillatory pressure and flame velocity behavior near the channel opening. This means the model cannot be relied upon to predict dynamic pressure loads on structures or equipment positioned near vent openings, even though it agrees with peak pressure magnitude. An engineer who uses this model to size structural elements near the vent opening based solely on peak pressure agreement may underestimate impulsive or cyclic loading.",
+        "must_include": [
+          "partly confined geometry constraint limits applicability to other confinement configurations",
+          "threefold pressure range reflects release profile dependence, not a tight bound for a specific scenario",
+          "CFD oscillation failure invalidates dynamic load prediction near the channel opening",
+          "peak pressure agreement does not extend validation to flame propagation dynamics"
+        ],
+        "disallowed_extrapolations": [
+          "claiming the pressure range applies directly to fully confined or open geometries",
+          "claiming the CFD model is fully validated because peak pressures agree",
+          "inferring flammability limits or DDT risk from LBV data alone",
+          "claiming the Gülder equation performance at 650 K invalidates the CFD model"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Identifying scope boundaries of explosion pressure data and CFD model validation for engineering safety design",
+        "primary_boundary": "Confinement geometry specificity of pressure data; CFD validation limited to peak pressure, not dynamic behavior",
+        "intended_error_modes": [
+          "treating partly confined pressure range as universally applicable",
+          "accepting CFD as fully validated based on peak pressure agreement alone",
+          "conflating LBV elevation with DDT risk or flammability limit width"
+        ]
+      }
+    }
+  ]
+}

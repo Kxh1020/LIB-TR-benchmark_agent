@@ -1,0 +1,1320 @@
+{
+  "TR_trigger+1+Applied_Thermal_Engineering__TR_trigger+10+Renewable_and_Sustainable_Energy_Reviews__TR_trigger+11+Fire_Safety_Journal": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A 300 Ah LFP cell at 100% SOC undergoes thermal runaway in a test where the electrolyte solvent flame is extinguished but the battery body is not cooled. Separately, flaming combustion is observed on a single LFP cell. Which statements about these two scenarios are correct?",
+          "options": [
+            "A. Extinguishing the electrolyte flame without cooling the battery body can still result in thermal runaway with more aggressive release of flammable gases and heat.",
+            "B. Flaming combustion on a single cell primarily determines the peak surface temperature, making it the dominant factor over internal heat generation.",
+            "C. Flaming combustion accelerates the onset of thermal runaway in a single cell but has little influence on peak surface temperature.",
+            "D. Extinguishing the electrolyte flame is sufficient to prevent thermal runaway if the battery surface temperature has already exceeded 600°C.",
+            "E. Peak surface temperature of a single cell is mainly governed by internal heat generation rather than external flaming combustion."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence states that extinguishing the flame without cooling can still lead to TR with more aggressive gas and heat release.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+10+Renewable_and_Sustainable_Energy_Reviews:C010"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Evidence reversal: peak surface temperature is mainly determined by internal heat generation, not flaming combustion.",
+              "error_type": "direction_reversal",
+              "evidence_refs": [
+                "TR_trigger+10+Renewable_and_Sustainable_Energy_Reviews:C002"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence directly states flaming combustion accelerates TR onset but has little influence on peak surface temperature.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+10+Renewable_and_Sustainable_Energy_Reviews:C002"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Overclaim: evidence shows flame extinction without body cooling is insufficient; surface temperature alone does not guarantee safety.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_trigger+10+Renewable_and_Sustainable_Energy_Reviews:C010"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Evidence states peak surface temperature is mainly determined by internal heat generation and less influenced by flaming combustion.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+10+Renewable_and_Sustainable_Energy_Reviews:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Causal roles of external flame vs. internal heat generation on TR peak temperature and onset timing",
+          "primary_boundary": "Single LFP cell; flame extinguishment without body cooling does not prevent TR",
+          "intended_error_modes": [
+            "direction_reversal",
+            "causal_overclaim"
+          ],
+          "disallowed_extrapolations": [
+            "Generalizing flame-extinguishment safety to multi-cell packs",
+            "Assuming surface temperature above 600°C guarantees self-ignition for LFP"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "In thermal runaway experiments on 18650-type lithium-ion batteries, a two-level external temperature warning system is proposed. The first level corresponds to SEI decomposition (internal temperature ~80°C) and the second level to the internal temperature rise rate acceleration point (~100°C). Which of the following statements about this warning system are correct?",
+          "options": [
+            "A. The first-level warning is triggered at an external temperature of 82°C, derived from a battery internal temperature prediction model.",
+            "B. The second-level warning external threshold is 92°C, corresponding to the internal temperature rise rate acceleration point before pressure relief valve opening.",
+            "C. Gas concentration monitoring provides an earlier warning than the external temperature thresholds because it detects gases before the pressure relief valve opens.",
+            "D. The second-level warning threshold at 92°C external corresponds to an internal temperature of 100°C, which precedes pressure relief valve opening.",
+            "E. The first-level warning at 82°C external temperature is set to correspond to separator melting rather than SEI decomposition."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "D"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence states first-level warning external temperature is 82°C, derived from the internal temperature prediction model at SEI decomposition.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+1+Applied_Thermal_Engineering:C012"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Evidence confirms second-level warning external temperature is 92°C, tied to the internal temperature rise rate acceleration point before valve opening.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+1+Applied_Thermal_Engineering:C013"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Evidence states gas concentration is only detectable after the pressure relief valve loosens, meaning TR has already begun—not an early warning.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_trigger+1+Applied_Thermal_Engineering:C010"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Evidence links the 92°C external threshold to an internal temperature of 100°C at the rise rate acceleration point before valve opening.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+1+Applied_Thermal_Engineering:C013"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Mechanism substitution: first-level warning corresponds to SEI decomposition, not separator melting, which occurs at higher temperatures.",
+              "error_type": "mechanism_substitution",
+              "evidence_refs": [
+                "TR_trigger+1+Applied_Thermal_Engineering:C012",
+                "TR_trigger+1+Applied_Thermal_Engineering:C011"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Two-level external temperature warning thresholds and their internal temperature correlates",
+          "primary_boundary": "18650 battery; warning thresholds derived from internal temperature prediction model; gas monitoring is a lagging indicator",
+          "intended_error_modes": [
+            "mechanism_substitution",
+            "causal_overclaim"
+          ],
+          "disallowed_extrapolations": [
+            "Applying these exact thresholds universally to all battery chemistries or form factors",
+            "Treating gas monitoring as an early-warning method"
+          ]
+        }
+      }
+    ],
+    "short_answers": []
+  },
+  "TR_trigger+12+Energy__TR_trigger+13+Journal_of_Power_Sources__TR_trigger+14+Applied_Thermal_Engineering": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A LiCoO2/graphite pouch cell at 95% SOC undergoes mechanical indentation. Four exothermic reactions are identified: SEI decomposition (130°C), anode-electrolyte reaction (150°C), cathode-electrolyte reaction (~184°C), and electrolyte decomposition (~230°C). Which statements correctly characterize the roles of these reactions in triggering violent thermal runaway?",
+          "options": [
+            "A The cathode-electrolyte reaction is the primary trigger for violent thermal runaway because it produces the highest exothermic peak among the four reactions.",
+            "B The anode-electrolyte reaction determines the onset of violent thermal runaway and contributes the most cumulative heat generation, despite not having the highest instantaneous exothermic peak.",
+            "C SEI decomposition initiates the reaction sequence at 130°C but is not identified as the key contributor to violent thermal runaway heat generation.",
+            "D The internal short circuit from mechanical indentation is the dominant heat source driving thermal runaway, with chemical reactions playing a secondary role.",
+            "E The cathode-electrolyte reaction manifests the highest exothermic peak but the anode-electrolyte reaction is identified as the key contributor determining thermal runaway triggering.",
+            "F Electrolyte decomposition at 230°C is the reaction that triggers violent thermal runaway because it occurs at the highest temperature threshold."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "Highest exothermic peak belongs to cathode-electrolyte reaction, but triggering of violent TR is attributed to anode-electrolyte reaction, not cathode.",
+              "error_type": "mechanism substitution",
+              "evidence_refs": [
+                "TR_trigger+12+Energy:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Evidence states anode-electrolyte reaction contributes most heat and determines violent TR triggering, while cathode reaction has highest peak.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+12+Energy:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "SEI decomposition occurs first at 130°C initiating the sequence, but evidence identifies anode-electrolyte reaction as the key TR contributor.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+12+Energy:C003",
+                "TR_trigger+12+Energy:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Evidence explicitly states internal short circuit has limited heat generation contribution and serves only as an inducing factor, not the dominant source.",
+              "error_type": "causal overclaim",
+              "evidence_refs": [
+                "TR_trigger+12+Energy:C006"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Directly supported: cathode-electrolyte reaction has highest exothermic peak; anode-electrolyte reaction is the key contributor determining TR triggering.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+12+Energy:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Electrolyte decomposition occurs last at 230°C but is not identified as the trigger; anode-electrolyte reaction at 150°C determines violent TR onset.",
+              "error_type": "mechanism substitution",
+              "evidence_refs": [
+                "TR_trigger+12+Energy:C003",
+                "TR_trigger+12+Energy:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Distinguishing between highest exothermic peak and key triggering contribution across the four TR reactions",
+          "primary_boundary": "Specific to LiCoO2/graphite pouch cell under mechanical indentation at 95% SOC; causal roles are chemistry- and mechanism-specific",
+          "intended_error_modes": [
+            "mechanism substitution",
+            "causal overclaim",
+            "boundary overreach"
+          ],
+          "disallowed_extrapolations": [
+            "Generalizing reaction sequence to all battery chemistries",
+            "Equating highest exothermic peak with primary TR trigger"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A battery module uses PCM with thermal conductivity of 0.6 W/(m·K) and no active water-cooling. During thermal runaway of battery 1, the adjacent battery 2 reaches a maximum temperature of 171.5°C. The system designer proposes two modifications: (i) increase PCM thermal conductivity to 0.8 W/(m·K) to improve normal-operation cooling, or (ii) add water-cooling at 0.05 m/s while keeping PCM at 0.8 W/(m·K). Explain the thermal runaway propagation risk of each modification and identify which, if either, avoids propagation to battery 2."
+        },
+        "ground_truth": {
+          "gold_answer": "Modification (i) increases PCM thermal conductivity from 0.6 to 0.8 W/(m·K). Although higher conductivity improves normal-operation cooling, it accelerates heat transfer between batteries during thermal runaway. At 0.8 W/(m·K), battery 2 exceeds the critical thermal runaway temperature, meaning propagation occurs. This modification therefore introduces a propagation risk not present at 0.6 W/(m·K), where battery 2 reaches only 171.5°C. Modification (ii) combines PCM at 0.8 W/(m·K) with water-cooling at 0.05 m/s. Evidence shows that at PCM conductivity of 0.8 W/(m·K), a cooling water velocity of 0.05 m/s is required and sufficient to avoid thermal runaway propagation. Therefore, modification (ii) avoids propagation while modification (i) alone does not.",
+          "must_include": [
+            "Increasing PCM conductivity to 0.8 W/(m·K) causes battery 2 to exceed critical TR temperature, triggering propagation",
+            "Higher PCM conductivity improves normal cooling but accelerates inter-battery heat transfer during TR",
+            "Water-cooling at 0.05 m/s with PCM at 0.8 W/(m·K) is sufficient to avoid TR propagation",
+            "Modification (i) alone does not avoid propagation; modification (ii) does"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming any PCM conductivity increase always prevents TR propagation",
+            "Claiming water-cooling alone without PCM is equivalent to the combined system",
+            "Generalizing the 0.05 m/s threshold to PCM conductivities other than 0.8 W/(m·K)"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Trade-off between normal-operation thermal benefit and TR propagation risk as PCM conductivity increases, and the role of water-cooling velocity threshold",
+          "primary_boundary": "Threshold behavior is specific to the tested PCM conductivity values and water-cooling velocities; conclusions are conditional on these parameters",
+          "intended_error_modes": [
+            "unsupported monotonicity (higher conductivity always better)",
+            "boundary overreach (applying 0.05 m/s threshold to other conductivity values)",
+            "causal overclaim (PCM alone prevents propagation at 0.8 W/(m·K))"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_trigger+29+Journal_of_Industrial_and_Engineering_Chemistry__TR_trigger+3+International_Journal_of_Heat_and_Mass_Transfer__TR_trigger+30+Applied_Physics_Letters": {
+    "mcqs": [],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A battery management engineer is evaluating two early-warning strategies for thermal runaway (TR) in a lithium iron phosphate (LFP) cell pack: (1) a gas sensor monitoring CO2 and H2 concentrations, and (2) a surface thermocouple array. The engineer also considers a resistance-based monitoring system. Explain the mechanistic basis for why gas-based detection provides earlier warning than thermocouple-based detection, identify at least one key limitation of gas-based detection, and state what advantage the resistance-based system offers over both approaches."
+        },
+        "ground_truth": {
+          "gold_answer": "Gas sensors detect TR precursors earlier than thermocouples because SEI decomposition releases CO2 (the primary initial gas) and subsequently H2 and CO before significant heat propagates to the cell surface. Surface thermocouples suffer inherent time delays due to heat conduction from the internal reaction site to the surface. In one study, a gas sensor detected fault signals 7–8 minutes before TR onset, while temperature sensors lagged 7 minutes behind gas sensors. A key limitation of gas-based detection is the short interval between gas release and actual TR onset, leaving insufficient lead time for intervention. The resistance-based system, using resistance magnitude and rate-of-change with thermodynamic calculations, can provide early warning more than 25 minutes before TR, exceeding the lead time of both gas and temperature sensors, and demonstrated greater precision and efficiency than the temperature-threshold system.",
+          "must_include": [
+            "CO2 originates from SEI decomposition as the primary initial gas",
+            "Surface thermocouple detection delayed by heat conduction",
+            "Gas sensor detects approximately 7–8 minutes before TR onset and 7 minutes ahead of temperature sensor",
+            "Limitation: short interval between gas release and TR onset gives insufficient lead time",
+            "Resistance-based system provides over 25 minutes advance warning"
+          ],
+          "disallowed_extrapolations": [
+            "Gas sensors are universally superior for all battery chemistries and abuse modes without qualification",
+            "Resistance-based monitoring eliminates all detection gaps including spontaneous TR from unknown causes",
+            "The 7–8 minute lead time applies to all sensor configurations and cell formats"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Comparative mechanistic basis of gas, thermocouple, and resistance-based TR early warning systems including their limitations and lead times",
+          "primary_boundary": "Evidence is from specific experimental configurations; gas sensor lead times and resistance system performance are condition-specific; electrochemical models not applicable to spontaneous TR from unknown causes",
+          "intended_error_modes": [
+            "scale_transfer_overclaim",
+            "causal_overclaim",
+            "unsupported_monotonicity"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_trigger+31+Advanced_Materials__TR_trigger+32+Energy_Conversion_and_Management__TR_trigger+33+UnknownJournal": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A PW@PAN PCM-based separator (latent heat ~135 J g⁻¹ at 61.8% encapsulation, melting point ~45 °C) is tested in a fully charged LiFePO4 pouch cell under nail penetration. The total heat absorbed by the separator is calculated at 3.9 J. Which of the following statements are supported by these conditions?",
+          "options": [
+            "A. The PCM separator suppresses peak surface temperature relative to a Celgard separator, but the magnitude of suppression during nail penetration is less than 10 °C.",
+            "B. The PCM separator eliminates thermal runaway risk in LFP cells because its total heat absorption exceeds all possible heat generation from cathode decomposition.",
+            "C. A separator with high thermal conductivity alone would provide equivalent thermal protection because it redistributes heat as effectively as latent heat storage.",
+            "D. The PW@PAN separator maintains dimensional stability at temperatures where the Celgard separator has already undergone thermal shrinkage.",
+            "E. The 3.9 J absorbed by the PCM separator is in the same order of magnitude as heat generated from LFP decomposition with electrolyte during an internal short-circuit.",
+            "F. Increasing PW content from 20% to 100% monotonically increases encapsulation ratio to 100%, so latent heat scales proportionally to PW mass fraction."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "D",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence states peak surface temperatures were 34.4 °C vs 39.6 °C, a difference of 5.2 °C, which is less than 10 °C.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+31+Advanced_Materials:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Evidence only shows 3.9 J is in the same order of magnitude as LFP decomposition heat; elimination of all TR risk is an unsupported causal overclaim.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_trigger+31+Advanced_Materials:C006"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Evidence explicitly states high thermal conductivity only redistributes heat and cannot dissipate total battery heat in time, making it non-equivalent to latent heat storage.",
+              "error_type": "mechanism_substitution",
+              "evidence_refs": [
+                "TR_trigger+31+Advanced_Materials:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Evidence states PW@PAN shows negligible change up to 200 °C while Celgard shrinks at 120 °C, confirming dimensional stability advantage.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+31+Advanced_Materials:C008"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Evidence directly states 3.9 J absorbed heat is in the same order of magnitude as heat from LFP decomposition with electrolyte during internal short-circuit.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+31+Advanced_Materials:C006"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Evidence shows encapsulation ratio reaches only 61.8% at 100% PW content, not 100%, so proportional scaling is an unsupported monotonicity overclaim.",
+              "error_type": "unsupported_monotonicity",
+              "evidence_refs": [
+                "TR_trigger+31+Advanced_Materials:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Distinguishing supported quantitative comparisons from causal overclaims about PCM separator thermal protection scope",
+          "primary_boundary": "PCM separator performance evidence is scoped to LFP nail-penetration tests; elimination of all TR risk is not supported",
+          "intended_error_modes": [
+            "causal_overclaim",
+            "mechanism_substitution",
+            "unsupported_monotonicity"
+          ],
+          "disallowed_extrapolations": [
+            "PCM separator prevents TR universally",
+            "high thermal conductivity equals latent heat protection",
+            "encapsulation ratio scales linearly to 100%"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A battery engineer proposes two strategies to prevent LIB thermal runaway propagation: (1) replace the standard separator with one having very high thermal conductivity to redistribute heat, and (2) use a PCM-based separator with a melting point near 45 °C and high latent heat. The engineer also notes that after a fire-suppression intervention, the cell temperature must be managed carefully. Using evidence-based reasoning about heat management mechanisms and the concept of Tsa, explain why Strategy 1 alone is insufficient, why Strategy 2 provides a qualitatively different protection mechanism, and what temperature target must be achieved post-intervention to prevent re-ignition."
+        },
+        "ground_truth": {
+          "gold_answer": "Strategy 1 (high thermal conductivity separator) redistributes heat to reduce localized hotspots but cannot remove total heat from the battery fast enough; the overall temperature can still rise to unsafe levels, making this approach insufficient for preventing thermal runaway. Strategy 2 (PCM separator) absorbs heat through latent heat storage at a defined phase-change temperature (~45 °C), providing a qualitatively different mechanism: it stores energy isothermally during melting rather than merely redistributing it, thereby actively buffering the total heat load. This distinction means Strategy 2 addresses total heat accumulation, not just spatial distribution. Regarding post-intervention management, the cell temperature must be reduced below Tsa—the threshold at which heat generation equals heat dissipation—because above Tsa, self-heating exceeds dissipation and reactions accelerate autonomously toward re-ignition even after external abuse or fire suppression has stopped.",
+          "must_include": [
+            "high thermal conductivity only redistributes heat, does not remove total heat",
+            "PCM absorbs heat via latent heat storage, qualitatively different from redistribution",
+            "cell temperature must be reduced below Tsa to prevent re-ignition",
+            "above Tsa heat generation exceeds dissipation causing autonomous acceleration"
+          ],
+          "disallowed_extrapolations": [
+            "PCM separator eliminates all thermal runaway risk",
+            "Strategy 1 provides zero thermal benefit",
+            "Tsa is a universal fixed temperature independent of cell chemistry or conditions",
+            "External thermal management can control the rapid reaction period"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Integrating heat redistribution vs. latent heat storage mechanisms with Tsa-based post-intervention temperature management",
+          "primary_boundary": "High thermal conductivity limitation is explicitly scoped; Tsa concept applies to post-abuse autonomous reaction phase; PCM benefit is scoped to heat absorption magnitude comparable to LFP decomposition heat",
+          "intended_error_modes": [
+            "mechanism_substitution",
+            "causal_overclaim",
+            "boundary_overreach",
+            "regime_transfer_error"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_trigger+34+International_Journal_of_Heat_and_Mass_Transfer__TR_trigger+35+Journal_of_Thermal_Analysis_and_Calorimetry__TR_trigger+36+Journal_of_Energy_Storage": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A four-cell lithium-ion battery module is tested in a confined enclosure. Before any cell undergoes thermal runaway (TR), heat transfer between neighboring cells is measured. Once a neighboring cell enters TR, the dominant mode shifts. An aluminum foil (AF) wrap is then applied to one cell to reduce absorbed radiation. Which statements about heat transfer modes and their consequences are correct?",
+          "options": [
+            "A. Before TR occurs in any cell, conduction via air is the dominant inter-cell heat transfer mode, accounting for roughly 50–84% of total heat transferred.",
+            "B. Once a neighboring cell undergoes TR, radiation becomes the dominant heat transfer mode, typically exceeding 80% of total heat transferred in stage II.",
+            "C. Applying aluminum foil prevents the wrapped cell from ever reaching thermal runaway by permanently blocking radiation.",
+            "D. With aluminum foil applied, the dominant heat transfer mode remains conduction even after the neighboring cell undergoes TR.",
+            "E. Radiation heat reduction via aluminum foil decreases temperature rise rate more than conduction heat reduction via refractory ceramic fiber, based on measured rate comparisons.",
+            "F. In a confined space, maximum cell temperatures during TR are higher than in a semi-confined space because restricted airflow traps radiated heat."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "D",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence states conduction via air accounts for ~50–83.8% before neighboring cell TR, confirming dominance.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+34+International_Journal_of_Heat_and_Mass_Transfer:C002"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Evidence states radiation proportion rises to 81.1–86.8% in stage II when neighboring cell undergoes TR.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+34+International_Journal_of_Heat_and_Mass_Transfer:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Evidence shows cell 2 still underwent TR with AF applied, possibly due to reaching self-accelerating decomposition temperature.",
+              "error_type": "boundary_overreach",
+              "evidence_refs": [
+                "TR_trigger+34+International_Journal_of_Heat_and_Mass_Transfer:C007"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Evidence explicitly states that with AF applied, dominant mode remained conduction even when neighboring cell underwent TR.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+34+International_Journal_of_Heat_and_Mass_Transfer:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "AF reduced temperature rise rate from 0.98 to 0.64°C/s (drop of 0.34); RCF reduced from 0.87 to 0.73°C/s (drop of 0.14), confirming radiation has greater influence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+34+International_Journal_of_Heat_and_Mass_Transfer:C006"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Evidence states confined space yields lower maximum temperatures than semi-confined, due to insufficient oxygen reducing combustion.",
+              "error_type": "causal_reversal",
+              "evidence_refs": [
+                "TR_trigger+34+International_Journal_of_Heat_and_Mass_Transfer:C001"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Heat transfer mode transitions during TR propagation and the effect of mitigation measures on those modes and their consequences",
+          "primary_boundary": "AF reduces radiation and maintains conduction dominance but does not guarantee TR prevention; confined space lowers, not raises, peak temperature",
+          "intended_error_modes": [
+            "boundary_overreach (C: AF prevents TR entirely)",
+            "causal_reversal (F: confined space raises temperature)"
+          ],
+          "disallowed_extrapolations": [
+            "Generalizing AF effectiveness to all cell chemistries or geometries",
+            "Concluding confinement always reduces TR severity regardless of combustion regime"
+          ]
+        }
+      }
+    ],
+    "short_answers": []
+  },
+  "TR_trigger+37+Applied_Energy__TR_trigger+38+Journal_of_Power_Sources__TR_trigger+39+UnknownJournal": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A 24 Ah NMC/graphite pouch cell is tested under both oven and adiabatic (ARC) conditions. The oven-test onset temperature T2 is 48.1°C lower than the ARC T2. Under adiabatic conditions, maximum temperature rates at internal jelly-roll positions JR_a and JR_b are approximately an order of magnitude higher than at the center and surface. Which statements correctly characterize the thermal behavior at internal versus surface positions under adiabatic conditions?",
+          "options": [
+            "A. The maximum surface temperature T3 is approximately half that measured at internal jelly-roll positions under adiabatic conditions.",
+            "B. The maximum temperature rate at the surface exceeds that at JR_a and JR_b by approximately one order of magnitude under adiabatic conditions.",
+            "C. The lower oven-test T2 compared to ARC T2 implies that oven heating triggers thermal runaway at a fundamentally lower internal energy state than adiabatic self-heating.",
+            "D. Under adiabatic conditions, T2 at different positions remains nearly constant as battery thickness increases, while T3 at the surface decreases by approximately 30°C.",
+            "E. Internal jelly-roll positions experience both higher peak temperatures and higher peak temperature rates than the surface under adiabatic conditions.",
+            "F. The surface T3 being lower than internal T3 under adiabatic conditions is caused by the surface acting as a heat sink to the environment even under nominally adiabatic test setups."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "D",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence directly states surface T3 is approximately half that at other positions under adiabatic conditions.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+37+Applied_Energy:C002"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Direction is reversed; JR_a and JR_b rates exceed center and surface by an order of magnitude, not the other way.",
+              "error_type": "reversed_trend",
+              "evidence_refs": [
+                "TR_trigger+37+Applied_Energy:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "The T2 difference reflects test-method heating rate differences, not a claim about internal energy state at onset; this is an unsupported causal overclaim.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_trigger+37+Applied_Energy:C001"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Evidence explicitly states T2 remains nearly constant with thickness increase and surface T3 decreases by ~30°C under adiabatic conditions.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+37+Applied_Energy:C009"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Combining C002 and C003: internal positions show both higher T3 (~double surface) and higher dT/dt (~10× surface), supporting this combined statement.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+37+Applied_Energy:C002",
+                "TR_trigger+37+Applied_Energy:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "No evidence attributes lower surface T3 to environmental heat loss under adiabatic setup; this is an unsupported mechanism substitution.",
+              "error_type": "mechanism_substitution",
+              "evidence_refs": [
+                "TR_trigger+37+Applied_Energy:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Spatial heterogeneity of thermal runaway peak temperature and temperature rate under adiabatic conditions",
+          "primary_boundary": "Adiabatic test conditions only; findings do not transfer to oven test spatial profiles",
+          "intended_error_modes": [
+            "reversed_trend",
+            "causal_overclaim",
+            "mechanism_substitution"
+          ],
+          "disallowed_extrapolations": [
+            "Inferring surface T3 reduction is due to heat loss in adiabatic tests",
+            "Equating T2 difference between methods to internal energy state difference"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "In oven tests on a pouch cell, when battery thickness exceeds 10 cm, a large temperature difference appears across positions. The thermocouple reading at the center for thickness >5 cm is driven by heat transfer from JR_a rather than internal heat generation. Separately, as oven temperature increases, the TR trigger sequence shifts from center-first to surface-first. Which of the following conclusions are supported?",
+          "options": [
+            "A. For oven tests with thickness >5 cm, the center thermocouple T2 value is an unreliable indicator of true thermal runaway onset temperature.",
+            "B. Increasing oven temperature always decreases T2 at both the surface and the center simultaneously.",
+            "C. When oven temperature increases, T2 at the surface increases and T2 at the center decreases.",
+            "D. For battery thickness <5 cm in oven tests, spatial temperature differences across positions are negligible and profiles are superimposed.",
+            "E. The center-first to surface-first trigger sequence shift is caused by the PE separator shutdown mechanism activating preferentially at the surface.",
+            "F. The T2 difference between JR_a and center exceeds 20% of the center value when thickness reaches 10 cm in oven tests."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "D",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence explicitly states center T2 at thickness >5 cm results from heat transfer from JR_a, not internal generation, making it unreliable.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+37+Applied_Energy:C010"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Direction is wrong for surface: evidence states T2 at surface increases with oven temperature while center T2 decreases.",
+              "error_type": "reversed_trend",
+              "evidence_refs": [
+                "TR_trigger+37+Applied_Energy:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence directly states surface T2 increases and center T2 decreases as oven temperature increases, linked to trigger sequence reversal.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+37+Applied_Energy:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Evidence explicitly states profiles at all four positions are superimposed when thickness is less than 5 cm.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+37+Applied_Energy:C008"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "No evidence links the trigger sequence shift to PE separator shutdown; this is an unsupported mechanism substitution from a different paper's finding.",
+              "error_type": "mechanism_substitution",
+              "evidence_refs": [
+                "TR_trigger+37+Applied_Energy:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Evidence states the T2 difference between JR_a and center exceeds 20% of the center value when thickness reaches 10 cm.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+37+Applied_Energy:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Reliability of spatial temperature measurements and trigger sequence dependence on oven temperature and thickness in oven tests",
+          "primary_boundary": "Oven test conditions; thickness thresholds of 5 cm and 10 cm are specific boundaries",
+          "intended_error_modes": [
+            "reversed_trend",
+            "mechanism_substitution",
+            "boundary_overreach"
+          ],
+          "disallowed_extrapolations": [
+            "Applying oven-test spatial unreliability conclusions to ARC tests",
+            "Attributing trigger sequence shift to separator physics without evidence"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A commercial PP/PE/PP three-layer separator activates shutdown near 130°C by PE pore melting while PP provides mechanical support. Separately, polyethylene-based shutdown separators in prismatic cells activate irreversibly between 130–135°C, and impedance drops by more than one order of magnitude above 175°C indicating separator meltdown. In almost all cases, separators cannot shut cells down completely. Which statements are correctly supported?",
+          "options": [
+            "A. PE pore melting near 130°C prevents lithium-ion migration while PP layers maintain mechanical integrity against internal short-circuit.",
+            "B. Separator shutdown between 130–135°C guarantees complete cessation of current flow, eliminating further overcharge risk.",
+            "C. The impedance drop above 175°C in polyethylene separators indicates separator meltdown, not a recovery of normal ionic conductivity.",
+            "D. An overcharged cell that has undergone separator shutdown may still continue charging at reduced current and remains a potential hazard.",
+            "E. The PP layer melts before the PE layer during thermal runaway, triggering the shutdown mechanism.",
+            "F. Separator shutdown is a reversible safety mechanism that resets upon cooling, allowing reuse of the cell."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "D"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence explicitly describes PE pore melting blocking ion migration while PP layer provides mechanical support against internal short-circuit.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+38+Journal_of_Power_Sources:C008"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Evidence states separators cannot shut cells down completely in almost all cases; complete cessation is an unsupported universal claim.",
+              "error_type": "boundary_overreach",
+              "evidence_refs": [
+                "TR_trigger+39+UnknownJournal:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence identifies the impedance drop above 175°C as indicative of separator meltdown, a distinct failure event, not normal conductivity restoration.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+39+UnknownJournal:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Evidence explicitly states overcharged cells can continue charging at lower currents post-shutdown and remain a potential hazard.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+39+UnknownJournal:C005"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Evidence states PE melts to block pores; no evidence supports PP melting first. This reverses the component roles.",
+              "error_type": "mechanism_substitution",
+              "evidence_refs": [
+                "TR_trigger+38+Journal_of_Power_Sources:C008"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Evidence explicitly states polyethylene-based shutdown separators are irreversibly activated; reversibility is directly contradicted.",
+              "error_type": "reversed_trend",
+              "evidence_refs": [
+                "TR_trigger+39+UnknownJournal:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Separator shutdown mechanism, temperature thresholds, irreversibility, and residual hazard after activation",
+          "primary_boundary": "Separator shutdown is irreversible and incomplete; 130–135°C activation range is specific to PE-based separators studied",
+          "intended_error_modes": [
+            "boundary_overreach",
+            "mechanism_substitution",
+            "reversed_trend"
+          ],
+          "disallowed_extrapolations": [
+            "Generalizing complete shutdown capability to all separator types",
+            "Treating impedance recovery above 175°C as normal function restoration"
+          ]
+        }
+      }
+    ],
+    "short_answers": []
+  },
+  "TR_trigger+4+Applied_Thermal_Engineering__TR_trigger+40+Journal_of_Cleaner_Production__TR_trigger+41+Materials_Science_in_Semiconductor_Processing": {
+    "mcqs": [
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A 12-cell lithium-ion module undergoes thermal runaway propagation. Researchers compare 4P3S, 3P4S, and no-electrical-connection configurations, measuring surface temperatures and propagation timing. Which statements are consistent with the experimental findings? Select all that apply.",
+          "options": [
+            "A. Connection topology (4P3S vs. 3P4S vs. none) has no significant effect on maximum temperature or propagation time.",
+            "B. Electricity transfer from healthy parallel cells to the TR cell raises TR cell temperature by approximately 28.2°C, which is dominant relative to the ~940°C peak.",
+            "C. Internal cell temperature during TR propagation averages approximately 160°C higher than surface temperature measured between cells.",
+            "D. TR propagation time interval increases monotonically from the first to the last cell in all connection scenarios.",
+            "E. Heat conduction through the main contact face between cells is the principal heat-transfer pathway in the open-chamber tests.",
+            "F. Combustion events significantly alter propagation behaviour between connection types in open-chamber conditions."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence states connection type had no significant influence on maximum temperature or propagation time.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+40+Journal_of_Cleaner_Production:C001"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "28.2°C increase is reported but described as low, not dominant, compared to ~940°C peak temperature.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_trigger+40+Journal_of_Cleaner_Production:C002"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence states average internal temperature was ~160°C higher than surface temperature between cells.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+40+Journal_of_Cleaner_Production:C003"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Evidence states propagation time increased until cell 6, then decreased and stabilized—not monotonically increasing.",
+              "error_type": "reversed_trend",
+              "evidence_refs": [
+                "TR_trigger+40+Journal_of_Cleaner_Production:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Evidence identifies conduction through the main face as the principal heat-transfer pathway in open-chamber tests.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+40+Journal_of_Cleaner_Production:C007"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Evidence states combustion events did not significantly affect thermal propagation behaviour in the open chamber.",
+              "error_type": "unsupported_monotonicity",
+              "evidence_refs": [
+                "TR_trigger+40+Journal_of_Cleaner_Production:C007"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Understanding which factors drive TR propagation in multi-cell modules and the role of electrical topology vs. thermal pathways",
+          "primary_boundary": "Findings apply to open-chamber conditions with the specific 12-cell module tested",
+          "intended_error_modes": [
+            "causal_overclaim",
+            "reversed_trend",
+            "unsupported_monotonicity"
+          ],
+          "disallowed_extrapolations": [
+            "Generalizing open-chamber combustion findings to enclosed battery packs",
+            "Treating 28.2°C electrical contribution as a dominant propagation driver"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A battery pack engineer proposes two strategies to reduce thermal runaway severity under mechanical abuse: (1) reduce SOC of all batteries in a module uniformly before a crash event, and (2) rely on minichannel liquid cooling at the pack level (80 modules) using a single conventional radiator rated at ~200 L/min. For each strategy, explain the physical mechanism that supports or limits its effectiveness, referencing relevant thresholds or quantitative boundaries where applicable."
+        },
+        "ground_truth": {
+          "gold_answer": "Strategy 1 is supported: reducing module SOC increases failure displacement (12–17% per SOC step reduction) and reduces TR severity, because fewer lithium ions are embedded in the negative electrode at lower SOC, decreasing mechanical strength and making violent TR harder to trigger (SOC=0.2 yields max ~119°C vs. >300°C at SOC=0.6). However, batteries directly contacting the external load cannot practically have their SOC changed as they fail first. Strategy 2 is not feasible: preventing propagation at the pack level requires ~2400 L/min (30 L/min × 80 modules), far exceeding the ~200 L/min radiator capacity. Additionally, at flow rates ≤1.0 L/min, water exceeds 100°C boiling point, risking channel damage. Cell-level flow control is necessary but impractical at pack scale.",
+          "must_include": [
+            "SOC reduction increases failure displacement and reduces TR severity",
+            "SOC=0.2 produces no violent TR; SOC=0.6 produces TR exceeding 300°C",
+            "Batteries directly contacting the load cannot have SOC changed in practice",
+            "Pack-level cooling requires ~2400 L/min, exceeding ~200 L/min radiator capacity",
+            "Minichannel cooling cannot prevent TR in the triggered cell even at 10 L/min"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming SOC reduction prevents TR in the directly loaded cell",
+            "Claiming minichannel cooling at any flow rate prevents TR in the source cell",
+            "Generalizing the 14–17% displacement increase to all battery geometries or module sizes without qualification"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Evaluating two distinct mitigation strategies against their physical mechanisms and quantitative feasibility boundaries",
+          "primary_boundary": "SOC strategy is limited by the inability to change SOC of directly loaded cells; cooling strategy is limited by radiator capacity and boiling point thresholds",
+          "intended_error_modes": [
+            "boundary_overreach on SOC strategy scope",
+            "scale_transfer_overclaim on cooling feasibility",
+            "causal_overclaim that cooling prevents TR in source cell"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_trigger+42+Energy_Storage_Materials__TR_trigger+5+Journal_of_Energy_Storage__TR_trigger+6+Journal_of_Power_Sources": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A cylindrical 18650 lithium-ion battery is instrumented with circumferential, axial, and radial strain gauges and a surface thermocouple. Under free-expansion boundary conditions, heating begins at t=0. Which of the following statements about early warning capability are supported by evidence? Select all that apply.",
+          "options": [
+            "A. Circumferential strain rate exceeding 0.1 µε/s provides a lead time of over 100 s relative to venting-based alerts under free-expansion conditions.",
+            "B. Axial strain exhibits the highest amplitude and strain rate throughout thermal runaway progression, making it the preferred sensing axis.",
+            "C. Surface thermocouple signals may lag behind internal heating onset due to thermal conduction delay, limiting responsiveness of temperature-based early warning.",
+            "D. Under fully constrained boundary conditions, circumferential strain reaches higher peak values and earlier onset than under free-expansion, improving early warning.",
+            "E. A strain-rate threshold of 0.2 µε/s corresponds to activation of the anode-electrolyte reaction and provides a practical early warning signal during rapid gas accumulation.",
+            "F. Strain-based early warning is equally effective regardless of boundary constraint configuration because gas generation rate is independent of mechanical boundary."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Circumferential strain rate exceeds 0.1 µε/s at 302 s; venting occurs at 413 s, giving >100 s lead time under free-expansion.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+6+Journal_of_Power_Sources:C001"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Axial strain is explicitly the weakest axis with minimal changes; circumferential strain has the highest amplitude and rate.",
+              "error_type": "mechanism substitution",
+              "evidence_refs": [
+                "TR_trigger+6+Journal_of_Power_Sources:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Surface temperature signals lag during early internal heating due to thermal conduction delay, limiting thermal-based early warning responsiveness.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+6+Journal_of_Power_Sources:C008"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Fully constrained conditions produce significantly lower maximum strain with greater delay, not higher values or earlier onset.",
+              "error_type": "boundary overreach",
+              "evidence_refs": [
+                "TR_trigger+6+Journal_of_Power_Sources:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "The 0.2 µε/s threshold at 345 s corresponds to An-ELE reaction activation and serves as a practical early warning during rapid gas accumulation.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+6+Journal_of_Power_Sources:C002"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Boundary configuration materially affects strain onset timing and amplitude; biaxial clamping triggers earliest response, fully constrained the latest.",
+              "error_type": "unsupported monotonicity",
+              "evidence_refs": [
+                "TR_trigger+6+Journal_of_Power_Sources:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Boundary-condition dependence of strain-based early warning and relative sensitivity of strain axes during thermal runaway",
+          "primary_boundary": "Free-expansion vs. constrained boundary conditions alter strain amplitude and onset timing; axial strain is weakest axis",
+          "intended_error_modes": [
+            "mechanism substitution",
+            "boundary overreach",
+            "unsupported monotonicity"
+          ],
+          "disallowed_extrapolations": [
+            "Strain-based warning effectiveness is boundary-independent",
+            "Axial strain is preferred sensing axis",
+            "Full constraint improves early warning"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "During overdischarge of a lithium-ion battery, describe the multi-step mechanism by which copper current collector dissolution can ultimately lead to internal short circuit. Then explain why the thermal runaway chain reaction is described as sequential rather than simultaneous, referencing the role of the SEI layer and separator in the progression. Your answer should address at least three distinct mechanistic steps."
+        },
+        "ground_truth": {
+          "gold_answer": "During overdischarge, the anode potential rises to approximately 3.5 V, reaching the dissolution potential of copper. Copper dissolves from the current collector into the electrolyte as Cu²⁺ ions. These ions migrate through the separator toward the cathode side, where they deposit and form copper dendrites. With unsuppressed growth, dendrites penetrate the separator, creating an internal short circuit (ISC). Regarding sequential chain reactions: thermal runaway progresses as temperature rises through distinct decomposition thresholds. SEI decomposition begins at 80–120°C (onset possibly as low as 57°C), releasing heat. If temperature continues rising, the PE separator melts near 130°C, initially providing a shutdown effect by closing pores. However, if heat generation exceeds this protection, the separator collapses, enabling direct electrode contact. Cathode decomposition then follows at material-specific onset temperatures. Each reaction stage feeds the next, making the process sequential rather than simultaneous.",
+          "must_include": [
+            "copper dissolution at anode potential reaching 3.5 V",
+            "Cu²⁺ ion migration through separator",
+            "copper dendrite formation causing ISC",
+            "SEI decomposition onset at 80–120°C as early chain step",
+            "separator melting as shutdown mechanism followed by collapse enabling further progression",
+            "sequential nature of decomposition reactions with rising temperature"
+          ],
+          "disallowed_extrapolations": [
+            "Overdischarge always causes thermal runaway in every cell chemistry",
+            "SEI decomposition onset below 80°C is detectable by calorimetry",
+            "Separator shutdown permanently prevents thermal runaway in all cases",
+            "Copper dendrite formation is instantaneous upon reaching 3.5 V"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-step overdischarge ISC mechanism combined with sequential chain-reaction structure of thermal runaway",
+          "primary_boundary": "Copper dissolution threshold is 3.5 V anode potential; SEI calorimetric detectability begins at 80°C not 57°C; separator shutdown is conditional not absolute",
+          "intended_error_modes": [
+            "causal overclaim on inevitability of TR from overdischarge",
+            "boundary overreach on SEI detectability",
+            "mechanism substitution confusing shutdown with permanent protection"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_trigger+7+Journal_of_Loss_Prevention_in_the_Process_Industries__TR_trigger+8+ACS_Applied_Materials_andamp;_Interfaces__TR_trigger+9+Applied_Thermal_Engineering": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "An 18650 LIB is overcharged to 120% SOC under controlled lab conditions. Its self-heating onset temperature (T1) drops from 95.8°C (fresh) to 41°C, while its thermal runaway triggering temperature (T2) remains near 163°C. Which statements correctly explain this divergent behavior?",
+          "options": [
+            "A. T1 decreases because plated metallic lithium reacts with electrolyte at lower temperatures than intercalated lithium, initiating side reactions earlier.",
+            "B. T2 decreases proportionally with T1 because overcharge uniformly degrades all internal materials including the separator polymer.",
+            "C. T2 is largely unaffected because it corresponds to separator collapse, and the separator melting point is not significantly altered by overcharge-induced side reactions.",
+            "D. The drop in T1 is primarily caused by loss of active material (LAM), which begins at 105–110% SOC and dominates thermal behavior at 120% SOC.",
+            "E. Gas accumulation inside the cell during overcharge lowers T1 by directly reducing the activation energy of SEI decomposition reactions.",
+            "F. T1 reduction means thermal runaway can be triggered within the normal operating temperature range of a thermal management system designed for fresh cells."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence states T1 decrease is mainly due to lithium plating; plated Li reacts with electrolyte at lower temperatures than intercalated Li.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+8+ACS_Applied_Materials_andamp;_Interfaces:C006"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Evidence explicitly states T2 shows almost no difference across overcharge levels; separator melting point is unaffected by side reactions.",
+              "error_type": "unsupported_monotonicity",
+              "evidence_refs": [
+                "TR_trigger+8+ACS_Applied_Materials_andamp;_Interfaces:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence states T2 represents separator collapse and separator is a polymer whose melting point is little affected by internal side reactions.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+8+ACS_Applied_Materials_andamp;_Interfaces:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "LAM begins only between 105–110% SOC; evidence attributes T1 decrease primarily to lithium plating, not LAM dominance.",
+              "error_type": "mechanism_substitution",
+              "evidence_refs": [
+                "TR_trigger+8+ACS_Applied_Materials_andamp;_Interfaces:C002",
+                "TR_trigger+8+ACS_Applied_Materials_andamp;_Interfaces:C006"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Evidence links gas accumulation to CID activation and interval time changes, not to direct reduction of SEI decomposition activation energy.",
+              "error_type": "mechanism_substitution",
+              "evidence_refs": [
+                "TR_trigger+8+ACS_Applied_Materials_andamp;_Interfaces:C007"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Evidence explicitly states T1 at 120% SOC (41°C) means TR may be triggered within the normal temperature range of a thermal management system.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+8+ACS_Applied_Materials_andamp;_Interfaces:C001"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Divergent effect of overcharge on T1 vs T2 and its safety implication for thermal management design",
+          "primary_boundary": "Mechanism distinction: lithium plating governs T1 reduction; separator polymer melting point governs T2 invariance",
+          "intended_error_modes": [
+            "mechanism_substitution",
+            "unsupported_monotonicity",
+            "causal_overclaim"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming T2 decreases proportionally with T1",
+            "Attributing T1 reduction solely to LAM rather than lithium plating"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "During thermal runaway of 18650 LIBs, the lower explosive limit (LEL) of vented gas is measured across varying SOC and heating conditions. Which of the following statements about LEL behavior are INCORRECT?",
+          "options": [
+            "A. LEL decreases monotonically as SOC increases from low to 100%, because higher SOC always produces more flammable gas.",
+            "B. At low SOC, adequate reaction between electrolyte and air produces CO2, raising the LEL of the vented mixture.",
+            "C. At 100% SOC, the vented gas has the lowest LEL among tested SOC values, indicating highest explosion risk.",
+            "D. Higher heating temperature always raises the LEL because more complete combustion consumes flammable gas before venting.",
+            "E. Higher heating power lowers the LEL of vented gas, with the minimum recorded LEL being 4.80% in the study.",
+            "F. The LEL non-monotonicity with SOC is explained by a shift from CO2-dominant to CO-dominant gas composition as SOC increases."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "D"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "Evidence shows LEL increases initially then declines with SOC; peak LEL is at 60% SOC, not monotonically decreasing.",
+              "error_type": "unsupported_monotonicity",
+              "evidence_refs": [
+                "TR_trigger+7+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Evidence states low-SOC electrolyte reacts adequately with air producing CO2, a non-flammable gas that raises LEL.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+7+Journal_of_Loss_Prevention_in_the_Process_Industries:C007"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence explicitly states 100% SOC has the lowest LEL and highest danger risk among tested SOC values.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+7+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Evidence states LEL declines with increasing heating temperature because higher temperature produces more violent runaway with higher flammable gas proportion.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_trigger+7+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Evidence directly states LEL declines with increasing heating power and the lowest LEL recorded is 4.80%.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+7+Journal_of_Loss_Prevention_in_the_Process_Industries:C006"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Evidence attributes the SOC-LEL non-monotonicity to CO2 dominance at low SOC and CO dominance at high SOC.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+7+Journal_of_Loss_Prevention_in_the_Process_Industries:C007",
+                "TR_trigger+7+Journal_of_Loss_Prevention_in_the_Process_Industries:C008"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Non-monotonic LEL behavior with SOC and directional effects of heating power and temperature on LEL",
+          "primary_boundary": "LEL peaks at 60% SOC, not at extremes; higher temperature/power lowers LEL; negation qualifier forces polarity check",
+          "intended_error_modes": [
+            "unsupported_monotonicity",
+            "causal_overclaim",
+            "direction_reversal"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming LEL monotonically decreases with SOC",
+            "Claiming higher temperature raises LEL via combustion consumption"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A battery engineer argues that overcharging an 18650 cell to 120% SOC is relatively safe because the thermal runaway triggering temperature T2 barely changes (~163°C vs. ~161°C), and the cell's anode crystal structure shows no new XRD peaks after overcharge. Critically evaluate this argument using evidence about what overcharge actually changes and what safety-relevant risk is introduced despite the stable T2 and anode structure."
+        },
+        "ground_truth": {
+          "gold_answer": "The argument is flawed because it conflates T2 stability with overall safety. While T2 (separator collapse temperature) and anode crystal structure are indeed largely unaffected by overcharge up to 120% SOC, overcharge critically lowers the self-heating onset temperature T1 from 95.8°C to 41°C. This 54.8°C reduction is caused by lithium plating, whose high-reactivity metallic lithium initiates exothermic side reactions with electrolyte at temperatures well within the normal thermal management operating range. Additionally, internal gas accumulation during overcharge advances CID activation at lower temperatures. Thus, even though T2 is stable, the cell can enter self-heating and progress toward runaway at temperatures a thermal management system designed for fresh cells would not flag as dangerous.",
+          "must_include": [
+            "T1 decreases from 95.8°C to 41°C at 120% SOC",
+            "T2 remains near 163°C and is not significantly affected by overcharge",
+            "Lithium plating is the primary cause of T1 reduction",
+            "Plated lithium reacts with electrolyte at lower temperatures than intercalated lithium",
+            "T1 reduction means TR can be triggered within normal thermal management operating range",
+            "Anode crystal structure stability does not imply electrochemical or thermal safety"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming T2 changes significantly with overcharge degree",
+            "Claiming anode structural damage is the primary safety concern at 120% SOC",
+            "Claiming the cell is safe at 120% SOC because T2 is stable",
+            "Attributing T1 reduction to cathode decomposition or separator changes"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Distinguishing T1 vs T2 as independent safety indicators and identifying the mechanism by which overcharge introduces risk despite apparent structural stability",
+          "primary_boundary": "T1 and T2 are governed by different mechanisms; XRD structural integrity does not imply thermal or electrochemical safety under overcharge",
+          "intended_error_modes": [
+            "mechanism_substitution",
+            "boundary_overreach",
+            "causal_overclaim"
+          ]
+        }
+      }
+    ]
+  }
+}

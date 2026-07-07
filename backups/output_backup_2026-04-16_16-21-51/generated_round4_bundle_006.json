@@ -1,0 +1,329 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An NCM811|graphite cell with standard electrolyte undergoes accelerating rate calorimetry. The cathode-electrolyte exothermic reaction is identified as the thermal runaway trigger at approximately 218°C, while the dry cathode alone shows its decomposition peak at a higher temperature. A flame-retardant additive is then incorporated into the electrolyte. DSC testing of the modified cathode-electrolyte mixture shows that the additive acts as a reducing agent, causing reactive oxygen species to be converted to oxygen gas at a temperature roughly 80°C lower than the unmodified cathode-electrolyte reaction peak. In a subsequent full-cell abuse test with the modified electrolyte, the thermal runaway trigger temperature T2 is measured at 198°C. Which of the following conclusions are supported by this scenario?",
+        "options": [
+          "A. The additive reduces the thermal runaway trigger temperature relative to the unmodified cell, meaning the modified cell enters thermal runaway at a lower temperature despite the intended flame-retardant function.",
+          "B. Because the additive lowers the oxygen release onset temperature, the cathode-electrolyte reaction is no longer the thermal runaway trigger in the modified cell; the dry cathode decomposition becomes the new trigger.",
+          "C. The earlier oxygen release caused by the additive is mechanistically consistent with the observed reduction in T2, because it advances the onset of the exothermic cathode-electrolyte interaction.",
+          "D. The additive eliminates the exothermic cathode-electrolyte reaction entirely, as evidenced by the shift in oxygen release to lower temperature.",
+          "E. A flame-retardant additive that lowers the oxygen release temperature of the cathode-electrolyte system cannot simultaneously lower T2, because flame retardancy and thermal runaway susceptibility are governed by independent mechanisms.",
+          "F. The observation that T2 decreases with additive incorporation is consistent with the electrolyte having a destabilizing effect on cathode phase structure, since electrolyte presence is known to promote earlier phase transition and oxygen release relative to the dry cathode."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "T2 drops from 218°C to 198°C with the additive, directly indicating the modified cell enters thermal runaway at a lower temperature. This is counterintuitive given the additive's flame-retardant label but is directly supported by the evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+183+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The evidence does not support a change in which reaction serves as the trigger. The cathode-electrolyte reaction remains the trigger mechanism; the additive shifts its onset temperature downward rather than replacing it with a different trigger. The dry cathode peak appearing later (not earlier) than the cathode-electrolyte reaction disqualifies it as the new trigger.",
+            "error_type": "mechanism substitution",
+            "evidence_refs": [
+              "TR_Mechanism+183+UnknownJournal:C002",
+              "TR_Mechanism+183+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The additive shifts oxygen release onset ~80°C lower, advancing the cathode-electrolyte exothermic interaction. This mechanistically explains why T2 decreases: the trigger reaction is initiated earlier. The causal chain (lower oxygen release onset → earlier exothermic cathode-electrolyte reaction → lower T2) is supported by the evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+183+UnknownJournal:C003",
+              "TR_Mechanism+183+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence shows the oxygen release peak shifts to lower temperature, not that the reaction is eliminated. The exothermic cathode-electrolyte reaction still occurs and T2 is still measurable, confirming the reaction persists.",
+            "error_type": "causal overclaim",
+            "evidence_refs": [
+              "TR_Mechanism+183+UnknownJournal:C003",
+              "TR_Mechanism+183+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "This option appears cautious and mechanistically plausible but is incorrect. The evidence directly demonstrates that the same additive both provides flame-retardant function and lowers T2, meaning the two effects are not independent in this system. The option's premise is contradicted by the observed outcome.",
+            "error_type": "condition violation distractor",
+            "evidence_refs": [
+              "TR_Mechanism+183+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The evidence states that electrolyte presence accelerates phase transition and oxygen release relative to the dry cathode by releasing lattice strain spontaneously. The additive enhances this destabilizing interaction further by acting as a reducing agent, which is consistent with the observed T2 reduction. The reasoning chain from electrolyte-induced lattice strain release to earlier oxygen release to lower T2 is supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+183+UnknownJournal:C005",
+              "TR_Mechanism+183+UnknownJournal:C003",
+              "TR_Mechanism+183+UnknownJournal:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism by which a flame-retardant additive paradoxically lowers thermal runaway trigger temperature through earlier cathode-electrolyte oxygen release",
+        "primary_boundary": "The additive shifts the cathode-electrolyte reaction onset to lower temperature rather than eliminating it, and this shift is mechanistically linked to the observed T2 reduction",
+        "intended_error_modes": [
+          "Assuming flame-retardant label implies improved thermal runaway resistance",
+          "Mechanism substitution: assuming trigger reaction changes rather than shifts",
+          "Causal overclaim: assuming oxygen release shift implies reaction elimination",
+          "Conservative but incorrect: asserting independence of flame retardancy and TR susceptibility"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding the additive is net beneficial or net detrimental at system level without additional evidence",
+          "Generalizing the T2 reduction to other cathode chemistries",
+          "Inferring T3 change from T2 change"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A 74 Ah large-format NCM811/silicon-carbon (SiC) anode cell undergoes thermal runaway. Internal temperature measurements reach 1192°C while the surface temperature peaks at 702°C. The internal temperature rise rate is approximately 20 times the surface temperature rise rate. In a separate kinetic substitution analysis, replacing only the anode-electrolyte reaction kinetics with those of a graphite-electrolyte system raises the thermal runaway onset temperature by about 12% and reduces the maximum temperature by about 27%. Replacing only the cathode-anode reaction kinetics with those of an NCM111-graphite system reduces the maximum temperature rise rate by approximately 94%. A safety engineer is evaluating surface temperature monitoring as the primary diagnostic for this cell format. Which of the following conclusions are admissible given these conditions?",
+        "options": [
+          "A. Surface temperature monitoring alone is insufficient to characterize the severity of internal thermal runaway events in this cell format, because the internal peak temperature and rate exceed surface values by margins that would cause surface-based assessments to substantially underestimate internal conditions.",
+          "B. Since the anode-electrolyte interaction controls the onset temperature and the cathode-anode interaction controls the maximum rise rate, a mitigation strategy targeting only one of these interactions cannot simultaneously optimize both onset temperature and maximum rise rate.",
+          "C. The 94% reduction in maximum temperature rise rate from cathode-anode kinetic substitution implies that cathode-anode interactions are also the primary determinant of thermal runaway onset temperature in this chemistry.",
+          "D. Replacing the SiC anode with a graphite anode is predicted to lower the internal peak temperature by approximately 400°C, based on the comparison between NCM811-SiC and NCM111-graphite chemistries.",
+          "E. The large gap between internal and surface temperature rise rates means that surface-measured (dT/dt) thresholds used for NCM111-graphite cells would trigger protective intervention too late when applied to NCM811-SiC cells operating under the same monitoring protocol.",
+          "F. Because cathode-anode kinetics dominate the maximum temperature rise rate, substituting the cathode material alone to NCM111 is sufficient to reduce the maximum temperature rise rate to levels comparable to NCM111-graphite cells."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The 490°C gap between internal and surface peak temperatures and the 20× difference in temperature rise rates directly support that surface monitoring substantially underestimates internal severity. This is an admissible conclusion from the stated measurements.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+185+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The evidence assigns onset temperature control to anode-electrolyte kinetics and maximum rise rate control to cathode-anode kinetics. These are distinct interactions, so a single-interaction mitigation cannot simultaneously optimize both metrics. This multi-factor interaction reasoning is supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+185+UnknownJournal:C003",
+              "TR_Mechanism+185+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The evidence explicitly shows that cathode-anode and cathode-electrolyte substitutions produce zero change in onset temperature (Tonset), while only anode-electrolyte substitution raises Tonset. Attributing onset temperature control to cathode-anode kinetics directly contradicts the stated evidence.",
+            "error_type": "mechanism confusion distractor",
+            "evidence_refs": [
+              "TR_Mechanism+185+UnknownJournal:C003",
+              "TR_Mechanism+185+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The ~400°C difference is between NCM811-SiC and NCM111-graphite as complete chemistry pairs, not from anode substitution alone. Attributing the full 400°C difference to anode replacement alone ignores that cathode chemistry also changes in that comparison and that individual kinetic substitutions show smaller, separated contributions.",
+            "error_type": "scope expansion and causal overclaim",
+            "evidence_refs": [
+              "TR_Mechanism+185+UnknownJournal:C001",
+              "TR_Mechanism+185+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The internal (dT/dt)max is ~20 times the surface value. Safety thresholds calibrated on surface measurements from NCM111-graphite cells would be based on surface rates that are a much smaller fraction of internal rates for NCM811-SiC. Applying the same surface threshold would therefore trigger intervention later in the thermal runaway progression for the more aggressive chemistry, making this a supported safety engineering inference.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+185+UnknownJournal:C005",
+              "TR_Mechanism+185+UnknownJournal:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The 94% reduction in (dT/dt)max was observed when both cathode AND anode kinetics were substituted together (NCM811-SiC → NCM111-graphite for the cathode-anode pair). The evidence does not support attributing this reduction to cathode substitution alone; the anode material is part of the cathode-anode interaction pair and cannot be excluded from the mechanism.",
+            "error_type": "single-variable control assumption ignoring multi-factor interaction",
+            "evidence_refs": [
+              "TR_Mechanism+185+UnknownJournal:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Diagnostic limitations of surface temperature monitoring and the distinct roles of anode-electrolyte vs. cathode-anode kinetics in controlling onset temperature vs. maximum rise rate",
+        "primary_boundary": "Cathode-anode kinetics control (dT/dt)max but not Tonset; anode-electrolyte kinetics control Tonset but not (dT/dt)max; surface measurements cannot represent internal severity",
+        "intended_error_modes": [
+          "Conflating dominant mechanism for rise rate with dominant mechanism for onset temperature",
+          "Attributing full chemistry comparison difference to single component substitution",
+          "Assuming cathode substitution alone reproduces the full cathode-anode kinetic substitution result",
+          "Ignoring the 20× internal-to-surface rate ratio when evaluating monitoring adequacy"
+        ],
+        "disallowed_extrapolations": [
+          "Predicting exact temperature reduction from single-component substitution using full-chemistry comparison data",
+          "Concluding that surface monitoring is useless in all cell formats",
+          "Generalizing onset temperature control to cathode-anode interactions"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery safety engineer is comparing separator design options for a cell that must operate safely up to at least 180°C before internal short circuit (ISC) is acceptable. Available separator options are: (i) standard polyethylene (PE), (ii) polypropylene (PP), and (iii) PE with ceramic coating. The engineer also knows that NCM cathode materials with higher nickel content release more heat during decomposition, and that the SEI layer on the anode begins generating detectable exothermic heat at 80°C or above, with onset potentially as low as 57°C. The engineer wants to select the separator that delays ISC beyond the 180°C threshold and also considers that the separator melting process itself is endothermic. Which of the following statements are admissible given these conditions?",
+        "options": [
+          "A. The PE separator fails to meet the 180°C ISC threshold because its collapse temperature is approximately 130°C, making it inadmissible for this application regardless of cathode chemistry.",
+          "B. The PP separator marginally fails the 180°C threshold because its collapse temperature is approximately 170°C, and the endothermic melting enthalpy of PP (-190 J/g) is insufficient to compensate for the exothermic heat from SEI decomposition that begins below 180°C.",
+          "C. The ceramic-coated separator is the only option that can meet the 180°C ISC threshold, since its collapse temperature range of 200–260°C exceeds the threshold, whereas PE and PP collapse below 180°C.",
+          "D. Because separator melting is endothermic, a PP separator will always absorb enough heat to prevent ISC in cells where SEI decomposition is the only active exothermic process below 180°C.",
+          "E. The endothermic character of separator melting is relevant to the thermal energy balance but does not change the temperature at which ISC occurs, since ISC onset is governed by the collapse temperature, not by the heat absorbed during melting.",
+          "F. For a high-nickel NCM cathode cell, selecting a ceramic-coated separator over PE delays the ISC onset temperature by at least 70°C, which reduces the probability that cathode decomposition heat will couple with ISC-induced short-circuit heating during the early phase of thermal runaway."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "PE separator collapse temperature is ~130°C, which is below the 180°C threshold. This is a direct admissibility judgment: PE is inadmissible for this requirement. The conclusion holds regardless of cathode chemistry because the threshold is defined by the separator collapse temperature alone.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+184+Energy_Storage_Materials:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The PP collapse temperature (~170°C) does place it below the 180°C threshold, making it inadmissible. However, the reasoning about SEI exothermic heat compensating for PP endothermic melting is not supported by the evidence and introduces an unsupported quantitative trade-off. The inadmissibility of PP is correctly identified but the mechanistic justification is an unsupported causal chain. More critically, the option conflates the ISC threshold (collapse temperature) with a thermal energy balance argument that is not how ISC onset is determined.",
+            "error_type": "causal overclaim combining correct conclusion with unsupported mechanism",
+            "evidence_refs": [
+              "TR_Mechanism+184+Energy_Storage_Materials:C004",
+              "TR_Mechanism+184+Energy_Storage_Materials:C005",
+              "TR_Mechanism+184+Energy_Storage_Materials:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Ceramic-coated separator collapse temperature (200–260°C) exceeds 180°C; PE (~130°C) and PP (~170°C) do not. The ceramic-coated option is the only one of the three that meets the stated threshold. This is a direct admissibility comparison supported by the evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+184+Energy_Storage_Materials:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "This option appears conservative but is incorrect. The endothermic melting of PP absorbs heat but does not prevent ISC; ISC occurs when the separator collapses, which is a structural event determined by the collapse temperature (~170°C), not by whether the thermal energy balance is net positive or negative. The option incorrectly treats endothermic melting as a mechanism that prevents ISC.",
+            "error_type": "conservative but incorrect: mechanism confusion between thermal energy absorption and structural collapse temperature",
+            "evidence_refs": [
+              "TR_Mechanism+184+Energy_Storage_Materials:C004",
+              "TR_Mechanism+184+Energy_Storage_Materials:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The evidence defines ISC onset by collapse temperature (a structural threshold), not by the thermal energy balance during melting. The endothermic enthalpy affects the local thermal energy budget but does not shift the collapse temperature. This is a mechanistically correct distinction between thermal energy absorption and structural failure temperature.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+184+Energy_Storage_Materials:C004",
+              "TR_Mechanism+184+Energy_Storage_Materials:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The ceramic-coated separator shifts ISC onset from ~130°C (PE) to 200–260°C, a minimum shift of 70°C, which is directionally correct. However, the conclusion that this 'reduces the probability that cathode decomposition heat will couple with ISC-induced heating during early thermal runaway' is a system-level safety inference that goes beyond what the component-level collapse temperature data supports. The evidence does not establish the coupling mechanism between ISC onset timing and cathode decomposition heat release at the system level.",
+            "error_type": "scope expansion: system-level safety inference from component-level collapse temperature data",
+            "evidence_refs": [
+              "TR_Mechanism+184+Energy_Storage_Materials:C005",
+              "TR_Mechanism+184+Energy_Storage_Materials:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Separator selection admissibility based on collapse temperature thresholds and the distinction between endothermic melting enthalpy and structural ISC onset temperature",
+        "primary_boundary": "ISC onset is governed by collapse temperature (structural), not by thermal energy balance during melting; ceramic coating is the only option meeting the 180°C threshold",
+        "intended_error_modes": [
+          "Conflating endothermic melting enthalpy with ISC prevention",
+          "Treating thermal energy balance as the mechanism controlling ISC onset",
+          "Extending component-level collapse temperature data to system-level coupling conclusions",
+          "Accepting a correct conclusion paired with an unsupported mechanism"
+        ],
+        "disallowed_extrapolations": [
+          "Predicting exact ISC onset temperature within the ceramic coating range (200–260°C)",
+          "Concluding that ceramic coating eliminates thermal runaway",
+          "Inferring that endothermic melting has no effect on any aspect of thermal runaway progression"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A cell engineer is comparing two NCM811-based cell designs: one using a silicon-carbon (SiC) anode and one using a graphite anode, both paired with the same NCM811 cathode and electrolyte. Kinetic substitution analysis on the SiC-based cell shows that replacing only the anode-electrolyte reaction kinetics with graphite-electrolyte kinetics raises the thermal runaway onset temperature by approximately 12% and reduces the maximum internal temperature by approximately 27%. Replacing only the cathode-anode reaction kinetics with NCM111-graphite kinetics reduces the maximum temperature rise rate by approximately 94% but does not change the onset temperature. The engineer proposes that switching from SiC to graphite anode will be sufficient to bring the cell's thermal runaway severity to a level comparable to NCM111-graphite cells. Evaluate whether this proposal is admissible, identifying which thermal runaway metrics are and are not addressed by the anode substitution alone, and explain why the proposal as stated is not fully supported."
+      },
+      "ground_truth": {
+        "gold_answer": "The proposal is only partially admissible. Substituting the SiC anode with a graphite anode addresses the thermal runaway onset temperature (Tonset) and contributes to reducing the maximum internal temperature, because the anode-electrolyte interaction controls Tonset and contributes approximately 27% to Tmax reduction. However, the maximum temperature rise rate (dT/dt)max is dominated by cathode-anode interactions, not anode-electrolyte interactions. The ~94% reduction in (dT/dt)max was observed only when cathode-anode kinetics were substituted (i.e., both cathode and anode chemistry changed together). Anode substitution alone does not change the cathode material, so the cathode-anode interaction pair is not fully replaced by graphite-equivalent kinetics. Therefore, the anode substitution alone cannot reproduce the ~94% reduction in (dT/dt)max. The proposal as stated is inadmissible for the claim of achieving full NCM111-graphite equivalence because it neglects the cathode contribution to the dominant (dT/dt)max mechanism.",
+        "must_include": [
+          "Anode-electrolyte kinetics control onset temperature (Tonset); anode substitution addresses this metric",
+          "Cathode-anode kinetics dominate (dT/dt)max; anode substitution alone does not replace the cathode-anode interaction pair",
+          "The ~94% (dT/dt)max reduction requires both cathode and anode kinetic substitution, not anode alone",
+          "The proposal is partially but not fully admissible; it addresses onset temperature but not maximum rise rate equivalence"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming anode substitution alone achieves full NCM111-graphite thermal runaway equivalence",
+          "Attributing the full ~400°C Tmax difference between NCM811-SiC and NCM111-graphite to anode substitution alone",
+          "Concluding that cathode substitution alone would be sufficient without addressing anode-electrolyte kinetics"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Decomposition of thermal runaway metrics (Tonset, Tmax, (dT/dt)max) by controlling interaction pair and the inadmissibility of single-component substitution for full chemistry equivalence",
+        "primary_boundary": "Cathode-anode kinetics control (dT/dt)max independently of anode-electrolyte kinetics; these are separable contributions requiring separate interventions",
+        "intended_error_modes": [
+          "Assuming anode substitution addresses all thermal runaway metrics equally",
+          "Conflating the full chemistry comparison (NCM811-SiC vs NCM111-graphite) with single-component substitution effects",
+          "Ignoring that cathode-anode interaction requires cathode participation, not anode alone"
+        ]
+      }
+    }
+  ]
+}

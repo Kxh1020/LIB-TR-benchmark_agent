@@ -1,0 +1,324 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is designing an early-warning system for a battery enclosure housing LFP pouch cells of varying capacities under thermal abuse conditions. The system must provide maximum advance warning before thermal runaway. TDLAS and NDIR sensors are both candidates. A key constraint is that the enclosure may accumulate dense smoke during the event. Which of the following conclusions about sensor selection and warning capability are admissible?",
+        "options": [
+          "A. TDLAS can provide warning several hundred seconds before thermal runaway by detecting methane, but its utility is limited to the pre-runaway phase because smoke generated during the event blocks the laser path.",
+          "B. NDIR sensors are admissible for continuous monitoring through the full thermal runaway event, including post-runaway gas quantification, because they do not rely on optical transmission.",
+          "C. Because methane is the first detectable gas, a sensor incapable of detecting methane cannot serve as the primary early-warning trigger regardless of its sensitivity to other gases.",
+          "D. Larger-capacity cells provide a longer warning window before thermal runaway onset, meaning TDLAS has more time to accumulate a detectable methane signal in higher-capacity installations.",
+          "E. TDLAS is the preferred sensor for post-runaway gas composition analysis because its spectral specificity is unaffected by the thermal environment.",
+          "F. The 300–700 s advance detection window applies equally to all cell capacities tested, so sensor selection need not account for capacity-dependent timing differences."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence explicitly states TDLAS detects CH4 before rupture but smoke blocks laser post-runaway, limiting it to the pre-runaway phase.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C005",
+              "TR_Gasventing+129+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence does not support NDIR for post-runaway quantification; the claim of continuous full-event coverage is an unsupported scope expansion.",
+            "error_type": "scope expansion beyond evidence",
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "CH4 is the first detectable gas; any sensor blind to CH4 misses the earliest trigger signal, making it inadmissible as the primary early-warning device.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C004",
+              "TR_Gasventing+129+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Higher-capacity cells delay thermal runaway onset, extending the pre-runaway window during which TDLAS can accumulate a detectable methane signal.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C001",
+              "TR_Gasventing+129+Journal_of_Power_Sources:C007",
+              "TR_Gasventing+129+Journal_of_Power_Sources:C010"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence explicitly states TDLAS is unsuitable after thermal runaway due to smoke obstruction, directly contradicting post-runaway analytical utility.",
+            "error_type": "condition violation — contradicts explicit evidence constraint",
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Evidence shows the 67 Ah cell triggers ~300 s before runaway while the stated range is 300–700 s; capacity-dependent timing differences exist and must be accounted for.",
+            "error_type": "overgeneralization across capacity range",
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C003",
+              "TR_Gasventing+129+Journal_of_Power_Sources:C010"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of sensor selection conclusions given optical limitation of TDLAS, gas detection sequence, and capacity-dependent timing",
+        "primary_boundary": "TDLAS utility is bounded to pre-runaway phase; post-runaway smoke invalidates optical path; capacity affects warning window duration",
+        "intended_error_modes": [
+          "scope expansion for NDIR post-runaway",
+          "ignoring smoke-induced TDLAS failure post-runaway",
+          "overgeneralizing detection window across capacities"
+        ],
+        "disallowed_extrapolations": [
+          "NDIR post-runaway quantification not supported",
+          "TDLAS spectral immunity to thermal environment not supported",
+          "uniform detection window across all capacities not supported"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Two LFP pouch cells — one rated 6 Ah and one rated 67 Ah — are subjected to identical 300 W thermal abuse. The larger cell undergoes thermal runaway approximately 829 s later than the smaller cell, but its peak event intensity is greater. Gas volumes measured are approximately 6.22 L for the 6 Ah cell and 21.60 L for the 67 Ah cell. An engineer must assess which statements about the relationship between capacity, timing, and gas generation are admissible.",
+        "options": [
+          "A. The delay in thermal runaway onset for the larger cell is consistent with a greater thermal mass requiring more energy input before critical temperatures are reached.",
+          "B. Because gas volume scales with capacity at approximately 0.54 L/Ah, a 100 Ah LFP cell would be expected to produce roughly 54 L of gas during thermal runaway under comparable conditions.",
+          "C. The greater severity of the 67 Ah cell event, despite its delayed onset, implies that the rate of energy release during thermal runaway is inversely related to the time required to initiate it.",
+          "D. The gas volume ratio between the two cells is consistent with the linear gas-to-capacity relationship, so the 67 Ah cell does not disproportionately amplify gas hazard relative to its capacity.",
+          "E. A system designer who observes a delayed thermal runaway onset in a large-format cell should not interpret the delay as evidence of reduced hazard severity.",
+          "F. The onset delay observed for the 67 Ah cell under 300 W heating can be directly extrapolated to predict onset timing under different heating rates for cells of intermediate capacity."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Greater thermal mass in higher-capacity cells requires more energy to reach critical temperature thresholds, consistent with the observed onset delay.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C007",
+              "TR_Gasventing+129+Journal_of_Power_Sources:C001"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Extrapolating the linear fit to 100 Ah exceeds the tested capacity range; the linear relationship is empirically derived and may not hold beyond tested bounds.",
+            "error_type": "unsupported extrapolation beyond tested parameter range",
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C006"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Evidence does not establish an inverse relationship between onset delay and energy release rate; severity and delay both increase with capacity, not inversely coupled.",
+            "error_type": "causal overclaim — inferring inverse coupling not supported by evidence",
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C001",
+              "TR_Gasventing+129+Journal_of_Power_Sources:C007"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "At ~0.54 L/Ah, the 67 Ah cell's ~21.60 L and 6 Ah cell's ~6.22 L are both consistent with the linear relationship, confirming proportional rather than disproportionate gas scaling.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C002",
+              "TR_Gasventing+129+Journal_of_Power_Sources:C006"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Evidence shows delayed onset is accompanied by more pronounced severity; interpreting delay as reduced hazard is a safety-critical error directly contradicted by the evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C001",
+              "TR_Gasventing+129+Journal_of_Power_Sources:C007"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The 829 s delay was measured under 300 W heating only; extrapolating to different heating rates or intermediate capacities is beyond the evidence scope.",
+            "error_type": "regime and parameter extrapolation beyond stated conditions",
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C007"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of conclusions about capacity-dependent onset delay, gas scaling, and severity relationship in LFP pouch cells",
+        "primary_boundary": "Delay in onset does not imply reduced severity; linear gas-capacity relationship is empirical and bounded; extrapolation beyond tested range is inadmissible",
+        "intended_error_modes": [
+          "interpreting delay as safety benefit",
+          "extrapolating linear fit beyond tested range",
+          "inferring inverse coupling between delay and severity"
+        ],
+        "disallowed_extrapolations": [
+          "onset timing at different heating rates",
+          "gas volume for capacities outside tested range",
+          "inverse delay-severity relationship"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "During thermal abuse of an LFP pouch cell, gas species are detected in a defined temporal sequence. Methane appears first, followed by HF and H2, with CO2 and CO detected last. The temperature thresholds associated with CH4 and H2 generation differ by approximately 130°C. A safety engineer is evaluating which mechanistic and diagnostic conclusions about this sequence are admissible.",
+        "options": [
+          "A. The early appearance of methane relative to H2 is consistent with the lower temperature threshold for anode-electrolyte solvent decomposition compared to the threshold for binder-lithium reactions.",
+          "B. Detection of H2 by a sensor before any CH4 signal has appeared would indicate that the binder-lithium reaction is occurring without prior electrolyte decomposition, which is mechanistically admissible given the evidence.",
+          "C. A sensor array that detects only CO and CO2 cannot confirm whether the cell has already passed through the CH4 and H2 generation stages, because CO and CO2 are detected last in the sequence.",
+          "D. The detection of HF before H2 implies that fluorine-containing species in the electrolyte decompose at a lower temperature than the binder-lithium reaction threshold.",
+          "E. Because CH4 is generated first, a methane sensor alone is sufficient to characterize the full gas hazard profile of LFP thermal runaway for ventilation system design.",
+          "F. The sequential gas detection pattern means that a sensor detecting CO2 as the first signal in an enclosure has likely already missed the earlier methane and HF warning stages."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "CH4 generation threshold is ~120°C (DMC decomposition) and H2 threshold is ~250°C (binder-lithium reaction), directly explaining CH4 appearing before H2 in the sequence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C008",
+              "TR_Gasventing+129+Journal_of_Power_Sources:C009",
+              "TR_Gasventing+129+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "H2 requires >250°C via binder-lithium reaction, which occurs after CH4 generation at >120°C; H2 appearing before CH4 contradicts the mechanistic temperature sequence.",
+            "error_type": "condition violation — contradicts temperature-ordered mechanism sequence",
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C008",
+              "TR_Gasventing+129+Journal_of_Power_Sources:C009"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "CO and CO2 are detected last; their presence alone confirms only that the final stage has been reached, not whether earlier CH4 and H2 stages occurred or were missed.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence states HF appears after CH4 but before H2; the evidence does not provide HF's specific temperature threshold, making this mechanistic inference unsupported.",
+            "error_type": "unsupported mechanistic inference — HF threshold not established in evidence",
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "CH4 being first does not make it sufficient for full hazard characterization; HF, H2, CO, and CO2 each present distinct hazards not captured by methane monitoring alone.",
+            "error_type": "scope overclaim — single-gas monitoring cannot characterize full hazard profile",
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Since CO2 is detected last in the sequence, a CO2-first signal in an enclosure implies the earlier methane, HF, and H2 stages have already occurred and their warning windows were missed.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanistic and diagnostic admissibility of conclusions derived from the temperature-ordered gas detection sequence in LFP thermal runaway",
+        "primary_boundary": "Gas sequence is temperature-threshold-ordered; CO2/CO detection last means earlier stages are already complete; single-gas monitoring insufficient for full hazard profile",
+        "intended_error_modes": [
+          "inverting temperature-ordered sequence for H2 vs CH4",
+          "inferring HF threshold without evidence",
+          "treating first-detected gas as sufficient for full characterization"
+        ],
+        "disallowed_extrapolations": [
+          "HF specific temperature threshold not in evidence",
+          "single-gas sufficiency for full hazard profile",
+          "H2 before CH4 mechanistic admissibility"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "An LFP pouch cell battery enclosure is instrumented with a TDLAS sensor configured to detect methane. During a thermal abuse event, the TDLAS system records a rising methane signal beginning approximately 300 seconds before thermal runaway occurs, then the signal abruptly drops to zero and remains at zero throughout and after the thermal runaway event. A technician interprets the signal loss as evidence that methane generation has ceased. Identify the mechanistic reason why this interpretation is incorrect, explain what the signal loss most likely indicates about the physical state of the enclosure, and describe one design implication for sensor system architecture in battery safety monitoring."
+      },
+      "ground_truth": {
+        "gold_answer": "The signal loss does not indicate cessation of methane generation. TDLAS operates by transmitting a laser beam across the measurement path; when dense smoke is generated during thermal runaway, it physically obstructs the laser path and reduces transmitted light intensity to zero, making the sensor blind regardless of actual gas concentration. The signal loss therefore indicates that the enclosure has entered the smoke-generating phase of thermal runaway, not that gas production has stopped. The design implication is that TDLAS should not be used as the sole sensor for monitoring through the full thermal runaway event. A complementary sensor that does not rely on optical transmission — such as an electrochemical or NDIR-type detector — should be included to maintain gas detection capability after the optical path is compromised by smoke.",
+        "must_include": [
+          "smoke generated during thermal runaway obstructs the laser path",
+          "signal loss reflects optical blockage not cessation of gas generation",
+          "TDLAS is limited to the pre-runaway or early-stage phase",
+          "a non-optical complementary sensor is needed for post-runaway monitoring"
+        ],
+        "disallowed_extrapolations": [
+          "claiming NDIR is definitively proven effective post-runaway by the evidence",
+          "claiming methane generation stops at any specific temperature",
+          "claiming the 300 s warning window is universal across all cell capacities"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism of TDLAS signal failure during thermal runaway and its implication for sensor system architecture",
+        "primary_boundary": "TDLAS signal loss is caused by smoke-induced optical obstruction, not gas concentration change; this limits TDLAS to pre-runaway monitoring only",
+        "intended_error_modes": [
+          "interpreting signal loss as gas generation cessation",
+          "assuming TDLAS provides continuous monitoring through full event",
+          "failing to identify need for complementary non-optical sensing"
+        ]
+      }
+    }
+  ]
+}

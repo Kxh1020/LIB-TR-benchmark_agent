@@ -1,0 +1,35 @@
+{
+  "mcqs": [],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "During an explosion of thermal runaway gas from an overheated LiFePO4 battery at a mixture concentration of 22.21% in air, the system is in a lean oxygen state. Post-explosion analysis shows CO content rises sharply while H2 and CH4 are substantially consumed. The post-explosion residual gas has a lower explosion limit of 12.95%, compared to the pre-explosion lower explosion limit of 6.32%. A process safety engineer argues that because the post-explosion LEL has nearly doubled, the secondary explosion hazard has been effectively eliminated and no further mitigation is needed. Evaluate this argument. In your answer, address: (1) what the elevated post-explosion LEL physically means for secondary explosion risk, (2) why the change in gas composition after the initial explosion does not eliminate the hazard, and (3) what the post-explosion CO accumulation implies for the chemical state of the residual gas."
+      },
+      "ground_truth": {
+        "gold_answer": "The engineer's argument is not defensible. (1) An elevated post-explosion LEL of 12.95% means that a higher concentration of residual gas is required to form an ignitable mixture compared to the pre-explosion state, but a finite positive LEL still defines a flammable range. The hazard is reduced in the sense that lower concentrations are no longer ignitable, but any accumulation above 12.95% remains capable of supporting ignition and secondary explosion. The LEL doubling does not eliminate the flammable range; it shifts its lower boundary upward. (2) The post-explosion gas composition still contains H2, CO, and residual hydrocarbons in quantities sufficient to sustain flammability above the new LEL. The evidence explicitly states that secondary explosion risk must still be mitigated after the initial event. The change in composition alters the mixture's flammability characteristics but does not remove all flammable species. (3) The large post-explosion increase in CO content is mechanistically consistent with incomplete oxidation under lean oxygen conditions: carbon-containing species such as CH4 are partially oxidized to CO rather than fully to CO2, because insufficient oxygen is available to complete the reaction. This means the residual gas contains a higher proportion of CO, which is itself a flammable and toxic species, indicating that the chemical energy content of the mixture has been partially redistributed rather than fully released. The residual gas therefore remains both flammable and chemically reactive.",
+        "must_include": [
+          "Elevated LEL reduces but does not eliminate the flammable concentration range",
+          "Secondary explosion risk explicitly remains after initial explosion",
+          "CO increase is consistent with incomplete oxidation under lean oxygen conditions",
+          "Residual gas retains flammable species above the new LEL"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming the doubled LEL proves secondary explosion is impossible",
+          "Inferring that CO accumulation indicates the mixture is inert",
+          "Concluding that post-explosion gas composition is safe without specifying concentration conditions"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Interpretation of post-explosion LEL elevation and residual gas composition in terms of secondary explosion hazard and incomplete combustion mechanism",
+        "primary_boundary": "Elevated LEL shifts but does not eliminate flammability; CO accumulation reflects incomplete oxidation, not inertness",
+        "intended_error_modes": [
+          "Misinterpreting higher LEL as hazard elimination",
+          "Ignoring that residual gas retains flammable species",
+          "Misattributing CO increase to inert dilution rather than incomplete oxidation"
+        ]
+      }
+    }
+  ]
+}

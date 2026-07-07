@@ -1,0 +1,342 @@
+{
+  "TR_Mechanism+61+UnknownJournal__TR_Mechanism+62+UnknownJournal__TR_Mechanism+66+UnknownJournal": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "An NCA||Gr cylindrical cell undergoes thermal abuse. At the moment thermal runaway is triggered (T2), the surface temperature reads approximately 180\u00b0C while the internal temperature has already exceeded 430\u00b0C. A safety engineer analyzing only the surface temperature record concludes that internal short circuit occurs after T2 and therefore does not contribute to triggering thermal runaway. Separately, heat contribution data from the self-heating stage (T1 to T2) shows that the anode\u2013electrolyte system accounts for roughly 54% of heat, internal short circuit for roughly 28%, and the cathode\u2013anode system for roughly 19%. Which of the following statements are admissible given these conditions?",
+          "options": [
+            "A. The surface temperature record alone is insufficient to correctly identify the timing of internal short circuit onset relative to thermal runaway triggering.",
+            "B. Because the anode\u2013electrolyte system contributes the largest heat fraction during the self-heating stage, internal short circuit is not a necessary contributor to thermal runaway triggering in this chemistry.",
+            "C. The large gap between internal and surface temperature at T2 means that surface-based diagnostic methods will systematically underestimate how early internal short circuit contributes to the thermal runaway sequence.",
+            "D. The roughly 28% heat contribution from internal short circuit during the self-heating stage is consistent with it playing a role in triggering thermal runaway, even though it is not the dominant heat source in that stage.",
+            "E. After thermal runaway is triggered, internal short circuit remains the primary driver of temperature rise toward the maximum because it releases heat instantaneously.",
+            "F. The surface-to-internal temperature discrepancy at T2 implies that any safety model using surface temperature as the sole input will incorrectly characterize the internal short circuit as a post-trigger event rather than a pre-trigger contributor."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "D",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The evidence explicitly states that relying only on surface temperature leads to incorrect attribution of internal short circuit timing relative to T2, making surface temperature alone insufficient for correct diagnosis.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+66+UnknownJournal:C002"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The evidence shows internal short circuit contributes 27.5% during the self-heating stage and its instantaneous heat release directly triggers thermal runaway. Dominant fractional contribution by another source does not make internal short circuit non-necessary; this is a causal overclaim based on magnitude ranking alone.",
+              "error_type": "Causal overclaim from fractional dominance; mechanism confusion",
+              "evidence_refs": [
+                "TR_Mechanism+66+UnknownJournal:C003",
+                "TR_Mechanism+66+UnknownJournal:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "A 258\u00b0C internal-to-surface temperature gap at T2 means surface measurements lag severely behind internal events, so surface-based diagnostics will consistently place internal short circuit later in the sequence than it actually occurs.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+66+UnknownJournal:C001",
+                "TR_Mechanism+66+UnknownJournal:C002"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "The evidence assigns 27.5% heat contribution to internal short circuit during the self-heating stage and states its instantaneous heat release directly triggers thermal runaway, making a role in triggering admissible even though it is not the largest fractional contributor.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+66+UnknownJournal:C003",
+                "TR_Mechanism+66+UnknownJournal:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "After thermal runaway is triggered (T2 to T3), internal short circuit contributes only 5.4% to temperature rise, while the anode\u2013electrolyte system contributes 59.1% and the cathode\u2013anode system 35.6%. Internal short circuit is not the primary post-trigger driver.",
+              "error_type": "Regime transfer error; confusing pre-trigger dominance with post-trigger dominance",
+              "evidence_refs": [
+                "TR_Mechanism+66+UnknownJournal:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "This is a direct mechanistic implication of the surface-internal temperature discrepancy at T2: any model using only surface temperature will see internal short circuit appearing to occur after T2, misclassifying it as a post-trigger event.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+66+UnknownJournal:C001",
+                "TR_Mechanism+66+UnknownJournal:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of surface-temperature-based diagnostic conclusions versus internal event timing, and the role of internal short circuit across thermal runaway stages.",
+          "primary_boundary": "Internal short circuit contributes meaningfully during self-heating and directly triggers thermal runaway, but its role collapses to minor after triggering; surface temperature cannot correctly resolve its timing.",
+          "intended_error_modes": [
+            "Causal overclaim: treating fractional dominance of one source as proof another is non-necessary",
+            "Regime transfer error: extending pre-trigger internal short circuit dominance into the post-trigger stage",
+            "Measurement scope error: assuming surface temperature correctly resolves internal event timing"
+          ],
+          "disallowed_extrapolations": [
+            "Concluding internal short circuit is the dominant post-trigger heat source",
+            "Concluding internal short circuit is not a trigger contributor because it is not the largest pre-trigger source",
+            "Generalizing the temperature gap magnitude to other chemistries or cell formats not in evidence"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "Two lithium-ion batteries of the same cell format are subjected to external short circuit at discharge rates of 20C. Battery A is at 50% SOC and Battery B is at 100% SOC. Measurements show that Battery A has a faster surface temperature rise rate but a lower maximum surface temperature than Battery B. During the short circuit, the negative electrode region consistently reaches the highest temperature, followed by the cell center, with the positive electrode region lowest. At 100% SOC, the voltage trace shows a distinct plateau near 2.75 V during discharge, which is not present at 50% SOC. Post-test examination identifies separator shrinkage and tearing as the primary cause of jelly roll deformation. Which of the following conclusions are admissible?",
+          "options": [
+            "A. The voltage plateau observed only at 100% SOC is consistent with separator pore closure triggered by locally elevated temperature hindering ion transport, not with a change in active material chemistry.",
+            "B. Because Battery A heats up faster, it poses a greater thermal runaway risk than Battery B under these short-circuit conditions.",
+            "C. The higher maximum temperature reached by Battery B is consistent with greater stored electrochemical energy being available for conversion during the short-circuit process.",
+            "D. The spatial temperature gradient, with the negative electrode region hottest, indicates that the primary heat generation site during external short circuit is at or near the negative electrode rather than the positive electrode.",
+            "E. Separator shrinkage and tearing being the main cause of jelly roll deformation means that preventing separator failure would eliminate thermal runaway under external short circuit conditions.",
+            "F. The voltage plateau near 2.75 V in the 100% SOC case is caused by the separator closing its micropores, and this same mechanism is responsible for the lower temperature rise rate observed in Battery B compared to Battery A."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "D",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The evidence explicitly states the voltage plateau in the high-SOC group was caused by high temperature triggering separator pore closure, which hindered Li+ transport. This is a mechanistic attribution consistent with the evidence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+62+UnknownJournal:C008",
+                "TR_Mechanism+62+UnknownJournal:C007"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "A faster temperature rise rate does not imply greater thermal runaway risk; the evidence shows Battery B (100% SOC) reaches a higher maximum temperature, which is the more relevant indicator of thermal severity. This conflates rate with magnitude and ignores SOC-dependent energy content.",
+              "error_type": "Mechanism confusion: conflating temperature rise rate with thermal runaway severity; ignoring SOC-dependent stored energy",
+              "evidence_refs": [
+                "TR_Mechanism+62+UnknownJournal:C002",
+                "TR_Mechanism+62+UnknownJournal:C003",
+                "TR_Mechanism+62+UnknownJournal:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Battery B at 100% SOC has more stored electrochemical energy than Battery A at 50% SOC. The evidence shows Battery B reaches a higher maximum temperature, which is consistent with more energy being available for conversion during the short circuit. This is a minimal engineering implication supported by the comparative data.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+62+UnknownJournal:C002",
+                "TR_Mechanism+62+UnknownJournal:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "The evidence directly states the negative electrode has the highest temperature during short circuit, followed by the center and then the positive electrode, which is consistent with primary heat generation occurring at or near the negative electrode.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+62+UnknownJournal:C005"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The evidence identifies separator shrinkage and tearing as the main cause of jelly roll deformation, not as the sole cause of thermal runaway. Preventing separator failure addresses a structural deformation mechanism but does not eliminate all thermal runaway pathways, which include electrochemical heat generation and other reactions.",
+              "error_type": "Protective mechanism overclaim: equating prevention of one failure mode with elimination of thermal runaway",
+              "evidence_refs": [
+                "TR_Mechanism+62+UnknownJournal:C006"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "The evidence states the voltage plateau is caused by separator pore closure from high temperature. Separator pore closure reduces ionic current, which would reduce the rate of electrochemical heat generation, consistent with the lower temperature rise rate observed in Battery B despite its higher final temperature. This requires two-step reasoning: pore closure \u2192 reduced ion transport \u2192 reduced current-driven heating rate.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+62+UnknownJournal:C007",
+                "TR_Mechanism+62+UnknownJournal:C008",
+                "TR_Mechanism+62+UnknownJournal:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Mechanism of SOC-dependent thermal behavior during external short circuit, separator pore closure effects, and spatial heat generation distribution.",
+          "primary_boundary": "Temperature rise rate and maximum temperature are distinct indicators that can point in opposite directions across SOC levels; separator pore closure reduces ionic transport rate but does not prevent eventual high temperatures at high SOC.",
+          "intended_error_modes": [
+            "Conflating temperature rise rate with thermal runaway severity",
+            "Overclaiming that preventing one structural failure mode eliminates thermal runaway",
+            "Ignoring that the separator pore closure mechanism simultaneously explains the voltage plateau and modulates the temperature rise rate"
+          ],
+          "disallowed_extrapolations": [
+            "Concluding that faster heating rate implies greater overall hazard without considering maximum temperature",
+            "Concluding that separator failure prevention eliminates thermal runaway",
+            "Extending spatial temperature distribution conclusions to other loading modes not described in evidence"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A lithium-ion battery module uses a polyolefin separator. During thermal abuse, the following sequential observations are recorded: (1) at approximately 80\u2013120\u00b0C, a reaction begins at the negative electrode involving active lithium and electrolyte; (2) at 150\u2013200\u00b0C, the positive electrode releases a gas that reacts violently with electrolyte; (3) above 200\u00b0C, the separator begins to lose structural integrity and electrode contact occurs. A design team proposes replacing the standard PE separator (melting point ~130\u00b0C) with a ceramic-coated separator (melting point ~200\u00b0C) to prevent direct electrode contact. They claim this change will prevent thermal runaway. A second proposal uses thermal insulation material between cells to delay propagation. Which of the following statements correctly characterize the admissible conclusions from this scenario?",
+          "options": [
+            "A. Replacing the PE separator with a ceramic-coated separator delays the onset of direct electrode contact but does not prevent the exothermic reactions at the negative electrode and positive electrode that occur at lower temperatures.",
+            "B. The ceramic-coated separator upgrade prevents thermal runaway because direct electrode contact is the initiating event of the thermal runaway sequence.",
+            "C. Thermal insulation between cells can delay propagation speed within the module but does not address the internal reaction cascade within an individual cell already undergoing thermal runaway.",
+            "D. The positive electrode oxygen release reaction at 150\u2013200\u00b0C occurs before the separator melting temperature of the ceramic-coated separator is reached, meaning the most energetic pre-contact reaction proceeds regardless of separator upgrade.",
+            "E. A PP/PE/PP composite separator with a melting point of approximately 170\u00b0C provides better protection against direct electrode contact than a ceramic-coated separator in this thermal abuse scenario.",
+            "F. The sequential nature of the reaction stages means that preventing direct electrode contact via a higher-melting separator eliminates the dominant heat source in the overall thermal runaway sequence."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "D"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The ceramic-coated separator melts at ~200\u00b0C, which delays direct electrode contact compared to PE (~130\u00b0C). However, the SEI decomposition reaction (80\u2013120\u00b0C) and the positive electrode oxygen release (150\u2013200\u00b0C) both occur below or at the ceramic separator's melting threshold, so these reactions proceed regardless of the separator upgrade.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+61+UnknownJournal:C001",
+                "TR_Mechanism+61+UnknownJournal:C002",
+                "TR_Mechanism+61+UnknownJournal:C003",
+                "TR_Mechanism+61+UnknownJournal:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Direct electrode contact occurs above 200\u00b0C, after the SEI decomposition and positive electrode oxygen release reactions have already begun. The ceramic separator delays contact but cannot prevent the reactions that precede it; claiming it prevents thermal runaway is an overclaim that misidentifies the initiating event.",
+              "error_type": "Protective mechanism overclaim; misidentifying the initiating event in the causal sequence",
+              "evidence_refs": [
+                "TR_Mechanism+61+UnknownJournal:C001",
+                "TR_Mechanism+61+UnknownJournal:C002",
+                "TR_Mechanism+61+UnknownJournal:C003",
+                "TR_Mechanism+61+UnknownJournal:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "The evidence states thermal insulation materials can significantly delay propagation speed within battery modules. This is a module-level effect; it does not address the internal reaction cascade within a cell already in thermal runaway.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+61+UnknownJournal:C008"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "The positive electrode oxygen release reaction occurs at 150\u2013200\u00b0C. The ceramic-coated separator melts at ~200\u00b0C. Therefore, the violent oxygen-electrolyte reaction begins at or before the ceramic separator's melting threshold, meaning this highly exothermic reaction proceeds regardless of the separator upgrade. This is a counterintuitive but admissible conclusion requiring temperature threshold comparison.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+61+UnknownJournal:C002",
+                "TR_Mechanism+61+UnknownJournal:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The PP/PE/PP composite separator melts at ~170\u00b0C, which is lower than the ceramic-coated separator at ~200\u00b0C. For the purpose of delaying direct electrode contact in this thermal abuse scenario, the ceramic-coated separator provides better protection than the composite separator, not worse.",
+              "error_type": "Numerical comparison error; inverting the relative protection ranking",
+              "evidence_refs": [
+                "TR_Mechanism+61+UnknownJournal:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Direct electrode contact is a late-stage event occurring above 200\u00b0C. The dominant heat sources in the overall sequence include the anode\u2013electrolyte reactions and cathode oxygen release, which precede direct contact. Preventing contact does not eliminate the dominant heat sources; this is a conservative-sounding but mechanistically incorrect claim.",
+              "error_type": "Causal overclaim; misidentifying direct electrode contact as the dominant heat source rather than a late-stage consequence",
+              "evidence_refs": [
+                "TR_Mechanism+61+UnknownJournal:C001",
+                "TR_Mechanism+61+UnknownJournal:C002",
+                "TR_Mechanism+61+UnknownJournal:C003",
+                "TR_Mechanism+66+UnknownJournal:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of separator upgrade and thermal insulation as thermal runaway prevention strategies, given the sequential temperature thresholds of internal reactions.",
+          "primary_boundary": "Separator upgrade delays direct electrode contact but cannot prevent reactions that occur at temperatures below the separator's melting point; thermal insulation affects propagation not internal cell reactions.",
+          "intended_error_modes": [
+            "Protective mechanism overclaim: treating separator upgrade as thermal runaway prevention",
+            "Misidentifying direct electrode contact as the initiating event rather than a late-stage consequence",
+            "Inverting the relative melting point ranking of separator types",
+            "Conflating module-level propagation delay with cell-level reaction suppression"
+          ],
+          "disallowed_extrapolations": [
+            "Concluding that ceramic separator prevents all exothermic reactions",
+            "Concluding that thermal insulation prevents thermal runaway in an already-triggered cell",
+            "Extending separator melting point comparison to other abuse modes not described"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "During external short circuit of a lithium-ion battery at 100% SOC, the voltage trace shows a distinct plateau near 2.75 V that is absent at 50% SOC under the same discharge rate. Post-test analysis also reveals that the negative electrode current collector copper foil was oxidized, with copper ions migrating across the separator and depositing on the positive electrode surface. Explain the mechanistic chain that produces the voltage plateau at high SOC, and identify which additional failure mechanism is enabled by the conditions that produce this plateau. Specifically address why this second failure mechanism is linked to the same high-SOC short-circuit conditions rather than being an independent event."
+        },
+        "ground_truth": {
+          "gold_answer": "At 100% SOC, the short-circuit current generates sufficient heat to raise the separator temperature to approximately 130\u00b0C, at which point the separator micropores close and irreversibly block, hindering Li+ transport. This reduced ionic conductivity limits the discharge current that can flow, producing the observed voltage plateau near 2.75 V. The same high-temperature, high-current conditions that drive separator pore closure also drive the battery into over-discharge during the short circuit process. Under over-discharge, the negative electrode current collector copper foil is oxidized to Cu+ and Cu2+ ions. Because the electrochemical potential difference between electrodes drives ion migration, these copper ions migrate across the separator to the positive electrode, where they are reduced and deposit as copper metal. This copper deposition is therefore mechanistically linked to the same high-SOC short-circuit conditions because: (1) the high SOC provides the stored energy necessary to sustain the large short-circuit current that both heats the separator to pore-closure temperature and drives the cell into over-discharge, and (2) the over-discharge state is the direct electrochemical precondition for copper oxidation and migration. At 50% SOC, the lower stored energy produces less heat and a smaller current, insufficient to trigger separator pore closure or drive the deep over-discharge required for copper dissolution and migration.",
+          "must_include": [
+            "Separator micropore closure at approximately 130\u00b0C as the cause of the voltage plateau",
+            "Hindered Li+ transport as the mechanism linking pore closure to the voltage plateau",
+            "Over-discharge during short circuit as the condition enabling copper oxidation",
+            "Copper ion migration from negative to positive electrode driven by electrochemical potential difference",
+            "Copper deposition on positive electrode surface as the result",
+            "High SOC providing the stored energy that sustains both the thermal and electrochemical conditions for both mechanisms",
+            "Explanation of why 50% SOC does not produce the same plateau or copper deposition"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming separator pore closure prevents thermal runaway at high SOC",
+            "Claiming copper deposition is the primary cause of thermal runaway rather than a consequence of over-discharge",
+            "Generalizing the voltage plateau mechanism to low-SOC conditions",
+            "Asserting that copper deposition occurs independently of the short-circuit-induced over-discharge"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-step mechanistic chain connecting high-SOC short-circuit conditions to separator pore closure (voltage plateau) and copper dissolution/migration (secondary failure), with explicit linkage between both mechanisms through shared causal conditions.",
+          "primary_boundary": "Both the voltage plateau and copper deposition are consequences of the same high-SOC short-circuit energy conditions; neither occurs independently of those conditions, and neither can be attributed to separator failure or copper oxidation alone.",
+          "intended_error_modes": [
+            "Treating the voltage plateau as caused by active material chemistry change rather than separator pore closure",
+            "Treating copper deposition as an independent failure mode unrelated to the over-discharge driven by short-circuit conditions",
+            "Failing to link both mechanisms to the high stored energy at 100% SOC as the common enabling condition",
+            "Claiming separator pore closure prevents thermal runaway rather than merely modulating current flow"
+          ]
+        }
+      }
+    ]
+  }
+}

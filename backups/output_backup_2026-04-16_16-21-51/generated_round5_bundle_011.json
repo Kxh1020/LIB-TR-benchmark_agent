@@ -1,0 +1,362 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery module test compares LFP and NCM523 chemistries under identical pressure reduction from 95 kPa to 35 kPa. The LFP module's thermal runaway propagation time decreases by roughly half, while the NCM523 module's propagation time increases by more than threefold over the same pressure range. The average maximum temperature of the NCM523 module is approximately twice that of the LFP module at any given pressure, and as pressure decreases, the instantaneous force during NCM523 venting increases due to the growing pressure differential between cell interior and environment. An engineer is evaluating which conclusions about deploying these modules in a high-altitude (low-pressure) environment are admissible. Which of the following conclusions are supported by the described behavior?",
+        "options": [
+          "A. Reducing ambient pressure improves the propagation safety margin for NCM523 modules but worsens it for LFP modules, making pressure reduction a chemistry-dependent rather than universally beneficial mitigation strategy.",
+          "B. Because NCM523 propagation time increases at lower pressure, NCM523 modules present a lower overall thermal hazard than LFP modules in high-altitude deployments.",
+          "C. The mechanical hazard from NCM523 venting events increases at lower ambient pressure, meaning that structural protection against vent-driven impact forces becomes more critical at altitude even as thermal propagation slows.",
+          "D. The observed divergence in propagation behavior between LFP and NCM523 under pressure change is sufficient to conclude that the dominant heat transfer pathway differs between the two chemistries under these conditions.",
+          "E. A design strategy that reduces ambient pressure around an LFP module to suppress thermal runaway propagation would be counterproductive based on the described pressure-dependent behavior.",
+          "F. The decrease in average maximum temperature observed at lower pressure for both chemistries confirms that pressure reduction is an effective standalone safety intervention for preventing thermal runaway initiation.",
+          "G. At 95 kPa, NCM523 propagation speed exceeds LFP propagation speed by a factor consistent with the ratio of their maximum temperatures, indicating a direct proportionality between peak temperature and propagation rate."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence shows that lower pressure accelerates LFP propagation while inhibiting NCM523 propagation, directly supporting that pressure reduction is chemistry-dependent in its effect on propagation safety, not universally beneficial or detrimental.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+185+Energy:C001",
+              "TR_Dynamics+185+Energy:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Although NCM523 propagation time increases at lower pressure, the average maximum temperature of NCM523 remains approximately twice that of LFP at any given pressure. Slower propagation does not offset the substantially higher thermal hazard magnitude. This is a conservative-sounding but mechanistically incorrect conclusion.",
+            "error_type": "causal overclaim / ignoring multi-factor interaction",
+            "evidence_refs": [
+              "TR_Dynamics+185+Energy:C003",
+              "TR_Dynamics+185+Energy:C001"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that the impact force from NCM523 venting grows as ambient pressure decreases due to the larger instantaneous pressure differential, making impact protection increasingly critical at low pressure even though thermal propagation slows.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+185+Energy:C005",
+              "TR_Dynamics+185+Energy:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "While the divergence in propagation behavior is real, the evidence does not identify or compare dominant heat transfer pathways between the two chemistries. Inferring a mechanistic pathway difference from a propagation time difference alone is an unsupported extrapolation.",
+            "error_type": "scope expansion / causal overclaim",
+            "evidence_refs": [
+              "TR_Dynamics+185+Energy:C001",
+              "TR_Dynamics+185+Energy:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The evidence shows that lower pressure accelerates LFP propagation speed (0.42 cell/min at 35 kPa versus half that at 95 kPa) and reduces LFP propagation time by 50.1%. Therefore, deliberately reducing pressure around an LFP module would worsen, not improve, propagation safety.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+185+Energy:C001",
+              "TR_Dynamics+185+Energy:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "While average maximum temperature decreases 20–50°C with pressure reduction, this describes a weakening of TR behavior, not prevention of TR initiation. Claiming pressure reduction prevents initiation is an overclaim beyond the evidence, which addresses propagation and peak temperature, not initiation thresholds.",
+            "error_type": "protective mechanism overclaim",
+            "evidence_refs": [
+              "TR_Dynamics+185+Energy:C002"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "NCM523 propagation speed at 95 kPa is 6.00 cell/min versus LFP at approximately 0.21 cell/min, a ratio far exceeding 2:1, while the temperature ratio is approximately 2:1. No direct proportionality between peak temperature and propagation rate is supported by the evidence.",
+            "error_type": "numerical exaggeration / unsupported proportionality",
+            "evidence_refs": [
+              "TR_Dynamics+185+Energy:C003",
+              "TR_Dynamics+185+Energy:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Chemistry-dependent and hazard-type-dependent effects of ambient pressure reduction on thermal runaway propagation and mechanical venting hazard",
+        "primary_boundary": "Lower pressure improves one hazard dimension for NCM523 (slower propagation) while worsening another (higher impact force), and worsens LFP propagation; conclusions must account for both hazard dimensions and chemistry specificity",
+        "intended_error_modes": [
+          "Treating slower propagation time as equivalent to lower overall hazard without accounting for peak temperature magnitude",
+          "Inferring mechanistic pathway differences from propagation behavior differences without direct evidence",
+          "Overgeneralizing pressure reduction as a universally beneficial safety intervention",
+          "Assuming proportionality between peak temperature and propagation speed"
+        ],
+        "disallowed_extrapolations": [
+          "Identifying dominant heat transfer pathways from propagation time data alone",
+          "Concluding that pressure reduction prevents TR initiation based on peak temperature reduction data",
+          "Claiming NCM523 is safer than LFP at altitude based solely on propagation time increase"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A lithium-ion cell undergoes an internal short circuit. Simulation results show that in an external short-circuit scenario the local maximum temperature reaches 120°C in 8.2 s, while an impurity-induced internal short circuit reaches the same temperature in 10.7 s. In both cases, the lithium-ion concentration in the electrolyte at the positive electrode–separator interface drops to near zero within 50–150 ms of short-circuit onset. When the state of charge is reduced from 100% to 50%, the temperature rise to 120°C slows across all short-circuit types, yet the current profile over time does not change substantially. Cooling applied only from the cell's lateral sides delays the 120°C threshold by approximately 0.1 s under adiabatic conditions due to a hotspot forming at the cell center. An engineer must assess which mechanistic and design conclusions are admissible from these observations.",
+        "options": [
+          "A. The near-zero electrolyte concentration at the positive electrode–separator interface within 150 ms indicates that the current during short circuit is governed by mass transport limitations in the electrolyte rather than by the available stored charge.",
+          "B. Because reducing SOC from 100% to 50% slows the temperature rise without substantially changing the current profile, the primary effect of lower SOC on thermal response operates through a reduction in available electrochemical energy rather than through a change in the mass-transport-limited current.",
+          "C. Side-only cooling is an effective strategy for preventing thermal runaway initiation in cells with long electrode layers because the 0.1 s delay it provides is sufficient to allow external intervention.",
+          "D. The shorter time to 120°C in the external short-circuit scenario compared to the impurity-induced scenario implies that the external short circuit generates a higher peak current, which is the direct cause of faster heating.",
+          "E. The convergence of all three short-circuit scenarios to a mass-transport-limited current regime within tens to hundreds of milliseconds means that the scenario-specific differences in heating rate are determined primarily by conditions after mass transport limitation is established, not before.",
+          "F. Temperatures 25–50°C above room temperature are sufficient to initiate the exothermic side reactions responsible for thermal runaway in all three scenarios.",
+          "G. The 0.1 s delay from side-only cooling is consistent with the heat removal being ineffective at the cell center, indicating that the thermal geometry of the cell constrains the utility of lateral cooling regardless of cooling power."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence states that a mass-transport-limited current is reached in all scenarios within 50–150 ms, and that even at 50% SOC the current profile does not differ markedly, confirming that mass transport in the electrolyte is the rate-determining process for current during short circuit.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+186+UnknownJournal:C004",
+              "TR_Dynamics+186+UnknownJournal:C006"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The evidence explicitly states that the current over time does not differ markedly at 50% SOC compared to 100% SOC, and that mass transport remains the rate-determining process. Therefore, the slower temperature rise at lower SOC cannot be attributed to a change in current; it must reflect a difference in heat generation per unit current or available energy, but the evidence does not support attributing it specifically to 'reduction in available electrochemical energy' as a distinct mechanism separate from the mass-transport control already identified. This option introduces a mechanistic attribution not supported by the evidence.",
+            "error_type": "causal overclaim / mechanism substitution",
+            "evidence_refs": [
+              "TR_Dynamics+186+UnknownJournal:C006"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The evidence states that side-only cooling delays the 120°C threshold by only about 0.1 s, which is described as very little deviation. Claiming this is sufficient for external intervention is an overclaim; the evidence explicitly frames this as ineffective heat removal due to the hotspot geometry.",
+            "error_type": "protective mechanism overclaim",
+            "evidence_refs": [
+              "TR_Dynamics+186+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence does not provide current magnitude data distinguishing the three scenarios. Attributing the faster heating in the external short-circuit scenario to a higher peak current is an unsupported causal inference; the mass-transport-limited current regime is reached rapidly in all scenarios, and the scenarios differ in timing to that limit, not necessarily in peak current magnitude.",
+            "error_type": "causal overclaim / measurement scope distractor",
+            "evidence_refs": [
+              "TR_Dynamics+186+UnknownJournal:C003",
+              "TR_Dynamics+186+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The evidence shows that mass-transport limitation is reached within 50–150 ms, but the temperature differences across scenarios accumulate over 8–11 s. The claim that scenario differences are determined primarily after mass-transport limitation is established is not supported; the evidence does not characterize the post-limitation heating dynamics in a way that supports this conclusion.",
+            "error_type": "unsupported extrapolation / scope expansion",
+            "evidence_refs": [
+              "TR_Dynamics+186+UnknownJournal:C003",
+              "TR_Dynamics+186+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence states that temperatures 25–50°C above room temperature accelerate aging processes, not that they initiate thermal runaway. Thermal runaway initiation requires temperatures above 100°C. This option confuses the aging acceleration threshold with the thermal runaway initiation threshold.",
+            "error_type": "condition violation / mechanism confusion",
+            "evidence_refs": [
+              "TR_Dynamics+186+UnknownJournal:C001",
+              "TR_Dynamics+186+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "The evidence directly states that the 0.1 s delay from side-only cooling occurs because the electrode layer length is too long for efficient heat removal, creating a hotspot at the center. This is a geometric constraint on lateral cooling effectiveness, not a power limitation, making this conclusion admissible.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+186+UnknownJournal:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mass-transport limitation as the rate-determining process during short circuit, and geometric constraints on lateral cooling effectiveness",
+        "primary_boundary": "The evidence supports mass transport as the current-controlling mechanism and geometry as the constraint on lateral cooling; it does not support attributing SOC effects to current changes or attributing scenario heating differences to peak current magnitude",
+        "intended_error_modes": [
+          "Attributing SOC-dependent temperature differences to current changes when evidence shows current is unchanged",
+          "Confusing aging acceleration threshold (25–50°C above ambient) with thermal runaway initiation threshold (>100°C)",
+          "Overclaiming that a 0.1 s delay from side cooling is operationally useful",
+          "Inferring post-limitation dynamics from pre-limitation timing differences"
+        ],
+        "disallowed_extrapolations": [
+          "Comparing peak current magnitudes across scenarios from timing data alone",
+          "Claiming side-only cooling prevents thermal runaway based on a 0.1 s delay",
+          "Attributing scenario-specific heating rate differences to post-mass-transport-limitation dynamics without supporting evidence"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A physics-based electrochemical model of a lithium-ion cell is parameterized by fitting voltage-discharge curves across multiple aging cycles. Five parameters are estimated: the effective negative-electrode solid-phase diffusion coefficient (Dsn), the electrolyte diffusion coefficient (D1), the positive-electrode solid-phase diffusion coefficient (Dsp), the positive-electrode reaction rate constant (kp), and the negative-electrode reaction rate constant (kn). Dsn decreases monotonically with cycle number with minimal overlap between its probability distributions at successive cycle numbers. The other four parameters show no consistent trend with cycle number and have large fitting uncertainties. The model uses 50 node points per region, generating 600 differential algebraic equations, which is impractical for real-time use. An engineer is asked to determine which conclusions about using this parameterization approach for battery health monitoring and design are admissible.",
+        "options": [
+          "A. Dsn is a more reliable aging indicator than kn because the voltage-discharge curve provides high sensitivity to Dsn but low sensitivity to kn, making kn estimates statistically indistinguishable across cycle numbers.",
+          "B. The monotonic decrease of Dsn with cycle number, combined with statistically non-overlapping distributions, supports using Dsn as a cycle-state indicator under the specific galvanostatic protocol used, but this conclusion does not extend to other charge-discharge protocols without additional validation.",
+          "C. Because D1, Dsp, kp, and kn show no monotonic trend, they do not degrade with cycling and can be treated as constants in any aging model derived from this parameterization.",
+          "D. The large uncertainty in kn estimates from voltage-discharge fitting means that even if kn does degrade monotonically, this method cannot reliably detect that degradation from voltage data alone.",
+          "E. The 600-equation model structure can be simplified for real-time use by reducing node count, and this simplification will preserve the accuracy of Dsn estimation because Dsn sensitivity is intrinsic to the electrochemical physics rather than to the spatial discretization.",
+          "F. The parameterization results are sufficient to guide redesign of electrode materials to reduce capacity fade, since Dsn is identified as the primary degradation-sensitive parameter.",
+          "G. The inability to track D1, Dsp, kp, and kn reliably from voltage-discharge data is a measurement sensitivity limitation of this fitting approach, not necessarily evidence that these parameters are stable across cycles."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "D",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence states that voltage-discharge curves are highly sensitive to Dsn but weakly sensitive to kn, and that kn estimates have large uncertainties. The non-overlapping distributions for Dsn versus the indistinguishable distributions for kn directly support this comparative reliability conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+184+UnknownJournal:C002",
+              "TR_Dynamics+184+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that tracking cycle-dependent variations in these parameters is valid only for the specific galvanostatic protocol used and is not appropriate for design purposes. The non-overlapping Dsn distributions support its use as a cycle indicator under that protocol, but the protocol limitation must be preserved.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+184+UnknownJournal:C003",
+              "TR_Dynamics+184+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The absence of a detectable monotonic trend in D1, Dsp, kp, and kn is a consequence of low sensitivity and large fitting uncertainty, not evidence that these parameters are stable. Treating them as constants in any aging model is an unsupported inference from a measurement limitation.",
+            "error_type": "measurement scope distractor / causal overclaim",
+            "evidence_refs": [
+              "TR_Dynamics+184+UnknownJournal:C002",
+              "TR_Dynamics+184+UnknownJournal:C001"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The evidence states that voltage-discharge curves are weakly sensitive to kn, resulting in large uncertainties. Even if kn does degrade, the fitting method cannot reliably resolve that degradation from voltage data, making this a correct admissibility judgment about method limitations.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+184+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The evidence states that the 600-equation model is impractical for real-time use due to the discretization, but does not support the claim that reducing node count preserves Dsn estimation accuracy. The relationship between spatial discretization and parameter sensitivity is not addressed in the evidence, making this an unsupported extrapolation.",
+            "error_type": "unsupported extrapolation / scope expansion",
+            "evidence_refs": [
+              "TR_Dynamics+184+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence explicitly states that this parameterization approach is not appropriate for use in designing batteries with reduced capacity fade. Recommending electrode redesign based on Dsn identification violates this stated limitation.",
+            "error_type": "scope expansion / condition violation",
+            "evidence_refs": [
+              "TR_Dynamics+184+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "This is a counterintuitive but correct conclusion: the absence of a detectable trend in D1, Dsp, kp, and kn reflects the low sensitivity of voltage-discharge fitting to these parameters, not their physical stability. The evidence directly supports this interpretation by attributing large uncertainties to weak sensitivity rather than to parameter constancy.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+184+UnknownJournal:C002",
+              "TR_Dynamics+184+UnknownJournal:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinguishing measurement sensitivity limitations from physical parameter stability, and the protocol-specific validity of parameter tracking",
+        "primary_boundary": "Absence of detectable trend in a parameter from voltage fitting reflects measurement insensitivity, not physical constancy; Dsn tracking is valid only under the specific protocol and not for design purposes",
+        "intended_error_modes": [
+          "Inferring physical stability of D1, Dsp, kp, kn from absence of detected trend",
+          "Extending Dsn-based monitoring conclusions to design recommendations",
+          "Assuming node reduction preserves parameter estimation accuracy without evidence",
+          "Treating protocol-specific results as universally applicable"
+        ],
+        "disallowed_extrapolations": [
+          "Using parameterization results to guide electrode material redesign",
+          "Treating undetected parameter trends as evidence of parameter constancy",
+          "Claiming spatial discretization reduction preserves Dsn sensitivity"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery module using NCM523 cells is being evaluated for deployment in a high-altitude environment where ambient pressure is approximately 35 kPa compared to standard sea-level conditions near 95 kPa. An engineer notes that at lower pressure the thermal runaway propagation time for NCM523 increases substantially (by more than threefold) and interprets this as evidence that the high-altitude environment is safer for NCM523 operation. Identify the specific mechanism that contradicts this interpretation, explain why the propagation time increase does not establish overall safety improvement, and state what additional hazard dimension must be accounted for when assessing NCM523 module safety at low ambient pressure."
+      },
+      "ground_truth": {
+        "gold_answer": "As ambient pressure decreases, the instantaneous pressure difference between the NCM523 cell interior and the surrounding environment increases at the moment of safety vent activation. This larger pressure differential increases the impact force generated during venting events. Therefore, while thermal runaway propagation between cells slows at lower pressure (longer propagation time), the mechanical hazard from venting impact forces grows. The engineer's interpretation is incorrect because it conflates one hazard dimension (inter-cell thermal propagation speed) with overall safety, ignoring the simultaneously increasing mechanical impact hazard. A complete safety assessment at low ambient pressure must account for the increased venting impact force, which makes structural and impact protection of the NCM523 module more critical at altitude, not less.",
+        "must_include": [
+          "Instantaneous pressure difference between cell interior and environment increases as ambient pressure decreases",
+          "Impact force during NCM523 venting events increases at lower ambient pressure",
+          "Slower thermal propagation does not offset the increased mechanical venting hazard",
+          "Impact protection becomes more critical for NCM523 at low ambient pressure",
+          "The overall hazard assessment must consider both thermal propagation and mechanical venting impact"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming that lower pressure prevents thermal runaway initiation in NCM523",
+          "Asserting that LFP modules are also safer at low pressure based on NCM523 propagation data",
+          "Quantifying the impact force increase without basis in the stated evidence",
+          "Concluding that the increased propagation time makes NCM523 modules acceptable for high-altitude use without addressing venting impact"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-dimensional hazard assessment: distinguishing thermal propagation rate from mechanical venting impact hazard under low ambient pressure conditions for NCM523",
+        "primary_boundary": "Longer propagation time at low pressure reflects inhibited thermal spread but does not capture the simultaneously increasing mechanical hazard from venting; safety conclusions must integrate both dimensions",
+        "intended_error_modes": [
+          "Treating propagation time as the sole indicator of module safety",
+          "Ignoring the pressure-differential-driven increase in venting impact force",
+          "Generalizing the NCM523 low-pressure behavior to LFP without evidence",
+          "Conflating weaker thermal propagation with absence of hazard escalation"
+        ]
+      }
+    }
+  ]
+}

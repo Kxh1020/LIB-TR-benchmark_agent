@@ -1,0 +1,148 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery module test compares LFP and NCM523 chemistries under identical pressure reduction from 95 kPa to 35 kPa. The LFP module's thermal runaway propagation time decreases by roughly half, while the NCM523 module's propagation time increases by more than threefold over the same pressure range. The average maximum temperature of the NCM523 module is approximately twice that of the LFP module at any given pressure, and as pressure decreases, the instantaneous force during NCM523 venting increases due to the growing pressure differential between cell interior and environment. An engineer is evaluating which conclusions about deploying these modules in a high-altitude (low-pressure) environment are admissible. Which of the following conclusions are supported by the described behavior?",
+        "options": [
+          "A. Reducing ambient pressure improves the propagation safety margin for NCM523 modules but worsens it for LFP modules, making pressure reduction a chemistry-dependent rather than universally beneficial mitigation strategy.",
+          "B. Because NCM523 propagation time increases at lower pressure, NCM523 modules present a lower overall thermal hazard than LFP modules in high-altitude deployments.",
+          "C. The mechanical hazard from NCM523 venting events increases at lower ambient pressure, meaning that structural protection against vent-driven impact forces becomes more critical at altitude even as thermal propagation slows.",
+          "D. The observed divergence in propagation behavior between LFP and NCM523 under pressure change is sufficient to conclude that the dominant heat transfer pathway differs between the two chemistries under these conditions.",
+          "E. A design strategy that reduces ambient pressure around an LFP module to suppress thermal runaway propagation would be counterproductive based on the described pressure-dependent behavior.",
+          "F. The decrease in average maximum temperature observed at lower pressure for both chemistries confirms that pressure reduction is an effective standalone safety intervention for preventing thermal runaway initiation.",
+          "G. At 95 kPa, NCM523 propagation speed exceeds LFP propagation speed by a factor consistent with the ratio of their maximum temperatures, indicating a direct proportionality between peak temperature and propagation rate."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence shows that lower pressure accelerates LFP propagation while inhibiting NCM523 propagation, directly supporting that pressure reduction is chemistry-dependent in its effect on propagation safety, not universally beneficial or detrimental.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+185+Energy:C001",
+              "TR_Dynamics+185+Energy:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Although NCM523 propagation time increases at lower pressure, the average maximum temperature of NCM523 remains approximately twice that of LFP at any given pressure. Slower propagation does not offset the substantially higher thermal hazard magnitude. This is a conservative-sounding but mechanistically incorrect conclusion.",
+            "error_type": "causal overclaim / ignoring multi-factor interaction",
+            "evidence_refs": [
+              "TR_Dynamics+185+Energy:C003",
+              "TR_Dynamics+185+Energy:C001"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that the impact force from NCM523 venting grows as ambient pressure decreases due to the larger instantaneous pressure differential, making impact protection increasingly critical at low pressure even though thermal propagation slows.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+185+Energy:C005",
+              "TR_Dynamics+185+Energy:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "While the divergence in propagation behavior is real, the evidence does not identify or compare dominant heat transfer pathways between the two chemistries. Inferring a mechanistic pathway difference from a propagation time difference alone is an unsupported extrapolation.",
+            "error_type": "scope expansion / causal overclaim",
+            "evidence_refs": [
+              "TR_Dynamics+185+Energy:C001",
+              "TR_Dynamics+185+Energy:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The evidence shows that lower pressure accelerates LFP propagation speed (0.42 cell/min at 35 kPa versus half that at 95 kPa) and reduces LFP propagation time by 50.1%. Therefore, deliberately reducing pressure around an LFP module would worsen, not improve, propagation safety.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+185+Energy:C001",
+              "TR_Dynamics+185+Energy:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "While average maximum temperature decreases 20–50°C with pressure reduction, this describes a weakening of TR behavior, not prevention of TR initiation. Claiming pressure reduction prevents initiation is an overclaim beyond the evidence, which addresses propagation and peak temperature, not initiation thresholds.",
+            "error_type": "protective mechanism overclaim",
+            "evidence_refs": [
+              "TR_Dynamics+185+Energy:C002"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "NCM523 propagation speed at 95 kPa is 6.00 cell/min versus LFP at approximately 0.21 cell/min, a ratio far exceeding 2:1, while the temperature ratio is approximately 2:1. No direct proportionality between peak temperature and propagation rate is supported by the evidence.",
+            "error_type": "numerical exaggeration / unsupported proportionality",
+            "evidence_refs": [
+              "TR_Dynamics+185+Energy:C003",
+              "TR_Dynamics+185+Energy:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Chemistry-dependent and hazard-type-dependent effects of ambient pressure reduction on thermal runaway propagation and mechanical venting hazard",
+        "primary_boundary": "Lower pressure improves one hazard dimension for NCM523 (slower propagation) while worsening another (higher impact force), and worsens LFP propagation; conclusions must account for both hazard dimensions and chemistry specificity",
+        "intended_error_modes": [
+          "Treating slower propagation time as equivalent to lower overall hazard without accounting for peak temperature magnitude",
+          "Inferring mechanistic pathway differences from propagation behavior differences without direct evidence",
+          "Overgeneralizing pressure reduction as a universally beneficial safety intervention",
+          "Assuming proportionality between peak temperature and propagation speed"
+        ],
+        "disallowed_extrapolations": [
+          "Identifying dominant heat transfer pathways from propagation time data alone",
+          "Concluding that pressure reduction prevents TR initiation based on peak temperature reduction data",
+          "Claiming NCM523 is safer than LFP at altitude based solely on propagation time increase"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery module using NCM523 cells is being evaluated for deployment in a high-altitude environment where ambient pressure is approximately 35 kPa compared to standard sea-level conditions near 95 kPa. An engineer notes that at lower pressure the thermal runaway propagation time for NCM523 increases substantially (by more than threefold) and interprets this as evidence that the high-altitude environment is safer for NCM523 operation. Identify the specific mechanism that contradicts this interpretation, explain why the propagation time increase does not establish overall safety improvement, and state what additional hazard dimension must be accounted for when assessing NCM523 module safety at low ambient pressure."
+      },
+      "ground_truth": {
+        "gold_answer": "As ambient pressure decreases, the instantaneous pressure difference between the NCM523 cell interior and the surrounding environment increases at the moment of safety vent activation. This larger pressure differential increases the impact force generated during venting events. Therefore, while thermal runaway propagation between cells slows at lower pressure (longer propagation time), the mechanical hazard from venting impact forces grows. The engineer's interpretation is incorrect because it conflates one hazard dimension (inter-cell thermal propagation speed) with overall safety, ignoring the simultaneously increasing mechanical impact hazard. A complete safety assessment at low ambient pressure must account for the increased venting impact force, which makes structural and impact protection of the NCM523 module more critical at altitude, not less.",
+        "must_include": [
+          "Instantaneous pressure difference between cell interior and environment increases as ambient pressure decreases",
+          "Impact force during NCM523 venting events increases at lower ambient pressure",
+          "Slower thermal propagation does not offset the increased mechanical venting hazard",
+          "Impact protection becomes more critical for NCM523 at low ambient pressure",
+          "The overall hazard assessment must consider both thermal propagation and mechanical venting impact"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming that lower pressure prevents thermal runaway initiation in NCM523",
+          "Asserting that LFP modules are also safer at low pressure based on NCM523 propagation data",
+          "Quantifying the impact force increase without basis in the stated evidence",
+          "Concluding that the increased propagation time makes NCM523 modules acceptable for high-altitude use without addressing venting impact"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-dimensional hazard assessment: distinguishing thermal propagation rate from mechanical venting impact hazard under low ambient pressure conditions for NCM523",
+        "primary_boundary": "Longer propagation time at low pressure reflects inhibited thermal spread but does not capture the simultaneously increasing mechanical hazard from venting; safety conclusions must integrate both dimensions",
+        "intended_error_modes": [
+          "Treating propagation time as the sole indicator of module safety",
+          "Ignoring the pressure-differential-driven increase in venting impact force",
+          "Generalizing the NCM523 low-pressure behavior to LFP without evidence",
+          "Conflating weaker thermal propagation with absence of hazard escalation"
+        ]
+      }
+    }
+  ]
+}

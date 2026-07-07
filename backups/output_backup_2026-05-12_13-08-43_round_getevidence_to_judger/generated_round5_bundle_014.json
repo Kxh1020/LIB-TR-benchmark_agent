@@ -1,0 +1,323 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An LFP 18650 cell undergoes accelerating rate calorimetry. At approximately 125°C, internal resistance rises by nearly two orders of magnitude and open-circuit voltage drops by a few millivolts. The cell then exhibits self-heating onset near 175°C. Despite this self-heating, the cell does not enter thermal runaway during the test without additional external heating. A battery safety engineer is evaluating which conclusions about this LFP cell's failure sequence are admissible based on these observations. Which of the following conclusions are supported?",
+        "options": [
+          "A. The internal resistance spike at 125°C indicates separator pore closure, which suppresses ionic current and temporarily reduces the rate of electrochemical heat generation.",
+          "B. The self-heating observed at 175°C is initiated by Joule heat from an internal short circuit caused by separator shrinkage, not by direct exothermic electrode reactions at that temperature.",
+          "C. Because separator shutdown produces a near-two-orders-of-magnitude resistance increase, it is sufficient on its own to prevent thermal runaway in LFP cells under all abuse conditions.",
+          "D. The absence of thermal runaway without additional heating implies that Joule heating from the internal short circuit alone cannot raise cell temperature to the threshold required for LFP thermal runaway.",
+          "E. The OCV drop of a few millivolts at 125°C confirms complete electrochemical discharge of the cell, explaining why thermal runaway does not occur.",
+          "F. A second endothermic event near 155°C in the separator precedes the internal short circuit, meaning separator shrinkage occurs before pore closure in this cell."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Separator shutdown closes pores, blocking ionic transport. This is the mechanism behind the resistance spike at 125°C and is consistent with the evidence that pore-closing is the first endothermic reaction. Reduced ionic current directly reduces electrochemical heat generation rate.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+193+Journal_of_Energy_Storage:C002",
+              "TR_Dynamics+193+Journal_of_Energy_Storage:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that separator shrinkage induces an internal short circuit, which triggers Joule heat, resulting in the self-heating at 175°C. This is a causal chain from mechanical deformation to electrical heating, not direct electrode exotherms.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+193+Journal_of_Energy_Storage:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "This overgeneralizes. The evidence shows separator shutdown occurs in this LFP cell, but the claim that it prevents thermal runaway under all abuse conditions is unsupported. The evidence only establishes behavior under the specific ARC test conditions described.",
+            "error_type": "Overgeneralization beyond stated conditions",
+            "evidence_refs": [
+              "TR_Dynamics+193+Journal_of_Energy_Storage:C003",
+              "TR_Dynamics+193+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The evidence states thermal runaway in LFP requires temperatures above 220°C and that Joule heating alone is insufficient; additional heating is necessary. The absence of thermal runaway directly implies the Joule heat pathway cannot reach the required threshold independently.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+193+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "A drop of a few millivolts in OCV does not indicate complete electrochemical discharge. The evidence describes this as a small perturbation associated with separator shutdown, not a discharge event. Attributing it to complete discharge is a measurement scope overclaim.",
+            "error_type": "Measurement scope overclaim",
+            "evidence_refs": [
+              "TR_Dynamics+193+Journal_of_Energy_Storage:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence states pore-closing occurs at ~125°C and thermal-shrinkage deformation at ~155°C, meaning pore closure precedes shrinkage. Option F reverses this ordering, contradicting the DSC sequence described in the evidence.",
+            "error_type": "Causal ordering reversal",
+            "evidence_refs": [
+              "TR_Dynamics+193+Journal_of_Energy_Storage:C002",
+              "TR_Dynamics+193+Journal_of_Energy_Storage:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Causal sequence of separator-mediated thermal events in LFP cells and admissibility of conclusions about each stage",
+        "primary_boundary": "Joule heating from internal short circuit is necessary but not sufficient for LFP thermal runaway; the 220°C threshold requires additional heating beyond what the short circuit provides",
+        "intended_error_modes": [
+          "Overgeneralizing separator shutdown as a universal thermal runaway prevention mechanism",
+          "Misinterpreting a small OCV drop as complete discharge",
+          "Reversing the causal sequence of pore-closing vs. shrinkage"
+        ],
+        "disallowed_extrapolations": [
+          "Separator shutdown prevents thermal runaway under all abuse conditions",
+          "OCV drop of a few mV indicates full cell discharge",
+          "Results from ARC test generalize to all LFP abuse scenarios"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A module-level thermal management system uses mini-channel liquid cooling integrated between prismatic cells. During a nail penetration test on one cell in the module, the short-circuited cell enters thermal runaway regardless of coolant flow rate. However, at adequate coolant flow rates, neighboring cells remain below their onset temperatures. Separately, aging data for NCM/graphite 18650 cells at 70% state of health shows that exothermic reaction onset shifts approximately 30°C lower than fresh cells and becomes independent of state of charge. A thermal safety engineer must decide which system-level and cell-level conclusions are admissible from these two observations combined. Which of the following statements are supported?",
+        "options": [
+          "A. Mini-channel cooling is appropriately classified as a propagation-prevention measure rather than a thermal runaway prevention measure for the short-circuited cell.",
+          "B. Because aged cells lose SoC dependence of onset temperature, a module containing aged cells presents a more uniform but elevated thermal risk profile compared to a module of fresh cells at mixed SoC levels.",
+          "C. Increasing coolant flow rate beyond the threshold needed to protect neighboring cells will eventually prevent thermal runaway in the nail-penetrated cell itself.",
+          "D. The 30°C shift in onset temperature for aged cells means that a thermal management system calibrated on fresh-cell data will have a reduced safety margin when applied to aged cells.",
+          "E. Since aged cells show no SoC dependence of onset temperature, state-of-charge monitoring is unnecessary for aged-cell modules from a thermal runaway risk perspective.",
+          "F. The inability of mini-channel cooling to prevent thermal runaway in the short-circuited cell implies that the internal heat generation rate during nail penetration exceeds the maximum heat extraction rate achievable by the cooling channel geometry."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence explicitly states mini-channel cooling fails to prevent thermal runaway in the short-circuited cell even at high flow rates, but can prevent propagation to neighboring cells. This precisely defines its functional role as propagation prevention, not thermal runaway prevention.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+194+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Fresh cells show SoC-dependent onset temperatures, meaning risk varies with charge state across the module. Aged cells lose this variation but shift onset 30°C lower uniformly. A module of aged cells therefore has a more uniform but lower-temperature risk threshold, which constitutes a more uniform but elevated risk profile. This requires combining both the comparison and the aging evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+194+UnknownJournal:C002",
+              "TR_Dynamics+194+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The evidence explicitly states that mini-channel cooling fails to prevent thermal runaway in the short-circuited cell even at high flow rates. Option C directly contradicts this by claiming sufficiently high flow rates would eventually prevent it. This is a protective mechanism overclaim.",
+            "error_type": "Protective mechanism overclaim",
+            "evidence_refs": [
+              "TR_Dynamics+194+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "If onset temperature shifts 30°C lower in aged cells, any thermal management system designed with fresh-cell onset temperatures as the safety threshold will have a 30°C reduced margin when the same system is applied to aged cells. This is a direct engineering implication of the 30°C shift.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+194+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "While aged cells lose SoC dependence of onset temperature, SoC monitoring serves multiple safety functions beyond onset temperature prediction (e.g., overcharge detection, capacity estimation, remaining energy assessment). Concluding it is unnecessary from a single thermal metric is an unsupported scope expansion and causal overclaim.",
+            "error_type": "Scope expansion and unsupported system-level recommendation",
+            "evidence_refs": [
+              "TR_Dynamics+194+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "While this is a plausible mechanistic inference, the evidence does not provide heat generation rates or channel heat extraction capacity data. The conclusion that internal generation exceeds maximum extraction capacity introduces a quantitative comparison not supported by the stated evidence. The evidence only establishes the outcome, not the heat flux balance.",
+            "error_type": "Unsupported quantitative mechanism inference",
+            "evidence_refs": [
+              "TR_Dynamics+194+UnknownJournal:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Functional scope of mini-channel cooling and implications of aging-induced onset temperature shift for module-level thermal safety",
+        "primary_boundary": "Mini-channel cooling scope is limited to propagation prevention; aging removes SoC dependence but does not eliminate the need for SoC monitoring for other safety functions",
+        "intended_error_modes": [
+          "Overclaiming cooling capability beyond propagation prevention",
+          "Eliminating SoC monitoring based on a single thermal metric",
+          "Introducing unsupported quantitative heat flux comparison"
+        ],
+        "disallowed_extrapolations": [
+          "High coolant flow rates can prevent thermal runaway in the short-circuited cell",
+          "Loss of SoC dependence in onset temperature makes SoC monitoring unnecessary",
+          "Evidence supports a specific heat generation vs. extraction rate comparison"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Three lithium-ion battery chemistries — LFP, LMO, and NCM — are tested under identical thermal abuse conditions in a sealed enclosure. Measurements show that before the cell temperature reaches an uncontrollable threshold, LFP releases approximately twice the molar quantity of gas as LMO. However, the fraction of total gas released before safety venting is highest for LMO at over 75%, compared to approximately 29% for LFP. During thermal runaway, NCM generates a total pressure change approximately 4.3 times greater than LFP. Post-test structural analysis of cathode materials reveals different dominant damage mechanisms across chemistries. An engineer must select which conclusions about the relationship between pre-venting gas behavior and structural damage mechanisms are admissible. Which of the following are supported?",
+        "options": [
+          "A. LMO's high fraction of pre-venting gas relative to total gas suggests that safety venting in LMO is triggered primarily by gas generation reactions rather than by electrolyte volatilization.",
+          "B. Because LFP releases more total moles of gas before the uncontrollable threshold than LMO, LFP presents a greater structural deformation risk to the cell casing during early-stage heating.",
+          "C. The dominant cause of cathode structural change after thermal runaway differs between LFP and NCM, with gas release driving LFP cathode damage and impact force driving NCM cathode damage.",
+          "D. NCM's pressure change being 4.3 times that of LFP during thermal runaway implies that NCM cathode structural change is primarily driven by the same gas-release mechanism that dominates in LFP.",
+          "E. LFP's safety venting being driven mainly by electrolyte volatilization rather than gas generation implies that LFP cathode structural damage after thermal runaway is less severe than NCM.",
+          "F. The difference in the fraction of gas released before safety venting between LFP and LMO is consistent with their having different primary mechanisms driving the venting event itself."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence states that LMO safety venting is mainly caused by gas release, and that 75.2% of total gas is released before venting. Together these confirm that gas generation reactions are the primary driver of LMO venting, consistent with option A.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+195+Journal_of_Energy_Storage:C002",
+              "TR_Dynamics+195+Journal_of_Energy_Storage:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "LFP releases more moles of gas before the uncontrollable threshold, but the evidence also states that LFP safety venting is mainly due to electrolyte volatilization, not gas pressure. Structural deformation risk depends on pressure buildup, which is influenced by the nature of the release (gas vs. vapor) and enclosure conditions, not simply molar quantity. This is a causal overclaim that ignores the mechanism distinction.",
+            "error_type": "Mechanism confusion and causal overclaim",
+            "evidence_refs": [
+              "TR_Dynamics+195+Journal_of_Energy_Storage:C001",
+              "TR_Dynamics+195+Journal_of_Energy_Storage:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence directly states that for LFP, gas release is the main source of cathode structural change after thermal runaway, while for LMO and NCM, impact force is the dominant cause. Option C accurately reflects this chemistry-dependent difference.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+195+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "NCM has the greatest pressure change, but the evidence states that for NCM, impact force is the dominant cause of cathode structural change, not gas release. Option D incorrectly infers that high pressure implies gas-release-driven structural damage, confusing the magnitude of pressure with its structural consequence mechanism.",
+            "error_type": "Mechanism substitution and causal overclaim",
+            "evidence_refs": [
+              "TR_Dynamics+195+Journal_of_Energy_Storage:C004",
+              "TR_Dynamics+195+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The evidence does not support a comparison of cathode damage severity between LFP and NCM based on venting mechanism alone. The venting mechanism describes what drives pressure buildup before venting, not the severity of post-runaway structural damage. This is an unsupported inference that conflates venting cause with damage severity.",
+            "error_type": "Unsupported cross-chemistry severity comparison",
+            "evidence_refs": [
+              "TR_Dynamics+195+Journal_of_Energy_Storage:C003",
+              "TR_Dynamics+195+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "LFP venting is driven mainly by electrolyte volatilization while LMO venting is driven mainly by gas release. These are mechanistically distinct pathways, directly explaining the large difference in the fraction of gas released before venting (29.1% vs. 75.2%). The consistency between mechanism difference and fraction difference is admissible.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+195+Journal_of_Energy_Storage:C002",
+              "TR_Dynamics+195+Journal_of_Energy_Storage:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Relationship between pre-venting gas fraction, venting mechanism, and post-runaway cathode damage mechanism across LFP, LMO, and NCM chemistries",
+        "primary_boundary": "High pressure or high gas quantity does not imply gas-release-driven structural damage; mechanism identity must be traced separately from magnitude",
+        "intended_error_modes": [
+          "Inferring structural damage mechanism from pressure magnitude alone",
+          "Conflating molar gas quantity with structural deformation risk without considering mechanism",
+          "Comparing damage severity across chemistries based on venting mechanism without direct evidence"
+        ],
+        "disallowed_extrapolations": [
+          "NCM's high pressure implies gas-release-driven cathode damage",
+          "LFP's higher pre-venting gas moles implies greater casing deformation risk than LMO",
+          "Venting mechanism predicts relative severity of post-runaway cathode damage"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "An NCA 18650 cell at 143% state of charge exhibits thermal runaway onset near 65°C, while the same cell at 100% state of charge shows a substantially higher onset temperature. A separate aging study on NCM/graphite 18650 cells at 70% state of health shows that exothermic reaction onset shifts approximately 30°C lower than fresh cells, and this shift is independent of state of charge. A battery management system is designed using onset temperature data from fresh NCA cells at 100% state of charge as the thermal safety threshold. Identify two distinct mechanisms by which this calibration approach may underestimate thermal runaway risk, and for each mechanism explain the specific condition under which the underestimation occurs and why the fresh-cell 100% SoC data fails to capture that risk."
+      },
+      "ground_truth": {
+        "gold_answer": "First mechanism: Overcharge-induced lithium deposition on the anode substantially lowers onset temperature. At overcharged states (e.g., 132% or 143% SoC), lithium deposits on the anode surface compromise thermal stability, reducing onset temperature to as low as 65°C for NCA cells at 143% SoC. Fresh-cell 100% SoC data does not capture this because lithium deposition is specific to overcharged conditions and does not occur at nominal full charge. A BMS threshold calibrated on 100% SoC data will therefore not trigger protective action early enough if the cell reaches overcharged states. Second mechanism: Aging-induced high-surface-area lithium deposition on the anode shifts onset temperature approximately 30°C lower in aged cells regardless of state of charge. Because aged cells lose SoC dependence of onset temperature, the lower onset applies at all charge levels, not just high SoC. Fresh-cell data at 100% SoC does not reflect this aging-induced shift, so a BMS calibrated on fresh-cell thresholds will have a 30°C reduced safety margin when applied to aged cells at any state of charge.",
+        "must_include": [
+          "Overcharge condition causes lithium deposition on anode, lowering onset temperature below the fresh-cell 100% SoC threshold",
+          "Aging causes a ~30°C downward shift in onset temperature independent of SoC, which fresh-cell calibration does not capture",
+          "Fresh-cell 100% SoC data fails to represent overcharged state behavior",
+          "Aged-cell onset temperature shift applies at all SoC levels, not just high SoC"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming that aging and overcharge effects are additive without evidence",
+          "Stating a specific onset temperature for aged NCA cells (evidence covers NCM/graphite aging)",
+          "Claiming the BMS cannot be corrected or that the risk is unmanageable",
+          "Generalizing the 30°C aging shift to NCA chemistry specifically"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Identification of two independent mechanisms that cause fresh-cell 100% SoC calibration to underestimate thermal runaway risk, and the specific conditions activating each",
+        "primary_boundary": "The overcharge mechanism is SoC-condition-specific; the aging mechanism is SoC-independent but chemistry-specific to the aged NCM/graphite evidence. Cross-chemistry generalization of aging data to NCA is not supported.",
+        "intended_error_modes": [
+          "Conflating overcharge and aging as the same mechanism",
+          "Applying the 30°C aging shift to NCA cells without noting the chemistry boundary",
+          "Claiming the two effects are additive without evidence",
+          "Treating SoC monitoring as irrelevant for aged cells based on onset temperature SoC independence"
+        ]
+      }
+    }
+  ]
+}

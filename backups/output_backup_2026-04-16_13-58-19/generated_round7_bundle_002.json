@@ -1,0 +1,316 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is analyzing vent gas from thermal runaway tests of 100% SOC NCA and LFP cells in a sealed enclosure. Both chemistries are tested at identical capacity and SOC. The engineer observes that NCA vent gas contains substantially higher hydrogen fractions and lower carbon-dioxide fractions than LFP. Using a constant adiabatic flame temperature (CAFT) method, the engineer calculates lower flammability limits (LFL) for both mixtures. Which conclusions are admissible given this scenario?",
+        "options": [
+          "A. The CAFT method is likely to underestimate the LFL for NCA vent gas more than for LFP vent gas, because hydrogen's adiabatic flame temperature is lower than that of hydrocarbons.",
+          "B. NCA vent gas will produce a higher peak laminar flame speed than LFP vent gas at equivalent equivalence ratios, attributable directly to its elevated hydrogen and reduced carbon-dioxide content.",
+          "C. Because LFP produces less hydrogen at 100% SOC, its vent gas mixture is non-flammable and poses no ignition risk in the enclosure.",
+          "D. The CAFT method error for LFL prediction is negligible for both chemistries because hydrogen is a minor constituent of battery vent gas.",
+          "E. The higher carbon-dioxide fraction in LFP vent gas acts as a diluent that lowers flame speed relative to NCA, making LFP vent gas safer in terms of flame propagation speed.",
+          "F. Since gas composition is independent of total venting volume once sufficient volume is produced, the flame speed comparison between NCA and LFP remains valid regardless of cell capacity differences."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "CAFT error is 26–44% due to hydrogen's lower adiabatic flame temperature; NCA's higher H2 fraction amplifies this error relative to LFP.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+121+Journal_of_Power_Sources:C005",
+              "TR_Gasventing+121+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "NCA peak laminar flame speed is highest among chemistries and is directly linked to higher H2 and lower CO2 in vent gas.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+121+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "LFP at 100% SOC produces flammable gases above 30% volume fraction at 50% SOC and higher; non-flammability claim is unsupported.",
+            "error_type": "overgeneralization_from_low_SOC_data",
+            "evidence_refs": [
+              "TR_Gasventing+121+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "CAFT error is 26–44% specifically because hydrogen is a significant constituent; the claim of negligibility contradicts evidence.",
+            "error_type": "mechanism_inversion",
+            "evidence_refs": [
+              "TR_Gasventing+121+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Higher CO2 in LFP vent gas acts as diluent reducing flame speed; LFP has lowest flame speed (0.37–0.42 m/s) vs NCA (0.69–1.07 m/s).",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+121+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Composition stability requires venting volume above ~50 L threshold; capacity differences may place one chemistry below this threshold.",
+            "error_type": "condition_violation_ignoring_volume_threshold",
+            "evidence_refs": [
+              "TR_Gasventing+120+Journal_of_Power_Sources:C002",
+              "TR_Gasventing+120+Journal_of_Power_Sources:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Interaction between vent gas composition, chemistry-dependent flame speed, and LFL prediction method error for NCA vs LFP",
+        "primary_boundary": "CAFT error is H2-fraction-dependent; LFP non-flammability claim violates SOC-dependent flammable gas evidence",
+        "intended_error_modes": [
+          "Assuming LFP is non-flammable because it has lower flame speed than NCA",
+          "Assuming CAFT error is uniform across chemistries regardless of H2 content",
+          "Ignoring volume threshold condition for composition stability"
+        ],
+        "disallowed_extrapolations": [
+          "LFP vent gas is non-flammable at 100% SOC",
+          "CAFT method is adequate for H2-rich mixtures",
+          "Composition stability is independent of total venting volume at all scales"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A 100% SOC NCM 811 cylindrical cell with an intact casing undergoes thermal runaway. At the safety valve burst temperature (405.5 K), internal pressure from redox-generated gas is approximately three times the electrolyte vapor pressure. As temperature rises further toward the separator collapsing temperature, the ratio of redox-gas pressure to electrolyte vapor pressure increases to over six. The temperature-to-gas-generation-rate relationship is nonlinear across this range but becomes approximately linear near the separator collapsing temperature. Which of the following conclusions are supported?",
+        "options": [
+          "A. Redox-generated gas pressure is the dominant contributor to safety valve bursting, not electrolyte vapor pressure, at the venting temperature.",
+          "B. Because the temperature–gas generation rate relationship is nonlinear before the separator collapsing temperature, a single-step reaction model is sufficient to describe internal pressure buildup in this regime.",
+          "C. Setting the safety valve burst threshold substantially above the manufacturer's specified range increases the risk of rupture and explosion because gas generated during thermal runaway cannot be vented in time.",
+          "D. The approximately linear relationship between temperature rate and gas generation rate near the separator collapsing temperature implies that a single dominant reaction controls pressure buildup at that stage.",
+          "E. At the venting temperature, electrolyte vapor pressure contributes meaningfully to total internal pressure but is not the primary driver of valve bursting.",
+          "F. The nonlinear temperature–gas generation relationship before the separator collapsing temperature indicates that total pressure at any intermediate temperature can be accurately predicted from a linear extrapolation of the venting-temperature values."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "At venting temperature, Pg (995.79 kPa) is nearly three times PELE (302.42 kPa); redox gas bears main responsibility for valve bursting.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Nonlinearity before Tsc explicitly indicates multi-step reactions; a single-step model is contradicted by the evidence.",
+            "error_type": "mechanism_inversion",
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence states that a high valve threshold prevents timely venting, causing rupture and explosion especially at high temperatures.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Approximate linearity near Tsc is described as an emergent behavior of multi-step reactions converging; it does not imply a single dominant reaction.",
+            "error_type": "causal_overclaim_from_linearity_observation",
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "PELE at venting is 302.42 kPa, contributing to total 1298.21 kPa; meaningful but not primary relative to Pg of 995.79 kPa.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C002",
+              "TR_Gasventing+122+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Nonlinearity before Tsc explicitly invalidates linear extrapolation from venting-temperature values to intermediate temperatures.",
+            "error_type": "unjustified_linear_extrapolation_across_nonlinear_regime",
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Pressure contribution hierarchy at venting and the multi-step reaction interpretation of nonlinear temperature–gas rate relationship",
+        "primary_boundary": "Approximate linearity near Tsc reflects multi-step convergence, not single-step dominance; PELE is real but secondary",
+        "intended_error_modes": [
+          "Interpreting near-Tsc linearity as evidence of single-step reaction",
+          "Treating PELE as negligible rather than secondary",
+          "Assuming linear extrapolation is valid across the nonlinear pre-Tsc regime"
+        ],
+        "disallowed_extrapolations": [
+          "Single-step model adequacy from near-Tsc linearity",
+          "Linear pressure prediction across the full Tonset-to-Tsc range",
+          "High valve threshold improves safety by containing gas longer"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A researcher compares thermal runaway vent gas from hard-case cylindrical cells and pouch cells of similar chemistry and capacity. Both cell types show a linear relationship between total mass loss and gas volume, but the slope differs: hard-case cells show a shallower slope. The researcher also notes that gas composition measurements from tests producing less than 40 liters of vent gas show anomalously high CO2 concentrations. Which conclusions are admissible?",
+        "options": [
+          "A. The shallower mass-loss slope for hard-case cells indicates that a larger fraction of their total mass loss is solid particulate ejected during venting, compared to pouch cells.",
+          "B. The anomalously high CO2 in low-volume tests reflects combustion of flammable vent gases by ambient oxygen in the test enclosure, not a change in the cell's internal gas generation chemistry.",
+          "C. Hard-case cells are safer than pouch cells during thermal runaway because their overpressure valves retain more solid mass inside the casing.",
+          "D. The gas composition measured at vent volumes below 40 liters can be used to characterize cell-internal gas chemistry if corrected for ambient oxygen dilution.",
+          "E. The overpressure valve in hard-case cells concentrates escaping gas through a restricted opening, generating stream velocities sufficient to entrain and eject electrode fragments.",
+          "F. Because gas composition is stable across all test volumes above the oxygen-influence threshold, the seven dominant species proportions can be treated as a cell-chemistry fingerprint independent of cell capacity."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Shallower slope for hard-case cells explicitly means higher solid mass proportion in total mass loss compared to pouch cells.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+120+Journal_of_Power_Sources:C006"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "At low vent volumes, ambient O2 oxidizes combustible gases to CO2; this is an enclosure artifact, not a change in cell chemistry.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+120+Journal_of_Power_Sources:C003",
+              "TR_Gasventing+120+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Higher solid ejection from hard-case cells reflects higher stream velocity and more energetic ejection, not improved containment safety.",
+            "error_type": "causal_overclaim_safety_from_mass_retention",
+            "evidence_refs": [
+              "TR_Gasventing+120+Journal_of_Power_Sources:C006"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence states these measurements cannot be evaluated; correction for O2 dilution is not supported as a valid recovery method.",
+            "error_type": "scope_expansion_beyond_stated_limitation",
+            "evidence_refs": [
+              "TR_Gasventing+120+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Overpressure valve concentrates gas through a small opening producing higher stream velocities that eject electrode pieces.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+120+Journal_of_Power_Sources:C006"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Composition stability is established across tests but the evidence does not support capacity-independent universality as a fingerprint across all cell designs.",
+            "error_type": "overgeneralization_beyond_evidence_scope",
+            "evidence_refs": [
+              "TR_Gasventing+120+Journal_of_Power_Sources:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism linking hard-case valve geometry to solid ejection, and O2-driven CO2 artifact at low vent volumes",
+        "primary_boundary": "Hard-case higher solid ejection reflects more energetic venting, not safer containment; low-volume CO2 data is an enclosure artifact not correctable",
+        "intended_error_modes": [
+          "Interpreting higher solid retention as a safety benefit for hard-case cells",
+          "Assuming low-volume CO2 measurements can be corrected rather than discarded",
+          "Overgeneralizing composition stability as a universal cell-chemistry fingerprint"
+        ],
+        "disallowed_extrapolations": [
+          "Hard-case cells are safer due to solid mass retention",
+          "Low-volume vent gas composition is recoverable via O2 correction",
+          "Composition stability implies capacity-independent universality"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "An engineer designing a battery management system for a high-energy-density lithium-ion pack wants to use the SOC-dependent flammable gas fraction in vent gas as the basis for a hazard threshold. For LCO cells, flammable gas fraction remains below 25% up to a certain SOC, then jumps sharply. For LFP cells, flammable gas fraction rises more gradually but still crosses 30% by 50% SOC. The engineer proposes that a single SOC-based flammability threshold can be used for both chemistries. Evaluate whether this proposal is admissible, identifying the key mechanism-based limitation and the specific evidence that constrains the conclusion."
+      },
+      "ground_truth": {
+        "gold_answer": "The proposal is not admissible as a single universal threshold. LCO cells exhibit a threshold-type transition near 40% SOC where flammable gas fraction jumps sharply, while LFP cells show a more gradual increase that already exceeds 30% by 50% SOC. These are distinct SOC-dependent behaviors: LCO's transition is abrupt and threshold-like, making a single threshold potentially valid within that chemistry but set at a chemistry-specific SOC. Applying the same threshold to LFP would either be too conservative at low SOC or miss the gradual rise before 50% SOC. Additionally, NCA cells have higher hydrogen fractions and the highest flame speeds, meaning flammability hazard is not solely captured by flammable gas volume fraction—flame speed and gas composition must also be considered. A single SOC threshold cannot account for these chemistry-specific composition differences and the distinct functional forms of the SOC-flammability relationship across chemistries.",
+        "must_include": [
+          "LCO exhibits a threshold-type jump near 40% SOC, not a gradual increase",
+          "LFP flammable fraction exceeds 30% by 50% SOC with gradual increase",
+          "A single threshold cannot capture both abrupt and gradual SOC-dependent behaviors",
+          "Chemistry-specific composition differences (H2 vs CO2 fractions) affect flammability beyond volume fraction alone"
+        ],
+        "disallowed_extrapolations": [
+          "A corrected single threshold can be derived by averaging the two SOC transition points",
+          "NCA and NMC can be assumed to follow the same pattern as LCO",
+          "Flammable gas volume fraction alone is sufficient to characterize ignition hazard across chemistries"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of a chemistry-agnostic SOC-based flammability threshold given chemistry-specific threshold vs gradual SOC-flammability relationships",
+        "primary_boundary": "LCO shows abrupt threshold behavior; LFP shows gradual increase; these functional forms are incompatible with a single shared threshold",
+        "intended_error_modes": [
+          "Assuming a single averaged SOC threshold is conservative enough for all chemistries",
+          "Ignoring that flame speed depends on H2/CO2 ratio, not just flammable fraction volume",
+          "Treating the LCO threshold as applicable to LFP because both show increasing flammability with SOC"
+        ]
+      }
+    }
+  ]
+}

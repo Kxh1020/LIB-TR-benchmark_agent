@@ -1,0 +1,328 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery safety engineer is evaluating vent gas flammability risk for two pouch cell chemistries — LFP and NCA — both at 100% SOC. The engineer notes that NCA vent gas contains a higher proportion of hydrogen and a lower proportion of carbon dioxide compared to LFP vent gas at the same SOC. The engineer must select which conclusions about peak laminar flame speed and ignition risk are defensible given this compositional difference. Which of the following conclusions are admissible?",
+        "options": [
+          "A. NCA vent gas will exhibit a higher peak laminar flame speed than LFP vent gas at 100% SOC, because elevated hydrogen fraction and reduced carbon dioxide both act in the same direction to increase flame propagation speed.",
+          "B. LFP vent gas poses a lower peak flammability hazard than NCA at 100% SOC, and this difference is primarily attributable to LFP having a higher carbon dioxide fraction that acts as a diluent.",
+          "C. Because NCA vent gas has a higher hydrogen fraction, its lower flammable gas volume fraction at 100% SOC compared to LFP makes NCA the safer chemistry at full charge.",
+          "D. The difference in peak laminar flame speed between NCA and LFP at 100% SOC is large enough that LFP vent gas flame speed range does not overlap with NCA vent gas flame speed range.",
+          "E. The compositional mechanism linking NCA vent gas to higher flame speed — higher hydrogen, lower carbon dioxide — is consistent with hydrogen's known higher laminar flame speed relative to hydrocarbons.",
+          "F. The ranking of peak laminar flame speed among chemistries at 100% SOC (NCA > LCO ≈ NMC > LFP) can be directly inferred from the relative hydrogen and carbon dioxide fractions in their vent gases."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "D",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence confirms NCA has highest flame speed and links this to higher hydrogen and lower CO2 acting together.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+121+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "LFP has lowest peak flame speed range; higher CO2 fraction is identified as a contributing diluent mechanism in evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+121+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Evidence does not state NCA has lower flammable gas volume fraction than LFP; flame speed ranking does not imply volume fraction ranking.",
+            "error_type": "scope_expansion_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+121+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "NCA range 0.69–1.07 m/s and LFP range 0.37–0.42 m/s are non-overlapping, supporting this conclusion directly from evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+121+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Evidence links higher hydrogen and lower CO2 to higher flame speed; hydrogen's high laminar flame speed relative to hydrocarbons is a stable engineering principle.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+121+Journal_of_Power_Sources:C004",
+              "TR_Gasventing+121+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Evidence provides flame speed data and compositional links for 100% SOC only; inferring full ranking from composition alone across all SOCs is an unsupported extrapolation.",
+            "error_type": "overgeneralization_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+121+Journal_of_Power_Sources:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism linking vent gas composition (hydrogen fraction, CO2 fraction) to peak laminar flame speed ranking across chemistries at 100% SOC",
+        "primary_boundary": "Flame speed ranking is supported at 100% SOC via compositional mechanism; volume fraction ranking and cross-SOC generalization are not supported",
+        "intended_error_modes": [
+          "Confusing flame speed ranking with flammable volume fraction ranking (C)",
+          "Overgeneralizing compositional-to-flame-speed mapping across all SOC conditions (F)"
+        ],
+        "disallowed_extrapolations": [
+          "Do not infer that higher flame speed implies lower flammable gas volume",
+          "Do not extend 100% SOC compositional ranking to partial SOC conditions without evidence"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is designing a battery module fire suppression system and must estimate the lower flammability limit (LFL) of vent gases from LCO, LFP, and NCA cells. Three candidate calculation methods are available: the CAFT method, the Jones method, and the Bounaceur method. The engineer knows that battery vent gases contain significant hydrogen fractions and that hydrogen has a lower adiabatic flame temperature than hydrocarbon fuels. The engineer must decide which method(s) are appropriate for LFL estimation and which conclusions about method selection are defensible.",
+        "options": [
+          "A. The CAFT method is unsuitable for LFL estimation of battery vent gases because its error range of 26–44% is driven by hydrogen's lower adiabatic flame temperature relative to hydrocarbons, violating a core assumption of the method.",
+          "B. The Jones and Bounaceur methods are both acceptable for LFL estimation of battery vent gases, with errors below 5% and slightly above 5% respectively, making either preferable to CAFT.",
+          "C. Because the CAFT method overestimates adiabatic flame temperature for hydrogen-containing mixtures, it will systematically underestimate the LFL, making it non-conservative for safety design.",
+          "D. The Bounaceur method's accuracy advantage over CAFT is attributable to its use of adiabatic mixing of fuels rather than a single composite flame temperature, which better handles hydrogen's anomalous thermodynamic behavior.",
+          "E. The Jones method is preferable to Bounaceur for all battery vent gas compositions because it consistently achieves lower error, regardless of hydrogen fraction.",
+          "F. Selecting the CAFT method for LFL estimation in a suppression system design would be inadmissible because its error is large enough to result in a non-conservative safety margin for hydrogen-rich vent gases."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence explicitly states CAFT error is 26–44% and attributes it to hydrogen's lower adiabatic flame temperature than hydrocarbons.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+121+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence states Jones error is below 5% but Bounaceur is 'slightly higher than Jones,' not necessarily below 5%; the exact Bounaceur threshold is not confirmed.",
+            "error_type": "numerical_exaggeration_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+121+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "If CAFT assumes higher adiabatic flame temperature than hydrogen provides, it overestimates flame stability, yielding a lower (less conservative) LFL estimate.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+121+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence states Bounaceur uses adiabatic mixing of fuels and achieves results similar to Jones; this mechanism distinguishes it from CAFT's single composite temperature approach.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+121+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence does not support Jones being preferable for all compositions; Bounaceur is described as 'very similar' with only slightly higher error, not universally inferior.",
+            "error_type": "overgeneralization_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+121+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "A 26–44% error in LFL estimation for a suppression system design is inadmissible; underestimating LFL creates a non-conservative safety margin in hydrogen-rich vent environments.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+121+Journal_of_Power_Sources:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of LFL calculation methods for hydrogen-containing battery vent gases and the mechanism driving CAFT's systematic error",
+        "primary_boundary": "CAFT is inadmissible due to hydrogen's anomalous thermodynamic behavior; Jones and Bounaceur are both acceptable but Bounaceur's exact error bound is not confirmed below 5%",
+        "intended_error_modes": [
+          "Asserting Bounaceur error is below 5% when evidence only says 'slightly higher than Jones' (B)",
+          "Claiming Jones is universally superior to Bounaceur across all compositions (E)"
+        ],
+        "disallowed_extrapolations": [
+          "Do not assign a specific numerical error bound to Bounaceur beyond 'slightly higher than Jones'",
+          "Do not generalize Jones superiority to all possible vent gas compositions"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An LCO cell and an LFP cell are both subjected to thermal abuse at 25% SOC and again at 50% SOC. At 25% SOC, both cells produce vent gas with flammable fractions below 20–25% by volume. At 50% SOC, LFP flammable gas fraction exceeds 30% by volume. For LCO, a threshold behavior is observed near 40% SOC where flammable gas fraction jumps sharply. An engineer must assess which statements about the SOC-dependence of flammability risk across these chemistries are supported.",
+        "options": [
+          "A. At 25% SOC, both LCO and LFP vent gases are below the 25% flammable volume threshold, so neither chemistry presents a meaningfully elevated flammability hazard at low SOC.",
+          "B. The transition from low to high flammable gas fraction in LCO vent gas occurs gradually across the full SOC range, consistent with a continuous increase in reducing reaction products.",
+          "C. The sharp increase in LCO flammable gas fraction near 40% SOC suggests a threshold-type mechanism rather than a monotonic compositional shift with SOC.",
+          "D. Because LFP flammable gas fraction exceeds 30% at 50% SOC and LCO exhibits a threshold near 40% SOC, both chemistries present elevated flammability risk at mid-to-high SOC, but through different SOC-dependence profiles.",
+          "E. The SOC threshold behavior observed in LCO can be directly applied to predict the SOC at which LFP transitions to high flammability risk, since both are lithium-ion chemistries.",
+          "F. At 50% SOC, LFP vent gas flammable fraction is higher than at 25% SOC, but whether this increase is due to increased hydrogen, carbon monoxide, or both cannot be determined from flammable volume fraction data alone.",
+          "G. The flammable fraction data at 25% and 50% SOC for LFP is sufficient to confirm that LFP flammability risk increases monotonically with SOC across the full 0–100% range."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence confirms both LCO and LFP are below 20–25% flammable volume at 25% SOC, supporting low hazard at this condition.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+121+Journal_of_Power_Sources:C002",
+              "TR_Gasventing+121+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence explicitly describes a sudden jump in LCO flammable gas at 40% SOC, contradicting a gradual continuous increase.",
+            "error_type": "mechanism_confusion_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+121+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "A sudden jump at a specific SOC is the defining signature of threshold behavior, not a monotonic trend.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+121+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Both chemistries show elevated flammability at mid-SOC but LCO via a threshold jump and LFP via a progressive increase, consistent with evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+121+Journal_of_Power_Sources:C002",
+              "TR_Gasventing+121+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence does not support transferring LCO's 40% SOC threshold to LFP; LFP shows a different, progressive trend without a stated threshold.",
+            "error_type": "overgeneralization_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+121+Journal_of_Power_Sources:C002",
+              "TR_Gasventing+121+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Flammable volume fraction is a composite metric; speciation into hydrogen vs. CO requires gas composition data, not just total flammable fraction.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+121+Journal_of_Power_Sources:C001",
+              "TR_Gasventing+121+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "Two data points (25% and 50% SOC) are insufficient to confirm monotonicity across the full 0–100% SOC range; extrapolation beyond measured conditions is unsupported.",
+            "error_type": "scope_expansion_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+121+Journal_of_Power_Sources:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "SOC-dependence profile of vent gas flammability for LCO and LFP, including threshold vs. progressive behavior and measurement scope limitations",
+        "primary_boundary": "LCO threshold at 40% SOC is chemistry-specific and cannot be transferred to LFP; two-point SOC data cannot confirm full-range monotonicity",
+        "intended_error_modes": [
+          "Applying LCO threshold SOC to LFP (E)",
+          "Inferring monotonic full-range behavior from two data points (G)",
+          "Describing LCO SOC-dependence as gradual rather than threshold-type (B)"
+        ],
+        "disallowed_extrapolations": [
+          "Do not transfer LCO threshold SOC value to other chemistries",
+          "Do not infer full-range monotonicity from partial SOC data"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A thermal runaway event occurs in an NCA cell at 100% SOC inside a battery module. A safety engineer must estimate the peak laminar flame speed of the resulting vent gas plume and select a method to calculate the lower flammability limit (LFL) for suppression system sizing. The engineer has access to three LFL calculation methods: CAFT, Jones, and Bounaceur. Explain (1) why the NCA vent gas at 100% SOC presents a higher peak flame speed hazard compared to LFP vent gas at the same SOC, identifying the specific compositional mechanism, and (2) which LFL calculation method(s) are admissible for this vent gas and why the excluded method is inadmissible, with reference to the specific property of hydrogen that causes its failure."
+      },
+      "ground_truth": {
+        "gold_answer": "NCA vent gas at 100% SOC contains a higher fraction of hydrogen and a lower fraction of carbon dioxide compared to LFP vent gas at the same SOC. Hydrogen has a higher laminar flame speed than hydrocarbons, and carbon dioxide acts as a diluent that reduces flame speed. These two effects compound: NCA's elevated hydrogen increases flame propagation rate while its reduced CO2 removes a suppressing diluent, yielding a peak laminar flame speed range of approximately 0.69–1.07 m/s versus 0.37–0.42 m/s for LFP. For LFL estimation, the Jones and Bounaceur methods are admissible (errors below approximately 5% and slightly above 5% respectively). The CAFT method is inadmissible because it relies on a critical adiabatic flame temperature criterion, and hydrogen has a lower adiabatic flame temperature than hydrocarbons. This causes CAFT to systematically misestimate the LFL with 26–44% error, which is non-conservative for suppression system sizing where underestimating LFL creates an unsafe design margin.",
+        "must_include": [
+          "NCA has higher hydrogen fraction and lower CO2 fraction than LFP at 100% SOC",
+          "Hydrogen's higher laminar flame speed and CO2's diluent role both contribute to NCA's higher flame speed",
+          "NCA peak flame speed range is non-overlapping with LFP range at 100% SOC",
+          "CAFT is inadmissible due to 26–44% error caused by hydrogen's lower adiabatic flame temperature than hydrocarbons",
+          "Jones and Bounaceur methods are both admissible with substantially lower error"
+        ],
+        "disallowed_extrapolations": [
+          "Do not claim Bounaceur error is confirmed below 5%; evidence states only 'slightly higher than Jones'",
+          "Do not generalize NCA vs LFP flame speed ranking to partial SOC conditions without evidence",
+          "Do not claim CAFT overestimates LFL without mechanistic justification from hydrogen's thermodynamic properties",
+          "Do not assert Jones is universally superior to Bounaceur for all vent gas compositions"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Compositional mechanism linking vent gas hydrogen and CO2 fractions to peak laminar flame speed, combined with admissibility judgment for LFL calculation methods in hydrogen-rich mixtures",
+        "primary_boundary": "CAFT inadmissibility is specifically caused by hydrogen's anomalous adiabatic flame temperature, not a general accuracy limitation; Bounaceur error bound is 'slightly higher than Jones' not confirmed below 5%",
+        "intended_error_modes": [
+          "Attributing NCA higher flame speed to total flammable gas volume rather than compositional mechanism",
+          "Claiming CAFT fails for general accuracy reasons rather than hydrogen-specific thermodynamic property",
+          "Asserting Bounaceur error is below 5% when evidence only confirms Jones below 5%",
+          "Generalizing NCA vs LFP flame speed ranking to other SOC conditions"
+        ]
+      }
+    }
+  ]
+}

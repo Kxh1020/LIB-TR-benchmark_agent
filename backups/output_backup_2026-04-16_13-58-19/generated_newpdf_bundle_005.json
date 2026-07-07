@@ -1,0 +1,334 @@
+{
+  "TR_Mechanism+210+Journal_of_Energy_Storage__TR_Mechanism+59+UnknownJournal__TR_Mechanism+60+Battery_Energy": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A pouch cell module is assembled under 0.2 MPa external clamping pressure to maintain electrode stack integrity during operation. During a thermal abuse event, engineers observe that the thermal runaway initiation temperature is elevated relative to an unconstrained cell, the initial runaway location has shifted toward the cell interior, and total gas vented during the event is substantially reduced. A safety analyst proposes that the reduced gas yield under pressure is primarily a consequence of suppressed internal reaction pathways due to mechanical compression. A second analyst argues that the reduced gas yield is instead driven by changes in the timing and duration of electrolyte loss processes. Which of the following conclusions are admissible given these observations and the stated conditions?",
+          "options": [
+            "A. The elevated initiation temperature under 0.2 MPa is consistent with improved internal thermal conductivity producing a more uniform temperature distribution, which delays the local thermal threshold from being reached.",
+            "B. The reduced total gas yield under 0.2 MPa is primarily explained by mechanical suppression of electrochemical decomposition reactions within the electrode stack.",
+            "C. The shift of the initial runaway location toward the cell center under elevated pressure is consistent with a more uniform internal temperature distribution rather than preferential edge heating.",
+            "D. Because total gas yield is reduced by approximately 53% at 0.2 MPa, thermal runaway propagation speed in a constrained module is lower than in an unconstrained module at the same conditions.",
+            "E. The reduced gas yield under pressure is more consistent with earlier safety venting and prolonged electrolyte evaporation than with direct suppression of internal reaction pathways.",
+            "F. The elevated initiation temperature under clamping pressure confirms that external pressure prevents thermal runaway from occurring if maintained throughout the abuse event."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence states that external pressure enhances interfacial contact, increases internal thermal conductivity, produces more uniform temperature distribution, and raises TR initiation temperature. This option correctly chains those mechanisms.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+59+UnknownJournal:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Evidence attributes reduced gas yield primarily to earlier safety venting and prolonged electrolyte evaporation, not to mechanical suppression of electrochemical decomposition. This option substitutes an unsupported mechanism.",
+              "error_type": "mechanism substitution",
+              "evidence_refs": [
+                "TR_Mechanism+59+UnknownJournal:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence states that increasing external pressure shifts the initial TR location inward toward the center. The mechanism linking this to more uniform temperature distribution (from enhanced conductivity) is supported by C003 and C004 together.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+59+UnknownJournal:C004",
+                "TR_Mechanism+59+UnknownJournal:C003"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Evidence explicitly states that propagation speed at 0.2 MPa increases by approximately 65% compared to 0 MPa, directly contradicting the claim that reduced gas yield implies reduced propagation speed. This is a counterintuitive but evidence-supported reversal: less gas does not mean slower propagation.",
+              "error_type": "causal overclaim / ignoring multi-factor interaction",
+              "evidence_refs": [
+                "TR_Mechanism+59+UnknownJournal:C001",
+                "TR_Mechanism+59+UnknownJournal:C002"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Evidence directly states that the reduction in total gas yield is primarily attributed to earlier safety venting and prolonged electrolyte evaporation periods, which supports the second analyst's position over the first.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+59+UnknownJournal:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Evidence shows that pressure raises initiation temperature but also accelerates propagation speed by 65% at 0.2 MPa. Concluding that pressure prevents thermal runaway is an inadmissible overclaim; pressure modifies but does not eliminate TR.",
+              "error_type": "protective mechanism overclaim",
+              "evidence_refs": [
+                "TR_Mechanism+59+UnknownJournal:C001",
+                "TR_Mechanism+59+UnknownJournal:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Distinguishing the mechanism responsible for reduced gas yield under pressure from the concurrent but independent effect of pressure on propagation speed, while correctly attributing the initiation temperature shift to thermal conductivity changes.",
+          "primary_boundary": "Reduced gas yield under pressure does not imply reduced propagation speed; these are mechanistically decoupled effects of pressure, and conflating them is the primary error mode.",
+          "intended_error_modes": [
+            "Inferring that lower gas yield implies slower propagation (D)",
+            "Substituting mechanical compression for the evidence-supported venting/evaporation mechanism (B)",
+            "Overclaiming that elevated initiation temperature means pressure prevents TR entirely (F)"
+          ],
+          "disallowed_extrapolations": [
+            "Concluding that clamping pressure eliminates thermal runaway risk",
+            "Attributing reduced gas yield to suppressed electrochemical reactions without evidence support",
+            "Assuming propagation speed and gas yield change in the same direction under pressure"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "An engineer is evaluating nail penetration safety for two battery designs: Design X uses a high-nickel NCM cathode (LiNi0.8Co0.1Mn0.1O2) and Design Y uses a LiFePO4 cathode. Both designs are tested at 100% SOC with steel nails of identical geometry. In a separate parameter study on Design X only, tests are conducted at 30% SOC and 85% SOC using both steel nails and ceramic nails of the same geometry. The engineer observes that at 85% SOC with ceramic nails, thermal runaway intensity is greater than with steel nails, but at 30% SOC the relationship reverses. The engineer must assess which conclusions about nail material, SOC regime, and cathode chemistry are supported by these observations.",
+          "options": [
+            "A. The reversal in nail conductivity effect between 30% SOC and 85% SOC is consistent with a regime change in which heat dissipation through the nail dominates at low SOC while Joule heat generation through the nail dominates at high SOC.",
+            "B. At 30% SOC, ceramic nails cause greater damage than steel nails because ceramic nails have lower thermal conductivity and therefore retain heat within the battery more effectively.",
+            "C. The greater thermal runaway intensity with ceramic nails at 85% SOC compared to steel nails is consistent with ceramic nails having lower conductivity, which reduces heat dissipation and concentrates Joule heating at the penetration site.",
+            "D. Design X will exhibit faster thermal runaway propagation to adjacent cells than Design Y under equivalent module conditions, based on cathode chemistry alone.",
+            "E. The observation that thermal runaway occurred at 100% SOC but not at 0% or 50% SOC under nail penetration is sufficient to conclude that 75% SOC is the minimum threshold for nail-induced thermal runaway in Design X.",
+            "F. The nail conductivity effect on thermal runaway intensity is SOC-regime-dependent and cannot be generalized across the full SOC range without specifying the operating regime.",
+            "G. At 85% SOC, replacing steel nails with ceramic nails in a penetration test increases fire risk relative to steel nails."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "F",
+            "G"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence states that under high SOC (>75%), higher nail conductivity enhances Joule heat release, while under low SOC (<50%), higher nail conductivity dissipates heat. This describes a regime change in the dominant mechanism, which option A correctly characterizes.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+60+Battery_Energy:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "At low SOC (<50%), higher nail conductivity (steel) dissipates heat and weakens TR. Ceramic nails have lower conductivity and therefore dissipate less heat. However, the evidence states that at low SOC, higher conductivity weakens TR intensity, meaning ceramic nails (lower conductivity) would produce more intense TR than steel at low SOC only if the Joule heating effect is secondary. The evidence does not support attributing ceramic nail damage at low SOC to heat retention; the mechanism framing in the option is unsupported and conflates low-SOC and high-SOC regimes.",
+              "error_type": "condition violation / mechanism confusion",
+              "evidence_refs": [
+                "TR_Mechanism+60+Battery_Energy:C004",
+                "TR_Mechanism+60+Battery_Energy:C006"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "At high SOC (>75%), higher nail conductivity enhances internal Joule heat release. Ceramic nails have lower conductivity than steel, so they reduce heat dissipation and concentrate heating. This is consistent with ceramic nails producing more intense TR at 85% SOC, which aligns with evidence that ceramic nails trigger higher-temperature TR flames and increase fire risk compared to steel nails.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+60+Battery_Energy:C004",
+                "TR_Mechanism+60+Battery_Energy:C006"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Evidence supports that NCM-based batteries propagate TR eightfold faster than LFP-based batteries. However, the phrase 'based on cathode chemistry alone' makes this an inadmissible overclaim because propagation also depends on module configuration, spacing, and other factors not reducible to cathode chemistry alone. The directional claim may be supported but the exclusive attribution is not.",
+              "error_type": "causal overclaim / single-variable attribution",
+              "evidence_refs": [
+                "TR_Mechanism+60+Battery_Energy:C002"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Evidence shows TR at 100% SOC and no TR at 0% and 50% SOC. Inferring 75% SOC as a minimum threshold from this data is an unsupported interpolation; the evidence does not test intermediate SOC values between 50% and 100% to establish a precise threshold.",
+              "error_type": "unsupported threshold extrapolation",
+              "evidence_refs": [
+                "TR_Mechanism+60+Battery_Energy:C001"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "The evidence explicitly establishes that nail conductivity has opposite effects depending on SOC regime (high vs. low SOC), confirming that any generalization across the full SOC range without regime qualification is inadmissible.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+60+Battery_Energy:C004"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Correct",
+              "justification": "Evidence states ceramic nails trigger higher-temperature TR flames and increase fire risk compared to steel nails. At 85% SOC (>75% SOC regime), ceramic nails also enhance TR intensity relative to steel. Both lines of evidence support this conclusion.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+60+Battery_Energy:C006",
+                "TR_Mechanism+60+Battery_Energy:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Regime-dependent reversal of nail conductivity effect on TR intensity, and the boundary between admissible and inadmissible conclusions about SOC thresholds and cathode chemistry attribution.",
+          "primary_boundary": "The nail conductivity effect reverses across the SOC regime boundary (~50\u201375% SOC); conclusions valid in one regime cannot be generalized to the other. Additionally, observing TR at 100% SOC and no TR at 50% SOC does not establish 75% as a threshold.",
+          "intended_error_modes": [
+            "Interpolating a precise SOC threshold from two-point SOC data (E)",
+            "Attributing propagation speed difference exclusively to cathode chemistry while ignoring module-level factors (D)",
+            "Applying the low-SOC mechanism framing to explain ceramic nail behavior without regime qualification (B)"
+          ],
+          "disallowed_extrapolations": [
+            "Inferring a specific minimum SOC threshold for nail-induced TR from 0%, 50%, 100% test points only",
+            "Attributing module-level propagation speed solely to cathode chemistry",
+            "Generalizing nail conductivity effect direction across the full SOC range"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "During a thermal runaway event in an NCM lithium-ion cell, a sequential series of internal events is recorded. At approximately 100\u00b0C, a gas analyzer detects H2 and C2H4 in the vent stream. At approximately 145\u00b0C, CO2 and O2 are detected simultaneously. At approximately 225\u00b0C, a rapid and uncontrolled temperature spike to above 900\u00b0C is recorded within seconds. A safety engineer is asked to evaluate which mechanistic interpretations of this sequence are consistent with the observed data, and whether any cross-component interactions between the stages are supported.",
+          "options": [
+            "A. The detection of H2 and C2H4 near 100\u00b0C is consistent with breakdown of the anode-side solid electrolyte interphase layer, which is known to decompose within the 80\u2013120\u00b0C range.",
+            "B. The simultaneous detection of CO2 and O2 near 145\u00b0C is consistent with the onset of a solid-liquid phase change reaction at the cathode that produces CO2 and releases O2.",
+            "C. The temperature spike above 900\u00b0C at approximately 225\u00b0C is consistent with a redox reaction between cathode and anode materials that is triggered once internal temperature exceeds approximately 220\u00b0C in NCM cells.",
+            "D. The reducing gases detected near 100\u00b0C play no role in the subsequent cathode degradation because they are generated at the anode and cannot interact with cathode material before the cathode reactions begin.",
+            "E. The sequence of events implies that the cathode phase change reaction at ~145\u00b0C is the direct trigger for SEI breakdown, establishing a reverse causal order from cathode to anode.",
+            "F. The reducing gases released during SEI breakdown can migrate to the cathode, react with cathode material, and advance the temperature at which cathode decomposition reactions begin, suggesting a cross-component interaction that accelerates the progression toward the 225\u00b0C threshold."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "C",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence states SEI layer breaks down between 80 and 120\u00b0C releasing H2 and C2H4. Detection near 100\u00b0C is within this range and the gas species match.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+210+Journal_of_Energy_Storage:C001"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Evidence states the solid-liquid phase change reaction of cathode material starts at 140\u00b0C, generating CO2 and releasing O2. Detection near 145\u00b0C with both CO2 and O2 is consistent with this threshold.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+210+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence states that for NCM batteries, when internal temperature exceeds 220\u00b0C, the redox reaction between cathode and anode occurs and can instantly raise temperature to above 900\u00b0C. The observed spike above 900\u00b0C at ~225\u00b0C matches this threshold and chemistry.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+210+Journal_of_Energy_Storage:C002"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Evidence explicitly states that reducing gas generated at the anode-electrolyte interface migrates to the cathode, reacts with cathode material, causes early degradation, releases heat, and advances the cathode decomposition reaction temperature. Option D directly contradicts this cross-component interaction.",
+              "error_type": "mechanism denial / ignoring cross-component interaction",
+              "evidence_refs": [
+                "TR_Mechanism+210+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The evidence establishes that SEI breakdown occurs first (~80\u2013120\u00b0C) and cathode phase change begins later (~140\u00b0C). The causal sequence runs from anode-side SEI breakdown to cathode interaction, not from cathode to anode. Reversing this order contradicts the evidence-supported temporal and causal sequence.",
+              "error_type": "causal reversal",
+              "evidence_refs": [
+                "TR_Mechanism+210+Journal_of_Energy_Storage:C001",
+                "TR_Mechanism+210+Journal_of_Energy_Storage:C004",
+                "TR_Mechanism+210+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Evidence states that reducing gases from the anode-electrolyte interface migrate to the cathode, cause early degradation, release heat, and advance the cathode decomposition reaction temperature. This cross-component interaction is directly supported and implies acceleration toward the 220\u00b0C NCM threshold.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+210+Journal_of_Energy_Storage:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Cross-component gas migration as an accelerating mechanism linking SEI breakdown to cathode degradation, and the correct causal ordering of the thermal runaway sequence in NCM cells.",
+          "primary_boundary": "The reducing gases from SEI breakdown are not inert after generation; they migrate and interact with the cathode, advancing its decomposition temperature. Denying this interaction or reversing the causal order are the primary error modes.",
+          "intended_error_modes": [
+            "Assuming anode-generated gases cannot interact with cathode material (D)",
+            "Reversing the causal sequence to imply cathode reactions trigger SEI breakdown (E)"
+          ],
+          "disallowed_extrapolations": [
+            "Inferring that cross-component gas migration is the sole trigger for the 220\u00b0C threshold event",
+            "Claiming the 900\u00b0C spike is caused by gas combustion rather than the cathode-anode redox reaction",
+            "Generalizing the NCM-specific 220\u00b0C threshold to other cathode chemistries"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A battery module uses high-nickel NCM pouch cells assembled under 0.1 MPa clamping pressure. During a thermal abuse event, an engineer notes that total gas vented per cell is substantially lower than in an unconstrained reference module, and that the thermal runaway initiation temperature is higher. However, once thermal runaway initiates in one cell, it propagates to adjacent cells faster than in the unconstrained reference. The engineer concludes that the clamping pressure has made the module safer overall because it delays initiation and reduces gas venting. Identify the specific flaw in this safety conclusion, explain the mechanistic reason why the engineer's conclusion is not fully supported, and state what additional factor must be accounted for when evaluating module-level safety under clamping pressure."
+        },
+        "ground_truth": {
+          "gold_answer": "The flaw is that the engineer equates delayed initiation and reduced gas yield with overall improved module safety, while ignoring that clamping pressure also accelerates thermal runaway propagation speed once initiation occurs. At 0.1 MPa, total gas yield decreases by approximately 28% and initiation temperature rises, but propagation speed increases relative to unconstrained conditions. The mechanistic reason is that enhanced interfacial contact under pressure increases internal thermal conductivity, which produces more uniform temperature distribution (raising initiation threshold) but also enables faster heat transfer between cells once runaway begins, accelerating propagation. The additional factor that must be accounted for is thermal runaway propagation speed between cells, because a module-level safety assessment cannot be based solely on single-cell initiation metrics; faster propagation can result in more cells being involved in a shorter time window, potentially increasing overall module-level hazard despite the delayed single-cell initiation.",
+          "must_include": [
+            "Clamping pressure increases thermal runaway propagation speed, not only delays initiation",
+            "Enhanced interfacial contact increases internal thermal conductivity, which is the mechanism behind both the higher initiation temperature and faster propagation",
+            "Reduced gas yield and elevated initiation temperature are insufficient to conclude overall module safety improvement",
+            "Propagation speed to adjacent cells must be considered in module-level safety evaluation"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming that clamping pressure at any level prevents thermal runaway",
+            "Stating a specific propagation speed value not supported by the evidence for 0.1 MPa",
+            "Concluding that the module is definitively more dangerous under pressure without qualification",
+            "Attributing reduced gas yield to suppression of internal electrochemical reactions"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "The decoupling of single-cell initiation metrics from module-level propagation behavior under external clamping pressure, and the mechanistic reason why the same physical change (enhanced thermal conductivity) produces opposite safety implications at the cell level versus the module level.",
+          "primary_boundary": "Reduced gas yield and elevated initiation temperature are cell-level metrics; they do not capture the module-level consequence of accelerated propagation. The same mechanism (increased thermal conductivity from pressure) simultaneously raises initiation temperature and increases propagation speed, making the net safety effect non-trivial and not reducible to either metric alone.",
+          "intended_error_modes": [
+            "Treating reduced gas yield as a direct indicator of reduced module-level hazard",
+            "Ignoring the propagation speed increase under pressure when evaluating module safety",
+            "Conflating cell-level initiation delay with module-level safety improvement"
+          ]
+        }
+      }
+    ]
+  }
+}

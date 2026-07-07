@@ -1,0 +1,323 @@
+{
+  "TR_Gasventing+122+Journal_of_Power_Sources__TR_Gasventing+123+Journal_of_Power_Sources__TR_Gasventing+128+Journal_of_Power_Sources": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "An engineer is analyzing internal pressure buildup in a fully charged NCM811 cylindrical cell during a controlled heating test. At the temperature where the separator begins to collapse, the pressure contribution from electrochemical redox gas generation is measured to be more than six times the electrolyte vapor pressure. Earlier in the heating sequence\u2014well before this temperature\u2014the relationship between heating rate and gas generation rate is nonlinear, but becomes approximately linear as the separator collapse temperature is approached. The safety valve on this cell has a threshold set near the lower bound of the manufacturer-specified burst range. Which of the following conclusions are admissible given these conditions?",
+          "options": [
+            "A. At the separator collapse temperature, electrolyte vapor pressure is the dominant contributor to total internal pressure, making vapor management the primary design lever for preventing rupture at that stage.",
+            "B. The approximately linear relationship between heating rate and gas generation rate near the separator collapse temperature is consistent with a single dominant reaction pathway governing gas production at that stage, rather than the multi-step process active at lower temperatures.",
+            "C. Because the safety valve threshold is near the lower bound of the manufacturer-specified burst range, the cell is more likely to vent gas before reaching the separator collapse temperature than a cell with a valve set near the upper bound of that range.",
+            "D. The nonlinear gas generation behavior observed before the separator collapse temperature implies that a single reaction rate equation is sufficient to model total gas production across the full heating range.",
+            "E. Raising the safety valve threshold pressure toward the upper bound of the manufacturer-specified range would reduce the risk of uncontrolled rupture at elevated temperatures relative to a valve set at the lower bound.",
+            "F. The transition from nonlinear to approximately linear gas generation behavior as temperature approaches the separator collapse point indicates that the electrochemical contribution to pressure becomes negligible relative to vapor pressure near that threshold."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "C"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "The evidence explicitly states that at the separator collapse temperature, redox gas pressure is over six times the electrolyte vapor pressure, making redox gas\u2014not vapor\u2014the dominant contributor. This option inverts the established pressure hierarchy.",
+              "error_type": "mechanism substitution",
+              "evidence_refs": [
+                "TR_Gasventing+122+Journal_of_Power_Sources:C001"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "The evidence states the relationship becomes approximately linear near the separator collapse temperature and that this supports a one-step reaction interpretation at that stage, contrasting with the multi-step nonlinear behavior at lower temperatures. This is a direct mechanistic inference admissible from the stated evidence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+122+Journal_of_Power_Sources:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "A valve set near the lower burst threshold will open at a lower internal pressure than one set near the upper bound. Since the separator collapse temperature is associated with very high internal pressures, a lower-threshold valve is more likely to vent before that pressure is reached, which is a direct engineering implication of the threshold relationship described.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+122+Journal_of_Power_Sources:C003",
+                "TR_Gasventing+122+Journal_of_Power_Sources:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "The evidence explicitly states the relationship is not linear before the separator collapse temperature, indicating a multi-step process. Claiming a single rate equation is sufficient across the full range contradicts this directly.",
+              "error_type": "overgeneralization",
+              "evidence_refs": [
+                "TR_Gasventing+122+Journal_of_Power_Sources:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The evidence states that a high safety valve threshold causes gas not to be vented in time, increasing rupture and explosion risk at high temperatures. Raising the threshold toward the upper bound therefore increases\u2014not reduces\u2014the risk of uncontrolled rupture. This is a counterintuitive but evidence-supported reversal of the option's claim.",
+              "error_type": "causal overclaim / direction reversal",
+              "evidence_refs": [
+                "TR_Gasventing+122+Journal_of_Power_Sources:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The transition to linear behavior near the separator collapse temperature reflects a reaction regime change in gas generation, not a reduction in electrochemical contribution. At that same temperature, redox gas pressure is over six times vapor pressure, so the electrochemical contribution is at its highest, not negligible.",
+              "error_type": "mechanism confusion",
+              "evidence_refs": [
+                "TR_Gasventing+122+Journal_of_Power_Sources:C001",
+                "TR_Gasventing+122+Journal_of_Power_Sources:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of mechanistic conclusions about pressure dominance and reaction regime near separator collapse temperature, and the engineering implication of safety valve threshold placement.",
+          "primary_boundary": "Redox gas pressure dominates over vapor pressure at the separator collapse temperature; the linear gas generation regime near that temperature reflects a single-step reaction, not a universal simplification; high valve thresholds increase rupture risk.",
+          "intended_error_modes": [
+            "mechanism substitution (vapor vs. redox dominance)",
+            "overgeneralization of linear regime to full temperature range",
+            "direction reversal on safety valve threshold risk"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming vapor pressure dominates at separator collapse temperature",
+            "Applying the linear reaction model to the full heating range",
+            "Claiming higher valve threshold reduces rupture risk"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery safety engineer compares gas emission behavior between NMC-811 21700 cells at 25% SoC and 100% SoC during two distinct events: (1) safety venting prior to thermal runaway, and (2) full thermal runaway. During safety venting, no H2 is detected at any SoC. During thermal runaway, H2 volume fraction increases strongly with SoC, reaching 12.9% at 100% SoC versus 0.20% at 5% SoC. Total gas volume produced during thermal runaway increases 3\u20135 fold when SoC rises from 25% to 100%. At 100% SoC, thermal runaway onset temperature is up to 60\u00b0C lower than at 5% SoC, and the pre-runaway gas detection window is 120 s shorter. Which of the following conclusions are admissible?",
+          "options": [
+            "A. H2 concentration during thermal runaway can serve as a diagnostic indicator of cell SoC at the time of the event, but H2 concentration during safety venting cannot serve the same function for these cells.",
+            "B. Because total gas volume increases 3\u20135 fold from 25% to 100% SoC, the gas generation rate per unit time during thermal runaway is also 3\u20135 times higher at 100% SoC than at 25% SoC.",
+            "C. At 100% SoC, the combination of lower onset temperature and shorter pre-runaway detection window means that a detection system relying solely on vented gas composition to identify imminent thermal runaway has less time to trigger an alarm than at lower SoC.",
+            "D. The absence of H2 during safety venting across all SoC levels indicates that the reactions responsible for H2 production are not active below the thermal runaway threshold temperature for these cells.",
+            "E. The 3\u20135 fold increase in total gas volume from 25% to 100% SoC during thermal runaway implies that gas management systems designed for low-SoC operation provide adequate venting capacity for full-charge thermal runaway events.",
+            "F. Since CH4 is the most abundant gas during safety venting and its concentration increases with SoC, CH4 monitoring is more suitable than H2 monitoring for early detection of pre-runaway venting events in these cells."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "D",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "H2 shows strong SoC-dependent concentration during thermal runaway (0.20% at 5% SoC to 12.9% at 100% SoC), making it a viable SoC indicator during that event. However, H2 is not detected during safety venting at any SoC, so it cannot serve as a venting-phase SoC indicator. This distinction is directly supported by the evidence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+123+Journal_of_Power_Sources:C002",
+                "TR_Gasventing+123+Journal_of_Power_Sources:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The evidence states total gas volume, not gas generation rate per unit time. The duration of thermal runaway events may differ across SoC levels, so a volumetric ratio cannot be directly equated to a rate ratio without information about event duration. This is an unsupported quantitative extrapolation.",
+              "error_type": "causal overclaim / scope expansion",
+              "evidence_refs": [
+                "TR_Gasventing+123+Journal_of_Power_Sources:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "At 100% SoC, onset temperature is up to 60\u00b0C lower (less thermal margin before runaway) and the pre-runaway detection window is 142 s versus 262 s at 5% SoC\u2014120 s shorter. A gas-composition-based detection system therefore has less time to act at high SoC, which is a direct multi-step inference from two independent evidence claims.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+123+Journal_of_Power_Sources:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "H2 is absent during safety venting at all SoC levels but present during thermal runaway in a strongly SoC-dependent manner. This is consistent with H2-producing reactions being thermally activated only above the thermal runaway threshold, which is an admissible mechanistic inference from the observed phase-dependent absence of H2.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+123+Journal_of_Power_Sources:C002",
+                "TR_Gasventing+123+Journal_of_Power_Sources:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The 3\u20135 fold increase in gas volume from 25% to 100% SoC means low-SoC design capacity is grossly insufficient for full-charge events. Concluding adequacy from low-SoC data directly contradicts the scaling evidence and constitutes a dangerous scope expansion.",
+              "error_type": "scope expansion / scale transfer beyond evidence",
+              "evidence_refs": [
+                "TR_Gasventing+123+Journal_of_Power_Sources:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "CH4 is consistently the most abundant gas during safety venting across all SoC levels and increases with SoC, while H2 is entirely absent during safety venting. For pre-runaway venting detection, CH4 monitoring is therefore better suited than H2 monitoring for these cells, which is a direct admissible comparison from the evidence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+123+Journal_of_Power_Sources:C001",
+                "TR_Gasventing+123+Journal_of_Power_Sources:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Phase-dependent gas composition as a diagnostic tool, SoC-dependent scaling of gas volume and detection window, and admissibility of rate vs. volume extrapolations.",
+          "primary_boundary": "H2 absence during venting vs. presence during thermal runaway defines a phase boundary; volumetric scaling does not imply rate scaling; low-SoC venting capacity cannot be extrapolated to full-charge events.",
+          "intended_error_modes": [
+            "confusing volume ratio with rate ratio",
+            "extrapolating low-SoC design capacity to high-SoC events",
+            "ignoring phase-dependent H2 behavior"
+          ],
+          "disallowed_extrapolations": [
+            "Inferring gas generation rate from total volume without duration data",
+            "Claiming low-SoC venting system adequacy for high-SoC thermal runaway"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A pack-level thermal runaway test is conducted on two 280Ah LiFePO4 cells within a battery pack. Post-event analysis shows that ejected material consists of approximately 2% gas by mass, approximately 20% condensed electrolyte liquid by mass, and approximately 78% solid wreckage by mass. The mass ratio of non-condensable gas to condensed liquid in the ejected fraction is approximately 1:10. The dominant gas species by mole fraction is H2 at 55.22%, followed by CO2 at 23.17% and CO at 7.97%. The pack's pressure balance valve opened 36 times during the event, with 72.2% of openings occurring at pressure change rates between 0.0 and 0.5 kPa/s. The first valve opening occurred at a pressure slightly above the manufacturer-specified threshold; subsequent openings occurred at pressures slightly lower than the first but still above the threshold. Which of the following conclusions are admissible?",
+          "options": [
+            "A. By mass, the ejected condensed electrolyte liquid poses a greater material hazard than the ejected gas fraction, because the liquid mass is approximately ten times the gas mass in the ejected substances.",
+            "B. The repeated valve openings at low pressure-change rates indicate that most pressure relief events during this thermal runaway were driven by rapid explosive gas generation rather than slow electrochemical off-gassing.",
+            "C. The slight decrease in valve opening pressure from the first to subsequent events is consistent with mechanical changes to the valve or seating surface occurring after the initial opening, rather than indicating the valve was improperly calibrated.",
+            "D. H2 constitutes the majority of ejected gas by mole fraction, so flammability risk from the gas phase is primarily associated with H2 rather than CO2 or CO in this chemistry under these test conditions.",
+            "E. Because 72.2% of pressure relief events occurred at rates of 0.0\u20130.5 kPa/s, the pressure balance valve design is confirmed to be adequate for preventing any overpressure condition during LFP thermal runaway at this scale.",
+            "F. The approximately 78% solid wreckage fraction by mass implies that most of the cell's active material is retained within the cell casing after thermal runaway, which limits but does not eliminate the external material ejection hazard."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "D"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The mass ratio of gas to liquid in ejected substances is approximately 1:10, and liquid constitutes approximately 20% versus 2% gas by total battery mass. By mass, the condensed electrolyte liquid fraction in the ejected material is ten times the gas fraction, making it the larger mass contributor to ejected hazardous material. This is a direct admissible inference from the stated mass fractions.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+128+Journal_of_Power_Sources:C003",
+                "TR_Gasventing+128+Journal_of_Power_Sources:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The evidence states that 72.2% of pressure relief events occurred at rates of 0.0\u20130.5 kPa/s, which represents slow pressure accumulation, not rapid explosive generation. This option inverts the rate interpretation: slow rates are inconsistent with explosive gas generation and are more consistent with gradual off-gassing.",
+              "error_type": "direction reversal / mechanism confusion",
+              "evidence_refs": [
+                "TR_Gasventing+128+Journal_of_Power_Sources:C002"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "The first opening occurred at 107.69\u2013107.23 kPa and subsequent openings at 105.74\u2013106.24 kPa, both above the manufacturer-specified 104.825 kPa. The slight reduction after first opening is consistent with mechanical deformation or seat wear after initial actuation\u2014a standard engineering interpretation of valve behavior after first use\u2014and does not indicate miscalibration since all values remain above the specified threshold.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+128+Journal_of_Power_Sources:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "H2 constitutes 55.22% of ejected gas by mole fraction, making it the dominant species. H2 is flammable and has a wide flammability range, while CO2 is not flammable. CO is flammable but present at only 7.97%. Therefore, H2 is the primary flammability contributor in the gas phase for this chemistry under these conditions, which is a direct admissible inference.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+128+Journal_of_Power_Sources:C001"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The observation that 72.2% of openings occurred at low rates describes the distribution of events that did occur, but does not confirm that no overpressure condition arose or that the valve design is adequate for all LFP thermal runaway scenarios. This is a scope expansion from a descriptive observation to a design adequacy claim, which is not supported by the evidence.",
+              "error_type": "scope expansion / causal overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+128+Journal_of_Power_Sources:C002"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The 78% wreckage fraction refers to solid residue remaining after the event, not material retained inside the casing. The evidence does not specify what fraction of wreckage is internal versus external. Inferring that most active material is retained inside the casing from the wreckage mass fraction is an unsupported extrapolation about location, not just quantity.",
+              "error_type": "scope expansion / unsupported location inference",
+              "evidence_refs": [
+                "TR_Gasventing+128+Journal_of_Power_Sources:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of mass-fraction-based hazard comparisons, valve behavior interpretation, and gas-phase flammability attribution for LFP thermal runaway.",
+          "primary_boundary": "Mass fractions describe ejected quantities but not internal retention location; low pressure-change rates indicate slow off-gassing not explosive generation; valve threshold data supports mechanical wear interpretation but not design adequacy claims.",
+          "intended_error_modes": [
+            "inverting rate interpretation (slow rate \u2192 explosive)",
+            "inferring internal retention from wreckage mass fraction",
+            "claiming design adequacy from descriptive pressure data"
+          ],
+          "disallowed_extrapolations": [
+            "Inferring casing retention from wreckage mass fraction",
+            "Claiming valve adequacy from pressure event distribution",
+            "Generalizing LFP results to other chemistries"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "An NMC-811 21700 cell at 100% SoC undergoes thermal runaway in a confined test enclosure. A gas detection system is positioned to monitor the enclosure atmosphere. The system is designed to trigger an alarm when it detects H2 above a set threshold, with the intent of providing early warning before full thermal runaway onset. Based on the known gas emission behavior of these cells across the two distinct phases of the event sequence\u2014safety venting and thermal runaway\u2014identify one fundamental limitation of using H2 as the sole early-warning indicator for this cell chemistry, and explain the mechanistic basis for that limitation. Then identify which gas species would be more appropriate for early-warning detection during the pre-runaway phase and justify that choice."
+        },
+        "ground_truth": {
+          "gold_answer": "H2 is not detected during safety venting of NMC-811 cells at any SoC level; it only appears during thermal runaway itself. Therefore, a detection system relying solely on H2 will not trigger an alarm during the pre-runaway venting phase, which is the period when intervention is still possible. The mechanistic basis is that H2-producing reactions are not active at the lower temperatures associated with safety venting and only become active at or above the thermal runaway threshold temperature. CH4 is the more appropriate indicator for early warning because it is consistently the most abundant gas during safety venting across all SoC levels and its concentration increases with SoC, meaning it is present and detectable during the pre-runaway phase when the detection window is still open.",
+          "must_include": [
+            "H2 is absent during safety venting at all SoC levels for NMC-811 cells",
+            "H2 only appears during thermal runaway, not during the pre-runaway venting phase",
+            "H2-producing reactions are not active below the thermal runaway threshold temperature",
+            "CH4 is consistently the most abundant gas during safety venting",
+            "CH4 concentration increases with SoC during safety venting",
+            "CH4 is present during the pre-runaway detection window"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming H2 is never produced by NMC-811 cells under any conditions",
+            "Claiming CH4 is a reliable thermal runaway indicator during the runaway phase itself",
+            "Generalizing the H2 absence finding to other cell chemistries",
+            "Claiming CH4 detection alone is sufficient for complete thermal runaway prevention"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Phase-dependent gas emission behavior as a constraint on early-warning detection strategy for NMC-811 cells; distinction between venting-phase and runaway-phase gas composition.",
+          "primary_boundary": "H2 absence is specific to the safety venting phase and to NMC-811 chemistry under the tested conditions; CH4 suitability is limited to the pre-runaway detection window and does not extend to runaway-phase diagnostics.",
+          "intended_error_modes": [
+            "Recommending H2 detection without recognizing its phase-dependent absence",
+            "Assuming H2 absence is universal across all lithium-ion chemistries",
+            "Conflating total gas volume indicators with early-warning composition indicators",
+            "Recommending CO2 or CO as early-warning gases without noting their lower abundance relative to CH4 during venting"
+          ]
+        }
+      }
+    ]
+  }
+}

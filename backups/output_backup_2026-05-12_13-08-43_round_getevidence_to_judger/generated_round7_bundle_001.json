@@ -1,0 +1,317 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A cylindrical LFP cell undergoes overcharge at 2C rate. Engineers monitoring gas emissions detect DMC, EMC, CH4, CO, and CO2 at a cell surface temperature of 53°C and SOC of 120%. Later in the same test, HF appears in the gas stream only after concentrations of all previously detected species begin declining. Which conclusions about the gas emission sequence are admissible given these observations?",
+        "options": [
+          "A. HF formation is driven by the same electrochemical oxidation reactions responsible for the initial hydrocarbon and CO emissions, and the delay reflects slower kinetics of the same pathway.",
+          "B. The initial gas release at 53°C is consistent with volatile solvent evaporation or decomposition rather than requiring high-temperature thermal runaway conditions.",
+          "C. Because HF appears only after other species decline, its formation mechanism operates independently of the reactions producing the initial gas species.",
+          "D. The presence of CO2 among the initial vent gases is sufficient to render the overall gas mixture non-flammable given its known inerting properties.",
+          "E. Temperature rather than the oxidoreduction state of the cell is the dominant parameter governing the main gas release phase.",
+          "F. The sequential appearance of HF after other gases proves that HF originates exclusively from cathode decomposition and not from electrolyte salt breakdown."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "Evidence explicitly states HF formation is decoupled from other reaction mechanisms, contradicting a shared oxidation pathway explanation.",
+            "error_type": "mechanism_confusion",
+            "evidence_refs": [
+              "TR_Gasventing+119+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "First gas release at 53°C is below thermal runaway thresholds; non-cyclic solvents evaporate below 100°C, consistent with solvent-driven early venting.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+119+Journal_of_Power_Sources:C002",
+              "TR_Gasventing+117+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence directly states HF formation mechanism is decoupled from other reaction mechanisms based on its delayed and sequential appearance.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+119+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence states CO2 quantity is insufficient to prevent flammability, counterbalanced by flammable gases such as H2.",
+            "error_type": "protective_mechanism_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+119+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Similarity between overcharge and thermal abuse gas compositions indicates temperature, not oxidoreduction reactions, governs main off-gas release.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+119+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Evidence identifies HF decoupling from other mechanisms but does not attribute it exclusively to cathode decomposition; LiPF6 electrolyte decomposition is the supported source.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+117+Journal_of_Power_Sources:C001",
+              "TR_Gasventing+119+Journal_of_Power_Sources:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism decoupling of HF formation from initial vent gas reactions and the role of temperature vs. electrochemistry in gas release",
+        "primary_boundary": "HF decoupling is mechanistically supported; CO2 inerting claim is explicitly refuted; temperature dominance over oxidoreduction is evidence-supported",
+        "intended_error_modes": [
+          "mechanism_confusion",
+          "protective_mechanism_overclaim",
+          "causal_overclaim"
+        ],
+        "disallowed_extrapolations": [
+          "Attributing HF exclusively to cathode decomposition",
+          "Claiming CO2 provides inerting protection",
+          "Treating HF delay as kinetic slowing of the same pathway"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "In oven-heated thermal runaway tests, working Li-ion cells show thermal runaway near 190°C with sparks, flames, and gas explosions occurring roughly 15 seconds post-runaway. Dead cells of the same type reach thermal runaway at 201–205°C but produce no sparks, flames, or explosions. A separate ARC measurement on the same working cell type identifies thermal runaway onset near 140°C. An engineer must assess what these results collectively imply about thermal runaway characterization and hazard comparison.",
+        "options": [
+          "A. The 50°C difference between oven and ARC thermal runaway temperatures for the same cell type reflects a genuine difference in cell chemistry between the two test populations.",
+          "B. Reporting a single thermal runaway temperature for a cell type without specifying the test method and its definition is insufficient for cross-study comparison.",
+          "C. Dead cells present a lower fire and explosion hazard than working cells under the same oven heating conditions, despite undergoing thermal runaway.",
+          "D. Because dead cells reach thermal runaway at higher temperatures than working cells, dead cells are inherently safer under all abuse conditions.",
+          "E. The gas explosion observed approximately 15 seconds after thermal runaway in working cells indicates that ignitable gas accumulates during the runaway event before finding an ignition source.",
+          "F. The ARC-measured onset near 140°C establishes the true thermal runaway threshold, making the oven-measured 190°C an experimental artifact that should be disregarded."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "Evidence attributes the 50°C difference to test method and definition differences, not to chemistry differences between test populations.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+118+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Evidence explicitly states thermal runaway temperature depends on test method and its definition, making method specification mandatory for valid comparison.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+118+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Dead cells undergo thermal runaway but produce no sparks, flames, or explosions, directly demonstrating lower fire/explosion hazard despite thermal runaway occurrence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+118+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence covers only oven heating conditions; generalizing dead cell safety advantage to all abuse conditions exceeds the evidence scope.",
+            "error_type": "overgeneralization",
+            "evidence_refs": [
+              "TR_Gasventing+118+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The ~15-second delay between thermal runaway and gas explosion is consistent with gas accumulation followed by delayed ignition, supported by the described sequence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+118+Journal_of_Power_Sources:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Evidence treats both measurements as valid method-dependent results; neither is designated as artifact. Dismissing one measurement contradicts the stated limitation.",
+            "error_type": "measurement_scope_violation",
+            "evidence_refs": [
+              "TR_Gasventing+118+Journal_of_Power_Sources:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Test-method dependence of thermal runaway temperature and the distinction between thermal runaway occurrence and fire/explosion hazard",
+        "primary_boundary": "Method-dependence applies to temperature values only; dead cell hazard reduction is condition-specific to oven heating, not universal",
+        "intended_error_modes": [
+          "causal_overclaim",
+          "overgeneralization",
+          "measurement_scope_violation"
+        ],
+        "disallowed_extrapolations": [
+          "Treating ARC value as the true threshold",
+          "Extending dead cell safety advantage beyond oven conditions",
+          "Attributing temperature difference to chemistry rather than method"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "During staged thermal heating of extracted LiPF6-containing electrolyte, both HF and POF3 are detected simultaneously starting near 100°C and both decrease near 170°C. PF5 is not detected at any temperature. In a separate cell-level test, CO, HF, and POF3 appear only during the third vent phase coinciding with thermal runaway, not during earlier vents. An engineer evaluating toxic gas hazard management must determine which mechanistic interpretations are admissible.",
+        "options": [
+          "A. The simultaneous decline of HF and POF3 near 170°C in the electrolyte heating test is consistent with limited residual moisture being insufficient to sustain complete POF3-to-HF conversion.",
+          "B. The absence of PF5 in the electrolyte heating test confirms that PF5 is not an intermediate in LiPF6 decomposition pathways under any conditions.",
+          "C. Monitoring gas emissions only during early venting phases in a cell-level test would fail to detect HF and POF3, underestimating toxic exposure risk during the most hazardous phase.",
+          "D. Because POF3 can convert to HF in humid environments, the toxic hazard from LiPF6 decomposition in dry conditions is limited to POF3 alone and HF can be excluded.",
+          "E. The cell-level detection of CO alongside HF and POF3 only at thermal runaway implies that CO generation requires the same temperature conditions as electrolyte salt decomposition.",
+          "F. The simultaneous appearance of HF and POF3 in the electrolyte heating test suggests that both species originate from a common decomposition step rather than from independent sequential reactions."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence explicitly proposes insufficient residual humidity as the explanation for simultaneous HF and POF3 decline at 170°C.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+117+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence attributes PF5 absence to its instability and rapid reaction, not to its absence from the decomposition pathway; absence of detection ≠ absence from mechanism.",
+            "error_type": "measurement_scope_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+117+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Cell-level evidence shows HF and POF3 appear exclusively in the third vent coinciding with thermal runaway; earlier vent monitoring would miss these toxic species entirely.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+118+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence states POF3 is a precursor to HF in humid environments but does not support excluding HF hazard in dry conditions as a universal safety claim.",
+            "error_type": "condition_violation_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+117+Journal_of_Power_Sources:C001"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "CO co-detection with HF at thermal runaway reflects the vent phase timing, not a mechanistic requirement that CO generation depends on salt decomposition temperature.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+118+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Simultaneous appearance of HF and POF3 from 100°C onward is consistent with both arising from a shared LiPF6 decomposition event rather than independent sequential steps.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+117+Journal_of_Power_Sources:C003",
+              "TR_Gasventing+117+Journal_of_Power_Sources:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanistic interpretation of HF/POF3 co-emission patterns and the timing-dependent toxic hazard at cell level",
+        "primary_boundary": "PF5 absence reflects detection limits not pathway exclusion; CO co-detection reflects vent phase not mechanistic coupling; POF3-to-HF conversion is humidity-conditional",
+        "intended_error_modes": [
+          "measurement_scope_distractor",
+          "condition_violation_distractor",
+          "causal_overclaim"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding PF5 is absent from decomposition mechanism",
+          "Excluding HF hazard in dry conditions universally",
+          "Treating CO co-detection as mechanistic dependency on salt decomposition temperature"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "An LFP cell undergoes overcharge abuse. Engineers observe that the vent gas mixture contains CO2 alongside flammable species. They propose that CO2 concentration in the vent gas could serve as a passive inerting agent, making the released gas mixture non-flammable without additional safety measures. Separately, a test engineer notes that in most overcharge trials venting and thermal runaway occur without explosion, but two trials produced explosions preceded by cell surface temperatures reaching 300–350°C. Evaluate the admissibility of the CO2 inerting proposal and explain what the two explosive trials indicate about the conditions governing explosion risk in LFP overcharge."
+      },
+      "ground_truth": {
+        "gold_answer": "The CO2 inerting proposal is not admissible. Evidence shows that the quantity of CO2 present in LFP overcharge vent gases is insufficient to prevent flammability, because flammable gases such as H2 are also present and counterbalance any inerting effect of CO2. Relying on CO2 alone as a passive safety measure is therefore unsupported. Regarding the two explosive trials: the evidence associates the explosions with cell surface temperatures reaching 300–350°C, attributed to a strong internal short circuit, whereas the seven non-explosive trials did not reach these temperatures. This indicates that explosion risk is not a fixed consequence of overcharge-induced thermal runaway but is conditional on the severity of internal short circuit development, which drives temperatures well above those seen in the reproducible non-explosive cases. The distinction implies that explosion is a threshold-dependent outcome linked to the intensity of internal short circuit, not simply to venting or thermal runaway occurrence.",
+        "must_include": [
+          "CO2 quantity is insufficient to prevent flammability in LFP vent gases",
+          "Flammable gases such as H2 counterbalance CO2 inerting effect",
+          "Explosions in the two outlier trials are associated with surface temperatures of 300–350°C",
+          "Higher temperatures linked to strong internal short circuit",
+          "Explosion is not a universal consequence of overcharge thermal runaway but is condition-dependent"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming CO2 provides any measurable inerting benefit under these conditions",
+          "Concluding that all overcharge events will produce explosions",
+          "Attributing the non-explosive majority outcome to CO2 inerting",
+          "Generalizing the internal short circuit mechanism to other chemistries without evidence"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of CO2 as passive inerting agent in LFP vent gas and the conditional nature of explosion risk under overcharge",
+        "primary_boundary": "CO2 insufficiency for inerting is explicitly stated; explosion conditionality is tied to internal short circuit severity and temperature, not to venting alone",
+        "intended_error_modes": [
+          "protective_mechanism_overclaim for CO2",
+          "overgeneralization of explosion risk to all overcharge events",
+          "ignoring the role of internal short circuit severity as the distinguishing condition"
+        ]
+      }
+    }
+  ]
+}

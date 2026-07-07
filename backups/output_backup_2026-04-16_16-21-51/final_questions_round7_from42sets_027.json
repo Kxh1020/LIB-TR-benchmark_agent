@@ -1,0 +1,98 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A vented enclosure contains a DMC/BVG gas mixture at 393 K and 0.1 MPa. An engineer compares the explosion hazard of pure DMC vapor against pure BVG under identical conditions and notes that BVG contains a significant fraction of inert gases. The engineer must select the correct mechanistic interpretation of the observed pressure difference and its implications for vent sizing. Which of the following statements are admissible conclusions?",
+        "options": [
+          "A. The higher peak overpressure of DMC relative to BVG is attributable to both the absence of inert diluents and the greater combustion energy density of DMC, making these two factors jointly responsible.",
+          "B. Because BVG contains inert gases that suppress combustion, its peak overpressure will always remain below that of any pure flammable vapor regardless of mixture composition.",
+          "C. The 31% difference in peak overpressure between DMC and BVG directly implies that vent areas sized for BVG will be inadequate by at least 31% when DMC is present at high fractions.",
+          "D. Inert gas content in BVG acts as a combustion suppressant, so increasing the BVG fraction in a DMC/BVG mixture would be expected to moderate peak overpressure relative to pure DMC.",
+          "E. The peak overpressure difference between DMC and BVG is sufficient to conclude that DMC poses a greater deflagration risk than BVG under all practical storage conditions.",
+          "F. The rate of pressure rise for pure DMC would be expected to exceed that of pure BVG under the same initial conditions, consistent with the higher combustion energy and absence of inert suppression."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence explicitly attributes the DMC–BVG pressure difference to both inert suppression in BVG and higher combustion heat of DMC.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+143+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Overgeneralization; the claim applies to BVG vs. pure DMC under specific conditions, not universally against any pure flammable vapor.",
+            "error_type": "Overgeneralization distractor",
+            "evidence_refs": [
+              "TR_Gasventing+143+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Vent area scales nonlinearly with overpressure; a 31% pressure difference does not translate directly to a 31% vent area deficit.",
+            "error_type": "Causal overclaim / numerical extrapolation",
+            "evidence_refs": [
+              "TR_Gasventing+143+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Mechanistically consistent: inert gases in BVG suppress combustion, so higher BVG fraction dilutes DMC and moderates peak overpressure.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+143+Journal_of_Loss_Prevention_in_the_Process_Industries:C001",
+              "TR_Gasventing+143+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Conclusion is condition-specific (393 K, 0.1 MPa, 8 L vessel); generalizing to all practical storage conditions exceeds evidence scope.",
+            "error_type": "Scope expansion beyond stated conditions",
+            "evidence_refs": [
+              "TR_Gasventing+143+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Higher combustion heat and absence of inert suppression both elevate rate of pressure rise; this is a minimal engineering implication consistent with the evidence mechanism.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+143+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanistic attribution of DMC vs. BVG pressure difference and its admissible engineering implications",
+        "primary_boundary": "The 31% overpressure difference is condition-specific and mechanistically dual-cause; it cannot be linearly transferred to vent sizing or universalized across all conditions.",
+        "intended_error_modes": [
+          "Numerical linear extrapolation to vent area",
+          "Overgeneralization of BVG suppression effect",
+          "Scope expansion to all storage conditions"
+        ],
+        "disallowed_extrapolations": [
+          "Vent area scales linearly with peak overpressure",
+          "BVG inert content suppresses all flammable vapors universally",
+          "Single-condition test generalizes to all practical conditions"
+        ]
+      }
+    }
+  ],
+  "short_answers": []
+}

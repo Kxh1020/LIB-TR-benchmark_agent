@@ -1,0 +1,101 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An NCM 811 lithium-ion battery is stored at 50% SOC in an open environment. A safety engineer argues that this SOC represents the safest storage condition based on explosion-related metrics. A second engineer counters that storing at 50% SOC does not eliminate explosion risk and that the lower explosion limit behavior across SOC levels is non-monotonic, which complicates straightforward SOC minimization strategies. Which of the following statements are consistent with both engineers' positions and the underlying physical reasoning?",
+        "options": [
+          "A. At 50% SOC, the lower explosion limit of the vent gas reaches its highest value among tested SOC levels, meaning a higher concentration of gas must accumulate before ignition becomes possible in open-space conditions.",
+          "B. Because the upper explosion limit increases continuously with SOC, the explosion range at 50% SOC is narrower than at 100% SOC, but the explosion pressure at 50% SOC at the lower explosion limit still exceeds 0.2 MPa, confirming that hazard is reduced but not eliminated.",
+          "C. The non-monotonic behavior of the lower explosion limit with SOC is driven by a monotonic increase in multi-carbon chain gas fraction as SOC rises, which directly lowers the ignition threshold at all SOC levels above 50%.",
+          "D. Since the maximum explosion flame temperature at 50% SOC is the lowest among tested conditions, this SOC can be considered thermally safe for all battery chemistries under open-space storage.",
+          "E. The highest explosion pressure among tested conditions occurs at 100% SOC at the lower explosion limit, which is consistent with the trend that higher SOC batteries release vent gas compositions with greater explosive energy.",
+          "F. A storage recommendation of 50% SOC is fully justified on explosion safety grounds because the lower explosion limit is maximized there, even though the explosion range still widens with increasing SOC above this point."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence states that LEL reaches a maximum at 50% SOC for NCM 811, meaning a higher gas concentration is required before the mixture enters the flammable range, which directly supports the first engineer's position on open-space safety.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+196+Journal_of_Energy_Storage:C003",
+              "TR_Gasventing+196+Journal_of_Energy_Storage:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The UEL increases continuously with SOC so the explosion range at 50% SOC is narrower than at 100% SOC. The minimum explosion pressure at LEL across all groups is the 50% SOC case, but it still exceeds 0.2 MPa, confirming hazard reduction without elimination. This satisfies both engineers' claims simultaneously.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+196+Journal_of_Energy_Storage:C002",
+              "TR_Gasventing+196+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Evidence states that LEL presents an inverted tendency with multi-carbon chain gas fraction — as multi-carbon chain gas fraction decreases, LEL increases. Option C inverts this by claiming the fraction increases monotonically with SOC, which contradicts the evidence that the fraction decreases at the SOC range where LEL increases.",
+            "error_type": "mechanism_inversion",
+            "evidence_refs": [
+              "TR_Gasventing+196+Journal_of_Energy_Storage:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The lowest flame temperature conclusion is specific to NCM 811 under the tested conditions. Extending this to 'all battery chemistries' is an unsupported generalization beyond the evidence scope.",
+            "error_type": "overgeneralization_across_chemistries",
+            "evidence_refs": [
+              "TR_Gasventing+196+Journal_of_Energy_Storage:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Evidence explicitly states the 100% SOC battery at LEL showed the highest explosion pressure of 0.4585 MPa. This is consistent with higher SOC producing more energetic vent gas compositions, as supported by the widening explosion range and increasing UEL with SOC.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+196+Journal_of_Energy_Storage:C005",
+              "TR_Gasventing+196+Journal_of_Energy_Storage:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "This appears cautious but is incorrect because it overstates the justification. The 50% SOC recommendation is supported for open-space conditions based on LEL maximization, but the explosion range still widens with SOC above 50% and the UEL continues increasing, meaning the recommendation cannot be described as fully justified on all explosion safety grounds without qualification.",
+            "error_type": "causal_overclaim_from_partial_metric",
+            "evidence_refs": [
+              "TR_Gasventing+196+Journal_of_Energy_Storage:C002",
+              "TR_Gasventing+196+Journal_of_Energy_Storage:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Non-monotonic LEL behavior with SOC and its implications for storage safety recommendations, combined with admissibility of hazard-reduction vs. hazard-elimination claims",
+        "primary_boundary": "50% SOC maximizes LEL and minimizes explosion flame temperature and pressure at LEL, but does not eliminate explosion risk; UEL and explosion range still increase with SOC above 50%",
+        "intended_error_modes": [
+          "inverting the causal relationship between multi-carbon chain gas fraction and LEL",
+          "overgeneralizing chemistry-specific results to all battery types",
+          "treating hazard reduction as hazard elimination"
+        ],
+        "disallowed_extrapolations": [
+          "Applying NCM 811 LEL/UEL trends to other chemistries without evidence",
+          "Concluding that 50% SOC is safe under all conditions, not just open-space",
+          "Treating LEL maximization as sufficient for complete explosion safety justification"
+        ]
+      }
+    }
+  ],
+  "short_answers": []
+}

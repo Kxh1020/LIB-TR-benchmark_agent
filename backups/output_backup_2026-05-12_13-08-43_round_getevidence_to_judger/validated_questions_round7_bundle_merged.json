@@ -1,0 +1,1701 @@
+{
+  "TR_Gasventing+117+Journal_of_Power_Sources__TR_Gasventing+118+Journal_of_Power_Sources__TR_Gasventing+119+Journal_of_Power_Sources": {
+    "mcqs": [
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "In oven-heated thermal runaway tests, working Li-ion cells show thermal runaway near 190°C with sparks, flames, and gas explosions occurring roughly 15 seconds post-runaway. Dead cells of the same type reach thermal runaway at 201–205°C but produce no sparks, flames, or explosions. A separate ARC measurement on the same working cell type identifies thermal runaway onset near 140°C. An engineer must assess what these results collectively imply about thermal runaway characterization and hazard comparison.",
+          "options": [
+            "A. The 50°C difference between oven and ARC thermal runaway temperatures for the same cell type reflects a genuine difference in cell chemistry between the two test populations.",
+            "B. Reporting a single thermal runaway temperature for a cell type without specifying the test method and its definition is insufficient for cross-study comparison.",
+            "C. Dead cells present a lower fire and explosion hazard than working cells under the same oven heating conditions, despite undergoing thermal runaway.",
+            "D. Because dead cells reach thermal runaway at higher temperatures than working cells, dead cells are inherently safer under all abuse conditions.",
+            "E. The gas explosion observed approximately 15 seconds after thermal runaway in working cells indicates that ignitable gas accumulates during the runaway event before finding an ignition source.",
+            "F. The ARC-measured onset near 140°C establishes the true thermal runaway threshold, making the oven-measured 190°C an experimental artifact that should be disregarded."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "Evidence attributes the 50°C difference to test method and definition differences, not to chemistry differences between test populations.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+118+Journal_of_Power_Sources:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Evidence explicitly states thermal runaway temperature depends on test method and its definition, making method specification mandatory for valid comparison.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+118+Journal_of_Power_Sources:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Dead cells undergo thermal runaway but produce no sparks, flames, or explosions, directly demonstrating lower fire/explosion hazard despite thermal runaway occurrence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+118+Journal_of_Power_Sources:C002"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Evidence covers only oven heating conditions; generalizing dead cell safety advantage to all abuse conditions exceeds the evidence scope.",
+              "error_type": "overgeneralization",
+              "evidence_refs": [
+                "TR_Gasventing+118+Journal_of_Power_Sources:C002"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "The ~15-second delay between thermal runaway and gas explosion is consistent with gas accumulation followed by delayed ignition, supported by the described sequence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+118+Journal_of_Power_Sources:C001"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Evidence treats both measurements as valid method-dependent results; neither is designated as artifact. Dismissing one measurement contradicts the stated limitation.",
+              "error_type": "measurement_scope_violation",
+              "evidence_refs": [
+                "TR_Gasventing+118+Journal_of_Power_Sources:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Test-method dependence of thermal runaway temperature and the distinction between thermal runaway occurrence and fire/explosion hazard",
+          "primary_boundary": "Method-dependence applies to temperature values only; dead cell hazard reduction is condition-specific to oven heating, not universal",
+          "intended_error_modes": [
+            "causal_overclaim",
+            "overgeneralization",
+            "measurement_scope_violation"
+          ],
+          "disallowed_extrapolations": [
+            "Treating ARC value as the true threshold",
+            "Extending dead cell safety advantage beyond oven conditions",
+            "Attributing temperature difference to chemistry rather than method"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "An LFP cell undergoes overcharge abuse. Engineers observe that the vent gas mixture contains CO2 alongside flammable species. They propose that CO2 concentration in the vent gas could serve as a passive inerting agent, making the released gas mixture non-flammable without additional safety measures. Separately, a test engineer notes that in most overcharge trials venting and thermal runaway occur without explosion, but two trials produced explosions preceded by cell surface temperatures reaching 300–350°C. Evaluate the admissibility of the CO2 inerting proposal and explain what the two explosive trials indicate about the conditions governing explosion risk in LFP overcharge."
+        },
+        "ground_truth": {
+          "gold_answer": "The CO2 inerting proposal is not admissible. Evidence shows that the quantity of CO2 present in LFP overcharge vent gases is insufficient to prevent flammability, because flammable gases such as H2 are also present and counterbalance any inerting effect of CO2. Relying on CO2 alone as a passive safety measure is therefore unsupported. Regarding the two explosive trials: the evidence associates the explosions with cell surface temperatures reaching 300–350°C, attributed to a strong internal short circuit, whereas the seven non-explosive trials did not reach these temperatures. This indicates that explosion risk is not a fixed consequence of overcharge-induced thermal runaway but is conditional on the severity of internal short circuit development, which drives temperatures well above those seen in the reproducible non-explosive cases. The distinction implies that explosion is a threshold-dependent outcome linked to the intensity of internal short circuit, not simply to venting or thermal runaway occurrence.",
+          "must_include": [
+            "CO2 quantity is insufficient to prevent flammability in LFP vent gases",
+            "Flammable gases such as H2 counterbalance CO2 inerting effect",
+            "Explosions in the two outlier trials are associated with surface temperatures of 300–350°C",
+            "Higher temperatures linked to strong internal short circuit",
+            "Explosion is not a universal consequence of overcharge thermal runaway but is condition-dependent"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming CO2 provides any measurable inerting benefit under these conditions",
+            "Concluding that all overcharge events will produce explosions",
+            "Attributing the non-explosive majority outcome to CO2 inerting",
+            "Generalizing the internal short circuit mechanism to other chemistries without evidence"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of CO2 as passive inerting agent in LFP vent gas and the conditional nature of explosion risk under overcharge",
+          "primary_boundary": "CO2 insufficiency for inerting is explicitly stated; explosion conditionality is tied to internal short circuit severity and temperature, not to venting alone",
+          "intended_error_modes": [
+            "protective_mechanism_overclaim for CO2",
+            "overgeneralization of explosion risk to all overcharge events",
+            "ignoring the role of internal short circuit severity as the distinguishing condition"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Gasventing+120+Journal_of_Power_Sources__TR_Gasventing+121+Journal_of_Power_Sources__TR_Gasventing+122+Journal_of_Power_Sources": {
+    "mcqs": [
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A 100% SOC NCM 811 cylindrical cell with an intact casing undergoes thermal runaway. At the safety valve burst temperature (405.5 K), internal pressure from redox-generated gas is approximately three times the electrolyte vapor pressure. As temperature rises further toward the separator collapsing temperature, the ratio of redox-gas pressure to electrolyte vapor pressure increases to over six. The temperature-to-gas-generation-rate relationship is nonlinear across this range but becomes approximately linear near the separator collapsing temperature. Which of the following conclusions are supported?",
+          "options": [
+            "A. Redox-generated gas pressure is the dominant contributor to safety valve bursting, not electrolyte vapor pressure, at the venting temperature.",
+            "B. Because the temperature–gas generation rate relationship is nonlinear before the separator collapsing temperature, a single-step reaction model is sufficient to describe internal pressure buildup in this regime.",
+            "C. Setting the safety valve burst threshold substantially above the manufacturer's specified range increases the risk of rupture and explosion because gas generated during thermal runaway cannot be vented in time.",
+            "D. The approximately linear relationship between temperature rate and gas generation rate near the separator collapsing temperature implies that a single dominant reaction controls pressure buildup at that stage.",
+            "E. At the venting temperature, electrolyte vapor pressure contributes meaningfully to total internal pressure but is not the primary driver of valve bursting.",
+            "F. The nonlinear temperature–gas generation relationship before the separator collapsing temperature indicates that total pressure at any intermediate temperature can be accurately predicted from a linear extrapolation of the venting-temperature values."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "At venting temperature, Pg (995.79 kPa) is nearly three times PELE (302.42 kPa); redox gas bears main responsibility for valve bursting.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+122+Journal_of_Power_Sources:C002"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Nonlinearity before Tsc explicitly indicates multi-step reactions; a single-step model is contradicted by the evidence.",
+              "error_type": "mechanism_inversion",
+              "evidence_refs": [
+                "TR_Gasventing+122+Journal_of_Power_Sources:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence states that a high valve threshold prevents timely venting, causing rupture and explosion especially at high temperatures.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+122+Journal_of_Power_Sources:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Approximate linearity near Tsc is described as an emergent behavior of multi-step reactions converging; it does not imply a single dominant reaction.",
+              "error_type": "causal_overclaim_from_linearity_observation",
+              "evidence_refs": [
+                "TR_Gasventing+122+Journal_of_Power_Sources:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "PELE at venting is 302.42 kPa, contributing to total 1298.21 kPa; meaningful but not primary relative to Pg of 995.79 kPa.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+122+Journal_of_Power_Sources:C002",
+                "TR_Gasventing+122+Journal_of_Power_Sources:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Nonlinearity before Tsc explicitly invalidates linear extrapolation from venting-temperature values to intermediate temperatures.",
+              "error_type": "unjustified_linear_extrapolation_across_nonlinear_regime",
+              "evidence_refs": [
+                "TR_Gasventing+122+Journal_of_Power_Sources:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Pressure contribution hierarchy at venting and the multi-step reaction interpretation of nonlinear temperature–gas rate relationship",
+          "primary_boundary": "Approximate linearity near Tsc reflects multi-step convergence, not single-step dominance; PELE is real but secondary",
+          "intended_error_modes": [
+            "Interpreting near-Tsc linearity as evidence of single-step reaction",
+            "Treating PELE as negligible rather than secondary",
+            "Assuming linear extrapolation is valid across the nonlinear pre-Tsc regime"
+          ],
+          "disallowed_extrapolations": [
+            "Single-step model adequacy from near-Tsc linearity",
+            "Linear pressure prediction across the full Tonset-to-Tsc range",
+            "High valve threshold improves safety by containing gas longer"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "An engineer designing a battery management system for a high-energy-density lithium-ion pack wants to use the SOC-dependent flammable gas fraction in vent gas as the basis for a hazard threshold. For LCO cells, flammable gas fraction remains below 25% up to a certain SOC, then jumps sharply. For LFP cells, flammable gas fraction rises more gradually but still crosses 30% by 50% SOC. The engineer proposes that a single SOC-based flammability threshold can be used for both chemistries. Evaluate whether this proposal is admissible, identifying the key mechanism-based limitation and the specific evidence that constrains the conclusion."
+        },
+        "ground_truth": {
+          "gold_answer": "The proposal is not admissible as a single universal threshold. LCO cells exhibit a threshold-type transition near 40% SOC where flammable gas fraction jumps sharply, while LFP cells show a more gradual increase that already exceeds 30% by 50% SOC. These are distinct SOC-dependent behaviors: LCO's transition is abrupt and threshold-like, making a single threshold potentially valid within that chemistry but set at a chemistry-specific SOC. Applying the same threshold to LFP would either be too conservative at low SOC or miss the gradual rise before 50% SOC. Additionally, NCA cells have higher hydrogen fractions and the highest flame speeds, meaning flammability hazard is not solely captured by flammable gas volume fraction—flame speed and gas composition must also be considered. A single SOC threshold cannot account for these chemistry-specific composition differences and the distinct functional forms of the SOC-flammability relationship across chemistries.",
+          "must_include": [
+            "LCO exhibits a threshold-type jump near 40% SOC, not a gradual increase",
+            "LFP flammable fraction exceeds 30% by 50% SOC with gradual increase",
+            "A single threshold cannot capture both abrupt and gradual SOC-dependent behaviors",
+            "Chemistry-specific composition differences (H2 vs CO2 fractions) affect flammability beyond volume fraction alone"
+          ],
+          "disallowed_extrapolations": [
+            "A corrected single threshold can be derived by averaging the two SOC transition points",
+            "NCA and NMC can be assumed to follow the same pattern as LCO",
+            "Flammable gas volume fraction alone is sufficient to characterize ignition hazard across chemistries"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of a chemistry-agnostic SOC-based flammability threshold given chemistry-specific threshold vs gradual SOC-flammability relationships",
+          "primary_boundary": "LCO shows abrupt threshold behavior; LFP shows gradual increase; these functional forms are incompatible with a single shared threshold",
+          "intended_error_modes": [
+            "Assuming a single averaged SOC threshold is conservative enough for all chemistries",
+            "Ignoring that flame speed depends on H2/CO2 ratio, not just flammable fraction volume",
+            "Treating the LCO threshold as applicable to LFP because both show increasing flammability with SOC"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Gasventing+123+Journal_of_Power_Sources__TR_Gasventing+124+UnknownJournal__TR_Gasventing+125+Fuel": {
+    "mcqs": [
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A two-car garage (enclosure ~130 m³) experiences a deflagration from battery vent gas released during thermal runaway. Experimental data show that partial deflagration of approximately 91 L of LFP surrogate gas or 124–310 L of NCA surrogate gas produces sufficient pressure to eject the garage door. The LFP surrogate yields higher pressure and impulse per liter than NCA surrogate. Peak internal pressures causing significant structural damage were measured at approximately 2.5–2.8 kPa. Which of the following conclusions are supported?",
+          "options": [
+            "A. The LFP surrogate's higher pressure output per liter means a smaller released volume of LFP gas is needed to reach the door-ejection threshold compared to NCA gas.",
+            "B. Because peak pressures causing structural damage were below established minor-damage thresholds, the Jarrett and Baker thresholds are conservative enough to be used directly for garage-scale battery explosion design without modification.",
+            "C. The gas volumes sufficient to eject the garage door correspond to well-mixed flammable concentrations substantially below the 25% LFL criterion commonly used for explosion hazard assessment, indicating that standard LFL-based hazard thresholds may underestimate structural risk in this geometry.",
+            "D. The Mulpuru vented explosion model over-predicts the rate of pressure rise relative to experimental results, making it suitable as a conservative design tool for estimating explosion pressure in similar enclosures.",
+            "E. For the largest tested NCA gas volume, the peak overpressure was lower than for a smaller volume, which demonstrates that increasing released gas volume monotonically increases peak overpressure in vented enclosures.",
+            "F. The structural damage observed at pressures 50% below established thresholds implies those thresholds cannot be applied without accounting for enclosure-specific vent characteristics."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "D",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "LFP yields greater pressure per liter due to higher burning velocity; therefore less volume is needed to reach the same pressure threshold.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+125+Fuel:C001",
+                "TR_Gasventing+125+Fuel:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Evidence shows significant damage occurred at pressures ~50% below those thresholds, indicating the thresholds are non-conservative for this geometry, not conservative enough for direct use.",
+              "error_type": "Causal overclaim: threshold conservatism inverted relative to evidence",
+              "evidence_refs": [
+                "TR_Gasventing+125+Fuel:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Damaging volumes correspond to only 1–2.5% LFL of the enclosure, far below the 25% LFL criterion, supporting the conclusion that standard criteria underestimate risk here.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+125+Fuel:C002"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "The model over-predicted pressure rise rate in every tested case, consistent with its use as a conservative design tool for pressure rise estimation.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+125+Fuel:C005"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The largest volume (3302 L) produced lower peak overpressure than the 1651 L case due to early pressure relief through the garage door acting as a vent panel, demonstrating non-monotonic behavior.",
+              "error_type": "Unjustified monotonicity: ignores regime change from vent panel activation",
+              "evidence_refs": [
+                "TR_Gasventing+125+Fuel:C006"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Damage at pressures 50% below standard thresholds indicates those thresholds do not account for enclosure-specific factors such as low-strength vent panels.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+125+Fuel:C003",
+                "TR_Gasventing+125+Fuel:C006"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of standard explosion thresholds and LFL-based criteria for battery vent gas deflagration in residential enclosures",
+          "primary_boundary": "Standard thresholds are non-conservative for this geometry; peak pressure is non-monotonic with gas volume due to vent panel activation",
+          "intended_error_modes": [
+            "Treating established thresholds as conservative when evidence shows they are non-conservative",
+            "Assuming monotonic pressure increase with gas volume without accounting for venting regime change"
+          ],
+          "disallowed_extrapolations": [
+            "Generalizing Mulpuru model conservatism to all enclosure geometries",
+            "Applying LFL-based thresholds without enclosure-specific vent characterization"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "An engineer is evaluating ignition and combustion hazards of battery vent gases from NMC/LMO cells at two states of charge (30% and 100%). Available data indicate: laminar burning velocity at 100% SoC is approximately 50% higher than at 30% SoC; fluorinated compounds at typical vent gas concentrations do not affect ignition delay; ignition delay time is insensitive to oxygen content; and carbonate-containing mixtures ignite up to an order of magnitude slower than H2/CO-rich mixtures at 730°C. Which conclusions are admissible?",
+          "options": [
+            "A. Removing fluorinated compounds from the vent gas stream would not meaningfully reduce ignition delay time under these conditions.",
+            "B. The 50% higher burning velocity at 100% SoC compared to 30% SoC directly implies that the ignition delay time is also approximately 50% shorter at 100% SoC.",
+            "C. In an oxygen-depleted environment, the vent gas mixture from a fully charged cell remains capable of igniting at approximately the same delay time as in air, provided temperature is sufficient.",
+            "D. At 730°C, a vent gas mixture dominated by carbonates ignites more slowly than a mixture dominated by H2 and CO, making the carbonate-dominated mixture comparatively less reactive at that temperature.",
+            "E. Because ignition delay is insensitive to oxygen content, enclosure ventilation strategies aimed at diluting oxygen are unlikely to prevent ignition if the gas temperature exceeds approximately 550°C.",
+            "F. The higher burning velocity at 100% SoC compared to 30% SoC is primarily caused by the higher fluorinated compound content at elevated SoC."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "D",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence states fluorinated compounds at typical concentrations do not affect ignition delay; removal would therefore not meaningfully change it.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+124+UnknownJournal:C001"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Burning velocity and ignition delay are distinct combustion properties; evidence does not link a 50% burning velocity increase to a proportional ignition delay reduction.",
+              "error_type": "Mechanism substitution: burning velocity conflated with ignition delay",
+              "evidence_refs": [
+                "TR_Gasventing+124+UnknownJournal:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence states ignition does not require high oxygen content and occurs at approximately the same delay time in oxygen-depleted conditions.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+124+UnknownJournal:C002"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "At 730°C, carbonate-containing mixtures ignite up to an order of magnitude slower than the most reactive H2/CO-rich mixtures, confirming lower reactivity.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+124+UnknownJournal:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "If ignition delay is insensitive to oxygen content, oxygen dilution cannot prevent ignition above the ~550°C threshold; this is a direct mechanistic implication.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+124+UnknownJournal:C002",
+                "TR_Gasventing+124+UnknownJournal:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Evidence attributes the SoC-dependent burning velocity difference to gas composition changes with SoC, and explicitly states fluorinated compounds do not affect ignition; attributing it to fluorinated content is unsupported.",
+              "error_type": "Causal overclaim: fluorinated compound content incorrectly identified as cause of burning velocity difference",
+              "evidence_refs": [
+                "TR_Gasventing+124+UnknownJournal:C001",
+                "TR_Gasventing+124+UnknownJournal:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of ignition and combustion hazard conclusions for battery vent gas under varying SoC and atmospheric conditions",
+          "primary_boundary": "Burning velocity and ignition delay are distinct properties; fluorinated compounds do not drive ignition behavior; oxygen dilution is ineffective above the temperature threshold",
+          "intended_error_modes": [
+            "Conflating burning velocity with ignition delay time",
+            "Attributing SoC-dependent combustion behavior to fluorinated compound content rather than bulk gas composition"
+          ],
+          "disallowed_extrapolations": [
+            "Inferring proportional ignition delay reduction from burning velocity ratio",
+            "Claiming oxygen dilution prevents ignition above 550°C"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A battery safety engineer is designing a gas-based early warning system for a storage room containing NMC-811 21700 cells at various states of charge. The engineer proposes using a single-species sensor targeting CH4, reasoning that CH4 is the most abundant species during safety venting at all SoC levels and that its concentration increases with SoC. A colleague argues that an H2 sensor should be added. Explain, using mechanism-based reasoning, why the colleague's argument is justified, and identify one specific limitation of relying solely on CH4 detection for this application."
+        },
+        "ground_truth": {
+          "gold_answer": "CH4 is the dominant species during safety venting at all SoC levels and its concentration increases with SoC. However, H2 is absent during safety venting across all tested SoC levels but appears during thermal runaway with concentration strongly increasing with SoC (from 0.20% at 5% SoC to 12.9% at 100% SoC). This means H2 detection provides a stage-discriminating signal: its presence specifically indicates that thermal runaway has initiated rather than that safety venting alone is occurring. A CH4-only sensor cannot distinguish between the safety venting stage and the thermal runaway stage because CH4 is present in both events. The critical limitation is that CH4 detection alone cannot alert the system to the transition from safety venting to thermal runaway, which is precisely the boundary where emergency intervention is most time-critical. Furthermore, at high SoC the detection window between venting onset and thermal runaway is compressed to approximately 142 seconds, making stage discrimination more urgent, not less.",
+          "must_include": [
+            "H2 is absent during safety venting but present during thermal runaway",
+            "H2 concentration increases strongly with SoC during thermal runaway",
+            "CH4 alone cannot discriminate between safety venting and thermal runaway stages",
+            "H2 detection provides a stage-specific or transition-specific signal",
+            "The detection window is compressed at high SoC, increasing urgency of stage discrimination"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming CH4 is absent during thermal runaway",
+            "Claiming H2 is present during safety venting at any SoC",
+            "Asserting that H2 concentration is independent of SoC during thermal runaway",
+            "Recommending a specific sensor threshold or alarm value not supported by evidence"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Stage-discriminating function of H2 detection versus CH4 detection in battery vent gas early warning, combined with SoC-dependent window compression",
+          "primary_boundary": "H2 is a thermal runaway stage marker, not a venting stage marker; CH4 presence in both stages prevents stage discrimination",
+          "intended_error_modes": [
+            "Treating CH4 abundance as sufficient for complete early warning",
+            "Failing to recognize that H2 absence during venting makes it a positive stage-transition indicator",
+            "Ignoring the compressed detection window at high SoC as a factor increasing the value of stage discrimination"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Gasventing+126+Journal_of_Power_Sources__TR_Gasventing+127+Journal_of_Power_Sources__TR_Gasventing+128+Journal_of_Power_Sources": {
+    "mcqs": [],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A safety engineer is comparing the toxic gas hazard from NTM sodium-ion batteries and LFP lithium-ion batteries at 100% SOC. The LFP cells undergo thermal runaway while the NTM SIBs do not. The engineer notes that the FED (fractional effective dose) value for LFP cells is approximately 29 times higher than for NTM SIBs at 100% SOC. CO concentrations from LFP cells at 60% SOC and above exceed the lethal threshold, while NTM SIB CO concentrations remain well below that threshold at all SOCs. However, the engineer also observes that NTM SIBs have a lower safety valve opening temperature than LFP cells. Explain why the lower safety valve opening temperature of NTM SIBs does not imply that NTM SIBs present a greater toxic gas hazard than LFP cells, and identify which gas species and which parameter most directly differentiate the toxic hazard between the two chemistries at high SOC."
+        },
+        "ground_truth": {
+          "gold_answer": "The lower safety valve opening temperature of NTM SIBs means the internal materials begin releasing gas at a lower temperature threshold, but this does not translate to greater toxic hazard because the NTM SIBs do not undergo thermal runaway at any tested SOC. Without thermal runaway, the exothermic reactions that generate large quantities of toxic gases such as CO and H2 do not occur at the same scale as in LFP cells. The toxic hazard is determined by the concentration and composition of gases actually released, not by the valve opening temperature alone. CO is the primary toxic gas species that differentiates the two chemistries: LFP cells at 60% SOC and above produce CO concentrations exceeding the lethal threshold, while NTM SIBs remain well below that threshold at all SOCs. The FED value, which integrates the toxic gas concentrations into an asphyxiation hazard metric, is approximately 29 times higher for LFP cells at 100% SOC, directly quantifying the hazard difference. Therefore, valve opening temperature is a thermal stability indicator, not a toxic hazard indicator; the relevant differentiating parameters are CO concentration relative to the lethal threshold and the FED value.",
+          "must_include": [
+            "Absence of thermal runaway in NTM SIBs means large-scale toxic gas generation does not occur despite lower valve opening temperature",
+            "CO concentration exceeding the lethal threshold in LFP cells at 60% SOC and above is the primary toxic differentiator",
+            "FED value quantifies the integrated asphyxiation hazard and is approximately 29 times higher for LFP at 100% SOC",
+            "Valve opening temperature is a thermal stability indicator, not a direct toxic hazard metric"
+          ],
+          "disallowed_extrapolations": [
+            "Concluding NTM SIBs are completely safe because they do not undergo thermal runaway under tested conditions",
+            "Inferring that lower valve opening temperature always implies greater gas release or greater hazard",
+            "Generalizing the toxic hazard comparison to SOC levels or conditions not covered by the evidence"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Decoupling thermal stability indicators (valve opening temperature) from toxic gas hazard indicators (CO concentration, FED) across two battery chemistries with different TR behavior",
+          "primary_boundary": "Valve opening temperature governs when gas release begins but does not determine the magnitude or toxicity of gases released; toxic hazard is determined by gas composition and concentration relative to physiological thresholds, which depend on whether thermal runaway occurs",
+          "intended_error_modes": [
+            "Conflating lower valve opening temperature with greater gas release or greater toxic hazard",
+            "Ignoring the absence of thermal runaway as the mechanistic reason for low toxic gas output in SIBs",
+            "Treating FED as a secondary metric rather than the primary integrated hazard quantifier"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Gasventing+129+Journal_of_Power_Sources__TR_Gasventing+130+Journal_of_Power_Sources__TR_Gasventing+131+Journal_of_Power_Sources": {
+    "mcqs": [
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "During thermal runaway of an LFP pouch cell, temperature exceeds 250°C. An analyst proposes that the H2 detected in effluent gases originates from electrolyte solvent decomposition, the same pathway responsible for early methane generation. A second analyst attributes H2 to binder-lithium reactions at the anode. Both analysts agree that CO2 and CO appear later in the gas sequence. Which assessment of these competing attributions is most consistent with the physical mechanisms involved?",
+          "options": [
+            "A Both attributions are equivalent because above 250°C all decomposition reactions occur simultaneously, making source separation impossible.",
+            "B The first analyst's attribution is incorrect; H2 at temperatures above 250°C is mechanistically linked to binder decomposition involving PVdF and CMC reacting with lithium, not to solvent decomposition.",
+            "C The second analyst's attribution is incorrect because electrolyte solvent decomposition is the dominant gas-generating pathway at all temperatures above 120°C.",
+            "D The first analyst's attribution applies specifically to CH4 generation above 120°C via dimethyl carbonate decomposition, and extending this pathway to explain H2 at higher temperatures contradicts the distinct temperature-dependent reaction assignments.",
+            "E Since CO2 and CO appear last in the detection sequence, they must originate from cathode decomposition, not from any anode-side reaction.",
+            "F The gas detection sequence alone is sufficient to determine reaction pathways without additional temperature-resolved characterization."
+          ],
+          "options_count": 6
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "D"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "Evidence identifies distinct temperature thresholds (120°C for CH4, 250°C for H2), implying separable temperature-dependent pathways, not simultaneous equivalence.",
+              "error_type": "threshold_boundary_ignored",
+              "evidence_refs": [
+                "TR_Gasventing+129+Journal_of_Power_Sources:C008",
+                "TR_Gasventing+129+Journal_of_Power_Sources:C009"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Evidence assigns H2 production specifically to binder (PVdF, CMC) reaction with lithium above 250°C, distinct from electrolyte solvent decomposition responsible for CH4.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+129+Journal_of_Power_Sources:C009"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Solvent decomposition above 120°C explains CH4, not H2. H2 mechanism activates above 250°C via a different pathway; one pathway does not dominate all temperatures for all gases.",
+              "error_type": "overgeneralization_across_temperature",
+              "evidence_refs": [
+                "TR_Gasventing+129+Journal_of_Power_Sources:C008",
+                "TR_Gasventing+129+Journal_of_Power_Sources:C009"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Applying the DMC solvent decomposition pathway (CH4, >120°C) to H2 at >250°C conflates two distinct temperature-resolved mechanisms with separate reactants.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+129+Journal_of_Power_Sources:C008",
+                "TR_Gasventing+129+Journal_of_Power_Sources:C009"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Evidence identifies CO2 and CO detection sequence but does not attribute them exclusively to cathode decomposition; the evidence does not support this specific source assignment.",
+              "error_type": "unsupported_source_attribution",
+              "evidence_refs": [
+                "TR_Gasventing+129+Journal_of_Power_Sources:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Detection sequence indicates timing but not reaction pathway. Determining mechanism requires temperature-resolved source identification, not sequence alone.",
+              "error_type": "measurement_scope_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+129+Journal_of_Power_Sources:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Temperature-threshold-dependent gas generation mechanisms in LFP cells",
+          "primary_boundary": "CH4 via solvent decomposition >120°C vs. H2 via binder-lithium reaction >250°C; these are distinct pathways not interchangeable",
+          "intended_error_modes": [
+            "conflating CH4 and H2 generation pathways",
+            "treating one mechanism as universally dominant",
+            "inferring cathode source from detection sequence alone"
+          ],
+          "disallowed_extrapolations": [
+            "attribution of CO/CO2 to specific electrode without evidence",
+            "claiming detection sequence alone resolves reaction pathways"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "An energy storage container houses multiple battery modules venting flammable gases after thermal runaway. The container has pressure relief panels opening at 3 kPa and an escape door opening at 20 kPa. Simulations show peak internal overpressure reaching approximately 23 kPa. The door side shows higher overpressure at 10 m distance compared to the relief panel side. A safety engineer proposes that eliminating pressure relief panels and relying solely on the escape door would simplify design without increasing risk since the door provides the primary venting pathway. Evaluate this proposal and the associated overpressure behavior.",
+          "options": [
+            "A The proposal is defensible because the escape door opens at a higher pressure threshold and therefore provides more controlled venting than the relief panels.",
+            "B The proposal is not supported; relief panels open first at 3 kPa and reduce internal pressure accumulation before the door threshold is reached, and removing them would increase peak internal overpressure.",
+            "C The door side already presents higher blast risk at 10 m distance compared to the relief panel side, so redistributing all venting to the door would concentrate hazard rather than distribute it.",
+            "D The peak overpressure of 23 kPa is below the minimum damage threshold of 4.8 kPa, so neither venting configuration produces a safety-relevant hazard at any distance.",
+            "E Pressure relief panels are redundant because the escape door alone can vent sufficient gas volume given that it opens before peak pressure is reached.",
+            "F The maximum damage distance of approximately 10 m on the door side indicates that personnel and equipment beyond that distance face no overpressure hazard regardless of venting configuration."
+          ],
+          "options_count": 6
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "C"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "Higher opening threshold means the door activates later, allowing greater pressure accumulation. This increases rather than reduces risk compared to early-opening relief panels.",
+              "error_type": "threshold_direction_inversion",
+              "evidence_refs": [
+                "TR_Gasventing+130+Journal_of_Power_Sources:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Relief panels open at 3 kPa, well before the 20 kPa door threshold. Sequential venting reduces pressure buildup; removing panels eliminates early-stage pressure relief.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+130+Journal_of_Power_Sources:C003",
+                "TR_Gasventing+130+Journal_of_Power_Sources:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence shows door side has higher overpressure risk than relief panel side at equivalent distances. Concentrating all venting to the door would amplify this existing asymmetry.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+130+Journal_of_Power_Sources:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Peak internal overpressure of 23 kPa far exceeds the 4.8 kPa minimum damage threshold; overpressure at 10 m is near threshold. The premise of the option is numerically incorrect.",
+              "error_type": "numerical_inversion",
+              "evidence_refs": [
+                "TR_Gasventing+130+Journal_of_Power_Sources:C003",
+                "TR_Gasventing+130+Journal_of_Power_Sources:C005"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Door opens at 20 kPa, after substantial pressure has already accumulated. Relief panels open at 3 kPa to prevent escalation to that level; the door does not compensate for missing early-stage venting.",
+              "error_type": "sequential_dependency_ignored",
+              "evidence_refs": [
+                "TR_Gasventing+130+Journal_of_Power_Sources:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "10 m is the maximum damage distance under the tested configuration with both venting pathways active. Removing relief panels could change this distance; the claim does not hold across configurations.",
+              "error_type": "condition_generalization_beyond_test_setup",
+              "evidence_refs": [
+                "TR_Gasventing+130+Journal_of_Power_Sources:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Sequential pressure relief function and hazard asymmetry in vented energy storage containers",
+          "primary_boundary": "Relief panels provide early-stage pressure reduction that door cannot substitute; door-side hazard asymmetry is worsened by concentrating venting",
+          "intended_error_modes": [
+            "treating higher threshold as safer venting",
+            "ignoring sequential threshold activation",
+            "misreading 10 m damage distance as universal safe boundary"
+          ],
+          "disallowed_extrapolations": [
+            "damage distance under modified venting configurations",
+            "total gas volume handled by each panel type"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "An engineer is selecting between LFP and NMC chemistry for a battery system where two independent safety concerns must be simultaneously managed: (1) minimizing the risk of toxic gas exposure to nearby personnel during thermal runaway, specifically HF emission, and (2) minimizing fire and explosion risk as indicated by a composite risk index. The engineer notes that LFP cells smoke for more than 20 minutes under thermal abuse compared to approximately 5 minutes for NMC. Based on the physical relationships between chemistry, gas emissions, and risk index behavior, explain why selecting LFP to address both concerns simultaneously involves an inherent trade-off, and identify which concern LFP addresses more effectively and which it addresses less effectively."
+        },
+        "ground_truth": {
+          "gold_answer": "LFP addresses fire and explosion risk more effectively. Its composite risk index remains low (approximately 2.3–3.3) across all SOC levels, whereas NMC1 reaches 4.2 at 75% SOC. LFP's higher failure temperature (~250°C vs ~200°C for NMC) contributes to this thermal stability advantage. However, LFP addresses HF toxic exposure concern less effectively. LFP emits up to 4 L/kWh of HF at 100% SOC, substantially more than NMC cells which range at 0.5–1.4 L/kWh. Additionally, LFP's prolonged smoking duration exceeding 20 minutes compared to ~5 minutes for NMC extends personnel exposure duration, compounding the HF hazard. The trade-off is therefore: LFP is superior for fire/explosion risk management but inferior for toxic gas (HF) exposure management. The engineer cannot optimize both simultaneously with a single chemistry choice between these two options.",
+          "must_include": [
+            "LFP risk index remains lower than NMC across SOC",
+            "LFP HF emission up to 4 L/kWh exceeds NMC range of 0.5–1.4 L/kWh",
+            "LFP smoking duration exceeds 20 minutes extending exposure",
+            "trade-off between fire risk and toxic gas exposure cannot be resolved by LFP alone"
+          ],
+          "disallowed_extrapolations": [
+            "claiming LFP eliminates fire risk entirely",
+            "claiming NMC is safer overall",
+            "inferring HF emission rate from smoking duration directly",
+            "extending risk index comparison to chemistries not mentioned in evidence"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Chemistry-dependent trade-off between thermal stability risk index and toxic HF emission during thermal runaway",
+          "primary_boundary": "LFP lower composite risk index vs. higher HF emission relative to NMC; prolonged smoking duration compounds HF exposure without implying higher fire risk",
+          "intended_error_modes": [
+            "selecting LFP as uniformly safer without recognizing HF trade-off",
+            "conflating smoking duration with fire hazard magnitude",
+            "assuming lower risk index implies lower toxic gas emission"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Gasventing+132+Journal_of_Power_Sources__TR_Gasventing+133+Journal_of_Power_Sources__TR_Gasventing+134+Fire_Safety_Journal": {
+    "mcqs": [
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "An 18650 LFP cell at 100% SOC undergoes thermal runaway under external heating at approximately 27°C/min. HF is detected in the vent plume immediately after safety venting onset. The venting window before thermal runaway is approximately 5 minutes. A parallel test on an NMC cell under identical heating shows a venting window of approximately 1 minute. HF peak concentrations in LFP at 50% SOC are approximately half those at 100% SOC. Which of the following conclusions are admissible?",
+          "options": [
+            "A. The 5-minute venting window in LFP provides a longer practical interval for HF-based early warning detection than the NMC venting window under these heating conditions.",
+            "B. Because HF appears immediately at venting onset in LFP, the absence of HF detection before venting can be used to confirm that thermal runaway has not yet initiated.",
+            "C. Reducing LFP SOC from 100% to 50% before storage approximately halves the peak HF hazard concentration during a thermal runaway event.",
+            "D. The longer venting window in LFP compared to NMC implies that LFP has a lower peak HF concentration during thermal runaway under these conditions.",
+            "E. Safety models calibrated using HF data collected through unheated metallic transfer lines are likely to underestimate the actual HF hazard, regardless of cell chemistry.",
+            "F. The SOC dependence of HF in LFP means that a 0% SOC LFP cell will produce no HF during thermal runaway.",
+            "G. The venting window duration is heating-rate dependent, so the 5-minute LFP window cannot be directly applied to scenarios with substantially different heating rates."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E",
+            "G"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "5 min vs 1 min venting window directly supports longer HF-based detection opportunity under the stated heating conditions.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+133+Journal_of_Power_Sources:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Absence of HF before venting is expected; it cannot confirm thermal runaway has not initiated since TR follows venting, not the reverse.",
+              "error_type": "measurement scope distractor",
+              "evidence_refs": [
+                "TR_Gasventing+133+Journal_of_Power_Sources:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence directly supports approximately halved peak HF at 50% vs 100% SOC for LFP; this is an admissible quantitative inference.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+133+Journal_of_Power_Sources:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Venting window duration reflects thermal stability, not HF concentration; no evidence links longer window to lower HF peak.",
+              "error_type": "mechanism confusion distractor",
+              "evidence_refs": [
+                "TR_Gasventing+133+Journal_of_Power_Sources:C001",
+                "TR_Gasventing+133+Journal_of_Power_Sources:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Evidence explicitly states unheated metallic lines cause underestimation of HF, affecting safety models regardless of chemistry.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+133+Journal_of_Power_Sources:C006"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "SOC dependence is demonstrated between 50% and 100%; extrapolating to zero HF at 0% SOC is beyond the evidence scope.",
+              "error_type": "overgeneralization distractor",
+              "evidence_refs": [
+                "TR_Gasventing+133+Journal_of_Power_Sources:C005"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Correct",
+              "justification": "The venting window was measured at ~27°C/min; applying it to different heating rates requires regime transfer not supported by the evidence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+133+Journal_of_Power_Sources:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of HF-based early warning inferences and SOC-dependent hazard reduction claims for LFP cells",
+          "primary_boundary": "Venting window duration and HF concentration are distinct properties; SOC dependence cannot be extrapolated to zero SOC without evidence",
+          "intended_error_modes": [
+            "mechanism confusion between venting window and HF concentration",
+            "overgeneralization of SOC trend to zero SOC",
+            "measurement scope error treating absence of HF as TR confirmation"
+          ],
+          "disallowed_extrapolations": [
+            "longer venting window implies lower HF peak",
+            "0% SOC implies zero HF",
+            "venting window at one heating rate applies universally"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "Vent gases from lithium-ion batteries with NCA cathode chemistry exhibit laminar burning velocities between 0.2 m/s and 1.1 m/s, exceeding those of typical hydrocarbons. In a 1-meter partially confined channel experiment, the maximum measured explosion pressure at an equivalence ratio near stoichiometric was approximately 1.36 kPa gauge. A CFD simulation of the same geometry predicted 1.45 kPa gauge at equivalence ratio 1.0. Pressure and flame-front velocity oscillations near the channel opening were not reproduced by the simulation. Which conclusions are admissible?",
+          "options": [
+            "A. The close agreement between measured and simulated peak explosion pressure at near-stoichiometric conditions suggests the CFD model captures the dominant pressure-generating mechanism in the channel interior.",
+            "B. Because the CFD underpredicts oscillatory behavior near the channel opening, it cannot be used to estimate peak explosion pressure anywhere in the channel geometry.",
+            "C. The higher laminar burning velocity of NCA vent gases relative to typical hydrocarbons implies that explosion pressure in a given geometry will always exceed that produced by hydrocarbon combustion.",
+            "D. The explosion pressures measured in the 1-meter channel cannot be directly applied to predict explosion pressures in larger or differently confined geometries without additional validation.",
+            "E. The discrepancy between measured and simulated oscillatory behavior near the channel opening indicates a limitation specific to the near-exit flow regime, not necessarily the entire domain.",
+            "F. The range of explosion pressures reported for partly confined geometries with various vent gas profiles indicates that a single equivalence ratio is sufficient to characterize worst-case explosion hazard for all Li-ion vent gas scenarios.",
+            "G. The laminar burning velocity range of 0.2–1.1 m/s for NCA vent gases spans conditions that could produce substantially different explosion pressures depending on mixture composition and confinement."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "D",
+            "E",
+            "G"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Peak pressure agreement within 7% at near-stoichiometric conditions supports that the dominant interior pressure mechanism is captured by CFD.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+134+Fire_Safety_Journal:C003",
+                "TR_Gasventing+134+Fire_Safety_Journal:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The oscillation failure is localized to the channel opening; peak interior pressure is well-predicted. Blanket rejection of CFD is an overclaim.",
+              "error_type": "scope expansion distractor",
+              "evidence_refs": [
+                "TR_Gasventing+134+Fire_Safety_Journal:C005",
+                "TR_Gasventing+134+Fire_Safety_Journal:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Higher LBV increases explosion potential but explosion pressure also depends on confinement, equivalence ratio, and geometry; universal claim is unsupported.",
+              "error_type": "overgeneralization distractor",
+              "evidence_refs": [
+                "TR_Gasventing+134+Fire_Safety_Journal:C001",
+                "TR_Gasventing+134+Fire_Safety_Journal:C002"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Explosion pressure is geometry- and confinement-dependent; scale transfer from a 1-m channel to other geometries requires additional validation.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+134+Fire_Safety_Journal:C002",
+                "TR_Gasventing+134+Fire_Safety_Journal:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Evidence explicitly localizes the CFD failure to near-exit oscillations; this is a regime-specific limitation, not a global model failure.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+134+Fire_Safety_Journal:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The wide pressure range across vent gas profiles demonstrates that a single equivalence ratio cannot characterize worst-case for all scenarios.",
+              "error_type": "condition violation distractor",
+              "evidence_refs": [
+                "TR_Gasventing+134+Fire_Safety_Journal:C002"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Correct",
+              "justification": "A fivefold range in LBV across mixture compositions implies strong sensitivity of explosion pressure to mixture and confinement conditions.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+134+Fire_Safety_Journal:C001"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of CFD model conclusions and explosion pressure generalization from confined channel experiments",
+          "primary_boundary": "CFD limitation is localized to near-exit oscillations; peak interior pressure prediction remains valid; geometry-specific results cannot be universally extrapolated",
+          "intended_error_modes": [
+            "scope expansion of CFD failure to entire domain",
+            "overgeneralization of LBV advantage to all confinement scenarios",
+            "single equivalence ratio characterization of worst-case"
+          ],
+          "disallowed_extrapolations": [
+            "1-m channel results to arbitrary geometries without validation",
+            "higher LBV always implies higher explosion pressure",
+            "CFD oscillation failure invalidates peak pressure prediction"
+          ]
+        }
+      }
+    ],
+    "short_answers": []
+  },
+  "TR_Gasventing+135+Fire_Safety_Journal__TR_Gasventing+136+Fuel__TR_Gasventing+137+Journal_of_Loss_Prevention_in_the_Process_Industries": {
+    "mcqs": [
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "An engineer is designing explosion protection for a battery storage facility where vented gases from thermal runaway may mix with battery vent gases (BVG) containing carbonate solvents (EMC, DMC). Tests show that adding carbonate content to BVG lowers the lower flammability limit of the mixture while simultaneously raising the limiting oxygen concentration (LOC) and maximum explosion pressure. The engineer concludes that increasing carbonate fraction in the vent gas simultaneously makes ignition easier and makes inerting-based suppression harder. Which options correctly characterize the engineering implications?",
+          "options": [
+            "A. A lower LFL in carbonate-enriched BVG mixtures means a smaller released gas concentration is sufficient to form a flammable atmosphere, increasing ignition risk at early stages of venting.",
+            "B. A higher LOC in carbonate-enriched mixtures means that a greater oxygen displacement is required to render the atmosphere non-ignitable, making nitrogen inerting less effective at the same dilution level.",
+            "C. Because carbonate addition raises maximum explosion pressure, the structural design pressure for containment must increase proportionally with carbonate fraction to maintain equivalent safety margins.",
+            "D. The simultaneous decrease in LFL and increase in LOC from carbonate addition represents a compounding hazard: ignition becomes easier while suppression by oxygen reduction requires more effort.",
+            "E. Since EMC has a lower LFL than DMC, replacing DMC with EMC in a carbonate-BVG mixture would reduce the LFL further, but this conclusion requires that the LFL trend observed for carbonate mixtures with BVG applies to individual carbonate substitutions.",
+            "F. Higher maximum rate of pressure rise in carbonate-enriched mixtures implies that explosion venting panel sizing based on BVG-only data would be non-conservative when carbonates are present."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "D",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence confirms LFL decreases with carbonate addition; lower LFL directly means flammable conditions are reached at lower gas concentrations.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+136+Fuel:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Evidence shows LOC increases with carbonate fraction; higher LOC means more oxygen must be displaced for inerting, reducing effectiveness at fixed dilution.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+136+Fuel:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Evidence shows PMax increases with carbonate fraction but does not establish a proportional relationship; assuming proportionality is an unsupported numerical extrapolation.",
+              "error_type": "numerical exaggeration and unsupported proportionality claim",
+              "evidence_refs": [
+                "TR_Gasventing+136+Fuel:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Evidence supports both effects simultaneously; this compound hazard conclusion follows directly from the co-occurrence of LFL decrease and LOC increase with carbonate addition.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+136+Fuel:C003",
+                "TR_Gasventing+136+Fuel:C005"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Individual carbonate LFL values are measured separately; applying the mixture trend to single-component substitution requires an assumption not supported by the evidence.",
+              "error_type": "scope transfer from mixture trend to individual component substitution",
+              "evidence_refs": [
+                "TR_Gasventing+136+Fuel:C002",
+                "TR_Gasventing+136+Fuel:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Evidence shows (dp/dt)Max increases with carbonate content; venting panel sizing based on BVG-only rate data would underestimate the deflagration index, making it non-conservative.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+136+Fuel:C001",
+                "TR_Gasventing+136+Fuel:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-factor hazard interaction between LFL reduction and LOC increase from carbonate addition, and implications for ignition risk and suppression design",
+          "primary_boundary": "Proportionality of PMax increase is not supported; individual carbonate substitution effects cannot be inferred from mixture trends without additional evidence",
+          "intended_error_modes": [
+            "assuming proportional structural design requirement from PMax trend",
+            "transferring mixture LFL trend to individual component substitution"
+          ],
+          "disallowed_extrapolations": [
+            "Proportional containment pressure scaling with carbonate fraction",
+            "Predicting LFL of individual carbonate substitutions from mixture trend data"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A battery storage facility houses 18650 lithium-ion cells of mixed cathode chemistries. During a thermal runaway event, a cell vents gas that mixes with ambient air. An engineer notes two observations: (1) the flame temperature measured 20 mm above a burning cell exceeds the temperature typically found in gaps between cells in a module array; (2) the soot number in vented gas during the explosion phase is lower at 100% SOC than at 50% SOC for NCA and LCO cells. The engineer concludes that higher SOC always produces more particulate hazard during thermal runaway events. Explain whether this conclusion is admissible, identifying the mechanism that limits its validity and the specific condition under which the observed reversal occurs."
+        },
+        "ground_truth": {
+          "gold_answer": "The conclusion is not fully admissible. During the venting phase, soot number does increase with SOC for NCA and LCO, consistent with higher SOC producing more particulate. However, during the explosion phase, the soot number peaks at 50% SOC and then decreases at higher SOC. The mechanism is that at higher SOC the explosion becomes more violent, and this violent explosion disperses or dilutes the soot such that the measured soot number is reduced relative to the 50% SOC case. Therefore the relationship between SOC and particulate hazard is phase-dependent: monotonically increasing during venting but non-monotonic during explosion, with the reversal occurring above 50% SOC in the explosion phase. The engineer's generalization ignores this phase-dependent behavior and the reversal mechanism driven by explosion violence.",
+          "must_include": [
+            "soot number increases with SOC during venting phase",
+            "soot number peaks at 50% SOC during explosion phase and decreases above it",
+            "violent explosion at high SOC is the mechanism causing the reversal",
+            "the conclusion is phase-dependent and not universally valid",
+            "the reversal occurs above 50% SOC in the explosion phase"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming the reversal applies to LMO cells under the same conditions",
+            "Claiming the flame temperature observation alone determines propagation to neighboring cells without accounting for actual gap dimensions",
+            "Asserting that lower soot number at 100% SOC means lower overall hazard at high SOC"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Phase-dependent non-monotonic relationship between SOC and soot number, and the mechanism linking explosion violence to the reversal",
+          "primary_boundary": "The SOC-soot relationship is monotonic during venting but non-monotonic during explosion; the reversal above 50% SOC is driven by explosion violence, not by reduced particulate generation",
+          "intended_error_modes": [
+            "Treating venting-phase trend as universal across all phases",
+            "Ignoring the explosion-phase reversal mechanism",
+            "Conflating lower measured soot number with reduced hazard without considering explosion violence"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Gasventing+138+Journal_of_Loss_Prevention_in_the_Process_Industries__TR_Gasventing+139+Journal_of_Loss_Prevention_in_the_Process_Industries__TR_Gasventing+140+Journal_of_Loss_Prevention_in_the_Process_Industries": {
+    "mcqs": [
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "Lithium-ion batteries at 0%, 50%, and 100% SOC are subjected to fire exposure. The 100% SOC battery produces peak heat release rate of approximately 5 kW; the 0% SOC battery produces approximately 2.3 kW. An explosion is observed during the second combustion stage for 50% and 100% SOC batteries but not for 0% SOC. Particle measurements show near-zero particle density during the second combustion stage at elevated SOC. Which conclusions about the combustion mechanism and SOC dependence are admissible?",
+          "options": [
+            "A. The absence of explosion at 0% SOC is consistent with the second combustion stage at that condition lacking the premixed flame character present at higher SOC.",
+            "B. The near-zero particle density during the second combustion stage at 100% SOC confirms that the second stage is dominated by a diffusion flame mechanism.",
+            "C. Higher SOC increases peak heat release rate monotonically, and this monotonic trend implies that explosion hazard also scales monotonically with SOC below 50%.",
+            "D. The elevated CO to CO2 ratio in the second combustion stage relative to the first stage is consistent with reduced mixing time in a partially premixed flame configuration.",
+            "E. Because explosion occurred at both 50% and 100% SOC but not at 0% SOC, a threshold SOC between 0% and 50% governs transition to explosion-capable combustion behavior.",
+            "F. Particle concentration detected only in the first combustion stage across all SOC conditions indicates the first stage is always a diffusion flame regardless of SOC."
+          ],
+          "options_note": "Select all correct options."
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "D",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "0% SOC second combustion was delayed and lacked explosion; absence of premixed flame character at 0% SOC is consistent with this observation and the evidence linking explosion to partially premixed combustion.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+139+Journal_of_Loss_Prevention_in_the_Process_Industries:C002",
+                "TR_Gasventing+139+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Near-zero particle density at elevated SOC second stage confirms partially premixed flame, not diffusion flame; the option inverts the mechanistic conclusion.",
+              "error_type": "mechanism_confusion",
+              "evidence_refs": [
+                "TR_Gasventing+139+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Evidence supports monotonic HRR trend across tested SOCs but does not support inferring explosion hazard scales monotonically below 50% SOC; a threshold exists somewhere in that range with no data below 50%.",
+              "error_type": "unsupported_extrapolation",
+              "evidence_refs": [
+                "TR_Gasventing+139+Journal_of_Loss_Prevention_in_the_Process_Industries:C001",
+                "TR_Gasventing+139+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Evidence directly links elevated CO/CO2 ratio in second stage to short mixing time in partially premixed flame, distinguishing it from first-stage diffusion flame behavior.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+139+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Explosion at 50% and 100% but not 0% SOC establishes a threshold between 0% and 50%; this is an admissible boundary inference from the three tested conditions.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+139+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Evidence states particle concentration detected only in first stage, but does not assert first stage is always diffusion flame regardless of SOC; this overgeneralizes and inverts the scope of the measurement.",
+              "error_type": "overgeneralization",
+              "evidence_refs": [
+                "TR_Gasventing+139+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "SOC-dependent combustion stage character and explosion threshold reasoning",
+          "primary_boundary": "Admissible threshold inference from three-point data vs. extrapolation below tested range; diffusion vs. premixed flame regime identification",
+          "intended_error_modes": [
+            "inverting particle density interpretation",
+            "extrapolating HRR monotonicity to explosion hazard monotonicity",
+            "overgeneralizing first-stage combustion character"
+          ],
+          "disallowed_extrapolations": [
+            "claiming explosion threshold is precisely quantified",
+            "claiming first stage is universally diffusion flame at all SOC"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A rack-level battery enclosure and a module-level battery enclosure are both subject to an internal arc flash event. Calculated pressure rise for the rack enclosure is approximately an order of magnitude greater than for the module enclosure and exceeds the structural rating of the rack enclosure. However, the measured pressure during an actual event is significantly lower than the calculated value. Explain the physical mechanism responsible for this discrepancy, identify the design condition that enables it, and describe one safety engineering implication of relying on this mechanism for structural protection."
+        },
+        "ground_truth": {
+          "gold_answer": "The discrepancy arises because rack enclosures are vented, allowing pressure to be relieved during the arc event rather than building to the calculated unvented peak. Venting dissipates the pressure wave, so actual pressures remain below the structural failure threshold despite the calculated value exceeding it. The critical design condition enabling this is the presence and adequacy of enclosure venting. A key safety implication is that the protective effect depends entirely on vent area and path remaining unobstructed; if venting is blocked or insufficient, actual pressures approach the calculated values, which exceed enclosure structural limits and can cause catastrophic enclosure failure. Therefore, enclosure integrity and vent path maintenance are load-bearing assumptions in the safety case, not passive features.",
+          "must_include": [
+            "venting as the mechanism reducing actual pressure below calculated value",
+            "calculated pressure exceeds enclosure structural rating for rack enclosures",
+            "venting is the enabling design condition",
+            "safety implication involving dependence on vent path availability or obstruction risk"
+          ],
+          "disallowed_extrapolations": [
+            "claiming venting eliminates arc flash hazard entirely",
+            "comparing rack vs. module venting effectiveness without evidence",
+            "claiming module enclosures also require venting for the same reason"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Mechanism linking enclosure venting to pressure reduction and the conditional safety dependence this creates",
+          "primary_boundary": "Vented vs. calculated unvented pressure; structural protection as condition-dependent not inherent",
+          "intended_error_modes": [
+            "attributing pressure reduction to enclosure material strength rather than venting",
+            "treating calculated pressure as directly applicable to vented systems",
+            "ignoring conditionality of venting on vent path integrity"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Gasventing+141+Journal_of_Loss_Prevention_in_the_Process_Industries__TR_Gasventing+142+Journal_of_Loss_Prevention_in_the_Process_Industries__TR_Gasventing+143+Journal_of_Loss_Prevention_in_the_Process_Industries": {
+    "mcqs": [
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "During dispersion modeling of a non-burning lithium-ion battery venting event at 100% SOC, an engineer evaluates how wind speed affects the downwind distance at which HF concentration drops below its immediately dangerous to life and health threshold. The modeling shows that safety distance peaks at a specific intermediate wind speed and decreases at both lower and higher wind speeds. Which statements about this behavior and its implications are admissible?",
+          "options": [
+            "A. The non-monotonic relationship between wind speed and safety distance arises because increasing wind speed first enhances advective transport of the toxic plume before dilution effects become dominant at higher speeds.",
+            "B. Because HF has the lowest IDLH among commonly reported battery failure gases, it will set the safety distance boundary in non-burning venting scenarios regardless of wind speed.",
+            "C. For non-burning venting, assuming that higher wind speed always reduces hazard distance is an unsafe simplification that can underestimate risk at intermediate wind speeds.",
+            "D. The peak safety distance at intermediate wind speed implies that calm conditions are always more hazardous than moderate wind conditions for non-burning battery venting.",
+            "E. In burning battery failure scenarios, safety distance also peaks at an intermediate wind speed for the same dilution-advection mechanism described for non-burning cases.",
+            "F. A safety perimeter designed only for the highest anticipated wind speed may be inadequate under moderate wind conditions for a non-burning venting event."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence explicitly describes the advection-then-dilution mechanism producing the non-monotonic wind speed dependence for non-burning cases.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+142+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Evidence shows HF sets safety distance in burning simulations; for non-burning cases this dominance is not established, and the claim generalizes beyond evidence scope.",
+              "error_type": "scope_expansion",
+              "evidence_refs": [
+                "TR_Gasventing+142+Journal_of_Loss_Prevention_in_the_Process_Industries:C004",
+                "TR_Gasventing+142+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "The non-monotonic peak means a single high-wind design assumption misses the worst-case intermediate wind speed; assuming monotonicity is an unsafe simplification.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+142+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Calm conditions produce shorter safety distances than the peak at intermediate speed; the evidence shows safety distance increases up to the peak, so calm is not always most hazardous.",
+              "error_type": "direction_error",
+              "evidence_refs": [
+                "TR_Gasventing+142+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "For burning cases, the non-monotonic behavior is driven by plume buoyancy from heat release rate, a different mechanism; the dilution-advection peak is specific to non-burning cases.",
+              "error_type": "regime_transfer_violation",
+              "evidence_refs": [
+                "TR_Gasventing+142+Journal_of_Loss_Prevention_in_the_Process_Industries:C002",
+                "TR_Gasventing+142+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Since safety distance peaks at intermediate wind speed, a perimeter sized only for high wind underestimates the hazard zone under moderate wind conditions.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+142+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Non-monotonic wind speed dependence of toxic safety distance for non-burning battery venting and its design implications",
+          "primary_boundary": "The non-monotonic peak is specific to non-burning cases; burning cases involve a different governing mechanism (plume buoyancy vs. dilution-advection balance)",
+          "intended_error_modes": [
+            "regime_transfer from non-burning to burning cases",
+            "direction_error on calm vs. moderate wind hazard ranking",
+            "scope_expansion of HF dominance from burning to non-burning"
+          ],
+          "disallowed_extrapolations": [
+            "Applying non-burning wind-speed peak behavior to burning scenarios",
+            "Claiming HF always sets safety distance regardless of scenario type"
+          ]
+        }
+      }
+    ],
+    "short_answers": []
+  },
+  "TR_Gasventing+144+Journal_of_Loss_Prevention_in_the_Process_Industries__TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries__TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries": {
+    "mcqs": [
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "An engineer is comparing the fire and explosion hazard of NMC and LFP pouch cells during thermal runaway (TR) triggered by thermal abuse at full charge. NMC cells reach peak temperatures of 505–548°C and NMC vent gas shows laminar burning velocity (Su) of 222.6 cm/s during the venting phase but only 77.2 cm/s during the TR phase. LFP cells reach only 278–286°C and do not ignite. The engineer concludes that NMC cells pose a greater combined thermal and combustion hazard in every respect. Which options correctly evaluate this conclusion?",
+          "options": [
+            "A. The conclusion is fully supported because NMC peak temperatures and Su values both exceed LFP values across all phases.",
+            "B. The conclusion overstates the case: LFP TR-phase Su (105.9 cm/s) exceeds NMC TR-phase Su (77.2 cm/s), meaning LFP vent gas is more reactive during the TR phase despite lower cell temperatures.",
+            "C. The conclusion is partially correct for thermal hazard but incorrect for combustion hazard ranking during the TR phase, since LFP TR-phase vent gas burns faster than NMC TR-phase vent gas.",
+            "D. LFP cells pose a lower explosion hazard than NMC cells in all phases because their lower peak temperature prevents H2 generation.",
+            "E. The phase-specific Su inversion between LFP and NMC during TR arises because H2 release timing differs: LFP releases H2 at TR onset driving higher TR-phase Su, while NMC venting-phase H2 dominates its Su profile.",
+            "F. Because LFP cells do not ignite during TR regardless of SOC, their vent gas Su values are irrelevant to practical hazard assessment.",
+            "G. Using only a global averaged BVG composition to compare NMC and LFP hazard would underestimate the peak Su for both chemistries relative to phase-specific analysis."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "C",
+            "E",
+            "G"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "LFP TR-phase Su (105.9 cm/s) exceeds NMC TR-phase Su (77.2 cm/s); the ranking reverses in the TR phase.",
+              "error_type": "overgeneralization",
+              "evidence_refs": [
+                "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C006",
+                "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C007"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "LFP TR-phase Su 105.9 cm/s exceeds NMC TR-phase Su 77.2 cm/s; the engineer's universal ranking is not supported.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C006",
+                "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C007"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "NMC thermal hazard exceeds LFP, but LFP TR-phase vent gas Su exceeds NMC TR-phase Su; the conclusion is partially incorrect.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C004",
+                "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C006",
+                "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C007"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "LFP TR-phase Su exceeds NMC TR-phase Su; lower temperature does not eliminate H2-driven combustion hazard in the TR phase.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C007",
+                "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C010"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "H2 release at TR onset drives LFP TR-phase Su; NMC venting-phase H2 dominance explains its Su profile inversion across phases.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C006",
+                "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C007",
+                "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C010"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Non-ignition of the cell does not preclude vent gas explosion hazard in the surrounding environment; Su remains a relevant hazard metric.",
+              "error_type": "scope_expansion_error",
+              "evidence_refs": [
+                "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C004",
+                "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C007"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Correct",
+              "justification": "Phase-specific Su maxima exceed global averaged values; using only global composition underestimates peak hazard for both chemistries.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C015"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Phase-specific Su ranking inversion between LFP and NMC and its mechanistic basis",
+          "primary_boundary": "LFP TR-phase Su exceeds NMC TR-phase Su despite lower LFP cell temperatures; H2 release timing governs the inversion",
+          "intended_error_modes": [
+            "overgeneralization of NMC superiority across all phases",
+            "causal overclaim that lower temperature eliminates LFP combustion hazard",
+            "scope error treating cell non-ignition as eliminating vent gas hazard"
+          ],
+          "disallowed_extrapolations": [
+            "Concluding LFP is safer than NMC in all combustion hazard dimensions",
+            "Using global BVG composition as equivalent to phase-specific analysis"
+          ]
+        }
+      }
+    ],
+    "short_answers": []
+  },
+  "TR_Gasventing+147+Fuel__TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries__TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries": {
+    "mcqs": [],
+    "short_answers": []
+  },
+  "TR_Gasventing+150+Journal_of_Loss_Prevention_in_the_Process_Industries__TR_Gasventing+151+Process_Safety_and_Environmental_Protection__TR_Gasventing+152+Process_Safety_and_Environmental_Protection": {
+    "mcqs": [
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "Four lithium-ion cell chemistries—NMC 1, NMC 2, LFP, and LTO—are subjected to identical heating abuse in a sealed canister. NMC cells exhibit onset temperatures of 140–145°C; LTO onset is 163°C; LFP onset is 200°C. Peak pressures: NMC 2 at ~102 bar, LFP at ~32 bar, LTO at ~29 bar. LFP vented gas contains the highest H2 fraction; NMC gas contains the highest CO fraction. Which conclusions are admissible?",
+          "options": [
+            "A. The LTO cell's lower onset temperature relative to LFP does not imply greater overall thermal hazard, because its peak pressure and peak temperature remain lower than LFP's.",
+            "B. The higher CO fraction in NMC vented gas compared to LFP is consistent with a greater contribution from cathode decomposition reactions in NMC cells.",
+            "C. Because NMC cells produce approximately three times the peak pressure of LFP cells, NMC cells present three times the explosion hazard in all confinement configurations.",
+            "D. The higher H2 fraction in LFP vented gas compared to NMC implies that LFP cells generate more total gas volume per cell than NMC cells under identical abuse conditions.",
+            "E. A lower thermal runaway onset temperature is a sufficient indicator of higher peak pressure during thermal runaway across these chemistries.",
+            "F. Gas composition differences between LFP and NMC chemistries suggest that different electrochemical decomposition pathways dominate during thermal runaway for each chemistry."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "LTO onset (163°C) is lower than LFP (200°C) yet peak temperature (305°C) and peak pressure (28.8 bar) remain lower than LFP, so onset temperature does not predict overall hazard magnitude.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C003",
+                "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "NMC produces highest CO, consistent with more extensive cathode decomposition releasing oxygen that reacts with carbon species; this is a minimal mechanistic inference supported by the chemistry difference.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C006",
+                "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C007"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Peak pressure ratio applies under the stated confinement; generalizing explosion hazard to all confinement configurations is an unsupported scope expansion.",
+              "error_type": "scope_expansion_distractor",
+              "evidence_refs": [
+                "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Higher H2 fraction reflects composition, not total gas volume; total volume comparison across chemistries is not supported by the stated evidence.",
+              "error_type": "measurement_scope_distractor",
+              "evidence_refs": [
+                "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C006"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "LTO has lower onset than LFP but lower peak pressure; onset temperature alone is insufficient to predict peak pressure ranking.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C003",
+                "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Distinct gas species distributions between LFP and NMC are consistent with different dominant decomposition pathways, which is a minimal mechanistic inference from the composition data.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C006"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Decoupling of onset temperature from peak hazard metrics; gas composition as a decomposition pathway indicator; boundary of confinement-specific results",
+          "primary_boundary": "Onset temperature is not a sufficient predictor of peak pressure or total hazard; composition fraction ≠ total volume",
+          "intended_error_modes": [
+            "causal_overclaim",
+            "scope_expansion",
+            "measurement_scope_confusion"
+          ],
+          "disallowed_extrapolations": [
+            "Onset temperature ranking predicts peak pressure ranking",
+            "H2 fraction implies total gas volume ranking",
+            "Pressure ratio generalizes across confinement geometries"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "An engineer is evaluating two scenarios involving NCM/graphite polymer lithium-ion cells under external heating abuse. In Scenario 1, a cell at 75% SOC vents without secondary ignition and produces a peak heat release rate of 4.38 kW and a maximum venting rate of 4.5 m/s. In Scenario 2, a cell at 100% SOC vents with secondary ignition, producing a peak heat release rate of 73.3 kW and a maximum venting rate of 9.4 m/s. Internal pressure at 75% SOC is 0.53 MPa and at 100% SOC is 1.39 MPa. The engineer proposes that reducing operating SOC from 100% to 75% is sufficient to manage all hazard dimensions proportionally. Evaluate this claim, identifying which hazard metrics change proportionally and which do not, and explain the engineering implication for hazard management strategy."
+        },
+        "ground_truth": {
+          "gold_answer": "The claim that all hazard dimensions scale proportionally with SOC reduction from 100% to 75% is not admissible. Internal pressure decreases from 1.39 to 0.53 MPa (a ~62% reduction), and venting rate decreases from 9.4 to 4.5 m/s (~52% reduction)—these are meaningful but not proportional reductions. Most critically, peak heat release rate drops from 73.3 kW (with secondary ignition at 100% SOC) to 4.38 kW at 75% SOC—a reduction of over 93%. This disproportionate drop occurs because secondary ignition at 100% SOC involves gas-phase combustion that amplifies heat release far beyond what the electrochemical and thermal decomposition alone produce. The venting rate and pressure changes are moderate, but the heat release change is regime-crossing: secondary ignition represents a qualitatively different hazard mode, not merely a higher-SOC continuation of the same mechanism. The engineering implication is that SOC reduction to 75% may be highly effective at eliminating the catastrophic fire hazard associated with secondary ignition, but it does not proportionally reduce mechanical hazards such as internal pressure and venting momentum. A complete hazard management strategy must address both the gas combustion risk (which SOC reduction strongly mitigates) and the mechanical venting hazard (which persists at reduced but not eliminated levels at 75% SOC).",
+          "must_include": [
+            "heat release rate reduction is disproportionately large due to secondary ignition being a qualitatively different mechanism",
+            "pressure and venting rate reductions are significant but not proportional to heat release reduction",
+            "secondary ignition at 100% SOC represents a regime change, not a continuous scaling",
+            "SOC reduction alone does not proportionally manage all hazard dimensions"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming that 75% SOC eliminates all thermal runaway risk",
+            "Claiming pressure scales linearly with SOC",
+            "Generalizing these results to other cell chemistries or formats without stated evidence"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Regime-crossing behavior of secondary ignition; disproportionate heat release amplification versus moderate pressure/venting changes; hazard management implications of SOC reduction",
+          "primary_boundary": "Secondary ignition is a qualitative regime change, not a continuous SOC-proportional amplification; different hazard metrics respond differently to SOC reduction",
+          "intended_error_modes": [
+            "Assuming all hazard metrics scale proportionally with SOC",
+            "Treating secondary ignition as a continuous amplification rather than a regime transition",
+            "Concluding SOC reduction to 75% eliminates thermal hazard rather than eliminating the secondary ignition regime"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Gasventing+153+Process_Safety_and_Environmental_Protection__TR_Gasventing+154+Process_Safety_and_Environmental_Protection__TR_Gasventing+155+Process_Safety_and_Environmental_Protection": {
+    "mcqs": [
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "Two LFP cell formats—a larger-capacity cell (LFP-L) and a smaller-capacity cell (LFP-SS)—are tested under thermal runaway conditions. At 100% SOC, LFP-SS produces more gas per unit capacity than LFP-L across all test environments, yet LFP-L reaches a higher maximum temperature. At 110% SOC, the upper explosive limit (UEL) of LFP-SS gas becomes lower than that of LFP-L, attributed to further decomposition of higher hydrocarbons into low-carbon species. An engineer must select which statements about these two formats are admissible.",
+          "options": [
+            "A. At 100% SOC, LFP-SS presents a wider flammable concentration range than LFP-L because both its LEL and UEL are higher, which directly implies greater ignition probability in a vented enclosure.",
+            "B. The higher maximum temperature of LFP-L at both 100% and 110% SOC, combined with lower gas production per unit capacity, suggests that LFP-L stores more energy in forms that manifest as heat rather than gas-phase products.",
+            "C. At 110% SOC, LFP-L gas has a higher UEL than LFP-SS, which is counterintuitive given LFP-SS produces more gas per capacity, and is explained by the composition shift toward low-carbon hydrocarbons in LFP-SS at elevated SOC.",
+            "D. Because LFP-SS produces more gas per capacity than LFP-L under all tested conditions, LFP-SS will always generate a larger absolute gas volume in any real installation regardless of cell capacity.",
+            "E. The presence of oxygen in an air environment increases peak pressure change for LFP-SS compared to nitrogen, indicating that enclosure atmosphere is a relevant variable in pressure hazard assessment for this cell format.",
+            "F. The reversal of UEL ordering between 100% and 110% SOC demonstrates that flammability limit comparisons between cell formats are SOC-dependent and cannot be generalized from a single charge level."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "C",
+            "E",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "Higher LEL and UEL for LFP-SS does not directly imply greater ignition probability; a wider flammable range requires LEL lower and UEL higher, not both shifted upward.",
+              "error_type": "mechanism confusion distractor",
+              "evidence_refs": [
+                "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "LFP-L has higher peak temperature and lower gas per capacity; this pattern is consistent with energy partitioning favoring thermal over gas-phase release.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C001",
+                "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "At 110% SOC, LFP-SS UEL drops below LFP-L due to CxHy decomposition into low-carbon species in LFP-SS; this counterintuitive reversal is mechanistically explained.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Gas production per capacity is higher for LFP-SS, but absolute volume depends on total cell capacity; larger LFP-L cells could produce more total gas despite lower per-capacity rate.",
+              "error_type": "scale transfer beyond evidence",
+              "evidence_refs": [
+                "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Air environment yields higher pressure change than N2 for LFP-SS at 100% SOC, confirming enclosure atmosphere affects pressure hazard.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "UEL ordering reverses between 100% and 110% SOC, directly demonstrating that flammability comparisons between formats are SOC-dependent.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "SOC-dependent flammability limit reversal and format-dependent energy partitioning between heat and gas",
+          "primary_boundary": "Higher LEL and UEL together do not imply wider flammable range; per-capacity gas rate cannot be extrapolated to absolute volume without knowing cell capacity",
+          "intended_error_modes": [
+            "misinterpreting shifted LEL/UEL as wider flammable range",
+            "extrapolating per-capacity rate to absolute volume across cell sizes"
+          ],
+          "disallowed_extrapolations": [
+            "Absolute gas volume from per-capacity rate without capacity information",
+            "Universal flammability ordering from single SOC data point"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A safety engineer is comparing NTM (sodium-ion) and NCM lithium-ion cells for use in a confined energy storage room. The NTM cell has a lower activation energy than NCM, a lower TNT-equivalent energy release, but its self-accelerating decomposition temperature (SADT) increases more steeply with surface heat transfer coefficient than NCM. The engineer proposes that NTM is the safer choice in all respects because it releases less blast energy. Identify the specific flaw in this reasoning and explain what additional safety dimension the engineer has failed to account for, referencing the relevant physical mechanisms."
+        },
+        "ground_truth": {
+          "gold_answer": "The engineer's reasoning is flawed because it conflates blast energy release with overall thermal safety. While NTM does release less TNT-equivalent energy than NCM, its lower activation energy means exothermic decomposition reactions are initiated at lower temperatures, making NTM more thermally reactive and more susceptible to spontaneous ignition at lower storage temperatures. This means ignition prevention requirements for NTM are at least as stringent as for NCM despite the lower blast consequence. The engineer has failed to account for the initiation hazard dimension: a system can pose lower consequence per event but higher likelihood of event initiation. Additionally, the steep SADT dependence on surface cooling for NTM means that inadequate cooling has a more severe effect on NTM safety margins than on NCM, introducing a cooling-system reliability requirement that the engineer's blast-energy comparison does not capture.",
+          "must_include": [
+            "lower activation energy implies thermal reactions initiate at lower temperatures for NTM",
+            "lower blast energy does not mean lower ignition or initiation risk",
+            "NTM ignition prevention requirements are at least as stringent as NCM",
+            "SADT of NTM is more sensitive to surface cooling conditions than NCM"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming NTM is more dangerous than NCM in all respects",
+            "Assigning a specific spontaneous ignition temperature to NCM from NTM evidence",
+            "Concluding NTM will always ignite before NCM under identical conditions without specifying temperature regime"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Distinguishing initiation hazard (activation energy, SADT) from consequence hazard (TNT-equivalent energy) in multi-chemistry safety comparison",
+          "primary_boundary": "Lower blast energy does not imply lower overall hazard when activation energy and SADT sensitivity create a higher initiation risk",
+          "intended_error_modes": [
+            "single-metric safety ranking using only blast energy",
+            "ignoring activation energy as an initiation hazard indicator",
+            "ignoring cooling-system sensitivity as a safety dimension"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Gasventing+156+Process_Safety_and_Environmental_Protection__TR_Gasventing+157+Process_Safety_and_Environmental_Protection__TR_Gasventing+158+Fuel": {
+    "mcqs": [],
+    "short_answers": []
+  }
+}

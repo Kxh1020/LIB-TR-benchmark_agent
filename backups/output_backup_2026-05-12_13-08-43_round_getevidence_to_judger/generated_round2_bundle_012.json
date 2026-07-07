@@ -1,0 +1,328 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A thermal runaway propagation model for a 20×20 cylindrical cell pack is configured with zero cell-to-cell spacing and ambient temperature of 25°C. An engineer proposes two modifications to study propagation dynamics: (i) inserting a 0.005 mm gap between all cells, and (ii) raising ambient temperature to 45°C. The model distinguishes two propagation modes separated by a threshold thermal contact resistance: below the threshold, local surface overheating produces an internal short circuit that accelerates triggering; above the threshold, surface and internal temperatures converge gradually before triggering occurs. Which of the following conclusions about these modifications are supported by the described model behavior?",
+        "options": [
+          "A. Inserting the 0.005 mm gap may switch propagation from the faster mode to the slower mode, because the gap increases equivalent thermal resistance between cells, potentially crossing the threshold that separates the two propagation regimes.",
+          "B. Raising ambient temperature to 45°C will slow propagation speed because higher initial thermal energy increases the time required for the internal short circuit condition to develop.",
+          "C. In the zero-gap baseline configuration, the faster propagation mode is active because low thermal contact resistance concentrates heat at the cell surface, causing separator melting before bulk jellyroll temperature equilibrates.",
+          "D. The two modifications act in opposing directions on propagation speed: the gap increase slows propagation by raising thermal resistance, while the ambient temperature increase accelerates propagation by raising initial thermal energy.",
+          "E. Inserting any nonzero gap guarantees that propagation switches to the slower mode regardless of the resulting thermal contact resistance value.",
+          "F. The slower propagation mode is inherently safer because it always prevents all cells in the pack from being triggered within the pack's operational lifetime."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Inserting a gap increases equivalent thermal resistance between cells. If the resulting thermal contact resistance exceeds the threshold value separating the two modes, propagation switches from Mode I (fast, surface-concentrated) to Mode II (slow, temperature-converging). This is a direct application of the threshold mechanism and the relationship between spacing and equivalent thermal resistance.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+198+Journal_of_Energy_Storage:C005",
+              "TR_Modelling+198+Journal_of_Energy_Storage:C006",
+              "TR_Modelling+198+Journal_of_Energy_Storage:C008"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Higher ambient temperature corresponds to higher initial thermal energy within each battery, which increases propagation speed, not decreases it. This option reverses the stated causal direction.",
+            "error_type": "causal_overclaim_reversal",
+            "evidence_refs": [
+              "TR_Modelling+198+Journal_of_Energy_Storage:C006"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "At zero gap, thermal contact resistance is low (Mode I), which causes local overheating at the battery surface, rapid separator melting, and an internal short circuit that further accelerates thermal runaway triggering. This is the mechanistic description of Mode I behavior.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+198+Journal_of_Energy_Storage:C003",
+              "TR_Modelling+198+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The gap increase raises equivalent thermal resistance, slowing propagation, while ambient temperature increase raises initial thermal energy, accelerating propagation. Both directional effects are independently supported, and their opposition is a valid multi-factor inference.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+198+Journal_of_Energy_Storage:C006"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Mode switching depends on whether the resulting thermal contact resistance exceeds the specific threshold value. A nonzero gap increases resistance but does not guarantee the threshold is crossed; the conclusion requires knowing the magnitude relative to the threshold, not merely the sign of the change.",
+            "error_type": "overgeneralization_from_trend",
+            "evidence_refs": [
+              "TR_Modelling+198+Journal_of_Energy_Storage:C005",
+              "TR_Modelling+198+Journal_of_Energy_Storage:C008"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The slower mode prolongs total propagation time significantly but does not prevent all cells from eventually being triggered. The evidence shows that in Mode II, temperatures still converge to the triggering threshold and thermal runaway is inevitable. This option overclaims the safety benefit of the slower mode.",
+            "error_type": "protective_mechanism_overclaim",
+            "evidence_refs": [
+              "TR_Modelling+198+Journal_of_Energy_Storage:C004",
+              "TR_Modelling+198+Journal_of_Energy_Storage:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Regime-dependent thermal runaway propagation mode switching as a function of thermal contact resistance threshold, and the opposing effects of gap and ambient temperature on propagation speed.",
+        "primary_boundary": "Mode switching requires crossing the specific thermal contact resistance threshold; a nonzero gap is necessary but not sufficient. The slower mode delays but does not prevent triggering.",
+        "intended_error_modes": [
+          "Reversing the causal direction of ambient temperature on propagation speed",
+          "Overgeneralizing that any nonzero gap guarantees mode switching",
+          "Overclaiming that the slower propagation mode prevents pack-level thermal runaway"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding that Mode II eliminates thermal runaway risk at pack level",
+          "Assuming any gap magnitude is sufficient to cross the threshold",
+          "Inferring that ambient temperature reduces propagation speed"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is evaluating temperature measurement strategies for characterizing thermal runaway severity across three cell formats: pouch, prismatic, and cylindrical. During accelerating rate calorimetry testing, thermocouples are placed at three locations for each cell: inside the cell, between two adjacent identical cells, and at the outer cell surface. The engineer observes that for all three formats, surface temperatures during peak thermal runaway are substantially lower than internal temperatures. Additionally, the rate of temperature increase measured internally is far greater than that measured at the surface or between cells. The engineer proposes using the between-cell thermocouple placement as a practical substitute for internal measurement across all three formats. Which of the following statements about this proposal and the underlying measurement relationships are correct?",
+        "options": [
+          "A. The between-cell placement is an adequate substitute for internal measurement in the pouch cell format because the temperature detected between two pouch cells closely approximates the internal temperature during thermal runaway.",
+          "B. For the prismatic cell, the between-cell thermocouple significantly underestimates the rate of temperature increase during thermal runaway, making it an inadequate substitute for internal measurement of peak thermal severity.",
+          "C. Surface temperature measurements are sufficient for accurately characterizing the maximum energy release of the cell body during thermal runaway across all three formats, because the surface eventually equilibrates with the interior.",
+          "D. The large discrepancy between internal and surface temperatures during peak thermal runaway is present in all three formats and arises because heat production accelerates faster than heat can transfer from the interior to the surface after the triggering temperature is reached.",
+          "E. For the cylindrical cell, the between-cell placement provides a more accurate substitute for internal measurement than it does for the prismatic cell, because the cylindrical geometry promotes more uniform radial heat distribution.",
+          "F. Prior to the onset of self-heating reactions, surface temperature measurements are adequate for characterizing the thermal state of the cell interior because heat generation is low enough to allow temperature equilibration."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "For the pouch cell, the internal temperature (925.0°C) and the between-cell temperature (908.5°C) are closely matched, supporting the between-cell placement as an appropriate substitute for internal measurement specifically for the pouch format.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+199+Journal_of_Energy_Storage:C001",
+              "TR_Modelling+199+Journal_of_Energy_Storage:C007"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "For the prismatic cell, the maximum rate of temperature increase measured internally was 24.2 times higher than that detected between two cells, confirming that the between-cell placement severely underestimates peak thermal severity and is an inadequate substitute.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+199+Journal_of_Energy_Storage:C006",
+              "TR_Modelling+199+Journal_of_Energy_Storage:C007"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Surface measurements substantially underestimate energy release during thermal runaway. For the pouch cell alone, internal measurements yielded approximately twice the energy calculated from surface measurements. Claiming sufficiency across all formats is an overgeneralization that contradicts the evidence.",
+            "error_type": "overgeneralization_from_limited_format",
+            "evidence_refs": [
+              "TR_Modelling+199+Journal_of_Energy_Storage:C008"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The large internal-to-surface temperature discrepancy after the triggering temperature is reached arises because heat production rate increases faster than heat can transfer from the interior to the exterior. This mechanism is consistent across all three formats as described.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+199+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The evidence explicitly states that the between-cell placement is inaccurate for both prismatic and cylindrical cells, and that direct internal measurement is required for both. No evidence supports the claim that cylindrical geometry produces better between-cell accuracy than prismatic geometry.",
+            "error_type": "unsupported_geometry_inference",
+            "evidence_refs": [
+              "TR_Modelling+199+Journal_of_Energy_Storage:C007"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Before the triggering temperature is reached, heat generation rate is low and temperature equilibration between interior and exterior occurs, making surface measurements adequate for characterizing the onset phase of thermal runaway.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+199+Journal_of_Energy_Storage:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Format-dependent validity of between-cell and surface thermocouple placements as substitutes for internal temperature measurement across different thermal runaway phases.",
+        "primary_boundary": "Between-cell substitution is valid only for pouch cells; surface measurements are adequate only before the triggering temperature is reached, not during peak thermal runaway.",
+        "intended_error_modes": [
+          "Overgeneralizing surface measurement sufficiency to all formats and all phases",
+          "Inferring cylindrical geometry advantage for between-cell accuracy without evidence",
+          "Confusing pre-triggering phase adequacy with post-triggering phase adequacy"
+        ],
+        "disallowed_extrapolations": [
+          "Extending pouch-cell between-cell validity to prismatic or cylindrical formats",
+          "Claiming surface measurements are sufficient for energy release quantification in any format",
+          "Inferring geometric effects on measurement accuracy not stated in evidence"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A simulation study of thermal runaway propagation in a battery pack compares a full model (including both natural convection and thermal radiation) against two reduced models: one omitting natural convection and one omitting thermal radiation. The omission of natural convection produces a peak temperature that is 150 K lower and a time-to-peak that is 52 seconds earlier compared to the full model. The omission of thermal radiation produces a peak temperature that is 52.4 K lower and a time-to-peak that is 125 seconds earlier. In a separate set of simulations, the cell-to-cell gap is varied. At zero gap, natural convection does not alter the sequence in which cells enter thermal runaway. At nonzero gaps, larger gaps increase the time interval before the last cell enters thermal runaway. An engineer concludes that for pack-level thermal runaway propagation modeling, radiation is the more important heat transfer mechanism to include accurately because omitting it causes a larger time-to-peak error. Which of the following evaluations of this conclusion and the underlying evidence are correct?",
+        "options": [
+          "A. The engineer's conclusion is not supported: omitting natural convection causes a larger peak temperature error (150 K) than omitting radiation (52.4 K), indicating that natural convection has a greater influence on peak temperature prediction accuracy.",
+          "B. The engineer's conclusion is partially supported for time-to-peak accuracy but does not extend to peak temperature accuracy, because the two omissions produce errors of opposite relative magnitude depending on which metric is considered.",
+          "C. At zero cell-to-cell gap, including or excluding natural convection in the model does not affect the predicted sequence of cell triggering, which is consistent with the absence of airflow in that configuration.",
+          "D. Increasing cell-to-cell gap improves pack energy density while simultaneously slowing thermal runaway propagation, making larger gaps unambiguously preferable from a combined safety and performance standpoint.",
+          "E. The time-to-peak error from omitting radiation is larger in magnitude than that from omitting convection, which means radiation governs the timing of peak temperature more strongly than convection does under the simulated conditions.",
+          "F. The relative importance of natural convection versus radiation for peak temperature prediction cannot be determined from these comparisons because the two mechanisms were not varied simultaneously in a controlled factorial design."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Omitting natural convection produces a 150 K peak temperature error versus 52.4 K for omitting radiation. For peak temperature accuracy, natural convection is the more critical mechanism to include, directly contradicting the engineer's conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+197+Case_Studies_in_Thermal_Engineering:C001",
+              "TR_Modelling+197+Case_Studies_in_Thermal_Engineering:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The relative importance of the two mechanisms reverses depending on the metric: radiation omission causes a larger time-to-peak error (125 s vs 52 s), while convection omission causes a larger peak temperature error (150 K vs 52.4 K). The engineer's conclusion holds for one metric but not the other, making it only partially supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+197+Case_Studies_in_Thermal_Engineering:C001",
+              "TR_Modelling+197+Case_Studies_in_Thermal_Engineering:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "At zero gap there is no airflow, so natural convection cannot alter the sequence of cell triggering. This is consistent with the stated mechanism and confirms that the effect of convection on triggering sequence is gap-dependent.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+197+Case_Studies_in_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Larger gaps increase the time interval before the last cell enters thermal runaway (a safety benefit) but compromise pack energy density. These effects trade off against each other; neither is unambiguously preferable without a design-specific weighting. The claim of unambiguous preference is unsupported.",
+            "error_type": "trade_off_ignored",
+            "evidence_refs": [
+              "TR_Modelling+197+Case_Studies_in_Thermal_Engineering:C003",
+              "TR_Modelling+197+Case_Studies_in_Thermal_Engineering:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Omitting radiation causes a 125-second time-to-peak error versus 52 seconds for omitting convection. Under the simulated conditions, radiation more strongly governs the timing of peak temperature, which is the specific metric on which the engineer's conclusion was based.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+197+Case_Studies_in_Thermal_Engineering:C001",
+              "TR_Modelling+197+Case_Studies_in_Thermal_Engineering:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The comparisons are single-mechanism ablation studies, which are a standard and valid method for assessing individual mechanism contributions. The relative magnitudes of the errors are directly comparable and do support conclusions about which mechanism has greater influence on each metric, even without a full factorial design.",
+            "error_type": "epistemic_overcaution_that_is_incorrect",
+            "evidence_refs": [
+              "TR_Modelling+197+Case_Studies_in_Thermal_Engineering:C001",
+              "TR_Modelling+197+Case_Studies_in_Thermal_Engineering:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Metric-dependent relative importance of natural convection versus thermal radiation in thermal runaway propagation modeling, and the trade-off between gap size, propagation delay, and energy density.",
+        "primary_boundary": "The relative importance of convection vs. radiation reverses depending on whether peak temperature or time-to-peak is the metric of interest; neither mechanism is universally dominant.",
+        "intended_error_modes": [
+          "Accepting the engineer's conclusion without checking metric dependence",
+          "Claiming larger gaps are unambiguously preferable without acknowledging the energy density trade-off",
+          "Applying excessive epistemic caution to reject valid ablation-study comparisons"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding that one mechanism is universally more important across all metrics",
+          "Claiming larger gaps are always preferable from a combined safety-performance standpoint",
+          "Requiring factorial experimental design to draw any comparative conclusion from ablation studies"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery safety engineer is designing an accelerating rate calorimetry test protocol to characterize the full thermal runaway behavior of a prismatic lithium-ion cell, including accurate determination of the maximum temperature, the maximum rate of temperature increase, and the total energy released by the cell body. The engineer must choose thermocouple placement locations and must also decide whether surface measurements alone are sufficient for any phase of the test. Using your knowledge of how internal and external temperatures relate during different phases of thermal runaway, describe: (1) which thermocouple placement is required to accurately characterize peak thermal runaway severity for a prismatic cell and why surface or between-cell placements are inadequate for this purpose; (2) during which phase of the test surface temperature measurements are sufficient and what physical condition makes them sufficient during that phase; and (3) what specific risk arises if energy release is evaluated from surface measurements alone."
+      },
+      "ground_truth": {
+        "gold_answer": "For a prismatic cell, direct internal thermocouple placement is required to accurately characterize peak thermal runaway severity. During peak thermal runaway, the internal temperature (approximately 959°C) far exceeds the between-cell temperature (approximately 806°C) and the surface temperature (approximately 381°C). The rate of temperature increase measured internally is approximately 24 times higher than that measured between cells and approximately 11 times higher than that measured at the surface. These large discrepancies arise because after the triggering temperature is reached, heat production accelerates faster than heat can transfer from the cell interior to the exterior, creating a sustained thermal gradient. The between-cell placement is not an adequate substitute for prismatic cells because the temperature and rate discrepancies remain large, unlike the pouch cell case where between-cell and internal temperatures are closely matched. Surface temperature measurements are sufficient only during the phase from onset of self-heating to the triggering temperature, because heat generation rate is low enough during this phase to allow temperature equilibration between the interior and exterior. After the triggering temperature is reached, this equilibration no longer holds and surface measurements become inadequate. If energy release is evaluated from surface measurements alone, it will be substantially underestimated; for the pouch cell, surface-based energy estimates are approximately half the internally measured value, and for prismatic and cylindrical cells the underestimation is expected to be even more severe given the larger internal-to-surface temperature discrepancies.",
+        "must_include": [
+          "Internal thermocouple placement is required for prismatic cells during peak thermal runaway",
+          "Between-cell placement is inadequate for prismatic cells due to large temperature and rate discrepancies",
+          "Surface measurements are sufficient only before the triggering temperature is reached, when heat generation is low and temperature equilibration occurs",
+          "After the triggering temperature, heat production exceeds the rate of heat transfer to the surface, invalidating surface measurements",
+          "Energy release evaluated from surface measurements will be substantially underestimated"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming between-cell placement is adequate for prismatic cells by analogy with pouch cells",
+          "Claiming surface measurements are adequate at any phase after the triggering temperature",
+          "Claiming the energy underestimation from surface measurements is negligible or acceptable for prismatic cells",
+          "Generalizing the pouch cell between-cell substitution validity to prismatic or cylindrical formats"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Phase-dependent validity of thermocouple placement strategies for prismatic cells, the physical mechanism causing internal-external temperature divergence during peak thermal runaway, and the safety implication of surface-based energy estimation.",
+        "primary_boundary": "Between-cell substitution is valid only for pouch cells; surface measurements are adequate only before the triggering temperature; energy estimates from surface measurements are substantially lower than true values.",
+        "intended_error_modes": [
+          "Applying pouch-cell between-cell substitution validity to prismatic cells",
+          "Claiming surface measurements are sufficient throughout the test",
+          "Underestimating the magnitude of energy underestimation from surface measurements"
+        ]
+      }
+    }
+  ]
+}

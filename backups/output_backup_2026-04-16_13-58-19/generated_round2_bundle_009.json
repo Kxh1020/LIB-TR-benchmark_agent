@@ -1,0 +1,372 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A 50 Ah prismatic LFP cell at 25°C is being overcharged under constant-current conditions. Surface infrared monitoring shows that below 100% SOC, the thermal pattern is a stable lateral stratification aligned with the tab region, with a maximum surface temperature difference of 18°C. As overcharging continues to 105% SOC, the thermal pattern transitions to a concentric distribution centered on the middle of the cell face, and this transition precedes any visible mechanical deformation by approximately 38 seconds. Beyond 120% SOC, the surface temperature rise rate increases sharply relative to the slow rate observed between 90% and 120% SOC. An engineer proposes using the thermal pattern transition at 105% SOC as the primary intervention trigger. Which of the following conclusions about this monitoring strategy and the underlying thermal behavior are supported by the described evidence?",
+        "options": [
+          "A. The shift from lateral to concentric thermal distribution at 105% SOC provides a warning signal that precedes the onset of visible mechanical deformation, making it a structurally earlier indicator than naked-eye inspection of cell bulging.",
+          "B. Because the concentric hotspot pattern appears before visible deformation, it can be concluded that internal gas generation has not yet begun at the moment the thermal pattern changes.",
+          "C. The lateral thermal stratification below 100% SOC is attributable to current concentration effects near the tab geometry, and its disappearance at 105% SOC is consistent with a redistribution of internal heat sources away from the tab region.",
+          "D. The sharp increase in temperature rise rate above 120% SOC confirms that the thermal behavior between 90% and 120% SOC is governed by the same mechanism as that above 120% SOC, differing only in rate.",
+          "E. Using the thermal pattern transition as an intervention trigger is more conservative than waiting for the sharp temperature rise rate increase, since the pattern transition occurs at a lower SOC than the rate acceleration threshold.",
+          "F. The 38-second lead time over visible deformation is sufficient to guarantee that a discharge intervention initiated at the pattern transition will prevent irreversible capacity loss in all LFP cell formats.",
+          "G. The tab-aligned lateral stratification during normal charging and its replacement by a central hotspot at 105% SOC represent two distinct thermal regimes whose boundary is defined by the overcharge threshold, not by the absolute surface temperature value."
+        ],
+        "correct_options": [
+          "A",
+          "C",
+          "E",
+          "G"
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence states the concentric thermal field emerges 38 ± 5 s before mechanical deformation becomes visible, directly supporting the claim that it is an earlier indicator than naked-eye bulge detection.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+190+Applied_Thermal_Engineering:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The evidence does not state that internal gas generation has not begun at the moment of thermal pattern transition. The 38-second lead over visible deformation does not imply absence of internal gas; it only establishes a temporal relationship with visible bulging. This is a measurement-scope overclaim.",
+            "error_type": "measurement scope overclaim",
+            "evidence_refs": [
+              "TR_Modelling+190+Applied_Thermal_Engineering:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence attributes the tab-aligned lateral stratification to current concentration (skin effect) and describes its replacement by a concentric hotspot at 105% SOC, which is consistent with internal heat sources redistributing away from the tab region as overcharge chemistry begins to dominate.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+190+Applied_Thermal_Engineering:C004",
+              "TR_Modelling+190+Applied_Thermal_Engineering:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence shows a sharp regime change above 120% SOC (rate jumps from ~0.013°C/s to 0.62°C/s), which is inconsistent with the same mechanism operating at different rates. The large rate discontinuity implies a different governing mechanism above 120% SOC, not a continuous acceleration of the same process.",
+            "error_type": "mechanism substitution / ignoring regime transition",
+            "evidence_refs": [
+              "TR_Modelling+190+Applied_Thermal_Engineering:C006"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The thermal pattern transition occurs at 105% SOC while the sharp rate increase occurs above 120% SOC. Triggering at the pattern transition therefore intervenes at a lower SOC, making it the more conservative (earlier) intervention point relative to the rate-based threshold.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+190+Applied_Thermal_Engineering:C005",
+              "TR_Modelling+190+Applied_Thermal_Engineering:C006"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence explicitly states that the 105% SOC threshold and associated thermal laws are specific to fresh 50 Ah prismatic LFP cells at 25°C, and that universality across different capacities, packaging forms, and conditions requires further investigation. Guaranteeing prevention across all LFP formats is an unsupported generalization.",
+            "error_type": "unsupported generalization beyond stated scope",
+            "evidence_refs": [
+              "TR_Modelling+190+Applied_Thermal_Engineering:C010"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "The evidence describes two distinct thermal patterns (lateral stratification below 100% SOC; concentric hotspot at 105% SOC) whose transition is linked to crossing the overcharge threshold, not to reaching a specific surface temperature. This supports the conclusion that the regime boundary is SOC-defined rather than temperature-defined.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+190+Applied_Thermal_Engineering:C004",
+              "TR_Modelling+190+Applied_Thermal_Engineering:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of thermal pattern transition as an early warning trigger and the mechanistic interpretation of thermal regime changes during LFP overcharge",
+        "primary_boundary": "Conclusions about internal state (gas generation, mechanism identity) cannot be drawn solely from surface thermal pattern observations; scope is also limited to the specific cell format and conditions tested",
+        "intended_error_modes": [
+          "Measurement scope overclaim: inferring absence of internal gas from surface thermal pattern alone",
+          "Mechanism substitution: treating the slow and fast temperature rise regimes as the same mechanism at different rates",
+          "Unsupported generalization: extending the 105% SOC threshold to all LFP cell formats"
+        ],
+        "disallowed_extrapolations": [
+          "Internal gas generation state cannot be inferred from surface thermal pattern alone",
+          "The 105% SOC threshold cannot be generalized to other cell formats, capacities, or SOH states without further evidence",
+          "The slow and fast thermal rise regimes above and below 120% SOC cannot be assumed to share the same governing mechanism"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery management system designer is evaluating two overcharge detection strategies for a lithium-ion pack. Strategy 1 uses voltage-based detection, triggering when the voltage increase rate exceeds 0.9 mV/s with no inflection point observed. Strategy 2 uses infrared thermal monitoring, triggering when local temperature rise rates exceed 0.03°C/s. Separately, a multi-parameter approach combining temperature rise rate, spatial thermal uniformity, and the second derivative of voltage is also under consideration. From experimental data on 50 Ah LFP cells at 25°C: the thermal warning precedes thermal runaway by approximately 1693 s; the voltage collapse detection precedes thermal runaway by approximately 500 s; and the multi-parameter approach reduces false positives to 4.7% while extending warning lead time by 32% ± 5% relative to voltage-only detection. Gas sensors operating in the same environment exhibit false alarm rates up to 30%. Which of the following conclusions are admissible given these conditions?",
+        "options": [
+          "A. The infrared thermal monitoring strategy provides a longer pre-runaway warning window than voltage collapse detection, with the difference in lead time being approximately 1193 s under the tested conditions.",
+          "B. Because the voltage rate threshold of 0.9 mV/s with no inflection point is described as definitively indicating an irreversible thermal runaway trajectory, triggering intervention at this point is equivalent in safety margin to triggering at the thermal anomaly threshold.",
+          "C. The multi-parameter strategy's 32% ± 5% improvement in lead time over voltage-only detection is consistent with the thermal detection advantage over voltage collapse detection, since thermal signals precede voltage collapse in the evidence.",
+          "D. Gas sensors should be excluded from battery management systems because their false alarm rate of up to 30% renders them unreliable as a standalone detection method under complex operational conditions.",
+          "E. A system relying solely on voltage collapse detection would miss the early warning window available from thermal monitoring by more than 1000 seconds under the conditions described.",
+          "F. The 4.7% false positive rate of the multi-parameter strategy is low enough to confirm that this approach eliminates the cross-sensitivity problem that affects gas sensors in complex environments.",
+          "G. The definitiveness of the voltage rate criterion (exceeding 0.9 mV/s without inflection) for identifying irreversible thermal runaway transition does not imply that intervention at this point will prevent thermal runaway, since the trajectory is already described as irreversible at that threshold."
+        ],
+        "correct_options": [
+          "A",
+          "C",
+          "E",
+          "G"
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence states thermal warning is detected 1693 ± 45 s before thermal runaway and that this is 1193 s earlier than voltage-based detection, directly supporting this conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+190+Applied_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The voltage rate threshold identifies the point at which the battery has already irreversibly entered the thermal runaway pathway. This is categorically different from the thermal anomaly threshold, which precedes runaway by ~1693 s. Treating them as equivalent in safety margin ignores the temporal and reversibility distinction between the two triggers.",
+            "error_type": "condition violation / ignoring temporal and reversibility distinction between triggers",
+            "evidence_refs": [
+              "TR_Modelling+190+Applied_Thermal_Engineering:C003",
+              "TR_Modelling+190+Applied_Thermal_Engineering:C008"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The multi-parameter strategy improves lead time by 32% over voltage-only detection. Since thermal signals precede voltage collapse by ~1193 s, and the multi-parameter strategy incorporates thermal signals, the improvement is mechanistically consistent with the thermal detection advantage established in the evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+190+Applied_Thermal_Engineering:C003",
+              "TR_Modelling+190+Applied_Thermal_Engineering:C009"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence states gas sensors have high false alarm rates in complex environments, supporting caution about standalone use. However, concluding they should be entirely excluded from battery management systems is a system-level recommendation that goes beyond the evidence, which only quantifies false alarm rate without evaluating their role in a multi-sensor fusion architecture.",
+            "error_type": "system-level recommendation from component-level observation / unsupported exclusion claim",
+            "evidence_refs": [
+              "TR_Modelling+190+Applied_Thermal_Engineering:C012"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The thermal detection lead over voltage collapse is approximately 1193 s, which exceeds 1000 s. A system using only voltage collapse detection therefore misses this window by more than 1000 s under the described conditions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+190+Applied_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The 4.7% false positive rate characterizes the multi-parameter strategy's performance; it does not address cross-sensitivity to environmental conditions, which is the specific mechanism causing gas sensor false alarms. These are different failure modes, and a low false positive rate in one system does not eliminate a different mechanism in another.",
+            "error_type": "mechanism substitution / scope expansion from one sensor type to another",
+            "evidence_refs": [
+              "TR_Modelling+190+Applied_Thermal_Engineering:C009",
+              "TR_Modelling+190+Applied_Thermal_Engineering:C012"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "The evidence states that exceeding 0.9 mV/s without an inflection point means the battery has definitively and irreversibly entered the thermal runaway pathway. An irreversible transition by definition cannot be prevented by intervention at that point; the trigger confirms runaway is underway, not that it can be averted.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+190+Applied_Thermal_Engineering:C008"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of safety claims about detection strategy lead times, the distinction between diagnostic confirmation and preventive intervention, and the scope of false-alarm rate comparisons across sensor types",
+        "primary_boundary": "A threshold that identifies an irreversible state cannot be treated as a preventive trigger; false positive rate comparisons across different sensor technologies with different failure mechanisms are not directly admissible",
+        "intended_error_modes": [
+          "Conflating a diagnostic confirmation threshold (voltage rate > 0.9 mV/s = irreversible) with a preventive intervention trigger",
+          "Recommending complete exclusion of a sensor type based solely on standalone false alarm rate without considering multi-sensor architectures",
+          "Treating false positive rate from one detection modality as resolving the cross-sensitivity problem of a different modality"
+        ],
+        "disallowed_extrapolations": [
+          "The voltage rate threshold confirming irreversible runaway does not imply intervention at that point can prevent runaway",
+          "Gas sensor false alarm rates do not justify complete exclusion from all system architectures based on standalone performance alone",
+          "The multi-parameter strategy's false positive rate cannot be compared to gas sensor cross-sensitivity as equivalent failure modes"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is analyzing the internal-to-external temperature gradient behavior of a lithium-ion cell under two overcharge modes: constant-current (CC) and constant-current/constant-voltage (CC-CV). Under CC-CV charging, the internal-external temperature difference at 0.5 C overcharge is 55°C, while at 7 C overcharge it is 29.5°C. Under CC charging, the corresponding differences are 75.2°C at 0.5 C and 66.1°C at 7 C. Additionally, under CC charging at 5 C and 7 C, the pressure relief valve activates at approximately 988 s and 686 s respectively, accompanied by a sharp drop in internal temperature. The voltage threshold at which an abrupt voltage change occurs during CC overcharging increases with overcharge rate, from approximately 5.0 V at 0.5 C to approximately 5.26 V at 7 C. Which of the following statements are supported by this evidence?",
+        "options": [
+          "A. Under CC-CV overcharging, the internal-external temperature gradient decreases as overcharge rate increases, which is counterintuitive relative to the expectation that higher rates generate more internal heat.",
+          "B. The pressure relief valve activation under CC high-rate overcharging causes a measurable reduction in internal temperature, indicating that the valve opening event itself constitutes a heat dissipation mechanism.",
+          "C. The internal-external temperature gradient under CC charging at low overcharge rates is larger than under CC-CV charging at the same rate, suggesting that the CV phase in CC-CV charging reduces the peak internal thermal accumulation.",
+          "D. The increase in voltage mutation threshold with increasing overcharge rate under CC charging implies that higher-rate overcharging is safer because the cell voltage remains below the mutation threshold for a longer absolute time.",
+          "E. Under CC charging, the internal-external temperature gradient at 7 C (66.1°C) is substantially larger than the CC-CV gradient at 7 C (29.5°C), indicating that the charging mode has a larger influence on internal thermal gradients at high rates than at low rates.",
+          "F. The earlier pressure relief valve activation at 7 C compared to 5 C under CC charging is consistent with higher-rate overcharging accumulating sufficient internal pressure in a shorter time.",
+          "G. Because the internal-external temperature difference under CC charging at 0.5 C reaches 75.2°C, external surface temperature measurement alone is sufficient to characterize the peak thermal stress experienced by the cell interior under all overcharge conditions."
+        ],
+        "correct_options": [
+          "A",
+          "C",
+          "E",
+          "F"
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The CC-CV data shows the gradient decreases from 55°C at 0.5 C to 29.5°C at 7 C. This is counterintuitive because higher rates are generally expected to generate more internal heat and thus larger gradients. The evidence supports this counterintuitive trend.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+188+Applied_Thermal_Engineering:C001"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The evidence states that pressure relief valve opening results in a sharp drop in internal temperature, but does not establish that the valve opening itself is a heat dissipation mechanism. The temperature drop could result from gas venting, endothermic effects, or loss of internal thermal mass. Attributing the temperature drop specifically to the valve as a heat dissipation mechanism is a causal overclaim not supported by the evidence.",
+            "error_type": "causal overclaim from correlation",
+            "evidence_refs": [
+              "TR_Modelling+188+Applied_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Comparing CC at 0.5 C (75.2°C gradient) with CC-CV at 0.5 C (55°C gradient) shows a larger gradient under CC at the same rate, which is consistent with the CV phase in CC-CV reducing peak internal thermal accumulation by limiting the sustained high-current input.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+188+Applied_Thermal_Engineering:C001",
+              "TR_Modelling+188+Applied_Thermal_Engineering:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The higher voltage mutation threshold at higher rates means the cell reaches a higher voltage before the abrupt change, not that it is safer. A higher mutation voltage at high rates may indicate more severe electrochemical stress at the point of mutation, not reduced risk. The conclusion that higher mutation threshold implies greater safety is unsupported and mechanistically reversed.",
+            "error_type": "causal overclaim / direction reversal of safety implication",
+            "evidence_refs": [
+              "TR_Modelling+188+Applied_Thermal_Engineering:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "At 7 C, the CC gradient (66.1°C) exceeds the CC-CV gradient (29.5°C) by 36.6°C. At 0.5 C, the difference is 75.2 - 55 = 20.2°C. The mode-dependent difference is larger at 7 C than at 0.5 C, supporting the conclusion that charging mode has a larger influence on internal thermal gradients at high rates.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+188+Applied_Thermal_Engineering:C001",
+              "TR_Modelling+188+Applied_Thermal_Engineering:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The pressure relief valve opens at 686 s for 7 C and 988 s for 5 C under CC charging. The shorter time to activation at higher rate is consistent with faster internal pressure accumulation at higher overcharge rates.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+188+Applied_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "The large internal-external gradient (up to 75.2°C) demonstrates precisely that external surface temperature substantially underestimates internal peak temperature. Concluding that surface measurement is sufficient to characterize internal thermal stress contradicts the evidence showing large and condition-dependent gradients.",
+            "error_type": "measurement scope overclaim / ignoring large internal-external gradient",
+            "evidence_refs": [
+              "TR_Modelling+188+Applied_Thermal_Engineering:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of conclusions about internal-external thermal gradients, the influence of charging mode on thermal behavior, and the safety implications of voltage mutation thresholds under different overcharge conditions",
+        "primary_boundary": "External surface temperature cannot characterize internal peak thermal stress when large gradients exist; higher voltage mutation thresholds at higher rates do not imply safety; causal mechanisms for temperature drops after valve activation cannot be specified beyond what the evidence states",
+        "intended_error_modes": [
+          "Causal overclaim: attributing the post-valve temperature drop to a specific heat dissipation mechanism",
+          "Direction reversal: interpreting higher voltage mutation threshold as a safety indicator",
+          "Measurement scope overclaim: treating surface temperature as sufficient for internal thermal characterization given demonstrated large gradients"
+        ],
+        "disallowed_extrapolations": [
+          "The specific mechanism of internal temperature drop after valve opening cannot be determined from the evidence",
+          "Higher voltage mutation thresholds at higher rates cannot be interpreted as indicating reduced risk",
+          "Surface temperature measurement cannot be generalized as sufficient for internal thermal stress characterization given the large demonstrated gradients"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery safety engineer is designing an overcharge intervention protocol for 50 Ah prismatic LFP cells at 25°C. The protocol must distinguish between a reversible overcharge condition (where a discharge intervention can limit capacity degradation below the 3% industry failure threshold) and an irreversible condition (where capacity loss exceeds 7.5% due to SEI film rupture). Two observable signals are available: (1) the transition of the surface thermal pattern from lateral tab-aligned stratification to a concentric central hotspot, and (2) the voltage increase rate exceeding 0.9 mV/s with no inflection point. The engineer also notes that the thermal pattern transition precedes visible mechanical deformation by approximately 38 seconds, and that early thermal anomalies (temperature rise rate > 0.03°C/s) can be detected approximately 1693 s before thermal runaway onset. Explain which signal should be used as the primary trigger for a discharge intervention intended to keep capacity degradation below 3%, and identify the specific mechanistic and temporal reasons why the other signal is unsuitable as a preventive intervention trigger for this purpose."
+      },
+      "ground_truth": {
+        "gold_answer": "The surface thermal pattern transition to a concentric hotspot (or equivalently, the early thermal anomaly detection at temperature rise rate > 0.03°C/s) should be used as the primary intervention trigger. This signal occurs at 105% SOC, which is at or before the reversible overcharge threshold; an immediate 1C discharge initiated at this point limits capacity degradation to 2.8% ± 0.3%, below the 3% failure criterion. The voltage rate signal (> 0.9 mV/s without inflection) is unsuitable as a preventive trigger because, by definition, exceeding this threshold means the battery has already irreversibly entered the thermal runaway pathway. At that point, capacity loss exceeds 7.5% due to widespread SEI film rupture, and the condition is irreversible. Using the voltage rate criterion as a preventive trigger is therefore a logical contradiction: it confirms that prevention has already failed rather than enabling it. The temporal argument reinforces this: the thermal anomaly signal precedes thermal runaway by approximately 1693 s, while voltage collapse detection precedes it by only approximately 500 s, meaning the thermal signal provides a substantially larger intervention window. The thermal pattern transition also precedes visible mechanical deformation by ~38 s, confirming it is an earlier observable indicator than physical deformation. Therefore, the thermal-based trigger operates in the reversible regime and enables preventive action, while the voltage rate criterion operates as a post-hoc confirmation of an irreversible state.",
+        "must_include": [
+          "Thermal pattern transition or early thermal anomaly occurs at or before 105% SOC, within the reversible regime",
+          "Immediate discharge at 105% SOC limits capacity degradation to below 3% (specifically 2.8% ± 0.3%)",
+          "Voltage rate criterion > 0.9 mV/s without inflection defines an already-irreversible thermal runaway trajectory, making it unsuitable as a preventive trigger",
+          "Beyond 105% SOC, capacity loss exceeds 7.5% due to SEI film rupture, confirming the irreversible state",
+          "Thermal detection precedes thermal runaway by ~1693 s versus ~500 s for voltage collapse, providing a larger intervention window"
+        ],
+        "disallowed_extrapolations": [
+          "Do not claim the thermal pattern transition guarantees prevention of thermal runaway in all LFP cell formats or conditions beyond the tested 50 Ah prismatic cells at 25°C",
+          "Do not claim the voltage rate criterion has no diagnostic value; it is unsuitable as a preventive trigger, not as a diagnostic indicator",
+          "Do not infer that the 38-second lead over visible deformation is the primary temporal advantage; the 1693 s lead over thermal runaway is the relevant intervention window"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinguishing between a diagnostic confirmation signal for an irreversible state and an early warning signal enabling preventive intervention, and reasoning about which thermal and electrochemical signals are admissible as intervention triggers within the reversible overcharge regime",
+        "primary_boundary": "A threshold that identifies an already-irreversible transition cannot serve as a preventive intervention trigger; the reversible/irreversible boundary at 105% SOC defines the admissible intervention window",
+        "intended_error_modes": [
+          "Treating the voltage rate criterion as a preventive trigger rather than an irreversibility confirmation",
+          "Failing to connect the 105% SOC thermal pattern transition to the reversible threshold and the 2.8% capacity degradation outcome",
+          "Confusing the 38-second lead over visible deformation with the primary temporal advantage (which is the ~1693 s lead over thermal runaway)"
+        ]
+      }
+    }
+  ]
+}

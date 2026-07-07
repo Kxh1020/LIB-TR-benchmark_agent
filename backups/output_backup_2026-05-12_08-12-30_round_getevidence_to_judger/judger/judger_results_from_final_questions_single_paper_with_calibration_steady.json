@@ -1,0 +1,688 @@
+{
+  "TR_Gasventing+1+UnknownJournal": [
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "D",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "D",
+        "E"
+      ],
+      "score": 1
+    }
+  ],
+  "TR_Gasventing+10+UnknownJournal": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "C",
+        "E",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E",
+        "F"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "E",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "The three-zone diffusion model implies a near-field fuel-rich zone (oxygen deficient), a mixing/intermediate zone where fuel and oxygen overlap, and a far-field oxygen-surplus zone where the fuel has already diluted below the LFL. Ignition/deflagration risk is not highest where oxygen is most abundant; it is highest where both conditions for ignition can be met simultaneously: fuel at or above the LFL (6.4–7.7%) and oxygen at or above the minimum oxygen concentration (10.0–11.5%). The far field is oxygen rich but fuel-lean (below LFL), so it is not the controlling ignition zone. The correct zone to monitor for ignition risk is the intermediate/mixing zone where the vent gas concentration is within the flammable range while oxygen has recovered above the minimum threshold. This zone is hazardous only during the transient period after venting starts as diffusion/entrainment brings oxygen into the vent plume and before continued dilution drives the fuel concentration everywhere below the LFL; that time interval is the governing window for deflagration risk.",
+      "gold_answer": "The oxygen-surplus zone is defined as the region where fuel concentration falls below the LFL (6.4–7.7%); despite high oxygen availability, ignition cannot be sustained there because insufficient fuel is present. Placing detectors only in this zone misses the actual ignition-risk region. The fuel-oxygen zone—where fuel exceeds LFL and oxygen exceeds the ignition threshold (10.0–11.5%)—is the correct monitoring target. This zone forms above the safety valve and expands rapidly after valve opening. Evidence shows deflagration tends to occur at the top of the safety valve within a few seconds of opening, meaning the hazardous window opens almost immediately after valve actuation. Detectors should therefore be positioned above the safety valve exit to capture the fuel-oxygen zone during this early post-opening interval.",
+      "score": 0.75,
+      "reason": "Correctly explains why the oxygen-surplus (far-field) zone is fuel-below-LFL and thus not ignitable, and identifies the overlapping fuel+oxygen (fuel-oxygen/mixing) zone as the proper ignition-risk monitoring target with an early post-venting transient hazard window. However, it misses key specifics from the reported behavior: that the combustible zone forms/enlarges above the safety valve and that deflagration is observed at the valve top within a few seconds of valve opening (immediate post-actuation window)."
+    }
+  ],
+  "TR_Gasventing+11+Journal_of_Energy_Storage": [
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "(1) Cell type 4 disconnects via CID activation, meaning its internal safety design is triggered by the ESC conditions (e.g., pressure/temperature rise) before the separator reaches a melt/shrink failure; the other cell types lack an effective/early CID response under these conditions or their separator fails first, so disconnection occurs by separator melting and shrinkage. (2) The thermal hysteresis implies temperature lags the electrical response, so safety-critical thermal indicators (e.g., peak temperature/thermal runaway onset) occur after the electrical peak/voltage-current signatures; therefore thermal safety measurements must be continued and time-aligned beyond/after the main electrical measurements rather than assuming electrical peak timing captures the worst-case thermal hazard.",
+      "gold_answer": "(1) Cell type 4 is equipped with a current interrupt device (CID), a pressure- or current-sensitive mechanical safety feature that triggers disconnection when activation conditions are met during the high-current ESC pulse. All other tested cell types lack a CID or equivalent device, so their only disconnection pathway is thermal: the separator melts and shrinks under the intense Joule heating at >25C rates, physically breaking the internal circuit. The difference is therefore a design feature (CID presence) rather than a difference in abuse severity. (2) Thermal hysteresis means peak surface temperature and peak chamber pressure occur after voltage and current have already dropped to zero. This implies that electrical measurements alone cannot capture the worst-case thermal and pressure state: safety-critical thermal and pressure monitoring must continue beyond the moment of electrical disconnection, because the hazard peak is temporally delayed relative to the electrical event.",
+      "score": 0.95,
+      "reason": "Matches key mechanisms: type 4 disconnects via CID activation; others via separator melting/shrinkage. Correctly explains this as a design-feature difference. Captures thermal hysteresis as thermal lag requiring monitoring beyond electrical disconnection, though it is a bit less explicit about pressure peaking after current/voltage drop to zero."
+    }
+  ],
+  "TR_Gasventing+12+Journal_of_Energy_Storage": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "B",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "E"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "D",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "F"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "A mass fraction is a relative quantity, so it can decrease even while the absolute mass in that size range increases if the total emitted particulate mass increases enough. Here, 100% SoC produces ~10× more total particulate mass, so even with a lower sub-10 µm fraction (3.29% vs 5.68%), the absolute sub-10 µm mass can still be higher at 100% SoC (because 0.0329×10 > 0.0568×1). The statement that ~85% of solid mass is <1 mm at both SoCs indicates most material remains in the solid/aerosol-relevant size spectrum in both cases, but the key health-relevant metric (absolute fine-particle mass, and potentially number) must be assessed from total mass and size distribution together. Therefore, comparing charge states using only the sub-10 µm fraction can be misleading for exposure/health assessment; 50% SoC has a higher fine-particle proportion, but 100% SoC can still yield greater fine-particle exposure due to much larger total emissions.",
+      "gold_answer": "Although the sub-10 µm fraction (by percentage) is higher at 50% SoC (5.68%) than at 100% SoC (3.29%), the total particulate mass at 100% SoC is roughly ten times greater. Multiplying fraction by total mass: at 100% SoC the absolute sub-10 µm mass is approximately 3.29% × 10M = 0.329M, while at 50% SoC it is 5.68% × M = 0.0568M (where M is the 50% SoC total mass). Thus the absolute sub-10 µm mass is still substantially higher at 100% SoC despite its lower percentage. For health exposure assessment, absolute mass reaching respirable size ranges matters more than fractional composition alone; evaluating only the percentage would underestimate fine-particle hazard at high SoC.",
+      "score": 1.0,
+      "reason": "Prediction correctly explains that absolute sub-10 µm mass equals fraction × total mass, that the ~10× higher total mass at 100% SoC outweighs the lower fraction so absolute fine-particle mass is higher at 100% SoC, and that health exposure assessment should use absolute respirable mass rather than fraction alone."
+    }
+  ],
+  "TR_Gasventing+13+Journal_of_Hazardous_Materials": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 1
+    }
+  ],
+  "TR_Gasventing+16+Journal_of_Energy_Storage": [
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "It cannot be applied because NCM thermal runaway introduces a different dominant heat-release mechanism: oxygen released from the cathode enables sustained, self-oxidizing combustion and post-vent flame growth that is not governed solely by the longitudinal-flow/Froude-number scaling used to fit the LFP data. With NCM, the ceiling temperature rise becomes infeasible to predict with the single LFP-based empirical correlation because the flame/HRR is strongly affected by internal oxygen production and resulting secondary burning of vented gases, rather than behaving as a flow-controlled jet fire. Compared with LFP, NCM thermal runaway produces more vigorous flaming with oxygen-supported combustion products and a flame that can intensify and evolve after the initial venting (often larger, longer-lasting, and more variable), whereas LFP flames are comparatively weaker and more directly tied to vented fuel mixing with ambient air without significant self-generated oxidizer.",
+      "gold_answer": "The empirical model cannot be applied to NCM batteries because NCM thermal runaway ejects fireballs accompanied by gas-solid mixtures, which are inherently difficult to predict. This gas-solid ejection introduces highly variable heat release and spatial distribution that the smooth power-law correlation cannot capture. In contrast, LFP flame is initiated by external ignition of vented combustible gases from a high-temperature heat source, producing a more predictable combustion process amenable to empirical correlation. NCM cells generate a large fireball during the runaway stage that subsequently transitions to a weaker, more stable flame, whereas LFP flame evolution is governed by gas-phase combustion without significant solid-particle ejection. The unpredictability of solid-particle entrainment in NCM fireballs is the primary reason the LFP-derived correlation fails for NCM.",
+      "score": 0.35,
+      "reason": "The prediction correctly notes the correlation was derived for LFP and argues NCM has different, more variable thermal runaway combustion behavior, but it misses the key required mechanism: NCM gas-solid mixture/solid-particle ejection producing unpredictable fireballs. It also does not state the specific NCM flame evolution (large fireball transitioning to weaker stable flame) and only partially captures the LFP ignition condition (external ignition of vented gases). The answer instead focuses on cathode oxygen release/self-oxidizing combustion, which is not the gold mechanism."
+    }
+  ],
+  "TR_Gasventing+17+Journal_of_Energy_Storage": [
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "C"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "score": 1
+    }
+  ],
+  "TR_Gasventing+20+UnknownJournal": [
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "D",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "D",
+        "E"
+      ],
+      "score": 0
+    }
+  ],
+  "TR_Gasventing+21+Journal_of_Energy_Storage": [
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Higher condensation ratio means more vapor condenses into fine liquid droplets that add to the aerosol number concentration and keep particles small/light, reducing their gravitational settling velocity and increasing residence time, so complete settling takes longer. Longer aerosol suspension in an enclosed space keeps HF‑prone species airborne for longer, increasing duration of potential HF formation/release and inhalation/exposure risk during evacuation. A key limitation is that the CFD model neglects phase‑change (condensation/evaporation) effects, which directly control droplet growth and settling, so its aerosol suspension predictions have reduced reliability.",
+      "gold_answer": "Higher condensation ratio produces smaller average droplet diameters. Via Stokes' Law, sedimentation velocity decreases quadratically with diameter, so smaller droplets settle more slowly. Additionally, smaller droplets have shorter particle relaxation times, reducing their ability to decouple from the gas flow and settle. Together these effects extend aerosol suspension time from 345 s to 376 s. The hazard implication is that HF, which readily adsorbs onto aerosol droplet surfaces, remains airborne longer at higher condensation ratios, extending toxic exposure duration for evacuees who cannot clear the space quickly. The key model limitation is that phase-change effects are neglected in the simulation, meaning droplet growth or evaporation dynamics are unrepresented, introducing unquantified error in aerosol diffusion and size distribution predictions at varying condensation ratios.",
+      "score": 0.9,
+      "reason": "Prediction matches the key causal chain: higher condensation ratio → finer/smaller droplets → reduced settling velocity → longer suspension, and correctly links this to prolonged airborne HF-related exposure plus identifies neglected phase change as the main model limitation. It does not explicitly state the quadratic Stokes-law dependence or particle relaxation-time point, so it is slightly incomplete versus the gold must-include details."
+    }
+  ],
+  "TR_Gasventing+23+Journal_of_Energy_Storage": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "D",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "D",
+        "F"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 1
+    }
+  ],
+  "TR_Gasventing+24+Journal_of_Hazardous_Materials": [
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "B",
+        "C",
+        "E",
+        "F"
+      ],
+      "gold_answer": [
+        "B",
+        "C",
+        "E",
+        "F"
+      ],
+      "score": 1
+    }
+  ],
+  "TR_Gasventing+25+Journal_of_Energy_Storage": [
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "1) State-of-health dependence: Aged LiFePO4 cells with SEI thickening and electrolyte consumption will have different gas-generation kinetics and composition during early degradation/incipient runaway. CH4 may be produced later, in lower amounts, or via different reaction pathways than in fresh cells, so a CH4 threshold calibrated on fresh cells can miss events (false negatives) or trigger incorrectly (false positives).\n\n2) Operating-condition/abuse-path dependence: The thresholds were derived only for 100% SOC, side-heating, 25°C on a specific fresh 100 Ah prismatic format. Changes in SOC, ambient temperature, heating location/rate, or cell design alter internal temperature distribution and the sequence/rates of electrolyte/SEI/binder decomposition and venting, which changes when CH4 appears relative to the onset of thermal runaway, making a single universal CH4 early-warning threshold non-transferable.",
+      "gold_answer": "First, battery aging involves SEI thickening and electrolyte consumption, which may alter gas generation kinetics. Because the CH₄ early-warning thresholds were derived from fresh cells, they have not been validated on batteries with varying states of health or degradation histories. An aged cell may generate CH₄ at different rates or concentrations relative to thermal runaway onset, potentially causing the threshold to trigger too late or too early. Second, the HCW-TDLAS sensor has a laboratory-calibrated detection limit of 21.2 ppm at 2 s integration, yet the actual thermal runaway signal started at ~6 ppm. Sub-threshold detection was enabled by continuous gas accumulation, temporal smoothing, and elevated in-situ temperature and pressure. In aged cells with altered gas kinetics, these conditions may differ, affecting whether sub-threshold signals remain reliably detectable. Neither limitation has been resolved by the evidence, so universal deployment across all SOH levels is not yet supported.",
+      "score": 0.6,
+      "reason": "Prediction correctly captures the key SOH/aging limitation: SEI thickening/electrolyte loss changing CH4 generation kinetics and making fresh-cell thresholds unvalidated and potentially early/late. However, the second required limitation in the gold answer is the HCW-TDLAS detection-limit issue (21.2 ppm vs ~6 ppm signal) and dependence on accumulation/smoothing/temperature/pressure; the prediction instead discusses general operating-condition/abuse-path transferability, which is plausible but not the mechanistic sensor-limit point asked for."
+    }
+  ],
+  "TR_Gasventing+27+eTransportation": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "D"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "D"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "D"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Error 1: Treating low-boiling molar dominance as proof that higher‑boiling species are negligible for hazard. Mechanism: Fire/explosion severity is not determined only by mole fraction; higher‑boiling/condensable hydrocarbons can have high heats of combustion and can form flammable aerosols or liquid films that later revaporize, so small molar amounts can still contribute materially to heat release rate, flame spread, and secondary ignition.\n\nError 2: Claiming the dataset is essentially complete despite sampling below the boiling points of higher‑carbon hydrocarbons. Mechanism: Those species will condense/adsorb in cool lines, filters, and collection vessels (phase partitioning and wall losses), causing systematic undercounting in the measured gas composition; thus the reported >90% ratio is biased high and does not demonstrate completeness of the true vented inventory.",
+      "gold_answer": "Error 1 – Sampling bias causing underestimation: The gas sampling temperature was below the boiling points of higher-carbon-number hydrocarbons. These species may have partially liquefied during collection, meaning their mole fractions are underrepresented in the dataset. The 90.60% ratio therefore reflects a measurement artifact, not a true dominance of low-boiling species, so the dataset is not essentially complete for higher-boiling compounds. Error 2 – Molar abundance conflated with ignition hazard: Macromolecular (higher-carbon) substances have lower self-ignition temperatures than small molecules. Even at low molar content, they can disproportionately contribute to fire initiation. Dismissing their hazard based on mole fraction alone confuses quantity with ignition propensity, which are independent hazard dimensions.",
+      "score": 0.75,
+      "reason": "Correctly identifies the sampling-temperature/condensation bias and explains the mechanism (wall losses/phase change) and that the >90% ratio can be an artifact. However, the second error differs from the gold: it argues hazard via heat of combustion/aerosols rather than the key point that higher-carbon (macromolecular) species can have lower self-ignition temperatures, so it only partially matches the required ignition-propensity mechanism."
+    }
+  ],
+  "TR_Gasventing+29+eTransportation": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "D"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "D"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Lowering SOC reduces the energy/heat released and transferred by venting gases from the triggering cell to adjacent back-end cells (27.4%→8%), so neighboring cells receive less preheating and take longer to reach runaway conditions; this weakens propagation severity and increases the TRP pause time (delayed/less intense propagation). A claim NOT supported by this evidence would be that reducing SOC increases vent-gas heating of adjacent cells or makes propagation faster/more severe (shorter pause times).",
+      "gold_answer": "Lower SOC reduces the electrochemical energy available in each cell, which decreases the intensity and heat content of TR venting gases released during runaway. This reduces the thermal load transferred to neighboring cells via hot venting gases (from 27.4% to 8% heat contribution), meaning back-end cells reach their safety valve activation threshold more slowly, directly extending TRP pause times. The two observations are mechanistically linked: less venting gas heat → slower temperature rise in adjacent cells → longer propagation intervals. A claim that would NOT be supported: that lower SOC universally prevents TR initiation or guarantees no TR propagation regardless of heating mode or module configuration. The evidence shows reduced severity and extended timing, not elimination of propagation.",
+      "score": 0.85,
+      "reason": "Prediction correctly links lower SOC to reduced vent-gas heat transfer, slower heating of neighboring cells, and longer TRP pause times, matching the causal mechanism. However, the unsupported-claim example differs: it cites the opposite trend (more vent heating/faster propagation) rather than the key boundary overreach in the gold (that low SOC universally prevents TR/propagation). So it misses the intended unsupported universal-prevention claim, though it still provides a valid not-supported statement."
+    }
+  ],
+  "TR_Gasventing+3+Journal_of_Energy_Storage": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "D",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "D",
+        "F"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 0
+    }
+  ],
+  "TR_Gasventing+33+2020_5th_IEEE_International_Conference_on_Recent_Advances_and_Innovations_in_Eng": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "(1) FTIR measures absorption from IR-active vibrational modes; H2 is a homonuclear diatomic with no changing dipole moment on vibration, so it has essentially no IR absorption and is not detectable by FTIR. (2) In overcharged NMC cells, CO2 is formed mainly from oxidative decomposition/combustion of carbonate electrolyte (and related interphase species) driven by high cathode potential and oxygen release from the delithiated layered oxide, not from the absence of H2-producing reactions. (3) Therefore, FTIR-only vent-gas analysis can miss major species like H2; reporting “no H2” from FTIR does not prove H2 is not generated, so conclusions about reaction pathways and gas composition during NMC thermal runaway must account for FTIR’s selectivity and be corroborated with complementary methods.",
+      "gold_answer": "FTIR detects gases by measuring absorption of infrared light, which requires the molecule to have a net dipole moment. H2 is a homonuclear diatomic molecule and has no dipole moment, so it cannot absorb IR radiation and is invisible to FTIR; supplementary methods are needed to detect it. In overcharged NMC cells, CO2 is not a direct product of electrolyte decomposition; instead, H2 and CO are produced directly from electrolyte decomposition, and CO2 forms via a secondary reaction between CO and O2 released from the cathode atomic lattice. Therefore, an FTIR-only analysis will underreport the total gas hazard by missing H2 entirely, and will correctly detect CO2 but cannot reveal its two-step formation pathway without additional chemical analysis.",
+      "score": 0.6,
+      "reason": "Correctly explains FTIR can’t detect H2 due to lack of IR-active dipole change and concludes FTIR-only gas analysis can miss H2, so non-detection ≠ absence. However, it gives an incorrect/insufficient CO2 mechanism, claiming CO2 forms mainly from direct oxidative electrolyte decomposition/combustion, whereas the gold requires the specific secondary pathway CO + O2 (from cathode lattice oxygen) → CO2 and that CO2 is not a direct electrolyte decomposition product."
+    }
+  ],
+  "TR_Gasventing+34+Batteries": [
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "The three-scenario comparison shows the textile composite can reduce or prevent cascading ignition, but it is not a sufficient standalone measure because it introduces a toxicological trade-off: higher HF exposure. The gas-permeable wrap allows combustion to be inhibited so electrolyte decomposition products are less fully oxidized/scrubbed, while the permeable barrier does not capture fluorine-containing species; this leads to increased HF release/accumulation compared with the baseline fire case. The additional demonstrated measure was applying an HF mitigation/sorbent treatment (HF filter/scrubber) in conjunction with the textile composite, which was confirmed to reduce HF concentration.",
+      "gold_answer": "The textile composite (Scenario 2) suppresses ignition and prevents cascading inflammation but is not a sufficient standalone measure because it creates a more severe toxic gas hazard than uncontrolled burning (Scenario 1). By blocking O2 access, it forces O2-deficient pyrolysis of the electrolyte solvent EMC at high temperature, causing homolytic C–O bond cleavage that generates free ethyl and methyl radicals. These recombine into 155 diverse organic species. HF concentration reaches 1640 ppm—more than 50× the IDLH and 82× the 10-minute EEL of 20 ppm—posing fatal risk within minutes. The five-stage filtration unit (Scenario 3) addresses this: chemisorption on alkaline activated alumina removes HF by trapping fluorine as aluminum fluoride, reducing HF to 3 ppm, which is below the 30 ppm IDLH.",
+      "score": 0.45,
+      "reason": "Prediction captures the main trade-off that the textile wrap suppresses fire but increases toxic HF hazard and notes an added filtration/scrubbing measure reduces HF. However it misses key required specifics: O2-deficient pyrolysis of EMC via homolytic C–O cleavage/free-radical mechanism, the quantitative HF level (1640 ppm and >50× IDLH), the confirmed post-filter HF level (3 ppm below IDLH), and the specific HF removal mechanism (chemisorption on alkaline activated alumina forming AlF3)."
+    }
+  ],
+  "TR_Gasventing+35+Journal_of_Hazardous_Materials": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "E"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "(1) The reported particle data (medians of 109.2, 183.7, 239.3 µm and 88–90% ≤0.85 mm) shows most ejected particles are far larger than the ≤10 µm / ≤5 µm / <2 µm respiratory deposition thresholds, so it suggests the dominant mass is not in the alveolar‑penetrating size range. However, it does not quantify the fraction of particles (by number or mass) that are ≤5 µm or <2 µm, so it does not let you conclude that alveolar penetration risk is absent; even a small unreported fine fraction could still reach deep lung/alveoli.\n\n(2) The 29 µm filter removing 90% of NCM111 particles is chemistry/size‑distribution dependent. Since NCM622 has a much larger median diameter (239.3 µm vs 109.2 µm) and potentially a different distribution shape and fine‑particle fraction, the same filter could have different removal efficiency and may not control the smaller, most respirable fraction in the same way. Therefore the NCM111 90% filtration/ignition‑prevention result cannot be assumed for NCM622 without testing the NCM622 aerosol/particle size distribution and filter performance.",
+      "gold_answer": "(1) The reported data confirms that 88–90% of particles are ≤0.85 mm (850 µm), which is well above the 10 µm upper-respiratory-tract threshold. This means a large fraction of particles are large enough to deposit in the upper airway rather than penetrate deeply. However, the data does not report what fraction falls below 10 µm, 5 µm, or 2 µm, so the magnitude of alveolar penetration hazard cannot be quantified from the given evidence. The presence of F, P, and Cr in particles means even upper-tract deposition carries chemical toxicity risk, but the sub-2 µm alveolar fraction remains uncharacterized. (2) Filtration efficiency depends on the particle size distribution relative to the filter pore size. NCM622 has a median diameter of 239.3 µm versus 109.2 µm for NCM111. A larger median implies a different cumulative size distribution; more NCM622 particles exceed 29 µm, which could alter the retained fraction. The 90% figure was established experimentally for NCM111's specific distribution and cannot be assumed to hold for NCM622 without testing that chemistry's distribution against the same filter.",
+      "score": 0.92,
+      "reason": "Matches the gold on the key points: the ≤0.85 mm statistic and medians do not determine the ≤10/5/2 µm fractions, so alveolar penetration hazard cannot be quantified/ruled out; and NCM111’s 90% filtration result is distribution-specific, with NCM622 having a larger median and potentially different fine fraction, so efficiency can’t be assumed without testing. Minor omission: does not mention the chemical-toxicity implication (F/P/Cr) for upper-airway deposition."
+    }
+  ],
+  "TR_Gasventing+36+Batteries": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "D",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "D",
+        "F"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "B",
+        "C",
+        "F"
+      ],
+      "gold_answer": [
+        "B",
+        "C",
+        "F"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "(1) The Lifetech event shows that passive protections like a safety valve are not fully reliable under severe fire exposure: even with the valve present, a cell can still catastrophically fail, eject material, and create a blast/pressure wave, so passive venting cannot be assumed to prevent explosive outcomes in all cases. (2) The non-detection of POF3 at a 6 ppm detection limit does not mean POF3 was not produced; it only means it was below the method’s sensitivity and/or test conditions. Since electrolyte studies indicate POF3 could be produced at roughly 1/20 of HF, it may be present at low but nonzero levels, so hazard assessment is incomplete if it treats “not detected” as “none released.” A negative result cannot confirm zero release because production could occur below the detection limit or be missed due to measurement constraints.",
+      "gold_answer": "The Lifetech explosion demonstrates that a safety valve, while designed to relieve pressure, does not guarantee prevention of catastrophic cell rupture under fire conditions at 100% SOC. One of five cells exploded despite having the mechanism present, indicating the valve failed to prevent pressure buildup sufficient to cause explosion. This shows passive safety mechanisms have non-zero failure probability under severe thermal abuse and cannot be treated as absolute safeguards. Regarding POF3: the detection limit of 6 ppm means the instrument cannot distinguish between zero release and release below 6 ppm. Since related electrolyte studies suggest POF3 production may be roughly 1/20th of HF production, and HF was measurably produced, POF3 may have been released at sub-detection concentrations. A negative result therefore reflects an instrument sensitivity boundary, not confirmed absence, leaving the hazard partially uncharacterized.",
+      "score": 1.0,
+      "reason": "Prediction matches all required points: notes valve present yet a cell still catastrophically failed (implying passive safety not guaranteed), and correctly interprets POF3 non-detection as limited by the 6 ppm detection threshold, not proof of zero, with the 1:20 POF3:HF ratio implying possible sub-detection release and incomplete hazard characterization."
+    }
+  ],
+  "TR_Gasventing+37+Batteries": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "D"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "D"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "1) Peak volumetric flow/vent rate: NMC/LMO produces a very large gas volume in a short time (~780 L/kg in ~4 min), so the system must be sized for much higher instantaneous generation rate and short-duration peak relief/ventilation; LFP produces far less total gas (~42 L/kg) but over a much longer period (~45 min), so the required peak flow is much lower but it must operate effectively for longer. 2) Total volume/hold-up vs duration: For NMC/LMO the key is accommodating/relieving a large total volume quickly (higher surge capacity and discharge rate); for LFP the key is maintaining sustained ventilation/handling over a prolonged event even though the total volume is small. Limitation: The tests are in a dry inert atmosphere; real installations may have air and humidity and fire conditions, which can change reactions (including HF formation/speciation and gas generation behavior), so inert-atmosphere emission rates/composition may not directly represent real-world fire ventilation conditions.",
+      "gold_answer": "First, the peak gas emission rate for NMC/LMO is approximately two orders of magnitude higher than for LFP (~190 L/min/kg vs ~0.94 L/min/kg), so the NMC/LMO system requires a gas management pathway with roughly 200× greater instantaneous flow capacity. Second, although absolute HF mass is comparable for both chemistries, the much smaller total gas volume from LFP means HF concentration in LFP vent gas is substantially higher; the LFP ventilation design must therefore prioritize HF dilution even though total gas volume is low. The critical limitation is that these tests were conducted in a dry inert atmosphere: some species detected may be unstable in normal air, and the absence of oxygen may alter which chemical species form, so gas composition and possibly total yield in a real fire scenario with ambient oxygen and humidity may differ from inert-atmosphere measurements.",
+      "score": 0.6,
+      "reason": "Correctly identifies the key difference in peak gas emission rate/instantaneous flow capacity (NMC/LMO much higher, short-duration vs LFP lower, longer duration) and correctly notes the inert-atmosphere limitation (oxygen/humidity/fire conditions change species and applicability). However, it misses the second required critical design difference about HF: comparable absolute HF mass but much higher HF concentration for LFP due to lower total gas volume, and instead repeats volume/duration considerations."
+    }
+  ],
+  "TR_Gasventing+39+Batteries": [
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "The argument fails when the aged NMC‑graphite pouch cell has developed internal lithium plating (and associated SEI growth/impedance rise) from high‑rate/low‑temperature operation or overcharge. In that case, despite lower capacity, metallic Li can form dendrites/soft shorts and is highly reactive; it can trigger earlier separator failure and rapid exothermic reactions (Li–electrolyte/SEI, cathode oxygen release), producing a faster, more violent runaway than a fresh cell. Safer behavior can be restored if the plated lithium is removed/passivated (e.g., by appropriate recovery cycling/rest at warm temperature to re‑intercalate Li and stabilize SEI, and/or by reducing SOC and allowing self‑discharge/aging to consume reactive Li), reducing the short‑circuit propensity and reactive Li inventory even though capacity fade remains.",
+      "gold_answer": "The argument is conditionally correct but contains an inadmissible universal claim. It fails when fresh metallic lithium plating is present on the anode: plated lithium is highly reactive and can intensify the thermal runaway reaction beyond what capacity reduction alone would predict, potentially making the aged cell more dangerous than a fresh cell. The failure mechanism is the exothermic reactivity of metallic lithium with electrolyte and other cell components during thermal runaway. However, if the cell is stored at rest for an extended period after plating (e.g., five months at room temperature), the plated lithium may chemically intercalate back into graphite particles or become passivated by electrolyte components such as EC, removing the hazard and restoring milder TR behavior consistent with the capacity-fade-only expectation.",
+      "score": 0.9,
+      "reason": "Matches all required elements: identifies metallic lithium plating as the failing condition, explains increased TR via plated Li reactivity (and related shorts/early failure), and gives mitigation via rest/warm recovery allowing re-intercalation/passivation. Minor mismatch: mitigation in gold emphasizes extended rest at room temperature; prediction adds cycling/SOC reduction details not required and slightly shifts emphasis."
+    }
+  ],
+  "TR_Gasventing+40+Batteries": [
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "F"
+      ],
+      "score": 1
+    }
+  ],
+  "TR_Gasventing+41+Batteries": [
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "D",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "E"
+      ],
+      "score": 0
+    }
+  ],
+  "TR_Gasventing+5+Journal_of_Energy_Storage": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "F"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Although higher SOC makes the runaway much more violent (higher peak mass-loss rates and a longer irreversible reaction), the extra energy is released mainly as a faster, more intense venting/combustion event rather than a proportionally larger total fuel inventory. At lower SOC, less internal reaction energy is available, but the released gases/burnable material can still oxidize and the burning lasts longer/weaker, so the integrated heat ends up close. The evidence attributes this convergence primarily to oxygen availability/air mixing limiting the net combustion (i.e., the amount that can actually burn), not to SOC-dependent changes in total combustible mass.",
+      "gold_answer": "Although higher SOC produces a more severe internal reaction—reflected in much higher peak mass loss rates and a longer irreversible reaction duration—the total combustion heat converges because the 50% SOC battery sustains a longer overall thermal runaway duration and a longer flame duration. The additional time over which the 50% SOC battery burns compensates for its lower instantaneous reaction intensity, allowing cumulative heat release to approach that of the 100% SOC case. The evidence attributes the small 5.18 MJ difference specifically to this extended thermal runaway and flame duration at 50% SOC. Therefore, total combustion heat is not a direct linear function of SOC alone; temporal duration of burning is a co-determining factor that partially offsets the intensity difference driven by stored electrochemical energy.",
+      "score": 0.55,
+      "reason": "Prediction correctly notes that higher SOC shows greater severity (peak mass loss rates, longer irreversible reaction) yet total heat can be similar because lower SOC burns longer so integrated heat approaches the higher SOC case, and that total heat is not solely determined by SOC. However, it misattributes the convergence primarily to oxygen availability/air mixing limits, whereas the gold/evidence specifically attributes the small difference to longer thermal runaway and flame duration at 50% SOC. Partial credit for capturing the duration-compensation mechanism but with an incorrect cited factor."
+    }
+  ]
+}

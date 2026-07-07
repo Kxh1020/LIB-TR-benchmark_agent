@@ -1,0 +1,313 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A cylindrical hard-case lithium-ion cell and a pouch cell of identical capacity undergo full thermal runaway in a sealed test enclosure. Both cells eject comparable total mass. An engineer observes that the hard-case cell produces significantly more solid particulate debris outside the cell compared to the pouch cell. Which of the following statements are consistent with the physical mechanism responsible for this difference?",
+        "options": [
+          "A. The overpressure valve in the hard-case cell concentrates escaping gas through a restricted orifice, generating stream velocities sufficient to detach and expel electrode fragments.",
+          "B. The hard-case cell produces a greater total volume of venting gas than the pouch cell, which directly increases the solid ejection fraction.",
+          "C. The pouch cell housing deforms and distributes venting gas over a larger exit area, reducing the mechanical force available to dislodge solid material.",
+          "D. The difference in solid ejection fraction is primarily caused by differences in electrolyte composition between hard-case and pouch cell formats.",
+          "E. The solid ejection fraction in hard-case cells is higher because their metallic housing retains heat longer, causing more complete electrode decomposition before venting.",
+          "F. The gas-to-solid mass ratio in the ejected material from hard-case cells is lower than that from pouch cells undergoing the same total mass loss."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence directly attributes higher solid ejection in hard-case cells to overpressure valve concentrating gas through a small orifice, increasing stream velocity.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+120+Journal_of_Power_Sources:C006"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence attributes the difference to valve geometry and stream velocity, not to a greater total venting gas volume in hard-case cells.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+120+Journal_of_Power_Sources:C006"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Pouch cell housing lacks a concentrated valve; distributed gas exit reduces per-unit-area stream force, consistent with lower solid ejection fraction in evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+120+Journal_of_Power_Sources:C006"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence attributes the ejection difference to housing geometry and valve design, not to electrolyte composition differences between formats.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Gasventing+120+Journal_of_Power_Sources:C006"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence does not support thermal retention as the mechanism; the cited cause is mechanical stream velocity from valve geometry, not thermal decomposition completeness.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Gasventing+120+Journal_of_Power_Sources:C006"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "A higher proportion of solid mass in total mass loss for hard-case cells implies a lower gas-to-solid ratio in ejected material, which is a direct logical consequence of the evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+120+Journal_of_Power_Sources:C006"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism linking housing geometry to solid ejection fraction during thermal runaway venting",
+        "primary_boundary": "The ejection difference is attributed to valve-induced stream velocity, not to total gas volume or electrolyte chemistry differences",
+        "intended_error_modes": [
+          "mechanism_substitution",
+          "causal_overclaim",
+          "ignoring_geometry_effect"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring that hard-case cells generate more total gas",
+          "Attributing solid ejection to thermal retention rather than mechanical stream force"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is designing a thermal runaway gas characterization test using a sealed autoclave. Two cell variants are tested: Cell A generates 35 liters of venting gas; Cell B generates 80 liters. The test protocol uses gas composition measurements to identify the stable species proportions. The engineer wants to determine which measurements are valid for characterizing the intrinsic venting gas composition and what limits the measurement at low volumes. Which conclusions are admissible?",
+        "options": [
+          "A. The gas composition measurement from Cell A cannot be used to characterize intrinsic venting gas composition because ambient oxygen in the autoclave significantly alters the measured species proportions at that volume.",
+          "B. Cell B measurements yield a stable gas composition because the venting volume is sufficient to render the influence of residual autoclave oxygen negligible.",
+          "C. The CO2 concentration measured from Cell A is likely elevated above its intrinsic value because combustible species are partially oxidized by available ambient oxygen at low venting volumes.",
+          "D. Since gas composition is independent of total venting volume above the threshold, Cell B results can be used to infer the intrinsic species proportions.",
+          "E. The CO2 elevation at low venting volumes indicates that the cell itself produces more CO2 at lower states of charge, not that ambient oxygen is responsible.",
+          "F. Both Cell A and Cell B measurements are equally valid because the seven dominant species together exceed 99 vol.-% in all cases regardless of venting volume."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence states measurements below 40–50 liters cannot be evaluated due to ambient O2 influence; 35 liters falls within this invalid range.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+120+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Evidence states O2 influence is negligible above 50 liters; 80 liters satisfies this threshold, making Cell B measurements valid for stable composition characterization.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+120+Journal_of_Power_Sources:C004",
+              "TR_Gasventing+120+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence explicitly states that at low venting volumes, combustible gases are oxidized to CO2 by available O2, elevating measured CO2 above its intrinsic concentration.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+120+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence states gas composition is stable and independent of total venting volume across valid tests; Cell B at 80 liters is within the valid regime.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+120+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence attributes CO2 elevation at low volumes to ambient O2 oxidation of combustibles, not to SOC-dependent cell chemistry differences.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Gasventing+120+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The 99 vol.-% dominance of seven species applies to valid measurements; at low volumes, O2-driven oxidation distorts proportions, making Cell A measurements invalid despite species coverage.",
+            "error_type": "condition_violation",
+            "evidence_refs": [
+              "TR_Gasventing+120+Journal_of_Power_Sources:C001",
+              "TR_Gasventing+120+Journal_of_Power_Sources:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of gas composition measurements as a function of venting volume threshold and ambient oxygen interference",
+        "primary_boundary": "Below approximately 40–50 liters, ambient O2 oxidizes combustibles and elevates CO2, invalidating intrinsic composition measurement",
+        "intended_error_modes": [
+          "condition_violation",
+          "mechanism_substitution",
+          "ignoring_threshold_dependence"
+        ],
+        "disallowed_extrapolations": [
+          "Applying the 99 vol.-% species coverage claim to invalidate the O2-interference limitation",
+          "Attributing CO2 elevation to cell-internal SOC effects rather than ambient oxidation"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Two lithium-ion cell designs are compared: Cell X has a volumetric energy density of 400 Wh/l and Cell Y has 600 Wh/l. Both use regular electrolyte. A safety engineer must evaluate thermal runaway onset temperature and venting gas volume per unit capacity. Using only the established relationships between energy density, onset temperature, and gas generation, which of the following conclusions are admissible?",
+        "options": [
+          "A. Cell Y is expected to reach thermal runaway onset at a lower temperature than Cell X, consistent with a negative relationship between volumetric energy density and onset temperature.",
+          "B. Cell Y will generate a larger total venting gas volume per ampere-hour than Cell X because higher energy density cells contain more reactive material.",
+          "C. The estimated onset temperature difference between Cell X and Cell Y is approximately 84 K, based on the known slope relating energy density to onset temperature.",
+          "D. The venting gas volume per ampere-hour for both cells is expected to fall within the range of 1.3 to 2.5 liters per ampere-hour, provided both use regular electrolytes.",
+          "E. Because Cell Y has higher energy density, its venting gas composition will contain a higher proportion of hydrogen compared to Cell X.",
+          "F. The onset temperature relationship implies that a cell with sufficiently high energy density could reach thermal runaway at ambient temperature without external heating."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence establishes a negative relationship between volumetric energy density and onset temperature; Cell Y at higher density will have lower onset temperature.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+120+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence links gas volume to capacity (Ah), not energy density; no evidence supports that higher energy density increases gas volume per Ah.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+120+Journal_of_Power_Sources:C007"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Applying the slope of -0.42 K·l/Wh to a density difference of 200 Wh/l yields approximately 84 K onset temperature difference, a direct admissible calculation from evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+120+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence states the average gas-to-capacity proportion is 1.96 l/Ah within a literature range of 1.3–2.5 l/Ah for regular electrolytes, applicable to both cells.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+120+Journal_of_Power_Sources:C007"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence states gas composition does not depend on total venting volume; no evidence links energy density to species-level composition differences such as hydrogen proportion.",
+            "error_type": "unsupported_extrapolation",
+            "evidence_refs": [
+              "TR_Gasventing+120+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Extrapolating the linear slope to extreme energy densities exceeds the evidence scope; the relationship does not support predicting ambient-temperature spontaneous runaway.",
+            "error_type": "unsupported_extrapolation",
+            "evidence_refs": [
+              "TR_Gasventing+120+Journal_of_Power_Sources:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissible inferences from the energy density–onset temperature slope and the gas-to-capacity ratio for regular electrolyte cells",
+        "primary_boundary": "The energy density–onset temperature slope applies within the tested range; it cannot be extrapolated to predict ambient-temperature spontaneous failure, and energy density does not determine gas composition",
+        "intended_error_modes": [
+          "unsupported_extrapolation",
+          "causal_overclaim",
+          "mechanism_substitution"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring species-level composition changes from energy density",
+          "Extrapolating linear onset temperature trend to extreme densities",
+          "Linking energy density to per-Ah gas volume"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A researcher measures the venting gas composition from a series of lithium-ion cells undergoing thermal runaway in a sealed enclosure. For cells that generate small venting volumes (below 40 liters), the measured CO2 fraction is substantially higher than for cells generating large volumes, while the CO2 fraction stabilizes at a consistent lower value for large-volume tests. The researcher proposes two competing explanations: (1) cells generating less gas inherently produce more CO2 due to differences in internal chemistry, or (2) the measurement environment is responsible for the elevated CO2 at low volumes. Identify which explanation is supported and describe the physical mechanism that causes the CO2 elevation at low venting volumes. Also state what this implies for the admissibility of low-volume measurements as characterizations of intrinsic cell venting gas composition."
+      },
+      "ground_truth": {
+        "gold_answer": "Explanation (2) is supported. At low venting volumes, residual ambient oxygen present in the sealed enclosure is present in sufficient quantity relative to the venting gas to oxidize combustible species such as CO, H2, and hydrocarbons, converting them to CO2. As venting volume increases, the fixed amount of available O2 becomes negligible relative to the total gas volume, so this oxidation reaction no longer significantly alters the measured composition, and CO2 stabilizes at its intrinsic value. This means that low-volume measurements reflect a measurement artifact rather than intrinsic cell chemistry. Therefore, measurements from cells generating below approximately 40–50 liters of venting gas are not admissible as characterizations of the true venting gas composition and must be excluded from composition analysis.",
+        "must_include": [
+          "ambient oxygen in the enclosure oxidizes combustible venting species to CO2 at low volumes",
+          "the O2 effect becomes negligible as venting volume increases beyond the threshold",
+          "low-volume measurements are not admissible for characterizing intrinsic gas composition",
+          "the elevated CO2 is a measurement artifact, not a cell chemistry difference"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming that CO2 elevation at low volumes indicates higher SOC or different electrode chemistry",
+          "Stating that the 99 vol.-% species coverage makes all measurements equally valid",
+          "Inferring that the threshold volume is a property of the cell rather than the measurement setup"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinguishing measurement artifact from intrinsic cell behavior in venting gas composition, and identifying the O2-driven oxidation mechanism responsible for CO2 elevation at low venting volumes",
+        "primary_boundary": "The CO2 elevation at low volumes is caused by enclosure O2 oxidizing combustibles, not by cell-internal chemistry differences; this invalidates low-volume measurements as intrinsic composition references",
+        "intended_error_modes": [
+          "Attributing CO2 elevation to cell chemistry rather than measurement environment",
+          "Ignoring the threshold-dependent validity of gas composition measurements",
+          "Treating the species coverage statistic as a validity guarantee independent of volume"
+        ]
+      }
+    }
+  ]
+}

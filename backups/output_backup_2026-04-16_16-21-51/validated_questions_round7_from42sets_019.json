@@ -1,0 +1,128 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "During external heating tests on 18650 cells, the smoke number (FSN) measured during the venting phase increases monotonically with SOC for both NCA and LCO. However, during the explosion phase, the FSN trend reverses after 50% SOC. Separately, LCO at 100% SOC (9.01 Wh) does not rupture the test canister, while LMO at 100% SOC (12.34 Wh) does. An engineer is assessing smoke and structural hazard at varying SOC. Which conclusions are admissible?",
+        "options": [
+          "A. For NCA and LCO, venting-phase smoke output can be used as a monotonic SOC indicator up to 100% SOC, but explosion-phase smoke output cannot serve this function above 50% SOC.",
+          "B. The reversal of FSN trend above 50% SOC during explosion indicates that higher SOC cells produce less hazardous smoke overall, making them safer from a smoke exposure standpoint.",
+          "C. Canister rupture behavior is determined by stored energy content rather than cathode chemistry alone, since two cells of different chemistry but different energy content showed different rupture outcomes.",
+          "D. Because LMO ruptured the canister and LCO did not, LMO cells are always more structurally hazardous than LCO cells regardless of SOC or energy content.",
+          "E. The FSN reversal above 50% SOC during explosion is consistent with violent explosion effects dispersing or diluting particulate matter rather than indicating reduced combustion severity.",
+          "F. The canister rupture data alone is sufficient to establish a universal energy threshold above which all 18650 chemistries will rupture containment structures."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Venting FSN increases monotonically with SOC; explosion FSN reverses after 50% SOC, breaking monotonicity for that phase.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+135+Fire_Safety_Journal:C008"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "FSN reversal is caused by violent explosion effects, not reduced combustion severity; overall hazard is not reduced.",
+            "error_type": "causal overclaim: misattributing measurement artifact to reduced hazard",
+            "evidence_refs": [
+              "TR_Gasventing+135+Fire_Safety_Journal:C008"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "LCO (9.01 Wh) did not rupture; LMO (12.34 Wh) did; energy content differentiates rupture outcome across chemistries.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+135+Fire_Safety_Journal:C009"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Rupture comparison is at 100% SOC with different energy contents; universalizing across all SOC and energy levels is unsupported.",
+            "error_type": "overgeneralization: extending single-condition comparison to universal claim",
+            "evidence_refs": [
+              "TR_Gasventing+135+Fire_Safety_Journal:C009"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Evidence states violent explosion lowers FSN values above 50% SOC; dispersion/dilution mechanism is consistent with this.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+135+Fire_Safety_Journal:C008"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Only two data points at 100% SOC for two chemistries; insufficient to establish a universal energy threshold for all chemistries.",
+            "error_type": "scope expansion: system-level universal threshold from two-point comparison",
+            "evidence_refs": [
+              "TR_Gasventing+135+Fire_Safety_Journal:C009"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Regime-dependent FSN behavior and energy-content-based rupture admissibility judgment",
+        "primary_boundary": "FSN monotonicity holds only during venting phase; rupture conclusion bounded to stated energy values and 100% SOC",
+        "intended_error_modes": [
+          "Interpreting FSN reversal as reduced hazard rather than measurement artifact of violent explosion (B)",
+          "Universalizing chemistry-based rupture comparison across all SOC (D)",
+          "Extrapolating two-point energy-rupture data to a universal threshold (F)"
+        ],
+        "disallowed_extrapolations": [
+          "Universal energy threshold for canister rupture across all chemistries",
+          "Overall safety ranking from explosion-phase FSN alone",
+          "Chemistry-based structural hazard ranking independent of energy content"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "An 18650 LMO cell at 100% SOC and an 18650 LCO cell at 100% SOC are both externally heated under identical open-chamber conditions. The LMO cell undergoes violent explosions and ruptures the test canister; the LCO cell does not rupture the canister. Both cells show decreasing TRonset with increasing SOC. An engineer proposes that because LMO has the lowest TRonset among tested chemistries, it should be treated as the most hazardous chemistry in all fire safety assessments. Evaluate whether this proposal is fully admissible, partially admissible, or inadmissible, and explain the specific reasoning boundaries that govern your judgment."
+      },
+      "ground_truth": {
+        "gold_answer": "The proposal is only partially admissible. LMO's lowest TRonset supports a conclusion that it initiates thermal runaway at lower temperatures than NCA or LCO under the tested conditions, which is a legitimate hazard indicator. However, treating LMO as universally most hazardous in all fire safety assessments overextends this finding in two ways. First, TRonset is one hazard dimension; canister rupture behavior is driven by stored energy content (LMO at 12.34 Wh vs. LCO at 9.01 Wh at 100% SOC), not cathode chemistry alone, so a lower-energy LMO cell at reduced SOC might not exceed the rupture threshold that a higher-energy cell of another chemistry would. Second, the violent explosions in LMO samples disqualify it from the empirical prediction framework applicable to NCA and LCO, meaning LMO's behavior is less predictable, not simply more hazardous in a monotonic sense. A complete fire safety assessment must account for energy content, SOC, and the specific failure mode (explosion vs. stable burning), none of which are captured by TRonset ranking alone.",
+        "must_include": [
+          "LMO lowest TRonset is a valid but partial hazard indicator",
+          "Canister rupture is governed by stored energy content, not chemistry alone",
+          "LMO exclusion from empirical equations reflects unpredictability, not simply greater hazard magnitude",
+          "Universal hazard ranking from TRonset alone is inadmissible without accounting for energy content and SOC"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming LMO is always most hazardous regardless of SOC or energy content",
+          "Treating TRonset as the sole determinant of fire safety hazard ranking",
+          "Inferring that LMO's exclusion from empirical equations means it is safer or less studied"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-dimensional hazard admissibility: TRonset ranking versus energy-content-driven rupture behavior and predictability limitations",
+        "primary_boundary": "TRonset ranking is chemistry-specific and condition-bounded; rupture hazard is energy-content-dependent; LMO unpredictability is distinct from monotonic hazard magnitude",
+        "intended_error_modes": [
+          "Conflating lowest TRonset with universally highest hazard across all metrics",
+          "Ignoring energy content as the rupture-determining variable",
+          "Misinterpreting LMO's exclusion from empirical equations as a simple hazard amplifier"
+        ]
+      }
+    }
+  ]
+}

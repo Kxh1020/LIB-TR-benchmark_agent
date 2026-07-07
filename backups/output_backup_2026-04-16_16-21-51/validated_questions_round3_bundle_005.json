@@ -1,0 +1,36 @@
+{
+  "mcqs": [],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery module uses a composite phase change firewall with a substrate thermal conductivity of 0.044 W/(m·K) and 55% PCM adsorption capacity. A second module of the same design has been aged so that its substrate conductivity has increased to 0.044 W/(m·K) but its PCM capacity has dropped to 45%. An engineer argues that the second module is safe against thermal runaway propagation because its substrate conductivity is still below the known propagation onset conductivity. Identify the specific flaw in this reasoning, explain which parameter creates the unresolved safety question, and state what additional information would be required to confirm or deny safe operation of the second module."
+      },
+      "ground_truth": {
+        "gold_answer": "The flaw is that the engineer evaluates only the substrate conductivity parameter and concludes safety based on it being below the conductivity failure threshold, while ignoring that the PCM adsorption capacity has independently degraded to 45%, which falls within the unresolved critical interval between the last confirmed safe value (50%) and the confirmed failure value (40%). The PCM capacity of 45% is below the last confirmed safe operating point (50%), meaning the firewall has not been confirmed to prevent propagation at this PCM level. The substrate conductivity being safe does not compensate for or override the PCM capacity uncertainty. To confirm safe operation, the engineer would need experimental or simulation data characterizing firewall behavior at PCM adsorption capacities between 40% and 50%, specifically at 45%, to determine whether the critical PCM threshold lies above or below 45%.",
+        "must_include": [
+          "PCM adsorption capacity of 45% falls within the unresolved critical interval (between 40% and 50%)",
+          "50% is the last confirmed safe PCM capacity; 45% is below this confirmed safe point",
+          "substrate conductivity being safe does not validate the system when PCM capacity is in an uncharacterized zone",
+          "additional data characterizing behavior at PCM capacities between 40% and 50% is required to resolve admissibility"
+        ],
+        "disallowed_extrapolations": [
+          "claiming the system is safe because substrate conductivity is below its threshold",
+          "claiming the system will definitely fail because 45% is below 50%",
+          "treating the two parameters as independent safety gates where passing one is sufficient",
+          "asserting a specific critical PCM threshold value not supported by the evidence"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility judgment under multi-parameter boundary uncertainty: recognizing that safety confirmation requires all relevant parameters to be within confirmed safe ranges, not merely below failure thresholds",
+        "primary_boundary": "PCM capacity of 45% lies between the confirmed safe lower bound (50%) and the confirmed failure value (40%), placing it in an unresolved interval that cannot be confirmed safe or unsafe without additional data",
+        "intended_error_modes": [
+          "accepting safety based on one parameter passing its threshold while ignoring a second parameter in an unresolved zone",
+          "treating 'below failure threshold' as equivalent to 'confirmed safe' when the safe operating range has a different boundary",
+          "assuming parameters are independent safety gates"
+        ]
+      }
+    }
+  ]
+}

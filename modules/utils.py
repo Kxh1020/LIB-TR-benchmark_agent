@@ -137,3 +137,43 @@ def normalize_decision_payload(payload: object) -> dict:
         decision = "REJECT"
     payload["decision"] = decision
     return payload
+
+def calc_judger_metrics(results_by_paper: dict) -> dict:
+    """统计正确率"""
+    total_items = 0
+    total_score = 0.0
+
+    mcq_count = 0
+    mcq_score = 0.0
+
+    sa_count = 0
+    sa_score = 0.0
+
+    for items in results_by_paper.values():
+        for item in items:
+            score = item.get("score", 0)
+            try:
+                score = float(score)
+            except (TypeError, ValueError):
+                score = 0.0
+
+            total_items += 1
+            total_score += score
+
+            question_type = str(item.get("question_type", "")).lower()
+
+            if question_type == "mcq":
+                mcq_count += 1
+                mcq_score += score
+            elif question_type == "short_answer":
+                sa_count += 1
+                sa_score += score
+
+    return {
+        "total_items": total_items,
+        "average_score": (total_score / total_items) if total_items else 0.0,
+        "mcq_count": mcq_count,
+        "mcq_accuracy": (mcq_score / mcq_count) if mcq_count else 0.0,
+        "sa_count": sa_count,
+        "sa_average_score": (sa_score / sa_count) if sa_count else 0.0,
+    }

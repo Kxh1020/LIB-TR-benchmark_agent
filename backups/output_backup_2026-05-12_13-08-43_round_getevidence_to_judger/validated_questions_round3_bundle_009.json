@@ -1,0 +1,37 @@
+{
+  "mcqs": [],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery array without any suppression measures undergoes complete thermal runaway propagation across all cells within approximately 5 seconds. An engineer tests two water spray strategies: (1) continuous spray applied for 20 seconds, and (2) intermittent spray with a duty cycle of 0.1 (spray period of 20 seconds, meaning spray is active for only 2 seconds per 20-second cycle). The continuous spray delays propagation to approximately 197 seconds but does not prevent it. The intermittent spray at DC 0.1 has no measurable effect on propagation, with the array completing propagation in approximately 7 seconds. A colleague argues that because the intermittent spray still delivers some cooling water, it should provide at least partial delay relative to the unprotected case. Identify the specific physical reason why the DC 0.1 intermittent spray fails to provide even partial delay, and explain why the 5-second propagation window is mechanistically critical to this failure."
+      },
+      "ground_truth": {
+        "gold_answer": "The thermal runaway propagation interval in the unprotected array lasts only approximately 5 seconds. The DC 0.1 intermittent spray has a 20-second period, meaning it delivers cooling for only 2 seconds out of every 20 seconds. During the critical 5-second propagation window, the average cooling power delivered by this intermittent pattern is insufficient to counteract the heat driving propagation. Because the propagation window is shorter than or comparable to the spray cycle period, the spray may not even be active during the critical interval, and even if partially active, the time-averaged cooling power is too low to affect the propagation dynamics. The 5-second window defines the interval during which suppression must be effective; any spray strategy whose average cooling power during that window falls below the threshold required to delay cell-to-cell heat transfer will have no measurable effect on propagation time. Continuous spray maintains cooling power throughout this window, which is why it achieves significant delay despite also not preventing propagation entirely.",
+        "must_include": [
+          "The propagation window is approximately 5 seconds, which is the interval during which suppression must act",
+          "DC 0.1 with a 20-second period delivers insufficient average cooling power during the propagation window",
+          "The intermittent spray cycle period is long relative to the propagation interval, so cooling is not reliably present during the critical window",
+          "Continuous spray maintains cooling throughout the propagation window and achieves delay, confirming that timing and average power during the window are the controlling factors",
+          "The failure is not due to zero water delivery but due to insufficient average cooling power during the specific propagation interval"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding that no intermittent spray strategy can ever delay propagation regardless of duty cycle or period",
+          "Concluding that continuous spray prevents propagation (it only delays it)",
+          "Attributing the failure solely to total water volume rather than to timing and average power during the propagation window",
+          "Claiming that a longer spray duration alone guarantees suppression without considering the propagation window duration"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Relationship between spray duty cycle, average cooling power during the propagation window, and the time-critical nature of thermal runaway suppression",
+        "primary_boundary": "The propagation window duration (~5 s) defines the relevant time scale for suppression effectiveness; strategies with insufficient average cooling power during that window provide no benefit regardless of total water delivered",
+        "intended_error_modes": [
+          "Attributing failure to total water volume rather than time-averaged power during the propagation window",
+          "Assuming any non-zero cooling contribution produces proportional delay",
+          "Ignoring the mismatch between spray cycle period and propagation window duration"
+        ]
+      }
+    }
+  ]
+}

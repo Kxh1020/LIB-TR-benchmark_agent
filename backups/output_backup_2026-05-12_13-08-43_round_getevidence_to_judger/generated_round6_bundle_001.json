@@ -1,0 +1,322 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An NCA battery pack is removed from service after 120 charge-discharge cycles. Capacity measurements confirm a 21.1% reduction from initial capacity, placing the battery below the 80% state-of-health threshold. The pack is subsequently subjected to thermal abuse at two different charge levels: one unit at 30% SOC and another at 100% SOC. An engineer evaluates the safety implications of the aged condition combined with the elevated charge state. Which of the following conclusions are supported by the combined effects of aging and SOC on thermal runaway behavior?",
+        "options": [
+          "A. The 100% SOC aged unit will reach thermal runaway onset at a lower temperature than the 30% SOC aged unit, and the time to onset will also be shorter.",
+          "B. Because aging has already degraded the battery, the additional influence of SOC on thermal runaway onset temperature becomes negligible compared to fresh batteries at the same SOC levels.",
+          "C. The CO concentration in gases released during thermal runaway of the aged battery will be higher at 100% SOC than at 30% SOC, while CO2 concentration will follow the opposite trend.",
+          "D. The interval between initial venting and ignition is expected to be shorter in the aged battery than in a fresh battery under the same thermal abuse conditions.",
+          "E. Aging below the 80% SOH threshold primarily affects capacity but does not alter the internal resistance sufficiently to change safety-relevant behavior.",
+          "F. The reduction in thermal runaway onset temperature between 30% and 100% SOC observed in aged batteries implies that fresh batteries at 100% SOC are necessarily safer than aged batteries at 30% SOC."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence shows that for 120-cycle aged NCA batteries, TR onset temperature decreases from 225.5°C at 30% SOC to 170.7°C at 100% SOC, and onset time is 324 s faster at 100% SOC. Both temperature and time effects are simultaneously supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+159+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The evidence shows a substantial SOC-dependent difference in TR onset temperature (225.5°C vs 170.7°C) and time (324 s) even in aged batteries, contradicting the claim that SOC influence becomes negligible after aging.",
+            "error_type": "causal overclaim / ignoring condition-dependent behavior",
+            "evidence_refs": [
+              "TR_Gasventing+159+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence directly states that for 120-cycle aged NCA batteries, CO concentration in TR gas increases with SOC while CO2 concentration decreases with SOC, making this an admissible conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+159+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence shows the interval between deflation and ignition contracts from 21 s (0 cycles) to 1 s (60 cycles) as cycle count increases. An aged battery (120 cycles, SOH ≤ 80%) would be expected to show an even shorter or comparably short interval relative to a fresh battery.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+159+Process_Safety_and_Environmental_Protection:C001",
+              "TR_Gasventing+159+Process_Safety_and_Environmental_Protection:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence explicitly states that when SOH falls to 80% or below, internal resistance increases greatly and affects safety performance. This directly contradicts the claim that internal resistance change is insufficient to alter safety behavior.",
+            "error_type": "condition violation distractor",
+            "evidence_refs": [
+              "TR_Gasventing+159+Process_Safety_and_Environmental_Protection:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence establishes TR onset temperatures for aged batteries at different SOC levels but provides no basis for comparing fresh batteries at 100% SOC against aged batteries at 30% SOC. This cross-condition comparison requires assumptions not supported by the evidence.",
+            "error_type": "unsupported extrapolation / scope expansion",
+            "evidence_refs": [
+              "TR_Gasventing+159+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Interaction between aging-induced degradation and SOC on thermal runaway onset characteristics and gas composition in NCA batteries",
+        "primary_boundary": "SOC effects on TR onset temperature and gas composition remain substantial even in aged batteries; aging below 80% SOH does affect safety-relevant internal resistance",
+        "intended_error_modes": [
+          "Assuming aging dominates and eliminates SOC influence",
+          "Ignoring that internal resistance changes at SOH ≤ 80% are safety-relevant",
+          "Cross-condition extrapolation comparing fresh vs aged at different SOC levels"
+        ],
+        "disallowed_extrapolations": [
+          "Comparing fresh 100% SOC to aged 30% SOC without evidence",
+          "Claiming SOC influence is negligible after aging",
+          "Generalizing ignition interval trend beyond 60 cycles to exact 120-cycle values"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "NCM523 pouch cells are preheated to 100°C and then subjected to rapid nail penetration. Cells are tested at SOC levels spanning 0% to 100%. The engineer observes that cells at 0–20% SOC show surface temperature peaks below 125°C with temperature rise rates below 3°C/s, while cells at 30% SOC and above show surface temperatures exceeding 380°C with rise rates above 30°C/s. A separate overheating-only test on the same chemistry shows thermal runaway trigger temperatures of 169–195°C across the same SOC range. The engineer must assess the safety classification and eruption behavior of these cells. Which of the following statements are admissible conclusions?",
+        "options": [
+          "A. The transition from mild to severe thermal runaway behavior occurs between 20% and 30% SOC under the combined mechanical and thermal loading condition, indicating a threshold rather than a continuous gradation.",
+          "B. The rapid penetration combined with 100°C preheating lowers the effective thermal runaway trigger temperature compared to overheating alone, meaning mechanical damage under elevated temperature conditions requires less additional thermal energy to initiate runaway.",
+          "C. Because 0–20% SOC cells remain below 125°C under this test protocol, they can be classified as thermally safe under all combined mechanical and thermal abuse scenarios.",
+          "D. At 100% SOC under rapid penetration with 100°C preheating, the eruption behavior is expected to involve a flame jet, representing a more severe ejection mode than observed at 50% SOC.",
+          "E. The increase in maximum temperature rise rate from 50% to 100% SOC (78.2°C/s to 93.5°C/s) is proportionally similar to the increase from 0% to 25% SOC, indicating a uniform monotonic scaling of severity with SOC.",
+          "F. A cell at 25% SOC under this protocol occupies an intermediate severity regime, with temperature rise rate between those of the mild and severe groups, and cannot be classified with either the 0–20% or the 30–100% SOC groups."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence defines 0–20% SOC as mild TR (rise rate 1–5°C/s) and 30–100% SOC as severe TR (>10°C/s), with 25% SOC as a distinct moderate state. The jump from ~2.5°C/s at 20% to 33.8°C/s at 30% confirms a threshold transition rather than continuous gradation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+160+Process_Safety_and_Environmental_Protection:C002",
+              "TR_Gasventing+160+Process_Safety_and_Environmental_Protection:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Evidence states that rapid penetration significantly reduced the TR trigger temperature threshold compared to overheating alone. Since overheating alone requires 169–195°C to trigger TR, but penetration at 100°C (below those temperatures) triggers TR, the mechanical damage under elevated temperature reduces the required thermal energy.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+160+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The mild TR classification applies specifically under the stated protocol (rapid penetration at 100°C preheating). Generalizing to 'all combined mechanical and thermal abuse scenarios' constitutes an inadmissible scope expansion. The evidence is condition-specific.",
+            "error_type": "scope expansion / overgeneralization distractor",
+            "evidence_refs": [
+              "TR_Gasventing+160+Process_Safety_and_Environmental_Protection:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence shows eruption mode transitions from smoke diffusion (30% SOC) → transverse spark jet (50% SOC) → longitudinal spark jet (75% SOC) → flame jet (100% SOC). A flame jet at 100% SOC is more severe than the transverse spark jet at 50% SOC, making this conclusion directly supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+160+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The rise rate increases from 2.2°C/s at 0% to 93.5°C/s at 100% SOC, but the increments are highly non-uniform: the jump from 20% to 25% SOC (2.51 to 7.31°C/s) and from 25% to 30% (7.31 to 33.8°C/s) are disproportionately large. The relationship is threshold-dependent, not uniformly monotonic.",
+            "error_type": "numerical exaggeration / incorrect functional form distractor",
+            "evidence_refs": [
+              "TR_Gasventing+160+Process_Safety_and_Environmental_Protection:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Evidence explicitly classifies 25% SOC as a distinct moderate TR state (rise rate 5–10°C/s), separate from both the mild group (0–20% SOC) and the severe group (30–100% SOC). This three-regime classification is directly supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+160+Process_Safety_and_Environmental_Protection:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "SOC-dependent TR severity regime classification and eruption mode progression under combined mechanical-thermal loading in NCM523 cells",
+        "primary_boundary": "Mild/moderate/severe TR classification is condition-specific to the stated protocol; the SOC-severity relationship is threshold-dependent, not uniformly monotonic; 25% SOC is a distinct intermediate regime",
+        "intended_error_modes": [
+          "Overgeneralizing mild TR classification to all abuse scenarios",
+          "Assuming uniform monotonic scaling of severity with SOC",
+          "Failing to recognize the non-proportional jump between SOC regimes"
+        ],
+        "disallowed_extrapolations": [
+          "Extending mild TR safety classification beyond the specific test protocol",
+          "Treating the SOC-to-severity relationship as linear or uniformly monotonic",
+          "Applying eruption mode observations to different chemistries or loading conditions"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A 4 Ah lithium iron phosphate cell undergoes thermal runaway inside an 80 L enclosed chamber. Measurements confirm that the released gas explosion propagates at supersonic speed and produces an average maximum overpressure of 383 kPa in the closed configuration. An explosion vent is then installed on the chamber. Tests with varying vent sizes show that as the dimensionless venting coefficient Kv decreases from 74.26 to 6.19, both peak overpressure and deflagration index decrease substantially. However, a venting efficiency index that accounts for both overpressure reduction and vent area cost reaches a maximum at an intermediate Kv value of 8.25 before declining. An engineer evaluates whether increasing vent area indefinitely is the optimal design strategy. Which of the following conclusions are admissible?",
+        "options": [
+          "A. Increasing vent area beyond the optimal Kv value of 8.25 continues to reduce overpressure but does so with diminishing returns in venting efficiency, making arbitrarily large vents suboptimal by the efficiency criterion.",
+          "B. The supersonic propagation speed measured in the closed chamber confirms that the explosion regime is detonation, which means the explosion vent must be designed to contain rather than relieve the pressure wave to be effective.",
+          "C. At small vent areas, the risk of secondary explosion may increase relative to intermediate vent sizes, because delayed vent opening allows greater accumulation of combustible gases that can mix with external air after venting.",
+          "D. Because the explosion vent reduced average maximum overpressure by over 93%, it can be concluded that the explosion vent eliminates the structural risk to the chamber under all TR gas release scenarios.",
+          "E. The optimal venting coefficient Kv = 8.25 represents a design point where the tradeoff between overpressure reduction and vent area cost is most favorable, but this optimum is specific to the tested configuration and may not transfer directly to chambers of different volume or cell capacity.",
+          "F. Reducing Kv from 74.26 to 6.19 produces a monotonic decrease in both peak overpressure and deflagration index, which implies that the minimum achievable overpressure is obtained at the smallest possible Kv value regardless of other design constraints."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The venting efficiency index Ks reaches a maximum at Kv = 8.25 and then decreases as vent area increases further. This means larger vents beyond this point reduce overpressure but at a cost that exceeds the efficiency benefit, making them suboptimal by this criterion. This is a direct implication of the non-monotonic Ks behavior.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+161+Process_Safety_and_Environmental_Protection:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "While the supersonic propagation confirms detonation, the evidence shows that explosion vents do effectively reduce overpressure by over 93% even under these conditions. The claim that vents must 'contain rather than relieve' detonation waves is not supported and contradicts the demonstrated effectiveness of relief venting.",
+            "error_type": "mechanism confusion / unsupported design recommendation",
+            "evidence_refs": [
+              "TR_Gasventing+161+Process_Safety_and_Environmental_Protection:C001",
+              "TR_Gasventing+161+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence states that small vent areas cause delayed opening due to higher opening pressure, leading to prolonged accumulation and increased concentration of combustible gases. After venting, high-temperature unburned gases can mix with external air to form a combustible cloud risking secondary explosion. This is directly supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+161+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The 93% reduction is a measured average across tested configurations, but the residual overpressure range (7.2–27 kPa) and variability across Kv values means structural risk is reduced, not eliminated. Claiming elimination of structural risk under 'all TR gas release scenarios' is an inadmissible overclaim beyond the tested conditions.",
+            "error_type": "protective mechanism overclaim distractor",
+            "evidence_refs": [
+              "TR_Gasventing+161+Process_Safety_and_Environmental_Protection:C001"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The optimal Kv = 8.25 is identified within the specific 80 L chamber with a 4 Ah LFP cell. The evidence does not support transferring this specific optimum to different chamber volumes or cell capacities, making the qualification that it is configuration-specific an admissible and necessary caveat.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+161+Process_Safety_and_Environmental_Protection:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "While decreasing Kv does reduce peak overpressure and deflagration index monotonically, the venting efficiency index Ks is non-monotonic and peaks at Kv = 8.25. The statement that the minimum overpressure at the smallest Kv is optimal 'regardless of other design constraints' ignores the efficiency penalty and potential secondary explosion risk at very small Kv values.",
+            "error_type": "ignoring boundary conditions / ignoring multi-factor interaction",
+            "evidence_refs": [
+              "TR_Gasventing+161+Process_Safety_and_Environmental_Protection:C002",
+              "TR_Gasventing+161+Process_Safety_and_Environmental_Protection:C003",
+              "TR_Gasventing+161+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Optimal explosion vent design under TR gas explosion conditions, including the non-monotonic efficiency relationship and secondary explosion risk at small vent areas",
+        "primary_boundary": "Venting efficiency is non-monotonic with vent area; overpressure reduction does not eliminate structural risk; optimal Kv is configuration-specific; small vent areas introduce secondary explosion risk",
+        "intended_error_modes": [
+          "Claiming venting eliminates structural risk from measured average reduction",
+          "Assuming monotonic optimality of smallest Kv ignoring efficiency and secondary explosion",
+          "Misinterpreting detonation classification as requiring containment rather than relief"
+        ],
+        "disallowed_extrapolations": [
+          "Transferring optimal Kv to different chamber volumes or cell capacities",
+          "Claiming 93% reduction equates to elimination of structural risk",
+          "Applying detonation classification to conclude vents are ineffective"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "An NCM523 battery module is operated at 50% SOC and subjected to a combined loading scenario: the cells are preheated to 100°C and then rapidly penetrated. Post-test analysis shows surface temperatures exceeding 400°C and a temperature rise rate of approximately 78°C/s. The module enclosure has a fixed-area explosion vent with a high opening pressure rating. An engineer raises two concerns: (1) whether the thermal runaway severity at 50% SOC under this combined loading would be classified differently than under overheating alone at the same SOC, and (2) whether the high opening pressure of the fixed vent introduces an additional hazard beyond the primary explosion overpressure. Provide a technically justified answer to both concerns, identifying the mechanism responsible for each effect."
+      },
+      "ground_truth": {
+        "gold_answer": "Concern 1: Under overheating alone, the TR trigger temperature for NCM523 at 50% SOC is approximately 185.9°C, meaning the cell must be heated to that temperature before runaway initiates. Under the combined loading of rapid penetration at 100°C preheating, TR is triggered at a much lower effective thermal threshold because mechanical damage from penetration introduces internal short circuits or structural disruption that reduces the energy barrier for runaway initiation. The evidence shows that rapid penetration significantly reduced the TR trigger temperature threshold compared to overheating alone. At 50% SOC under combined loading, the cell enters severe TR (rise rate ~78°C/s, surface temperature ~440°C), which is a more dangerous outcome than what overheating alone at 100°C would produce, since overheating alone at 100°C would not reach the 185.9°C trigger threshold without additional heating. The mechanism is that mechanical damage under elevated temperature lowers the effective activation condition for exothermic reactions, enabling TR at conditions that would be sub-threshold under purely thermal loading. Concern 2: A high opening pressure on a fixed vent with small effective area causes delayed vent opening. During the delay, combustible gases released from TR continue to accumulate inside the enclosure, increasing both concentration and total quantity of flammable gas. When the vent finally opens, high-temperature unburned gases are ejected and can mix with external air to form a combustible cloud. If this cloud contacts hot surfaces or ignition sources outside the enclosure, a secondary explosion can occur. The mechanism is that delayed venting converts a controlled pressure relief event into an uncontrolled release of a pre-mixed combustible cloud, creating a secondary ignition hazard that is spatially displaced from the primary event and potentially more difficult to control.",
+        "must_include": [
+          "Rapid penetration reduces TR trigger temperature compared to overheating alone",
+          "Mechanical damage under elevated temperature lowers the effective threshold for TR initiation",
+          "50% SOC under combined loading falls in severe TR regime with rise rate exceeding 10°C/s",
+          "High opening pressure causes delayed vent opening",
+          "Delayed opening leads to accumulation of combustible gases",
+          "Post-venting mixing of hot unburned gases with external air can form a combustible cloud",
+          "Combustible cloud creates secondary explosion risk"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming the combined loading result applies to all mechanical abuse scenarios regardless of preheating temperature",
+          "Stating that the secondary explosion risk is eliminated by any specific vent design without evidence",
+          "Quantifying the TR trigger temperature under combined loading without evidence support",
+          "Generalizing the optimal Kv from the LFP test to this NCM523 module configuration"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism by which combined mechanical-thermal loading lowers TR trigger conditions relative to thermal-only loading, and the secondary explosion mechanism introduced by high-opening-pressure vents with small area",
+        "primary_boundary": "TR trigger temperature reduction is specific to combined loading; secondary explosion risk is specific to small vent area with high opening pressure; optimal vent parameters from one configuration do not transfer directly",
+        "intended_error_modes": [
+          "Confusing TR trigger temperature under overheating alone with combined loading trigger conditions",
+          "Treating high opening pressure as uniformly beneficial for structural protection without recognizing secondary explosion risk",
+          "Failing to connect delayed vent opening to combustible cloud formation mechanism"
+        ]
+      }
+    }
+  ]
+}

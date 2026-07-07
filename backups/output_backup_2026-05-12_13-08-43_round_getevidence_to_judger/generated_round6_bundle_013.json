@@ -1,0 +1,325 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An NCM 811 lithium-ion battery is stored at 50% SOC in an open environment. A safety engineer argues that this SOC represents the safest storage condition based on explosion-related metrics. A second engineer counters that storing at 50% SOC does not eliminate explosion risk and that the lower explosion limit behavior across SOC levels is non-monotonic, which complicates straightforward SOC minimization strategies. Which of the following statements are consistent with both engineers' positions and the underlying physical reasoning?",
+        "options": [
+          "A. At 50% SOC, the lower explosion limit of the vent gas reaches its highest value among tested SOC levels, meaning a higher concentration of gas must accumulate before ignition becomes possible in open-space conditions.",
+          "B. Because the upper explosion limit increases continuously with SOC, the explosion range at 50% SOC is narrower than at 100% SOC, but the explosion pressure at 50% SOC at the lower explosion limit still exceeds 0.2 MPa, confirming that hazard is reduced but not eliminated.",
+          "C. The non-monotonic behavior of the lower explosion limit with SOC is driven by a monotonic increase in multi-carbon chain gas fraction as SOC rises, which directly lowers the ignition threshold at all SOC levels above 50%.",
+          "D. Since the maximum explosion flame temperature at 50% SOC is the lowest among tested conditions, this SOC can be considered thermally safe for all battery chemistries under open-space storage.",
+          "E. The highest explosion pressure among tested conditions occurs at 100% SOC at the lower explosion limit, which is consistent with the trend that higher SOC batteries release vent gas compositions with greater explosive energy.",
+          "F. A storage recommendation of 50% SOC is fully justified on explosion safety grounds because the lower explosion limit is maximized there, even though the explosion range still widens with increasing SOC above this point."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence states that LEL reaches a maximum at 50% SOC for NCM 811, meaning a higher gas concentration is required before the mixture enters the flammable range, which directly supports the first engineer's position on open-space safety.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+196+Journal_of_Energy_Storage:C003",
+              "TR_Gasventing+196+Journal_of_Energy_Storage:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The UEL increases continuously with SOC so the explosion range at 50% SOC is narrower than at 100% SOC. The minimum explosion pressure at LEL across all groups is the 50% SOC case, but it still exceeds 0.2 MPa, confirming hazard reduction without elimination. This satisfies both engineers' claims simultaneously.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+196+Journal_of_Energy_Storage:C002",
+              "TR_Gasventing+196+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Evidence states that LEL presents an inverted tendency with multi-carbon chain gas fraction — as multi-carbon chain gas fraction decreases, LEL increases. Option C inverts this by claiming the fraction increases monotonically with SOC, which contradicts the evidence that the fraction decreases at the SOC range where LEL increases.",
+            "error_type": "mechanism_inversion",
+            "evidence_refs": [
+              "TR_Gasventing+196+Journal_of_Energy_Storage:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The lowest flame temperature conclusion is specific to NCM 811 under the tested conditions. Extending this to 'all battery chemistries' is an unsupported generalization beyond the evidence scope.",
+            "error_type": "overgeneralization_across_chemistries",
+            "evidence_refs": [
+              "TR_Gasventing+196+Journal_of_Energy_Storage:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Evidence explicitly states the 100% SOC battery at LEL showed the highest explosion pressure of 0.4585 MPa. This is consistent with higher SOC producing more energetic vent gas compositions, as supported by the widening explosion range and increasing UEL with SOC.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+196+Journal_of_Energy_Storage:C005",
+              "TR_Gasventing+196+Journal_of_Energy_Storage:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "This appears cautious but is incorrect because it overstates the justification. The 50% SOC recommendation is supported for open-space conditions based on LEL maximization, but the explosion range still widens with SOC above 50% and the UEL continues increasing, meaning the recommendation cannot be described as fully justified on all explosion safety grounds without qualification.",
+            "error_type": "causal_overclaim_from_partial_metric",
+            "evidence_refs": [
+              "TR_Gasventing+196+Journal_of_Energy_Storage:C002",
+              "TR_Gasventing+196+Journal_of_Energy_Storage:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Non-monotonic LEL behavior with SOC and its implications for storage safety recommendations, combined with admissibility of hazard-reduction vs. hazard-elimination claims",
+        "primary_boundary": "50% SOC maximizes LEL and minimizes explosion flame temperature and pressure at LEL, but does not eliminate explosion risk; UEL and explosion range still increase with SOC above 50%",
+        "intended_error_modes": [
+          "inverting the causal relationship between multi-carbon chain gas fraction and LEL",
+          "overgeneralizing chemistry-specific results to all battery types",
+          "treating hazard reduction as hazard elimination"
+        ],
+        "disallowed_extrapolations": [
+          "Applying NCM 811 LEL/UEL trends to other chemistries without evidence",
+          "Concluding that 50% SOC is safe under all conditions, not just open-space",
+          "Treating LEL maximization as sufficient for complete explosion safety justification"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A lithium-ion battery undergoes thermal runaway in a sealed test chamber. In one trial, the chamber is filled with air; in a second trial, the chamber is filled with nitrogen. Both trials use identical cells at the same SOC. After thermal runaway, the gas volume collected in the nitrogen trial is measured to be lower than in the air trial. An engineer proposes that the nitrogen environment suppresses the overall severity of thermal runaway by preventing free radical chain reactions. A second engineer argues that while gas volume is reduced in nitrogen, the explosion risk of the collected gas relative to the air-trial gas cannot be determined from volume alone. Which of the following conclusions are admissible given the described conditions?",
+        "options": [
+          "A. The lower gas volume in the nitrogen trial is consistent with suppression of oxidation reactions that would otherwise generate additional combustion products, since combustible gases cannot react with oxygen in the nitrogen environment.",
+          "B. Because the nitrogen trial produces less total gas, the explosion risk of the nitrogen-trial gas is necessarily lower than that of the air-trial gas at the same SOC.",
+          "C. The reduction in gas volume in nitrogen relative to air is evidence that the chain reaction of free radicals was inhibited, which is a mechanistically admissible explanation for the observed difference.",
+          "D. In the air trial at 100% SOC, the near-complete consumption of oxygen in the chamber indicates that combustion reactions contributed substantially to the total gas generation, beyond what would occur from internal battery reactions alone.",
+          "E. The nitrogen environment eliminates thermal runaway entirely by removing the oxidant, so the temperature rise observed in the nitrogen trial must be lower than the safety valve opening temperature.",
+          "F. The second engineer's position is mechanistically sound because gas volume reduction in nitrogen reflects suppression of oxidation-driven gas generation, but the composition and flammability characteristics of the remaining gas are not determined by volume alone."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence directly states that in nitrogen, combustible gases cannot undergo oxidation with O2 and free radical chain reactions are inhibited, resulting in reduced gas generation. This mechanistically explains the lower volume observed.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+195+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence states that explosion risk in nitrogen is lower than in air, but this is a property of the atmosphere, not solely of gas volume. Inferring lower explosion risk from lower volume alone conflates two distinct variables. The composition of the remaining gas determines its flammability, not volume alone.",
+            "error_type": "causal_overclaim_from_single_variable",
+            "evidence_refs": [
+              "TR_Gasventing+195+Journal_of_Energy_Storage:C003",
+              "TR_Gasventing+195+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence explicitly identifies inhibition of free radical chain reactions as the mechanism responsible for reduced gas generation in nitrogen. This is a mechanistically admissible and evidence-supported explanation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+195+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence states that at 100% SOC in air, the battery consumed almost all the oxygen in the container, indicating severe combustion. This implies that combustion reactions contributed to gas generation beyond the internal battery decomposition reactions alone, which is a supported inference.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+195+Journal_of_Energy_Storage:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence shows that thermal runaway still occurs in nitrogen — the nitrogen environment reduces explosion risk and gas volume but does not eliminate thermal runaway. The internal exothermic reactions of battery materials proceed independently of oxygen availability. Claiming the temperature stays below the safety valve opening temperature contradicts the experimental setup where TR is observed in nitrogen.",
+            "error_type": "mechanism_overclaim_protective_intervention",
+            "evidence_refs": [
+              "TR_Gasventing+195+Journal_of_Energy_Storage:C005",
+              "TR_Gasventing+195+Journal_of_Energy_Storage:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The second engineer's position is admissible. Gas volume reduction in nitrogen reflects suppression of oxidation-driven generation, but the flammability and explosion risk of the remaining gas depend on its composition, not its volume. This is consistent with the evidence that explosion risk in nitrogen is lower than in air, but this is an atmospheric effect, not a volume effect.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+195+Journal_of_Energy_Storage:C003",
+              "TR_Gasventing+195+Journal_of_Energy_Storage:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism of gas volume reduction in nitrogen atmosphere and admissibility of explosion risk inferences from volume versus composition",
+        "primary_boundary": "Nitrogen reduces gas volume via free radical chain reaction inhibition, but explosion risk depends on gas composition and atmosphere, not volume alone; thermal runaway still occurs in nitrogen",
+        "intended_error_modes": [
+          "inferring explosion risk from gas volume alone",
+          "claiming nitrogen eliminates thermal runaway rather than modifying its products",
+          "confusing atmospheric explosion risk reduction with internal reaction suppression"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding nitrogen prevents thermal runaway based on gas volume reduction",
+          "Treating volume as a proxy for flammability or explosion risk without composition data"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "During accelerated rate calorimetry testing of a lithium-ion cell, three sequential thermal events are detected. The first event begins near 80–100°C and is exothermic. The second event, occurring near 120–150°C, is associated with a steep and rapid temperature rise. The third event, occurring above 180°C, involves oxygen release from an electrode material. A battery safety engineer is evaluating which event represents the point of no return for thermal runaway progression and which measurements at the cell surface are sufficient to confirm each event has occurred. Which of the following statements are admissible?",
+        "options": [
+          "A. The steep temperature rise associated with the second event is mechanistically consistent with a large local current generated by direct contact between electrodes following separator failure, rather than from the exothermic reaction of electrode materials with electrolyte.",
+          "B. The first event can be confirmed as complete by a surface temperature measurement reaching 100°C, because the exothermic reaction between electrolyte and anode produces a surface-detectable heat signature that uniquely identifies this stage.",
+          "C. The third event, involving cathode decomposition and oxygen release, can amplify the severity of any ongoing electrolyte combustion reactions by providing an internal oxidant source, making it a critical escalation point even if the cell has already passed through the second event.",
+          "D. A self-heating rate of 0.2 K/min measured at the cell surface is sufficient to confirm that the separator has mechanically failed, because this rate threshold is defined as the thermal runaway onset.",
+          "E. The second event represents a more abrupt escalation in temperature rise rate than the first event, which is consistent with the transition from a distributed exothermic reaction to a concentrated current-driven heating mechanism.",
+          "F. Because the third event occurs above 180°C and involves exothermic cathode decomposition, it is the earliest event that can trigger the onset of thermal runaway in a cell that has not yet reached the first event temperature."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence states the mechanical breakdown of the separator at 120–150°C leads to internal short circuit and steep temperature rise due to large local currents. This is mechanistically distinct from the distributed exothermic reaction of the first event, and the option correctly attributes the steep rise to current-driven heating following electrode contact.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+197+Journal_of_Energy_Storage:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Surface temperature reaching 100°C does not uniquely confirm that the SEI damage and exothermic electrolyte-anode reaction has completed. Surface temperature is an indirect and non-specific indicator; other heat sources or ambient conditions could produce the same surface reading. This is a measurement scope overclaim.",
+            "error_type": "surface_measurement_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+197+Journal_of_Energy_Storage:C001"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence states that above 180°C the cathode decomposes exothermically and releases oxygen. Internal oxygen release can support or amplify combustion of electrolyte, making the third event an escalation mechanism even after the second event has occurred. This is a mechanistically admissible multi-step interaction.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+197+Journal_of_Energy_Storage:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "A self-heating rate of 0.2 K/min is defined as the onset temperature of thermal runaway, not as confirmation of separator failure. Separator failure occurs near 120–150°C and is identified by a steep temperature rise, not by this low self-heating rate threshold. Conflating the two thresholds is a mechanism substitution error.",
+            "error_type": "mechanism_substitution_threshold_confusion",
+            "evidence_refs": [
+              "TR_Gasventing+197+Journal_of_Energy_Storage:C004",
+              "TR_Gasventing+197+Journal_of_Energy_Storage:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The first event involves distributed exothermic reaction between electrolyte and anode following SEI damage. The second event involves internal short circuit from separator failure generating large local currents, producing a steep temperature rise. The transition from distributed to concentrated heating is mechanistically consistent with the described progression and supports the characterization of the second event as more abrupt.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+197+Journal_of_Energy_Storage:C001",
+              "TR_Gasventing+197+Journal_of_Energy_Storage:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The third event occurs above 180°C, well after the first event at 80–100°C and the second at 120–150°C. Claiming it can trigger thermal runaway in a cell that has not yet reached the first event temperature inverts the sequential thermal runaway progression described in the evidence. This is a causal ordering error.",
+            "error_type": "causal_ordering_inversion",
+            "evidence_refs": [
+              "TR_Gasventing+197+Journal_of_Energy_Storage:C001",
+              "TR_Gasventing+197+Journal_of_Energy_Storage:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Sequential thermal runaway stages and admissibility of surface measurement inferences for identifying each stage, plus mechanism attribution for each temperature-defined event",
+        "primary_boundary": "Each thermal event has a distinct mechanism and temperature range; surface temperature alone cannot confirm internal event completion; the 0.2 K/min threshold marks TR onset, not separator failure",
+        "intended_error_modes": [
+          "conflating the 0.2 K/min self-heating threshold with separator failure confirmation",
+          "treating surface temperature as a unique identifier of a specific internal event",
+          "inverting the causal sequence of thermal runaway stages"
+        ],
+        "disallowed_extrapolations": [
+          "Using surface temperature to confirm completion of a specific internal reaction stage",
+          "Applying the 0.2 K/min threshold as a separator failure indicator",
+          "Treating cathode decomposition as a trigger for events preceding it in the temperature sequence"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "An NCM 811 battery at 100% SOC undergoes thermal runaway in an air environment. A safety engineer observes that the lower explosion limit of the vent gas at this SOC is lower than the lower explosion limit at 50% SOC, while the upper explosion limit is higher than at 50% SOC. The engineer also notes that the explosion pressure at the lower explosion limit for the 100% SOC case is the highest among all tested SOC levels. Separately, it is known that higher SOC batteries require less heat input to trigger thermal runaway onset and exhibit lower thermal runaway onset temperatures. Explain the combined safety implication of these two trends — the explosion characteristics of the vent gas and the thermal runaway triggering behavior — for the risk profile of a 100% SOC NCM 811 battery compared to a 50% SOC battery. Your answer should address both the ignition hazard of the released gas and the ease of reaching the conditions under which that gas is released."
+      },
+      "ground_truth": {
+        "gold_answer": "A 100% SOC NCM 811 battery presents a compounded risk relative to a 50% SOC battery through two reinforcing mechanisms. First, the vent gas at 100% SOC has a lower LEL than at 50% SOC, meaning the gas mixture becomes flammable at a lower concentration in air, and its wider explosion range (lower LEL, higher UEL) means a broader range of gas-air mixing ratios can sustain ignition or explosion. The highest explosion pressure at LEL among all tested SOC levels further indicates that if ignition occurs, the resulting explosion is more energetic. Second, the 100% SOC battery requires less heat input to reach thermal runaway onset and has a lower onset temperature, meaning the conditions under which this more hazardous vent gas is released are reached more easily. The combination means that a 100% SOC battery is both more likely to release vent gas under a given thermal stress and, once released, that gas presents a higher ignition and explosion hazard than at 50% SOC. These two trends are not independent; together they define a risk profile where the barrier to gas release is lower and the consequence of that release is more severe.",
+        "must_include": [
+          "Lower LEL at 100% SOC means flammability is reached at lower gas concentration compared to 50% SOC",
+          "Wider explosion range at 100% SOC compared to 50% SOC",
+          "Highest explosion pressure at LEL occurs at 100% SOC",
+          "Lower thermal runaway onset temperature and less heat required at higher SOC means gas release conditions are more easily reached",
+          "The two trends compound the risk: easier triggering combined with more hazardous released gas"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming the 100% SOC battery will always ignite or explode under normal conditions",
+          "Applying these conclusions to battery chemistries other than NCM 811 without qualification",
+          "Stating that 50% SOC eliminates explosion risk rather than reducing it",
+          "Inferring that the higher explosion pressure at 100% SOC is caused solely by gas volume rather than composition"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Integration of SOC-dependent vent gas explosion characteristics with SOC-dependent thermal runaway triggering behavior to construct a compound risk argument",
+        "primary_boundary": "Both the gas hazard and the triggering ease increase with SOC for NCM 811; the risk is compounded, not additive in a simple sense; conclusions are specific to NCM 811 under tested conditions",
+        "intended_error_modes": [
+          "Treating the two trends as independent rather than compounding",
+          "Overstating the 50% SOC recommendation as eliminating risk",
+          "Attributing explosion pressure differences solely to gas volume rather than composition and flammability properties",
+          "Generalizing to other chemistries without qualification"
+        ]
+      }
+    }
+  ]
+}

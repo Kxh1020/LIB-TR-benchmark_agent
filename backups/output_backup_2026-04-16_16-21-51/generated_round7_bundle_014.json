@@ -1,0 +1,367 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A 280 Ah LiFePO4 prismatic cell undergoes thermal runaway triggered by external heating. Engineers measure maximum cell temperature, total gas volume, and vent gas composition at 25%, 50%, and 75% SOC. They observe that the flammable range of the vent gas mixture is widest at 50% SOC, not 75% SOC, despite 75% SOC producing far greater gas volumes and higher temperatures. Which of the following conclusions are supported by this observation?",
+        "options": [
+          "A. The flammability hazard posed by vent gases does not scale monotonically with SOC because gas composition shifts—specifically the marked decrease in CO2 fraction and increase in H2 fraction at higher SOC—alter the flammability window in a non-additive way.",
+          "B. Since 75% SOC produces the highest gas temperature and volume, it necessarily presents the greatest deflagration risk, and the wider flammable range at 50% SOC is an artifact of measurement error.",
+          "C. The reduction in CO2 fraction at 75% SOC relative to 50% SOC reduces the fire-retardant contribution within the gas mixture, which narrows the upper flammability boundary even as total combustible gas volume increases.",
+          "D. Because the lower flammability limit at 75% SOC is lower than at 50% SOC, ignition of the 75% SOC vent gas requires a higher ambient gas concentration to initiate, making it safer in confined spaces.",
+          "E. A single hazard metric combining gas volume and flammable range would rank 50% SOC as posing greater deflagration risk than 75% SOC, even though 75% SOC generates more than seven times the gas volume of 25% SOC.",
+          "F. The non-monotonic flammability behavior implies that thermal runaway severity, measured by peak temperature, is a reliable proxy for deflagration risk across all SOC levels.",
+          "G. At 75% SOC, the upper flammability limit contracts substantially compared to 50% SOC, meaning that even though ignition is easier, the concentration window over which violent deflagration can occur is significantly narrower."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "FHI order 50%>75%>25% and CO2/H2 composition shifts confirm non-monotonic flammability with SOC.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C005",
+              "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Directly contradicts evidence that FHI and flammable range do not peak at 75% SOC; measurement artifact claim is unsupported.",
+            "error_type": "causal overclaim / condition violation",
+            "evidence_refs": [
+              "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C005",
+              "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C010"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "CO2 fraction drops from 40% at 50% SOC to 12% at 75% SOC, reducing fire-retardant effect and narrowing UFL window.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C004",
+              "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C007"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Lower LFL at 75% SOC (~5%) means ignition requires less gas concentration, not more—the reasoning is inverted.",
+            "error_type": "mechanism confusion / direction reversal",
+            "evidence_refs": [
+              "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C006"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Combining volume and flammable range into a single ranking is not supported; evidence addresses FHI and RF separately without authorizing composite ranking.",
+            "error_type": "scope expansion / unsupported composite metric",
+            "evidence_refs": [
+              "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C005",
+              "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C010"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Evidence explicitly shows peak temperature is not a reliable proxy for deflagration risk; FHI is non-monotonic with SOC.",
+            "error_type": "overgeneralization / causal overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "UFL at 75% SOC is 4.7–6.6% versus 55–65% at 50% SOC; narrower window means violent deflagration range contracts despite easier ignition.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C007",
+              "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C006"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Non-monotonic relationship between SOC, gas composition, and flammability hazard metrics",
+        "primary_boundary": "Higher SOC produces more gas and higher temperature but does not necessarily produce wider flammable range due to composition shifts",
+        "intended_error_modes": [
+          "Assuming thermal severity monotonically implies flammability risk",
+          "Inverting LFL reasoning for ignition threshold",
+          "Constructing unsupported composite hazard metric"
+        ],
+        "disallowed_extrapolations": [
+          "Ranking deflagration risk by gas volume alone",
+          "Using peak temperature as proxy for deflagration hazard",
+          "Attributing non-monotonic behavior to measurement artifact"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "LiFePO4 battery thermal runaway gases are released into a confined space that also contains leaking methane. At 75% SOC, the TR gas H2 fraction is approximately 26% and CO2 fraction is approximately 12%. An engineer evaluates explosion risk as methane concentration in the space rises from 2% to 12%. Explosion overpressure peaks between 4–6% methane, while free radical concentration peaks at 8–9% methane. Which statements are admissible given these conditions?",
+        "options": [
+          "A. The concentration at which explosion overpressure peaks is lower than the concentration at which free radical activity peaks, indicating that macroscopic pressure buildup and chain-branching radical generation are temporally decoupled.",
+          "B. At methane concentrations above 8%, the explosion overpressure continues to rise because higher radical concentrations drive more complete combustion.",
+          "C. The decrease in CO2 fraction at 75% SOC relative to lower SOC conditions reduces the fire-retardant buffering capacity of the TR gas, making the mixture more susceptible to ignition at lower methane additions.",
+          "D. Post-explosion exhaust at methane concentrations exceeding 8% will contain elevated CO relative to CO2, because oxygen deficiency shifts combustion toward incomplete oxidation pathways.",
+          "E. Because peak overpressure occurs at 4–6% methane, the hazard is fully controlled by ensuring methane concentration stays below 4%, with no residual explosion risk from the TR gas alone.",
+          "F. The fire-retardant effect of CO2 in the TR gas is sufficient at 75% SOC to prevent ignition of the mixture regardless of methane concentration.",
+          "G. The temporal separation between peak radical concentration and peak overpressure implies that using radical concentration as the sole predictor of explosion severity would overestimate risk at methane concentrations above the overpressure peak."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence directly states peak overpressure at 4–6% methane while radical peak is at 8–9%, confirming temporal decoupling.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+158+Fuel:C004",
+              "TR_Gasventing+158+Fuel:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Overpressure peaks at 4–6% and declines above that; higher radical concentration above 8% does not sustain rising overpressure—oxygen deficiency limits combustion.",
+            "error_type": "causal overclaim / ignoring oxygen limitation regime",
+            "evidence_refs": [
+              "TR_Gasventing+158+Fuel:C002",
+              "TR_Gasventing+158+Fuel:C003",
+              "TR_Gasventing+158+Fuel:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "CO2 drops from ~40% at 50% SOC to ~12% at 75% SOC; reduced CO2 lowers fire-retardant buffering, increasing susceptibility to ignition with methane addition.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+158+Fuel:C001",
+              "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence states that above 8% methane, oxygen deficiency causes incomplete combustion with sharp CO increase and CO2 reduction in exhaust.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+158+Fuel:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "TR gas itself has an LEL of ~5–11%; explosion risk exists from TR gas alone even without methane, so staying below 4% methane does not eliminate hazard.",
+            "error_type": "protective mechanism overclaim / ignoring TR gas baseline flammability",
+            "evidence_refs": [
+              "TR_Gasventing+158+Fuel:C005",
+              "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C006"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "CO2 at 75% SOC is only ~12%; evidence shows UEL expands significantly at high SOC, meaning ignition is not prevented by residual CO2.",
+            "error_type": "protective mechanism overclaim / condition violation",
+            "evidence_refs": [
+              "TR_Gasventing+158+Fuel:C001",
+              "TR_Gasventing+158+Fuel:C005"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "Temporal decoupling means radical peak at 8–9% does not correspond to overpressure peak at 4–6%; using radicals alone overestimates severity above the overpressure peak.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+158+Fuel:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Decoupling between free radical concentration and explosion overpressure; regime change above oxygen-deficient threshold",
+        "primary_boundary": "Peak overpressure occurs at lower methane concentration than peak radical activity; above 8% methane, oxygen deficiency dominates and shifts hazard character",
+        "intended_error_modes": [
+          "Assuming radical concentration directly predicts overpressure",
+          "Claiming methane control below 4% eliminates all explosion risk",
+          "Assuming CO2 fraction at 75% SOC is sufficient to prevent ignition"
+        ],
+        "disallowed_extrapolations": [
+          "Monotonic relationship between methane concentration and explosion severity",
+          "Radical concentration as sole explosion severity predictor",
+          "CO2 fraction at 75% SOC providing complete fire suppression"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Two 314 Ah LiFePO4 batteries undergo thermal runaway—one via overheating, one via overcharging. Both produce gas mixtures dominated by H2, CO2, and CO. The overheating gas reaches maximum explosion overpressure at a concentration of 15.86%, substantially below the calculated stoichiometric concentration of 28.19%. Engineers propose that this gap is diagnostic of a specific suppression mechanism within the gas mixture itself. Which conclusions are admissible?",
+        "options": [
+          "A. The deviation of the actual Pmax concentration from stoichiometric is consistent with CO and CO2 within the TR gas interfering with chain-branching reactions, preventing complete combustion even at the prescribed test conditions.",
+          "B. Because overcharging generates approximately 26% more total gas volume than overheating, the overcharging gas mixture will always produce higher maximum explosion overpressure than the overheating gas mixture.",
+          "C. The suppressive effect of CO2 and CO on chain reaction propagation implies that increasing H2 fraction—as occurs at higher SOC—would reduce the gap between actual and stoichiometric Pmax concentrations.",
+          "D. Post-explosion residual gas after a lean-oxygen event contains elevated CO relative to pre-explosion levels, which itself constitutes a secondary flammable hazard since CO has a non-negligible flammability range.",
+          "E. The Pmax concentration gap between actual (15.86%) and stoichiometric (28.19%) proves that the TR gas cannot explode at any concentration above 15.86%, since the suppressive components dominate at higher concentrations.",
+          "F. The consumption order of combustible gases during explosion—where hydrocarbons are consumed before H2, and H2 before CO—is consistent with differences in the reactivity of hydrogen atoms across these species.",
+          "G. Since both overheating and overcharging TR gases contain CO2 and CO, both mixtures will exhibit Pmax concentration values below their respective stoichiometric concentrations, though the magnitude of the gap may differ."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D",
+          "F",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence explicitly attributes the stoichiometric gap to suppressive effects of CO2 and CO inhibiting chain reaction mechanism.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Greater gas volume does not determine Pmax; composition and chain reaction dynamics govern overpressure, not total volume alone.",
+            "error_type": "causal overclaim / single-variable attribution",
+            "evidence_refs": [
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C003",
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Higher SOC increases H2 fraction and decreases CO2 fraction; reduced CO2 suppression would shrink the gap between actual and stoichiometric Pmax concentration.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C005",
+              "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C004",
+              "TR_Gasventing+158+Fuel:C001"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence shows CO increases 280.95% post-explosion in lean-oxygen state; CO is a flammable gas, constituting a secondary explosion hazard.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C007",
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C009"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Pmax occurring at 15.86% does not mean explosion is impossible above that concentration; it means the chain reaction is suppressed at stoichiometric conditions, not that higher concentrations are inert.",
+            "error_type": "boundary violation / overclaim from threshold",
+            "evidence_refs": [
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C004",
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Gas consumption order C2H6>C2H4>CH4>H2>CO negatively correlates with Mulliken charge of hydrogen atoms, consistent with reactivity differences.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C006"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "Both TR gas types contain CO2 and CO; the suppression mechanism applies to both, though proportions differ, so both Pmax concentrations should fall below stoichiometric.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C001",
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C002",
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism by which gas composition shifts the actual Pmax concentration below stoichiometric; secondary hazard from post-explosion CO enrichment",
+        "primary_boundary": "Pmax concentration below stoichiometric indicates suppression, not inertness above that concentration",
+        "intended_error_modes": [
+          "Equating greater gas volume with higher Pmax",
+          "Interpreting Pmax concentration as an upper ignition boundary",
+          "Ignoring post-explosion CO as a secondary flammable hazard"
+        ],
+        "disallowed_extrapolations": [
+          "Gas volume as determinant of explosion overpressure",
+          "Pmax concentration as upper safe limit for explosion risk",
+          "Suppression mechanism preventing all combustion above Pmax concentration"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery safety engineer is evaluating vented gases from a 280 Ah LiFePO4 cell at 75% SOC following thermal runaway. The engineer notes that the lower flammability limit of the vent gas is approximately 5%—lower than at 50% SOC—and concludes that 75% SOC presents the greatest overall flammability hazard. A colleague argues this conclusion is incomplete. Explain, using the relationship between gas composition, flammability limits, and flammable range, why the colleague's objection is technically valid. Identify the specific compositional mechanism responsible and state which SOC level presents the greatest deflagration risk according to the available evidence."
+      },
+      "ground_truth": {
+        "gold_answer": "The engineer's conclusion is incomplete because a lower LFL indicates easier ignition but does not capture the full flammable range. At 75% SOC, the upper flammability limit contracts sharply to approximately 4.7–6.6%, compared to 55–65% at 50% SOC. This means the concentration window over which sustained deflagration can occur is approximately 17.6% at 75% SOC versus approximately 48.5% at 50% SOC. The compositional mechanism is the marked decrease in CO2 fraction (from ~40% at 50% SOC to ~12% at 75% SOC) and the corresponding increase in H2 fraction. CO2 acts as a fire-retardant component; its reduction at high SOC alters the combustion boundary structure, narrowing the UFL substantially even as H2 content rises. The Flammability Hazard Index and flammable range both indicate that 50% SOC presents the greatest deflagration risk, not 75% SOC, despite 75% SOC producing far greater gas volumes and higher temperatures. Thermal severity and deflagration risk are therefore not equivalent metrics.",
+        "must_include": [
+          "Lower LFL at 75% SOC indicates easier ignition but does not represent overall flammability hazard",
+          "Upper flammability limit at 75% SOC contracts to approximately 4.7–6.6%, far below 50% SOC value of 55–65%",
+          "Flammable range at 75% SOC (~17.6%) is smaller than at 50% SOC (~48.5%)",
+          "CO2 fraction decreases from ~40% at 50% SOC to ~12% at 75% SOC, reducing fire-retardant buffering",
+          "50% SOC presents the greatest deflagration risk based on flammable range and FHI",
+          "Thermal severity (peak temperature, gas volume) is not a reliable proxy for deflagration risk"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming 75% SOC is safe because its flammable range is narrow",
+          "Attributing UFL contraction to H2 increase alone without referencing CO2 decrease",
+          "Generalizing the non-monotonic SOC-flammability relationship to all battery chemistries",
+          "Using gas volume as a determinant of deflagration risk"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinction between LFL-based ignition ease and flammable range as a measure of deflagration risk; compositional mechanism for non-monotonic SOC-flammability relationship",
+        "primary_boundary": "LFL alone is insufficient to characterize overall flammability hazard; UFL contraction at 75% SOC narrows the deflagration window despite lower LFL",
+        "intended_error_modes": [
+          "Equating lower LFL with greater overall flammability hazard",
+          "Assuming flammability risk increases monotonically with SOC",
+          "Ignoring UFL contraction as a counterbalancing factor",
+          "Attributing hazard ranking solely to gas volume or peak temperature"
+        ]
+      }
+    }
+  ]
+}

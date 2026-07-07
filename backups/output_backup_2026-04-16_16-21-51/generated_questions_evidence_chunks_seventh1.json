@@ -1,0 +1,317 @@
+{
+  "TR_Gasventing+65+Energies__TR_Gasventing+66+Energies__TR_Gasventing+67+Energies": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A 50 Ah LFP prismatic cell at 100% SOC undergoes thermal abuse testing in a sealed chamber. The surface temperature reaches 195\u00b0C, at which point the safety valve opens and chamber pressure begins to rise at 110 kPa/s. The cell voltage drops to zero instantly, and the temperature rise rate increases to 37\u00b0C/min. The cell eventually reaches a maximum surface temperature of 320\u00b0C. Post-test analysis reveals that H2 comprises approximately 50% of the normalized gas volume, and the cell experienced 18% mass loss. Which of the following statements are consistent with the observed behavior?",
+          "options": [
+            "A. The voltage collapse at 195\u00b0C indicates that the safety valve opening directly caused internal short-circuit failure, triggering the accelerated temperature rise.",
+            "B. The chamber pressure rise rate of 110 kPa/s at valve opening reflects primarily gas generation from thermal decomposition reactions rather than release of pre-existing internal pressure.",
+            "C. The maximum surface temperature of 320\u00b0C is insufficient to fully evaporate ethylene carbonate (EC) from the electrolyte, implying that liquid ejection may occur during the event.",
+            "D. The 18% mass loss is attributable entirely to H2 gas release, since H2 comprises 50% of the gas volume and is the lightest species.",
+            "E. The temperature rise rate of 37\u00b0C/min at 195\u00b0C indicates that exothermic decomposition reactions have become self-sustaining, independent of external heating."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "The voltage collapse and accelerated temperature rise both occur when surface temperature reaches 190-210\u00b0C, which is the thermal runaway trigger temperature range for LFP at 100% SOC. The safety valve opening at ~160\u00b0C precedes this event. The voltage collapse indicates onset of thermal runaway reactions, not a consequence of valve opening causing short-circuit.",
+              "error_type": "causal_reversal",
+              "evidence_refs": [
+                "TR_Gasventing+65+Energies:C001",
+                "TR_Gasventing+65+Energies:C006"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The safety valve opens at approximately 160\u00b0C, well before the 195\u00b0C thermal runaway trigger. At valve opening, only a small amount of gas and electrolyte is released because the valve opening pressure threshold is reached. The 110 kPa/s pressure rise occurs during the first eruption stage when thermal runaway begins, not at the initial valve opening. The pressure rise reflects both pre-existing pressure release and accelerating gas generation.",
+              "error_type": "mechanism_confusion",
+              "evidence_refs": [
+                "TR_Gasventing+65+Energies:C009",
+                "TR_Gasventing+65+Energies:C010"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Ethylene carbonate has a boiling point of approximately 244\u00b0C. The maximum surface temperature of 320\u00b0C exceeds this, but LFP cells have been observed to eject liquid EC when surface temperatures do not exceed 350\u00b0C during thermal runaway, because internal temperature distribution is non-uniform and some regions may remain below the evaporation threshold. The 320\u00b0C maximum is close to this boundary.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+67+Energies:C005",
+                "TR_Gasventing+65+Energies:C002"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "H2 comprises 50% of the normalized gas volume, not 50% of the mass loss. Mass loss includes electrolyte vapor, other gas species (CO, CO2, hydrocarbons), and potentially liquid electrolyte ejection. H2 is the lightest species but contributes minimally to total mass loss despite its large volume fraction. The 18% mass loss cannot be attributed entirely to H2.",
+              "error_type": "unit_confusion",
+              "evidence_refs": [
+                "TR_Gasventing+65+Energies:C005",
+                "TR_Gasventing+65+Energies:C008"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "The temperature rise rate accelerates to 37\u00b0C/min when surface temperature reaches 190-210\u00b0C, which is the thermal runaway trigger range for LFP at 100% SOC. This acceleration indicates that exothermic decomposition reactions (SEI breakdown, electrolyte decomposition, cathode-electrolyte reactions) have become self-sustaining and dominate over external heating. The voltage collapse to zero confirms loss of electrochemical function and onset of internal chemical decomposition.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+65+Energies:C001"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-stage thermal runaway progression and mechanism identification from observable signals",
+          "primary_boundary": "Distinguishing between valve opening effects, thermal runaway trigger, and temperature-dependent phase behavior; separating volume-based and mass-based composition metrics",
+          "intended_error_modes": [
+            "causal_reversal",
+            "mechanism_confusion",
+            "unit_confusion"
+          ],
+          "disallowed_extrapolations": [
+            "Assuming valve opening causes thermal runaway",
+            "Assuming chamber pressure rise reflects only pre-existing pressure",
+            "Assuming volume fraction equals mass fraction"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "Two sets of prismatic cells undergo thermal abuse testing at 100% SOC: Set A consists of 117 Ah NCM811 cells, and Set B consists of 50 Ah LFP cells. Both sets are tested under identical external heating rates of 5\u00b0C/min. Post-test gas analysis reveals that Set A produces CO at 2.25 \u00d7 10^5 ppmv with negligible CO2, while Set B produces CO2 at 1.65 \u00d7 10^5 ppmv with negligible CO. Set A reaches a maximum surface temperature of 511\u00b0C, while Set B reaches 320\u00b0C. Normalized gas production is measured at 0.09 mol/Ah for Set A and 0.03 mol/Ah for Set B. Which of the following conclusions are defensible from these observations?",
+          "options": [
+            "A. The absence of CO in Set B emissions indicates that LFP cells do not undergo electrolyte decomposition reactions that produce CO as an intermediate species.",
+            "B. The CO-to-CO2 conversion in Set B is attributable to the LFP cathode material remaining stable at the observed maximum temperature, preventing catalytic oxidation pathways that would otherwise consume oxygen and leave CO unreacted.",
+            "C. The threefold difference in normalized gas production (0.09 vs. 0.03 mol/Ah) implies that NCM811 cells undergo more extensive electrolyte decomposition than LFP cells under identical thermal abuse conditions.",
+            "D. The maximum temperature difference (511\u00b0C vs. 320\u00b0C) is the primary cause of the difference in normalized gas production, and if Set B were heated to 511\u00b0C, its normalized gas production would approach 0.09 mol/Ah.",
+            "E. The presence of CO rather than CO2 in Set A emissions indicates that the NCM811 cathode undergoes oxygen release at temperatures above 500\u00b0C, creating a reducing environment that prevents CO oxidation to CO2.",
+            "F. Set A cells pose a greater acute inhalation hazard than Set B cells in an enclosed space, since CO is more immediately toxic than CO2 at comparable concentrations."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "C",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "The absence of CO in Set B does not mean CO is not produced as an intermediate. The evidence indicates that CO is entirely converted to CO2 in LFP cells, implying that CO is produced but subsequently oxidized. The LFP cathode stability up to 500\u00b0C allows complete oxidation of CO to CO2, whereas NCM cathodes release oxygen and decompose at lower temperatures, leaving CO unreacted.",
+              "error_type": "mechanism_misinterpretation",
+              "evidence_refs": [
+                "TR_Gasventing+67+Energies:C002"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "LFP cathode material remains stable up to 500\u00b0C, and the maximum surface temperature of Set B (320\u00b0C) is well below this threshold. This stability prevents premature oxygen release and allows complete oxidation of CO to CO2. In contrast, NCM cathodes decompose and release oxygen at lower temperatures, creating conditions where CO remains unreacted.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+67+Energies:C002"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "The normalized gas production of 0.09 mol/Ah for NCM811 vs. 0.03 mol/Ah for LFP represents a threefold difference. This difference reflects more extensive decomposition reactions in NCM cells, including cathode decomposition, electrolyte breakdown, and SEI decomposition. The comparison is valid because both are normalized by capacity and tested under identical conditions (100% SOC, same heating rate).",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+66+Energies:C001"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "The difference in normalized gas production is primarily driven by chemistry-dependent decomposition mechanisms, not solely by maximum temperature. LFP cathodes remain stable up to 500\u00b0C, meaning even if heated to 511\u00b0C, the cathode would not undergo the same oxygen-release and structural decomposition as NCM cathodes. The normalized gas production difference reflects fundamental material stability differences, not just temperature.",
+              "error_type": "causal_oversimplification",
+              "evidence_refs": [
+                "TR_Gasventing+66+Energies:C001",
+                "TR_Gasventing+67+Energies:C002"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "While NCM cathodes do release oxygen at elevated temperatures, the statement incorrectly describes the environment as 'reducing.' Oxygen release creates an oxidizing environment locally, but the high reactivity and rapid consumption of oxygen by electrolyte and anode materials, combined with incomplete combustion, results in CO remaining unreacted rather than being oxidized to CO2. The mechanism is not a reducing environment but rather kinetic limitations and oxygen depletion.",
+              "error_type": "mechanism_inversion",
+              "evidence_refs": [
+                "TR_Gasventing+67+Energies:C001",
+                "TR_Gasventing+67+Energies:C002"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "CO has an IDLH (Immediately Dangerous to Life or Health) limit of 1200 ppm, while CO2's IDLH is 40,000 ppm. Set A produces CO at 2.25 \u00d7 10^5 ppmv (225,000 ppm), which is nearly 200 times the IDLH limit. Set B produces CO2 at 1.65 \u00d7 10^5 ppmv (165,000 ppm), which is approximately 4 times the IDLH limit. CO is far more immediately toxic at these concentrations, making Set A a greater acute inhalation hazard.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+67+Energies:C001",
+                "TR_Gasventing+67+Energies:C002",
+                "TR_Gasventing+67+Energies:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Chemistry-dependent gas composition and toxicity; distinguishing temperature effects from material stability effects",
+          "primary_boundary": "Separating temperature-driven behavior from chemistry-driven behavior; identifying mechanism vs. outcome; toxicity threshold reasoning",
+          "intended_error_modes": [
+            "mechanism_misinterpretation",
+            "causal_oversimplification",
+            "mechanism_inversion"
+          ],
+          "disallowed_extrapolations": [
+            "Assuming absence of CO means no CO production",
+            "Assuming temperature alone determines gas production",
+            "Confusing oxidizing and reducing environments"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A 117 Ah NCM811 prismatic cell at 50% SOC is subjected to thermal abuse under two different ambient conditions: Test 1 at room temperature (25\u00b0C) and Test 2 at elevated ambient temperature (160-250\u00b0C). In Test 1, the safety valve opens and releases gas over an extended period without triggering thermal runaway, with a maximum gas releasing rate of 0.185 mol/s. In Test 2, the safety valve opens and thermal runaway is triggered shortly afterward, with a maximum gas releasing rate of 0.374 mol/s. Total gas production in Test 2 is approximately 10% higher than in Test 1, and the characteristic venting duration in Test 2 is approximately half that of Test 1. Which of the following statements are supported by these observations?",
+          "options": [
+            "A. The elevated ambient temperature in Test 2 provides sufficient energy to trigger thermal runaway immediately upon valve opening, whereas at room temperature the cell remains thermally stable after venting.",
+            "B. The doubling of maximum gas releasing rate in Test 2 (0.374 vs. 0.185 mol/s) is primarily attributable to increased internal pressure at elevated ambient temperature, which accelerates gas ejection velocity through the valve orifice.",
+            "C. The 10% increase in total gas production in Test 2 indicates that elevated ambient temperature causes additional decomposition reactions to occur that are not active at room temperature.",
+            "D. The halving of characteristic venting duration in Test 2 is consistent with thermal runaway being triggered during venting, which accelerates gas generation and shortens the release period compared to passive venting without thermal runaway.",
+            "E. At 50% SOC and room temperature, the energy released by valve opening and electrolyte vaporization is insufficient to initiate self-sustaining exothermic decomposition, whereas elevated ambient temperature reduces the thermal margin and allows runaway to initiate.",
+            "F. The maximum gas releasing rate is a direct function of ambient temperature and is independent of whether thermal runaway is triggered, since gas flow rate depends only on pressure differential and valve geometry."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "D",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "The statement incorrectly implies that thermal runaway is triggered 'immediately upon valve opening' in Test 2. The evidence indicates that at 50% SOC, thermal runaway is not triggered when the safety valve first opens, even at elevated ambient temperature. Instead, the elevated ambient temperature reduces thermal margin and allows thermal runaway to be triggered shortly after valve opening, not immediately upon opening. The timing distinction is important.",
+              "error_type": "temporal_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+66+Energies:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The doubling of maximum gas releasing rate is not primarily due to increased internal pressure from elevated ambient temperature. Instead, it reflects the onset of thermal runaway in Test 2, which generates gas at a much higher rate due to rapid exothermic decomposition reactions. The maximum gas releasing rate is strongly correlated with whether thermal runaway occurs, not merely with ambient temperature or initial internal pressure.",
+              "error_type": "mechanism_substitution",
+              "evidence_refs": [
+                "TR_Gasventing+66+Energies:C003",
+                "TR_Gasventing+66+Energies:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "The 10% increase in total gas production does not necessarily indicate that new decomposition reactions become active at elevated temperature. Instead, it more likely reflects that existing decomposition reactions proceed more completely or that thermal runaway (which occurs in Test 2 but not Test 1) drives more extensive decomposition of the same reactants. The increase is modest and consistent with enhanced reaction kinetics and completeness rather than activation of entirely new pathways.",
+              "error_type": "mechanistic_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+66+Energies:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "At 50% SOC and room temperature, thermal runaway is not triggered when the valve opens, leading to a long period of passive gas release and electrolyte vaporization. In contrast, at elevated ambient temperature, thermal runaway is triggered during or shortly after venting, which dramatically accelerates gas generation through exothermic decomposition. This acceleration shortens the venting duration to approximately half, consistent with the observed behavior.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+66+Energies:C004",
+                "TR_Gasventing+66+Energies:C005"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "At 50% SOC, the cell contains less stored energy than at 100% SOC. At room temperature, valve opening and electrolyte vaporization provide cooling and pressure relief, preventing thermal runaway initiation. Elevated ambient temperature (160-250\u00b0C) reduces the thermal margin by pre-heating the cell closer to decomposition thresholds, allowing self-sustaining exothermic reactions to initiate during or after venting. This is consistent with the observation that thermal runaway occurs in Test 2 but not Test 1.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+66+Energies:C004",
+                "TR_Gasventing+66+Energies:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The maximum gas releasing rate is strongly dependent on whether thermal runaway is triggered. When thermal runaway occurs, exothermic decomposition reactions generate gas at a much higher rate than passive venting and electrolyte vaporization. The doubling of gas releasing rate in Test 2 is attributable to thermal runaway onset, not merely to ambient temperature or valve geometry. Gas flow rate depends on gas generation rate, not only on pressure differential and valve geometry.",
+              "error_type": "ignoring_dominant_mechanism",
+              "evidence_refs": [
+                "TR_Gasventing+66+Energies:C003",
+                "TR_Gasventing+66+Energies:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Regime transition from passive venting to thermal runaway; ambient temperature effect on thermal margin and runaway initiation",
+          "primary_boundary": "Distinguishing between passive venting behavior and thermal runaway-driven gas release; identifying thermal margin and initiation conditions",
+          "intended_error_modes": [
+            "temporal_overclaim",
+            "mechanism_substitution",
+            "mechanistic_overclaim",
+            "ignoring_dominant_mechanism"
+          ],
+          "disallowed_extrapolations": [
+            "Assuming valve opening immediately triggers thermal runaway",
+            "Assuming gas release rate depends only on pressure and geometry",
+            "Assuming 10% gas increase implies new reaction pathways"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A 280 Ah LFP prismatic battery module is tested at three different SOC levels (0%, 50%, 100%) under identical thermal abuse conditions. At 0% SOC, the safety valve opens but no secondary eruption occurs. At 50% and 100% SOC, a secondary eruption occurs after the initial valve opening. The maximum surface temperatures follow the order: 100% SOC > 50% SOC > 0% SOC. Explain the physical mechanism that determines whether a secondary eruption occurs, and why this mechanism is SOC-dependent. Your answer should address the role of stored energy, decomposition reaction initiation, and the relationship between valve opening and thermal runaway triggering."
+        },
+        "ground_truth": {
+          "gold_answer": "At 0% SOC, the cell contains minimal stored electrochemical energy. When the safety valve opens at approximately 160\u00b0C, the pressure relief and electrolyte vaporization provide cooling, and the limited energy available is insufficient to initiate self-sustaining exothermic decomposition reactions. Therefore, no thermal runaway occurs and no secondary eruption is observed. At 50% and 100% SOC, the cell contains significantly more stored energy in the form of lithiated anode and charged cathode. After the initial valve opening, continued external heating or internal heat generation raises the cell temperature into the thermal runaway trigger range (190-210\u00b0C for LFP at 100% SOC). At this point, exothermic decomposition reactions (SEI breakdown, electrolyte decomposition, cathode-electrolyte reactions) become self-sustaining and accelerate rapidly. This generates a large amount of gas and heat in a short period, causing a violent secondary eruption. The SOC dependence arises because higher SOC corresponds to greater stored electrochemical energy, which provides more fuel for exothermic decomposition once initiated. The severity of thermal runaway and the violence of the secondary eruption both increase with SOC, as evidenced by the maximum temperature ordering.",
+          "must_include": [
+            "Stored electrochemical energy increases with SOC",
+            "At 0% SOC, energy is insufficient to sustain exothermic decomposition after valve opening",
+            "At 50% and 100% SOC, thermal runaway is triggered after valve opening",
+            "Thermal runaway involves self-sustaining exothermic decomposition reactions",
+            "Secondary eruption is caused by rapid gas and heat generation during thermal runaway"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming valve opening directly causes thermal runaway",
+            "Claiming thermal runaway always occurs when valve opens",
+            "Ignoring the role of stored energy in determining whether thermal runaway initiates",
+            "Claiming secondary eruption is purely a pressure phenomenon unrelated to chemical reactions"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "SOC-dependent thermal runaway initiation and secondary eruption mechanism",
+          "primary_boundary": "Distinguishing between valve opening (pressure relief event) and thermal runaway initiation (chemical energy release); understanding SOC as a stored energy parameter",
+          "intended_error_modes": [
+            "Confusing valve opening with thermal runaway trigger",
+            "Ignoring stored energy role",
+            "Treating secondary eruption as purely mechanical"
+          ]
+        }
+      }
+    ]
+  }
+}

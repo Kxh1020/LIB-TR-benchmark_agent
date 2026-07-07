@@ -1,0 +1,361 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A 280 Ah LFP battery containing two jelly rolls undergoes nail penetration testing. In one configuration, insulation around the battery is thickened to reduce heat dissipation. In a separate configuration, the nail diameter is kept small enough that the separator damaged area remains below a critical threshold. An engineer reviews the following observations: (1) with thickened insulation, the time between the first and second jelly roll thermal runaway events increases substantially; (2) with a small nail, thermal runaway does not initiate at all; (3) when only one jelly roll has undergone thermal runaway, the battery voltage remains above 3100 mV until the second jelly roll also completes thermal runaway. Which of the following conclusions are supported by these observations?",
+        "options": [
+          "A. The interval between sequential thermal runaway events in the two-jelly-roll battery is governed by the rate at which heat transfers from the first affected jelly roll to the second, making heat dissipation conditions a controlling variable for propagation timing.",
+          "B. Preventing thermal runaway initiation by limiting separator damage is mechanistically equivalent to delaying propagation by increasing insulation, because both interventions reduce the peak temperature reached during the event.",
+          "C. The voltage signal alone is insufficient to distinguish between a state in which one jelly roll has completed thermal runaway and a state in which neither jelly roll has undergone thermal runaway, given that voltage remains above 3100 mV in both cases before the second event.",
+          "D. The battery voltage remaining above 3100 mV after the first jelly roll undergoes thermal runaway confirms that the electrochemical capacity of the battery is fully preserved until the second thermal runaway event completes.",
+          "E. Thermal runaway initiation in this LFP cell chemistry requires the heat generated at the nail penetration site to be sufficient to propagate separator dissolution beyond the initial damage zone, meaning excessive heat dissipation can prevent initiation entirely.",
+          "F. Thickening the insulation cotton is expected to reduce the maximum temperature reached during the second thermal runaway event because slower heat transfer limits the energy available to the second jelly roll.",
+          "G. The two-stage voltage behavior observed during the sequential jelly roll events indicates that the internal resistance of the battery increases monotonically throughout the entire thermal runaway sequence."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence shows that thickening insulation delayed the interval between the two thermal runaway events, directly implicating heat transfer rate from the first to the second jelly roll as the controlling variable for propagation timing. This is a supported causal inference from the heat dissipation manipulation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+189+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "These are mechanistically distinct interventions. Limiting separator damage prevents initiation by keeping the initial heat generation below the threshold needed to propagate separator dissolution. Increasing insulation delays propagation between already-initiated events. The evidence treats these as separate phenomena with different causal pathways; conflating them as equivalent because both reduce peak temperature is an unsupported mechanism substitution.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Mechanism+189+UnknownJournal:C002",
+              "TR_Mechanism+189+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence states voltage remains above 3100 mV after a small fluctuation following the first jelly roll thermal runaway until the second completes. This means the voltage profile after the first event is not clearly distinguishable from a pre-event baseline by voltage level alone, making voltage an ambiguous diagnostic signal for the intermediate state. This is a supported measurement scope limitation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+189+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Voltage remaining above 3100 mV does not imply full preservation of electrochemical capacity. One jelly roll has already undergone thermal runaway and is destroyed. The voltage reading reflects the parallel configuration of the remaining functional jelly roll, not total capacity preservation. This is a measurement scope overclaim.",
+            "error_type": "measurement_scope_overclaim",
+            "evidence_refs": [
+              "TR_Mechanism+189+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that thermal runaway will not occur if the separator damaged area is too small or heat dissipation is excessive, because the generated heat cannot further dissolve the separator. This directly supports the conclusion that initiation requires heat sufficient to propagate separator dissolution beyond the initial damage zone.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+189+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Thickening insulation retains heat rather than dissipating it, which would increase rather than reduce the energy available to the second jelly roll. The evidence shows the interval is extended, not that the severity of the second event is reduced. This distractor correctly identifies the direction of the insulation effect on timing but inverts the thermal consequence for the second event.",
+            "error_type": "causal_direction_inversion",
+            "evidence_refs": [
+              "TR_Mechanism+189+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "The evidence describes voltage remaining above 3100 mV with only a small fluctuation after the first event, which does not support a claim of monotonically increasing internal resistance throughout the sequence. The voltage behavior is described as a small fluctuation followed by stability, which is inconsistent with a monotonic resistance increase.",
+            "error_type": "unsupported_monotonicity",
+            "evidence_refs": [
+              "TR_Mechanism+189+UnknownJournal:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinguishing between thermal runaway initiation prevention and propagation delay as mechanistically distinct interventions, and evaluating the diagnostic limitations of voltage signals during sequential jelly roll events.",
+        "primary_boundary": "Heat dissipation controls propagation timing between already-initiated events; separator damage area controls whether initiation occurs at all. These are not equivalent mechanisms.",
+        "intended_error_modes": [
+          "mechanism_substitution between initiation prevention and propagation delay",
+          "measurement scope overclaim from voltage signal to capacity state",
+          "causal direction inversion for insulation effect on second event severity"
+        ],
+        "disallowed_extrapolations": [
+          "Voltage above 3100 mV implies full capacity preservation",
+          "Insulation thickening reduces second event severity",
+          "Both interventions are equivalent because both affect peak temperature"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is evaluating electrolyte safety for a Gr|NMC811 cell intended for high-temperature operation. Three electrolyte formulations are under consideration: (1) conventional 1 M LiPF6 in EC:EMC, (2) concentrated LiFSI in DMC, and (3) concentrated LiFSI in a non-flammable solvent TMP. Accelerating rate calorimetry data shows that formulation (2) triggers thermal runaway at a lower temperature than formulation (1), and formulation (3) triggers thermal runaway at an even lower temperature than formulation (2). Separate calorimetry on isolated components shows that the cathode combined with concentrated LiFSI/DMC electrolyte does not reach thermal runaway conditions below 290 °C, while the lithiated anode combined with concentrated LiFSI releases heat approximately eight times greater than the anode alone at a temperature near 210 °C. The engineer proposes that replacing the flammable DMC solvent with non-flammable TMP will improve overall thermal safety because it eliminates combustion risk. Which of the following statements correctly identify flaws or limitations in this proposal?",
+        "options": [
+          "A. The proposal conflates two distinct hazard pathways: the flammability of the electrolyte solvent when exposed to oxygen, and the exothermic reduction of the electrolyte by the lithiated anode inside the cell. Eliminating solvent flammability does not address the anode-driven internal exothermic pathway.",
+          "B. Since the cathode-electrolyte reactions with concentrated LiFSI/DMC do not trigger thermal runaway below 290 °C, substituting TMP for DMC at the cathode side is the most effective intervention for raising the thermal runaway trigger temperature.",
+          "C. The non-flammable TMP formulation triggers thermal runaway at a lower temperature than the flammable DMC formulation, which indicates that solvent non-flammability is not a reliable predictor of improved thermal runaway resistance under internal abuse conditions.",
+          "D. The dominant exothermic event in the LiFSI-based cells is driven by the interaction between the lithiated anode and the electrolyte salt, not the solvent, meaning that changing the solvent from DMC to TMP does not remove the primary heat-generating pathway.",
+          "E. The conventional LiPF6/EC:EMC electrolyte is safer than both LiFSI-based formulations under internal thermal abuse because it has the highest thermal runaway trigger temperature among the three formulations tested.",
+          "F. The proposal is valid because non-flammable solvents universally reduce the total heat released during thermal runaway regardless of the anode chemistry involved.",
+          "G. The data showing cathode-electrolyte reactions remaining below thermal runaway threshold up to 290 °C implies that cathode decomposition is not a contributing factor to thermal runaway initiation in these LiFSI-based cells under the tested conditions."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that flammability reflects behavior when oxidized by oxygen, while electrolyte reduction by the lithiated anode triggers the chain of exothermic reactions. The proposal fails because it addresses only the external combustion pathway while the internal anode-reduction pathway remains the thermal runaway trigger.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+190+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The evidence shows cathode-electrolyte reactions do not trigger thermal runaway below 290 °C, meaning cathode-side reactions are not the dominant initiation pathway. Intervening on the cathode side would therefore not be the most effective approach for raising the thermal runaway trigger temperature. The anode-electrolyte interaction is the dominant pathway.",
+            "error_type": "mechanism_misattribution",
+            "evidence_refs": [
+              "TR_Mechanism+190+UnknownJournal:C003",
+              "TR_Mechanism+190+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The TMP formulation is non-flammable yet triggers thermal runaway at 195.2 °C, which is lower than the DMC formulation at 200.5 °C and both are lower than the conventional electrolyte at 213.1 °C. This directly demonstrates that non-flammability does not correlate with higher thermal runaway trigger temperature under internal conditions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+190+UnknownJournal:C004",
+              "TR_Mechanism+190+UnknownJournal:C001"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The evidence identifies the lithiated anode reacting with LiFSI salt as producing heat eight times greater than the anode alone, and the cathode-electrolyte path does not reach thermal runaway below 290 °C. The primary exothermic pathway is therefore the anode-salt interaction, not the solvent. Changing the solvent does not eliminate this pathway.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+190+UnknownJournal:C002",
+              "TR_Mechanism+190+UnknownJournal:C003",
+              "TR_Mechanism+190+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "While the conventional LiPF6 electrolyte has the highest thermal runaway trigger temperature among the three tested, concluding it is 'safer' is an overgeneralization. The comparison is limited to the thermal runaway trigger temperature under ARC-like conditions; other safety dimensions such as post-ignition combustion behavior, gas generation, and failure severity are not addressed by this single metric.",
+            "error_type": "scope_expansion_to_overall_safety",
+            "evidence_refs": [
+              "TR_Mechanism+190+UnknownJournal:C001",
+              "TR_Mechanism+190+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence directly contradicts this claim: the non-flammable TMP formulation produces a lower thermal runaway trigger temperature than the flammable DMC formulation, demonstrating that non-flammable solvents do not universally improve thermal runaway resistance. This is an overgeneralization that ignores the anode-salt interaction mechanism.",
+            "error_type": "overgeneralization",
+            "evidence_refs": [
+              "TR_Mechanism+190+UnknownJournal:C004",
+              "TR_Mechanism+190+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "The evidence states that the cathode combined with concentrated LiFSI/DMC electrolyte did not enter thermal runaway and its maximum dT/dt remained below 0.1 °C/s up to 290 °C, explicitly concluding that cathode-electrolyte reactions were incapable of triggering thermal runaway. Under the tested conditions, cathode decomposition is therefore not an initiation contributor.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+190+UnknownJournal:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinguishing between external flammability and internal electrochemical exothermic pathways as separate safety dimensions, and identifying which component interaction dominates thermal runaway initiation in LiFSI-based cells.",
+        "primary_boundary": "Solvent flammability governs external combustion behavior; anode-electrolyte salt reduction governs internal thermal runaway initiation. Non-flammable solvents do not address the dominant internal pathway.",
+        "intended_error_modes": [
+          "conflating external flammability with internal thermal runaway resistance",
+          "misattributing the dominant initiation pathway to the cathode side",
+          "overgeneralizing from trigger temperature to overall safety"
+        ],
+        "disallowed_extrapolations": [
+          "Non-flammable solvents universally improve thermal runaway resistance",
+          "Cathode-side intervention is the most effective approach",
+          "Highest trigger temperature implies overall superior safety"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery engineer is designing an electrolyte system for a graphite-anode cell intended to operate with improved thermal stability. The engineer knows that the solid electrolyte interphase (SEI) on the graphite anode is the first component to decompose as temperature rises, and that the onset temperature of SEI decomposition depends on the lithium salt used. Available data shows: LiBF4-containing electrolytes produce SEI with decomposition onset near 60 °C; LiPF6-containing electrolytes produce SEI with onset near 80 °C; thermally stable salts such as LiTFSI, LiCF3SO3, and LiBOB shift the onset to 110–135 °C. Separately, ARC data on full pouch cells shows that cells using a LiTFSI-LiDFOB-LiPF6 blended electrolyte reach thermal runaway onset near 181 °C, compared to 143 °C for cells using 1 M LiPF6 alone. The engineer proposes replacing LiPF6 entirely with LiTFSI to maximize SEI thermal stability. Which of the following statements are admissible conclusions from this information?",
+        "options": [
+          "A. Replacing LiPF6 with thermally stable salts raises the SEI decomposition onset temperature, which delays the earliest exothermic event in the thermal abuse sequence and is consistent with the observed increase in full-cell thermal runaway onset temperature when such salts are incorporated.",
+          "B. Because the blended LiTFSI-LiDFOB-LiPF6 electrolyte raises thermal runaway onset to 181 °C compared to 143 °C for pure LiPF6, replacing LiPF6 entirely with LiTFSI alone is expected to raise the thermal runaway onset temperature by at least the same margin.",
+          "C. The improvement in full-cell thermal runaway onset temperature observed with the blended electrolyte cannot be attributed solely to the increase in SEI decomposition onset temperature, because other thermally triggered events such as separator shrinkage and cathode decomposition also occur at higher temperatures in the sequence and may interact with the SEI decomposition event.",
+          "D. LiPF6 decomposition into LiF and PF5 beginning near 85 °C in the presence of carbonate solvents means that even in cells using LiPF6, the salt itself begins generating reactive species well before the SEI decomposition onset temperature of 80 °C reported for LiPF6-based SEI.",
+          "E. The data supports the conclusion that SEI decomposition onset temperature is the sole determinant of full-cell thermal runaway onset temperature, because the ranking of salt thermal stability directly matches the ranking of cell-level thermal runaway onset temperatures.",
+          "F. Using thermally stable salts to raise SEI decomposition onset temperature is a necessary but not necessarily sufficient condition for raising the full-cell thermal runaway onset temperature, given that multiple thermally triggered events occur in sequence before thermal runaway.",
+          "G. The thermal runaway onset temperature improvement seen in the blended electrolyte cell compared to the pure LiPF6 cell confirms that LiPF6 is the component solely responsible for the lower thermal runaway onset in the pure LiPF6 cell."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence shows thermally stable salts shift SEI decomposition onset to 110–135 °C compared to 60–80 °C for LiPF6/LiBF4, and the blended electrolyte containing thermally stable salts raises full-cell thermal runaway onset from 143 °C to 181 °C. The causal chain from SEI stability to delayed initiation is consistent with both the component-level and cell-level data.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+191+UnknownJournal:C003",
+              "TR_Mechanism+191+UnknownJournal:C004",
+              "TR_Mechanism+191+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The blended electrolyte contains LiPF6 in addition to LiTFSI and LiDFOB. The improvement observed cannot be directly extrapolated to a pure LiTFSI formulation, which may behave differently due to the absence of LiPF6 and different SEI chemistry, ionic conductivity, and interfacial reactions. This is an unsupported extrapolation from a blend result to a single-salt result.",
+            "error_type": "unsupported_extrapolation_from_blend_to_single_salt",
+            "evidence_refs": [
+              "TR_Mechanism+191+UnknownJournal:C004",
+              "TR_Mechanism+191+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The thermal abuse sequence includes SEI decomposition, anode-electrolyte reactions, separator shrinkage near 135 °C, cathode decomposition near 200 °C, and electrolyte decomposition at 250–300 °C. The full-cell thermal runaway onset reflects the cumulative effect of this sequence, so attributing the improvement solely to SEI decomposition onset is not supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+191+UnknownJournal:C001",
+              "TR_Mechanism+191+UnknownJournal:C004",
+              "TR_Mechanism+191+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence states LiPF6 decomposes near 85 °C in the presence of EC and DMC, and that LiPF6-based SEI decomposition onset is near 80 °C. The claim that salt decomposition begins before SEI decomposition onset is a borderline numerical comparison, but more critically, the evidence does not state that PF5 generation at 85 °C occurs before the 80 °C SEI onset in a way that changes the sequence. The 5 °C difference is within experimental uncertainty and the evidence does not support the directional claim that salt decomposition precedes SEI decomposition onset in LiPF6 cells.",
+            "error_type": "unsupported_numerical_ordering_from_borderline_values",
+            "evidence_refs": [
+              "TR_Mechanism+191+UnknownJournal:C002",
+              "TR_Mechanism+191+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The evidence shows multiple events in the thermal abuse sequence beyond SEI decomposition, including separator shrinkage, cathode decomposition, and electrolyte decomposition. Attributing full-cell thermal runaway onset solely to SEI decomposition onset ignores these other contributors and is an inadmissible single-factor attribution.",
+            "error_type": "single_factor_overclaim",
+            "evidence_refs": [
+              "TR_Mechanism+191+UnknownJournal:C001",
+              "TR_Mechanism+191+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Given the multi-event thermal abuse sequence, raising SEI decomposition onset is consistent with raising the full-cell onset temperature but cannot guarantee it in isolation because later events such as separator failure and cathode decomposition also contribute. This is a necessary-but-not-sufficient reasoning that is directly supported by the multi-stage sequence evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+191+UnknownJournal:C001",
+              "TR_Mechanism+191+UnknownJournal:C004",
+              "TR_Mechanism+191+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "The blended electrolyte still contains LiPF6, so the improvement cannot confirm that LiPF6 alone was responsible for the lower onset in the pure LiPF6 cell. The blended formulation introduces multiple changes simultaneously. This is a causal overclaim from a comparative result where the independent variable was not isolated.",
+            "error_type": "causal_overclaim_from_non_isolated_comparison",
+            "evidence_refs": [
+              "TR_Mechanism+191+UnknownJournal:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Evaluating whether SEI decomposition onset temperature is a necessary, sufficient, or partial determinant of full-cell thermal runaway onset, and identifying inadmissible extrapolations from blend electrolyte data to single-salt predictions.",
+        "primary_boundary": "SEI decomposition onset is one step in a multi-event thermal abuse sequence; it influences but does not solely determine full-cell thermal runaway onset. Blend electrolyte results cannot be directly extrapolated to single-salt formulations.",
+        "intended_error_modes": [
+          "single-factor attribution of full-cell thermal runaway onset to SEI decomposition",
+          "extrapolating blend electrolyte improvement to pure single-salt replacement",
+          "causal overclaim from non-isolated comparative experiment"
+        ],
+        "disallowed_extrapolations": [
+          "SEI onset temperature is the sole determinant of full-cell thermal runaway onset",
+          "Pure LiTFSI will achieve at least the same improvement as the blended formulation",
+          "LiPF6 alone is responsible for the lower onset in pure LiPF6 cells"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A Gr|NMC811 cell uses a concentrated LiFSI-based electrolyte. During accelerating rate calorimetry, the cell enters thermal runaway at a lower trigger temperature than an identical cell using conventional LiPF6/EC:EMC electrolyte. Isolated component calorimetry shows that the cathode combined with the concentrated LiFSI electrolyte does not reach thermal runaway conditions below 290 °C, while the lithiated anode combined with concentrated LiFSI releases approximately eight times more heat than the anode alone at around 210 °C. A safety engineer argues that replacing the LiFSI solvent with a non-flammable alternative will resolve the lower trigger temperature problem because it removes the combustion hazard. Identify the primary mechanistic flaw in this argument, explain which component interaction is responsible for the lower thermal runaway trigger temperature in the LiFSI-based cell, and state what the non-flammable solvent substitution would and would not address."
+      },
+      "ground_truth": {
+        "gold_answer": "The primary flaw is that the engineer conflates two distinct hazard pathways: (1) the external flammability of the electrolyte solvent when oxidized by oxygen outside the cell, and (2) the internal exothermic reduction of the electrolyte by the lithiated anode inside the cell. The lower thermal runaway trigger temperature in the LiFSI-based cell is caused by the highly exothermic reaction between the lithiated graphite anode and the LiFSI salt, which releases approximately eight times more heat than the anode alone at around 210 °C. The cathode-electrolyte interaction with the concentrated LiFSI electrolyte does not trigger thermal runaway below 290 °C and is therefore not the dominant initiation pathway. Replacing the flammable DMC solvent with a non-flammable solvent such as TMP would address the external combustion risk if the electrolyte were exposed to air or ignition sources after venting, but it would not remove the anode-LiFSI salt exothermic reaction, which is the internal mechanism responsible for the lower trigger temperature. Evidence shows that the non-flammable TMP formulation actually triggers thermal runaway at an even lower temperature than the flammable DMC formulation, confirming that solvent non-flammability does not mitigate and may not improve the internal thermal runaway initiation pathway driven by the anode-salt interaction.",
+        "must_include": [
+          "Distinction between external flammability (oxidation by oxygen) and internal electrolyte reduction by the lithiated anode as separate hazard pathways",
+          "Identification of the anode-LiFSI salt interaction as the dominant exothermic event responsible for the lower trigger temperature",
+          "Statement that cathode-electrolyte reactions are not the initiation driver below 290 °C",
+          "Statement that non-flammable solvent substitution addresses external combustion but not the internal anode-driven exothermic pathway",
+          "Recognition that the non-flammable TMP formulation produces an even lower thermal runaway trigger temperature, contradicting the engineer's premise"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming that non-flammable solvents universally improve thermal runaway resistance",
+          "Attributing the lower trigger temperature to cathode decomposition or cathode-electrolyte reactions",
+          "Concluding that LiFSI salt replacement alone would fully resolve the thermal runaway initiation problem without supporting evidence",
+          "Asserting that the conventional LiPF6 electrolyte is safer in all respects based solely on its higher trigger temperature"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanistic distinction between external flammability and internal anode-driven exothermic reduction as separate thermal safety dimensions in LiFSI-based electrolyte cells.",
+        "primary_boundary": "Solvent flammability governs post-venting external combustion; anode-electrolyte salt reduction governs internal thermal runaway initiation. These are independent pathways and interventions targeting one do not necessarily affect the other.",
+        "intended_error_modes": [
+          "Conflating external flammability with internal thermal runaway resistance",
+          "Misidentifying the cathode-electrolyte interaction as the dominant initiation pathway",
+          "Assuming non-flammable solvents improve the internal thermal runaway trigger temperature"
+        ]
+      }
+    }
+  ]
+}

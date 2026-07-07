@@ -1,0 +1,358 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery module engineer is evaluating two phase-change thermal management materials for use in a high-rate discharge application. Material A is an organic paraffin/expanded graphite composite with high latent heat. Material B is an encapsulated inorganic hydrated salt in a silica matrix with a melting point near 51°C and a latent heat approximately 20–30% lower than Material A. Under normal 3C discharge cycling, both materials reduce peak module temperature below the threshold for accelerated degradation. However, the module must also satisfy a fire safety requirement: the thermal management material must not ignite or sustain combustion if a cell undergoes thermal runaway and ejects hot gases. A secondary requirement is that the material must retain its thermal buffering capacity across repeated thermal cycles without significant mass loss above 100°C. Which of the following conclusions about the selection between Material A and Material B are admissible given these constraints?",
+        "options": [
+          "A. Material B is preferable for the fire safety requirement because its encapsulation architecture fundamentally changes its ignition behavior relative to the organic composite, even though its latent heat per unit mass is lower.",
+          "B. Material A is preferable overall because higher latent heat per unit mass directly translates to superior thermal runaway delay performance, making the fire safety trade-off acceptable.",
+          "C. Material B's suitability for repeated thermal cycling is supported by evidence that its encapsulation reduces mass loss rate above 100°C by more than an order of magnitude compared to the unencapsulated hydrated salt.",
+          "D. The 23.7% reduction in peak temperature at 3C discharge demonstrated by encapsulated inorganic PCM cooling confirms that Material B will also prevent thermal runaway propagation in a multi-cell module under all abuse conditions.",
+          "E. Material A's ignition behavior under direct flame contact disqualifies it from applications where thermal runaway gas ejection is a credible scenario, regardless of its latent heat advantage.",
+          "F. Both materials provide equivalent thermal runaway delay performance because the peak temperature reduction during normal discharge is the primary determinant of thermal runaway onset delay.",
+          "G. The fire safety performance of Material B cannot be inferred from its behavior under 60-second flame exposure alone, because thermal runaway gas ejection may involve higher heat flux than a standard flame test."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence shows that organic PCM ignites within 5 seconds of flame contact while EIPCM (encapsulated inorganic hydrated salt in silica) does not ignite after 60 seconds. This behavioral difference is attributable to the encapsulation architecture changing the ignition pathway, and the conclusion is admissible even though the latent heat is lower. This is counterintuitive because lower latent heat would normally disfavor selection.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+200+Chemical_Engineering_Journal:C004",
+              "TR_Protection+200+Chemical_Engineering_Journal:C001"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Higher latent heat per unit mass does not directly translate to superior thermal runaway delay without accounting for fire safety. The evidence shows that organic PCM actually sustains combustion during thermal runaway, which would add heat to the system rather than absorb it. This is a causal overclaim that ignores the fire amplification mechanism.",
+            "error_type": "causal_overclaim_ignoring_mechanism_reversal",
+            "evidence_refs": [
+              "TR_Protection+200+Chemical_Engineering_Journal:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence directly states that the encapsulated material shows a mass loss rate of 1.52%/min above 100°C versus 21.63%/min for the unencapsulated hydrated salt—a reduction of more than an order of magnitude. This supports the conclusion about thermal cycling stability.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+200+Chemical_Engineering_Journal:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The 23.7% peak temperature reduction at 3C discharge is a normal-operation result. Extrapolating this to prevention of thermal runaway propagation under all abuse conditions is a scope expansion beyond the evidence. The evidence shows delay and peak temperature reduction during TR, not prevention under all conditions.",
+            "error_type": "scope_expansion_from_normal_to_abuse_conditions",
+            "evidence_refs": [
+              "TR_Protection+200+Chemical_Engineering_Journal:C002",
+              "TR_Protection+200+Chemical_Engineering_Journal:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The evidence shows organic PCM ignites within 5 seconds of flame contact and burns until exhausted. In a thermal runaway scenario with hot gas ejection, this combustion behavior would add heat to neighboring cells rather than absorb it, making Material A unsuitable regardless of latent heat advantage. This is supported by the mechanism that burning PCM increases surrounding heat.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+200+Chemical_Engineering_Journal:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Peak temperature reduction during normal discharge and thermal runaway delay are governed by different mechanisms. Normal discharge peak temperature reduction reflects steady heat absorption, while thermal runaway delay also depends on fire behavior of the PCM itself. These are not equivalent performance metrics.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Protection+200+Chemical_Engineering_Journal:C002",
+              "TR_Protection+200+Chemical_Engineering_Journal:C003"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "While this appears epistemically cautious, it contradicts the engineering admissibility of the flame exposure test as a discriminating safety criterion. The 60-second no-ignition result versus 5-second ignition is a large behavioral difference that supports a safety-relevant distinction. Dismissing this as insufficient without evidence of a higher-flux failure mode is an unsupported scope restriction that renders the test uninformative, which is not justified.",
+            "error_type": "conservative_but_incorrect_unsupported_scope_restriction",
+            "evidence_refs": [
+              "TR_Protection+200+Chemical_Engineering_Journal:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of material selection conclusions when fire safety and thermal capacity requirements interact, requiring mechanism-based reasoning about how PCM combustion reverses its protective function during thermal runaway.",
+        "primary_boundary": "The boundary between normal-operation thermal performance and abuse-condition fire behavior: a material with higher latent heat is not preferable if it amplifies heat during thermal runaway by sustaining combustion.",
+        "intended_error_modes": [
+          "Selecting B by equating higher latent heat with superior overall performance without accounting for combustion behavior",
+          "Selecting D by extrapolating normal discharge performance to all abuse conditions",
+          "Selecting G as a cautious-seeming but mechanistically unjustified rejection of flame test evidence"
+        ],
+        "disallowed_extrapolations": [
+          "Do not infer that latent heat alone determines thermal runaway delay performance",
+          "Do not infer that 3C discharge peak temperature reduction implies propagation prevention",
+          "Do not generalize flame test results to quantitative heat flux comparisons not present in evidence"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Two 100% SOC NCM 811 pouch cells are arranged in a module with a barrier material between them. In a baseline test with no barrier, the second cell undergoes thermal runaway 105 seconds after the first, triggering at 196.2°C and reaching a peak temperature of 792.6°C—higher than the first cell's peak of 701.6°C. In a second test, a 1 mm thick neat epoxy resin (EP) barrier is inserted between the cells. The first cell undergoes thermal runaway at a similar time, but the second cell undergoes thermal runaway only 52 seconds after the first. In a third test, a 3 mm thick EP composite containing 3.0 wt% of a flame-retardant MoS2 filler (EP/PR-MoS2-3) is used as the barrier. In this test, no thermal runaway occurs in the second cell, which reaches a maximum temperature of 91.1°C. Post-test electrochemical characterization shows that the second cell in the EP-3 test has a charge transfer resistance approximately 60 times higher and a lithium-ion diffusion coefficient approximately 3600 times lower than the second cell in the EP/PR-MoS2-3 test, despite only a 25°C difference in their maximum surface temperatures. Which of the following statements are admissible conclusions from these observations?",
+        "options": [
+          "A. The neat EP barrier accelerates thermal runaway propagation relative to the no-barrier case because its combustion adds heat to the environment surrounding the second cell, reducing the time available for heat dissipation.",
+          "B. The 25°C difference in maximum surface temperature between the two surviving cells is sufficient to explain the large difference in their electrochemical degradation, because electrochemical degradation is highly sensitive to peak temperature in this range.",
+          "C. The EP/PR-MoS2-3 barrier's effectiveness in stopping propagation cannot be attributed solely to increased thickness, because the neat EP barrier at 1 mm already demonstrates that thickness without flame retardancy accelerates rather than delays propagation.",
+          "D. The electrochemical characterization data imply that surface temperature measurement alone is not a reliable indicator of internal electrochemical damage state when comparing cells exposed to barriers with different thermal and combustion properties.",
+          "E. The second cell's higher peak temperature in the no-barrier case compared to the first cell indicates that thermal runaway in NCM 811 cells is self-amplifying through a positive feedback mechanism that is independent of barrier material.",
+          "F. The flame-retardant filler in EP/PR-MoS2-3 prevents thermal runaway propagation primarily by increasing the thermal mass of the barrier rather than by modifying its combustion behavior.",
+          "G. A barrier material that undergoes combustion when exposed to thermal runaway heat can function as a net heat source rather than a heat sink for the adjacent cell, making its presence worse than no barrier under certain conditions."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that EP's thermal breakdown and combustion increases the heat surrounding battery 2, accelerating propagation. The reduction of Δt1 from 105 s to 52 s with the EP barrier directly supports this causal mechanism.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+201+Chemical_Engineering_Journal:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The evidence shows that a 25°C difference in maximum surface temperature corresponds to approximately 60-fold difference in charge transfer resistance and 3600-fold difference in diffusion coefficient. This is not consistent with temperature sensitivity alone explaining the difference; the evidence instead implies that the nature of heat exposure (duration, internal heat distribution, or other factors) differs between the two cases beyond what surface temperature captures. Attributing the difference to temperature sensitivity in this range is an unsupported causal claim.",
+            "error_type": "causal_overclaim_attributing_complex_outcome_to_single_variable",
+            "evidence_refs": [
+              "TR_Protection+201+Chemical_Engineering_Journal:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The neat EP barrier at 1 mm accelerates propagation rather than delaying it. Therefore, simply increasing EP thickness without flame retardancy would not produce the observed stopping behavior. The effectiveness of EP/PR-MoS2-3 must involve the flame-retardant properties, not thickness alone. This is a multi-step reasoning conclusion: thickness without flame retardancy → acceleration; therefore flame retardancy is a necessary contributor.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+201+Chemical_Engineering_Journal:C001",
+              "TR_Protection+201+Chemical_Engineering_Journal:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The evidence shows that two cells with only 25°C difference in maximum surface temperature have dramatically different internal electrochemical states (60× and 3600× differences in key parameters). This directly supports the conclusion that surface temperature is an unreliable indicator of internal damage when barrier combustion properties differ.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+201+Chemical_Engineering_Journal:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The second cell's higher peak temperature in the no-barrier case may reflect accumulated heat from the first cell's runaway plus the second cell's own exothermic reactions, but attributing this to a self-amplifying mechanism independent of barrier material is an overclaim. The evidence does not isolate this as a cell-chemistry-intrinsic positive feedback independent of external heat input. The comparison is between different barrier conditions, not a controlled test of intrinsic amplification.",
+            "error_type": "causal_overclaim_from_correlation",
+            "evidence_refs": [
+              "TR_Protection+201+Chemical_Engineering_Journal:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence attributes EP/PR-MoS2-3 effectiveness to its 'superior flame retardant and thermal insulation properties,' not primarily to thermal mass. Furthermore, the neat EP barrier demonstrates that a combustible barrier of similar or lower mass can accelerate propagation, which is inconsistent with thermal mass being the primary mechanism.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Protection+201+Chemical_Engineering_Journal:C001",
+              "TR_Protection+201+Chemical_Engineering_Journal:C002"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "The neat EP barrier reduces Δt1 from 105 s to 52 s, meaning the second cell undergoes thermal runaway faster with the barrier than without it. This directly demonstrates that a combustible barrier can function as a net heat source, making its presence worse than no barrier. This is counterintuitive because barriers are generally expected to provide protection.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+201+Chemical_Engineering_Journal:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of conclusions about barrier material behavior during thermal runaway propagation, specifically the counterintuitive result that a combustible barrier can accelerate propagation, and the diagnostic limitation of surface temperature as an indicator of internal damage.",
+        "primary_boundary": "The boundary between a barrier as a passive thermal insulator versus an active heat source when it undergoes combustion; and the boundary between surface temperature as a proxy for internal state when barrier combustion properties differ.",
+        "intended_error_modes": [
+          "Selecting B by assuming 25°C surface temperature difference explains electrochemical degradation difference",
+          "Selecting F by attributing effectiveness to thermal mass rather than flame retardancy",
+          "Missing G because it is counterintuitive that a barrier makes propagation worse"
+        ],
+        "disallowed_extrapolations": [
+          "Do not infer that thickness alone determines barrier effectiveness",
+          "Do not infer that surface temperature fully characterizes internal electrochemical damage state",
+          "Do not attribute the second cell's higher peak temperature in no-barrier case to an intrinsic cell-level amplification mechanism without evidence"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is designing a protective coating system for lithium-ion battery casings to mitigate thermal runaway consequences. The available coating is an epoxy resin composite containing 20 wt% of a copper-modified flame-retardant filler (EP/MAP-Cu20%). Test data show that applying this coating to the external surface of the battery casing at 3 mm thickness limits the external casing peak temperature to 93°C at a rise rate of 2.8°C/s. When applied to the internal surface of the casing at the same thickness, the peak internal temperature is 319°C. When applied to the top internal surface only, the peak temperature reaches 362°C. The pure EP coating (no filler) at the same thickness delays fire onset time by a baseline amount, while EP/MAP-Cu20% delays fire onset time by 51% longer than pure EP and reduces peak surface temperature rise by 36% relative to pure EP. The engineer must decide between two configurations: Configuration X applies the coating externally at 3 mm, and Configuration Y applies the coating internally at the side surface at 3 mm. The module housing surrounding the battery has a maximum allowable continuous exposure temperature of 120°C. Which of the following conclusions about this design decision are admissible?",
+        "options": [
+          "A. Configuration X satisfies the module housing temperature constraint because the external casing peak of 93°C remains below 120°C, whereas Configuration Y cannot be evaluated against the housing constraint using only internal temperature data.",
+          "B. Configuration Y provides superior protection of the battery's internal components compared to Configuration X because internal coating placement intercepts heat closer to the source before it reaches the electrodes.",
+          "C. The 51% delay in fire onset time provided by EP/MAP-Cu20% relative to pure EP is attributable to the reduction in heat release rate of the coating itself, since the filler reduces both total heat release and peak heat release rate by over 74% compared to pure EP.",
+          "D. Configuration X and Configuration Y cannot be ranked on overall safety without knowing whether the primary failure risk is external module damage or internal electrode degradation, because the two configurations protect different boundaries.",
+          "E. Increasing MAP-Cu filler content beyond 20 wt% in the epoxy matrix will continue to reduce heat release rate monotonically, so the engineer should specify the highest manufacturable filler loading.",
+          "F. The placement of coating on the top internal surface versus the side internal surface produces a measurable difference in peak temperature (362°C vs 319°C), indicating that coating location within the internal surface affects thermal protection effectiveness.",
+          "G. The external coating configuration's 93°C external peak temperature implies that the internal battery temperature during thermal runaway is also near 93°C, confirming that the coating prevents significant internal heat generation."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The external casing peak of 93°C is directly below the 120°C housing limit, making Configuration X admissible for the housing constraint. Configuration Y's internal temperature data (319°C) does not characterize external surface temperature, so the housing constraint cannot be evaluated from that data alone. This requires recognizing the measurement scope limitation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+202+Chemical_Engineering_Journal:C002",
+              "TR_Protection+202+Chemical_Engineering_Journal:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The evidence shows that internal coating at the side surface reaches 319°C peak internally, while external coating limits external surface to 93°C. The internal coating does not prevent high internal temperatures; it only modifies the heat distribution within the casing. The claim that internal placement 'intercepts heat closer to the source' is a plausible-sounding mechanism but is not supported by the evidence showing 319°C internal peaks with internal coating.",
+            "error_type": "mechanism_substitution_unsupported_by_outcome",
+            "evidence_refs": [
+              "TR_Protection+202+Chemical_Engineering_Journal:C002",
+              "TR_Protection+202+Chemical_Engineering_Journal:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence shows EP/MAP-Cu20% reduces THR and PHRR by 74.4% and 76.7% respectively compared to pure EP. The fire onset delay and peak temperature reduction relative to pure EP are consistent with the coating's own reduced heat release being a contributing mechanism. This is a multi-step causal chain: reduced PHRR of coating → less heat added to system → delayed fire onset and lower peak temperature.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+202+Chemical_Engineering_Journal:C004",
+              "TR_Protection+202+Chemical_Engineering_Journal:C001"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Configuration X protects the external boundary (module housing) while Configuration Y protects the internal boundary (electrode side). These address different failure modes. Without knowing which failure risk dominates, ranking them on overall safety requires additional information not provided in the stem. This is an admissibility boundary judgment.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+202+Chemical_Engineering_Journal:C002",
+              "TR_Protection+202+Chemical_Engineering_Journal:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The evidence states that increasing MAP-Cu proportion continuously reduces THR and PHRR up to 20 wt%, but does not provide data beyond 20 wt%. Recommending the highest manufacturable loading based on a trend observed only up to 20 wt% is an unsupported extrapolation. Mechanical properties, processability, and other constraints are not addressed.",
+            "error_type": "unsupported_monotonic_extrapolation_beyond_evidence_range",
+            "evidence_refs": [
+              "TR_Protection+202+Chemical_Engineering_Journal:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The evidence directly shows that top internal placement reaches 362°C while side internal placement reaches 319°C—a 43°C difference. This directly supports the conclusion that coating location within the internal surface affects thermal protection effectiveness.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+202+Chemical_Engineering_Journal:C005"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "The 93°C external casing temperature reflects the external surface after the coating has absorbed and insulated against internal heat. It does not imply that internal battery temperature is near 93°C. Internal temperatures during thermal runaway are typically several hundred degrees Celsius. This is a measurement scope violation: inferring internal state from external surface measurement.",
+            "error_type": "surface_measurement_extrapolated_to_internal_state",
+            "evidence_refs": [
+              "TR_Protection+202+Chemical_Engineering_Journal:C002",
+              "TR_Protection+202+Chemical_Engineering_Journal:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of design configuration conclusions when coating placement determines which boundary is protected, requiring recognition that external and internal temperature measurements characterize different system boundaries and cannot be directly compared for different protection objectives.",
+        "primary_boundary": "The boundary between what external surface temperature data can and cannot imply about internal battery state, and the boundary between evidence-supported trends and extrapolation beyond the tested parameter range.",
+        "intended_error_modes": [
+          "Selecting B by assuming internal placement is inherently superior without checking internal temperature outcomes",
+          "Selecting E by extrapolating a monotonic trend beyond the tested range",
+          "Selecting G by inferring internal temperature from external surface measurement"
+        ],
+        "disallowed_extrapolations": [
+          "Do not infer internal battery temperature from external casing temperature",
+          "Do not extrapolate MAP-Cu loading trends beyond 20 wt%",
+          "Do not rank configurations on overall safety without specifying which failure mode is being evaluated"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "In a battery module, a 1 mm thick neat epoxy resin barrier is placed between two 100% SOC NCM 811 pouch cells. Experimental data show that when this barrier is present, the second cell undergoes thermal runaway 52 seconds after the first cell, compared to 105 seconds in the absence of any barrier. Separately, electrochemical data from a different test show that two cells exposed to barriers of different flame-retardant properties have maximum surface temperatures differing by only 25°C, yet their charge transfer resistances differ by approximately 60-fold and their lithium-ion diffusion coefficients differ by approximately 3600-fold. \n\nA module safety engineer proposes the following: 'Any solid barrier between cells will improve safety by slowing thermal runaway propagation, and surface temperature monitoring after a propagation event is sufficient to assess whether the surviving cell has sustained significant internal damage.' \n\nIdentify the two specific engineering errors in this proposal, explain the physical mechanism underlying each error, and state what additional information or measurement would be needed to correct each error."
+      },
+      "ground_truth": {
+        "gold_answer": "Error 1: The claim that any solid barrier improves safety by slowing propagation is incorrect. A combustible barrier without flame-retardant properties can accelerate thermal runaway propagation rather than delay it. The mechanism is that when the barrier material undergoes thermal breakdown and combustion upon exposure to heat from the first cell's thermal runaway, it releases additional heat into the environment surrounding the second cell. This added heat reduces the time available before the second cell reaches its thermal runaway trigger temperature, making propagation faster than in the no-barrier case. To correct this error, the engineer needs to characterize the combustion behavior of the barrier material (e.g., peak heat release rate, ignitability) under conditions representative of thermal runaway heat exposure, and select barrier materials with demonstrated flame-retardant properties rather than assuming any solid barrier is protective.\n\nError 2: The claim that surface temperature monitoring is sufficient to assess internal electrochemical damage is incorrect. The evidence shows that cells with only a 25°C difference in maximum surface temperature can have dramatically different internal electrochemical states, with charge transfer resistance and lithium-ion diffusion coefficient differing by factors of approximately 60 and 3600 respectively. The mechanism underlying this discrepancy is that surface temperature is an indirect and spatially averaged measurement that does not capture the duration, spatial distribution, or internal thermal gradients experienced by the electrodes and electrolyte. Barriers with different thermal and combustion properties alter the heat transfer pathway to the cell interior in ways that are not fully reflected in the peak surface temperature. To correct this error, post-event electrochemical characterization (such as impedance spectroscopy to measure charge transfer resistance and diffusion coefficients) is required to assess internal damage state, and surface temperature alone should not be used as the sole diagnostic criterion.",
+        "must_include": [
+          "combustible barrier adds heat to surrounding environment, accelerating propagation rather than delaying it",
+          "neat EP barrier reduces propagation delay time compared to no barrier (105 s reduced to 52 s)",
+          "surface temperature is an unreliable indicator of internal electrochemical damage state",
+          "25°C surface temperature difference corresponds to orders-of-magnitude differences in charge transfer resistance and diffusion coefficient",
+          "electrochemical characterization (impedance spectroscopy or equivalent) is needed to assess internal damage",
+          "flame-retardant properties of barrier material must be characterized, not assumed protective"
+        ],
+        "disallowed_extrapolations": [
+          "Do not claim that all barriers accelerate propagation; only combustible barriers without flame retardancy are shown to do so",
+          "Do not claim that surface temperature is never useful; only that it is insufficient alone for internal damage assessment",
+          "Do not specify a particular threshold temperature above which internal damage occurs, as this is not supported by the evidence",
+          "Do not generalize the 60-fold and 3600-fold differences to other chemistries or SOC levels"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Identification and mechanistic explanation of two distinct engineering errors: (1) assuming any barrier improves safety regardless of its combustion behavior, and (2) assuming surface temperature adequately characterizes internal electrochemical damage state.",
+        "primary_boundary": "The boundary between a barrier as a passive thermal insulator and an active heat source when combustible; and the boundary between surface temperature as a proxy measurement and direct electrochemical characterization of internal state.",
+        "intended_error_modes": [
+          "Identifying only one of the two errors",
+          "Correctly identifying the barrier combustion error but attributing it to thickness rather than flame-retardant properties",
+          "Correctly identifying the surface temperature limitation but failing to specify what measurement would correct it",
+          "Overgeneralizing to claim all barriers are harmful or that surface temperature is never informative"
+        ]
+      }
+    }
+  ]
+}

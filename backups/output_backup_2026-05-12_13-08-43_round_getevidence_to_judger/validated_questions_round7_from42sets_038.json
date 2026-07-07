@@ -1,0 +1,135 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "During a process safety review, an engineer compares the explosive hazard potential of three battery chemistries using TNT equivalent energy. The NTM sodium-ion cell and the LFP cell yield nearly identical TNT equivalent values, differing by less than 1%, while the NCM cell yields a value 2.2 times higher than NTM. Separately, the NTM cell exhibits the lowest activation energy among all three. A risk assessor must classify relative hazard tiers. Which of the following assessments are admissible?",
+        "options": [
+          "A. NTM and LFP cells can be placed in the same explosive hazard tier based on TNT equivalent energy, even though their thermal runaway peak temperatures differ.",
+          "B. The NCM cell's higher TNT equivalent energy, combined with its higher activation energy than NTM, implies that activation energy is the primary determinant of explosive energy release during thermal runaway.",
+          "C. The NTM cell's lower activation energy relative to NCM does not predict that NTM will release more explosive energy than NCM during thermal runaway.",
+          "D. Because NTM and LFP have nearly identical TNT equivalent values, their thermal runaway hazard profiles are interchangeable for all process safety purposes.",
+          "E. The explosive energy ranking NCM >> NTM ≈ LFP is consistent with a scenario where the dominant energy source differs between the high-nickel NCM chemistry and the other two chemistries.",
+          "F. The 2.2× higher TNT equivalent of NCM over NTM means that NCM cells require at least 2.2 times the separation distance in storage compared to NTM cells."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "TNT equivalent values for NTM and LFP differ by less than 1%; explosive hazard tier classification based on this metric places them together despite different peak temperatures.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+154+Process_Safety_and_Environmental_Protection:C004",
+              "TR_Gasventing+154+Process_Safety_and_Environmental_Protection:C001"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "NCM has higher Ea than NTM yet releases more explosive energy; this contradicts activation energy being the primary determinant of explosive energy.",
+            "error_type": "causal overclaim / mechanism substitution",
+            "evidence_refs": [
+              "TR_Gasventing+154+Process_Safety_and_Environmental_Protection:C003",
+              "TR_Gasventing+154+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "NTM has lower Ea than NCM yet releases far less explosive energy; activation energy governs initiation kinetics, not total energy content.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+154+Process_Safety_and_Environmental_Protection:C003",
+              "TR_Gasventing+154+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "TNT equivalent parity covers explosive energy only; ignition threshold, peak temperature, and activation energy differ, making full hazard profile interchangeability inadmissible.",
+            "error_type": "scope expansion / single-metric overgeneralization",
+            "evidence_refs": [
+              "TR_Gasventing+154+Process_Safety_and_Environmental_Protection:C001",
+              "TR_Gasventing+154+Process_Safety_and_Environmental_Protection:C002",
+              "TR_Gasventing+154+Process_Safety_and_Environmental_Protection:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The large energy gap between NCM and the other two chemistries is consistent with NCM having a distinct dominant energy-releasing mechanism, a reasoning-based inference from the pattern.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+154+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Separation distance depends on blast overpressure models, geometry, and regulatory standards; TNT equivalent ratio alone does not directly set a proportional separation distance requirement.",
+            "error_type": "system-level recommendation from component-level metric without engineering basis",
+            "evidence_refs": [
+              "TR_Gasventing+154+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Decoupling activation energy from explosive energy release, and limits of single-metric hazard classification",
+        "primary_boundary": "Activation energy predicts initiation kinetics, not total explosive energy; TNT equivalent parity does not imply full hazard profile equivalence",
+        "intended_error_modes": [
+          "activation energy as determinant of explosive energy",
+          "single-metric full hazard equivalence",
+          "direct proportional scaling of separation distance from TNT ratio"
+        ],
+        "disallowed_extrapolations": [
+          "Activation energy determines explosive energy magnitude",
+          "TNT equivalent equality implies all hazard metrics are equal",
+          "TNT ratio directly sets engineering separation distances"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A sodium-ion (NTM) battery cell is being evaluated for use in a warehouse storage system alongside LFP and NCM lithium-ion cells. The NTM cell has the lowest activation energy among the three chemistries, a maximum thermal runaway temperature intermediate between LFP and NCM, and a TNT equivalent explosive energy nearly identical to LFP but 2.2 times lower than NCM. Its spontaneous ignition threshold under natural convection is 169.6°C for fully charged cells, and its self-accelerating decomposition temperature responds more strongly to convective cooling improvements than either LFP or NCM. An engineer argues that because NTM shows the greatest SADT improvement with cooling, it is the safest choice for ambient storage without forced cooling. Identify the specific flaw in this reasoning and explain which hazard dimension makes NTM potentially more concerning than LFP under uncooled storage conditions."
+      },
+      "ground_truth": {
+        "gold_answer": "The engineer's reasoning conflates the benefit of adding cooling with the baseline safety of uncooled storage. A large SADT improvement with cooling means the cell is highly sensitive to cooling—but this also implies that without cooling, the NTM cell's SADT is lower relative to its potential than the other chemistries. The NTM cell has the lowest activation energy of all three, meaning exothermic decomposition reactions initiate more readily at lower temperatures. Under uncooled natural convection, this lower activation energy makes NTM more thermally reactive than LFP, increasing self-heating onset risk at a given storage temperature. The 169.6°C spontaneous ignition threshold applies only to fully charged cells, so partial charge does not eliminate this concern. The hazard dimension making NTM more concerning than LFP under uncooled conditions is its higher thermal reactivity due to lower activation energy, which means self-heating can begin at lower temperatures, even though the explosive energy released is nearly the same as LFP.",
+        "must_include": [
+          "Greater SADT improvement with cooling does not imply greater safety without cooling",
+          "NTM has the lowest activation energy, implying earlier onset of exothermic decomposition",
+          "Lower activation energy means higher thermal reactivity under uncooled conditions compared to LFP",
+          "The 169.6°C threshold is conditional on full state of charge",
+          "Explosive energy similarity to LFP does not offset the initiation reactivity difference"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding NTM is unsafe in all configurations based solely on activation energy",
+          "Claiming NTM explosive energy is higher than LFP",
+          "Stating that forced cooling cannot compensate for NTM's higher reactivity",
+          "Applying the 169.6°C threshold to partially charged cells without qualification"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinguishing cooling sensitivity as a relative benefit from baseline uncooled hazard level, and linking activation energy to self-heating onset risk",
+        "primary_boundary": "SADT improvement rate with cooling is a sensitivity metric, not a baseline safety metric; activation energy governs initiation risk independently of explosive energy",
+        "intended_error_modes": [
+          "Conflating cooling benefit with uncooled safety",
+          "Ignoring activation energy as the relevant metric for uncooled storage risk",
+          "Treating TNT equivalent parity with LFP as full hazard equivalence"
+        ]
+      }
+    }
+  ]
+}

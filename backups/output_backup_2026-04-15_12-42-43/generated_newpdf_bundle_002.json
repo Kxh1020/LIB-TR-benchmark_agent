@@ -1,0 +1,365 @@
+{
+  "TR_Gasventing+130+Journal_of_Power_Sources__TR_Gasventing+153+Process_Safety_and_Environmental_Protection__TR_Gasventing+157+Process_Safety_and_Environmental_Protection": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A 280Ah LFP prismatic cell undergoes thermal runaway testing across a range of SOC conditions. At 75% SOC, total gas emission is 7.4 times that at 25% SOC, the lower flammability limit drops to approximately 5%, and the vent gas composition shifts toward elevated H2 and reduced CO2 fractions. At 50% SOC, the flammability hazard index is measured to be higher than at 75% SOC, despite lower total gas volume. An engineer is evaluating whether flammability-related ignition risk scales monotonically with SOC for this cell chemistry. Which of the following conclusions are admissible given these conditions?",
+          "options": [
+            "A. The flammability hazard index at 50% SOC exceeding that at 75% SOC is consistent with the vent gas at 75% SOC having a narrower flammable concentration range, even though total gas volume is higher at 75% SOC.",
+            "B. Because total gas emission increases with SOC and the lower flammability limit decreases with SOC, ignition risk necessarily increases monotonically from 25% to 75% SOC.",
+            "C. The reduction in CO2 fraction and increase in H2 fraction at higher SOC is consistent with a shift in electrolyte decomposition pathways driven by increased lithium concentration, which also contributes to the change in flammability characteristics.",
+            "D. The flammable concentration range at 75% SOC being narrower than at 50% SOC is sufficient to conclude that a 75% SOC vent gas release poses lower overall explosion hazard than a 50% SOC release under all enclosure conditions.",
+            "E. At 25% SOC, the upper flammability limit of vent gases substantially exceeds that at 75% SOC, which means that at dilute mixing conditions a 25% SOC release could remain within the flammable range over a wider concentration band than a 75% SOC release.",
+            "F. The non-monotonic behavior of flammability hazard index with SOC implies that thermal runaway severity, as measured by maximum cell temperature, also follows a non-monotonic trend with SOC.",
+            "G. Using total gas volume alone as a proxy for flammability ignition risk would overestimate the risk at 75% SOC relative to 50% SOC for this cell chemistry and test configuration."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E",
+            "G"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The flammable range at 75% SOC is 17.6% versus 48.5% at 50% SOC. A higher FHI at 50% SOC despite lower total gas volume is mechanistically consistent with the much wider flammable concentration band at 50% SOC. This requires combining FHI ordering evidence with flammable range data.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C005",
+                "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C008"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The FHI follows 50% SOC > 75% SOC > 25% SOC, directly contradicting monotonic increase. This distractor appears reasonable because both gas volume and LFL trend in the same direction, but the flammable range reversal breaks monotonicity.",
+              "error_type": "unjustified monotonicity",
+              "evidence_refs": [
+                "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "The evidence explicitly attributes the shift toward H2 and reduced CO2 at higher SOC to altered electrolyte decomposition pathways promoted by increased lithium concentration. This is a direct mechanistic chain supported by the evidence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C003",
+                "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C010"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "The narrower flammable range at 75% SOC is a component of hazard assessment, but the conclusion that overall explosion hazard is lower under all enclosure conditions is an inadmissible generalization. Enclosure geometry, ventilation, and ignition source location are not accounted for, and the FHI at 75% SOC still exceeds 25% SOC.",
+              "error_type": "scope expansion distractor / condition violation",
+              "evidence_refs": [
+                "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C005",
+                "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C008"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "The UFL at 25% and 50% SOC is 55\u201365%, far exceeding the 4.7\u20136.6% UFL at 75% SOC. At dilute mixing conditions, a 25% SOC release remains flammable across a much wider ambient concentration band (RF ~43.7%) than a 75% SOC release (RF ~17.6%). This is counterintuitive because lower SOC is typically assumed safer, but the wide flammable range means dilute releases remain ignitable over a broader mixing window.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C008"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Maximum cell temperature increases sequentially with SOC (35% then 258.3% increases from 25% to 50% to 75%), which is monotonic. The non-monotonic FHI behavior does not imply non-monotonic temperature behavior; these are governed by different physical quantities.",
+              "error_type": "mechanism confusion / causal overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C001",
+                "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C005"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Correct",
+              "justification": "Since FHI at 50% SOC exceeds that at 75% SOC despite lower gas volume at 50% SOC, using total gas volume as the sole proxy for ignition risk would rank 75% SOC as higher risk than 50% SOC, which contradicts the FHI ordering. This is a direct admissible inference from the non-monotonic FHI result.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C005",
+                "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C007"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Non-monotonic relationship between SOC and flammability hazard index; admissibility of gas-volume-based risk proxies",
+          "primary_boundary": "FHI is non-monotonic with SOC; total gas volume and LFL trends alone cannot determine FHI ordering",
+          "intended_error_modes": [
+            "unjustified monotonicity from volume/LFL trends",
+            "scope expansion to all enclosure conditions",
+            "conflating FHI non-monotonicity with temperature non-monotonicity"
+          ],
+          "disallowed_extrapolations": [
+            "Concluding monotonic ignition risk from monotonic gas volume",
+            "Applying flammable range narrowness to all hazard scenarios without enclosure qualification",
+            "Inferring thermal severity non-monotonicity from flammability non-monotonicity"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "An NCM622 battery module and a 280Ah LFP prismatic cell are both tested under thermal runaway conditions at varying SOC. For the NCM622 module, no thermal runaway propagation occurs when SOC is below 25% in closed space, and CO2 content in vent gas increases from 38.91% to 70.45% as SOC decreases from 100% to 50%. For the LFP cell, CO2 proportion decreases from approximately 61% at 25% SOC to 12% at 75% SOC, and the number of detected gaseous components increases from 15 at 25% SOC to 36 at 75% SOC. An engineer is asked to evaluate which conclusions about vent gas composition trends and propagation behavior are supported across both chemistries, and which are chemistry-specific. Which of the following judgments are admissible?",
+          "options": [
+            "A. The trend of CO2 fraction increasing as SOC decreases is consistent across both the NCM622 module and the LFP cell evidence, supporting a cross-chemistry generalization for this directional relationship.",
+            "B. The increase in gaseous component count with SOC for the LFP cell cannot be directly generalized to the NCM622 module, because the evidence for component count variation is specific to the LFP cell.",
+            "C. The SOC threshold below which thermal runaway propagation is suppressed in the NCM622 module can be applied directly to LFP cells, since both chemistries show reduced severity at lower SOC.",
+            "D. The increase in CO2 fraction at lower SOC for the NCM622 module is consistent with the evidence that CO and C2H4 content decreases at lower SOC, suggesting that the relative contribution of reactions producing CO and hydrocarbons diminishes as stored energy decreases.",
+            "E. Because the LFP cell at 50% SOC did not exhibit significant thermal runaway behavior under prolonged heating, it can be concluded that NCM622 modules at 50% SOC would similarly suppress propagation in closed space.",
+            "F. The reduction in total gas production volume with decreasing SOC in the NCM622 module, combined with the increase in CO2 fraction, is consistent with a scenario where lower-energy reactions dominate at reduced SOC, producing proportionally more CO2 relative to combustible species.",
+            "G. The evidence that LFP cells show a non-linear jump in gas emissions between 50% and 75% SOC, while NCM622 modules show a more gradual reduction in propagation time between 50% and 100% SOC, supports the conclusion that LFP cells are inherently more dangerous than NCM622 cells above 50% SOC."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "D",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "NCM622 module: CO2 increases from 38.91% to 70.45% as SOC decreases from 100% to 50%. LFP cell: CO2 decreases from 61% at 25% SOC to 12% at 75% SOC, i.e., CO2 increases as SOC decreases. Both datasets show the same directional trend, making this cross-chemistry generalization admissible at the directional level.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+153+Process_Safety_and_Environmental_Protection:C003",
+                "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C010"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "The gaseous component count data (15, 19, 36 at 25%, 50%, 75% SOC) is specific to the LFP cell. No equivalent component count data is provided for the NCM622 module. Generalizing this trend across chemistries is an unsupported extrapolation.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C002"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "The 25% SOC propagation suppression threshold is established for NCM622 in closed space. The LFP cell evidence shows a different threshold behavior (50% SOC as critical TR trigger). Applying the NCM622 threshold to LFP is an inadmissible cross-chemistry extrapolation.",
+              "error_type": "overgeneralization / regime transfer beyond stated conditions",
+              "evidence_refs": [
+                "TR_Gasventing+153+Process_Safety_and_Environmental_Protection:C001",
+                "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C006"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "The NCM622 evidence shows CO and C2H4 both decrease with decreasing SOC while CO2 increases. This is mechanistically consistent with a shift away from reactions producing combustible carbon species toward less energetic oxidation pathways at lower stored energy, which is an admissible mechanistic inference from the compositional data.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+153+Process_Safety_and_Environmental_Protection:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The LFP 50% SOC threshold behavior is explicitly noted to warrant further investigation for different material systems. Applying LFP-specific threshold behavior to NCM622 is an inadmissible cross-chemistry extrapolation. This is a conservative-appearing but incorrect option.",
+              "error_type": "cross-chemistry overgeneralization",
+              "evidence_refs": [
+                "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C006",
+                "TR_Gasventing+153+Process_Safety_and_Environmental_Protection:C001"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "NCM622 total gas production decreases from 17.48 mol to 6.17 mol as SOC drops from 100% to 50%, while CO2 fraction increases. The inference that lower-energy reactions dominate at reduced SOC, producing proportionally more CO2 relative to combustible species, is a mechanistically coherent and evidence-supported interpretation.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+153+Process_Safety_and_Environmental_Protection:C002",
+                "TR_Gasventing+153+Process_Safety_and_Environmental_Protection:C003"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Incorrect",
+              "justification": "Comparing absolute danger between chemistries based on gas emission scaling and propagation time trends requires accounting for cell geometry, energy density, and test configuration. The evidence does not support a cross-chemistry absolute danger ranking; this is an inadmissible system-level conclusion from component-level comparative data.",
+              "error_type": "causal overclaim / scope expansion distractor",
+              "evidence_refs": [
+                "TR_Gasventing+157+Process_Safety_and_Environmental_Protection:C001",
+                "TR_Gasventing+153+Process_Safety_and_Environmental_Protection:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Cross-chemistry admissibility of vent gas composition trends and propagation thresholds",
+          "primary_boundary": "Chemistry-specific thresholds and component-count data cannot be generalized across NCM622 and LFP without additional evidence",
+          "intended_error_modes": [
+            "cross-chemistry threshold extrapolation",
+            "applying LFP TR suppression behavior to NCM622",
+            "absolute danger ranking from partial comparative data"
+          ],
+          "disallowed_extrapolations": [
+            "NCM622 propagation threshold applied to LFP",
+            "LFP component count trend applied to NCM622",
+            "Cross-chemistry absolute hazard ranking from single-variable comparison"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "An energy storage container houses battery modules that can undergo thermal runaway and vent combustible gases. The container is equipped with pressure relief panels that open at 3 kPa internal pressure and an escape door that opens at 20 kPa. During a simulated explosion event, the maximum internal overpressure reaches approximately 23 kPa. External overpressure measurements at various distances show values near 4.8 kPa at approximately 10 m from the container, with values below 4.8 kPa at closer intermediate measurement points on the relief-panel side. The explosion risk on the door side is assessed as higher than on the relief-panel side. Separately, pipeline flame propagation tests with the same vent gas composition show peak flame velocities near 20 m/s and peak overpressures near 0.595 MPa. An engineer must evaluate safety zone distances and venting design adequacy. Which conclusions are admissible?",
+          "options": [
+            "A. The pressure relief panels reduce internal overpressure by venting gases before the door threshold is reached, and the sequential opening of panels then door represents a staged pressure management strategy that limits peak internal overpressure.",
+            "B. The 0.595 MPa pipeline overpressure result can be directly used to estimate the external overpressure hazard radius around the energy storage container, since both involve the same vent gas composition.",
+            "C. The higher explosion risk on the door side compared to the relief-panel side is consistent with the door having a larger venting area, which results in a greater mass flux of combustible gas through that opening during the event.",
+            "D. The 4.8 kPa damage threshold distance of approximately 10 m applies to the door side of the container; concluding that the same 10 m distance is equally protective on the relief-panel side would require additional justification not provided by the stated evidence.",
+            "E. Because the maximum internal overpressure of 23 kPa is substantially lower than the 0.595 MPa pipeline flame overpressure, the container venting design can be considered adequate for all battery module failure scenarios involving this vent gas composition.",
+            "F. The presence of inert gas components in LIB vent gas, which reduces peak overpressure relative to pure H2 or CH4, means that the explosion hazard of LIB vent gases is lower than that of natural gas in all confined geometries.",
+            "G. The maximum damage distance of approximately 10 m is derived from a specific overpressure threshold applied to external measurement points; this conclusion is conditional on the assumed damage threshold value and the specific container configuration tested."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "D",
+            "G"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The evidence shows panels open at 3 kPa and the door opens at 20 kPa, with maximum internal pressure reaching 23 kPa after both open. The sequential threshold-based opening directly implements staged pressure management, and the venting is credited with greatly decreasing overpressure. This is a mechanistically admissible conclusion.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+130+Journal_of_Power_Sources:C003",
+                "TR_Gasventing+130+Journal_of_Power_Sources:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The 0.595 MPa result is from a confined pipeline geometry with specific ignition and confinement conditions. The container external overpressure is governed by venting area, container geometry, and gas distribution. Directly transferring the pipeline peak overpressure to estimate external container hazard radius is an inadmissible geometry and confinement transfer.",
+              "error_type": "scope expansion / geometry transfer beyond stated conditions",
+              "evidence_refs": [
+                "TR_Gasventing+130+Journal_of_Power_Sources:C002",
+                "TR_Gasventing+130+Journal_of_Power_Sources:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "The evidence explicitly states that the higher door-side risk results from the larger door area allowing more gas to vent through it. This is a direct causal chain from venting area to gas mass flux to external explosion risk.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+130+Journal_of_Power_Sources:C009"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "The 10 m damage distance is established from measurements that include the door-side geometry. The door side has higher risk than the relief-panel side. Applying the same 10 m distance to the relief-panel side without qualification ignores the directional asymmetry in explosion risk. Additional justification is required.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+130+Journal_of_Power_Sources:C005",
+                "TR_Gasventing+130+Journal_of_Power_Sources:C009"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The 23 kPa internal maximum and 0.595 MPa pipeline result involve fundamentally different geometries and confinement conditions. The lower internal pressure is achieved because venting greatly reduces it; this does not mean the venting design is adequate for all failure scenarios, particularly those involving higher gas concentrations or different ignition timing. This is a conservative-appearing but incorrect generalization.",
+              "error_type": "causal overclaim / scope expansion",
+              "evidence_refs": [
+                "TR_Gasventing+130+Journal_of_Power_Sources:C002",
+                "TR_Gasventing+130+Journal_of_Power_Sources:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The evidence states that inert gas content reduces peak overpressure relative to pure H2 or CH4 in the specific pipeline test. Generalizing this to all confined geometries is an inadmissible universal claim. Geometry, concentration, and ignition conditions all affect the comparison.",
+              "error_type": "overgeneralization / condition violation",
+              "evidence_refs": [
+                "TR_Gasventing+130+Journal_of_Power_Sources:C002"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Correct",
+              "justification": "The 10 m distance is explicitly derived using 4.8 kPa as the minimum damage threshold, applied to specific measurement point locations in the tested configuration. The conclusion is conditional on both the threshold value and the container geometry tested, making this an admissible and appropriately bounded statement.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+130+Journal_of_Power_Sources:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of safety zone distances and venting adequacy conclusions from container explosion simulation data",
+          "primary_boundary": "Pipeline overpressure results cannot be transferred to container external hazard; damage distance is configuration- and threshold-conditional; door-side asymmetry limits symmetric safety zone application",
+          "intended_error_modes": [
+            "geometry transfer from pipeline to container",
+            "universal inert gas safety claim",
+            "symmetric application of asymmetric damage distance",
+            "venting adequacy overclaim from single scenario"
+          ],
+          "disallowed_extrapolations": [
+            "Pipeline overpressure to container external hazard radius",
+            "Inert gas overpressure reduction to all confined geometries",
+            "10 m damage distance applied symmetrically without directional qualification"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A 280Ah LFP prismatic cell is tested at 25%, 50%, and 75% SOC. At 75% SOC, total gas emission is 7.4 times that at 25% SOC, the lower flammability limit of vent gas drops to approximately 5%, and the vent gas temperature reaches 315.9\u00b0C. At 25% and 50% SOC, the upper flammability limit is in the range of 55\u201365%, while at 75% SOC the upper flammability limit drops to 4.7\u20136.6%. The Flammability Hazard Index follows the order 50% SOC > 75% SOC > 25% SOC. An engineer proposes that the cell at 75% SOC poses the greatest flammability ignition risk because it produces the most gas and has the lowest lower flammability limit. Identify the specific reasoning error in this proposal, explain which additional flammability characteristic the engineer has failed to account for, and describe the mechanism by which the vent gas composition change at higher SOC produces this overlooked characteristic."
+        },
+        "ground_truth": {
+          "gold_answer": "The engineer's reasoning error is treating total gas volume and lower flammability limit as sufficient proxies for overall flammability ignition risk, while ignoring the flammable concentration range (the interval between lower and upper flammability limits). At 75% SOC, although the lower flammability limit is low (approximately 5%), the upper flammability limit also collapses to 4.7\u20136.6%, producing a flammable range of only approximately 17.6%. In contrast, at 50% SOC the flammable range is approximately 48.5%, meaning that a vent gas release at 50% SOC remains within the ignitable concentration window across a much wider range of mixing conditions. This is why the Flammability Hazard Index at 50% SOC exceeds that at 75% SOC despite lower total gas volume at 50% SOC. The mechanism driving the upper flammability limit collapse at 75% SOC is the shift in vent gas composition: at higher SOC, increased lithium concentration promotes reactions between active materials and electrolyte that preferentially produce H2 and hydrocarbons rather than CO2, while simultaneously reducing the CO2 fraction. The resulting gas mixture at 75% SOC, dominated by H2 with a narrow flammable range, has a very tight ignitable concentration window. At 25% and 50% SOC, the gas mixture retains a high CO2 fraction and a composition that supports a wide flammable range with a high upper flammability limit, making it ignitable across a broad mixing band even though the lower flammability limit is higher.",
+          "must_include": [
+            "The engineer ignores the upper flammability limit or the flammable concentration range width",
+            "At 75% SOC the upper flammability limit collapses to approximately 4.7\u20136.6%, giving a narrow flammable range of approximately 17.6%",
+            "At 50% SOC the flammable range is approximately 48.5%, exceeding that at 75% SOC",
+            "The Flammability Hazard Index at 50% SOC exceeds that at 75% SOC, contradicting the engineer's ranking",
+            "The composition shift at higher SOC toward H2 and reduced CO2 is driven by altered electrolyte decomposition pathways at higher lithium concentration",
+            "The narrow flammable range at 75% SOC results from the H2-dominated composition with high-concentration flammability limits converging"
+          ],
+          "disallowed_extrapolations": [
+            "Concluding that 75% SOC is always safer than 50% SOC in all hazard dimensions",
+            "Applying the LFP flammability range behavior to NCM622 or other chemistries without qualification",
+            "Claiming the upper flammability limit collapse at 75% SOC eliminates ignition risk",
+            "Asserting that total gas volume is irrelevant to hazard assessment in all contexts"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Distinction between lower flammability limit, upper flammability limit, flammable range width, and their combined role in determining flammability hazard index; mechanism linking SOC-dependent composition to flammable range behavior",
+          "primary_boundary": "LFL alone is insufficient to determine FHI; the flammable range width (UFL\u2013LFL) is the overlooked variable; the UFL collapse at 75% SOC is mechanistically linked to H2-dominated composition from altered electrolyte decomposition",
+          "intended_error_modes": [
+            "Using LFL and gas volume as sole risk proxies while ignoring UFL and flammable range",
+            "Assuming monotonic ignition risk increase with SOC",
+            "Failing to connect composition shift mechanism to flammability limit behavior"
+          ]
+        }
+      }
+    ]
+  }
+}

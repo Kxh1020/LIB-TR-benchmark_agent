@@ -1,0 +1,114 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A thermal runaway simulation of an NCM811 pouch cell with nail penetration is performed using kinetic parameters derived directly from differential scanning calorimetry (DSC) experiments. The simulation predicts no propagating reaction front and no thermal runaway event. However, physical nail penetration experiments on the same cell chemistry consistently produce thermal runaway. A modeler proposes adjusting the electrolyte reaction kinetics: increasing the frequency factor by 5%, decreasing the activation energy by 5%, and increasing the reaction enthalpy. After these adjustments, the simulation successfully captures a propagating reaction front. A second engineer argues that the activation energy of the electrolyte reaction is the single most influential parameter controlling the delay time to thermal runaway onset among all reaction kinetic parameters in the model. Which of the following conclusions are admissible given these conditions?",
+        "options": [
+          "A. The failure of the original DSC-derived parameters to predict thermal runaway indicates that DSC measurements systematically overestimate the activation energy of the electrolyte reaction under nail penetration conditions.",
+          "B. The successful capture of reaction front propagation after parameter adjustment is consistent with the electrolyte activation energy being the dominant kinetic parameter controlling thermal runaway delay time.",
+          "C. Because the simulation requires adjustment of DSC-derived parameters to match nail penetration experiments, the DSC-derived parameters are not directly transferable to nail penetration abuse conditions without modification.",
+          "D. The adjusted simulation result demonstrates that the frequency factor of the electrolyte reaction is more influential than its activation energy in controlling thermal runaway delay time.",
+          "E. The inability of the original parameters to predict thermal runaway implies that the nail penetration experiments were conducted at a different state of charge than the DSC samples.",
+          "F. The parameter adjustment required for simulation fidelity suggests that the electrolyte kinetic parameters derived from small-sample DSC experiments may not fully represent the in-cell reaction behavior under abuse conditions.",
+          "G. Since reaction front propagation is captured only after increasing reaction enthalpy and decreasing activation energy, thermal runaway in this cell is driven primarily by the positive electrode decomposition rather than electrolyte reactions."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "The evidence identifies a discrepancy between DSC-derived parameters and nail penetration behavior, but does not state that DSC systematically overestimates activation energy. The required correction is a 5% decrease in activation energy, but attributing this specifically to a systematic DSC measurement bias is an unsupported causal overclaim beyond the evidence scope.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Modelling+183+UnknownJournal:C001",
+              "TR_Modelling+183+UnknownJournal:C002",
+              "TR_Modelling+183+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that the activation energy of the electrolyte global equation plays the most important role in affecting the delay time for thermal runaway. The successful simulation after adjusting this parameter (among others) is consistent with this claim. This is a supported admissible conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+183+UnknownJournal:C001",
+              "TR_Modelling+183+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence directly shows that original DSC-derived parameters fail to reproduce nail penetration thermal runaway, while adjusted parameters succeed. This supports the conclusion that DSC-derived parameters are not directly transferable without modification to nail penetration abuse conditions. This is a minimal admissible inference from the stated experimental discrepancy.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+183+UnknownJournal:C002",
+              "TR_Modelling+183+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence states the opposite: the activation energy of the electrolyte is the most important parameter, not the frequency factor. This option inverts the stated ranking and is a mechanism confusion distractor that appears plausible because the frequency factor was also adjusted.",
+            "error_type": "mechanism_confusion",
+            "evidence_refs": [
+              "TR_Modelling+183+UnknownJournal:C001"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The evidence does not mention SOC differences between DSC samples and nail penetration experiments. Attributing the discrepancy to SOC mismatch is an unsupported assumption not provided or justified in the evidence. This is a conservative-appearing but unsupported distractor.",
+            "error_type": "unsupported_assumption",
+            "evidence_refs": [
+              "TR_Modelling+183+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The need to adjust DSC-derived kinetic parameters to match in-cell nail penetration behavior is consistent with the conclusion that small-sample DSC measurements may not fully represent in-cell reaction behavior under abuse conditions. This is a minimal and evidence-grounded engineering inference from the observed parameter gap.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+183+UnknownJournal:C002",
+              "TR_Modelling+183+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "The evidence attributes the dominant role in thermal runaway progression to electrolyte kinetics, not positive electrode decomposition. The parameter adjustments made were to electrolyte parameters, and the evidence identifies electrolyte activation energy as the most influential parameter. Attributing primary drive to the positive electrode is a mechanism substitution error.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Modelling+183+UnknownJournal:C001",
+              "TR_Modelling+183+UnknownJournal:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of conclusions about DSC-to-abuse-condition parameter transferability and the dominance of electrolyte activation energy in controlling thermal runaway delay time",
+        "primary_boundary": "The evidence supports that DSC-derived parameters require modification for nail penetration conditions and that electrolyte activation energy is the dominant parameter — but does not support attributing the discrepancy to specific measurement biases or to positive electrode dominance",
+        "intended_error_modes": [
+          "Attributing simulation-experiment discrepancy to a specific measurement mechanism (DSC overestimation) not supported by evidence",
+          "Inverting the stated parameter importance ranking (frequency factor vs activation energy)",
+          "Introducing an unstated SOC variable as explanation",
+          "Misidentifying the dominant reaction component as positive electrode rather than electrolyte"
+        ],
+        "disallowed_extrapolations": [
+          "Generalizing DSC parameter transferability conclusions to other cell chemistries",
+          "Concluding that all kinetic parameters require adjustment, not just electrolyte parameters",
+          "Applying the parameter importance ranking to chemistries other than NCM811"
+        ]
+      }
+    }
+  ],
+  "short_answers": []
+}

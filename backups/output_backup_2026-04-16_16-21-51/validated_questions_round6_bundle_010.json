@@ -1,0 +1,133 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A LiNi1/3Co1/3Mn1/3O2/graphite cylindrical cell is subjected to thermal abuse testing at two different states of charge: 5% SOC and 90% SOC. The 5% SOC cell reaches a peak temperature near 289 °C with its separator shrinking but remaining structurally present and electrode material staying attached to current collectors. The 90% SOC cell reaches a substantially higher peak temperature, its separator is completely destroyed, and electrode material detaches from collectors. A safety engineer must assess which conclusions about the relationship between SOC and thermal runaway severity are admissible from these observations. Which of the following conclusions are supported?",
+        "options": [
+          "A. The difference in internal structural damage between the two SOC conditions is consistent with a threshold-like transition in reaction intensity rather than a simple proportional scaling of the same degradation mechanism.",
+          "B. Because the 5% SOC cell separator survives structurally, it can be concluded that no exothermic reactions occurred inside that cell during the thermal abuse event.",
+          "C. The observation that electrode material remains attached at 5% SOC but detaches at 90% SOC is sufficient to conclude that the current collector material itself melts at high SOC but not at low SOC.",
+          "D. The substantially higher peak temperature at 90% SOC compared to 5% SOC is consistent with greater stored electrochemical energy driving more intense exothermic reactions at higher charge states.",
+          "E. The structural survival of the separator at 5% SOC implies that thermal runaway propagation to an adjacent cell in a module would be prevented under all conditions at that SOC.",
+          "F. The gas deflagration and particle ejection observed exclusively at 90% SOC but not at 5% SOC indicates that the mechanical hazard from thermal runaway is SOC-dependent, with qualitatively different hazard modes emerging at high charge states."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The transition from separator shrinkage and attached electrodes at 5% SOC to complete separator destruction and detached electrodes at 90% SOC, combined with the appearance of deflagration only above 90% SOC, is consistent with a threshold-like change in reaction character rather than a smooth proportional scaling. This is a multi-step inference from the structural evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+186+Journal_of_Energy_Storage:C007",
+              "TR_Gasventing+186+Journal_of_Energy_Storage:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Separator survival does not imply absence of exothermic reactions; it implies the thermal conditions were insufficient to destroy the separator. The cell still reached ~289 °C, consistent with some exothermic activity. This is a measurement-scope overclaim.",
+            "error_type": "measurement scope overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+186+Journal_of_Energy_Storage:C003",
+              "TR_Gasventing+186+Journal_of_Energy_Storage:C007"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Electrode material detachment is consistent with binder decomposition or thermal degradation of the electrode coating, not necessarily current collector melting. The evidence does not support inferring collector melting from this observation.",
+            "error_type": "mechanism substitution / unsupported causal attribution",
+            "evidence_refs": [
+              "TR_Gasventing+186+Journal_of_Energy_Storage:C007"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Higher SOC corresponds to more stored electrochemical energy available for exothermic reactions. The linear relationship between SOC and peak temperature, combined with the observed temperature difference, is consistent with this mechanism. This is a direct evidence-supported causal inference.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+186+Journal_of_Energy_Storage:C001",
+              "TR_Gasventing+186+Journal_of_Energy_Storage:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Separator survival at the cell level under the specific thermal abuse conditions tested does not generalize to propagation prevention in a module under all conditions. This is a scale transfer beyond evidence scope and an overgeneralization from a single test condition.",
+            "error_type": "scale transfer beyond evidence / overgeneralization",
+            "evidence_refs": [
+              "TR_Gasventing+186+Journal_of_Energy_Storage:C007"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Gas deflagration and particle ejection were observed at 90% and 100% SOC but not at lower SOC values. This directly supports the conclusion that mechanical hazard modes are SOC-dependent and qualitatively different at high charge states.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+186+Journal_of_Energy_Storage:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of SOC-dependent hazard mode conclusions from structural and thermal observations during thermal runaway",
+        "primary_boundary": "Structural survival of separator at low SOC does not imply absence of reactions or propagation immunity; qualitative hazard mode change at high SOC is supported but mechanism details (e.g., collector melting) are not",
+        "intended_error_modes": [
+          "Inferring absence of exothermic reactions from separator survival (measurement scope overclaim)",
+          "Attributing electrode detachment to current collector melting without evidence (mechanism substitution)",
+          "Extrapolating cell-level separator survival to module-level propagation prevention (scale transfer overclaim)"
+        ],
+        "disallowed_extrapolations": [
+          "Separator survival implies no exothermic reactions occurred",
+          "Cell-level low-SOC behavior prevents propagation in all module configurations",
+          "Electrode detachment implies current collector melting"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery safety researcher observes that during thermal runaway of a LiNi1/3Co1/3Mn1/3O2/graphite cell at 100% SOC, 25 distinct gas species are identified in the vented gases, compared to only 6 gas species at 5% SOC. The researcher also notes that HF concentration in the released gases is higher at 100% SOC than at 5% SOC, and that gas deflagration with particle ejection occurs at 90% and 100% SOC but not at lower charge states. A colleague proposes that because the number of gas species increases with SOC, the primary safety concern at high SOC is gas toxicity, and that mechanical hazards from particle ejection are secondary and can be addressed independently of the gas management strategy. Evaluate whether this proposed prioritization and the independence assumption are admissible based on the available evidence. Identify the specific reasoning error in the colleague's proposal and explain what the evidence actually supports regarding the relationship between gas generation severity and mechanical hazard at high SOC."
+      },
+      "ground_truth": {
+        "gold_answer": "The colleague's proposal contains two admissibility errors. First, the prioritization of gas toxicity over mechanical hazards is not supported by the evidence as a general hierarchy. The evidence shows that at high SOC (90–100%), both increased gas species count and diversity (including higher HF concentration) AND gas deflagration with particle ejection occur together. These are co-occurring hazard modes at high SOC, not independently ranked ones. The evidence does not establish that gas toxicity is the primary hazard and mechanical ejection is secondary. Second, the independence assumption is not admissible. Gas deflagration — the mechanism that drives particle ejection — is itself a gas-phase phenomenon. The particle ejection at high SOC is caused by or co-occurs with gas deflagration, meaning the gas generation severity and the mechanical hazard are mechanistically coupled at high SOC. A gas management strategy that addresses vented gas composition but not deflagration pressure or ejection dynamics would be incomplete. What the evidence actually supports is that high SOC creates a qualitatively different and more severe hazard regime in which gas toxicity, gas quantity (more species, higher HF), and mechanical hazard (deflagration, particle ejection) all intensify together. The appropriate conclusion is that high-SOC thermal runaway requires an integrated hazard management approach addressing both gas and mechanical consequences, not a sequential or independent treatment of each.",
+        "must_include": [
+          "Gas deflagration and particle ejection are co-occurring with increased gas species count at high SOC, not independent hazard modes",
+          "The evidence does not support a toxicity-over-mechanical priority ranking",
+          "Gas deflagration mechanistically links the gas hazard and the mechanical ejection hazard",
+          "High SOC represents a qualitatively different hazard regime where multiple hazard modes intensify simultaneously",
+          "Independence assumption is not admissible because particle ejection is driven by gas-phase deflagration"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming that mechanical hazard is always more severe than gas toxicity at high SOC",
+          "Claiming that the number of gas species is the sole determinant of toxicity risk",
+          "Asserting that deflagration is the only mechanism of particle ejection without evidence for that exclusivity",
+          "Generalizing the high-SOC hazard coupling to low-SOC conditions where deflagration was not observed"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of hazard prioritization and independence assumptions when multiple co-occurring hazard modes are mechanistically coupled at high SOC",
+        "primary_boundary": "Evidence shows co-occurrence and mechanical coupling of gas and particle ejection hazards at high SOC; it does not support independent treatment or a ranked priority between gas toxicity and mechanical hazard",
+        "intended_error_modes": [
+          "Treating co-occurring hazard modes as independently addressable when they share a common mechanism (gas deflagration)",
+          "Inferring a hazard priority ranking from the observation that more gas species appear at high SOC",
+          "Ignoring the mechanistic link between gas generation severity and particle ejection at high SOC"
+        ]
+      }
+    }
+  ]
+}

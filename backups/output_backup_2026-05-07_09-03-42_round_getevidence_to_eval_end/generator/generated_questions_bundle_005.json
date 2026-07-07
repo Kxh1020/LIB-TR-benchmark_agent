@@ -1,0 +1,319 @@
+{
+  "TR_Modelling+101+Applied_Energy__TR_Modelling+131+Energy__TR_Modelling+14+Journal_of_Energy_Storage": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A 60 Ah prismatic NCM/graphite cell undergoes thermal runaway in an EV-ARC test. An internal thermocouple records a maximum temperature of 994.8 \u00b0C and a peak rate of 531 \u00b0C/s. A surface thermocouple on the same cell records simultaneously. Which statements about the surface thermocouple readings are supported by engineering evidence?",
+          "options": [
+            "A. The surface thermocouple maximum temperature (~565.9 \u00b0C) underestimates the internal peak by roughly 430 \u00b0C, so surface measurements alone cannot characterize peak internal severity.",
+            "B. The surface temperature variation rate (~49.2 \u00b0C/s) is approximately one order of magnitude lower than the internal rate, meaning surface-based rate-of-rise alarms will underestimate internal escalation speed.",
+            "C. Surface and internal thermocouples reach the same maximum temperature because thermal equilibrium is established before the peak is recorded.",
+            "D. The surface thermocouple provides an earlier onset warning than the internal thermocouple because surface sensors respond to convective heat before internal reactions begin.",
+            "E. The gap between surface and internal peak temperatures implies that using surface temperature as a proxy for internal state leads to a conservative (safe-side) overestimate of internal severity.",
+            "F. Voltage drop to near zero occurs 6.8 s before thermal runaway onset and therefore provides an earlier electrical warning than either thermocouple measurement of the runaway event itself."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Surface max 565.9 \u00b0C vs internal 994.8 \u00b0C; difference ~429 \u00b0C confirms surface underestimates internal peak severity.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+14+Journal_of_Energy_Storage:C002"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Surface rate max 49.2 \u00b0C/s vs internal 531 \u00b0C/s; one-order-of-magnitude gap confirmed, rate alarms underestimate escalation.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+14+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Evidence shows a ~430 \u00b0C gap at peak; thermal equilibrium is not established, making this a boundary overreach.",
+              "error_type": "boundary overreach",
+              "evidence_refs": [
+                "TR_Modelling+14+Journal_of_Energy_Storage:C002"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "No evidence supports surface sensors giving earlier onset warning; onset temperature T1 is defined from the internal thermocouple.",
+              "error_type": "causal overclaim",
+              "evidence_refs": [
+                "TR_Modelling+14+Journal_of_Energy_Storage:C001"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Surface reads lower, not higher, than internal; using surface as proxy is non-conservative, not conservative.",
+              "error_type": "mechanism substitution",
+              "evidence_refs": [
+                "TR_Modelling+14+Journal_of_Energy_Storage:C002"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Voltage drops 6.8 s before TR onset, predating the thermal runaway temperature rise detected by either thermocouple.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+14+Journal_of_Energy_Storage:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Measurement-versus-internal-state gap: surface thermocouple underestimates internal peak temperature and rate; voltage provides earlier warning than thermal sensors.",
+          "primary_boundary": "Findings apply to the specific 60 Ah prismatic NCM/graphite cell under EV-ARC adiabatic conditions; equilibrium assumption is explicitly violated.",
+          "intended_error_modes": [
+            "boundary overreach",
+            "causal overclaim",
+            "mechanism substitution"
+          ],
+          "disallowed_extrapolations": [
+            "Assuming surface and internal temperatures equalize before peak",
+            "Assuming surface sensors provide earlier onset detection than internal sensors",
+            "Treating surface underestimate as conservative overestimate"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "An engineer compares LFP and NCM battery chemistries under extreme adiabatic conditions and notes that the ratio of triggering energy of self-heat onset to total self-heat generation is ~24.5% for LFP and ~5\u20138% for NCM. The engineer then designs a thermal management intervention. Which conclusions about these chemistries and intervention design are valid?",
+          "options": [
+            "A. For NCM batteries under adiabatic conditions, internal chemical reactions account for approximately 95% of heat sources during thermal runaway, leaving external input as a minor contributor.",
+            "B. Because LFP requires ~24.5% external triggering energy relative to total self-heat, LFP batteries demand substantially more external energy input to initiate thermal runaway than NCM batteries under comparable adiabatic conditions.",
+            "C. The ~5\u20138% onset ratio for NCM means that once NCM self-heating begins, the remaining ~92\u201395% of heat is released rapidly, implying less intervention time than for LFP after onset.",
+            "D. The consistent onset-to-total-heat ratio across LFP cells (mean 24.5%, median 23.1%) means this ratio can be directly applied to predict NCM thermal runaway onset energy without adjustment.",
+            "E. For LFP, approximately 65.5% of total self-heat is released during the thermal runaway stage itself, meaning most LFP self-heat is concentrated in a short burst after the triggering threshold is crossed.",
+            "F. Under adiabatic conditions, LFP batteries derive roughly 80% of total energy from internal exothermic reactions, so external heating accounts for the minority of total energy even though it may exceed the triggering threshold."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence states internal chemical interactions account for ~95% of NCM heat sources under extreme adiabatic conditions.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+101+Applied_Energy:C008"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The ratio is onset-to-total-self-heat, not an absolute energy comparison between chemistries; absolute triggering energy comparison is unsupported.",
+              "error_type": "scale transfer overclaim",
+              "evidence_refs": [
+                "TR_Modelling+101+Applied_Energy:C001",
+                "TR_Modelling+101+Applied_Energy:C008"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Low onset ratio (~5\u20138%) for NCM means ~92\u201395% of heat remains post-onset, implying a larger and faster self-sustaining release with less intervention time.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+101+Applied_Energy:C008"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Evidence explicitly shows NCM ratio (~5\u20138%) differs substantially from LFP (~24.5%); direct transfer across chemistries is unsupported.",
+              "error_type": "regime transfer error",
+              "evidence_refs": [
+                "TR_Modelling+101+Applied_Energy:C001",
+                "TR_Modelling+101+Applied_Energy:C008"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Evidence states ~65.5% of LFP self-heat is released during thermal runaway in a short period, causing steep temperature rise.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+101+Applied_Energy:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Evidence states LFP gets ~80% of energy from internal reactions and ~20% from external input under adiabatic conditions.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+101+Applied_Energy:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Chemistry-specific onset-to-total-heat ratios and their implications for intervention timing and energy partitioning.",
+          "primary_boundary": "Ratios are defined under extreme adiabatic conditions; direct cross-chemistry transfer of LFP ratios to NCM is explicitly unsupported.",
+          "intended_error_modes": [
+            "scale transfer overclaim",
+            "regime transfer error",
+            "unsupported monotonicity"
+          ],
+          "disallowed_extrapolations": [
+            "Applying LFP onset ratio directly to NCM",
+            "Comparing absolute triggering energies across chemistries from ratio data alone"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery pack engineer evaluates thermal runaway propagation in a multi-cell prismatic pack. Cells are arranged in series with silicon rubber pads between battery sets. Under uphill climbing at 120 km/h, 3% slope, 40 \u00b0C ambient, thermal runaway is triggered. Which statements about propagation dynamics and early warning are supported?",
+          "options": [
+            "A. The thermal runaway propagation time interval across a silicon rubber pad (~120 s) is approximately twice that between adjacent cells within the same set (~60 s), indicating the pad provides meaningful but not absolute propagation delay.",
+            "B. Approximately 47% of total cell energy during thermal runaway is ejected by venting, making venting the largest single energy loss pathway from the triggering cell.",
+            "C. Heat conduction dominates energy transfer before thermal runaway onset; after onset, reaction heat becomes the dominant pathway, so pre-runaway thermal monitoring primarily captures conductive heat flow.",
+            "D. Uphill climbing at 120 km/h, 3% slope, 40 \u00b0C ambient produces the shortest propagation time intervals among studied conditions because it yields the highest initial battery temperature at runaway onset.",
+            "E. Lateral surface temperature monitoring reliably detects thermal runaway in adjacent cells within seconds because propagation between neighboring cells takes only ~60 s.",
+            "F. Nail penetration as an abuse trigger introduces a unique fire hazard not present in non-penetration tests because air ingress through the penetration hole can ignite vented electrolyte."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence states silicon rubber pad interval ~120 s vs adjacent cell interval ~60 s; ratio of ~2\u00d7 is directly supported.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+14+Journal_of_Energy_Storage:C006"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Evidence states ~47% of total energy ejected by venting, exceeding the ~41% used to heat the cell itself.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+14+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence states heat conduction dominates before runaway; reaction heat dominates after onset in the propagating cell.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+101+Applied_Energy:C009"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Uphill climbing yields highest initial temperature at onset (47.4 \u00b0C) and shortest propagation intervals among the four studied conditions.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+14+Journal_of_Energy_Storage:C007"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Evidence warns lateral temperature detection can be delayed during localized heating; 78 s propagation interval means surface monitoring may miss early onset.",
+              "error_type": "causal overclaim",
+              "evidence_refs": [
+                "TR_Modelling+101+Applied_Energy:C010"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Evidence explicitly states air ingress from nail hole can cause fire on electrolyte during venting, a hazard absent without air.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+14+Journal_of_Energy_Storage:C008"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Propagation dynamics, energy partitioning, dominant heat transfer pathway shift, and abuse-method-specific hazards in multi-cell packs.",
+          "primary_boundary": "Propagation intervals and energy fractions are specific to the tested pack geometry and conditions; lateral temperature monitoring limitation applies to localized heating scenarios.",
+          "intended_error_modes": [
+            "causal overclaim",
+            "boundary overreach"
+          ],
+          "disallowed_extrapolations": [
+            "Assuming lateral surface monitoring provides reliable real-time detection within the ~60 s propagation window",
+            "Generalizing uphill climbing result to all operating conditions unconditionally"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A battery management system designer is evaluating three early warning strategies for lithium-ion battery thermal runaway: (1) surface temperature monitoring, (2) voltage monitoring, and (3) acoustic/sound-based monitoring. For each strategy, identify one confirmed limitation and one confirmed advantage based on engineering evidence. Then explain why a sound-based warning system may not be directly applicable to flexible pouch (soft-case) battery packs, even if it performs well on square hard-case batteries."
+        },
+        "ground_truth": {
+          "gold_answer": "Surface temperature monitoring: advantage\u2014widely deployable; limitation\u2014surface readings lag and underestimate internal temperatures (surface max ~565.9 \u00b0C vs internal ~994.8 \u00b0C) and surface rate of rise is ~10\u00d7 lower than internal rate, so it cannot characterize internal severity accurately. Temperature and voltage-based warnings can only be realized 3\u20135 minutes in advance when the battery is already at the runaway boundary. Voltage monitoring: advantage\u2014voltage drop (e.g., 3.22 V to 0.25 V within 1 s) occurs 6.8 s before thermal runaway onset, providing an earlier electrical warning than thermal sensors for the runaway event itself; limitation\u2014voltage cannot localize internal events or detect gradual degradation reliably. Acoustic monitoring: advantage\u2014sound-based warning can be issued approximately 7000 s earlier than temperature or stress-based methods on average; limitation\u2014the safety valve release sound of flexible pouch (soft-case) batteries is very weak and cannot realize thermal runaway warning, because the soft casing absorbs pressure waves from gas expansion rather than concentrating them as a rigid hard-case does. Therefore, acoustic warning systems validated on square hard-case batteries cannot be directly transferred to soft-case packs without redesign.",
+          "must_include": [
+            "Surface temperature underestimates internal peak temperature",
+            "Temperature/voltage warning only 3\u20135 minutes before runaway boundary",
+            "Voltage drop occurs 6.8 s before thermal runaway onset",
+            "Acoustic warning approximately 7000 s earlier than temperature-based methods",
+            "Soft-case battery safety valve sound is too weak for acoustic warning",
+            "Soft casing absorbs pressure waves, reducing acoustic signal intensity"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming acoustic warning works equally well for all battery formats without format qualification",
+            "Claiming voltage monitoring provides warning earlier than acoustic monitoring in general",
+            "Claiming surface temperature monitoring is conservative (safe-side) relative to internal state",
+            "Applying the 7000 s acoustic advantage figure to soft-case batteries"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Comparative early warning strategy evaluation: measurement-versus-internal-state gap for thermal sensors, temporal advantage of voltage and acoustic signals, and format-dependent limitation of acoustic detection.",
+          "primary_boundary": "Acoustic advantage (~7000 s) and sound-based warning are established only for square hard-case batteries; soft-case limitation is explicitly stated. Voltage drop timing (6.8 s) is specific to the tested prismatic NCM/graphite cell.",
+          "intended_error_modes": [
+            "Regime transfer error: applying acoustic warning performance from hard-case to soft-case batteries",
+            "Causal overclaim: asserting surface temperature provides conservative overestimate of internal severity",
+            "Boundary overreach: claiming voltage warning is generally earlier than acoustic warning across all conditions"
+          ]
+        }
+      }
+    ]
+  }
+}

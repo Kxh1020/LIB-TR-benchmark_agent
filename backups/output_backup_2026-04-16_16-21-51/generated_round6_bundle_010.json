@@ -1,0 +1,324 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A LiNi1/3Co1/3Mn1/3O2/graphite cylindrical cell is subjected to thermal abuse testing at two different states of charge: 5% SOC and 90% SOC. The 5% SOC cell reaches a peak temperature near 289 °C with its separator shrinking but remaining structurally present and electrode material staying attached to current collectors. The 90% SOC cell reaches a substantially higher peak temperature, its separator is completely destroyed, and electrode material detaches from collectors. A safety engineer must assess which conclusions about the relationship between SOC and thermal runaway severity are admissible from these observations. Which of the following conclusions are supported?",
+        "options": [
+          "A. The difference in internal structural damage between the two SOC conditions is consistent with a threshold-like transition in reaction intensity rather than a simple proportional scaling of the same degradation mechanism.",
+          "B. Because the 5% SOC cell separator survives structurally, it can be concluded that no exothermic reactions occurred inside that cell during the thermal abuse event.",
+          "C. The observation that electrode material remains attached at 5% SOC but detaches at 90% SOC is sufficient to conclude that the current collector material itself melts at high SOC but not at low SOC.",
+          "D. The substantially higher peak temperature at 90% SOC compared to 5% SOC is consistent with greater stored electrochemical energy driving more intense exothermic reactions at higher charge states.",
+          "E. The structural survival of the separator at 5% SOC implies that thermal runaway propagation to an adjacent cell in a module would be prevented under all conditions at that SOC.",
+          "F. The gas deflagration and particle ejection observed exclusively at 90% SOC but not at 5% SOC indicates that the mechanical hazard from thermal runaway is SOC-dependent, with qualitatively different hazard modes emerging at high charge states."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The transition from separator shrinkage and attached electrodes at 5% SOC to complete separator destruction and detached electrodes at 90% SOC, combined with the appearance of deflagration only above 90% SOC, is consistent with a threshold-like change in reaction character rather than a smooth proportional scaling. This is a multi-step inference from the structural evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+186+Journal_of_Energy_Storage:C007",
+              "TR_Gasventing+186+Journal_of_Energy_Storage:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Separator survival does not imply absence of exothermic reactions; it implies the thermal conditions were insufficient to destroy the separator. The cell still reached ~289 °C, consistent with some exothermic activity. This is a measurement-scope overclaim.",
+            "error_type": "measurement scope overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+186+Journal_of_Energy_Storage:C003",
+              "TR_Gasventing+186+Journal_of_Energy_Storage:C007"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Electrode material detachment is consistent with binder decomposition or thermal degradation of the electrode coating, not necessarily current collector melting. The evidence does not support inferring collector melting from this observation.",
+            "error_type": "mechanism substitution / unsupported causal attribution",
+            "evidence_refs": [
+              "TR_Gasventing+186+Journal_of_Energy_Storage:C007"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Higher SOC corresponds to more stored electrochemical energy available for exothermic reactions. The linear relationship between SOC and peak temperature, combined with the observed temperature difference, is consistent with this mechanism. This is a direct evidence-supported causal inference.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+186+Journal_of_Energy_Storage:C001",
+              "TR_Gasventing+186+Journal_of_Energy_Storage:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Separator survival at the cell level under the specific thermal abuse conditions tested does not generalize to propagation prevention in a module under all conditions. This is a scale transfer beyond evidence scope and an overgeneralization from a single test condition.",
+            "error_type": "scale transfer beyond evidence / overgeneralization",
+            "evidence_refs": [
+              "TR_Gasventing+186+Journal_of_Energy_Storage:C007"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Gas deflagration and particle ejection were observed at 90% and 100% SOC but not at lower SOC values. This directly supports the conclusion that mechanical hazard modes are SOC-dependent and qualitatively different at high charge states.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+186+Journal_of_Energy_Storage:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of SOC-dependent hazard mode conclusions from structural and thermal observations during thermal runaway",
+        "primary_boundary": "Structural survival of separator at low SOC does not imply absence of reactions or propagation immunity; qualitative hazard mode change at high SOC is supported but mechanism details (e.g., collector melting) are not",
+        "intended_error_modes": [
+          "Inferring absence of exothermic reactions from separator survival (measurement scope overclaim)",
+          "Attributing electrode detachment to current collector melting without evidence (mechanism substitution)",
+          "Extrapolating cell-level separator survival to module-level propagation prevention (scale transfer overclaim)"
+        ],
+        "disallowed_extrapolations": [
+          "Separator survival implies no exothermic reactions occurred",
+          "Cell-level low-SOC behavior prevents propagation in all module configurations",
+          "Electrode detachment implies current collector melting"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "During thermal runaway testing of lithium-ion batteries, gas composition measurements are taken under two atmospheric conditions: ambient air and an inert argon atmosphere. In air, CO concentration peaks approximately 50% higher than in argon, and CO2 concentration in air (~1989 ppm) is approximately 50% higher than in argon (~961 ppm). Separately, when the same battery chemistry is tested at 180 °C ambient temperature versus 220 °C ambient temperature, CO concentration is higher at 180 °C than at 220 °C. A gas safety engineer is evaluating which mechanistic conclusions about gas generation during thermal runaway are admissible from these two sets of observations. Which of the following conclusions are supported?",
+        "options": [
+          "A. The higher CO and CO2 concentrations in air compared to argon indicate that oxygen availability promotes oxidative reactions that contribute to gas generation beyond the battery's internal decomposition reactions alone.",
+          "B. Because CO concentration is higher at 180 °C than at 220 °C ambient temperature, it can be concluded that CO generation during thermal runaway is inversely proportional to temperature across the full temperature range relevant to battery abuse.",
+          "C. The approximately equal relative reduction (~50%) of both CO and CO2 when switching from air to argon suggests that both gases are produced through pathways that are similarly dependent on oxygen availability under these test conditions.",
+          "D. The higher CO concentration at 180 °C compared to 220 °C is consistent with incomplete combustion being more prevalent at lower ambient temperatures, where oxidation of CO to CO2 may be less complete.",
+          "E. The reduction in CO and CO2 in argon atmosphere demonstrates that internal battery decomposition reactions produce negligible CO or CO2 in the absence of oxygen.",
+          "F. The atmospheric oxygen dependence of CO and CO2 concentrations means that gas hazard assessments performed in inert atmosphere will systematically underestimate the gas toxicity hazard in real fire scenarios."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The consistent ~50% reduction in both CO and CO2 when oxygen is removed (argon atmosphere) directly supports the conclusion that oxygen-dependent oxidative reactions contribute to gas generation. This is a direct causal inference from the atmospheric comparison.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+188+Journal_of_Energy_Storage:C001",
+              "TR_Gasventing+188+Journal_of_Energy_Storage:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The observation that CO is higher at 180 °C than 220 °C covers only two specific temperature points. Inferring an inverse proportional relationship across the full relevant temperature range is an unjustified extrapolation beyond the evidence scope.",
+            "error_type": "overgeneralization of a two-point comparison to a universal trend",
+            "evidence_refs": [
+              "TR_Gasventing+188+Journal_of_Energy_Storage:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Both CO and CO2 show approximately 50% reduction when switching from air to argon. This parallel behavior is consistent with both gases sharing oxygen-dependent production pathways under these conditions. This requires recognizing the symmetry across two independent measurements.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+188+Journal_of_Energy_Storage:C001",
+              "TR_Gasventing+188+Journal_of_Energy_Storage:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Higher CO at lower ambient temperature is consistent with incomplete oxidation of CO to CO2 at 180 °C versus more complete oxidation at 220 °C. This is a mechanistically sound interpretation of the non-monotonic temperature dependence of CO concentration.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+188+Journal_of_Energy_Storage:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The argon atmosphere results still show substantial CO (~50% of air values) and CO2 (~961 ppm), confirming that internal decomposition reactions do produce these gases even without oxygen. The evidence directly contradicts the claim of negligible production in argon.",
+            "error_type": "overclaim from reduction magnitude — confusing partial reduction with elimination",
+            "evidence_refs": [
+              "TR_Gasventing+188+Journal_of_Energy_Storage:C001",
+              "TR_Gasventing+188+Journal_of_Energy_Storage:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Since oxygen availability increases both CO and CO2 concentrations by approximately 50%, inert atmosphere testing systematically underestimates gas concentrations relative to real air-exposed fire scenarios. This is a direct safety engineering implication of the atmospheric comparison evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+188+Journal_of_Energy_Storage:C001",
+              "TR_Gasventing+188+Journal_of_Energy_Storage:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of mechanistic conclusions about oxygen-dependent gas generation pathways and temperature effects on CO/CO2 production during thermal runaway",
+        "primary_boundary": "Argon atmosphere reduces but does not eliminate CO/CO2 production; the temperature-CO relationship is non-monotonic and cannot be extrapolated as a universal inverse trend",
+        "intended_error_modes": [
+          "Confusing partial reduction in argon with complete elimination of internal decomposition gas production",
+          "Extrapolating a two-point temperature comparison to a universal inverse proportionality"
+        ],
+        "disallowed_extrapolations": [
+          "Argon atmosphere implies negligible CO/CO2 from internal reactions",
+          "CO concentration is universally inversely proportional to temperature across all abuse conditions"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A 50 Ah NMC lithium-ion cell undergoes thermal runaway in a controlled test. The total settleable particulate matter (PM) ejected is measured at 97.47 g, representing approximately 11.2% of the cell mass. Particle size analysis shows that nearly 45% of the PM by mass has a particle size below 0.85 mm, with a median particle size of approximately 198 µm. Elemental analysis identifies metallic elements comprising approximately 42.9% of the total PM mass, with fluorine and certain other elements present at low mass fractions but known to undergo biomagnification in biological systems. A process safety engineer is evaluating filter specifications and environmental hazard classifications for a battery testing facility. Which of the following conclusions are admissible based on these observations?",
+        "options": [
+          "A. A filter with a pore size just below 0.85 mm would capture the majority of the ejected settleable PM by mass, making it a meaningful but not complete barrier against PM accumulation in the test environment.",
+          "B. Because fluorine and tin are present at very low mass percentages in the PM, their contribution to long-term environmental and human health risk from repeated thermal runaway events in a facility is negligible and does not require specific mitigation.",
+          "C. The fact that metallic elements constitute approximately 42.9% of the PM mass means that the non-metallic fraction, including organic decomposition products and fluorine-containing compounds, constitutes the majority of the PM by mass.",
+          "D. The median particle size of approximately 198 µm indicates that a significant fraction of the ejected PM would remain suspended as fine aerosol in still air for extended periods, representing a persistent inhalation hazard.",
+          "E. The approximately 11.2% mass ejection as settleable PM implies that the remaining approximately 88.8% of cell mass is either retained in the cell casing or released as gases, and the gas fraction alone determines the primary acute toxicity hazard.",
+          "F. The combination of sub-millimeter particle sizes, metallic element content, and biomagnification potential of trace elements collectively supports classifying the ejected PM as a multi-pathway environmental hazard rather than a purely acute physical hazard."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence states that a filter below 0.85 mm pore size would capture more than 50% of settleable PM by mass. This directly supports the conclusion that such a filter is a meaningful but incomplete barrier. The phrasing correctly avoids overclaiming complete capture.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+187+Journal_of_Energy_Storage:C003",
+              "TR_Gasventing+187+Journal_of_Energy_Storage:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The evidence explicitly states that elements such as fluorine and tin, despite low mass percentages, can be enriched thousands of times through biomagnification before entering the human body. Dismissing their risk based solely on low initial mass fraction is a direct violation of the biomagnification mechanism described in the evidence.",
+            "error_type": "ignoring biomagnification mechanism — low mass fraction does not imply low chronic risk",
+            "evidence_refs": [
+              "TR_Gasventing+187+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "If metallic elements constitute 42.9% of total PM mass, then by arithmetic the non-metallic fraction constitutes approximately 57.1%, which is the majority. This is a direct numerical inference from the evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+187+Journal_of_Energy_Storage:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "A median particle size of 198 µm is in the coarse particle range. Particles of this size settle relatively quickly in still air and are not typically classified as persistent fine aerosol. Persistent aerosol suspension is characteristic of particles in the PM2.5 or PM10 range (below ~10 µm), not ~200 µm. The evidence does not support characterizing the bulk of this PM as persistent aerosol.",
+            "error_type": "regime transfer error — applying fine aerosol behavior to coarse particle size range",
+            "evidence_refs": [
+              "TR_Gasventing+187+Journal_of_Energy_Storage:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The conclusion that the gas fraction alone determines primary acute toxicity is an unsupported claim. The evidence identifies toxic elements in the PM including fluorine-containing compounds and metals with biomagnification potential, and does not establish a hierarchy between PM and gas toxicity. This is a causal overclaim beyond the evidence scope.",
+            "error_type": "unsupported causal hierarchy claim — PM toxicity is not ruled out as an acute hazard",
+            "evidence_refs": [
+              "TR_Gasventing+187+Journal_of_Energy_Storage:C005",
+              "TR_Gasventing+187+Journal_of_Energy_Storage:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The combination of sub-millimeter particle sizes enabling dispersal, metallic element content with known toxicity, and biomagnification potential of trace elements collectively supports a multi-pathway environmental hazard classification. This requires integrating three independent evidence claims and is counterintuitive because the low mass fractions of trace elements might suggest minor concern.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+187+Journal_of_Energy_Storage:C002",
+              "TR_Gasventing+187+Journal_of_Energy_Storage:C004",
+              "TR_Gasventing+187+Journal_of_Energy_Storage:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of environmental and physical hazard classifications for ejected particulate matter from LIB thermal runaway based on particle size, composition, and biomagnification evidence",
+        "primary_boundary": "Low mass fraction of trace toxic elements does not imply low chronic risk due to biomagnification; median particle size of ~198 µm does not support persistent aerosol characterization",
+        "intended_error_modes": [
+          "Dismissing trace element risk based on low mass fraction without accounting for biomagnification",
+          "Misclassifying ~200 µm median particles as persistent fine aerosol",
+          "Claiming gas fraction alone determines acute toxicity without evidence for that hierarchy"
+        ],
+        "disallowed_extrapolations": [
+          "Low initial mass fraction of fluorine/tin implies negligible chronic risk",
+          "198 µm median particle size implies persistent aerosol suspension",
+          "Gas fraction is the sole determinant of acute toxicity hazard"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery safety researcher observes that during thermal runaway of a LiNi1/3Co1/3Mn1/3O2/graphite cell at 100% SOC, 25 distinct gas species are identified in the vented gases, compared to only 6 gas species at 5% SOC. The researcher also notes that HF concentration in the released gases is higher at 100% SOC than at 5% SOC, and that gas deflagration with particle ejection occurs at 90% and 100% SOC but not at lower charge states. A colleague proposes that because the number of gas species increases with SOC, the primary safety concern at high SOC is gas toxicity, and that mechanical hazards from particle ejection are secondary and can be addressed independently of the gas management strategy. Evaluate whether this proposed prioritization and the independence assumption are admissible based on the available evidence. Identify the specific reasoning error in the colleague's proposal and explain what the evidence actually supports regarding the relationship between gas generation severity and mechanical hazard at high SOC."
+      },
+      "ground_truth": {
+        "gold_answer": "The colleague's proposal contains two admissibility errors. First, the prioritization of gas toxicity over mechanical hazards is not supported by the evidence as a general hierarchy. The evidence shows that at high SOC (90–100%), both increased gas species count and diversity (including higher HF concentration) AND gas deflagration with particle ejection occur together. These are co-occurring hazard modes at high SOC, not independently ranked ones. The evidence does not establish that gas toxicity is the primary hazard and mechanical ejection is secondary. Second, the independence assumption is not admissible. Gas deflagration — the mechanism that drives particle ejection — is itself a gas-phase phenomenon. The particle ejection at high SOC is caused by or co-occurs with gas deflagration, meaning the gas generation severity and the mechanical hazard are mechanistically coupled at high SOC. A gas management strategy that addresses vented gas composition but not deflagration pressure or ejection dynamics would be incomplete. What the evidence actually supports is that high SOC creates a qualitatively different and more severe hazard regime in which gas toxicity, gas quantity (more species, higher HF), and mechanical hazard (deflagration, particle ejection) all intensify together. The appropriate conclusion is that high-SOC thermal runaway requires an integrated hazard management approach addressing both gas and mechanical consequences, not a sequential or independent treatment of each.",
+        "must_include": [
+          "Gas deflagration and particle ejection are co-occurring with increased gas species count at high SOC, not independent hazard modes",
+          "The evidence does not support a toxicity-over-mechanical priority ranking",
+          "Gas deflagration mechanistically links the gas hazard and the mechanical ejection hazard",
+          "High SOC represents a qualitatively different hazard regime where multiple hazard modes intensify simultaneously",
+          "Independence assumption is not admissible because particle ejection is driven by gas-phase deflagration"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming that mechanical hazard is always more severe than gas toxicity at high SOC",
+          "Claiming that the number of gas species is the sole determinant of toxicity risk",
+          "Asserting that deflagration is the only mechanism of particle ejection without evidence for that exclusivity",
+          "Generalizing the high-SOC hazard coupling to low-SOC conditions where deflagration was not observed"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of hazard prioritization and independence assumptions when multiple co-occurring hazard modes are mechanistically coupled at high SOC",
+        "primary_boundary": "Evidence shows co-occurrence and mechanical coupling of gas and particle ejection hazards at high SOC; it does not support independent treatment or a ranked priority between gas toxicity and mechanical hazard",
+        "intended_error_modes": [
+          "Treating co-occurring hazard modes as independently addressable when they share a common mechanism (gas deflagration)",
+          "Inferring a hazard priority ranking from the observation that more gas species appear at high SOC",
+          "Ignoring the mechanistic link between gas generation severity and particle ejection at high SOC"
+        ]
+      }
+    }
+  ]
+}

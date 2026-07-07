@@ -1,0 +1,39 @@
+{
+  "mcqs": [],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A CuO-decorated InSe monolayer material is being evaluated for detecting thermal runaway failure gases from lithium batteries. At 298 K, the material shows dramatically different desorption behavior for CO2 compared to CO, C2H2, and C2H4. An engineer proposes using a single CuO-InSe sensor module to simultaneously perform two distinct functions: (1) rapid real-time detection of CO2 as an early thermal runaway indicator, and (2) selective capture and retention of CO for subsequent offline quantification.\n\nExplain whether this dual-function proposal is physically admissible based on the described material behavior. Then identify one additional capability of the CuO-InSe material, related to the retained gases, that would be useful for assessing the stage of thermal runaway failure, and explain the physical basis for that capability."
+      },
+      "ground_truth": {
+        "gold_answer": "The dual-function proposal is admissible. At 298 K, CO2 desorbs from CuO-InSe on a timescale of approximately 10^-9 s, enabling rapid sensor response for real-time CO2 detection. In contrast, CO has a desorption time of approximately 6.6×10^12 s at 298 K, meaning CO remains effectively bound to the surface on any practical timescale, enabling its capture and retention for offline analysis. These two behaviors are mechanistically independent and can coexist in the same material at the same operating temperature.\n\nThe additional capability is temperature-controlled selective separation of CO, C2H2, and C2H4. Because the desorption times of these three gases decrease at different rates with increasing temperature, controlled heating of the CuO-InSe material can sequentially release each gas at a characteristic temperature, allowing them to be distinguished from one another. Since different gases are associated with different stages of thermal runaway progression, this selective release capability enables identification of which failure stage has occurred.",
+        "must_include": [
+          "CO2 desorption is rapid at 298 K enabling real-time sensing",
+          "CO desorption time is extremely long at 298 K enabling retention/adsorption",
+          "The two functions are compatible because they rely on opposite desorption behaviors of different gases",
+          "Temperature-controlled separation of CO, C2H2, and C2H4 is possible because their desorption times differ and decrease at different rates with temperature",
+          "This separation is useful for identifying thermal runaway stage"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming CO2 can also be retained or concentrated by CuO-InSe",
+          "Claiming pristine InSe has equivalent capability",
+          "Claiming the separation is based on chemical selectivity unrelated to desorption kinetics",
+          "Specifying exact desorption temperatures for each gas beyond what is stated in the evidence",
+          "Claiming the band gap change alone explains the dual sensing/adsorption function"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Dual-function admissibility judgment based on contrasting desorption kinetics, and temperature-programmed desorption as a stage-identification tool",
+        "primary_boundary": "Dual function is admissible only because CO2 and CO have opposite desorption regimes at 298 K; temperature separation capability is based on differential desorption rate dependence, not chemical identity alone",
+        "intended_error_modes": [
+          "Claiming the dual function is inadmissible because one material cannot serve two purposes",
+          "Confusing rapid CO2 desorption with inability to detect CO2",
+          "Attributing stage-identification capability to band gap changes rather than desorption kinetics",
+          "Overstating by claiming exact temperature thresholds for each gas separation"
+        ]
+      }
+    }
+  ]
+}

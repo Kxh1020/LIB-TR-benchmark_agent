@@ -1,0 +1,349 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery thermal management engineer is evaluating early warning signal strategies for a lithium-ion battery pack. Testing on NCM cells shows that flammable gas is detectable well before any fire event, and that among monitored gases during overcharging of LFP cells, one specific gas is consistently detected first—preceding smoke by over 10 minutes. The engineer also notes that semiconductor-based gas sensors, while sensitive, require operating temperatures far above the normal battery operating range. Given these conditions, which of the following conclusions about early warning signal selection are admissible?",
+        "options": [
+          "A. Gas signals provide earlier warning than voltage signals for thermal runaway events in NCM cells, making gas detection the superior single indicator for all battery chemistries under all abuse modes.",
+          "B. H2 detection during overcharging of LFP cells provides a warning that precedes smoke, making it a candidate first-indicator gas for that specific abuse mode.",
+          "C. Voltage signals provide more warning time before thermal runaway peak than temperature signals, even though voltage is not the earliest available signal.",
+          "D. Semiconductor gas sensors are directly deployable inside lithium-ion battery enclosures as the primary detection method because their sensitivity compensates for operating temperature mismatch.",
+          "E. The earlier detection time of gas signals compared to temperature signals does not imply that gas sensors are operationally practical for in-cell deployment given their thermal operating requirements.",
+          "F. Because gas signals precede fire by hundreds of seconds in both NCM and LFP cells, a gas-signal-based system guarantees sufficient evacuation time in all pack configurations.",
+          "G. Temperature signals provide the least lead time before thermal runaway peak among gas, voltage, and temperature signals."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "C",
+          "E",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "The evidence supports gas signal superiority for NCM and LFP cells under the tested conditions, but generalizing to all chemistries and all abuse modes is an unsupported overgeneralization. The evidence is chemistry- and condition-specific.",
+            "error_type": "overgeneralization distractor",
+            "evidence_refs": [
+              "TR_Modelling+191+Renewable_and_Sustainable_Energy_Reviews:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Evidence directly states H2 is the first detected gas during LFP overcharging, with detection 639 s before smoke. This is a specific, condition-bounded admissible conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+191+Renewable_and_Sustainable_Energy_Reviews:C007"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence states voltage signals allow 5.96 min warning before thermal runaway peak, while temperature signals allow only 0.5 min. Voltage therefore provides more lead time than temperature, even though gas signals (7.05 min) are earlier still. This requires two-step comparative reasoning.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+191+Renewable_and_Sustainable_Energy_Reviews:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence explicitly states that semiconductor gas sensors require operating temperatures above 200°C, while battery operating range is −20°C to 60°C. Sensitivity does not resolve the thermal incompatibility for in-cell deployment.",
+            "error_type": "protective mechanism overclaim / condition violation",
+            "evidence_refs": [
+              "TR_Modelling+191+Renewable_and_Sustainable_Energy_Reviews:C009"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "This correctly combines the evidence that gas signals are earlier (C004, C005) with the constraint that semiconductor gas sensors cannot operate in the battery temperature range (C009), yielding the admissible conclusion that practical deployment is limited despite signal advantage.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+191+Renewable_and_Sustainable_Energy_Reviews:C005",
+              "TR_Modelling+191+Renewable_and_Sustainable_Energy_Reviews:C009"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence gives specific lead times for specific cell types under specific conditions. Claiming guaranteed sufficiency across all pack configurations is an unsupported system-level extrapolation from component-level data.",
+            "error_type": "scope expansion / system-level overclaim",
+            "evidence_refs": [
+              "TR_Modelling+191+Renewable_and_Sustainable_Energy_Reviews:C004"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "Evidence quantifies gas at 7.05 min, voltage at 5.96 min, and temperature at 0.5 min before thermal runaway peak. Temperature provides the least lead time among the three. This is a direct but non-trivial comparative inference.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+191+Renewable_and_Sustainable_Energy_Reviews:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of early warning signal conclusions given signal lead-time data and sensor deployment constraints",
+        "primary_boundary": "Gas signal superiority in lead time does not imply operational practicality of gas sensors inside cells, and cell-level lead times do not guarantee system-level sufficiency",
+        "intended_error_modes": [
+          "Overgeneralization of chemistry-specific result to all chemistries",
+          "Ignoring sensor operating temperature constraint when recommending deployment",
+          "Scale transfer from cell-level lead time to pack-level safety guarantee"
+        ],
+        "disallowed_extrapolations": [
+          "Gas signal superiority generalizes to all abuse modes and chemistries",
+          "Sensitivity advantage of semiconductor sensors overrides thermal incompatibility",
+          "Cell-level warning times guarantee adequate response time in all pack configurations"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A cell-level thermal runaway model for an NCM/electrolyte system is being validated. Calorimetry data shows that when NCM cathode material is combined with electrolyte, heat flow rises sharply starting near 250°C and peaks near 283°C, with rapid gas pressure buildup above 270°C. Separately, modeling of the same cell chemistry gives a self-accelerating decomposition temperature (SADT) near 126–139°C depending on the model used. At the anode, experimental data indicates that above 300°C the binder reaction with lithium-ions becomes the dominant exothermic process, generating H2. When electrolyte is present at the anode, s-SEI regeneration consumes available lithium-ions, which reduces the exothermic contribution from the binder reaction. A module-level propagation criterion states that if ambient temperature exceeds the SADT or surrounding cell shell temperature reaches 139°C for sufficient duration, propagation to adjacent cells will occur. Which of the following conclusions are admissible based on this information?",
+        "options": [
+          "A. The sharp heat flow increase near 250°C in the NCM/electrolyte system is consistent with cathode-electrolyte interaction being the dominant heat source in that temperature range, not binder decomposition.",
+          "B. Electrolyte presence at the anode simultaneously increases the severity of s-SEI decomposition and increases the severity of the binder reaction, producing a compounded exothermic effect.",
+          "C. The SADT values derived from the Semenov and Frank-Kamenetskii models define a propagation risk window: cells whose shell temperature remains below approximately 126°C are not at risk of receiving sufficient energy to trigger propagation under the stated criterion.",
+          "D. Above 300°C, the binder reaction is the dominant anode-side exothermic process, but its magnitude is reduced when electrolyte is present because s-SEI regeneration depletes the lithium-ions available for that reaction.",
+          "E. The pressure buildup above 270°C in the NCM/electrolyte system is caused primarily by electrolyte pyrolysis, since pyrolysis rates are sufficiently fast at those temperatures to account for the observed gas generation timescale.",
+          "F. The SADT threshold derived from cell-level calorimetry is directly applicable as a module-level propagation threshold without additional assumptions about heat transfer geometry or delay time."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence places the sharp NCM/electrolyte heat flow rise at ~250°C peaking at ~283°C, while binder reaction dominance is above 300°C. At ~250°C, binder reaction is not yet dominant, making cathode-electrolyte interaction the admissible dominant source in that range. This requires regime-based reasoning.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+192+Applied_Energy:C004",
+              "TR_Modelling+193+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence explicitly states that electrolyte presence increases s-SEI decomposition heat but reduces the binder reaction because s-SEI regeneration depletes lithium-ions. The two effects are not compounded—they partially offset each other. This is a mechanism interaction error.",
+            "error_type": "mechanism confusion / ignoring multi-factor interaction",
+            "evidence_refs": [
+              "TR_Modelling+193+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The propagation criterion requires both temperature threshold AND sufficient duration (delay time). Stating that cells below ~126°C are not at risk ignores the delay time condition and also conflates ambient temperature SADT with shell temperature threshold. This is a conservative-appearing but mechanistically incomplete conclusion.",
+            "error_type": "condition violation / ignoring delay time requirement",
+            "evidence_refs": [
+              "TR_Modelling+192+Applied_Energy:C005",
+              "TR_Modelling+192+Applied_Energy:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence directly supports that above 300°C binder reaction is dominant at the anode, and that electrolyte presence reduces its exothermic peak by depleting lithium-ions through s-SEI regeneration. Both parts of this statement are evidence-supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+193+UnknownJournal:C003",
+              "TR_Modelling+193+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence explicitly states that at 250°C, EMC pyrolysis would take over 7,000,000 s and EC over 300,000,000 s to complete—orders of magnitude longer than the thermal runaway timescale of ~10 s. Pyrolysis cannot account for observed gas generation on the relevant timescale.",
+            "error_type": "mechanism substitution / ignoring timescale constraint",
+            "evidence_refs": [
+              "TR_Modelling+193+UnknownJournal:C006"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The propagation criterion explicitly requires both the temperature threshold and that time exceeds the delay time of thermal runaway. Applying SADT directly as a module-level threshold without accounting for heat transfer geometry and delay time is an unsupported scale transfer.",
+            "error_type": "scale transfer beyond evidence / scope expansion",
+            "evidence_refs": [
+              "TR_Modelling+192+Applied_Energy:C005",
+              "TR_Modelling+192+Applied_Energy:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Regime-dependent dominance of anode exothermic reactions and admissibility of propagation threshold application",
+        "primary_boundary": "Electrolyte presence creates opposing effects on anode reactions (amplifying s-SEI, reducing binder); SADT threshold requires delay time condition for propagation admissibility; pyrolysis timescale is incompatible with thermal runaway timescale",
+        "intended_error_modes": [
+          "Assuming electrolyte amplifies all anode reactions simultaneously",
+          "Applying SADT as a sufficient propagation threshold without delay time condition",
+          "Attributing pressure buildup to pyrolysis without checking timescale compatibility",
+          "Ignoring that propagation criterion requires both temperature and duration conditions"
+        ],
+        "disallowed_extrapolations": [
+          "Electrolyte presence uniformly increases all exothermic reactions at the anode",
+          "SADT alone is sufficient to determine propagation risk without heat transfer and delay time considerations",
+          "Electrolyte pyrolysis is a plausible gas source on thermal runaway timescales at 250°C"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is designing a thermal runaway sequence model for a high-nickel NCM cell. The model must capture the ordered sequence of exothermic events from approximately 90°C through post-300°C conditions. Available experimental data indicates: SEI decomposition begins near 90°C; separator melting and internal short circuit formation occurs above 130°C; cathode and electrolyte breakdown with toxic and combustible gas release occurs up to 200°C; cathode-electrolyte interaction heat flow peaks near 283°C with pressure buildup above 270°C; binder reaction with lithium-ions becomes dominant above 300°C; and increasing nickel content lowers the onset temperature of cathode thermal decomposition while increasing heat release. The engineer also notes that when cathode structural collapse produces oxygen, a reaction between the anode and that oxygen generates additional H2 and CO2 near 250°C. Which of the following statements about the modeled sequence are admissible?",
+        "options": [
+          "A. The internal short circuit formation is correctly placed after SEI decomposition in the sequence, because separator failure requires temperatures that exceed the SEI decomposition onset.",
+          "B. In a high-nickel NCM cell compared to a lower-nickel variant, the onset of cathode thermal decomposition would be expected to occur at a higher temperature, reducing early-stage heat release.",
+          "C. The H2 and CO2 generation near 250°C attributed to anode-cathode oxygen interaction represents a cross-electrode coupling mechanism that is absent when only isolated electrode components are tested.",
+          "D. The binder reaction becoming dominant above 300°C implies that below 300°C, binder decomposition contributes negligibly to total heat generation and can be excluded from the model in that temperature range.",
+          "E. Separator melting above 130°C creates conditions for internal short circuit, which can then generate additional resistive heating—a mechanism that could accelerate the temperature rise toward the cathode-electrolyte reaction regime near 250–283°C.",
+          "F. The pressure buildup above 270°C in the NCM/electrolyte system is consistent with gas generation from cathode-electrolyte thermochemical reactions, not from electrolyte pyrolysis at that temperature.",
+          "G. Because toxic and combustible gases are released up to 200°C, the fire and explosion risk is fully established before the cathode-electrolyte peak heat flow event near 283°C and does not depend on that later reaction."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "SEI decomposition onset is ~90°C and separator melting begins above 130°C. The sequence is ordered correctly. This is a straightforward but necessary threshold-ordering check.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+191+Renewable_and_Sustainable_Energy_Reviews:C001",
+              "TR_Modelling+191+Renewable_and_Sustainable_Energy_Reviews:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence states that increasing nickel content causes thermal decomposition to appear at a lower temperature with more heat released. Higher nickel content therefore lowers onset temperature, not raises it. This option reverses the stated trend.",
+            "error_type": "causal direction reversal",
+            "evidence_refs": [
+              "TR_Modelling+193+UnknownJournal:C001"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence states the additional H2 and CO2 generation near 250°C is induced by the combination of cathode and anode, attributed to anode reaction with oxygen from cathode structural collapse. This cross-electrode interaction is a coupled mechanism not present in isolated electrode testing.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+193+UnknownJournal:C007"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence states binder reaction becomes the dominant exothermic process above 300°C, but this does not imply negligible contribution below 300°C. Dominance above a threshold does not exclude contribution below it. This is a boundary overclaim.",
+            "error_type": "threshold misinterpretation / causal overclaim",
+            "evidence_refs": [
+              "TR_Modelling+193+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "This requires multi-step mechanism chaining: separator failure → internal short → resistive heating → temperature acceleration toward cathode-electrolyte reaction regime. Each step is individually supported, and the chain is mechanistically coherent with the evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+191+Renewable_and_Sustainable_Energy_Reviews:C002",
+              "TR_Modelling+192+Applied_Energy:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Evidence shows pyrolysis of EMC at 250°C would require over 7,000,000 s—incompatible with the thermal runaway timescale. The pressure buildup above 270°C is therefore consistent with cathode-electrolyte thermochemical reactions, not pyrolysis.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+193+UnknownJournal:C006",
+              "TR_Modelling+192+Applied_Energy:C004"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "Gas release up to 200°C establishes combustible gas presence, but the peak heat flow and pressure buildup near 270–283°C represent a distinct and more intense energy release event. Claiming fire/explosion risk is fully established before that event ignores the dominant heat and pressure contribution of the later cathode-electrolyte reaction.",
+            "error_type": "causal overclaim / scope expansion",
+            "evidence_refs": [
+              "TR_Modelling+191+Renewable_and_Sustainable_Energy_Reviews:C003",
+              "TR_Modelling+192+Applied_Energy:C002",
+              "TR_Modelling+192+Applied_Energy:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of thermal runaway sequence ordering and mechanism attribution across temperature regimes",
+        "primary_boundary": "Dominance of a reaction above a threshold does not exclude contribution below it; pyrolysis timescale incompatibility eliminates it as a pressure source; cross-electrode coupling is a distinct mechanism requiring combined electrode conditions",
+        "intended_error_modes": [
+          "Reversing nickel content effect on decomposition onset temperature",
+          "Interpreting dominance threshold as exclusion threshold for binder reaction",
+          "Claiming fire risk is fully established before peak heat flow event",
+          "Attributing pressure buildup to pyrolysis without checking timescale"
+        ],
+        "disallowed_extrapolations": [
+          "Higher nickel content raises cathode decomposition onset temperature",
+          "Binder reaction contributes negligibly below 300°C because it is not dominant there",
+          "Combustible gas release before 200°C fully determines explosion risk independent of later reactions"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery safety engineer is comparing two monitoring strategies for detecting incipient thermal runaway in a lithium-ion battery pack. Strategy 1 uses an internal short circuit detection algorithm that monitors impedance changes and triggers an alarm based on model-estimated internal resistance. Strategy 2 uses a gas detection system that monitors for the first detectable gas species during overcharging. The engineer notes that traditional battery management systems can only respond to obvious failures and lack predictive capability. The engineer also observes that gas sensors and internal signature monitoring sensors both lack predictive capability, though gas sensors provide earlier warning. Given these constraints, explain: (a) what distinguishes the warning capability of gas-based detection from impedance-based internal short circuit detection in terms of the type of failure each addresses, and (b) why neither strategy alone is sufficient to provide predictive capability for unknown failure modes, even if both provide early warning for the failure modes they are designed to detect."
+      },
+      "ground_truth": {
+        "gold_answer": "(a) Gas-based detection is designed to detect the onset of thermal runaway through chemical byproducts of exothermic reactions (e.g., H2 as the first detectable gas during LFP overcharging, preceding smoke and fire by hundreds of seconds). Impedance-based internal short circuit detection monitors electrochemical state changes associated with internal resistance anomalies, providing alarm capability specifically for internal short circuit events (e.g., triggering alarm ~30 min before thermal runaway for a specific internal short circuit resistance). These address different failure initiation mechanisms: gas detection responds to chemical decomposition products, while impedance monitoring responds to electrical anomalies. (b) Both strategies are reactive to known failure signatures—they detect conditions that have already begun to develop. Evidence states that gas sensors and internal signature monitoring sensors both lack predictive capability, and that traditional BMS technology cannot realize intelligent processing of data signals or prediction of unknown accidents. Neither strategy can anticipate failure modes for which no characteristic signature has been defined or trained, making them insufficient for unknown failure mode prediction regardless of their early warning performance on known failure types.",
+        "must_include": [
+          "Gas detection responds to chemical decomposition products (e.g., H2) preceding fire/smoke",
+          "Impedance-based detection responds to electrical anomalies associated with internal short circuit",
+          "The two strategies address different failure initiation mechanisms",
+          "Both gas sensors and internal signature monitoring lack predictive capability per evidence",
+          "Traditional BMS cannot predict unknown failure modes",
+          "Early warning for known failures does not imply predictive capability for unknown failures"
+        ],
+        "disallowed_extrapolations": [
+          "Gas detection is superior to impedance monitoring in all scenarios",
+          "Combining both strategies would provide predictive capability for unknown failures",
+          "Impedance monitoring provides longer warning time than gas detection in general",
+          "Gas sensors can be deployed inside cells without operational constraints"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinction between early warning capability and predictive capability, and the mechanism-specificity of each detection strategy",
+        "primary_boundary": "Early warning for known failure signatures does not constitute predictive capability for unknown failure modes; the two detection strategies address different physical mechanisms and cannot be conflated",
+        "intended_error_modes": [
+          "Claiming combined use of both strategies provides predictive capability",
+          "Conflating early warning time advantage with predictive capability",
+          "Generalizing the superiority of gas detection to all failure modes and conditions",
+          "Ignoring that both strategy types are explicitly stated to lack predictive capability"
+        ]
+      }
+    }
+  ]
+}

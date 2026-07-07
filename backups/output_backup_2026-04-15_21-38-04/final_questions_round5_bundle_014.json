@@ -1,0 +1,37 @@
+{
+  "mcqs": [],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "An NCA 18650 cell at 143% state of charge exhibits thermal runaway onset near 65°C, while the same cell at 100% state of charge shows a substantially higher onset temperature. A separate aging study on NCM/graphite 18650 cells at 70% state of health shows that exothermic reaction onset shifts approximately 30°C lower than fresh cells, and this shift is independent of state of charge. A battery management system is designed using onset temperature data from fresh NCA cells at 100% state of charge as the thermal safety threshold. Identify two distinct mechanisms by which this calibration approach may underestimate thermal runaway risk, and for each mechanism explain the specific condition under which the underestimation occurs and why the fresh-cell 100% SoC data fails to capture that risk."
+      },
+      "ground_truth": {
+        "gold_answer": "First mechanism: Overcharge-induced lithium deposition on the anode substantially lowers onset temperature. At overcharged states (e.g., 132% or 143% SoC), lithium deposits on the anode surface compromise thermal stability, reducing onset temperature to as low as 65°C for NCA cells at 143% SoC. Fresh-cell 100% SoC data does not capture this because lithium deposition is specific to overcharged conditions and does not occur at nominal full charge. A BMS threshold calibrated on 100% SoC data will therefore not trigger protective action early enough if the cell reaches overcharged states. Second mechanism: Aging-induced high-surface-area lithium deposition on the anode shifts onset temperature approximately 30°C lower in aged cells regardless of state of charge. Because aged cells lose SoC dependence of onset temperature, the lower onset applies at all charge levels, not just high SoC. Fresh-cell data at 100% SoC does not reflect this aging-induced shift, so a BMS calibrated on fresh-cell thresholds will have a 30°C reduced safety margin when applied to aged cells at any state of charge.",
+        "must_include": [
+          "Overcharge condition causes lithium deposition on anode, lowering onset temperature below the fresh-cell 100% SoC threshold",
+          "Aging causes a ~30°C downward shift in onset temperature independent of SoC, which fresh-cell calibration does not capture",
+          "Fresh-cell 100% SoC data fails to represent overcharged state behavior",
+          "Aged-cell onset temperature shift applies at all SoC levels, not just high SoC"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming that aging and overcharge effects are additive without evidence",
+          "Stating a specific onset temperature for aged NCA cells (evidence covers NCM/graphite aging)",
+          "Claiming the BMS cannot be corrected or that the risk is unmanageable",
+          "Generalizing the 30°C aging shift to NCA chemistry specifically"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Identification of two independent mechanisms that cause fresh-cell 100% SoC calibration to underestimate thermal runaway risk, and the specific conditions activating each",
+        "primary_boundary": "The overcharge mechanism is SoC-condition-specific; the aging mechanism is SoC-independent but chemistry-specific to the aged NCM/graphite evidence. Cross-chemistry generalization of aging data to NCA is not supported.",
+        "intended_error_modes": [
+          "Conflating overcharge and aging as the same mechanism",
+          "Applying the 30°C aging shift to NCA cells without noting the chemistry boundary",
+          "Claiming the two effects are additive without evidence",
+          "Treating SoC monitoring as irrelevant for aged cells based on onset temperature SoC independence"
+        ]
+      }
+    }
+  ]
+}

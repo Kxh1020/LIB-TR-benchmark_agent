@@ -1,0 +1,37 @@
+{
+  "mcqs": [],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery thermal management engineer is designing a vented enclosure for NMC/LMO packs that may operate across a range of states of charge. The engineer proposes two independent safety measures: (1) filling the enclosure with a fluorinated inert gas to suppress combustion of any released vent gases, and (2) limiting maximum SOC to 30% during storage to reduce combustion hazard if venting occurs. Critically evaluate the technical justification for each measure based on the combustion behavior of battery vent gases. Identify which measure is supported, which is not, and explain the mechanism-based reasoning for each conclusion."
+      },
+      "ground_truth": {
+        "gold_answer": "Measure 1 (fluorinated gas suppression) is not supported. Evidence shows that fluorinated compounds at concentrations typical of battery vent gases have no effect on ignition delay time or macroscopic combustion characteristics. Therefore, adding fluorinated compounds to the enclosure atmosphere cannot be justified as a combustion suppression strategy based on this mechanism. Measure 2 (SOC limitation) is supported. Evidence shows that for NMC/LMO batteries, the laminar burning velocity of vent gas at 100% SOC is approximately 50% higher than at 30% SOC, demonstrating that combustion intensity is strongly SOC-dependent. Limiting SOC to 30% therefore meaningfully reduces the combustion hazard of any released vent gas. However, the engineer should note that SOC limitation does not eliminate ignition risk, since ignition delay is primarily temperature-governed with a threshold near 550°C and is insensitive to oxygen content, so thermal management of enclosure surfaces remains necessary.",
+        "must_include": [
+          "Fluorinated compounds at typical concentrations do not affect ignition delay or combustion characteristics",
+          "Fluorinated gas suppression measure is not mechanistically justified",
+          "Laminar burning velocity at SOC 100% is approximately 50% higher than at SOC 30%",
+          "SOC limitation reduces combustion intensity and is supported",
+          "Ignition is temperature-threshold dependent near 550°C and insensitive to oxygen content"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming fluorinated compounds suppress combustion at higher concentrations than typical battery vent gas levels",
+          "Claiming SOC limitation eliminates ignition risk entirely",
+          "Inferring that SOC affects ignition delay time based on the evidence provided",
+          "Claiming oxygen depletion from fluorinated gas filling would independently reduce ignition risk"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Differential evaluation of two safety measures against evidence-defined mechanisms: fluorinated compound combustion effects (null) versus SOC-dependent burning velocity (significant)",
+        "primary_boundary": "Fluorinated compounds: null effect on ignition and combustion at typical concentrations. SOC: strong effect on laminar burning velocity but evidence does not extend this to ignition delay.",
+        "intended_error_modes": [
+          "Assuming fluorinated gas filling suppresses combustion by analogy to halon-type agents",
+          "Assuming SOC reduction also reduces ignition probability by reducing ignition delay",
+          "Conflating burning velocity reduction with ignition suppression"
+        ]
+      }
+    }
+  ]
+}

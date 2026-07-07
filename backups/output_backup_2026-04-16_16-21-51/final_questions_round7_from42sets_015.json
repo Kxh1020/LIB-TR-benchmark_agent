@@ -1,0 +1,231 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "During a fire risk assessment for a battery energy storage installation, an engineer compares LFP and NMC1 cells across multiple states of charge. Available data show that NMC1 reaches a composite Risk Index of 4.2 at 75% SOC and remains elevated at full charge, while LFP stays within a lower risk band across all SOC levels tested. Additionally, NMC1 and NMC3 produce CO emissions exceeding 150 L/kWh at full charge, with peak rates above 2 L/min, whereas LFP emits substantially more HF per unit energy than NMC. Which of the following engineering judgments are admissible?",
+        "options": [
+          "A. For NMC1, the dominant driver of elevated composite risk at 75% SOC is more strongly associated with chemistry than with SOC level, because LFP maintains a lower risk band even at equivalent SOC.",
+          "B. Selecting LFP over NMC1 eliminates the need for HF mitigation measures in the installation, because LFP has demonstrated lower composite risk across all SOC levels.",
+          "C. NMC1 poses a greater acute CO asphyxiation hazard than LFP during a venting event at full charge, consistent with its substantially higher CO emission rate per unit energy.",
+          "D. Because LFP risk index remains below NMC1 at all tested SOC levels, LFP can be operated at any SOC without additional thermal management provisions.",
+          "E. The finding that NMC1 risk escalates steeply with SOC while LFP does not implies that SOC-based operational limits are a more effective risk reduction lever for NMC1 than for LFP.",
+          "F. LFP's higher HF emission per unit energy means that in enclosed spaces, LFP venting events may require more aggressive ventilation or scrubbing provisions than NMC events of equivalent energy."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "LFP maintains lower risk at the same SOC levels where NMC1 escalates, isolating chemistry as the dominant differentiating factor over SOC.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+131+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "LFP emits more HF per kWh than NMC; lower composite risk index does not eliminate the need for HF mitigation specific to that gas species.",
+            "error_type": "scope_expansion_from_composite_index_to_species_specific_hazard",
+            "evidence_refs": [
+              "TR_Gasventing+131+Journal_of_Power_Sources:C004",
+              "TR_Gasventing+131+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "NMC1 CO emissions exceed 150 L/kWh with peak rates above 2 L/min at full charge; this directly supports greater acute CO hazard relative to LFP.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+131+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Lower relative risk does not remove the need for thermal management; LFP risk index still varies with SOC and absolute risk is not zero at any SOC.",
+            "error_type": "comparative_result_misapplied_as_absolute_safety_guarantee",
+            "evidence_refs": [
+              "TR_Gasventing+131+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "NMC1 shows steep SOC-dependent escalation while LFP does not; SOC limits therefore offer greater marginal risk reduction for NMC1 than for LFP.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+131+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "LFP emits up to 4 L/kWh HF versus 0.5–1.4 L/kWh for NMC; this higher species-specific emission justifies more aggressive HF-targeted ventilation or scrubbing.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+131+Journal_of_Power_Sources:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinguishing composite risk index conclusions from species-specific gas hazard conclusions; chemistry-vs-SOC dominance reasoning",
+        "primary_boundary": "A lower composite risk index for LFP does not imply lower hazard on every individual gas species dimension; HF hazard inverts the ranking",
+        "intended_error_modes": [
+          "Composite index overgeneralization to species-specific hazard",
+          "Comparative safety used as absolute safety guarantee",
+          "Ignoring that risk index and individual gas emission rankings can diverge"
+        ],
+        "disallowed_extrapolations": [
+          "LFP lower RI implies no HF mitigation needed",
+          "LFP lower RI implies no thermal management needed at any SOC",
+          "CO dominance at full charge generalizes to all SOC levels without evidence"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is designing emergency response protocols for a battery storage facility housing LFP cells. Testing data indicate that LFP cells fail at approximately 250°C under thermal abuse, smoke for more than 20 minutes following onset of failure, and emit HF at up to 4 L/kWh — substantially exceeding NMC cells on this metric. The engineer argues that because LFP has the highest failure temperature among the chemistries evaluated, first responders face a lower overall hazard than they would with NMC cells. Evaluate which aspects of this argument are admissible.",
+        "options": [
+          "A. The argument is partially admissible: the higher failure temperature supports a lower probability of spontaneous thermal runaway initiation, but does not reduce the toxic gas exposure hazard once failure has occurred.",
+          "B. The argument is fully admissible because failure temperature is the primary determinant of all downstream hazard dimensions including gas toxicity.",
+          "C. The argument is inadmissible in its entirety because LFP cells have a lower failure temperature than NMC cells.",
+          "D. The argument is inadmissible as stated because first responder exposure duration is extended by prolonged smoking, and HF concentration hazard is elevated relative to NMC, making the overall hazard comparison non-trivial.",
+          "E. The argument would become fully admissible if the facility uses ventilation systems, because ventilation eliminates the HF and smoking duration concerns.",
+          "F. The higher failure temperature of LFP supports a narrower but valid claim: that thermal runaway is less easily triggered by external heat sources in LFP than in NMC cells under otherwise identical conditions."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Failure temperature governs initiation probability but not post-failure gas toxicity; partial admissibility correctly separates these two hazard stages.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+131+Journal_of_Power_Sources:C001",
+              "TR_Gasventing+131+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Failure temperature does not determine gas toxicity; LFP emits more HF than NMC despite its higher failure temperature, directly refuting this claim.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+131+Journal_of_Power_Sources:C001",
+              "TR_Gasventing+131+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "LFP failure temperature is approximately 250°C, higher than NMC at approximately 200°C; the factual premise of this rejection is incorrect.",
+            "error_type": "factual_inversion",
+            "evidence_refs": [
+              "TR_Gasventing+131+Journal_of_Power_Sources:C001"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Prolonged smoking exceeding 20 minutes and elevated HF emission both increase first responder hazard post-failure, making the overall comparison non-trivial and the blanket argument inadmissible.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+131+Journal_of_Power_Sources:C002",
+              "TR_Gasventing+131+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Ventilation may reduce but does not eliminate HF or smoking duration hazards; claiming full admissibility from ventilation alone is an unsupported overclaim about mitigation completeness.",
+            "error_type": "protective_mechanism_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+131+Journal_of_Power_Sources:C002",
+              "TR_Gasventing+131+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The narrow claim that LFP is harder to trigger thermally than NMC is directly supported by the failure temperature comparison and is a valid bounded conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+131+Journal_of_Power_Sources:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility boundary between failure temperature as an initiation metric versus post-failure hazard dimensions",
+        "primary_boundary": "Failure temperature governs initiation likelihood only; post-failure hazard (gas toxicity, exposure duration) is governed by separate mechanisms not reducible to failure temperature",
+        "intended_error_modes": [
+          "Causal overclaim from failure temperature to all hazard dimensions",
+          "Protective mechanism overclaim for ventilation",
+          "Factual inversion of failure temperature ordering"
+        ],
+        "disallowed_extrapolations": [
+          "Failure temperature predicts gas emission magnitude",
+          "Ventilation eliminates toxic gas hazard",
+          "Higher failure temperature implies unconditionally lower first responder risk"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A procurement engineer is selecting between LFP and NMC1 cells for a stationary energy storage system installed in a building with limited ventilation. The engineer has access to the following information: LFP cells fail at a higher temperature than NMC cells under thermal abuse; LFP cells smoke for more than 20 minutes compared to approximately 5 minutes for NMC cells; LFP cells emit substantially more HF per unit energy than NMC cells; NMC1 cells produce CO at rates exceeding 150 L/kWh at full charge with peak rates above 2 L/min; and NMC1 composite risk index escalates steeply with SOC while LFP remains in a lower risk band across all tested SOC levels. The engineer concludes that LFP is unambiguously the safer choice for this installation. Explain whether this conclusion is admissible, identifying which specific hazard dimensions support it and which undermine it, and describe what additional design or operational provisions would be necessary to make LFP deployment responsible in this context."
+      },
+      "ground_truth": {
+        "gold_answer": "The conclusion that LFP is unambiguously safer is not fully admissible. LFP does offer advantages on two dimensions: its higher failure temperature reduces the probability of thermally triggered runaway initiation, and its composite risk index remains lower than NMC1 across all tested SOC levels, indicating better overall thermal stability. These support preferring LFP for reducing spontaneous failure risk. However, in a building with limited ventilation, two LFP-specific hazards become critical. First, LFP emits substantially more HF per unit energy than NMC cells, meaning that a venting or failure event will produce higher HF concentrations in an enclosed space, increasing toxic exposure risk for occupants and responders. Second, LFP smoking duration exceeds 20 minutes compared to approximately 5 minutes for NMC, which significantly extends the window of atmospheric contamination and responder exposure. CO hazard is more severe for NMC1 at high SOC. Therefore the hazard ranking inverts depending on which gas species and which exposure window is considered. To make LFP deployment responsible, the engineer must implement HF-rated ventilation or scrubbing systems sized for LFP emission levels, establish extended evacuation and no-entry protocols accounting for prolonged smoking duration, and not rely solely on the lower composite risk index as justification for reduced gas hazard provisions.",
+        "must_include": [
+          "LFP higher failure temperature supports lower initiation probability",
+          "LFP composite risk index lower than NMC1 across SOC levels",
+          "LFP emits more HF per unit energy than NMC — elevated toxic gas hazard in enclosed space",
+          "LFP smoking duration exceeds 20 minutes — extended exposure window",
+          "Unambiguous safety conclusion is not admissible because hazard ranking differs by dimension",
+          "HF mitigation provisions required for LFP despite lower composite risk index",
+          "Extended evacuation or responder protocol required due to prolonged smoking"
+        ],
+        "disallowed_extrapolations": [
+          "Lower composite risk index implies lower hazard on all individual gas species",
+          "Higher failure temperature implies lower post-failure gas toxicity",
+          "Standard NMC-rated ventilation is sufficient for LFP HF emissions",
+          "LFP smoking duration advantage over NMC exists — it does not; LFP smokes longer"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-dimensional hazard trade-off reasoning: integrating failure temperature, composite risk index, species-specific gas emission, and exposure duration into an admissibility judgment for a specific installation context",
+        "primary_boundary": "Composite risk index and failure temperature do not subsume species-specific gas hazard; LFP's lower composite risk coexists with higher HF emission and longer smoking duration, requiring separate provisions",
+        "intended_error_modes": [
+          "Composite index overgeneralization to all hazard dimensions",
+          "Failure temperature used as proxy for post-failure gas safety",
+          "Ignoring installation-specific context (limited ventilation) when applying general chemistry comparison",
+          "Treating comparative advantage on one dimension as unconditional overall safety advantage"
+        ]
+      }
+    }
+  ]
+}

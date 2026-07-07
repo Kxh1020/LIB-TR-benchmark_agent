@@ -1,0 +1,195 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A 53 Ah NCM pouch cell at 100% SOC is subjected separately to three thermal runaway triggers: nail penetration, lateral external heating, and overcharge at 1C. Measurements show that the internal temperature during nail penetration reaches approximately 1005 °C while the surface temperature peaks at 774 °C. Under lateral heating, the surface trigger temperature is 233 °C and thermal runaway spreads to the rear surface in approximately 20 s. Under overcharge, thermal runaway is triggered at a surface temperature of 117 °C after the cell has been charged to approximately 128% SOC. An engineer must assess which diagnostic and mechanistic conclusions are supported by these observations. Which of the following are admissible conclusions?",
+        "options": [
+          "A. For nail penetration, surface temperature measurement alone is insufficient to characterize the peak thermal state of the cell interior during thermal runaway, because the internal temperature substantially exceeds the surface temperature.",
+          "B. The lower surface trigger temperature under overcharge compared to lateral heating indicates that overcharge generates less total heat than lateral heating before thermal runaway onset.",
+          "C. The longer injection duration under overcharge compared to nail penetration is consistent with a greater cumulative energy input to the cell before thermal runaway is triggered.",
+          "D. The 20-second propagation time across the cell thickness under lateral heating implies that the same propagation rate would be observed in a multi-cell module under identical heating conditions.",
+          "E. Under nail penetration, the fact that internal temperature rise precedes surface temperature rise indicates that heat originates internally and diffuses outward, rather than being imposed from the cell surface.",
+          "F. The surface trigger temperature under overcharge being lower than under lateral heating is sufficient to conclude that overcharge is the least hazardous of the three abuse modes tested."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence directly shows a ~231 °C gap between internal (1005 °C) and surface (774 °C) temperatures during nail penetration, establishing that surface measurement underestimates peak internal thermal state.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+158+World_Electric_Vehicle_Journal:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Trigger surface temperature reflects the condition at which thermal runaway is initiated, not the total heat generated before that point. Overcharge involves electrochemical energy accumulation over 1020 s to 128.3% SOC; the lower trigger temperature does not imply less total energy input. This is a mechanism confusion distractor.",
+            "error_type": "mechanism confusion / causal overclaim",
+            "evidence_refs": [
+              "TR_Dynamics+158+World_Electric_Vehicle_Journal:C002",
+              "TR_Dynamics+158+World_Electric_Vehicle_Journal:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence states that injection time is positively correlated with energy input before thermal runaway, and overcharge has the longest injection duration (29 s vs. 22 s for nail penetration), supporting the conclusion of greater cumulative energy input.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+158+World_Electric_Vehicle_Journal:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The 20-second propagation time is a cell-level measurement for a single pouch cell under lateral heating. Extrapolating this rate to a multi-cell module involves scale transfer beyond the evidence scope, as module-level propagation depends on inter-cell spacing, thermal conductivity, and configuration.",
+            "error_type": "scale transfer beyond evidence",
+            "evidence_refs": [
+              "TR_Dynamics+158+World_Electric_Vehicle_Journal:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that internal temperature rise occurs much earlier than surface temperature rise after nail penetration, indicating internal heat generation diffusing outward—consistent with the described conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+158+World_Electric_Vehicle_Journal:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Overcharge produces the highest peak surface temperature (935 °C) and longest injection duration of the three modes, indicating greater overall energy release. The lower trigger temperature reflects only the initiation threshold, not overall hazard severity. This is a conservative-appearing but mechanistically incorrect conclusion.",
+            "error_type": "condition violation / partial-information overclaim",
+            "evidence_refs": [
+              "TR_Dynamics+158+World_Electric_Vehicle_Journal:C001",
+              "TR_Dynamics+158+World_Electric_Vehicle_Journal:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinguishing trigger temperature, internal temperature, injection duration, and peak temperature as independent indicators of thermal runaway mechanism and severity across abuse modes",
+        "primary_boundary": "Trigger surface temperature reflects initiation threshold, not total energy input or overall hazard; internal and surface temperatures are decoupled; cell-level propagation time cannot be directly transferred to module level",
+        "intended_error_modes": [
+          "Equating low trigger temperature with low total energy input",
+          "Using trigger temperature as a proxy for overall hazard ranking",
+          "Extrapolating single-cell propagation time to module-level behavior"
+        ],
+        "disallowed_extrapolations": [
+          "Trigger temperature directly indicates total heat generated before thermal runaway",
+          "Cell-level lateral propagation time applies directly to multi-cell modules",
+          "Lower trigger temperature implies lower overall abuse hazard"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A parallel-connected lithium-ion battery module undergoes thermal runaway propagation testing under varying discharge rates applied to the module prior to and during the propagation event. As discharge rate increases from 0 C to 3 C, the maximum temperature rate drops substantially, propagation time extends, and propagation rate declines by approximately three times. At 3 C discharge, batteries that previously produced visible flame instead emit only white smoke. Thermal conduction between adjacent cells accounts for 57–73% of inter-cell heat exchange throughout the propagation process regardless of discharge rate. An engineer evaluates several design and safety conclusions based on these observations. Which of the following conclusions are admissible?",
+        "options": [
+          "A. Increasing discharge rate before and during a thermal runaway event reduces the stored electrochemical energy available to sustain propagation, which is mechanistically consistent with the observed reduction in temperature rate and propagation speed.",
+          "B. Because thermal conduction dominates inter-cell heat exchange at all tested discharge rates, eliminating direct cell-to-cell thermal contact would be sufficient to prevent propagation entirely under 3 C discharge conditions.",
+          "C. The transition from visible flame to white smoke emission at 3 C discharge indicates a change in the combustion or decomposition regime, but does not by itself confirm that propagation has been arrested.",
+          "D. The reduction in propagation rate at 3 C discharge to approximately one-third of the undischarged rate demonstrates that discharge rate is the only variable controlling propagation speed in this module configuration.",
+          "E. The observation that propagation time extends while propagation rate declines under higher discharge rates is internally consistent, since slower cell-to-cell spread necessarily requires more total time to traverse the same number of cells.",
+          "F. Since thermal conduction accounts for 57–73% of heat exchange between adjacent cells, radiation and convection together contribute the remaining fraction and cannot be neglected as secondary propagation pathways even at high discharge rates."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Discharging reduces stored electrochemical energy in the cells, which is the energy source for thermal runaway intensity. The evidence shows that higher discharge rate reduces maximum temperature rate and propagation speed, consistent with reduced available energy driving less intense and slower propagation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+159+Journal_of_Energy_Storage:C001",
+              "TR_Dynamics+159+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Even if thermal conduction is the dominant pathway (57–73%), the remaining 27–43% from radiation and convection is non-negligible. Eliminating conduction alone would not prevent propagation entirely; it would only reduce it. This is a protective mechanism overclaim distractor.",
+            "error_type": "protective mechanism overclaim / ignoring secondary pathways",
+            "evidence_refs": [
+              "TR_Dynamics+159+Journal_of_Energy_Storage:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence shows that at 3 C, cells emit white smoke instead of flame, indicating a change in the thermal decomposition or combustion character. However, the evidence also shows propagation still occurs at 3 C (propagation rate = 0.5 battery/min), so the absence of flame does not mean propagation is arrested.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+159+Journal_of_Energy_Storage:C004",
+              "TR_Dynamics+159+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence demonstrates discharge rate as an effective variable but does not establish it as the only controlling variable. Cell spacing, thermal conductivity, and module configuration are known system parameters affecting propagation. Claiming single-variable control is an unsupported overgeneralization.",
+            "error_type": "single-variable causal overclaim",
+            "evidence_refs": [
+              "TR_Dynamics+159+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "If propagation rate (batteries/min) declines, then traversing the same number of cells takes longer, so propagation time increases. This is internally consistent and directly supported by the evidence showing both trends simultaneously.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+159+Journal_of_Energy_Storage:C002",
+              "TR_Dynamics+159+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "If thermal conduction accounts for 57–73%, then radiation and convection together account for 27–43%, which is a substantial fraction. The evidence does not show this fraction diminishes with discharge rate, so these pathways remain relevant secondary contributors to propagation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+159+Journal_of_Energy_Storage:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of safety and mechanistic conclusions about discharge-rate-mediated thermal runaway propagation mitigation in a parallel module",
+        "primary_boundary": "Discharge rate reduces but does not eliminate propagation; dominant conduction pathway does not make secondary pathways negligible; flame suppression does not equal propagation arrest",
+        "intended_error_modes": [
+          "Overclaiming that eliminating the dominant heat pathway prevents propagation entirely",
+          "Treating discharge rate as the sole controlling variable",
+          "Interpreting absence of visible flame as propagation arrest"
+        ],
+        "disallowed_extrapolations": [
+          "Eliminating conduction alone prevents propagation",
+          "Discharge rate is the only variable controlling propagation speed",
+          "White smoke emission confirms propagation has stopped"
+        ]
+      }
+    }
+  ],
+  "short_answers": []
+}

@@ -1,0 +1,133 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Two 18650 cell chemistries are tested under identical external heating. Chemistry X has a thermal runaway onset range of 173–215 °C with strong SOC dependence on onset temperature, and loses 58–61% of mass during runaway. Chemistry Y has an onset range of 242–249 °C with little SOC dependence on mass loss (~11–13%), and shows a ~5-minute venting-to-runaway window. A safety engineer must design a gas detection system for a storage room containing both chemistries at mixed SOC levels. Which design judgments are admissible?",
+        "options": [
+          "A. The detection system must respond within approximately 1 minute of venting onset to provide useful warning for Chemistry X cells.",
+          "B. Chemistry Y cells at low SOC pose negligible HF risk during venting because their mass loss is SOC-independent.",
+          "C. A single detection threshold calibrated on Chemistry X data will be conservative for Chemistry Y cells, because Chemistry X cells produce more mass loss and therefore more total gas.",
+          "D. The longer venting window of Chemistry Y provides more time for automated suppression to activate before thermal runaway, but does not imply that Chemistry Y produces lower peak HF than Chemistry X.",
+          "E. Because Chemistry X onset temperature decreases with increasing SOC, cells stored at 100% SOC represent the highest-risk condition for early thermal runaway initiation.",
+          "F. The SOC independence of Chemistry Y mass loss means that SOC monitoring alone is sufficient to characterize the thermal runaway hazard severity for Chemistry Y cells."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence states the NMC venting window is ~1 minute; a detection system must respond within this window to provide actionable warning before thermal runaway.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+133+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "SOC independence of mass loss does not imply negligible HF risk; LFP still shows strong SOC dependence in peak HF emissions, and even low-SOC cells produce significant HF.",
+            "error_type": "mechanism confusion / conflating mass loss SOC-independence with HF SOC-independence",
+            "evidence_refs": [
+              "TR_Gasventing+133+Journal_of_Power_Sources:C002",
+              "TR_Gasventing+133+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Greater mass loss does not establish that Chemistry X produces more HF than Chemistry Y; the evidence does not provide a cross-chemistry HF comparison, and LFP (Chemistry Y) peak HF exceeds 66,000 ppm.",
+            "error_type": "unsupported cross-chemistry HF comparison / causal overclaim linking mass loss to HF",
+            "evidence_refs": [
+              "TR_Gasventing+133+Journal_of_Power_Sources:C002",
+              "TR_Gasventing+133+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The longer venting window is an evidence-supported advantage for response time; the absence of evidence for a Chemistry X vs. Y peak HF comparison means no claim about relative HF magnitude is admissible.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+133+Journal_of_Power_Sources:C004",
+              "TR_Gasventing+133+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Evidence states higher SOC NMC cells initiate runaway at lower temperatures; 100% SOC therefore represents the earliest onset condition and highest risk for premature thermal runaway.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+133+Journal_of_Power_Sources:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Chemistry Y (LFP) shows strong SOC dependence in peak HF, meaning SOC monitoring informs HF hazard level; but mass loss SOC-independence means SOC alone does not characterize all hazard dimensions, and the claim of sufficiency is unsupported.",
+            "error_type": "scope expansion / conflating one hazard metric with complete hazard characterization",
+            "evidence_refs": [
+              "TR_Gasventing+133+Journal_of_Power_Sources:C002",
+              "TR_Gasventing+133+Journal_of_Power_Sources:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Design admissibility of gas detection and hazard characterization strategies for mixed-chemistry storage, requiring multi-factor reasoning about venting windows, SOC dependence, and cross-chemistry HF comparisons",
+        "primary_boundary": "Cross-chemistry HF comparison is not supported by evidence; mass loss magnitude does not imply HF magnitude; SOC independence of mass loss does not imply SOC independence of HF emissions",
+        "intended_error_modes": [
+          "Conflating mass loss SOC-independence with HF SOC-independence",
+          "Inferring Chemistry X produces more HF from greater mass loss",
+          "Treating single-metric SOC monitoring as sufficient for full hazard characterization"
+        ],
+        "disallowed_extrapolations": [
+          "Ranking peak HF between NMC and LFP chemistries from mass loss data",
+          "Concluding low-SOC LFP poses negligible HF risk",
+          "Claiming SOC monitoring alone characterizes LFP thermal runaway hazard severity"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "An engineer is designing an HF early-warning system for a battery storage facility containing LFP cells operating at variable SOC levels. The engineer proposes to set the detection alarm threshold based on historical gas analysis data collected using conventional unheated metallic transfer lines. The engineer also proposes to use the alarm-to-runaway interval as the response time budget for automated suppression. Identify two distinct technical problems with this design approach and explain the engineering mechanism behind each problem."
+      },
+      "ground_truth": {
+        "gold_answer": "Problem 1: The historical data collected using unheated metallic transfer lines systematically underestimates true HF concentrations because HF is highly adsorptive and corrosive, causing it to be partially or entirely lost before reaching the analyzer. Setting the alarm threshold from this data means the threshold may be orders of magnitude below the actual hazardous concentration, causing either false early alarms or, if the threshold is set proportionally low, failing to reflect the true severity of the hazard in the facility risk model. Problem 2: The alarm-to-runaway interval observed for LFP cells (~5 minutes under ~27 °C/min heating) is a useful response window, but its practical value depends on the detection system being able to register HF at venting onset. If the alarm threshold is set too high due to underestimated reference data, the system may not trigger at venting onset, effectively collapsing the available response interval. Additionally, LFP peak HF shows strong SOC dependence; at lower SOC the peak HF is approximately half that of 100% SOC, meaning a threshold calibrated at one SOC level may not be appropriate across the full SOC range of the facility.",
+        "must_include": [
+          "Unheated metallic transfer lines cause HF loss due to adsorption and corrosion, leading to underestimated reference concentrations",
+          "Hazard model or alarm threshold calibrated on underestimated data may be orders of magnitude below true concentrations",
+          "The venting-to-runaway interval is only usable if detection occurs at venting onset; a miscalibrated threshold may delay or prevent detection at that onset",
+          "LFP peak HF is strongly SOC-dependent; a single threshold may not be valid across all SOC levels present in the facility"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming the venting window is the same for NMC and LFP",
+          "Claiming metallic line loss affects timing of venting or runaway events",
+          "Claiming 50% SOC LFP cells produce no HF",
+          "Claiming the engineer can correct the threshold by a fixed factor without additional measurement"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Interaction between measurement artifact (transfer line HF loss) and detection system design, combined with SOC-dependent HF magnitude affecting threshold validity across operating conditions",
+        "primary_boundary": "Transfer line loss affects concentration magnitude and therefore threshold calibration validity, but not physical event timing; SOC dependence means a single threshold cannot be universally applied without accounting for SOC range",
+        "intended_error_modes": [
+          "Treating timing data as unaffected by measurement setup (scope confusion)",
+          "Ignoring SOC dependence when setting a single facility-wide threshold",
+          "Assuming a fixed correction factor can recover true HF from metallic line data"
+        ]
+      }
+    }
+  ]
+}

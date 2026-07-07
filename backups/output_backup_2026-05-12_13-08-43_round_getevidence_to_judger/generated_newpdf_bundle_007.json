@@ -1,0 +1,360 @@
+{
+  "TR_Mechanism+67+UnknownJournal__TR_Mechanism+68+UnknownJournal__TR_Mechanism+69+UnknownJournal": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A lithium-ion cell is held isothermally at 105\u00b0C. An engineer monitors both the terminal voltage and the impedance of the SEI component (measured via electrochemical impedance spectroscopy) over time. After 20 minutes at this temperature, the SEI impedance component has effectively vanished while the terminal voltage has not yet shown a significant drop. The engineer must decide which signal to use as an early warning indicator for thermal runaway risk and what the vanishing SEI impedance physically implies. Which of the following conclusions are admissible given these observations?",
+          "options": [
+            "A. The disappearance of SEI impedance after 20 minutes at 105\u00b0C indicates that the SEI film has been severely damaged or has effectively ceased to exist as a structurally intact layer, even though the terminal voltage has not yet reflected this change.",
+            "B. Because terminal voltage remains stable while SEI impedance has vanished, the terminal voltage is the more reliable indicator of imminent thermal runaway at this temperature.",
+            "C. The SEI impedance signal provides earlier warning of thermal runaway risk than terminal voltage because it responds more sensitively to temperature-driven structural changes in the SEI layer.",
+            "D. The vanishing of SEI impedance at 105\u00b0C after 20 minutes confirms that the cell has already entered full thermal runaway, since SEI decomposition is the initiating step.",
+            "E. The observation that terminal voltage is stable while SEI impedance has disappeared is consistent with the SEI undergoing structural degradation before electrochemical capacity loss becomes detectable at the cell terminals.",
+            "F. The SEI impedance drop at elevated temperature is an artifact of measurement technique and does not reflect any physical change in the SEI film.",
+            "G. The sensitivity advantage of SEI impedance over terminal voltage is only valid at temperatures below 75\u00b0C and cannot be extended to the 105\u00b0C regime."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The evidence explicitly states that the SEI impedance component almost disappears after holding time exceeds 20 minutes at 105\u00b0C, and that this indicates the SEI film structure may be seriously damaged or completely disappeared. This is a direct admissible conclusion from the stated observation.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+67+UnknownJournal:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The evidence states that SEI impedance is more sensitive than terminal voltage to temperature changes, making terminal voltage the less reliable early indicator. This option inverts the evidenced relationship.",
+              "error_type": "Mechanism inversion / comparison reversal",
+              "evidence_refs": [
+                "TR_Mechanism+67+UnknownJournal:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "The evidence states that SEI impedance is more sensitive than terminal voltage to temperature changes and that it is better used as an early indicator of thermal runaway risk. This option correctly captures the comparative diagnostic advantage.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+67+UnknownJournal:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "SEI decomposition is the first step in thermal runaway, not confirmation that full thermal runaway has occurred. The vanishing of SEI impedance indicates structural damage to the SEI, which is a precursor condition, not evidence that full thermal runaway has already been reached. This is a causal overclaim conflating initiation with completion.",
+              "error_type": "Causal overclaim \u2014 conflating initiation step with full thermal runaway",
+              "evidence_refs": [
+                "TR_Mechanism+67+UnknownJournal:C001",
+                "TR_Mechanism+67+UnknownJournal:C005"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "The observation that terminal voltage is stable while SEI impedance has vanished is mechanistically consistent: SEI structural degradation is a localized interfacial phenomenon that precedes bulk electrochemical changes detectable at the terminals. This is supported by the evidence that SEI impedance is more sensitive than voltage and that SEI decomposition precedes broader thermal runaway.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+67+UnknownJournal:C004",
+                "TR_Mechanism+67+UnknownJournal:C005",
+                "TR_Mechanism+67+UnknownJournal:C001"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The evidence directly links the disappearance of the SEI impedance component to physical structural damage or disappearance of the SEI film. Attributing the signal change to a measurement artifact contradicts the evidence-supported physical interpretation.",
+              "error_type": "Measurement scope distractor \u2014 dismissing a physically grounded signal as artifact",
+              "evidence_refs": [
+                "TR_Mechanism+67+UnknownJournal:C005"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Incorrect",
+              "justification": "The evidence shows SEI impedance dropped more than 70% by 75\u00b0C, establishing sensitivity at that temperature, and separately shows near-complete disappearance at 105\u00b0C. The evidence supports the sensitivity advantage extending into the higher temperature regime rather than being limited below 75\u00b0C. This option imposes an unsupported upper boundary on the sensitivity advantage.",
+              "error_type": "Unjustified regime restriction \u2014 imposing an upper temperature boundary not supported by evidence",
+              "evidence_refs": [
+                "TR_Mechanism+67+UnknownJournal:C004",
+                "TR_Mechanism+67+UnknownJournal:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of diagnostic conclusions from SEI impedance vs. terminal voltage signals under thermal stress, and the physical meaning of SEI impedance disappearance.",
+          "primary_boundary": "SEI impedance disappearance indicates structural damage/precursor state, not completion of thermal runaway; and SEI impedance is the more sensitive early indicator relative to terminal voltage.",
+          "intended_error_modes": [
+            "Conflating SEI decomposition initiation with full thermal runaway completion (D)",
+            "Inverting the comparative sensitivity relationship between SEI impedance and terminal voltage (B)",
+            "Dismissing a physically grounded signal as measurement artifact (F)",
+            "Imposing an unsupported upper temperature boundary on the sensitivity advantage (G)"
+          ],
+          "disallowed_extrapolations": [
+            "Concluding that stable terminal voltage means the cell is safe after SEI impedance has vanished",
+            "Generalizing SEI impedance sensitivity advantage to all battery chemistries without evidence",
+            "Claiming that SEI impedance disappearance at 105\u00b0C proves full thermal runaway has occurred"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A silicon-anode lithium-ion cell is subjected to prolonged cycling. Post-cycling analysis reveals that the SEI on the silicon electrode contains lithium propionate and Li2CO3 in addition to LEDC, and that the relative amounts of lithium propionate and Li2CO3 increase more rapidly between the 30th and 50th cycles than the LEDC content decreases over the same interval. Separately, it is known that Li2CO3 in the SEI on the cycled silicon electrode begins to decompose at a lower temperature than would be expected from the behavior of independently prepared LEDC. An engineer is assessing the thermal safety implications of this evolving SEI chemistry. Which of the following conclusions are admissible?",
+          "options": [
+            "A. The disproportionate increase in lithium propionate and Li2CO3 relative to LEDC between the 30th and 50th cycles indicates that these species were already present in the SEI before the post-cycling thermal analysis, consistent with LEDC undergoing thermal decomposition during cycling itself.",
+            "B. The earlier onset of Li2CO3 decomposition in the cycled silicon electrode SEI compared to independently prepared LEDC can be attributed to the high carbon content of the silicon electrode promoting carbothermal reduction of Li2CO3.",
+            "C. Because LEDC is the primary SEI component on silicon anodes, the thermal decomposition temperature of the SEI on a cycled silicon electrode can be reliably estimated from the decomposition behavior of independently prepared LEDC alone.",
+            "D. The evolution of CO2 and C2H4 gases during LEDC decomposition begins at approximately 90\u00b0C, with C2H4 appearing before CO2, which is consistent with the formation of an intermediate species during decomposition rather than a single-step reaction.",
+            "E. The increasing complexity of the SEI with cycling on silicon electrodes implies that the thermal decomposition onset of the SEI shifts to higher temperatures as cycling progresses, because more stable compounds accumulate.",
+            "F. The presence of LixPOyFz in the SEI of cycled silicon electrodes, derived from LiPF6 electrolyte decomposition, contributes a distinct thermal decomposition event in the 250\u2013350\u00b0C range that is separate from the LEDC decomposition pathway.",
+            "G. The carbothermal reduction effect on Li2CO3 decomposition kinetics in the silicon electrode SEI is sufficient evidence to conclude that all SEI components on silicon anodes decompose at lower temperatures than their independently prepared counterparts."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "D",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The evidence explicitly states that the greater increase in RCO2Li and Li2CO3 intensity between the 30th and 50th cycles compared to LEDC decrease is consistent with these species being present in the SEI prior to TGA measurement, supporting LEDC decomposing during prolonged cycling.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+68+UnknownJournal:C008"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "The evidence directly attributes the lower decomposition onset temperature of Li2CO3 in the cycled silicon electrode SEI to the high carbon content of the silicon electrode causing carbothermal reduction.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+68+UnknownJournal:C006"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "The evidence shows that the SEI on cycled silicon electrodes contains multiple components beyond LEDC (lithium propionate, Li2CO3, LixPOyFz) and that Li2CO3 in this context decomposes at a lower temperature than independently prepared LEDC due to carbothermal reduction. Estimating SEI thermal behavior from independently prepared LEDC alone ignores the increased complexity and altered decomposition kinetics.",
+              "error_type": "Overgeneralization \u2014 ignoring SEI complexity evolution and altered decomposition kinetics in the actual electrode environment",
+              "evidence_refs": [
+                "TR_Mechanism+68+UnknownJournal:C005",
+                "TR_Mechanism+68+UnknownJournal:C006"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "The evidence states that C2H4 evolution clearly begins at approximately 90\u00b0C before CO2 evolution, which is described as suggesting an intermediate species (lithium peroxodicarbonate) is generated, indicating a multi-step rather than single-step decomposition.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+68+UnknownJournal:C009"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The evidence shows that cycling causes LEDC to decompose into lithium propionate and Li2CO3, and that Li2CO3 in the silicon electrode context decomposes at lower temperatures due to carbothermal reduction. This suggests the thermal decomposition onset may shift to lower temperatures with cycling for some components, not higher. The claim that more stable compounds accumulate and shift onset to higher temperatures is not supported and contradicts the evidence on carbothermal reduction.",
+              "error_type": "Directional error \u2014 incorrect inference about temperature shift direction; ignores carbothermal reduction lowering decomposition onset",
+              "evidence_refs": [
+                "TR_Mechanism+68+UnknownJournal:C005",
+                "TR_Mechanism+68+UnknownJournal:C006"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "The evidence states that the weight loss in the 250\u2013350\u00b0C range in cycled silicon electrodes results from thermal decomposition of LixPOyFz, a decomposition product of LiPF6 reported as an SEI component. This is identified as a distinct thermal event separate from LEDC decomposition.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+68+UnknownJournal:C007"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Incorrect",
+              "justification": "The evidence supports carbothermal reduction affecting Li2CO3 decomposition kinetics specifically. Generalizing this effect to all SEI components on silicon anodes is an overgeneralization not supported by the evidence, which only identifies this mechanism for Li2CO3.",
+              "error_type": "Overgeneralization \u2014 extending a mechanism specific to Li2CO3 to all SEI components without evidence",
+              "evidence_refs": [
+                "TR_Mechanism+68+UnknownJournal:C006"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of conclusions about SEI evolution on silicon anodes during cycling, including decomposition sequence, in-situ decomposition during cycling, altered decomposition kinetics, and multi-component thermal behavior.",
+          "primary_boundary": "SEI complexity increases with cycling and alters thermal decomposition behavior in ways that cannot be predicted from independently prepared LEDC alone; carbothermal reduction specifically affects Li2CO3 but cannot be generalized to all SEI components.",
+          "intended_error_modes": [
+            "Estimating cycled electrode SEI thermal behavior from independently prepared LEDC alone, ignoring SEI complexity (C)",
+            "Incorrectly inferring that SEI complexity shifts decomposition to higher temperatures, ignoring carbothermal reduction evidence (E)",
+            "Overgeneralizing the carbothermal reduction effect from Li2CO3 to all SEI components (G)"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming all SEI components on silicon anodes decompose at lower temperatures than their independently prepared counterparts",
+            "Using independently prepared LEDC decomposition temperature as a reliable proxy for cycled silicon electrode SEI decomposition onset",
+            "Concluding that increasing SEI complexity necessarily increases thermal stability"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "An engineer is designing a multi-cell battery module using 280 Ah LFP prismatic cells. Testing under adiabatic conditions with heating powers between 300 W and 600 W showed that thermal runaway is triggered at approximately 670 kJ of external energy input regardless of the heating power applied, and that this triggering energy represents roughly 21% of the theoretical stored energy. Once thermal runaway begins, approximately 65.5% of the total self-heat is released in a short time interval. The engineer is also evaluating two module configurations: Configuration X uses fewer, thicker cells; Configuration Y uses more, thinner cells of equivalent total capacity. Which of the following conclusions about the thermal behavior and module design implications are admissible?",
+          "options": [
+            "A. The constancy of triggering energy across the 300\u2013600 W heating power range indicates that the onset of thermal runaway in these LFP cells is governed by an energy threshold rather than a power or rate threshold.",
+            "B. Because approximately 80% of the total energy released during adiabatic thermal abuse originates from internal exothermic reactions rather than the external trigger, reducing the external heating power to below 300 W would reliably prevent thermal runaway from reaching dangerous temperatures.",
+            "C. The steep temperature rise after thermal runaway onset is primarily driven by the rapid release of the majority of internally generated self-heat rather than by the continued application of external heating.",
+            "D. Configuration Y, with more and thinner cells, poses a higher thermal runaway propagation risk than Configuration X because thinner cells experience higher average temperatures during propagation, creating a positive feedback between cell temperature and heat generation.",
+            "E. The linear relationship between battery thickness and thermal runaway triggering time implies that Configuration X will reach the triggering energy threshold faster than Configuration Y under the same external heating power.",
+            "F. The 670 kJ triggering energy threshold established for the 280 Ah LFP cell can be directly applied to determine the triggering energy for LFP cells of different capacities without additional testing.",
+            "G. The fact that triggering energy accounts for only about 21% of theoretical stored energy means that a thermal management system capable of absorbing 21% of stored energy will reliably prevent thermal runaway in all operating scenarios."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "D"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The evidence states that triggering energy remains constant at approximately 670 kJ when multiple heating powers (300\u2013600 W) are applied, with only 2.5% inaccuracy. This constancy across varying power levels directly supports the conclusion that onset is governed by an energy threshold rather than a power threshold.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+69+UnknownJournal:C002"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The evidence shows that approximately 80% of total energy during adiabatic thermal abuse comes from internal exothermic reactions. Even if external heating power is reduced, once internal reactions are triggered, the dominant energy source is internal. Reducing external power below the tested range does not guarantee prevention of dangerous temperatures because the internal self-heat generation is the dominant contributor. This option conflates the triggering condition with the total energy budget.",
+              "error_type": "Causal overclaim \u2014 conflating reduction of external trigger power with prevention of dangerous internal heat release; ignores that internal reactions dominate total energy",
+              "evidence_refs": [
+                "TR_Mechanism+69+UnknownJournal:C001",
+                "TR_Mechanism+69+UnknownJournal:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "The evidence states that approximately 65.5% of self-heat is released in a short time after thermal runaway onset, causing the steep temperature rise. This directly supports the conclusion that the rapid temperature increase is driven by rapid internal self-heat release rather than continued external heating.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+69+UnknownJournal:C003"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "The evidence states that more cells and thinner cells accelerate thermal runaway propagation by increasing the average temperature of thinner cells, with cell temperature and heat generation having positive feedback. Configuration Y directly matches this described condition.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+69+UnknownJournal:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The evidence states that triggering time grows linearly with battery thickness. Configuration X uses thicker cells, meaning it would take longer to reach the triggering energy threshold, not faster. This option inverts the direction of the thickness-triggering time relationship.",
+              "error_type": "Directional error \u2014 inverting the relationship between battery thickness and triggering time",
+              "evidence_refs": [
+                "TR_Mechanism+69+UnknownJournal:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The 670 kJ threshold is established specifically for the 280 Ah LFP cell tested. The evidence does not support direct application of this value to cells of different capacities. The triggering energy as a fraction of theoretical stored energy (~21%) was reported for this specific cell, and applying the absolute value to different capacity cells without additional testing is an unsupported extrapolation.",
+              "error_type": "Scale transfer beyond evidence \u2014 applying a cell-specific threshold to different capacity cells without justification",
+              "evidence_refs": [
+                "TR_Mechanism+69+UnknownJournal:C002"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Incorrect",
+              "justification": "The 21% figure represents the triggering energy as a fraction of stored energy under adiabatic conditions with external heating. A thermal management system absorbing this fraction would only address the external trigger energy, not the approximately 80% of energy from internal exothermic reactions that dominates after onset. This option confuses the triggering threshold with the total thermal runaway energy budget and overstates the protective capability.",
+              "error_type": "Protective mechanism overclaim \u2014 conflating triggering energy fraction with total thermal runaway energy; ignores that internal reactions contribute ~80% of total energy",
+              "evidence_refs": [
+                "TR_Mechanism+69+UnknownJournal:C001",
+                "TR_Mechanism+69+UnknownJournal:C002",
+                "TR_Mechanism+69+UnknownJournal:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of conclusions about LFP thermal runaway triggering energy characteristics, internal vs. external energy contributions, cell thickness effects on propagation, and design implications for multi-cell modules.",
+          "primary_boundary": "The 670 kJ threshold is specific to the tested 280 Ah cell and cannot be directly transferred to other capacities; the ~80% internal energy contribution means external trigger reduction alone does not prevent dangerous temperature rise; triggering time increases with thickness, not decreases.",
+          "intended_error_modes": [
+            "Inverting the thickness-triggering time relationship (E)",
+            "Conflating reduction of external trigger with prevention of dangerous temperatures from internal reactions (B)",
+            "Applying a cell-specific absolute energy threshold to different capacity cells (F)",
+            "Confusing triggering energy fraction with total thermal runaway energy budget for thermal management sizing (G)"
+          ],
+          "disallowed_extrapolations": [
+            "Applying the 670 kJ threshold to LFP cells of different capacities without additional testing",
+            "Concluding that controlling external heating power below tested range reliably prevents dangerous thermal runaway temperatures",
+            "Sizing a thermal management system based solely on the triggering energy fraction to prevent thermal runaway"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A lithium-ion cell with a silicon anode uses LiPF6-based electrolyte. After 50 cycles, the SEI on the silicon anode contains LEDC, lithium propionate, Li2CO3, and LixPOyFz. An engineer performs a thermal ramp test on the cycled electrode and observes that Li2CO3 decomposition begins at a notably lower temperature than would be expected from the behavior of Li2CO3 prepared independently, and that a distinct mass loss event occurs in the 250\u2013350\u00b0C range. (a) Identify the mechanism responsible for the lower-than-expected Li2CO3 decomposition onset temperature in this electrode context, and explain why this mechanism is specific to the silicon electrode environment. (b) Identify the SEI component responsible for the 250\u2013350\u00b0C mass loss event and its origin in the cell chemistry. (c) Explain why the thermal decomposition behavior of the fully cycled silicon electrode SEI cannot be reliably predicted from the thermal decomposition behavior of independently prepared LEDC alone, citing at least two distinct reasons supported by the described evidence."
+        },
+        "ground_truth": {
+          "gold_answer": "(a) The lower-than-expected Li2CO3 decomposition onset is caused by carbothermal reduction. This mechanism is specific to the silicon electrode environment because silicon electrodes have a high carbon content, and carbon is known to promote carbothermal reduction, which alters the decomposition kinetics and lowers the onset temperature compared to pure Li2CO3 decomposition. (b) The 250\u2013350\u00b0C mass loss event results from the thermal decomposition of LixPOyFz, which is a decomposition product of LiPF6 electrolyte and has been identified as a component of the SEI on cycled electrodes. (c) Two reasons: First, LEDC thermally decomposes during prolonged cycling itself to generate lithium propionate and Li2CO3 within the SEI before any ex-situ thermal test, meaning the SEI is already compositionally more complex than pure LEDC by the time of measurement, so independently prepared LEDC does not represent the actual SEI composition. Second, the Li2CO3 present in the cycled electrode SEI decomposes at a lower temperature than independently prepared LEDC due to carbothermal reduction by the electrode carbon content, so the decomposition temperature of the actual SEI components is shifted relative to what would be predicted from independent LEDC behavior.",
+          "must_include": [
+            "carbothermal reduction as the mechanism for lower Li2CO3 decomposition onset",
+            "high carbon content of silicon electrode as the reason this mechanism is specific to this environment",
+            "LixPOyFz as the component responsible for the 250\u2013350\u00b0C mass loss",
+            "LiPF6 electrolyte decomposition as the origin of LixPOyFz",
+            "LEDC decomposes during cycling to form lithium propionate and Li2CO3, increasing SEI complexity before thermal testing",
+            "Li2CO3 in the electrode context decomposes at lower temperature than independently prepared LEDC due to carbothermal reduction"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming that all SEI components on silicon anodes decompose at lower temperatures than their independently prepared counterparts based solely on the Li2CO3 carbothermal reduction evidence",
+            "Stating that LEDC is completely absent from the SEI after 50 cycles",
+            "Claiming that LixPOyFz decomposition occurs at the same temperature range as LEDC decomposition",
+            "Asserting that the carbothermal reduction mechanism applies to graphite anodes without additional evidence"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-mechanism reasoning about SEI evolution on silicon anodes: in-situ decomposition during cycling, carbothermal reduction of Li2CO3, LiPF6-derived SEI components, and the inadequacy of independently prepared LEDC as a proxy for cycled electrode SEI thermal behavior.",
+          "primary_boundary": "Carbothermal reduction is specifically tied to the high carbon content of the silicon electrode and applies to Li2CO3 specifically, not all SEI components; LEDC decomposition during cycling creates compositional complexity that independently prepared LEDC cannot represent.",
+          "intended_error_modes": [
+            "Attributing the lower decomposition onset to a generic electrode surface effect without identifying carbothermal reduction",
+            "Misidentifying the 250\u2013350\u00b0C mass loss as LEDC decomposition rather than LixPOyFz",
+            "Providing only one reason for the inadequacy of independently prepared LEDC as a proxy, missing either the in-situ cycling decomposition or the altered kinetics argument",
+            "Overgeneralizing carbothermal reduction to all SEI components rather than specifically to Li2CO3"
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,968 @@
+{
+  "TR_Protection+119+Journal_of_Energy_Storage__TR_Protection+120+Journal_of_Energy_Storage__TR_Protection+121+Journal_of_Energy_Storage": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery module engineer is evaluating two composite phase-change material candidates for use as thermal barriers between cylindrical cells. Candidate A has a thermal conductivity of 0.085 W/(m\u00b7K) and Candidate B has a thermal conductivity of 0.051 W/(m\u00b7K). Both materials contain paraffin and silica aerogel but at different mass ratios. The engineer concludes that Candidate A should be excluded from consideration because it will not prevent thermal runaway propagation. A colleague argues that Candidate A still provides meaningful thermal resistance and should not be dismissed. Which of the following judgments are admissible given the stated conditions?",
+          "options": [
+            "A. Candidate A should be excluded because its thermal conductivity exceeds the threshold above which the material is considered ineffective at preventing thermal runaway propagation.",
+            "B. Candidate B provides lower thermal conductivity, but this alone does not guarantee suppression of propagation unless the installed thickness also satisfies system-level heat transfer requirements.",
+            "C. The colleague's argument is admissible because any reduction in thermal conductivity below the baseline module condition provides a proportional reduction in propagation risk.",
+            "D. Candidate A's exclusion is unjustified because the 0.085 W/(m\u00b7K) value is sufficiently close to the threshold to warrant experimental confirmation before rejection.",
+            "E. Both candidates should be excluded if the module lacks a convective cooling system, because passive thermal barriers alone are insufficient to block propagation under any condition.",
+            "F. Candidate B's lower density compared to Candidate A indicates it will also provide superior mechanical support within the module."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence explicitly states thermal conductivity above 0.1 W/(m\u00b7K) is not helpful for preventing propagation; 0.085 exceeds this threshold.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+119+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Low thermal conductivity is necessary but thickness and system configuration also govern heat transfer; this is a minimal engineering implication.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+119+Journal_of_Energy_Storage:C003",
+                "TR_Protection+121+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Proportional risk reduction is an overgeneralization; evidence defines a threshold, not a continuous linear relationship.",
+              "error_type": "unjustified monotonicity",
+              "evidence_refs": [
+                "TR_Protection+119+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Appears cautious but is wrong; 0.085 W/(m\u00b7K) clearly exceeds the stated 0.1 W/(m\u00b7K) threshold, making exclusion admissible without further testing.",
+              "error_type": "conservative but incorrect",
+              "evidence_refs": [
+                "TR_Protection+119+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Evidence shows 3 mm FR-CPCM-4 plates alone controlled adjacent battery temperature; passive barriers can be sufficient under stated conditions.",
+              "error_type": "causal overclaim",
+              "evidence_refs": [
+                "TR_Protection+119+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Density difference between candidates is not stated; mechanical support inference is unsupported by evidence.",
+              "error_type": "unsupported extrapolation",
+              "evidence_refs": [
+                "TR_Protection+119+Journal_of_Energy_Storage:C001"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Threshold-based admissibility judgment for thermal barrier material selection combined with system-level sufficiency reasoning",
+          "primary_boundary": "Thermal conductivity threshold of 0.1 W/(m\u00b7K) for propagation prevention; below threshold is necessary but not universally sufficient",
+          "intended_error_modes": [
+            "proportionality overgeneralization",
+            "conservative boundary softening",
+            "passive-barrier dismissal overclaim"
+          ],
+          "disallowed_extrapolations": [
+            "Assuming any conductivity reduction provides proportional safety benefit",
+            "Assuming passive barriers are always insufficient without active cooling"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "During thermal runaway propagation tests on an 18650-type battery module, two parameters are measured: the temperature at which thermal runaway onset occurs in each cell (T2,p) and the rate of temperature rise at that onset moment (q(T2,p)). The T2,p values across propagation events deviate within \u00b110% of the single-cell accelerating rate calorimetry reference value, while q(T2,p) deviates by over 900% across the same events. Separately, the maximum heat accumulation rate during propagation is measured at approximately 20 times the maximum net heat transfer rate achievable in the module. An engineer proposes using q(T2,p) as the primary diagnostic parameter for characterizing propagation severity across different module designs. Which conclusions about this proposal and the underlying thermal dynamics are admissible?",
+          "options": [
+            "A. The proposal is inadmissible because q(T2,p) exhibits variability far exceeding the range that would allow reliable cross-module comparison.",
+            "B. T2,p is a more reliable characterization parameter than q(T2,p) for propagation events because its deviation from the reference value remains within an acceptable range.",
+            "C. The large ratio of heat accumulation rate to net heat transfer rate implies that increasing the heat transfer capacity of the module by a factor of two would be sufficient to suppress single-cell thermal runaway.",
+            "D. The difficulty in suppressing single-cell thermal runaway, compared to suppressing propagation, is consistent with the observed disparity between heat accumulation rate and maximum achievable heat transfer rate.",
+            "E. Because T2,p remains stable across propagation events, it can be used to infer the internal temperature distribution of each cell at the moment of onset.",
+            "F. The 900% deviation in q(T2,p) indicates that the heat generation mechanism changes fundamentally between propagation events, requiring a different electrochemical model for each event."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "D"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Over 900% deviation makes q(T2,p) unreliable for cross-module characterization; evidence explicitly identifies it as unreliable.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+120+Journal_of_Energy_Storage:C002"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "\u00b110% deviation for T2,p versus >900% for q(T2,p) directly supports T2,p as the more reliable parameter.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+120+Journal_of_Energy_Storage:C001",
+                "TR_Protection+120+Journal_of_Energy_Storage:C002"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Heat accumulation is ~20\u201330 times the maximum transfer rate; doubling transfer capacity still falls far short of matching accumulation.",
+              "error_type": "numerical underestimation of gap",
+              "evidence_refs": [
+                "TR_Protection+120+Journal_of_Energy_Storage:C003",
+                "TR_Protection+120+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Evidence causally links the ~30-fold gap between heat accumulation and transfer rates to why single-cell TR mitigation remains unsolved while propagation suppression is achievable.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+120+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "T2,p is a surface-based measurement; evidence explicitly states homogeneous temperature assumption is limited to small cells and internal divergence is not measured.",
+              "error_type": "measurement scope overclaim",
+              "evidence_refs": [
+                "TR_Protection+120+Journal_of_Energy_Storage:C006"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Evidence attributes q(T2,p) variability to propagation distortion, not to fundamental mechanism changes requiring new electrochemical models.",
+              "error_type": "causal overclaim",
+              "evidence_refs": [
+                "TR_Protection+120+Journal_of_Energy_Storage:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Diagnostic parameter reliability judgment combined with heat rate disparity implications for single-cell vs propagation suppression",
+          "primary_boundary": "Parameter reliability is defined by deviation magnitude; heat rate ratio defines the feasibility boundary for single-cell suppression vs propagation suppression",
+          "intended_error_modes": [
+            "underestimating heat rate gap magnitude",
+            "measurement scope overclaim for internal state",
+            "attributing variability to mechanism change rather than propagation distortion"
+          ],
+          "disallowed_extrapolations": [
+            "Inferring internal temperature from surface T2,p stability",
+            "Concluding a 2x increase in cooling suffices based on the ratio alone"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A simulation study of a battery module examines how the location within a cell where thermal runaway is first triggered in a heated adjacent cell changes depending on two independently varied parameters: the thermal conductivity of insulation material between cells (\u03bb) and the convective heat dissipation coefficient of the module (h). When \u03bb is high and h is low, the trigger location is at the face of the cell core nearest the runaway cell. When \u03bb is reduced to the blocking threshold or h is raised to the blocking threshold, propagation is prevented entirely. An engineer concludes that either reducing \u03bb alone or increasing h alone to their respective blocking thresholds is a sufficient strategy for reliable propagation suppression in any module configuration. Which of the following judgments are admissible?",
+          "options": [
+            "A. The engineer's conclusion is inadmissible because evidence indicates that optimal suppression requires the synergistic action of both insulation and heat dissipation, not either parameter alone.",
+            "B. The shift in trigger location from the cell face to the cell interior when insulation improves or dissipation increases is consistent with a transition from externally driven to internally driven thermal runaway initiation.",
+            "C. Reducing \u03bb to the blocking threshold is a sufficient standalone strategy because the simulation confirms complete propagation prevention at that value regardless of h.",
+            "D. The trigger location at the cell face under poor insulation conditions indicates that the electrochemical reactions in the heated cell begin at the separator layer closest to the heat source.",
+            "E. Because both \u03bb reduction and h increase independently achieve blocking in simulation, deploying only one measure provides equivalent system-level safety to deploying both simultaneously.",
+            "F. The trigger location shift observed in simulation provides a diagnostic indicator of whether the dominant heat transfer pathway is conduction from the adjacent cell or internal heat generation within the heated cell."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence explicitly states optimal suppression cannot be achieved by either parameter alone; synergistic effect is required.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+121+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Front-end triggering under intense inter-cell heat transfer versus interior triggering under good dissipation is consistent with a transition in dominant heat pathway.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+121+Journal_of_Energy_Storage:C003",
+                "TR_Protection+121+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Appears conservative but is wrong; evidence states optimal suppression requires synergy of both parameters, not either alone.",
+              "error_type": "conservative but incorrect single-parameter sufficiency claim",
+              "evidence_refs": [
+                "TR_Protection+121+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Evidence identifies trigger location at cell core front end but does not attribute this to separator-layer electrochemical reactions; this is an unsupported mechanistic claim.",
+              "error_type": "mechanism substitution",
+              "evidence_refs": [
+                "TR_Protection+121+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Independent blocking in simulation does not imply equivalent system-level safety; synergy evidence contradicts equivalence of single-measure deployment.",
+              "error_type": "system-level overclaim from component simulation",
+              "evidence_refs": [
+                "TR_Protection+121+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Trigger location encodes whether external conduction from the TR cell or internal heat generation dominates, making it a valid diagnostic of the dominant pathway.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+121+Journal_of_Energy_Storage:C003",
+                "TR_Protection+121+Journal_of_Energy_Storage:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Synergistic vs single-parameter sufficiency judgment for propagation suppression, combined with trigger location as a heat pathway diagnostic",
+          "primary_boundary": "Single-parameter threshold achievement in simulation does not imply standalone sufficiency; optimal suppression requires parameter synergy",
+          "intended_error_modes": [
+            "single-parameter sufficiency overclaim",
+            "mechanism substitution at trigger location",
+            "equating independent blocking thresholds with equivalent system safety"
+          ],
+          "disallowed_extrapolations": [
+            "Concluding either \u03bb or h alone is sufficient for all module configurations",
+            "Attributing trigger location to specific electrochemical sub-layer reactions"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A thermal management engineer is designing a cooling strategy for an 18650-type battery module to prevent thermal runaway propagation. The engineer has access to calorimetry data showing that the maximum heat accumulation rate during thermal runaway in a single cell far exceeds the maximum net heat transfer rate achievable by any practical cooling system in the module. The engineer also knows that radiation consistently accounts for approximately 65% of total heat transferred out of the module during propagation events. Given these constraints, explain why solutions for suppressing thermal runaway propagation between cells are achievable while suppressing thermal runaway within a single cell remains fundamentally more difficult. In your answer, identify the specific thermal rate relationship that defines this asymmetry and explain what it implies for cooling strategy design at the module level versus the single-cell level."
+        },
+        "ground_truth": {
+          "gold_answer": "Thermal runaway propagation between cells can be suppressed because the heat that must be intercepted at the inter-cell boundary is the net heat transfer rate between cells, which is approximately 30 times smaller than the heat accumulation rate within the triggering cell. A cooling strategy only needs to match or exceed this inter-cell transfer rate to break the propagation chain. In contrast, suppressing thermal runaway within a single cell would require a cooling system capable of removing heat at a rate matching the internal heat accumulation rate, which exceeds 1000 W and is approximately 20\u201330 times larger than any achievable net heat transfer rate. This makes single-cell suppression practically infeasible with current cooling approaches. At the module level, the designer targets the inter-cell heat flux, which is within the range of achievable cooling power, rather than the full internal generation rate. The dominance of radiation (~65% of total heat transfer) also means that module-level thermal management must account for radiative pathways, not only conduction or convection.",
+          "must_include": [
+            "heat accumulation rate within a single cell is approximately 20\u201330 times larger than the maximum net heat transfer rate",
+            "propagation suppression targets inter-cell heat transfer, which is within achievable cooling range",
+            "single-cell suppression requires matching internal heat generation, which exceeds practical cooling capacity",
+            "radiation dominates heat transfer at approximately 65% of total heat transferred in the module"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming that any cooling system exceeding 65 W will suppress single-cell thermal runaway",
+            "Stating that radiation elimination would prevent propagation",
+            "Generalizing the 18650-type findings to large-format cells where homogeneous temperature assumption fails"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Mechanistic explanation of the asymmetry between single-cell TR suppression difficulty and propagation suppression feasibility based on heat rate ratios",
+          "primary_boundary": "The ~30-fold ratio between heat accumulation and net transfer rates defines the feasibility boundary; propagation suppression targets the smaller inter-cell flux, not the full accumulation rate",
+          "intended_error_modes": [
+            "Confusing the cooling threshold for propagation suppression with the threshold needed for single-cell suppression",
+            "Ignoring the heat rate ratio and attributing the asymmetry to chemistry or cell geometry alone",
+            "Overclaiming that radiation control alone would resolve propagation"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Protection+116+Case_Studies_in_Thermal_Engineering__TR_Protection+117+Case_Studies_in_Thermal_Engineering__TR_Protection+118+Case_Studies_in_Thermal_Engineering": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A cylindrical lithium-ion battery pack operating at 15 W continuous thermal load is equipped with a phase-change material (PCM) layer and a thermoelectric cooling module. After 100 minutes, the average battery temperature stabilizes at 76\u00b0C. An engineer proposes that adding aluminum fins to the existing assembly will bring the battery into a safe operating range. The engineer further argues that the fin geometry is irrelevant as long as total fin surface area is equivalent. Which of the following conclusions are supported by engineering reasoning from the described evidence?",
+          "options": [
+            "A. Adding fins to the PCM-thermoelectric assembly can reduce average battery temperature into a safe range, but the specific fin geometry materially affects the magnitude of temperature reduction achieved.",
+            "B. The thermoelectric module alone is sufficient to prevent thermal runaway because it reduced temperature by 9\u00b0C from the PCM-only baseline.",
+            "C. Axial fin geometry provides greater temperature reduction than circular fin geometry under equivalent thermal load conditions, meaning geometry selection is not inconsequential.",
+            "D. Since the PCM-thermoelectric system already reduced temperature from 85\u00b0C to 76\u00b0C, any additional cooling layer will proportionally reduce temperature by the same increment.",
+            "E. The fin addition brings the battery within safe range only if the PCM has not yet fully melted, because fins cannot compensate for exhausted latent heat capacity.",
+            "F. A system combining PCM, thermoelectric module, and fins can maintain battery temperature below hazardous thresholds at 15 W, but the effectiveness depends on fin configuration rather than surface area equivalence alone."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence shows fins added to PCM-thermoelectric assembly reduced temperature to 65\u00b0C (safe range), and geometry change from circular to axial gave further reduction to 48\u00b0C.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+116+Case_Studies_in_Thermal_Engineering:C003",
+                "TR_Protection+116+Case_Studies_in_Thermal_Engineering:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "At 76\u00b0C the system remains in a hazardous range per evidence; a 9\u00b0C reduction does not eliminate thermal runaway risk.",
+              "error_type": "causal overclaim",
+              "evidence_refs": [
+                "TR_Protection+116+Case_Studies_in_Thermal_Engineering:C002"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence directly shows axial fins achieved 48\u00b0C versus circular fins at 65\u00b0C under identical conditions, contradicting geometry-irrelevance claim.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+116+Case_Studies_in_Thermal_Engineering:C003",
+                "TR_Protection+116+Case_Studies_in_Thermal_Engineering:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Each cooling addition produced different incremental reductions (9\u00b0C, 11\u00b0C, 17\u00b0C); proportional equivalence is unsupported and contradicted by evidence.",
+              "error_type": "unjustified monotonicity",
+              "evidence_refs": [
+                "TR_Protection+116+Case_Studies_in_Thermal_Engineering:C002",
+                "TR_Protection+116+Case_Studies_in_Thermal_Engineering:C003",
+                "TR_Protection+116+Case_Studies_in_Thermal_Engineering:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Evidence does not condition fin effectiveness on PCM melt state; this introduces an assumption not supported by the stated evidence.",
+              "error_type": "unsupported conditional",
+              "evidence_refs": [
+                "TR_Protection+116+Case_Studies_in_Thermal_Engineering:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Evidence shows full assembly with axial fins achieves safe temperature; geometry type, not just area, determines outcome per C003 vs C004 comparison.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+116+Case_Studies_in_Thermal_Engineering:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of fin geometry independence claim and incremental cooling effectiveness",
+          "primary_boundary": "Geometry type (axial vs. circular) produces non-equivalent outcomes even at equivalent surface area; incremental reductions are non-proportional",
+          "intended_error_modes": [
+            "unjustified proportionality assumption",
+            "ignoring geometry-dependent heat transfer",
+            "overclaiming thermoelectric sufficiency"
+          ],
+          "disallowed_extrapolations": [
+            "Assuming equal surface area implies equal performance",
+            "Assuming each cooling layer provides equal incremental benefit",
+            "Concluding thermoelectric alone prevents thermal runaway"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "In a 12-cell lithium-ion battery pack, thermal runaway (TR) is initiated in Cell 1. Three passive protection configurations are evaluated: (1) phase-change polymer material (PPCM) alone at varying thicknesses, (2) PPCM combined with insulation layers, and (3) immersion cooling using a fluid with a boiling point of 34\u00b0C. The regulatory standard requires that the propagation delay from Cell 1 to Cell 2 (D1,2) be at least 300 s. Which of the following statements are admissible conclusions from these conditions?",
+          "options": [
+            "A. Increasing PPCM thickness reliably and proportionally reduces peak cell temperature, making thicker PPCM the most effective single strategy for limiting thermal damage.",
+            "B. A 3.6 mm PPCM layer alone is insufficient to meet the 300 s propagation delay standard, but combining it with insulation layers can satisfy this requirement.",
+            "C. Immersion cooling with a fluid boiling at 34\u00b0C prevents TR propagation beyond Cell 1 by maintaining adjacent cells near the fluid boiling point, but this conclusion applies specifically to the described fluid and pack configuration.",
+            "D. PPCM thickness increases beyond 3.6 mm yield diminishing returns in peak temperature reduction due to the low thermal conductivity of battery material and the rapid progression of TR.",
+            "E. Because immersion cooling completely blocks propagation, it renders PPCM-based protection redundant in any battery pack design.",
+            "F. The combination of PPCM and insulation achieves a propagation delay exceeding that of 5.4 mm PPCM alone, indicating that thermal resistance layering can outperform thickness increase for meeting delay standards.",
+            "G. The 300 s standard can be met by PPCM alone only if thickness is increased to at least 5.4 mm, based on the propagation delay data."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "C",
+            "D",
+            "F",
+            "G"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "Evidence shows peak temperature reduction plateaus: 7.7%, 16%, 17.2% for increasing PPCM thickness; proportional reduction is explicitly contradicted.",
+              "error_type": "unjustified monotonicity",
+              "evidence_refs": [
+                "TR_Protection+117+Case_Studies_in_Thermal_Engineering:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "D1,2=253 s for 3.6 mm PPCM fails standard; combined design with insulation gives D1,2=798 s, meeting it.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+117+Case_Studies_in_Thermal_Engineering:C002",
+                "TR_Protection+117+Case_Studies_in_Thermal_Engineering:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence confirms complete propagation blocking with HFE-7000 at 34\u00b0C boiling point; conditional scoping to described configuration is appropriate.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+117+Case_Studies_in_Thermal_Engineering:C003"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Evidence explicitly attributes minimal incremental Tpe improvement to low LIB thermal conductivity and high TR speed as PPCM thickness increases.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+117+Case_Studies_in_Thermal_Engineering:C005"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Immersion cooling effectiveness is specific to described configuration; generalizing to make PPCM universally redundant is an unsupported system-level overclaim.",
+              "error_type": "scope expansion distractor",
+              "evidence_refs": [
+                "TR_Protection+117+Case_Studies_in_Thermal_Engineering:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "PPCM+insulation gives D1,2=798 s versus 5.4 mm PPCM alone at D1,2=401 s; layering thermal resistance outperforms thickness increase for delay.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+117+Case_Studies_in_Thermal_Engineering:C002",
+                "TR_Protection+117+Case_Studies_in_Thermal_Engineering:C004"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Correct",
+              "justification": "5.4 mm PPCM gives D1,2=401 s meeting standard; 3.6 mm gives 253 s failing it; minimum thickness for compliance is 5.4 mm per evidence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+117+Case_Studies_in_Thermal_Engineering:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of protection strategy conclusions across PPCM thickness, combined designs, and immersion cooling",
+          "primary_boundary": "Peak temperature reduction saturates with PPCM thickness; propagation delay does not; immersion cooling conclusion is configuration-specific",
+          "intended_error_modes": [
+            "proportionality assumption for peak temperature",
+            "overgeneralizing immersion cooling to universal recommendation",
+            "conflating delay improvement with temperature reduction improvement"
+          ],
+          "disallowed_extrapolations": [
+            "Assuming PPCM thickness linearly reduces peak temperature",
+            "Applying immersion cooling result to all pack geometries",
+            "Treating delay and peak temperature as co-optimized by same parameter"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery thermal management system uses two sequential PCM layers: PCM1 adjacent to the battery cell and PCM2 positioned further away. A nanoparticle additive (single-walled carbon nanotubes, SWCNT) at 6% volume fraction is dispersed in PCM1. The base PCM material is RT82. An engineer claims that because SWCNT improves thermal conductivity more than alumina does, replacing alumina with SWCNT in PCM2 will produce the dominant thermal regulation improvement in the system. Which of the following assessments of this claim are correct?",
+          "options": [
+            "A. The claim is flawed because positional proximity to the heat source, not nanoparticle type alone, determines which PCM layer dominates thermal regulation.",
+            "B. The claim is partially supported because SWCNT does outperform alumina in thermal conductivity enhancement, but attributing dominant system improvement to PCM2 modification ignores the positional hierarchy of the two layers.",
+            "C. The claim is fully supported because superior thermal conductivity of SWCNT in any layer will dominate system-level heat dissipation regardless of layer position.",
+            "D. Replacing alumina with SWCNT in PCM2 may enhance its thermal conductivity, but PCM1 adjacent to the battery will still govern the initial thermal response due to its direct thermal contact.",
+            "E. The 6% SWCNT loading in PCM1 already provides a 45% enhancement in phase transition rate over pure RT82; adding SWCNT to PCM2 would produce a comparable enhancement in PCM2 but would not change which layer governs the primary thermal regulation.",
+            "F. Since SWCNT increases liquid fraction by over 66% compared to pure PCM, applying it to PCM2 would make PCM2 the thermally dominant layer by accelerating its melting before PCM1 is engaged."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "D",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence states PCM1 adjacent to battery significantly outperforms PCM2 in thermal regulation due to positional proximity, not nanoparticle type.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+118+Case_Studies_in_Thermal_Engineering:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "SWCNT superiority over alumina is supported; but dominant improvement attribution to PCM2 contradicts positional hierarchy evidence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+118+Case_Studies_in_Thermal_Engineering:C003",
+                "TR_Protection+118+Case_Studies_in_Thermal_Engineering:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Evidence shows position governs which layer dominates; thermal conductivity improvement alone cannot override positional proximity effect.",
+              "error_type": "mechanism substitution distractor",
+              "evidence_refs": [
+                "TR_Protection+118+Case_Studies_in_Thermal_Engineering:C003"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "PCM1 governs initial thermal response due to direct contact; PCM2 enhancement cannot change this positional priority.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+118+Case_Studies_in_Thermal_Engineering:C003",
+                "TR_Protection+118+Case_Studies_in_Thermal_Engineering:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "45% phase transition enhancement at 6% SWCNT in RT82 is evidence-supported; PCM1 positional dominance is maintained regardless of PCM2 nanoparticle loading.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+118+Case_Studies_in_Thermal_Engineering:C005",
+                "TR_Protection+118+Case_Studies_in_Thermal_Engineering:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "PCM2 cannot melt before PCM1 since PCM1 receives heat first due to proximity; this reverses the physically determined thermal sequence.",
+              "error_type": "condition violation distractor",
+              "evidence_refs": [
+                "TR_Protection+118+Case_Studies_in_Thermal_Engineering:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Interaction between nanoparticle-enhanced thermal conductivity and positional hierarchy in multi-layer PCM systems",
+          "primary_boundary": "Positional proximity to heat source governs layer dominance; nanoparticle enhancement cannot override this spatial constraint",
+          "intended_error_modes": [
+            "mechanism substitution: conductivity overrides position",
+            "ignoring thermal sequence imposed by geometry",
+            "overgeneralizing SWCNT liquid fraction enhancement to positional dominance"
+          ],
+          "disallowed_extrapolations": [
+            "Concluding SWCNT in any layer dominates system behavior",
+            "Assuming PCM2 can engage before PCM1 under any nanoparticle loading",
+            "Treating liquid fraction enhancement as equivalent to positional thermal priority"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A battery pack protection system uses a phase-change polymer material (PPCM) layer between cells. Testing shows that increasing PPCM thickness from 3.6 mm to 5.4 mm increases the thermal runaway propagation delay from Cell 1 to Cell 2 by approximately 59% (from 253 s to 401 s), while the reduction in average peak cell temperature increases only marginally (from 16% to 17.2% relative to the unprotected pack). An engineer concludes that PPCM thickness is an effective lever for controlling both propagation delay and peak temperature equally. Identify the specific physical reasons why this conclusion is not supported, and explain which protection objective PPCM thickness primarily addresses under these conditions."
+        },
+        "ground_truth": {
+          "gold_answer": "PPCM thickness effectively delays TR propagation time because it increases the thermal resistance and latent heat absorption between cells, slowing heat transfer to adjacent cells. However, peak temperature reduction is limited because the low thermal conductivity of the battery material and the high speed of TR progression mean that heat generated within a cell during TR cannot be efficiently extracted by the PPCM before peak temperatures are reached. Therefore, PPCM thickness primarily addresses propagation delay rather than peak temperature limitation. The two objectives respond differently to thickness increase: delay scales substantially with thickness while peak temperature reduction saturates, making thickness an asymmetric lever that cannot be assumed to control both outcomes proportionally.",
+          "must_include": [
+            "low thermal conductivity of battery material limits peak temperature reduction",
+            "high speed of TR limits PPCM effectiveness on peak temperature",
+            "propagation delay increases substantially with thickness",
+            "peak temperature reduction saturates or shows diminishing returns with thickness",
+            "PPCM primarily addresses propagation delay, not peak temperature"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming PPCM equally controls both propagation delay and peak temperature",
+            "Claiming peak temperature reduction scales proportionally with thickness",
+            "Recommending PPCM as sufficient for peak temperature management without qualification"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Asymmetric effectiveness of PPCM thickness on propagation delay versus peak temperature reduction",
+          "primary_boundary": "Low battery thermal conductivity and high TR speed create a physical limit on peak temperature reduction that does not apply equally to propagation delay",
+          "intended_error_modes": [
+            "Treating propagation delay and peak temperature as co-optimized by the same parameter",
+            "Ignoring the physical mechanism that limits PPCM effectiveness on peak temperature",
+            "Overgeneralizing thickness increase as a universal improvement lever"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Gasventing+7+Journal_of_Energy_Storage__TR_Gasventing+8+Journal_of_Energy_Storage__TR_Gasventing+9+Journal_of_Energy_Storage": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "An NCM battery module is being evaluated for storage protocol design. Engineering data shows that as SOC decreases from 120% to 30%, the onset temperature of thermal runaway rises monotonically, yet gas generation rate during the pre-runaway stage is slightly higher at lower SOC values. A safety engineer proposes that storing cells at the lowest feasible SOC minimizes all venting-related hazards simultaneously. Which of the following conclusions about this proposal are supported by the underlying physical mechanisms?",
+          "options": [
+            "A. Reducing SOC lowers the maximum temperature reached during thermal runaway, which reduces total exothermic energy release and supports the proposal on that basis.",
+            "B. The higher onset temperature at lower SOC increases the duration of the pre-runaway stage, which elevates cumulative gas generation before separator collapse, partially undermining the proposal.",
+            "C. Because gas generation rate during the pre-runaway stage increases at lower SOC, the total gas volume vented before thermal runaway is necessarily lower at lower SOC.",
+            "D. The narrowest flammability range for NMC off-gas occurs at 30% SOC, making this SOC preferable for storage on flammability grounds, consistent with the proposal.",
+            "E. Since onset temperature rises with decreasing SOC, the cell spends more time at elevated temperature before runaway, which drives higher side-reaction rates and slightly increases pre-collapse gas accumulation.",
+            "F. Lower SOC universally reduces all gas-phase hazards including flammability range width, toxic species concentration, and explosion limits, fully validating the proposal across all hazard dimensions."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "D",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence directly supports that T_max decreases with decreasing SOC, indicating suppressed exothermic reactions.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+7+Journal_of_Energy_Storage:C002"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Higher onset temperature at lower SOC extends Stage II duration, increasing n_sc from 0.042 to 0.052 mol, partially undermining the proposal.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+7+Journal_of_Energy_Storage:C004",
+                "TR_Gasventing+7+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Higher rate combined with longer duration at lower SOC actually increases cumulative pre-collapse gas; the direction claimed is reversed.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+7+Journal_of_Energy_Storage:C003",
+                "TR_Gasventing+7+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Evidence explicitly states narrowest flammability range at 30% SOC and recommends it for storage and transport.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+8+Journal_of_Energy_Storage:C011"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Evidence states higher onset temperature increases side-reaction rates, raising dn/dt and extending Stage II, increasing pre-collapse gas.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+7+Journal_of_Energy_Storage:C003",
+                "TR_Gasventing+7+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Evidence shows lower SOC increases pre-collapse gas and does not universally reduce all hazard dimensions; overgeneralization.",
+              "error_type": "overgeneralization",
+              "evidence_refs": [
+                "TR_Gasventing+7+Journal_of_Energy_Storage:C003",
+                "TR_Gasventing+7+Journal_of_Energy_Storage:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-factor interaction between SOC, onset temperature, Stage II duration, gas accumulation, and flammability range",
+          "primary_boundary": "Lower SOC reduces T_max and narrows flammability range but simultaneously increases pre-collapse gas accumulation via extended Stage II duration",
+          "intended_error_modes": [
+            "causal_overclaim on gas volume direction",
+            "overgeneralization of SOC benefit across all hazard dimensions"
+          ],
+          "disallowed_extrapolations": [
+            "Concluding lower SOC reduces all gas-phase hazards simultaneously",
+            "Treating gas generation rate as the sole determinant of total gas volume"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A fire safety engineer is comparing LFP and NMC lithium-ion batteries of equal capacity for use in an enclosed vehicle charging facility. Both are evaluated at 100% SOC. The engineer notes that LFP produces far less total off-gas volume than NMC, and concludes that LFP presents a lower combined hazard profile in this enclosed environment. Which of the following statements are consistent with the evidence on gas-phase and toxic hazards for these two chemistries?",
+          "options": [
+            "A. LFP off-gas has a lower calculated flammability limit than NMC off-gas, meaning LFP gas reaches a flammable concentration in a smaller enclosed volume than NMC gas.",
+            "B. Despite lower total gas volume, LFP batteries emit over ten times more HF per unit capacity than NMC batteries, making LFP more acutely toxic in enclosed spaces.",
+            "C. At 100% SOC, NMC batteries emit approximately ten times more CO per unit capacity than LFP batteries, which partially offsets the LFP HF toxicity advantage for NMC.",
+            "D. Because LFP generates less total off-gas volume than NMC at 100% SOC, the contaminated volume from LFP in an enclosed space is smaller than from NMC across all toxic species.",
+            "E. The lower specific gas volume of LFP compared to NMC at 100% SOC means LFP off-gas will breach its lower flammability limit in a larger volume than NMC off-gas.",
+            "F. LFP HF emissions decrease as SOC increases, so the toxicity disadvantage of LFP relative to NMC is most pronounced at lower SOC values, not at 100% SOC."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "C",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "LFP LFL is 6.2% versus NMC 7.9\u20139.2%, so LFP reaches flammable concentration in 18% smaller volume despite lower total gas.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+8+Journal_of_Energy_Storage:C009"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "LFP emits 50\u2013100 g/kWh HF versus less than 10 g/kWh for NMC; LFP is significantly more toxic despite lower gas volume.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+8+Journal_of_Energy_Storage:C004",
+                "TR_Gasventing+8+Journal_of_Energy_Storage:C008"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "NMC emits 172 g/kWh CO versus 19 g/kWh for LFP at 100% SOC; NMC CO hazard partially offsets its HF advantage.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+8+Journal_of_Energy_Storage:C007"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Lower total gas volume does not translate to smaller contaminated volume; LFP HF toxicity produces larger contaminated volumes than NMC.",
+              "error_type": "scope_expansion_from_volume_to_toxicity",
+              "evidence_refs": [
+                "TR_Gasventing+8+Journal_of_Energy_Storage:C008"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Lower specific gas volume and lower LFL together mean LFP reaches flammable concentration in a smaller, not larger, volume than NMC.",
+              "error_type": "mechanism_confusion",
+              "evidence_refs": [
+                "TR_Gasventing+8+Journal_of_Energy_Storage:C009",
+                "TR_Gasventing+8+Journal_of_Energy_Storage:C001"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "LFP HF emissions trend from 100 g/kWh at 0% SOC to 50 g/kWh at 100% SOC; toxicity gap versus NMC is greatest at low SOC.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+8+Journal_of_Energy_Storage:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Decoupling of total gas volume from toxic and flammability hazard across LFP and NMC chemistries",
+          "primary_boundary": "Lower total gas volume does not imply lower hazard; LFP lower LFL and higher HF emissions create greater hazard in enclosed spaces despite smaller gas volume",
+          "intended_error_modes": [
+            "volume-to-hazard conflation",
+            "mechanism confusion on LFL direction",
+            "ignoring HF dominance in toxicity calculation"
+          ],
+          "disallowed_extrapolations": [
+            "Concluding LFP is safer overall from lower gas volume alone",
+            "Assuming CO dominates toxicity over HF for LFP"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A CTP battery module undergoes thermal runaway in a closed nitrogen-filled enclosure instrumented with pressure and voltage sensors. Engineers observe that abrupt chamber pressure changes occur slightly before the recorded thermal runaway trigger times for each cell in the module. The vented gas composition is dominated by H2, CO2, and CO, with a calculated explosion limit substantially wider than methane and a lower explosive limit near 6%. Which conclusions about monitoring strategy and gas hazard are admissible given these conditions?",
+          "options": [
+            "A. Pressure monitoring in the enclosed space provides earlier warning of thermal runaway onset than voltage monitoring alone.",
+            "B. The wide explosion limit range and low explosive limit of the vented gas indicate that the gas mixture poses a higher explosion risk upon air ingress than a pure methane leak of equivalent volume.",
+            "C. Because the enclosure is filled with nitrogen, the vented gas cannot form a flammable mixture and the explosion limit calculation is irrelevant to operational safety.",
+            "D. The dominance of H2 in the vented gas composition is consistent with conditions of advanced thermal runaway or deflagration rather than initial venting stages where CO2 typically dominates.",
+            "E. The higher TRP temperature and lower mass loss observed in the closed nitrogen environment compared to open air indicate that nitrogen confinement reduces the severity of thermal runaway.",
+            "F. Since pressure change precedes voltage-based TR detection by only a small margin, voltage monitoring remains sufficient as the primary safety signal and pressure monitoring adds no operationally meaningful lead time."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "D"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Pressure abrupt change times are consistently earlier than TR trigger times across all four cells in the module.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+9+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Explosion limit 6.27\u201354.14% is wider than methane with lower LEL; evidence explicitly states higher explosion risk than methane upon air mixing.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+9+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Nitrogen prevents ignition during confinement but air ingress after venting or enclosure breach creates flammable conditions; explosion limit remains safety-relevant.",
+              "error_type": "condition_violation_ignoring_air_ingress_scenario",
+              "evidence_refs": [
+                "TR_Gasventing+9+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Evidence shows CO2 dominates initial venting while H2 and CO become significant during deflagration; H2 dominance at 32.85% is consistent with advanced TR stage.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+8+Journal_of_Energy_Storage:C016",
+                "TR_Gasventing+9+Journal_of_Energy_Storage:C002"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Higher TRP temperature in nitrogen is caused by lower heat dissipation, not reduced TR severity; lower mass loss reflects different combustion conditions, not mitigation.",
+              "error_type": "causal_overclaim_protective_mechanism",
+              "evidence_refs": [
+                "TR_Gasventing+9+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Evidence states pressure change more accurately warns TR timing; dismissing the lead time advantage contradicts the stated monitoring superiority of pressure signals.",
+              "error_type": "conservative_but_wrong_minimization_of_evidence",
+              "evidence_refs": [
+                "TR_Gasventing+9+Journal_of_Energy_Storage:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Pressure monitoring superiority, gas composition stage-dependence, and explosion hazard admissibility in closed nitrogen systems",
+          "primary_boundary": "Nitrogen confinement changes heat dissipation and mass loss but does not eliminate post-breach explosion risk; pressure signal lead time is operationally meaningful",
+          "intended_error_modes": [
+            "conflating nitrogen atmosphere with permanent explosion prevention",
+            "misattributing higher TRP temperature to reduced severity",
+            "dismissing small but consistent pressure lead time as operationally irrelevant"
+          ],
+          "disallowed_extrapolations": [
+            "Concluding nitrogen enclosure mitigates TR severity",
+            "Treating small temporal lead time as negligible without evidence"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "An engineer is designing a ventilation and hazard containment system for an enclosed battery energy storage facility housing large-format LFP cells at mixed states of charge ranging from 0% to 100% SOC. The engineer assumes that because LFP cells are known to generate substantially less total off-gas volume than NMC cells, the primary design constraint is flammability rather than toxicity. Critically evaluate this assumption. In your answer, identify which specific hazard dimension most strongly challenges this assumption, explain the mechanism responsible, and describe how the SOC operating range affects the severity of this hazard for LFP cells."
+        },
+        "ground_truth": {
+          "gold_answer": "The assumption is not fully supported. Although LFP generates less total off-gas volume than NMC, LFP emits over ten times more HF per unit capacity than NMC (50\u2013100 g/kWh versus less than 10 g/kWh). HF has a very low exposure limit, so the contaminated volume from HF alone for LFP exceeds that of NMC despite the lower gas volume. This makes acute toxicity, specifically HF emission, the dominant hazard dimension that challenges the flammability-first assumption. Regarding SOC dependence: LFP HF emissions show a downward trend with increasing SOC, from approximately 100 g/kWh at 0% SOC to 50 g/kWh at 100% SOC, attributed to higher thermal runaway temperatures reached at higher SOC. Therefore, the toxicity hazard is most severe at low SOC, meaning the 0% SOC end of the operating range represents the worst-case toxic exposure scenario and must be the governing design condition for ventilation sizing, not the high-SOC flammability scenario.",
+          "must_include": [
+            "LFP emits more than ten times more HF per unit capacity than NMC",
+            "HF low exposure limit drives larger contaminated volume despite lower gas volume",
+            "toxicity is the dominant hazard dimension challenging the assumption",
+            "LFP HF emissions decrease as SOC increases",
+            "worst-case toxic hazard occurs at low SOC for LFP"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming LFP flammability hazard is negligible or irrelevant",
+            "Stating NMC is safer overall without acknowledging NMC CO emissions",
+            "Asserting that higher SOC always reduces all hazards for LFP"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Decoupling of gas volume from toxicity hazard and SOC-dependent HF emission behavior for LFP",
+          "primary_boundary": "Lower total gas volume does not imply lower toxic hazard; HF emission rate and exposure limit govern contaminated volume independently of total gas quantity",
+          "intended_error_modes": [
+            "conflating gas volume with hazard magnitude",
+            "ignoring HF dominance over flammability for LFP toxicity",
+            "assuming monotonic SOC-hazard relationship without direction check"
+          ]
+        }
+      }
+    ]
+  }
+}

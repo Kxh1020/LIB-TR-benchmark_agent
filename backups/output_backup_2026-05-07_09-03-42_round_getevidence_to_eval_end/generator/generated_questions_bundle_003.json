@@ -1,0 +1,341 @@
+{
+  "TR_Mechanism+59+UnknownJournal__TR_Mechanism+60+Battery_Energy__TR_Mechanism+61+UnknownJournal": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A prismatic LFP battery module is held under 0.2 MPa external pressure during a thermal runaway event. Engineers observe that total gas yield drops by ~53% relative to 0 MPa, yet postmortem analysis shows deeper electrode degradation and silicon deposits on the cathode surface. Which combination of effects correctly explains these observations?",
+          "options": [
+            "A. Reduced gas yield reflects suppressed exothermic reactions; silicon deposits confirm that reaction severity decreased uniformly at 0.2 MPa.",
+            "B. Earlier safety venting and prolonged electrolyte evaporation reduce total gas yield, while intensified exothermic reactions and possible ceramic-separator microcracking under high pressure explain deeper degradation and cathode silicon deposits.",
+            "C. Higher external pressure increases through-plane thermal conductivity, producing a more uniform temperature field that both suppresses gas generation and reduces reaction severity, leaving electrode materials intact.",
+            "D. Silicon deposits originate from electrolyte decomposition products migrating through an intact separator; total gas reduction is caused solely by chemical reaction suppression rather than venting timing.",
+            "E. The 53% gas reduction is caused by the cathode acting as an oxygen scavenger, and silicon deposits result from Fe2+ oxidation byproducts redistributed under pressure.",
+            "F. Reduced gas yield and deeper degradation are both consistent with 0.2 MPa: earlier venting and prolonged evaporation cut total gas, while intensified reactions and mechanical separator degradation increase electrode damage and allow SiO2 migration to the cathode."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "Postmortem evidence shows intensified, not suppressed, exothermic reactions at 0.2 MPa; silicon deposits indicate mechanical separator degradation.",
+              "error_type": "causal overclaim",
+              "evidence_refs": [
+                "TR_Mechanism+59+UnknownJournal:C005",
+                "TR_Mechanism+59+UnknownJournal:C015"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Earlier venting and prolonged evaporation explain gas reduction; intensified reactions and ceramic separator microcracking explain deeper degradation and Si deposits.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+59+UnknownJournal:C003",
+                "TR_Mechanism+59+UnknownJournal:C004",
+                "TR_Mechanism+59+UnknownJournal:C005",
+                "TR_Mechanism+59+UnknownJournal:C015"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Uniform temperature field is confirmed, but it does not reduce reaction severity; postmortem shows deeper degradation, contradicting this claim.",
+              "error_type": "boundary overreach",
+              "evidence_refs": [
+                "TR_Mechanism+59+UnknownJournal:C001",
+                "TR_Mechanism+59+UnknownJournal:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Gas reduction is attributed to venting timing and evaporation, not solely chemical suppression; Si deposits suggest mechanical separator failure, not electrolyte migration.",
+              "error_type": "mechanism substitution",
+              "evidence_refs": [
+                "TR_Mechanism+59+UnknownJournal:C004",
+                "TR_Mechanism+59+UnknownJournal:C015"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Oxygen scavenging by LFP cathode is observed in component-level tests, not linked to bulk gas reduction or Si deposit formation under pressure.",
+              "error_type": "mechanism substitution",
+              "evidence_refs": [
+                "TR_Mechanism+59+UnknownJournal:C014",
+                "TR_Mechanism+59+UnknownJournal:C015"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Correctly links gas reduction to venting/evaporation mechanisms and electrode damage plus Si migration to intensified reactions and separator mechanical failure at 0.2 MPa.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+59+UnknownJournal:C003",
+                "TR_Mechanism+59+UnknownJournal:C004",
+                "TR_Mechanism+59+UnknownJournal:C005",
+                "TR_Mechanism+59+UnknownJournal:C015"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Distinguishing the mechanism of gas yield reduction from the mechanism of increased reaction severity and separator degradation under elevated external pressure",
+          "primary_boundary": "Gas reduction is caused by venting timing and evaporation, not by suppressed reactions; reaction severity actually intensifies at 0.2 MPa",
+          "intended_error_modes": [
+            "causal overclaim",
+            "mechanism substitution",
+            "boundary overreach"
+          ],
+          "disallowed_extrapolations": [
+            "Inferring that lower gas yield implies lower reaction severity",
+            "Attributing Si deposits to electrolyte chemistry rather than mechanical separator failure"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "During nail penetration of LFP batteries, an engineer tests two nail materials: tungsten steel and polyformaldehyde (POM). At SOC < 50%, which statements about nail thermal conductivity effects on thermal runaway intensity and heat distribution are supported?",
+          "options": [
+            "A. At low SOC, tungsten steel nails conduct approximately 90% of short-circuit heat away through the nail in the first 100 s, reducing local heat accumulation and weakening thermal runaway intensity.",
+            "B. At low SOC, higher nail conductivity enhances Joule heat release internally, intensifying thermal runaway regardless of nail material.",
+            "C. POM nails conduct less than 50% of short-circuit heat through the nail in the first 100 s, retaining more heat locally and increasing thermal runaway risk at low SOC.",
+            "D. At low SOC, higher nail conductivity dissipates heat, weakening thermal runaway intensity, consistent with tungsten steel conducting ~90% of heat away versus POM conducting less than 50%.",
+            "E. Nail conductivity effects on thermal runaway intensity are SOC-independent; the same nail material produces the same thermal outcome at all SOC levels.",
+            "F. At low SOC, ceramic nails present higher fire risk than steel nails because they trigger higher-temperature flames.",
+            "G. Contact resistance between the nail and active material film is approximately three orders of magnitude greater than between nail and bare metal foil, meaning nail conductivity dominates over contact resistance in determining local heat generation."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "D"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Tungsten steel conducts ~90% of heat through the nail in first 100 s; at low SOC higher conductivity dissipates heat, weakening thermal runaway.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+60+Battery_Energy:C018",
+                "TR_Mechanism+60+Battery_Energy:C016"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Enhanced Joule heat release applies at high SOC (>75%), not low SOC; at low SOC higher conductivity dissipates heat instead.",
+              "error_type": "regime transfer error",
+              "evidence_refs": [
+                "TR_Mechanism+60+Battery_Energy:C015",
+                "TR_Mechanism+60+Battery_Energy:C016"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "POM retaining heat locally is factually supported, but concluding this increases thermal runaway risk at low SOC contradicts evidence that lower conductivity weakens heat dissipation without necessarily intensifying runaway at low SOC.",
+              "error_type": "boundary overreach",
+              "evidence_refs": [
+                "TR_Mechanism+60+Battery_Energy:C018",
+                "TR_Mechanism+60+Battery_Energy:C016"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Correctly combines SOC-dependent conductivity effect with quantitative heat conduction fractions for both nail materials.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+60+Battery_Energy:C016",
+                "TR_Mechanism+60+Battery_Energy:C018"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Nail conductivity effect on thermal runaway intensity is explicitly SOC-dependent: opposite effects observed above 75% versus below 50% SOC.",
+              "error_type": "unsupported monotonicity",
+              "evidence_refs": [
+                "TR_Mechanism+60+Battery_Energy:C015",
+                "TR_Mechanism+60+Battery_Energy:C016"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Ceramic nail higher fire risk is reported but not restricted to low SOC; applying it as a low-SOC-specific claim is an unsupported scope transfer.",
+              "error_type": "regime transfer error",
+              "evidence_refs": [
+                "TR_Mechanism+60+Battery_Energy:C017"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Incorrect",
+              "justification": "Contact resistance being three orders of magnitude higher means it, not nail bulk conductivity, dominates local heat generation at the contact point.",
+              "error_type": "causal overclaim",
+              "evidence_refs": [
+                "TR_Mechanism+60+Battery_Energy:C019"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "SOC-dependent reversal of nail conductivity effect on thermal runaway intensity, combined with quantitative heat conduction fractions",
+          "primary_boundary": "Conductivity effect direction reverses between low SOC (<50%) and high SOC (>75%); heat conduction fractions apply to first 100 s only",
+          "intended_error_modes": [
+            "regime transfer error",
+            "unsupported monotonicity",
+            "causal overclaim"
+          ],
+          "disallowed_extrapolations": [
+            "Applying high-SOC conductivity effects to low-SOC conditions",
+            "Treating nail conductivity as SOC-independent"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "In prismatic LFP batteries, external pressure of 0.1 MPa raises TR onset temperature (maximizing onset delay), while 0.2 MPa most reduces total gas generation. Gas composition analysis shows H2 at 68.5% of total gas at 0 MPa, shifting to predominantly heavier hydrocarbons at 0.1\u20130.2 MPa. Upper explosive limit (UEL) is consistently higher at 0 MPa. Which conclusions are supported?",
+          "options": [
+            "A. 0.1 MPa is the optimal pressure for minimizing explosion risk because it maximizes TR onset delay.",
+            "B. 0 MPa presents greater explosion risk than 0.1 or 0.2 MPa, evidenced by consistently higher UEL at 0 MPa.",
+            "C. The shift from H2-dominant to hydrocarbon-dominant gas composition under pressure indicates that electrolyte decomposition reactions are suppressed and replaced by SEI-related reactions.",
+            "D. There is a design trade-off: 0.1 MPa optimizes TR onset delay while 0.2 MPa optimizes gas suppression; neither pressure simultaneously maximizes both safety metrics.",
+            "E. Because 0.2 MPa reduces total gas yield by 53%, it also minimizes explosion risk more than 0 MPa.",
+            "F. At 0 MPa, H2 comprising 68.5% of total gas and highest UEL together indicate greater flammability hazard, but this does not imply that 0.2 MPa is safe from explosion risk beyond the tested range."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "D",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "0.1 MPa maximizes onset delay but UEL data shows 0 MPa has highest explosion risk; onset delay and explosion risk are distinct metrics not directly linked.",
+              "error_type": "causal overclaim",
+              "evidence_refs": [
+                "TR_Mechanism+59+UnknownJournal:C009",
+                "TR_Mechanism+59+UnknownJournal:C017"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "UEL is consistently higher at 0 MPa than at 0.1 or 0.2 MPa, directly indicating greater explosion risk at 0 MPa.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+59+UnknownJournal:C009"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Gas composition shift toward hydrocarbons under pressure is reported, but attributing it to SEI reaction replacement of electrolyte decomposition is not supported; earlier venting explains composition differences.",
+              "error_type": "mechanism substitution",
+              "evidence_refs": [
+                "TR_Mechanism+59+UnknownJournal:C007",
+                "TR_Mechanism+59+UnknownJournal:C008"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Evidence explicitly identifies 0.1 MPa as maximizing onset delay and 0.2 MPa as optimizing gas suppression, confirming a design trade-off between the two metrics.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+59+UnknownJournal:C017"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Lower total gas yield at 0.2 MPa does not directly equate to lower UEL or explosion risk; UEL depends on gas composition, not only total volume.",
+              "error_type": "causal overclaim",
+              "evidence_refs": [
+                "TR_Mechanism+59+UnknownJournal:C003",
+                "TR_Mechanism+59+UnknownJournal:C009"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Correctly identifies 0 MPa hazard from H2 proportion and UEL, while appropriately limiting the conclusion to the tested range per evidence boundary.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+59+UnknownJournal:C007",
+                "TR_Mechanism+59+UnknownJournal:C009",
+                "TR_Mechanism+59+UnknownJournal:C016"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Distinguishing explosion risk (UEL-based) from gas volume reduction, and recognizing the pressure-optimization trade-off between onset delay and gas suppression",
+          "primary_boundary": "UEL and total gas yield are distinct safety metrics; conclusions are bounded to the 0\u20130.2 MPa tested range",
+          "intended_error_modes": [
+            "causal overclaim",
+            "mechanism substitution",
+            "boundary overreach"
+          ],
+          "disallowed_extrapolations": [
+            "Equating lower total gas yield with lower explosion risk",
+            "Extending findings beyond the 0\u20130.2 MPa tested range"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A battery engineer is designing a nail penetration safety protocol for LFP cells and must choose between a steel nail and a ceramic nail for standardized testing. The engineer also needs to decide whether to test at 50% SOC or 90% SOC. Using evidence about nail material properties, SOC thresholds, and thermal runaway mechanisms, explain: (1) how nail electrical conductivity interacts with SOC to determine thermal runaway intensity, and (2) what distinct hazard ceramic nails introduce that steel nails do not, even though ceramic nails are electrically non-conductive. Restrict your answer to the evidence-supported mechanisms."
+        },
+        "ground_truth": {
+          "gold_answer": "At high SOC (>75%), nails with higher electrical and thermal conductivity enhance internal Joule heat release, intensifying thermal runaway; at low SOC (<50%), the same high-conductivity nails dissipate heat externally, weakening thermal runaway intensity. This means the nail conductivity effect reverses direction depending on SOC, so a steel nail at 90% SOC amplifies runaway while the same nail at 50% SOC mitigates it. Separately, ceramic nails\u2014despite being electrically non-conductive and thus unable to carry short-circuit current\u2014are more likely to trigger higher-temperature thermal runaway flames than steel nails, increasing fire risk through a distinct mechanism unrelated to Joule heating. Therefore, ceramic nails introduce a flame temperature hazard that cannot be inferred from their electrical properties alone, and steel nail behavior cannot be generalized across SOC levels.",
+          "must_include": [
+            "Nail conductivity effect reverses between low SOC (<50%) and high SOC (>75%)",
+            "High conductivity intensifies runaway at high SOC via enhanced Joule heat release",
+            "High conductivity weakens runaway at low SOC via heat dissipation",
+            "Ceramic nails increase fire risk by triggering higher-temperature flames",
+            "Ceramic nail flame hazard is distinct from electrical short-circuit current mechanism"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming ceramic nails are safer overall because they lack electrical conductivity",
+            "Applying the high-SOC conductivity intensification effect to low-SOC conditions",
+            "Asserting that steel nails always increase or always decrease thermal runaway risk regardless of SOC",
+            "Extending conclusions beyond the nail materials and SOC ranges described in the evidence"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "SOC-dependent reversal of nail conductivity effect on thermal runaway intensity, combined with the distinct flame-temperature hazard introduced by ceramic nails",
+          "primary_boundary": "Conductivity effect direction is SOC-dependent (reversal at ~50\u201375% SOC boundary); ceramic nail hazard is fire-temperature-based, not current-based",
+          "intended_error_modes": [
+            "regime transfer error",
+            "mechanism substitution",
+            "causal overclaim from non-conductivity to overall safety"
+          ]
+        }
+      }
+    ]
+  }
+}

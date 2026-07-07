@@ -1,0 +1,97 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A kinetic model for lithium-ion cell thermal runaway is constructed by fitting parameters exclusively to DSC data. The model includes an anode reaction term representing SEI decomposition followed by remaining exothermic reactions. When the model is used in ARC cell simulations, it fails to reproduce the experimentally observed temperature gap between SEI decomposition onset and the onset of remaining exothermic reactions. A separate model calibrated directly to ARC data for the same anode reaction uses a pre-exponential factor of A = 0.035 s⁻¹ for the low-temperature range, whereas DSC-inferred pre-exponential factors for the same reaction type typically range from 10¹⁰ to 10²⁰ s⁻¹. An engineer is asked to evaluate which modeling conclusions are defensible given this situation. Which of the following statements are admissible?",
+        "options": [
+          "A. The failure of DSC-calibrated models to reproduce the ARC temperature gap is consistent with the pre-exponential factor required for ARC fidelity being outside the range accessible by DSC-based inference, indicating a fundamental limitation of DSC-only calibration for this reaction.",
+          "B. The ARC-calibrated pre-exponential factor of 0.035 s⁻¹ is physically unreasonable and should be rejected, because it falls more than ten orders of magnitude below the lowest end of the DSC-inferred range.",
+          "C. Because the ARC-calibrated pre-exponential factor bridges the gap between SEI decomposition and remaining exothermic reactions, using DSC-only kinetics in ARC simulations will systematically underestimate the temperature at which the remaining reactions ignite relative to SEI onset.",
+          "D. A model that reproduces ARC behavior using A = 0.035 s⁻¹ may be valid for ARC conditions but cannot be assumed to reproduce DSC behavior, because the two experimental protocols probe different temperature ramp rates and thermal environments.",
+          "E. The discrepancy between DSC-inferred and ARC-calibrated pre-exponential factors proves that the underlying chemical reaction mechanism differs between DSC and ARC conditions, and therefore a single kinetic model cannot be valid for both.",
+          "F. The pre-exponential factor range of 10¹⁰ to 10²⁰ s⁻¹ from DSC data represents a sufficiently wide uncertainty band that ARC simulation results will be insensitive to which value within this range is selected."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The ARC-required pre-exponential factor (0.035 s⁻¹) is outside the DSC-inferred range (10¹⁰–10²⁰ s⁻¹) by many orders of magnitude. This directly implies that DSC-only calibration cannot produce the kinetic parameter needed to reproduce the ARC temperature gap, making DSC-only calibration a fundamental limitation for this specific reaction. The reasoning chain is: ARC gap requires low A → DSC cannot produce low A → DSC-only calibration is insufficient for ARC fidelity.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+194+Chemical_Engineering_Journal:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The evidence explicitly states that A = 0.035 s⁻¹ was obtained by direct fitting to ARC experimental data, not by theoretical derivation. Rejecting it as physically unreasonable based solely on its deviation from DSC-inferred values is an unjustified overclaim. The evidence presents it as a significant outlier but does not invalidate it. This is a conservative-appearing but incorrect distractor.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Modelling+194+Chemical_Engineering_Journal:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The direction of the error is inverted. A DSC-calibrated model with a high pre-exponential factor would predict faster reaction kinetics at low temperature, which would tend to close the gap between SEI onset and remaining reactions rather than widen it. The claim that DSC-only kinetics underestimates the temperature of remaining reaction onset is not directly supported and inverts the mechanism. This is a mechanism confusion distractor.",
+            "error_type": "mechanism_confusion_distractor",
+            "evidence_refs": [
+              "TR_Modelling+194+Chemical_Engineering_Journal:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "ARC and DSC probe different thermal environments and ramp rates. A kinetic model calibrated to ARC data is valid within ARC conditions but cannot be assumed to reproduce DSC observations, because the parameter fitting was performed under different experimental constraints. This is an admissible boundary conclusion that avoids overclaiming cross-protocol validity.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+194+Chemical_Engineering_Journal:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The discrepancy in pre-exponential factors is consistent with different experimental conditions producing different effective kinetic parameters, but it does not prove that the underlying chemical mechanism differs. Mechanism difference is one possible interpretation, but the evidence does not support this as a definitive conclusion. This is a causal overclaim distractor.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Modelling+194+Chemical_Engineering_Journal:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "DSC-informed kinetic uncertainty produces 2σ ranges of 9–17% on simulated initiation and maximum temperatures, indicating that the choice of pre-exponential factor within the DSC range does have significant impact. The claim of insensitivity is directly contradicted by the evidence on kinetic uncertainty effects.",
+            "error_type": "overgeneralization_distractor",
+            "evidence_refs": [
+              "TR_Modelling+194+Chemical_Engineering_Journal:C003",
+              "TR_Modelling+194+Chemical_Engineering_Journal:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of DSC-only kinetic calibration for ARC simulation fidelity and cross-protocol model validity",
+        "primary_boundary": "The ARC-required pre-exponential factor is outside the DSC-accessible range, making DSC-only calibration insufficient for ARC fidelity, but this does not prove mechanism difference or invalidate ARC-calibrated parameters",
+        "intended_error_modes": [
+          "causal_overclaim",
+          "mechanism_confusion_distractor",
+          "overgeneralization_distractor"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding mechanism difference from parameter discrepancy",
+          "Claiming DSC range insensitivity given known 9–17% uncertainty impact",
+          "Rejecting ARC-calibrated parameters as physically unreasonable"
+        ]
+      }
+    }
+  ],
+  "short_answers": []
+}

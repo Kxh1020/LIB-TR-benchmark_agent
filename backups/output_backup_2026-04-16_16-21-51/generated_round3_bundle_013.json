@@ -1,0 +1,330 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A lithium-ion battery pack operating at 420 Vdc is being evaluated for isolation safety. The pack uses a current interrupt device (CID) on each cell as a primary overcurrent protection mechanism. During an overcharge fault, the pack voltage across the CID contacts exceeds 50 V before the CID activates. An engineer proposes that because CID activation interrupts current flow, it will reliably prevent thermal runaway under this overcharge condition. A second engineer argues that even if the CID activates, the high-voltage condition introduces a failure pathway that the CID mechanism itself cannot eliminate. Which of the following conclusions are supported by engineering reasoning under these stated conditions?",
+        "options": [
+          "A. CID activation under the overcharge condition can itself become a source of ignition because arc generation at high voltage produces sparks and heat capable of igniting combustible gases and electrolyte.",
+          "B. The 420 Vdc pack voltage satisfies the minimum isolation requirement of 100 ohms/volt DC if the chassis isolation resistance is at least 42 kilohms.",
+          "C. Because CID activation interrupts the overcurrent path, arc formation is physically impossible once the contacts separate, making thermal runaway from the CID itself inadmissible.",
+          "D. The risk of arc-induced thermal runaway at the CID is specific to conditions where contact voltage exceeds 50 V, and does not apply at lower pack voltages where the same CID design operates.",
+          "E. A PTC device placed in series with each cell would provide a complementary protection layer because it enters a high-resistance state when cell temperature exceeds 100 degrees C, independent of the arc mechanism at the CID.",
+          "F. The conservative nature of industry-accepted DC arc flash calculation methods means that arc flash incident energy at the CID contacts is likely lower than calculated values, so the ignition risk is overstated."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence states that high-voltage CID (>50 V) can generate arcs under overcharge, with sparks and heat igniting combustible gas and electrolyte, resulting in thermal runaway. The stem specifies voltage exceeds 50 V before CID activation, satisfying this condition directly.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+215+Fire:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The isolation requirement specifies 100 ohms/volt DC, so a 420 Vdc system requires 42 kilohms minimum. This arithmetic is correct, but the stated evidence gives the example for a 400 Vdc system requiring 200 kilohms, which implies 500 ohms/volt AC is the relevant standard for that context. The DC requirement of 100 ohms/volt does yield 42 kilohms for 420 V, making this numerically plausible but the stem context is about CID arc risk, not isolation compliance. More critically, this option is a distractor that applies a threshold from a different regulatory context without relevance to the stated failure scenario.",
+            "error_type": "scope_expansion_distractor",
+            "evidence_refs": [
+              "TR_Protection+216+IEEE_Industry_Applications_Magazine:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "This option assumes contact separation eliminates arc formation, but arc generation occurs precisely during and at the moment of contact separation under high voltage. The evidence explicitly identifies arc generation as a consequence of CID operation under high-voltage overcharge, not as a pre-activation phenomenon. This is a causal overclaim that inverts the actual mechanism.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Protection+215+Fire:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The evidence conditions arc-induced thermal runaway risk specifically to voltages exceeding 50 V. This is a threshold-dependent conclusion: the same CID design operating below 50 V does not carry the same arc-ignition risk. This is a regime-dependent admissible conclusion directly supported by the stated threshold.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+215+Fire:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "PTC protection operates by entering a high-resistance state when cell temperature exceeds 100 degrees C, which is a thermally triggered mechanism independent of the voltage-driven arc mechanism at the CID. These are complementary and non-redundant protection pathways. The evidence supports both mechanisms operating on distinct physical triggers.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+215+Fire:C001",
+              "TR_Protection+215+Fire:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "While evidence confirms that industry-accepted DC arc flash calculation methods yield conservative results, this applies to arc flash incident energy calculations for pack-level events. Using this to conclude that CID arc ignition risk is overstated conflates arc flash incident energy magnitude with the binary question of whether ignition can occur. Even a lower-than-calculated arc energy can be sufficient to ignite combustible gases. This is a protective mechanism overclaim distractor.",
+            "error_type": "protective_mechanism_overclaim",
+            "evidence_refs": [
+              "TR_Protection+216+IEEE_Industry_Applications_Magazine:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Threshold-dependent arc ignition risk at CID contacts under high-voltage overcharge, and admissibility of complementary PTC protection as an independent mechanism",
+        "primary_boundary": "Arc-induced thermal runaway at CID is conditioned on voltage exceeding 50 V; PTC operates on a temperature threshold independent of the arc mechanism; conservative arc flash energy calculations do not eliminate ignition admissibility",
+        "intended_error_modes": [
+          "Assuming CID contact separation eliminates arc risk (mechanism inversion)",
+          "Applying conservative arc flash energy estimates to dismiss ignition risk (scope transfer)",
+          "Confusing isolation resistance compliance with arc ignition risk (irrelevant threshold application)"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding that CID is universally safe regardless of operating voltage",
+          "Concluding that lower-than-calculated arc energy means ignition cannot occur",
+          "Applying vehicle isolation standards to pack-level arc fault risk assessment"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A thermosensitive microcapsule fire extinguishing agent is coated on the surface of lithium-ion cells in a two-cell module. The capsule wall material has an endothermic absorption range of 51 to 119 degrees C and ruptures above 119 degrees C to release a bromine-containing fire suppressant. In a thermal runaway propagation test, cell 1 undergoes thermal runaway first. Measurements show that cell 1's peak temperature is reduced by 18 degrees C compared to natural cooling, and cell 2 reaches a peak of 63 degrees C. An engineer evaluating this system makes the following claims. Which claims are admissible under the described evidence?",
+        "options": [
+          "A. The bromine-containing suppressant reduces peak temperature primarily by absorbing heat through an endothermic phase transition in the capsule wall material before rupture.",
+          "B. The suppressant released from cell 1's capsules can contribute to limiting cell 2's temperature rise, because the released material acts on the combustion chain reaction rather than solely on the surface of the originating cell.",
+          "C. Because cell 2 reaches only 63 degrees C, the capsule coating on cell 2 does not rupture during this test, meaning cell 2's suppressant remains unreleased and provides no active contribution during the event.",
+          "D. The 14 degree C reduction in single-cell peak temperature and the 18 degree C reduction observed for cell 1 in the module test are consistent with each other, confirming that module-level confinement has no effect on suppressant performance.",
+          "E. The thermal protection provided by the microcapsule system eliminates the production of toxic off-gases from the cells during thermal runaway.",
+          "F. The endothermic absorption by the capsule wall material below 119 degrees C and the chemical radical-capture action of the bromine compound above 119 degrees C represent two distinct and sequential contributions to temperature mitigation."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "The endothermic peak of the capsule wall is attributed to the wall material absorbing heat before rupture, which is a physical absorption mechanism. However, the primary chemical suppression mechanism after rupture is the bromine element capturing free radicals in the combustion chain reaction. Attributing the bromine compound's temperature reduction to endothermic phase transition confuses the wall material's pre-rupture behavior with the core material's post-rupture chemical mechanism. This is a mechanism substitution distractor.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Protection+217+Polymers:C003",
+              "TR_Protection+217+Polymers:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The bromine compound acts by capturing free radicals in the combustion chain reaction, which is a gas-phase or distributed chemical mechanism rather than a surface-contact-only mechanism. This means suppressant released from cell 1's capsules can act on the combustion environment surrounding cell 2, contributing to the observed reduction in cell 2's peak temperature. This is an admissible inference from the radical-capture mechanism.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+217+Polymers:C005",
+              "TR_Protection+217+Polymers:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Capsule rupture requires temperature to exceed 119 degrees C. Cell 2 reaches only 63 degrees C, which is below this threshold. Therefore, cell 2's capsule wall remains intact and the core suppressant material is not released from cell 2's coating during the test. This is a direct threshold-based admissible conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+217+Polymers:C002",
+              "TR_Protection+217+Polymers:C003",
+              "TR_Protection+217+Polymers:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The single-cell test shows a 14 degree C reduction while the module test shows an 18 degree C reduction for cell 1. These values differ, which is inconsistent with the claim that module confinement has no effect. The difference could reflect confinement effects, thermal interaction, or different test conditions. Claiming consistency to conclude no confinement effect is an unsupported overgeneralization and ignores the numerical discrepancy.",
+            "error_type": "overgeneralization_distractor",
+            "evidence_refs": [
+              "TR_Protection+217+Polymers:C001",
+              "TR_Protection+217+Polymers:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The evidence states that the bromine compound reduces the formation of flammable gases by disrupting the oxidation process, but this is a reduction in flammable gas formation, not elimination of all toxic off-gases. Furthermore, evidence from a separate source confirms that lithium-ion cells produce large quantities of toxic gases even at 30% SOC during thermal runaway. Claiming elimination of toxic off-gases is an unsupported protective mechanism overclaim.",
+            "error_type": "protective_mechanism_overclaim",
+            "evidence_refs": [
+              "TR_Protection+217+Polymers:C005",
+              "TR_Protection+216+IEEE_Industry_Applications_Magazine:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Below 119 degrees C, the capsule wall material undergoes endothermic absorption (physical heat absorption). Above 119 degrees C, the wall ruptures and releases the bromine compound, which then captures free radicals chemically. These are two distinct mechanisms operating in sequential temperature regimes, both supported by the evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+217+Polymers:C003",
+              "TR_Protection+217+Polymers:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Sequential and spatially distributed suppression mechanisms of thermosensitive microcapsule agents, and admissibility of conclusions about rupture threshold, chemical mechanism scope, and toxic gas claims",
+        "primary_boundary": "Capsule rupture threshold at 119 degrees C determines whether active chemical suppression is released; bromine radical-capture mechanism is not confined to the originating cell surface; temperature reductions are partial, not eliminative",
+        "intended_error_modes": [
+          "Attributing bromine chemical action to endothermic phase transition (mechanism substitution)",
+          "Claiming toxic gas elimination from a partial flammable gas reduction result (protective mechanism overclaim)",
+          "Using numerically different reduction values to claim no confinement effect (overgeneralization)"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding that suppression eliminates toxic off-gassing",
+          "Concluding that module-level and single-cell performance are equivalent",
+          "Concluding that cell 2 capsules contribute actively when cell 2 temperature is below rupture threshold"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery management system designer is evaluating protection strategies for a 14-cell series lithium-ion pack. The pack will operate in an environment where individual cells may experience short-circuit faults. The designer considers three protection elements: (1) a PTC device on each cell that enters high resistance above 100 degrees C, (2) a CID on each cell that activates at approximately 1.8 MPa internal pressure at 100 degrees C, and (3) a thermosensitive microcapsule coating on each cell surface that ruptures above 119 degrees C. The designer concludes that because all three devices activate near or above 100 degrees C, they provide equivalent and redundant protection against thermal runaway initiation. Which of the following statements correctly identifies a flaw or limitation in this reasoning?",
+        "options": [
+          "A. The PTC and CID both respond to conditions that can develop within seconds of a short circuit in large-format cells, but the microcapsule coating responds only after the cell surface temperature exceeds 119 degrees C, meaning the coating activates later in the thermal escalation sequence than the other two devices.",
+          "B. The three devices address different physical mechanisms: PTC limits overcurrent by resistance increase, CID interrupts current by pressure-triggered disconnection, and the microcapsule coating acts on combustion chemistry after release, so their protective functions are not equivalent even if their activation temperatures overlap.",
+          "C. Because a PTC failure in a 14-cell series pack has been shown to result in ignition and thermal runaway, the presence of CID and microcapsule coating on the same cells provides sufficient redundancy to prevent this failure mode.",
+          "D. The CID activation pressure of approximately 1.8 MPa is independent of cell chemistry and SOC, so the CID provides consistent protection across all operating conditions in the pack.",
+          "E. The microcapsule coating reduces peak thermal runaway temperature by a modest amount and decreases heating rate, but it does not prevent thermal runaway initiation; therefore it cannot be considered equivalent to devices that interrupt the electrical fault pathway.",
+          "F. PTC protection is rendered ineffective in a series pack configuration because the high resistance state of one PTC does not reduce current through the remaining cells in the series string."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Large-format cells can reach temperatures exceeding 93 degrees C within seconds of a short circuit. PTC activates above 100 degrees C and CID activates at 100 degrees C under pressure, both responding to early thermal and pressure escalation. The microcapsule coating requires surface temperature to exceed 119 degrees C before rupture, placing it later in the thermal escalation sequence. This temporal ordering is a real non-equivalence that the designer's reasoning ignores.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+216+IEEE_Industry_Applications_Magazine:C001",
+              "TR_Protection+215+Fire:C001",
+              "TR_Protection+215+Fire:C004",
+              "TR_Protection+217+Polymers:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "PTC acts on overcurrent via resistance, CID acts on internal pressure via mechanical disconnection, and the microcapsule acts on combustion chain chemistry after release. These are mechanistically distinct: the first two interrupt the electrical fault pathway while the third mitigates thermal consequences after the cell has already begun thermal escalation. Treating them as equivalent because activation temperatures are similar ignores mechanism-level differences.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+215+Fire:C001",
+              "TR_Protection+215+Fire:C004",
+              "TR_Protection+217+Polymers:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "This option claims that CID and microcapsule coating provide sufficient redundancy to cover PTC failure in a 14-cell series pack. However, the evidence only states that PTC failure can result in ignition and thermal runaway; it does not state that the other two devices can compensate for PTC failure. The CID activates on internal pressure and the microcapsule acts on combustion chemistry, neither of which directly substitutes for PTC's overcurrent limiting function. This is a conservative-sounding but incorrect redundancy claim.",
+            "error_type": "protective_mechanism_overclaim",
+            "evidence_refs": [
+              "TR_Protection+215+Fire:C003",
+              "TR_Protection+215+Fire:C001"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence reports CID activation pressure values from specific test conditions (100 degrees C, specific cell types). Claiming that activation pressure is independent of cell chemistry and SOC across all operating conditions is an unsupported generalization beyond the stated experimental scope. This is an overgeneralization distractor.",
+            "error_type": "overgeneralization_distractor",
+            "evidence_refs": [
+              "TR_Protection+215+Fire:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The microcapsule system reduces peak temperature by 14 degrees C and decreases heating rate but does not prevent thermal runaway from initiating. In contrast, PTC and CID both act to interrupt the electrical or pressure-driven fault pathway before or at the onset of thermal runaway. The microcapsule is a consequence-mitigation device, not an initiation-prevention device, making equivalence with PTC and CID inadmissible.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+217+Polymers:C001",
+              "TR_Protection+215+Fire:C001",
+              "TR_Protection+215+Fire:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "In a series string, a PTC entering high resistance on one cell does reduce current through the entire series string because series circuits share the same current path. A high-resistance PTC on one cell limits current for all cells in the string. This option inverts the correct series circuit behavior and is mechanistically wrong.",
+            "error_type": "mechanism_confusion_distractor",
+            "evidence_refs": [
+              "TR_Protection+215+Fire:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Non-equivalence of protection mechanisms that share similar activation temperature ranges but differ in physical mechanism, temporal activation sequence, and failure mode coverage",
+        "primary_boundary": "Activation temperature proximity does not imply mechanistic equivalence; microcapsule coating mitigates consequences rather than preventing initiation; PTC failure in series packs is not covered by combustion-chemistry-acting agents",
+        "intended_error_modes": [
+          "Treating temperature-similar activation thresholds as mechanistic equivalence",
+          "Claiming redundancy coverage across mechanistically distinct failure modes",
+          "Overgeneralizing CID activation conditions beyond tested parameters",
+          "Inverting series circuit current behavior for PTC"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding that any combination of three protection devices prevents all thermal runaway scenarios",
+          "Concluding that CID activation pressure is chemistry-independent",
+          "Concluding that microcapsule coating prevents thermal runaway initiation"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A lithium-ion battery module operates at 30% state of charge. During a fault event, the cells undergo thermal runaway. A safety engineer argues that because the ignition potential during thermal runaway is reduced at 30% SOC compared to higher SOC conditions, the primary hazard to personnel in the vicinity has been substantially mitigated. Identify the specific flaw in this safety argument, explain the mechanism that makes the argument incomplete, and describe what additional protective measure or consideration remains necessary even at 30% SOC."
+      },
+      "ground_truth": {
+        "gold_answer": "The flaw in the argument is that it conflates reduced ignition potential with reduced overall hazard. While the likelihood of ignition during thermal runaway is lower at 30% SOC than at higher SOC, lithium-ion cells produce large quantities of toxic gases during off-gassing even at 30% SOC. The ignition risk reduction does not address the toxic gas hazard, which is present regardless of whether ignition occurs. The mechanism is that gas generation during thermal runaway is driven by electrochemical decomposition reactions and electrolyte breakdown, which continue to produce toxic species at 30% SOC even if the thermal energy available for ignition is reduced. The additional protective consideration that remains necessary is ventilation, gas detection, or respiratory protection for personnel, because the toxic off-gas hazard is not mitigated by the lower SOC condition that reduces ignition potential.",
+        "must_include": [
+          "Ignition potential reduction at 30% SOC does not eliminate the toxic gas hazard",
+          "Toxic gases are produced in large quantities even at 30% SOC during off-gassing",
+          "The argument incorrectly treats reduced ignition risk as equivalent to reduced overall personnel hazard",
+          "A separate protective measure addressing toxic gas exposure remains necessary"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming that 30% SOC eliminates thermal runaway",
+          "Claiming that toxic gas production is proportional to SOC and therefore negligible at 30%",
+          "Claiming that ignition potential reduction at 30% SOC means no fire hazard exists under any condition",
+          "Specifying a numerical toxic gas quantity or composition not provided in the evidence"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinction between ignition hazard reduction and toxic gas hazard at reduced SOC; admissibility of partial hazard mitigation claims as complete safety arguments",
+        "primary_boundary": "Reduced ignition potential at 30% SOC is a conditional improvement in one hazard pathway; toxic off-gassing persists at 30% SOC and represents an independent hazard pathway that the SOC-based argument does not address",
+        "intended_error_modes": [
+          "Treating ignition risk reduction as equivalent to overall hazard mitigation",
+          "Assuming toxic gas production scales with SOC to negligible levels at 30%",
+          "Failing to identify that two independent hazard pathways exist and only one is addressed by the SOC argument"
+        ]
+      }
+    }
+  ]
+}

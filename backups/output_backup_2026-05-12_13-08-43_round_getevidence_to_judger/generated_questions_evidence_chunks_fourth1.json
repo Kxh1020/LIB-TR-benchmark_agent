@@ -1,0 +1,280 @@
+{
+  "TR_Gasventing+56+Batteries__TR_Gasventing+57+Applied_Energy__TR_Gasventing+58+Batteries": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery safety engineer is evaluating thermal runaway propagation mitigation strategies for a lithium-ion battery pack. The pack consists of multiple cells arranged with adjustable spacing and is equipped with an active ventilation system. During a thermal runaway event, flammable gases (H2, CO, CH4) are released and accumulate in the pack enclosure. The engineer must balance two competing objectives: (1) reducing thermal runaway propagation speed between cells, and (2) minimizing the duration of exposure to explosive gas concentrations. Which of the following statements about design trade-offs are consistent with the interaction between cell spacing and ventilation?",
+          "options": [
+            "A. Increasing cell spacing reduces propagation speed but may prolong the pack's exposure to explosive gas mixtures by inhibiting rapid gas dispersion.",
+            "B. Increasing ventilation rate decreases gas concentration and shortens the duration of explosion risk exposure, independent of cell spacing effects.",
+            "C. Void volume within the pack enclosure has a dominant effect on the duration of explosion risk exposure, comparable to the effect of ventilation rate.",
+            "D. Without active ventilation, vented gases reach a saturation condition where subsequent cell failures do not significantly increase gas concentration.",
+            "E. Increasing cell spacing always improves overall safety by reducing both propagation speed and explosion risk duration simultaneously."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "D"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "This statement correctly captures the trade-off: increased cell distance reduces thermal runaway propagation speed but inhibits rapid dispersion of venting gases, causing prolonged explosion risk exposure.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+57+Applied_Energy:C002"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "This statement is supported by evidence showing that increasing ventilation rate decreases gas concentration and shortens the duration of explosion risk exposure. The independence claim is admissible as the evidence does not indicate coupling between ventilation and spacing effects on gas concentration dynamics.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+57+Applied_Energy:C001"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "This overstates the effect of void volume. Evidence indicates void volume has limited effect on the duration of explosion risk exposure, contradicting the claim of dominant or comparable effect.",
+              "error_type": "magnitude_exaggeration",
+              "evidence_refs": [
+                "TR_Gasventing+57+Applied_Energy:C003"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "This correctly describes the saturation condition observed in packs without active ventilation, where gases achieve saturation and flow straight out rather than accumulating further, keeping concentrations essentially constant as subsequent cells fail.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+57+Applied_Energy:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "This ignores the trade-off identified in the evidence: while increasing cell spacing reduces propagation speed, it inhibits rapid gas dispersion and prolongs explosion risk exposure, not improving both simultaneously.",
+              "error_type": "ignoring_trade_off",
+              "evidence_refs": [
+                "TR_Gasventing+57+Applied_Energy:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Trade-off between thermal propagation mitigation and gas explosion risk in battery pack design",
+          "primary_boundary": "Distinguishing between single-objective improvements and multi-objective trade-offs in safety design",
+          "intended_error_modes": [
+            "ignoring_trade_off",
+            "magnitude_exaggeration",
+            "assuming_monotonic_improvement"
+          ],
+          "disallowed_extrapolations": [
+            "specific numerical thresholds for spacing or ventilation rate",
+            "system-level safety certification claims"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A research team is conducting nail penetration tests on lithium-ion cells to characterize thermal runaway behavior. They are comparing two test configurations: (1) cells tested in an open-air environment, and (2) cells tested in a sealed chamber filled with nitrogen gas. Both configurations use the same cell chemistry (NMC prismatic, 100% SOC) and identical penetration parameters. Temperature and gas composition are monitored throughout the tests. Which of the following conclusions about the influence of test environment on thermal runaway characteristics are defensible?",
+          "options": [
+            "A. Cells tested in the nitrogen-filled chamber will exhibit lower peak temperatures than those tested in open air due to suppression of combustion-driven heat release.",
+            "B. Cells tested in open air will produce higher CO2 concentrations and lower H2 concentrations compared to those tested in nitrogen atmosphere.",
+            "C. The nitrogen environment will result in higher localized peak temperatures due to more constrained heat dissipation in the sealed chamber.",
+            "D. Increased humidity within the nitrogen environment will increase the concentration of measurable gaseous species by promoting vapor-phase reactions.",
+            "E. The test environment (air vs. nitrogen) affects gas composition but does not significantly influence the maximum temperature reached during thermal runaway."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "This is supported by evidence showing that in nitrogen-filled chambers, batteries reached much lower maximum temperatures (47\u00b0C) compared to air-filled chambers (122\u00b0C), demonstrating the suppressive influence of inert gas on combustion-driven temperature rise.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+58+Batteries:C007"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "This correctly describes the observed trend: air environments resulted in higher CO2 and lower H2 concentrations, while N2 environments produced the opposite trend.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+58+Batteries:C008"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "This confuses two separate effects. While closed chambers can constrain heat dissipation and lead to higher localized temperatures (as observed in closed N2-chamber vs. open setup comparison), the nitrogen atmosphere itself suppresses combustion and reduces peak temperatures. The evidence shows nitrogen environment produces lower, not higher, temperatures compared to air.",
+              "error_type": "mechanism_confusion",
+              "evidence_refs": [
+                "TR_Gasventing+58+Batteries:C006",
+                "TR_Gasventing+58+Batteries:C007"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "This reverses the observed effect. Evidence shows that increased humidity promoted condensation of vapor-phase products on chamber surfaces, reducing (not increasing) the concentration of measurable gaseous species.",
+              "error_type": "directional_error",
+              "evidence_refs": [
+                "TR_Gasventing+58+Batteries:C010"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "This contradicts the evidence showing that test environment has a major influence on maximum temperature: nitrogen environments suppress combustion and result in dramatically lower peak temperatures compared to air environments.",
+              "error_type": "ignoring_primary_effect",
+              "evidence_refs": [
+                "TR_Gasventing+58+Batteries:C007"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Influence of test environment (air vs. inert atmosphere) on thermal runaway temperature and gas composition",
+          "primary_boundary": "Distinguishing between combustion suppression effects and heat dissipation constraints",
+          "intended_error_modes": [
+            "mechanism_confusion",
+            "directional_error",
+            "ignoring_primary_effect"
+          ],
+          "disallowed_extrapolations": [
+            "specific temperature values for untested chemistries",
+            "safety certification claims based on single test condition"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery testing laboratory is developing a standardized nail penetration protocol to trigger thermal runaway with high repeatability. They are investigating the influence of penetration speed on the consistency of thermal runaway initiation. The protocol must balance the need for consistent triggering with practical test duration constraints. Cells are NMC prismatic format at 100% SOC, tested in controlled atmosphere. Which of the following statements about penetration speed effects on thermal runaway triggering are supported?",
+          "options": [
+            "A. Using a penetration speed of 1 mm/s, significantly lower than the 80 mm/s suggested in SAE standards, can reduce standard deviations in temperature and voltage profiles and allow more stable thermal runaway triggering.",
+            "B. Conductive nails produce greater temperature spikes during penetration compared to non-conductive nails, indicating that electrical short-circuit contribution dominates over mechanical damage in determining thermal response.",
+            "C. At 50% SOC, cells exhibit only swelling and gas release without entering thermal runaway, while cells at 100% SOC experience thermal runaway under identical penetration conditions.",
+            "D. Penetration speed has minimal influence on the onset temperature of thermal runaway but significantly affects the rate of temperature rise after initiation.",
+            "E. Hard-case prismatic cells withstand higher internal pressure before venting compared to pouch cells, but this difference does not affect the likelihood of thermal runaway initiation during nail penetration."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "This is directly supported by evidence showing that a penetration speed of 1 mm/s, much lower than the 80 mm/s in SAE standards, significantly lowered standard deviations in temperature and voltage profiles and allowed more stable and consistent triggering of thermal runaway.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+58+Batteries:C013"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "While the first part is correct (conductive nails cause greater temperature spikes), the causal claim that electrical short-circuit contribution dominates over mechanical damage is not supported by the evidence. The evidence only establishes the comparative observation, not the mechanism dominance.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+58+Batteries:C002"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "This correctly describes the SOC-dependent behavior observed in LCO pouch cells: cells at 50% SOC exhibited only swelling and gas release without thermal runaway, while 100% SOC cells experienced thermal runaway.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+58+Batteries:C014"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "This invents a distinction (onset temperature vs. rate of rise) that is not supported by the evidence. The evidence indicates penetration speed affects consistency of triggering and profile variability, not a specific decomposition into onset vs. rate effects.",
+              "error_type": "unsupported_mechanism_decomposition",
+              "evidence_refs": [
+                "TR_Gasventing+58+Batteries:C013"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "While the first part is correct (hard-case cells withstand higher pressure before venting), the claim that this does not affect thermal runaway initiation likelihood is not supported. The pressure difference and venting behavior could influence the thermal runaway progression, and the evidence does not establish independence.",
+              "error_type": "unsupported_independence_claim",
+              "evidence_refs": [
+                "TR_Gasventing+58+Batteries:C017"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Influence of test parameters (penetration speed, nail conductivity, SOC) on thermal runaway triggering consistency and behavior",
+          "primary_boundary": "Distinguishing between observed comparative effects and unsupported mechanistic or independence claims",
+          "intended_error_modes": [
+            "causal_overclaim",
+            "unsupported_mechanism_decomposition",
+            "unsupported_independence_claim"
+          ],
+          "disallowed_extrapolations": [
+            "optimal penetration speed for all cell formats",
+            "universal SOC threshold for thermal runaway across all chemistries"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A battery pack designer is comparing three candidate cell chemistries (LFP, NMC, NVPF) for an application where both explosion risk and thermal severity must be minimized. The designer has access to normalized vent gas volume data, gas composition data, maximum vent gas temperature data, and flammability window calculations for each chemistry when triggered by overtemperature. Explain which chemistry presents the lowest explosion risk and which presents the lowest thermal severity, and identify whether these two safety objectives can be simultaneously optimized by selecting a single chemistry. Your answer must distinguish between explosion risk (determined by flammability window and H2 content) and thermal severity (determined by peak vent gas temperature)."
+        },
+        "ground_truth": {
+          "gold_answer": "NVPF presents the lowest explosion risk due to its narrowest flammability window (7% to 28%) compared to NMC (7% to 46%) and LFP (6% to 45%). NVPF also presents the lowest thermal severity with a maximum vent gas temperature of 265\u00b0C, compared to LFP at 446\u00b0C and NMC at 1050\u00b0C. Therefore, NVPF simultaneously optimizes both safety objectives, allowing a single chemistry selection to minimize both explosion risk and thermal severity.",
+          "must_include": [
+            "NVPF has the narrowest flammability window",
+            "NVPF has the lowest maximum vent gas temperature",
+            "Both objectives can be met by selecting NVPF"
+          ],
+          "disallowed_extrapolations": [
+            "Claims about other trigger methods not specified in the prompt",
+            "Recommendations for system-level safety certification",
+            "Claims about cost or energy density trade-offs",
+            "Generalization to other cell formats or capacities"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-objective safety optimization across cell chemistries considering explosion risk and thermal severity",
+          "primary_boundary": "Distinguishing between two independent safety metrics and determining whether they can be simultaneously optimized",
+          "intended_error_modes": [
+            "confusing flammability window with total gas volume",
+            "assuming explosion risk and thermal severity are always coupled",
+            "selecting LFP based on lowest normalized gas volume without considering flammability window"
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,361 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A 22 Ah pouch LIB cell develops an internal short circuit (ISC) with a fixed contact area of 1 mm². An engineer compares two ISC geometries: Geometry A has a compact shape with a perimeter of 4 mm, while Geometry B has an elongated shape with a perimeter of approximately 32 mm. Both geometries are at the same state of charge. The engineer must assess which geometry poses a greater risk of triggering local thermal runaway and which generates more total heat over the discharge event. Which of the following statements are consistent with the physical behavior of these two geometries?",
+        "options": [
+          "A. Geometry A poses a higher local thermal runaway risk than Geometry B because its compact shape concentrates heat into a smaller perimeter, producing a higher peak ISC zone temperature despite lower total heat generation.",
+          "B. Geometry B poses a higher local thermal runaway risk than Geometry A because its elongated shape increases total heat generation, and higher total heat necessarily produces a higher local peak temperature.",
+          "C. Geometry B generates more total heat than Geometry A over the discharge event, yet Geometry A is more likely to trigger local thermal runaway because its peak ISC zone temperature is higher.",
+          "D. Both geometries produce identical peak ISC zone temperatures because the contact area is fixed at 1 mm², making perimeter irrelevant to local temperature rise.",
+          "E. Geometry A has a lower short circuit resistance than Geometry B, which is why its peak ISC zone temperature is higher.",
+          "F. The relationship between perimeter and peak ISC zone temperature is monotonically increasing, meaning longer perimeters always produce higher local temperatures at fixed area.",
+          "G. Reducing ISC perimeter at fixed area decreases total heat generation while increasing the risk of exceeding the thermal runaway trigger temperature locally."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence shows that the compact geometry (4 mm perimeter) produces a peak ISC zone temperature of 228.7°C while the elongated geometry (32 mm perimeter) produces only 108.2°C, and total heat is lower for the compact geometry (19.3 kJ vs 28.3 kJ). The compact shape concentrates resistance and heat into a smaller zone, producing higher local temperature despite lower total heat. This is counterintuitive because higher total heat does not imply higher local peak temperature.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+182+Applied_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "This option correctly identifies that Geometry B generates more total heat but incorrectly concludes that higher total heat implies higher local peak temperature. The evidence shows the opposite: the elongated geometry has higher total heat but lower peak ISC zone temperature. This is a causal overclaim distractor.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Modelling+182+Applied_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Directly supported by evidence: Geometry B (32 mm perimeter) generates 28.3 kJ versus 19.3 kJ for Geometry A (4 mm perimeter), yet Geometry A reaches 228.7°C versus 108.2°C for Geometry B. The thermal runaway trigger temperature of 150°C is exceeded by Geometry A but not Geometry B.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+182+Applied_Thermal_Engineering:C002",
+              "TR_Modelling+182+Applied_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Fixed area does not imply identical peak temperatures. The evidence explicitly shows that perimeter variation at fixed area produces dramatically different peak ISC zone temperatures (228.7°C vs 108.2°C), because perimeter determines resistance and heat concentration. This ignores the mechanism by which geometry controls local resistance.",
+            "error_type": "mechanism_confusion",
+            "evidence_refs": [
+              "TR_Modelling+182+Applied_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The evidence states that as perimeter increases, short circuit resistance decreases. Therefore Geometry A (4 mm perimeter) has higher resistance, not lower. This option inverts the resistance-perimeter relationship, making it a mechanism confusion distractor.",
+            "error_type": "mechanism_confusion",
+            "evidence_refs": [
+              "TR_Modelling+182+Applied_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence shows the opposite monotonic trend: increasing perimeter at fixed area decreases peak ISC zone temperature (from 228.7°C to 108.2°C). This option states a false monotonic direction and is a numerical exaggeration distractor.",
+            "error_type": "unjustified_monotonicity",
+            "evidence_refs": [
+              "TR_Modelling+182+Applied_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "Supported by evidence: the compact geometry (4 mm perimeter) generates less total heat (19.3 kJ) than the elongated geometry (28.3 kJ), yet its peak ISC zone temperature (228.7°C) exceeds the 150°C thermal runaway trigger. This captures the inverse relationship between total heat and local temperature risk at fixed area.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+182+Applied_Thermal_Engineering:C002",
+              "TR_Modelling+182+Applied_Thermal_Engineering:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Relationship between ISC geometry (perimeter at fixed area), total heat generation, and local peak temperature risk for thermal runaway triggering",
+        "primary_boundary": "At fixed ISC area, increasing perimeter increases total heat but decreases local peak temperature — these two safety-relevant quantities move in opposite directions, making total heat generation an unreliable proxy for local thermal runaway risk",
+        "intended_error_modes": [
+          "Conflating total heat generation with local peak temperature as a single risk metric",
+          "Assuming fixed area implies fixed local temperature regardless of shape",
+          "Inverting the resistance-perimeter relationship",
+          "Applying false monotonic trend between perimeter and local temperature"
+        ],
+        "disallowed_extrapolations": [
+          "Generalizing the perimeter-temperature relationship to different cell chemistries or capacities without evidence",
+          "Concluding that elongated ISC geometries are always safer at the system level",
+          "Applying these thresholds to cells other than the 22 Ah pouch cell described"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A thermal runaway simulation of an NCM811 pouch cell with nail penetration is performed using kinetic parameters derived directly from differential scanning calorimetry (DSC) experiments. The simulation predicts no propagating reaction front and no thermal runaway event. However, physical nail penetration experiments on the same cell chemistry consistently produce thermal runaway. A modeler proposes adjusting the electrolyte reaction kinetics: increasing the frequency factor by 5%, decreasing the activation energy by 5%, and increasing the reaction enthalpy. After these adjustments, the simulation successfully captures a propagating reaction front. A second engineer argues that the activation energy of the electrolyte reaction is the single most influential parameter controlling the delay time to thermal runaway onset among all reaction kinetic parameters in the model. Which of the following conclusions are admissible given these conditions?",
+        "options": [
+          "A. The failure of the original DSC-derived parameters to predict thermal runaway indicates that DSC measurements systematically overestimate the activation energy of the electrolyte reaction under nail penetration conditions.",
+          "B. The successful capture of reaction front propagation after parameter adjustment is consistent with the electrolyte activation energy being the dominant kinetic parameter controlling thermal runaway delay time.",
+          "C. Because the simulation requires adjustment of DSC-derived parameters to match nail penetration experiments, the DSC-derived parameters are not directly transferable to nail penetration abuse conditions without modification.",
+          "D. The adjusted simulation result demonstrates that the frequency factor of the electrolyte reaction is more influential than its activation energy in controlling thermal runaway delay time.",
+          "E. The inability of the original parameters to predict thermal runaway implies that the nail penetration experiments were conducted at a different state of charge than the DSC samples.",
+          "F. The parameter adjustment required for simulation fidelity suggests that the electrolyte kinetic parameters derived from small-sample DSC experiments may not fully represent the in-cell reaction behavior under abuse conditions.",
+          "G. Since reaction front propagation is captured only after increasing reaction enthalpy and decreasing activation energy, thermal runaway in this cell is driven primarily by the positive electrode decomposition rather than electrolyte reactions."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "The evidence identifies a discrepancy between DSC-derived parameters and nail penetration behavior, but does not state that DSC systematically overestimates activation energy. The required correction is a 5% decrease in activation energy, but attributing this specifically to a systematic DSC measurement bias is an unsupported causal overclaim beyond the evidence scope.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Modelling+183+UnknownJournal:C001",
+              "TR_Modelling+183+UnknownJournal:C002",
+              "TR_Modelling+183+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that the activation energy of the electrolyte global equation plays the most important role in affecting the delay time for thermal runaway. The successful simulation after adjusting this parameter (among others) is consistent with this claim. This is a supported admissible conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+183+UnknownJournal:C001",
+              "TR_Modelling+183+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence directly shows that original DSC-derived parameters fail to reproduce nail penetration thermal runaway, while adjusted parameters succeed. This supports the conclusion that DSC-derived parameters are not directly transferable without modification to nail penetration abuse conditions. This is a minimal admissible inference from the stated experimental discrepancy.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+183+UnknownJournal:C002",
+              "TR_Modelling+183+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence states the opposite: the activation energy of the electrolyte is the most important parameter, not the frequency factor. This option inverts the stated ranking and is a mechanism confusion distractor that appears plausible because the frequency factor was also adjusted.",
+            "error_type": "mechanism_confusion",
+            "evidence_refs": [
+              "TR_Modelling+183+UnknownJournal:C001"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The evidence does not mention SOC differences between DSC samples and nail penetration experiments. Attributing the discrepancy to SOC mismatch is an unsupported assumption not provided or justified in the evidence. This is a conservative-appearing but unsupported distractor.",
+            "error_type": "unsupported_assumption",
+            "evidence_refs": [
+              "TR_Modelling+183+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The need to adjust DSC-derived kinetic parameters to match in-cell nail penetration behavior is consistent with the conclusion that small-sample DSC measurements may not fully represent in-cell reaction behavior under abuse conditions. This is a minimal and evidence-grounded engineering inference from the observed parameter gap.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+183+UnknownJournal:C002",
+              "TR_Modelling+183+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "The evidence attributes the dominant role in thermal runaway progression to electrolyte kinetics, not positive electrode decomposition. The parameter adjustments made were to electrolyte parameters, and the evidence identifies electrolyte activation energy as the most influential parameter. Attributing primary drive to the positive electrode is a mechanism substitution error.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Modelling+183+UnknownJournal:C001",
+              "TR_Modelling+183+UnknownJournal:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of conclusions about DSC-to-abuse-condition parameter transferability and the dominance of electrolyte activation energy in controlling thermal runaway delay time",
+        "primary_boundary": "The evidence supports that DSC-derived parameters require modification for nail penetration conditions and that electrolyte activation energy is the dominant parameter — but does not support attributing the discrepancy to specific measurement biases or to positive electrode dominance",
+        "intended_error_modes": [
+          "Attributing simulation-experiment discrepancy to a specific measurement mechanism (DSC overestimation) not supported by evidence",
+          "Inverting the stated parameter importance ranking (frequency factor vs activation energy)",
+          "Introducing an unstated SOC variable as explanation",
+          "Misidentifying the dominant reaction component as positive electrode rather than electrolyte"
+        ],
+        "disallowed_extrapolations": [
+          "Generalizing DSC parameter transferability conclusions to other cell chemistries",
+          "Concluding that all kinetic parameters require adjustment, not just electrolyte parameters",
+          "Applying the parameter importance ranking to chemistries other than NCM811"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An NMC cell and an LFP cell of comparable format are subjected to identical oven heating tests. The NMC cell reaches a maximum temperature of approximately 488°C at around 1850 seconds. The LFP cell reaches a maximum temperature of approximately 346°C at around 3200 seconds. Separately, a thermal sequence model for a similar NMC-type cell identifies the following: the SEI layer begins to decompose and release heat at approximately 90°C, initiating subsequent negative electrode reactions; the electrolyte begins to decompose above 200°C and releases the greatest exothermic heat among all components; and electrolyte decomposition can raise cell temperature by more than 300°C within a few seconds. An engineer must evaluate several safety and design conclusions based on these observations. Which of the following conclusions are admissible?",
+        "options": [
+          "A. The higher maximum temperature reached by the NMC cell compared to the LFP cell is consistent with NMC having greater total exothermic heat release capacity during thermal runaway.",
+          "B. In the NMC-type cell thermal sequence, the SEI decomposition event is the primary driver of the rapid temperature spike exceeding 300°C observed during full thermal runaway.",
+          "C. The electrolyte decomposition stage, occurring above 200°C, is the most energetically significant step in the thermal runaway sequence of the NMC-type cell and is responsible for the largest temperature rise.",
+          "D. Because the LFP cell takes longer to reach its maximum temperature than the NMC cell, the LFP cell is safer under all thermal abuse conditions.",
+          "E. The SEI decomposition at approximately 90°C acts as an initiating event for subsequent reactions rather than as the primary heat source driving the cell to maximum temperature.",
+          "F. Under 3C discharge conditions, a significant internal temperature gradient develops within the cell, and this gradient implies that surface temperature measurements alone are sufficient to detect the onset of SEI decomposition.",
+          "G. The rapid temperature rise of more than 300°C within seconds during electrolyte decomposition indicates that once electrolyte decomposition begins, intervention to prevent maximum temperature from being reached is unlikely to be effective."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The NMC cell reaches 488°C versus 346°C for LFP under identical oven conditions. This differential outcome is consistent with NMC having greater exothermic heat release capacity. This is a minimal admissible inference from the comparative result, supported by the known difference in thermal runaway severity between these chemistries.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+184+Applied_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The evidence states SEI decomposition initiates subsequent reactions at ~90°C but the electrolyte decomposition (above 200°C) releases the greatest exothermic heat and drives the temperature rise exceeding 300°C. Attributing the major temperature spike to SEI decomposition confuses the initiating event with the primary energy source — a mechanism confusion distractor that appears plausible because SEI is mentioned first in the sequence.",
+            "error_type": "mechanism_confusion",
+            "evidence_refs": [
+              "TR_Modelling+184+Applied_Thermal_Engineering:C001",
+              "TR_Modelling+184+Applied_Thermal_Engineering:C002",
+              "TR_Modelling+184+Applied_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Directly supported by evidence: the electrolyte releases the greatest exothermic heat among all components and its decomposition elevates temperature by more than 300°C within seconds, producing the maximum cell temperature. This is the most energetically significant step.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+184+Applied_Thermal_Engineering:C002",
+              "TR_Modelling+184+Applied_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The LFP cell taking longer to reach maximum temperature reflects a slower progression, not universal safety superiority. The evidence does not support a claim of LFP safety under all thermal abuse conditions. This is an overgeneralization distractor — the longer time-to-maximum-temperature is condition-specific and does not generalize across all abuse modes.",
+            "error_type": "overgeneralization",
+            "evidence_refs": [
+              "TR_Modelling+184+Applied_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The evidence explicitly states SEI decomposition initiates subsequent negative electrode reactions at ~90°C, while the electrolyte releases the greatest heat. SEI decomposition is therefore an initiating event, not the primary heat source. This is a counterintuitive correct option because SEI is often associated with thermal runaway onset, but its role here is initiating rather than energy-dominant.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+184+Applied_Thermal_Engineering:C001",
+              "TR_Modelling+184+Applied_Thermal_Engineering:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence states that under 3C discharge, the core temperature is 10°C higher than the surface temperature, demonstrating a significant internal gradient. This gradient means surface temperature measurements underrepresent core temperature and cannot reliably detect internal events like SEI decomposition onset at ~90°C. The option correctly identifies the gradient but draws an incorrect conclusion — it is a conservative-appearing but mechanistically wrong distractor.",
+            "error_type": "measurement_scope_violation",
+            "evidence_refs": [
+              "TR_Modelling+184+Applied_Thermal_Engineering:C001",
+              "TR_Modelling+184+Applied_Thermal_Engineering:C005"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "While the evidence supports that electrolyte decomposition produces a rapid temperature rise exceeding 300°C within seconds, concluding that intervention is 'unlikely to be effective' is a system-level safety recommendation that goes beyond the scope of the cell-level thermal sequence evidence provided. No intervention effectiveness data is given. This is an unsupported scope expansion from component observation to system safety recommendation.",
+            "error_type": "scope_expansion",
+            "evidence_refs": [
+              "TR_Modelling+184+Applied_Thermal_Engineering:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinguishing the initiating role of SEI decomposition from the energy-dominant role of electrolyte decomposition in the thermal runaway sequence, and admissibility of comparative chemistry safety conclusions",
+        "primary_boundary": "SEI decomposition is an initiating event at low temperature; electrolyte decomposition is the primary energy source at high temperature — these roles must not be conflated; comparative chemistry conclusions are condition-specific",
+        "intended_error_modes": [
+          "Confusing the initiating event (SEI) with the primary energy source (electrolyte)",
+          "Overgeneralizing LFP safety from a single oven test comparison",
+          "Treating surface temperature as sufficient for detecting internal onset events despite known core-surface gradient",
+          "Making system-level intervention effectiveness claims from cell-level thermal sequence data"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding that LFP is universally safer than NMC across all abuse conditions",
+          "Applying the 300°C/seconds electrolyte decomposition rate to other cell formats or chemistries",
+          "Inferring intervention effectiveness from thermal sequence timing data alone"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "In a 22 Ah pouch LIB cell, an internal short circuit (ISC) is located at the center of the cell versus near the side edge, with all other parameters held equal. Separately, for a small-radius ISC (0.5 mm), approximately 80% of the heat generated within the ISC zone originates from the cathode layer rather than the anode layer. Explain: (1) why ISC location near the cell edge produces a higher peak ISC zone temperature than a centrally located ISC, and (2) why the cathode contributes disproportionately to heat generation in the ISC zone despite both electrodes carrying the same short circuit current. Your answer should identify the governing physical mechanism for each effect."
+      },
+      "ground_truth": {
+        "gold_answer": "(1) An ISC located at the cell center has more surrounding electrode and electrolyte material on all sides to absorb and distribute the locally generated heat, reducing peak temperature. An ISC near the cell edge has less surrounding material on the edge side, reducing the effective thermal mass and heat dissipation pathway available, so the same heat generation produces a higher local peak temperature. The governing mechanism is the asymmetry in local thermal mass and heat conduction pathways available to the ISC zone depending on its position within the cell. (2) Although both electrodes carry the same short circuit current, the cathode has significantly lower electrical conductivity (approximately 10 S/m, roughly 10% of the anode conductivity). Since resistive heat generation scales as current squared times resistance, and resistance is inversely proportional to electrical conductivity, the cathode presents much higher local resistance and therefore dissipates far more heat per unit volume than the anode for the same current. The governing mechanism is the large difference in electrical conductivity between cathode and anode materials.",
+        "must_include": [
+          "Edge location reduces available thermal mass or heat dissipation pathways compared to center location",
+          "More surrounding material at center position distributes heat more effectively",
+          "Cathode has lower electrical conductivity than anode (approximately 10% of anode conductivity)",
+          "Higher resistance at cathode produces greater resistive heat dissipation for the same current",
+          "Heat generation scales with resistance (or inversely with conductivity) at fixed current"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming that edge location changes the short circuit resistance or current magnitude",
+          "Attributing cathode heat dominance to higher current flowing through the cathode rather than higher resistance",
+          "Generalizing the 80% cathode heat fraction to ISC radii other than approximately 0.5 mm or to other cell chemistries",
+          "Concluding that moving the ISC to the center eliminates thermal runaway risk rather than only reducing peak temperature"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Physical mechanisms governing ISC zone temperature as a function of (a) spatial location within the cell and (b) electrode electrical conductivity asymmetry",
+        "primary_boundary": "Location effect operates through thermal mass and heat dissipation geometry, not through electrical parameters; cathode heat dominance operates through electrical conductivity difference, not current asymmetry — these are distinct mechanisms that must not be conflated",
+        "intended_error_modes": [
+          "Attributing edge-location temperature increase to higher current or higher resistance at the edge rather than reduced thermal dissipation",
+          "Attributing cathode heat dominance to higher current through cathode rather than higher resistivity",
+          "Conflating total heat generation with local peak temperature",
+          "Overgeneralizing the cathode heat fraction to all ISC sizes or chemistries"
+        ]
+      }
+    }
+  ]
+}

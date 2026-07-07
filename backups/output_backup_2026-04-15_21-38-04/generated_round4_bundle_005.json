@@ -1,0 +1,349 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A graphite/NMC pouch cell with EC/DMC/LiPF6 electrolyte is prepared with two formulations: Formulation A uses 0.4 vol% vinylene carbonate (VC) additive and a C/10 formation rate; Formulation B uses no VC additive and a 1C formation rate. Both cells are subjected to a controlled thermal ramp from 60°C to 132°C. An engineer evaluates the gas evolution behavior of each formulation and draws conclusions about safety-relevant thresholds and additive effects. Which of the following conclusions are admissible based on the described conditions?",
+        "options": [
+          "A. Both formulations will begin evolving CO2, POF3, and H2 at approximately the same temperature onset, despite their different additive and formation conditions.",
+          "B. Formulation A will produce substantially more POF3 relative to other tested conditions, indicating that high VC content combined with slow formation creates a condition that amplifies fluorophosphate gas release.",
+          "C. Formulation A will produce less C2H4 than Formulation B, because higher VC content suppresses the decomposition pathway associated with the organic SEI component linked to ethylene gas.",
+          "D. Formulation B will produce more H2 than Formulation A during the heating ramp, because higher formation rates increase H2 evolution regardless of VC concentration.",
+          "E. Reaching temperatures near 132°C in Formulation A poses an elevated venting risk compared to Formulation B, because residual VC can trigger cross-polymerization reactions with strong CO2 evolution at those temperatures.",
+          "F. The suppression of C2H4 in Formulation A confirms that VC completely eliminates all SEI-derived gas species during thermal abuse up to 132°C.",
+          "G. The onset temperature for CO2 evolution in Formulation A will be significantly lower than in Formulation B due to the presence of residual VC."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence states that for all VC concentrations and formation rates tested, CO2, POF3, and H2 evolution started near 70–80°C. This threshold is invariant across the formulation conditions described, making this conclusion admissible and counterintuitive given the large differences in formulation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+180+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Evidence directly supports that high VC concentration with low formation rate (C/10) produces approximately three times more POF3 than other conditions. Formulation A matches this exact condition profile.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+180+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence states higher VC amounts suppress C2H4 evolution, linked to reduced presence of lithium ethylene dicarbonate (LEDC). Formulation A has higher VC (0.4 vol%) vs. Formulation B (no VC), so less C2H4 in Formulation A is admissible.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+180+UnknownJournal:C001"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence states H2 increases with higher formation rate for both VC concentrations. Formulation B has the higher formation rate (1C), so it would produce more H2 than Formulation A (C/10). However, this option reverses the comparison: it claims Formulation B produces more H2 than Formulation A, which is directionally consistent with evidence. On re-examination, this is actually supported. Re-evaluated: D is correct in direction but must be checked against option A dependency. Actually D is supported by C004 — Formulation B (1C formation) produces more H2 than Formulation A (C/10). D is correct.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Mechanism+180+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Evidence states that at ~130°C, residual VC can trigger cross-polymerization of EC and VC under strong CO2 evolution, potentially causing rapid pressure increase and venting. Formulation A retains residual VC (0.4 vol%), while Formulation B has none. This makes Formulation A more susceptible to this venting mechanism at 132°C.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+180+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Evidence states VC suppresses C2H4 evolution, suggesting reduced LEDC presence, but does not state that all SEI-derived gas species are eliminated. This is a scope expansion overclaim — the evidence supports suppression of one species, not complete elimination of all SEI-derived gases.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Mechanism+180+UnknownJournal:C001"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "Evidence states CO2 onset is near 70–80°C for all VC concentrations and formation rates. There is no evidence that VC content shifts the CO2 onset temperature. This distractor is plausible because VC changes SEI chemistry, but the evidence explicitly shows the onset threshold is invariant across conditions.",
+            "error_type": "condition_violation",
+            "evidence_refs": [
+              "TR_Mechanism+180+UnknownJournal:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Condition-dependent gas evolution behavior under thermal abuse as a function of VC additive concentration and formation rate, including threshold invariance and species-specific effects.",
+        "primary_boundary": "CO2/POF3/H2 onset temperature is invariant across formulation conditions (C002), while C2H4 and POF3 magnitude are condition-dependent (C001, C003, C004). VC suppresses C2H4 but does not eliminate all SEI gases.",
+        "intended_error_modes": [
+          "Assuming VC content shifts gas onset temperature (G)",
+          "Overclaiming complete elimination of SEI gases from partial suppression evidence (F)",
+          "Missing that the threshold invariance (A) is counterintuitive given large formulation differences"
+        ],
+        "disallowed_extrapolations": [
+          "VC eliminates all thermal abuse gas species",
+          "Higher VC universally reduces all gas evolution",
+          "Formation rate affects CO2 onset temperature"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is comparing the thermal safety of a present-day solid-state battery (SSB) and an advanced theoretical SSB with higher energy density (achieved by reducing solid electrolyte thickness) against a conventional lithium-ion battery (LIB). The SSB configurations contain a small amount of liquid electrolyte in the cathode. Two failure scenarios are analyzed: Scenario A involves external heating; Scenario B involves an internal short circuit. The engineer must assess which safety-relevant conclusions are admissible across the energy density spectrum.",
+        "options": [
+          "A. Under external heating, the present-day SSB poses lower thermal risk than the LIB because its cathode liquid electrolyte volume fraction is lower, reducing the total heat available from liquid electrolyte reactions.",
+          "B. Under external heating, increasing the SSB energy density toward theoretical limits increases the potential temperature rise primarily because more electrode active material is present per unit volume.",
+          "C. Under short-circuit conditions, the present-day SSB is safer than the LIB in terms of potential temperature rise, and this relative safety advantage is maintained as energy density increases toward theoretical limits.",
+          "D. Under short-circuit conditions, the advanced high-energy-density SSB can exceed the LIB in potential temperature rise, driven by reduced thermal mass and the relatively low heat capacity of the solid electrolyte used.",
+          "E. A fully liquid-electrolyte-free all-solid-state battery (ASSB) eliminates the risk of fire entirely under short-circuit conditions because it contains no flammable liquid electrolyte.",
+          "F. The heat-release behavior of the SSB under external heating becomes insensitive to further increases in cathode liquid electrolyte volume fraction beyond a specific threshold, because the oxygen generated by the cathode becomes the limiting reactant.",
+          "G. The short-circuit temperature risk of the SSB relative to the LIB depends on energy density, meaning a comparison made at present-day energy densities cannot be directly extended to future high-energy-density designs."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "F",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence states that at typical values (0.1 VF liquid electrolyte in SSB cathode vs. 0.3 VF in LIB), the SSB heat release under external heating is about one-third that of the LIB. Lower liquid electrolyte volume fraction directly reduces available heat from electrolyte reactions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+181+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence states the temperature rise under external heating increases from 53°C to 415°C as energy density increases due to liquid electrolyte reactions, not due to increased active material. The mechanism is attributed to LE reactions as SE thickness decreases, not to electrode mass increase. This is a mechanism substitution distractor.",
+            "error_type": "mechanism_confusion",
+            "evidence_refs": [
+              "TR_Mechanism+181+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Evidence explicitly states that the SSB and ASSB overtake the LIB in potential temperature rise under short-circuit conditions as energy densities increase. The relative safety advantage of the present-day SSB does not persist at higher energy densities. This is a conservative-sounding but incorrect distractor.",
+            "error_type": "regime_transfer_beyond_conditions",
+            "evidence_refs": [
+              "TR_Mechanism+181+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence directly states that SSB and ASSB overtake LIB in potential temperature rise under short-circuit failure as energy densities increase, because thermal mass is smaller and LLZO has relatively low heat capacity. This is counterintuitive because SSBs are often perceived as inherently safer.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+181+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence states short-circuited all-solid-state batteries can reach temperatures significantly higher than conventional LIBs and could lead to fire through flammable packaging and nearby materials. Eliminating liquid electrolyte does not eliminate fire risk entirely; the high temperature itself can ignite surrounding materials.",
+            "error_type": "protective_mechanism_overclaim",
+            "evidence_refs": [
+              "TR_Mechanism+181+UnknownJournal:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Evidence states that for the SSB under external heating, a plateau in heat release forms when cathode liquid electrolyte volume fraction exceeds approximately 0.125, at which point all cathode-generated O2 has reacted with the liquid electrolyte. This identifies O2 availability as the limiting factor, not liquid electrolyte amount.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+181+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "Evidence shows the SSB is safer than LIB under short circuit at present-day energy densities but overtakes LIB at higher energy densities. This energy-density dependence means conclusions drawn at one design point cannot be extended to another, making G admissible and important for engineering design judgment.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+181+UnknownJournal:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Energy-density-dependent crossover of thermal risk between SSB and LIB under two distinct failure scenarios, and the mechanism governing the heat-release plateau under external heating.",
+        "primary_boundary": "The relative thermal safety ranking of SSB vs. LIB is scenario-dependent (external heating vs. short circuit) and energy-density-dependent. The crossover in short-circuit risk is driven by thermal mass and solid electrolyte heat capacity, not liquid electrolyte content.",
+        "intended_error_modes": [
+          "Attributing external heating temperature rise to electrode mass rather than liquid electrolyte reactions (B)",
+          "Assuming present-day SSB safety advantage persists at all energy densities (C)",
+          "Assuming ASSB eliminates all fire risk by removing liquid electrolyte (E)",
+          "Missing that the heat-release plateau is O2-limited, not electrolyte-limited (F)"
+        ],
+        "disallowed_extrapolations": [
+          "SSBs are universally safer than LIBs under all conditions",
+          "Removing liquid electrolyte eliminates all thermal hazard pathways",
+          "Heat release under external heating scales linearly with liquid electrolyte volume fraction at all fractions"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A 1.5 Ah 18650 NCM/Graphite cell is operated under adiabatic conditions. An engineer evaluates four operating scenarios: (1) 8C discharge, (2) 13C discharge, (3) 12C charge with a functional cut-off voltage control, and (4) 12C charge with faulty cut-off voltage control. The engineer must determine which conclusions about thermal runaway risk and timing are admissible under these conditions.",
+        "options": [
+          "A. Scenario 3 does not lead to thermal runaway because the charge operation is terminated by the cut-off voltage before sufficient heat accumulates to trigger thermal abuse reactions.",
+          "B. Scenario 1 will trigger thermal runaway during the discharge process itself, because 8C exceeds the threshold at which adiabatic temperature rise is sufficient to initiate exothermic reactions.",
+          "C. Scenario 2 will always trigger thermal runaway, but the thermal runaway event occurs after the discharge is complete rather than during the discharge process.",
+          "D. Scenario 4 is more dangerous than Scenario 2 in terms of time to thermal runaway, because the faulty charge condition reaches the critical temperature threshold faster than the 13C discharge case.",
+          "E. The asymmetry in temperature rise between charge and discharge at the same C-rate means that charge scenarios always require a higher C-rate than discharge scenarios to trigger thermal runaway under adiabatic conditions.",
+          "F. Scenario 4 leads to thermal runaway faster than a 15C discharge scenario, because continuous power input during faulty charge pushes the cell to the thermal runaway threshold more rapidly than the post-discharge heat accumulation mechanism in high-rate discharge.",
+          "G. Under adiabatic conditions, thermal runaway risk during discharge is governed solely by the heat generated during the discharge event, with no contribution from post-discharge exothermic processes."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence states that no thermal runaway or thermal abuse reactions occur during very high C-rate charge because the charge operation is terminated by the early arrival of the cut-off voltage. Scenario 3 has functional cut-off control, so this mechanism applies.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+182+International_Journal_of_Heat_and_Mass_Transfer:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence states thermal runaway is triggered after discharge at 13C, not during discharge. For 8C, which is below the 13C threshold, thermal runaway is not indicated. This distractor incorrectly places the thermal runaway event during discharge and at a sub-threshold C-rate.",
+            "error_type": "condition_violation",
+            "evidence_refs": [
+              "TR_Mechanism+182+International_Journal_of_Heat_and_Mass_Transfer:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence states thermal runaway is always triggered after discharge when the C-rate reaches 13C under adiabatic conditions. The post-discharge timing is explicitly stated. This is counterintuitive because one might expect the highest-temperature moment to be during the high-rate discharge itself.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+182+International_Journal_of_Heat_and_Mass_Transfer:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence states the 12C faulty charge case leads to thermal runaway at ~320 s, while the 15C discharge case requires ~400 s after discharge. Since 13C discharge requires even more time than 15C discharge (which already takes ~400 s), Scenario 4 (12C faulty charge) reaches thermal runaway faster than Scenario 2 (13C discharge). This is admissible by combining C003 and C005.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+182+International_Journal_of_Heat_and_Mass_Transfer:C003",
+              "TR_Mechanism+182+International_Journal_of_Heat_and_Mass_Transfer:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence shows charge produces smaller temperature rise than discharge at the same C-rate, and that faulty charge at 12C triggers thermal runaway faster than 15C discharge. However, the claim that charge always requires a higher C-rate threshold than discharge is not supported; the faulty charge scenario at 12C is more dangerous than 13C discharge. The asymmetry exists but does not imply a universal C-rate threshold ordering for thermal runaway.",
+            "error_type": "overgeneralization",
+            "evidence_refs": [
+              "TR_Mechanism+182+International_Journal_of_Heat_and_Mass_Transfer:C002",
+              "TR_Mechanism+182+International_Journal_of_Heat_and_Mass_Transfer:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Evidence explicitly states the 12C faulty charge scenario is more dangerous than high C-rate discharge cases, with thermal runaway at ~320 s vs. ~400 s for 15C discharge. The mechanism is that continuous power input during faulty charge steadily drives the cell toward the critical threshold, whereas post-discharge runaway depends on residual heat accumulation without ongoing power input.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+182+International_Journal_of_Heat_and_Mass_Transfer:C005"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "Evidence shows thermal runaway occurs after discharge at 13C, meaning post-discharge exothermic processes contribute to triggering thermal runaway. The discharge heat alone is not sufficient; the post-discharge period is where the critical threshold is crossed. This distractor incorrectly attributes thermal runaway risk solely to the discharge event.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Mechanism+182+International_Journal_of_Heat_and_Mass_Transfer:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Timing and mechanism of thermal runaway under adiabatic conditions for discharge vs. charge scenarios, including the role of cut-off voltage control and post-discharge heat accumulation.",
+        "primary_boundary": "Thermal runaway under high-rate discharge occurs after discharge completion, not during; faulty charge at lower C-rate can be more dangerous than high-rate discharge due to continuous power input. Cut-off voltage control prevents thermal runaway during charge.",
+        "intended_error_modes": [
+          "Placing thermal runaway during discharge rather than after (B, G)",
+          "Assuming charge always requires higher C-rate than discharge for thermal runaway (E)",
+          "Missing that post-discharge exothermic processes are necessary for thermal runaway in discharge scenarios (G)"
+        ],
+        "disallowed_extrapolations": [
+          "Thermal runaway threshold C-rate for charge is always higher than for discharge",
+          "8C discharge triggers thermal runaway under adiabatic conditions",
+          "Discharge heat alone governs thermal runaway risk without post-discharge contributions"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A cell engineer is designing a graphite/NMC cell with EC/DMC/LiPF6 electrolyte and is considering using 0.4 vol% vinylene carbonate (VC) additive formed at a slow C/10 rate to improve SEI quality. A safety reviewer raises two concerns: (1) that this formulation may produce unusually high amounts of a specific fluorine-containing gas species during thermal abuse, and (2) that at temperatures near 130°C, the residual VC in this formulation creates a distinct venting risk not present in VC-free cells. The engineer responds that the gas onset temperature for this formulation will at least be higher than for VC-free cells, providing a safety margin. Evaluate the engineer's response and the reviewer's two concerns. For each of the three claims, state whether it is supported, unsupported, or contradicted by the described evidence, and identify the specific mechanism or threshold relevant to each judgment."
+      },
+      "ground_truth": {
+        "gold_answer": "The engineer's response is contradicted by the evidence. The onset temperature for CO2, POF3, and H2 evolution is near 70–80°C for all VC concentrations and formation rates tested, including the high-VC/slow-formation condition. There is no evidence that VC content raises the gas onset temperature; the threshold is invariant across conditions. The reviewer's first concern is supported: cells with 0.4 vol% VC and C/10 formation rate produce approximately three times more POF3 than other conditions, indicating that this specific combination amplifies fluorophosphate gas release during thermal abuse. The reviewer's second concern is also supported: at temperatures near 130°C, residual VC can trigger cross-polymerization of EC and VC under strong CO2 evolution, potentially causing rapid internal pressure increase and cell venting. This mechanism is specific to cells retaining residual VC and does not apply to VC-free formulations.",
+        "must_include": [
+          "Gas onset temperature (~70–80°C) is invariant across VC concentrations and formation rates, contradicting the engineer's claim of a higher onset temperature",
+          "High VC (0.4 vol%) with slow formation (C/10) produces approximately three times more POF3 than other conditions, supporting the reviewer's first concern",
+          "Residual VC at ~130°C can trigger cross-polymerization with EC under strong CO2 evolution causing rapid pressure increase and venting, supporting the reviewer's second concern",
+          "The POF3 amplification is specific to the combination of high VC content and low formation rate, not attributable to either factor alone"
+        ],
+        "disallowed_extrapolations": [
+          "VC suppresses all gas species during thermal abuse",
+          "The POF3 increase implies higher overall thermal runaway risk without further evidence",
+          "The venting risk at 130°C applies to all VC concentrations equally",
+          "Formation rate alone controls POF3 evolution magnitude"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility judgment on three simultaneous claims about a specific VC/formation-rate combination: gas onset temperature invariance, condition-specific POF3 amplification, and VC-specific venting mechanism at elevated temperature.",
+        "primary_boundary": "Gas onset temperature is invariant across all tested conditions (C002), making the engineer's claim inadmissible. POF3 amplification is specific to the high-VC/slow-formation combination (C003). The venting risk at ~130°C is specific to cells with residual VC (C005).",
+        "intended_error_modes": [
+          "Accepting the engineer's claim that VC raises gas onset temperature",
+          "Attributing POF3 amplification to VC content alone without requiring the slow formation rate condition",
+          "Generalizing the 130°C venting risk to all VC concentrations rather than specifically to cells with residual VC"
+        ]
+      }
+    }
+  ]
+}

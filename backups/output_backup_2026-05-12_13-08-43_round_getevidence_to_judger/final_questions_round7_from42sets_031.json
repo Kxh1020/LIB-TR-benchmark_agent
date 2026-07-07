@@ -1,0 +1,134 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An enclosure safety test uses NMC chemistry TR gases at a fixed lean equivalence ratio. The test engineer proposes two modifications: (M1) shift the mixture to a rich equivalence ratio while holding temperature at 950 K; (M2) hold the lean equivalence ratio fixed but raise the ambient temperature from 950 K to 1050 K. The engineer claims both modifications reduce overall fire hazard equally. A reviewer challenges this claim. Which statements correctly characterize the hazard changes introduced by each modification?",
+        "options": [
+          "A. M1 reduces adiabatic overpressure hazard because overpressure sensitivity is lower under rich conditions, but it may increase or maintain laminar burning velocity if the mixture moves closer to the peak LBV equivalence ratio.",
+          "B. M2 reduces ignition delay time by approximately one order of magnitude, increasing ignition hazard, which directly contradicts the engineer's claim that M2 reduces overall fire hazard.",
+          "C. M1 and M2 affect independent hazard dimensions—M1 primarily affects flame propagation and overpressure, M2 primarily affects ignition timing—making a direct equivalence claim between them inadmissible without specifying which hazard metric is prioritized.",
+          "D. M2 has negligible effect on ignition delay time because 950 K to 1050 K is within the attenuated sensitivity regime above 1200 K.",
+          "E. Because NMC gases have intermediate LBV relative to LCO/NMC and LFP, shifting equivalence ratio under M1 has no meaningful effect on flame propagation hazard for NMC specifically.",
+          "F. M1 cannot reduce overpressure hazard because the non-monotonic LBV trend means rich conditions still produce significant flame temperatures."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "C"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Rich shift reduces overpressure sensitivity per evidence, but if the new equivalence ratio is closer to the LBV peak, burning velocity may not decrease; multi-factor reasoning required.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+147+Fuel:C004",
+              "TR_Gasventing+147+Fuel:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "950–1050 K is within the 800–1200 K high-sensitivity regime; ~one order of magnitude reduction in ignition delay time increases ignition hazard, contradicting the engineer's claim.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+147+Fuel:C001"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "M1 and M2 operate on different hazard pathways; claiming equivalence requires specifying a common metric, which the engineer did not do—making the equivalence claim inadmissible.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+147+Fuel:C001",
+              "TR_Gasventing+147+Fuel:C004",
+              "TR_Gasventing+147+Fuel:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "950–1050 K falls within the 800–1200 K high-sensitivity regime, not the attenuated regime above 1200 K; this option misapplies the regime boundary.",
+            "error_type": "condition violation—misidentifying the regime boundary",
+            "evidence_refs": [
+              "TR_Gasventing+147+Fuel:C001",
+              "TR_Gasventing+147+Fuel:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "NMC having intermediate LBV rank does not exempt it from equivalence ratio effects on LBV; the non-monotonic trend applies to all three chemistries including NMC.",
+            "error_type": "mechanism confusion—ranking position does not negate equivalence ratio dependence",
+            "evidence_refs": [
+              "TR_Gasventing+147+Fuel:C003",
+              "TR_Gasventing+147+Fuel:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Significant flame temperature under rich conditions does not negate the overpressure sensitivity reduction; overpressure and flame temperature are distinct hazard metrics.",
+            "error_type": "mechanism substitution—conflating flame temperature with overpressure sensitivity",
+            "evidence_refs": [
+              "TR_Gasventing+147+Fuel:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-dimensional hazard assessment requiring simultaneous reasoning about ignition delay regime, overpressure sensitivity, and LBV equivalence ratio dependence",
+        "primary_boundary": "The 800–1200 K high-sensitivity regime must not be confused with the attenuated >1200 K regime; overpressure sensitivity and LBV are distinct hazard dimensions that cannot be conflated",
+        "intended_error_modes": [
+          "misidentifying regime boundary for M2",
+          "using LBV rank position to dismiss equivalence ratio effects",
+          "conflating flame temperature with overpressure hazard"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming M2 falls in attenuated regime",
+          "Treating intermediate LBV rank as immunity to equivalence ratio effects",
+          "Using flame temperature as a proxy for overpressure sensitivity"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A fire protection engineer is designing a gas detection and suppression system for a battery room where LFP and NMC cells are co-located. During thermal runaway events, both cell types vent combustible gases. The engineer proposes a single detection threshold calibrated to the LFP gas mixture's laminar burning velocity characteristics, arguing that if it is safe for LFP it is safe for NMC. The suppression system activates when detected gas concentration crosses a lean-to-stoichiometric threshold. Identify two distinct technical flaws in the engineer's design logic and explain the mechanism by which each flaw could result in inadequate protection, referencing the relevant combustion behavior of TR gases."
+      },
+      "ground_truth": {
+        "gold_answer": "Flaw 1: The engineer assumes LFP-calibrated thresholds are conservative for NMC gases, but NMC gases have a higher laminar burning velocity than LFP under identical equivalence ratio conditions. A detection threshold set to LFP's flame propagation characteristics will be crossed at a gas concentration that already presents a significantly higher flame propagation hazard for NMC gases, meaning the suppression system activates too late relative to the NMC hazard level. Flaw 2: The engineer calibrates the threshold at the lean-to-stoichiometric boundary without accounting for the fact that adiabatic overpressure is most sensitive to equivalence ratio changes under lean conditions. Even at gas concentrations below the detection threshold—within the lean regime—small increases in NMC gas concentration produce disproportionately large overpressure escalation. The suppression system therefore fails to capture the steepest portion of the overpressure hazard curve, leaving a window of high overpressure risk before the threshold is reached.",
+        "must_include": [
+          "NMC has higher laminar burning velocity than LFP under identical equivalence ratio conditions",
+          "LFP-calibrated threshold underestimates NMC flame propagation hazard",
+          "Overpressure is more sensitive to equivalence ratio changes under lean conditions than rich conditions",
+          "Pre-threshold lean-regime concentration changes carry disproportionate overpressure hazard"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming LFP gases are non-flammable or pose no hazard",
+          "Stating that NMC and LFP peak LBV occurs at the same equivalence ratio without evidence support",
+          "Asserting that the suppression system provides zero protection rather than inadequate protection",
+          "Introducing specific numerical thresholds not supported by the evidence"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Application of chemistry-dependent LBV ranking and equivalence ratio-dependent overpressure sensitivity to evaluate detection threshold adequacy",
+        "primary_boundary": "LFP-to-NMC extrapolation of LBV-based thresholds is inadmissible because LBV ranking is chemistry-dependent; lean-regime overpressure sensitivity means pre-threshold concentrations are not low-hazard",
+        "intended_error_modes": [
+          "Assuming lower-LBV chemistry provides conservative threshold for higher-LBV chemistry",
+          "Ignoring lean-regime overpressure sensitivity when setting concentration-based detection thresholds",
+          "Treating stoichiometric threshold as capturing the full hazard curve"
+        ]
+      }
+    }
+  ]
+}

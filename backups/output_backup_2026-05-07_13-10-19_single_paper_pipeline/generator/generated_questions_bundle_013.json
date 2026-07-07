@@ -1,0 +1,315 @@
+{
+  "TR_trigger+129+Energy__TR_trigger+158+Journal_of_Energy_Storage__TR_trigger+197+Journal_of_Energy_Storage": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "An LFP battery is subjected to oven heating. Voltage remains stable at ~3.33 V before venting. Expansion force anomaly (F > 1300 N) is detectable before venting. Thermal runaway is defined as maximum temperature rise rate exceeding 1\u00b0C/s. At 180\u00b0C oven temperature, the interval from force anomaly to TR onset is ~10,318 s. At 250\u00b0C it is ~3,758 s. Which statements about this early-warning system are supported?",
+          "options": [
+            "A. Voltage signal provides an earlier warning than expansion force signal across all tested oven temperatures.",
+            "B. The expansion force anomaly signal consistently appears before voltage and surface temperature anomalies regardless of oven temperature.",
+            "C. The lead time provided by expansion force warning decreases as oven temperature increases in TR scenarios.",
+            "D. At 180\u00b0C oven temperature, expansion force monitoring can provide approximately 3 hours of advance warning before TR onset.",
+            "E. The early-warning advantage of expansion force monitoring is greater at lower oven temperatures than at temperatures \u2265180\u00b0C.",
+            "F. Because voltage is stable before venting at all tested temperatures, voltage monitoring alone is sufficient for TR early warning."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "Evidence states expansion force consistently emerges as one of the initial abnormal signals, appearing before voltage anomalies.",
+              "error_type": "causal overclaim",
+              "evidence_refs": [
+                "TR_trigger+158+Journal_of_Energy_Storage:C011"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Expansion force consistently emerges as one of the initial abnormal signals detected, irrespective of oven temperature.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+158+Journal_of_Energy_Storage:C011"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Lead time for expansion force warning decreases with increasing oven temperature in TR scenarios, per direct evidence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+158+Journal_of_Energy_Storage:C003",
+                "TR_trigger+158+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "At 180\u00b0C, time span from force anomaly to TR onset is 10,318 s, explicitly stated to allow ~3 h advance warning.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+158+Journal_of_Energy_Storage:C014"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Evidence explicitly states expansion force early warning is more effective under lower oven temperature scenarios than at \u2265180\u00b0C.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+158+Journal_of_Energy_Storage:C015"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Stable voltage before venting means voltage lacks discriminating power; expansion force is the earlier and more informative signal.",
+              "error_type": "boundary overreach",
+              "evidence_refs": [
+                "TR_trigger+158+Journal_of_Energy_Storage:C004",
+                "TR_trigger+158+Journal_of_Energy_Storage:C011"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Relative warning lead time of expansion force vs. voltage signals, and how oven temperature modulates warning effectiveness",
+          "primary_boundary": "Evidence is restricted to LFP batteries under oven heating; voltage stability before venting does not imply voltage is a useful early warning signal",
+          "intended_error_modes": [
+            "causal overclaim (A: voltage earlier than force)",
+            "boundary overreach (F: voltage sufficient alone)",
+            "unsupported monotonicity"
+          ],
+          "disallowed_extrapolations": [
+            "Extending lead-time advantage of expansion force to all oven temperatures equally",
+            "Claiming voltage drop is an early TR indicator in this regime"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery module of LiNi0.8Co0.15Al0.05O2 cells operates under 3C discharge rate. SEI decomposition initiates at 74\u00b0C; self-heating commences at 145\u00b0C; TR triggers at 166\u00b0C. A gaseous fire extinguishing agent is deployed at the onset of flames. The module uses nitrogen gas cooling at 1 m/s flow and 2 bar ambient pressure. Which conclusions are supported by the evidence?",
+          "options": [
+            "A. SEI decomposition at 74\u00b0C immediately triggers self-heating and thermal runaway in the cell.",
+            "B. Gaseous extinguishing agents reliably prevent thermal runaway propagation to adjacent cells by eliminating the heat source.",
+            "C. Nitrogen provides better propagation suppression than argon under equivalent flow conditions because nitrogen has higher heat capacity.",
+            "D. At 3C discharge rate, operating at \u22651 m/s flow and \u22652 bar pressure is identified as a minimum condition to effectively mitigate flame propagation.",
+            "E. Increasing ambient pressure from 1 bar to 3 bar completely inhibits thermal runaway propagation under 3C discharge and 0.5 m/s flow conditions.",
+            "F. Argon outperforms nitrogen in cooling effectiveness because argon has higher density than nitrogen."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "C",
+            "D",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "SEI decomposition at 74\u00b0C is the first exothermic reaction, but self-heating only commences at 145\u00b0C; immediate TR is not supported.",
+              "error_type": "causal overclaim",
+              "evidence_refs": [
+                "TR_trigger+197+Journal_of_Energy_Storage:C002"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Gaseous agents extinguish flames but fail to significantly lower cell temperatures; exothermic reactions persist, enabling re-ignition or propagation.",
+              "error_type": "boundary overreach",
+              "evidence_refs": [
+                "TR_trigger+197+Journal_of_Energy_Storage:C006"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Nitrogen's superior suppression over argon is attributed to higher heat capacity; argon's higher density does not compensate for its lower heat capacity.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+197+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Evidence explicitly states 3C discharge requires at least 1 m/s flow and 2 bar pressure to effectively mitigate flame propagation.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+197+Journal_of_Energy_Storage:C007"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Under 3C discharge and 0.5 m/s flow, propagation was completely inhibited at 3 bar, with slowing observed at 2 bar.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+197+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Argon's higher density is explicitly overridden by its lower heat capacity, making it the least effective cooling gas tested.",
+              "error_type": "mechanism substitution",
+              "evidence_refs": [
+                "TR_trigger+197+Journal_of_Energy_Storage:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Distinguishing SEI decomposition as TR onset trigger vs. sustained self-heating; gaseous agent limitations; gas property ranking for cooling",
+          "primary_boundary": "Pressure suppression result is specific to 3C discharge and 0.5 m/s flow; gaseous agent limitation applies post-extinguishment only",
+          "intended_error_modes": [
+            "causal overclaim (A: SEI decomposition = immediate TR)",
+            "boundary overreach (B: gaseous agent prevents propagation)",
+            "mechanism substitution (F: density dominates over heat capacity)"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming complete inhibition at 3 bar applies to all discharge rates",
+            "Claiming gaseous agents are ineffective at extinguishing flames"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A fleet safety analyst reviews BMS data from 41 electric vehicles involved in thermal runaway accidents. Vehicles are classified as latent-failure (anomalous data >1 week before accident) or sudden-failure (no prior anomaly). Internal short circuit (ISC) is the most common sudden-failure type. An ISC leading to TR typically produces a voltage drop. One vehicle showed a voltage spike to 17 V just before the accident. Which conclusions are supported?",
+          "options": [
+            "A. The voltage spike to 17 V in the anomalous vehicle is most likely caused by an internal short circuit triggering thermal runaway.",
+            "B. Among 41 accidental vehicles, sudden-failure cases outnumber latent-failure cases.",
+            "C. For sudden-failure vehicles, the Abnormal Rate Frequency Distribution curve alone is sufficient to determine the root cause of failure.",
+            "D. The voltage spike to 17 V is inconsistent with ISC-induced TR and is more likely attributable to BMS malfunction or data transmission error from mechanical impact.",
+            "E. Continuous low voltage in a cell can lead to lithium deposition, internal short circuit, and ultimately thermal runaway.",
+            "F. A voltage difference of 0.025 V between cells is guaranteed to trigger BMS alarm systems in commercial vehicles."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "D",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "ISC-induced TR causes voltage drop, not spike; the 17 V spike is attributed to BMS malfunction or mechanical damage to data wires.",
+              "error_type": "mechanism substitution",
+              "evidence_refs": [
+                "TR_trigger+129+Energy:C010"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "The latent-to-sudden ratio is 17:24, confirming sudden-failure cases outnumber latent-failure cases in this dataset.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+129+Energy:C012"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Evidence explicitly states ARFD alone is insufficient for sudden-failure vehicles; full status data from the prior week is required.",
+              "error_type": "boundary overreach",
+              "evidence_refs": [
+                "TR_trigger+129+Energy:C011"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "A voltage spike contradicts the ISC-TR voltage-drop signature; simultaneous mechanical damage to battery and data wires is the supported explanation.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+129+Energy:C010"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Continuous low voltage leads to lithium deposition on the anode, causing ISC and redox reactions with electrolyte, triggering TR.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+129+Energy:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Evidence shows a 0.025 V difference in vehicle 8 did not trigger the alarm system, directly contradicting this claim.",
+              "error_type": "boundary overreach",
+              "evidence_refs": [
+                "TR_trigger+129+Energy:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Distinguishing ISC voltage signature from mechanical-damage artifacts; BMS alarm threshold limitations; ARFD sufficiency boundary",
+          "primary_boundary": "Voltage spike \u2260 ISC signature; 0.025 V difference insufficient to trigger alarm in observed case; ARFD insufficient for sudden-failure root cause",
+          "intended_error_modes": [
+            "mechanism substitution (A: spike attributed to ISC)",
+            "boundary overreach (C: ARFD sufficient; F: 0.025 V always triggers alarm)"
+          ],
+          "disallowed_extrapolations": [
+            "Generalizing that any voltage anomaly indicates ISC",
+            "Claiming ARFD is sufficient for latent-failure analysis"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "An LFP battery module is monitored using three signal channels: surface temperature, voltage, and expansion force. The module is exposed to oven heating at temperatures ranging from 150\u00b0C to 250\u00b0C. Thermal runaway is defined as maximum temperature rise rate exceeding 1\u00b0C/s, and ISC events occur only when oven temperature exceeds 180\u00b0C. The ISC trigger temperature (back surface) remains between 228\u00b0C and 235\u00b0C regardless of oven temperature. Explain why voltage monitoring alone is insufficient as an early warning strategy in this scenario, and identify which signal provides the earliest warning and how its effectiveness changes with oven temperature."
+        },
+        "ground_truth": {
+          "gold_answer": "Voltage monitoring alone is insufficient because voltage remains relatively stable at approximately 3.33 V before venting across all tested oven temperatures, providing no discriminating early-warning signal prior to the critical event. Expansion force is the signal that consistently appears earliest among the three channels, irrespective of oven temperature, with anomaly detection (F > 1300 N) preceding both voltage and surface temperature anomalies. However, the effectiveness of expansion force warning decreases as oven temperature increases: at 180\u00b0C the lead time from force anomaly to TR onset is approximately 10,318 s (~3 hours), whereas at 250\u00b0C it shrinks to approximately 3,758 s. Therefore, expansion force monitoring is most advantageous at lower oven temperatures, and its warning advantage diminishes at higher oven temperatures where TR progression is faster.",
+          "must_include": [
+            "voltage remains stable (~3.33 V) before venting, making it uninformative as an early warning",
+            "expansion force anomaly signal appears earliest regardless of oven temperature",
+            "lead time decreases as oven temperature increases in TR scenarios",
+            "at 180\u00b0C lead time is approximately 10,318 s; at 250\u00b0C it is approximately 3,758 s",
+            "expansion force warning is more effective at lower oven temperatures than at temperatures \u2265180\u00b0C"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming voltage drop is an early warning indicator in this LFP oven-heating regime",
+            "Claiming expansion force warning lead time is constant across oven temperatures",
+            "Asserting that ISC trigger temperature varies with oven temperature",
+            "Extending conclusions to non-LFP chemistries or non-oven-heating abuse modes"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-signal early warning comparison: voltage stability as a limitation, expansion force as the earliest indicator, and the non-monotonic (decreasing) lead time with increasing oven temperature",
+          "primary_boundary": "Conclusions restricted to LFP batteries under oven heating at 150\u2013250\u00b0C; voltage stability finding applies before venting only; ISC trigger temperature is oven-temperature-independent within tested range",
+          "intended_error_modes": [
+            "Asserting voltage is a useful early warning signal because it eventually drops at TR onset",
+            "Claiming expansion force warning effectiveness is uniform across all oven temperatures",
+            "Confusing ISC trigger temperature (oven-independent) with TR trigger temperature (oven-dependent)"
+          ]
+        }
+      }
+    ]
+  }
+}

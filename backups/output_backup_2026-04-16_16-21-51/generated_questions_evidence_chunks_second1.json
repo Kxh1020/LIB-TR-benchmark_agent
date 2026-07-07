@@ -1,0 +1,288 @@
+{
+  "TR_Gasventing+50+Batteries__TR_Gasventing+51+Batteries__TR_Gasventing+52+Batteries": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery test facility operates at two altitude conditions: sea-level (95 kPa) and high-altitude (20 kPa). During thermal runaway testing of lithium-ion cells, engineers observe that reducing ambient pressure from 95 kPa to 20 kPa consistently shortens the time to first venting (safety valve opening or pouch rupture) across all tested cell formats. However, the time from first venting to spark ejection (indicating onset of vigorous exothermic reactions) shows format-dependent behavior: it decreases for cylindrical cells but increases for pouch cells. Peak heat release rate measurements show substantial reductions at low pressure for all formats. Which of the following conclusions are admissible based on these observations?",
+          "options": [
+            "A. The reduction in ambient pressure accelerates internal pressure buildup prior to venting, but the subsequent reaction propagation rate depends on cell geometry and internal gas transport characteristics.",
+            "B. Pouch cells exhibit delayed spark ejection at low pressure because reduced oxygen availability slows the transition from venting to combustion, while cylindrical cells are less sensitive to this effect due to their confined geometry.",
+            "C. The decrease in peak heat release rate at 20 kPa indicates that the total energy released during thermal runaway is lower at reduced pressure, making high-altitude operation inherently safer.",
+            "D. For cylindrical cells, the shortened time to spark ejection at low pressure suggests that reduced ambient pressure enhances the rate of exothermic decomposition reactions within the cell.",
+            "E. The format-dependent behavior of spark ejection timing indicates that pouch and cylindrical cells undergo fundamentally different thermal runaway mechanisms that are triggered by different pressure-dependent pathways."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The observation that venting time decreases uniformly across formats while spark ejection timing shows format-dependent behavior (decreasing for cylindrical, increasing for pouch) supports the conclusion that pre-venting pressure buildup is accelerated by reduced ambient pressure, but post-venting reaction propagation depends on cell-specific factors such as geometry and internal gas dynamics.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+50+Batteries:C002",
+                "TR_Gasventing+50+Batteries:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "The delayed spark ejection for pouch cells at low pressure (from 625s to 643s for 10Ah, 730s to 761s for 15Ah) combined with reduced oxygen availability at 20 kPa is consistent with slower transition to combustion. Cylindrical cells show opposite behavior (145s to 133s), suggesting their confined geometry creates different gas-phase conditions that are less dependent on ambient oxygen concentration.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+50+Batteries:C002",
+                "TR_Gasventing+50+Batteries:C006"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Peak heat release rate (HRR) measures power, not total energy. The reduction in peak HRR at low pressure indicates reduced combustion intensity, not reduced total energy release. The evidence shows increased CO/CO2 ratios at low pressure, indicating incomplete combustion rather than reduced energy content, making this a conflation of power and energy.",
+              "error_type": "mechanism_confusion",
+              "evidence_refs": [
+                "TR_Gasventing+50+Batteries:C001",
+                "TR_Gasventing+50+Batteries:C007"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "The shortened spark ejection time for cylindrical cells at low pressure does not indicate enhanced internal reaction rates. The evidence shows that reduced pressure accelerates venting (external pressure relief), which can trigger spark ejection earlier. This is a timing effect related to pressure relief dynamics, not an indication of faster internal decomposition kinetics.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+50+Batteries:C002",
+                "TR_Gasventing+50+Batteries:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The format-dependent timing behavior reflects differences in how pressure, geometry, and gas transport affect the progression from venting to combustion, not fundamentally different thermal runaway mechanisms. Both formats undergo the same sequence of internal reactions (SEI breakdown, separator melting, cathode decomposition); the pressure-dependent differences arise from how these formats respond to external pressure changes during gas release and ignition.",
+              "error_type": "overgeneralization",
+              "evidence_refs": [
+                "TR_Gasventing+50+Batteries:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Pressure-dependent thermal runaway progression and format-specific gas-phase dynamics",
+          "primary_boundary": "Distinguishing between pre-venting pressure buildup (uniform across formats) and post-venting combustion progression (format-dependent) under reduced ambient pressure",
+          "intended_error_modes": [
+            "Conflating peak power (HRR) with total energy release",
+            "Attributing timing changes to internal reaction kinetics rather than external pressure relief dynamics",
+            "Overgeneralizing format-dependent behavior to imply fundamentally different mechanisms"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming reduced pressure makes operation 'inherently safer' based solely on reduced peak HRR",
+            "Inferring internal reaction rate changes from external timing observations",
+            "Claiming different thermal runaway mechanisms for different formats without mechanistic evidence"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "During thermal runaway testing of lithium-ion cells at two ambient pressures (95 kPa and 20 kPa), gas composition analysis reveals that CO concentrations increase substantially at reduced pressure (e.g., from 0.19 vol.% to 0.28 vol.% for single cylindrical cells, and from 0.21 vol.% to 0.91 vol.% for 5-cell arrays). Simultaneously, the CO/CO2 ratio increases from 1.55 to 2.05 for single cells and from 0.96 to 1.99 for 5-cell arrays when pressure drops from 95 kPa to 20 kPa. For single cylindrical cells at 20 kPa, no combustion flames are observed throughout the entire thermal runaway event, despite visible spark ejection. Which of the following statements are consistent with these observations?",
+          "options": [
+            "A. The increased CO/CO2 ratio at reduced pressure indicates that gas-phase oxidation reactions are less complete, consistent with lower oxygen partial pressure limiting combustion efficiency.",
+            "B. The absence of sustained flames at 20 kPa for single cells, despite spark ejection, suggests that the oxygen mass concentration per unit volume falls below the threshold required for sustained ignition of the vented gas mixture.",
+            "C. The higher absolute CO concentration at 20 kPa indicates that more CO is produced during internal cell decomposition reactions at reduced ambient pressure.",
+            "D. For multi-cell configurations, the increase in CO concentration from 0.21 vol.% to 0.91 vol.% at reduced pressure demonstrates that cell-to-cell thermal propagation generates more incomplete combustion products than single-cell events.",
+            "E. The observation that flames do not occur at 20 kPa implies that thermal runaway severity is reduced at high altitude, making spark ejection a less significant safety concern in low-pressure environments."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The increased CO/CO2 ratio at reduced pressure directly indicates less complete oxidation of carbon species, consistent with lower oxygen partial pressure limiting combustion efficiency.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+50+Batteries:C007"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Evidence explicitly states that at 20 kPa, no flames occur because oxygen mass concentration per volume is below the stoichiometric ratio for ignition, consistent with spark ejection without sustained combustion.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+50+Batteries:C006"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Higher CO at 20 kPa reflects reduced post-venting oxidation, not increased internal CO production. Internal decomposition is temperature-driven and not directly affected by ambient pressure.",
+              "error_type": "mechanism_confusion",
+              "evidence_refs": [
+                "TR_Gasventing+50+Batteries:C004",
+                "TR_Gasventing+50+Batteries:C007"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Multi-cell CO increase follows the same pressure-dependent combustion limitation mechanism, not evidence of inherently different propagation chemistry.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+50+Batteries:C004",
+                "TR_Gasventing+50+Batteries:C007"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Absence of flames indicates reduced post-venting combustion, not reduced internal thermal runaway severity. Higher CO and uncombusted hydrocarbons may increase toxicity risk.",
+              "error_type": "safety_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+50+Batteries:C006",
+                "TR_Gasventing+50+Batteries:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Gas-phase combustion efficiency and oxygen-limited ignition under reduced ambient pressure",
+          "primary_boundary": "Distinguishing between internal decomposition chemistry (temperature-driven) and external gas-phase combustion (oxygen-limited at low pressure)",
+          "intended_error_modes": [
+            "Attributing increased CO to internal production rather than reduced external oxidation",
+            "Inferring reduced thermal runaway severity from absence of flames",
+            "Misinterpreting multi-cell behavior as evidence of different propagation chemistry rather than scaled combustion limitation"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming ambient pressure affects internal decomposition reaction pathways",
+            "Concluding that absence of flames makes low-pressure operation safer without considering toxicity trade-offs"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "Thermal runaway testing is conducted on two lithium-ion chemistries: LiFePO4 (LFP) and LiCoO2 (LCO) cells at various states of charge (0%, 30%, 50%, 75%). Post-test analysis of emitted PM2.5 particles reveals that for LFP cells at 0% and 30% SOC (which did not flame), organic matter (OM) dominates the particle composition. For LFP cells at 50% and 75% SOC (which exhibited flaming combustion), phosphate (PO4\u00b3\u207b) dominates with 34-44% of PM2.5 mass, while OM fractions drop to 1-20%. Elemental carbon (EC) fraction increases from 0-7% at low SOC to 25-29% at 75% SOC for LFP cells. LCO cells flamed at all tested SOCs. During the tests, organic carbon (OC) is more abundant during cell venting phases, while EC and PO4\u00b3\u207b are more abundant when flaming combustion occurs. Which of the following conclusions are supported by these observations?",
+          "options": [
+            "A. The transition from OM-dominated to PO4\u00b3\u207b-dominated particle composition in LFP cells is primarily driven by whether flaming combustion occurs, rather than by the state of charge itself.",
+            "B. The increase in EC fraction with SOC for LFP cells indicates that higher energy content at elevated SOC leads to more complete thermal decomposition of organic electrolyte components.",
+            "C. The dominance of PO4\u00b3\u207b in particles from flaming LFP cells suggests that the cathode material (LiFePO4) undergoes thermal decomposition and releases phosphorus-containing species that are oxidized during combustion.",
+            "D. For LFP cells, the absence of flaming at 0% and 30% SOC can be attributed to insufficient combustible gas generation at low SOC, while at 50% and 75% SOC, sufficient electrolyte decomposition products are available to sustain combustion.",
+            "E. The observation that OC is more abundant during venting while EC and PO4\u00b3\u207b are more abundant during flaming indicates that venting releases primarily unburned organic species, while flaming converts these to carbonaceous soot and inorganic oxidation products."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The evidence explicitly states that ignition of the emissions stream, rather than cell SOC, is mostly responsible for the general composition of emitted PM2.5 particles. The compositional shift from OM-dominated (0-30% SOC, no flame) to PO4\u00b3\u207b-dominated (50-75% SOC, flaming) directly supports this conclusion.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+51+Batteries:C004",
+                "TR_Gasventing+51+Batteries:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The increase in EC with SOC is confounded with the occurrence of flaming combustion at higher SOC. The evidence indicates that EC is more abundant when flaming occurs, not that higher SOC directly causes more complete decomposition. The EC increase is a consequence of combustion conditions (flame presence), not a direct effect of SOC on decomposition completeness.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+51+Batteries:C002",
+                "TR_Gasventing+51+Batteries:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "The dominance of PO4\u00b3\u207b (34-44% of PM2.5 mass) specifically in flaming LFP cells, where the cathode is LiFePO4, strongly suggests that phosphorus from the cathode material is released during thermal decomposition and subsequently oxidized during combustion to form phosphate species in the particle phase.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+51+Batteries:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "While the observation that LFP cells do not flame at 0% and 30% SOC is consistent with insufficient combustible material, this conclusion requires assumptions about gas generation rates and flammability limits that are not directly supported by the particle composition data. The evidence shows what happens when flaming occurs, but does not provide direct evidence about gas generation rates or flammability thresholds at different SOCs.",
+              "error_type": "unsupported_extrapolation",
+              "evidence_refs": [
+                "TR_Gasventing+51+Batteries:C001"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "The evidence directly states that OC is more abundant during venting while EC and PO4\u00b3\u207b are more abundant during flaming. This pattern is consistent with venting releasing unburned organic vapors (OC) and flaming converting these to elemental carbon soot (EC) and oxidizing inorganic species to form PO4\u00b3\u207b.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+51+Batteries:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Relationship between combustion conditions, SOC, and particle composition during thermal runaway",
+          "primary_boundary": "Distinguishing between direct SOC effects and combustion-mediated effects on particle composition",
+          "intended_error_modes": [
+            "Attributing EC increase to SOC-dependent decomposition rather than combustion conditions",
+            "Making unsupported inferences about gas generation and flammability from particle composition data",
+            "Confusing correlation between SOC and flaming with direct causal relationship"
+          ],
+          "disallowed_extrapolations": [
+            "Inferring gas generation rates or flammability limits from particle composition",
+            "Claiming SOC directly controls decomposition completeness without accounting for combustion as mediating factor"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "During thermal runaway of a lithium-ion cell with a graphite anode and a transition metal oxide cathode, the cell temperature rises from ambient to approximately 1000\u00b0C. The sequence involves SEI breakdown (90-120\u00b0C), separator melting (135-165\u00b0C), electrolyte decomposition (200\u00b0C and above), and cathode oxygen release (150-310\u00b0C). If a cell undergoes thermal runaway initiated by external heating, explain why the separator melting event at 135-165\u00b0C can lead to accelerated self-heating even before the primary exothermic electrolyte decomposition reactions become dominant at 200\u00b0C. Your answer should identify the mechanism by which separator melting contributes to thermal acceleration and explain why this mechanism is distinct from the later high-temperature exothermic reactions."
+        },
+        "ground_truth": {
+          "gold_answer": "When the separator melts at 135-165\u00b0C, electrical contact between anode and cathode can occur, resulting in an internal short circuit and self-discharge. This self-discharge generates resistive heating (I\u00b2R losses) as current flows through the short circuit path, accelerating temperature rise before the major exothermic decomposition reactions at 200\u00b0C become dominant. This mechanism is distinct because it is electrochemical energy release (stored electrical energy converted to heat via short circuit) rather than chemical decomposition energy release (bond breaking and oxidation reactions). The separator melting enables a new heat generation pathway that is independent of the temperature-dependent reaction kinetics governing electrolyte and cathode decomposition.",
+          "must_include": [
+            "Internal short circuit or electrical contact between electrodes",
+            "Self-discharge or current flow generating resistive heating",
+            "Distinction between electrochemical energy release (short circuit) and chemical decomposition energy release"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming separator melting directly causes electrolyte decomposition",
+            "Stating that separator melting is the primary heat source during thermal runaway",
+            "Confusing separator melting temperature with thermal runaway onset temperature"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-stage thermal runaway progression and mechanism transition from electrochemical to chemical heat generation",
+          "primary_boundary": "Distinguishing between short-circuit-driven heating (separator melting consequence) and decomposition-driven heating (high-temperature reactions)",
+          "intended_error_modes": [
+            "Treating all heat generation as coming from chemical decomposition",
+            "Failing to recognize that separator melting enables a distinct electrochemical heating pathway",
+            "Confusing the temperature at which an event occurs with its contribution to thermal acceleration"
+          ]
+        }
+      }
+    ]
+  }
+}

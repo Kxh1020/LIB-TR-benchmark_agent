@@ -1,0 +1,203 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An 18650 lithium-ion cell at 100% SOC is undergoing externally driven thermal runaway under a constant 20 W heating load. Liquid nitrogen (LN) is sprayed vertically onto the positive electrode for durations of 20 s, 60 s, and 100 s in separate trials. The surface temperature reductions achieved are 172.2°C, 322°C, and 432°C respectively. In a parallel set of trials at the same 100% SOC and 100 s spray duration, heating power is varied from 10 W to 25 W, and the measured average cooling rates are 3.89°C/s, 3.87°C/s, 3.83°C/s, and 3.79°C/s respectively. A thermal protection engineer must evaluate the following claims about LN cooling effectiveness under these conditions. Which of the following statements are admissible conclusions from these observations?",
+        "options": [
+          "A. The relationship between spray duration and temperature reduction is strictly linear, because each 20 s increment produces a proportional increase in heat extraction.",
+          "B. Increasing heating power from 10 W to 25 W reduces the average cooling rate, indicating that LN cooling capacity is not unlimited and is partially overcome by higher heat generation rates.",
+          "C. A 100 s vertical LN spray is sufficient to prevent thermal runaway re-ignition after spraying stops, because the post-spray temperature returns to safe levels.",
+          "D. The diminishing average cooling rate with increasing heating power implies that at sufficiently high heating power, LN spraying would provide no net cooling benefit.",
+          "E. The data support that spray duration is a more influential parameter for total temperature reduction than spray direction under the tested conditions.",
+          "F. The non-proportional increase in temperature reduction with spray duration is consistent with a regime where early spray duration yields higher incremental benefit than later spray duration.",
+          "G. The cooling rate data across heating powers are consistent with LN providing meaningful but load-dependent cooling, without implying that a specific power threshold eliminates LN effectiveness."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "F",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "The increments are 172.2, 246.3, 322, 331.9, 432°C at 20 s intervals, showing non-uniform steps (74.1, 75.7, 9.9, 100.1°C), which are clearly non-linear. Asserting strict linearity contradicts the evidence.",
+            "error_type": "numerical exaggeration distractor — incorrect functional form",
+            "evidence_refs": [
+              "TR_Protection+197+Renewable_Energy:C006"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The average cooling rate decreases monotonically from 3.89 to 3.79°C/s as heating power increases from 10 to 25 W, directly supporting that higher heat generation partially offsets LN cooling capacity. This is a direct mechanistic inference from the evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+197+Renewable_Energy:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The evidence shows post-spray temperature returns to 38.9°C after vertical spraying, but this is a surface temperature measurement. Whether thermal runaway re-ignition is prevented cannot be concluded from surface temperature alone, and the evidence does not claim prevention of re-ignition, only temperature reduction during spray.",
+            "error_type": "scope expansion — surface measurement extrapolated to safety guarantee",
+            "evidence_refs": [
+              "TR_Protection+197+Renewable_Energy:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence shows a small, nearly flat decrease in cooling rate (3.89 to 3.79°C/s over 15 W increase). Extrapolating this modest trend to claim LN would provide zero net cooling at sufficiently high power is an unjustified extrapolation beyond the tested range.",
+            "error_type": "unjustified monotonicity extrapolation beyond evidence scope",
+            "evidence_refs": [
+              "TR_Protection+197+Renewable_Energy:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The evidence compares vertical vs. horizontal spraying at 80–100 s and 20 W, showing a large difference in minimum temperature (−108.4°C vs. −5.9°C). This indicates spray direction has a very large effect. The claim that duration is more influential than direction is not supported and likely contradicted.",
+            "error_type": "condition violation — ignores comparative evidence on spray direction",
+            "evidence_refs": [
+              "TR_Protection+197+Renewable_Energy:C004",
+              "TR_Protection+197+Renewable_Energy:C006"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The incremental temperature reductions per 20 s interval are approximately 74, 76, 10, and 100°C, showing a non-proportional pattern. The large jump from 20 s to 60 s followed by the small step to 80 s is consistent with a regime where early spray duration is highly effective, then diminishes, then recovers — supporting non-proportional, regime-dependent behavior rather than linear accumulation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+197+Renewable_Energy:C006"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "The cooling rate varies only from 3.89 to 3.79°C/s across a 15 W heating power range, indicating LN remains effective across all tested powers but with load-dependent modulation. No threshold of zero effectiveness is implied. This is a conservative, evidence-bounded conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+197+Renewable_Energy:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of trend-based and functional-form conclusions from LN cooling rate and temperature reduction data",
+        "primary_boundary": "Non-linearity of temperature reduction vs. spray duration; modest vs. catastrophic load-dependence of cooling rate",
+        "intended_error_modes": [
+          "Assuming linear accumulation of cooling benefit with spray time",
+          "Extrapolating small monotonic trend to zero-effectiveness threshold",
+          "Using post-spray surface temperature to claim re-ignition prevention",
+          "Underweighting the large directional effect relative to duration effect"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming LN loses effectiveness at high power based on a 0.1°C/s cooling rate change",
+          "Asserting re-ignition prevention from surface temperature return to 38.9°C",
+          "Asserting spray duration dominates over spray direction without comparative data"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery thermal management system uses fine water mist (FWM) combined with forced air flow to cool lithium-ion cells during thermal runaway events. Experimental data show that the maximum cooling capacity improvement with FWM addition reaches 29.5% compared to pure air flow cooling. When FWM flow rate exceeds 0.6 mL/s, local evaporation of droplets dominates the cooling process. As air velocity increases, cooling capacity increases, but droplet retention time in the high-temperature region is significantly shortened, leading to decreased cooling efficiency. A separate overcharge test on a large-format cell shows that water mist cooling factor reaches only 7.8% of theoretical maximum cooling power even during active thermal runaway. An engineer is designing a combined FWM-air cooling system for a module-level thermal protection application. Which of the following design-relevant conclusions are admissible?",
+        "options": [
+          "A. Increasing air velocity indefinitely will continue to improve total cooling capacity, because higher air velocity always increases the convective heat transfer coefficient.",
+          "B. Operating FWM above 0.6 mL/s transitions the dominant cooling mechanism from convective air cooling to local droplet evaporation, which has implications for how flow rate changes affect system response.",
+          "C. The 29.5% improvement ceiling from FWM addition implies that for thermal runaway events where heat generation rates far exceed pure air cooling capacity, FWM addition alone cannot be expected to provide sufficient protection.",
+          "D. Because cooling efficiency decreases with increasing air velocity, the optimal operating point for a combined FWM-air system involves a trade-off between total cooling capacity and droplet evaporation efficiency, and cannot be determined by maximizing air velocity alone.",
+          "E. The low cooling factor observed in the overcharge water mist test confirms that FWM combined with air flow will also achieve less than 10% of theoretical cooling power in any thermal runaway scenario.",
+          "F. At FWM flow rates below 0.6 mL/s, the cooling process is not dominated by local droplet evaporation, meaning that changes in FWM flow rate in this sub-threshold regime affect the system through a different mechanism than at higher flow rates."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "C",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "The evidence explicitly states that increasing air velocity shortens droplet retention time, leading to decreased cooling efficiency. While total cooling capacity may increase with air velocity, the claim that indefinite increase always improves total cooling capacity ignores the efficiency trade-off and the regime-dependent behavior described. The option presents a monotonic claim that contradicts the stated trade-off.",
+            "error_type": "unjustified monotonicity — ignores efficiency-capacity trade-off with air velocity",
+            "evidence_refs": [
+              "TR_Protection+199+Applied_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The evidence directly states that local evaporation dominates when FWM flow rate exceeds 0.6 mL/s, establishing a regime transition at this threshold. This has direct design implications: below and above this threshold, the dominant mechanism differs, affecting how system response changes with flow rate adjustments.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+199+Applied_Thermal_Engineering:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "A maximum 29.5% improvement over pure air cooling means FWM addition is bounded in its incremental benefit. For thermal runaway events where pure air cooling is already far below what is needed, a 29.5% improvement on an insufficient baseline still leaves a large deficit. This is a valid engineering implication of the stated ceiling.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+199+Applied_Thermal_Engineering:C001"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The evidence establishes that higher air velocity increases cooling capacity but decreases cooling efficiency (by shortening droplet retention). These two effects pull in opposite directions, creating a genuine trade-off. The conclusion that optimal operation cannot be determined by maximizing air velocity alone follows directly from this trade-off structure.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+199+Applied_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The 7.8% cooling factor was measured in a specific overcharge test with a particular water mist configuration (not FWM combined with air flow). Generalizing this result to all thermal runaway scenarios and to the FWM-air combined system constitutes an unjustified cross-system and cross-scenario extrapolation. The evidence does not support a universal less-than-10% ceiling for FWM-air systems.",
+            "error_type": "scope expansion — extrapolating a specific test result to a different system configuration and all scenarios",
+            "evidence_refs": [
+              "TR_Protection+198+Applied_Thermal_Engineering:C005",
+              "TR_Protection+199+Applied_Thermal_Engineering:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The 0.6 mL/s threshold defines when local evaporation dominates. Below this threshold, local evaporation does not dominate, meaning a different mechanism (likely convective or mixed) governs cooling in that regime. This is a direct implication of the stated threshold condition and is admissible as a regime-boundary inference.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+199+Applied_Thermal_Engineering:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Design admissibility for combined FWM-air cooling systems given regime thresholds, efficiency-capacity trade-offs, and cross-system extrapolation limits",
+        "primary_boundary": "The 0.6 mL/s regime threshold; the 29.5% improvement ceiling applies to FWM addition over air, not to absolute sufficiency; the 7.8% cooling factor cannot be transferred to a different system",
+        "intended_error_modes": [
+          "Monotonic extrapolation of air velocity benefit",
+          "Cross-system transfer of cooling factor from overcharge WM test to FWM-air system",
+          "Ignoring regime transition at 0.6 mL/s"
+        ],
+        "disallowed_extrapolations": [
+          "Applying overcharge WM cooling factor universally to FWM-air systems",
+          "Claiming indefinite air velocity increase always improves total cooling",
+          "Treating 29.5% improvement as sufficient without reference to baseline adequacy"
+        ]
+      }
+    }
+  ],
+  "short_answers": []
+}

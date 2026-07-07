@@ -1,0 +1,339 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery safety engineer is evaluating two lithium-ion cell chemistries—one iron-phosphate cathode (LFP) and one nickel-cobalt-aluminum cathode (NCA)—for use in an enclosed energy storage room. Both are tested at identical state of charge. The engineer notes that the LFP cells produce vent gases with elevated concentrations of ethylene and ethane relative to NCA cells. Which of the following conclusions about explosion risk are admissible based on this information?",
+        "options": [
+          "A. LFP vent gases present a higher explosion propensity than NCA vent gases under the same conditions, attributable to the elevated ethylene and ethane fractions.",
+          "B. NCA cells are unconditionally safer than LFP cells in enclosed spaces because their vent gases contain lower concentrations of flammable hydrocarbons.",
+          "C. Among the individual gas species present in LFP vent gas, ethylene contributes more to explosion propensity than carbon monoxide under stoichiometric conditions.",
+          "D. The explosion risk of the combined LFP vent gas mixture can be estimated by computing a weighted average of the explosion limits of its constituent species.",
+          "E. The higher explosion propensity of LFP vent gas is primarily driven by the iron-phosphate cathode decomposition products rather than the electrolyte-derived gases.",
+          "F. Carbon monoxide, despite being present in LFP vent gas, exhibits the lowest explosion propensity among the identifiable individual gas components under stoichiometric conditions.",
+          "G. Because ethylene has the highest individual explosion propensity, a mixture dominated by ethylene will always have a higher explosion propensity than a mixture dominated by carbon monoxide regardless of mixture composition."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence directly supports LFP higher explosion propensity attributed to elevated ethylene and ethane concentrations.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Unconditional safety claim violates SOC-dependence and ignores that conditions vary; NCA may pose other risks not captured here.",
+            "error_type": "overgeneralization distractor",
+            "evidence_refs": [
+              "TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries:C001",
+              "TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence establishes ethylene has the highest individual explosion propensity under stoichiometric conditions, exceeding CO.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence explicitly states mixture explosion limits cannot be approximated by weighted summation of individual component limits.",
+            "error_type": "causal overclaim / scope expansion",
+            "evidence_refs": [
+              "TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence attributes the propensity difference to ethylene and ethane concentrations; no evidence links this specifically to cathode vs. electrolyte origin.",
+            "error_type": "mechanism substitution / unsupported attribution",
+            "evidence_refs": [
+              "TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Evidence states CO exhibits the lowest explosion propensity among individual BVG components under stoichiometric conditions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "Mixture behavior cannot be inferred from individual component rankings; evidence explicitly prohibits weighted summation extrapolation to mixtures.",
+            "error_type": "overgeneralization / ignoring multi-component interaction",
+            "evidence_refs": [
+              "TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries:C003",
+              "TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of explosion propensity conclusions from vent gas composition and individual component rankings, including mixture interaction boundaries.",
+        "primary_boundary": "Individual component explosion propensity rankings do not transfer to mixture-level predictions via weighted summation.",
+        "intended_error_modes": [
+          "Treating individual gas species rankings as directly predictive of mixture behavior",
+          "Overgeneralizing NCA safety across all conditions",
+          "Attributing vent gas composition to a specific electrode source without evidence"
+        ],
+        "disallowed_extrapolations": [
+          "Mixture explosion limits from weighted individual limits",
+          "Unconditional chemistry-level safety ranking independent of conditions",
+          "Electrode-specific attribution of ethylene/ethane origin"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An LFP battery pack is stored in a ventilated enclosure. Testing reveals that vent gas explosion tendency peaks at states of charge between 50% and 100%, and the relationship between SOC and explosion tendency is nonlinear. A technician proposes that the safest long-term storage SOC for minimizing explosion risk in the event of venting is 100% SOC, reasoning that fully charged cells vent more gas and dilute the most reactive species. A second technician argues storage at 25% SOC is safest. Which of the following statements are consistent with the evidence?",
+        "options": [
+          "A. Storage at 25% SOC is more defensible than storage at 100% SOC for minimizing vent gas explosion propensity, because the peak explosion tendency region includes 100% SOC.",
+          "B. The first technician's dilution argument is supported because higher SOC produces larger vent volumes that reduce reactive species concentration.",
+          "C. The nonlinear SOC dependence means that reducing SOC from 100% to 75% may not proportionally reduce explosion tendency, and the benefit may be smaller than a linear model would predict.",
+          "D. Because explosion tendency peaks between 50% and 100% SOC, storage at any SOC below 50% guarantees negligible explosion risk from vent gases.",
+          "E. The nonlinear relationship implies there exists at least one SOC transition point where explosion tendency changes more sharply than at other SOC intervals.",
+          "F. Overcharged states present higher explosion propensity than states within the 50%–100% SOC range, making overcharge the dominant storage risk scenario.",
+          "G. The SOC dependence of explosion tendency applies specifically to LFP chemistry and cannot be assumed to hold for NCA cells without separate characterization."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence places peak explosion tendency at 50–100% SOC, making 100% SOC storage less defensible than lower SOC storage.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Dilution argument is not supported by evidence; evidence shows higher SOC correlates with higher explosion tendency, contradicting this reasoning.",
+            "error_type": "causal overclaim / mechanism substitution",
+            "evidence_refs": [
+              "TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Nonlinear SOC dependence means proportional reduction assumptions are invalid; benefit of moderate SOC reduction may be smaller than expected.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence does not state that below 50% SOC guarantees negligible risk; it identifies the peak region, not a zero-risk threshold below it.",
+            "error_type": "boundary violation / threshold overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "A nonlinear relationship necessarily implies uneven rates of change across the SOC range, implying at least one region of sharper transition.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Evidence states explosion tendency is higher at 50–100% SOC than at overcharged states, directly contradicting this claim.",
+            "error_type": "condition violation / reversal of stated trend",
+            "evidence_refs": [
+              "TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "Evidence characterizes LFP SOC dependence specifically; extending this trend to NCA without separate evidence is an unsupported extrapolation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries:C001",
+              "TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Regime-dependent and nonlinear SOC effects on LFP vent gas explosion tendency, and the boundary between admissible and overclaimed conclusions about safe storage SOC.",
+        "primary_boundary": "Peak explosion tendency at 50–100% SOC does not imply zero risk below 50%, and nonlinearity prohibits proportional reduction assumptions.",
+        "intended_error_modes": [
+          "Treating the peak region boundary as a zero-risk threshold below it",
+          "Assuming overcharge is the dominant risk scenario contrary to evidence",
+          "Applying dilution reasoning not supported by the evidence",
+          "Generalizing LFP SOC dependence to NCA without basis"
+        ],
+        "disallowed_extrapolations": [
+          "Zero explosion risk below 50% SOC",
+          "Linear SOC-to-explosion-tendency mapping",
+          "NCA SOC dependence assumed identical to LFP"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A process safety analyst is modeling ignition hazards in a battery storage facility where LFP cells may vent simultaneously. The analyst proposes using the explosion limits of the dominant individual gas species—weighted by their molar fractions—to estimate the overall mixture flammability envelope, arguing this is conservative because it uses the most reactive species as the reference. A colleague disputes this, citing fundamental limitations of that approach. Which of the following statements correctly characterize the admissibility of the analyst's approach and the underlying explosion behavior of the individual species?",
+        "options": [
+          "A. The analyst's weighted summation approach is not admissible for estimating mixture explosion limits because multi-component mixture behavior cannot be approximated this way.",
+          "B. The weighted summation approach is conservative and therefore acceptable for regulatory compliance purposes, even if it overestimates the true explosion limit.",
+          "C. Ethylene and carbon monoxide represent the extremes of individual explosion propensity among BVG components, with ethylene being the most reactive and CO the least reactive under stoichiometric conditions.",
+          "D. The explosion-initiating temperature difference between ethylene and CO can reach up to 300 K at the same pressure, making the choice of reference species highly consequential for ignition temperature modeling.",
+          "E. Because CO has the lowest explosion propensity among individual species, a mixture containing CO as the dominant component will have lower explosion propensity than a pure ethylene mixture.",
+          "F. The analyst's approach would be admissible if applied only to binary mixtures of two BVG components rather than the full multi-component mixture."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence explicitly states mixture explosion limits cannot be approximated by weighted summation of individual component limits.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Conservatism does not validate a method shown to be inapplicable; the evidence prohibits this approximation without qualifying it as conservative.",
+            "error_type": "protective mechanism overclaim / scope expansion",
+            "evidence_refs": [
+              "TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence identifies C2H4 as highest and CO as lowest individual explosion propensity under stoichiometric conditions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence states the explosion-initiating temperature gap between C2H4 and CO can reach 300 K at the same pressure.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Individual species rankings cannot be transferred to mixture behavior; evidence explicitly prohibits this extrapolation via weighted summation logic.",
+            "error_type": "overgeneralization / ignoring multi-component interaction",
+            "evidence_refs": [
+              "TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries:C003",
+              "TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Evidence states multi-component mixture limits cannot be approximated by weighted summation; no evidence supports a binary mixture exception.",
+            "error_type": "unsupported conditional exception / scope invention",
+            "evidence_refs": [
+              "TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of weighted summation for mixture explosion limit estimation, and the significance of the 300 K ignition temperature gap between individual BVG species.",
+        "primary_boundary": "Individual component explosion propensity rankings and explosion-initiating temperatures are valid for single-species analysis but cannot be combined via weighted summation to predict mixture behavior.",
+        "intended_error_modes": [
+          "Accepting weighted summation as conservative and therefore valid",
+          "Transferring individual species rankings directly to mixture explosion propensity",
+          "Inventing a binary mixture exception not supported by evidence"
+        ],
+        "disallowed_extrapolations": [
+          "Mixture explosion limits from weighted individual limits in any configuration",
+          "CO-dominated mixture explosion propensity inferred from individual CO ranking"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "An LFP battery storage facility operates cells at 75% SOC. During a venting event, the released gas mixture contains ethylene, carbon monoxide, ethane, and several other species. A safety engineer proposes two actions: (1) use the explosion limit of ethylene alone as a conservative upper bound for the mixture's explosion hazard, and (2) reduce cell SOC to 110% of rated capacity to move outside the peak explosion tendency region. Evaluate the admissibility of each proposed action, identifying the specific mechanism or evidence-based limitation that supports or invalidates each proposal."
+      },
+      "ground_truth": {
+        "gold_answer": "Action 1 is not admissible. Although ethylene has the highest individual explosion propensity among BVG components under stoichiometric conditions, the explosion limits of multi-component gas mixtures cannot be approximated by the limits of any single constituent species, including the most reactive one. The mixture exhibits behavior that is not predictable from weighted or single-species extrapolation, so using ethylene's limit as a mixture proxy lacks evidentiary support and may misrepresent the actual hazard envelope. Action 2 is not admissible. The evidence shows that LFP vent gas explosion tendency peaks between 50% and 100% SOC and is actually higher in this range than at overcharged states. Operating at 110% SOC does not move the system outside the high-risk region; it moves toward or into overcharge, which the evidence indicates has lower explosion tendency than the 50–100% SOC range. However, overcharge introduces other failure risks not addressed by this evidence, so the proposal cannot be justified on explosion propensity grounds alone.",
+        "must_include": [
+          "Mixture explosion limits cannot be approximated by individual component limits including the most reactive species",
+          "Ethylene has highest individual explosion propensity but this does not transfer to mixture prediction",
+          "LFP explosion tendency peaks at 50–100% SOC, not at overcharged states",
+          "Overcharged states show lower explosion tendency than 50–100% SOC range per evidence",
+          "Action 2 is based on a reversal of the actual SOC-explosion tendency relationship"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming ethylene's individual limit is conservative for any mixture configuration",
+          "Claiming overcharge is safe based solely on lower explosion tendency relative to 50–100% SOC",
+          "Applying NCA explosion tendency data to evaluate LFP behavior",
+          "Inferring mixture flammability envelope from any single-species or weighted-species calculation"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of single-species explosion limit proxies for multi-component mixtures, and the counterintuitive SOC-explosion tendency relationship showing overcharge is not the peak risk condition for LFP.",
+        "primary_boundary": "Individual species explosion propensity rankings cannot substitute for mixture explosion limit characterization; and the peak explosion risk SOC window (50–100%) is not the overcharge regime.",
+        "intended_error_modes": [
+          "Accepting ethylene limit as conservative upper bound for mixture",
+          "Assuming overcharge is the highest explosion risk condition",
+          "Treating the SOC-explosion tendency relationship as monotonically increasing toward overcharge"
+        ]
+      }
+    }
+  ]
+}

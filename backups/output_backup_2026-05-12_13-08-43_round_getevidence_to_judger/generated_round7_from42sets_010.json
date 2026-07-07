@@ -1,0 +1,314 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is evaluating thermal runaway hazard for a battery module containing 18650-format cells. Two candidate chemistries are under consideration: NMC811/SiC lithium-ion and a sodium-ion cell with a manganese-iron-nickel oxide cathode. Both formats are tested under identical continuous heating at 128 W. The engineer observes that sodium-ion cells initiate thermal runaway later and produce no gas ignition. Which of the following conclusions are admissible based on this scenario?",
+        "options": [
+          "A. The later thermal runaway onset in sodium-ion cells is consistent with a higher initiation temperature, not a slower reaction rate once runaway begins.",
+          "B. Because sodium-ion cells do not ignite venting gas, their peak venting gas velocity can be estimated using the same optical method applied to lithium-ion cells.",
+          "C. The absence of gas ignition in sodium-ion cells is sufficient evidence to conclude that their venting gas composition is non-flammable under all conditions.",
+          "D. The longer transition time from safety valve opening to thermal runaway in sodium-ion cells compared to 18650 lithium-ion cells is consistent with greater thermal stability of the sodium-ion chemistry.",
+          "E. The lower surface temperatures in sodium-ion cells during thermal runaway are causally linked to the absence of gas ignition, not solely to differences in stored energy.",
+          "F. Because sodium-ion cells show lower mass loss and lower temperatures, they can be confirmed as safe for module integration without further propagation testing."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Higher TR start temperature in SIBs (10–15°C above LIBs) explains later onset; this is a threshold shift, not a rate change.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+126+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Velocity estimation required gas ignition as optical marker; absence of ignition in SIBs explicitly precluded this measurement.",
+            "error_type": "measurement scope violation",
+            "evidence_refs": [
+              "TR_Gasventing+126+Journal_of_Power_Sources:C009"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "No ignition under tested conditions does not establish non-flammability universally; this is an inadmissible generalization beyond tested conditions.",
+            "error_type": "overgeneralization beyond evidence scope",
+            "evidence_refs": [
+              "TR_Gasventing+126+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "SIB transition time of 154 s vs 115 s for 18650 LIBs under identical heating is consistent with the stated greater thermal stability of SIBs.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+126+Journal_of_Power_Sources:C010",
+              "TR_Gasventing+126+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Evidence attributes lower SIB temperatures to both lower energy content and absence of ignition; ignition absence is an independent contributor, not reducible to energy alone.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+126+Journal_of_Power_Sources:C004",
+              "TR_Gasventing+126+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Cell-level lower severity does not justify system-level safety clearance; propagation behavior requires separate module-level evidence.",
+            "error_type": "scale transfer overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+126+Journal_of_Power_Sources:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of safety and mechanism conclusions when comparing SIB and LIB thermal runaway under defined heating conditions",
+        "primary_boundary": "Cell-level observations (temperature, ignition absence, transition time) support chemistry-level comparisons but not system-level safety clearance or universal flammability claims",
+        "intended_error_modes": [
+          "Treating absence of ignition as proof of non-flammable gas composition",
+          "Applying LIB optical velocity measurement method to SIBs where the method's precondition (ignition) is absent",
+          "Scaling cell-level severity reduction to module-level safety without propagation evidence"
+        ],
+        "disallowed_extrapolations": [
+          "Universal non-flammability of SIB venting gas from single-condition test",
+          "Module safety from cell-level mass loss and temperature data alone"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "During thermal runaway testing of 18650 and 21700 NMC811/SiC lithium-ion cells, venting gas velocity is recorded from the start of the optically visible thermal runaway event. Both formats show velocities exceeding 100 m/s at onset, followed by decay. A module designer is evaluating the mechanical impingement hazard to adjacent cells and structural components. Which statements about the venting gas velocity profile and its implications are admissible?",
+        "options": [
+          "A. The initial high velocity exceeding 100 m/s is attributable to gas ignition at thermal runaway onset, not to peak internal pressure alone.",
+          "B. Because velocity decays below 50 m/s within 200 ms, the mechanical impingement hazard is effectively negligible for any structural component located more than 10 cm from the vent.",
+          "C. The exponential decay profile implies that the highest mechanical loading on adjacent components occurs within the first 200 ms of the optically visible thermal runaway event.",
+          "D. The similarity in velocity decay trends between 18650 and 21700 formats suggests the decay mechanism is governed by a shared physical process rather than format-specific geometry.",
+          "E. Peak mass flow rates of up to 2000 g/s lasting only milliseconds indicate that time-averaged flow metrics substantially underrepresent the instantaneous mechanical and thermal loading during early thermal runaway.",
+          "F. The venting gas velocity data alone is sufficient to fully characterize the thermal hazard to adjacent cells in a module."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence explicitly attributes initial high velocities exceeding 100 m/s to gas ignition, making this a supported causal attribution.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+126+Journal_of_Power_Sources:C006"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence gives velocity decay thresholds but provides no spatial attenuation data; distance-based hazard elimination is an unsupported extrapolation.",
+            "error_type": "unsupported spatial extrapolation from temporal data",
+            "evidence_refs": [
+              "TR_Gasventing+126+Journal_of_Power_Sources:C006"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Exponential decay from >100 m/s at onset to <50 m/s by 200 ms places peak mechanical loading in the first 200 ms window, consistent with the velocity profile.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+126+Journal_of_Power_Sources:C006"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Both formats show similar exponential decay trends despite different geometries, supporting a shared governing mechanism rather than format-specific behavior.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+126+Journal_of_Power_Sources:C006"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Peak rates up to 2000 g/s lasting milliseconds versus average rates of 30–300 g/s confirm that averages structurally underrepresent instantaneous peak loads.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+126+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Velocity characterizes mechanical impingement; thermal hazard to adjacent cells also depends on surface temperature, gas temperature, and heat transfer, none derivable from velocity alone.",
+            "error_type": "measurement scope overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+126+Journal_of_Power_Sources:C001",
+              "TR_Gasventing+126+Journal_of_Power_Sources:C006"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of mechanical and thermal hazard conclusions derived from venting gas velocity and mass flow rate profiles",
+        "primary_boundary": "Temporal velocity decay data supports time-windowed loading conclusions but not spatial hazard elimination; velocity data alone cannot characterize full thermal hazard",
+        "intended_error_modes": [
+          "Extrapolating temporal decay to spatial distance-based safety",
+          "Treating time-averaged mass flow as representative of instantaneous peak loading",
+          "Using velocity data alone to characterize thermal hazard"
+        ],
+        "disallowed_extrapolations": [
+          "Distance-based mechanical hazard thresholds from temporal velocity data",
+          "Full thermal hazard characterization from velocity profile alone"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery safety engineer is comparing 18650 lithium-ion and 18650 sodium-ion cells for use in a stationary storage application. Both cell types are tested under the same heating protocol. The engineer notes that the lithium-ion cells lose 77% of their mass during thermal runaway while sodium-ion cells lose only 55%. The engineer proposes that the lower mass loss in sodium-ion cells is entirely explained by their lower stored energy content. Which of the following assessments of this proposal are correct?",
+        "options": [
+          "A. The proposal is incomplete because the absence of gas ignition in sodium-ion cells independently contributes to lower mass loss beyond what energy content alone would predict.",
+          "B. The proposal is valid because lower stored energy is the only mechanistic pathway through which mass loss can differ between chemistries.",
+          "C. The proposal cannot be evaluated without knowing the exact capacity difference between the two cell formats.",
+          "D. The proposal is partially supported but overstates the role of energy content by excluding the contribution of ignition-driven ejection to total mass loss in lithium-ion cells.",
+          "E. Because sodium-ion cells show lower mass loss, they necessarily produce lower peak venting gas temperatures than lithium-ion cells under all heating conditions.",
+          "F. The lower mass loss in sodium-ion cells is consistent with both lower energy content and absence of ignition acting as concurrent contributing factors."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence explicitly states absence of ignition as an independent contributor to lower SIB mass loss, making the single-factor energy proposal incomplete.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+126+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence identifies ignition as a separate contributor to mass loss; attributing all differences to energy content is a single-factor causal overclaim.",
+            "error_type": "causal overclaim / ignoring multi-factor interaction",
+            "evidence_refs": [
+              "TR_Gasventing+126+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Evidence already identifies multiple contributing factors without requiring exact capacity values; this introduces an unnecessary precondition not supported by the evidence structure.",
+            "error_type": "false prerequisite introduction",
+            "evidence_refs": [
+              "TR_Gasventing+126+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Energy content is a stated contributor but ignition-driven ejection in LIBs is also identified; the proposal overstates energy's exclusive role.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+126+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Lower mass loss does not necessarily imply lower peak venting gas temperature under all conditions; this is an inadmissible universal generalization from a specific test result.",
+            "error_type": "overgeneralization across conditions",
+            "evidence_refs": [
+              "TR_Gasventing+126+Journal_of_Power_Sources:C002",
+              "TR_Gasventing+126+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Evidence directly supports both lower energy content and absence of ignition as concurrent factors in lower SIB mass loss.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+126+Journal_of_Power_Sources:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-factor causal attribution of mass loss differences between SIB and LIB during thermal runaway",
+        "primary_boundary": "Mass loss difference has at least two identified contributing factors; single-factor attribution to energy content alone is inadmissible",
+        "intended_error_modes": [
+          "Single-factor causal reduction of multi-factor outcome",
+          "Universalizing a condition-specific observation about temperature across all heating conditions",
+          "Introducing false prerequisite conditions for evaluating a causal claim"
+        ],
+        "disallowed_extrapolations": [
+          "Universal temperature ordering from mass loss ordering across all conditions",
+          "Exclusive causal role of stored energy in mass loss differences"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A thermal runaway test is conducted on 18650-format lithium-ion cells (NMC811/SiC) and 18650-format sodium-ion cells under identical continuous heating at 128 W. The engineer records: (i) thermal runaway start temperatures, (ii) transition times from safety valve opening to thermal runaway, (iii) peak and average venting gas mass flow rates for lithium-ion cells, and (iv) surface and venting gas temperatures for both chemistries. The engineer attempts to estimate venting gas velocity for sodium-ion cells using the same optical method used for lithium-ion cells. Explain why this estimation fails for sodium-ion cells, identify what physical consequence of this limitation is for mass flow rate characterization of sodium-ion cells, and state what the available temperature data alone can and cannot establish about the relative hazard of the two chemistries."
+      },
+      "ground_truth": {
+        "gold_answer": "The optical velocity estimation method for lithium-ion cells relies on gas ignition as a visible marker to track flow. Sodium-ion cells produce no gas ignition during thermal runaway under the tested conditions, so the optical method has no trackable feature and velocity cannot be estimated. As a direct consequence, mass flow rate for sodium-ion cells cannot be calculated, since mass flow rate estimation depends on velocity values that are unavailable. Regarding hazard comparison from temperature data alone: the available data supports that sodium-ion cells reach lower peak surface and venting gas temperatures (all below 400°C versus exceeding 400°C surface and exceeding 1370°C venting gas for lithium-ion cells), and that this difference is partly attributable to absence of ignition and lower stored energy. However, temperature data alone cannot establish that sodium-ion cells are safer at the module level, because propagation behavior, mechanical impingement from mass flow, and gas composition hazard are not characterized by temperature measurements alone.",
+        "must_include": [
+          "Optical velocity method requires gas ignition as a visible marker, which is absent in sodium-ion cells",
+          "Mass flow rate for sodium-ion cells cannot be estimated due to unavailability of velocity values",
+          "Sodium-ion surface and venting gas temperatures remain below 400°C versus substantially higher values for lithium-ion cells",
+          "Temperature data alone is insufficient to establish module-level safety because mass flow, propagation, and gas composition are not captured"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming sodium-ion venting gas is non-flammable based on absence of ignition in this test",
+          "Concluding sodium-ion cells are safe for module use based solely on lower temperatures and mass loss",
+          "Inferring sodium-ion mass flow rates by analogy from lithium-ion values"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Measurement method dependency on physical preconditions, propagation of measurement limitations to derived quantities, and admissibility boundaries of temperature-based hazard comparison",
+        "primary_boundary": "Velocity and mass flow rate characterization of SIBs is blocked by absence of ignition; temperature data supports relative severity comparison but not comprehensive hazard assessment",
+        "intended_error_modes": [
+          "Assuming velocity can be estimated by analogy from LIB data",
+          "Treating lower temperature as sufficient for module-level safety conclusion",
+          "Conflating absence of ignition with non-flammable gas composition"
+        ]
+      }
+    }
+  ]
+}

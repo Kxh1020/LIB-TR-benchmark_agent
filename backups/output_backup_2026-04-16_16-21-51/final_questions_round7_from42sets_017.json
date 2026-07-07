@@ -1,0 +1,36 @@
+{
+  "mcqs": [],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "An engineer is designing an HF early-warning system for a battery storage facility containing LFP cells operating at variable SOC levels. The engineer proposes to set the detection alarm threshold based on historical gas analysis data collected using conventional unheated metallic transfer lines. The engineer also proposes to use the alarm-to-runaway interval as the response time budget for automated suppression. Identify two distinct technical problems with this design approach and explain the engineering mechanism behind each problem."
+      },
+      "ground_truth": {
+        "gold_answer": "Problem 1: The historical data collected using unheated metallic transfer lines systematically underestimates true HF concentrations because HF is highly adsorptive and corrosive, causing it to be partially or entirely lost before reaching the analyzer. Setting the alarm threshold from this data means the threshold may be orders of magnitude below the actual hazardous concentration, causing either false early alarms or, if the threshold is set proportionally low, failing to reflect the true severity of the hazard in the facility risk model. Problem 2: The alarm-to-runaway interval observed for LFP cells (~5 minutes under ~27 °C/min heating) is a useful response window, but its practical value depends on the detection system being able to register HF at venting onset. If the alarm threshold is set too high due to underestimated reference data, the system may not trigger at venting onset, effectively collapsing the available response interval. Additionally, LFP peak HF shows strong SOC dependence; at lower SOC the peak HF is approximately half that of 100% SOC, meaning a threshold calibrated at one SOC level may not be appropriate across the full SOC range of the facility.",
+        "must_include": [
+          "Unheated metallic transfer lines cause HF loss due to adsorption and corrosion, leading to underestimated reference concentrations",
+          "Hazard model or alarm threshold calibrated on underestimated data may be orders of magnitude below true concentrations",
+          "The venting-to-runaway interval is only usable if detection occurs at venting onset; a miscalibrated threshold may delay or prevent detection at that onset",
+          "LFP peak HF is strongly SOC-dependent; a single threshold may not be valid across all SOC levels present in the facility"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming the venting window is the same for NMC and LFP",
+          "Claiming metallic line loss affects timing of venting or runaway events",
+          "Claiming 50% SOC LFP cells produce no HF",
+          "Claiming the engineer can correct the threshold by a fixed factor without additional measurement"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Interaction between measurement artifact (transfer line HF loss) and detection system design, combined with SOC-dependent HF magnitude affecting threshold validity across operating conditions",
+        "primary_boundary": "Transfer line loss affects concentration magnitude and therefore threshold calibration validity, but not physical event timing; SOC dependence means a single threshold cannot be universally applied without accounting for SOC range",
+        "intended_error_modes": [
+          "Treating timing data as unaffected by measurement setup (scope confusion)",
+          "Ignoring SOC dependence when setting a single facility-wide threshold",
+          "Assuming a fixed correction factor can recover true HF from metallic line data"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "During thermal abuse of an LFP pouch cell, gas species are detected in a defined temporal sequence. Methane appears first, followed by HF and H2, with CO2 and CO detected last. The temperature thresholds associated with CH4 and H2 generation differ by approximately 130°C. A safety engineer is evaluating which mechanistic and diagnostic conclusions about this sequence are admissible.",
+        "options": [
+          "A. The early appearance of methane relative to H2 is consistent with the lower temperature threshold for anode-electrolyte solvent decomposition compared to the threshold for binder-lithium reactions.",
+          "B. Detection of H2 by a sensor before any CH4 signal has appeared would indicate that the binder-lithium reaction is occurring without prior electrolyte decomposition, which is mechanistically admissible given the evidence.",
+          "C. A sensor array that detects only CO and CO2 cannot confirm whether the cell has already passed through the CH4 and H2 generation stages, because CO and CO2 are detected last in the sequence.",
+          "D. The detection of HF before H2 implies that fluorine-containing species in the electrolyte decompose at a lower temperature than the binder-lithium reaction threshold.",
+          "E. Because CH4 is generated first, a methane sensor alone is sufficient to characterize the full gas hazard profile of LFP thermal runaway for ventilation system design.",
+          "F. The sequential gas detection pattern means that a sensor detecting CO2 as the first signal in an enclosure has likely already missed the earlier methane and HF warning stages."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "CH4 generation threshold is ~120°C (DMC decomposition) and H2 threshold is ~250°C (binder-lithium reaction), directly explaining CH4 appearing before H2 in the sequence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C008",
+              "TR_Gasventing+129+Journal_of_Power_Sources:C009",
+              "TR_Gasventing+129+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "H2 requires >250°C via binder-lithium reaction, which occurs after CH4 generation at >120°C; H2 appearing before CH4 contradicts the mechanistic temperature sequence.",
+            "error_type": "condition violation — contradicts temperature-ordered mechanism sequence",
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C008",
+              "TR_Gasventing+129+Journal_of_Power_Sources:C009"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "CO and CO2 are detected last; their presence alone confirms only that the final stage has been reached, not whether earlier CH4 and H2 stages occurred or were missed.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence states HF appears after CH4 but before H2; the evidence does not provide HF's specific temperature threshold, making this mechanistic inference unsupported.",
+            "error_type": "unsupported mechanistic inference — HF threshold not established in evidence",
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "CH4 being first does not make it sufficient for full hazard characterization; HF, H2, CO, and CO2 each present distinct hazards not captured by methane monitoring alone.",
+            "error_type": "scope overclaim — single-gas monitoring cannot characterize full hazard profile",
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Since CO2 is detected last in the sequence, a CO2-first signal in an enclosure implies the earlier methane, HF, and H2 stages have already occurred and their warning windows were missed.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanistic and diagnostic admissibility of conclusions derived from the temperature-ordered gas detection sequence in LFP thermal runaway",
+        "primary_boundary": "Gas sequence is temperature-threshold-ordered; CO2/CO detection last means earlier stages are already complete; single-gas monitoring insufficient for full hazard profile",
+        "intended_error_modes": [
+          "inverting temperature-ordered sequence for H2 vs CH4",
+          "inferring HF threshold without evidence",
+          "treating first-detected gas as sufficient for full characterization"
+        ],
+        "disallowed_extrapolations": [
+          "HF specific temperature threshold not in evidence",
+          "single-gas sufficiency for full hazard profile",
+          "H2 before CH4 mechanistic admissibility"
+        ]
+      }
+    }
+  ],
+  "short_answers": []
+}

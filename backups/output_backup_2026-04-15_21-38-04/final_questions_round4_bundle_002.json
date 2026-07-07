@@ -1,0 +1,111 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery electrolyte engineer is studying the evolution of the solid electrolyte interphase (SEI) on graphite anodes in LiPF6-based electrolytes. During initial formation cycling in a 1.0 M LiPF6/EC electrolyte, only ethylene gas is detected as a gaseous product, and the primary SEI components are lithium ethylene dicarbonate (LEDC) and LiF. When the same electrolyte system is stored at 55°C for 2 days with either Li2CO3 or LEDC present, both carbonate species decompose quantitatively in the presence of LiPF6 in DMC, producing gaseous CO2, LiF, and various electrolyte-soluble species. A separate experiment shows that adding vinylene carbonate (VC) as an additive inhibits EC reduction, reducing LEDC and ethylene generation, while generating poly(VC) and CO2, with the CO2 subsequently reduced to Li2CO3. The engineer must assess which conclusions about SEI composition, stability, and additive effects are admissible.",
+        "options": [
+          "A. The SEI formed in LiPF6/EC during initial cycling is predominantly composed of LEDC and LiF, with ethylene as the only gaseous byproduct of the formation process.",
+          "B. Elevated temperature storage of a graphite anode SEI containing LEDC in a LiPF6-based electrolyte can lead to SEI porosity increase because decomposition products include gases and electrolyte-soluble species that reduce the quantity of insoluble SEI components.",
+          "C. Adding VC to a LiPF6/EC electrolyte suppresses ethylene evolution during formation because VC is preferentially reduced ahead of EC, shifting the primary reduction pathway away from LEDC generation toward poly(VC) and Li2CO3 formation.",
+          "D. The Li2CO3 generated from CO2 reduction in VC-containing electrolytes is thermally stable in the presence of LiPF6 at moderate temperatures and therefore accumulates indefinitely in the SEI without further reaction.",
+          "E. Because LEDC decomposes more rapidly than Li2CO3 under identical LiPF6/DMC storage conditions at 55°C, SEI layers containing predominantly LEDC are less stable than those containing predominantly Li2CO3 under these conditions.",
+          "F. The quantitative decomposition of both Li2CO3 and LEDC in LiPF6/DMC at 55°C after 2 days confirms that neither carbonate species can persist in the SEI under any elevated temperature condition in LiPF6-based electrolytes.",
+          "G. VC addition to LiPF6/EC electrolyte changes the primary gaseous product of formation cycling from ethylene to CO2, consistent with VC preferentially generating CO2 rather than LEDC during reduction."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "C",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence explicitly states OEMS analysis confirms ethylene as the only gas evolved during initial formation in 1.0 M LiPF6/EC, and the initial SEI is predominantly LEDC and LiF.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+171+UnknownJournal:C001"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Evidence states that decomposition products of LEDC reacting with LiPF6 include gases and electrolyte-soluble species, and explicitly concludes this reduces insoluble SEI components and makes the SEI more porous. This is a direct evidence-supported causal chain.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+171+UnknownJournal:C003",
+              "TR_Mechanism+171+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence states VC reduction inhibits EC reduction, decreasing LEDC and ethylene generation, with VC preferentially reduced to poly(VC) and CO2. This mechanistic chain directly supports option C.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+171+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence directly contradicts this: Li2CO3 stored with LiPF6 in DMC at 55°C quantitatively decomposes after only 2 days. The claim that Li2CO3 accumulates indefinitely without further reaction is directly falsified by the evidence.",
+            "error_type": "Direct contradiction of stated evidence; ignoring condition-dependent decomposition",
+            "evidence_refs": [
+              "TR_Mechanism+171+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The evidence states both LEDC and Li2CO3 decompose quantitatively after 2 days at 55°C under the same conditions. The evidence does not provide a comparative rate between the two under identical conditions sufficient to conclude LEDC decomposes more rapidly than Li2CO3. The LEDC decomposition is described as more complex, not necessarily faster. This comparative rate claim is not admissible from the evidence.",
+            "error_type": "Unsupported comparative rate claim; evidence shows both decompose quantitatively but does not establish relative rates",
+            "evidence_refs": [
+              "TR_Mechanism+171+UnknownJournal:C002",
+              "TR_Mechanism+171+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence shows quantitative decomposition under specific conditions (LiPF6/DMC, 55°C, 2 days). Generalizing this to 'any elevated temperature condition' is an inadmissible overgeneralization beyond the stated experimental scope. The evidence does not cover all temperature ranges or electrolyte compositions.",
+            "error_type": "Overgeneralization from specific conditions to universal claim",
+            "evidence_refs": [
+              "TR_Mechanism+171+UnknownJournal:C002",
+              "TR_Mechanism+171+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "Evidence states VC inhibits EC reduction (reducing ethylene) and VC is preferentially reduced to generate CO2. With ethylene suppressed and CO2 generated as the primary gaseous product of VC reduction, this conclusion is mechanistically supported. This is a counterintuitive correct option because engineers familiar only with EC-based SEI might expect ethylene to remain the dominant gas.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+171+UnknownJournal:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of conclusions about SEI composition, thermal stability of carbonate species, and VC additive effects on formation gas evolution and SEI chemistry",
+        "primary_boundary": "Distinguishing condition-specific decomposition results from universal stability claims, and distinguishing admissible mechanistic conclusions from unsupported comparative rate claims",
+        "intended_error_modes": [
+          "Assuming Li2CO3 generated from VC reduction is stable in LiPF6 electrolyte",
+          "Overgeneralizing quantitative decomposition at specific conditions to all elevated temperatures",
+          "Inferring comparative decomposition rates from evidence that only establishes quantitative endpoint"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding LEDC decomposes faster than Li2CO3 without direct rate comparison evidence",
+          "Generalizing 55°C/2-day/DMC results to all LiPF6-based electrolyte conditions",
+          "Inferring that VC-derived Li2CO3 is stable in LiPF6 environments"
+        ]
+      }
+    }
+  ],
+  "short_answers": []
+}

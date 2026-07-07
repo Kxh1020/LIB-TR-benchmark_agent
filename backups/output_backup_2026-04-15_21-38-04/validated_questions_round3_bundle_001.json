@@ -1,0 +1,143 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is evaluating safety protection strategies for a cylindrical lithium-ion cell that will operate under conditions where both overcharge and external short-circuit events are credible abuse scenarios. The cell incorporates a pressure-responsive current interrupt device (CID) that activates at approximately 145 psi, a safety vent that opens at approximately 406 psi, a PTC thermistor with room-temperature resistance in the milliohm range that transitions to high resistance above 100°C, and a triple-layered PP/PE/PP separator whose PE middle layer melts near 130°C while the PP outer layers maintain structural integrity to approximately 165°C. The engineer must assess which protective mechanisms are reliably effective for each abuse scenario and identify which limitations are intrinsic to specific device types rather than remediable by design refinement. Which of the following assessments are supported by the described system and its known mechanism-level constraints?",
+        "options": [
+          "A. Under an overcharge scenario that produces inhomogeneous temperature distribution across the cell, the shutdown separator may fail to prevent thermal runaway even when the average cell temperature reaches the PE melting point, because localized regions may not reach the shutdown temperature while other regions already exceed it.",
+          "B. The PTC thermistor provides reliable protection against internal hot spots at the SEI layer and electrode surfaces because its resistance transition is triggered by the same electrochemical reactions that generate those hot spots.",
+          "C. If the CID activates correctly during a pressure-buildup event, the cell is rendered permanently non-functional, distinguishing it from shape memory alloy-based current interrupt approaches that restore electrical connection after temperature normalization.",
+          "D. The safety vent activation pressure for an 18650 cylindrical cell exceeds the CID activation pressure, which means that in a correctly functioning cell, gas venting will always occur before the CID activates during a pressure-escalation event.",
+          "E. A PTC thermistor placed at the cell terminal provides a meaningful but potentially delayed response to internal thermal events at the electrode level, because thermal conduction from internal hot spots to the PTC location introduces a lag that depends on the distance between the hot spot and the device.",
+          "F. The triple-layered separator design ensures complete protection against thermal runaway under rapid localized overheating because the PP outer layers maintain structural integrity above the PE shutdown temperature, preventing physical collapse of the separator.",
+          "G. For prismatic and pouch cell formats, the absence of PTC thermistors means that current limitation during external short-circuit events above 100°C must be achieved through alternative mechanisms, since PTC protection is not commonly integrated into those formats."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence explicitly states that cylindrical cells with shutdown separators went into thermal runaway under overcharge conditions, with the possible reason being inhomogeneous temperature distribution causing incomplete separator shutdown. This directly supports the conclusion that non-uniform temperature distribution can prevent full separator shutdown even when the average temperature reaches the threshold.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+180+The_Safety_Challenges_and_Strategies_of_Using_Lithium‐Ion_Batteries:C025",
+              "TR_Protection+180+The_Safety_Challenges_and_Strategies_of_Using_Lithium‐Ion_Batteries:C024"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence states that PTC response to internal hot spots at the SEI layer and electrodes may be delayed due to placement distance from those locations. The PTC responds to temperature at its placement location, not directly to electrochemical reactions. Claiming that the PTC is triggered by the same reactions that generate internal hot spots misidentifies the trigger mechanism and ignores the spatial separation limitation.",
+            "error_type": "Mechanism substitution; ignoring placement distance limitation",
+            "evidence_refs": [
+              "TR_Protection+180+The_Safety_Challenges_and_Strategies_of_Using_Lithium‐Ion_Batteries:C016"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence states that the CID in cylindrical cells is a one-time protective device that permanently disables the battery once activated, and that shape memory alloy CIDs restore electrical connection after temperature normalization. This distinction is directly supported and represents a fundamental difference in reversibility between the two device types.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+180+The_Safety_Challenges_and_Strategies_of_Using_Lithium‐Ion_Batteries:C010",
+              "TR_Protection+180+The_Safety_Challenges_and_Strategies_of_Using_Lithium‐Ion_Batteries:C012"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "While the safety vent activation pressure (406 psi) exceeds the CID activation pressure (145 psi), the conclusion that gas venting always occurs before CID activation is not supported. The CID activates at lower pressure and is designed to interrupt current before the vent pressure is reached. The ordering of activation thresholds means the CID is intended to activate first, not the vent. Reversing this sequence misinterprets the protective hierarchy. Additionally, CID malfunction due to incorrect weld strength could prevent CID activation entirely, meaning the vent might activate without prior CID activation.",
+            "error_type": "Causal overclaim; misinterpreting activation pressure ordering as activation sequence guarantee; ignoring CID malfunction conditions",
+            "evidence_refs": [
+              "TR_Protection+180+The_Safety_Challenges_and_Strategies_of_Using_Lithium‐Ion_Batteries:C018",
+              "TR_Protection+180+The_Safety_Challenges_and_Strategies_of_Using_Lithium‐Ion_Batteries:C009"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Evidence states that delays in PTC response to internal hot spots at the SEI layer and electrodes may occur due to placement distance. This directly supports the conclusion that the PTC provides a response that is meaningful but potentially delayed, with the delay governed by thermal conduction distance between the internal hot spot and the device location.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+180+The_Safety_Challenges_and_Strategies_of_Using_Lithium‐Ion_Batteries:C016",
+              "TR_Protection+180+The_Safety_Challenges_and_Strategies_of_Using_Lithium‐Ion_Batteries:C015"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Evidence explicitly states that the shutdown separator function can provide little protection under rapid localized overheating, overcharging, or internal short circuits. The mechanical integrity of the PP outer layers does not compensate for the failure of the PE shutdown layer to close uniformly under rapid or localized heating. Claiming complete protection contradicts the stated limitation.",
+            "error_type": "Protective mechanism overclaim; ignoring stated limitation under rapid localized overheating",
+            "evidence_refs": [
+              "TR_Protection+180+The_Safety_Challenges_and_Strategies_of_Using_Lithium‐Ion_Batteries:C024",
+              "TR_Protection+180+The_Safety_Challenges_and_Strategies_of_Using_Lithium‐Ion_Batteries:C025"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "Evidence states that PTC thermistors are typically absent in prismatic and pouch batteries but commonly found in cylindrical cells. Since the PTC's function is to limit current by transitioning to high resistance above 100°C during external short circuits, its absence in prismatic and pouch formats means this specific current-limiting mechanism is unavailable in those formats and must be replaced by alternative approaches.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+180+The_Safety_Challenges_and_Strategies_of_Using_Lithium‐Ion_Batteries:C013",
+              "TR_Protection+180+The_Safety_Challenges_and_Strategies_of_Using_Lithium‐Ion_Batteries:C034"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism-level limitations of individual cell-level safety devices (CID, PTC, shutdown separator) across different abuse scenarios and cell formats, including the distinction between device activation threshold and reliable protective function.",
+        "primary_boundary": "Each safety device addresses specific failure modes under specific conditions; none provides universal protection, and limitations are intrinsic to the device mechanism rather than remediable by threshold adjustment alone.",
+        "intended_error_modes": [
+          "Assuming PTC responds directly to electrochemical reactions rather than to temperature at its placement location (option B)",
+          "Misinterpreting activation pressure ordering as guaranteeing activation sequence (option D)",
+          "Overclaiming separator protection under rapid localized heating based on mechanical integrity of outer layers (option F)"
+        ],
+        "disallowed_extrapolations": [
+          "CID activation pressure ordering does not guarantee that CID always activates before vent under all malfunction conditions",
+          "Separator mechanical integrity above shutdown temperature does not compensate for incomplete shutdown under inhomogeneous heating"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery pack designer is evaluating whether to use metal plates between cells to mitigate thermal runaway propagation. Testing on a five-cell stack at 100% SOC shows that 0.8 mm plates double the total propagation time but do not prevent full propagation, while 1.6 mm plates limit propagation to only the second cell, and 3.2 mm plates completely prevent propagation beyond the initiating cell. The designer notes that the metal plates absorb substantially more energy than the incremental energy delivered to the next cell during gap-crossing, and that the thermal resistance of the plate material itself is orders of magnitude smaller than the contact resistance at cell-to-plate interfaces. The designer concludes that for a production pack containing several hundred cells, simply scaling up the plate thickness used in the five-cell test will reliably achieve the same mitigation outcome. Identify two distinct reasons why this conclusion is not fully supported, and explain the mechanism underlying each reason."
+      },
+      "ground_truth": {
+        "gold_answer": "First, the propagation threshold (expressed as the ratio of stored cell energy to total system heat capacity, i.e., potential temperature rise ΔT) is specific to the tested cell type and configuration. The critical ΔT values separating full propagation, limited propagation, and complete mitigation cannot be directly extrapolated to other cell types or configurations. A plate thickness that achieves mitigation in the five-cell test may not achieve the same outcome in a different cell chemistry, geometry, or pack arrangement because the cell heat capacity, stored energy, and thermal contact characteristics will differ. Second, applying metal plates between every cell in a pack of hundreds of cells would constitute a significant increase in weight, cost, and volume. The five-cell result demonstrates physical effectiveness at small scale but does not address the practical engineering constraint that the thermal management subsystem mass should remain within acceptable limits relative to total pack weight. The scale-up imposes a system-level penalty that was not present in the five-cell demonstration and cannot be ignored in a production design.",
+        "must_include": [
+          "The propagation threshold (ΔT or stored energy to heat capacity ratio) is specific to the tested cell type and configuration and cannot be directly extrapolated to other cell types or configurations.",
+          "Applying metal plates to a pack of hundreds of cells would constitute a significant increase in weight, cost, and volume, representing a practical constraint not captured by the five-cell test.",
+          "The mitigation outcome depends on whether the potential temperature rise falls below a configuration-specific threshold, not solely on the absolute plate thickness."
+        ],
+        "disallowed_extrapolations": [
+          "Do not claim that the plate thickness values from the five-cell test are universally applicable to any cell chemistry or pack configuration.",
+          "Do not claim that contact resistance or plate conduction resistance alone determines whether mitigation is achieved.",
+          "Do not claim that the weight or volume penalty can be overcome simply by using thinner plates without evidence that thinner plates achieve the required ΔT reduction."
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of scaling a small-stack mitigation result to a large production pack, including both the configuration-specificity of the propagation threshold and the practical system-level constraints of adding inter-cell thermal mass.",
+        "primary_boundary": "The propagation threshold is cell-type and configuration-specific; the practical weight and volume penalty of inter-cell plates at pack scale is a system-level constraint not captured by component-level or small-stack testing.",
+        "intended_error_modes": [
+          "Assuming the ΔT threshold values from the five-cell test apply universally to any cell type or pack configuration",
+          "Ignoring the weight, cost, and volume penalty when scaling from five cells to hundreds of cells",
+          "Treating plate thickness as the sole determinant of mitigation outcome without accounting for cell-specific energy and heat capacity"
+        ]
+      }
+    }
+  ]
+}

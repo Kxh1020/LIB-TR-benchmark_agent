@@ -1,0 +1,358 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A lithium-ion cell with a graphite anode and LFP cathode is undergoing adiabatic cycling at a very low rate (C/20). The cathode model accounts for inter-particle lithium redistribution driven by phase separation, while an alternative model treats secondary particles without this redistribution mechanism. Both models use identical SEI decomposition kinetics. An engineer observes that the cell modeled with inter-particle redistribution enters a self-accelerating thermal event significantly earlier during discharge than the alternative model, even though both cells start at the same state of charge and temperature. Which of the following conclusions are admissible based on this scenario?",
+        "options": [
+          "A. The earlier onset of the thermal event in the redistribution model is primarily caused by separator melting occurring at a lower temperature due to the phase-separation mechanism in the cathode.",
+          "B. The elevated heat generation in the redistribution model during intermediate depths of discharge is sufficient to initiate the SEI decomposition chain earlier, even though the triggering mechanism originates in the cathode rather than the anode.",
+          "C. The inter-particle lithium redistribution increases heat generation at intermediate depths of discharge, which advances the point at which anode-side exothermic reactions are initiated under adiabatic conditions.",
+          "D. Because both models share the same SEI kinetics, the difference in thermal runaway onset timing must be attributable entirely to differences in electrolyte salt decomposition rates.",
+          "E. The redistribution-driven heat generation difference would be expected to disappear at high discharge rates, where phase-separation-driven particle-by-particle lithiation is suppressed.",
+          "F. The earlier thermal runaway in the redistribution model demonstrates that cathode transport phenomena can govern the timing of anode-initiated exothermic reactions under low-rate adiabatic conditions.",
+          "G. The capacity loss associated with SEI regeneration is the primary cause of the earlier thermal runaway onset in the redistribution model, since regeneration consumes cyclable lithium before the alternative model reaches the same depth of discharge."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "C",
+          "E",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "Separator melting is a distinct threshold event (~130–170°C) unrelated to the phase-separation mechanism in the cathode. The evidence links the earlier onset to transport-driven heat generation, not to a change in separator melting temperature.",
+            "error_type": "Mechanism substitution distractor",
+            "evidence_refs": [
+              "TR_Modelling+170+Energy_Conversion_and_Management:C004",
+              "TR_Modelling+172+Journal_of_Industrial_and_Engineering_Chemistry:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The first part is directionally correct, but attributing the trigger to the cathode phase-separation mechanism directly causing SEI decomposition conflates the heat source (cathode transport) with the thermally-activated reaction (anode SEI). The chain is: cathode heat generation raises cell temperature, which then initiates anode SEI decomposition. The option's framing that the triggering mechanism 'originates in the cathode' misattributes the SEI decomposition initiation. More critically, it omits the necessary temperature-mediated coupling step, making it an incomplete and misleading causal claim.",
+            "error_type": "Causal overclaim / mechanism attribution error",
+            "evidence_refs": [
+              "TR_Modelling+170+Energy_Conversion_and_Management:C003",
+              "TR_Modelling+170+Energy_Conversion_and_Management:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence directly supports that inter-particle redistribution causes significantly higher heat generation at intermediate depths of discharge under low-rate conditions, and that this higher transport-driven heat generation initiates the thermal runaway chain earlier under adiabatic conditions. The causal chain from cathode heat generation to earlier anode SEI activation is supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+170+Energy_Conversion_and_Management:C003",
+              "TR_Modelling+170+Energy_Conversion_and_Management:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Both models share the same SEI kinetics, but this does not imply electrolyte salt decomposition rates differ. The difference is in cathode transport heat generation. Attributing the timing difference to electrolyte salt decomposition is unsupported and contradicts the stated shared kinetics premise.",
+            "error_type": "Mechanism substitution / causal overclaim",
+            "evidence_refs": [
+              "TR_Modelling+170+Energy_Conversion_and_Management:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The evidence states that the elevated heat generation in the redistribution model occurs because of particle-by-particle lithiation at low currents and low local overpotentials. At high rates, overpotentials increase and the phase-separation-driven redistribution behavior is suppressed, which is consistent with the evidence's condition that this effect is specific to low currents. This is a counterintuitive but evidence-supported conclusion: the dangerous effect diminishes at higher rates.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+170+Energy_Conversion_and_Management:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The evidence supports that higher transport-driven heat generation in the cathode model initiates the thermal runaway chain earlier, meaning cathode transport phenomena govern the timing of the overall thermal event even though the exothermic reactions are anode-side. This is a counterintuitive conclusion since thermal runaway is typically associated with anode-side chemistry.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+170+Energy_Conversion_and_Management:C004",
+              "TR_Modelling+170+Energy_Conversion_and_Management:C002"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "SEI regeneration and associated capacity loss are consequences that occur after the thermal runaway chain has been initiated, not the primary cause of its earlier onset. The earlier onset is driven by higher heat generation preceding SEI regeneration. This option reverses the causal sequence.",
+            "error_type": "Causal ordering reversal",
+            "evidence_refs": [
+              "TR_Modelling+170+Energy_Conversion_and_Management:C005",
+              "TR_Modelling+170+Energy_Conversion_and_Management:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Causal chain from cathode transport heat generation to thermal runaway onset timing, and rate-dependence of the phase-separation redistribution effect",
+        "primary_boundary": "The redistribution-driven heat increase is specific to low-rate, intermediate depth-of-discharge conditions; it does not represent a general cathode property independent of rate",
+        "intended_error_modes": [
+          "Mechanism substitution (separator melting, electrolyte salt decomposition)",
+          "Causal ordering reversal (SEI regeneration as cause vs. consequence)",
+          "Ignoring rate-dependence of the phase-separation effect",
+          "Misattributing the triggering mechanism to the cathode rather than recognizing temperature-mediated coupling to anode reactions"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming the redistribution effect persists at high rates",
+          "Attributing the onset difference to separator or electrolyte salt chemistry differences",
+          "Treating SEI regeneration capacity loss as the initiating cause"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A multi-jelly-roll prismatic lithium-ion battery undergoes thermal runaway propagation (TRP) under test conditions. Measurements show that the thermal runaway front (TRF) propagation speed within each cell accelerates from an initial value to a significantly higher value as propagation proceeds. The temperature at the front of each cell during TRF propagation is observed to substantially exceed the temperature threshold required to trigger thermal runaway in the next jelly roll. A second battery sample with more jelly rolls than the first is tested under otherwise identical conditions. An engineer must assess which interventions and conclusions are supported by this scenario.",
+        "options": [
+          "A. The fact that front temperatures substantially exceed the triggering threshold implies that reducing thermal conductivity of the cell casing alone is sufficient to prevent TRP under these test conditions.",
+          "B. The acceleration of TRF propagation speed within each cell is consistent with a process driven by temperature gradients, exothermic reactions, and gas flow acting together rather than any single factor.",
+          "C. The battery sample with more jelly rolls is expected to exhibit a more pronounced in-cell TRF acceleration behavior compared to the sample with fewer jelly rolls.",
+          "D. Because the front temperature exceeds the triggering threshold by a large margin, TRP suppression requires simultaneously reducing the energy available at the propagation front, not merely increasing thermal resistance.",
+          "E. The observed venting direction changes during TRP in multi-jelly-roll prismatic batteries are caused by the sequential triggering of individual jelly rolls, with each triggered jelly roll redirecting venting toward the safety valve.",
+          "F. Increasing the number of jelly rolls in a prismatic cell reduces TRF propagation speed because the additional thermal mass distributes heat over a larger volume.",
+          "G. Under the described test conditions, a thicker thermal resistance layer between cells would be expected to contribute to TRP suppression by reducing the constant that governs the boundary temperature driving propagation."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "C",
+          "E",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "The evidence states that the limit temperature at each cell front is much higher than the TR triggering temperature, and therefore TRP cannot be eliminated under tested conditions. Reducing thermal conductivity alone (one of several factors) is insufficient to prevent TRP when front temperatures so substantially exceed the trigger threshold. This option overclaims the effectiveness of a single intervention.",
+            "error_type": "Protective mechanism overclaim / single-variable control",
+            "evidence_refs": [
+              "TR_Modelling+171+Renewable_Energy:C003",
+              "TR_Modelling+171+Renewable_Energy:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The evidence explicitly attributes in-cell TRF acceleration to the combined action of significant temperature gradients, chemical reactions, and gas flow along the propagation direction. This multi-factor attribution is directly supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+171+Renewable_Energy:C001"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence directly states that in-cell TRF acceleration behavior is more noticeable for batteries with more jelly rolls, making this conclusion admissible.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+171+Renewable_Energy:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "While this appears cautious and mechanistically reasonable, the evidence does not support the specific claim that TRP suppression requires reducing available energy rather than increasing thermal resistance. The evidence identifies multiple suppression strategies including thicker thermal resistance layers, higher heat capacity, lower thermal conductivity, higher convection, and heat absorption components. The option incorrectly narrows the suppression requirement to energy reduction alone, which is a conservative but unsupported constraint.",
+            "error_type": "Conservative but incorrect / unsupported constraint narrowing",
+            "evidence_refs": [
+              "TR_Modelling+171+Renewable_Energy:C003",
+              "TR_Modelling+171+Renewable_Energy:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The evidence states that venting direction changes during TRP in multi-jelly-roll prismatic batteries point to lines between each triggered jelly roll and the safety valve, with the number of direction changes corresponding to the number of jelly roll triggering events. This is directly supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+171+Renewable_Energy:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence states that more jelly rolls leads to more pronounced in-cell TRF acceleration, which is the opposite of what this option claims. Additional jelly rolls do not reduce propagation speed; they are associated with more noticeable acceleration behavior.",
+            "error_type": "Direction reversal distractor",
+            "evidence_refs": [
+              "TR_Modelling+171+Renewable_Energy:C002"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "The evidence identifies a thicker thermal resistance layer as one of the supplementary strategies for decreasing the constant C in the TRF boundary temperature equation, which leads to TRP suppression. This is directly supported as a contributing suppression strategy.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+171+Renewable_Energy:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "TRF propagation acceleration mechanisms, jelly roll count effects, suppression strategies, and the admissibility of single-intervention claims when front temperatures far exceed trigger thresholds",
+        "primary_boundary": "When front temperatures substantially exceed the triggering threshold, no single intervention is sufficient to prevent TRP; suppression requires reducing the boundary temperature constant through multiple combined strategies",
+        "intended_error_modes": [
+          "Overclaiming single-intervention sufficiency for TRP prevention",
+          "Reversing the direction of jelly roll count effect on TRF acceleration",
+          "Narrowing suppression requirements to energy reduction alone without evidence support"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming thermal conductivity reduction alone prevents TRP when front temperatures greatly exceed trigger thresholds",
+          "Inferring that more jelly rolls reduces propagation speed due to thermal mass"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A lithium-ion battery is subjected to controlled heating. The following sequence of events is recorded: at approximately 80–90°C, breakdown of a protective interfacial layer on the anode begins with associated gas release; at approximately 120°C, the exposed anode active material reacts with electrolyte generating hydrocarbons; at approximately 130°C, one type of polymer separator begins to melt; at approximately 150°C, decomposition of the electrolyte salt accelerates substantially, producing a reactive intermediate that further decomposes the electrolyte and reacts with trace moisture to emit a toxic gas. An engineer uses a surface thermocouple to monitor the cell and observes a temperature plateau near 125°C lasting several minutes before a rapid temperature escalation begins. Which of the following conclusions about the state of the cell at the moment the rapid escalation begins are admissible?",
+        "options": [
+          "A. The rapid escalation is most likely initiated by the onset of polymer separator melting, since 125°C is below the melting point of the higher-melting separator type but consistent with the lower-melting type beginning to fail.",
+          "B. The surface thermocouple reading of 125°C is sufficient to confirm that internal temperatures have not yet reached the electrolyte salt decomposition threshold, since surface and internal temperatures equilibrate rapidly in small cells.",
+          "C. At the moment rapid escalation begins, SEI decomposition and anode-electrolyte reactions have already occurred, meaning the cell has already lost a portion of its protective interfacial layer before the escalation onset.",
+          "D. The toxic gas associated with electrolyte salt decomposition cannot yet be present in significant quantities at the moment rapid escalation begins, because the salt decomposition threshold has not been reached according to the surface measurement.",
+          "E. The temperature plateau before escalation is consistent with an endothermic process temporarily absorbing heat, which could include separator melting absorbing latent heat before the short circuit energy release dominates.",
+          "F. Because hydrocarbon generation from anode-electrolyte reaction begins near 120°C and the plateau is observed near 125°C, it is admissible that this reaction is ongoing at the plateau, contributing to the thermal state before escalation.",
+          "G. The rapid escalation onset near 125°C conclusively rules out electrolyte salt decomposition as a contributing mechanism during the escalation phase, since that threshold is not reached until 150°C."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence places PE separator melting near 130°C and PP near 170°C. A plateau near 125°C followed by rapid escalation is consistent with the PE separator beginning to fail near 130°C triggering an internal short circuit. The surface temperature of 125°C is close to but below the PE melting point, and the escalation onset is consistent with separator failure initiating the short circuit energy release. This is admissible as the most mechanistically consistent explanation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+172+Journal_of_Industrial_and_Engineering_Chemistry:C004",
+              "TR_Modelling+172+Journal_of_Industrial_and_Engineering_Chemistry:C001"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Surface thermocouple readings cannot confirm internal temperatures, particularly during active exothermic reactions. The assumption that surface and internal temperatures equilibrate rapidly is not supported by the evidence and represents a measurement scope violation. Internal temperatures may be higher than surface readings during active heat generation.",
+            "error_type": "Measurement scope overclaim / surface-to-internal extrapolation",
+            "evidence_refs": [
+              "TR_Modelling+172+Journal_of_Industrial_and_Engineering_Chemistry:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence establishes that SEI breakdown begins above 80°C and anode-electrolyte reactions occur near 120°C. Since the cell has already passed through these temperatures before reaching the 125°C plateau, both processes have already been initiated. This is a counterintuitive but correct conclusion: the cell's protective layer has already been compromised before the most dramatic thermal event begins.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+172+Journal_of_Industrial_and_Engineering_Chemistry:C002",
+              "TR_Modelling+172+Journal_of_Industrial_and_Engineering_Chemistry:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "This appears conservative and cautious but is incorrect because the surface thermocouple cannot confirm internal temperatures. Internal temperatures may have reached or exceeded 150°C even if the surface reads 125°C, especially given active exothermic reactions. Concluding that toxic gas is absent based solely on surface temperature is an inadmissible inference.",
+            "error_type": "Conservative but incorrect / measurement scope violation",
+            "evidence_refs": [
+              "TR_Modelling+172+Journal_of_Industrial_and_Engineering_Chemistry:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "While separator melting is endothermic and could contribute to a temperature plateau, the evidence does not support attributing the plateau specifically to latent heat absorption from separator melting followed by short circuit energy release. The plateau is at 125°C, slightly below the PE melting point of ~130°C. Attributing the plateau to separator melting latent heat is not directly supported and introduces a mechanism not established in the evidence for this temperature range.",
+            "error_type": "Mechanism attribution without sufficient evidence support",
+            "evidence_refs": [
+              "TR_Modelling+172+Journal_of_Industrial_and_Engineering_Chemistry:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The evidence places anode-electrolyte hydrocarbon-generating reactions near 120°C. The plateau is observed near 125°C, meaning the cell is within the temperature range where this reaction is active. It is admissible that this reaction is ongoing during the plateau phase, contributing to the thermal state.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+172+Journal_of_Industrial_and_Engineering_Chemistry:C003"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "The surface temperature reading of 125°C does not rule out internal temperatures reaching 150°C or higher, particularly during active exothermic reactions. Concluding that electrolyte salt decomposition is ruled out as a contributing mechanism during escalation based on surface temperature alone is an inadmissible inference and represents a measurement scope violation.",
+            "error_type": "Measurement scope overclaim / causal elimination without sufficient basis",
+            "evidence_refs": [
+              "TR_Modelling+172+Journal_of_Industrial_and_Engineering_Chemistry:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of conclusions about internal cell state based on surface temperature measurements during a multi-stage thermal event, and identification of which reactions have already occurred at a given surface temperature",
+        "primary_boundary": "Surface thermocouple readings cannot confirm internal temperatures; conclusions about internal reaction states based solely on surface measurements are inadmissible",
+        "intended_error_modes": [
+          "Surface-to-internal temperature extrapolation",
+          "Using surface temperature to rule out reactions whose thresholds may have been exceeded internally",
+          "Attributing temperature plateau to a specific endothermic mechanism without sufficient evidence",
+          "Failing to recognize that prior temperature stages mean earlier reactions have already occurred"
+        ],
+        "disallowed_extrapolations": [
+          "Confirming absence of toxic gas based on surface temperature alone",
+          "Ruling out electrolyte salt decomposition during escalation based on surface temperature",
+          "Attributing plateau specifically to separator latent heat absorption"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A lithium-ion battery model is constructed in which the cathode accounts for inter-particle lithium redistribution due to phase separation, and the anode uses standard SEI decomposition kinetics with an onset above 60°C. The cell is cycled adiabatically at a very low rate. The model predicts that during SEI regeneration following the initial decomposition, the cell experiences capacity loss, voltage reduction, and increased heat generation rate. An engineer proposes that once SEI regeneration begins, the thermal event becomes self-reinforcing even without any further increase in the external heat source. Explain the mechanism by which SEI regeneration creates a self-reinforcing thermal progression, identifying the specific physical quantities involved and the direction of their changes, and state whether the cathode's inter-particle redistribution behavior is necessary for this self-reinforcing loop to operate once regeneration has begun."
+      },
+      "ground_truth": {
+        "gold_answer": "SEI regeneration consumes cyclable lithium, which reduces cell capacity and lowers cell voltage. The lower cell voltage results from higher overpotentials caused by the additional passivating layers formed during regeneration and increased transport losses. Both higher overpotentials and increased transport losses directly increase the rate of heat generation within the cell. Under adiabatic conditions, this increased heat generation raises cell temperature, which in turn accelerates SEI decomposition kinetics (Arrhenius-governed), exposing more anode surface to electrolyte and driving further SEI regeneration. This creates a self-reinforcing loop: regeneration → capacity and voltage loss → higher overpotentials and transport losses → higher heat generation rate → higher temperature → faster SEI decomposition → more regeneration. Once this loop is established, the cathode inter-particle redistribution is not necessary for the loop to continue operating, because the loop is driven by anode-side SEI chemistry and the resulting electrochemical-thermal coupling. The redistribution behavior contributed to initiating the thermal event earlier by elevating heat generation at intermediate depths of discharge, but the self-reinforcing regeneration loop operates independently of the cathode model once it is triggered.",
+        "must_include": [
+          "SEI regeneration causes loss of cyclable lithium leading to capacity loss",
+          "Capacity loss and additional passivating layers increase overpotentials",
+          "Increased overpotentials and transport losses increase heat generation rate",
+          "Under adiabatic conditions, increased heat generation raises temperature",
+          "Higher temperature accelerates SEI decomposition (Arrhenius kinetics above 60°C)",
+          "This creates a self-reinforcing loop between heat generation and SEI decomposition",
+          "The cathode inter-particle redistribution is NOT necessary for the self-reinforcing loop once regeneration has begun; it contributed to earlier initiation but not to the loop mechanism itself"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming the cathode redistribution mechanism is part of the self-reinforcing loop",
+          "Claiming the loop requires external heating to continue",
+          "Attributing the self-reinforcing behavior to separator melting or electrolyte salt decomposition",
+          "Stating that SEI regeneration directly causes separator failure as part of the primary loop"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism of self-reinforcing thermal progression through SEI regeneration and electrochemical-thermal coupling, and the distinction between what initiated the event versus what sustains the loop",
+        "primary_boundary": "The cathode redistribution behavior governs initiation timing but not the self-reinforcing loop mechanism, which is entirely anode-side and electrochemical-thermal in nature",
+        "intended_error_modes": [
+          "Conflating initiation mechanism (cathode redistribution heat) with sustaining mechanism (SEI regeneration loop)",
+          "Omitting the role of overpotentials and transport losses in heat generation increase",
+          "Failing to identify the Arrhenius temperature dependence as the feedback amplifier",
+          "Incorrectly including separator melting or electrolyte decomposition as part of the primary self-reinforcing loop"
+        ]
+      }
+    }
+  ]
+}

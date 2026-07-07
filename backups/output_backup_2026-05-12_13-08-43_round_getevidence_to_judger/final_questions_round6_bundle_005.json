@@ -1,0 +1,38 @@
+{
+  "mcqs": [],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery safety engineer is reviewing two aspects of thermal runaway gas behavior in LFP cells. First, during thermal runaway, the gas mixture composition evolves over time: hydrogen-producing reactions terminate early, followed by termination of olefinic reactions, with CO2 becoming dominant in later stages. Second, as thermal runaway progresses, the flammable range of the gas mixture narrows. The engineer proposes that the narrowing of the flammable range in later stages is directly caused by the shift in gas composition toward CO2 dominance, and therefore that early-stage venting gases are more hazardous than late-stage gases from an explosion risk perspective. Evaluate the admissibility of this proposal. Identify what the evidence supports, what it does not support, and whether the engineer's causal claim and comparative hazard conclusion are justified. Explain the reasoning chain required."
+      },
+      "ground_truth": {
+        "gold_answer": "The engineer's proposal contains two components that must be evaluated separately. The first component—that the flammable range of the gas mixture narrows as thermal runaway progresses—is directly supported by the evidence. The second component—that this narrowing is caused by the shift toward CO2 dominance—is mechanistically plausible and consistent with the evidence (CO2 is a diluent that reduces flammability), but the evidence does not explicitly establish this as the sole or confirmed causal mechanism; it is an admissible inference but not a proven causal claim. The third component—that early-stage gases are more hazardous from an explosion risk perspective than late-stage gases—is admissible as a directional conclusion because the flammable range is wider early in the process when hydrogen-producing and olefinic reactions are active, and narrows as these terminate and CO2 dominates. However, the engineer should not claim this as a precise quantitative comparison without additional data on gas concentrations and mixture fractions at each stage. The reasoning chain is: reaction sequence (H2-producing → olefinic → CO2-dominant) → compositional shift toward less flammable species → narrowing flammable range → reduced explosion risk in later stages. The causal link between CO2 dominance and flammable range narrowing is mechanistically consistent but should be stated as a supported inference rather than a proven cause-effect relationship. The comparative hazard conclusion (early more hazardous than late) is admissible in directional terms.",
+        "must_include": [
+          "The narrowing of the flammable range as TR progresses is directly supported by evidence",
+          "The causal attribution to CO2 dominance is mechanistically consistent but not explicitly proven by the evidence alone",
+          "Early-stage gases having a wider flammable range than late-stage gases is an admissible directional conclusion",
+          "The reaction sequence (H2-producing terminates first, then olefinic, then CO2 dominant) supports the compositional shift reasoning",
+          "The engineer's causal claim is an admissible inference but overstates certainty if presented as established cause-effect"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming the causal mechanism is proven rather than inferred",
+          "Quantifying the relative hazard difference between early and late stages without supporting data",
+          "Concluding that late-stage gases are non-flammable or safe",
+          "Applying this conclusion to non-LFP chemistries or different TR conditions"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of causal inference linking gas composition evolution to flammable range narrowing, and the validity of comparative hazard conclusions across TR stages",
+        "primary_boundary": "Evidence supports the trend (narrowing flammable range) and the sequence (reaction termination order and CO2 dominance) but does not explicitly prove the causal link between CO2 dominance and flammable range narrowing; directional hazard comparison is admissible but quantitative comparison is not",
+        "intended_error_modes": [
+          "causal_overclaim from correlation",
+          "overgeneralization of hazard conclusion",
+          "treating admissible inference as proven mechanism",
+          "ignoring boundary between directional and quantitative conclusions"
+        ]
+      }
+    }
+  ]
+}

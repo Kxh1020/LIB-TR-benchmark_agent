@@ -1,0 +1,320 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A 280 Ah LFP battery at 50% SOC is subjected to overheating abuse. Engineers monitor surface stress as a potential early warning signal. The stress signal transitions from exponential to linear growth at a rate exceeding the defined threshold, and thermal runaway is subsequently confirmed. A separate 0% SOC battery from the same batch is tested under identical heating conditions; the front surface temperature approaches 400°C but thermal runaway does not occur. Which of the following conclusions are admissible based on the described conditions?",
+        "options": [
+          "A. The stress-based transition point provides a longer advance warning than gas detection via safety valve opening for the 50% SOC battery.",
+          "B. The absence of thermal runaway in the 0% SOC battery is consistent with most lithium ions residing on the positive electrode side, reducing the rate of exothermic reactions.",
+          "C. For the 0% SOC battery, the stress signal becomes irrelevant and provides no actionable warning before any safety event.",
+          "D. The stress change rate threshold defined for early warning is set below the observed transition-point rates of tested batteries to incorporate a safety margin.",
+          "E. Because the 0% SOC battery does not undergo thermal runaway, its peak internal stress must remain lower than that of the 50% SOC battery throughout the entire heating test.",
+          "F. The Joule-Thomson effect during safety valve opening is expected to produce a measurable temperature decrease in both the 50% SOC and 0% SOC batteries."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "Evidence states the stress-based transition point provides approximately 2000 s advance warning for 50% SOC batteries, while gas detection via safety valve opening provides nearly 1000 s advance warning. The stress method provides more advance warning, but the option states the stress method provides longer warning than gas detection — this directional claim is actually correct. However, re-examining: stress gives ~2000 s, gas detection gives ~1000 s, so stress does give longer warning. But this option is actually correct. Re-evaluating: the option is supported by C001 (~2000 s for stress) vs C010 (~1000 s for gas detection). This is correct.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+167+Process_Safety_and_Environmental_Protection:C001",
+              "TR_Modelling+167+Process_Safety_and_Environmental_Protection:C010"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Evidence directly supports that at 0% SOC, most lithium ions have been transferred to the positive electrode, leading to slower chemical reaction rates and preventing thermal runaway. This mechanistic explanation is evidence-supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+167+Process_Safety_and_Environmental_Protection:C008"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Evidence explicitly states that even for 0% SOC batteries that do not undergo thermal runaway, the stress signal provides a warning approximately 816.3 s before the safety valve opens, enhancing evacuation time. The stress signal retains actionable value.",
+            "error_type": "scope_expansion_beyond_evidence",
+            "evidence_refs": [
+              "TR_Modelling+167+Process_Safety_and_Environmental_Protection:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence states that observed transition-point stress change rates are both higher than 0.47 kPa/s, and the defined threshold is set at 0.45 kPa/s, explicitly incorporating a safety margin below the observed values. This is directly supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+167+Process_Safety_and_Environmental_Protection:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The evidence does not support a direct comparison of peak internal stress between 0% SOC and 50% SOC batteries throughout the entire heating test. The absence of thermal runaway does not necessarily imply lower peak stress at all stages; the stress dynamics are driven by gas generation and mechanical deformation, not solely by thermal runaway occurrence. This is an unsupported extrapolation.",
+            "error_type": "unsupported_extrapolation",
+            "evidence_refs": [
+              "TR_Modelling+167+Process_Safety_and_Environmental_Protection:C008"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Evidence states that batteries at different SOCs all experience a temperature decrease when the safety valve opens, attributed to the Joule-Thomson effect. This applies to both 50% SOC and 0% SOC batteries, as the effect is described as occurring across different SOC levels.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+167+Process_Safety_and_Environmental_Protection:C009"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of stress-based early warning conclusions and SOC-dependent thermal runaway mechanism for LFP batteries",
+        "primary_boundary": "The stress signal retains warning value even when thermal runaway does not occur; the 0% SOC no-runaway outcome is mechanistically explained by lithium-ion distribution, not by absence of stress signals",
+        "intended_error_modes": [
+          "Assuming stress signal is only useful when thermal runaway occurs (Option C)",
+          "Inferring peak stress magnitude from thermal runaway outcome without evidence (Option E)",
+          "Misidentifying the relative warning times of stress vs gas detection methods"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming stress signal is irrelevant for batteries that do not undergo thermal runaway",
+          "Inferring internal stress magnitude from thermal outcome alone",
+          "Assuming Joule-Thomson cooling only applies to high-SOC batteries"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An NCM523/graphite 18650 battery at 100% SOC undergoes thermal runaway. Calorimetric analysis of harvested electrode-electrolyte samples shows that the anode-electrolyte reaction and the cathode-anode reaction together account for the dominant share of heat generation, while cathode-only and separator contributions are minor. A separate set of batteries is tested across SOC levels from 0% to 100%. At 0% SOC, the maximum temperature rise rate does not meet the thermal runaway criterion. The safety valve opening temperature decreases as SOC increases. Which of the following statements are admissible?",
+        "options": [
+          "A. Interventions targeting anode-electrolyte and cathode-anode reactions would address a larger fraction of total thermal runaway heat than interventions targeting cathode decomposition alone.",
+          "B. The decrease in safety valve opening temperature with increasing SOC indicates that gas generation inside the cell accelerates at higher SOC.",
+          "C. Since thermal runaway does not occur at 0% SOC, the anode-electrolyte reaction enthalpy at 0% SOC is negligible and can be excluded from any thermal model.",
+          "D. The reaction onset temperatures for cathode-anode and anode-electrolyte reactions decrease as SOC increases, meaning that at higher SOC the cell becomes vulnerable to thermal triggering at lower temperatures.",
+          "E. The minor heat contribution of the separator at 100% SOC implies that separator failure is not involved in the thermal runaway sequence at any SOC.",
+          "F. The dominance of anode-electrolyte heat generation at 100% SOC is sufficient to conclude that the same dominance applies at 50% SOC."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "At 100% SOC, anode-electrolyte and cathode-anode reactions account for 52.2% and 40.9% of total heat, totaling over 93%, while cathode alone accounts for 5.6%. Targeting the dominant reactions addresses a far larger heat fraction than targeting cathode decomposition alone. This is a direct admissible inference.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+168+Journal_of_Cleaner_Production:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Evidence explicitly states that the decrease in safety valve opening temperature with increasing SOC indicates that the rate of gas production within the battery increases with increasing SOC. This is a direct evidence-supported conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+168+Journal_of_Cleaner_Production:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Evidence states that reaction enthalpy increases with SOC, meaning at 0% SOC the enthalpy is lower but not necessarily negligible. Furthermore, the absence of thermal runaway at 0% SOC is due to the rate criterion not being met, not because reactions are absent. Concluding the enthalpy is negligible and should be excluded is an unsupported overclaim.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Modelling+168+Journal_of_Cleaner_Production:C002",
+              "TR_Modelling+168+Journal_of_Cleaner_Production:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence states that reaction onset temperatures for cathode-anode and anode-electrolyte reactions roughly decrease as SOC increases. Lower onset temperatures at higher SOC mean the cell can be triggered into exothermic reactions at lower external temperatures, which is a direct mechanistic implication.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+168+Journal_of_Cleaner_Production:C001"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The evidence reports heat contribution fractions at 100% SOC only. A minor heat contribution does not imply that separator failure is mechanistically absent or uninvolved at any SOC. This is an inadmissible generalization from a heat fraction measurement to a mechanistic exclusion across all SOC levels.",
+            "error_type": "overgeneralization_distractor",
+            "evidence_refs": [
+              "TR_Modelling+168+Journal_of_Cleaner_Production:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The heat contribution fractions are reported only at 100% SOC. Evidence shows that reaction enthalpies change with SOC, so the relative dominance of different reactions may shift at intermediate SOC. Extrapolating the 100% SOC heat fraction hierarchy to 50% SOC is not supported by the evidence.",
+            "error_type": "condition_violation_distractor",
+            "evidence_refs": [
+              "TR_Modelling+168+Journal_of_Cleaner_Production:C002",
+              "TR_Modelling+168+Journal_of_Cleaner_Production:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of heat generation hierarchy conclusions and SOC-dependent reaction onset behavior in NCM523/graphite cells",
+        "primary_boundary": "Heat fraction data at 100% SOC cannot be directly extrapolated to other SOC levels; absence of thermal runaway at 0% SOC does not eliminate reaction enthalpy from thermal models",
+        "intended_error_modes": [
+          "Inferring negligible enthalpy from absence of thermal runaway (Option C)",
+          "Generalizing 100% SOC heat fraction hierarchy to all SOC levels (Option F)",
+          "Treating minor heat contribution as mechanistic absence across all conditions (Option E)"
+        ],
+        "disallowed_extrapolations": [
+          "Applying 100% SOC heat fraction data to 50% SOC without evidence",
+          "Equating failure to meet thermal runaway criterion with absence of exothermic reactions",
+          "Inferring separator non-involvement from low heat contribution fraction"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A lithium-ion battery is overcharged at varying charging rates from 1 C to 6 C. Expansion force is monitored continuously. At 1 C, the expansion-force rise rate shows a plateau stage during overcharging, and the time interval between the expansion-force warning signal and the temperature-based warning signal is 682 s. At 6 C, the plateau disappears and the maximum expansion-force rise rate reaches 505.6 N/s, while the time interval between the two warning signals drops to 151 s. The internal short-circuit temperature at 5 C and 6 C is approximately 101°C, compared to approximately 120°C at 1–4 C. The SOC at which venting begins remains approximately constant across all charging rates. An engineer proposes to deploy this expansion-force monitoring system at the module level without additional validation. Which of the following statements are admissible?",
+        "options": [
+          "A. At lower charging rates, the expansion-force warning signal provides a longer time window for intervention before temperature-based warning is triggered.",
+          "B. The disappearance of the plateau in the expansion-force rise rate above 3 C indicates a regime change in the internal gas generation or mechanical response of the battery.",
+          "C. Because the SOC boundary for venting is rate-independent, the thermal severity of venting events is also rate-independent.",
+          "D. The reduction in internal short-circuit temperature at 5 C and 6 C compared to lower rates is consistent with accelerated lithium dendrite formation at high charging rates reducing the thermal threshold for short-circuit initiation.",
+          "E. Deploying the expansion-force monitoring system at the module level is directly justified by the cell-level results without further validation.",
+          "F. At 6 C, the shorter warning interval between expansion-force and temperature signals reduces the practical intervention window compared to 1 C, even though the expansion-force signal itself is detected earlier in absolute temperature terms."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence directly states that the time interval between the expansion-force warning and temperature warning increases steadily from 151 s at 6 C to 682 s at 1 C as charging rate decreases. Lower charging rates therefore provide a longer intervention window.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+169+Journal_of_Cleaner_Production:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Evidence states that a plateau stage is observed in the expansion-force rise rate below 3 C, and this plateau disappears above 3 C. This behavioral transition at a specific charging rate threshold indicates a regime change in the underlying physical process governing force evolution.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+169+Journal_of_Cleaner_Production:C006"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The evidence states that the SOC boundary for venting is rate-independent. However, thermal severity depends on multiple factors including heat generation rate, which is strongly rate-dependent (e.g., maximum force rise rate increases from 31.4 N/s at 1 C to 505.6 N/s at 6 C). Rate-independence of the venting SOC boundary does not imply rate-independence of thermal severity. This is a causal overclaim linking a geometric/electrochemical boundary to a thermal outcome.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Modelling+169+Journal_of_Cleaner_Production:C003",
+              "TR_Modelling+169+Journal_of_Cleaner_Production:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence explicitly attributes the decreased internal short-circuit temperature at 5 C and 6 C to rapid proliferation of lithium dendrites at high charging rates. This mechanistic explanation is directly evidence-supported and represents a counterintuitive result — higher rate lowers the short-circuit threshold.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+169+Journal_of_Cleaner_Production:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence explicitly states that the efficacy of the expansion-force early warning method at the module and system levels requires further additional validation and cannot be directly extrapolated from cell-level results. The engineer's proposal violates this stated limitation.",
+            "error_type": "scale_transfer_beyond_evidence",
+            "evidence_refs": [
+              "TR_Modelling+169+Journal_of_Cleaner_Production:C008"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Evidence states that the expansion-force warning can be detected at temperatures as low as 35.4°C, which is an absolute temperature-based detection threshold. The claim in Option F conflates the absolute detection temperature with the relative time interval between the two warning signals. The evidence supports that at 6 C the interval is shorter (151 s vs 682 s at 1 C), but whether the absolute expansion-force detection temperature is earlier or later in absolute terms at 6 C vs 1 C is not directly supported by the evidence as framed. The option introduces an unsupported comparison of absolute detection temperatures across rates.",
+            "error_type": "unsupported_extrapolation",
+            "evidence_refs": [
+              "TR_Modelling+169+Journal_of_Cleaner_Production:C001",
+              "TR_Modelling+169+Journal_of_Cleaner_Production:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of expansion-force warning system conclusions across charging rates and scale transfer limitations",
+        "primary_boundary": "Rate-independence of venting SOC boundary does not imply rate-independence of thermal severity; cell-level results cannot be directly extrapolated to module level",
+        "intended_error_modes": [
+          "Equating rate-independent venting SOC boundary with rate-independent thermal severity (Option C)",
+          "Applying cell-level validation to module-level deployment without additional validation (Option E)",
+          "Conflating absolute detection temperature with relative warning interval (Option F)"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring thermal severity from SOC venting boundary alone",
+          "Extrapolating cell-level expansion-force results to module or system level without validation",
+          "Treating rate-independent geometric boundaries as implying rate-independent thermal outcomes"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery engineer is designing an early warning system for a 280 Ah LFP battery pack. Two candidate monitoring approaches are under consideration: (1) monitoring voltage drop and temperature surge, and (2) monitoring internal surface stress transitions. The engineer notes that for batteries at 50% SOC, the stress-based method identifies a characteristic signal transition approximately 2000 s before thermal runaway, while voltage and temperature monitoring provides warning only within the final 20 s before thermal runaway. For batteries at 0% SOC, which do not undergo thermal runaway, the stress signal still precedes safety valve opening by approximately 816 s. A third approach — gas detection at safety valve opening — provides approximately 1000 s of advance warning. The engineer must also define a stress change rate threshold for the warning system. Observed transition-point stress change rates across tested batteries exceed 0.47 kPa/s. Explain: (a) why the stress-based method provides a substantially longer warning window than voltage and temperature monitoring, referencing the physical mechanism that makes stress an earlier indicator; (b) why the stress signal retains warning value even for batteries that do not undergo thermal runaway; and (c) what engineering principle justifies setting the warning threshold at 0.45 kPa/s rather than at the observed minimum of 0.47 kPa/s, and what risk this introduces."
+      },
+      "ground_truth": {
+        "gold_answer": "(a) Voltage and temperature changes become detectable only when electrochemical and thermal processes have already reached a near-runaway state — voltage collapse and rapid temperature rise are late-stage manifestations of internal degradation. Surface stress, by contrast, responds to internal gas generation and mechanical deformation that begin earlier in the abuse sequence, as the battery swells before catastrophic heat release. The transition from exponential to linear stress growth reflects a change in the internal physical state that precedes the thermal cascade, making it an earlier indicator than terminal electrochemical or thermal signals. (b) Even when thermal runaway does not occur — as in 0% SOC batteries where slower chemical reactions prevent runaway — internal gas generation and mechanical deformation still occur as the battery is heated and the safety valve eventually opens. The stress signal tracks these mechanical changes regardless of whether they culminate in thermal runaway, so it provides actionable warning time before the safety valve event even in non-runaway scenarios. (c) Setting the threshold at 0.45 kPa/s, below the observed minimum of 0.47 kPa/s, incorporates a safety margin so that the warning is triggered before any observed transition point, reducing the risk of missed detections. The introduced risk is an increase in false positive rate — the system may issue warnings for stress change rates between 0.45 and 0.47 kPa/s that correspond to non-critical events, potentially leading to unnecessary interventions or alarm fatigue.",
+        "must_include": [
+          "stress reflects internal gas generation or mechanical deformation that precedes thermal cascade",
+          "voltage and temperature are late-stage indicators responding only near runaway",
+          "stress signal retains value in non-runaway scenarios because mechanical/gas events still occur before safety valve opening",
+          "threshold set below observed minimum to provide safety margin against missed detections",
+          "threshold below observed values introduces risk of false positives or unnecessary warnings"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming stress monitoring eliminates all false negatives",
+          "Claiming the 0.45 kPa/s threshold is universally applicable to all battery chemistries or sizes",
+          "Claiming voltage monitoring provides no useful information at any stage of thermal abuse",
+          "Inferring that the stress method is superior to gas detection at all SOC levels without qualification"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism-based justification for early warning signal selection and threshold engineering trade-offs in LFP battery thermal runaway monitoring",
+        "primary_boundary": "Stress signal is an early mechanical indicator that precedes electrochemical and thermal terminal events; its utility extends to non-runaway scenarios; threshold setting below observed values involves a safety-false-positive trade-off",
+        "intended_error_modes": [
+          "Attributing early warning solely to faster sensor response rather than to earlier physical event",
+          "Claiming stress signal is only useful when thermal runaway occurs",
+          "Failing to identify the false positive risk introduced by a conservative threshold",
+          "Confusing the safety margin rationale with a claim of higher sensitivity"
+        ]
+      }
+    }
+  ]
+}

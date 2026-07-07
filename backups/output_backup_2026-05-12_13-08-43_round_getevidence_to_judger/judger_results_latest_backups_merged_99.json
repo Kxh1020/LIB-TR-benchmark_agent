@@ -1,0 +1,1342 @@
+{
+  "final_questions_newdata_success_merged::TR_Gasventing+13+Journal_of_Hazardous_Materials__TR_Gasventing+14+Journal_of_Energy_Storage__TR_Gasventing+15+Journal_of_Energy_Storage": [
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "D",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "D",
+        "F"
+      ],
+      "score": 1
+    }
+  ],
+  "final_questions_newdata_success_merged::TR_Modelling+25+Thermal_Science_and_Engineering_Progress__TR_Modelling+5+Journal_of_Energy_Storage__TR_Modelling+6+Journal_of_Energy_Storage": [
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "First claim (detection time equals internal gas-generation start): not admissible. The first signal from a sensor placed outside the soft-pack shell is delayed by transport and release processes (gas must be generated, accumulate, migrate to a leak/vent path, pass through/around packaging, then reach and diffuse into the sensor). Therefore the ~370 s mark is a first external detection time, not the true onset time of internal gas generation.\n\nSecond claim (use an H2-selective sensor because H2 is the first gas in LFP thermal runaway): not admissible as stated. The situation described is 2C charging with first external gas detection; it is not established that the event is thermal runaway, and the “first gas” sequence for thermal runaway does not necessarily govern early gassing during abusive/overcharge or normal charging conditions. Even if H2 can be an early species in LFP thermal runaway, selecting an H2-only sensor could miss or delay detection of other dominant/earlier-released gases under non-thermal-runaway gassing, so the justification is not valid without confirming the failure mode and expected gas composition.",
+      "gold_answer": "The first colleague's claim is not admissible. External sensors detect gas only after it has accumulated to a sufficient concentration inside the battery and escaped through the shell; the 370-second mark reflects when accumulated gas reaches the external sensor, not the actual onset of internal gas generation, which occurred earlier. The second colleague's claim is admissible. Evidence shows H2 is the first gas generated during LFP thermal runaway under both overheating and overcharging conditions, so an H2-selective sensor is mechanistically appropriate for earliest possible external detection. However, the inherent internal accumulation lag still applies regardless of gas species selectivity.",
+      "score": 0.5,
+      "reason": "Correctly judges the first claim as not admissible and gives the proper accumulation/escape/transport lag reasoning. But incorrectly judges the second claim as not admissible; the gold answer deems it admissible because H2 is first generated in LFP thermal runaway (including overcharging), while noting the external detection lag still remains."
+    }
+  ],
+  "final_questions_newdata_success_merged::TR_Gasventing+16+Journal_of_Energy_Storage__TR_Gasventing+17+Journal_of_Energy_Storage__TR_Gasventing+18+Journal_of_Energy_Storage": [],
+  "final_questions_newdata_success_merged::TR_Modelling+19+Journal_of_Energy_Storage__TR_Modelling+20+Journal_of_Energy_Storage__TR_Modelling+21+Journal_of_Energy_Storage": [
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Repeated slight overcharge gradually ages and destabilizes the cell (e.g., accumulates internal damage/heat, raises SOC, increases internal resistance and reactivity, and can create latent defects such as lithium plating and weakened separators). By the time TR finally initiates, the cell is in a more energetic and more reactive preconditioned state, so the runaway is more violent and transfers heat to neighbors more effectively, making propagation faster and total energy release larger than when TR is triggered abruptly before such preconditioning develops. The implication for early warning design is that systems must detect slow-developing precursors (mild overcharge/temperature rise, resistance/voltage drift, heat accumulation trends) rather than relying only on acute-threshold alarms, because low-rate abuse can lead to the most severe propagation once TR starts.",
+      "gold_answer": "Repeated slight overcharge cycles produce a longer incubation period during which heat accumulates progressively within the cell. By the time TR is triggered, the cell has already stored significantly more internal energy than a cell driven to TR by a rapid external thermal event, which does not allow the same degree of pre-TR heat accumulation. This elevated internal energy state at TR onset results in a more energetic event and faster propagation to adjacent cells. The engineering implication is that early warning systems must detect the slow, cumulative pre-TR signatures during the incubation period—potentially days before the event—rather than relying on threshold exceedance of acute abuse signals. Systems that only monitor for rapid anomalies will miss the overcharge-induced incubation pathway entirely, and the consequence of missing it is a more severe TR event than would occur from the acute abuse scenarios the system was designed to detect.",
+      "score": 0.93,
+      "reason": "Matches the gold mechanism: slight overcharge gives a longer incubation with cumulative heat/energy buildup so TR starts from a higher-energy state, causing more violent TR and faster propagation. Also matches the implication: early warning must detect slow cumulative precursors/trends, not only acute threshold alarms. Adds extra degradation mechanisms (plating, separator weakening) not required but not disallowed; minor missing emphasis on incubation length relative to acute abuse, though implied."
+    }
+  ],
+  "final_questions_newdata_success_merged::TR_Modelling+22+Energy_Reports__TR_Modelling+23+Energy_Storage_Materials__TR_Modelling+24+Applied_Energy": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "D"
+      ],
+      "gold_answer": [
+        "A",
+        "D"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Thermal runaway starts with SEI decomposition (about 80–120°C) and proceeds through anode–electrolyte reaction (~100°C), then electrolyte decomposition (>200°C) and binder reactions (>260°C). Cathode chemistry mainly changes how much heat is released when the cathode reacts with the electrolyte; choosing LFP instead of LCO reduces the total heat from this cathode–electrolyte reaction, so less additional heat is fed back into the cell to drive later stages harder, reducing overall runaway severity. The stage most directly affected by cathode selection is the cathode–electrolyte reaction (the cathode-driven heat release, occurring in the higher-temperature portion associated with electrolyte decomposition).",
+      "gold_answer": "The early stages of thermal runaway (SEI decomposition, anode-electrolyte reaction) are independent of cathode chemistry and occur in both LCO and LFP cells at similar temperatures. The cathode chemistry most directly affects the heat released when the cathode material reacts with the electrolyte. LFP releases substantially less heat in this reaction than LCO, which ranks highest among common cathode materials. Because this cathode-electrolyte reaction contributes to the total heat driving temperature escalation through subsequent stages (electrolyte decomposition above 200°C, binder reactions above 260°C), lower cathode heat release reduces the likelihood that the cell reaches these higher-temperature thresholds, thereby reducing overall thermal runaway severity. The cathode-electrolyte reaction stage is the one most directly differentiated by chemistry selection.",
+      "score": 0.9,
+      "reason": "Correctly explains that cathode chemistry mainly affects the cathode–electrolyte heat release and that lower heat from LFP reduces escalation into later stages, identifying the cathode–electrolyte reaction stage. It does not explicitly state the required point that SEI decomposition and anode–electrolyte reactions are independent of cathode chemistry, and it omits the explicit LCO-highest/LFP-lowest heat release ranking."
+    }
+  ],
+  "final_questions_newdata_success_merged::TR_Modelling+16+Journal_of_Energy_Storage__TR_Modelling+17+Journal_of_Energy_Storage__TR_Modelling+18+Journal_of_Energy_Storage": [
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Above ~100°C the separator begins to shrink, which can cause loss of electrode spacing, pore closure/changed ionic transport, and ultimately internal shorting (and associated rapid Joule heating/exothermic reactions). A model that does not include separator shrinkage/melting and short-circuit heat generation will underpredict the heat release and temperature rise, so it will predict thermal runaway onset too late. This introduces a non-conservative (unsafe) error: it underestimates the risk and can miss/late-warn TR onset.",
+      "gold_answer": "Above approximately 100°C, separator shrinkage can create physical contact between electrodes, initiating a micro internal short circuit (MISC). The heat generated by this ISC is not captured in the model, causing the model to underestimate temperature after MISC onset. Because the model predicts lower temperatures and delays the predicted TR trigger time relative to reality, it is non-conservative for safety assessment: it overestimates the time available before TR and underestimates the thermal hazard severity, which could lead to inadequate safety margins if used directly for design or protection system timing.",
+      "score": 1.0,
+      "reason": "Matches the gold: attributes discrepancy above 100°C to separator shrinkage causing loss of spacing/physical contact leading to (micro) internal short and extra Joule heating not in the model, which makes the model underpredict temperature and delay TR onset. Correctly states this is non-conservative/unsafe (underestimates hazard and late-warns TR)."
+    }
+  ],
+  "final_questions_newdata_success_merged::TR_Protection+119+Journal_of_Energy_Storage__TR_Protection+120+Journal_of_Energy_Storage__TR_Protection+121+Journal_of_Energy_Storage": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "D"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Propagation between cells can be suppressed because, at the module level, the cooling/heat-removal pathways (dominated by radiation, ~65% of the heat leaving the module) can be designed so that the maximum net heat transfer rate out of the module is greater than or comparable to the net heat flow from a runaway cell into neighboring cells, keeping adjacent cells below their trigger conditions. In contrast, suppressing thermal runaway within a single cell is fundamentally harder because calorimetry shows the defining asymmetry: the single-cell maximum heat accumulation (generation) rate during runaway far exceeds the maximum net heat transfer rate achievable by any practical cooling system. This rate relationship implies that module-level strategy should focus on limiting inter-cell heat transfer (especially radiative coupling) and enhancing outward heat rejection/insulation barriers to prevent propagation, rather than attempting to remove heat fast enough to arrest the runaway reaction inside the initiating cell.",
+      "gold_answer": "Thermal runaway propagation between cells can be suppressed because the heat that must be intercepted at the inter-cell boundary is the net heat transfer rate between cells, which is approximately 30 times smaller than the heat accumulation rate within the triggering cell. A cooling strategy only needs to match or exceed this inter-cell transfer rate to break the propagation chain. In contrast, suppressing thermal runaway within a single cell would require a cooling system capable of removing heat at a rate matching the internal heat accumulation rate, which exceeds 1000 W and is approximately 20–30 times larger than any achievable net heat transfer rate. This makes single-cell suppression practically infeasible with current cooling approaches. At the module level, the designer targets the inter-cell heat flux, which is within the range of achievable cooling power, rather than the full internal generation rate. The dominance of radiation (~65% of total heat transfer) also means that module-level thermal management must account for radiative pathways, not only conduction or convection.",
+      "score": 0.86,
+      "reason": "Correctly explains the asymmetry: propagation suppression targets the smaller inter-cell heat transfer that cooling can match, while single-cell suppression would require removing heat at the much larger internal heat accumulation rate, which is impractical; also notes radiation ~65% and its design implication. Missing the key quantitative relationship (≈20–30× larger) and the explicit statement that inter-cell transfer is ≈30× smaller than the accumulation rate."
+    }
+  ],
+  "final_questions_newdata_success_merged::TR_Protection+116+Case_Studies_in_Thermal_Engineering__TR_Protection+117+Case_Studies_in_Thermal_Engineering__TR_Protection+118+Case_Studies_in_Thermal_Engineering": [
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "The conclusion is not supported because increasing PPCM thickness mainly increases the amount of phase-change material and the heat-transfer path length, which (i) provides more latent-heat absorption capacity and (ii) raises thermal resistance, thereby slowing heat flow from Cell 1 to Cell 2 and strongly extending the time required to heat the neighboring cell to runaway conditions. However, the peak temperature of a cell is dominated by the cell’s own thermal runaway heat generation and subsequent venting/combustion and is only weakly affected by additional PPCM once the local interface reaches the phase-change temperature and the material near the cell is already melted/saturated; extra thickness farther from the cell contributes little additional peak-temperature suppression over the tested range. Under these conditions, PPCM thickness primarily addresses the protection objective of delaying/impeding thermal runaway propagation between cells, not equally reducing peak cell temperature.",
+      "gold_answer": "PPCM thickness effectively delays TR propagation time because it increases the thermal resistance and latent heat absorption between cells, slowing heat transfer to adjacent cells. However, peak temperature reduction is limited because the low thermal conductivity of the battery material and the high speed of TR progression mean that heat generated within a cell during TR cannot be efficiently extracted by the PPCM before peak temperatures are reached. Therefore, PPCM thickness primarily addresses propagation delay rather than peak temperature limitation. The two objectives respond differently to thickness increase: delay scales substantially with thickness while peak temperature reduction saturates, making thickness an asymmetric lever that cannot be assumed to control both outcomes proportionally.",
+      "score": 0.82,
+      "reason": "Correctly explains that thicker PPCM increases thermal resistance/latent heat absorption, greatly delaying propagation, while peak temperature reduction shows diminishing returns because peak temperature is dominated by the cell’s own runaway heat and PPCM near the interface quickly saturates. It also identifies propagation delay as the primary objective. However, it omits the specific physical constraints in the gold answer: low thermal conductivity of the battery material and the high speed of TR limiting heat extraction before peak temperature."
+    }
+  ],
+  "final_questions_newdata_success_merged::TR_Gasventing+7+Journal_of_Energy_Storage__TR_Gasventing+8+Journal_of_Energy_Storage__TR_Gasventing+9+Journal_of_Energy_Storage": [
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "D"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "score": 1
+    }
+  ],
+  "final_questions_newdata_success_merged::TR_Gasventing+25+Journal_of_Energy_Storage__TR_Gasventing+5+Journal_of_Energy_Storage__TR_Gasventing+6+Journal_of_Energy_Storage": [
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Not mechanistically admissible from the given information: the CO2 dominance in the LFP thermal‑runaway gas at normal SOC is an observation, while the LEL changes in the separate study are tied to a specific overcharge‑driven mechanism (higher cutoff voltage → thicker SEI → less CO2 + more vaporized solvent → lower LEL). For the proposal to be valid, the causal chain would have to be: higher CO2 fraction in the vented mixture (with other combustible components held comparable) → increased inerting/dilution → increased LEL (i.e., less flammable mixture). This benefit would be reduced or reversed if conditions shift the vented mixture toward more vaporized solvent/hydrocarbons (e.g., overcharge/high cutoff voltage producing more solvent vapor and less CO2), which decreases the LEL despite any CO2 present.",
+      "gold_answer": "The reasoning is mechanistically admissible in direction: CO2 is not combustible and its presence in a gas mixture dilutes combustible components, which raises the LEL of the mixture. The causal chain required is: high CO2 fraction → dilution of combustible hydrocarbons and solvents in the gas mixture → higher LEL → reduced explosion risk at a given gas concentration. This chain is consistent with the evidence that decreased CO2 content (from SEI thickening under overcharge) lowers LEL. However, the benefit would be reduced or reversed if the cell undergoes overcharge cycling, because SEI thickening then reduces CO2 content and increases vaporized solvent content in the thermal runaway gas, shifting the composition toward more flammable mixtures regardless of the baseline chemistry.",
+      "score": 0.72,
+      "reason": "Captures the key dilution mechanism (high CO2 can inert/dilute combustibles → higher LEL) and gives the correct undermining condition (overcharge/high cutoff → thicker SEI → less CO2 + more solvent vapor → lower LEL). However, it incorrectly states the reasoning is \"not mechanistically admissible\" rather than admissible in direction but conditional, so it partially contradicts the gold’s main admissibility claim."
+    }
+  ],
+  "final_questions_newdata_success_merged::TR_Modelling+13+Applied_Energy__TR_Modelling+14+Journal_of_Energy_Storage__TR_Modelling+15+2024_6th_International_Conference_on_Electrical_Engineering_and_Control_Technolo": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "B",
+        "C",
+        "F"
+      ],
+      "gold_answer": [
+        "B",
+        "C",
+        "F"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "B",
+        "E"
+      ],
+      "gold_answer": [
+        "B",
+        "C",
+        "E"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Not admissible; cathode-side decomposition should not be included from the beginning because it starts near 250°C. Below 250°C, heat generation is dominated by anode-side reactions (SEI decomposition and anode–electrolyte reactions).",
+      "gold_answer": "The proposal is not admissible as stated. Cathode active material decomposition begins only near 250°C, so including it from the start of heating is inconsistent with the evidence-defined temperature thresholds. Below 250°C, heat generation is dominated by anode-side and anode-electrolyte interface reactions, specifically SEI decomposition and the reaction between anode active material and electrolyte. Positive-electrolyte reactions (130–170°C) also contribute in that range, but the evidence explicitly identifies anode-electrolyte interface reactions as the dominant source below 250°C. A model that activates cathode decomposition below its threshold would overestimate heat generation in the sub-250°C regime.",
+      "score": 1.0,
+      "reason": "Prediction correctly rejects including cathode decomposition from the start because it begins near 250°C, and correctly identifies anode-side/SEI and anode–electrolyte interface reactions as dominant below 250°C. Mention of positive-electrolyte contribution is optional and not required for correctness."
+    }
+  ],
+  "final_questions_newdata_success_merged::TR_Gasventing+22+Journal_of_Energy_Storage__TR_Gasventing+23+Journal_of_Energy_Storage__TR_Gasventing+24+Journal_of_Hazardous_Materials": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "D",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "D",
+        "F"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Mechanism: the ejected powder particles are relatively large/coarse, giving low specific surface area and slow oxidation/combustion kinetics so a flame cannot accelerate or generate significant overpressure in a dispersed cloud. Boundary condition: if the material were present as a much finer fraction (e.g., strong size reduction/ultrafine dust), the explosion-hazard conclusion would no longer be admissible.",
+      "gold_answer": "The ejected powder particles are predominantly in the 147–210 µm size range without grinding or processing. Particles of this size cannot form a stable suspension in air, which is a prerequisite for dust explosion propagation. Without stable suspension, the powder-air mixture cannot maintain the uniform dispersion needed to sustain a deflagration front, so no explosion pressure above 0.05 MPa was observed across the tested concentration range. The admissibility of this conclusion is bounded by the particle size condition: if the powder were subjected to grinding, pulverization, or sieving that reduced particle size substantially, stable suspension could become possible, and the no-explosion conclusion would no longer be admissible.",
+      "score": 0.6,
+      "reason": "Correctly identifies that coarse particle size explains lack of explosion and that finer, size-reduced dust (e.g., after grinding) could invalidate the conclusion. However, it gives the wrong primary mechanism (kinetics/surface area) instead of the key gold mechanism that large particles cannot form a stable suspended dust cloud in air, which is required for dust-explosion propagation."
+    }
+  ],
+  "final_questions_newdata_success_merged::TR_Protection+131+Journal_of_Energy_Storage__TR_Protection+132+Journal_of_Energy_Storage__TR_Protection+133+Journal_of_Energy_Storage": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "C",
+        "F"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Cooling effectiveness is governed by the gas’s convective heat transfer capability, i.e., its thermophysical properties (especially thermal conductivity and resulting heat-transfer coefficient). Argon’s chemical inertness does not determine cooling performance; at the same flow speed its lower thermal conductivity (and thus lower heat transfer coefficient) makes it cool worse than nitrogen/air despite being inert. Design implication: do not switch to argon expecting equal or better thermal-runaway protection at the same flow; if argon is used, higher flow/stronger cooling design is required, and nitrogen/air is preferred for effective convective cooling.",
+      "gold_answer": "Cooling gas effectiveness in suppressing thermal runaway propagation is governed primarily by heat capacity, not chemical inertness. Evidence shows nitrogen outperforms argon and air because of its higher heat capacity, while argon exhibits the lowest effectiveness of the three gases due to its lower heat capacity. Argon's chemical inertness is irrelevant to its heat transfer capability; a chemically inert gas with low heat capacity will still transfer less thermal energy per unit mass than a gas with higher heat capacity at identical flow conditions. The design implication is that gas selection should prioritize heat capacity over chemical inertness: nitrogen is the preferred cooling medium among common gases for reducing thermal runaway propagation risk at equivalent flow speeds.",
+      "score": 0.55,
+      "reason": "Correctly rejects the idea that argon’s chemical inertness improves cooling and concludes argon cools worse and shouldn’t be chosen over nitrogen at the same flow. However, it identifies the governing property as thermal conductivity/heat-transfer coefficient rather than (primarily) heat capacity as required by the gold answer, and it does not clearly state nitrogen outperforms both argon and air specifically due to higher heat capacity."
+    }
+  ],
+  "final_questions_newdata_success_merged::TR_Protection+134+Journal_of_Energy_Storage__TR_Protection+204+Case_Studies_in_Thermal_Engineering__TR_Protection+205+Journal_of_Energy_Storage": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "D",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "D",
+        "F"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "D",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "D",
+        "F"
+      ],
+      "score": 1
+    }
+  ],
+  "final_questions_random3_merged::TR_Dynamics+26+UnknownJournal__TR_Dynamics+27+RSC_Advances__TR_Dynamics+3+UnknownJournal": [
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "B",
+        "C",
+        "F"
+      ],
+      "gold_answer": [
+        "B",
+        "C",
+        "F"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "The flaw is equating lower external thermal indicators (peak surface temperature, temperature rise rate, radiation heat flux) with lower overall thermal‑runaway hazard. Large 180 Ah cells release much more total energy and vent much larger amounts of hot gas/ejecta, so a key additional hazard pathway—overpressure/jetting (gas release, flame/eruption, mechanical shock and toxic/flammable vapor discharge) and its ability to trigger propagation to neighbors—must be considered. Because the total vented mass and energy can be higher even when surface temperatures/heat flux are lower, the pressure/venting/projection (and related propagation/toxicity) hazard can be greater, leading to the opposite conclusion: safety provisions must be more stringent for at least the overpressure/venting hazard category.",
+      "gold_answer": "The flaw is conflating all thermal runaway hazard pathways with combustion and heat release metrics. While larger-capacity cells exhibit weaker combustion and lower radiation heat flux, they generate greater quantities of explosive gases including hydrogen, carbon monoxide, and hydrocarbons. Thermal indicators such as peak temperature and radiation flux capture fire and thermal hazard but do not reflect explosive gas generation, which scales with cell capacity. Therefore, for explosion hazard specifically, the 180 Ah module requires more stringent provisions than the 60 Ah module, directly contradicting the engineer's conclusion. The two hazard pathways decouple with increasing capacity.",
+      "score": 0.86,
+      "reason": "Correctly identifies the core flaw: lower thermal indicators reflect fire/thermal hazard but don’t capture a separate hazard pathway (vented flammable/explosive gas/overpressure), which can increase with larger cell capacity and require more stringent safety for explosion/overpressure. However, it adds an unsupported claim about “much more total energy” and emphasizes ejecta/propagation/toxicity more than the key point that explosive gas generation scales with capacity, so it’s not a perfect match."
+    }
+  ],
+  "final_questions_random3_merged::TR_trigger+1+Applied_Thermal_Engineering__TR_trigger+10+Renewable_and_Sustainable_Energy_Reviews__TR_trigger+11+Fire_Safety_Journal": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "E"
+      ],
+      "score": 1
+    }
+  ],
+  "final_questions_random3_merged::TR_Dynamics+15+Batteries__TR_Dynamics+16+Batteries__TR_Dynamics+17+Batteries": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "E",
+        "G"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "E",
+        "G"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "E",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Near-complete CO2 removal only shows the filter captures an inert diluent; it does not demonstrate control of explosion hazard because the remaining vent gas can still contain combustible species (notably CO) at concentrations above the lower explosion limit, so the mixture can remain explosible even after CO2 is removed. The SOC-linked mechanism is that higher SOC produces a vent composition with higher CO/combustible content (and less CO2 dilution), which overloads/saturates the pyrobubble’s CO-capture/oxidation capacity and reduces CO removal efficiency, making the system least effective at high SOC.",
+      "gold_answer": "High CO2 removal does not control explosion hazard because CO2 is not a flammable species; the explosion hazard is determined by the concentrations of combustible gases such as CO, CH4, and C2H4. At high SOC, these combustible species are released at concentrations above the lower explosion limit (7 vol% for the mixture), and CO removal is least effective precisely at high SOC, meaning the most hazardous operating condition corresponds to the worst filtration performance for the relevant species. The mechanism linking high SOC to reduced CO removal likely reflects the higher total gas volume and flow rate at high SOC overwhelming the filter capacity or contact time, reducing removal efficiency for CO while CO2 removal remains high due to different adsorption kinetics or capacity.",
+      "score": 0.92,
+      "reason": "Correctly states CO2 is inert and not indicative of explosion hazard control, emphasizes that combustible gases (notably CO) can remain above LEL and that CO removal is worst at high SOC. Mechanism is mostly aligned (capacity/overload at high SOC), though it attributes the SOC effect partly to higher CO fraction/less CO2 dilution rather than clearly to higher total gas volume/flow/contact-time limits, so slightly incomplete."
+    }
+  ],
+  "final_questions_random3_merged::TR_Mechanism+26+UnknownJournal__TR_Mechanism+27+Energy__TR_Mechanism+3+UnknownJournal": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "D",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "D",
+        "F"
+      ],
+      "score": 1
+    }
+  ],
+  "final_questions_random3_merged::TR_Mechanism+23+UnknownJournal__TR_Mechanism+24+UnknownJournal__TR_Mechanism+25+UnknownJournal": [
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "1) The transient drop in average module air temperature during venting is caused by rapid expulsion/jetting of hot gas that entrains and drives out the warmer internal air (mass/energy removal), plus short-time convective mixing/dilution with cooler incoming air; this advection of enthalpy out of the module can temporarily outweigh the ongoing heat release and make the volume-averaged air temperature decrease.\n\n2) The progressively shorter intervals between successive cell failures arise from cumulative preheating of remaining cells and the module environment, reduced thermal margins, and increasing heat flux from multiple concurrently heating/venting/burning cells, so each subsequent cell reaches its failure threshold faster.\n\nWith respect to downstream propagation risk: the venting-cooling effect tends to oppose propagation (by reducing local gas temperature/heat transfer transiently), while the accelerating failure sequence promotes propagation; thus they act in opposition overall.",
+      "gold_answer": "The transient temperature decrease occurs because ejected vent gas, which is cooler than the hot trapped air inside the module, displaces that trapped air, producing a net cooling effect on the bulk air temperature despite local heat generation. The shortening propagation intervals occur because vent gas convection pre-heats downstream cells before thermal runaway reaches them directly, reducing the additional energy input needed to trigger each successive cell. These phenomena are not in opposition: the bulk air cooling effect is a transient displacement phenomenon, while the convective pre-heating of adjacent cells is a cumulative thermal loading effect. Together they indicate that vent gas plays a dual role: it can momentarily reduce bulk air temperature while simultaneously transferring sufficient thermal energy to downstream cells to accelerate propagation.",
+      "score": 0.55,
+      "reason": "Correctly explains interval shortening as due to cumulative preheating/reduced thermal margin (though not specifically attributing it to vent-gas convection) and gives a plausible displacement/enthalpy-removal explanation for transient bulk air cooling. However, it misses the key gold detail that the vent gas itself is cooler and displaces hotter trapped air, and it incorrectly concludes the two effects act in opposition; the gold states they are not contradictory and can occur simultaneously on different scales."
+    }
+  ],
+  "final_questions_random3_merged::TR_Mechanism+12+UnknownJournal__TR_Mechanism+13+UnknownJournal__TR_Mechanism+14+Journal_of_Power_Sources": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "D",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "D"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "B",
+        "D",
+        "F"
+      ],
+      "gold_answer": [
+        "B",
+        "D"
+      ],
+      "score": 0
+    }
+  ],
+  "final_questions_random3_merged::机械滥用2__机械滥用3__机械滥用4": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "C"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "D",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "The flaw is assuming the surface temperature (and a 300°C surface cutoff) reliably represents and can control the cell’s thermal runaway severity in all initiations. Nail penetration produces an extremely fast (9 s) internally driven runaway where the core reaches ~887°C while the surface response lags; the event can fully develop and eject heat before a surface-mounted cutoff can react, so it cannot stop propagation. Uniform external heating is surface-driven and slower, but the nail-penetration mode defeats the strategy because internal temperatures far exceed the surface and rise on a timescale too short for surface sensing/cutoff to be protective.",
+      "gold_answer": "The primary flaw is that the 300°C cutoff is calibrated against surface temperature, but under nail penetration at 100% SOC the internal peak temperature reaches 887°C while the surface reaches 631°C—a 256°C internal-to-surface gap. More critically, the entire nail penetration TR event completes in 9 seconds, far too fast for a surface-mounted cutoff to detect, actuate, and interrupt heat transfer before internal temperatures reach catastrophic levels. The uniform heating scenario (186°C surface, 357 seconds) might be addressable by the cutoff, but the nail penetration scenario defeats it through both the internal-surface temperature decoupling and the extreme speed of energy release, which prevents any surface-reactive protective device from intervening in time.",
+      "score": 1.0,
+      "reason": "Correctly identifies that a surface-rated 300°C cutoff is flawed because nail penetration causes a rapid (9 s) internally driven runaway where internal temperature (~887°C) far exceeds/decouples from the surface (631°C), so the surface device cannot respond in time. Also notes uniform external heating is slower and more surface-driven, making the cutoff more plausible there without overclaiming."
+    }
+  ],
+  "final_questions_random3_merged::TR_Mechanism+1+UnknownJournal__TR_Mechanism+10+Applied_Energy__TR_Mechanism+11+UnknownJournal": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "D",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "D",
+        "F"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "C",
+        "D"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "D",
+        "F"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "F"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Primary target: negative electrode solvent decomposition. Reasoning: (1) It is a dominant heat source—about 13× the heat of electrolyte breakdown—so reducing it most effectively lowers total heat release compared with electrolyte-focused mitigation. (2) Cathode-focused intervention is deprioritized because cathode DSC shows no exothermic activity below 250°C, whereas thermal runaway is triggered below 150°C, implying cathode reactions are not the initiator/major contributor at the triggering temperatures.",
+      "gold_answer": "The primary intervention target is negative electrode solvent decomposition. First, it releases the largest share of heat during thermal runaway (~1984 W versus 1157 W for internal short circuit, 479 W for positive solvent decomposition, and 148 W for electrolyte breakdown), making it the dominant contributor to total heat generation. Second, cathode decomposition is inadmissible as a primary target because its exothermic onset (~250°C) exceeds the thermal runaway trigger temperature (<150°C), meaning it does not contribute meaningfully before runaway is already established. Electrolyte breakdown is also a lower-priority target because its heat release is 13 times smaller than the negative solvent reaction. Therefore, suppressing negative electrode solvent reactivity offers the greatest reduction in total heat release.",
+      "score": 0.95,
+      "reason": "Correctly identifies negative electrode solvent decomposition and justifies it by (a) being much larger heat source than electrolyte breakdown (13×) and (b) excluding cathode due to onset > TR trigger temperature. Minor omission: does not explicitly state it is the largest among all four processes (only vs electrolyte)."
+    }
+  ],
+  "final_questions_random3_merged::TR_Gasventing+1+UnknownJournal__TR_Gasventing+2+Journal_of_Hazardous_Materials__TR_Gasventing+3+Journal_of_Energy_Storage": [
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Reasoning error: an overgeneralization/unsupported universal claim (and implicit equivocation that smaller size plus presence of heavy metals automatically means strictly greater hazard under all conditions), without accounting for exposure and dose.\n\nAdditional factors needed: quantitative emission characteristics (particle number/mass and size distribution across abuse scenarios), metal speciation/solubility and bioavailability (including oxidation state and leachability), toxicity benchmarks for the emitted species, persistence and environmental fate/transport, and realistic exposure assessment (concentration in air, duration, ventilation, deposition/clearance, aggregation), plus variability with state of charge, temperature, failure mode, and other abuse conditions.",
+      "gold_answer": "The investigator commits a multi-factor conflation error by treating particle size alone as the determinant of inhalation hazard while ignoring that hazard depends on both size and composition jointly. NMC particles are smaller (nanoscale, higher lung penetration potential) and contain toxic heavy metals, but LFP particles, while larger, are carbonaceous with fluoride and silicon content, which carry their own toxicological profiles. The conclusion that NMC is strictly greater in hazard under all conditions is an inadmissible universal claim because: (1) the evidence characterizes size and composition separately, not their combined dose-response; (2) no emission quantity or exposure concentration data is provided to compare absolute hazard magnitude; (3) the evidence is from lab-scale tests and extrapolation to real-scale conditions is explicitly cautioned against. A defensible comparative hazard ranking would require toxicological dose-response data for each particle type, emission quantity per event, and validated scaling from lab to operational conditions.",
+      "score": 0.78,
+      "reason": "Correctly identifies the key error as an unsupported universal/overgeneralized hazard ranking and notes the need for exposure/dose and quantitative emissions plus toxicology and condition variability. However, it does not explicitly state the required point that particle size and composition must be evaluated jointly (it implies it) and it omits the specific counterpoint that LFP particles (fluoride/silicon-containing carbonaceous) have their own toxicological relevance, and it doesn’t clearly mention the lab-scale-to-real-scale extrapolation limitation emphasized in the gold."
+    }
+  ],
+  "final_questions_random3_merged::TR_trigger+12+Energy__TR_trigger+13+Journal_of_Power_Sources__TR_trigger+14+Applied_Thermal_Engineering": [
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "D",
+        "F"
+      ],
+      "score": 0
+    }
+  ],
+  "final_questions_random3_merged::TR_trigger+23+International_Journal_of_Energy_Research__TR_trigger+24+Journal_of_Hazardous_Materials__TR_trigger+25+Rare_Metals": [
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "(1) Using the Thomas (lumped) SADT model despite Bi = 0.07 (not sufficiently small for strict lumped/isothermal assumption; spatial temperature gradients are non-negligible). (2) Not admissible/unsupported: the fact that one reaction is the largest contributor does not by itself justify a >50% reduction in total heat. (3) Other coupled/exothermic pathways and feedbacks remain (e.g., SEI/anode–electrolyte reactions, separator melting/internal short, oxygen release from cathode, or delayed heat release), so suppressing the dominant cathode–solvent reaction can be offset by increased/shifted contributions from other reactions and still lead to runaway.",
+      "gold_answer": "(1) With Bi=0.07 < 0.1, the Thomas model produces incorrect results; the Semenov model should be used instead. (2) The claim that suppressing the positive-solvent reaction reduces heat by more than half is directionally supported since this reaction contributes approximately 61% of total heat, but the precise reduction depends on whether other reactions are coupled or compensatory. (3) Suppressing the dominant reaction may shift the system to a regime where secondary reactions become rate-limiting or where thermal runaway onset temperature changes, meaning total severity is not simply proportional to the contribution of one reaction pathway.",
+      "score": 0.55,
+      "reason": "(1) Incorrect: for Bi=0.07 (<0.1) Thomas is the wrong choice because Bi is too small (Semenov should apply); prediction reverses the reasoning (claims gradients non-negligible). (2) Partially: prediction rejects the >50% claim outright, but gold says it is directionally supported (~61%) though not guaranteed. (3) Essentially correct: notes coupled/compensatory reactions can limit proportional reduction."
+    }
+  ],
+  "final_questions_random3_merged::TR_trigger+18+Batteries__TR_trigger+19+Applied_Energy__TR_trigger+2+ENERGY_andamp;_ENVIRONMENTAL_MATERIALS": [
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "The conclusion assumes pore-blocking at the PE shutdown temperature permanently prevents shorts, but it ignores that continued heating to the PP melting point destroys the separator’s mechanical/structural integrity. Once the PP support melts (and the separator can shrink, rupture, or allow electrode contact), the blocked pores no longer guarantee physical separation, so an internal short can still occur under continued heating despite the initial shutdown.",
+      "gold_answer": "The shutdown function blocks ionic current through the separator pores when PE melts near 110°C, which can interrupt electrochemical reactions. However, it does not prevent mechanical failure of the separator. When temperature continues rising to the PP melting point (165°C), the separator loses mechanical integrity and undergoes thermal shrinkage, causing physical contact between cathode and anode. This electrode contact creates an electronic short circuit that is independent of ionic conductivity. Therefore, shutdown addresses the ionic pathway but not the mechanical shrinkage pathway; internal short circuit via electrode contact remains possible above 165°C regardless of pore blockage.",
+      "score": 1.0,
+      "reason": "Prediction identifies the key gap: PE shutdown blocks pores/ionic current but does not prevent separator mechanical failure. It explains that at PP melting (~165°C) the separator can shrink/rupture, allowing electrode contact and an electronic short independent of pore blockage."
+    }
+  ],
+  "final_questions_random3_merged::TR_Dynamics+1+UnknownJournal__TR_Dynamics+10+Batteries__TR_Dynamics+11+UnknownJournal": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "B",
+        "C"
+      ],
+      "gold_answer": [
+        "B",
+        "C",
+        "G"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Non-uniform temperature causes cell-to-cell impedance/kinetic differences that create current imbalance in series/parallel groups, so the hottest (and/or highest-resistance/fastest-aging) cells reach voltage limits (end-of-charge overvoltage or end-of-discharge undervoltage) first and constrain the whole pack. Therefore pack capacity and voltage are set by the weakest/most limiting cell’s voltage/impedance behavior under load, not by average cell capacity fade, and measuring individual cell capacity in isolation does not capture these imbalance-driven, voltage-limited pack-level losses.",
+      "gold_answer": "Non-uniform temperature distribution causes cells to age and degrade at different rates, producing cell-to-cell variation in internal resistance and available capacity. At the pack level, output voltage and available capacity are constrained by the weakest or most resistive cell, not the average cell. Even if individual hot cells show modest capacity fade in isolation, their elevated internal resistance (from accelerated SEI growth) increases voltage drop under load, reducing pack output voltage below what cell-level capacity measurements would predict. Additionally, the pack's usable capacity is limited by whichever cell reaches its cutoff voltage first. Therefore, cell-level capacity measurements taken individually cannot capture the pack-level penalty imposed by inter-cell imbalance, making them insufficient predictors of pack output.",
+      "score": 0.95,
+      "reason": "Matches the key mechanism: temperature gradients cause differential aging/impedance, making pack voltage/capacity limited by the weakest/highest-resistance cell hitting voltage cutoffs first, so isolated cell capacity tests miss imbalance/voltage-drop effects. Minor omission: doesn’t explicitly mention SEI growth, but core reasoning is correct."
+    }
+  ],
+  "final_questions_random3_merged::TR_Propagation+1+Applied_Energy__TR_Propagation+2+Applied_Energy__TR_Propagation+3+Applied_Energy": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Because the cell/module conducts heat much more effectively in-plane than through-plane (≈20×), the heating geometry controls how fast heat spreads to internal regions where electrochemical failure and internal shorting drive a sharp voltage collapse. With large surface heating, heat must penetrate mainly through-plane to reach inner layers, so internal short formation and voltage drop are delayed until late in the internal thermal-runaway propagation stage. With side heating, heat is injected along directions that couple more strongly to in-plane conduction paths, so it rapidly spreads laterally through electrodes/separator stacks, triggering internal propagation and shorting early, producing an initial-stage voltage drop.\n\nSide heating yields higher peak temperatures but lower gas volume: the more localized, rapidly propagated heating concentrates energy in a smaller region and accelerates temperature rise (higher peak), while involving less overall cell volume in decomposition/venting and shortening the time/extent for widespread reactions, leading to less total gas generation. Large surface heating warms a larger area more uniformly and for longer, so peak temperatures are lower due to broader heat spreading and losses, but more material reaches gas-evolving decomposition, producing a larger total gas volume.",
+      "gold_answer": "Under side heating, heat enters parallel to the electrode plane where conductivity is high (~18 W/mK), causing rapid and nearly simultaneous temperature rise across all electrode layers. This produces near-simultaneous internal short circuits across all core layers at the initial stage, causing immediate voltage collapse. Under large surface heating, heat must conduct through the low-conductivity through-plane direction (~0.8 W/mK), creating a sequential layer-by-layer propagation front; voltage drops only after the propagation front has traversed most layers. Side heating produces higher peak temperatures and higher overall temperatures because heat is retained within the cell (less mass loss, less gas ejection), while large surface heating drives more material ejection, producing over twice the gas volume but lower retained thermal energy.",
+      "score": 0.84,
+      "reason": "Correctly links anisotropic conductivity to heating geometry: side heating couples to high in-plane conduction causing rapid spread and early internal shorting/voltage collapse, while large-surface heating relies on low through-plane conduction giving sequential propagation and late voltage drop. Also identifies side heating as higher peak temperature but lower gas volume. However, the gas/temperature reasoning is partially off: gold emphasizes higher peak under side heating due to heat retention/less mass loss and ejection, whereas prediction attributes lower gas mainly to less volume/time for decomposition rather than reduced ejection/mass loss."
+    }
+  ],
+  "final_questions_random3_merged::工程防护策略1-001__工程防护策略1-002__工程防护策略1-003": [
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "E",
+        "F"
+      ],
+      "gold_answer": [
+        "B",
+        "E"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "The heterogeneous current collector activates before any temperature rise, so it can intervene immediately at the onset of mechanical abuse, whereas the phase-change additive reduces temperature by absorbing heat after heating begins (it is thermally triggered), which is too late to have the same early-time advantage under rapid events. The phase-change additive can provide protection in a non-mechanical overheating scenario (e.g., internal/external heating leading to temperature rise) where there is no mechanical-abuse trigger for the heterogeneous current collector mechanism.",
+      "gold_answer": "The heterogeneous current collector mechanism is mechanically triggered and activates immediately upon cell deformation, before temperature begins to rise, interrupting electrical pathways before any heat is generated at the shorting site. The phase-change additive relies on capillary transport to deliver material to the damaged region, which requires finite time even though mechanical damage creates a loosely packed structure that favors flow. Under very rapid mechanical abuse, the current collector mechanism acts before thermal escalation begins, whereas the additive must reach the site before the temperature exceeds the threshold activating secondary exothermic reactions. However, the phase-change additive can provide thermal buffering in scenarios where thermal runaway initiates without mechanical deformation, such as overcharging or high-temperature storage, because it absorbs heat regardless of the trigger mechanism, whereas the heterogeneous current collector protection requires mechanical deformation to activate and would not engage in purely thermal initiation scenarios.",
+      "score": 0.72,
+      "reason": "Correctly states the heterogeneous current collector is mechanically triggered and acts before temperature rise, and identifies non-mechanical overheating as a case where the additive helps but the current collector would not. However, it misses the key point that the phase-change additive is limited by finite transport/capillary delivery time to the damage site (not merely being 'thermally triggered'), and it does not clearly mention overcharge/high-temperature storage as examples."
+    }
+  ],
+  "final_questions_random3_merged::TR_trigger+7+Journal_of_Loss_Prevention_in_the_Process_Industries__TR_trigger+8+ACS_Applied_Materials_andamp;_Interfaces__TR_trigger+9+Applied_Thermal_Engineering": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Thermal insulation between the clamps and the cells suppresses heat flow through the clamp/housing path, so the first cell’s heat reaches the second cell much more slowly when that path is blocked. Once the second cell goes into runaway, the second-to-third propagation is still rapid because it is governed mainly by direct cell-to-cell heat transfer (contact/conduction and local radiation) that the clamp insulation does not significantly affect. The asymmetry implies the dominant intercell heat transfer pathway is through the clamp/structural conduction for the first-to-second step, while the second-to-third step is dominated by direct neighboring-cell coupling.",
+      "gold_answer": "Thermal insulation between clamps and cells primarily interrupts conductive heat transfer through the metallic clamp structure, which is the dominant pathway from the heating source to the adjacent cell. This explains the large delay increase for Bat2 (28 s to 290 s): the clamp-mediated conduction from the triggered cell to Bat2 is blocked. However, once Bat2 itself undergoes thermal runaway, it becomes a direct heat source adjacent to Bat3, and the clamp-mediated pathway is no longer the primary route—direct cell-to-cell conduction or radiation dominates. The insulation layer between clamp and battery does not interrupt this direct inter-cell pathway, so the Bat2-to-Bat3 delay remains near 30 seconds. The asymmetry implies that clamp conduction dominates early propagation but becomes secondary once an intermediate cell is already in thermal runaway.",
+      "score": 1.0,
+      "reason": "Prediction matches the gold: insulation blocks clamp/structural conductive heat transfer causing large delay from first to second cell; once the second cell is in runaway, direct cell-to-cell conduction/radiation dominates to the third cell so delay is unchanged, implying different dominant pathways at each step."
+    }
+  ],
+  "final_questions_random3_merged::TR_Mechanism+20+UnknownJournal__TR_Mechanism+21+UnknownJournal__TR_Mechanism+22+UnknownJournal": [
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "The flaw is assuming that lowering/softening thermal-runaway severity metrics (heat release, peak temperature, duration) is equivalent to eliminating the root cause and onset of thermal runaway, and that the effects add directly. The 80°C pre-aging effect mainly reflects chemistry/material changes that alter reaction kinetics and available reactive inventory (raising apparent activation energy and reducing total exothermic heat), but it does not remove the possibility of internal shorting, oxygen release from cathode, or other trigger pathways that initiate runaway. The fluorinated anion-dominated incombustible electrolyte mainly removes/limits external flaming and electrolyte-fuel contribution, but it does not prevent the internal exothermic decomposition of electrodes/cathode oxygen evolution, gas generation, or propagation once runaway starts. Thus, combining them does not guarantee the “safest possible” configuration because neither intervention fundamentally prevents initiation mechanisms or all heat-generating reactions; they target different (and incomplete) parts of the runaway problem (severity of some reactions and combustibility), not full prevention.",
+      "gold_answer": "The primary flaw is that the engineer conflates reduction in specific severity metrics with overall safety improvement and assumes the two interventions are additive across all hazard dimensions. The 80°C aging reduces heat release and peak temperature, but this occurs because the aluminium-plastic film ruptures and electrolyte evaporates during aging, removing combustible material before runaway—not because the cell becomes intrinsically more stable. The higher activation energy reflects a changed degradation state, not a universally safer reaction pathway. Critically, the longer runaway duration means the hazard window is extended, which can increase risk in confined or propagation-sensitive systems. The incombustible electrolyte addresses flammability of the electrolyte liquid but does not eliminate heat generation from electrode decomposition reactions during thermal runaway. Neither intervention addresses the other's failure mode: aging-induced electrolyte loss does not make the cell non-flammable under all conditions, and electrolyte incombustibility does not reduce the exothermic electrode reactions that drive peak temperature. Combining them does not guarantee additive safety benefit because the mechanisms are distinct and each leaves the other's hazard pathway unaddressed.",
+      "score": 0.72,
+      "reason": "Captures the main flaw (conflating metric reductions with overall safety and assuming additivity) and correctly notes incombustible electrolyte only addresses flammability, not electrode-driven exothermic decomposition/oxygen release. However, it misses the key specific mechanism for 80°C aging (film rupture and electrolyte evaporation removing inventory) and does not note that the longer runaway duration extends the hazard window; the activation-energy point is only addressed vaguely."
+    }
+  ],
+  "final_questions_random3_merged::TR_trigger+26+Applied_Thermal_Engineering__TR_trigger+27+Journal_of_Energy_Storage__TR_trigger+3+International_Journal_of_Heat_and_Mass_Transfer": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "B",
+        "D",
+        "E"
+      ],
+      "gold_answer": [
+        "B",
+        "D",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "E",
+        "G"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "G"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "B",
+        "C",
+        "F"
+      ],
+      "gold_answer": [
+        "B",
+        "C",
+        "F"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Under side rupture, hot gases/jet flames and localized heating impinge laterally on the neighboring cell; an aluminum plate readily conducts this intense, near-point lateral heat into the adjacent cell, so it can spread the heat fast enough to trigger propagation even though it works for top-venting where heat is directed away. A graphite composite with high in-plane but low cross-plane conductivity can laterally spread/diffuse the side-impingement heat within the sheet while impeding through-thickness heat transfer into the adjacent cell, reducing the peak heat flux reaching that cell. In a parallel-connected module, the engineer must also account for electrical energy fed from healthy cells into the failing cell (e.g., fault current/parallel current sharing driven by internal short and pack impedance), which can intensify the event and raise propagation risk regardless of the interstitial thermal barrier.",
+      "gold_answer": "The aluminum plate fails under side rupture because the lateral heat and mass release from the cell overwhelms its heat-sink function, which was adequate only for the more contained top-venting thermal load. The graphite composite addresses this by combining high in-plane thermal conductivity, which spreads and dissipates heat laterally away from the adjacent cell interface, with low cross-plane conductivity, which thermally insulates the adjacent cell from direct heat transfer. This anisotropic property combination limits the net heat flux reaching the neighboring cell regardless of the rupture direction. The additional system-level variable the engineer must account for in a parallel configuration is the electrical energy redistribution pathway: healthy cells can discharge into the TR cell through the parallel connection, adding electrochemical heat generation that is independent of the interstitial material's thermal properties and can accelerate propagation beyond what thermal management alone addresses.",
+      "score": 0.95,
+      "reason": "Matches the required mechanisms: explains aluminum plate inadequacy for side rupture loading, graphite sheet anisotropic conduction (high in-plane spreading + low cross-plane insulation) reducing heat flux to neighbor, and identifies parallel electrical energy redistribution from healthy cells as an independent propagation driver. Minor deviation: frames aluminum as conducting heat into neighbor rather than being overwhelmed as a heat sink, but overall intent is correct."
+    }
+  ],
+  "final_questions_random3_merged::TR_Dynamics+20+Batteries__TR_Dynamics+21+Batteries__TR_Dynamics+22+Batteries": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "D"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "D",
+        "F"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Increasing the N/P ratio from 1.10 to 1.30 adds anode excess capacity, which lowers anode potential during charge and can suppress lithium plating and improve cycle life, but it also reduces usable cell capacity/energy density and can increase irreversible lithium loss and polarization. Based on available evidence, an N/P ratio around 1.20 best balances longer cycle life with plating suppression. Pushing beyond this (e.g., to 1.30) can be counterproductive because added anode excess increasingly wastes capacity and can drive greater lithium inventory loss and uneven utilization, and it may not further reduce plating while potentially worsening mechanical/SEI degradation and raising impedance—so overall safety/performance gains diminish and can even reverse.",
+      "gold_answer": "Increasing N/P ratio from 1.10 suppresses Li plating (achieved above 1.10) and an N/P of 1.20 specifically enhances cycle life. However, increasing N/P generally reduces initial coulombic efficiency and raises the anode electrochemical potential at end of charge, which degrades specific capacity and cycle life. Therefore 1.20 represents the evidence-supported optimum: it suppresses plating and maximizes cycle life. Pushing to 1.30 or higher trades away capacity and cycle life without additional safety benefit, and the elevated end-of-charge anode potential can itself contribute to degradation mechanisms that indirectly compromise safety over long-term cycling.",
+      "score": 0.72,
+      "reason": "Correctly states that N/P≈1.20 is the best balance and that going to 1.30 wastes capacity/doesn’t add plating-suppression benefit. However, it misses the key evidence points that increasing N/P reduces initial coulombic efficiency and (per gold) raises anode end-of-charge potential; it even claims the opposite (lower anode potential), and it doesn’t clearly state the plating-suppression threshold as “above 1.10”."
+    }
+  ],
+  "final_questions_random3_merged::TR_Dynamics+23+Batteries__TR_Dynamics+24+Nano_Energy__TR_Dynamics+25+Journal_of_The_Electrochemical_Society": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "C",
+        "E"
+      ],
+      "gold_answer": [
+        "C",
+        "E"
+      ],
+      "score": 1
+    }
+  ],
+  "final_questions_random3_merged::热失控传播行为1__热失控传播行为2__热失控传播行为3": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "E",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "E",
+        "F"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "The ~7× slower internal propagation under large-surface heating is explained by a different thermal runaway triggering/propagation mechanism: heating a large face creates a more uniform temperature field and earlier pressure relief/venting so the reaction front advances mainly by distributed heating rather than a concentrated localized hotspot-driven front, whereas side/bottom heating tends to create a more localized high-temperature region that drives faster internal runaway propagation.\n\nThe engineer’s conclusion does not follow because the large-surface case simultaneously produces much larger gas generation and higher jet velocity, increasing flame/jet impingement, heat transfer to neighboring cells, and secondary ignition risk at module level. A slower in-cell propagation speed does not necessarily mean lower module propagation hazard when the external hazard (more energetic venting/jet) is greater; the net module risk depends on both internal propagation and external heat/jet effects, so the observations do not directly imply improved safety.",
+      "gold_answer": "The slower propagation velocity under large surface heating is explained by thermal conductivity anisotropy: heat must travel perpendicular to the electrode plane where conductivity is roughly twenty times lower than in-plane. Side and bottom heating drive heat along the high-conductivity in-plane direction, producing approximately seven times faster propagation. However, the engineer's conclusion is inadmissible because slower propagation does not imply lower module-level hazard. Large surface heating produces over twice the gas volume and higher jet velocity, indicating more energetic venting events that could mechanically or thermally trigger adjacent cells through different pathways. Additionally, module-level propagation risk depends on inter-cell heat transfer geometry, spacing, and whether the dominant trigger mechanism is conductive heat or gas/flame impingement, none of which are resolved by single-cell propagation velocity alone.",
+      "score": 0.65,
+      "reason": "Correctly rejects the safety conclusion and explains that higher gas volume/jet velocity can be an independent hazard pathway affecting module propagation, so single-cell propagation speed alone is insufficient. However, it misses the key specified mechanism for the ~7× velocity difference (thermal conductivity anisotropy with ~20× lower through-plane vs in-plane conductivity) and instead proposes a different, unsupported explanation."
+    }
+  ],
+  "final_questions_random3_merged::气体排放65__气体排放79__气体排放81": [
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Because the rod-driven runaway releases a vent gas with lower CO2 (less inerting, so the LFL is not pushed upward as much) and higher H2 (which lowers the LFL and raises the UFL), the resulting flammability envelope is wider and the mixture remains flammable over a broader range during post-vent mixing. Thus, even with slower onset and lower peak pressure, the rod case can sustain a greater explosion hazard. The specific mechanism is reduced CO2 dilution/inerting combined with elevated H2 enrichment that expands the flammable limits (decreases LFL and increases UFL).",
+      "gold_answer": "The heating rod produces lower CO2 concentration and higher H2 concentration in the released gas compared to the coil. Lower CO2 means less LFL elevation (CO2's primary flammability-suppressing mechanism), so the LFL remains lower. Higher H2 simultaneously lowers the LFL further and raises the UFL, widening the flammable concentration range. The combined effect of reduced CO2 and elevated H2 produces the widest flammable range and the lowest LFL among the three methods. This means the rod's released gas mixture ignites at lower concentrations and sustains combustion over a broader range, making it more hazardous for post-vent explosion even though the rod's peak pressure during the event itself is lower.",
+      "score": 1.0,
+      "reason": "Matches the gold: identifies rod gas has lower CO2 (less LFL-raising inerting) and higher H2 (lowers LFL, raises UFL), giving a wider flammable range and greater sustained post-vent explosion hazard driven by composition rather than peak pressure."
+    }
+  ],
+  "final_questions_random3_merged::TR_Dynamics+12+Batteries__TR_Dynamics+13+Batteries__TR_Dynamics+14+Batteries": [],
+  "final_questions_random3_merged::TR_trigger+15+Energy__TR_trigger+16+Journal_of_Power_Sources__TR_trigger+17+Energy_Conversion_and_Management": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "F",
+        "G"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "G"
+      ],
+      "score": 0
+    }
+  ],
+  "final_questions_random3_merged::TR_Mechanism+7+UnknownJournal__TR_Mechanism+8+UnknownJournal__TR_Mechanism+9+Advanced_Energy_and_Sustainability_Research": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "F"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "F"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "E",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "E"
+      ],
+      "score": 0
+    }
+  ],
+  "final_questions_random3_merged::TR_Dynamics+7+ACS_Applied_Materials_andamp;_Interfaces__TR_Dynamics+8+Advanced_Science__TR_Dynamics+9+IEEE_Access": [
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "D"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "D"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "1) Low SOC for NCM523 does not make thermal-runaway propagation risk inherently lower than an LFP cell at 100% SOC: propagation depends on heat release rate, oxygen/electrolyte reactions, cell design/state (including TR onset temperature and venting/jet flame behavior), and neighbor heat flux; SOC alone cannot be used to rank NCM vs LFP propagation risk.\n2) Claiming the PCC will completely prevent propagation is inadmissible because PCCs only absorb/redistribute heat within a finite latent-heat/temperature window and can be overwhelmed or bypassed by non-thermal pathways (e.g., gas/jet flame, molten ejecta, pressure-driven venting); without test evidence under the specific cell/module conditions, “complete prevention” exceeds the evidence boundary.",
+      "gold_answer": "Flaw 1: While NCM523 peak HRR decreases with SOC (32.2 kW at 25% SOC vs 165.3 kW at 100% SOC), comparing it to LFP at 100% SOC requires knowing LFP's SOC-dependent HRR, which is not established by the evidence; additionally, LFP's higher cathode thermal stability threshold (>240°C vs >180°C for NCM523) means its reactions are harder to trigger, so the SOC-based comparison alone does not determine relative propagation risk. Flaw 2: PCC reduces neighboring cell maximum temperature by 60°C and 'effectively hinders' propagation, but the evidence does not support the claim that it completely prevents propagation under all configurations; this is an inadmissible overclaim of a mitigation measure.",
+      "score": 0.92,
+      "reason": "Captures both required flaws: (1) rejects SOC-only cross-chemistry safety ranking and notes onset temperature/chemistry-dependent triggering factors, aligning with the need for LFP-specific SOC/HRR evidence even if not stated explicitly; (2) correctly flags “PCC completely prevents propagation” as an overclaim beyond evidence, adding plausible bypass mechanisms. Minor deduction for not explicitly stating the missing LFP SOC-dependent HRR data boundary."
+    }
+  ],
+  "final_questions_random3_merged::TR_Modelling+1+UnknownJournal__TR_Modelling+2+Applied_Energy__TR_Modelling+3+Journal_of_Energy_Storage": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "D"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "D"
+      ],
+      "gold_answer": [
+        "A",
+        "B"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Whether the larger-radius cell is actually less vulnerable is set by the balance between how much ISC heat is generated by the cathode–anode short and how effectively that heat is removed; changing outer radius changes the thermal mass and heat-loss pathway, so vulnerability depends on the net heat-generation-vs-heat-dissipation balance rather than size alone. Thermal runaway occurrence (independent of cell size) is controlled by the nail radius relative to a critical nail radius for this ISC type, i.e., whether the nail is large enough to produce sufficient short-circuit heating to exceed the runaway threshold.",
+      "gold_answer": "The engineer's prediction is correct in direction but for a specific mechanistic reason: the electrochemical heat generation rate at the ISC site is determined by the nail radius and ISC pathway resistance, not by cell outer radius. Because both cells share the same nail radius and ISC type, they experience the same initial heat generation rate. However, the smaller cell has a smaller surface area for heat dissipation, so it accumulates heat faster relative to its thermal mass and reaches the critical temperature more readily, making it more vulnerable to thermal runaway. The larger cell dissipates heat more effectively and is less susceptible. The parameter that controls whether thermal runaway is triggered at all — independent of cell size — is the nail radius: there is a critical nail radius threshold below which the electrochemical heat generation rate is insufficient to initiate TR regardless of cell geometry, and above which TR can occur.",
+      "score": 0.85,
+      "reason": "Correctly identifies the key mechanism as a heat-generation vs heat-dissipation balance and correctly states that TR triggering is controlled by nail radius with a critical threshold for this ISC type. However, it misses the explicit point that for fixed nail radius/ISC type the initial heat generation rate is essentially independent of cell outer radius, and it doesn’t clearly state the smaller cell’s reduced dissipation area as the specific reason it is more vulnerable."
+    }
+  ],
+  "final_questions_random3_merged::TR_Mechanism+15+Applied_Thermal_Engineering__TR_Mechanism+16+UnknownJournal__TR_Mechanism+17+UnknownJournal": [
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Voltage-only early warning is inadequate because the two abuses produce different—and in one case weak—voltage precursors. In overcharge, cell voltage rises clearly and can provide an early indication before severe thermal escalation. In external heating, temperature can increase significantly while the cell voltage changes little or can even decrease, so relying on voltage would miss or delay detection of a heating-driven runaway. A more defensible approach is multi-signal monitoring: combine voltage (and its rate/imbalance) with direct temperature sensing (and temperature rate/gradients across the module), using threshold and trend-based logic tailored separately for overcharge vs. external heating conditions.",
+      "gold_answer": "Under overcharge abuse, voltage drops approximately 2 seconds before the catastrophic temperature rise rate, making it a valid early-warning signal. However, under external heating abuse, voltage remains stable for over 600 seconds before abruptly collapsing to zero, providing no meaningful early warning. A voltage-only strategy therefore fails to detect heating-induced TR until the event is already imminent. A more defensible approach combines voltage monitoring with temperature-rate monitoring: temperature rise rate can provide earlier indication under heating conditions where voltage is uninformative, while voltage leads under overcharge. The choice of primary signal must account for the abuse mode regime, as no single signal is universally early-warning across both conditions.",
+      "score": 0.78,
+      "reason": "Correctly states that voltage can be a useful precursor in overcharge but is uninformative/changes little under external heating, so a voltage-only strategy misses heating-driven runaway, and recommends combining voltage with temperature/temperature-rate monitoring tailored by abuse mode. However, it misses the key specific behavior from the gold answer that under overcharge the voltage drops shortly before thermal escalation and that under heating voltage stays stable for a long period (hundreds of seconds) then collapses to zero; it also incorrectly emphasizes voltage rising in overcharge rather than the drop precursor."
+    }
+  ],
+  "final_questions_random3_merged::TR_Dynamics+18+Batteries__TR_Dynamics+19+Batteries__TR_Dynamics+2+Batteries": [
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Lower ambient pressure reduces the external backpressure on the cell so gas generation and separator/relief pathways lead to earlier/easier vent opening and a lower internal pressure/boiling point environment; this enhances heat removal by vented mass and delays the build-up of the critical internal conditions needed for self-accelerating exothermic reactions. At 100% SOC the cell has more reactive lithium inventory and higher heat-generation potential once decomposition starts, so the competition between reaction heat generation and pressure-dependent venting/heat-removal is stronger; therefore changing ambient pressure produces a larger shift in the balance point, giving a bigger delay in runaway onset time and a higher apparent onset temperature than at 75% SOC. The pressure sensitivity is attributed mainly to the pre-venting stage (before full venting/major voltage collapse), while post-venting indicators (venting time/temperature and voltage-drop time) show little dependence on ambient pressure under these tests. This conclusion is limited to the specific cell format/chemistry (18650 NCM811), SOC range (75% vs 100%), and the particular heating-abuse and pressure conditions (40 vs 101 kPa); it may not generalize to other designs, chemistries, vent architectures, or abuse modes.",
+      "gold_answer": "Because venting time, venting temperature, and voltage drop time are all insensitive to ambient pressure, the pre-venting electrochemical initiation sequence is not the mechanism through which pressure affects onset. The pressure sensitivity must therefore arise in the post-venting phase, where reduced ambient pressure lowers oxygen availability and reduces combustion-driven heat feedback to the cell, delaying the self-heating cascade that defines thermal runaway onset. At 100% SOC, the cell contains more reactive lithiated anode material and higher electrolyte reactant availability, meaning the post-venting exothermic reactions are more energetic and their rate is more strongly modulated by the oxygen-dependent combustion feedback. At 75% SOC, lower reactant availability reduces the sensitivity of the post-venting heat release to pressure changes, producing smaller shifts in onset time and temperature. The boundary on this conclusion is that it applies specifically to NCM811 18650 cells under the tested pressure range (40–101 kPa); generalization to other chemistries, form factors, or pressures below 40 kPa is not supported by the available evidence.",
+      "score": 0.4,
+      "reason": "Gives the correct SOC-dependent rationale (more reactive inventory at 100% SOC) and appropriately bounds generalizability to the tested NCM811 18650 and pressure range. However, it localizes the pressure sensitivity mainly to the pre-venting stage and attributes it to venting/heat-removal effects, whereas the gold answer requires concluding the effect is post-venting (oxygen/combustion heat-feedback) specifically because venting/voltage-drop metrics are pressure-insensitive. This mismatch on the primary mechanism/phase is a major error, so only partial credit."
+    }
+  ],
+  "final_questions_random3_merged::产气机理__产气机理2__产气机理3": [
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "During overcharge the anode becomes saturated and lithium plates as metallic Li on the negative electrode; this highly reactive plated lithium drives low-temperature exothermic reactions (with electrolyte/cathode oxygen), causing the onset temperature to collapse to ~80°C. The primary species responsible is plated metallic lithium. SEI decomposition alone cannot account for the drop because it mainly occurs at ~90–150°C and does not explain an onset near 80°C.",
+      "gold_answer": "During overcharge beyond 100% SOC, metallic lithium deposits on the negative electrode surface because the graphite is fully lithiated and cannot accommodate additional lithium intercalation. Metallic lithium is far more reactive than intercalated lithium and reacts exothermically with the electrolyte at much lower temperatures (~80°C), which is why the onset temperature drops sharply from above 180°C to approximately 80°C. This drop is primarily attributable to metallic lithium, not to SEI decomposition. SEI decomposition occurs in the 90–150°C range and is a contributing exothermic event, but it cannot account for the drop to ~80°C onset because SEI decomposition does not introduce a new highly reactive species; it merely exposes intercalated lithium to electrolyte. The sharp threshold drop is specific to the formation of metallic lithium during overcharge.",
+      "score": 1.0,
+      "reason": "Predicted answer correctly attributes the sharp onset-temperature drop during overcharge (>100% SOC) to metallic lithium plating on the saturated anode, identifies plated metallic Li as the primary reactive species causing ~80°C reactivity, and states SEI decomposition (90–150°C) alone cannot explain an onset near 80°C."
+    }
+  ],
+  "final_questions_random3_merged::热失控动力学1__热失控动力学2__热失控动力学3": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C"
+      ],
+      "gold_answer": [
+        "A",
+        "C"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C"
+      ],
+      "gold_answer": [
+        "A",
+        "C"
+      ],
+      "score": 1
+    }
+  ],
+  "final_questions_random3_merged::建模预测71__建模预测94__建模预测95": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "D"
+      ],
+      "score": 0
+    }
+  ],
+  "final_questions_random3_merged::TR_Protection+116+Case_Studies_in_Thermal_Engineering__TR_Protection+117+Case_Studies_in_Thermal_Engineering__TR_Protection+204+Case_Studies_in_Thermal_Engineering": [
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "D",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "E"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Reasoning supporting preference: Fluid Y has a higher latent heat of vaporization (166 kJ/kg vs 142 kJ/kg), so per unit mass it can absorb more heat during boiling and thus offers greater heat-sink capacity for suppressing thermal runaway propagation. Limitation: the evidence only shows both fluids prevented propagation in the tested setup; it does not establish superiority across operating conditions or account for other selection criteria (e.g., required mass/volume, boiling point/temperature range, dielectric/compatibility, viscosity/pumping, safety, cost), so concluding Fluid Y should always be selected is not justified from the available results.",
+      "gold_answer": "Fluid Y's higher latent heat of vaporization (166 vs 142 kJ/kg) means each unit mass absorbs more heat during phase change, increasing heat removal capacity per unit coolant mass. This supports a directional preference for Fluid Y when heat load is the limiting factor. However, the conclusion that Fluid Y 'should always be selected' is inadmissible because both fluids completely prevented propagation in the tested configuration—meaning the lower-latent-heat fluid already provided sufficient margin. Selection depends on system-specific factors such as flow rate, boiling point, compatibility, cost, and thermal load magnitude, none of which were varied in the evidence. The evidence supports Fluid Y as having higher thermal capacity, not as universally superior across all operating conditions.",
+      "score": 1.0,
+      "reason": "Matches the gold: cites higher latent heat meaning more heat absorbed per unit mass as directional preference, notes both fluids prevented propagation in the tested setup (implying X was sufficient), and explains that universal selection is unjustified because other system-specific factors/conditions weren’t evaluated."
+    }
+  ],
+  "final_questions::TR_Dynamics+1+UnknownJournal__TR_Dynamics+2+Batteries__TR_Dynamics+3+UnknownJournal": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "D",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "D",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "B",
+        "C",
+        "D"
+      ],
+      "gold_answer": [
+        "B",
+        "C",
+        "D"
+      ],
+      "score": 1
+    }
+  ],
+  "final_questions::TR_Gasventing+1+UnknownJournal__TR_Gasventing+2+Journal_of_Hazardous_Materials__TR_Gasventing+3+Journal_of_Energy_Storage": [
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "D"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "D"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "The argument commits a location/representativeness error (using a local point measurement to infer the thermal state of a different component under different exposure). The ~200°C value measured 10 mm above the vent valve is a local gas temperature near the vent outlet under that specific probe position and is not the temperature of the gas plume impinging on the SMC cover nor the cover temperature; the cover is exposed to much hotter jet/plume regions and radiative/convective heating consistent with reported >800°C gas above adjacent cells, plus mechanical loading from the pressure rise and observed plastic deformation (~2% strain). The evidence therefore does not justify concluding “no immediate melting risk” from the 200°C measurement; it supports that the cover can plastically deform without instant melt during the brief venting, but elevated temperatures can still heat-soak the cover and create a melting risk on longer timescales after/around the event as heat continues to transfer into the SMC.",
+      "gold_answer": "The engineer's argument contains a measurement scope error. The 200°C reading is a localized temperature at a specific point 10 mm above the vent valve and does not represent the temperature field experienced by the SMC cover as a whole. The cell surface itself reaches approximately 686°C, and venting gas exceeding 670°C is documented to melt the SMC cover (melting point ~260°C) within 60 minutes of sustained exposure. The argument conflates a near-vent point measurement with the cover's thermal exposure. Regarding short-term structural integrity: the cover does undergo plastic deformation (~2% strain) during the 8-second event due to pressure rise, indicating the elastic limit is exceeded. However, cover melting is a longer-timescale hazard requiring sustained high-temperature gas exposure beyond the venting window, not an immediate 8-second event consequence.",
+      "score": 0.86,
+      "reason": "Correctly identifies the measurement/representativeness (scope) error, explains that 200°C is a localized near-vent gas reading not the cover/plume exposure, and notes plastic deformation (~2% strain) during the 8 s event plus longer-timescale heat-soak melting risk rather than instantaneous melting. Missing the key supporting quantitative evidence from the gold (cell surface ~686°C and >670°C gas melting SMC within ~60 min)."
+    }
+  ],
+  "final_questions::TR_Mechanism+1+UnknownJournal__TR_Mechanism+2+UnknownJournal__TR_Mechanism+3+UnknownJournal": [
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "D",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "D",
+        "F"
+      ],
+      "score": 1
+    }
+  ],
+  "final_questions::TR_Modelling+1+UnknownJournal__TR_Modelling+2+Applied_Energy__TR_Modelling+3+Journal_of_Energy_Storage": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "D",
+        "G"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "D",
+        "G"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Flaw: it assumes that producing more total heat in a larger cell automatically implies proportionally better heat dissipation, ignoring that cooling is limited by surface area while heat generation and stored energy scale with volume and that the short-circuit heating is localized by the fixed nail radius rather than uniformly distributed. Correct mechanism: under a fixed nail radius, the internal-short heat source size is essentially fixed while the cell’s thermal mass and characteristic heat-removal path length increase with cell radius; the surface-area-to-volume ratio decreases, so the cell’s ability to reject heat per unit thermal mass worsens and temperature rise is more likely to exceed the runaway threshold. Directional relationship: increasing cell size (larger radius/higher capacity) increases thermal runaway susceptibility/risk for the same nail radius and short-circuit scenario.",
+      "gold_answer": "The engineer's argument is flawed because it conflates total heat generation with initial heat generation rate. Under fixed nail radius, the ISC electrical resistance—and therefore the initial electrochemical heat generation rate—is independent of cell radius and cell capacity, because ISC current is confined to a small radial region near the nail and does not distribute across the full active material layers. Consequently, a larger cell does not generate heat faster at the ISC site. However, larger cells have greater surface areas, which increases heat dissipation capacity. Smaller cells have smaller surface areas relative to the same ISC heat source, so they reach the critical self-heating temperature more easily. The correct relationship is that smaller cells are more susceptible to thermal runaway than larger cells under fixed nail radius conditions, which is counterintuitive to the engineer's reasoning.",
+      "score": 0.35,
+      "reason": "Correctly notes the short-circuit heating is localized by fixed nail radius and critiques conflating total heat with dissipation, but it misses/contradicts the key point that ISC resistance (and initial heat generation rate) is independent of cell radius and, critically, it reverses the required directional relationship by claiming larger cells are more susceptible; gold says smaller cells are more susceptible under fixed nail radius."
+    }
+  ],
+  "final_questions::TR_Propagation+1+Applied_Energy__TR_Propagation+2+Applied_Energy__TR_Propagation+3+Applied_Energy": [
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "The conclusion is flawed because “no TR propagation” is inferred from the absence of ignition in cells 2–4, but cell 2 actually experienced a failure event (safety venting and 0 V) caused by heating from cell 1 through paths other than direct TR propagation. Aerogel can delay/limit flame and direct contact heat, yet cell 1’s runaway can still raise cell 2’s temperature via residual heat transfer (edges, fixtures/busbars, gases/pressure) enough to trigger the cell’s CID/vent and internal disconnection/shutdown. The venting/0 V indicates cell 2 was thermally damaged/triggered its safety disconnect, not “protected,” so the observed outcome is a heat-induced electrical isolation or internal short leading to complete discharge/voltage collapse rather than successful thermal protection.",
+      "gold_answer": "The conclusion is flawed because preventing TR propagation is not equivalent to preventing cell damage. Aerogel insulation blocks inter-cell conductive heat transfer but simultaneously impairs heat dissipation from the TR cell and causes heat accumulation in adjacent cells. In configuration B, cell 2 absorbs sufficient heat to trigger safety venting and sustain internal component damage (evidenced by 0 V), meaning it has been functionally destroyed despite not entering full TR. The mechanism is that aerogel increases thermal resistance in both directions: it reduces heat flow to downstream cells but also traps heat near cell 2, raising its temperature past the safety vent threshold and damaging internal structure. Protection from propagation does not imply protection from thermal damage.",
+      "score": 0.72,
+      "reason": "Correctly identifies the key flaw: stopping TR propagation doesn’t mean the adjacent cell is protected, and safety venting/0 V indicates cell 2 was damaged without full TR. However, it misses the core mechanism emphasized in the gold answer: aerogel’s bidirectional insulation effect that impairs heat dissipation and traps/accumulates heat near cell 2; instead it attributes heating mainly to alternate heat paths."
+    }
+  ],
+  "final_questions::TR_Protection+116+Case_Studies_in_Thermal_Engineering__TR_Protection+117+Case_Studies_in_Thermal_Engineering__TR_Protection+204+Case_Studies_in_Thermal_Engineering": [
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "A longer absolute trigger delay in Strategy 2 does not by itself prove superior protection for compliance because compliance is based on whether propagation is prevented/contained under the required test conditions, not just how long it takes the neighboring cell to reach its trigger; adding insulation can also shift where heat is stored and released and may not ensure containment across all scenarios even if it delays the adjacent-cell trigger in that specific setup. Strategy 3 is categorically different because it uses phase-change boiling of the dielectric fluid (immersion boiling/latent-heat heat removal) to actively limit cell temperature and suppress propagation, rather than relying mainly on passive conduction resistance and heat absorption of solid layers like PPCM/insulation in Strategies 1 and 2.",
+      "gold_answer": "Strategy 2 achieves a longer trigger delay (798 s vs 414 s) but regulatory compliance under standards like GB 38031 requires a minimum propagation time D1,2 of at least 300 s. This metric is confirmed only for Strategy 1 (D1,2 = 401 s). Without D1,2 data for Strategy 2's combined configuration, standard compliance cannot be confirmed despite the longer trigger delay—trigger delay and propagation time are distinct metrics. Strategy 3 is categorically different because immersion cooling with a low-boiling-point dielectric fluid (boiling point ~34°C) absorbs heat through latent heat of vaporization at the liquid-vapor interface, maintaining adjacent cells near the boiling point and preventing the temperature rise necessary to initiate TR. Strategies 1 and 2 delay TR propagation by slowing heat transfer but do not maintain a thermodynamic temperature ceiling; Strategy 3 imposes a phase-change temperature ceiling that physically prevents adjacent cells from reaching TR onset temperatures.",
+      "score": 0.78,
+      "reason": "Correctly explains that longer adjacent-cell trigger delay alone doesn’t establish regulatory compliance and notes Strategy 3’s distinct latent-heat/boiling mechanism vs passive solid layers. However, it does not explicitly identify the required regulatory metric D1,2, the GB 38031 ≥300 s criterion, or that only Strategy 1 has confirmed D1,2 and Strategy 2 lacks it; also the “temperature ceiling” aspect is implied but not stated as clearly as in the gold."
+    }
+  ],
+  "final_questions::TR_trigger+1+Applied_Thermal_Engineering__TR_trigger+2+ENERGY_andamp;_ENVIRONMENTAL_MATERIALS__TR_trigger+3+International_Journal_of_Heat_and_Mass_Transfer": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Admissible designs are the Al2O3-PDA dual-coated PE separator and the PP base membrane with a PE microsphere shutdown layer; the pristine PE and the Al2O3-only coated PE are not admissible at 140°C. The best-performing option is the Al2O3-PDA dual-coated PE, distinguished by the PDA-enabled binding/adhesion that retains the Al2O3 ceramic layer and maintains separator integrity at elevated temperature. A relevant limitation of the shutdown-layer approach is that it relies on thermal melting/shutdown of PE, so at this temperature range it can lose mechanical integrity/undergo excessive softening while shutting down rather than remaining structurally stable.",
+      "gold_answer": "At 140°C for 30 minutes, the pristine PE separator shrinks 36.8%, Al2O3-coated PE shrinks 21.1%, and Al2O3-PDA dual-coated PE shows no measurable shrinkage. Only the Al2O3-PDA dual-coated separator is admissible for this application because it maintains dimensional stability at 140°C, preventing cathode-anode contact. The synergistic dual coating suppresses thermal shrinkage beyond what either coating achieves alone. The PE microsphere shutdown layer melts and blocks pores rapidly at 110–120°C, which is useful for shutdown below the target temperature, but its base PP membrane has a melting point of 165°C and does not address the shrinkage failure mode at 140°C in the same way; furthermore, once pores are blocked the cell is non-functional, making it a shutdown rather than a stability solution.",
+      "score": 0.62,
+      "reason": "Correctly rejects pristine PE and Al2O3-only due to shrinkage and identifies Al2O3-PDA as best, attributing its performance to the dual-coating/adhesion mechanism that maintains dimensional stability. However, it incorrectly deems the PP+PE-microsphere shutdown-layer option admissible at 140°C and misses the key limitation that it is a shutdown (pore-blocking, cell becomes non-functional) rather than a dimensional-stability solution at 140°C."
+    }
+  ],
+  "final_questions::产气机理__产气机理2__产气机理3": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "D",
+        "F"
+      ],
+      "score": 0
+    }
+  ],
+  "final_questions::工程防护策略1-001__工程防护策略1-002__工程防护策略1-003": [],
+  "final_questions::建模预测71__建模预测94__建模预测95": [
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Increasing the inter-cell gap improves thermal runaway propagation safety by delaying when heat from a failing cell drives neighbors (and thus the last cell) into runaway and by enabling a faster temperature drop after the peak, but it lowers pack energy density because more volume is consumed by empty space. A counterintuitive but mechanistically justified conclusion is that going from 0 mm spacing to a small nonzero gap can drastically slow propagation (from ~3 s to ~18 s) because introducing even a thin gap can push the thermal interface over a contact-resistance threshold that breaks the strong heat-transfer pathway present at zero spacing.",
+      "gold_answer": "Larger inter-cell gaps delay propagation to the last cell and accelerate post-peak cooling by improving heat dissipation, but reduce pack energy density—a direct safety-versus-density trade-off. The counterintuitive conclusion is that zero spacing (Design B) is more dangerous than a small but nonzero gap, because direct contact places cells in Mode I propagation where surface overheating triggers an early internal short circuit, resulting in ~3 s propagation time. Even a minimal gap crossing the thermal contact resistance threshold shifts the system to Mode II, where bulk heating governs and propagation extends to ~18 s. Thus, adding any gap, despite accelerating inter-cell heat transfer in one sense, actually delays runaway propagation by eliminating the surface-overheating short-circuit pathway.",
+      "score": 0.9,
+      "reason": "Captures the main trade-off (larger gaps delay last-cell runaway, speed post-peak cooling, but reduce energy density) and the counterintuitive result (0 mm much faster than small nonzero gap, ~3 s vs ~18 s, due to crossing a contact-resistance threshold). Missing the key mechanistic detail that zero spacing is fast specifically because Mode I surface overheating triggers an early internal short circuit, and that the nonzero gap shifts to Mode II bulk-heating behavior."
+    }
+  ],
+  "final_questions::机械滥用2__机械滥用3__机械滥用4": [],
+  "final_questions::气体排放65__气体排放79__气体排放81": [
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "D",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "D",
+        "F"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Two-step chain: (1) The coil causes faster/greater venting, producing more gas and ejecting more electrolyte/active material. (2) That enhanced venting removes mass and carries heat away (endothermic vaporization plus convective cooling), so less energy remains to heat the cell after runaway, giving a lower post-runaway peak temperature. Greater explosion hazard: the heating rod, because the vented gas has a lower lower-flammability limit and a wider flammable range (more easily reaches ignitable composition), whereas the coil’s higher LFL and narrower flammable range make ignition less likely despite more total gas.",
+      "gold_answer": "Higher gas generation under coil heating dissipates more heat from the battery to the surrounding environment via mass transport of hot gases, reducing the energy retained in the battery and thereby lowering peak battery temperature. The heating rod poses greater explosion hazard because it produces both the widest flammable concentration range (51.11%) and the lowest lower flammability limit (7.97%), meaning the gas mixture ignites at lower concentrations and remains flammable across a broader range than the coil or plate methods.",
+      "score": 0.95,
+      "reason": "Prediction correctly explains that greater gas venting carries heat away to the environment, lowering retained energy and thus peak temperature, and correctly identifies the heating rod as the greater explosion hazard due to both wider flammable range and lower LFL. It omits the specific numeric LFL/range values cited in the gold."
+    }
+  ],
+  "final_questions::热失控传播行为1__热失控传播行为2__热失控传播行为3": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "E",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E",
+        "F"
+      ],
+      "score": 1
+    }
+  ],
+  "final_questions::热失控动力学1__热失控动力学2__热失控动力学3": []
+}

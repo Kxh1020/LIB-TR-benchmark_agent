@@ -1,0 +1,101 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A cell-level thermal runaway model for an NCM/electrolyte system is being validated. Calorimetry data shows that when NCM cathode material is combined with electrolyte, heat flow rises sharply starting near 250°C and peaks near 283°C, with rapid gas pressure buildup above 270°C. Separately, modeling of the same cell chemistry gives a self-accelerating decomposition temperature (SADT) near 126–139°C depending on the model used. At the anode, experimental data indicates that above 300°C the binder reaction with lithium-ions becomes the dominant exothermic process, generating H2. When electrolyte is present at the anode, s-SEI regeneration consumes available lithium-ions, which reduces the exothermic contribution from the binder reaction. A module-level propagation criterion states that if ambient temperature exceeds the SADT or surrounding cell shell temperature reaches 139°C for sufficient duration, propagation to adjacent cells will occur. Which of the following conclusions are admissible based on this information?",
+        "options": [
+          "A. The sharp heat flow increase near 250°C in the NCM/electrolyte system is consistent with cathode-electrolyte interaction being the dominant heat source in that temperature range, not binder decomposition.",
+          "B. Electrolyte presence at the anode simultaneously increases the severity of s-SEI decomposition and increases the severity of the binder reaction, producing a compounded exothermic effect.",
+          "C. The SADT values derived from the Semenov and Frank-Kamenetskii models define a propagation risk window: cells whose shell temperature remains below approximately 126°C are not at risk of receiving sufficient energy to trigger propagation under the stated criterion.",
+          "D. Above 300°C, the binder reaction is the dominant anode-side exothermic process, but its magnitude is reduced when electrolyte is present because s-SEI regeneration depletes the lithium-ions available for that reaction.",
+          "E. The pressure buildup above 270°C in the NCM/electrolyte system is caused primarily by electrolyte pyrolysis, since pyrolysis rates are sufficiently fast at those temperatures to account for the observed gas generation timescale.",
+          "F. The SADT threshold derived from cell-level calorimetry is directly applicable as a module-level propagation threshold without additional assumptions about heat transfer geometry or delay time."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence places the sharp NCM/electrolyte heat flow rise at ~250°C peaking at ~283°C, while binder reaction dominance is above 300°C. At ~250°C, binder reaction is not yet dominant, making cathode-electrolyte interaction the admissible dominant source in that range. This requires regime-based reasoning.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+192+Applied_Energy:C004",
+              "TR_Modelling+193+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence explicitly states that electrolyte presence increases s-SEI decomposition heat but reduces the binder reaction because s-SEI regeneration depletes lithium-ions. The two effects are not compounded—they partially offset each other. This is a mechanism interaction error.",
+            "error_type": "mechanism confusion / ignoring multi-factor interaction",
+            "evidence_refs": [
+              "TR_Modelling+193+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The propagation criterion requires both temperature threshold AND sufficient duration (delay time). Stating that cells below ~126°C are not at risk ignores the delay time condition and also conflates ambient temperature SADT with shell temperature threshold. This is a conservative-appearing but mechanistically incomplete conclusion.",
+            "error_type": "condition violation / ignoring delay time requirement",
+            "evidence_refs": [
+              "TR_Modelling+192+Applied_Energy:C005",
+              "TR_Modelling+192+Applied_Energy:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence directly supports that above 300°C binder reaction is dominant at the anode, and that electrolyte presence reduces its exothermic peak by depleting lithium-ions through s-SEI regeneration. Both parts of this statement are evidence-supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+193+UnknownJournal:C003",
+              "TR_Modelling+193+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence explicitly states that at 250°C, EMC pyrolysis would take over 7,000,000 s and EC over 300,000,000 s to complete—orders of magnitude longer than the thermal runaway timescale of ~10 s. Pyrolysis cannot account for observed gas generation on the relevant timescale.",
+            "error_type": "mechanism substitution / ignoring timescale constraint",
+            "evidence_refs": [
+              "TR_Modelling+193+UnknownJournal:C006"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The propagation criterion explicitly requires both the temperature threshold and that time exceeds the delay time of thermal runaway. Applying SADT directly as a module-level threshold without accounting for heat transfer geometry and delay time is an unsupported scale transfer.",
+            "error_type": "scale transfer beyond evidence / scope expansion",
+            "evidence_refs": [
+              "TR_Modelling+192+Applied_Energy:C005",
+              "TR_Modelling+192+Applied_Energy:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Regime-dependent dominance of anode exothermic reactions and admissibility of propagation threshold application",
+        "primary_boundary": "Electrolyte presence creates opposing effects on anode reactions (amplifying s-SEI, reducing binder); SADT threshold requires delay time condition for propagation admissibility; pyrolysis timescale is incompatible with thermal runaway timescale",
+        "intended_error_modes": [
+          "Assuming electrolyte amplifies all anode reactions simultaneously",
+          "Applying SADT as a sufficient propagation threshold without delay time condition",
+          "Attributing pressure buildup to pyrolysis without checking timescale compatibility",
+          "Ignoring that propagation criterion requires both temperature and duration conditions"
+        ],
+        "disallowed_extrapolations": [
+          "Electrolyte presence uniformly increases all exothermic reactions at the anode",
+          "SADT alone is sufficient to determine propagation risk without heat transfer and delay time considerations",
+          "Electrolyte pyrolysis is a plausible gas source on thermal runaway timescales at 250°C"
+        ]
+      }
+    }
+  ],
+  "short_answers": []
+}

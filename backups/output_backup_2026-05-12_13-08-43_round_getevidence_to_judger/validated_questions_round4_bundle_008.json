@@ -1,0 +1,37 @@
+{
+  "mcqs": [],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A Gr|NMC811 cell uses a concentrated LiFSI-based electrolyte. During accelerating rate calorimetry, the cell enters thermal runaway at a lower trigger temperature than an identical cell using conventional LiPF6/EC:EMC electrolyte. Isolated component calorimetry shows that the cathode combined with the concentrated LiFSI electrolyte does not reach thermal runaway conditions below 290 °C, while the lithiated anode combined with concentrated LiFSI releases approximately eight times more heat than the anode alone at around 210 °C. A safety engineer argues that replacing the LiFSI solvent with a non-flammable alternative will resolve the lower trigger temperature problem because it removes the combustion hazard. Identify the primary mechanistic flaw in this argument, explain which component interaction is responsible for the lower thermal runaway trigger temperature in the LiFSI-based cell, and state what the non-flammable solvent substitution would and would not address."
+      },
+      "ground_truth": {
+        "gold_answer": "The primary flaw is that the engineer conflates two distinct hazard pathways: (1) the external flammability of the electrolyte solvent when oxidized by oxygen outside the cell, and (2) the internal exothermic reduction of the electrolyte by the lithiated anode inside the cell. The lower thermal runaway trigger temperature in the LiFSI-based cell is caused by the highly exothermic reaction between the lithiated graphite anode and the LiFSI salt, which releases approximately eight times more heat than the anode alone at around 210 °C. The cathode-electrolyte interaction with the concentrated LiFSI electrolyte does not trigger thermal runaway below 290 °C and is therefore not the dominant initiation pathway. Replacing the flammable DMC solvent with a non-flammable solvent such as TMP would address the external combustion risk if the electrolyte were exposed to air or ignition sources after venting, but it would not remove the anode-LiFSI salt exothermic reaction, which is the internal mechanism responsible for the lower trigger temperature. Evidence shows that the non-flammable TMP formulation actually triggers thermal runaway at an even lower temperature than the flammable DMC formulation, confirming that solvent non-flammability does not mitigate and may not improve the internal thermal runaway initiation pathway driven by the anode-salt interaction.",
+        "must_include": [
+          "Distinction between external flammability (oxidation by oxygen) and internal electrolyte reduction by the lithiated anode as separate hazard pathways",
+          "Identification of the anode-LiFSI salt interaction as the dominant exothermic event responsible for the lower trigger temperature",
+          "Statement that cathode-electrolyte reactions are not the initiation driver below 290 °C",
+          "Statement that non-flammable solvent substitution addresses external combustion but not the internal anode-driven exothermic pathway",
+          "Recognition that the non-flammable TMP formulation produces an even lower thermal runaway trigger temperature, contradicting the engineer's premise"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming that non-flammable solvents universally improve thermal runaway resistance",
+          "Attributing the lower trigger temperature to cathode decomposition or cathode-electrolyte reactions",
+          "Concluding that LiFSI salt replacement alone would fully resolve the thermal runaway initiation problem without supporting evidence",
+          "Asserting that the conventional LiPF6 electrolyte is safer in all respects based solely on its higher trigger temperature"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanistic distinction between external flammability and internal anode-driven exothermic reduction as separate thermal safety dimensions in LiFSI-based electrolyte cells.",
+        "primary_boundary": "Solvent flammability governs post-venting external combustion; anode-electrolyte salt reduction governs internal thermal runaway initiation. These are independent pathways and interventions targeting one do not necessarily affect the other.",
+        "intended_error_modes": [
+          "Conflating external flammability with internal thermal runaway resistance",
+          "Misidentifying the cathode-electrolyte interaction as the dominant initiation pathway",
+          "Assuming non-flammable solvents improve the internal thermal runaway trigger temperature"
+        ]
+      }
+    }
+  ]
+}

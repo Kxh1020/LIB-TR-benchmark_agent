@@ -1,0 +1,225 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "In a battery fire experiment, the CO/CO2 ratio measured during the second combustion stage is consistently higher than during the first stage. The first stage exhibits diffusion flame behavior; the second stage exhibits partially premixed flame behavior with a shorter flow time between fuel release and oxidation. An engineer proposes that reducing the CO/CO2 ratio in the second stage could be achieved by converting the flame to a diffusion-dominated mode. Which statements about the CO/CO2 ratio difference and the proposed intervention are admissible?",
+        "options": [
+          "A. The higher CO/CO2 ratio in the second stage is mechanistically explained by insufficient residence time for CO oxidation to CO2 within the partially premixed flame, not by a higher rate of CO production from the battery.",
+          "B. The engineer's proposal is consistent with the evidence: a diffusion flame would provide longer mixing time, which the evidence associates with lower CO/CO2 ratios.",
+          "C. The CO/CO2 ratio difference between stages is primarily caused by differences in the carbon content of the materials combusting in each stage rather than by flame structure.",
+          "D. Because the second combustion stage at 0% SOC lacks an explosion but still produces a second combustion event, the CO/CO2 ratio at 0% SOC in the second stage is expected to be lower than at 100% SOC based solely on the flame structure argument.",
+          "E. The evidence supports that flame structure governs CO/CO2 ratio within this experiment, but does not establish whether this relationship holds when battery chemistry or venting gas composition changes substantially.",
+          "F. The higher CO/CO2 ratio in the second stage proves that the second stage generates more total CO mass than the first stage across all SOC conditions."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence explicitly attributes the higher CO/CO2 ratio to small flow/mixing time in the partially premixed flame, not to increased CO production rate.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+139+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Diffusion flame is associated with longer mixing time per the evidence; the engineer's logic follows directly from the stated mechanism linking mixing time to CO/CO2 ratio.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+139+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The evidence attributes the ratio difference to flame structure and mixing time, not to differences in carbon content of combusting materials; this is a mechanism substitution.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Gasventing+139+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The 0% SOC second combustion lacks an explosion but the evidence does not establish its flame structure as diffusion-dominated; inferring lower CO/CO2 from SOC alone is unsupported.",
+            "error_type": "unsupported_extrapolation",
+            "evidence_refs": [
+              "TR_Gasventing+139+Journal_of_Loss_Prevention_in_the_Process_Industries:C003",
+              "TR_Gasventing+139+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The evidence establishes the flame-structure/CO ratio link within this experimental context; generalization to different chemistries or gas compositions is not supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+139+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "CO/CO2 ratio reflects conversion efficiency, not total mass; a higher ratio does not imply greater total CO mass without knowing absolute flow rates and durations.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+139+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism linking flame structure to CO/CO2 ratio and admissibility of design intervention inference",
+        "primary_boundary": "CO/CO2 ratio difference is attributed to mixing time within the stated flame types; this does not extend to total CO mass or to different battery chemistries",
+        "intended_error_modes": [
+          "mechanism_substitution (C)",
+          "unsupported SOC-to-flame-structure extrapolation (D)",
+          "ratio-to-mass quantity confusion (F)"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring total CO mass from CO/CO2 ratio alone",
+          "Assuming 0% SOC second combustion is diffusion-dominated without evidence"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Three identical lithium-ion batteries are burned under identical external conditions at 0%, 50%, and 100% SOC. Peak heat release rates are 2.31, 4.26, and 5.04 kW respectively. Explosions occur only at 50% and 100% SOC during the second combustion stage. A safety engineer argues that a battery discharged to 0% SOC before storage eliminates the explosion hazard and reduces fire severity to an acceptable level for an indoor installation. Evaluate which aspects of this safety argument are defensible.",
+        "options": [
+          "A. The argument that full discharge eliminates the explosion hazard during the second combustion stage is supported, since no explosion was observed at 0% SOC.",
+          "B. The argument that 0% SOC reduces fire severity to an acceptable level for indoor installation is not directly supportable from heat release rate data alone, as acceptability depends on installation-specific criteria not established by this evidence.",
+          "C. Because the 0% SOC battery still produces a peak heat release rate of 2.31 kW and undergoes two combustion stages, full discharge eliminates the explosion risk but does not eliminate the fire hazard.",
+          "D. The reduction in peak HRR from 100% to 0% SOC confirms that full discharge is sufficient to prevent thermal runaway in batteries stored indoors.",
+          "E. The observation that the second combustion at 0% SOC is delayed relative to higher SOC conditions implies that full discharge provides additional evacuation time, which is a defensible secondary safety benefit.",
+          "F. The explosion hazard elimination at 0% SOC and the HRR reduction together guarantee that a 0% SOC battery fire will not propagate to adjacent stored batteries in any realistic indoor configuration."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence directly states no explosion occurred at 0% SOC during the second combustion stage, supporting this specific claim.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+139+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Acceptability for indoor installation requires installation-specific thresholds not provided in the evidence; HRR data alone cannot establish acceptability.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+139+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "0% SOC still yields 2.31 kW peak HRR and two combustion stages; fire hazard persists even though explosion hazard is eliminated—a counterintuitive partial-mitigation conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+139+Journal_of_Loss_Prevention_in_the_Process_Industries:C001",
+              "TR_Gasventing+139+Journal_of_Loss_Prevention_in_the_Process_Industries:C002",
+              "TR_Gasventing+139+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "HRR reduction does not imply thermal runaway prevention; the 0% SOC battery still undergoes combustion. This is a causal overclaim from a severity metric.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+139+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The delayed second combustion at 0% SOC (520 s vs 275 s at 100% SOC) is evidence-supported and implies more time before the second hazardous event, a defensible secondary benefit.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+139+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Propagation to adjacent batteries depends on spacing, configuration, and thermal coupling—none of which are addressed by this single-cell HRR and explosion evidence.",
+            "error_type": "scale_transfer_beyond_evidence",
+            "evidence_refs": [
+              "TR_Gasventing+139+Journal_of_Loss_Prevention_in_the_Process_Industries:C001",
+              "TR_Gasventing+139+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of multi-claim safety argument from SOC-dependent fire behavior evidence",
+        "primary_boundary": "Cell-level HRR and explosion data support partial hazard reduction claims but cannot establish system-level propagation safety or installation acceptability",
+        "intended_error_modes": [
+          "thermal runaway prevention overclaim from HRR reduction (D)",
+          "scale transfer to propagation without configuration data (F)"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring thermal runaway prevention from HRR magnitude alone",
+          "Inferring no-propagation guarantee from single-cell explosion absence"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery fire produces two sequential combustion stages. In the first stage, particles are detected at measurable concentrations and the CO/CO2 ratio is relatively low. In the second stage at elevated SOC, particles are nearly absent and the CO/CO2 ratio is higher. An explosion occurs during the second stage at 50% and 100% SOC but not at 0% SOC, where the second stage is also substantially delayed. Using the relationship between flame structure, mixing time, and combustion products, explain: (1) why the CO/CO2 ratio increases from the first to the second stage, and (2) what the particle concentration data and explosion behavior together imply about the flame structure transition between the two stages and how SOC modulates whether that transition produces an explosive event."
+      },
+      "ground_truth": {
+        "gold_answer": "The CO/CO2 ratio increases from the first to the second stage because the second stage is characterized by a partially premixed flame with short flow time between fuel release and oxidation. This short mixing time is insufficient for complete conversion of CO to CO2, so CO accumulates relative to CO2. In the first stage, the diffusion flame has longer mixing time, allowing more complete CO oxidation and thus a lower CO/CO2 ratio. The near-absence of particles in the second stage at elevated SOC is diagnostic of a partially premixed flame, since diffusion flames produce more particulate matter. Together, the particle absence and explosive character at 50% and 100% SOC confirm that the second stage transitions to a partially premixed combustion regime capable of explosive behavior. At 0% SOC, the second combustion is delayed and non-explosive, indicating that the gas-phase fuel quantity or release rate at that charge level is insufficient to establish the premixed conditions required for an explosion, even though some second-stage combustion still occurs.",
+        "must_include": [
+          "Short mixing or flow time in the partially premixed flame causes incomplete CO-to-CO2 conversion, raising the CO/CO2 ratio in the second stage",
+          "Particle near-absence in the second stage at elevated SOC is consistent with partially premixed flame structure",
+          "Explosion at 50% and 100% SOC is linked to premixed flame conditions achieved in the second stage",
+          "At 0% SOC, the second stage is delayed and non-explosive, indicating premixed conditions are not achieved at that charge level",
+          "First stage diffusion flame has longer mixing time, supporting lower CO/CO2 ratio"
+        ],
+        "disallowed_extrapolations": [
+          "Do not claim the CO/CO2 ratio difference is due to differences in carbon content of combusting materials",
+          "Do not infer total CO mass from CO/CO2 ratio alone",
+          "Do not claim 0% SOC eliminates all fire hazard or prevents the second combustion stage entirely",
+          "Do not extend the flame structure argument to different battery chemistries or venting gas compositions without qualification"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism linking flame structure and mixing time to CO/CO2 ratio, and SOC-dependent modulation of premixed flame formation and explosion risk",
+        "primary_boundary": "The flame-structure explanation for CO/CO2 ratio is established within this experimental context; explosion absence at 0% SOC reflects failure to achieve premixed conditions, not elimination of all combustion",
+        "intended_error_modes": [
+          "Attributing CO/CO2 ratio change to material carbon content rather than mixing time",
+          "Treating 0% SOC second-stage delay as elimination of the second combustion event",
+          "Inferring total CO mass from ratio data alone",
+          "Generalizing flame structure mechanism to all battery chemistries without qualification"
+        ]
+      }
+    }
+  ]
+}

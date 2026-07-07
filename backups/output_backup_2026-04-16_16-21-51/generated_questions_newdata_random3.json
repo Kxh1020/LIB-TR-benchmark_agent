@@ -1,0 +1,993 @@
+{
+  "TR_Gasventing+13+Journal_of_Hazardous_Materials__TR_Gasventing+14+Journal_of_Energy_Storage__TR_Gasventing+15+Journal_of_Energy_Storage": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "An energy storage system container experiences thermal runaway in a lithium iron phosphate battery pack. The dominant combustible component in the vented gas exceeds 60% by volume and is characterized by high diffusivity and a wide flammability range. Engineers are evaluating explosion hazard zones outside the container. The container has asymmetric vent areas: one end has a substantially smaller vent opening than the opposite end. Ignition occurs at the smaller-vent end. Which of the following conclusions about the resulting external explosion hazard are supported by engineering reasoning under these conditions?",
+          "options": [
+            "A. The asymmetric vent configuration causes the external explosion overpressure at the smaller-vent end to be elevated relative to a symmetric configuration, expanding the hazard zone.",
+            "B. Because the dominant gas component has high diffusivity, the explosion overpressure hazard zone is necessarily larger than the dynamic pressure hazard zone at all distances from the container.",
+            "C. The dynamic pressure hazard zone at the ignited end may extend farther than the overpressure hazard zone, making dynamic pressure the controlling injury criterion at the boundary.",
+            "D. Once an external explosion occurs and the wave re-enters the container through open vents, internal pressure will continue to accumulate, generating a secondary internal peak pressure that exceeds the external peak.",
+            "E. The asymmetric vent geometry elevates external overpressure because the smaller vent restricts outflow, increasing confinement effects during gas expulsion.",
+            "F. The high hydrogen fraction in the vented gas is sufficient on its own to determine the peak explosion overpressure, independent of container geometry or ignition location.",
+            "G. Under central ignition rather than end ignition, the indoor peak overpressure would be expected to be higher due to bidirectional flame propagation within the container."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "G"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence directly states asymmetric vent area increased external overpressure by 54%, expanding explosion hazard degree.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+15+Journal_of_Energy_Storage:C006"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Evidence shows dynamic pressure hazard zone (7 m) exceeded overpressure hazard zone (6 m), contradicting this claim.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+15+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence shows dynamic pressure hazard area reached 7 m versus 6 m for overpressure, making dynamic pressure the outer boundary criterion.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+15+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Evidence states returning explosion waves cannot block open vents, so internal pressure cannot accumulate and the internal peak pressure is not generated.",
+              "error_type": "mechanism_substitution",
+              "evidence_refs": [
+                "TR_Gasventing+15+Journal_of_Energy_Storage:C007"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Smaller vent restricts gas outflow, increasing confinement; this mechanistically supports the observed 54% overpressure increase from asymmetric geometry.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+15+Journal_of_Energy_Storage:C006"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Evidence shows container geometry and ignition location independently affect peak overpressure; gas composition alone does not determine it.",
+              "error_type": "single_variable_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+15+Journal_of_Energy_Storage:C006",
+                "TR_Gasventing+15+Journal_of_Energy_Storage:C009"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Correct",
+              "justification": "Evidence states central ignition produces the most severe indoor explosion due to bidirectional flame propagation increasing combustion rate and peak overpressure.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+15+Journal_of_Energy_Storage:C009"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Interaction between vent asymmetry, ignition location, and explosion hazard zone geometry for hydrogen-rich TR gas in a confined ESS container.",
+          "primary_boundary": "Dynamic pressure hazard zone can exceed overpressure hazard zone; internal pressure accumulation requires vent blockage which open vents prevent.",
+          "intended_error_modes": [
+            "Assuming overpressure always dominates dynamic pressure at all distances",
+            "Assuming re-entrant explosion waves generate secondary internal peaks through open vents",
+            "Attributing peak overpressure solely to gas composition without geometry effects"
+          ],
+          "disallowed_extrapolations": [
+            "Generalizing vent asymmetry effect magnitude to other geometries",
+            "Assuming hydrogen fraction alone predicts explosion severity independent of confinement"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A researcher is modeling the explosion characteristics of battery vent gas mixed with air using three published kinetic mechanisms. Experimental laminar flame speed measurements are available across equivalence ratios from 0.8 to 1.8. The gas mixture has a variable ratio of heavier hydrocarbons to hydrogen (CH ratio). At equivalence ratios at or below 1.5, increasing the CH ratio is observed to reduce both flame speed and peak explosion pressure. However, at equivalence ratio 1.8, the trend reverses. Which of the following statements about this system are admissible conclusions?",
+          "options": [
+            "A. The reversal of CH ratio effect at equivalence ratio 1.8 is consistent with a change in the dominant reaction pathway governing radical pool concentration at fuel-rich conditions.",
+            "B. A kinetic model that overestimates laminar flame speed across all equivalence ratios would be conservative for explosion pressure prediction and therefore acceptable for safety assessment.",
+            "C. The non-monotonic dependence of flame speed on equivalence ratio, with a peak near 1.2, implies that the hazard from a fixed gas release is highest when the mixture forms near-stoichiometric conditions rather than at the richest possible mixture.",
+            "D. Because USC 2.0 underestimates and Aramco 3.0 overestimates laminar flame speed, their average would necessarily produce the best agreement with experimental data.",
+            "E. The key radical pool combining H, O, and OH controls explosion characteristics, so any condition that suppresses this pool will reduce both flame speed and peak pressure simultaneously.",
+            "F. At equivalence ratio 1.8, the reaction converting O and H2 to H and OH is suppressed by excess hydrogen, which mechanistically explains the observed regime-dependent behavior of the CH ratio effect."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The CH ratio reversal at \u03a6=1.8 aligns with the evidence that dominant radical pathways shift under fuel-rich conditions, changing mixture reactivity.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+14+Journal_of_Energy_Storage:C002",
+                "TR_Gasventing+14+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Overestimating flame speed does not make a model conservative for all safety metrics; it may misrepresent regime-dependent behavior and misdirect design decisions.",
+              "error_type": "protective_mechanism_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+14+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Peak flame speed and explosion pressure occur at \u03a6=1.2, not at the richest mixture, so near-stoichiometric conditions represent the highest hazard scenario.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+14+Journal_of_Energy_Storage:C001"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Averaging two models with opposite systematic errors does not guarantee accuracy; the errors may not be symmetric or cancel at all equivalence ratios.",
+              "error_type": "unjustified_monotonicity",
+              "evidence_refs": [
+                "TR_Gasventing+14+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Evidence states the combined H+O+OH radical pool controls explosion characteristics and shares the same trend as both flame speed and peak pressure.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+14+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Evidence explicitly states excess hydrogen suppresses the O+H2 reaction at fuel-rich conditions, reducing reactivity and explaining the regime-dependent CH ratio effect.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+14+Journal_of_Energy_Storage:C003",
+                "TR_Gasventing+14+Journal_of_Energy_Storage:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Regime-dependent behavior of CH ratio on explosion characteristics and the role of the radical pool as the controlling mechanism.",
+          "primary_boundary": "The CH ratio effect reverses sign at \u03a6=1.8 due to a mechanistic shift, not a continuous trend; peak hazard is at \u03a6=1.2, not maximum richness.",
+          "intended_error_modes": [
+            "Assuming model overestimation is always conservative for safety",
+            "Assuming averaging two bounding models yields the best estimate",
+            "Treating the CH ratio effect as monotonic across all equivalence ratios"
+          ],
+          "disallowed_extrapolations": [
+            "Extending the \u03a6=1.2 peak result to predict behavior at other equivalence ratios without regime qualification",
+            "Claiming the FFCM-1 model is valid beyond the tested equivalence ratio range"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "During thermal processing of spent NMC lithium-ion batteries at 700 \u00b0C in an oxidative atmosphere for 90 minutes, carbon content is reduced from approximately 41% to under 1%. Separately, fluorine-containing electrolyte salt decomposes at temperatures that depend on whether organic solvents are present: decomposition can begin near 85 \u00b0C with solvents present, versus 150\u2013250 \u00b0C without. After thermal treatment, fluorine is found not only in the gas phase as HF but also retained in an organic oil by-product. An engineer proposes that extending the treatment time beyond 90 minutes at 700 \u00b0C will further reduce residual fluorine in the solid product. Which of the following assessments are consistent with the evidence?",
+          "options": [
+            "A. Carbon removal at 700 \u00b0C is effectively complete within the first 30 minutes, so extending treatment time beyond 60 minutes provides no meaningful additional carbon reduction.",
+            "B. Fluorine retention in the organic oil fraction means that gas-phase HF measurement alone would underestimate total fluorine release during thermal treatment.",
+            "C. The engineer's proposal to extend treatment time to reduce solid-phase fluorine is well-supported, because longer oxidative exposure will volatilize the remaining fluorine-containing oil fraction.",
+            "D. The early onset of LiPF6 decomposition in solvent-containing systems near 85 \u00b0C implies that fluorine release begins well before the carbon oxidation regime is reached at processing temperatures.",
+            "E. Because sample weight stabilizes within 60\u201390 minutes at 700 \u00b0C, the thermal treatment protocol is confirmed to have also eliminated all fluorine-containing residues from the solid product.",
+            "F. The presence of fluorine in the polar fraction of the oil by-product indicates that fluorine partitioning between gas and condensed phases is a relevant consideration for waste stream management."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "D",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence states carbon removal is complete within the first 30 minutes at 700 \u00b0C; weight does not change significantly beyond 60 minutes.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+13+Journal_of_Hazardous_Materials:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Evidence shows fluorine is retained in organic oil, not fully released as HF gas; gas-phase measurement alone would miss this condensed-phase fluorine.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+13+Journal_of_Hazardous_Materials:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Evidence does not support that extended time reduces solid fluorine; weight stabilization shows carbon removal is complete but does not address fluorine in oil fraction.",
+              "error_type": "unsupported_extrapolation",
+              "evidence_refs": [
+                "TR_Gasventing+13+Journal_of_Hazardous_Materials:C004",
+                "TR_Gasventing+13+Journal_of_Hazardous_Materials:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "LiPF6 decomposition onset near 85 \u00b0C with solvents present means fluorine release initiates far below the 700 \u00b0C carbon oxidation temperature.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+13+Journal_of_Hazardous_Materials:C002"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Weight stabilization confirms carbon removal completion; it does not confirm fluorine elimination, as fluorine may remain in oil by-product without contributing to weight change.",
+              "error_type": "measurement_scope_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+13+Journal_of_Hazardous_Materials:C005",
+                "TR_Gasventing+13+Journal_of_Hazardous_Materials:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Evidence of 35% fluorine by weight in the polar oil fraction directly establishes that fluorine partitions between gas and condensed phases during processing.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+13+Journal_of_Hazardous_Materials:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Scope of weight stabilization as a process completion indicator and fluorine partitioning between gas and condensed phases during thermal treatment.",
+          "primary_boundary": "Weight stabilization confirms carbon removal but does not confirm fluorine removal; fluorine retention in oil is independent of carbon oxidation completion.",
+          "intended_error_modes": [
+            "Using weight stabilization as a proxy for total contaminant removal including fluorine",
+            "Assuming extended treatment time addresses all residual species equally",
+            "Treating gas-phase HF as the complete fluorine mass balance"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming the 35% fluorine oil fraction is eliminated by longer treatment without evidence",
+            "Generalizing carbon removal kinetics to fluorine removal kinetics"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "An ESS container stores lithium iron phosphate batteries. During a thermal runaway event, the batteries vent a gas mixture with hydrogen as the dominant component exceeding 60% by volume, along with CO, light hydrocarbons, and CO2. The container has multiple vents, all of which have failed open. A fire safety engineer is assessing whether igniting this gas mixture near the center of the container versus near one end produces a more severe indoor explosion, and separately whether an external explosion following ignition at one end can generate a secondary internal pressure peak by forcing the explosion wave back through the open vents. Provide a justified engineering assessment of both questions, identifying the governing mechanism in each case."
+        },
+        "ground_truth": {
+          "gold_answer": "Central ignition produces a more severe indoor explosion because the flame propagates bidirectionally from the ignition point, increasing the combustion reaction rate and generating the maximum peak overpressure compared to end ignition. For the secondary internal peak question: when all vents have failed open, the returning external explosion wave cannot effectively block the vents, so the interior does not form a sufficiently confined space for pressure to accumulate continuously. Therefore, the typical internal secondary peak pressure cannot be generated. The governing mechanism is that confinement is required for pressure accumulation, and open vents eliminate the necessary confinement condition.",
+          "must_include": [
+            "Central ignition is more severe due to bidirectional flame propagation",
+            "Bidirectional propagation increases combustion rate and peak overpressure",
+            "Open vents prevent confinement required for internal pressure accumulation",
+            "Returning explosion wave cannot block open vents",
+            "Secondary internal peak pressure is not generated under open-vent conditions"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming central ignition is always more severe regardless of container geometry or gas composition",
+            "Claiming the secondary internal peak is generated even with partially open vents without evidence",
+            "Attributing the absence of secondary peak to gas composition rather than vent configuration"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Ignition location effect on indoor explosion severity and the confinement requirement for secondary internal pressure peak formation.",
+          "primary_boundary": "Open vents eliminate the confinement condition necessary for internal pressure accumulation; this is a structural condition, not a gas property effect.",
+          "intended_error_modes": [
+            "Claiming end ignition is more severe because it directly faces the vent",
+            "Assuming the returning explosion wave generates a secondary peak regardless of vent status",
+            "Conflating flame speed with peak overpressure without accounting for propagation geometry"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Modelling+25+Thermal_Science_and_Engineering_Progress__TR_Modelling+5+Journal_of_Energy_Storage__TR_Modelling+6+Journal_of_Energy_Storage": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery module containing packed 18650 cylindrical NMC811 cells at 100% SOC is subjected to mechanical crushing. The crush is applied in the thickness direction at a speed exceeding a documented critical threshold. An engineer evaluates thermal runaway risk and gas hazard severity. Which of the following conclusions are admissible given these conditions?",
+          "options": [
+            "A. The cells closest to the impact surface face disproportionately higher thermal runaway risk because deformation propagates row by row from the impact side under the stated crushing speed regime.",
+            "B. The thickness-direction crush is more hazardous than length or width direction crush because it restricts heat release, promoting local heat accumulation that can trigger thermal runaway.",
+            "C. NMC811 cells at 100% SOC will generate less gas per unit capacity than LFP cells under the same mechanical abuse conditions, reducing post-ignition explosion risk.",
+            "D. Because total heat generation changes only marginally with ageing state, the thermal runaway severity for these fresh cells is expected to be substantially lower than for heavily cycled cells of the same chemistry.",
+            "E. The high Ni content of NMC811 increases the volume proportion of flammable hydrocarbons such as CH4 and C2H4 in the vent gas relative to lower-Ni NMC variants, compounding the fire hazard.",
+            "F. Contact between the anode coating and the cathode aluminum current collector represents the most dangerous internal short-circuit configuration in terms of electrocaloric response, and this mode is more likely when separator fracture is extensive.",
+            "G. The gas generation hazard from NMC811 at 100% SOC is bounded by the LFP 18650 gas generation capacity because LFP has a more thermally stable cathode."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "E",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence states that above critical crushing speed, packed batteries deform row by row from the impact side, giving that side higher thermal runaway risk.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+6+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Evidence directly supports that thickness-direction compression restricts heat release and promotes heat accumulation leading to thermal runaway, making it more dangerous.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+6+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "NMC generates 99.33 mmol/Ah vs LFP 45.45 mmol/Ah at 100% SOC; NMC811 produces far more gas, not less.",
+              "error_type": "direction_reversal",
+              "evidence_refs": [
+                "TR_Modelling+25+Thermal_Science_and_Engineering_Progress:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Total heat generation increases only slightly with ageing; fresh vs. aged difference is small, not substantial. Overclaims the magnitude of the ageing effect.",
+              "error_type": "magnitude_overclaim",
+              "evidence_refs": [
+                "TR_Modelling+5+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Evidence shows increasing Ni proportion raises CH4 and C2H4 volume fractions; NMC811 has the highest values among NMC variants, increasing flammable gas hazard.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+25+Thermal_Science_and_Engineering_Progress:C008"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Evidence identifies anode coating\u2013cathode Al collector contact as the most dangerous ISC mode; extensive separator fracture increases the probability of this contact configuration.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+6+Journal_of_Energy_Storage:C001",
+                "TR_Modelling+6+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Incorrect",
+              "justification": "NMC gas generation capacity substantially exceeds LFP; the claim inverts the evidence-supported ranking and is not admissible.",
+              "error_type": "direction_reversal",
+              "evidence_refs": [
+                "TR_Modelling+25+Thermal_Science_and_Engineering_Progress:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-factor admissibility judgment combining mechanical abuse direction, impact-side propagation, chemistry-dependent gas hazard, and ISC mode severity under defined conditions.",
+          "primary_boundary": "NMC811 gas generation exceeds LFP; thickness-direction crush is more hazardous; row-by-row deformation applies only above critical crushing speed; ageing effect on total heat is small not large.",
+          "intended_error_modes": [
+            "direction_reversal on gas generation ranking",
+            "magnitude overclaim on ageing effect",
+            "conservative-appearing but incorrect gas hazard bound"
+          ],
+          "disallowed_extrapolations": [
+            "Assuming LFP is always safer in gas generation",
+            "Assuming ageing dramatically changes total heat release",
+            "Generalizing row-by-row deformation to all crushing speeds"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "An engineer is analyzing thermal runaway gas hazard for LFP batteries triggered under two different abuse modes: overheating and overcharging. The same 26650 LFP format is used in both cases. The engineer also notes that gas sensors are deployed outside the battery shell. Which conclusions about gas detection timing, safety valve behavior, and hazard characterization are admissible?",
+          "options": [
+            "A. Under overheating conditions, the safety valve opens primarily because of electrolyte vapor pressure buildup, whereas under overcharging the valve opens due to accumulated internal gas; these mechanisms are distinct and should not be assumed interchangeable.",
+            "B. Because H2 is the first gas detected in both overheating and overcharging conditions and its lower explosion limit is only 4%, the external sensor will capture the initial H2 release before any significant accumulation occurs inside the battery.",
+            "C. The gas production capacity under overheating is more than twice that under overcharging for LFP 26650 cells, meaning overheating poses a substantially larger total gas volume hazard than overcharging for this format.",
+            "D. External gas sensors reliably indicate the onset of internal gas generation because the concentration measured outside the shell directly reflects the internal generation rate at that moment.",
+            "E. The binder decomposition reaction is the primary source of H2 during thermal runaway, and because H2 has a low explosion limit, even partial binder decomposition under mild thermal conditions represents a significant ignition risk.",
+            "F. Since gas sensors outside the shell can only detect gas after it accumulates to a threshold concentration inside the battery and then escapes, there is an inherent detection lag between internal gas generation onset and external sensor response.",
+            "G. For LFP 26650 batteries, CO2 constitutes a larger proportion of total vent gas than for LFP 18650 batteries, making CO2-based early warning more reliable for the 26650 format."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence explicitly distinguishes the two valve-opening mechanisms: electrolyte vapor for overheating, internal gas release for overcharging in LFP batteries.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+25+Thermal_Science_and_Engineering_Progress:C014"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Evidence states external sensors detect gas only after accumulation inside the battery reaches a threshold; initial H2 release is not captured before accumulation.",
+              "error_type": "measurement_scope_overclaim",
+              "evidence_refs": [
+                "TR_Modelling+25+Thermal_Science_and_Engineering_Progress:C012"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence shows overheating produces 38.65 mmol/Ah vs 12.03 mmol/Ah for overcharging, a 221% difference, supporting a substantially larger gas volume hazard under overheating.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+25+Thermal_Science_and_Engineering_Progress:C007"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Evidence states external measurements reflect gas that has accumulated internally first; direct reflection of internal generation rate is not supported.",
+              "error_type": "measurement_scope_overclaim",
+              "evidence_refs": [
+                "TR_Modelling+25+Thermal_Science_and_Engineering_Progress:C012"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Evidence identifies binder decomposition as the primary H2 source during thermal runaway and states that H2's 4% lower explosion limit means small amounts create ignition risk.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+25+Thermal_Science_and_Engineering_Progress:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Evidence explicitly states external detection requires prior internal accumulation, creating an inherent lag between internal generation onset and external sensor response.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+25+Thermal_Science_and_Engineering_Progress:C012"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Incorrect",
+              "justification": "Evidence shows CO2 proportion is lower in 26650 (25.39%) than in 18650 (53%) for LFP, making CO2-based warning less reliable for 26650, not more.",
+              "error_type": "direction_reversal",
+              "evidence_refs": [
+                "TR_Modelling+25+Thermal_Science_and_Engineering_Progress:C006"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of gas detection timing claims, abuse-mode-specific valve mechanisms, and gas composition-based warning reliability for LFP formats.",
+          "primary_boundary": "External sensors have inherent detection lag; CO2 proportion is lower not higher in 26650 vs 18650; overheating generates more than twice the gas of overcharging.",
+          "intended_error_modes": [
+            "measurement scope overclaim for external sensors",
+            "direction reversal on CO2 proportion ranking",
+            "assuming initial gas is captured before accumulation"
+          ],
+          "disallowed_extrapolations": [
+            "Assuming external sensor captures real-time internal generation",
+            "Assuming 26650 has higher CO2 fraction than 18650 for LFP"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A NCA/Graphite 18650 cell is cycled at -10\u00b0C for 30 cycles at 1C rate, reaching approximately 47% state of health. During a subsequent thermal abuse test, the cell enters thermal runaway. An engineer compares this aged cell's thermal runaway behavior to a fresh cell of the same chemistry. Which of the following statements about the aged cell's thermal runaway characteristics are admissible?",
+          "options": [
+            "A. Thermal runaway in the aged cell begins earlier in the heating sequence because plated lithium reacts with electrolyte at around 140\u00b0C, a reaction pathway absent in the fresh cell.",
+            "B. The total heat released during thermal runaway by the aged cell is substantially larger than that of the fresh cell, making the aged cell significantly more dangerous in terms of total energy release.",
+            "C. In the aged cell, the positive electrode\u2013electrolyte reaction remains the dominant heat source, and together with the negative electrode\u2013electrolyte reaction, these two reactions still account for the majority of total heat generation.",
+            "D. Because the negative-electrolyte reaction heat increases with ageing while electrolyte decomposition heat decreases, the net effect is that total heat generation decreases significantly in the aged cell.",
+            "E. The shift in heat source distribution with ageing\u2014specifically the growth of the deposited Li-electrolyte reaction contribution\u2014means that the onset temperature of thermal runaway is reduced for heavily aged cells cycled at low temperature.",
+            "F. Since the SOH of the aged cell is only 47%, the reduced active lithium inventory means the positive-electrolyte reaction is no longer a significant heat contributor during thermal runaway.",
+            "G. The increased heat from the negative-electrolyte reaction in aged cells is a consequence of lithium plating during low-temperature cycling, which increases the reactive lithium available at the anode."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence states that for low-temperature cycled cells, plated lithium reacts with electrolyte at ~140\u00b0C, promoting reactions and causing earlier thermal runaway onset.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+5+Journal_of_Energy_Storage:C001"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Evidence states total heat generation increases only a little with ageing state; a substantial increase is not supported.",
+              "error_type": "magnitude_overclaim",
+              "evidence_refs": [
+                "TR_Modelling+5+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence states positive-electrolyte and negative-electrolyte reactions together account for more than 90% of total heat generation; this distribution holds across ageing states.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+5+Journal_of_Energy_Storage:C002"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Evidence shows total heat changes only slightly; the net effect is not a significant decrease. The redistribution does not cause a large net reduction.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Modelling+5+Journal_of_Energy_Storage:C003",
+                "TR_Modelling+5+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Evidence links plated lithium reacting with electrolyte at ~140\u00b0C to an earlier thermal runaway start; this is a mechanism-based reduction in onset temperature for low-temperature aged cells.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+5+Journal_of_Energy_Storage:C001"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Evidence identifies positive-electrolyte reaction as the largest heat source during thermal runaway; reduced SOH does not eliminate this contribution per the evidence.",
+              "error_type": "unsupported_extrapolation",
+              "evidence_refs": [
+                "TR_Modelling+5+Journal_of_Energy_Storage:C002"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Incorrect",
+              "justification": "While mechanistically plausible, the evidence does not explicitly state that lithium plating is the cause of increased negative-electrolyte reaction heat; this is an unsupported causal inference beyond the evidence.",
+              "error_type": "causal_overclaim_beyond_evidence",
+              "evidence_refs": [
+                "TR_Modelling+5+Journal_of_Energy_Storage:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of ageing-dependent thermal runaway onset, heat source distribution, and total heat magnitude claims for low-temperature cycled cells.",
+          "primary_boundary": "Total heat increases only slightly with ageing; positive-electrolyte reaction remains dominant; earlier onset is supported but substantially larger total heat is not.",
+          "intended_error_modes": [
+            "magnitude overclaim on total heat increase",
+            "eliminating dominant heat source based on SOH reduction",
+            "causal overclaim linking SOH to net heat decrease",
+            "inferring lithium plating causation beyond stated evidence"
+          ],
+          "disallowed_extrapolations": [
+            "Assuming SOH reduction eliminates positive-electrolyte heat contribution",
+            "Assuming ageing causes large total heat increase",
+            "Attributing increased negative-electrolyte heat explicitly to plating without evidence support"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "An LFP soft-pack battery is being charged at 2C rate. A gas sensor located outside the battery shell detects the first gas signal approximately 370 seconds after charging begins. A colleague claims this detection time accurately marks when internal gas generation began inside the battery. A second colleague proposes switching to an H2-selective sensor because H2 is the first gas generated during thermal runaway in LFP batteries. Evaluate both claims. Identify which is admissible, which is not, and explain the engineering reasoning for each judgment in terms of the detection mechanism and gas generation sequence."
+        },
+        "ground_truth": {
+          "gold_answer": "The first colleague's claim is not admissible. External sensors detect gas only after it has accumulated to a sufficient concentration inside the battery and escaped through the shell; the 370-second mark reflects when accumulated gas reaches the external sensor, not the actual onset of internal gas generation, which occurred earlier. The second colleague's claim is admissible. Evidence shows H2 is the first gas generated during LFP thermal runaway under both overheating and overcharging conditions, so an H2-selective sensor is mechanistically appropriate for earliest possible external detection. However, the inherent internal accumulation lag still applies regardless of gas species selectivity.",
+          "must_include": [
+            "External sensors detect gas after internal accumulation, not at the moment of internal generation onset",
+            "The 370-second detection time does not represent the start of internal gas generation",
+            "H2 is the first gas generated in LFP thermal runaway, supporting H2-selective sensor choice",
+            "The accumulation lag applies to H2 detection as well, limiting how early any external sensor can respond"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming external detection time equals internal generation onset time",
+            "Claiming H2 sensor eliminates the detection lag caused by internal accumulation",
+            "Generalizing the 370-second timing to other charging rates or battery formats",
+            "Claiming the sensor detects the initial gas generation inside the battery"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility judgment on external gas sensor detection timing versus internal gas generation onset, combined with gas emission sequence reasoning for sensor selection.",
+          "primary_boundary": "External sensors have inherent lag due to internal accumulation; H2 is first gas generated but detection lag still applies; detection time reflects accumulation threshold not generation onset.",
+          "intended_error_modes": [
+            "Equating external detection time with internal generation onset",
+            "Assuming H2 selectivity eliminates detection lag",
+            "Overgeneralizing timing data across conditions"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Gasventing+16+Journal_of_Energy_Storage__TR_Gasventing+17+Journal_of_Energy_Storage__TR_Gasventing+18+Journal_of_Energy_Storage": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A longitudinal ventilation system is installed in an enclosed tunnel where LFP battery packs are transported. At a ventilation speed of 1.5 m/s, thermal runaway is initiated in one cell and a sustained flame is observed. An engineer proposes increasing ventilation to 2.5 m/s to improve safety, citing reduced toxic gas accumulation. A second engineer argues this will worsen the fire hazard by forcing the flame toward the tunnel floor and increasing surface contact. Which of the following conclusions are supported by engineering reasoning under these conditions?",
+          "options": [
+            "A. Increasing ventilation to 2.5 m/s would reduce CO emissions from the LFP cell, supporting the first engineer's claim about toxic gas reduction.",
+            "B. At ventilation speeds above 1.0 m/s, the flame tilt in a confined channel becomes more pronounced, meaning the second engineer's concern about floor contact is mechanistically grounded.",
+            "C. Because thermal runaway was already initiated at 1.5 m/s, increasing to 2.5 m/s cannot prevent propagation to adjacent cells regardless of ventilation geometry.",
+            "D. Ventilation above 4.0 m/s would prevent thermal runaway initiation, so the engineer should target that threshold rather than 2.5 m/s.",
+            "E. The reduction in CO emissions at 2.0 m/s is primarily caused by suppression of the electrochemical decomposition reactions inside the cell.",
+            "F. Both engineers can be simultaneously correct: higher ventilation reduces toxic gas accumulation while also increasing flame-floor proximity, creating a competing safety trade-off."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "D",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence shows ~90% CO reduction at 2.0 m/s for LFP; 2.5 m/s exceeds this, supporting the claim directionally.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+16+Journal_of_Energy_Storage:C001"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Evidence states that above 1.0 m/s, confined space and airflow increase entrainment and flame tilt becomes more pronounced.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+16+Journal_of_Energy_Storage:C004",
+                "TR_Gasventing+16+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Evidence addresses initiation threshold, not propagation after initiation; this extrapolates beyond the stated evidence scope.",
+              "error_type": "scope_expansion_distractor",
+              "evidence_refs": [
+                "TR_Gasventing+16+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Evidence explicitly states TR cannot be initiated above 4 m/s; this is a supported threshold recommendation distinct from the 2.5 m/s proposal.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+16+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "CO reduction is attributed to ventilation dilution and entrainment effects, not suppression of internal electrochemical reactions.",
+              "error_type": "mechanism_substitution",
+              "evidence_refs": [
+                "TR_Gasventing+16+Journal_of_Energy_Storage:C001"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Both effects are evidenced simultaneously: CO reduction at higher speeds and increased flame tilt creating floor contact risk represent a genuine trade-off.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+16+Journal_of_Energy_Storage:C001",
+                "TR_Gasventing+16+Journal_of_Energy_Storage:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-factor safety trade-off between toxic gas reduction and flame geometry hazard under increased ventilation for LFP cells",
+          "primary_boundary": "Ventilation effects are regime-dependent: CO reduction and flame tilt intensification both occur above 1.0 m/s, creating competing safety implications that cannot be resolved by selecting only one engineer's position",
+          "intended_error_modes": [
+            "mechanism_substitution for CO reduction cause",
+            "scope_expansion from initiation threshold to propagation",
+            "ignoring competing mechanism interaction"
+          ],
+          "disallowed_extrapolations": [
+            "Assuming CO reduction implies overall fire hazard reduction",
+            "Extending initiation threshold evidence to post-initiation propagation control"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A simulation of a 100% SOC lithium-ion cell during thermal runaway models the sequence from internal pressure buildup to safety valve opening and subsequent jet fire. The simulation records that internal pressure reaches 1.5 MPa at 94 ms, the safety valve opens, pressure drops to near atmospheric within 0.03 ms, and a jet fire lasting approximately 6 ms follows. An engineer reviewing the results must assess which conclusions about the physical sequence are admissible. Which of the following statements are consistent with the described sequence?",
+          "options": [
+            "A. The pressure drop from 1.5 MPa to near atmospheric occurring in 0.03 ms implies the venting flow is initially supersonic or near-sonic, consistent with the reported 450 m/s jet velocity.",
+            "B. Since pyrolysis gas jetting completes in under 2 ms but the jet fire lasts approximately 6 ms, combustion continues after the primary gas ejection phase has ended.",
+            "C. The jet velocity increasing from 450 m/s to approximately 500 m/s after valve opening indicates that mechanical pressure alone drives the peak flow, not thermal expansion from combustion.",
+            "D. The 94 ms pressure rise time at 100% SOC establishes that lower SOC cells would reach the same 1.5 MPa threshold in a shorter time due to reduced internal resistance.",
+            "E. CO2 reaching 70% mass fraction above the valve nozzle at 94.05 ms is consistent with active combustion of the ejected gases at that moment.",
+            "F. The 0.03 ms pressure equalization timescale is too short for any thermal protection intervention to prevent valve opening once the 1.5 MPa threshold is reached."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "E",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Pressure drop from 1.5 MPa to atmospheric in 0.03 ms combined with 450 m/s jet velocity is physically consistent with near-sonic or supersonic choked flow.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+17+Journal_of_Energy_Storage:C002",
+                "TR_Gasventing+17+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Gas jetting ends before 2 ms but fire lasts 6 ms; combustion sustaining beyond ejection phase is the only consistent interpretation.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+17+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Evidence attributes the velocity increase to 500 m/s to thermal expansion from combustion, not mechanical pressure, directly contradicting this option.",
+              "error_type": "mechanism_substitution",
+              "evidence_refs": [
+                "TR_Gasventing+17+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Evidence provides the 94 ms threshold only for 100% SOC; inferring lower SOC behavior from this single data point is an unsupported extrapolation.",
+              "error_type": "overgeneralization_distractor",
+              "evidence_refs": [
+                "TR_Gasventing+17+Journal_of_Energy_Storage:C001"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "CO2 at 70% mass fraction above the nozzle at 94.05 ms is consistent with active combustion of ejected gases producing CO2 as a product.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+17+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "A 0.03 ms equalization timescale is physically inaccessible to any thermal intervention; once 1.5 MPa is reached, valve opening is mechanically inevitable.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+17+Journal_of_Energy_Storage:C001",
+                "TR_Gasventing+17+Journal_of_Energy_Storage:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of mechanistic conclusions about the pressure-venting-combustion sequence during thermal runaway at 100% SOC",
+          "primary_boundary": "The velocity increase to 500 m/s is attributed to combustion thermal expansion, not mechanical pressure; and the 94 ms threshold applies only to 100% SOC without basis for SOC extrapolation",
+          "intended_error_modes": [
+            "mechanism substitution attributing velocity increase to pressure rather than combustion",
+            "overgeneralization of SOC-specific threshold to other SOC conditions"
+          ],
+          "disallowed_extrapolations": [
+            "Inferring lower SOC pressure rise time from 100% SOC data alone",
+            "Claiming mechanical pressure drives peak jet velocity when evidence attributes it to combustion"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "Three groups of lithium-ion cells are subjected to different aging protocols before thermal runaway testing: Group A cycled at 0\u00b0C, Group B stored at high temperature, Group C subjected to combined high-temperature and charging abuse. Group A shows reduced gas volume and flame intensity during venting. Group B produces no sparks, flames, or gas explosion during thermal runaway. Group C shows increased total heat, increased gas generation, and a higher proportion of combustible gases. An engineer must evaluate which safety-relevant conclusions are admissible across these three groups.",
+          "options": [
+            "A. Group B's absence of flames and explosions during thermal runaway indicates that high-temperature storage aging reduces the available energy for combustion, making it the safest aging condition for thermal runaway outcomes.",
+            "B. Group A's reduced flame intensity relative to fresh cells is consistent with capacity loss reducing available electrochemical energy, but does not imply reduced internal thermal hazard.",
+            "C. Group C presents a greater fire and explosion risk than Group A during a thermal runaway event, based on the relative combustible gas fractions and total heat generation.",
+            "D. Because Group A shows reduced gas and flame during venting, low-temperature cycled cells can be considered safe for deployment in confined spaces without additional thermal management.",
+            "E. The evidence across all three groups supports the conclusion that any form of aging uniformly reduces thermal runaway severity relative to fresh cells.",
+            "F. Lithium plating associated with Group A's aging protocol is identified as a dominant factor in safety degradation over the cell lifetime, even though the venting phase appears less severe."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "C",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "Absence of flames is observed but attributing it to reduced combustion energy is an unsupported causal overclaim; mechanism is not established in evidence.",
+              "error_type": "causal_overclaim_distractor",
+              "evidence_refs": [
+                "TR_Gasventing+18+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "This appears cautious but introduces a capacity-loss mechanism not stated in the evidence; the internal thermal hazard claim is unsupported.",
+              "error_type": "conservative_but_incorrect",
+              "evidence_refs": [
+                "TR_Gasventing+18+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Group C's higher combustible gas fraction and total heat directly support greater fire and explosion risk compared to Group A's reduced gas and flame intensity.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+18+Journal_of_Energy_Storage:C003",
+                "TR_Gasventing+18+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Reduced venting severity does not establish deployment safety; lithium plating from 0\u00b0C cycling is the dominant lifetime safety degradation factor.",
+              "error_type": "scope_expansion_distractor",
+              "evidence_refs": [
+                "TR_Gasventing+18+Journal_of_Energy_Storage:C002",
+                "TR_Gasventing+18+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Group C shows enhanced hazard, directly contradicting any claim that aging uniformly reduces thermal runaway severity.",
+              "error_type": "overgeneralization_distractor",
+              "evidence_refs": [
+                "TR_Gasventing+18+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Evidence explicitly identifies lithium plating from low-temperature cycling as the most crucial safety degradation factor over the whole life cycle, despite reduced venting severity.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+18+Journal_of_Energy_Storage:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of comparative safety conclusions across three aging protocols with divergent thermal runaway phenomenology",
+          "primary_boundary": "Reduced venting severity in Group A does not imply overall safety; lithium plating is the dominant lifetime hazard factor. Group C's enhanced hazard refutes any uniform aging-reduces-severity claim.",
+          "intended_error_modes": [
+            "causal overclaim about Group B mechanism",
+            "overgeneralization that all aging reduces severity",
+            "scope expansion from reduced venting to deployment safety",
+            "conservative-sounding but mechanistically unsupported capacity-loss attribution"
+          ],
+          "disallowed_extrapolations": [
+            "Inferring combustion energy reduction from absence of flames in Group B",
+            "Concluding 0\u00b0C cycled cells are safe for confined deployment based on venting phase alone"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A battery safety engineer is designing a ventilated enclosure for LFP cells and must simultaneously address two hazards: toxic CO accumulation and flame impingement on structural surfaces. The engineer knows that increasing longitudinal airflow reduces CO emissions but also causes the flame to tilt more steeply toward the floor at higher speeds. Explain the mechanism by which increased ventilation produces these two opposing effects, identify the ventilation regime where both effects are active simultaneously, and state what constraint limits the engineer's ability to simply increase ventilation indefinitely to eliminate both hazards."
+        },
+        "ground_truth": {
+          "gold_answer": "Increased longitudinal ventilation dilutes and displaces combustion gases, reducing CO concentration through enhanced entrainment and transport away from the source, explaining the ~90% CO reduction observed at 2.0 m/s. Simultaneously, above 1.0 m/s (Fr > 3.2), the combined effect of airflow momentum and confined channel geometry increases smoke plume entrainment, causing the flame to tilt progressively toward the floor, with near-floor contact observed at 2.0 m/s. Both effects are therefore simultaneously active in the regime above 1.0 m/s. The constraint limiting indefinite ventilation increase is that above 4.0 m/s, thermal runaway cannot be initiated at all in the restricted channel, meaning the design target shifts to that threshold, but achieving and maintaining 4.0 m/s continuously may not be operationally feasible, and below that threshold the flame-floor proximity hazard intensifies with speed.",
+          "must_include": [
+            "CO reduction is attributed to enhanced dilution or entrainment by increased airflow",
+            "Flame tilt toward floor is caused by increased entrainment behavior in the confined space above 1.0 m/s",
+            "Both effects are simultaneously active above 1.0 m/s ventilation speed",
+            "Above 4.0 m/s thermal runaway initiation is prevented, establishing an upper threshold constraint"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming CO reduction is due to suppression of internal cell reactions",
+            "Claiming flame tilt is caused solely by airflow momentum without confined space contribution",
+            "Claiming that 2.0 m/s ventilation eliminates fire hazard",
+            "Inferring that 4.0 m/s also eliminates flame-floor contact hazard for already-initiated events"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Mechanism-level explanation of competing ventilation effects on toxic gas and flame geometry hazards, with identification of the active regime and the threshold constraint",
+          "primary_boundary": "Both CO reduction and flame tilt intensification are active above 1.0 m/s; the 4.0 m/s threshold prevents initiation but does not resolve the competing hazard trade-off below that speed",
+          "intended_error_modes": [
+            "Attributing CO reduction to internal reaction suppression rather than dilution",
+            "Ignoring confined space contribution to flame tilt",
+            "Treating 4.0 m/s as a general fire elimination threshold rather than an initiation-specific threshold"
+          ]
+        }
+      }
+    ]
+  }
+}

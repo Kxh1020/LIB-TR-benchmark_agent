@@ -1,0 +1,354 @@
+{
+  "TR_Modelling+101+Applied_Energy__TR_Modelling+131+Energy__TR_Modelling+14+Journal_of_Energy_Storage": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery safety engineer is evaluating thermal runaway (TR) triggering behavior in a 280 Ah LFP prismatic cell using three different constant heating power levels applied sequentially in separate tests. In each test, heating is applied externally until TR onset is detected. The engineer observes that TR is triggered at different times and different surface temperatures across the three tests, but records the cumulative external energy delivered at TR onset in each case. The engineer then proposes the following conclusions about the triggering energy (TE) and its relationship to the battery's stored energy. Which of the following conclusions are admissible based on the described experimental conditions?",
+          "options": [
+            "A. The cumulative external energy required to trigger TR is approximately constant across the three heating power levels, indicating that TE is a property of the cell rather than of the applied heating rate.",
+            "B. Because TR onset occurs at different surface temperatures for different heating powers, the internal triggering condition must also vary with heating power, so TE cannot be used as a fixed threshold.",
+            "C. The external input energy at TR onset represents only a minority fraction of the total energy eventually released during TR, since internal exothermic reactions dominate the total heat generation under adiabatic-like conditions.",
+            "D. The constancy of TE across heating powers implies that surface temperature at TR onset is also constant and can serve as an equivalent trigger criterion.",
+            "E. The triggering energy threshold accounts for roughly one-fifth of the theoretical stored energy in the cell, meaning that TR can be initiated by delivering far less energy than the cell's full electrochemical capacity.",
+            "F. Because external input energy is only about one-fifth of stored energy at trigger, the remaining four-fifths of stored energy is released instantaneously at TR onset.",
+            "G. The small inaccuracy in TE across different heating powers supports using cumulative energy input as a more reliable trigger criterion than surface temperature alone."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E",
+            "G"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence states that TE remains constant when multiple heating powers are used to activate TR, with inaccuracy of only 2.5%, directly supporting the conclusion that TE is a cell-level property independent of heating rate.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+101+Applied_Energy:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The evidence explicitly shows TE is constant across heating powers despite different onset times and temperatures. Inferring that variable surface temperature implies variable internal triggering condition contradicts the evidence and confuses surface measurement with internal state.",
+              "error_type": "measurement_scope_distractor",
+              "evidence_refs": [
+                "TR_Modelling+101+Applied_Energy:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence states that under adiabatic conditions, approximately 80% of energy comes from internal exothermic reactions and external input accounts for approximately 20%. This means external TE is a minority fraction of total heat generation, consistent with this conclusion.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+101+Applied_Energy:C002"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "The evidence shows TR occurs at different surface temperatures under different heating powers, yet TE is constant. Surface temperature at TR onset is therefore not constant and cannot serve as an equivalent criterion. This option incorrectly conflates constancy of TE with constancy of surface temperature.",
+              "error_type": "mechanism_substitution",
+              "evidence_refs": [
+                "TR_Modelling+101+Applied_Energy:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Evidence states the 670 kJ TE accounts for 20.8% of theoretical stored energy, which is approximately one-fifth. The conclusion that TR can be initiated by delivering far less than the full stored energy follows directly.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+101+Applied_Energy:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The evidence does not support instantaneous release of the remaining stored energy at TR onset. In fact, evidence shows approximately 65.5% of self-heat is released during TR in a short period, but this refers to self-generated heat, not total stored electrochemical energy, and the release is rapid but not instantaneous at onset.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Modelling+101+Applied_Energy:C004"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Correct",
+              "justification": "The 2.5% inaccuracy in TE across different heating powers, combined with the known variability in surface temperature at TR onset, supports using cumulative energy input as a more reliable trigger criterion than surface temperature. This is a minimal engineering implication from the evidence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+101+Applied_Energy:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of TE as a cell-level constant trigger criterion versus surface temperature, and the relationship between external input energy and total heat generation",
+          "primary_boundary": "TE constancy holds across heating powers but does not imply constancy of surface temperature at TR onset; external input energy is a minority of total heat generation",
+          "intended_error_modes": [
+            "confusing surface temperature variability with internal trigger variability",
+            "conflating constancy of TE with constancy of surface temperature",
+            "causal overclaim about instantaneous energy release at onset"
+          ],
+          "disallowed_extrapolations": [
+            "Generalizing TE constancy to all LFP chemistries or cell sizes beyond the 280 Ah cell",
+            "Claiming surface temperature is equivalent to internal trigger condition",
+            "Asserting all stored energy is released at TR onset"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery pack designer is comparing two early warning strategies for a lithium-ion battery system under overcharge abuse: (1) a sound-based acoustic monitoring system that detects internal structural changes, and (2) a combined temperature-and-stress monitoring system. In controlled overcharge tests, the acoustic system issues warnings approximately 7000 seconds earlier than the temperature-and-stress system. The temperature-and-stress warnings are issued near the point at which the battery transitions from slow to rapid self-heating. The acoustic system's second-level classification accuracy drops from 98.08% to 95.68% when white noise is introduced, while first-level classification is essentially unaffected by the noise. The designer must select a warning strategy for a high-density pack where response time after warning is safety-critical. Which of the following conclusions about the two strategies are admissible?",
+          "options": [
+            "A. The temperature-and-stress system provides warnings at a point where the battery is approaching a critical state, meaning that the available response time after warning may be insufficient for effective intervention in a high-density pack.",
+            "B. Because the acoustic system's second-level accuracy decreases under noise, the temperature-and-stress system is the more reliable choice for environments with significant vibration or electromagnetic interference.",
+            "C. The acoustic system's early warning advantage is primarily useful for first-level detection, since second-level classification is materially degraded by noise and may not be trustworthy in real operating environments.",
+            "D. The approximately 7000-second lead time of the acoustic system over temperature-and-stress methods represents a meaningful operational advantage for enabling intervention before the battery reaches a critical state.",
+            "E. The near-identical first-level warning performance with and without white noise suggests that the acoustic system's initial detection capability is robust to the type of noise tested, even if second-level classification is somewhat affected.",
+            "F. A temperature-and-stress system that detects the transition from slow to rapid self-heating provides an earlier warning than acoustic methods because it directly monitors the electrochemical state of the cell.",
+            "G. The reduction in second-level accuracy from 98.08% to 95.68% under white noise represents a failure of the acoustic system that disqualifies it from safety-critical applications."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "D",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence explicitly states that temperature-and-stress warnings are issued around T2, at which point the battery is approaching or entering a critical state, making it difficult to provide sufficient response time. This directly supports the conclusion.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+131+Energy:C002"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The evidence shows the acoustic system's second-level accuracy drops only moderately under white noise (98.08% to 95.68%) and first-level performance is unaffected. Concluding that the temperature-and-stress system is more reliable is not supported and ignores the fundamental timing disadvantage of that system. This is a conservative-appearing but mechanistically incorrect distractor.",
+              "error_type": "condition_violation_distractor",
+              "evidence_refs": [
+                "TR_Modelling+131+Energy:C005",
+                "TR_Modelling+131+Energy:C002"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "The evidence states first-level warning results are nearly identical with and without noise, meaning first-level detection is robust. The claim that the acoustic system's advantage is 'primarily useful for first-level detection' while second-level is 'not trustworthy' overstates the noise impact on second-level (which remains at 95.68%) and mischaracterizes the evidence.",
+              "error_type": "numerical_exaggeration_distractor",
+              "evidence_refs": [
+                "TR_Modelling+131+Energy:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Evidence states the acoustic system issues warnings approximately 7000 seconds earlier than temperature-and-stress methods. Given that temperature-and-stress warnings occur near a critical state with insufficient response time, a 7000-second lead time is a meaningful operational advantage. This requires two-step reasoning: timing advantage plus the criticality of the temperature-and-stress warning point.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+131+Energy:C001",
+                "TR_Modelling+131+Energy:C002"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Evidence explicitly states that first-level warning results after adding white noise were nearly identical to those without it, directly supporting robustness of initial detection capability to the tested noise type.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+131+Energy:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "This directly contradicts the evidence, which shows acoustic warnings precede temperature-and-stress warnings by approximately 7000 seconds. The claim that temperature monitoring is earlier inverts the established comparison.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Modelling+131+Energy:C001"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Incorrect",
+              "justification": "A drop from 98.08% to 95.68% is a moderate reduction, not a system failure. The evidence does not support disqualification from safety-critical use on this basis, and the first-level detection remains unaffected. This is an overclaim from a moderate accuracy reduction.",
+              "error_type": "numerical_exaggeration_distractor",
+              "evidence_refs": [
+                "TR_Modelling+131+Energy:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Comparative admissibility of acoustic versus temperature-and-stress warning strategies given timing advantage, noise sensitivity, and criticality of warning point",
+          "primary_boundary": "Noise reduces second-level acoustic accuracy moderately but does not eliminate the fundamental timing advantage; temperature-and-stress warnings occur too late for effective intervention",
+          "intended_error_modes": [
+            "overweighting moderate accuracy reduction to disqualify acoustic system",
+            "ignoring the timing disadvantage of temperature-and-stress methods",
+            "inverting the direction of the timing comparison"
+          ],
+          "disallowed_extrapolations": [
+            "Generalizing noise robustness to all noise types beyond white noise tested",
+            "Claiming acoustic system is immune to all noise",
+            "Concluding temperature-and-stress system is safer based on noise sensitivity alone"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A thermal management engineer is analyzing TR propagation in a prismatic NMC/graphite battery pack. The pack contains cells separated by silicon rubber pads. Internal thermocouple measurements show that during TR, the maximum internal temperature reaches approximately 995\u00b0C while the maximum surface temperature is only approximately 566\u00b0C. The temperature change rate at the cell interior peaks at approximately 531\u00b0C/s shortly after TR triggering, while the surface rate peaks at approximately 49\u00b0C/s. Separately, propagation time intervals between adjacent cells are approximately 60 seconds, while intervals across silicon rubber pads are approximately 120 seconds. In a scenario where a vehicle has been operating under fast-charging conditions prior to a TR event, cell temperatures before TR onset are approximately 47\u00b0C rather than the 28\u00b0C observed after rapid heating alone. The engineer must assess propagation risk and the reliability of surface-based monitoring. Which of the following conclusions are admissible?",
+          "options": [
+            "A. Surface temperature measurements alone cannot reliably characterize the severity of internal TR conditions, because the internal peak temperature and rate of temperature rise both differ from surface values by amounts that are physically significant.",
+            "B. The silicon rubber pads slow TR propagation relative to direct cell-to-cell contact, but this protective effect diminishes as propagation advances through the pack.",
+            "C. Because the surface temperature rate is approximately one-tenth of the internal rate, a surface-based monitoring system that triggers at a fixed rate threshold will detect TR at approximately the same time as an internal thermocouple-based system.",
+            "D. The elevated initial cell temperature under fast-charging conditions accelerates TR propagation relative to the rapid-heating baseline, because cells require less additional energy input to reach the TR triggering condition.",
+            "E. The difference between internal and surface maximum temperatures implies that surface-mounted thermal protection devices calibrated to surface temperature thresholds will activate before internal TR has fully developed.",
+            "F. The decreasing propagation time interval across silicon rubber pads as TR progresses indicates that the thermal resistance of the pads is effectively reduced by the progressive heating of the pack.",
+            "G. Because silicon rubber pad intervals are twice those of direct cell-to-cell intervals, doubling the number of pads between any two cells will proportionally double the total propagation delay across that section."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "D"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence shows internal peak temperature (~995\u00b0C) differs from surface (~566\u00b0C) by ~430\u00b0C, and internal rate (531\u00b0C/s) differs from surface rate (49.2\u00b0C/s) by approximately one order of magnitude. Both differences are physically significant, supporting the conclusion that surface measurements cannot reliably characterize internal TR severity.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+14+Journal_of_Energy_Storage:C002",
+                "TR_Modelling+14+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Evidence states silicon rubber pad intervals (~120s) are greater than direct cell-to-cell intervals (~60s), confirming a slowing effect. Evidence also states pad-related intervals decrease as propagation progresses, confirming the protective effect diminishes. Both parts of this conclusion are evidence-supported.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+14+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Because the surface rate is approximately one-tenth of the internal rate, a surface-based system using a fixed rate threshold will detect TR significantly later than an internal system, not at approximately the same time. This option incorrectly ignores the consequence of the order-of-magnitude rate difference on detection timing.",
+              "error_type": "measurement_scope_distractor",
+              "evidence_refs": [
+                "TR_Modelling+14+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Evidence confirms that initial cell temperature has an important impact on TR propagation time intervals, and that fast-charging raises initial temperature to ~47\u00b0C versus ~28\u00b0C under rapid heating. Higher initial temperature means less energy input is needed to reach TR triggering conditions, accelerating propagation. This requires two-step causal reasoning.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+14+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The evidence shows surface temperature is significantly lower than internal temperature during TR. A surface-calibrated protection device would therefore activate only after internal TR has already substantially developed, not before. This option inverts the correct implication of the temperature gap.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Modelling+14+Journal_of_Energy_Storage:C002"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "While the evidence shows pad-related intervals decrease as propagation progresses, the evidence does not state the mechanism is thermal resistance reduction of the pads themselves. The decreasing interval could reflect elevated initial temperatures of downstream cells due to progressive heating, not a material property change of the pads. Attributing this to pad thermal resistance reduction is an unsupported mechanistic overclaim.",
+              "error_type": "mechanism_confusion_distractor",
+              "evidence_refs": [
+                "TR_Modelling+14+Journal_of_Energy_Storage:C004",
+                "TR_Modelling+14+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Incorrect",
+              "justification": "The evidence shows pad intervals decrease as propagation progresses, meaning the relationship between number of pads and total delay is not proportional. Assuming proportional scaling ignores the regime-dependent behavior where later pads provide less delay than earlier ones.",
+              "error_type": "unjustified_monotonicity",
+              "evidence_refs": [
+                "TR_Modelling+14+Journal_of_Energy_Storage:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of surface-based monitoring conclusions, silicon rubber pad protective effect and its limits, and the role of initial temperature in propagation acceleration",
+          "primary_boundary": "Surface measurements systematically underestimate internal severity; pad protection diminishes with propagation progress; initial temperature effect on propagation is causal but proportional scaling of pads is not supported",
+          "intended_error_modes": [
+            "assuming surface rate threshold gives equivalent detection timing to internal measurement",
+            "inverting the implication of surface-internal temperature gap for protection device activation",
+            "attributing decreasing pad intervals to pad material property change rather than progressive cell heating",
+            "assuming proportional scaling of pad count to propagation delay"
+          ],
+          "disallowed_extrapolations": [
+            "Generalizing pad interval behavior to other pad materials or geometries",
+            "Claiming surface temperature is always a fixed fraction of internal temperature",
+            "Extending proportional pad scaling to arbitrary pack configurations"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A prismatic NMC/graphite cell is tested under accelerating rate calorimetry conditions. An internal thermocouple records a self-heating onset at 72.4\u00b0C and a TR triggering temperature of 222.7\u00b0C, while a surface thermocouple records a maximum of 565.9\u00b0C compared to an internal maximum of 994.8\u00b0C. Separately, a battery pack model using the same cell chemistry shows that TR propagation time intervals across silicon rubber pads decrease progressively as TR advances through the pack, and that cells pre-conditioned at higher initial temperatures (e.g., from fast charging at ~47\u00b0C) show shorter propagation intervals than cells starting near ambient (~28\u00b0C).\n\nA pack safety engineer proposes that: (1) surface temperature monitoring can adequately characterize the internal TR state because the surface thermocouple captures the same qualitative progression of events, and (2) silicon rubber pads provide a consistent and predictable propagation delay throughout the life of a TR event in the pack.\n\nEvaluate both proposals. For each, state whether it is admissible based on the described evidence and identify the specific mechanism or observation that limits or supports the proposal."
+        },
+        "ground_truth": {
+          "gold_answer": "Proposal 1 is not admissible. Although the surface thermocouple captures the qualitative sequence of events (onset, triggering, peak), it systematically underestimates both the magnitude and rate of internal temperature changes. The internal peak temperature (~995\u00b0C) exceeds the surface peak (~566\u00b0C) by approximately 430\u00b0C, and the internal maximum rate of temperature rise (~531\u00b0C/s) exceeds the surface rate (~49\u00b0C/s) by approximately one order of magnitude. These are not minor calibration offsets but reflect the thermal resistance of the cell structure attenuating and delaying heat transfer to the surface. A monitoring system calibrated to surface thresholds will therefore activate substantially later and at a lower apparent severity than the internal state warrants, making it inadequate for characterizing internal TR severity.\n\nProposal 2 is not admissible. The evidence shows that propagation time intervals associated with silicon rubber pads decrease as TR progresses through the pack, with the gap between successive pad intervals reaching as large as 11 seconds. This means the pads provide a longer delay for the first TR event they encounter but progressively shorter delays for subsequent events. The mechanism is that progressive heating of the pack raises the initial temperature of downstream cells, reducing the additional energy input required to trigger TR in those cells. Therefore, the propagation delay provided by silicon rubber pads is not consistent or predictable throughout a TR event; it diminishes as the event advances.",
+          "must_include": [
+            "Surface temperature underestimates internal temperature by a physically significant margin (~430\u00b0C difference in peak values)",
+            "Surface rate of temperature rise is approximately one order of magnitude lower than internal rate (~531\u00b0C/s internal vs ~49\u00b0C/s surface)",
+            "Surface monitoring is inadequate for characterizing internal TR severity due to thermal resistance of cell structure",
+            "Silicon rubber pad propagation intervals decrease as TR progresses through the pack",
+            "The decreasing pad delay is linked to progressive elevation of downstream cell initial temperatures",
+            "The pad protective effect is not constant and diminishes with propagation advancement"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming surface monitoring is completely useless for any safety function",
+            "Asserting silicon rubber pads provide no protective effect at all",
+            "Generalizing the specific temperature values to other cell chemistries or geometries",
+            "Attributing the decreasing pad interval to degradation of pad material properties without evidence support",
+            "Claiming the internal-surface temperature ratio is fixed or predictable across all operating conditions"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of surface-based TR characterization and consistency of silicon rubber pad propagation delay, requiring multi-step reasoning about measurement scope limitations and mechanism-dependent behavior change",
+          "primary_boundary": "Surface measurements capture qualitative progression but not quantitative severity; pad delays are regime-dependent and decrease with pack thermal state progression",
+          "intended_error_modes": [
+            "Accepting qualitative agreement between surface and internal signals as sufficient for quantitative characterization",
+            "Treating pad intervals as a fixed material property rather than a state-dependent quantity",
+            "Attributing decreasing pad intervals to material degradation rather than progressive cell preheating"
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,958 @@
+{
+  "TR_trigger+1+Applied_Thermal_Engineering": [
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 7,
+        "D3": 9,
+        "D4": 8,
+        "D5": 7,
+        "Total": 39,
+        "MinDim": 7
+      },
+      "reason": "The item cleanly targets the inference that overlap in maxima does not negate a SOC-dependent intensity threshold, and the gold answer specifies the intended boundary (SOC ≥ 50% with consistently >900°C) versus the 0% SOC wide range. However, because it is short-answer, many superficially acceptable responses could be graded as correct without nailing the distribution-vs-extremes error, weakening discriminative strength. There are no explicit decoy options to enforce single-fault contrasts, so diagnostic separation depends heavily on rubric strictness.",
+      "qid": "S1"
+    }
+  ],
+  "TR_trigger+10+Renewable_and_Sustainable_Energy_Reviews": [
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 8,
+        "D3": 9,
+        "D4": 8,
+        "D5": 8,
+        "Total": 41,
+        "MinDim": 8
+      },
+      "reason": "The stem and gold answer maintain a clear boundary between extinguishing an external flame and the continuation of internally driven thermal runaway, and they scope the electrolyte-distribution temperature effects to large-format 300 Ah LFP testing rather than general LIB behavior. Cognitive demand is coherent (post-flame residual hazard plus internal spatial/phase-change mechanism), and the required elements are mechanism-specific enough to discriminate informed reasoning. Main risk is that the prompt implicitly expects recall of a particular observation (post-valve-opening temperature dips tied to electrolyte boiling) without providing explicit in-stem cues, which can reduce boundary stability and make some answers seem partially defensible.",
+      "qid": "S1"
+    }
+  ],
+  "TR_trigger+11+Fire_Safety_Journal": [
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 7,
+        "D2": 8,
+        "D3": 8,
+        "D4": 8,
+        "D5": 7,
+        "Total": 38,
+        "MinDim": 7
+      },
+      "reason": "The item cleanly anchors inference to the observed pressure–volume tradeoff and asks for statements consistent with that evidence, supporting a coherent joint-threshold interpretation. Distractors are mostly plausible and fail for a single dominant reason (e.g., monotonicity reversal, overclaiming post-spray cooling differences), though some correctness still leans on implicit assumptions about contact efficiency and spray duration not explicitly stated in the stem, slightly weakening boundary tightness and discrimination.",
+      "qid": "Q1"
+    },
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 8,
+        "D3": 8,
+        "D4": 8,
+        "D5": 8,
+        "Total": 40,
+        "MinDim": 8
+      },
+      "reason": "The item cleanly tests scope-limited inference: what can and cannot be generalized from a specific 2×2 21700, 0.1 MPa spray dataset, with overreach options targeting chemistry/format transfer and pressure monotonicity. Distractors are engineering-plausible and tend to fail for one dominant boundary or causal assumption, enabling mechanism-aware discrimination. Some ambiguity remains because phrases like “directly scaled” and “equivalent or better suppression” could invite interpretive latitude about what counts as ‘equivalent,’ slightly weakening boundary tightness and discriminative sharpness.",
+      "incorrect option audit": {
+        "C": "[engineering-plausible-but-unsupported]",
+        "D": "[engineering-plausible-but-unsupported]"
+      },
+      "qid": "Q3"
+    },
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 7,
+        "D3": 9,
+        "D4": 8,
+        "D5": 8,
+        "Total": 40,
+        "MinDim": 7
+      },
+      "reason": "The stem tightly specifies a LiPF6 electrolyte and a directional outcome (water increases HF), enabling a well-bounded, two-step mechanism explanation centered on PF5 hydrolysis and the safety-assessment implication beyond thermal metrics. A residual risk is that without explicit mention of PF5 in the stem, some solvers may argue alternate HF pathways unless they already know the intended intermediate, slightly softening boundary integrity and discrimination. The item still robustly targets a single coherent judgment (mechanistic chain plus evaluation-scope consequence) and is unlikely to be solvable by purely stylistic cues.",
+      "qid": "S1"
+    }
+  ],
+  "TR_trigger+12+Energy": [
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 8,
+        "D3": 8,
+        "D4": 7,
+        "D5": 8,
+        "Total": 39,
+        "MinDim": 7
+      },
+      "reason": "The item cleanly probes a specific mechanistic boundary: nail-size vs peak temperature is explicitly conditional, and the causal hierarchy distinguishes trigger (ISC) from dominant exotherm (anode–electrolyte reaction). Distractors are largely single-fault and plausibly reflect common confusions (monotonic area→temperature, indicator vs driver, overgeneralized transport-limitation safety), though some absolute wording (“always,” “reliably”) creates mild stylistic cueing that can aid test-wise elimination.",
+      "qid": "Q2"
+    },
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 7,
+        "D3": 9,
+        "D4": 8,
+        "D5": 8,
+        "Total": 40,
+        "MinDim": 7
+      },
+      "reason": "The prompt tightly scopes the causal claim to mechanically induced thermal runaway in an LiCoO2/graphite pouch cell and asks for a hierarchy-based evaluation, which strongly constrains what constitutes a correct justification. A minor boundary risk remains because it references specific predicted onset conditions (128°C, 3 s) that could tempt solvers to generalize beyond the intended mechanism-focused answer. Despite being short-answer (no decoys), it cleanly targets one mechanistic judgment—short-circuit heat versus anode–electrolyte reaction dominance plus the limited reliability of solid-phase Li+ transport self-limitation—yielding good discrimination among mechanism-aware versus surface-level responses.",
+      "qid": "S1"
+    }
+  ],
+  "TR_trigger+13+Journal_of_Power_Sources": [
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 7,
+        "D2": 8,
+        "D3": 8,
+        "D4": 8,
+        "D5": 8,
+        "Total": 39,
+        "MinDim": 7
+      },
+      "reason": "The item stays largely within a clear boundary (constant total heating power with differing heater coverage) and cleanly probes the causal effect of heating-area-driven power density on TR onset time and pre-onset energy. Distractors are plausible and mostly single-fault (e.g., conflating equal power with equal energy), though some conclusions about TR timing can depend on unstated thermal-contact/uniformity details, slightly weakening boundary integrity and discrimination.",
+      "qid": "Q1"
+    },
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 7,
+        "D3": 9,
+        "D4": 9,
+        "D5": 8,
+        "Total": 41,
+        "MinDim": 7
+      },
+      "reason": "The prompt tightly binds the explanation to a specific mechanism (core heat conduction vs applied flux power and equivalent power balance) and asks for reconciliation of both shorter time and lower total energy at higher power, which supports high construct coherence and discrimination. The main quality risk is that, as a short-answer item without explicit boundary qualifiers in-stem, some respondents could overgeneralize beyond external heating or substitute generic Arrhenius-rate arguments, creating mild epistemic ambiguity and reducing decoy-like diagnostic contrasts.",
+      "qid": "S1"
+    }
+  ],
+  "TR_trigger+15+Energy": [
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 8,
+        "D3": 8,
+        "D4": 8,
+        "D5": 8,
+        "Total": 40,
+        "MinDim": 8
+      },
+      "reason": "The stem tightly anchors the judgment to a specific abuse test sequence and to whether voltage/temperature monitoring is adequate, yielding a clear set of incorrect statements without needing major unstated experimental assumptions. Distractors are engineering-plausible yet each breaks on a dominant mechanism (signal lag, SOC non-responsiveness, non-sequential multilayer cascade), supporting good discrimination, though some claims (e.g., “voltage monitoring alone provides sufficient early warning”) are slightly extreme and may be eliminated by test-taking heuristics rather than deep mechanism reasoning.",
+      "dimension_evidence": {
+        "D1": {
+          "support": "Correctness hinges on explicitly stated sequencing and the detection-gap boundary (mechanical damage can precede sensor signals; multilayer cascade is near-simultaneous), which is aligned with the stem.",
+          "risk": "Option A imports a quantitative displacement bound and cross-test generality (hemispherical punch vs rigid rod) that could invite boundary disputes if a solver assumes different cell designs or setups."
+        },
+        "D2": {
+          "support": "Each incorrect option has a single dominant flaw: B overclaims sufficiency of voltage, C overreaches SOC immediacy, and D asserts sequential arrest contrary to cascading failure.",
+          "risk": "B’s “voltage monitoring alone provides sufficient early warning” may be too obviously overconfident, reducing subtlety compared to the other distractors."
+        },
+        "D3": {
+          "support": "All options interrogate one coherent construct: mapping failure sequence to what sensors can or cannot detect early enough for warning.",
+          "risk": "Option A focuses on sub-millimeter displacement differences between failure modes, which is more about kinematic quantification than detection adequacy, slightly widening the construct."
+        },
+        "D4": {
+          "support": "Options are mostly parallel, technical, and neutrally phrased without overt stylistic tells; modality is comparable across choices.",
+          "risk": "B and C contain stronger absolute language (“alone,” “sufficient,” “immediately,” “reliable”) that can cue incorrectness independent of domain understanding."
+        },
+        "D5": {
+          "support": "The item rewards mechanism-aware reasoning about observability lag and multilayer cascade behavior rather than simple ordering recall.",
+          "risk": "A solver could answer by a shallow heuristic against absolute claims (B/C) without fully engaging with the nuanced timing and irreversibility boundary."
+        }
+      },
+      "incorrect_option_audit": {
+        "B": "[causal inversion]",
+        "C": "[boundary overreach]",
+        "D": "[engineering-plausible-but-unsupported]"
+      },
+      "qid": "Q2"
+    },
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 8,
+        "D3": 9,
+        "D4": 8,
+        "D5": 8,
+        "Total": 41,
+        "MinDim": 8
+      },
+      "reason": "The prompt tightly binds the inference to a staged failure sequence (mechanical→electrical→thermal) and explicitly supplies key boundary conditions (displacement lead, large-format SOC latency, irreversible-stage detection risk), enabling a well-entailed answer without requiring outside assumptions. It cleanly targets one coherent judgment: why voltage/temperature lag early damage and what sensing modality the evidence supports; however, as a short-answer item, discriminative power depends on rubric strictness because some responders could give a generic “voltage/temperature lag” explanation without engaging the displacement/SOC/irreversibility specifics.",
+      "qid": "S1"
+    }
+  ],
+  "TR_trigger+16+Journal_of_Power_Sources": [
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 8,
+        "D3": 8,
+        "D4": 8,
+        "D5": 8,
+        "Total": 40,
+        "MinDim": 8
+      },
+      "reason": "The correct options are tightly anchored to explicit stem conditions (one-way coupling omission; conductivity contrast; strain-to-thickness interpretation), and the incorrect options introduce clear boundary overreach, causal inversion, or unsupported directional inference. Distractors are plausible and mostly single-fault, supporting good discrimination on whether the solver can separate stated parameterization/limitations from extrapolated consequences, though some options can be eliminated by broad plausibility rather than detailed mechanism.",
+      "qid": "Q2"
+    },
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 7,
+        "D2": 7,
+        "D3": 8,
+        "D4": 8,
+        "D5": 8,
+        "Total": 38,
+        "MinDim": 7
+      },
+      "reason": "The item cleanly targets how contact area modulates short resistance/current, voltage sag, and observed temperature evolution, with a sensible boundary cue (“no instantaneous temperature spike”) anchoring one correct statement. However, some correctness hinges on an implicit, regime-dependent assumption about translating voltage-drop speed into runaway likelihood and heat dissipation, and two distractors share a similar trend-reversal pattern which slightly weakens discriminative sharpness. Overall it remains a coherent, stylistically neutral A-tier question that should separate mechanism-aware solvers from surface-level intuition.",
+      "incorrect_option_audit": {
+        "C": "[causal inversion]",
+        "E": "[causal inversion]",
+        "F": "[boundary overreach]"
+      },
+      "dimension_evidence": {
+        "D1": {
+          "support": "Stem constrains comparison to identical cells and SOC, and explicitly notes absence of an instantaneous temperature spike, narrowing the mechanistic inference space.",
+          "counter_risk": "Option B’s runaway-risk claim depends on an implicit thermal balance timescale/geometry assumption not explicitly stated, creating a potential gray zone across test setups."
+        },
+        "D2": {
+          "support": "Distractors remain domain-plausible and each introduces a specific mechanistic mislink (e.g., contact area vs resistance, or area vs local heating).",
+          "counter_risk": "Options C and E both primarily fail via the same direction-of-effect reversal, reducing single-fault diversity."
+        },
+        "D3": {
+          "support": "All options align to one construct: contact-area-dependent ISC behavior connecting resistance/current, temperature profile, and runaway risk.",
+          "counter_risk": "Mixing observational thermometer behavior (D) with causal runaway-risk reasoning (B/E) may slightly broaden the target from one inference chain to two adjacent ones."
+        },
+        "D4": {
+          "support": "Options are grammatically parallel, similar in length/technical density, and avoid obvious modal or stylistic giveaways.",
+          "counter_risk": "Option F’s absolute phrasing (“depends solely”) is a bit more extreme than others, which can cue incorrectness by tone."
+        },
+        "D5": {
+          "support": "Requires distinguishing counterintuitive interactions (larger area → lower resistance yet not necessarily higher local peak temperature/runaway), which discourages heuristic guessing.",
+          "counter_risk": "Because the stem pre-announces “no instantaneous temperature spike,” option D may be selected by shallow matching, and shared trend-reversal distractors make elimination easier."
+        }
+      },
+      "qid": "Q3"
+    },
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 8,
+        "D3": 9,
+        "D4": 8,
+        "D5": 8,
+        "Total": 41,
+        "MinDim": 8
+      },
+      "reason": "The item cleanly targets a bounded mechanistic explanation (contact area → resistance/current/voltage drop → heating vs dissipation, with a specified small- vs large-format divergence at exceedingly large areas), and the non-monotonicity requirement reduces vague “more area is worse” answers. Main risk is boundary fuzziness around what counts as “exceedingly large” and the dependence on cell design/chemistry specifics, which could introduce reasonable alternative narratives, but overall it should strongly discriminate mechanism-aware respondents from heuristic ones.",
+      "qid": "S1"
+    }
+  ],
+  "TR_trigger+17+Energy_Conversion_and_Management": [
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 8,
+        "D3": 9,
+        "D4": 8,
+        "D5": 8,
+        "Total": 41,
+        "MinDim": 8
+      },
+      "reason": "The item cleanly bounds the inference to an evidence-stated conductivity–enthalpy trade-off and the design implication of an optimum EG fraction range, with correct choices aligned to that boundary. Distractors are mostly engineering-plausible yet each fails via a distinct dominant error (independence/monotonicity/overreach), supporting good discrimination. Some residual ambiguity remains because “net thermal benefit uncertain” and “balance point” can depend on unstated performance metrics and module context, slightly limiting boundary tightness and discriminative strength.",
+      "incorrect_option_audit": {
+        "B": "[proxy invalidity]",
+        "D": "[boundary overreach]",
+        "E": "[engineering-plausible-but-unsupported]"
+      },
+      "dimension_evidence": {
+        "D1": {
+          "support": "Correct options are entailed by the stated evidence: increasing EG raises thermal conductivity while lowering phase change enthalpy, motivating an optimal recommended range and caution about extrapolating beyond 20 wt%.",
+          "counter_evidence": "Phrases like “net thermal benefit uncertain” and the implied “balance point” depend on unstated system-level objectives (e.g., peak temperature vs duration), leaving some boundary fuzziness."
+        },
+        "D2": {
+          "support": "Each distractor has a single dominant structural flaw: B contradicts enthalpy dependence, D over-claims causality to propagation, and E asserts unsupported full compensation.",
+          "counter_evidence": "Option D introduces an additional variable (cell spacing) that may make it feel like a different topic, slightly weakening the purity of the decoy set."
+        },
+        "D3": {
+          "support": "All options target one coherent judgment: reasoning about the competing material-property trade-off and what it implies for selecting EG fraction.",
+          "counter_evidence": "Referencing thermal runaway propagation in D risks drifting toward module-level safety mechanisms rather than material-property optimization."
+        },
+        "D4": {
+          "support": "Options are largely parallel in style and modality, with no obvious lexical giveaway that uniquely marks the correct set.",
+          "counter_evidence": "Absolute terms like “always preferable,” “necessarily,” and “at any EG fraction” may cue elimination via language extremity rather than domain reasoning."
+        },
+        "D5": {
+          "support": "Discriminates mechanism-aware solvers by requiring recognition that optimizing conductivity alone is not justified when latent heat decreases and that the recommended range encodes a trade-off.",
+          "counter_evidence": "Some elimination can be done by spotting linguistic absolutes (B/D/E), enabling partial success through test-taking heuristics rather than deep thermal-design reasoning."
+        }
+      },
+      "qid": "Q1"
+    },
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 8,
+        "D3": 8,
+        "D4": 7,
+        "D5": 8,
+        "Total": 39,
+        "MinDim": 7
+      },
+      "reason": "The item cleanly anchors judgment to a specific spacing (L=2 mm) and observable outcomes (peak temperatures, times, and stated propagation to specific cells), supporting a bounded comparison between configurations. Distractors are mostly plausible and miss by a single dominant overreach (mechanism attribution, extrapolation, or proportionality), though some wording (e.g., strong claims like “sufficient to dissipate all runaway heat”) makes a couple eliminations slightly too easy and reduces stylistic neutrality.",
+      "qid": "Q2"
+    }
+  ],
+  "TR_trigger+18+Batteries": [
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 8,
+        "D3": 9,
+        "D4": 8,
+        "D5": 8,
+        "Total": 41,
+        "MinDim": 8
+      },
+      "reason": "The item keeps the inference grounded in explicitly provided internal vs surface peak temperatures and a defined TR characterization metric (T3), with incorrect choices failing via clear mechanism or scope overreach. Distractors are domain-plausible and largely single-fault (causal sequencing, adiabatic misinterpretation, and overgeneralizing surface uniformity), while the construct remains coherent around measurement interpretation and hazard characterization. Some residual ambiguity remains in how strongly one can generalize from two external faces to broader heat-flux uniformity or infer severity strictly from peak temperature, slightly limiting discriminative sharpness.",
+      "qid": "Q1"
+    },
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 8,
+        "D3": 9,
+        "D4": 8,
+        "D5": 8,
+        "Total": 41,
+        "MinDim": 8
+      },
+      "reason": "The item cleanly ties observed TRP time and per-cell mass-loss patterns to a single mechanistic interpretation: trigger energy affects C1 severity/pace while downstream cells converge to a trigger-insensitive regime. Distractors are plausible and mostly fail on one identifiable inference error (over-generalization or improper transfer from C1 to C2–C4), with only modest risk that options A/E lean on an implicit “extra energy” model that is not fully specified in the stem.",
+      "qid": "Q3"
+    }
+  ],
+  "TR_trigger+19+Applied_Energy": [
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 8,
+        "D3": 8,
+        "D4": 8,
+        "D5": 8,
+        "Total": 40,
+        "MinDim": 8
+      },
+      "reason": "The item maintains a clear boundary between modeled intra-cell reactions/phase-change effects and post-TR phenomena, enabling a well-scoped selection of limitations and physical causes. Distractors are plausible and hinge on specific mechanism confusions (e.g., internal vs external combustion; sole-cause overclaim), supporting diagnostic discrimination. Some ambiguity remains because several correct statements require mapping distinct experimental signatures (rate dip, post-TR spike, Tmax error) to different mechanisms, which can blur the single inference thread and slightly reduce separation for mid-level solvers.",
+      "qid": "Q2"
+    },
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 8,
+        "D3": 9,
+        "D4": 8,
+        "D5": 8,
+        "Total": 41,
+        "MinDim": 8
+      },
+      "reason": "The item cleanly enforces the key boundary that external gas combustion is outside the cell (thus not a cell Tmax term) while remaining safety-relevant at the module level, yielding a well-scoped multi-select with strong mechanistic alignment. Distractors are largely plausible and hinge on single dominant misconceptions (e.g., confusing model accuracy residuals with missing heat sources, or equating “outside the cell” with “no system impact”). Some residual ambiguity remains because option E generalizes reliability from one close-match case, and two distractors lean on the same outside-vs-system boundary, mildly reducing discriminative spread.",
+      "qid": "Q3"
+    }
+  ],
+  "TR_trigger+2+ENERGY_andamp;_ENVIRONMENTAL_MATERIALS": [
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 8,
+        "D3": 8,
+        "D4": 8,
+        "D5": 8,
+        "Total": 40,
+        "MinDim": 8
+      },
+      "reason": "The item cleanly targets boundary-aware interpretation of shrinkage results versus a specification defined under different conditions, while also checking restraint against extrapolation beyond tested temperature regimes. Distractors are largely single-fault and mechanism-plausible (causal overclaim, regime transfer, temperature-boundary extrapolation, and monotonicity overclaim), yielding good diagnostic value. Residual risk is that option A’s “spirit of the specification” phrasing and the multi-correct format can introduce mild judgment variability without changing the intended boundary logic.",
+      "incorrect_option_audit": {
+        "B": "[boundary overreach]",
+        "D": "[boundary overreach]",
+        "F": "[boundary overreach]"
+      },
+      "qid": "Q1"
+    },
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 8,
+        "D3": 9,
+        "D4": 8,
+        "D5": 9,
+        "Total": 42,
+        "MinDim": 8
+      },
+      "reason": "The item cleanly constrains correctness to activation temperatures and intervention stage (shutdown vs flame retardant) while explicitly warning against universalizing a specific adiabatic short-circuit result. Distractors are largely engineering-plausible but each fails for a dominant, diagnosable reason (mechanism substitution, stage confusion, or boundary overreach), yielding strong discrimination between mechanism-aware and superficial solvers. Minor residual ambiguity comes from relying on an assumed PP melting point context and the absolute language in some options, but it does not undermine the intended correct set.",
+      "incorrect_option_audit": {
+        "B": "[causal inversion]",
+        "D": "[boundary overreach]",
+        "F": "[boundary overreach]"
+      },
+      "dimension_evidence": {
+        "D1": {
+          "support": "Correct choices are entailed by explicit temperature thresholds (110–120°C vs 160°C) and by the stated adiabatic short-circuit outcomes relative to PP melting, with boundaries against regime transfer implied by the specific test context.",
+          "counter": "The stem assumes a single PP melting point and that the cited adiabatic comparison maps straightforwardly to Design X’s mechanism, leaving some hidden-assumption room about materials/test comparability."
+        },
+        "D2": {
+          "support": "Each wrong option is close to true domain intuitions but breaks via one main flaw: dismissing late-stage mitigation (B), equating shutdown with fire suppression (D), or universal guarantee across scenarios (F).",
+          "counter": "Two distractors (D and F) share a similar overclaim structure, slightly reducing diversity of error modes."
+        },
+        "D3": {
+          "support": "All options probe a single coherent target: sequencing and regime-appropriateness of separator safety functions across thermal runaway stages.",
+          "counter": "Option C additionally taps evidence interpretation from a specific comparative dataset, adding a small secondary subskill beyond pure mechanism-stage logic."
+        },
+        "D4": {
+          "support": "Options are mostly parallel in technical tone and modality, with no glaring length or form imbalance that trivially signals correctness.",
+          "counter": "Some absolute phrasing (“complete fire suppression,” “guaranteed,” “irrelevant”) may cue incorrectness via extremity rather than engineering reasoning."
+        },
+        "D5": {
+          "support": "Strong reasoners must distinguish shutdown (current interruption) from flame suppression and understand stage ordering and limits of extrapolation from a specific test, which is hard to solve by surface plausibility alone.",
+          "counter": "A portion of the discrimination may come from spotting absolute-language traps (D/F) rather than fully modeling the mechanisms."
+        }
+      },
+      "qid": "Q2"
+    },
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 8,
+        "D3": 8,
+        "D4": 8,
+        "D5": 8,
+        "Total": 40,
+        "MinDim": 8
+      },
+      "reason": "The stem tightly specifies two evidence-backed constraints (electrospinning-specific nanoparticle loading ceiling and a porosity window), and the correct choices stay within those boundaries while wrong choices mainly fail by overgeneralization or unjustified monotonic/causal claims. Distractors are domain-plausible and largely single-fault, and the item coherently tests coupled-constraint engineering judgment rather than isolated recall. Some residual ambiguity remains because option F leans on plausible intuition about densification/mechanics, and option E can be selected via generic “multi-parameter optimization” heuristics, modestly limiting discriminative power.",
+      "incorrect_option_audit": {
+        "B": "[boundary overreach]",
+        "D": "[boundary overreach]",
+        "F": "[engineering-plausible-but-unsupported]"
+      },
+      "qid": "Q3"
+    },
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 8,
+        "D3": 9,
+        "D4": 8,
+        "D5": 8,
+        "Total": 41,
+        "MinDim": 8
+      },
+      "reason": "The item cleanly distinguishes evidence-backed statements (internal shorts as a frequent accident origin; a staged initiation sequence beginning with SEI decomposition) from the colleague’s mechanistic bypass overclaim, keeping the epistemic boundary mostly tight and explicitly tied to separator-design implications. It targets a single coherent judgment—causal chain integrity and intervention-point mapping—without major topic drift, and the prompt wording is largely neutral. Discrimination is strong but not maximal because the stem’s broad statistic (“90%”) and absolute phrasing (“always,” “directly”) make the incorrect claim somewhat easy to reject via surface cues rather than deeper mechanism reasoning.",
+      "qid": "S1"
+    }
+  ],
+  "TR_trigger+20+Journal_of_Materials_Chemistry_A": [
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 8,
+        "D3": 9,
+        "D4": 8,
+        "D5": 8,
+        "Total": 41,
+        "MinDim": 8
+      },
+      "reason": "The stem tightly specifies the causal trigger (separator fracture vs coating fracture) and provides quantitative context (ISC resistance, small temperature rise), enabling clear entailment for A/B while constraining overgeneralizations like D. Distractors are domain-plausible and mostly fail for a single mechanistic or boundary reason, and the item coherently targets mechanism-based design prioritization rather than recall. Some residual ambiguity remains around whether imaging is a “design change” and whether reduced temperature rise could be conditionally safe, but overall the item has strong discriminatory value for causal-stage reasoning.",
+      "qid": "Q3"
+    }
+  ],
+  "TR_trigger+21+Energy_Technology": [
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 7,
+        "D3": 9,
+        "D4": 8,
+        "D5": 8,
+        "Total": 40,
+        "MinDim": 7
+      },
+      "reason": "The item has strong epistemic boundary control by explicitly requiring mode-specific conclusions and mechanistic justification while constraining overgeneralization (e.g., additive concentration, cell size, and no “elimination” claims). It coherently targets a single integrated judgment—linking radical-scavenging benefit to slower self-heating/overcharge regimes versus ineffectiveness under fast/high-energy abuse—though discriminative separation may be moderately reduced because it is a short-answer item without crafted distractors, making partial-credit responses somewhat subjective.",
+      "qid": "S1"
+    }
+  ],
+  "TR_trigger+22+Applied_Thermal_Engineering": [
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 8,
+        "D3": 9,
+        "D4": 8,
+        "D5": 8,
+        "Total": 41,
+        "MinDim": 8
+      },
+      "reason": "The item cleanly constrains a mechanism attribution (thermal vs electrical coupling) using multiple provided measurements (time acceleration, peak current, small voltage drop, negligible transferred capacity), keeping the epistemic boundary largely inside the stem. Distractors are plausible and mostly fail via a single dominant misattribution (overreading current/voltage as meaningful energy transfer), making the question discriminative for mechanism-aware reasoning rather than keyword matching. Minor risk remains that option A’s absolute phrasing (“dominant cause”) could invite boundary debate across module designs beyond the stated configuration.",
+      "qid": "Q1"
+    },
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 8,
+        "D3": 8,
+        "D4": 8,
+        "D5": 8,
+        "Total": 40,
+        "MinDim": 8
+      },
+      "reason": "The stem provides a tight mechanistic boundary (Tc relative to 100 °C and latent vs sensible cooling) and a concrete observation (battery #3 fails while #4–#6 are protected), making A and E strongly entailed and allowing a reasoned, configuration-linked inference for C. Distractors are largely single-fault overclaims (universal prevention/ineffectiveness or threshold irrelevance), though C’s support depends on interpreting “parallel connections sustain propagation” rather than a strictly isolated causal proof, slightly limiting discriminative sharpness.",
+      "qid": "Q2"
+    },
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 8,
+        "D3": 9,
+        "D4": 8,
+        "D5": 8,
+        "Total": 41,
+        "MinDim": 8
+      },
+      "reason": "The item cleanly ties two reported observations (progressive Tr reduction and sharply shorter inter-row propagation time) to one mechanistic inference: connector-mediated thermal intensification in the connected module, while explicitly penalizing overgeneralization and unsupported thresholds. Distractors are mostly single-fault and plausible (mechanism substitution, unjustified self-limiting claim, universal-chemistry overclaim), yielding strong discrimination. Minor risk remains that option B invites ambiguity by contrasting “electrical vs thermal coupling” when the stem does not explicitly delimit electrical effects, though the intended mechanism is still clear.",
+      "qid": "Q3"
+    },
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 7,
+        "D3": 9,
+        "D4": 8,
+        "D5": 8,
+        "Total": 40,
+        "MinDim": 7
+      },
+      "reason": "The prompt supplies tight quantitative cues (high peak current but negligible net transferred charge; sub-100°C TR onset) that bound the correct causal attributions to connector-mediated heat transfer and reduced WM latent-heat effectiveness. The item coherently targets a single integrated mechanistic judgment (thermal vs electrical propagation driver plus thresholded suppression failure) and should discriminate mechanism-aware solvers, though short-answer format and lack of explicit distractors slightly reduce decoy/diagnostic control and may permit partially correct narratives.",
+      "qid": "S1"
+    }
+  ],
+  "TR_trigger+23+International_Journal_of_Energy_Research": [
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 8,
+        "D3": 9,
+        "D4": 8,
+        "D5": 8,
+        "Total": 41,
+        "MinDim": 8
+      },
+      "reason": "The stem cleanly specifies the governing condition (fixed internal-to-ambient pressure differential at valve cracking), making A/C/E tightly entailed and bounding out alternative explanations. Distractors are domain-plausible and mostly fail for a single dominant misconception (absolute vs differential pressure, spurious gas-generation suppression, wrong-direction inference about gas accumulation), supporting good diagnostic separation. A minor risk is that E can feel like post-hoc correlation with crack temperature rather than a distinct mechanistic explanation, slightly softening discriminative strength.",
+      "qid": "Q1"
+    },
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 8,
+        "D3": 9,
+        "D4": 8,
+        "D5": 7,
+        "Total": 40,
+        "MinDim": 7
+      },
+      "reason": "The stem and correct options align to a single mechanistic account (SOC → stored energy → faster ejection → incomplete oxidation → lower effective combustion heat), and most distractors are plausible but wrong for a specific mechanism/boundary reason. However, A and D are near-duplicates, reducing discriminative lift, and the item leans on an unstated assumption that ejection-speed limits combustion completion under the tested conditions.",
+      "incorrect_option_audit": {
+        "B": "[causal inversion]",
+        "C": "[boundary overreach]",
+        "E": "[engineering-plausible-but-unsupported]"
+      },
+      "dimension_evidence": {
+        "D1": {
+          "support": "Correctness is narrowly tied to an ejection-speed-driven incomplete combustion mechanism rather than generic SOC-to-heat claims.",
+          "counter_risk": "The item implicitly assumes combustion completeness is limited by residence time/oxidation kinetics in the test setup, which is not explicitly bounded."
+        },
+        "D2": {
+          "support": "Each incorrect option is technically plausible yet fails via one dominant mismatch (mechanism swap, pressure-threshold overclaim, unsupported electrolyte-fuel claim).",
+          "counter_risk": "Option B bundles timing/temperature and flame-front arguments, which could be seen as more than one fault depending on interpretation."
+        },
+        "D3": {
+          "support": "All options target the same causal link between SOC and effective combustion heat through venting/ejection and combustion completeness.",
+          "counter_risk": "Introducing relief-valve cracking pressure invites a secondary construct (hardware threshold behavior) that may distract from the core ejection/combustion mechanism."
+        },
+        "D4": {
+          "support": "Options are written in a largely parallel, technical style without obvious giveaway wording or formatting artifacts.",
+          "counter_risk": "A and D are stylistically and semantically very similar, which can cue a ‘two-of-a-kind’ selection strategy."
+        },
+        "D5": {
+          "support": "Distinguishing correct from incorrect requires mechanism-sensitive reasoning about cause (ejection speed) versus alternative narratives (thermal decomposition timing, valve threshold, extra fuel).",
+          "counter_risk": "Because A and D restate the same mechanism, test-takers can select both by redundancy rather than deeper discrimination, lowering separative power."
+        }
+      },
+      "qid": "Q3"
+    },
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 8,
+        "D3": 9,
+        "D4": 8,
+        "D5": 8,
+        "Total": 41,
+        "MinDim": 8
+      },
+      "reason": "The stem and gold answer tightly specify a multi-step causal chain (ambient pressure → valve cracking via fixed differential → pre-ignition gas inventory → combustion completeness → THR anomaly), with explicit disallowed extrapolations that help preserve boundary integrity. The item cleanly targets mechanism-based reasoning rather than recall, but some ambiguity risk remains because alternative altitude-related explanations (e.g., oxygen availability) are plausible unless the solver explicitly adheres to the requested pressure-differential/gas-accumulation framing, slightly limiting discriminative sharpness.",
+      "qid": "S1"
+    }
+  ],
+  "TR_trigger+24+Journal_of_Hazardous_Materials": [
+    {
+      "decision": "REVISE",
+      "scores": {
+        "D1": 6,
+        "D2": 7,
+        "D3": 6,
+        "D4": 7,
+        "D5": 7,
+        "Total": 33,
+        "MinDim": 6
+      },
+      "reason": "The item has clear local evidence for the SADT-vs-radius slope comparison and for “largest single contributor” from the 61.4% heat fraction, but it also blends three largely separable inference targets (chemistry threshold vs size scaling vs reaction partitioning), which weakens construct focus and boundary integrity. Distractors are mostly single-fault and plausible (trend reversal and causal overclaim), yet overall discriminative power is reduced because some conclusions (e.g., C) are close to definitional and A depends on an external comparative claim not supported by the stem alone.",
+      "qid": "Q2"
+    },
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 8,
+        "D3": 8,
+        "D4": 7,
+        "D5": 7,
+        "Total": 38,
+        "MinDim": 7
+      },
+      "reason": "The stem provides quantified rise rates across two explicit h ranges plus a separate validation claim, allowing firm identification of the two incorrect statements (equal-marginal-benefit and ceiling extrapolation) without needing outside assumptions. Distractors are largely single-fault and mechanism-aligned (marginal vs absolute gain, diminishing returns, validation scope), though the presence of multiple “still increases” cues and an easy ratio option reduces discriminative power and introduces mild cue-based elimination.",
+      "incorrect_option_audit": {
+        "B": "[metric slippage]",
+        "E": "[boundary overreach]"
+      },
+      "dimension_evidence": {
+        "D1": {
+          "support": "Numerical rates and bounded h intervals make it clear what can be concluded within-range and what constitutes extrapolation beyond 500 W m-2 K-1.",
+          "counter_evidence": "Option A depends on comparing an explicitly given absolute rise (23 K) to an implied rise in the high-h range, which requires an unstated computation/assumption about interpreting the provided average rate."
+        },
+        "D2": {
+          "support": "B and E each fail for a single dominant structural reason (marginal-rate equivalence vs beyond-range ceiling inference) while remaining domain-plausible.",
+          "counter_evidence": "Some correct options (C and A) are quite straightforward restatements of diminishing returns/greater low-h effect, which can make the incorrect ones easier to isolate by elimination."
+        },
+        "D3": {
+          "support": "All options target the same coherent judgment: interpreting SADT sensitivity to h (marginal vs absolute effects, diminishing returns, extrapolation) plus a clearly separable validation-scope check.",
+          "counter_evidence": "Mixing SADT–h interpretation with model validation against oven tests slightly broadens the construct, introducing a second mini-target."
+        },
+        "D4": {
+          "support": "Options are mostly parallel, technical, and similar in length/modality, avoiding obvious stylistic giveaways.",
+          "counter_evidence": "The absolute wording in E (“fixed ceiling and stops increasing”) is more extreme than other options, creating a mild linguistic cue toward incorrectness."
+        },
+        "D5": {
+          "support": "Correct identification requires distinguishing absolute improvement vs marginal benefit and recognizing invalid extrapolation beyond the measured range—mechanism- and boundary-sensitive reasoning.",
+          "counter_evidence": "B can be dismissed quickly from the visibly different rise rates, and E from its absolute ‘stops’ language, reducing separation between strong and shallow solvers."
+        }
+      },
+      "qid": "Q3"
+    }
+  ],
+  "TR_trigger+25+Rare_Metals": [
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 8,
+        "D3": 9,
+        "D4": 8,
+        "D5": 8,
+        "Total": 41,
+        "MinDim": 8
+      },
+      "reason": "The item cleanly targets inference limits of two diagnostics: dV/dQ’s non-excludability on null results and MST’s finite detection floor, making the correct set tightly entailed by the stem conditions. Distractors are plausible overclaims that hinge on a single boundary mistake (treating non-detection as proof of absence), and the option set stays aligned to one coherent judgment about diagnostic admissibility. A mild risk is that two distractors share the same overreach pattern, slightly reducing discriminative spread for strong test-takers.",
+      "qid": "Q3"
+    },
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 7,
+        "D3": 8,
+        "D4": 8,
+        "D5": 7,
+        "Total": 38,
+        "MinDim": 7
+      },
+      "reason": "The prompt cleanly targets two concrete proposal flaws tied to well-scoped mechanisms (local vs bulk potential under thermal nonuniformity, and non-proportional re-intercalation kinetics), with explicit disallowed extrapolations that tighten boundary integrity. Main quality risks are that responses may vary in how they operationalize “bulk potential” vs local overpotential/temperature gradients and in what evidence they invoke for “constant” re-intercalation rate, which can blur grading and slightly reduce discriminative sharpness.",
+      "qid": "S1"
+    }
+  ],
+  "TR_trigger+26+Applied_Thermal_Engineering": [
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 8,
+        "D3": 9,
+        "D4": 8,
+        "D5": 8,
+        "Total": 41,
+        "MinDim": 8
+      },
+      "reason": "The stem pins the mechanism to anisotropic thermal conduction and explicitly requires validity across both venting/rupture modes, making the correct set (A,B,D) tightly aligned to the stated boundary. Distractors are domain-plausible and largely fail for single, distinct reasons (buffering vs conduction, chemical reaction, and incorrect mode-dependence transfer), giving good diagnostic separation, though A vs D can feel partially redundant and may allow some superficial elimination.",
+      "qid": "Q2"
+    },
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 8,
+        "D3": 9,
+        "D4": 8,
+        "D5": 8,
+        "Total": 41,
+        "MinDim": 8
+      },
+      "reason": "The item cleanly targets the boundary between single-cell ARC behavior and module-level temperature amplification under propagation, and the correct options align with that mechanism-sensitive interpretation while explicitly penalizing universalization and false upper-bound claims. Distractors are largely single-fault and plausible (causal over-attribution, boundary overreach, and monotonicity/upper-bound error), supporting strong discrimination beyond keyword matching. Minor risk remains that B can tempt debate over whether lower peak necessarily implies material absorption versus generic heat-loss pathways, slightly softening boundary tightness and discrimination.",
+      "qid": "Q3"
+    }
+  ],
+  "TR_trigger+27+Journal_of_Energy_Storage": [
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 8,
+        "D3": 9,
+        "D4": 8,
+        "D5": 8,
+        "Total": 41,
+        "MinDim": 8
+      },
+      "reason": "The stem provides quantitative contrasts (<0.1% voltage vs ~10% entropy) that tightly bound what can be inferred about early-ISC detectability and supports the intended mechanism-level conclusion that entropy can reveal distributional inconsistency when magnitude differences are tiny. Distractors are mostly single-fault and plausibly reflect common confusions (noise-floor arguments, lumped-parameter overgeneralization, and restricting entropy to current), producing good discrimination. Some residual ambiguity remains around whether “not applicable” versus “inadequate” depends on unstated measurement/threshold design details, slightly softening boundary integrity and discriminative sharpness.",
+      "qid": "Q1"
+    },
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 8,
+        "D3": 8,
+        "D4": 8,
+        "D5": 8,
+        "Total": 40,
+        "MinDim": 8
+      },
+      "reason": "The item cleanly separates compute-time feasibility from detection-latency claims and scopes the lumped-parameter limitation to sensitivity rather than usability, yielding tight entailment for A/C/E. Distractors are domain-plausible and mostly single-fault (runtime vs latency, prohibition overreach, cross-method guarantee), supporting strong diagnostic value. Some residual ambiguity remains around what counts as “real-time requirements” and how strongly “not highly sensitive” can be interpreted without a quantitative threshold, slightly limiting discrimination.",
+      "incorrect_option_audit": {
+        "B": "[metric slippage]",
+        "D": "[boundary overreach]",
+        "F": "[boundary overreach]"
+      },
+      "qid": "Q3"
+    },
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 7,
+        "D3": 8,
+        "D4": 8,
+        "D5": 8,
+        "Total": 39,
+        "MinDim": 7
+      },
+      "reason": "The stem provides quantitative contrasts (<0.1% vs ~10%, normal Δ < 0.05 ppm) that tightly support the intended mechanism explanation and the scoped limitation/condition, reducing room for hidden assumptions. It coherently targets one judgment chain (why voltage fails, why entropy works, what lumping loses, and what enables applicability), though the “practically applicable” condition could still invite some boundary drift (e.g., thresholding/noise or localization assumptions), slightly limiting discriminative sharpness.",
+      "incorrect_option_audit": {
+        "A": "[causal inversion]",
+        "B": "[boundary overreach]",
+        "C": "[metric slippage]",
+        "D": "[proxy invalidity]"
+      },
+      "qid": "S1"
+    }
+  ],
+  "TR_trigger+28+Journal_of_Power_Sources": [
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 7,
+        "D3": 9,
+        "D4": 8,
+        "D5": 8,
+        "Total": 40,
+        "MinDim": 7
+      },
+      "reason": "The item cleanly tests boundary discipline: component-specific thermal data (DSC cathode vs ARC lithium metal) and modest onset shifts are contrasted against illegitimate cross-component and full-cell safety generalizations. Distractors are domain-plausible and mostly single-fault, though two incorrect options hinge on a similar overreach pattern, slightly reducing discriminative spread and inviting some elimination by “absolute claim” heuristics rather than mechanism-level reasoning.",
+      "incorrect_option_audit": {
+        "B": "[boundary overreach]",
+        "D": "[boundary overreach]"
+      },
+      "dimension_evidence": {
+        "D1": {
+          "support": "Correct selections hinge on explicitly respecting experimental scope (ARC on Li metal cannot entail DSC cathode behavior; a 5 °C shift cannot entail runaway prevention).",
+          "counter_risk": "Option C’s “worst-case among all SOC” can be chemistry- and design-conditional in general, so some solvers may perceive hidden-assumption dependence despite the stem’s framing."
+        },
+        "D2": {
+          "support": "B and D each fail primarily by a single dominant inference error: illegitimate transfer across tested components (B) and causal overclaim from a small temperature delay to full-cell safety (D).",
+          "counter_risk": "Both incorrect options rely on an overreach/overgeneralization fault, reducing diversity of distractor failure modes."
+        },
+        "D3": {
+          "support": "All options align to one coherent judgment target: which conclusions are unsupported extrapolations from the described DSC/ARC evidence about TRI.",
+          "counter_risk": "The item lightly mixes two extrapolation axes (cross-component transfer vs full-cell runaway claims), which could feel like two subskills even though they are closely related."
+        },
+        "D4": {
+          "support": "Options are grammatically parallel, technically consistent, and comparable in length, with no obvious formatting cues pointing to the keyed responses.",
+          "counter_risk": "Some options use strong absolutist language (“eliminates all,” “proving,” “at all temperatures”) that may cue test-wise elimination independent of deeper thermal-runaway understanding."
+        },
+        "D5": {
+          "support": "Correct choices require mechanism-aware boundary sensitivity: distinguishing observation-level findings (onset/heat flow, lithium reactivity) from invalid system-level conclusions.",
+          "counter_risk": "Absolutist phrasing makes B and D potentially solvable by superficial “too strong to be true” heuristics, lowering discrimination among mid-level reasoners."
+        }
+      },
+      "qid": "Q2"
+    }
+  ],
+  "TR_trigger+29+Journal_of_Industrial_and_Engineering_Chemistry": [],
+  "TR_trigger+3+International_Journal_of_Heat_and_Mass_Transfer": [],
+  "TR_trigger+30+Applied_Physics_Letters": [
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 8,
+        "D3": 8,
+        "D4": 8,
+        "D5": 7,
+        "Total": 39,
+        "MinDim": 7
+      },
+      "reason": "The item cleanly ties observed impedance and temperature changes to scoped inferences, while penalizing unjustified universality and single-mechanism overclaims. Distractors are largely single-fault and plausible, but two incorrect options lean toward broad/absolutist language that can be eliminated by test-taking heuristics, slightly weakening discriminative power. Overall it targets one coherent mechanism-vs-boundary judgment with minimal stylistic cue leakage.",
+      "dimension_evidence": {
+        "D1": {
+          "support": "Correct options are anchored to explicitly provided numeric observations and the stated cell type/additive level, with clear avoidance of cross-format generalization in the keyed set.",
+          "counter_evidence": "Option A’s mechanistic phrasing ('wetting the separator') introduces a specific pathway not strictly entailed by the observations alone, creating some hidden-assumption leakage."
+        },
+        "D2": {
+          "support": "C fails by universalizing beyond the described test context, and D fails by substituting a purely physical mechanism despite electrochemical impedance changes—each a dominant single error.",
+          "counter_evidence": "D’s incorrectness relies on interpreting 'purely' as excluding any electrochemical contribution; if a solver treats it as a dominant-but-not-exclusive mechanism, ambiguity could arise."
+        },
+        "D3": {
+          "support": "All options revolve around the same inference target: what the paired thermal and impedance observations support mechanistically and in scope.",
+          "counter_evidence": "Option E introduces series resistance alongside charge-transfer resistance, slightly shifting from mechanism inference to parameter bookkeeping within EIS."
+        },
+        "D4": {
+          "support": "Options are largely parallel in form and technical register, with no obvious length or tone giveaway for the correct set.",
+          "counter_evidence": "C and D contain extreme qualifiers ('all', 'purely') that may act as stylistic cues independent of domain understanding."
+        },
+        "D5": {
+          "support": "The item differentiates mechanism-aware reasoning (electrochemical pathway vs phase-change-only) and boundary-aware reasoning (coin cell evidence vs universal claims).",
+          "counter_evidence": "At least one distractor (C) can be rejected via generic 'avoid absolute statements' heuristics, reducing separation between shallow and deep solvers."
+        }
+      },
+      "incorrect_option_audit": {
+        "C": "[boundary overreach]",
+        "D": "[causal inversion]"
+      },
+      "qid": "Q1"
+    },
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 8,
+        "D3": 9,
+        "D4": 8,
+        "D5": 8,
+        "Total": 41,
+        "MinDim": 8
+      },
+      "reason": "The prompt tightly constrains reasoning to a nail-penetration scenario with a rapid temperature rise and a specific mitigation mechanism (separator wetting increasing resistance), making the intended property-based comparison well-bounded. It cleanly targets a single comparative causal judgment (phase/volatility/transport limits) and requires mechanism-aware distinctions across candidates, though some ambiguity remains because key transport terms (e.g., “diffusion distance” vs capillary infiltration/viscosity) are not operationally defined, which can broaden acceptable explanations.",
+      "qid": "S1"
+    }
+  ],
+  "TR_trigger+32+Energy_Conversion_and_Management": [
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 8,
+        "D3": 9,
+        "D4": 8,
+        "D5": 8,
+        "Total": 41,
+        "MinDim": 8
+      },
+      "reason": "The stem defines Tsa operationally and asks for consequences of being above it after abuse removal, keeping the boundary condition central and supporting a mechanism-based inference about self-sustaining heating and intervention limits. Distractors are generally plausible and map to common confusions (trigger removal, boundary inversion, extinguishment), though the item introduces some stage-dependent ambiguity (post-ignition vs. pre-runaway) that could create mild disagreement without additional context. Overall it cleanly targets one judgment construct (self-accelerating vs. externally driven behavior around Tsa) and should discriminate beyond superficial reading.",
+      "qid": "Q1"
+    },
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 8,
+        "D3": 8,
+        "D4": 8,
+        "D5": 8,
+        "Total": 40,
+        "MinDim": 8
+      },
+      "reason": "The item cleanly separates what is strictly supported by the provided quantitative comparisons (ratios and qualitative interpretation of rapidity) from invalid hazard extrapolations, creating solid boundary discipline. Distractors are plausible and mechanism-adjacent (fire hazard inference and enclosed-space danger inference) but fail primarily by overreaching beyond given variables, while the correct answers require both arithmetic and inference about rate meaning. A mild risk is that two incorrect options hinge on similar overgeneralization dynamics, slightly reducing discriminative variety.",
+      "qid": "Q3"
+    },
+    {
+      "decision": "ACCEPT",
+      "scores": {
+        "D1": 8,
+        "D2": 8,
+        "D3": 9,
+        "D4": 8,
+        "D5": 8,
+        "Total": 41,
+        "MinDim": 8
+      },
+      "reason": "The stem tightly specifies the stage ordering and the external-cooling limitation, making the correct evaluation strongly stage-conditional (slow period influence vs rapid period non-control) with an explicit mechanistic constraint (internal heat-generation rate vs heat removal). Distractor space is implicit (as a short-answer rebuttal) but still structurally focused on a single judgment target: rejecting the “any stage reliably prevents destruction” monotonicity claim via the slow/rapid regime distinction. Some ambiguity remains because the prompt does not explicitly name Tsa or quantify “rapid” in-stem, so weaker solvers might answer with generic statements about ‘insufficient cooling’ without demonstrating the intended threshold/heat-transfer-rate boundary.",
+      "qid": "S1"
+    }
+  ]
+}

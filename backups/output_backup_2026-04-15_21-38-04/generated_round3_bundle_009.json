@@ -1,0 +1,338 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A four-cell battery module is tested in an open environment. When thermal runaway is triggered at the first cell with no protective materials, all four cells complete thermal runaway within approximately 16 seconds. When the same trigger is applied at the middle cell (cell 3), the total heat release is approximately three times higher and the propagation completes faster than the first-cell case. A designer proposes inserting a 1 mm layer of a phase-change composite material (SMEP) between each adjacent cell pair to reduce peak heat release rate and delay propagation. Which of the following conclusions are admissible based on this scenario?",
+        "options": [
+          "A. The SMEP layer will delay thermal runaway propagation compared to the unprotected module, but propagation to all cells will still occur.",
+          "B. The higher total heat release observed when triggering at the middle cell is primarily caused by the greater number of cells that eventually undergo thermal runaway.",
+          "C. Inserting SMEP reduces peak heat release rate but increases total heat release relative to the unprotected first-cell case, making SMEP alone an incomplete safety solution.",
+          "D. Because SMEP delays propagation by over an order of magnitude relative to the unprotected case, a sufficiently thick SMEP layer will eventually achieve complete propagation suppression regardless of trigger location.",
+          "E. The observation that middle-cell triggering produces higher total heat release than first-cell triggering supports the conclusion that trigger location affects the directionality of heat propagation in the module.",
+          "F. SMEP performance demonstrated in open environments can be directly applied to predict its effectiveness in sealed battery enclosures.",
+          "G. Increasing IFR content in SMEP shortens self-extinguishing duration but also reduces the material's energy absorption capacity per unit mass."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence confirms that 1 mm SMEP delays propagation to 133.42 s total but does not completely prevent it, so propagation to all cells still occurs.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+203+Chemical_Engineering_Journal:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Both first-cell and middle-cell triggering result in all four cells undergoing thermal runaway, so the difference in cell count cannot explain the threefold increase in total heat release. The evidence attributes the higher THR to bidirectional propagation, not to a larger number of affected cells.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Protection+203+Chemical_Engineering_Journal:C007"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence explicitly states that 1 mm SMEP reduces PHRR but increases THR by 50% relative to the unprotected first-cell case due to PA content enhancing combustion, making SMEP alone an incomplete safety solution despite its delay benefit.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+203+Chemical_Engineering_Journal:C006"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence shows that both 1 mm and 1.5 mm SMEP delay but do not prevent propagation. The claim that sufficient thickness will eventually suppress propagation regardless of trigger location is not supported; complete suppression in the evidence requires a different material (KGSA) or a combination approach, and non-first-cell triggering imposes greater thermal shock that even thicker combinations could not fully suppress.",
+            "error_type": "unjustified_monotonicity_extrapolation",
+            "evidence_refs": [
+              "TR_Protection+203+Chemical_Engineering_Journal:C003",
+              "TR_Protection+203+Chemical_Engineering_Journal:C008"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The evidence states that middle-cell triggering causes bidirectional propagation, which significantly promotes heat generation and results in much higher THR (7.91 MJ vs 2.56 MJ). This supports the conclusion that trigger location affects heat propagation directionality.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+203+Chemical_Engineering_Journal:C007"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Evidence explicitly states that the study only investigated open environments and that SMEP effectiveness in sealed environments requires further exploration, making direct application of open-environment results to sealed enclosures inadmissible.",
+            "error_type": "scope_expansion",
+            "evidence_refs": [
+              "TR_Protection+203+Chemical_Engineering_Journal:C009"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "Evidence shows that as IFR content increases from SMEP1 to SMEP4, combustion duration shortens (150 s to 3 s, indicating faster self-extinguishing) while melting enthalpy decreases (115.78 to 102.67 J/g), meaning energy absorption capacity per unit mass is reduced. Both trends are supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+203+Chemical_Engineering_Journal:C010"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Trade-off between SMEP's delay benefit and its combustion-enhancement penalty, combined with trigger-location effects on propagation severity",
+        "primary_boundary": "SMEP alone cannot prevent propagation and increases THR; open-environment results cannot be extended to sealed environments; trigger location changes propagation directionality not just cell count",
+        "intended_error_modes": [
+          "mechanism_substitution for B",
+          "unjustified monotonicity extrapolation for D",
+          "scope expansion beyond stated conditions for F"
+        ],
+        "disallowed_extrapolations": [
+          "SMEP thickness alone guarantees suppression",
+          "sealed-environment performance inferred from open-environment data",
+          "cell count as sole driver of THR difference"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery module engineer is evaluating two barrier configurations to prevent thermal runaway propagation. Configuration K uses a standalone 3 mm aerogel-based barrier (KGSA) between each cell pair. Configuration KS-1.5 uses a thinner 2 mm KGSA combined with a 1.5 mm SMEP layer. Tests show that Configuration K completely blocks propagation when thermal runaway is triggered at the first cell. Configuration KS-1.5 also completely prevents propagation when triggered at a non-first cell (cell 2 or cell 3), achieving a minimum adjacent-cell surface temperature of 55.6 °C. However, when 2 mm KGSA is combined with only 1 mm SMEP (Configuration KS-1), propagation is delayed by over 600 seconds but not fully suppressed under non-first-cell triggering. Which of the following conclusions are admissible?",
+        "options": [
+          "A. The failure of KS-1 to prevent propagation under non-first-cell triggering, despite its long delay, indicates that delay duration alone is not a reliable predictor of whether propagation will ultimately be suppressed.",
+          "B. Because Configuration K prevents propagation under first-cell triggering, it can be concluded that K also prevents propagation under non-first-cell triggering conditions.",
+          "C. The success of KS-1.5 under non-first-cell triggering but not the explicit testing of K under the same condition means that KS-1.5 is confirmed superior to K for all trigger locations.",
+          "D. The difference in outcome between KS-1 and KS-1.5 under non-first-cell triggering implies that the additional 0.5 mm of SMEP contributes a mechanistically distinct suppression effect beyond simple thermal mass addition.",
+          "E. The 55.6 °C peak surface temperature achieved by KS-1.5 on adjacent cells is consistent with successful propagation suppression, since it remains well below temperatures associated with thermal runaway onset.",
+          "F. The evidence supports that combining a rigid thermal barrier with a phase-change interlayer can achieve complete propagation suppression under conditions where either material alone at the tested thicknesses cannot."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "E",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "KS-1 delayed propagation by over 600 seconds yet still failed to prevent it, while KS-1.5 succeeded. This demonstrates that delay magnitude is not sufficient to predict suppression outcome, requiring a reasoning step beyond simple delay-duration comparison.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+203+Chemical_Engineering_Journal:C008",
+              "TR_Protection+203+Chemical_Engineering_Journal:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence only demonstrates that 3 mm KGSA prevents propagation under first-cell triggering. Non-first-cell triggering produces greater thermal shock intensity (as shown by KS-1 failing under those conditions), so extrapolating K's first-cell result to non-first-cell conditions is an unsupported scope extension.",
+            "error_type": "condition_violation_distractor",
+            "evidence_refs": [
+              "TR_Protection+203+Chemical_Engineering_Journal:C004",
+              "TR_Protection+203+Chemical_Engineering_Journal:C008"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The evidence does not include a test of Configuration K under non-first-cell triggering. Concluding KS-1.5 is superior to K for all trigger locations requires a comparison that was not performed; this is an inadmissible inference from incomplete comparative data.",
+            "error_type": "scope_expansion_distractor",
+            "evidence_refs": [
+              "TR_Protection+203+Chemical_Engineering_Journal:C004",
+              "TR_Protection+203+Chemical_Engineering_Journal:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "While the outcome difference between KS-1 and KS-1.5 is real, the evidence does not support attributing it to a mechanistically distinct effect of the additional 0.5 mm SMEP beyond thermal mass. The evidence describes the outcome difference but does not characterize the mechanism at that resolution. This is a causal overclaim.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Protection+203+Chemical_Engineering_Journal:C005",
+              "TR_Protection+203+Chemical_Engineering_Journal:C008"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "A peak surface temperature of 55.6 °C on adjacent cells is far below the temperatures at which thermal runaway reactions initiate (evidence from paper 204 places relevant reaction thresholds above 440 K / ~167 °C), and the evidence explicitly confirms no thermal runaway occurred in those cells, making this conclusion admissible.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+203+Chemical_Engineering_Journal:C005",
+              "TR_Protection+204+Case_Studies_in_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Evidence shows that SMEP alone at 1 mm and 1.5 mm cannot prevent propagation, and KS-1 (2 mm KGSA + 1 mm SMEP) also fails under non-first-cell triggering, but KS-1.5 (2 mm KGSA + 1.5 mm SMEP) succeeds. This supports the conclusion that the combination at sufficient thickness achieves what either tested alone cannot under these conditions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+203+Chemical_Engineering_Journal:C003",
+              "TR_Protection+203+Chemical_Engineering_Journal:C005",
+              "TR_Protection+203+Chemical_Engineering_Journal:C008"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of comparative conclusions across different trigger locations and material configurations, and the relationship between delay duration and suppression outcome",
+        "primary_boundary": "First-cell triggering results cannot be directly extrapolated to non-first-cell triggering; delay magnitude does not predict suppression; comparative superiority claims require matched test conditions",
+        "intended_error_modes": [
+          "condition_violation for B",
+          "scope_expansion for C",
+          "causal_overclaim for D"
+        ],
+        "disallowed_extrapolations": [
+          "K performance under first-cell triggering implies K performance under non-first-cell triggering",
+          "KS-1.5 superiority over K for all conditions without matched testing",
+          "mechanism identification from outcome difference alone"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A thermal management engineer is designing PCM-based protection for a lithium-ion battery module. Experimental data shows that increasing PCM thermal conductivity from a low value to a high value progressively reduces the maximum cell temperature during thermal runaway, eventually suppressing reactions that require temperatures above approximately 170 °C and 200 °C respectively. Separately, increasing PCM layer thickness from 2 mm to 5 mm significantly reduces the temperature seen by adjacent cells and the total heat released during thermal runaway, but further increasing thickness beyond 6 mm produces negligible additional reduction in these quantities. However, PCM thickness has minimal effect on the peak temperature reached by the cell undergoing thermal runaway itself, because the thermal runaway process completes before significant PCM volume can participate in heat absorption. Which of the following conclusions are admissible?",
+        "options": [
+          "A. Increasing PCM thermal conductivity is a more effective strategy for reducing the peak temperature of the cell undergoing thermal runaway than increasing PCM thickness.",
+          "B. Once PCM thickness exceeds the saturation threshold, further increases in thickness cannot improve protection of adjacent cells because the PCM has already absorbed all heat released during thermal runaway.",
+          "C. A PCM layer with high thermal conductivity but thickness below the saturation threshold may still fail to prevent thermal runaway propagation if the heat released exceeds the PCM's total absorption capacity.",
+          "D. The insensitivity of peak cell temperature to PCM thickness implies that PCM thickness is irrelevant to module-level thermal runaway propagation outcomes.",
+          "E. The threshold behavior in PCM thickness suggests that there exists a minimum thickness below which the PCM cannot fully absorb the heat released during thermal runaway, and above which it can.",
+          "F. Because PCM thermal conductivity controls peak cell temperature and PCM thickness controls adjacent-cell temperature, optimizing only one parameter is sufficient for complete thermal runaway suppression."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence shows that increasing PCM thermal conductivity reduces peak cell temperature during thermal runaway (from 704 K to 417 K), while PCM thickness has little effect on peak cell temperature. Therefore thermal conductivity is the effective lever for peak cell temperature, making this conclusion admissible and counterintuitive relative to the common assumption that more material always helps.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+204+Case_Studies_in_Thermal_Engineering:C003",
+              "TR_Protection+204+Case_Studies_in_Thermal_Engineering:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Evidence explicitly states that when thickness reaches 6 mm or greater, T2min and QTR no longer change significantly because the PCM is sufficient to completely absorb all heat released by the cell during thermal runaway. This directly supports the admissibility of option B.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+204+Case_Studies_in_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "This option conflates the role of thermal conductivity (which controls peak temperature by rate of heat transfer) with total heat absorption capacity (which is controlled by thickness and latent heat). While the reasoning sounds conservative, it incorrectly attributes a capacity-based failure mode to a conductivity-based parameter. The evidence does not support this coupled failure mechanism as stated.",
+            "error_type": "mechanism_confusion_conservative_but_wrong",
+            "evidence_refs": [
+              "TR_Protection+204+Case_Studies_in_Thermal_Engineering:C003",
+              "TR_Protection+204+Case_Studies_in_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence shows PCM thickness has little effect on the peak temperature of the cell undergoing thermal runaway but significantly affects adjacent-cell temperatures and total heat release during propagation. Concluding that thickness is irrelevant to module-level propagation outcomes is an inadmissible scale-transfer error: component-level insensitivity does not imply system-level irrelevance.",
+            "error_type": "scale_transfer_error",
+            "evidence_refs": [
+              "TR_Protection+204+Case_Studies_in_Thermal_Engineering:C004",
+              "TR_Protection+204+Case_Studies_in_Thermal_Engineering:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The evidence explicitly describes a threshold at approximately 6 mm where behavior transitions from incomplete to complete heat absorption, defining a minimum thickness boundary. This conclusion is directly supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+204+Case_Studies_in_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence shows that thermal conductivity and thickness address different aspects of protection (peak temperature vs. adjacent-cell temperature and total heat release respectively). Optimizing only one parameter leaves the other protection dimension unaddressed, making complete suppression through a single parameter inadmissible.",
+            "error_type": "single_variable_control_of_multi_factor_system",
+            "evidence_refs": [
+              "TR_Protection+204+Case_Studies_in_Thermal_Engineering:C003",
+              "TR_Protection+204+Case_Studies_in_Thermal_Engineering:C004",
+              "TR_Protection+204+Case_Studies_in_Thermal_Engineering:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinct roles of PCM thermal conductivity versus PCM thickness in controlling different aspects of thermal runaway behavior, and the threshold nature of thickness effects",
+        "primary_boundary": "PCM thickness controls adjacent-cell protection and total heat absorption but not peak cell temperature; thermal conductivity controls peak cell temperature; these are separable effects requiring independent optimization",
+        "intended_error_modes": [
+          "scale_transfer error for D",
+          "single-variable control assumption for F",
+          "mechanism conflation for C"
+        ],
+        "disallowed_extrapolations": [
+          "PCM thickness irrelevance at cell level implies irrelevance at module level",
+          "high conductivity alone sufficient for complete suppression",
+          "capacity failure mode attributed to conductivity parameter"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery array without any suppression measures undergoes complete thermal runaway propagation across all cells within approximately 5 seconds. An engineer tests two water spray strategies: (1) continuous spray applied for 20 seconds, and (2) intermittent spray with a duty cycle of 0.1 (spray period of 20 seconds, meaning spray is active for only 2 seconds per 20-second cycle). The continuous spray delays propagation to approximately 197 seconds but does not prevent it. The intermittent spray at DC 0.1 has no measurable effect on propagation, with the array completing propagation in approximately 7 seconds. A colleague argues that because the intermittent spray still delivers some cooling water, it should provide at least partial delay relative to the unprotected case. Identify the specific physical reason why the DC 0.1 intermittent spray fails to provide even partial delay, and explain why the 5-second propagation window is mechanistically critical to this failure."
+      },
+      "ground_truth": {
+        "gold_answer": "The thermal runaway propagation interval in the unprotected array lasts only approximately 5 seconds. The DC 0.1 intermittent spray has a 20-second period, meaning it delivers cooling for only 2 seconds out of every 20 seconds. During the critical 5-second propagation window, the average cooling power delivered by this intermittent pattern is insufficient to counteract the heat driving propagation. Because the propagation window is shorter than or comparable to the spray cycle period, the spray may not even be active during the critical interval, and even if partially active, the time-averaged cooling power is too low to affect the propagation dynamics. The 5-second window defines the interval during which suppression must be effective; any spray strategy whose average cooling power during that window falls below the threshold required to delay cell-to-cell heat transfer will have no measurable effect on propagation time. Continuous spray maintains cooling power throughout this window, which is why it achieves significant delay despite also not preventing propagation entirely.",
+        "must_include": [
+          "The propagation window is approximately 5 seconds, which is the interval during which suppression must act",
+          "DC 0.1 with a 20-second period delivers insufficient average cooling power during the propagation window",
+          "The intermittent spray cycle period is long relative to the propagation interval, so cooling is not reliably present during the critical window",
+          "Continuous spray maintains cooling throughout the propagation window and achieves delay, confirming that timing and average power during the window are the controlling factors",
+          "The failure is not due to zero water delivery but due to insufficient average cooling power during the specific propagation interval"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding that no intermittent spray strategy can ever delay propagation regardless of duty cycle or period",
+          "Concluding that continuous spray prevents propagation (it only delays it)",
+          "Attributing the failure solely to total water volume rather than to timing and average power during the propagation window",
+          "Claiming that a longer spray duration alone guarantees suppression without considering the propagation window duration"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Relationship between spray duty cycle, average cooling power during the propagation window, and the time-critical nature of thermal runaway suppression",
+        "primary_boundary": "The propagation window duration (~5 s) defines the relevant time scale for suppression effectiveness; strategies with insufficient average cooling power during that window provide no benefit regardless of total water delivered",
+        "intended_error_modes": [
+          "Attributing failure to total water volume rather than time-averaged power during the propagation window",
+          "Assuming any non-zero cooling contribution produces proportional delay",
+          "Ignoring the mismatch between spray cycle period and propagation window duration"
+        ]
+      }
+    }
+  ]
+}

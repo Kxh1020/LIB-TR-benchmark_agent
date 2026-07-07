@@ -1,0 +1,235 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A lithium-ion cell containing LiPF6-based electrolyte with a solvent mixture of DMC, DEC, and EC undergoes controlled thermal ramp in a dry nitrogen atmosphere. Gas sampling begins at 80°C and continues through 200°C. An analyst observes that solvent vapor is detected well before 100°C, but fluorine-containing toxic species are not detected until approximately 100°C. At 170°C, both HF and POF3 signals decline simultaneously. Which conclusions about the observed emission behavior are admissible?",
+        "options": [
+          "A. The early solvent vapor detection below 100°C is consistent with non-cyclic carbonates evaporating preferentially before cyclic carbonates, which require higher temperatures to develop significant vapor pressure.",
+          "B. The simultaneous decline of HF and POF3 at 170°C indicates that all LiPF6 decomposition is complete by that temperature, making further fluorine-species emission impossible above 170°C.",
+          "C. The co-appearance of HF and POF3 near 100°C is consistent with POF3 being a decomposition product of LiPF6 that can serve as a precursor to HF when sufficient humidity is present.",
+          "D. The dry nitrogen atmosphere eliminates POF3 as a precursor pathway entirely, meaning all detected HF must originate from a direct LiPF6 decomposition route that does not involve POF3.",
+          "E. The simultaneous decline of both species near 170°C is consistent with insufficient residual humidity to fully convert POF3 to HF, rather than necessarily indicating complete cessation of LiPF6 decomposition.",
+          "F. Because EC has negligible vapor pressure below 100°C, its evaporation cannot contribute to any gas-phase reactions that produce fluorine-containing species below that threshold.",
+          "G. The absence of PF5 in the detected gas species is consistent with PF5 being too reactive and short-lived to accumulate to detectable levels under these conditions."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence explicitly states non-cyclic carbonates evaporate below 100°C while cyclic carbonates require higher temperatures.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+117+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence explains the decline via insufficient humidity, not completion of decomposition; this is an unsupported causal overclaim.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+117+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence directly supports POF3 as a LiPF6 decomposition product and HF precursor in humid conditions, consistent with co-detection near 100°C.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+117+Journal_of_Power_Sources:C001",
+              "TR_Gasventing+117+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence does not support eliminating POF3 as a precursor under dry conditions; it states residual humidity is insufficient, not absent from the mechanism.",
+            "error_type": "condition_violation_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+117+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Evidence explicitly attributes simultaneous decline to insufficient residual humidity for POF3-to-HF conversion, not to decomposition cessation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+117+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Evidence states EC has negligible vapor pressure below 100°C but does not establish that EC participation is required for fluorine-species production below that threshold; the fluorine species originate from LiPF6, not EC.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Gasventing+117+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "Evidence states PF5 is too short-lived due to instability and reactivity with residual water or solvents, consistent with non-detection.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+117+Journal_of_Power_Sources:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of mechanistic conclusions about fluorine-species emission patterns and solvent volatility during LiPF6 electrolyte thermal decomposition",
+        "primary_boundary": "Simultaneous HF/POF3 decline is explained by humidity insufficiency, not decomposition completion; PF5 non-detection reflects reactivity, not absence of decomposition pathway",
+        "intended_error_modes": [
+          "causal_overclaim on decomposition completion",
+          "condition_violation by attributing dry atmosphere to mechanism elimination",
+          "mechanism_substitution linking EC evaporation to fluorine production"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding LiPF6 decomposition is complete at 170°C",
+          "Claiming dry conditions eliminate POF3 precursor role entirely",
+          "Attributing HF production to cyclic carbonate evaporation"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A researcher performs thermogravimetric analysis coupled with infrared spectroscopy on extracted LiPF6-based electrolyte containing both EC and DMC solvents. The heating rate is controlled and the carrier gas contains trace residual moisture. Solvent vapor signals appear in two distinct temperature ranges. Fluorine-containing gas signals appear only after 100°C and both HF and POF3 signals decline near 170°C. No PF5 signal is detected throughout. Which of the following mechanistic interpretations are consistent with these observations?",
+        "options": [
+          "A. The two-stage solvent vapor signal is consistent with DMC evaporating in the lower temperature range and EC evaporating in the higher temperature range, reflecting their different volatility characteristics.",
+          "B. The absence of PF5 signal confirms that LiPF6 does not decompose via any pathway involving PF5 as an intermediate, since a stable intermediate would necessarily be detectable.",
+          "C. The appearance of both HF and POF3 above 100°C is consistent with LiPF6 decomposition initiating in that temperature range, with POF3 acting as an intermediate that partially converts to HF via reaction with residual moisture.",
+          "D. The decline of HF signal near 170°C, occurring simultaneously with POF3 decline, is more consistent with moisture depletion limiting further POF3-to-HF conversion than with complete cessation of LiPF6 decomposition.",
+          "E. Because HF and POF3 appear simultaneously, the data confirm that HF is produced exclusively through the POF3 intermediate route and not through any direct LiPF6 decomposition pathway.",
+          "F. The trace residual moisture in the carrier gas is sufficient to explain partial POF3-to-HF conversion, consistent with both species being detected rather than only POF3."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence explicitly states non-cyclic carbonates (including DMC) evaporate below 100°C and cyclic carbonates (EC) above 100°C, directly explaining the two-stage signal.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+117+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence explains PF5 absence by its short lifetime and reactivity, not by its absence from the decomposition pathway; non-detection does not rule out transient intermediacy.",
+            "error_type": "measurement_scope_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+117+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence supports LiPF6 decomposition producing both HF and POF3 from 100°C, with POF3 serving as HF precursor via moisture reaction.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+117+Journal_of_Power_Sources:C001",
+              "TR_Gasventing+117+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence explicitly attributes the simultaneous decline near 170°C to insufficient residual humidity for POF3-to-HF conversion, not to decomposition completion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+117+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Simultaneous appearance is consistent with POF3 being a precursor but does not exclude direct HF production; the evidence does not establish exclusivity of the POF3 route.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+117+Journal_of_Power_Sources:C001",
+              "TR_Gasventing+117+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Evidence states residual humidity was insufficient to fully convert POF3 to HF, implying partial conversion did occur, which is consistent with detecting both species.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+117+Journal_of_Power_Sources:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanistic interpretation of TG/FTIR gas emission patterns from LiPF6 electrolyte thermal decomposition including solvent volatility staging and fluorine species dynamics",
+        "primary_boundary": "PF5 non-detection reflects reactivity not pathway absence; simultaneous HF/POF3 appearance does not establish exclusive production route; decline at 170°C reflects humidity depletion not decomposition completion",
+        "intended_error_modes": [
+          "inferring pathway absence from non-detection of reactive intermediate",
+          "claiming exclusive HF production route from co-detection pattern",
+          "treating signal decline as decomposition completion"
+        ],
+        "disallowed_extrapolations": [
+          "Ruling out PF5 intermediacy based on non-detection",
+          "Claiming HF is produced exclusively via POF3 route",
+          "Concluding LiPF6 decomposition ends at 170°C"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A lithium-ion battery using LiPF6-based electrolyte vents in a humid outdoor environment. A first responder measures only POF3 in the vent gas plume and reports that HF is not detected, concluding that no HF hazard is present. A safety engineer disputes this conclusion. Using your understanding of the chemical relationships among LiPF6 decomposition products and the role of environmental conditions, explain why the first responder's conclusion may not be admissible, and identify what additional factor must be considered to correctly assess the fluorine-based inhalation hazard."
+      },
+      "ground_truth": {
+        "gold_answer": "The first responder's conclusion is not admissible because POF3 is a precursor to HF in humid environments: it reacts with moisture to generate HF. Therefore, detecting POF3 in a humid outdoor environment means HF may be actively forming from the released POF3 even if direct HF measurement at that moment is low. The key additional factor is ambient humidity: in humid conditions, POF3 does not remain stable but converts to HF, meaning the total fluorine inhalation hazard includes both any directly released HF and the HF that will be generated from POF3 conversion. A hazard assessment based solely on instantaneous HF measurement without accounting for POF3 concentration and humidity-driven conversion will systematically underestimate the actual HF exposure risk.",
+        "must_include": [
+          "POF3 is a precursor to HF in humid environments",
+          "humidity drives conversion of POF3 to HF",
+          "low instantaneous HF detection does not exclude HF formation from POF3",
+          "total fluorine hazard requires accounting for POF3 as a latent HF source"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming POF3 always fully converts to HF regardless of humidity level",
+          "Claiming PF5 contributes to inhalation hazard through accumulation",
+          "Stating that HF and POF3 must always be detected simultaneously for decomposition to have occurred"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of hazard assessment based on instantaneous HF measurement when POF3 is present as a humidity-reactive HF precursor",
+        "primary_boundary": "POF3 detection in humid conditions implies ongoing or future HF generation; instantaneous HF non-detection does not establish absence of HF hazard",
+        "intended_error_modes": [
+          "treating HF non-detection as proof of no HF hazard",
+          "ignoring POF3-to-HF conversion pathway under ambient humidity",
+          "failing to account for POF3 as a latent fluorine hazard source"
+        ]
+      }
+    }
+  ]
+}

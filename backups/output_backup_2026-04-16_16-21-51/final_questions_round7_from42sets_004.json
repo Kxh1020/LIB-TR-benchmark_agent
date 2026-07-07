@@ -1,0 +1,96 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A cylindrical hard-case lithium-ion cell and a pouch cell of identical capacity undergo full thermal runaway in a sealed test enclosure. Both cells eject comparable total mass. An engineer observes that the hard-case cell produces significantly more solid particulate debris outside the cell compared to the pouch cell. Which of the following statements are consistent with the physical mechanism responsible for this difference?",
+        "options": [
+          "A. The overpressure valve in the hard-case cell concentrates escaping gas through a restricted orifice, generating stream velocities sufficient to detach and expel electrode fragments.",
+          "B. The hard-case cell produces a greater total volume of venting gas than the pouch cell, which directly increases the solid ejection fraction.",
+          "C. The pouch cell housing deforms and distributes venting gas over a larger exit area, reducing the mechanical force available to dislodge solid material.",
+          "D. The difference in solid ejection fraction is primarily caused by differences in electrolyte composition between hard-case and pouch cell formats.",
+          "E. The solid ejection fraction in hard-case cells is higher because their metallic housing retains heat longer, causing more complete electrode decomposition before venting.",
+          "F. The gas-to-solid mass ratio in the ejected material from hard-case cells is lower than that from pouch cells undergoing the same total mass loss."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence directly attributes higher solid ejection in hard-case cells to overpressure valve concentrating gas through a small orifice, increasing stream velocity.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+120+Journal_of_Power_Sources:C006"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence attributes the difference to valve geometry and stream velocity, not to a greater total venting gas volume in hard-case cells.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+120+Journal_of_Power_Sources:C006"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Pouch cell housing lacks a concentrated valve; distributed gas exit reduces per-unit-area stream force, consistent with lower solid ejection fraction in evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+120+Journal_of_Power_Sources:C006"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence attributes the ejection difference to housing geometry and valve design, not to electrolyte composition differences between formats.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Gasventing+120+Journal_of_Power_Sources:C006"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence does not support thermal retention as the mechanism; the cited cause is mechanical stream velocity from valve geometry, not thermal decomposition completeness.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Gasventing+120+Journal_of_Power_Sources:C006"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "A higher proportion of solid mass in total mass loss for hard-case cells implies a lower gas-to-solid ratio in ejected material, which is a direct logical consequence of the evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+120+Journal_of_Power_Sources:C006"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism linking housing geometry to solid ejection fraction during thermal runaway venting",
+        "primary_boundary": "The ejection difference is attributed to valve-induced stream velocity, not to total gas volume or electrolyte chemistry differences",
+        "intended_error_modes": [
+          "mechanism_substitution",
+          "causal_overclaim",
+          "ignoring_geometry_effect"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring that hard-case cells generate more total gas",
+          "Attributing solid ejection to thermal retention rather than mechanical stream force"
+        ]
+      }
+    }
+  ],
+  "short_answers": []
+}

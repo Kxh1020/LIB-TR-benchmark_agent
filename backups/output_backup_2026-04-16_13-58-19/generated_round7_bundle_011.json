@@ -1,0 +1,319 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A confined space accumulates vent gas from LFP batteries that were discharged to 60% SOC before thermal runaway. A safety engineer assesses explosion risk by measuring gas composition and finds elevated ethylene and ethane concentrations. A colleague argues that because the SOC is below the 100% peak, explosion propensity is moderate and a simple additive mixing rule can be used to estimate the explosion limits of the multi-component gas mixture for ventilation system design. Which conclusions about this scenario are admissible?",
+        "options": [
+          "A. The elevated ethylene concentration is consistent with LFP chemistry being a primary driver of explosion propensity relative to NCA chemistry, regardless of SOC.",
+          "B. At 60% SOC, LFP vent gas explosion tendency is near its maximum, not a moderate intermediate value, because the peak range spans 50–100% SOC.",
+          "C. Using a weighted summation of individual component explosion limits to estimate the mixture explosion limits is not a valid approximation for multi-component BVG mixtures.",
+          "D. Carbon monoxide, if present as the dominant component, would represent the greatest individual explosion hazard among the vent gas species.",
+          "E. The explosion propensity at 60% SOC is necessarily lower than at overcharged conditions because higher charge states always produce more reactive gases.",
+          "F. The engineer can safely use additive mixing rules if ethylene is treated as the dominant component, since it has the highest individual explosion propensity."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "C"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "LFP's higher explosion propensity than NCA is attributed to higher ethylene and ethane concentrations, making this inference admissible.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The SOC peak range is 50–100%, so 60% SOC falls within the peak region, not a moderate intermediate.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence explicitly states that weighted summation cannot approximate mixture explosion limits for multi-component BVG.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "CO exhibits the lowest explosion propensity among individual BVG components; this directly contradicts evidence.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence states explosion tendency peaks at 50–100% SOC and is higher there than at overcharged states, contradicting monotonic SOC assumption.",
+            "error_type": "unjustified_monotonicity",
+            "evidence_refs": [
+              "TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Additive mixing rules are explicitly inadmissible for multi-component BVG regardless of which component dominates.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of explosion risk assessment methods and SOC-dependent explosion propensity for LFP BVG",
+        "primary_boundary": "SOC peak range 50–100% means 60% SOC is near maximum, not moderate; additive mixing rules are inadmissible for multi-component BVG",
+        "intended_error_modes": [
+          "unjustified_monotonicity on SOC-explosion relationship",
+          "causal overclaim on mixing rule applicability",
+          "mechanism substitution confusing CO with high-propensity component"
+        ],
+        "disallowed_extrapolations": [
+          "Assuming overcharge always produces higher explosion risk than 50–100% SOC",
+          "Applying additive rules even when dominant component is identified"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "During a battery thermal runaway event, vent gases accumulate in a partially enclosed space at an initial temperature of 90°C. The gas mixture contains BVG with a small proportion of DMC vapor at an overall equivalence ratio of 0.7 (lean). An ignition source assessment is being conducted. A technician proposes that adding more DMC to the lean mixture will reduce ignition energy because DMC has a lower minimum ignition energy than BVG at its optimal equivalence ratio. Which statements about ignition risk in this scenario are admissible?",
+        "options": [
+          "A. Under lean conditions at equivalence ratio 0.7, increasing the DMC proportion in the BVG/DMC mixture substantially raises ignition energy, contrary to the technician's expectation.",
+          "B. The minimum ignition energy of BVG at 90°C is lower than at 30°C, so the elevated initial temperature increases ignition sensitivity relative to ambient conditions.",
+          "C. DMC's minimum ignition energy of 0.84 mJ at its optimal equivalence ratio confirms that DMC always reduces ignition energy when added to BVG under any mixture condition.",
+          "D. The U-shaped ignition energy trend of BVG/DMC mixtures with equivalence ratio means that the lean condition represents a regime where DMC addition increases rather than decreases ignition energy.",
+          "E. Because ignition energy decreases linearly with initial temperature, the 90°C condition represents approximately a 33% reduction in ignition energy compared to 30°C for stoichiometric BVG.",
+          "F. The technician's reasoning is valid because DMC's lower minimum ignition energy at equivalence ratio 1.3 applies directly to lean mixture conditions."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "D",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "At equivalence ratio 0.7, ignition energy rises sharply with DMC proportion, directly contradicting the technician's claim.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Ignition energy decreases linearly with temperature; 90°C is higher than 30°C, so ignition sensitivity is greater.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "DMC's low minimum ignition energy applies only at its optimal equivalence ratio; under lean conditions DMC addition increases ignition energy substantially.",
+            "error_type": "condition_violation",
+            "evidence_refs": [
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C004",
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The U-shaped trend means lean and rich extremes have higher ignition energy; lean regime is where DMC addition increases ignition energy.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C003",
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "From 0.12 mJ at 30°C to 0.08 mJ at 90°C is a ~33% reduction, consistent with the stated linear decrease over 60°C interval.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C001",
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "DMC's optimal equivalence ratio behavior cannot be transferred to lean conditions; the lean regime shows the opposite effect.",
+            "error_type": "regime_transfer_beyond_stated_conditions",
+            "evidence_refs": [
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C004",
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Regime-dependent effect of DMC addition on BVG ignition energy under lean conditions and temperature sensitivity of ignition energy",
+        "primary_boundary": "DMC's low minimum ignition energy applies only at its optimal equivalence ratio; under lean conditions DMC addition increases ignition energy—opposite of intuition from DMC's standalone behavior",
+        "intended_error_modes": [
+          "regime transfer from optimal equivalence ratio to lean conditions",
+          "overgeneralization of DMC's low ignition energy to all mixture conditions",
+          "ignoring U-shaped trend structure"
+        ],
+        "disallowed_extrapolations": [
+          "Assuming DMC always reduces ignition energy regardless of equivalence ratio regime",
+          "Transferring stoichiometric DMC behavior to lean BVG/DMC mixtures"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer compares NMC and LFP battery thermal runaway gases for use in explosion consequence modeling. At stoichiometric conditions, the engineer notes that LFP gases have higher explosion propensity than NMC gases. For flame propagation modeling, the engineer also needs to rank laminar burning velocities. A colleague claims that because LFP has higher explosion propensity, it must also have the highest laminar burning velocity among the chemistries. Evaluate which conclusions about these two properties are admissible.",
+        "options": [
+          "A. LFP's higher explosion propensity relative to NCA is attributable to its gas composition, specifically elevated hydrocarbon concentrations, not to a universally higher flame speed.",
+          "B. The colleague's claim is incorrect: LFP gases have the lowest laminar burning velocity among the three chemistries compared, despite having higher explosion propensity than NCA.",
+          "C. LCO/NMC gases have the highest laminar burning velocity, meaning explosion propensity ranking and laminar burning velocity ranking are not necessarily aligned across all chemistries.",
+          "D. Because laminar burning velocity and explosion propensity both peak near stoichiometric conditions, a gas with higher explosion propensity at stoichiometric conditions must have a higher laminar burning velocity at all equivalence ratios.",
+          "E. The adiabatic overpressure of all three TR gas types is more sensitive to equivalence ratio changes in the lean regime than in the rich regime.",
+          "F. NMC gases have a higher laminar burning velocity than LFP gases, so consequence modeling using LFP laminar burning velocity as a conservative upper bound for NMC would underestimate flame propagation speed."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "C",
+          "E",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "LFP's higher explosion propensity vs NCA is attributed to higher ethylene and ethane concentrations, not a universal flame speed advantage.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "LBV ranking is LCO/NMC > NMC > LFP, so LFP has the lowest LBV despite higher explosion propensity than NCA—counterintuitive but evidence-supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+147+Fuel:C003",
+              "TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "LCO/NMC has the highest LBV while LFP has higher explosion propensity than NCA, demonstrating the two rankings are not aligned.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+147+Fuel:C003",
+              "TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "LBV and explosion propensity rankings differ across chemistries; higher explosion propensity does not imply higher LBV at all equivalence ratios.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+147+Fuel:C003",
+              "TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Adiabatic overpressure shows rapid escalation in the lean regime and gradual attenuation in the rich regime, confirming greater lean-side sensitivity.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+147+Fuel:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "NMC LBV exceeds LFP LBV; using LFP as an upper bound for NMC would underestimate NMC flame propagation speed.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+147+Fuel:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Independence of explosion propensity and laminar burning velocity rankings across battery chemistries; consequences for consequence modeling",
+        "primary_boundary": "Explosion propensity ranking (LFP > NCA) and LBV ranking (LCO/NMC > NMC > LFP) are not aligned; these are distinct properties driven by different gas composition features",
+        "intended_error_modes": [
+          "causal overclaim linking explosion propensity to LBV universally",
+          "mechanism confusion between explosion propensity drivers and flame speed drivers"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring LBV ranking from explosion propensity ranking",
+          "Using LFP LBV as conservative upper bound for NMC in flame propagation modeling"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A thermal runaway event releases battery vent gas into a hot enclosure where the gas temperature is initially 900 K and rises toward 1300 K over several seconds. An engineer uses a single ignition delay time value calculated at 900 K to assess ignition risk throughout the entire temperature rise. Explain why this approach is likely to underestimate ignition risk during the early phase and why the degree of underestimation changes as temperature rises toward and above 1200 K. Address the mechanism governing ignition delay time in each temperature regime."
+      },
+      "ground_truth": {
+        "gold_answer": "Between 800 and 1200 K, ignition delay time decreases by approximately one order of magnitude per 100 K increase in temperature. Using a single value at 900 K therefore significantly overestimates the ignition delay time at temperatures between 900 K and 1200 K, meaning the engineer underestimates how quickly ignition can occur as temperature rises through this regime. The underestimation grows rapidly because the relationship is strongly temperature-dependent in this range. However, above 1200 K, the temperature sensitivity of ignition delay time is markedly attenuated—the delay time no longer decreases as steeply with further temperature increases. Therefore, as the gas temperature approaches and exceeds 1200 K, the error introduced by using a fixed low-temperature value becomes less severe in relative terms, because the actual ignition delay time is no longer changing as rapidly with temperature. The engineer's approach is most dangerous in the 900–1200 K window where the delay time is collapsing rapidly, and becomes comparatively less erroneous above 1200 K where the system enters a low-sensitivity regime.",
+        "must_include": [
+          "ignition delay time decreases approximately one order of magnitude per 100 K in the 800–1200 K range",
+          "using a 900 K value underestimates ignition risk as temperature rises toward 1200 K",
+          "above 1200 K temperature sensitivity is markedly attenuated",
+          "the degree of underestimation is greatest in the 900–1200 K regime and diminishes above 1200 K"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming ignition delay time continues to decrease at the same rate above 1200 K",
+          "Claiming the engineer's approach is equally wrong at all temperatures",
+          "Quantifying ignition delay time values not provided in evidence",
+          "Attributing the regime change above 1200 K to a specific chemical mechanism not stated in evidence"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Regime-dependent temperature sensitivity of ignition delay time and consequences for risk assessment methodology",
+        "primary_boundary": "The strong inverse temperature dependence holds from 800–1200 K but is markedly attenuated above 1200 K; a single low-temperature estimate is most dangerous in the lower regime",
+        "intended_error_modes": [
+          "Assuming monotonic and uniform temperature sensitivity across the full range",
+          "Failing to identify the regime transition at 1200 K as the boundary that changes the degree of underestimation",
+          "Treating the attenuation above 1200 K as elimination of temperature dependence"
+        ]
+      }
+    }
+  ]
+}

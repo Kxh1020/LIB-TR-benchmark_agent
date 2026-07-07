@@ -1,0 +1,366 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery safety engineer is evaluating fluorinated agents for use in a sealed enclosure containing 18650 lithium-ion cells. The enclosure is designed to suppress thermal runaway by introducing the agent at a fixed concentration when a cell enters runaway. Baseline tests without any agent recorded a peak temperature of approximately 623°C and a peak pressure of 1.6 bar. After reviewing agent performance data, the engineer notes that one agent (designated HT) reduced neither temperature nor pressure relative to baseline, while another agent (designated Novec 7500) reduced peak temperature by approximately 29% but still increased peak pressure. A third agent (designated HD) reduced peak temperature by approximately 7.5% but increased peak pressure by 75%. The engineer must determine which conclusions about these agents are admissible before recommending a suppression strategy. Which of the following conclusions are supported by the described performance data?",
+        "options": [
+          "A. Novec 7500 provides the greatest reduction in peak temperature among the agents described, but its use does not eliminate the pressure hazard inside the enclosure.",
+          "B. Because HT increased both peak temperature and peak pressure relative to baseline, it is inadmissible as a suppression agent under any enclosure condition.",
+          "C. The pressure increase caused by all agents, including those that reduce peak temperature, means that enclosure structural integrity under agent-augmented runaway must be evaluated independently of temperature reduction performance.",
+          "D. HD is preferable to Novec 7500 for enclosure suppression because its lower temperature ratio indicates a molecular structure with less hydrogen content.",
+          "E. An agent that reduces peak temperature while simultaneously increasing peak pressure can worsen one hazard dimension even when it improves another, making single-metric selection criteria insufficient.",
+          "F. The fact that all agents increased peak pressure confirms that fluorinated agent decomposition products contribute to gas-phase pressure loading during thermal runaway regardless of whether they reduce temperature.",
+          "G. Because Novec 7500 achieved the largest temperature reduction, it can be directly recommended for all enclosed battery suppression applications without further testing."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence confirms Novec 7500 reduced peak temperature by 28.9% (largest among agents described) while still increasing peak pressure by 56.3%, so the pressure hazard is not eliminated.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+209+Thermal_Science_and_Engineering_Progress:C003",
+              "TR_Protection+209+Thermal_Science_and_Engineering_Progress:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The evidence documents HT's performance at a fixed concentration in one enclosure configuration. Concluding it is inadmissible under any enclosure condition extrapolates beyond the tested conditions and generalizes a single-condition result universally.",
+            "error_type": "Overgeneralization distractor",
+            "evidence_refs": [
+              "TR_Protection+209+Thermal_Science_and_Engineering_Progress:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Since all seven agents increased peak pressure—including those that reduced temperature—enclosure structural integrity is a separate hazard dimension that cannot be inferred from temperature reduction data alone. This is a minimal engineering implication directly supported by the universal pressure increase finding.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+209+Thermal_Science_and_Engineering_Progress:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence links absence of hydrogen in molecular structure to low temperature ratio, but HD reduced temperature by only 7.5% versus Novec 7500's 28.9%, and HD increased pressure by 75% versus Novec 7500's 56.3%. The molecular hydrogen argument does not make HD preferable; the comparison inverts the actual performance ranking.",
+            "error_type": "Mechanism substitution distractor — correct mechanistic principle misapplied to produce an incorrect comparative conclusion",
+            "evidence_refs": [
+              "TR_Protection+209+Thermal_Science_and_Engineering_Progress:C003",
+              "TR_Protection+209+Thermal_Science_and_Engineering_Progress:C004",
+              "TR_Protection+209+Thermal_Science_and_Engineering_Progress:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Novec 7500 and HD both demonstrate the pattern of temperature reduction with simultaneous pressure increase, directly supporting the conclusion that single-metric selection is insufficient. This is a counterintuitive correct option because it implies that the 'best' temperature-reducing agent may not be the safest overall choice.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+209+Thermal_Science_and_Engineering_Progress:C003",
+              "TR_Protection+209+Thermal_Science_and_Engineering_Progress:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "All seven agents increased peak pressure, including those that reduced temperature, which is consistent with agent decomposition contributing to gas-phase pressure loading independent of temperature effect. This is supported by the universal pressure increase finding across chemically diverse agents.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+209+Thermal_Science_and_Engineering_Progress:C004"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "This is a conservative-appearing but incorrect distractor. While Novec 7500 achieved the largest temperature reduction, the evidence scope is a single cell format at fixed concentration in one enclosure geometry. Generalizing to all enclosed battery suppression applications violates the boundary of the evidence.",
+            "error_type": "Scope expansion distractor — system-level recommendation from component-level single-condition result",
+            "evidence_refs": [
+              "TR_Protection+209+Thermal_Science_and_Engineering_Progress:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of suppression agent selection conclusions when agents simultaneously affect multiple hazard dimensions (temperature and pressure) in opposing directions",
+        "primary_boundary": "All tested agents increased peak pressure regardless of their temperature effect; no agent eliminated both hazards simultaneously; results are condition-specific (fixed concentration, single cell format)",
+        "intended_error_modes": [
+          "Selecting a single-metric winner without accounting for the orthogonal pressure hazard",
+          "Universalizing a single-condition result to all enclosure types",
+          "Misapplying the molecular hydrogen mechanism to reverse the actual performance ranking",
+          "Accepting a scope-expanded recommendation because it appears appropriately cautious"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding any agent is universally inadmissible from single-condition data",
+          "Recommending an agent for all applications from one test configuration",
+          "Inferring that temperature reduction implies overall safety improvement"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is designing a thermal management system for a battery module intended for a fast-charging electric vehicle application. The module uses large-format pouch cells. The engineer is comparing three cooling architectures: forced air cooling, indirect liquid cooling with optimized cold plates, and direct immersion cooling. Available performance data indicate that forced air systems provide heat transfer coefficients of 10–50 W/m²·K, optimized liquid cold plates reach 200–1000 W/m²·K, and immersion cooling can reduce peak cell temperature by up to 40% compared to air-cooled and indirect liquid-cooled systems under controlled pack-level conditions. Additionally, temperature differentials as small as 5°C across large-format pouch cell planes have been shown to cause nonuniform aging and eventual thermal instability. The engineer must also account for the fact that fast charging increases sensitivity to thermal stress and that operation above 45°C accelerates degradation. Which of the following conclusions are admissible based on these conditions?",
+        "options": [
+          "A. Forced air cooling is inadmissible for this fast-charging application because its heat transfer coefficient range causes thermal gradients that can exceed safety thresholds.",
+          "B. Because immersion cooling achieved up to 40% peak temperature reduction under controlled pack-level conditions, it can be specified as the standard cooling solution for all fast-charging electric vehicle platforms without further validation.",
+          "C. The 5°C differential threshold for nonuniform aging in large-format pouch cells implies that even indirect liquid cooling, despite its higher heat transfer coefficient than air, may be insufficient if it cannot maintain uniformity within that bound across the cell plane.",
+          "D. Immersion cooling's superiority over indirect liquid cooling in peak temperature reduction means it necessarily also achieves better temperature uniformity across all cell formats and operating conditions.",
+          "E. The combination of fast charging sensitivity to thermal stress and the 45°C degradation threshold means that any cooling architecture must be evaluated not only on peak temperature suppression but also on its ability to maintain spatial uniformity within the cell plane.",
+          "F. Nanofluid-enhanced immersion cooling, which offers convective heat transfer enhancements of 15–30% over standard immersion, is currently ready for mass deployment in fast-charging vehicle platforms given its laboratory-scale performance advantages.",
+          "G. The gap between air cooling's maximum heat transfer coefficient and the lower bound of optimized liquid cold plates represents a regime difference large enough to justify excluding air cooling from fast-charging module designs on thermal gradient grounds alone."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence explicitly states air cooling is unsuitable for high power or fast charging applications because its 10–50 W/m²·K coefficient causes thermal gradients that can exceed safety thresholds. The stem conditions match this directly.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+210+Thermal_Science_and_Engineering_Progress:C012"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence explicitly states that thermal performance improvements from immersion cooling cannot be directly generalized across all electric vehicle platforms or operating scenarios because they derive from controlled laboratory, module-level, or pack-level conditions. This option violates that boundary.",
+            "error_type": "Scope expansion distractor — generalizing controlled-condition results to all platforms",
+            "evidence_refs": [
+              "TR_Protection+210+Thermal_Science_and_Engineering_Progress:C009"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The 5°C threshold for nonuniform aging applies to large-format pouch cells specifically. Even indirect liquid cooling, which has a higher heat transfer coefficient than air, may not maintain uniformity within 5°C across the cell plane under all conditions. This requires reasoning from the uniformity threshold to evaluate indirect liquid cooling's admissibility — a counterintuitive conclusion because indirect liquid cooling is generally considered superior to air cooling.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+210+Thermal_Science_and_Engineering_Progress:C010",
+              "TR_Protection+210+Thermal_Science_and_Engineering_Progress:C001"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence supports immersion cooling's peak temperature reduction advantage but states that temperature uniformity of ±2–3°C is achieved only under specific experimental conditions including defined cell format, flow rate, heat flux, and pack geometry. Concluding that immersion necessarily achieves better uniformity across all cell formats and conditions is an unsupported generalization.",
+            "error_type": "Condition violation distractor — removing the specific conditions under which the uniformity result was obtained",
+            "evidence_refs": [
+              "TR_Protection+210+Thermal_Science_and_Engineering_Progress:C008",
+              "TR_Protection+210+Thermal_Science_and_Engineering_Progress:C009"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Combining the fast charging thermal stress sensitivity with the 45°C degradation threshold and the 5°C uniformity threshold for pouch cells requires multi-step reasoning: fast charging → elevated thermal stress → need for both peak suppression and spatial uniformity. This is supported by multiple evidence claims and represents a multi-factor interaction conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+210+Thermal_Science_and_Engineering_Progress:C013",
+              "TR_Protection+210+Thermal_Science_and_Engineering_Progress:C010"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Evidence explicitly states that nanofluid-enhanced immersion cooling remains at the research and prototype stage due to unresolved challenges related to nanoparticle stability, dielectric degradation, filtration, and long-term reliability. This option is a conservative-appearing claim about a promising technology that is nonetheless incorrect because it contradicts a stated limitation.",
+            "error_type": "Protective mechanism overclaim distractor — claiming deployment readiness contradicted by explicit limitation evidence",
+            "evidence_refs": [
+              "TR_Protection+210+Thermal_Science_and_Engineering_Progress:C014"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "Air cooling's maximum coefficient is 50 W/m²·K; the lower bound of optimized liquid cold plates is 200 W/m²·K — a factor of 4 difference at the boundary. Combined with the explicit statement that air cooling causes gradients exceeding safety thresholds in fast-charging applications, this regime difference is sufficient to exclude air cooling on thermal gradient grounds. This is counterintuitive as it makes a strong exclusionary claim that is nonetheless evidence-supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+210+Thermal_Science_and_Engineering_Progress:C001",
+              "TR_Protection+210+Thermal_Science_and_Engineering_Progress:C012"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of cooling architecture selection conclusions for fast-charging large-format pouch cell modules, requiring multi-factor reasoning across peak temperature, spatial uniformity, and deployment readiness",
+        "primary_boundary": "Immersion cooling results are condition-specific and cannot be generalized; uniformity threshold of 5°C applies specifically to large-format pouch cells; nanofluid systems are not deployment-ready; air cooling is explicitly excluded from fast-charging applications",
+        "intended_error_modes": [
+          "Generalizing controlled-condition immersion cooling results to all platforms",
+          "Assuming higher heat transfer coefficient implies better uniformity without condition qualification",
+          "Accepting nanofluid deployment readiness based on laboratory performance alone",
+          "Failing to apply the 5°C uniformity threshold to evaluate indirect liquid cooling"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring system-level deployment readiness from laboratory-scale performance",
+          "Concluding immersion cooling universally achieves ±2–3°C uniformity across all formats",
+          "Treating peak temperature reduction as a proxy for spatial uniformity"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A fire safety engineer is analyzing thermal runaway propagation in a battery module under two distinct environmental configurations. In Configuration A, cells are housed in a confined enclosure with a low ceiling height. In Configuration B, cells are in an open space with no overhead obstruction. Both configurations use the same NCM cell chemistry and the same initial SOC. The engineer observes that Configuration A produces higher ambient temperatures, greater total combustible gas accumulation, and higher radiation heat flux to neighboring cells than Configuration B. The engineer also notes that in Configuration A, the dominant heat transfer pathway to neighboring cells shifts compared to open space. Additionally, the engineer is evaluating whether introducing nitrogen dilution into Configuration A would reduce propagation risk. Which of the following conclusions are admissible?",
+        "options": [
+          "A. In Configuration A, the elevated radiation heat flux to neighboring cells is partly attributable to a plate obstacle effect that amplifies flame radiation, which can reach approximately four times the open-space value.",
+          "B. Nitrogen dilution in Configuration A would eliminate thermal runaway propagation because inert gas completely removes the flame heating contribution.",
+          "C. The greater total combustible gas accumulation in Configuration A compared to Configuration B increases the potential for deflagration events that are absent in open space configurations.",
+          "D. Because confined space suppresses maximum battery temperature through insufficient combustion, Configuration A is safer than Configuration B for the cells undergoing runaway.",
+          "E. Nitrogen dilution reduces propagation speed in Configuration A by decreasing oxygen concentration, which reduces both flame heating and total heating contributions, but this does not constitute complete elimination of propagation risk.",
+          "F. The dominant heat transfer mechanism driving thermal runaway propagation in Configuration A shifts toward ceiling flame contribution as ceiling height decreases, making ceiling geometry a controlling parameter for propagation in confined spaces.",
+          "G. The higher ambient temperature in Configuration A relative to Configuration B is sufficient to conclude that NCM cells in confined spaces always reach thermal runaway faster than in open spaces regardless of SOC."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence states that in confined space, the maximum radiation heat flux was about four times that of open space due to the plate obstacle effect. This directly supports the conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+211+Batteries:C024"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence states nitrogen dilution slows propagation by reducing oxygen concentration and reducing flame heating and total heating values, but does not state it eliminates propagation. Claiming complete elimination is an overclaim beyond the evidence boundary.",
+            "error_type": "Protective mechanism overclaim distractor — claiming elimination when evidence only supports slowing",
+            "evidence_refs": [
+              "TR_Protection+211+Batteries:C013",
+              "TR_Protection+211+Batteries:C041"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence states the total amount of combustible gases is greater in confined space than open space, and that this possesses larger potential deflagration risks and accelerates thermal runaway speed. This directly supports the conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+211+Batteries:C039"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "This is a conservative-appearing but incorrect distractor. While evidence confirms confined space suppresses maximum battery temperature due to insufficient combustion, this does not make Configuration A safer overall. The same confinement produces higher ambient temperatures, greater combustible gas accumulation, higher radiation flux to neighbors, and greater deflagration risk — all of which represent increased system-level hazard. The temperature suppression of the initiating cell is a local effect that does not translate to overall safety.",
+            "error_type": "Causal overclaim distractor — treating a local temperature suppression effect as an overall safety conclusion while ignoring multi-factor system hazards",
+            "evidence_refs": [
+              "TR_Protection+211+Batteries:C014",
+              "TR_Protection+211+Batteries:C026",
+              "TR_Protection+211+Batteries:C039"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Evidence supports that nitrogen dilution slows propagation through reduced oxygen concentration reducing flame and total heating values, and that propagation in air is faster than under nitrogen. The conclusion that this does not constitute complete elimination is consistent with the evidence boundary and is the counterintuitive correct option — it affirms a real mitigation effect while denying complete elimination.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+211+Batteries:C013",
+              "TR_Protection+211+Batteries:C041"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Evidence states that thermal runaway propagation in a confined space is mainly contributed to by ceiling flame, and that the influence of the flame increased as height decreased. This makes ceiling geometry a controlling parameter for propagation, which is directly supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+211+Batteries:C027",
+              "TR_Protection+211+Batteries:C025"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "Evidence establishes that higher ambient temperature in confined space is a real phenomenon, but the conclusion that NCM cells always reach thermal runaway faster regardless of SOC is an overgeneralization. SOC is established as a major determinant of thermal runaway timing and severity, and the comparison is made without controlling for SOC. The word 'always' is not the primary problem — the problem is the unsupported universal claim ignoring SOC dependence.",
+            "error_type": "Overgeneralization distractor — ignoring SOC dependence when universalizing a confinement effect",
+            "evidence_refs": [
+              "TR_Protection+211+Batteries:C003",
+              "TR_Protection+211+Batteries:C026"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of conclusions about confined-space thermal runaway propagation mechanisms, including the counterintuitive finding that local temperature suppression in confined space does not imply overall safety improvement",
+        "primary_boundary": "Confined space suppresses initiating cell temperature but amplifies system-level hazards through radiation, combustible gas accumulation, and ceiling flame effects; nitrogen dilution slows but does not eliminate propagation; ceiling geometry controls propagation in confined spaces",
+        "intended_error_modes": [
+          "Interpreting local cell temperature suppression as overall safety improvement",
+          "Overclaiming complete elimination of propagation from nitrogen dilution",
+          "Ignoring SOC dependence when generalizing confinement effects to thermal runaway timing",
+          "Failing to distinguish between cell-level and system-level hazard metrics"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding confined space is safer based solely on initiating cell temperature suppression",
+          "Treating nitrogen dilution as a complete propagation barrier",
+          "Generalizing confinement timing effects across all SOC levels"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery module engineer is comparing two suppression strategies for a confined enclosure containing NCM lithium-ion cells at 100% SOC. Strategy 1 uses water mist released at the moment the safety valve cracks. Strategy 2 uses water mist released after thermal runaway is fully established. The engineer also considers that CO2 and perfluorohexanone are available as alternative agents, with perfluorohexanone achieving rapid cooling that prevents the battery from reaching its ignition point, while CO2 takes longer to extinguish flames. Additionally, flood cooling with water is available but has been shown to be less effective for NCM chemistry than for LMO or LFP chemistries. Given these conditions and the known SOC-dependent hazard profile of NCM cells at 100% SOC, explain which suppression timing and agent combination is most defensible for this scenario, and identify the primary mechanism-based reason why the SOC condition makes early intervention particularly critical. Your answer must address both the timing dimension and the agent selection dimension, and must not claim that any strategy completely eliminates thermal runaway risk."
+      },
+      "ground_truth": {
+        "gold_answer": "For NCM cells at 100% SOC, early intervention using water mist at the moment of safety valve cracking is strongly preferable to post-runaway release because early release achieves fire extinguishing within seconds whereas post-runaway release requires approximately three minutes. At 100% SOC, peak heat release rate, CO and HF production, jet flow violence, and maximum temperature are all significantly elevated compared to lower SOC conditions. This means the energy release rate and toxic gas generation during the window between valve cracking and full runaway are already at their most hazardous level, making rapid suppression critical to limiting both thermal and chemical hazard escalation. Among agents, perfluorohexanone is more defensible than CO2 for this scenario because it extinguishes through rapid cooling that prevents the battery from reaching the ignition point, whereas CO2 takes longer. Flood cooling with water is less defensible for NCM chemistry specifically, as evidence shows it is less effective for NCM than for LMO or LFP. No strategy can be claimed to completely eliminate thermal runaway risk, as suppression addresses flame behavior and heat release but does not necessarily arrest internal electrochemical reactions already in progress at 100% SOC.",
+        "must_include": [
+          "Early water mist release at safety valve cracking achieves extinguishing within seconds versus approximately three minutes for post-runaway release",
+          "100% SOC produces higher peak heat release rate, CO, HF, and more violent jet flow than lower SOC, making early intervention more critical",
+          "Perfluorohexanone is preferable to CO2 because it achieves rapid cooling preventing ignition point from being reached",
+          "Flood cooling is less effective for NCM than for LMO or LFP chemistry",
+          "No suppression strategy completely eliminates thermal runaway risk"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming any agent or timing strategy completely stops thermal runaway once initiated",
+          "Recommending flood cooling as equally effective for NCM as for other chemistries",
+          "Asserting that CO2 is ineffective — it has inhibitory effects but is slower than perfluorohexanone",
+          "Generalizing the suppression effectiveness to all cell formats or enclosure geometries beyond the stated conditions"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-factor suppression strategy selection combining timing-dependent effectiveness, agent mechanism differences, chemistry-specific limitations, and SOC-dependent hazard escalation",
+        "primary_boundary": "Suppression timing determines extinguishing speed (seconds vs. minutes); perfluorohexanone outperforms CO2 on extinguishing speed through a cooling mechanism; flood cooling is chemistry-dependent and less effective for NCM; 100% SOC elevates all hazard metrics; no strategy eliminates internal electrochemical runaway once initiated",
+        "intended_error_modes": [
+          "Recommending flood cooling for NCM without noting its reduced effectiveness",
+          "Claiming CO2 is ineffective rather than slower",
+          "Ignoring the timing dimension and focusing only on agent selection",
+          "Claiming early intervention completely prevents thermal runaway rather than limiting its consequences",
+          "Failing to connect 100% SOC hazard escalation to the criticality of early intervention timing"
+        ]
+      }
+    }
+  ]
+}

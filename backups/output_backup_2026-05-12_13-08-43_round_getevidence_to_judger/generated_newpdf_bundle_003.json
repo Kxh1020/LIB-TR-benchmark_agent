@@ -1,0 +1,351 @@
+{
+  "TR_Gasventing+160+Process_Safety_and_Environmental_Protection__TR_Gasventing+22+Journal_of_Energy_Storage__TR_Gasventing+23+Journal_of_Energy_Storage": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "An NCM523 battery pack is subjected to rapid mechanical penetration while held at an initial thermal load of 100\u00b0C. Engineers observe that a battery at 25% SOC shows a gradual voltage decline followed by a transient recovery, while a battery at 30% SOC shows an instantaneous voltage drop to zero. Both batteries are then characterized by their temperature rise rates: the 25% SOC unit registers approximately 7\u00b0C/s and the 30% SOC unit registers approximately 34\u00b0C/s. A safety engineer must classify the thermal runaway severity and predict eruption behavior for the 30% SOC case. Which of the following conclusions are admissible based on this scenario?",
+          "options": [
+            "A. The voltage behavior difference between 25% and 30% SOC indicates that the 30% SOC battery undergoes complete internal energy release during penetration, whereas the 25% SOC battery does not reach this condition.",
+            "B. The 25% SOC battery is in a moderate thermal runaway state and the 30% SOC battery is in a severe thermal runaway state, meaning the two units straddle the threshold between moderate and severe regimes.",
+            "C. Because the 30% SOC battery exhibits severe thermal runaway, its eruption behavior is expected to involve at minimum smoke diffusion, consistent with the lowest-severity eruption mode observed in severe TR batteries.",
+            "D. The instantaneous voltage drop to zero at 30% SOC confirms that the battery's peak surface temperature will exceed 500\u00b0C, since voltage collapse is the direct cause of high surface temperatures.",
+            "E. The temperature rise rate difference between 25% and 30% SOC is primarily caused by a change in the rate of heat dissipation to the environment rather than a change in internal heat generation.",
+            "F. The gradual voltage decline and transient recovery at 25% SOC is consistent with a mild-to-moderate TR classification where internal energy is not fully released instantaneously.",
+            "G. Since both batteries are penetrated under the same 100\u00b0C thermal load, the eruption behavior of the 30% SOC battery can be expected to be identical to that of a 50% SOC battery penetrated under the same conditions."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "C",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence states that when SOC \u2265 30%, intense electrochemical reaction causes full internal energy release and instantaneous voltage drop to 0 V, whereas mild-to-moderate TR batteries (0\u201325% SOC) show gradual decline and transient recovery. This directly supports the stated mechanistic distinction.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+160+Process_Safety_and_Environmental_Protection:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Evidence classifies 25% SOC as moderate TR (5\u201310\u00b0C/s, observed ~7.31\u00b0C/s) and 30% SOC as severe TR (>10\u00b0C/s, observed ~33.8\u00b0C/s), confirming these two units straddle the moderate-severe boundary.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+160+Process_Safety_and_Environmental_Protection:C003",
+                "TR_Gasventing+160+Process_Safety_and_Environmental_Protection:C002"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence shows that 30% SOC is the entry point of severe TR and its eruption mode is smoke diffusion, which is the lowest-severity eruption mode in the severe TR category. Stating 'at minimum smoke diffusion' is admissible and counterintuitive because one might expect a stronger eruption claim.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+160+Process_Safety_and_Environmental_Protection:C006",
+                "TR_Gasventing+160+Process_Safety_and_Environmental_Protection:C003"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Voltage collapse is a consequence of full internal energy release, not the direct cause of surface temperature rise. The causal direction is inverted. Additionally, the evidence does not support a deterministic threshold of >500\u00b0C derived from voltage behavior alone; peak temperature at 30% SOC is ~380\u00b0C.",
+              "error_type": "causal overclaim and mechanism inversion",
+              "evidence_refs": [
+                "TR_Gasventing+160+Process_Safety_and_Environmental_Protection:C001",
+                "TR_Gasventing+160+Process_Safety_and_Environmental_Protection:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The large jump in temperature rise rate from 25% to 30% SOC (7.31 to 33.8\u00b0C/s) under the same environmental conditions is inconsistent with a change in heat dissipation being the primary driver. The evidence attributes severity to SOC-dependent internal energy and electrochemical reaction intensity, not to dissipation changes.",
+              "error_type": "mechanism substitution",
+              "evidence_refs": [
+                "TR_Gasventing+160+Process_Safety_and_Environmental_Protection:C002",
+                "TR_Gasventing+160+Process_Safety_and_Environmental_Protection:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Evidence explicitly states that mild-to-moderate TR batteries (0\u201325% SOC) show gradual voltage decline followed by transient recovery, which is mechanistically consistent with incomplete internal energy release. This supports the classification claim.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+160+Process_Safety_and_Environmental_Protection:C004",
+                "TR_Gasventing+160+Process_Safety_and_Environmental_Protection:C003"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Incorrect",
+              "justification": "Evidence shows that eruption behavior is SOC-dependent and progresses through distinct modes: 30% SOC shows smoke diffusion while 50% SOC shows transverse spark jet. Identical thermal load does not produce identical eruption behavior across different SOC levels.",
+              "error_type": "overgeneralization across SOC levels",
+              "evidence_refs": [
+                "TR_Gasventing+160+Process_Safety_and_Environmental_Protection:C006"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "SOC-dependent thermal runaway severity classification and eruption behavior prediction under combined penetration and thermal load",
+          "primary_boundary": "The threshold between moderate and severe TR lies between 25% and 30% SOC; eruption mode is SOC-specific, not uniform across severe TR",
+          "intended_error_modes": [
+            "causal inversion between voltage collapse and temperature rise",
+            "mechanism substitution attributing severity to dissipation rather than internal generation",
+            "overgeneralization of eruption mode across SOC within severe TR regime"
+          ],
+          "disallowed_extrapolations": [
+            "Inferring peak temperature from voltage behavior alone",
+            "Assuming identical eruption behavior for all severe TR batteries regardless of SOC",
+            "Attributing temperature rise rate differences to environmental dissipation changes"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A lithium-ion battery installed in a confined aircraft compartment is subjected to thermal abuse. In one test configuration, the battery is not immersed in aviation hydraulic oil and undergoes thermal runaway with a peak temperature rise rate of 14.6\u00b0C/s. In three other configurations, the battery is immersed at 25 mm, 45 mm, and 75 mm depths in aviation hydraulic oil, and no thermal runaway occurs in any immersed case. The aviation hydraulic oil contains alkaline additives including phosphate and amine-based inhibitors. A safety engineer evaluating these results must determine which hazard conclusions are admissible. Which of the following statements are supported by this scenario?",
+          "options": [
+            "A. At 25 mm and 45 mm immersion depths, the asphyxiation hazard from released gases remains significant because the fractional effective dose of asphyxiants exceeds the threshold associated with serious risk, even though thermal runaway is prevented.",
+            "B. At 75 mm immersion depth, HF hazard is eliminated because the alkaline additives in the hydraulic oil neutralize HF released when the safety valve opens, and the extent of neutralization is sufficient for complete removal at this depth.",
+            "C. Increasing immersion depth from 25 mm to 75 mm eliminates all gas-phase hazards simultaneously, so full immersion can be considered a comprehensive solution to both thermal and toxicological risks in confined aircraft environments.",
+            "D. The suppression of thermal runaway at all immersion depths demonstrates that any level of hydraulic oil contact is sufficient to prevent both the thermal and gas-phase hazards associated with battery failure.",
+            "E. The reduction in CO generation with increasing immersion depth is consistent with reduced combustion reactions, but this trend alone does not confirm that all toxic gas species are reduced monotonically with immersion depth.",
+            "F. Since peak surface temperature decreases with immersion depth and no thermal runaway occurs in immersed batteries, the thermal management benefit of hydraulic oil immersion scales monotonically and can be extrapolated to predict behavior at immersion depths beyond 75 mm without additional testing."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence explicitly states that at partial immersion (25 mm and 45 mm), FED remains above 1, indicating high asphyxiation hazard, even though thermal runaway is prevented. This is a counterintuitive but evidence-supported conclusion: preventing TR does not eliminate gas hazard.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+22+Journal_of_Energy_Storage:C004",
+                "TR_Gasventing+22+Journal_of_Energy_Storage:C002"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Evidence states that HF contacts the hydraulic oil and is neutralized by alkaline additives, and that at 75 mm immersion, complete HF neutralization occurs. The mechanism (alkaline additive neutralization) and outcome (complete removal at 75 mm) are both directly supported.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+22+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "While full immersion eliminates HF and reduces CO and temperature, the evidence does not state that all gas-phase hazards are eliminated. The FED dropping below 1 at 75 mm addresses asphyxiation, but the claim of 'comprehensive solution to all gas-phase hazards' is an overclaim not supported by the evidence.",
+              "error_type": "protective mechanism overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+22+Journal_of_Energy_Storage:C004",
+                "TR_Gasventing+22+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Evidence shows that at 25 mm and 45 mm, thermal runaway is prevented but asphyxiation hazard (FED > 1) persists. Therefore, any immersion level does not prevent all hazards; partial immersion leaves significant gas-phase risk.",
+              "error_type": "overgeneralization from thermal to all hazards",
+              "evidence_refs": [
+                "TR_Gasventing+22+Journal_of_Energy_Storage:C002",
+                "TR_Gasventing+22+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Evidence shows CO decreases with immersion depth but HF unexpectedly increases with SOC under immersion conditions, demonstrating that gas species do not all trend monotonically in the same direction. The statement that CO reduction alone does not confirm monotonic reduction of all toxic species is therefore admissible and requires multi-factor reasoning.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+22+Journal_of_Energy_Storage:C001",
+                "TR_Gasventing+22+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The evidence establishes a monotonic trend within the tested range (0\u201375 mm) but does not support extrapolation beyond 75 mm. Extrapolating a monotonic trend beyond the tested boundary is an unsupported scope expansion, and the neutralization mechanism may saturate or change character beyond the tested range.",
+              "error_type": "unsupported extrapolation beyond evidence scope",
+              "evidence_refs": [
+                "TR_Gasventing+22+Journal_of_Energy_Storage:C001",
+                "TR_Gasventing+22+Journal_of_Energy_Storage:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-hazard admissibility judgment for hydraulic oil immersion: thermal runaway suppression vs. gas-phase toxicological hazard independence",
+          "primary_boundary": "Thermal runaway prevention at partial immersion does not imply elimination of asphyxiation hazard; different hazard types respond differently to immersion depth",
+          "intended_error_modes": [
+            "conflating thermal runaway prevention with complete hazard elimination",
+            "assuming all gas species respond monotonically to the same intervention",
+            "extrapolating monotonic trend beyond tested parameter range",
+            "protective mechanism overclaim for full immersion"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming full immersion eliminates all gas-phase hazards without species-specific evidence",
+            "Extrapolating immersion depth benefits beyond 75 mm",
+            "Treating partial immersion as sufficient for all safety criteria"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery energy storage system is installed in an aircraft cabin. Engineers compare two scenarios: a single-cell venting event under natural ventilation, and a 36-cell simultaneous venting event under the same natural ventilation conditions. They also compare two battery pack positions: one located at a corner adjacent to walls (position A) and one located away from walls (position B). A third comparison involves a conventional ventilation layout operating at 2.5 m/s versus an optimized ventilation layout operating at 1.5 m/s. The engineers must assess flammable gas accumulation hazards. Which of the following conclusions are admissible?",
+          "options": [
+            "A. Scaling from a single-cell event to a 36-cell event under natural ventilation produces a hazardous volume increase that is disproportionately large relative to the cell count increase, indicating that the hazard does not scale linearly with cell number.",
+            "B. Position A (corner-adjacent) produces a larger peak hazardous volume and longer hazard duration than position B, and this difference is attributable to localized gas accumulation effects rather than differences in total gas generation.",
+            "C. The optimized ventilation layout at 1.5 m/s is inadmissible as a replacement for the conventional layout at 2.5 m/s because lower airflow velocity necessarily results in inferior hazardous zone control.",
+            "D. Buoyancy-driven stratification near the cabin ceiling is a persistent phenomenon that cannot be resolved by increasing ventilation velocity alone, since the stratification is driven by density differences rather than by bulk airflow.",
+            "E. The hazardous volume under natural ventilation for 36 cells exceeds 8 m\u00b3, which is more than 88 times the single-cell value of approximately 0.09 m\u00b3, demonstrating that the relationship between cell count and hazardous volume is strongly superlinear under these conditions.",
+            "F. Because the optimized layout achieves similar hazardous zone control at lower velocity, it can be concluded that ventilation velocity is the primary determinant of hazardous zone size and that layout geometry is a secondary factor.",
+            "G. For corner-positioned battery packs, the combination of localized accumulation and prolonged hazard duration means that the peak hazardous volume may exceed that of a centrally positioned pack by an order of magnitude under natural ventilation."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence states hazardous volume increases from ~0.09 m\u00b3 for one cell to over 8 m\u00b3 for 36 cells, which is more than an 88-fold increase for a 36-fold increase in cell count. This confirms the scaling is superlinear, not proportional, under natural ventilation.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+23+Journal_of_Energy_Storage:C001"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Evidence states corner/wall-adjacent packs induce localized gas accumulation, and the 7_u (corner) scenario has the largest hazardous volume (12.17 m\u00b3) with the longest duration (838 s) compared to other positions. The mechanism cited (localized accumulation) is supported by the evidence, and total gas generation is the same since the same number of cells is involved.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+23+Journal_of_Energy_Storage:C003",
+                "TR_Gasventing+23+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Evidence explicitly states that the optimized layout at 1.5 m/s achieves a similar level of hazardous zone control as the conventional layout at 2.5 m/s, with an additional peak concentration reduction. The claim that lower velocity necessarily results in inferior control is directly contradicted by the evidence.",
+              "error_type": "unjustified monotonicity assumption about velocity-control relationship",
+              "evidence_refs": [
+                "TR_Gasventing+23+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "While buoyancy effects causing ceiling stratification are supported by evidence, the claim that this cannot be resolved by ventilation velocity alone is not supported. The evidence shows ventilation layout and velocity do affect hazardous zone control. The absolute statement about ventilation being ineffective against stratification is not admissible from the evidence provided.",
+              "error_type": "unsupported absolute claim beyond evidence scope",
+              "evidence_refs": [
+                "TR_Gasventing+23+Journal_of_Energy_Storage:C002",
+                "TR_Gasventing+23+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Direct calculation from evidence: >8 m\u00b3 for 36 cells versus ~0.09 m\u00b3 for one cell gives a ratio exceeding 88, while the cell count ratio is 36. This confirms superlinear scaling and the numerical claim is directly derivable from the stated evidence values.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+23+Journal_of_Energy_Storage:C001"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The evidence shows that the optimized layout achieves equivalent or better control at lower velocity, which implies that layout geometry compensates for reduced velocity. This contradicts the claim that velocity is the primary determinant and layout is secondary; the result demonstrates that layout geometry is at least as important as velocity.",
+              "error_type": "single-variable attribution of multi-factor outcome",
+              "evidence_refs": [
+                "TR_Gasventing+23+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Incorrect",
+              "justification": "Evidence shows the corner scenario (7_u) peaks at 12.17 m\u00b3 versus 1.24 m\u00b3 for the 9_u scenario, a ratio of approximately 9.8, which is close to but does not clearly exceed one order of magnitude (10\u00d7). The claim of 'order of magnitude' is a numerical exaggeration not firmly supported by the evidence.",
+              "error_type": "numerical exaggeration distractor",
+              "evidence_refs": [
+                "TR_Gasventing+23+Journal_of_Energy_Storage:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Scale transfer reasoning and position-dependent gas accumulation in aircraft cabin battery venting scenarios",
+          "primary_boundary": "Superlinear scaling of hazardous volume with cell count under natural ventilation; layout geometry can compensate for velocity reduction; corner position amplifies hazard through localized accumulation",
+          "intended_error_modes": [
+            "assuming linear scaling from cell count to hazardous volume",
+            "assuming velocity is the sole determinant of ventilation effectiveness",
+            "overstating the ratio between corner and non-corner scenarios as an order of magnitude",
+            "claiming buoyancy stratification is immune to ventilation intervention"
+          ],
+          "disallowed_extrapolations": [
+            "Concluding that lower velocity always produces inferior hazard control regardless of layout",
+            "Claiming ventilation cannot address buoyancy stratification based solely on the evidence provided",
+            "Treating the corner-to-central ratio as definitively exceeding one order of magnitude"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "An NCM523 battery at 100% SOC and a second NCM523 battery at 30% SOC are both subjected to rapid penetration under a 100\u00b0C initial thermal load. A safety engineer notes that under overheating alone (no penetration), the thermal runaway trigger temperature for a 100% SOC battery is approximately 169\u00b0C, while for a 30% SOC battery it is approximately 195\u00b0C. The engineer also observes that under hydraulic oil full immersion (75 mm depth), a separate battery at 100% SOC shows a peak temperature rise rate of less than 1\u00b0C/s and no thermal runaway occurs, but HF concentration in the gas phase is detected at a low but nonzero level before eventually declining to zero. Explain the mechanism by which HF initially appears but then declines to zero under full immersion, and identify one hazard that persists at partial immersion (25\u201345 mm) despite thermal runaway being prevented, providing the physical reasoning for why that hazard is not eliminated by partial immersion alone."
+        },
+        "ground_truth": {
+          "gold_answer": "HF is generated when the battery safety valve opens and electrolyte fluorine-containing compounds decompose during thermal abuse. Under full immersion, the released HF contacts the aviation hydraulic oil, which contains alkaline additives (phosphate or amine-based inhibitors) that chemically neutralize the HF. As immersion depth increases, the contact area and quantity of alkaline additive available for neutralization increases, and at 75 mm full immersion the neutralization reaction is sufficient to consume all released HF, driving its concentration to zero after an initial peak. The initial nonzero detection occurs because HF is released before or as it contacts the oil, and the neutralization reaction requires contact time and sufficient additive quantity. For partial immersion (25\u201345 mm), the asphyxiation hazard from released gases persists: the fractional effective dose (FED) of asphyxiant gases remains above 1, indicating serious asphyxiation risk. This hazard is not eliminated by partial immersion because thermal runaway suppression reduces heat-driven combustion reactions but does not fully suppress gas generation from electrochemical decomposition reactions. The quantity of asphyxiant gases released is sufficient to maintain FED above the critical threshold even without full thermal runaway, and the partial immersion does not provide enough oil contact or confinement to neutralize or absorb the asphyxiant gas volume.",
+          "must_include": [
+            "HF is neutralized by alkaline additives (phosphate or amine-based inhibitors) in the aviation hydraulic oil",
+            "neutralization extent increases with immersion depth, reaching complete neutralization at 75 mm",
+            "HF initially appears because it is released before complete neutralization occurs",
+            "asphyxiation hazard (FED above 1) persists at partial immersion despite thermal runaway prevention",
+            "thermal runaway suppression does not eliminate gas generation sufficient to cause asphyxiation"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming that partial immersion eliminates all gas-phase hazards",
+            "Claiming that HF is the primary asphyxiation agent",
+            "Inferring that full immersion eliminates all possible hazards beyond what the evidence states",
+            "Attributing HF neutralization to thermal quenching rather than chemical reaction with alkaline additives"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Mechanism of HF neutralization by hydraulic oil alkaline additives and independence of asphyxiation hazard from thermal runaway occurrence under partial immersion",
+          "primary_boundary": "Thermal runaway suppression and gas-phase hazard elimination are not equivalent outcomes; partial immersion achieves the former but not the latter",
+          "intended_error_modes": [
+            "Attributing HF disappearance to thermal quenching or dilution rather than chemical neutralization",
+            "Assuming that preventing thermal runaway at partial immersion also eliminates asphyxiation risk",
+            "Conflating HF hazard with asphyxiation hazard"
+          ]
+        }
+      }
+    ]
+  }
+}

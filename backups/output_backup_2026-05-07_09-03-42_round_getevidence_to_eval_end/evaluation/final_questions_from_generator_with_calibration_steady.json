@@ -1,0 +1,784 @@
+{
+  "TR_trigger+43+Journal_of_Electrochemical_Science_and_Engineering__TR_trigger+44+Journal_of_Power_Sources__TR_trigger+45+Applied_Thermal_Engineering": {
+    "mcqs": [],
+    "short_answers": []
+  },
+  "TR_trigger+46+iScience__TR_trigger+47+UnknownJournal__TR_trigger+48+Journal_of_Energy_Storage": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "In a 18650 LIB array experiment, the NO.1 cell at 100% SOC reached a peak temperature of 794.0°C but stored only 16.60 kJ of heat, while the NO.1 cell at 50% SOC stored 19.26 kJ. The critical storage heat threshold to trigger TR propagation lies between these values. Which statements correctly explain why the 100% SOC array failed to propagate TR despite its higher peak temperature?",
+          "options": [
+            "A. Peak temperature alone does not determine TR propagation; the total heat stored and transferred to adjacent cells is the governing parameter.",
+            "B. The 100% SOC cell released more heat overall than the 50% SOC cell, so heat storage is irrelevant to propagation judgment.",
+            "C. At 100% SOC, mass loss from molten aluminum ejection dissipated energy away from adjacent cells rather than conducting it to them.",
+            "D. TR propagation requires the adjacent cell temperature to exceed the self-heating onset temperature (89–130°C) by a sufficient margin to overcome heat dissipation losses.",
+            "E. Because the 100% SOC cell had the highest peak temperature among all SOC levels, it should always produce the strongest propagation capability.",
+            "F. Storage heat below the critical threshold (~16.60–19.26 kJ) is insufficient to raise adjacent cell temperature far enough above Tonset under non-adiabatic conditions."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "D",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence shows peak temperature did not predict propagation; stored heat was the governing threshold variable.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+46+iScience:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Reverses the evidence: high peak temperature at 100% SOC did not translate to sufficient stored heat for propagation.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_trigger+46+iScience:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Mass loss from aluminum ejection is reported for 100% SOC but is not linked causally to propagation failure in evidence.",
+              "error_type": "mechanism_substitution",
+              "evidence_refs": [
+                "TR_trigger+46+iScience:C003"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Evidence states adjacent cell must exceed Tonset by a sufficient margin under non-adiabatic conditions to trigger TR.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+46+iScience:C012"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Unsupported monotonicity: highest peak temperature does not imply strongest propagation; 70% SOC array propagated most strongly.",
+              "error_type": "unsupported_monotonicity",
+              "evidence_refs": [
+                "TR_trigger+46+iScience:C004",
+                "TR_trigger+46+iScience:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Directly follows from the threshold finding: 16.60 kJ is below the critical range, insufficient to propagate under non-adiabatic conditions.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+46+iScience:C005",
+                "TR_trigger+46+iScience:C012"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Distinguishing peak temperature from stored heat as the governing variable for TR propagation, combined with non-adiabatic threshold reasoning.",
+          "primary_boundary": "Critical storage heat threshold between 16.60 kJ and 19.26 kJ for 18650 arrays; peak temperature is not the propagation criterion.",
+          "intended_error_modes": [
+            "unsupported_monotonicity",
+            "causal_overclaim",
+            "mechanism_substitution"
+          ],
+          "disallowed_extrapolations": [
+            "Generalizing that highest SOC always produces strongest propagation",
+            "Treating peak temperature as equivalent to stored heat for propagation prediction"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery pack engineer compares two suppression agents for 18650 LIB arrays undergoing TR. Novec 1230 (boiling point 49.2°C) is applied as a fine spray; water is applied as a directed spray. Tests show Novec 1230 reduces CO to 1952 ppm versus 3897 ppm for BC powder, but average array temperatures under Novec 1230 (783.9°C) are nearly identical to the no-agent baseline (760.4°C). Which conclusions are supported?",
+          "options": [
+            "A. Novec 1230 is effective at suppressing TR propagation in LIB arrays because it reduces CO concentration significantly.",
+            "B. Novec 1230's poor surface cooling results from premature evaporation of small droplets before contact with battery surfaces, caused by its low boiling point.",
+            "C. Water spray can inhibit TR propagation in LIB arrays but introduces a risk of short-circuiting LIB modules if used extensively.",
+            "D. BC dry powder is superior to Novec 1230 for CO reduction because it has a higher boiling point enabling better surface contact.",
+            "E. Novec 1230 reduces CO via chain chemical reactions with LIB electrolyte, but this chemical benefit does not translate to thermal suppression of TR propagation.",
+            "F. The cooling efficiency ranking of agents is fixed regardless of the surface temperature at the time of application."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "CO reduction and TR propagation suppression are distinct outcomes; evidence shows Novec 1230 failed to suppress propagation.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_trigger+46+iScience:C007",
+                "TR_trigger+46+iScience:C010"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Evidence directly states low evaporation temperature causes Novec 1230 droplets to evaporate before contacting battery surfaces.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+46+iScience:C009"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence confirms water spray inhibited propagation and also warns that extensive water use risks short circuits in LIB modules.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+46+iScience:C006",
+                "TR_trigger+46+iScience:C011"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Attributes Novec 1230's CO reduction disadvantage to boiling point; evidence attributes Novec 1230's CO advantage to chemical reactions, not boiling point comparison.",
+              "error_type": "mechanism_substitution",
+              "evidence_refs": [
+                "TR_trigger+46+iScience:C010"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Evidence confirms chain reactions reduce CO but array temperatures under Novec 1230 were nearly identical to the no-agent baseline.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+46+iScience:C007",
+                "TR_trigger+46+iScience:C010"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Evidence explicitly shows cooling rank reverses between ~550°C and ~200°C surfaces, so ranking is temperature-dependent.",
+              "error_type": "boundary_overreach",
+              "evidence_refs": [
+                "TR_trigger+46+iScience:C008"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Separating chemical suppression (CO reduction) from thermal suppression (propagation inhibition) for Novec 1230, and identifying temperature-dependent cooling rank reversal.",
+          "primary_boundary": "Novec 1230 conclusions apply only to fine-spray delivery; cooling rank is surface-temperature-conditional, not universal.",
+          "intended_error_modes": [
+            "causal_overclaim",
+            "mechanism_substitution",
+            "boundary_overreach"
+          ],
+          "disallowed_extrapolations": [
+            "Inferring TR propagation suppression from CO reduction data alone",
+            "Treating cooling efficiency rank as temperature-independent"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A simulation models TR propagation in NCA 18650 packs. ISC triggers when jellyroll temperature reaches 165°C. Two packs differ only in equivalent thermal resistance θc: Pack A has θc = 0.5 K/W, Pack B has θc = 1.2 K/W. The threshold is θc = 0.89 K/W. Which statements correctly characterize the propagation behavior of these two packs?",
+          "options": [
+            "A. Pack A operates in Mode I; local surface overheating causes early ISC triggering, accelerating TR propagation.",
+            "B. Pack B operates in Mode I because higher thermal resistance concentrates heat more effectively at the surface.",
+            "C. Pack B operates in Mode II; surface and jellyroll temperatures converge over time, and total propagation time is significantly longer than Pack A.",
+            "D. Pack A will have a circular TR propagation front in a large array, while Pack B will tend toward a regular polygon front.",
+            "E. Increasing ambient temperature slows TR propagation in both packs by increasing heat dissipation to the environment.",
+            "F. Pack A's faster propagation results from lower thermal resistance enabling quicker heat transfer between batteries."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "D",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "θc = 0.5 K/W < 0.89 K/W threshold places Pack A in Mode I; evidence confirms local surface overheating triggers early ISC.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+48+Journal_of_Energy_Storage:C002",
+                "TR_trigger+48+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Reverses the mode assignment: high θc defines Mode II, not Mode I; higher resistance prevents surface heat concentration.",
+              "error_type": "regime_transfer_error",
+              "evidence_refs": [
+                "TR_trigger+48+Journal_of_Energy_Storage:C002",
+                "TR_trigger+48+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "θc = 1.2 K/W > 0.89 K/W places Pack B in Mode II; evidence states surface and jellyroll temperatures converge and propagation time is significantly longer.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+48+Journal_of_Energy_Storage:C002",
+                "TR_trigger+48+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Evidence states Mode I produces circular propagation front and Mode II produces regular polygon front in large packs.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+48+Journal_of_Energy_Storage:C008"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Evidence states higher ambient temperature increases propagation speed due to higher initial thermal energy, not slows it.",
+              "error_type": "unsupported_monotonicity",
+              "evidence_refs": [
+                "TR_trigger+48+Journal_of_Energy_Storage:C006"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Evidence directly states decreasing thermal resistance enables quicker heat transfer, increasing propagation speed.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+48+Journal_of_Energy_Storage:C007"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Mapping θc values to propagation modes using the threshold, then deriving mode-specific consequences for propagation time, front geometry, and speed.",
+          "primary_boundary": "Mode I/II threshold at θc = 0.89 K/W for NCA 18650 packs; mode assignments and consequences are model-specific.",
+          "intended_error_modes": [
+            "regime_transfer_error",
+            "unsupported_monotonicity"
+          ],
+          "disallowed_extrapolations": [
+            "Generalizing mode threshold to other chemistries or separator melting points",
+            "Inferring that higher resistance always reduces propagation risk under all conditions"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A safety engineer is evaluating flame retardant electrolyte additives for 18650 LIBs. They note that halogen-based additives increase flame retardancy in the order F < Cl < Br < I, yet iodine additives are rarely used. They also observe that adding large amounts of phosphate-based flame retardants reduces the self-extinguishing time (SET) below 6 s/g but degrades battery performance. Explain the two key trade-offs that limit the practical deployment of these additive strategies, referencing the relevant thresholds and failure mechanisms."
+        },
+        "ground_truth": {
+          "gold_answer": "First, for halogen additives: although flame retardancy increases from F to I, iodine additives are impractical because the C–I bond is too weak to maintain chemical stability, eliminating the strongest option. Bromine or chlorine must be used instead, accepting lower flame retardancy. Second, for phosphate-based additives: achieving a nonflammable electrolyte (SET < 6 s/g) requires high additive concentrations, but redundant flame retardant amounts cause severe electrochemical performance degradation, including reduced chemical stability and inhibited ionic conductivity. Engineers must therefore balance flammability reduction against unacceptable capacity and conductivity losses, accepting either residual flammability or compromised electrochemical performance.",
+          "must_include": [
+            "C–I bond instability as the reason iodine additives are impractical despite highest flame retardancy",
+            "SET threshold: nonflammable at less than 6 s/g, less flammable at 6–20 s/g",
+            "Redundant flame retardant amounts cause reduced ionic conductivity and chemical stability degradation",
+            "Trade-off between flame retardancy level and electrochemical performance"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming fluorine additives provide strong flame retardancy (they are the weakest in the halogen series)",
+            "Asserting that any SET below 20 s/g qualifies as nonflammable",
+            "Inferring that phosphate additives at any concentration are safe for battery performance"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Integrating halogen stability constraints with SET thresholds and the performance-flammability trade-off for phosphate additives into a dual trade-off explanation.",
+          "primary_boundary": "Iodine instability applies specifically to C–I bond weakness; SET thresholds are 6 s/g (nonflammable) and 6–20 s/g (less flammable); performance degradation applies to redundant concentrations only.",
+          "intended_error_modes": [
+            "Boundary overreach: claiming iodine is usable with minor modification",
+            "Unsupported monotonicity: assuming more additive always improves both safety and performance",
+            "Threshold confusion: misidentifying the SET boundary for nonflammable classification"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_trigger+49+Journal_of_Energy_Chemistry__TR_trigger+50+Journal_of_Power_Sources__TR_trigger+51+Energy_Procedia": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "Four Li-ion cells (LFP, NCM111, NCM622, NCM811) are overcharged at 1C CC from 100% SOC. LFP reaches thermal runaway onset at 112°C; all NCM cells reach onset near 92–93°C. LFP's maximum temperature is 308°C versus 589–695°C for NCM cells. Which statements correctly explain why LFP exhibits lower peak temperature despite triggering thermal runaway first?",
+          "options": [
+            "A. The high-energy P=O bond in LFP's (PO4)3− structure resists decomposition, preventing O2 release and avoiding formation of strong oxidizing substances during thermal runaway.",
+            "B. LFP's higher Tonset (112°C vs ~92°C) means less total energy is stored in side reactions before runaway, directly limiting peak temperature across all chemistries.",
+            "C. LFP does not generate oxygen upon cathode decomposition, removing the oxidant that drives the intense exothermic reactions responsible for the high peak temperatures seen in NCM cells.",
+            "D. LFP's maximum temperature rate (15.7°C/s) is far lower than NCM622's peak rate (118.6°C/s), consistent with less intense exothermic chemistry rather than faster heat dissipation.",
+            "E. NCM cells catch fire or explode during thermal runaway while LFP only produces smoke, proving that NCM cathodes have inherently lower thermal stability than any phosphate-based cathode under all conditions.",
+            "F. The absence of oxygen release from LFP cathode prevents electrolyte combustion reactions, which are the primary source of the additional heat that elevates peak temperatures in NCM cells beyond LFP levels."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "D"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Directly supported: stable P=O bond prevents structural collapse and O2 release, limiting oxidizing conditions and peak temperature.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+49+Journal_of_Energy_Chemistry:C010"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Causal overclaim: higher Tonset is observed but the evidence does not establish it as the direct mechanism limiting peak temperature.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_trigger+49+Journal_of_Energy_Chemistry:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Supported: LFP does not release O2 on decomposition, removing the oxidant that sustains intense exothermic reactions seen in NCM cells.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+49+Journal_of_Energy_Chemistry:C010"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Supported: LFP's Rmax of 15.7°C/s vs NCM622's 118.6°C/s reflects less intense exothermic chemistry, consistent with lower peak temperature.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+49+Journal_of_Energy_Chemistry:C006"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Boundary overreach: fire/explosion comparison is under specific overcharge conditions; universalizing across all conditions is unsupported.",
+              "error_type": "boundary_overreach",
+              "evidence_refs": [
+                "TR_trigger+49+Journal_of_Energy_Chemistry:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Mechanism substitution: evidence attributes lower peak temperature to cathode O2 release prevention, not specifically to electrolyte combustion suppression.",
+              "error_type": "mechanism_substitution",
+              "evidence_refs": [
+                "TR_trigger+49+Journal_of_Energy_Chemistry:C010"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Mechanism linking LFP cathode chemistry to lower peak thermal runaway temperature despite earlier onset",
+          "primary_boundary": "Overcharge at 1C CC from 100% SOC; comparison confined to these four chemistries under these conditions",
+          "intended_error_modes": [
+            "causal_overclaim",
+            "boundary_overreach",
+            "mechanism_substitution"
+          ],
+          "disallowed_extrapolations": [
+            "Generalizing LFP thermal superiority to all abuse modes",
+            "Attributing peak temperature difference solely to Tonset difference"
+          ]
+        }
+      }
+    ],
+    "short_answers": []
+  },
+  "TR_trigger+55+Applied_Thermal_Engineering__TR_trigger+56+Journal_of_Hazardous_Materials__TR_trigger+57+Applied_Energy": {
+    "mcqs": [],
+    "short_answers": []
+  },
+  "TR_trigger+58+Journal_of_Power_Sources__TR_trigger+59+Energy__TR_trigger+60+Fire_Technology": {
+    "mcqs": [
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A fire safety engineer compares internal versus external water-based suppression applied to a traction battery pack after flames are knocked out. External application used standard spray; internal application used 13 L of suppressant with direct pack access. Which statements correctly describe the suppression outcomes and residual risks?",
+          "options": [
+            "A. External suppression is sufficient to halt thermal activity inside the pack because knocking out flames removes the primary heat source driving internal reactions.",
+            "B. Internal suppression with 13 L can delay cell-to-cell thermal propagation and prevent TR from triggering in all cells within the initiating module.",
+            "C. After external flames are extinguished, large quantities of combustible gas may continue to be released, creating explosion risk in enclosed spaces.",
+            "D. Water mist systems with longer release times provide stronger and more uniform cooling throughout the traction battery than short-burst water spray systems.",
+            "E. External water suppression cools the battery interior effectively because water penetrates pack enclosures through convective heat exchange.",
+            "F. Internal suppression can potentially stop TR propagation from the initiating module to neighboring modules, using ~200°C external module surface temperature as the propagation threshold."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "C",
+            "D",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "Evidence explicitly states external suppression did not cool battery interior; thermal activity and gas release continued after flame knockdown.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_trigger+60+Fire_Technology:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Evidence states internal suppression with 13 L delayed cell-to-cell propagation and prevented TR in all cells within the initiating module.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+60+Fire_Technology:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence states large gas quantities continue post-flame-knockdown and can cause explosion risk from sparks in enclosed spaces.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+60+Fire_Technology:C007"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Evidence attributes stronger uniform cooling to water mist's longer release time versus the ~30 s water spray release.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+60+Fire_Technology:C006"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Evidence directly contradicts this; external application left interior cooling insignificant, disproving convective penetration assumption.",
+              "error_type": "mechanism_substitution",
+              "evidence_refs": [
+                "TR_trigger+60+Fire_Technology:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Evidence states internal suppression showed potential to stop TR propagation using ~200°C external module surface as the propagation threshold.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+60+Fire_Technology:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Differential effectiveness of internal vs. external suppression and residual post-suppression hazards",
+          "primary_boundary": "External suppression cannot cool battery interior; internal suppression effectiveness conditional on pack access",
+          "intended_error_modes": [
+            "causal_overclaim",
+            "mechanism_substitution"
+          ],
+          "disallowed_extrapolations": [
+            "External water application penetrates and cools battery interior",
+            "Flame knockdown halts all thermal activity"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A post-mortem analysis of a lithium-ion battery failed under high-temperature CV overcharge shows ~57% fluorine and ~20% oxygen on the anode surface, compared to ~15% fluorine and ~10% oxygen in a new cell. A colleague proposes that the same fluorine enrichment pattern would appear after CC overcharge failure. Using evidence about overcharge mode effects on anode chemistry and the mechanisms responsible, evaluate whether this generalization is supported and explain the underlying cause of any difference."
+        },
+        "ground_truth": {
+          "gold_answer": "The generalization is not supported. Post-mortem evidence shows that CV and CC failure modes produce distinct anode surface chemistries. CV failure anodes exhibit higher relative fluorine percentages, while CC failure anodes show larger oxygen percentages. The difference is attributed to rate changes in reaction kinetics: high voltage (CV mode) drives reactions that preferentially increase fluorine-containing decomposition products, whereas high current (CC mode) drives kinetics that increase oxygen-containing products. Therefore, the ~4x fluorine enrichment observed after high-temperature CV overcharge is specific to that mode and cannot be generalized to CC overcharge failure. Attributing identical fluorine enrichment to CC failure would constitute a regime transfer error.",
+          "must_include": [
+            "CV failure produces higher fluorine percentages; CC failure produces higher oxygen percentages",
+            "Difference caused by rate changes in reaction kinetics from high voltage versus high current",
+            "Generalization from CV to CC overcharge is not supported"
+          ],
+          "disallowed_extrapolations": [
+            "Fluorine enrichment pattern is universal across all overcharge modes",
+            "High temperature alone determines the anode chemistry regardless of overcharge mode",
+            "CC overcharge produces the same ~4x fluorine increase as CV overcharge"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Mode-specific anode surface chemistry after overcharge failure and the kinetic mechanism distinguishing CV from CC failure",
+          "primary_boundary": "Fluorine enrichment is specific to CV mode; oxygen enrichment to CC mode; driven by voltage vs. current kinetics respectively",
+          "intended_error_modes": [
+            "regime_transfer_error",
+            "causal_overclaim",
+            "unsupported_monotonicity"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_trigger+61+Journal_of_Energy_Storage__TR_trigger+62+The_Journal_of_Physical_Chemistry_C__TR_trigger+63+Process_Safety_and_Environmental_Protection": {
+    "mcqs": [],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "An engineer compares post-short-circuit behavior of NCM and LFP batteries after mechanical abuse. They observe that in LFP, only the separator structure shows significant changes, while in NCM, both the separator and the cathode material show significant structural changes. The engineer also notes that LFP batteries show better thermal stability during thermal runaway. Using the evidence about cathode chemistry and electrochemical reaction intensity, explain: (1) why internal electrochemical reaction intensity differs between NCM and LFP after short circuit, and (2) what chemical property of LFP's cathode structure contributes to its superior thermal stability during thermal runaway."
+        },
+        "ground_truth": {
+          "gold_answer": "After internal short circuit, NCM undergoes significantly more intense internal electrochemical reactions than LFP, evidenced by structural changes in both the separator and cathode material in NCM versus only the separator in LFP. This difference reflects greater electrochemical reactivity and structural instability in NCM cathode material under short-circuit conditions. Regarding thermal stability, LFP's cathode contains tetrahedral (PO4)3− anions with strong covalent P–O bonds. These bonds inhibit oxygen release from the cathode during thermal runaway. Reduced oxygen availability limits the amount of ignitable electrolyte that can combust, thereby reducing heat generation. This mechanism is specific to LFP's phosphate structure and does not apply to NCM, which lacks equivalent oxygen-binding covalent bonds.",
+          "must_include": [
+            "NCM shows structural changes in both separator and cathode material; LFP shows changes only in separator",
+            "Strong covalent P–O bond in (PO4)3− anions of LFP inhibits oxygen loss",
+            "Reduced oxygen limits ignitable electrolyte mass and heat generation during thermal runaway"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming LFP cannot undergo thermal runaway under any condition",
+            "Attributing LFP thermal stability solely to lower SOC or capacity rather than cathode chemistry",
+            "Generalizing the P–O bond mechanism to all phosphate-containing electrolyte additives"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Causal chain linking cathode chemistry to electrochemical reaction intensity post-short-circuit and to thermal runaway severity via oxygen release mechanism",
+          "primary_boundary": "Comparison is between NCM and LFP under post-mechanical-abuse short-circuit conditions; thermal stability mechanism is specific to LFP phosphate cathode structure",
+          "intended_error_modes": [
+            "Mechanism substitution: attributing LFP stability to capacity difference rather than P–O bond chemistry",
+            "Boundary overreach: claiming LFP is immune to thermal runaway",
+            "Causal overclaim: inferring separator-only damage in LFP means no electrochemical reaction occurs"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_trigger+64+Journal_of_Power_Sources__TR_trigger+65+Process_Safety_and_Environmental_Protection__TR_trigger+66+Urologia_Journal": {
+    "mcqs": [],
+    "short_answers": []
+  },
+  "TR_trigger+68+Energy_Storage_Materials__TR_trigger+69+Journal_of_Power_Sources__TR_trigger+72+Journal_of_Power_Sources": {
+    "mcqs": [
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "During thermal runaway of a lithium-ion battery, heat contributions are quantified as: ISC heat = 2%, chemical reactions = 98% (of which cathode-anode oxidation-reduction = 48%). Ni-rich NMC cathode (Ni = 0.95) has a phase transition onset near 100°C and phase transition temperature of 180°C. Which statements about thermal runaway heat sources and NMC thermal stability are correct?",
+          "options": [
+            "A. The dominant heat source during thermal runaway is the oxidation-reduction reaction between cathode and anode materials, not the internal short circuit itself.",
+            "B. Internal short circuit is the primary heat generator during thermal runaway, with chemical reactions playing a secondary role.",
+            "C. Increasing Ni content in NMC cathode increases thermal stability by raising the phase transition temperature.",
+            "D. The low onset temperature (~100°C) of Ni-rich NMC phase transition is attributed to thermally induced reduction of Ni ions.",
+            "E. Cathode decomposition above ~180°C in high-Ni NMC releases oxygen, which can subsequently react with anode LiCx to generate additional heat.",
+            "F. SEI decomposition beginning near 90°C is the largest single contributor to total thermal runaway heat release."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "D",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Ca+An oxidation-reduction accounts for ~48% of total heat; ISC contributes only 2%, making chemical reactions dominant per C003 and C006.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+68+Energy_Storage_Materials:C003",
+                "TR_trigger+68+Energy_Storage_Materials:C006"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "ISC contributes only 2% of heat; chemical reactions account for 98%, directly contradicting this claim.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_trigger+68+Energy_Storage_Materials:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Thermal stability decreases with increasing Ni content; higher Ni lowers phase transition temperature, the opposite of this claim.",
+              "error_type": "unsupported_monotonicity",
+              "evidence_refs": [
+                "TR_trigger+68+Energy_Storage_Materials:C016",
+                "TR_trigger+68+Energy_Storage_Materials:C008"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Low onset temperature (~100°C) of Ni-rich NMC phase transition is explicitly attributed to thermally induced reduction of Ni ions per C007.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+68+Energy_Storage_Materials:C007"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Cathode decomposition above ~180°C releases oxygen; released oxidative gas reacts with anode LiCx at 274.2°C generating heat, per C005 and C017.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+68+Energy_Storage_Materials:C005",
+                "TR_trigger+68+Energy_Storage_Materials:C017"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "SEI decomposition initiates thermal runaway at ~90°C but is not identified as the largest single heat contributor; Ca+An reaction holds that role.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_trigger+68+Energy_Storage_Materials:C001",
+                "TR_trigger+68+Energy_Storage_Materials:C006"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Quantitative heat source attribution during thermal runaway and Ni-content effect on NMC thermal stability",
+          "primary_boundary": "ISC is a trigger not a major heat source; Ni content inversely relates to thermal stability",
+          "intended_error_modes": [
+            "causal_overclaim",
+            "unsupported_monotonicity"
+          ],
+          "disallowed_extrapolations": [
+            "ISC dominates heat generation",
+            "Higher Ni content improves thermal stability",
+            "SEI decomposition is the largest heat contributor"
+          ]
+        }
+      }
+    ],
+    "short_answers": []
+  },
+  "TR_trigger+79+Journal_of_Power_Sources__TR_trigger+80+Journal_of_Power_Sources__TR_trigger+81+Journal_of_Energy_Storage": {
+    "mcqs": [
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "During temperature-ramp tests on three pouch/lithium-ion cells, impedance rises ~2 orders of magnitude at ~133°C for PLBs but ~4 orders for cell C. Above 140°C, OCV drops to zero. Cell C uses LiBF4/EC–GBL electrolyte and shows no rupture, swelling, or fire. Which statements are INCORRECTLY characterizing these observations?",
+          "options": [
+            "A. A two-order-of-magnitude impedance rise at shutdown temperature guarantees complete cessation of overcharge current in all cell designs.",
+            "B. The OCV drop to zero above 140°C results from separator meltdown creating pinholes large enough for internal short-circuit.",
+            "C. Cell C's absence of fire and rupture is attributable to the thermal and electrochemical stability of its LiBF4/EC–GBL electrolyte.",
+            "D. The separator shutdown mechanism at ~133°C is caused by polyethylene melting, consistent with PE shutdown temperatures of 130–140°C.",
+            "E. Cell C's four-order impedance rise ensures it cannot sustain any internal short-circuit above 140°C.",
+            "F. SOC-dependent onset-of-thermal-runaway temperature is a universal property observed in all cell chemistries tested."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "E",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect (target)",
+              "justification": "Two-order rise may be insufficient for complete shutdown; cells may continue overcharging at lower rates, remaining hazardous.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_trigger+80+Journal_of_Power_Sources:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct characterization",
+              "justification": "Directly supported: OCV drop above 140°C attributed to separator meltdown pinholes enabling internal short-circuit.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+80+Journal_of_Power_Sources:C002"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct characterization",
+              "justification": "Directly supported: cell C's benign outcome attributed to LiBF4/EC–GBL electrolyte stability against LiCoO₂ oxidation.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+80+Journal_of_Power_Sources:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct characterization",
+              "justification": "Directly supported: PE shutdown at 130–140°C matches ~133°C impedance rise observation.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+80+Journal_of_Power_Sources:C001"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect (target)",
+              "justification": "Four-order impedance rise reduces current but does not prevent OCV collapse above 140°C; internal short-circuit still occurs.",
+              "error_type": "boundary_overreach",
+              "evidence_refs": [
+                "TR_trigger+80+Journal_of_Power_Sources:C001",
+                "TR_trigger+80+Journal_of_Power_Sources:C002"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect (target)",
+              "justification": "Cell B showed SOC-independent OTRT; SOC dependence is not universal across all chemistries tested.",
+              "error_type": "unsupported_monotonicity",
+              "evidence_refs": [
+                "TR_trigger+80+Journal_of_Power_Sources:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of shutdown completeness claims and universality of SOC-dependent OTRT",
+          "primary_boundary": "Observations limited to PLBs and cell C under temperature-ramp conditions; cell B is a counterexample to universality",
+          "intended_error_modes": [
+            "causal_overclaim",
+            "boundary_overreach",
+            "unsupported_monotonicity"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming four-order impedance rise prevents all short-circuit events",
+            "Generalizing SOC-OTRT dependence to all lithium-ion chemistries"
+          ]
+        }
+      }
+    ],
+    "short_answers": []
+  }
+}

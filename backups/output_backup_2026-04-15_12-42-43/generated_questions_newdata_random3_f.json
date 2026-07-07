@@ -1,0 +1,955 @@
+{
+  "TR_Gasventing+25+Journal_of_Energy_Storage__TR_Gasventing+5+Journal_of_Energy_Storage__TR_Gasventing+6+Journal_of_Energy_Storage": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A 100 Ah LiFePO4/graphite prismatic cell at 100% SOC undergoes side-heating abuse. An in-line optical methane sensor embedded in the sealed test enclosure records a CH4 signal beginning near 6 ppm and rising to a peak before any surface temperature criterion for thermal runaway is met. The sensor's laboratory-calibrated detection limit is 21.2 ppm at a 2-second integration time. A safety engineer must decide which conclusions about the early-warning capability and the underlying electrochemical event are admissible from this scenario. Which of the following statements are supported?",
+          "options": [
+            "A. The sensor can provide a meaningful lead time before thermal runaway because continuous gas accumulation in the enclosure allows detection below the nominal single-measurement detection limit.",
+            "B. The peak in the rate of CH4 concentration change, occurring well before the thermal runaway temperature criterion is met, is consistent with a transition from localized to sustained exothermic side reactions associated with SEI breakdown.",
+            "C. Because the sensor's detection limit exceeds the initial signal level, no admissible early-warning conclusion can be drawn from the CH4 signal in this configuration.",
+            "D. The same early-warning lead time would be preserved if the sensor were repositioned externally and relied on gas diffusing through the safety valve, since the physical chemistry of CH4 generation is unchanged.",
+            "E. The ~679-second lead time between the CH4 signal threshold and the thermal runaway trigger is sufficient to confirm that CH4 generation is the direct cause of the temperature acceleration rather than a co-occurring symptom.",
+            "F. The lead time observed under these specific conditions cannot be directly generalized to cells of different capacity, chemistry, or heating mode without additional evidence.",
+            "G. The detection of CH4 at approximately 6 ppm in this sealed enclosure proves that the safety valve ruptured at that moment."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence explicitly states detection below the nominal limit was achieved via continuous accumulation and signal processing in the enclosure.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+25+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Evidence links the peak dC/dt around 650 s to SEI breakdown and transition from localized triggering to sustained chain amplification, preceding TR onset.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+25+Journal_of_Energy_Storage:C003",
+                "TR_Gasventing+25+Journal_of_Energy_Storage:C001"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "This conservative-sounding conclusion is wrong; evidence shows sub-limit detection is achievable via accumulation, making early warning admissible.",
+              "error_type": "conservative but incorrect; ignores accumulation mechanism",
+              "evidence_refs": [
+                "TR_Gasventing+25+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Evidence explicitly states external sensing introduces unpredictable transport delays and airflow interference, invalidating lead-time preservation claims.",
+              "error_type": "mechanism substitution; ignores transport delay boundary",
+              "evidence_refs": [
+                "TR_Gasventing+25+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Temporal precedence supports early warning but does not establish direct causation; overclaims from correlation to cause.",
+              "error_type": "causal overclaim from correlation",
+              "evidence_refs": [
+                "TR_Gasventing+25+Journal_of_Energy_Storage:C001"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Evidence is specific to one cell format, chemistry, and heating mode; generalizing lead time across conditions is an unsupported extrapolation.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+25+Journal_of_Energy_Storage:C001",
+                "TR_Gasventing+25+Journal_of_Energy_Storage:C002"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Incorrect",
+              "justification": "Gas accumulation in a sealed enclosure can occur before or independent of valve rupture; the signal onset does not prove valve rupture timing.",
+              "error_type": "measurement scope overclaim; confuses signal with specific internal event",
+              "evidence_refs": [
+                "TR_Gasventing+25+Journal_of_Energy_Storage:C004",
+                "TR_Gasventing+25+Journal_of_Energy_Storage:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of early-warning conclusions from sub-limit CH4 detection and the mechanistic interpretation of the dC/dt peak",
+          "primary_boundary": "Detection below nominal limit is admissible via accumulation; causation cannot be inferred from temporal precedence alone; external sensing invalidates lead-time preservation",
+          "intended_error_modes": [
+            "Treating nominal detection limit as hard floor for any warning conclusion (conservative but wrong)",
+            "Assuming physical chemistry preservation implies sensor performance preservation across configurations",
+            "Inferring causation from temporal lead time"
+          ],
+          "disallowed_extrapolations": [
+            "Generalizing lead time to other cell formats or chemistries",
+            "Concluding valve rupture timing from gas signal onset in sealed enclosure"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A 280 Ah LFP prismatic cell undergoes thermal runaway testing under two SOC conditions (50% and 100%) and two combustion conditions (gas production only vs. ignited flame). Engineers observe that peak battery surface temperatures differ substantially between SOC levels but remain nearly identical between gas-production and flame conditions at the same SOC. Meanwhile, the flame temperature above the cell, the mass loss rate during venting, and the irreversible reaction duration all vary with SOC. Which of the following conclusions are admissible from this scenario?",
+          "options": [
+            "A. The near-identical battery surface temperatures under gas-production and flame conditions at the same SOC indicate that flame radiation does not substantially heat the cell body, making surface temperature a poor discriminator between these two combustion conditions.",
+            "B. The substantially higher peak mass loss rate at 100% SOC compared to 50% SOC under gas-production conditions indicates that internal reaction severity scales with SOC, but this does not imply that total combustion heat scales proportionally.",
+            "C. Because the 50% SOC battery has a lower peak heat release rate, it necessarily releases less total combustion energy than the 100% SOC battery, and this difference will be large.",
+            "D. The higher flame temperature above the 100% SOC cell compared to 50% SOC is primarily caused by the difference in battery surface temperature rather than by differences in gas composition or quantity.",
+            "E. Under flame conditions, the lower observed mass loss rate compared to gas-production conditions at the same SOC is consistent with partial combustion of material at the vent opening rather than full ejection.",
+            "F. The duration of irreversible internal reaction, defined by back-surface temperature rise rate exceeding 0.5\u00b0C/s, is longer at 100% SOC than at 50% SOC, which is consistent with greater internal energy available for sustained exothermic reaction."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "E",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence states surface temperatures are nearly identical under both conditions at same SOC because flame jets upward and radiation is ineffective at heating the cell.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+5+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Mass loss rate difference is large (12.9/15.25 vs 2.3/1.25 g/s), but total combustion heat difference is only 5.18 MJ, showing non-proportional scaling due to duration effects.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+5+Journal_of_Energy_Storage:C005",
+                "TR_Gasventing+5+Journal_of_Energy_Storage:C008"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Total heat difference is only 5.18 MJ, not large; longer duration at 50% SOC partially compensates, making the difference smaller than peak rate implies.",
+              "error_type": "unjustified monotonicity; ignores duration compensation effect",
+              "evidence_refs": [
+                "TR_Gasventing+5+Journal_of_Energy_Storage:C008"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Battery surface temperatures are nearly equal under gas-production and flame conditions at same SOC; flame temperature difference between SOCs must arise from gas quantity/composition, not surface temperature.",
+              "error_type": "mechanism substitution; attributes flame temperature to wrong driver",
+              "evidence_refs": [
+                "TR_Gasventing+5+Journal_of_Energy_Storage:C003",
+                "TR_Gasventing+5+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Evidence explicitly states that ignition at vent opening causes partial combustion there rather than full ejection, explaining lower mass loss rate under flame conditions.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+5+Journal_of_Energy_Storage:C012"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Evidence states irreversible reaction duration is 200 s at 100% SOC vs 80 s at 50% SOC, consistent with higher stored energy sustaining exothermic reactions longer.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+5+Journal_of_Energy_Storage:C011"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Relationship between SOC, combustion condition, surface temperature, mass loss rate, and total heat release during LFP thermal runaway",
+          "primary_boundary": "Total heat does not scale proportionally with peak rate due to duration effects; flame radiation does not drive surface temperature; flame temperature difference between SOCs is driven by gas quantity not surface temperature",
+          "intended_error_modes": [
+            "Inferring large total heat difference from large peak rate difference",
+            "Attributing flame temperature difference to surface temperature difference",
+            "Ignoring duration compensation when comparing total energy release"
+          ],
+          "disallowed_extrapolations": [
+            "Assuming peak mass loss rate and total combustion energy scale proportionally with SOC",
+            "Generalizing flame-condition mass loss behavior without accounting for vent-combustion mechanism"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery safety engineer is evaluating Li-ion cells cycled under varying cutoff voltages (4.2 V, 4.3 V, 4.4 V) and charge/discharge ambient temperatures (30\u00b0C, 40\u00b0C, 50\u00b0C, 60\u00b0C). Gas composition analysis of thermal runaway products shows that overcharging decreases CO2 content and increases vaporized solvent content, while the exothermic enthalpy of anode material mixtures decreases with increasing cutoff voltage. The engineer notes that the Lower Explosion Limit (LEL) of the vented gas mixture is non-monotonic with ambient temperature, reaching its minimum at 40\u00b0C and rising above 50\u00b0C. Which conclusions are admissible?",
+          "options": [
+            "A. The reduction in LEL under overcharge conditions is primarily driven by increased CO content, because overcharge promotes incomplete combustion reactions that favor CO over CO2.",
+            "B. The non-monotonic LEL behavior with ambient temperature implies that 40\u00b0C is the most hazardous charge/discharge temperature from an explosion risk standpoint among the tested temperatures, even though higher temperatures might be expected to accelerate degradation.",
+            "C. The decrease in anode mixture exothermic enthalpy with increasing cutoff voltage indicates that higher overcharge reduces the total energy available from anode-electrolyte reactions during thermal runaway, yet the gas mixture becomes more flammable.",
+            "D. The rise in LEL above 50\u00b0C ambient temperature is consistent with improved negative electrode activity at higher temperatures inhibiting lithium precipitation and promoting earlier consumption of vaporized solvent by cathode reactions.",
+            "E. Because CO has an LEL of 12% compared to 1.5\u20135% for combustible hydrocarbons, the increase in CO content under overcharge is the dominant reason the gas mixture LEL decreases.",
+            "F. The 20% increase in vaporized solvent content at 40\u00b0C under 4.4 V overcharge compared to 30\u00b0C under normal charge represents a compounded effect of both temperature and voltage, making this condition the most compositionally distinct from baseline among tested combinations."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "C",
+            "D"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "Evidence attributes LEL decrease to decreased CO2 and increased combustible hydrocarbons, not CO; CO's high LEL (12%) means it does not drive mixture LEL down.",
+              "error_type": "mechanism substitution; attributes LEL decrease to wrong gas species",
+              "evidence_refs": [
+                "TR_Gasventing+6+Journal_of_Energy_Storage:C009",
+                "TR_Gasventing+6+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Evidence shows LEL is lowest at 40\u00b0C and rises above 50\u00b0C, making 40\u00b0C the most explosion-hazardous temperature tested, counterintuitively not the highest temperature.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+6+Journal_of_Energy_Storage:C002",
+                "TR_Gasventing+6+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence shows anode enthalpy decreases with cutoff voltage while LEL decreases (more flammable gas), demonstrating these two hazard metrics move in opposite directions under overcharge.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+6+Journal_of_Energy_Storage:C007",
+                "TR_Gasventing+6+Journal_of_Energy_Storage:C001"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Evidence explicitly states that above 50\u00b0C, improved electrode activity inhibits lithium precipitation and promotes cathode-DMC reaction, reducing vaporized DMC and raising LEL.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+6+Journal_of_Energy_Storage:C010"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Evidence explicitly states CO's high LEL means it does not drive mixture LEL down; the decrease is attributed to hydrocarbons and CO2 reduction, not CO increase.",
+              "error_type": "mechanism substitution; contradicts explicit evidence on CO LEL role",
+              "evidence_refs": [
+                "TR_Gasventing+6+Journal_of_Energy_Storage:C009"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Evidence states the 20% increment is at 4.4 V relative to 4.2 V at 40\u00b0C, not relative to 30\u00b0C normal charge; the comparison baseline is mischaracterized.",
+              "error_type": "condition violation; misrepresents the comparison baseline from evidence",
+              "evidence_refs": [
+                "TR_Gasventing+6+Journal_of_Energy_Storage:C006"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Mechanism driving LEL decrease under overcharge and non-monotonic temperature dependence of explosion hazard",
+          "primary_boundary": "CO increase does not drive LEL down due to its high LEL; LEL is non-monotonic with temperature with minimum at 40\u00b0C; anode enthalpy and gas flammability are decoupled hazard metrics",
+          "intended_error_modes": [
+            "Attributing LEL decrease to CO increase rather than hydrocarbon increase and CO2 decrease",
+            "Assuming higher temperature always means higher hazard (monotonicity violation)",
+            "Conflating anode reaction energy with gas flammability hazard"
+          ],
+          "disallowed_extrapolations": [
+            "Concluding that above 60\u00b0C the LEL trend continues to rise without additional evidence",
+            "Applying the 40\u00b0C LEL minimum finding to cell chemistries other than those tested"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A 280 Ah LFP cell at 100% SOC undergoes thermal runaway. Gas composition analysis shows that carbon dioxide is the dominant measured gas species by proportion. Separately, overcharge cycling experiments on a different Li-ion chemistry show that increasing cutoff voltage thickens the SEI membrane, reduces CO2 content in thermal runaway gas, and increases vaporized solvent content, thereby decreasing the Lower Explosion Limit of the vented gas mixture. An engineer proposes that the high CO2 fraction observed in the LFP cell at normal SOC is itself a safety benefit because it raises the LEL of the vented gas mixture. Explain whether this reasoning is mechanistically admissible, identify the specific causal chain that would need to hold for the proposal to be valid, and state one condition under which this benefit would be reduced or reversed."
+        },
+        "ground_truth": {
+          "gold_answer": "The reasoning is mechanistically admissible in direction: CO2 is not combustible and its presence in a gas mixture dilutes combustible components, which raises the LEL of the mixture. The causal chain required is: high CO2 fraction \u2192 dilution of combustible hydrocarbons and solvents in the gas mixture \u2192 higher LEL \u2192 reduced explosion risk at a given gas concentration. This chain is consistent with the evidence that decreased CO2 content (from SEI thickening under overcharge) lowers LEL. However, the benefit would be reduced or reversed if the cell undergoes overcharge cycling, because SEI thickening then reduces CO2 content and increases vaporized solvent content in the thermal runaway gas, shifting the composition toward more flammable mixtures regardless of the baseline chemistry.",
+          "must_include": [
+            "CO2 raises LEL by diluting combustible components, so the directional reasoning is admissible",
+            "The causal chain requires CO2 fraction to remain high during actual thermal runaway venting",
+            "Overcharge cycling reduces CO2 content via SEI thickening, which would reduce or reverse this benefit"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming CO2 presence eliminates explosion risk",
+            "Assuming CO2 fraction remains constant regardless of cycling history or SOC",
+            "Generalizing the LFP gas composition finding to other chemistries without qualification"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of CO2 dilution as a LEL-raising safety mechanism and the conditions that undermine it",
+          "primary_boundary": "CO2 raises LEL by dilution, making the directional claim admissible, but overcharge-induced SEI thickening reduces CO2 content and negates this benefit; the benefit is condition-dependent, not universal",
+          "intended_error_modes": [
+            "Accepting the proposal as universally valid without identifying the overcharge boundary condition",
+            "Rejecting the proposal entirely without recognizing the valid directional mechanism",
+            "Confusing CO with CO2 in the LEL mechanism"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Modelling+13+Applied_Energy__TR_Modelling+14+Journal_of_Energy_Storage__TR_Modelling+15+2024_6th_International_Conference_on_Electrical_Engineering_and_Control_Technolo": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A cylindrical lithium-ion cell undergoes accelerating rate calorimetry. Internal and surface thermocouples are both active. The internal thermocouple records a maximum temperature of approximately 995\u00b0C and a peak rate of temperature rise near 530\u00b0C/s. The surface thermocouple simultaneously records a maximum of approximately 566\u00b0C and a peak rate near 49\u00b0C/s. Separately, the cell voltage drops sharply from above 3 V to below 0.3 V within one second, and this voltage event is recorded roughly 7 seconds before the internal thermocouple indicates the onset of the most intense thermal phase. Which conclusions are admissible given these observations?",
+          "options": [
+            "A. Surface temperature measurements alone are sufficient to characterize the severity of the internal thermal event during thermal runaway.",
+            "B. The sharp voltage drop can serve as an early warning signal because it precedes the most intense thermal phase by several seconds.",
+            "C. The order-of-magnitude difference between internal and surface temperature rise rates means that surface measurements systematically underestimate the rate of internal heat generation during thermal runaway.",
+            "D. Because the voltage drop occurs before the peak internal temperature, it must be caused by separator melting producing an internal short circuit.",
+            "E. The internal temperature peak being nearly 430\u00b0C above the surface peak implies that surface-based thermal models will overestimate the time available for intervention.",
+            "F. The voltage dive preceding thermal runaway onset indicates a diagnostic window exists, but the surface temperature at that moment does not yet reflect the internal state."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "C",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "Internal temperature exceeds surface by ~430\u00b0C; surface measurements cannot characterize internal severity.",
+              "error_type": "measurement scope overclaim",
+              "evidence_refs": [
+                "TR_Modelling+14+Journal_of_Energy_Storage:C001"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Voltage drop precedes TR onset by 6.8 s, explicitly supporting an early warning function.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+14+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "531 vs 49.2\u00b0C/s is an order-of-magnitude difference; surface rate systematically underestimates internal heat generation rate.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+14+Journal_of_Energy_Storage:C002"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Separator melting causing internal short circuit is one mechanism, but the evidence does not establish it as the sole cause of the voltage drop.",
+              "error_type": "causal overclaim from correlation",
+              "evidence_refs": [
+                "TR_Modelling+15+2024_6th_International_Conference_on_Electrical_Engineering_and_Control_Technolo:C005"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Higher internal temperature means surface models underestimate severity, not overestimate intervention time; direction of inference is reversed.",
+              "error_type": "mechanism direction reversal",
+              "evidence_refs": [
+                "TR_Modelling+14+Journal_of_Energy_Storage:C001"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Voltage drop precedes TR; at that moment surface temperature lags internal state, so surface does not yet reflect internal condition.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+14+Journal_of_Energy_Storage:C001",
+                "TR_Modelling+14+Journal_of_Energy_Storage:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of surface-measurement-based conclusions versus internal state during thermal runaway, and the diagnostic value of voltage signals.",
+          "primary_boundary": "Surface measurements cannot represent internal thermal severity; voltage drop precedes but does not by itself identify the mechanism of internal short circuit.",
+          "intended_error_modes": [
+            "measurement scope overclaim",
+            "causal overclaim from correlation",
+            "mechanism direction reversal"
+          ],
+          "disallowed_extrapolations": [
+            "Inferring internal short circuit cause solely from voltage timing without additional evidence",
+            "Using surface temperature rate to quantify internal heat generation rate"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery pack thermal runaway propagation model compares four operating conditions: normal operation, fast charging, rapid heating with charging, and uphill climbing. The initial cell temperature just before thermal runaway onset is highest under uphill climbing (~47.4\u00b0C) and fast charging (~47.2\u00b0C), both exceeding the other two conditions. Uphill climbing produces the shortest propagation time intervals between cells. The model also shows that the propagation time interval across a silicon rubber pad (~120 s) is approximately twice the interval between adjacent cells (~60 s). Which of the following conclusions are supported?",
+          "options": [
+            "A. Uphill climbing is the most severe condition for thermal runaway propagation primarily because it generates more electrical energy than fast charging.",
+            "B. Silicon rubber pads slow thermal runaway propagation between cells, and their effect is distinguishable from direct cell-to-cell conduction in this model.",
+            "C. Because fast charging and uphill climbing produce nearly identical initial temperatures, their thermal runaway propagation time intervals must also be nearly identical.",
+            "D. A higher initial cell temperature before thermal runaway onset is associated with shorter propagation time intervals, making pre-existing thermal state a relevant factor in propagation severity.",
+            "E. The propagation time interval through a silicon rubber pad being longer than the cell-to-cell interval implies that adding such pads could extend the time available for intervention during propagation.",
+            "F. The model results establish that uphill climbing is the worst condition for propagation, but this conclusion cannot be extended to pack configurations with different thermal management designs without additional evidence."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "D",
+            "E",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "Evidence identifies uphill climbing as worst by initial temperature and propagation interval, not by electrical energy generation mechanism.",
+              "error_type": "unsupported causal mechanism attribution",
+              "evidence_refs": [
+                "TR_Modelling+14+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "120 s pad interval vs 60 s cell-to-cell interval shows pads slow propagation and are distinguishable in the model.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+14+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Similar initial temperatures do not imply identical propagation intervals; uphill climbing is explicitly identified as worse despite similar temperature.",
+              "error_type": "unjustified equivalence from similar parameter values",
+              "evidence_refs": [
+                "TR_Modelling+14+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Higher initial temperatures correlate with shorter propagation intervals across the compared conditions, supporting initial thermal state as a relevant factor.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+14+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Longer propagation interval through pads (~120 s vs ~60 s) directly implies more time available for intervention at that interface.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+14+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Model results apply to the described configuration; extrapolation to different thermal management designs is not supported without additional evidence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+14+Journal_of_Energy_Storage:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Propagation severity ranking across operating conditions and the role of inter-cell materials in modulating propagation timing.",
+          "primary_boundary": "Similar initial temperatures do not guarantee identical propagation behavior; model conclusions are configuration-specific.",
+          "intended_error_modes": [
+            "unsupported causal mechanism attribution",
+            "unjustified equivalence from similar parameter values",
+            "scope expansion beyond model configuration"
+          ],
+          "disallowed_extrapolations": [
+            "Attributing uphill climbing severity to electrical energy generation without evidence",
+            "Generalizing pack-level propagation results to different thermal management configurations"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A thermal runaway model for a lithium-ion cell is calibrated using oven test data. The model includes SEI decomposition, anode-electrolyte reactions, and cathode decomposition reactions, but excludes combustion of flammable gases. The model accurately predicts the temperature at which thermal runaway initiates but consistently underestimates the maximum temperature reached. A separate model from the literature that omits several exothermic reactions also predicts onset correctly but fails on maximum temperature. Which statements about these modeling results are admissible?",
+          "options": [
+            "A. Combustion of flammable gases is the primary reason the model underestimates maximum temperature, because combustion is the largest exothermic event in thermal runaway.",
+            "B. Accurate prediction of thermal runaway onset does not require inclusion of all exothermic reactions, but accurate prediction of maximum temperature does.",
+            "C. The exclusion of combustion from the model is justified on the basis that combustion energy primarily heats the surroundings rather than the cell itself.",
+            "D. Because the model predicts onset correctly, it can be used to determine the maximum temperature with acceptable accuracy for safety-critical design decisions.",
+            "E. The consistent underestimation of maximum temperature across models with incomplete reaction sets suggests that omitted exothermic reactions contribute meaningfully to peak temperature.",
+            "F. Including combustion in the model would necessarily resolve the maximum temperature underestimation."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "Evidence states combustion is excluded because it heats surroundings, not because it is the largest exothermic event; this causal claim is unsupported.",
+              "error_type": "causal overclaim without evidence",
+              "evidence_refs": [
+                "TR_Modelling+13+Applied_Energy:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Both models predict onset correctly despite incomplete reaction sets, but both fail on maximum temperature, supporting this distinction.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+13+Applied_Energy:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence explicitly states combustion heats surroundings rather than the cell, justifying its exclusion from the cell temperature model.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+13+Applied_Energy:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Correct onset prediction does not imply acceptable maximum temperature accuracy; the model consistently underestimates peak temperature.",
+              "error_type": "scope expansion from partial validation",
+              "evidence_refs": [
+                "TR_Modelling+13+Applied_Energy:C005"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Pattern of underestimation across models with incomplete reaction sets supports the inference that omitted reactions contribute to peak temperature.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+13+Applied_Energy:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Combustion is excluded because it does not heat the cell; including it would not resolve cell-internal maximum temperature underestimation.",
+              "error_type": "protective mechanism overclaim",
+              "evidence_refs": [
+                "TR_Modelling+13+Applied_Energy:C004",
+                "TR_Modelling+13+Applied_Energy:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of model validation conclusions when only onset is correctly predicted and maximum temperature is underestimated.",
+          "primary_boundary": "Onset accuracy does not validate maximum temperature accuracy; combustion exclusion is justified by energy routing, not by magnitude.",
+          "intended_error_modes": [
+            "scope expansion from partial validation",
+            "causal overclaim on combustion magnitude",
+            "false resolution claim for combustion inclusion"
+          ],
+          "disallowed_extrapolations": [
+            "Using onset-validated models for maximum temperature safety decisions",
+            "Attributing maximum temperature underestimation solely to combustion omission"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A lithium-ion cell is heated from ambient temperature to above 300\u00b0C. An engineer wants to model the heat generation sequence accurately. The evidence indicates that different exothermic reactions are active in distinct temperature ranges: SEI decomposition begins around 60\u201390\u00b0C, anode-electrolyte reactions are active up to approximately 250\u00b0C, positive-electrolyte reactions occur around 130\u2013170\u00b0C, and cathode active material decomposition begins near 250\u00b0C. The engineer proposes that cathode-side reactions should be included in the model from the beginning of heating because they contribute to total heat generation. Evaluate whether this proposal is admissible, and identify which reaction regime dominates heat generation below 250\u00b0C according to the evidence."
+        },
+        "ground_truth": {
+          "gold_answer": "The proposal is not admissible as stated. Cathode active material decomposition begins only near 250\u00b0C, so including it from the start of heating is inconsistent with the evidence-defined temperature thresholds. Below 250\u00b0C, heat generation is dominated by anode-side and anode-electrolyte interface reactions, specifically SEI decomposition and the reaction between anode active material and electrolyte. Positive-electrolyte reactions (130\u2013170\u00b0C) also contribute in that range, but the evidence explicitly identifies anode-electrolyte interface reactions as the dominant source below 250\u00b0C. A model that activates cathode decomposition below its threshold would overestimate heat generation in the sub-250\u00b0C regime.",
+          "must_include": [
+            "Cathode active material decomposition begins near 250\u00b0C and should not be active below that threshold in the model",
+            "Below 250\u00b0C heat generation is dominated by anode-electrolyte interface reactions including SEI decomposition",
+            "The proposal introduces cathode reactions outside their evidence-supported temperature range"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming cathode reactions are entirely negligible at all temperatures above 250\u00b0C",
+            "Asserting that SEI decomposition alone accounts for all heat generation below 250\u00b0C without acknowledging anode-electrolyte reactions",
+            "Generalizing the dominance ranking to conditions outside the described heating scenario"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Correct sequencing of exothermic reaction regimes and admissibility of activating cathode reactions below their evidence-defined threshold.",
+          "primary_boundary": "Cathode decomposition threshold is near 250\u00b0C; below this, anode-electrolyte interface reactions dominate. Activating cathode reactions earlier violates the evidence-defined regime boundary.",
+          "intended_error_modes": [
+            "Ignoring temperature-regime boundaries and treating all reactions as simultaneously active",
+            "Confusing positive-electrolyte reactions (130\u2013170\u00b0C) with cathode active material decomposition (~250\u00b0C)",
+            "Accepting the proposal because cathode reactions eventually contribute, without checking the threshold condition"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Gasventing+22+Journal_of_Energy_Storage__TR_Gasventing+23+Journal_of_Energy_Storage__TR_Gasventing+24+Journal_of_Hazardous_Materials": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A lithium-ion battery pack is subjected to thermal abuse inside a confined aircraft cabin. Batteries are positioned at a corner adjacent to a wall. Natural ventilation is the only active airflow mechanism. As the number of simultaneously venting cells increases from a single cell to several dozen cells, an engineer must assess which conclusions about gas hazard are admissible. Which of the following statements are supported by engineering reasoning under these conditions?",
+          "options": [
+            "A. The hazardous flammable gas volume scales nonlinearly with cell count, and the duration of hazardous conditions also increases, compounding risk beyond what single-cell extrapolation would predict.",
+            "B. Corner and wall-adjacent placement suppresses gas accumulation by directing venting gases away from occupied zones, reducing peak concentration relative to centrally located packs.",
+            "C. Buoyancy-driven stratification causes high-concentration gas to persist near the ceiling rather than dispersing uniformly, creating a localized hazard zone that surface-level sensors may not detect.",
+            "D. Under natural ventilation, increasing the number of venting cells from one to several dozen causes only a proportional, linear increase in hazardous volume, so single-cell test data is sufficient for multi-cell risk assessment.",
+            "E. The corner placement of the pack tends to promote localized gas accumulation rather than suppress it, which is mechanistically consistent with reduced mixing from boundary walls.",
+            "F. Because buoyancy effects are dominant, forced ventilation at any flow rate will fully eliminate ceiling-level stratification and reduce peak concentration proportionally with increasing flow speed."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence shows hazardous volume grows from ~0.09 m\u00b3 (1 cell) to >8 m\u00b3 (36 cells) with prolonged duration, confirming nonlinear scaling.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+23+Journal_of_Energy_Storage:C001"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Evidence states corner/wall placement induces localized accumulation, not suppression; this option reverses the direction of the effect.",
+              "error_type": "mechanism_reversal",
+              "evidence_refs": [
+                "TR_Gasventing+23+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Buoyancy causes persistent ceiling stratification; surface-level sensors would underestimate ceiling concentration, a valid diagnostic limitation inference.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+23+Journal_of_Energy_Storage:C002"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Evidence explicitly shows disproportionate scaling (0.09 to >8 m\u00b3), contradicting linear extrapolation from single-cell data.",
+              "error_type": "unjustified_monotonicity",
+              "evidence_refs": [
+                "TR_Gasventing+23+Journal_of_Energy_Storage:C001"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Evidence states corner/wall packs induce localized accumulation; reduced mixing from boundaries is the consistent mechanistic explanation.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+23+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Evidence shows increasing ventilation rate beyond a threshold yields no further reduction in peak concentration or duration, so proportional improvement is unsupported.",
+              "error_type": "protective_mechanism_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+23+Journal_of_Energy_Storage:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of multi-cell gas hazard scaling and spatial accumulation conclusions under natural ventilation in confined spaces",
+          "primary_boundary": "Nonlinear scaling vs. linear extrapolation; corner placement promotes rather than suppresses accumulation; ventilation has a saturation threshold",
+          "intended_error_modes": [
+            "mechanism_reversal on corner placement",
+            "unjustified linear extrapolation from single-cell data",
+            "protective mechanism overclaim for forced ventilation"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming forced ventilation eliminates stratification at any flow rate",
+            "Treating single-cell hazard volume as proportionally scalable to multi-cell scenarios"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "An engineer evaluates two ventilation layout configurations for a confined cabin environment following battery thermal runaway gas release. Layout I (conventional) requires 2.5 m/s to achieve acceptable hazardous zone control. Layout II (optimized) achieves comparable hazardous zone control at 1.5 m/s. When Layout II is further increased to 2.5 m/s, peak concentration is similar to that at 1.5 m/s and duration does not decrease. The engineer must decide which design and operational conclusions are admissible. Select all admissible conclusions.",
+          "options": [
+            "A. Layout II at 1.5 m/s is preferable to Layout I at 2.5 m/s on an energy-efficiency basis, since both achieve comparable hazardous zone control.",
+            "B. The diminishing returns observed when Layout II is increased from 1.5 to 2.5 m/s indicate that ventilation layout geometry, not flow speed alone, is the primary determinant of hazardous zone control beyond a certain flow threshold.",
+            "C. Because Layout II at 2.5 m/s fails to outperform Layout II at 1.5 m/s, increasing flow speed is universally ineffective for hazardous gas mitigation regardless of layout configuration.",
+            "D. Layout I at 2.5 m/s and Layout II at 1.5 m/s produce equivalent safety outcomes, so either can be selected without penalty when energy consumption is not a constraint.",
+            "E. The saturation behavior of Layout II above 1.5 m/s implies that a minimum effective ventilation speed exists for this layout, below which hazardous zone control would likely degrade.",
+            "F. The evidence supports recommending Layout II at 2.5 m/s as the optimal configuration because it combines the best layout geometry with the highest tested flow speed."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence directly states Layout II at 1.5 m/s achieves similar control as Layout I at 2.5 m/s; energy efficiency advantage is a minimal valid implication.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+23+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Saturation at 1.5 m/s for Layout II while Layout I requires 2.5 m/s supports layout geometry as the dominant factor beyond a flow threshold.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+23+Journal_of_Energy_Storage:C004",
+                "TR_Gasventing+23+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Saturation is observed only for Layout II above 1.5 m/s; universalizing to all layouts and flow speeds is an unsupported overgeneralization.",
+              "error_type": "overgeneralization",
+              "evidence_refs": [
+                "TR_Gasventing+23+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Evidence notes Layout II at 1.5 m/s achieves ~0.27% additional peak concentration reduction; equivalence is approximate, not exact, making this a conservative but imprecise overclaim.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+23+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Saturation behavior above 1.5 m/s logically implies a threshold; below it, control would degrade. This is a boundary reasoning implication consistent with the evidence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+23+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Evidence shows Layout II at 2.5 m/s provides no improvement over 1.5 m/s; recommending it as optimal ignores the saturation finding and wastes energy.",
+              "error_type": "ignoring_threshold_behavior",
+              "evidence_refs": [
+                "TR_Gasventing+23+Journal_of_Energy_Storage:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of ventilation design conclusions given saturation behavior and layout-dependent performance",
+          "primary_boundary": "Saturation of Layout II above 1.5 m/s applies only to that layout; cannot universalize; equivalence of layouts is approximate not exact",
+          "intended_error_modes": [
+            "overgeneralization of saturation to all layouts",
+            "exact equivalence overclaim",
+            "recommending higher flow as optimal despite saturation evidence"
+          ],
+          "disallowed_extrapolations": [
+            "Universalizing Layout II saturation behavior to Layout I or other configurations",
+            "Claiming Layout II at 2.5 m/s is optimal"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A lithium-ion battery is subjected to thermal runaway under hydraulic oil immersion. At 25 mm and 45 mm immersion heights, no thermal runaway occurs (peak temperature rise rates below 1\u00b0C/s), but the fractional effective dose (FED) for gas asphyxiation remains above 1. At 75 mm full immersion, FED drops below 1 and hydrocarbon gas generation is eliminated. Separately, as SOC increases from 0% to 100% under immersion, peak surface temperature decreases while HF concentration increases. Which conclusions are admissible?",
+          "options": [
+            "A. Preventing thermal runaway through partial immersion is not sufficient to eliminate serious asphyxiation hazard, because FED can remain above 1 even when temperature rise rates are well below the thermal runaway threshold.",
+            "B. At higher SOC under immersion, the reduction in peak surface temperature indicates reduced electrochemical energy release, which also reduces HF generation as a correlated byproduct.",
+            "C. Full immersion eliminates the flammability hazard from hydrocarbon gases and reduces asphyxiation risk below the critical FED threshold, but these benefits are achieved simultaneously only at the 75 mm depth.",
+            "D. The increase in HF concentration with increasing SOC under immersion conditions suggests that the mechanism driving HF generation is distinct from the mechanism driving peak temperature, since the two trends move in opposite directions.",
+            "E. Because partial immersion suppresses thermal runaway, it also guarantees that all toxic gas hazards are reduced to safe levels, making full immersion unnecessary from a safety standpoint.",
+            "F. The non-monotonic relationship between SOC and hazard profile under immersion means that optimizing immersion depth for temperature suppression alone may not minimize the overall chemical hazard to personnel."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "D",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence shows FED >1 at partial immersion despite no thermal runaway; thermal runaway suppression and asphyxiation hazard are decoupled.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+22+Journal_of_Energy_Storage:C002",
+                "TR_Gasventing+22+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Evidence shows HF increases with SOC while temperature decreases; attributing HF reduction to temperature reduction directly contradicts the observed trend.",
+              "error_type": "mechanism_confusion",
+              "evidence_refs": [
+                "TR_Gasventing+22+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence shows hydrocarbon elimination and FED<1 both occur at 75 mm; stating both benefits require 75 mm is supported and condition-specific.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+22+Journal_of_Energy_Storage:C001",
+                "TR_Gasventing+22+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Opposite SOC trends for surface temperature and HF concentration support mechanistic decoupling; this is a valid multi-factor interaction inference.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+22+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Evidence explicitly shows FED remains above 1 under partial immersion despite no thermal runaway; this option is conservative-sounding but factually contradicted.",
+              "error_type": "protective_mechanism_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+22+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Temperature and HF move in opposite directions with SOC; optimizing depth for temperature alone ignores the HF hazard increase, a valid multi-factor trade-off conclusion.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+22+Journal_of_Energy_Storage:C004",
+                "TR_Gasventing+22+Journal_of_Energy_Storage:C001"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of safety conclusions when thermal runaway suppression and toxic gas hazards are mechanistically decoupled under immersion conditions",
+          "primary_boundary": "Thermal runaway suppression \u2260 elimination of all gas hazards; HF and temperature trends are opposite with SOC",
+          "intended_error_modes": [
+            "conflating thermal runaway suppression with full hazard elimination",
+            "assuming HF correlates positively with temperature",
+            "overclaiming partial immersion sufficiency"
+          ],
+          "disallowed_extrapolations": [
+            "Inferring that any immersion depth eliminating thermal runaway also eliminates toxic gas hazard",
+            "Treating temperature reduction as a proxy for all hazard reduction under SOC variation"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "Ejected powder from lithium-ion battery thermal runaway contains carbon as its dominant component by mass. In an inert (argon) atmosphere, the first-step weight loss of this powder during heating decreases as SOC increases from 40% to 100%. In an air atmosphere, first-step weight loss increases with increasing heating power at fixed SOC and temperature. However, dust explosion testing across a concentration range of 30\u20132000 g/m\u00b3 produced no explosion pressure exceeding 0.05 MPa. Explain the mechanistic reasoning that connects particle size to the absence of dust explosion, and identify one condition under which the explosion hazard conclusion might no longer be admissible. Limit your answer to the key physical mechanism and the specific boundary condition."
+        },
+        "ground_truth": {
+          "gold_answer": "The ejected powder particles are predominantly in the 147\u2013210 \u00b5m size range without grinding or processing. Particles of this size cannot form a stable suspension in air, which is a prerequisite for dust explosion propagation. Without stable suspension, the powder-air mixture cannot maintain the uniform dispersion needed to sustain a deflagration front, so no explosion pressure above 0.05 MPa was observed across the tested concentration range. The admissibility of this conclusion is bounded by the particle size condition: if the powder were subjected to grinding, pulverization, or sieving that reduced particle size substantially, stable suspension could become possible, and the no-explosion conclusion would no longer be admissible.",
+          "must_include": [
+            "particle size in the 147\u2013210 \u00b5m range prevents stable suspension in air",
+            "stable suspension is required for dust explosion propagation",
+            "the no-explosion conclusion is conditional on the powder remaining unprocessed",
+            "grinding or pulverization would invalidate the conclusion by enabling stable suspension"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming the powder is non-flammable in all forms or conditions",
+            "Attributing the absence of explosion to chemical inertness of the powder components",
+            "Generalizing the no-explosion conclusion to processed or size-reduced powder",
+            "Inferring that concentration has no effect on hazard independent of particle size"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Mechanistic link between particle size, suspension stability, and dust explosion admissibility boundary",
+          "primary_boundary": "No-explosion conclusion is valid only for unprocessed large-particle powder; grinding invalidates it by enabling stable suspension",
+          "intended_error_modes": [
+            "Attributing explosion absence to chemical composition rather than physical suspension behavior",
+            "Treating the no-explosion result as unconditional across all particle sizes",
+            "Ignoring the processing-state boundary condition"
+          ]
+        }
+      }
+    ]
+  }
+}

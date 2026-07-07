@@ -1,0 +1,36 @@
+{
+  "mcqs": [],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A lithium-ion battery cell is operating at a discharge rate above 2C in an environment set to 20°C. A battery management system engineer proposes using a parameter lookup table that was constructed from parameter estimates obtained at discharge rates below 1C across temperatures from 10°C to 40°C. The engineer argues that because voltage relative errors were within 0.5% at intermediate SOC values during the low-rate estimation, the lookup table is equally valid for predicting cell behavior at the high discharge rate. Identify the primary technical reason this argument is not admissible, and explain which specific parameter or condition change at high discharge rates undermines the assumption that the low-rate estimates can be treated as true values for lookup table use at those rates."
+      },
+      "ground_truth": {
+        "gold_answer": "The argument is not admissible because the assumption that low-rate parameter estimates can be treated as true values depends on the temperature rise during estimation being negligibly small. At discharge rates below 1C, the temperature rise is below 3°C even at low SOC, which is small enough that the estimated parameters reflect the intended temperature condition. However, at discharge rates above 2C, the temperature rise reaches up to 14.8°C, meaning the cell is operating at a significantly different temperature than the ambient setpoint. The parameter most affected is Ds,n (solid-phase diffusion coefficient in the negative electrode), which increases appreciably with increasing current — unlike εs,n which increases with temperature but not appreciably with current. Because Ds,n is a sensitive parameter (small changes in it greatly influence model output, especially at end of discharge), and because it changes with the elevated temperature caused by high-rate self-heating, the lookup table values derived at low rates no longer represent the true parameter values at the actual operating temperature during high-rate discharge. The 0.5% voltage error criterion was established at intermediate SOC under low-rate conditions; at high rates and low SOC, the strong nonlinear battery characteristics further amplify the error from using incorrect parameter values.",
+        "must_include": [
+          "Temperature rise at rates above 2C is large (up to ~14.8°C), invalidating the assumption of negligible self-heating used to justify treating low-rate estimates as true values",
+          "At rates below 1C, temperature rise is below 3°C, which is the basis for the lookup table validity claim",
+          "Ds,n is a sensitive parameter that increases appreciably with increasing current, unlike εs,n",
+          "Sensitive parameters (Ds,n, Ds,p, εs,n, εs,p) have large influence on model output especially at end of discharge",
+          "The 0.5% error criterion applies at intermediate SOC under low-rate conditions and does not extend to high-rate or low-SOC conditions"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming the lookup table is completely useless at all SOC values at high rates — the error is largest at end of discharge / low SOC",
+          "Stating that insensitive parameters (εe,n, εe,p, εe,s) are the source of the problem",
+          "Concluding that the 14.8°C rise alone causes thermal runaway or safety failure — the evidence only supports parameter estimation error, not a safety threshold violation"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Identifying why the low-rate parameter estimation validity condition (small temperature rise) breaks down at high discharge rates, and which sensitive parameter is most affected by the current-dependent temperature rise",
+        "primary_boundary": "The lookup table validity argument rests on temperature rise being small enough that estimated parameters equal true values — this condition holds below 1C (rise < 3°C) but fails above 2C (rise up to 14.8°C), and the failure is consequential specifically because Ds,n is both current-sensitive and a high-influence parameter",
+        "intended_error_modes": [
+          "Focusing only on the temperature rise without connecting it to which specific sensitive parameter is affected by current increase",
+          "Treating the 0.5% error criterion as universally applicable rather than SOC-range and rate-range specific",
+          "Confusing insensitive parameters (εe,n, εe,p, εe,s) with sensitive ones as the source of model error"
+        ]
+      }
+    }
+  ]
+}

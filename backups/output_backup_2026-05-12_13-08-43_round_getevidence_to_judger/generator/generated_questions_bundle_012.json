@@ -1,0 +1,313 @@
+{
+  "TR_Protection+30+Chemical_Engineering_Journal__TR_Protection+78+Energy__TR_Protection+9+Energy": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery pack uses a composite PCM (CPCM) with thermal conductivity of 0.5 W/(m\u00b7K) surrounding cells, combined with a liquid cooling plate separating two rows of batteries. Thermal runaway is triggered in one row. Which statements correctly describe the system's propagation behavior under these conditions?",
+          "options": [
+            "A. Reducing CPCM thermal conductivity from 6 to 0.5 W/(m\u00b7K) increases total thermal runaway propagation time from 23.5 s to 112.7 s by concentrating heat around the triggering battery and impeding transfer through the cooling plate.",
+            "B. Because CPCM thermal insulation reduces heat reaching the cooling plate, increasing coolant flow rate above a threshold has a large effect on propagation time between batteries in the same row wrapped by CPCM.",
+            "C. For batteries within the same row wrapped by CPCM and not separated by the cooling plate, thermal runaway propagation time is largely insensitive to coolant flow rate changes.",
+            "D. Low CPCM thermal conductivity unconditionally prevents thermal runaway propagation to all batteries in the pack regardless of the energy released.",
+            "E. Once the latent heat of the PCM surrounding the cells is fully exhausted, the high thermal conductivity of the PCM material can accelerate rather than retard thermal runaway propagation.",
+            "F. The dominant mechanism by which low CPCM conductivity delays propagation is by increasing convective heat transfer from the cell surface to the coolant."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Directly supported: low conductivity concentrates heat locally and impedes cooling-plate transfer, extending propagation time to 112.7 s.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+78+Energy:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "CPCM thermal insulation minimizes coolant flow rate influence on same-row batteries; the correct direction is the opposite of what B claims.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Protection+78+Energy:C007"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "PCM wrapping thermally insulates same-row batteries from coolant changes, so propagation time between them is largely insensitive to flow rate variation.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+78+Energy:C007"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Boundary overreach: low conductivity delays but does not unconditionally prevent propagation; exhausted latent heat removes the protective barrier.",
+              "error_type": "boundary_overreach",
+              "evidence_refs": [
+                "TR_Protection+9+Energy:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Once latent heat is exhausted, high PCM thermal conductivity becomes a propagation accelerant rather than a barrier.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+9+Energy:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The mechanism is conductive resistance impeding heat transfer through the plate, not enhanced convection; mechanism substitution error.",
+              "error_type": "mechanism_substitution",
+              "evidence_refs": [
+                "TR_Protection+78+Energy:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Interaction between CPCM thermal conductivity, PCM latent heat exhaustion, and coolant flow rate on thermal runaway propagation pathways",
+          "primary_boundary": "PCM protective effect reverses after latent heat exhaustion; coolant flow rate effect is limited to cooling-plate-separated batteries, not same-row CPCM-wrapped batteries",
+          "intended_error_modes": [
+            "boundary_overreach",
+            "causal_overclaim",
+            "mechanism_substitution"
+          ],
+          "disallowed_extrapolations": [
+            "Low CPCM conductivity unconditionally stops propagation",
+            "Coolant flow rate dominates same-row propagation when CPCM is present"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "An NCM/LFP (6:1)||graphite double-layer cathode pouch cell and a pristine NCM||graphite cell are both subjected to nail penetration at 100% SOC and to differential scanning calorimetry analysis. The thermal runaway temperature (TTR) of the double-layer cell is delayed by 193\u00b0C relative to pristine NCM. Which of the following statements are supported by these findings?",
+          "options": [
+            "A. The NCM/LFP (6:1)||graphite cell passes nail penetration with only voltage jitter and no fire, while the pristine NCM||graphite cell combusts immediately upon puncture.",
+            "B. The higher TTR of the double-layer cell implies that its SEI decomposition onset temperature is also higher than that of the pristine NCM cell, consistent with a more stable SEI film.",
+            "C. The 193\u00b0C TTR delay is sufficient to conclude that the double-layer design eliminates all thermal runaway risk under any abuse condition.",
+            "D. The first exothermic DSC peak of NCM/LFP (6:1) appears at a higher temperature and with smaller enthalpy than that of pristine NCM, indicating enhanced thermal stability of the cathode material.",
+            "E. Because the LFP surface layer improves nail penetration safety, external safety strategies such as coolants and phase-change heat absorbers are rendered unnecessary for this cell chemistry.",
+            "F. Transition metal dissolution onto the graphite anode is lower in the double-layer cell than in the pristine NCM cell after cycling, attributed to reduced lattice oxygen loss."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "D",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Directly evidenced: NCM/LFP cell passes nail test with voltage jitter only; pristine NCM combusts immediately at puncture.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+30+Chemical_Engineering_Journal:C010"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Onset temperature is 90\u00b0C for double-layer vs 85\u00b0C for pristine NCM, consistent with more stable SEI on the double-layer cathode.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+30+Chemical_Engineering_Journal:C007"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Boundary overreach: a delayed TTR indicates improved safety under tested conditions, not elimination of risk under all abuse scenarios.",
+              "error_type": "boundary_overreach",
+              "evidence_refs": [
+                "TR_Protection+30+Chemical_Engineering_Journal:C002"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "First exothermic peak shifts from 225\u00b0C to 234\u00b0C with much smaller enthalpy for NCM/LFP (6:1), indicating enhanced cathode thermal stability.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+30+Chemical_Engineering_Journal:C008"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "External strategies fail under extreme temperature and pressure regardless of cell chemistry; the LFP layer does not remove this limitation.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Protection+30+Chemical_Engineering_Journal:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "TM content on graphite anode is lower in NCM/LFP cell after 100 cycles, attributed to reduced lattice oxygen loss limiting TM dissolution.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+30+Chemical_Engineering_Journal:C009"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-mechanism safety benefits of double-layer NCM/LFP cathode design across nail penetration, DSC thermal stability, SEI stability, and TM dissolution",
+          "primary_boundary": "Improved TTR and nail safety do not eliminate all thermal runaway risk; external strategy limitations remain chemistry-independent",
+          "intended_error_modes": [
+            "boundary_overreach",
+            "causal_overclaim"
+          ],
+          "disallowed_extrapolations": [
+            "Double-layer design eliminates all TR risk",
+            "LFP surface layer makes external cooling strategies unnecessary"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery module uses SAT-urea/EG as a PCM with a total thermal storage density of ~1000 kJ/kg (latent heat 181 kJ/kg, thermochemical 567 kJ/kg, sensible 300 kJ/kg from 25\u00b0C to 120\u00b0C). Previously studied PCMs have latent heat densities of ~150 kJ/kg. The thermal runaway heat release of a cell is ~880 kJ/kg. Which statements correctly characterize the thermal management implications?",
+          "options": [
+            "A. Previously studied PCMs with ~150 kJ/kg latent heat are sufficient to absorb the ~880 kJ/kg released during thermal runaway if enough PCM mass is used, making SAT-urea/EG unnecessary.",
+            "B. SAT-urea/EG achieves its high total storage density through three sequential mechanisms: solid-liquid phase change, thermochemical decomposition, and sensible heat absorption.",
+            "C. Kinetics-based thermal decomposition models derived from low heating rate experiments are directly applicable to predict SAT-urea/EG behavior under the high heat flux of thermal runaway.",
+            "D. The addition of 7 wt% urea to SAT reduces both the melting point and the thermochemical decomposition temperature without reducing heat storage density, enabling operation closer to the 120\u00b0C thermal runaway threshold.",
+            "E. Once the latent heat of SAT-urea/EG is exhausted, its residual high thermal conductivity may accelerate rather than retard further thermal runaway propagation.",
+            "F. Flammable organic PCMs such as paraffin introduce an additional hazard during thermal runaway because PCM combustion adds heat to the battery system."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "D",
+            "E",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "~150 kJ/kg is far below the ~880 kJ/kg TR heat release; the evidence explicitly states previously studied PCMs are far too low for TR absorption.",
+              "error_type": "boundary_overreach",
+              "evidence_refs": [
+                "TR_Protection+9+Energy:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Total density of ~1000 kJ/kg is explicitly composed of latent heat (181), thermochemical (567), and sensible heat (300) contributions.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+9+Energy:C011"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Low-heating-rate kinetics models are explicitly stated as unsuitable for the high heat flux conditions of thermal runaway.",
+              "error_type": "regime_transfer_error",
+              "evidence_refs": [
+                "TR_Protection+9+Energy:C012"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "7 wt% urea lowers melting point to 46.5\u00b0C and decomposition temperature to 118.5\u00b0C without affecting heat storage density, aligning decomposition with the 120\u00b0C TR threshold.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+9+Energy:C008",
+                "TR_Protection+9+Energy:C001"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "After latent heat exhaustion, high PCM thermal conductivity becomes a propagation accelerant, a confirmed causal reversal of the protective role.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+9+Energy:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Flammable organic PCMs can combust and introduce additional heat into the battery system, further intensifying thermal runaway.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+9+Energy:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-mechanism thermal storage of SAT-urea/EG, limitations of low-heating-rate kinetics models, and dual role of PCM thermal conductivity before and after latent heat exhaustion",
+          "primary_boundary": "Kinetics models derived at low heating rates are not valid for TR high heat flux; PCM protection reverses after latent heat exhaustion; previously studied PCMs insufficient for TR heat load",
+          "intended_error_modes": [
+            "boundary_overreach",
+            "regime_transfer_error",
+            "causal_overclaim"
+          ],
+          "disallowed_extrapolations": [
+            "Low-heating-rate kinetics models apply to TR conditions",
+            "Sufficient mass of low-density PCM can substitute for high-density PCM in TR scenarios"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A battery pack engineer proposes two independent modifications to reduce thermal runaway propagation risk: (1) replacing the existing CPCM (thermal conductivity 6 W/(m\u00b7K)) with a low-conductivity CPCM (0.5 W/(m\u00b7K)), and (2) increasing coolant flow rate from 0.009 m/s to 0.029 m/s. For batteries separated by the cooling plate, explain the mechanism by which each modification delays propagation and quantify the propagation time change where evidence supports it. Then identify one condition under which the low-conductivity CPCM modification could paradoxically accelerate rather than delay propagation, and explain the mechanism."
+        },
+        "ground_truth": {
+          "gold_answer": "Modification 1: Reducing CPCM conductivity from 6 to 0.5 W/(m\u00b7K) concentrates heat around the triggering battery and impedes heat transfer through the cooling plate to adjacent batteries, extending total propagation time from 23.5 s to 112.7 s. Modification 2: Increasing coolant flow rate from 0.009 to 0.029 m/s enhances heat dissipation through the cooling plate, extending propagation time across the plate from 17.8 s to 32.9 s (1.84\u00d7). Note: increased flow rate only significantly affects batteries separated by the cooling plate; for batteries in the same row wrapped by CPCM, flow rate changes have minimal effect because CPCM thermal insulation limits heat reaching the coolant. Paradoxical acceleration condition: once the latent heat of the low-conductivity CPCM is fully exhausted, the residual high thermal conductivity of the PCM material (after phase change or decomposition is complete) can accelerate heat transfer between cells, promoting rather than retarding propagation.",
+          "must_include": [
+            "Low CPCM conductivity concentrates heat locally and impedes cooling-plate transfer, extending propagation time from 23.5 s to 112.7 s",
+            "Higher coolant flow rate extends cooling-plate propagation time from 17.8 s to 32.9 s",
+            "Coolant flow rate has minimal effect on same-row CPCM-wrapped batteries",
+            "After latent heat exhaustion, high PCM thermal conductivity accelerates propagation"
+          ],
+          "disallowed_extrapolations": [
+            "Low CPCM conductivity unconditionally prevents all propagation regardless of energy input",
+            "Coolant flow rate increase equally protects all batteries in the pack including same-row CPCM-wrapped cells",
+            "Low-heating-rate kinetics models can be used to predict PCM decomposition timing under thermal runaway heat flux"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Mechanistic interaction between CPCM conductivity, coolant flow rate, spatial battery arrangement, and the latent-heat-exhaustion reversal of PCM protection",
+          "primary_boundary": "Coolant flow rate effect is restricted to cooling-plate-separated batteries; CPCM protection reverses after latent heat exhaustion; quantitative claims restricted to evidence-reported values",
+          "intended_error_modes": [
+            "boundary_overreach asserting universal propagation prevention",
+            "scale_transfer_overclaim applying cooling-plate flow-rate benefit to same-row batteries",
+            "omission of latent heat exhaustion reversal mechanism"
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,321 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery safety engineer is evaluating the internal pressure buildup sequence for three cylindrical cell chemistries—LFP, LMO, and NCM—subjected to thermal abuse. Measurements show that before the cell temperature enters the uncontrollable runaway phase, LFP releases the largest absolute molar quantity of gas among the three chemistries, yet the fraction of that gas relative to the total gas volume required to open the safety valve is the smallest for LFP. Additionally, for LMO and NCM cells, the dominant mechanism driving safety valve opening is identified as gas release, while for LFP it is a different mechanism. The engineer must determine which conclusions about the pre-venting and venting behavior of these cells are admissible based solely on this information. Which of the following conclusions are supported?",
+        "options": [
+          "A. The LFP cell accumulates a larger total gas volume threshold for safety valve opening than LMO, which is consistent with its low pre-venting gas fraction despite generating the most pre-venting gas in absolute terms.",
+          "B. Because LFP generates the highest absolute molar quantity of pre-venting gas, it poses the greatest internal pressure hazard among the three chemistries prior to safety valve actuation.",
+          "C. For LMO and NCM cells, the safety valve opening is primarily driven by gas-phase reactions rather than phase-change contributions from the electrolyte.",
+          "D. The low pre-venting gas fraction in LFP implies that the mechanism bridging pre-venting gas accumulation to valve opening in LFP relies substantially on a non-gas-release contribution such as electrolyte volatilization.",
+          "E. The ordering of pre-venting gas fractions (LMO > NCM > LFP) directly implies that LMO reaches its valve-opening threshold earliest in the thermal abuse timeline.",
+          "F. The difference in pre-venting gas fractions across chemistries indicates that comparing absolute pre-venting gas quantities alone is insufficient to rank the chemistries by proximity to safety valve actuation."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "LFP pre-venting gas is 0.094 mol yet constitutes only 29.1% of the valve-opening volume, implying the total threshold is approximately 0.094/0.291 ≈ 0.32 mol. LMO pre-venting gas is 0.042 mol at 75.2%, implying threshold ≈ 0.056 mol. LFP's threshold is therefore larger than LMO's, which is consistent with the stated fractions and the absolute quantities.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+192+Journal_of_Energy_Storage:C001",
+              "TR_Gasventing+192+Journal_of_Energy_Storage:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Absolute pre-venting gas quantity does not determine pressure hazard prior to valve actuation; what matters is how close that quantity brings the cell to its valve-opening threshold. LFP's large threshold means its 0.094 mol represents only 29.1% of the way to valve opening, so it is not necessarily closest to a hazardous venting event.",
+            "error_type": "causal overclaim / ignoring threshold context",
+            "evidence_refs": [
+              "TR_Gasventing+192+Journal_of_Energy_Storage:C001",
+              "TR_Gasventing+192+Journal_of_Energy_Storage:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence states that safety venting of LMO and NCM is mainly caused by gas release, which is a phase-distinct mechanism from electrolyte volatilization (a phase-change contribution). This directly supports the conclusion that gas-phase generation, not electrolyte phase change, dominates valve opening for these two chemistries.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+192+Journal_of_Energy_Storage:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "LFP's pre-venting gas fraction is only 29.1%, meaning 70.9% of the valve-opening volume must come from another source. The evidence explicitly identifies electrolyte volatilization as the main driver of LFP safety venting, making this conclusion directly admissible and mechanistically consistent.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+192+Journal_of_Energy_Storage:C002",
+              "TR_Gasventing+192+Journal_of_Energy_Storage:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The pre-venting gas fraction indicates how much of the valve-opening threshold has been reached by the pre-venting phase, but it does not determine the absolute time at which the threshold is crossed during thermal abuse. The rate of gas generation and the absolute threshold value both affect timing, and neither is derivable from the fraction alone.",
+            "error_type": "scope expansion / ignoring rate and threshold magnitude",
+            "evidence_refs": [
+              "TR_Gasventing+192+Journal_of_Energy_Storage:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Since the valve-opening threshold differs across chemistries (as implied by the combination of absolute quantities and fractions), and since the dominant mechanism also differs, ranking chemistries by proximity to valve actuation requires knowing both the absolute pre-venting quantity and the total threshold—not just the absolute quantity alone.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+192+Journal_of_Energy_Storage:C001",
+              "TR_Gasventing+192+Journal_of_Energy_Storage:C002",
+              "TR_Gasventing+192+Journal_of_Energy_Storage:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Relationship between absolute pre-venting gas quantity, pre-venting gas fraction, valve-opening threshold, and dominant venting mechanism across LFP, LMO, and NCM chemistries.",
+        "primary_boundary": "Absolute pre-venting gas quantity cannot be used alone to rank proximity to valve actuation; the valve-opening threshold and dominant mechanism must both be considered.",
+        "intended_error_modes": [
+          "Treating highest absolute pre-venting gas as highest pre-venting pressure hazard (B)",
+          "Inferring temporal ordering from gas fraction alone without rate or threshold information (E)"
+        ],
+        "disallowed_extrapolations": [
+          "Deriving thermal abuse timeline from gas fractions alone",
+          "Equating gas-release dominance with higher absolute gas quantity"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An explosion hazard assessment is being conducted for a ventilated enclosure into which gases from thermally abused lithium-ion batteries are released. The analysis considers four battery cases: LFP at 50% SoC, NMC at 100% SoC, NCA at 50% SoC, and LCO at 50% SoC. The vented gas mixture contains syngas as a major combustible component. The enclosure has a fixed vent area of 0.36 m². It is known that for syngas, the laminar flame speed peaks at fuel-rich conditions rather than at stoichiometry. It is also known that when CO₂ content of the vented gas is included in the equivalence ratio calculation, the LFP 50% SoC case experiences the largest reduction in equivalence ratio among all four cases. Which of the following conclusions are admissible under these conditions?",
+        "options": [
+          "A. If CO₂ is excluded from the equivalence ratio calculation, LFP at 50% SoC produces the highest peak explosion pressure among the four cases at this vent area.",
+          "B. Increasing the enclosure vent area beyond 0.36 m² will reduce peak explosion pressure for all four battery cases regardless of equivalence ratio.",
+          "C. The peak explosion pressure for syngas-containing mixtures occurs at stoichiometric conditions because stoichiometry maximizes the energy released per unit volume.",
+          "D. When CO₂ is included in the equivalence ratio calculation, LFP at 50% SoC transitions from the highest to the lowest peak explosion pressure among the four cases.",
+          "E. The fact that LFP at 50% SoC exceeds NMC at 100% SoC in peak explosion pressure at this vent area implies that LFP batteries are inherently more hazardous than NMC batteries across all SoC levels and vent configurations.",
+          "F. The syngas laminar flame speed behavior at rich conditions means that a conservative explosion hazard assessment based solely on stoichiometric equivalence ratio would underestimate peak pressure for these vented gas mixtures."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence states that at 50% SoC and 0.36 m² vent area, LFP has the maximum peak pressure among the three battery types at the same SoC (LFP > NCA > LCO), and separately that LFP at 50% SoC exceeds NMC at 100% SoC. This ranking applies when CO₂ is not included in the equivalence ratio, which is the baseline condition described.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+193+Journal_of_Energy_Storage:C001",
+              "TR_Gasventing+193+Journal_of_Energy_Storage:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The evidence states that for any equivalence ratio, increasing vent area causes a monotonic reduction in peak pressure. This applies across all four battery cases since the statement is condition-general with respect to equivalence ratio.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+193+Journal_of_Energy_Storage:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The evidence explicitly states that for syngas, the laminar flame speed is highest at a rich condition rather than at stoichiometry, and that peak explosion pressure is therefore observed at fuel-rich conditions. This directly contradicts the claim that stoichiometry maximizes peak pressure for these mixtures.",
+            "error_type": "mechanism substitution / ignoring syngas-specific laminar flame speed behavior",
+            "evidence_refs": [
+              "TR_Gasventing+193+Journal_of_Energy_Storage:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The evidence directly states that including CO₂ causes a 32.4% reduction in LFP equivalence ratio—the largest reduction among all four cases—and that this causes the peak pressure ranking to switch from LFP having the highest to the lowest peak pressure.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+193+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The evidence establishes LFP's higher hazard only under the specific condition of 50% SoC and 0.36 m² vent area. Generalizing this to all SoC levels and vent configurations is an unsupported extrapolation beyond the stated conditions. The evidence also shows that including CO₂ reverses the ranking even within the same conditions.",
+            "error_type": "overgeneralization / scope expansion beyond stated conditions",
+            "evidence_refs": [
+              "TR_Gasventing+193+Journal_of_Energy_Storage:C002",
+              "TR_Gasventing+193+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Because syngas flame speed peaks at rich conditions and peak pressure follows flame speed behavior, a hazard assessment anchored at stoichiometric equivalence ratio would miss the true peak pressure, which occurs at fuel-rich conditions. This is a direct mechanistic implication of the syngas laminar flame speed evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+193+Journal_of_Energy_Storage:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Condition-dependent explosion pressure ranking across battery chemistries, effect of CO₂ inclusion on equivalence ratio, and syngas-specific flame speed behavior on peak pressure location.",
+        "primary_boundary": "The LFP hazard ranking is valid only under the specific stated conditions and reverses when CO₂ is properly accounted for; syngas peak pressure occurs at rich, not stoichiometric, conditions.",
+        "intended_error_modes": [
+          "Assuming stoichiometry maximizes explosion pressure for syngas-containing mixtures (C)",
+          "Generalizing condition-specific hazard ranking to all SoC and vent configurations (E)"
+        ],
+        "disallowed_extrapolations": [
+          "Ranking battery hazard across all conditions from a single SoC and vent area data point",
+          "Applying standard fuel stoichiometry peak-pressure logic to syngas mixtures without accounting for flame speed behavior"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A fire safety engineer is comparing two thermal runaway scenarios for the same battery module containing three cells. In the first scenario (cluster configuration), the three cells react sequentially: the first cell reacts without flames, and the two neighboring cells subsequently react individually in the presence of fire, producing sequential heat release rate peaks of approximately 20 kW, then 100–130 kW, then 100–130 kW. In the second scenario (module configuration), the first cell again reacts without flames, but the two adjacent cells react simultaneously in the presence of fire, producing a single large peak of approximately 250 kW. In both scenarios, only three cells participate. Separately, it is known that when flaming combustion is present, HF production increases by a factor of 10 relative to the non-flaming phase, and that the time to compromised tenability is approximately two times shorter when flaming combustion occurs compared to cell degassing without flames. The engineer must assess which conclusions about these two scenarios are admissible.",
+        "options": [
+          "A. The simultaneous reaction in the module scenario produces a higher peak heat release rate than the sum of the two sequential peaks in the cluster scenario, indicating a superadditive interaction when cells react concurrently.",
+          "B. In both scenarios, the first cell's reaction contributes negligibly to HF production relative to the subsequent cells, because the first cell reacts without flames and HF production is substantially lower in the non-flaming phase.",
+          "C. The module scenario poses a shorter time to compromised tenability than the cluster scenario, because the simultaneous reaction produces a higher instantaneous HF release rate associated with the single large flaming peak.",
+          "D. Because the total number of reacting cells is identical in both scenarios, the total energy released over the full event must be equal, and the difference in peak heat release rate reflects only a difference in reaction timing.",
+          "E. The cluster scenario's sequential peak structure implies that propagation between cells can be slowed or interrupted, whereas the module scenario's simultaneous reaction implies that propagation was fast enough to overlap the reaction windows of adjacent cells.",
+          "F. The higher peak heat release rate in the module scenario compared to the cluster scenario is sufficient to conclude that the module configuration is more hazardous under all fire safety metrics."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "The module scenario peak is 250 kW, while the two sequential flaming peaks in the cluster scenario are each 100–130 kW, summing to 200–260 kW. The module peak of 250 kW falls within the range of the sum of the two cluster peaks, so it is not clearly superadditive. The evidence does not support a claim of superadditive interaction.",
+            "error_type": "numerical exaggeration / unsupported causal overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+194+Journal_of_Energy_Storage:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The evidence states HF production increases by a factor of 10 when flames are present. The first cell reacts without flames in both scenarios, so its HF contribution is approximately one-tenth that of each flaming cell. With two flaming cells reacting, the first cell's contribution is indeed negligible relative to the flaming cells.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+194+Journal_of_Energy_Storage:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence states that time to compromised tenability is two times shorter when flaming combustion occurs. The module scenario concentrates the flaming reaction into a single simultaneous peak, producing a higher instantaneous HF release rate. This is consistent with a shorter tenability window compared to the cluster scenario where flaming peaks are separated in time.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+194+Journal_of_Energy_Storage:C003",
+              "TR_Gasventing+194+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Equal cell count does not guarantee equal total energy release, because the presence or absence of flaming combustion dramatically changes the effective heat of combustion (6–12 kJ/Wh without flames vs. 50 kJ/Wh with flames). If the flame development differs between scenarios, total energy released can differ even with the same number of cells.",
+            "error_type": "ignoring thermal-combustion coupling / causal overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+194+Journal_of_Energy_Storage:C001"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Sequential peaks in the cluster scenario are consistent with propagation that allows time separation between cell reactions, while simultaneous reaction in the module scenario implies the thermal or mechanical coupling was sufficient to trigger adjacent cells concurrently. This is an admissible mechanistic inference from the described peak structures.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+194+Journal_of_Energy_Storage:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Peak heat release rate is one hazard metric, but it does not determine all fire safety outcomes. The cluster scenario's sequential flaming events may produce a longer total duration of HF exposure, which could be more hazardous under cumulative dose metrics. The evidence does not support a universal hazard ranking across all metrics.",
+            "error_type": "scope expansion / single-metric overgeneralization",
+            "evidence_refs": [
+              "TR_Gasventing+194+Journal_of_Energy_Storage:C004",
+              "TR_Gasventing+194+Journal_of_Energy_Storage:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Comparison of sequential vs. simultaneous cell reaction in terms of peak heat release rate, HF production, tenability time, and total energy release; admissibility of hazard ranking conclusions.",
+        "primary_boundary": "Equal cell count does not imply equal total energy or equal hazard across all metrics; flaming vs. non-flaming distinction governs both HF production and effective heat of combustion.",
+        "intended_error_modes": [
+          "Assuming equal cell count implies equal total energy (D)",
+          "Claiming superadditivity without numerical support (A)",
+          "Generalizing peak HRR superiority to all fire safety metrics (F)"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring total energy equality from cell count equality",
+          "Ranking overall hazard from a single metric (peak HRR) alone"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A ventilation system designer is assessing the gas explosion hazard from battery thermal runaway events in an enclosed space. The vented gas from LFP batteries at 50% SoC contains a substantial fraction of CO₂ in addition to combustible species. Two analysts disagree: Analyst A argues that CO₂ should be excluded from the equivalence ratio calculation because it is not a fuel, so its presence does not affect the explosion hazard ranking. Analyst B argues that including CO₂ changes the effective equivalence ratio and therefore changes the explosion pressure ranking. Additionally, the designer knows that for the combustible component of the vented gas, the laminar flame speed peaks at fuel-rich rather than stoichiometric conditions.\n\n(a) Explain, using mechanism-based reasoning, why Analyst B's position is correct and describe the specific consequence for the LFP battery's hazard ranking when CO₂ is properly accounted for.\n\n(b) Explain why a hazard assessment that uses stoichiometric equivalence ratio as the design point for peak explosion pressure would be non-conservative for these vented gas mixtures, and identify the condition at which peak pressure actually occurs."
+      },
+      "ground_truth": {
+        "gold_answer": "(a) CO₂, while not a fuel, acts as a diluent that reduces the effective fuel-to-oxidizer ratio of the combustible mixture. When CO₂ is included in the equivalence ratio calculation, it lowers the effective equivalence ratio of the LFP vented gas mixture. The LFP 50% SoC case experiences the largest reduction in equivalence ratio among the battery cases considered (32.4%), because LFP vented gas contains a particularly high CO₂ fraction. This large reduction shifts the mixture away from the fuel-rich condition where peak flame speed and peak explosion pressure occur. As a consequence, the hazard ranking switches: LFP transitions from having the highest peak explosion pressure among the cases to having the lowest. Analyst A's position is incorrect because treating CO₂ as irrelevant ignores its diluent effect on the mixture's combustion behavior, which directly controls explosion pressure.\n\n(b) For the combustible component of the vented gas (syngas), the laminar flame speed is highest at fuel-rich conditions, not at stoichiometry. Because explosion pressure in a confined or vented enclosure is driven by the rate of pressure rise, which is coupled to flame speed, peak explosion pressure also occurs at fuel-rich conditions rather than at stoichiometry. A hazard assessment anchored at stoichiometric equivalence ratio would therefore underestimate the peak pressure, because the actual worst-case condition occurs at a richer mixture. The design point for peak explosion pressure should be the fuel-rich condition corresponding to maximum laminar flame speed for the specific gas composition, not the stoichiometric point.",
+        "must_include": [
+          "CO₂ acts as a diluent reducing the effective equivalence ratio",
+          "LFP 50% SoC experiences the largest equivalence ratio reduction (32.4%)",
+          "LFP ranking switches from highest to lowest peak explosion pressure when CO₂ is included",
+          "Syngas laminar flame speed peaks at fuel-rich conditions, not stoichiometry",
+          "Peak explosion pressure occurs at fuel-rich conditions",
+          "Stoichiometric design point underestimates peak pressure for these mixtures"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming CO₂ directly participates in combustion reactions",
+          "Generalizing the LFP hazard ranking reversal to all vent areas or all SoC levels",
+          "Claiming stoichiometric assessment is always non-conservative for all fuel types",
+          "Asserting that LFP is always less hazardous than other chemistries after CO₂ correction"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism by which CO₂ content affects equivalence ratio and explosion pressure ranking, and the implication of syngas flame speed behavior for conservative hazard assessment design point selection.",
+        "primary_boundary": "CO₂ diluent effect on equivalence ratio is condition-specific to LFP vented gas composition; the non-conservative stoichiometric design point applies specifically to syngas-containing mixtures where flame speed peaks at rich conditions.",
+        "intended_error_modes": [
+          "Treating CO₂ as hazard-irrelevant because it is not a fuel",
+          "Assuming stoichiometry is always the conservative design point for explosion pressure",
+          "Failing to connect flame speed behavior to explosion pressure peak location"
+        ]
+      }
+    }
+  ]
+}

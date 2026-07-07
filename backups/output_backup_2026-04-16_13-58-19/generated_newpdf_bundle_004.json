@@ -1,0 +1,369 @@
+{
+  "TR_Gasventing+6+Journal_of_Energy_Storage__TR_Gasventing+7+Journal_of_Energy_Storage__TR_Gasventing+79+Applied_Energy": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A lithium-ion battery pack is operated in an environment where the charge/discharge ambient temperature is maintained at 40\u00b0C, and cells are repeatedly cycled to a cutoff voltage of 4.4 V. During a thermal runaway event, engineers measure the composition of vented gases and observe a lower-than-expected Lower Explosion Limit (LEL) compared to cells cycled at 30\u00b0C to 4.2 V. They propose several mechanisms to explain this observation. Which of the following conclusions about the gas composition change and its underlying cause are supported by the described conditions?",
+          "options": [
+            "A. The reduction in LEL is primarily driven by an increase in CO content, because CO has a lower LEL than other combustible species produced during thermal runaway.",
+            "B. The reduction in LEL results from a higher proportion of vaporized electrolyte solvent in the vent gas, caused by elevated ambient temperature increasing solvent volatility before and during thermal runaway.",
+            "C. The thickening of the SEI layer under repeated overcharge cycling promotes incomplete oxidation reactions during thermal runaway, shifting gas composition toward species that collectively lower the mixture LEL.",
+            "D. The decrease in exothermic enthalpy of the anode material mixture at higher cutoff voltages indicates that more electrolyte is available to vaporize into the vent gas, contributing to the LEL reduction.",
+            "E. Because CO has an LEL of 12%, an increase in CO fraction relative to other combustible gases would raise the mixture LEL, not lower it, making CO enrichment an unlikely explanation for the observed LEL decrease.",
+            "F. The LEL reduction observed at 40\u00b0C compared to 30\u00b0C would be expected to continue monotonically if temperature were raised to 60\u00b0C, since higher temperature consistently increases solvent vaporization.",
+            "G. The combined effect of overcharge and elevated ambient temperature produces a larger LEL decrease than either factor alone, because both independently increase vaporized DMC content in the vent gas."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "C",
+            "D",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "CO has an LEL of 12%, which is significantly higher than other combustible hydrocarbons (1.5\u20135%). An increase in CO fraction would therefore tend to raise the mixture LEL, not lower it. This option confuses the direction of CO's effect on mixture LEL.",
+              "error_type": "mechanism_confusion",
+              "evidence_refs": [
+                "TR_Gasventing+6+Journal_of_Energy_Storage:C008",
+                "TR_Gasventing+6+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "While elevated temperature does increase vaporized DMC content, the evidence attributes this specifically to the interaction between temperature, SEI thickening, and overcharge cycling, not simply to ambient volatility. The mechanism described here is oversimplified and omits the SEI-mediated pathway that is the supported causal chain.",
+              "error_type": "mechanism_substitution",
+              "evidence_refs": [
+                "TR_Gasventing+6+Journal_of_Energy_Storage:C004",
+                "TR_Gasventing+6+Journal_of_Energy_Storage:C007"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "The evidence supports that overcharge cycling thickens the SEI membrane, leading to incomplete reactions during thermal runaway that decrease CO2 content and increase CO content. The decrease in CO2 (high LEL contribution as a non-flammable diluent) combined with increased flammable hydrocarbon fractions lowers the mixture LEL. This is a supported multi-step causal chain.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+6+Journal_of_Energy_Storage:C007",
+                "TR_Gasventing+6+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "The evidence shows that exothermic enthalpy of the anode material mixture decreases with increasing cutoff voltage (25.35 J/g at 4.2 V, 10.11 J/g at 4.4 V), indicating less electrolyte reacts with anode material. This leaves more electrolyte available to vaporize, consistent with the observed increase in DMC content in vent gas and the resulting LEL decrease. This is a counterintuitive but evidence-supported inference: lower reaction enthalpy implies more unreacted electrolyte available for vaporization.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+6+Journal_of_Energy_Storage:C006",
+                "TR_Gasventing+6+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "CO has an LEL of 12%, far above the 1.5\u20135% range of other combustible hydrocarbons. Therefore, enriching the gas mixture with CO would increase rather than decrease the mixture LEL. This makes CO enrichment inconsistent with the observed LEL decrease, and the evidence confirms the LEL decrease is driven by DMC increase and CO2 decrease, not CO increase.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+6+Journal_of_Energy_Storage:C008",
+                "TR_Gasventing+6+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The evidence explicitly states that LEL is lowest at 40\u00b0C and increases as temperature rises from 40\u00b0C to 60\u00b0C, because above 50\u00b0C the increased cathode material activity promotes earlier DMC consumption, reducing DMC content in vent gas. The relationship is non-monotonic with a minimum at 40\u00b0C, not monotonically decreasing with temperature.",
+              "error_type": "unjustified_monotonicity",
+              "evidence_refs": [
+                "TR_Gasventing+6+Journal_of_Energy_Storage:C003",
+                "TR_Gasventing+6+Journal_of_Energy_Storage:C009"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Incorrect",
+              "justification": "While both overcharge and 40\u00b0C ambient temperature individually increase DMC content in vent gas, the evidence does not support that their combined effect is simply additive or synergistic in a way that produces a larger LEL decrease than either alone in all cases. Above 50\u00b0C, elevated temperature actually reverses the DMC enrichment effect. This option ignores the regime-dependent reversal and overgeneralizes the interaction.",
+              "error_type": "overgeneralization",
+              "evidence_refs": [
+                "TR_Gasventing+6+Journal_of_Energy_Storage:C009",
+                "TR_Gasventing+6+Journal_of_Energy_Storage:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Mechanism chain linking overcharge cycling, SEI thickening, gas composition shift, and LEL change; non-monotonic temperature dependence of LEL; CO's counterintuitive role in mixture LEL",
+          "primary_boundary": "CO enrichment raises mixture LEL due to CO's high individual LEL; LEL minimum occurs at 40\u00b0C and reverses above 50\u00b0C; lower anode reaction enthalpy implies more available electrolyte for vaporization",
+          "intended_error_modes": [
+            "mechanism_confusion on CO direction",
+            "unjustified_monotonicity for temperature trend",
+            "oversimplified volatility mechanism ignoring SEI pathway",
+            "overgeneralization of combined factor interaction"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming CO increase lowers mixture LEL",
+            "Claiming LEL decreases monotonically with temperature above 40\u00b0C",
+            "Attributing LEL change solely to ambient volatility without SEI mechanism"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "An NCM811 prismatic cell (62 Ah) undergoes thermal runaway. Measurements show that approximately 68% of the vented gas is flammable, with CO2 and CO as the two largest components by mole fraction, followed by H2, C2H4, and CH4. A sensor array is placed at multiple distances above the safety valve. At the safety valve outlet itself, the sensor reads a combustion risk index of zero. At a location 1 m above the safety valve, the highest combustion risk and explosive power are recorded. Engineers debate the cause of this spatial distribution of risk and propose design mitigations. Which of the following statements about the risk distribution and its implications are admissible?",
+          "options": [
+            "A. The zero combustion risk index at the safety valve outlet is consistent with flammable gas concentration exceeding the upper explosive limit at that location, not with an absence of flammable gas.",
+            "B. The spatial shift of peak risk to 1 m above the valve is caused by differential diffusion of gas concentrations creating a zone where flammable gas concentration falls within the explosive range.",
+            "C. Because CO2 is the largest single component by mole fraction, the vent gas mixture at the valve outlet is primarily non-flammable and the risk index of zero reflects dilution below the lower explosive limit.",
+            "D. The highest explosive risk occurring at a distance from the valve rather than at the valve outlet implies that ignition suppression measures applied only at the valve face will not fully address the peak risk zone.",
+            "E. Reducing jet velocity at the safety valve would decrease the risk of explosion at the valve opening, because lower velocity allows faster dilution of the flammable gas below the explosive range.",
+            "F. The observation that fireballs appeared near 1 m above the valve at specific times during the jet event is consistent with the highest risk occurring during the initial and final stages of the jet when velocity is lower.",
+            "G. The risk index of zero at the valve outlet can be used to confirm that the vent gas composition at that location is below the lower explosive limit, making it safe for personnel to approach the valve during venting."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "D",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The evidence states that at the safety valve, flammable gas concentration exceeds the UEL, resulting in a risk index of zero. A risk index of zero at the valve is due to concentration above UEL (too rich to ignite), not absence of flammable gas. This is counterintuitive but directly supported.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+79+Applied_Energy:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "The evidence explicitly states that differential diffusion of gas concentrations on either side of the safety valve creates an ignition risk zone, and that farther from the valve the concentration falls within the explosive range. This directly supports the mechanism described.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+79+Applied_Energy:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "The risk index of zero at the valve outlet is due to concentration exceeding the UEL, not dilution below the LEL. CO2 being the largest component does not imply the mixture is below LEL; the mixture is above UEL because of the high total flammable gas concentration (68.1% flammable). This option misidentifies the mechanism.",
+              "error_type": "mechanism_confusion",
+              "evidence_refs": [
+                "TR_Gasventing+79+Applied_Energy:C002",
+                "TR_Gasventing+79+Applied_Energy:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Since the peak risk zone is 1 m above the valve rather than at the valve face, interventions targeting only the valve outlet would not address the highest-risk location. This is a direct safety engineering implication of the spatial risk distribution described in the evidence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+79+Applied_Energy:C003",
+                "TR_Gasventing+79+Applied_Energy:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The evidence states that as jet velocity decreases, the risk of explosion and combustion at the safety valve opening increases, not decreases. Lower velocity does not accelerate dilution below LEL; instead it increases the time the concentration remains in the explosive range near the valve. This option reverses the correct causal direction.",
+              "error_type": "causal_overclaim_reversed",
+              "evidence_refs": [
+                "TR_Gasventing+79+Applied_Energy:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "The evidence states that the highest risk of jet-induced explosion occurs during the initial and final stages of the jet, which correspond to lower jet velocities. The observation of fireballs at specific times is consistent with this timing pattern, supporting the link between lower jet velocity phases and peak risk.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+79+Applied_Energy:C005",
+                "TR_Gasventing+79+Applied_Energy:C003"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Incorrect",
+              "justification": "A risk index of zero at the valve outlet reflects concentration above UEL, meaning the gas is too rich to ignite at that point but is not safe\u2014it is a highly concentrated flammable mixture. Concluding it is safe for personnel to approach is an unsafe and unsupported extrapolation that misinterprets the risk index meaning.",
+              "error_type": "scope_expansion_safety_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+79+Applied_Energy:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Spatial distribution of combustion risk relative to safety valve; UEL-driven zero risk index at valve outlet; jet velocity effect on risk; safety implication of peak risk location",
+          "primary_boundary": "Risk index of zero at valve = above UEL, not below LEL; lower jet velocity increases risk at valve opening; peak risk zone is distant from valve, not at valve face",
+          "intended_error_modes": [
+            "confusing above-UEL with below-LEL for zero risk index",
+            "reversing jet velocity effect on risk",
+            "unsafe personnel safety inference from risk index of zero",
+            "misattributing dilution mechanism"
+          ],
+          "disallowed_extrapolations": [
+            "Concluding zero risk index means safe concentration",
+            "Concluding lower jet velocity reduces explosion risk",
+            "Concluding valve-face intervention addresses peak risk zone"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "Two NCM cells are prepared at different states of charge: Cell A at 120% SOC and Cell B at 30% SOC. Both are subjected to identical thermal abuse. During the most severe stage of thermal runaway, Cell A exhibits a maximum temperature rise rate of order 10^4 K/min and reaches approximately 700 K, while Cell B exhibits a maximum temperature rise rate of order 10^2 K/min and reaches approximately 600 K. After the event, total mass loss for Cell A is approximately twice that of Cell B. An engineer proposes several conclusions about the SOC-dependent behavior. Which of the following are admissible based on the described conditions?",
+          "options": [
+            "A. The two-order-of-magnitude difference in maximum temperature rise rate between Cell A and Cell B indicates that the severity of the most energetic thermal runaway stage scales strongly and non-linearly with SOC over this range.",
+            "B. Because Cell B reaches approximately 600 K despite having a much lower temperature rise rate, the total thermal energy released by Cell B is comparable to that of Cell A, differing mainly in release rate rather than total magnitude.",
+            "C. The approximately twofold difference in total mass loss between Cell A and Cell B is consistent with more complete decomposition of reactive materials at higher SOC, not merely a difference in reaction rate.",
+            "D. The onset temperature of thermal runaway for Cell B is higher than for Cell A, which combined with Cell B's lower T_max, implies that the thermal runaway window (from onset to peak) is narrower for Cell B than for Cell A.",
+            "E. The lower maximum temperature rise rate of Cell B means that a thermal management system designed to handle Cell A's thermal runaway would be over-designed for Cell B and could safely be down-rated for low-SOC operation.",
+            "F. The data from Cell A and Cell B together are sufficient to conclude that thermal runaway severity varies monotonically with SOC across the full range from 0% to 120%, with no threshold or non-monotonic behavior.",
+            "G. The higher T_onset for Cell B relative to Cell A means Cell B provides more warning time before the most severe stage of thermal runaway, which is a safety-relevant difference even though Cell B's T_max is also lower."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "D",
+            "G"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The temperature rise rate differs by two orders of magnitude (10^4 vs 10^2 K/min) between 120% and 30% SOC. This is a strong, non-linear scaling of severity with SOC over this range, directly supported by the quantitative evidence. The conclusion is admissible and the magnitude is striking but evidence-grounded.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+7+Journal_of_Energy_Storage:C003",
+                "TR_Gasventing+7+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Total mass loss for Cell A is approximately twice that of Cell B, indicating more complete reactive material decomposition at higher SOC. This means the total energy released is not comparable between the two cells; Cell A releases substantially more total energy. The option incorrectly separates rate from total magnitude when the evidence shows both differ.",
+              "error_type": "mechanism_confusion",
+              "evidence_refs": [
+                "TR_Gasventing+7+Journal_of_Energy_Storage:C005",
+                "TR_Gasventing+7+Journal_of_Energy_Storage:C002"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "The evidence explicitly states that the approximately twofold increase in mass loss from 50% to 120% SOC indicates more complete reactive material decomposition at higher SOC. This is a compositional/extent-of-reaction difference, not merely a rate difference, making this conclusion admissible.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+7+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "T_onset increases as SOC decreases (Cell B has higher T_onset than Cell A), and T_max is lower for Cell B. The temperature window from onset to peak is therefore bounded above by a lower T_max and starts from a higher T_onset, making the window narrower for Cell B. This is a valid multi-step inference from the two monotonic trends.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+7+Journal_of_Energy_Storage:C001",
+                "TR_Gasventing+7+Journal_of_Energy_Storage:C002"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "While Cell B's thermal runaway is less severe, concluding that a thermal management system can be safely down-rated for low-SOC operation is a system-level safety recommendation that goes beyond what the cell-level evidence supports. SOC can change during operation, and a system designed only for low-SOC conditions would be inadequate if SOC increases. This is a scope expansion distractor that appears conservative but is actually unsafe.",
+              "error_type": "scope_expansion_system_from_component",
+              "evidence_refs": [
+                "TR_Gasventing+7+Journal_of_Energy_Storage:C003",
+                "TR_Gasventing+7+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The evidence covers SOC from 30% to 120% and shows monotonic trends within that range, but does not provide data for 0\u201330% SOC or characterize whether threshold or non-monotonic behavior exists outside the measured range. Concluding monotonicity across the full 0\u2013120% range is an unsupported extrapolation beyond the evidence boundary.",
+              "error_type": "overgeneralization_beyond_evidence_range",
+              "evidence_refs": [
+                "TR_Gasventing+7+Journal_of_Energy_Storage:C001",
+                "TR_Gasventing+7+Journal_of_Energy_Storage:C002"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Correct",
+              "justification": "Higher T_onset for Cell B means the cell must be heated to a higher temperature before the severe stage begins, providing more time or thermal margin for detection and intervention. This is a safety-relevant difference independent of T_max, and is a valid engineering implication of the T_onset trend.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+7+Journal_of_Energy_Storage:C001"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "SOC-dependent thermal runaway severity: T_onset, T_max, dT/dt, mass loss; safety implications of onset temperature difference; boundary of evidence for monotonicity claim",
+          "primary_boundary": "Evidence covers 30\u2013120% SOC only; total mass loss differences indicate extent not just rate; system-level design recommendations require more than cell-level severity data",
+          "intended_error_modes": [
+            "conflating rate difference with total energy equivalence",
+            "extrapolating monotonicity beyond evidence range",
+            "unsafe system design recommendation from cell-level data",
+            "missing the T_onset window narrowing inference"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming monotonicity for full 0\u2013120% SOC range",
+            "Concluding thermal management can be down-rated at low SOC",
+            "Claiming Cell B total energy release is comparable to Cell A"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A lithium-ion battery with an NCM cathode is cycled at 40\u00b0C ambient temperature and overcharged to 4.4 V cutoff. During a subsequent thermal runaway event, the vent gas composition is analyzed. An engineer notes that the CO2 fraction in the vent gas is lower than expected for a normally charged cell, while the CO fraction is higher. The engineer initially concludes that the higher CO fraction is the primary reason the gas mixture's Lower Explosion Limit (LEL) has decreased compared to a normally charged cell at 30\u00b0C ambient. Identify the specific flaw in this reasoning, explain the correct mechanism linking overcharge cycling to LEL decrease, and identify which gas species change is actually responsible for the LEL reduction. Your answer should address: (1) why increased CO fraction does not lower the mixture LEL, (2) the mechanistic pathway from overcharge cycling to the gas composition change that does lower the LEL, and (3) why the 40\u00b0C ambient condition amplifies this effect compared to 30\u00b0C."
+        },
+        "ground_truth": {
+          "gold_answer": "(1) CO has an LEL of 12%, which is substantially higher than the LEL of other combustible hydrocarbons present in thermal runaway gas (1.5\u20135%). Adding more CO to a mixture of lower-LEL combustible gases raises the mixture LEL rather than lowering it. Therefore, CO enrichment cannot be the cause of the observed LEL decrease. (2) The correct mechanistic pathway is: overcharge cycling causes thickening of the SEI membrane on the anode. During thermal runaway, the thicker SEI causes incomplete oxidation reactions, which decreases CO2 content in the vent gas and increases CO content. Separately, because less electrolyte reacts with the anode material (as evidenced by decreased exothermic enthalpy at higher cutoff voltages), more electrolyte solvent (specifically DMC) remains available to vaporize into the vent gas. The increase in vaporized DMC content\u2014a low-LEL flammable species\u2014is the primary driver of the LEL decrease. Simultaneously, the decrease in CO2 content removes a non-flammable diluent that would otherwise raise the mixture LEL. (3) At 40\u00b0C ambient compared to 30\u00b0C, the proportion of vaporized DMC in the vent gas is higher (approximately 4% higher at normal charge, and 20% higher under 4.4 V overcharge). The elevated ambient temperature increases DMC volatilization into the gas phase during thermal runaway, amplifying the DMC-driven LEL reduction. This effect is specific to the 40\u00b0C regime; above 50\u00b0C, increased cathode material activity promotes earlier consumption of DMC, reversing the trend and causing LEL to increase again.",
+          "must_include": [
+            "CO LEL is 12%, higher than other combustible hydrocarbons (1.5\u20135%), so CO increase raises not lowers mixture LEL",
+            "SEI thickening from overcharge cycling causes incomplete reactions reducing CO2 and increasing CO",
+            "Decreased anode reaction enthalpy at higher cutoff voltage implies more unreacted electrolyte available to vaporize",
+            "Increased vaporized DMC content is the primary cause of LEL decrease",
+            "Decreased CO2 content removes non-flammable diluent, contributing to LEL decrease",
+            "40\u00b0C ambient increases DMC vaporization compared to 30\u00b0C, amplifying the effect",
+            "Above 50\u00b0C the trend reverses due to increased cathode material activity consuming DMC earlier"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming LEL decreases monotonically with ambient temperature above 40\u00b0C",
+            "Claiming CO increase is responsible for LEL decrease",
+            "Claiming the LEL effect is the same at 50\u00b0C or 60\u00b0C as at 40\u00b0C",
+            "Attributing LEL change solely to CO2 decrease without identifying DMC increase as primary driver"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-step mechanism linking overcharge cycling \u2192 SEI thickening \u2192 incomplete reactions \u2192 CO2 decrease + DMC increase \u2192 LEL decrease; CO's counterintuitive role in mixture LEL; non-monotonic temperature dependence",
+          "primary_boundary": "CO enrichment raises mixture LEL due to CO's high individual LEL; LEL minimum at 40\u00b0C with reversal above 50\u00b0C; DMC increase is primary LEL driver, not CO increase",
+          "intended_error_modes": [
+            "Attributing LEL decrease to CO increase (reversed direction)",
+            "Ignoring DMC vaporization as the primary mechanism",
+            "Assuming monotonic temperature dependence above 40\u00b0C",
+            "Conflating CO2 decrease as sole cause without identifying DMC increase"
+          ]
+        }
+      }
+    ]
+  }
+}

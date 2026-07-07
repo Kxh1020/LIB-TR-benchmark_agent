@@ -1,0 +1,325 @@
+{
+  "TR_trigger+63+Process_Safety_and_Environmental_Protection__TR_trigger+75+Journal_of_Power_Sources__TR_trigger+84+Energy_Storage_Materials": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "An NCM811 pouch cell is overcharged at 0.5 C and reaches a surface peak temperature of approximately 87\u00b0C without entering thermal runaway. A second identical cell is overcharged at 0.8 C and enters thermal runaway at a surface trigger temperature of approximately 88\u00b0C. An engineer observes that the two trigger temperatures differ by less than 2\u00b0C and concludes that surface temperature alone is a reliable threshold indicator for distinguishing safe from unsafe overcharge conditions in this chemistry. A second engineer argues that the overcharge rate, not the surface temperature at trigger, is the controlling variable for whether thermal runaway occurs. Which of the following statements are admissible given these observations?",
+          "options": [
+            "A. The near-identical surface temperatures at the onset boundary (safe vs. unsafe) indicate that surface temperature measurement cannot reliably discriminate between overcharge rates that do and do not produce thermal runaway in this system.",
+            "B. Because exothermic side reactions dominate heat accumulation during overcharge-induced thermal runaway across the rates that produce it, the rate-dependent difference in outcome is more likely governed by internal heat generation kinetics than by the absolute surface temperature reached.",
+            "C. The 0.5 C result proves that any overcharge condition producing a surface temperature below 94\u00b0C is inherently safe for NCM811 cells, regardless of overcharge rate.",
+            "D. The similarity in surface trigger temperatures across the boundary implies that a single fixed surface temperature threshold could be used as a universal cutoff to prevent thermal runaway under all overcharge rates tested.",
+            "E. The overcharge rate determines whether the internal heat generation rate is sufficient to sustain the exothermic cascade, while surface temperature at the moment of trigger reflects the thermal state at that instant rather than the process leading to it.",
+            "F. Since thermal runaway did not occur at 0.5 C, it can be inferred that the exothermic side reaction contribution to heat accumulation is negligible at sub-threshold overcharge rates."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The surface temperatures at the safe/unsafe boundary (86.61\u00b0C at 0.5 C vs. 88.26\u00b0C at 0.8 C) differ by less than 2\u00b0C, making surface temperature an unreliable discriminator between conditions that do and do not produce thermal runaway. This is directly supported by the evidence showing overlapping temperature ranges across the threshold.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+84+Energy_Storage_Materials:C001",
+                "TR_trigger+84+Energy_Storage_Materials:C002"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Evidence shows exothermic side reactions account for 63\u201369% of total heat accumulation during overcharge-induced thermal runaway. This supports the inference that internal reaction kinetics, which are rate-dependent, govern whether thermal runaway occurs rather than the absolute surface temperature value at any moment.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+84+Energy_Storage_Materials:C003",
+                "TR_trigger+84+Energy_Storage_Materials:C002"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "This is an overgeneralization. The 0.5 C result only establishes that thermal runaway did not occur at that specific rate with that surface temperature. It cannot be extended to all overcharge conditions or rates, since the rate itself is the controlling variable, not the surface temperature threshold alone.",
+              "error_type": "overgeneralization across conditions",
+              "evidence_refs": [
+                "TR_trigger+84+Energy_Storage_Materials:C001",
+                "TR_trigger+84+Energy_Storage_Materials:C002"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "This is a conservative-appearing but incorrect conclusion. The near-identical surface temperatures across the safe/unsafe boundary actually demonstrate that a fixed surface temperature cutoff would fail to discriminate between safe and unsafe conditions, not that it could serve as a universal threshold.",
+              "error_type": "measurement scope overclaim; conservative but wrong",
+              "evidence_refs": [
+                "TR_trigger+84+Energy_Storage_Materials:C001",
+                "TR_trigger+84+Energy_Storage_Materials:C002"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "This correctly distinguishes the process variable (overcharge rate driving internal reaction kinetics) from the state variable (surface temperature at trigger). The evidence shows that thermal runaway occurs or not depending on rate, while trigger temperatures are similar across the boundary, consistent with surface temperature being a consequence rather than a cause.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+84+Energy_Storage_Materials:C001",
+                "TR_trigger+84+Energy_Storage_Materials:C002",
+                "TR_trigger+84+Energy_Storage_Materials:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The evidence does not provide data on side reaction heat contributions below the thermal runaway threshold. Inferring negligible side reactions at 0.5 C from the absence of thermal runaway is an unsupported extrapolation; the absence of runaway may reflect insufficient rate to sustain the cascade, not absence of side reactions.",
+              "error_type": "unsupported extrapolation from absence of outcome",
+              "evidence_refs": [
+                "TR_trigger+84+Energy_Storage_Materials:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of surface temperature as a thermal runaway threshold indicator versus overcharge rate as the controlling variable in NCM811 overcharge scenarios",
+          "primary_boundary": "Surface temperature at the safe/unsafe overcharge boundary is nearly identical, making it an unreliable discriminator; rate-dependent internal kinetics govern the outcome",
+          "intended_error_modes": [
+            "treating surface temperature as a universal threshold when it fails at the boundary",
+            "inferring absence of side reactions from absence of thermal runaway",
+            "using near-identical temperatures as justification for a fixed cutoff rather than as evidence of its inadequacy"
+          ],
+          "disallowed_extrapolations": [
+            "generalizing the 0.5 C safe result to all sub-94\u00b0C conditions regardless of rate",
+            "claiming side reaction contribution is negligible below the thermal runaway threshold"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "In separate experiments, NMC811 18650 cylindrical cells at 100% SoC required a minimum of 346.5 J of laser energy to induce thermal runaway, while cells at 50% SoC required 495 J. In both cases, a sudden voltage drop was observed to precede an abrupt increase in chamber pressure, and all cases in which the vent progression reached the particle-laden stage ended in thermal runaway. Separately, for a prismatic cell format under external heating, the thermal runaway trigger time for a 100% SOC cell occurred nearly 1200 s earlier than for a 50% SOC cell, and thermal runaway did not occur at 0% SOC even as the heating front approached 400\u00b0C. An engineer is asked to evaluate whether SOC-dependent thermal runaway susceptibility observed in cylindrical cells under laser irradiation can be directly applied to predict thermal runaway onset timing in prismatic cells under external heating. Which of the following conclusions are admissible?",
+          "options": [
+            "A. The directional relationship\u2014higher SOC reduces the energy or time required to trigger thermal runaway\u2014is consistent across both experimental formats, supporting the conclusion that SOC is a controlling variable for thermal runaway susceptibility independent of trigger modality.",
+            "B. The specific energy thresholds (346.5 J and 495 J) measured in cylindrical cells under laser irradiation can be directly used to set heating power limits for prismatic cells under external thermal abuse.",
+            "C. The observation that voltage drop precedes pressure rise in laser-irradiated cells establishes a universal causal sequence applicable to all thermal runaway trigger mechanisms, including external heating.",
+            "D. The fact that thermal runaway did not occur at 0% SOC under external heating, even near 400\u00b0C, is consistent with the laser irradiation finding that higher stored energy lowers the trigger threshold, since at 0% SOC the electrochemical energy available to sustain the cascade is minimal.",
+            "E. The vent stage transition observed in cylindrical cells under laser irradiation serves as a diagnostic marker that is equally applicable to prismatic cells under external heating for predicting thermal runaway onset.",
+            "F. Quantitative prediction of thermal runaway onset timing in prismatic cells under external heating cannot be made from laser irradiation thresholds alone, because the trigger mechanism, cell geometry, and heat transfer boundary conditions differ between the two experimental configurations."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "D",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Both datasets show that higher SOC reduces the threshold for thermal runaway: lower laser energy needed at 100% vs. 50% SoC in cylindrical cells, and earlier trigger time at 100% vs. 50% SOC in prismatic cells. The directional consistency supports SOC as a controlling variable across formats, which is an admissible minimal engineering implication.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+75+Journal_of_Power_Sources:C001",
+                "TR_trigger+63+Process_Safety_and_Environmental_Protection:C002",
+                "TR_trigger+63+Process_Safety_and_Environmental_Protection:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The laser energy thresholds are specific to the cylindrical cell geometry, laser irradiation modality, and the localized heating mechanism. Directly applying these values to prismatic cells under distributed external heating involves a geometry, scale, and mechanism transfer not supported by the evidence.",
+              "error_type": "scale and mechanism transfer beyond evidence scope",
+              "evidence_refs": [
+                "TR_trigger+75+Journal_of_Power_Sources:C001"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "The voltage-drop-before-pressure-rise sequence was observed specifically in laser irradiation tests. Claiming it is a universal causal sequence for all trigger mechanisms is an overgeneralization; external heating may produce different internal event ordering.",
+              "error_type": "overgeneralization of mechanism sequence across trigger modalities",
+              "evidence_refs": [
+                "TR_trigger+75+Journal_of_Power_Sources:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "The 0% SOC result (no thermal runaway even near 400\u00b0C under external heating) is mechanistically consistent with the laser irradiation finding that higher stored electrochemical energy lowers the trigger threshold. At 0% SOC, the energy available to sustain exothermic cascades is minimal, which is consistent across both experimental frameworks.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+63+Process_Safety_and_Environmental_Protection:C003",
+                "TR_trigger+75+Journal_of_Power_Sources:C001"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The vent stage transition (turbulent to particle vent) was identified as a critical threshold in cylindrical cells under laser irradiation. Applying this as an equally valid diagnostic marker for prismatic cells under external heating is an unsupported format and mechanism transfer; prismatic cells have different venting geometry and thermal profiles.",
+              "error_type": "scope expansion distractor; format and mechanism transfer",
+              "evidence_refs": [
+                "TR_trigger+75+Journal_of_Power_Sources:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Quantitative prediction requires that the trigger mechanism, geometry, and boundary conditions match. Laser irradiation creates a localized, high-intensity, surface-initiated heat source, while external heating creates a distributed thermal load. These differences in mechanism and geometry preclude direct quantitative transfer, which is an admissible engineering boundary judgment.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+75+Journal_of_Power_Sources:C001",
+                "TR_trigger+63+Process_Safety_and_Environmental_Protection:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of cross-format, cross-modality transfer of SOC-dependent thermal runaway thresholds from cylindrical laser-irradiated cells to prismatic externally heated cells",
+          "primary_boundary": "Directional SOC effects are transferable; quantitative thresholds and specific diagnostic sequences are not transferable across trigger modality and cell geometry",
+          "intended_error_modes": [
+            "direct numerical transfer of laser energy thresholds to external heating scenarios",
+            "universalizing the voltage-drop-before-pressure-rise sequence across all trigger mechanisms",
+            "applying cylindrical cell vent stage diagnostics to prismatic cell formats"
+          ],
+          "disallowed_extrapolations": [
+            "using laser irradiation energy thresholds to set heating power limits for prismatic cells",
+            "treating vent stage transitions as geometry-independent diagnostic markers"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "An NCM811 pouch cell at 140% SOC (deeply overcharged) has a cathode that begins thermal decomposition at approximately 200\u00b0C and starts releasing oxygen at approximately 203\u00b0C. The same cell enters thermal runaway at a trigger temperature of approximately 187\u00b0C when heated externally, with a peak temperature of approximately 745\u00b0C. In contrast, a 100% SOC cell has a cathode decomposition onset near 212\u00b0C, oxygen release onset near 215\u00b0C, and a thermal runaway trigger temperature of approximately 202\u00b0C with a peak near 724\u00b0C. A thermal safety engineer notes that the thermal runaway trigger temperature (187\u00b0C) for the 140% SOC cell is lower than the cathode decomposition onset temperature (200\u00b0C) measured for that cell's cathode material. The engineer is asked to assess what this relationship implies about the mechanism initiating thermal runaway at 140% SOC. Which of the following statements are admissible?",
+          "options": [
+            "A. The fact that thermal runaway triggers below the measured cathode decomposition onset temperature at 140% SOC implies that cathode decomposition is not the initiating event for thermal runaway in this condition; another exothermic process reaches a self-sustaining threshold at a lower temperature.",
+            "B. The lower trigger temperature at 140% SOC compared to 100% SOC is consistent with a reduction in the thermal stability of the cell system as a whole at higher charge states, even if the cathode decomposition onset alone does not account for the trigger temperature.",
+            "C. Because the cathode decomposition onset at 140% SOC (200\u00b0C) exceeds the thermal runaway trigger temperature (187\u00b0C), cathode decomposition can be identified as the rate-limiting step in the thermal runaway initiation sequence at this charge state.",
+            "D. The higher peak temperature at 140% SOC compared to 100% SOC is consistent with greater total energy release during the runaway event, which is admissible given the higher stored electrochemical energy at deeper charge states.",
+            "E. The oxygen release onset temperature at 140% SOC (203\u00b0C) being above the thermal runaway trigger temperature (187\u00b0C) means that oxygen-mediated combustion reactions within the cell cannot contribute to the propagation phase of thermal runaway at this charge state.",
+            "F. The convergence of decomposition onset, oxygen release onset, and trigger temperature within a narrow range at both SOC levels suggests that the thermal runaway process is governed by a tightly coupled sequence of cathode-side reactions, but the trigger at 140% SOC occurring below cathode decomposition onset indicates that anode-side or electrolyte-side reactions may initiate the cascade before cathode involvement."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "D"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The thermal runaway trigger temperature (187\u00b0C) is below the cathode decomposition onset (200\u00b0C) at 140% SOC. This means the cell enters self-sustaining thermal runaway before the cathode begins decomposing, which logically excludes cathode decomposition as the initiating event and implies another lower-temperature exothermic process (e.g., anode-electrolyte reactions) initiates the cascade.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+84+Energy_Storage_Materials:C004",
+                "TR_trigger+84+Energy_Storage_Materials:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "The evidence shows that at 140% SOC, both the trigger temperature is lower and the peak temperature is higher than at 100% SOC. This is consistent with reduced overall thermal stability at higher charge states, an admissible directional conclusion supported by the data.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+84+Energy_Storage_Materials:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "This is the counterintuitive trap: the fact that cathode decomposition onset (200\u00b0C) exceeds the trigger temperature (187\u00b0C) means cathode decomposition cannot be the rate-limiting initiating step\u2014it occurs after thermal runaway has already been triggered. This option inverts the causal logic.",
+              "error_type": "causal inversion; mechanism misidentification",
+              "evidence_refs": [
+                "TR_trigger+84+Energy_Storage_Materials:C004",
+                "TR_trigger+84+Energy_Storage_Materials:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "The peak temperature at 140% SOC (745\u00b0C) exceeds that at 100% SOC (724\u00b0C), consistent with greater total energy release at higher charge states. This is a minimal engineering implication supported by the evidence showing higher stored electrochemical energy at deeper charge states correlates with higher peak temperatures.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+84+Energy_Storage_Materials:C005"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The oxygen release onset being above the trigger temperature does not preclude oxygen-mediated reactions from contributing to propagation. Once thermal runaway is triggered and cell temperatures rise rapidly above 200\u00b0C, oxygen release and subsequent combustion reactions can occur during the propagation phase even if they were not the initiating event. This option confuses initiation with propagation.",
+              "error_type": "confusing trigger conditions with propagation conditions",
+              "evidence_refs": [
+                "TR_trigger+84+Energy_Storage_Materials:C004",
+                "TR_trigger+84+Energy_Storage_Materials:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "While the mechanistic inference about anode-side or electrolyte-side initiation is plausible engineering reasoning, the second clause\u2014specifically attributing initiation to anode-side or electrolyte-side reactions\u2014goes beyond what the evidence supports. The evidence establishes that cathode decomposition is not the initiator at 140% SOC but does not identify which alternative mechanism is responsible.",
+              "error_type": "unsupported specific mechanism attribution beyond evidence scope",
+              "evidence_refs": [
+                "TR_trigger+84+Energy_Storage_Materials:C004",
+                "TR_trigger+84+Energy_Storage_Materials:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Mechanism admissibility for thermal runaway initiation at 140% SOC when trigger temperature falls below cathode decomposition onset temperature",
+          "primary_boundary": "Trigger temperature below cathode decomposition onset excludes cathode decomposition as initiating event but does not identify the alternative initiator; oxygen release above trigger temperature does not preclude its role in propagation",
+          "intended_error_modes": [
+            "inverting causal logic to identify cathode decomposition as rate-limiting because its onset exceeds trigger temperature",
+            "conflating initiation temperature with propagation phase conditions",
+            "over-specifying the alternative initiation mechanism beyond what evidence supports"
+          ],
+          "disallowed_extrapolations": [
+            "identifying anode-side or electrolyte-side reactions as the specific initiator without evidence",
+            "concluding oxygen-mediated reactions cannot contribute to propagation based on onset temperature alone"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "In a thermal abuse experiment on a prismatic lithium-ion battery, stress monitoring detects a transition from exponential to linear stress growth approximately 2000 s before thermal runaway occurs in a 50% SOC cell, while voltage drop and temperature surge methods provide warning only within 20 s of the event. Separately, overcharge experiments on NCM811 pouch cells show that thermal runaway is triggered at surface temperatures between 88\u00b0C and 94\u00b0C across overcharge rates from 0.8 C to 3 C, while cells overcharged at 0.5 C reach 87\u00b0C without triggering thermal runaway. Explain why combining stress-based early warning with surface temperature monitoring would not eliminate the risk of missed thermal runaway prediction in overcharge scenarios, and identify the specific limitation of each monitoring approach that creates this residual risk."
+        },
+        "ground_truth": {
+          "gold_answer": "Stress-based early warning detects the transition from exponential to linear stress growth, which provides a lead time of approximately 2000 s before thermal runaway under external heating conditions. However, this method was characterized under external thermal abuse (heating front-driven scenarios), not overcharge. In overcharge scenarios, the internal heat generation mechanism is dominated by exothermic side reactions and ohmic heating from current flow, which may not produce the same mechanical stress evolution pattern. Therefore, whether the exponential-to-linear stress transition occurs as a reliable precursor under overcharge conditions is not established by the evidence, creating a residual risk that the stress signal may not appear or may appear differently under overcharge-driven thermal runaway. Surface temperature monitoring fails in overcharge scenarios because the surface trigger temperatures for thermal runaway (88\u201394\u00b0C across 0.8 C to 3 C) overlap with the peak temperature reached without thermal runaway at 0.5 C (87\u00b0C). This near-identical temperature range means a fixed surface temperature threshold cannot reliably discriminate between overcharge rates that do and do not produce thermal runaway. The controlling variable is the overcharge rate (which determines internal heat generation kinetics), not the surface temperature value at any instant. Therefore, surface temperature alone cannot provide reliable warning in overcharge scenarios because the thermal state at the surface does not distinguish safe from unsafe internal conditions when the rates differ by less than one order of magnitude near the threshold.",
+          "must_include": [
+            "stress-based method was characterized under external heating, not overcharge, so its applicability to overcharge-driven thermal runaway is not established",
+            "surface temperatures at the safe/unsafe overcharge boundary overlap (87\u00b0C safe vs. 88\u00b0C unsafe), making surface temperature an unreliable discriminator",
+            "overcharge rate, not surface temperature, is the controlling variable for whether thermal runaway occurs",
+            "each method has a domain-specific limitation that the other method does not compensate for in overcharge scenarios"
+          ],
+          "disallowed_extrapolations": [
+            "claiming stress monitoring is universally unreliable for all thermal runaway scenarios",
+            "claiming surface temperature monitoring is useful if a lower threshold is selected",
+            "inferring that combining both methods guarantees detection under all conditions"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Domain-specific limitations of stress-based early warning and surface temperature monitoring when applied to overcharge-induced thermal runaway scenarios",
+          "primary_boundary": "Stress monitoring evidence is from external heating scenarios; surface temperature evidence shows overlapping safe/unsafe temperatures at the overcharge rate boundary\u2014neither method transfers reliably to overcharge without qualification",
+          "intended_error_modes": [
+            "assuming stress monitoring transfers directly from external heating to overcharge scenarios",
+            "assuming a lower surface temperature threshold would resolve the discrimination problem",
+            "treating the combination of two limited methods as sufficient to eliminate residual risk"
+          ]
+        }
+      }
+    ]
+  }
+}

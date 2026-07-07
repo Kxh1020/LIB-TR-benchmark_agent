@@ -1,0 +1,311 @@
+{
+  "TR_Gasventing+117+Journal_of_Power_Sources__TR_Gasventing+118+Journal_of_Power_Sources__TR_Gasventing+119+Journal_of_Power_Sources": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "B",
+        "C",
+        "E"
+      ],
+      "gold_answer": [
+        "B",
+        "C",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "The CO2 inerting proposal is not admissible based on the observations given: the vent gas is a mixture that still contains flammable species, and CO2 presence alone does not establish that the mixture becomes non-flammable under all venting conditions or concentrations.\n\nThe two explosive trials indicate that explosion risk is conditional and tied to reaching sufficiently high temperatures (about 300–350°C) before/during venting, implying that most overcharge events vent and run away without explosion unless a high-temperature ignition condition is achieved.",
+      "gold_answer": "The CO2 inerting proposal is not admissible. Evidence shows that the quantity of CO2 present in LFP overcharge vent gases is insufficient to prevent flammability, because flammable gases such as H2 are also present and counterbalance any inerting effect of CO2. Relying on CO2 alone as a passive safety measure is therefore unsupported. Regarding the two explosive trials: the evidence associates the explosions with cell surface temperatures reaching 300–350°C, attributed to a strong internal short circuit, whereas the seven non-explosive trials did not reach these temperatures. This indicates that explosion risk is not a fixed consequence of overcharge-induced thermal runaway but is conditional on the severity of internal short circuit development, which drives temperatures well above those seen in the reproducible non-explosive cases. The distinction implies that explosion is a threshold-dependent outcome linked to the intensity of internal short circuit, not simply to venting or thermal runaway occurrence.",
+      "score": 0.78,
+      "reason": "Correctly rejects CO2 inerting and notes explosions are conditional and associated with 300–350°C. However, it omits the key mechanism/details that CO2 quantity is insufficient specifically because H2 (and other flammables) counterbalance any inerting, and it does not mention the strong internal short-circuit severity as the driver of the high temperatures in the explosive outliers."
+    }
+  ],
+  "TR_Gasventing+120+Journal_of_Power_Sources__TR_Gasventing+121+Journal_of_Power_Sources__TR_Gasventing+122+Journal_of_Power_Sources": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Not admissible. The key limitation is chemistry-specific, mechanism-driven vent-gas composition versus SOC, so a single SOC threshold cannot generalize across LCO and LFP. Evidence: for LCO the flammable gas fraction stays <25% until a particular SOC and then increases abruptly, while for LFP it increases gradually but already exceeds 30% by 50% SOC, implying different SOC–flammability relationships and thresholds.",
+      "gold_answer": "The proposal is not admissible as a single universal threshold. LCO cells exhibit a threshold-type transition near 40% SOC where flammable gas fraction jumps sharply, while LFP cells show a more gradual increase that already exceeds 30% by 50% SOC. These are distinct SOC-dependent behaviors: LCO's transition is abrupt and threshold-like, making a single threshold potentially valid within that chemistry but set at a chemistry-specific SOC. Applying the same threshold to LFP would either be too conservative at low SOC or miss the gradual rise before 50% SOC. Additionally, NCA cells have higher hydrogen fractions and the highest flame speeds, meaning flammability hazard is not solely captured by flammable gas volume fraction—flame speed and gas composition must also be considered. A single SOC threshold cannot account for these chemistry-specific composition differences and the distinct functional forms of the SOC-flammability relationship across chemistries.",
+      "score": 0.82,
+      "reason": "Correctly rejects a universal SOC threshold and cites the key evidence: LCO has an abrupt jump after staying <25%, while LFP rises gradually and exceeds 30% by 50% SOC, so one threshold can’t fit both functional forms. However, it omits the additional mechanism/evidence that gas composition (e.g., H2/CO2 differences and associated flame speed differences, noted via NCA) means flammability hazard is not captured by flammable volume fraction alone."
+    }
+  ],
+  "TR_Gasventing+123+Journal_of_Power_Sources__TR_Gasventing+124+UnknownJournal__TR_Gasventing+125+Fuel": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "D",
+        "F"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "D",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "D",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "The H2 sensor is justified because H2 is also generated during safety venting and its formation is tied to key decomposition reactions (electrolyte/surface reduction and other high-temperature breakdown processes), so it can be a strong, early gas signature of onset and progression of internal reactions across states of charge. A specific limitation of using only CH4 is that CH4 is not a uniquely reliable early indicator of venting severity/onset: its presence and rise can lag or vary with reaction pathway and SoC, so a CH4-only system can miss or delay detection in cases where H2 is produced prominently while CH4 is low or slower to appear.",
+      "gold_answer": "CH4 is the dominant species during safety venting at all SoC levels and its concentration increases with SoC. However, H2 is absent during safety venting across all tested SoC levels but appears during thermal runaway with concentration strongly increasing with SoC (from 0.20% at 5% SoC to 12.9% at 100% SoC). This means H2 detection provides a stage-discriminating signal: its presence specifically indicates that thermal runaway has initiated rather than that safety venting alone is occurring. A CH4-only sensor cannot distinguish between the safety venting stage and the thermal runaway stage because CH4 is present in both events. The critical limitation is that CH4 detection alone cannot alert the system to the transition from safety venting to thermal runaway, which is precisely the boundary where emergency intervention is most time-critical. Furthermore, at high SoC the detection window between venting onset and thermal runaway is compressed to approximately 142 seconds, making stage discrimination more urgent, not less.",
+      "score": 0.15,
+      "reason": "Mentions adding H2 could help and implies it may indicate onset/progression, but incorrectly claims H2 is generated during safety venting (gold: H2 absent during venting, present in thermal runaway). It also misses the key stage-discrimination argument (H2 as TR-only marker) and the compressed high-SoC detection window. The stated CH4 limitation (lag/variability) does not match the gold limitation (cannot distinguish venting vs thermal runaway because CH4 present in both)."
+    }
+  ],
+  "TR_Gasventing+126+Journal_of_Power_Sources__TR_Gasventing+127+Journal_of_Power_Sources__TR_Gasventing+128+Journal_of_Power_Sources": [
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "A lower safety valve opening temperature in NTM SIBs only indicates earlier pressure relief/venting onset, not that more toxic gas is produced or that toxicity is higher; at 100% SOC the LFP cells undergo thermal runaway and generate far larger amounts of toxic/CO-rich effluent, yielding an FED about 29× higher, while NTM SIBs do not run away and their CO stays well below the lethal threshold. The toxic hazard at high SOC is most directly differentiated by CO as the key gas species and by the FED value as the key parameter.",
+      "gold_answer": "The lower safety valve opening temperature of NTM SIBs means the internal materials begin releasing gas at a lower temperature threshold, but this does not translate to greater toxic hazard because the NTM SIBs do not undergo thermal runaway at any tested SOC. Without thermal runaway, the exothermic reactions that generate large quantities of toxic gases such as CO and H2 do not occur at the same scale as in LFP cells. The toxic hazard is determined by the concentration and composition of gases actually released, not by the valve opening temperature alone. CO is the primary toxic gas species that differentiates the two chemistries: LFP cells at 60% SOC and above produce CO concentrations exceeding the lethal threshold, while NTM SIBs remain well below that threshold at all SOCs. The FED value, which integrates the toxic gas concentrations into an asphyxiation hazard metric, is approximately 29 times higher for LFP cells at 100% SOC, directly quantifying the hazard difference. Therefore, valve opening temperature is a thermal stability indicator, not a toxic hazard indicator; the relevant differentiating parameters are CO concentration relative to the lethal threshold and the FED value.",
+      "score": 1.0,
+      "reason": "Prediction correctly explains that lower valve-opening temperature only indicates earlier venting and does not imply higher toxic hazard because NTM SIBs do not undergo thermal runaway; it identifies CO as the key differentiating gas and FED (29× higher for LFP at 100% SOC) as the key hazard parameter, noting CO exceeds lethal threshold for LFP but not for NTM SIBs."
+    }
+  ],
+  "TR_Gasventing+129+Journal_of_Power_Sources__TR_Gasventing+130+Journal_of_Power_Sources__TR_Gasventing+131+Journal_of_Power_Sources": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "D"
+      ],
+      "gold_answer": [
+        "B",
+        "D"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "B",
+        "C"
+      ],
+      "gold_answer": [
+        "B",
+        "C"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Selecting LFP involves a trade-off because the longer-duration smoke under thermal abuse implies a more prolonged release/dispersion of vented products that can increase personnel exposure time, while LFP’s chemistry is generally more thermally stable and thus tends to yield a lower composite fire/explosion risk index than NMC. Therefore, LFP addresses the fire/explosion (risk index) concern more effectively, but it addresses the toxic-gas (HF exposure) concern less effectively due to the extended smoke/venting duration.",
+      "gold_answer": "LFP addresses fire and explosion risk more effectively. Its composite risk index remains low (approximately 2.3–3.3) across all SOC levels, whereas NMC1 reaches 4.2 at 75% SOC. LFP's higher failure temperature (~250°C vs ~200°C for NMC) contributes to this thermal stability advantage. However, LFP addresses HF toxic exposure concern less effectively. LFP emits up to 4 L/kWh of HF at 100% SOC, substantially more than NMC cells which range at 0.5–1.4 L/kWh. Additionally, LFP's prolonged smoking duration exceeding 20 minutes compared to ~5 minutes for NMC extends personnel exposure duration, compounding the HF hazard. The trade-off is therefore: LFP is superior for fire/explosion risk management but inferior for toxic gas (HF) exposure management. The engineer cannot optimize both simultaneously with a single chemistry choice between these two options.",
+      "score": 0.7,
+      "reason": "Correctly identifies the inherent trade-off and matches which concern LFP improves (lower fire/explosion risk index via greater thermal stability) versus worsens (toxic gas/HF exposure, aided by longer smoking duration). However, it omits the key factual point that LFP emits substantially more HF (up to ~4 L/kWh vs NMC ~0.5–1.4 L/kWh), so the toxic-gas disadvantage is only partially supported."
+    }
+  ],
+  "TR_Gasventing+132+Journal_of_Power_Sources__TR_Gasventing+133+Journal_of_Power_Sources__TR_Gasventing+134+Fire_Safety_Journal": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "G"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E",
+        "G"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "D",
+        "E",
+        "G"
+      ],
+      "gold_answer": [
+        "A",
+        "D",
+        "E",
+        "G"
+      ],
+      "score": 1
+    }
+  ],
+  "TR_Gasventing+135+Fire_Safety_Journal__TR_Gasventing+136+Fuel__TR_Gasventing+137+Journal_of_Loss_Prevention_in_the_Process_Industries": [
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "D",
+        "F"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Not admissible. The particulate hazard does not always increase with SOC because soot formation is limited by the combustion/vent-gas burning conditions and can reverse with SOC. The observed reversal occurs in the explosion phase for NCA and LCO cells, where the soot number in vented gas is lower at 100% SOC than at 50% SOC.",
+      "gold_answer": "The conclusion is not fully admissible. During the venting phase, soot number does increase with SOC for NCA and LCO, consistent with higher SOC producing more particulate. However, during the explosion phase, the soot number peaks at 50% SOC and then decreases at higher SOC. The mechanism is that at higher SOC the explosion becomes more violent, and this violent explosion disperses or dilutes the soot such that the measured soot number is reduced relative to the 50% SOC case. Therefore the relationship between SOC and particulate hazard is phase-dependent: monotonically increasing during venting but non-monotonic during explosion, with the reversal occurring above 50% SOC in the explosion phase. The engineer's generalization ignores this phase-dependent behavior and the reversal mechanism driven by explosion violence.",
+      "score": 0.55,
+      "reason": "Correctly says the conclusion is not admissible and identifies that the reversal occurs in the explosion phase where 100% SOC has lower soot than 50% for NCA/LCO. However, it omits key details that soot increases with SOC during the venting phase and does not state the specific mechanism (more violent high-SOC explosion dispersing/diluting soot) or that soot peaks at 50% and decreases above it."
+    }
+  ],
+  "TR_Gasventing+138+Journal_of_Loss_Prevention_in_the_Process_Industries__TR_Gasventing+139+Journal_of_Loss_Prevention_in_the_Process_Industries__TR_Gasventing+140+Journal_of_Loss_Prevention_in_the_Process_Industries": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "D",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "D",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "The discrepancy is due to rapid pressure relief (venting) during the arc event: hot gases and vaporized products escape through openings so the enclosure cannot build to the closed-volume calculated peak. This occurs when the enclosure has a pressure-relief path (e.g., weak panels, doors/gaskets unseating, or dedicated vents/rupture features) that opens early under overpressure. A safety implication is that using venting as the primary structural protection can shift the hazard outward (jetting hot gases/particles/flame and pressure waves), so the design must control vent direction and exclusion zones and not assume enclosure integrity without validated vent performance.",
+      "gold_answer": "The discrepancy arises because rack enclosures are vented, allowing pressure to be relieved during the arc event rather than building to the calculated unvented peak. Venting dissipates the pressure wave, so actual pressures remain below the structural failure threshold despite the calculated value exceeding it. The critical design condition enabling this is the presence and adequacy of enclosure venting. A key safety implication is that the protective effect depends entirely on vent area and path remaining unobstructed; if venting is blocked or insufficient, actual pressures approach the calculated values, which exceed enclosure structural limits and can cause catastrophic enclosure failure. Therefore, enclosure integrity and vent path maintenance are load-bearing assumptions in the safety case, not passive features.",
+      "score": 0.85,
+      "reason": "Correctly identifies venting/pressure-relief as the mechanism and the enabling condition (a relief path that opens). It also notes a valid safety implication (hazard ejected outward and need to control venting). However, it does not explicitly state the key conditional risk emphasized in the gold answer: that protection depends on vent area/path remaining unobstructed and that blockage/insufficiency would allow pressures to reach the (structurally exceeding) calculated values."
+    }
+  ],
+  "TR_Gasventing+141+Journal_of_Loss_Prevention_in_the_Process_Industries__TR_Gasventing+142+Journal_of_Loss_Prevention_in_the_Process_Industries__TR_Gasventing+143+Journal_of_Loss_Prevention_in_the_Process_Industries": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "F"
+      ],
+      "score": 1
+    }
+  ],
+  "TR_Gasventing+144+Journal_of_Loss_Prevention_in_the_Process_Industries__TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries__TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "B",
+        "C",
+        "E",
+        "G"
+      ],
+      "gold_answer": [
+        "B",
+        "C",
+        "E",
+        "G"
+      ],
+      "score": 1
+    }
+  ],
+  "TR_Gasventing+147+Fuel__TR_Gasventing+148+Journal_of_Loss_Prevention_in_the_Process_Industries__TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries": [],
+  "TR_Gasventing+150+Journal_of_Loss_Prevention_in_the_Process_Industries__TR_Gasventing+151+Process_Safety_and_Environmental_Protection__TR_Gasventing+152+Process_Safety_and_Environmental_Protection": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "F"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "The claim is not valid that all hazard dimensions are managed proportionally by reducing SOC from 100% to 75%. Internal pressure and venting metrics change roughly proportionally (pressure drops from 1.39 to 0.53 MPa and maximum venting rate drops from 9.4 to 4.5 m/s), but the fire/combustion hazard does not: the peak heat release rate drops disproportionately (73.3 kW with secondary ignition at 100% SOC versus 4.38 kW without secondary ignition at 75% SOC) and the ignition outcome changes qualitatively (secondary ignition present vs absent). Engineering implication: SOC reduction helps reduce pressure/jet severity, but it cannot be assumed to scale all hazards; hazard management must explicitly address secondary ignition/HRR (e.g., ignition control, vent/flame management, separation/thermal barriers) rather than relying on SOC reduction alone.",
+      "gold_answer": "The claim that all hazard dimensions scale proportionally with SOC reduction from 100% to 75% is not admissible. Internal pressure decreases from 1.39 to 0.53 MPa (a ~62% reduction), and venting rate decreases from 9.4 to 4.5 m/s (~52% reduction)—these are meaningful but not proportional reductions. Most critically, peak heat release rate drops from 73.3 kW (with secondary ignition at 100% SOC) to 4.38 kW at 75% SOC—a reduction of over 93%. This disproportionate drop occurs because secondary ignition at 100% SOC involves gas-phase combustion that amplifies heat release far beyond what the electrochemical and thermal decomposition alone produce. The venting rate and pressure changes are moderate, but the heat release change is regime-crossing: secondary ignition represents a qualitatively different hazard mode, not merely a higher-SOC continuation of the same mechanism. The engineering implication is that SOC reduction to 75% may be highly effective at eliminating the catastrophic fire hazard associated with secondary ignition, but it does not proportionally reduce mechanical hazards such as internal pressure and venting momentum. A complete hazard management strategy must address both the gas combustion risk (which SOC reduction strongly mitigates) and the mechanical venting hazard (which persists at reduced but not eliminated levels at 75% SOC).",
+      "score": 0.92,
+      "reason": "Correctly rejects proportional-scaling claim, identifies disproportionate HRR drop tied to secondary ignition as a qualitative regime change, and notes pressure/venting reductions are more moderate and require separate mitigation. Minor issue: says pressure/venting change 'roughly proportionally' without clarifying they are not proportional to the HRR reduction, but overall meaning matches."
+    }
+  ],
+  "TR_Gasventing+153+Process_Safety_and_Environmental_Protection__TR_Gasventing+154+Process_Safety_and_Environmental_Protection__TR_Gasventing+155+Process_Safety_and_Environmental_Protection": [
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "B",
+        "C",
+        "E",
+        "F"
+      ],
+      "gold_answer": [
+        "B",
+        "C",
+        "E",
+        "F"
+      ],
+      "score": 1
+    }
+  ],
+  "TR_Gasventing+156+Process_Safety_and_Environmental_Protection__TR_Gasventing+157+Process_Safety_and_Environmental_Protection__TR_Gasventing+158+Fuel": []
+}

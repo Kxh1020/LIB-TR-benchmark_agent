@@ -1,0 +1,36 @@
+{
+  "mcqs": [],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A lithium-ion battery module design team is comparing two flame retardant encapsulation approaches. In Approach X, the encapsulant material melts at 72°C, which is close to the temperature at which abnormal heat generation begins in the battery. In Approach Y, the encapsulant is a polymer that begins to degrade at 120°C. The team observes that Approach Y still elevates the thermal runaway onset temperature above the no-thermal-management baseline, but by a smaller margin than Approach X. A junior engineer proposes that Approach Y should be abandoned because its release temperature is too high to intervene before thermal runaway becomes self-sustaining. A senior engineer disagrees and argues that Approach Y retains value despite its delayed release. Additionally, the team is evaluating whether the encapsulation approach affects battery performance during normal operation, specifically ionic conductivity at the separator. Explain: (1) the mechanistic basis for why Approach Y still provides measurable thermal runaway protection despite releasing flame retardant after abnormal heat generation has begun; (2) why Approach X's encapsulation strategy is expected to maintain higher ionic conductivity during normal operation compared to directly dissolving the flame retardant in the electrolyte at equivalent concentration; and (3) one condition under which Approach Y's delayed release could become a safety liability rather than a benefit, based on the physical sequence of events during thermal runaway."
+      },
+      "ground_truth": {
+        "gold_answer": "(1) Even though Approach Y releases flame retardant after the onset of abnormal heat generation, the flame retardant is delivered before the thermal runaway becomes fully uncontrolled. The evidence shows that microcapsule-based (polymer shell) passive release elevated TR onset temperature by 35°C above the no-TM baseline, demonstrating that partial intervention during the rising temperature phase can still absorb heat, slow the temperature rise, and delay the onset of uncontrolled runaway. The flame retardant acts on the thermal trajectory even if it does not prevent the initial heat generation event. (2) When flame retardant such as TEP is dissolved directly in the electrolyte, it contacts the separator and reduces ionic conductivity proportionally to its concentration (e.g., from 0.42 to 0.26 mS/cm at 5% and to 0.15 mS/cm at 10%). Encapsulation in a PCM material such as stearic acid prevents the flame retardant from contacting the separator during normal operation, so the separator retains its baseline ionic conductivity. The PCM-encapsulated design achieved 0.65 mS/cm, higher than either direct-addition concentration tested. (3) Approach Y becomes a safety liability if the delayed release allows the battery temperature to reach the range where separator thermal shrinkage and internal short circuit occur before the flame retardant is delivered. The evidence states that thermal inertia after polymer shell melting further increases battery temperature and causes separator shrinkage, leading to serious short circuit. If the polymer shell degradation onset (120°C) is reached only after the separator has already begun to shrink, the flame retardant release may arrive too late to prevent the short circuit that accelerates runaway, making the delayed release not merely less effective but potentially contributing to a more severe failure mode.",
+        "must_include": [
+          "Approach Y still elevates TR onset temperature above no-TM baseline despite delayed release (35°C increase supported by evidence)",
+          "Direct flame retardant addition to electrolyte reduces ionic conductivity proportionally to concentration; encapsulation prevents separator contact during normal operation",
+          "PCM-encapsulated design achieves higher ionic conductivity than direct addition at equivalent or higher concentration",
+          "Delayed release in Approach Y can allow temperature to reach separator shrinkage range before intervention, causing short circuit that accelerates runaway"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming Approach Y is equally effective as Approach X",
+          "Claiming encapsulation completely eliminates flame retardant contact with separator under all conditions",
+          "Claiming Approach Y prevents thermal runaway propagation to neighboring cells",
+          "Asserting that ionic conductivity improvement from encapsulation translates directly to equivalent electrochemical performance under abuse conditions"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-mechanism reasoning connecting release timing to TR protection effectiveness, encapsulation strategy to normal-operation ionic conductivity, and delayed release to a specific failure mode liability",
+        "primary_boundary": "Delayed release still provides measurable protection but creates a specific liability when temperature exceeds separator shrinkage threshold before release; encapsulation benefit is specific to normal operation separator contact prevention",
+        "intended_error_modes": [
+          "Concluding Approach Y is fully ineffective because release is delayed",
+          "Failing to connect ionic conductivity benefit to the physical separation mechanism during normal operation",
+          "Failing to identify the separator shrinkage threshold as the specific condition converting Approach Y's delay into a liability"
+        ]
+      }
+    }
+  ]
+}

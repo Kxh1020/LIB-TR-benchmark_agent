@@ -1,0 +1,308 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery energy storage enclosure experienced thermal runaway in one rack. A gaseous suppression agent discharged as designed, but post-incident analysis confirmed the enclosure leaked at a rate too high to maintain design concentration for the required hold time. When maintenance personnel subsequently opened the enclosure door, a deflagration occurred. Which conclusions about this sequence are admissible?",
+        "options": [
+          "A. The suppression agent discharge was a necessary precondition for the deflagration because it displaced oxygen, creating a stratified layer that later mixed with runaway gases.",
+          "B. The suppression agent's inability to arrest cell-level thermal runaway progression is consistent with a fundamental limitation of the suppression mechanism, not a deployment failure.",
+          "C. The deflagration could not have occurred if the enclosure had maintained design agent concentration for the full required hold time, because sustained concentration prevents flammable mixture formation.",
+          "D. Opening the enclosure door contributed to deflagration conditions by simultaneously reducing suppression agent concentration and introducing oxygen that combined with accumulated runaway gases.",
+          "E. The leakage rate exceedance identified during commissioning integrity testing was a sufficient predictor that the suppression system would fail to prevent thermal runaway propagation.",
+          "F. The deflagration risk was primarily created by the enclosure door opening rather than by the prior thermal runaway gas generation, because no flammable mixture existed before the door was opened."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "Evidence does not support stratification as the mechanism; the agent displaced oxygen but its causal role in deflagration is through concentration loss, not stratification.",
+            "error_type": "mechanism substitution",
+            "evidence_refs": [
+              "TR_Gasventing+138+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Evidence states the system was inherently unable to curtail cell thermal runaway progression, indicating a mechanism-level limitation independent of deployment performance.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+138+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Evidence shows the agent cannot arrest thermal runaway regardless of concentration; sustained concentration addresses suppression, not runaway gas generation that enables flammable mixture.",
+            "error_type": "protective mechanism overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+138+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence directly supports that door opening caused decreased agent concentration and sudden oxygen increase that combined with runaway gases to form a flammable mixture.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+138+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Leakage rate predicts failure to retain agent concentration, not failure to prevent thermal runaway propagation; these are distinct failure modes with different mechanisms.",
+            "error_type": "causal overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+138+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Runaway-generated gases accumulated prior to door opening; the door opening was a trigger for ignition conditions, not the source of flammable gas.",
+            "error_type": "causal overclaim ignoring prior accumulation",
+            "evidence_refs": [
+              "TR_Gasventing+138+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinguishing suppression system mechanism limitations from deployment failures, and identifying multi-factor contributions to post-runaway deflagration",
+        "primary_boundary": "Agent concentration maintenance addresses flammability suppression but cannot arrest cell-level thermal runaway; these are separate failure modes",
+        "intended_error_modes": [
+          "conflating suppression deployment failure with inherent mechanism limitation",
+          "overclaiming that sustained agent concentration would prevent flammable mixture formation",
+          "attributing deflagration solely to door opening rather than to accumulated runaway gases plus door opening"
+        ],
+        "disallowed_extrapolations": [
+          "Suppression agent concentration maintenance prevents thermal runaway propagation",
+          "Commissioning leakage test results predict thermal runaway arrest capability"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An arc flash analysis is performed for a battery storage facility containing both module-level enclosures and rack-level enclosures. Calculated arc flash pressures for rack enclosures are found to be approximately an order of magnitude greater than those for module enclosures and exceed the structural capacity of the rack enclosures. However, both enclosure types are vented. A safety engineer must determine which structural risk conclusions are defensible for the vented rack enclosures.",
+        "options": [
+          "A. Because calculated pressures exceed rack enclosure structural capacity, rack enclosures present a confirmed structural failure risk under arc flash conditions even when vented.",
+          "B. Venting reduces actual arc flash pressures below calculated values for rack enclosures, making the unvented calculated pressure an overestimate of actual structural loading.",
+          "C. The order-of-magnitude pressure difference between rack and module enclosures is preserved after venting, so rack enclosures remain structurally more vulnerable than module enclosures under arc flash.",
+          "D. Vented module enclosures face negligible arc flash structural risk because their calculated pressures are already well below rack enclosure levels before venting reduction.",
+          "E. The calculated arc flash pressures alone are sufficient to determine whether a vented rack enclosure will fail structurally, because venting only affects thermal consequences.",
+          "F. The pressure reduction from venting is sufficient to conclude that actual rack enclosure arc flash pressures are lower than the enclosure structural capacity, making structural failure unlikely."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "C"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "Evidence explicitly states venting makes actual pressures significantly lower than calculated values; confirmed structural failure risk from calculated values alone is an inadmissible conclusion.",
+            "error_type": "ignoring boundary condition of venting",
+            "evidence_refs": [
+              "TR_Gasventing+138+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Evidence directly supports that venting makes actual arc pressures significantly lower than calculated values, establishing calculated values as overestimates for vented enclosures.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+138+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence establishes an order-of-magnitude difference in calculated pressures; since both types are vented, the relative ranking is preserved even though absolute values are reduced.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+138+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence does not support that module enclosure pressures are negligible after venting; lower relative pressure does not establish negligible absolute structural risk without further evidence.",
+            "error_type": "unjustified extrapolation to negligible risk",
+            "evidence_refs": [
+              "TR_Gasventing+138+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence shows venting significantly reduces actual pressures below calculated values; using calculated pressures alone to determine structural failure in vented enclosures is explicitly unsupported.",
+            "error_type": "ignoring venting regime effect on pressure",
+            "evidence_refs": [
+              "TR_Gasventing+138+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Evidence states venting makes actual pressures significantly lower but does not quantify whether they fall below structural capacity; this conclusion exceeds the evidence boundary.",
+            "error_type": "overclaim beyond evidence scope",
+            "evidence_refs": [
+              "TR_Gasventing+138+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of structural risk conclusions for vented vs. unvented enclosures under arc flash, and preservation of relative pressure ranking after venting",
+        "primary_boundary": "Venting reduces actual pressures below calculated values but evidence does not quantify whether actual pressures fall below structural capacity",
+        "intended_error_modes": [
+          "treating calculated unvented pressures as actual structural loading for vented enclosures",
+          "concluding structural failure is confirmed from calculated values alone",
+          "overclaiming that venting eliminates structural risk without quantitative support"
+        ],
+        "disallowed_extrapolations": [
+          "Venting reduces pressures below structural capacity for rack enclosures",
+          "Module enclosure arc flash structural risk is negligible"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "During a battery energy storage incident, post-incident analysis estimates that the flammable gas mixture occupied between 11% and 22% of the enclosure volume at the time of explosion, with an equivalence ratio in the range 1.6 to 1.8 and a laminar burning velocity between 0.18 and 0.22 m/s. A cell temperature rise of at least 64°C was recorded, producing a cell temperature exceeding 80°C. Which statements about this incident's combustion and thermal conditions are admissible?",
+        "options": [
+          "A. The equivalence ratio range of 1.6–1.8 indicates the mixture was fuel-rich at the time of explosion, meaning incomplete combustion was the dominant combustion mode.",
+          "B. The recorded cell temperature rise of at least 64°C is sufficient to establish that exothermic decomposition reactions were initiated, given the stated threshold.",
+          "C. Because the flammable mixture occupied less than 25% of the enclosure volume, the deflagration overpressure was necessarily below the enclosure's structural failure threshold.",
+          "D. The laminar burning velocity range of 0.18–0.22 m/s characterizes the mixture combustion rate but does not by itself determine whether the deflagration produced damaging overpressure.",
+          "E. The 80°C threshold exceedance confirms that thermal runaway was caused by external heating rather than internal electrochemical self-heating, because membrane deterioration requires an external heat source.",
+          "F. The combination of partial enclosure fill volume and fuel-rich equivalence ratio is consistent with a scenario where runaway gas generation was ongoing but incomplete at the time of ignition."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "Equivalence ratio above 1 confirms fuel-rich mixture, but the claim that incomplete combustion was the dominant mode is an unsupported mechanistic inference beyond the stated evidence.",
+            "error_type": "causal overclaim beyond evidence scope",
+            "evidence_refs": [
+              "TR_Gasventing+138+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Evidence states the 80°C threshold governs onset of membrane deterioration and exothermic decomposition; a temperature rise of at least 64°C from an unspecified baseline exceeding 80°C supports this conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+138+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Evidence does not link partial fill volume to overpressure relative to structural capacity; fill fraction alone does not determine overpressure without enclosure geometry and venting parameters.",
+            "error_type": "unjustified scale transfer from fill fraction to structural outcome",
+            "evidence_refs": [
+              "TR_Gasventing+138+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Laminar burning velocity characterizes mixture combustion kinetics; overpressure depends additionally on enclosure geometry, fill fraction, and venting, which are not determined by burning velocity alone.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+138+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence identifies 80°C as threshold for onset of decomposition reactions but does not specify external versus internal heating as the cause; attributing cause to external heating is unsupported.",
+            "error_type": "causal overclaim from threshold exceedance",
+            "evidence_refs": [
+              "TR_Gasventing+138+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Partial enclosure fill with fuel-rich mixture is mechanistically consistent with ongoing but incomplete gas generation at ignition time; this is a minimal admissible inference from the stated conditions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+138+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of combustion characterization and thermal threshold conclusions from partial fill fraction, equivalence ratio, burning velocity, and temperature rise data",
+        "primary_boundary": "Burning velocity and fill fraction characterize mixture properties but do not individually determine structural overpressure outcomes; threshold exceedance supports reaction initiation but not causal attribution",
+        "intended_error_modes": [
+          "inferring combustion mode dominance from equivalence ratio alone",
+          "inferring structural safety from partial fill fraction alone",
+          "attributing thermal runaway cause from threshold exceedance without causal evidence"
+        ],
+        "disallowed_extrapolations": [
+          "Laminar burning velocity alone determines deflagration overpressure",
+          "Partial enclosure fill fraction implies sub-threshold structural loading",
+          "80°C threshold exceedance identifies heating source type"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery energy storage facility installs a gaseous suppression system in a rack enclosure. During commissioning, room integrity testing reveals that the leakage rate is too high to maintain the required agent concentration for the specified hold time. The facility operator argues that the suppression system still provides meaningful protection because it will discharge correctly and temporarily suppress flammable conditions. A safety engineer must evaluate whether this argument is defensible and identify the two distinct failure modes that the integrity test result and the system's inherent limitations represent. Explain the reasoning."
+      },
+      "ground_truth": {
+        "gold_answer": "The operator's argument is only partially defensible and conflates two distinct failure modes. The first failure mode is concentration retention failure: the integrity test result shows the enclosure cannot maintain design agent concentration for the required hold time, meaning flammable conditions may re-establish after initial suppression as agent leaks out and oxygen re-enters. The second failure mode is an inherent mechanism limitation: gaseous suppression agents are fundamentally unable to arrest cell-level thermal runaway progression regardless of concentration, because thermal runaway is driven by internal electrochemical and exothermic decomposition reactions that continue independently of the surrounding atmosphere. Therefore, even if the integrity deficiency were corrected, the system would still be unable to prevent thermal runaway propagation. The argument is defensible only in the narrow sense that correct discharge provides transient atmospheric suppression; it is not defensible as a claim that the system provides protection against the primary hazard of thermal runaway progression.",
+        "must_include": [
+          "concentration retention failure due to leakage rate exceeding required hold time",
+          "inherent inability of suppression agent to arrest cell thermal runaway progression",
+          "these are two distinct failure modes not addressed by the same corrective action",
+          "discharge correctness does not compensate for inherent mechanism limitation"
+        ],
+        "disallowed_extrapolations": [
+          "Correcting the leakage rate would enable the suppression system to prevent thermal runaway",
+          "The suppression system provides no protection whatsoever under any condition",
+          "Gaseous suppression agents can arrest thermal runaway if concentration is maintained"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinguishing concentration retention failure from inherent suppression mechanism limitation, and evaluating the admissibility of a partial-protection argument",
+        "primary_boundary": "Agent concentration maintenance and thermal runaway arrest are governed by different mechanisms; integrity test results address only the former",
+        "intended_error_modes": [
+          "treating integrity test failure as the sole protection deficiency",
+          "concluding that correct discharge provides protection against thermal runaway propagation",
+          "conflating atmospheric suppression capability with thermal runaway arrest capability"
+        ]
+      }
+    }
+  ]
+}

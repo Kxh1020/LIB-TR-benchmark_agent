@@ -1,0 +1,132 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is modeling an internal short circuit in a cylindrical lithium-ion cell. Three candidate short-circuit resistance values are under consideration: 1 µΩ, 30 µΩ, and a value in between. At 1 µΩ, the cell temperature rapidly exceeds 498 K within 21 seconds and voltage drops to near-zero within 40 seconds. At 30 µΩ, the local temperature does not reach its maximum of 430 K until 70 seconds after the event, after which temperature decreases because heat dissipation rate exceeds heat generation rate. The engineer also knows that at 0.5 µΩ ISC resistance, electrochemical reaction heat accounts for ~80% of total heat generation and short-circuit Ohmic heat accounts for ~20%. The engineer must assess whether increasing short-circuit resistance from 1 µΩ to 30 µΩ represents a transition from a thermally uncontrolled to a thermally self-limiting condition. Which of the following statements are supported by the described behavior?",
+        "options": [
+          "A. At 30 µΩ, the thermal outcome is self-limiting because after reaching the local maximum temperature, the heat dissipation rate exceeds the heat generation rate, causing temperature to decrease — a behavior not observed at 1 µΩ.",
+          "B. The lower peak temperature at 30 µΩ (430 K) compared to 1 µΩ (exceeds 498 K) is primarily explained by the reduction in electrochemical reaction heat generation, since that pathway dominates total heat generation.",
+          "C. Increasing short-circuit resistance from 1 µΩ to 30 µΩ shifts the thermal response from a condition where heat accumulates faster than it dissipates to one where sufficient time exists for heat dissipation to compete with generation, resulting in a qualitatively different thermal trajectory.",
+          "D. At 30 µΩ, the 70-second delay before peak temperature indicates that the electrochemical reaction has time to complete before thermal effects dominate, making electrochemical depletion the primary reason temperature subsequently decreases.",
+          "E. The voltage behavior at 30 µΩ — a gentle decrease followed by rapid decrease and then slow decrease to zero — indicates a more complex energy release sequence than the near-monotonic rapid collapse observed at 1 µΩ.",
+          "F. Because the peak temperature at 30 µΩ (430 K) still exceeds the separator melting threshold, the self-limiting thermal behavior at this resistance value does not prevent separator failure and therefore does not represent a safe operating condition."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence explicitly states that at 30 µΩ, after reaching 430 K maximum, temperature rapidly decreased because heat dissipation rate exceeded heat generation rate. At 1 µΩ, temperature exceeded 498 K rapidly with no such self-limiting behavior described. This is a direct admissible conclusion from the evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+174+International_Journal_of_Electrochemical_Science:C001",
+              "TR_Dynamics+174+International_Journal_of_Electrochemical_Science:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The heat fraction data (80% electrochemical, 20% Ohmic) is from 0.5 µΩ conditions. More importantly, the lower peak temperature at 30 µΩ is explained by the slower energy release rate allowing heat dissipation to compete — not primarily by a reduction in electrochemical heat generation. This option commits a mechanism-substitution error by attributing the outcome to the dominant heat source rather than the rate-dissipation balance.",
+            "error_type": "mechanism substitution — attributing outcome to dominant heat source fraction rather than heat generation/dissipation rate balance",
+            "evidence_refs": [
+              "TR_Dynamics+174+International_Journal_of_Electrochemical_Science:C002",
+              "TR_Dynamics+174+International_Journal_of_Electrochemical_Science:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence describes the 30 µΩ case as one where 'concentrated release of energy was much slower than that in the two aforementioned conditions, so that Ohmic heat generated from short-circuit current had relatively enough time to be dissipated.' This directly supports the characterization of a qualitative shift in thermal trajectory driven by the competition between generation rate and dissipation rate.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+174+International_Journal_of_Electrochemical_Science:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence attributes the temperature decrease after the peak at 30 µΩ to heat dissipation rate exceeding heat generation rate — not to electrochemical depletion. Attributing the decrease to completion of the electrochemical reaction is an unsupported causal substitution. This is a conservative-sounding but mechanistically incorrect distractor.",
+            "error_type": "causal overclaim / mechanism substitution — electrochemical depletion vs. dissipation-generation rate crossover",
+            "evidence_refs": [
+              "TR_Dynamics+174+International_Journal_of_Electrochemical_Science:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Evidence describes the 30 µΩ voltage behavior as a gentle decrease for ~50 s, then rapid decrease for 30 s, then slow decrease to zero — a three-phase sequence. At 1 µΩ, voltage quickly decreased to near-zero within 40 s, consistent with a more rapid and less structured collapse. The multi-phase voltage behavior at 30 µΩ indicates a more complex energy release sequence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+174+International_Journal_of_Electrochemical_Science:C001",
+              "TR_Dynamics+174+International_Journal_of_Electrochemical_Science:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The separator melting threshold (130°C ≈ 403 K) is from a different evidence source describing a general thermal runaway sequence. The claim that 430 K exceeds separator melting is numerically plausible, but the conclusion that 30 µΩ 'does not represent a safe operating condition' conflates a local transient peak temperature with a sustained failure condition, and the evidence describes temperature subsequently decreasing after the peak. The safety conclusion is an unsupported system-level inference from a local transient measurement.",
+            "error_type": "scope expansion — system safety conclusion from local transient temperature; ignores self-limiting nature of the thermal response",
+            "evidence_refs": [
+              "TR_Dynamics+174+International_Journal_of_Electrochemical_Science:C002",
+              "TR_Dynamics+173+International_Journal_of_Electrochemical_Science:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Identifying the mechanism responsible for the qualitative difference in thermal trajectory between low and moderate ISC resistance, and distinguishing heat generation/dissipation rate balance from heat source magnitude as the governing factor",
+        "primary_boundary": "The thermal outcome difference between 1 µΩ and 30 µΩ is governed by the rate of energy release relative to dissipation capacity, not by the absolute magnitude of any single heat source fraction",
+        "intended_error_modes": [
+          "Attributing lower peak temperature at 30 µΩ to reduced electrochemical heat rather than slower release rate enabling dissipation",
+          "Attributing post-peak cooling to electrochemical depletion rather than dissipation-generation rate crossover",
+          "Applying a transient local peak temperature to infer sustained system-level failure without accounting for the self-limiting trajectory"
+        ],
+        "disallowed_extrapolations": [
+          "Applying the 80/20 heat fraction split from 0.5 µΩ directly to 30 µΩ conditions",
+          "Concluding that any temperature above separator melting threshold necessarily results in separator failure given the transient and self-limiting nature of the 30 µΩ response"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A lithium-ion battery cell is operating at a discharge rate above 2C in an environment set to 20°C. A battery management system engineer proposes using a parameter lookup table that was constructed from parameter estimates obtained at discharge rates below 1C across temperatures from 10°C to 40°C. The engineer argues that because voltage relative errors were within 0.5% at intermediate SOC values during the low-rate estimation, the lookup table is equally valid for predicting cell behavior at the high discharge rate. Identify the primary technical reason this argument is not admissible, and explain which specific parameter or condition change at high discharge rates undermines the assumption that the low-rate estimates can be treated as true values for lookup table use at those rates."
+      },
+      "ground_truth": {
+        "gold_answer": "The argument is not admissible because the assumption that low-rate parameter estimates can be treated as true values depends on the temperature rise during estimation being negligibly small. At discharge rates below 1C, the temperature rise is below 3°C even at low SOC, which is small enough that the estimated parameters reflect the intended temperature condition. However, at discharge rates above 2C, the temperature rise reaches up to 14.8°C, meaning the cell is operating at a significantly different temperature than the ambient setpoint. The parameter most affected is Ds,n (solid-phase diffusion coefficient in the negative electrode), which increases appreciably with increasing current — unlike εs,n which increases with temperature but not appreciably with current. Because Ds,n is a sensitive parameter (small changes in it greatly influence model output, especially at end of discharge), and because it changes with the elevated temperature caused by high-rate self-heating, the lookup table values derived at low rates no longer represent the true parameter values at the actual operating temperature during high-rate discharge. The 0.5% voltage error criterion was established at intermediate SOC under low-rate conditions; at high rates and low SOC, the strong nonlinear battery characteristics further amplify the error from using incorrect parameter values.",
+        "must_include": [
+          "Temperature rise at rates above 2C is large (up to ~14.8°C), invalidating the assumption of negligible self-heating used to justify treating low-rate estimates as true values",
+          "At rates below 1C, temperature rise is below 3°C, which is the basis for the lookup table validity claim",
+          "Ds,n is a sensitive parameter that increases appreciably with increasing current, unlike εs,n",
+          "Sensitive parameters (Ds,n, Ds,p, εs,n, εs,p) have large influence on model output especially at end of discharge",
+          "The 0.5% error criterion applies at intermediate SOC under low-rate conditions and does not extend to high-rate or low-SOC conditions"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming the lookup table is completely useless at all SOC values at high rates — the error is largest at end of discharge / low SOC",
+          "Stating that insensitive parameters (εe,n, εe,p, εe,s) are the source of the problem",
+          "Concluding that the 14.8°C rise alone causes thermal runaway or safety failure — the evidence only supports parameter estimation error, not a safety threshold violation"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Identifying why the low-rate parameter estimation validity condition (small temperature rise) breaks down at high discharge rates, and which sensitive parameter is most affected by the current-dependent temperature rise",
+        "primary_boundary": "The lookup table validity argument rests on temperature rise being small enough that estimated parameters equal true values — this condition holds below 1C (rise < 3°C) but fails above 2C (rise up to 14.8°C), and the failure is consequential specifically because Ds,n is both current-sensitive and a high-influence parameter",
+        "intended_error_modes": [
+          "Focusing only on the temperature rise without connecting it to which specific sensitive parameter is affected by current increase",
+          "Treating the 0.5% error criterion as universally applicable rather than SOC-range and rate-range specific",
+          "Confusing insensitive parameters (εe,n, εe,p, εe,s) with sensitive ones as the source of model error"
+        ]
+      }
+    }
+  ]
+}

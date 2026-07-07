@@ -1,0 +1,298 @@
+{
+  "TR_Gasventing+62+UnknownJournal__TR_Gasventing+63+Electronics__TR_Gasventing+64+Energies": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery pack ventilation channel is designed to handle venting gas from lithium-ion cells during thermal runaway. The channel operates at an initial pressure of 154 kPa. During a thermal event, venting gas mixes with air at an equivalence ratio of 1.0 and ignites. Temperature measurements indicate the gas mixture temperature rises from 329 K to 400 K during propagation. An engineer must assess which statements about flame behavior and explosion risk are consistent with the observed temperature increase.",
+          "options": [
+            "A: The maximum flame velocity increases by a factor greater than 2.5, and the combustion mode transitions from slow deflagration to fast deflagration, significantly elevating explosion risk.",
+            "B: The flame velocity increase is primarily driven by pressure rise rather than temperature rise, so the combustion mode remains unchanged despite the temperature increase.",
+            "C: The propagation time decreases by approximately 60% relative to the initial condition, indicating a regime change in flame dynamics.",
+            "D: Because the equivalence ratio remains at 1.0 throughout, the flame velocity remains approximately constant regardless of temperature change.",
+            "E: The temperature increase to 400 K causes the flame velocity to exceed local sonic speed, which is not observed at 329 K under the same pressure and equivalence ratio."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence shows maximum flame velocity increases from 138.2 m/s at 329 K to 402.5 m/s at 400 K (factor of ~2.9), and at 400 K the combustion mode changes to fast deflagration with flame velocity exceeding local sonic speed, posing high explosion risk.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+64+Energies:C002",
+                "TR_Gasventing+64+Energies:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Evidence shows initial temperature has high sensitivity to flame velocity, and the combustion mode does change at 400 K. Pressure is held constant at 154 kPa, so the velocity increase is temperature-driven, not pressure-driven.",
+              "error_type": "mechanism_confusion",
+              "evidence_refs": [
+                "TR_Gasventing+64+Energies:C002",
+                "TR_Gasventing+64+Energies:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence states propagation time decreases by up to 60.6% relative to 300 K as temperature increases to 400 K, indicating a regime change in flame dynamics.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+64+Energies:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Evidence shows flame velocity is highly sensitive to initial temperature even when equivalence ratio is constant. Maximum flame velocity increases from 109.2 m/s at 300 K to 402.5 m/s at 400 K under constant equivalence ratio of 1.0.",
+              "error_type": "ignoring_condition_dependence",
+              "evidence_refs": [
+                "TR_Gasventing+64+Energies:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Evidence shows that at 400 K, flame velocity exceeds local sonic speed and deflagration mode occurs, whereas at 329 K (and other lower temperatures) under the same pressure and equivalence ratio, no deflagration appears and combustion mode does not change.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+64+Energies:C002",
+                "TR_Gasventing+64+Energies:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Temperature-dependent regime transition in venting gas combustion and its effect on flame velocity and explosion risk",
+          "primary_boundary": "Threshold temperature (400 K) at which combustion mode transitions from slow to fast deflagration",
+          "intended_error_modes": [
+            "attributing velocity increase to pressure rather than temperature",
+            "assuming equivalence ratio controls flame velocity independently of temperature",
+            "failing to recognize regime transition at critical temperature threshold"
+          ],
+          "disallowed_extrapolations": [
+            "generalizing flame behavior across temperature regimes without recognizing threshold effects",
+            "assuming linear scaling of flame velocity with temperature"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A safety engineer compares thermal runaway characteristics of LFP and NCM811 battery chemistries for use in an enclosed battery pack. Both chemistries undergo thermal runaway under identical test conditions. Gas composition analysis shows LFP produces gas with 50.82% H2 and 9.3% CO, while NCM811 produces gas with lower H2 content. Normalized gas production measurements show NCM811 produces 2.1 L/Ah while LFP produces 0.569 L/Ah. The engineer must determine which safety-related conclusions are admissible based on these measurements.",
+          "options": [
+            "A: LFP presents lower overall hazard than NCM811 because its normalized gas production volume is approximately one-fourth that of NCM811.",
+            "B: The lower flammability limit of the LFP gas mixture is lower than that of NCM811 due to the higher H2 fraction in LFP gas, despite LFP producing less total gas volume.",
+            "C: From a gas volume perspective, NCM811 poses greater hazard, but from a flammability composition perspective, LFP poses greater hazard due to its lower flammability limit.",
+            "D: The higher H2 content in LFP gas indicates that LFP thermal runaway is more energetic than NCM811 thermal runaway on a per-cell basis.",
+            "E: Because LFP produces significantly less gas volume, the risk of pressure-driven cell-to-cell propagation in the enclosed pack is lower for LFP than for NCM811.",
+            "F: The thermal stability ranking based on trigger temperature is consistent with the hazard ranking based on gas production volume."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "C"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "This conclusion considers only gas volume and ignores gas composition. Evidence shows that while LFP produces less gas volume, its gas has a lower flammability limit due to high H2 content, reversing the hazard ranking when composition is considered.",
+              "error_type": "single_factor_reasoning",
+              "evidence_refs": [
+                "TR_Gasventing+63+Electronics:C002",
+                "TR_Gasventing+63+Electronics:C003",
+                "TR_Gasventing+63+Electronics:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Evidence states LFP gas contains 50.82% H2 compared to lower H2 in NCM, and that the higher H2 content results in a lower LFL due to the relatively low LFL of H2 itself.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+63+Electronics:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence explicitly states that based on gas production volume, NCM811 poses greater harm than LFP, but from the perspective of gas composition (flammability), the hazard ranking reverses with LFP > NCM811.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+63+Electronics:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Higher H2 content in the vented gas does not necessarily indicate more energetic thermal runaway. H2 content reflects decomposition pathways and gas composition, not total energy release. Evidence does not support inferring energy release from gas composition alone.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+63+Electronics:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "While LFP produces less gas volume, the evidence does not establish a direct relationship between normalized gas production and cell-to-cell propagation risk in an enclosed pack. Propagation depends on multiple factors including heat transfer, not just gas volume.",
+              "error_type": "unsupported_extrapolation",
+              "evidence_refs": [
+                "TR_Gasventing+63+Electronics:C002"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Evidence shows LFP has higher trigger temperature (~184\u00b0C) than NCM811 (~130-140\u00b0C), indicating better thermal stability for LFP. However, the gas volume hazard ranking is NCM811 > LFP. These rankings are consistent. But the flammability composition hazard ranking is LFP > NCM811, which is inconsistent with thermal stability ranking. The statement is too broad and ignores the composition-based hazard reversal.",
+              "error_type": "overgeneralization",
+              "evidence_refs": [
+                "TR_Gasventing+63+Electronics:C001",
+                "TR_Gasventing+63+Electronics:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-factor hazard assessment requiring integration of gas volume and gas composition effects",
+          "primary_boundary": "Distinction between volume-based and composition-based hazard metrics, which produce opposite rankings",
+          "intended_error_modes": [
+            "single-factor reasoning (considering only volume or only composition)",
+            "inferring energy release from gas composition",
+            "extrapolating from gas volume to propagation risk without supporting mechanism",
+            "assuming consistency between thermal stability and all hazard metrics"
+          ],
+          "disallowed_extrapolations": [
+            "inferring cell-to-cell propagation behavior from normalized gas production alone",
+            "inferring thermal runaway energy from gas composition"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "During a thermal runaway event, venting gas from a lithium-ion battery mixes with air in a confined channel. The excess air coefficient (ratio of actual air to stoichiometric air) is varied from 1.0 to 0.8. At an excess air coefficient of 1.0, the combustion proceeds as slow deflagration with average flame velocity below 150 m/s. At an excess air coefficient of 0.8, measurements show maximum flame velocity reaches approximately 445 m/s, and the maximum overpressure caused by the combustion wave is 91.3 kPa, exceeding the overpressure caused by the ignition pressure wave (61.7 kPa). An engineer must assess which mechanistic conclusions are supported by these observations.",
+          "options": [
+            "A: The transition from excess air coefficient 1.0 to 0.8 causes a combustion mode change from slow deflagration to fast deflagration, significantly increasing explosion risk.",
+            "B: The increase in flame velocity from below 150 m/s to 445 m/s is primarily due to increased fuel concentration, but the combustion mode remains deflagration throughout.",
+            "C: At excess air coefficient 0.8, the combustion wave overpressure exceeds the ignition pressure wave overpressure, indicating the combustion process itself becomes the dominant pressure source.",
+            "D: The critical excess air coefficient at which combustion mode changes is approximately 0.9, marking the boundary between slow and fast deflagration regimes.",
+            "E: Reducing the excess air coefficient below 1.0 always increases flame velocity monotonically until stoichiometric conditions are reached."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "D"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence states that when excess air coefficient decreases to 0.8, average flame velocity exceeds local sonic speed and combustion mode changes from slow deflagration to fast deflagration, significantly increasing risk of combustion accident.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+64+Energies:C001",
+                "TR_Gasventing+64+Energies:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Evidence shows the combustion mode does change at excess air coefficient 0.8, transitioning to fast deflagration. The statement incorrectly claims the mode remains unchanged.",
+              "error_type": "ignoring_regime_transition",
+              "evidence_refs": [
+                "TR_Gasventing+64+Energies:C001"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence explicitly states that at excess air coefficient 0.8, the peak overpressure caused by the combustion wave (91.3 kPa) exceeds that caused by the ignition pressure wave (61.7 kPa), indicating the combustion process becomes the dominant pressure source.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+64+Energies:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Evidence states that when the excess air coefficient is around 0.9, the combustion mode changes, marking the boundary between slow and fast deflagration.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+64+Energies:C001"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Evidence shows a regime transition occurs around excess air coefficient 0.9, indicating non-monotonic behavior. The statement incorrectly assumes monotonic increase in flame velocity, ignoring the threshold-dependent regime change.",
+              "error_type": "ignoring_threshold_effect",
+              "evidence_refs": [
+                "TR_Gasventing+64+Energies:C001"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Excess air coefficient threshold effect on combustion mode transition and pressure generation mechanism",
+          "primary_boundary": "Critical excess air coefficient (~0.9) separating slow and fast deflagration regimes",
+          "intended_error_modes": [
+            "assuming monotonic relationship between excess air coefficient and flame velocity",
+            "failing to recognize regime transition at critical threshold",
+            "ignoring shift in dominant pressure generation mechanism"
+          ],
+          "disallowed_extrapolations": [
+            "extrapolating slow deflagration behavior to fuel-rich conditions without recognizing mode change"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A battery safety researcher measures the breakdown voltage between two electrodes separated by 5 mm in two different venting gas atmospheres: NCA gas mixture (10% CO2, 37.1% CO, 42.8% H2, 7.1% CH4, 3% C2H4) and LFP gas mixture (48.4% CO2, 29.5% CO, 5.6% H2, 7% CH4, 0.5% C2H6). At room temperature, the NCA gas mixture exhibits higher breakdown voltage than the LFP mixture. At 300\u00b0C, the opposite is observed: LFP gas mixture exhibits higher breakdown voltage than NCA. Additionally, combustion analysis under fuel-rich conditions shows that NCA gas combustion sustainability is driven by H radicals rather than OH radicals. Explain what safety-relevant conclusion can be drawn about NCA gas combustion behavior in oxygen-limited environments, and identify which physical mechanism accounts for the temperature-dependent reversal in breakdown voltage ranking between the two gas mixtures."
+        },
+        "ground_truth": {
+          "gold_answer": "For NCA gas combustion: Because combustion sustainability is driven by H radicals rather than OH radicals under fuel-rich conditions, NCA gas combustion can be sustained even in environments with low oxygen availability, which has major implications for battery pack design where oxygen may be limited. For the breakdown voltage reversal: The reversal occurs because the two gas mixtures have different temperature-dependent ionization characteristics. At room temperature, NCA gas (with higher H2 content, 42.8% vs 5.6%) requires higher voltage to ionize. At elevated temperature (300\u00b0C), thermal energy assists ionization differently for the two mixtures, reversing the relative breakdown voltage. The mechanism is temperature-dependent ionization potential and collision frequency changes that affect differently the two gas compositions.",
+          "must_include": [
+            "NCA gas combustion can be sustained in low-oxygen or oxygen-limited environments",
+            "H radical-driven combustion mechanism enables sustainability without sufficient OH radicals",
+            "temperature-dependent ionization characteristics differ between the two gas mixtures",
+            "thermal energy at 300\u00b0C assists ionization differently for NCA vs LFP gas"
+          ],
+          "disallowed_extrapolations": [
+            "claiming NCA gas is more flammable than LFP gas in all conditions",
+            "attributing breakdown voltage reversal solely to H2 content without considering temperature-dependent ionization",
+            "claiming the reversal is due to chemical reaction rather than ionization physics",
+            "recommending specific pack designs without acknowledging the limited scope of the evidence"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Mechanism of H radical-driven combustion in oxygen-limited environments and temperature-dependent ionization behavior of gas mixtures",
+          "primary_boundary": "Distinguishing between combustion mechanism (H vs OH radical-driven) and electrical breakdown mechanism (temperature-dependent ionization)",
+          "intended_error_modes": [
+            "conflating combustion chemistry with electrical breakdown physics",
+            "attributing breakdown voltage reversal to a single compositional factor without considering temperature-dependent ionization",
+            "overgeneralizing flammability conclusions beyond the stated fuel-rich, low-oxygen conditions"
+          ]
+        }
+      }
+    ]
+  }
+}

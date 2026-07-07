@@ -1,0 +1,316 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A safety engineer is evaluating ignition risk for vent gases released from a Li-ion battery pack in a confined enclosure. The enclosure atmosphere is oxygen-depleted due to prior venting events, and the local hot-surface temperature is measured at 520°C. The vent gas composition includes fluorinated compounds at concentrations typical of battery venting. The engineer must determine which ignition risk conclusions are defensible under these conditions.",
+        "options": [
+          "A. The oxygen-depleted atmosphere substantially delays ignition compared to ambient-air conditions, and the risk window is therefore extended rather than eliminated.",
+          "B. The fluorinated compounds in the vent gas mixture will inhibit the combustion chain reactions, meaningfully reducing the probability of ignition.",
+          "C. At 520°C, self-ignition within a short time window is unlikely without an external ignition source, regardless of oxygen content.",
+          "D. Because oxygen content does not strongly control ignition delay, the depleted-oxygen condition alone is insufficient to conclude that ignition risk is negligible.",
+          "E. The fluorinated compound concentration is the primary variable controlling whether ignition occurs under these enclosure conditions.",
+          "F. The combination of low oxygen and fluorinated compounds creates a synergistic suppression effect that eliminates ignition risk below 550°C."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "C",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "Evidence shows oxygen depletion does not substantially change ignition delay; the premise of extended risk window due to O2 depletion is unsupported.",
+            "error_type": "condition_violation_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+124+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence explicitly states fluorinated compounds at typical concentrations do not affect ignition delay or macroscopic combustion characteristics.",
+            "error_type": "mechanism_confusion_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+124+UnknownJournal:C001"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "520°C is below the ~550°C threshold; evidence states ignition requires long time or external source below this temperature, independent of O2 content.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+124+UnknownJournal:C003",
+              "TR_Gasventing+124+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence shows ignition delay is insensitive to oxygen content, so O2 depletion alone cannot justify concluding ignition risk is negligible.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+124+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence shows fluorinated compounds at typical concentrations have no effect on ignition; they are not the primary controlling variable.",
+            "error_type": "causal_overclaim_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+124+UnknownJournal:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "No evidence supports a synergistic suppression effect between low O2 and fluorinated compounds; each individually has negligible effect on ignition.",
+            "error_type": "multi_factor_interaction_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+124+UnknownJournal:C001",
+              "TR_Gasventing+124+UnknownJournal:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of ignition risk conclusions under combined oxygen-depleted and fluorinated-compound conditions below the temperature threshold",
+        "primary_boundary": "Temperature threshold (~550°C) governs self-ignition timing; O2 content and fluorinated compounds do not meaningfully alter ignition delay at typical concentrations",
+        "intended_error_modes": [
+          "Assuming O2 depletion extends ignition delay",
+          "Assuming fluorinated compounds inhibit combustion chain reactions",
+          "Inferring synergistic suppression from two individually ineffective factors"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding ignition is impossible below 550°C without external source",
+          "Claiming fluorinated compounds provide any measurable ignition protection",
+          "Treating O2 depletion as a primary safety barrier against ignition"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Two NMC/LMO battery packs vent gas simultaneously into a shared plenum maintained at 730°C. Pack A was at 30% SOC during the thermal event; Pack B was at 100% SOC. A third gas stream (Stream C) consists of nearly 50% hydrogen with the remainder being CO-rich combustion products. An engineer must assess relative ignition timing and combustion intensity across the three streams to prioritize hazard mitigation.",
+        "options": [
+          "A. Stream C will ignite faster than both Pack A and Pack B vent gases, and this difference can reach approximately one order of magnitude at 730°C.",
+          "B. Pack B vent gas will exhibit a laminar burning velocity roughly 50% greater than Pack A vent gas, making Pack B the higher combustion intensity hazard among the two battery streams.",
+          "C. Because both Pack A and Pack B originate from the same battery chemistry, their ignition delay times at 730°C will be nearly identical regardless of SOC difference.",
+          "D. The higher laminar burning velocity of Pack B vent gas implies it will also ignite significantly faster than Pack A vent gas at 730°C.",
+          "E. Prioritizing mitigation of Stream C over Pack B is justified on ignition speed grounds, but Pack B remains the more hazardous battery-sourced stream relative to Pack A on combustion intensity grounds.",
+          "F. At 730°C, carbonate-containing vent gases from either battery pack pose negligible ignition hazard because their ignition delay is orders of magnitude longer than hydrogen-rich streams."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence states carbonate-containing mixtures ignite up to an order of magnitude slower than H2/CO-rich mixtures at 730°C; Stream C ignites fastest.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+124+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Evidence directly states laminar burning velocity at SOC 100% is ~50% higher than at SOC 30% for the same NMC/LMO chemistry.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+124+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Evidence shows combustion properties including burning velocity are highly SOC-dependent even within the same chemistry; identical ignition delay is unsupported.",
+            "error_type": "overgeneralization_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+124+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Laminar burning velocity and ignition delay are distinct properties; evidence does not support inferring faster ignition from higher burning velocity.",
+            "error_type": "mechanism_confusion_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+124+UnknownJournal:C004",
+              "TR_Gasventing+124+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Combining C004 (Stream C ignites fastest) and C005 (SOC 100% has higher burning velocity), both sub-conclusions are individually supported and jointly admissible.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+124+UnknownJournal:C004",
+              "TR_Gasventing+124+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Evidence states carbonate-containing mixtures ignite up to an order of magnitude slower, not that they pose negligible hazard; ignition still occurs at 730°C.",
+            "error_type": "causal_overclaim_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+124+UnknownJournal:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinguishing ignition delay from laminar burning velocity as independent hazard dimensions, and correctly applying SOC-dependence within a single chemistry",
+        "primary_boundary": "Laminar burning velocity and ignition delay are separate properties; SOC affects burning velocity but the evidence does not extend this to ignition delay differences between SOC levels",
+        "intended_error_modes": [
+          "Conflating burning velocity with ignition speed",
+          "Assuming same chemistry implies same combustion properties regardless of SOC",
+          "Treating order-of-magnitude slower ignition as negligible rather than delayed"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring ignition delay differences from burning velocity differences",
+          "Concluding carbonate-containing gases are safe at 730°C",
+          "Extending SOC-dependence of burning velocity to ignition delay without evidence"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A fire investigator is analyzing a battery enclosure incident where vent gases ignited. The enclosure surface temperature at the time of venting was recorded at 480°C. The vent gas composition was identified as carbonate-containing with fluorinated compounds at typical battery concentrations. No external ignition sources were identified in the post-incident inspection. The investigator must determine which causal explanations are consistent with the available evidence.",
+        "options": [
+          "A. Self-ignition driven solely by the 480°C surface temperature is inconsistent with the evidence, suggesting an undetected external ignition source or a localized hot spot exceeding the threshold temperature.",
+          "B. The fluorinated compounds in the vent gas likely acted as ignition promoters, explaining ignition at a temperature below the general threshold.",
+          "C. The absence of identified external ignition sources is sufficient to conclude that self-ignition occurred, since carbonate-containing gases can self-ignite at any temperature above 400°C.",
+          "D. The oxygen content of the enclosure atmosphere at the time of venting is a critical unknown that, if low, would explain why ignition did not occur immediately.",
+          "E. The evidence is consistent with delayed ignition initiated by a localized thermal condition exceeding 550°C rather than by the recorded bulk surface temperature.",
+          "F. Because ignition delay is insensitive to oxygen content, the enclosure oxygen level is irrelevant to determining the ignition cause in this scenario."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Below ~550°C, self-ignition requires long time or external source; 480°C bulk temperature alone cannot explain ignition, pointing to undetected source or local hot spot.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+124+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence explicitly states fluorinated compounds at typical concentrations do not affect ignition; they cannot explain ignition below the threshold.",
+            "error_type": "mechanism_confusion_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+124+UnknownJournal:C001"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Absence of identified external sources does not confirm self-ignition; no evidence supports self-ignition threshold at 400°C for carbonate-containing gases.",
+            "error_type": "causal_overclaim_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+124+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence shows ignition is insensitive to oxygen content; low O2 would not explain failure to ignite immediately and is not a critical unknown for this purpose.",
+            "error_type": "conservative_but_wrong_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+124+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "A localized hot spot above ~550°C is consistent with evidence-defined threshold behavior and explains ignition despite sub-threshold bulk temperature measurement.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+124+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "While O2 insensitivity is correct, concluding enclosure O2 level is entirely irrelevant to ignition cause analysis overclaims; other O2-dependent hazard aspects may still matter.",
+            "error_type": "scope_expansion_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+124+UnknownJournal:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of ignition cause explanations given a sub-threshold bulk temperature, absence of identified external sources, and evidence-defined insensitivities",
+        "primary_boundary": "~550°C threshold separates self-ignition regimes; fluorinated compounds and O2 content are both non-controlling variables per evidence",
+        "intended_error_modes": [
+          "Attributing ignition promotion to fluorinated compounds",
+          "Using absence of identified sources to confirm self-ignition without threshold reasoning",
+          "Treating O2 content as a critical unknown when evidence shows ignition is O2-insensitive"
+        ],
+        "disallowed_extrapolations": [
+          "Extending fluorinated compound effects beyond evidence-stated null result",
+          "Inferring a specific sub-400°C self-ignition threshold not present in evidence",
+          "Concluding O2 level is completely irrelevant to all aspects of enclosure hazard"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery thermal management engineer is designing a vented enclosure for NMC/LMO packs that may operate across a range of states of charge. The engineer proposes two independent safety measures: (1) filling the enclosure with a fluorinated inert gas to suppress combustion of any released vent gases, and (2) limiting maximum SOC to 30% during storage to reduce combustion hazard if venting occurs. Critically evaluate the technical justification for each measure based on the combustion behavior of battery vent gases. Identify which measure is supported, which is not, and explain the mechanism-based reasoning for each conclusion."
+      },
+      "ground_truth": {
+        "gold_answer": "Measure 1 (fluorinated gas suppression) is not supported. Evidence shows that fluorinated compounds at concentrations typical of battery vent gases have no effect on ignition delay time or macroscopic combustion characteristics. Therefore, adding fluorinated compounds to the enclosure atmosphere cannot be justified as a combustion suppression strategy based on this mechanism. Measure 2 (SOC limitation) is supported. Evidence shows that for NMC/LMO batteries, the laminar burning velocity of vent gas at 100% SOC is approximately 50% higher than at 30% SOC, demonstrating that combustion intensity is strongly SOC-dependent. Limiting SOC to 30% therefore meaningfully reduces the combustion hazard of any released vent gas. However, the engineer should note that SOC limitation does not eliminate ignition risk, since ignition delay is primarily temperature-governed with a threshold near 550°C and is insensitive to oxygen content, so thermal management of enclosure surfaces remains necessary.",
+        "must_include": [
+          "Fluorinated compounds at typical concentrations do not affect ignition delay or combustion characteristics",
+          "Fluorinated gas suppression measure is not mechanistically justified",
+          "Laminar burning velocity at SOC 100% is approximately 50% higher than at SOC 30%",
+          "SOC limitation reduces combustion intensity and is supported",
+          "Ignition is temperature-threshold dependent near 550°C and insensitive to oxygen content"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming fluorinated compounds suppress combustion at higher concentrations than typical battery vent gas levels",
+          "Claiming SOC limitation eliminates ignition risk entirely",
+          "Inferring that SOC affects ignition delay time based on the evidence provided",
+          "Claiming oxygen depletion from fluorinated gas filling would independently reduce ignition risk"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Differential evaluation of two safety measures against evidence-defined mechanisms: fluorinated compound combustion effects (null) versus SOC-dependent burning velocity (significant)",
+        "primary_boundary": "Fluorinated compounds: null effect on ignition and combustion at typical concentrations. SOC: strong effect on laminar burning velocity but evidence does not extend this to ignition delay.",
+        "intended_error_modes": [
+          "Assuming fluorinated gas filling suppresses combustion by analogy to halon-type agents",
+          "Assuming SOC reduction also reduces ignition probability by reducing ignition delay",
+          "Conflating burning velocity reduction with ignition suppression"
+        ]
+      }
+    }
+  ]
+}

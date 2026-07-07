@@ -1,0 +1,108 @@
+{
+  "boundary_patterns": {
+    "D1": {
+      "strong_signals": [
+        "All required facts are either explicitly contained in the prompt or can be derived from generally accepted first-principles reasoning stated in the stem (e.g., electro-thermal coupling, heat transfer, basic kinetics).",
+        "Scope is constrained to a clearly defined test condition/system (cell format, abuse mode, SOC, environment), preventing reliance on unspecified experimental details.",
+        "Claims are phrased as conditionals tied to given assumptions (e.g., \u201cif RISC below threshold\u2026\u201d, \u201cunder reduced pressure\u2026\u201d), preserving epistemic traceability.",
+        "No need for external constants, proprietary data, or paper-specific numerics to decide the correct options."
+      ],
+      "risk_signals": [
+        "Requires paper-specific empirical results without providing them (e.g., asking about exact trends/thresholds/ordering not inferable from general principles).",
+        "Introduces undefined terms or metrics (e.g., Tonset/TTR without operational meaning in the item) such that correctness depends on a particular reference.",
+        "Overclaims universality (\u201calways\u201d, \u201cinevitably\u201d, \u201cmust\u201d) for phenomena that are context-dependent, forcing disputes about edge cases.",
+        "Hidden dependence on experimental setup specifics (sensor placement, calibration, geometry) not stated in the stem."
+      ],
+      "ambiguity_triggers": [
+        "Mixture of \u2018general reasoning\u2019 and \u2018reported findings\u2019 language without clarifying which governs correctness.",
+        "Options hinge on directionality of effects that can flip with regime (e.g., convection influence, pressure effects, PCM conductivity saturation) unless the regime is pinned down.",
+        "Using qualitative thresholds (\u201cdominant\u201d, \u201cmeaningful\u201d, \u201csignificant\u201d) without a defined comparator or metric."
+      ]
+    }
+  },
+  "incorrect_patterns": {
+    "D2": {
+      "strong_signals": [
+        "Decoys are mechanistically plausible and near-miss: they share vocabulary/causal chain elements with the correct options but fail on one key constraint (sign, location, necessity/sufficiency).",
+        "Decoys reflect common misconceptions (e.g., surface temperature equals internal hotspot; \u2018more cooling always reduces peak TR\u2019; \u2018higher SOC always monotonic\u2019), making them attractive but falsifiable.",
+        "In multi-select items, decoys vary in type (overgeneralization, wrong causal direction, confounding variables) rather than being all obviously wrong.",
+        "Decoys do not contradict the stem\u2019s stated assumptions; instead they contradict implied physical reasoning."
+      ],
+      "risk_signals": [
+        "Throwaway decoys with obvious markers (\u2018always\u2019, \u2018perfectly\u2019, \u2018inevitably\u2019) when the rest are nuanced, making elimination trivial.",
+        "Decoys depend on obscure terminology errors or typos (e.g., duplicated reactions, inconsistent labels) rather than conceptual misunderstanding.",
+        "Multiple options are paraphrases of each other (duplicate content), reducing the effective number of decoys.",
+        "Correct options are the only ones with hedging/technical specificity, leaking the answer by style."
+      ],
+      "ambiguity_triggers": [
+        "Decoys that could be \u2018sometimes true\u2019 depending on unmentioned conditions, leading to disputes in multi-select.",
+        "Decoys with two coupled claims where one is true and one is false; evaluators may disagree whether to treat as false overall.",
+        "Use of comparative language (\u201cmore dangerous\u201d, \u201cdominant\u201d) without an explicit reference point invites interpretation variance."
+      ]
+    }
+  },
+  "cognitive_patterns": {
+    "D3": {
+      "strong_signals": [
+        "The stem establishes a single coherent inference target (e.g., identify supported statements; identify wrong statements; pick interface with highest strength) and options map cleanly onto that target.",
+        "Assumptions needed for reasoning are provided up front (e.g., definitions of TR criterion, known principles about resistance limiting current, heat transfer role).",
+        "Granularity matches the cognitive task: single-choice for one decisive inference; multi-select when multiple independent consequences follow.",
+        "Options are mutually scorable: each statement can be judged independently true/false under the given assumptions."
+      ],
+      "risk_signals": [
+        "Task mixes different targets (mechanism explanation + specific experimental observation) without indicating priority.",
+        "Options require multi-step domain leaps not scaffolded by the stem (e.g., detailed chemistry pathways without specifying what counts as \u2018primary\u2019).",
+        "\u201cWhich are wrong?\u201d items include statements that are not logically negations but are orthogonal, increasing confusion.",
+        "The stem truncates or contains malformed context (e.g., incomplete sentence, broken option labels), undermining coherence."
+      ],
+      "ambiguity_triggers": [
+        "Boundary between \u2018supported by general reasoning\u2019 vs \u2018requires empirical confirmation\u2019 is unclear.",
+        "Items using specialized definitions (\u201cprimary reaction\u201d, \u201cdirectly generate\u201d, \u201cdoes not include radical termination\u201d) can be interpreted differently unless sharply stated.",
+        "Multi-select with many correct choices (or all-of-the-above patterns) can cause disagreement about intended difficulty vs validity."
+      ]
+    }
+  },
+  "language_patterns": {
+    "D4": {
+      "strong_signals": [
+        "Neutral, technical phrasing without persuasive cues; options similar in length/complexity and avoid emotive or evaluative wording.",
+        "Consistent modality and quantifiers across options (e.g., all use \u201cmay/can\u201d where appropriate) to prevent stylistic answer cues.",
+        "Clear instruction verbs (\u201cSelect all\u2026\u201d, \u201cWhich are wrong?\u201d) and unambiguous scope qualifiers in the stem.",
+        "Terminology is consistent across stem and options (same symbols, same abbreviations, defined once)."
+      ],
+      "risk_signals": [
+        "Typos/formatting artifacts (duplicated equations, missing option labels, truncated stems) that distract or change meaning.",
+        "Inconsistent capitalization/grammar across options, making some stand out as likely correct/incorrect.",
+        "Overuse of absolute terms in only a subset of options, enabling testwiseness rather than reasoning.",
+        "Ambiguous referents (\u201cthis\u201d, \u201cit\u201d, \u201csuch a case\u201d) without a clear antecedent."
+      ],
+      "cue_leak_signals": [
+        "Correct options systematically longer, more qualified, or more \u2018scientific sounding\u2019 than decoys.",
+        "Presence of uniquely specific numbers/thresholds in only correct options (or only decoys), creating pattern-based elimination.",
+        "Using parenthetical clarifications only on correct options, signaling intent.",
+        "Answer-key patterns such as frequent inclusion of \u2018all of the above\u2019 as correct, or repeated letter clusters across items."
+      ]
+    }
+  },
+  "diagnostic_patterns": {
+    "D5": {
+      "strong_signals": [
+        "Each option tests a distinct misconception or reasoning step (causality direction, sufficiency vs necessity, regime dependence, measurement vs internal state).",
+        "Correct set is not guessable by superficial heuristics; eliminating decoys requires engaging with the stated assumptions/mechanisms.",
+        "Items avoid redundancy: removing any one option would measurably reduce coverage of the concept space.",
+        "Multi-select keys include a mix of letters and do not systematically favor extremes; distractors are balanced across positions."
+      ],
+      "risk_signals": [
+        "Low separation: multiple options are simultaneously plausible under different unstated regimes, reducing diagnosticity.",
+        "Overly easy via keyword heuristics (e.g., \u2018always\u2019=false) rather than domain reasoning.",
+        "Overly hard because it demands memorized paper-specific outcomes; discriminates on exposure, not reasoning.",
+        "Keys dominated by many-correct or few-correct patterns across the set, enabling meta-guessing."
+      ],
+      "ambiguity_triggers": [
+        "Options framed with vague magnitude terms (\u201cmeaningfully\u201d, \u201csignificantly\u201d, \u201cdominant\u201d) without operational thresholds.",
+        "Competing \u2018correct\u2019 interpretations: engineering plausibility vs strict logical entailment from the stem.",
+        "Conditional statements missing explicit conditions, causing disagreement whether they apply in the described scenario."
+      ]
+    }
+  }
+}

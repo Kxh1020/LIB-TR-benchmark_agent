@@ -1,0 +1,129 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery safety engineer is reviewing the thermal runaway progression of a high-SOC NCM 811 cell. Calorimetric data shows that from the onset temperature to the separator collapse temperature (Tsc), the rate of gas generation and the rate of temperature rise do not scale proportionally. However, as temperature approaches Tsc, this relationship becomes approximately proportional. The engineer must decide whether to model the pre-Tsc reaction pathway as a single lumped process. Which conclusions are admissible?",
+        "options": [
+          "A. The non-proportional scaling between gas generation rate and temperature rise rate before Tsc is consistent with multiple sequential or parallel reaction steps occurring in that regime.",
+          "B. The approximately proportional relationship near Tsc indicates that a single dominant reaction has taken over, making a single-step model admissible specifically near Tsc but not across the full pre-Tsc range.",
+          "C. Because the relationship becomes approximately proportional near Tsc, the entire pre-Tsc process can be adequately represented by a single-step reaction model for engineering design purposes.",
+          "D. The non-linear pre-Tsc behavior implies that gas pressure buildup is negligible until Tsc is reached, so venting design need only account for post-Tsc conditions.",
+          "E. The transition from non-proportional to approximately proportional behavior near Tsc suggests a regime change in the dominant reaction mechanism as temperature increases toward Tsc.",
+          "F. A single-step lumped model is conservative for all pre-Tsc conditions because it will overestimate gas generation rate at lower temperatures."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence explicitly states non-linearity before Tsc implies multi-step reactions; non-proportional rates are mechanistically consistent with this.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Approximate linearity near Tsc supports single-step modeling only in that sub-regime; applying it to the full pre-Tsc range is unsupported by evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Overgeneralizes the near-Tsc linearity to the full pre-Tsc range; evidence explicitly states the relationship is not linear until approaching Tsc.",
+            "error_type": "overgeneralization_of_regime",
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Non-linearity does not imply negligible gas pressure before Tsc; evidence shows significant Pg at venting (well before Tsc at ~3923 kPa).",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C001",
+              "TR_Gasventing+122+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Transition from non-proportional to proportional behavior is consistent with a regime change in dominant reaction mechanism near Tsc.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "No evidence supports that a single-step model overestimates at lower temperatures; this is an unsupported quantitative claim about model conservatism.",
+            "error_type": "unsupported_extrapolation",
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of single-step reaction modeling across the pre-Tsc temperature range given non-linear gas generation behavior",
+        "primary_boundary": "Approximate linearity near Tsc permits single-step modeling only in that sub-regime; non-linearity across the full pre-Tsc range requires multi-step representation",
+        "intended_error_modes": [
+          "Extending near-Tsc linearity to the entire pre-Tsc domain (C)",
+          "Inferring negligible pre-Tsc gas pressure from non-linearity (D)",
+          "Claiming conservatism of a single-step model without evidential basis (F)"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding that multi-step reactions imply negligible gas generation before Tsc",
+          "Applying near-Tsc single-step approximation to full thermal runaway modeling"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A 100% SOC NCM 811 cell undergoes thermal abuse. At the safety valve opening event, the internal pressure is confirmed to lie within the manufacturer's specified burst range. At a higher temperature corresponding to separator collapse, the internal gas pressure from redox reactions is substantially greater than at the venting event and is over six times the electrolyte vapor pressure at that same temperature. Between the onset temperature and separator collapse, the rate of temperature rise and the rate of gas generation do not scale proportionally, but this relationship becomes approximately proportional near separator collapse. \n\nAn engineer proposes that: (1) the safety valve threshold should be raised to reduce nuisance venting, and (2) the pre-separator-collapse reaction chemistry can be modeled as a single lumped step for all thermal runaway simulations. Evaluate both proposals, identifying the specific mechanism-based reasoning that supports or refutes each."
+      },
+      "ground_truth": {
+        "gold_answer": "Proposal 1 (raise burst threshold) is inadmissible. Raising the threshold means gas generated during thermal runaway is not vented in time. Because redox-driven gas pressure dominates total internal pressure at the venting event (approximately three times the electrolyte vapor contribution) and reaches even higher levels at separator collapse, delaying venting allows dangerous pressure accumulation. This increases the risk of uncontrolled rupture or explosion rather than controlled release. The fact that normal venting pressure lies within the manufacturer's range validates the current threshold calibration, not the safety of a higher one.\n\nProposal 2 (single-step lumped model for all pre-Tsc conditions) is inadmissible for the full pre-Tsc range. The non-proportional relationship between gas generation rate and temperature rise rate from onset to near separator collapse indicates that multiple reaction steps govern this regime. A single-step model is only approximately valid near separator collapse where the relationship becomes approximately proportional. Applying a single-step model across the entire pre-Tsc range would misrepresent the reaction pathway and could produce incorrect pressure and temperature predictions at intermediate temperatures.",
+        "must_include": [
+          "Raising burst threshold delays venting of redox-generated gas, increasing rupture/explosion risk",
+          "Redox gas dominates pressure at venting event relative to electrolyte vapor",
+          "Non-proportional gas generation and temperature rate before Tsc implies multi-step reactions",
+          "Single-step model is only approximately valid near Tsc, not across the full pre-Tsc range",
+          "Manufacturer pressure range validation does not justify raising the threshold"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming a safe intermediate threshold exists between normal venting and Tsc pressure",
+          "Asserting that single-step model is conservative or bounding for all pre-Tsc conditions",
+          "Generalizing pressure ratios or reaction behavior to other SOC levels or chemistries not stated"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of two engineering proposals: burst threshold modification and reaction modeling simplification, evaluated against pressure dominance relationships and non-linear gas generation behavior",
+        "primary_boundary": "Higher burst threshold increases rupture risk via delayed venting of dominant redox gas; single-step model is valid only near Tsc where proportionality holds, not across the full pre-Tsc regime",
+        "intended_error_modes": [
+          "Treating manufacturer pressure range as justification for threshold increase",
+          "Extending near-Tsc proportionality to the full pre-Tsc modeling domain",
+          "Underweighting redox gas dominance relative to electrolyte vapor in venting design"
+        ]
+      }
+    }
+  ]
+}

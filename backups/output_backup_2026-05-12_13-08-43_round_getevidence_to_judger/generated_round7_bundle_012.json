@@ -1,0 +1,318 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A 27 Ah NCM/graphite polymer cell undergoes external heating abuse at 75% SOC without secondary ignition. A safety engineer observes that internal pressure reaches 0.53 MPa and heat release rate peaks at 4.38 kW. The engineer must assess whether reducing SOC to 25% would eliminate thermal runaway risk and whether secondary ignition primarily amplifies pressure rather than heat release. Which conclusions are admissible?",
+        "options": [
+          "A. Reducing SOC to 25% eliminates thermal runaway risk because the maximum surface temperature remains near 90°C and violent venting does not occur under external heating at that charge level.",
+          "B. Secondary ignition at 100% SOC primarily amplifies peak pressure rather than heat release rate, since pressure scales more steeply with SOC than heat release.",
+          "C. The increase in internal pressure from 75% to 100% SOC is greater in absolute magnitude than the increase from 25% to 75% SOC, indicating a non-linear SOC dependence of pressure accumulation.",
+          "D. At 25% SOC, the absence of violent venting confirms that no exothermic reactions occur within the cell under external heating.",
+          "E. Secondary ignition at 100% SOC produces a disproportionately larger increase in heat release rate than in venting rate, suggesting that gas combustion contributes more to the thermal hazard than gas ejection velocity alone.",
+          "F. Because venting rate increases monotonically with SOC, the toxicological hazard from asphyxiant gases scales linearly with SOC across the full range tested."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "At 25% SOC, maximum surface temperature is ~90°C and violent thermal runaway does not occur under external heating.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+152+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Secondary ignition increases heat release from 5.54 kW to 73.3 kW—a ~13x jump—while venting rate increases from 7.2 to 9.4 m/s, a modest change. Heat release amplification dominates.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Gasventing+152+Process_Safety_and_Environmental_Protection:C002",
+              "TR_Gasventing+152+Process_Safety_and_Environmental_Protection:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Pressure rises 0.86 MPa from 75% to 100% SOC versus 0.39 MPa from 25% to 75%, confirming non-linear, accelerating SOC dependence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+152+Process_Safety_and_Environmental_Protection:C001"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Absence of violent venting does not confirm absence of exothermic reactions; it only indicates reactions were insufficient to trigger runaway.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+152+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Secondary ignition multiplies heat release ~13x (5.54 to 73.3 kW) but venting rate increases only ~30% (7.2 to 9.4 m/s), supporting combustion as dominant thermal hazard amplifier.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+152+Process_Safety_and_Environmental_Protection:C002",
+              "TR_Gasventing+152+Process_Safety_and_Environmental_Protection:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "FED values show non-linear SOC dependence (0.002 at 25% to 0.033 at 100%); a linear scaling claim is unsupported.",
+            "error_type": "unjustified_monotonicity",
+            "evidence_refs": [
+              "TR_Gasventing+152+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "SOC-dependent regime transitions in pressure, heat release, and toxicological hazard; secondary ignition amplification mechanism",
+        "primary_boundary": "Absence of thermal runaway at 25% SOC does not imply absence of internal reactions; secondary ignition amplifies heat release far more than venting velocity",
+        "intended_error_modes": [
+          "mechanism_substitution",
+          "causal_overclaim",
+          "unjustified_monotonicity"
+        ],
+        "disallowed_extrapolations": [
+          "Linear scaling of any hazard metric with SOC",
+          "Pressure amplification as primary secondary ignition effect"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Four lithium-ion cell chemistries—NMC 1, NMC 2, LFP, and LTO—are subjected to identical heating abuse in a sealed canister. NMC cells exhibit onset temperatures of 140–145°C; LTO onset is 163°C; LFP onset is 200°C. Peak pressures: NMC 2 at ~102 bar, LFP at ~32 bar, LTO at ~29 bar. LFP vented gas contains the highest H2 fraction; NMC gas contains the highest CO fraction. Which conclusions are admissible?",
+        "options": [
+          "A. The LTO cell's lower onset temperature relative to LFP does not imply greater overall thermal hazard, because its peak pressure and peak temperature remain lower than LFP's.",
+          "B. The higher CO fraction in NMC vented gas compared to LFP is consistent with a greater contribution from cathode decomposition reactions in NMC cells.",
+          "C. Because NMC cells produce approximately three times the peak pressure of LFP cells, NMC cells present three times the explosion hazard in all confinement configurations.",
+          "D. The higher H2 fraction in LFP vented gas compared to NMC implies that LFP cells generate more total gas volume per cell than NMC cells under identical abuse conditions.",
+          "E. A lower thermal runaway onset temperature is a sufficient indicator of higher peak pressure during thermal runaway across these chemistries.",
+          "F. Gas composition differences between LFP and NMC chemistries suggest that different electrochemical decomposition pathways dominate during thermal runaway for each chemistry."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "LTO onset (163°C) is lower than LFP (200°C) yet peak temperature (305°C) and peak pressure (28.8 bar) remain lower than LFP, so onset temperature does not predict overall hazard magnitude.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C003",
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "NMC produces highest CO, consistent with more extensive cathode decomposition releasing oxygen that reacts with carbon species; this is a minimal mechanistic inference supported by the chemistry difference.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C006",
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C007"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Peak pressure ratio applies under the stated confinement; generalizing explosion hazard to all confinement configurations is an unsupported scope expansion.",
+            "error_type": "scope_expansion_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Higher H2 fraction reflects composition, not total gas volume; total volume comparison across chemistries is not supported by the stated evidence.",
+            "error_type": "measurement_scope_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C006"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "LTO has lower onset than LFP but lower peak pressure; onset temperature alone is insufficient to predict peak pressure ranking.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C003",
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Distinct gas species distributions between LFP and NMC are consistent with different dominant decomposition pathways, which is a minimal mechanistic inference from the composition data.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C006"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Decoupling of onset temperature from peak hazard metrics; gas composition as a decomposition pathway indicator; boundary of confinement-specific results",
+        "primary_boundary": "Onset temperature is not a sufficient predictor of peak pressure or total hazard; composition fraction ≠ total volume",
+        "intended_error_modes": [
+          "causal_overclaim",
+          "scope_expansion",
+          "measurement_scope_confusion"
+        ],
+        "disallowed_extrapolations": [
+          "Onset temperature ranking predicts peak pressure ranking",
+          "H2 fraction implies total gas volume ranking",
+          "Pressure ratio generalizes across confinement geometries"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "During recycling, four black mass samples (A, B, C, D) from lithium-ion batteries are evaluated for fire and explosion hazards. All samples exceed 400°C in a hot-air stream test. Only samples A and C produce self-sustaining smoldering, reaching above 640°C. Sample B initiates exothermic reaction at 170°C—lower than A and C—but smoldering does not propagate. Sample D produces 2.27 L H2/kg when contacted with 80°C water; sample A produces only 0.017 L H2/kg. None of the samples ignite in a dust explosion screening test. Which conclusions are admissible?",
+        "options": [
+          "A. A lower exothermic onset temperature is not sufficient to ensure smoldering propagation; the total heat released must also exceed the threshold needed to sustain combustion.",
+          "B. Sample D poses a greater acute flammability hazard than sample A when contacted with hot water, due to substantially higher hydrogen generation per unit mass.",
+          "C. Because all four samples exceed 400°C in the hot-air stream test, all four samples present equivalent smoldering fire hazards under ambient storage conditions.",
+          "D. The failure of all samples to ignite in the dust explosion screening test implies that none of the samples will produce a flammable dust cloud under any industrial handling condition.",
+          "E. Samples A and C present a smoldering fire hazard that sample B does not, despite sample B having a lower exothermic onset temperature than A and C.",
+          "F. The hydrogen concentration from sample D reaching 3.54% by volume in the preliminary water contact test indicates that this sample could approach flammable concentration thresholds in a confined space with limited ventilation."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "E",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Sample B has the lowest onset temperature yet fails to sustain smoldering, confirming onset temperature alone is insufficient; heat release adequacy determines propagation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+150+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Sample D produces ~134x more H2 per kg than sample A under identical water contact conditions, directly supporting greater acute flammability hazard.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+150+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Exceeding 400°C in a hot-air stream indicates spontaneous combustion tendency but not equivalent smoldering hazard; only A and C exhibit self-sustaining smoldering.",
+            "error_type": "overgeneralization",
+            "evidence_refs": [
+              "TR_Gasventing+150+Journal_of_Loss_Prevention_in_the_Process_Industries:C001",
+              "TR_Gasventing+150+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The screening test result applies to the specific test apparatus and energy conditions; generalizing to all industrial handling conditions is an unsupported scope expansion.",
+            "error_type": "scope_expansion_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+150+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Evidence explicitly shows A and C sustain smoldering while B does not, despite B's lower onset temperature—a counterintuitive but directly supported conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+150+Journal_of_Loss_Prevention_in_the_Process_Industries:C002",
+              "TR_Gasventing+150+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "H2 concentration reaching 3.54% v/v is a measured result; in confined spaces with limited ventilation this could approach or reach flammable limits, a minimal engineering implication.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+150+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Decoupling of exothermic onset temperature from smoldering propagation; differential water-reactivity hazard; scope limits of screening test results",
+        "primary_boundary": "Onset temperature does not predict smoldering propagation; screening test non-ignition does not generalize to all conditions",
+        "intended_error_modes": [
+          "overgeneralization_from_screening_test",
+          "onset_temperature_as_hazard_proxy",
+          "scope_expansion"
+        ],
+        "disallowed_extrapolations": [
+          "All samples with >400°C equivalent smoldering hazard",
+          "Dust explosion screening result generalizes to all handling conditions"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "An engineer is evaluating two scenarios involving NCM/graphite polymer lithium-ion cells under external heating abuse. In Scenario 1, a cell at 75% SOC vents without secondary ignition and produces a peak heat release rate of 4.38 kW and a maximum venting rate of 4.5 m/s. In Scenario 2, a cell at 100% SOC vents with secondary ignition, producing a peak heat release rate of 73.3 kW and a maximum venting rate of 9.4 m/s. Internal pressure at 75% SOC is 0.53 MPa and at 100% SOC is 1.39 MPa. The engineer proposes that reducing operating SOC from 100% to 75% is sufficient to manage all hazard dimensions proportionally. Evaluate this claim, identifying which hazard metrics change proportionally and which do not, and explain the engineering implication for hazard management strategy."
+      },
+      "ground_truth": {
+        "gold_answer": "The claim that all hazard dimensions scale proportionally with SOC reduction from 100% to 75% is not admissible. Internal pressure decreases from 1.39 to 0.53 MPa (a ~62% reduction), and venting rate decreases from 9.4 to 4.5 m/s (~52% reduction)—these are meaningful but not proportional reductions. Most critically, peak heat release rate drops from 73.3 kW (with secondary ignition at 100% SOC) to 4.38 kW at 75% SOC—a reduction of over 93%. This disproportionate drop occurs because secondary ignition at 100% SOC involves gas-phase combustion that amplifies heat release far beyond what the electrochemical and thermal decomposition alone produce. The venting rate and pressure changes are moderate, but the heat release change is regime-crossing: secondary ignition represents a qualitatively different hazard mode, not merely a higher-SOC continuation of the same mechanism. The engineering implication is that SOC reduction to 75% may be highly effective at eliminating the catastrophic fire hazard associated with secondary ignition, but it does not proportionally reduce mechanical hazards such as internal pressure and venting momentum. A complete hazard management strategy must address both the gas combustion risk (which SOC reduction strongly mitigates) and the mechanical venting hazard (which persists at reduced but not eliminated levels at 75% SOC).",
+        "must_include": [
+          "heat release rate reduction is disproportionately large due to secondary ignition being a qualitatively different mechanism",
+          "pressure and venting rate reductions are significant but not proportional to heat release reduction",
+          "secondary ignition at 100% SOC represents a regime change, not a continuous scaling",
+          "SOC reduction alone does not proportionally manage all hazard dimensions"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming that 75% SOC eliminates all thermal runaway risk",
+          "Claiming pressure scales linearly with SOC",
+          "Generalizing these results to other cell chemistries or formats without stated evidence"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Regime-crossing behavior of secondary ignition; disproportionate heat release amplification versus moderate pressure/venting changes; hazard management implications of SOC reduction",
+        "primary_boundary": "Secondary ignition is a qualitative regime change, not a continuous SOC-proportional amplification; different hazard metrics respond differently to SOC reduction",
+        "intended_error_modes": [
+          "Assuming all hazard metrics scale proportionally with SOC",
+          "Treating secondary ignition as a continuous amplification rather than a regime transition",
+          "Concluding SOC reduction to 75% eliminates thermal hazard rather than eliminating the secondary ignition regime"
+        ]
+      }
+    }
+  ]
+}

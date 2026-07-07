@@ -1,0 +1,322 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A cylindrical lithium-ion cell with a LiCoO2 cathode is subjected to nail penetration testing. Two protocols are compared: Protocol A drives the nail slowly to a shallow depth below 4.5 mm, while Protocol B drives the nail rapidly to a deep penetration of 7.5 mm. The total short-circuit resistance in both cases is dominated by the contact resistance at the nail-electrode interface, which is inhomogeneously distributed. An engineer evaluates the thermal and safety outcomes of these two protocols. Which of the following conclusions are supported by the described conditions?",
+        "options": [
+          "A. Protocol A produces a higher peak nail temperature than Protocol B, despite Protocol B achieving greater penetration depth.",
+          "B. Protocol B produces greater total heat generation than Protocol A because the nail traverses more electrode layers, increasing the number of short-circuit paths.",
+          "C. The dominance of contact resistance over nail internal resistance means that the nail material's bulk thermal conductivity is the primary determinant of peak temperature in both protocols.",
+          "D. Under inhomogeneous contact resistance distribution, the maximum local heat production can be substantially higher than predictions assuming uniform contact resistance, regardless of penetration protocol.",
+          "E. Protocol A's lower penetration depth necessarily limits the total energy available for heat generation, making thermal runaway impossible regardless of nail speed.",
+          "F. The counterintuitive result that slower, shallower penetration produces higher nail temperatures is consistent with contact resistance dominating total short-circuit resistance."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence directly states that slow shallow penetration (<4.5 mm) produced nail temperatures exceeding 600°C while fast deep penetration (7.5 mm) did not exceed 140°C, confirming Protocol A yields higher peak nail temperature despite less penetration.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+207+The_Cambridge_Photographic_Atlas_of_Galaxies:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "This option invokes a plausible but unsupported mechanism—that more electrode layers contacted yields more heat. The evidence shows the opposite outcome (deeper penetration → lower temperature), and the contact resistance dominance means the number of layers is not the controlling variable.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Mechanism+207+The_Cambridge_Photographic_Atlas_of_Galaxies:C005",
+              "TR_Mechanism+209+Renewable_Energy:C001"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Because contact resistance dominates total short-circuit resistance by several orders of magnitude over nail internal resistance, the nail material's bulk thermal conductivity is not the primary determinant of peak temperature. The controlling factor is the contact resistance, not the nail's intrinsic properties.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Mechanism+209+Renewable_Energy:C001"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence states that under inhomogeneous contact resistance distribution, maximum heat production was always 300% higher than under the uniformity assumption. This holds as a general result independent of which penetration protocol is used.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+209+Renewable_Energy:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "This is a conservative-appearing but incorrect option. Evidence shows that slow shallow penetration (<4.5 mm) produced nail temperatures exceeding 600°C, indicating thermal runaway conditions are reachable at shallow depth. Limiting penetration depth does not guarantee prevention of thermal runaway.",
+            "error_type": "condition_violation",
+            "evidence_refs": [
+              "TR_Mechanism+207+The_Cambridge_Photographic_Atlas_of_Galaxies:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The contact resistance dominating total resistance provides the mechanistic explanation for why slow shallow penetration generates higher local temperatures: energy is concentrated at a high-resistance contact point rather than distributed across a larger penetration zone. This is consistent with the observed counterintuitive temperature outcome.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+207+The_Cambridge_Photographic_Atlas_of_Galaxies:C005",
+              "TR_Mechanism+209+Renewable_Energy:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism linking contact resistance dominance to counterintuitive nail penetration temperature outcomes, and the effect of inhomogeneous resistance distribution on local heat production.",
+        "primary_boundary": "Contact resistance dominance means penetration depth and nail material properties are not the primary thermal determinants; local resistance distribution governs peak heat generation.",
+        "intended_error_modes": [
+          "Assuming deeper penetration always produces more heat (scope expansion)",
+          "Attributing peak temperature to nail bulk thermal conductivity rather than contact resistance (mechanism substitution)",
+          "Assuming shallow penetration prevents thermal runaway (condition violation / conservative but wrong)"
+        ],
+        "disallowed_extrapolations": [
+          "Generalizing the 300% inhomogeneity result to specific numerical predictions beyond what evidence states",
+          "Inferring that contact resistance dominance applies equally to all cell chemistries or geometries not specified"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is evaluating the flammability risk of vent gases from lithium-ion cells undergoing thermal runaway at two different initial states of charge: one cell at low SOC and one at high SOC. It is known that the lower flammability limit (LFL) of the vent gas mixture changes with SOC, and that gas production volume is positively correlated with initial SOC. The engineer must assess ignition risk and gas hazard for both conditions. Which of the following statements are admissible conclusions from these conditions?",
+        "options": [
+          "A. The high-SOC cell produces a larger volume of vent gas and has a lower LFL, meaning a smaller gas concentration is sufficient to reach ignition conditions compared to the low-SOC cell.",
+          "B. The low-SOC cell presents lower ignition risk solely because it produces less total gas volume, independent of the LFL of that gas.",
+          "C. The higher LFL at low SOC arises because the thermal runaway is less violent and produces proportionally more CO2, which raises the fuel-to-oxygen ratio required for ignition.",
+          "D. Because the high-SOC cell has both greater gas volume and lower LFL, it unambiguously presents greater ignition risk under all confinement and ventilation conditions.",
+          "E. At low SOC, the relatively higher CO2 content in vent gas contributes to a higher LFL by diluting flammable species and requiring more fuel relative to available oxygen for ignition.",
+          "F. The LFL of vent gas is independent of SOC because the fundamental combustion chemistry of the electrolyte solvent does not change with lithiation state."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence supports both that gas production is positively correlated with SOC and that LFL decreases with increasing SOC. Together these imply the high-SOC cell produces more gas at a lower ignition threshold concentration, making ignition conditions easier to reach.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+209+Renewable_Energy:C003",
+              "TR_Mechanism+209+Renewable_Energy:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "This option isolates gas volume as the sole determinant of ignition risk while ignoring LFL. The evidence explicitly establishes that LFL varies with SOC and is a distinct risk factor. Ignoring LFL constitutes a single-variable oversimplification of a multi-factor hazard.",
+            "error_type": "ignoring_multi_factor_interaction",
+            "evidence_refs": [
+              "TR_Mechanism+209+Renewable_Energy:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "This directly reflects the mechanistic explanation in the evidence: at low SOC, less violent thermal runaway allows more complete electrolyte reaction producing more CO2, which increases the LFL because more fuel relative to O2 is needed for ignition.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+209+Renewable_Energy:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "While both factors (higher gas volume and lower LFL) favor greater ignition risk at high SOC, the conclusion that this holds under all confinement and ventilation conditions is an overclaim. System-level ignition risk depends on confinement geometry, ventilation, and ignition source availability, which are not addressed by the evidence.",
+            "error_type": "scope_expansion_to_system_level",
+            "evidence_refs": [
+              "TR_Mechanism+209+Renewable_Energy:C003",
+              "TR_Mechanism+209+Renewable_Energy:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "This is mechanistically consistent with the evidence: higher CO2 content at low SOC acts as a diluent of flammable species and shifts the fuel-to-oxygen balance, requiring more fuel for ignition and thus raising the LFL. This is a valid mechanistic restatement of the evidence in terms of gas composition effects.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+209+Renewable_Energy:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence directly contradicts this: LFL decreases with increasing SOC, demonstrating that the flammability characteristics of vent gas are SOC-dependent. The composition of vent gas changes with SOC due to differences in reaction completeness and CO2 production.",
+            "error_type": "overgeneralization",
+            "evidence_refs": [
+              "TR_Mechanism+209+Renewable_Energy:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-factor interaction between SOC, vent gas volume, vent gas composition (CO2 content), and lower flammability limit in determining ignition hazard.",
+        "primary_boundary": "Both gas volume and LFL must be considered together; neither alone is sufficient to characterize ignition risk, and system-level conclusions about all conditions are not supported.",
+        "intended_error_modes": [
+          "Single-variable reasoning using only gas volume to assess ignition risk",
+          "Overclaiming universal ignition risk superiority without accounting for confinement conditions",
+          "Asserting SOC-independence of LFL despite direct evidence of SOC dependence"
+        ],
+        "disallowed_extrapolations": [
+          "Quantitative ignition risk comparison across specific confinement geometries",
+          "Generalizing LFL behavior to chemistries other than those implied by the evidence"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A lithium-ion cell with an NMC cathode is charged beyond 4.5 V. The cathode surface contains residual Li2CO3 from manufacturing. The electrolyte is standard carbonate-based. An engineer assesses the gas evolution and reactive species generation under these conditions. Separately, a second cell using a LiFePO4 cathode with a carbon coating is operated in an electrolyte containing 4000 ppm water and charged to a potential approaching 4.5 V. Which of the following conclusions are admissible given these conditions?",
+        "options": [
+          "A. In the NMC cell, Li2CO3 decomposition at voltages as low as 3.8 V can generate singlet oxygen before the cell reaches 4.5 V, meaning reactive oxygen species may already be present when oxygen evolution from the NMC lattice begins.",
+          "B. In the LFP cell, the presence of 4000 ppm water lowers the threshold voltage for carbon coating oxidation compared to a water-free electrolyte, and increases the volume of gas generated.",
+          "C. Singlet oxygen generated from Li2CO3 decomposition in the NMC cell is relatively benign because it is produced at a lower voltage where the electrolyte is thermally stable.",
+          "D. In the NMC cell charged beyond 4.5 V, oxygen evolution from the cathode surface is primarily driven by Co reduction rather than Ni oxidation state changes.",
+          "E. The gas evolution behavior of the LFP cell at 4000 ppm water cannot be compared to the NMC cell because the two cathode chemistries involve fundamentally different oxidation mechanisms.",
+          "F. Both cells can exhibit increased gas generation under their respective high-stress conditions, but the reactive species responsible differ: singlet oxygen is implicated in the NMC cell while H2 generation is implicated in the LFP cell under high water content."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence states Li2CO3 decomposes at 3.8 V producing singlet oxygen, and oxygen evolution from NMC surface occurs beyond 4.5 V. Since 3.8 V precedes 4.5 V during charging, singlet oxygen from Li2CO3 is generated before lattice oxygen evolution begins, meaning both sources can be active at different voltage stages.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+208+Advanced_Functional_Materials:C001",
+              "TR_Mechanism+208+Advanced_Functional_Materials:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Evidence states that in water-containing electrolyte (4000 ppm), the oxidation threshold for the LFP carbon coating drops from 4.75 V to 4.5 V, and gas content is larger than in water-free electrolyte. Both conclusions are directly supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+208+Advanced_Functional_Materials:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The evidence explicitly describes singlet oxygen as 'extremely destructive to the applied electrolyte,' making this characterization of it as 'relatively benign' directly contradicted. The lower voltage of production does not mitigate its reactivity toward the electrolyte.",
+            "error_type": "causal_overclaim_inversion",
+            "evidence_refs": [
+              "TR_Mechanism+208+Advanced_Functional_Materials:C001"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence states that Ni is the least stable element and that Ni4+ content governs thermal stability of NMC cathodes, with Ni4+ undergoing the fastest reduction. Oxygen evolution from the NMC surface above 4.5 V is attributed to recombination of singlet oxygen escaped from the NMC lattice, linked to Ni-rich behavior, not Co reduction.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Mechanism+208+Advanced_Functional_Materials:C002",
+              "TR_Mechanism+208+Advanced_Functional_Materials:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "This appears epistemically cautious but is incorrect as a general claim. The question does not require direct mechanistic equivalence to compare gas evolution behaviors; the two cells can be compared in terms of gas volume and species generated under their respective conditions without requiring identical mechanisms.",
+            "error_type": "conservative_but_wrong_scope_restriction",
+            "evidence_refs": [
+              "TR_Mechanism+208+Advanced_Functional_Materials:C001",
+              "TR_Mechanism+208+Advanced_Functional_Materials:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Evidence supports that NMC cells generate singlet oxygen from Li2CO3 decomposition and lattice oxygen evolution, while LFP cells under high water content generate H2 from water reduction on the electrode surface. Both cells show increased gas generation under stress, but via distinct reactive species.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+208+Advanced_Functional_Materials:C001",
+              "TR_Mechanism+208+Advanced_Functional_Materials:C005",
+              "TR_Mechanism+208+Advanced_Functional_Materials:C008"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Voltage-dependent gas evolution and reactive species generation across two cathode chemistries under different electrolyte conditions, requiring multi-mechanism reasoning.",
+        "primary_boundary": "Singlet oxygen from Li2CO3 at 3.8 V is destructive to electrolyte; LFP carbon coating oxidation threshold is water-content-dependent; Ni governs NMC thermal instability, not Co.",
+        "intended_error_modes": [
+          "Misidentifying Co as the driver of NMC oxygen evolution instead of Ni",
+          "Characterizing singlet oxygen as benign based on its low production voltage",
+          "Refusing cross-chemistry comparison on grounds of mechanistic difference (conservative but wrong)"
+        ],
+        "disallowed_extrapolations": [
+          "Quantitative comparison of gas volumes between NMC and LFP cells",
+          "Inferring thermal runaway onset temperatures from gas evolution data alone",
+          "Generalizing LFP water sensitivity results to NMC or other cathode chemistries"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A lithium-ion cell with an NMC cathode is cycled under conditions where the working temperature rises above 80°C during operation. The cell has been charged to above 80% state-of-charge. An engineer observes that the cell temperature continues to rise even after the external heat source is removed. Separately, the engineer notes that overcharge tests on similar cells show that the onset temperature for exothermic reactions at the negative electrode drops sharply when the cell is pushed above 100% SOC. Explain the two distinct mechanisms that make this cell progressively more dangerous as both temperature and SOC increase beyond their respective thresholds, and identify what governs the thermal stability of the NMC cathode under these conditions."
+      },
+      "ground_truth": {
+        "gold_answer": "Two distinct mechanisms contribute to the escalating danger. First, when the working temperature exceeds 80°C, exothermic chemical reactions are triggered that further heat the battery, creating a self-reinforcing feedback cycle where heat generation accelerates rather than stabilizes—this is the thermal runaway feedback mechanism. Second, at the negative electrode, the onset temperature for exothermic reactions decreases sharply once the cell exceeds 100% SOC, dropping from above 180°C to approximately 80°C, because metallic lithium deposited during overcharge is highly reactive and initiates exothermic reactions at much lower temperatures than intercalated lithium. These two thresholds can interact: a cell above 100% SOC has a dramatically lowered reaction onset temperature that falls within the range where the thermal feedback cycle is already active above 80°C, compressing the safety margin. The thermal stability of the NMC cathode is governed by the Ni4+ content after charging: Ni is the least stable transition metal element and undergoes the fastest reduction from Ni4+ to Ni2+ during thermal decomposition, so higher Ni content after charge corresponds to lower thermal stability. Mn improves thermal stability while Co maintains it.",
+        "must_include": [
+          "Exothermic reactions above 80°C create a self-reinforcing feedback cycle that continues heating the cell after external heat is removed",
+          "Above 100% SOC, onset temperature for negative electrode exothermic reactions drops from above 180°C to approximately 80°C due to metallic lithium deposition",
+          "Metallic lithium plays an important role in thermal runaway during overcharge",
+          "NMC cathode thermal stability is governed by Ni4+ content after charging",
+          "Ni is the least stable element and undergoes the fastest reduction during thermal decomposition",
+          "Mn improves and Co maintains thermal stability of NMC"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming the 80°C threshold and the 100% SOC threshold are the same mechanism",
+          "Asserting that exceeding 80°C alone is sufficient to cause thermal runaway without the feedback cycle condition",
+          "Generalizing NMC Ni4+ governance of thermal stability to LFP or LTO chemistries",
+          "Quantifying the rate of temperature rise or the exact heat generation values beyond what is stated"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-threshold interaction between temperature-driven exothermic feedback and SOC-driven reduction in onset temperature, combined with Ni4+ governance of NMC cathode thermal stability.",
+        "primary_boundary": "The 80°C thermal feedback threshold and the 100% SOC negative electrode onset temperature drop are distinct mechanisms that can interact; NMC stability is governed by Ni4+ specifically, not by cathode voltage alone.",
+        "intended_error_modes": [
+          "Conflating the 80°C working temperature threshold with the negative electrode onset temperature reduction",
+          "Attributing NMC thermal instability to Co or Mn rather than Ni4+ content",
+          "Treating the two thresholds as independent without recognizing their potential interaction when both are exceeded simultaneously"
+        ]
+      }
+    }
+  ]
+}

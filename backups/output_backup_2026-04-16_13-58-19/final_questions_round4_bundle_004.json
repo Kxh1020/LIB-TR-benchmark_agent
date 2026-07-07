@@ -1,0 +1,142 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery safety engineer is analyzing thermal runaway risk across the service life of lithium-ion cells stored at elevated temperature (55°C, 100% SOC) versus cells cycled at low temperature (−5°C, 1C). Accelerating rate calorimetry data show that stored cells exhibit an increase in the onset temperature for abnormal self-heating and an increase in the time interval between onset and full thermal runaway, while low-temperature cycled cells show the opposite trend with both parameters decreasing substantially as state of health declines. The engineer must determine which statements about the underlying mechanisms and safety implications are defensible. Which of the following are admissible conclusions?",
+        "options": [
+          "A. The improvement in thermal runaway onset temperature for the elevated-temperature stored cells is counterintuitive relative to the expectation that high-temperature storage accelerates degradation, but it is consistent with the dominant aging mechanism at high temperature not producing anode deposits that lower characteristic temperatures.",
+          "B. The decrease in thermal runaway onset temperature for low-temperature cycled cells is most directly explained by the formation of anode deposits that react exothermically with electrolyte at lower temperatures than the native anode material.",
+          "C. Because both storage at 55°C and cycling at −5°C result in capacity loss, the thermal runaway hazard at equivalent state of health must be similar regardless of the aging pathway taken to reach that state of health.",
+          "D. The time interval between onset of self-heating and full thermal runaway provides information about the rate of exothermic reaction progression, and its reduction in low-temperature cycled cells indicates that the reaction cascade accelerates more rapidly in those cells.",
+          "E. The observation that T3 (the temperature at which full thermal runaway occurs) remains constant across different states of health for low-temperature cycled cells implies that the total energy released during thermal runaway is independent of aging state.",
+          "F. A cell that has been stored at 55°C and 100% SOC until significant capacity loss has occurred presents a lower thermal runaway risk at the onset stage than a fresh cell of the same chemistry cycled to 80% state of health at −5°C."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "This is counterintuitive because high-temperature storage is generally associated with accelerated degradation and worsened safety. However, the evidence shows that high-temperature aging is dominated by SEI growth, electrolyte decomposition, and active material losses—not lithium plating. Since lithium plating is the key mechanism that lowers T1 and T2, its absence in high-temperature storage explains why T1 actually rises. This requires multi-step mechanism reasoning.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+179+UnknownJournal:C003",
+              "TR_Mechanism+177+UnknownJournal:C003",
+              "TR_Mechanism+179+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The evidence directly establishes that lithium plating is the key reason for deterioration of thermal runaway performance during aging, leading to decreases in T1 and T2. At low temperatures, lithium plating is the dominant aging mechanism. The exothermic reaction between plated lithium and electrolyte at lower temperatures than the native anode material is the mechanistic explanation for the observed T1 decrease.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+179+UnknownJournal:C004",
+              "TR_Mechanism+177+UnknownJournal:C003",
+              "TR_Mechanism+178+ENERGY_andamp;_ENVIRONMENTAL_MATERIALS:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "This is a conservative but incorrect option. The evidence explicitly shows that thermal runaway behavior depends on the aging pathway, not just the state of health reached. Low-temperature cycled cells at 80% SOH show dramatically worsened thermal runaway metrics compared to elevated-temperature stored cells at similar capacity loss. Thermal runaway hazard at equivalent SOH is pathway-dependent.",
+            "error_type": "condition_violation_ignoring_pathway_dependence",
+            "evidence_refs": [
+              "TR_Mechanism+179+UnknownJournal:C002",
+              "TR_Mechanism+179+UnknownJournal:C003",
+              "TR_Mechanism+179+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The time interval between onset and full thermal runaway (DtTR) decreasing by 70% at 80% SOH for low-temperature cycled cells directly indicates that the exothermic reaction cascade progresses more rapidly in those cells. This is a mechanistically coherent interpretation of DtTR as a rate indicator for the reaction progression.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+179+UnknownJournal:C002",
+              "TR_Mechanism+179+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The evidence states that T3 remained constant at different SOH for low-temperature cycled cells, but this does not imply that total energy released is independent of aging state. T3 is a temperature threshold, not a measure of total heat. The evidence separately shows that the ratio of total heat released to electrochemical energy increases with cycle number, which contradicts the implication of constant total energy release.",
+            "error_type": "measurement_scope_distractor",
+            "evidence_refs": [
+              "TR_Mechanism+179+UnknownJournal:C002",
+              "TR_Mechanism+177+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The evidence shows that elevated-temperature stored cells exhibit T1 rising to 96.3°C and DtTR reaching 2.85 times initial value, while low-temperature cycled cells at 80% SOH show T1 dropping to 52.4°C and DtTR decreasing by 70%. A cell with T1 near 96°C presents a lower onset-stage risk than one with T1 near 52°C. This comparative conclusion is directly supported by the evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+179+UnknownJournal:C002",
+              "TR_Mechanism+179+UnknownJournal:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Aging pathway dependence of thermal runaway characteristic temperatures, with mechanism discrimination between lithium plating and high-temperature degradation modes",
+        "primary_boundary": "Thermal runaway hazard is not determined solely by state of health but by the aging mechanism that produced that state of health; T3 constancy does not imply constant total heat release",
+        "intended_error_modes": [
+          "Assuming equivalent SOH implies equivalent thermal runaway risk regardless of aging path",
+          "Inferring total energy release from a single temperature threshold measurement",
+          "Missing the counterintuitive result that high-temperature storage improves thermal runaway onset metrics"
+        ],
+        "disallowed_extrapolations": [
+          "Treating T3 as a proxy for total heat released",
+          "Concluding that capacity fade rate determines thermal runaway severity independently of mechanism",
+          "Generalizing the 55°C storage improvement to all elevated-temperature aging conditions"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A lithium-ion cell with a graphite anode is cycled at −5°C until it reaches 80% state of health. A second cell of identical fresh chemistry is stored at 55°C and 100% SOC until it reaches a similar level of capacity loss. Both cells are then subjected to accelerating rate calorimetry. Explain, using the governing degradation mechanisms at each temperature, why the two cells are expected to show different thermal runaway onset temperatures and different times between onset and full thermal runaway, even though they have reached similar states of health. Your answer should identify the dominant aging mechanism in each case, explain how that mechanism affects the anode-electrolyte thermodynamic system, and state why cathode behavior is not expected to be the differentiating factor."
+      },
+      "ground_truth": {
+        "gold_answer": "At −5°C, the dominant aging mechanism is lithium plating on the graphite anode. Plated lithium is highly reactive with the electrolyte and initiates exothermic reactions at lower temperatures than the native graphite-electrolyte system. This lowers the onset temperature for abnormal self-heating (T1) and the thermal runaway triggering temperature (T2), and dramatically shortens the time interval between onset and full thermal runaway. At 55°C, the dominant aging mechanisms are SEI growth, electrolyte decomposition, and active material losses—none of which deposit reactive metallic lithium on the anode. As a result, the anode-electrolyte exothermic reactivity is not amplified; in fact, T1 increases and the time to thermal runaway lengthens relative to the fresh cell. The cathode is not the differentiating factor because thermal stability measurements of fresh and degraded cathodes across all aging paths show similar heat generation profiles, indicating that cathode degradation does not change significantly during aging regardless of the path taken. Therefore, the divergence in thermal runaway behavior between the two cells is entirely attributable to anode-side changes driven by the respective dominant aging mechanisms.",
+        "must_include": [
+          "lithium plating as dominant mechanism at low temperature",
+          "SEI growth / electrolyte decomposition / active material loss as dominant mechanisms at high temperature",
+          "plated lithium reacts exothermically with electrolyte at lower temperatures, reducing T1 and T2",
+          "time to thermal runaway (DtTR) decreases for low-temperature cycled cells and increases for high-temperature stored cells",
+          "cathode thermal stability is similar across aging paths and does not differentiate the two cases",
+          "thermal runaway behavior depends on anode-electrolyte exothermic reactions"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming that high-temperature storage eliminates all thermal runaway risk",
+          "Attributing the difference to cathode decomposition differences",
+          "Claiming that equal state of health implies equal thermal runaway hazard without referencing mechanism",
+          "Stating that T3 changes explain the difference in thermal runaway severity"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism-dependent divergence of thermal runaway characteristic parameters under different aging pathways at equivalent state of health",
+        "primary_boundary": "Thermal runaway hazard is pathway-dependent through anode mechanism; cathode contribution is invariant across aging paths and cannot explain the differential",
+        "intended_error_modes": [
+          "Attributing differential thermal runaway behavior to cathode degradation differences",
+          "Assuming equivalent SOH implies equivalent thermal runaway risk",
+          "Failing to connect lithium plating specifically to lowered T1/T2 via anode-electrolyte reactivity",
+          "Confusing T3 constancy with absence of thermal runaway severity change"
+        ]
+      }
+    }
+  ]
+}

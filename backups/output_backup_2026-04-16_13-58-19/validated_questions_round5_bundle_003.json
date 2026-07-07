@@ -1,0 +1,226 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A 21700 NMC cell at 100% SOC undergoes thermal runaway in an altitude-simulation chamber. As ambient pressure is reduced from 101 kPa to 30 kPa, the following observations are recorded: the onset temperature for thermal runaway increases, the time interval between safety venting and thermal runaway onset shortens from 48 s to 22 s, and the maximum jet flame height is non-monotonic with pressure, peaking at an intermediate pressure rather than at the lowest tested pressure. Mass loss across all tested pressures shows no consistent directional trend. A safety engineer is evaluating whether reduced ambient pressure at high altitude represents a more or less severe thermal runaway hazard compared to sea level. Which of the following statements are admissible based on this evidence?",
+        "options": [
+          "A. The shortened venting-to-runaway interval at lower pressure means that any thermal management response triggered by venting detection has less time to act before runaway onset, increasing operational risk.",
+          "B. Because the onset temperature for thermal runaway increases at lower pressure, high-altitude operation is categorically safer than sea-level operation for this cell chemistry.",
+          "C. The non-monotonic behavior of jet flame height with pressure indicates that the relationship between ambient pressure and combustion behavior cannot be described by a simple monotonic model over the tested range.",
+          "D. The absence of a consistent trend in mass loss across pressures implies that the total energy content released during thermal runaway is strongly pressure-dependent.",
+          "E. The rate of temperature rise during thermal runaway is influenced by both internal battery pressure dynamics and external ambient pressure, so neither factor alone fully characterizes the severity of runaway at altitude.",
+          "F. Flame lift-off was not observed at any tested pressure, which confirms that jet fire hazard is negligible at reduced ambient pressure."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The venting-to-runaway interval decreases from 48 s to 22 s as pressure drops. This is a direct operational implication: safety systems triggered by venting detection have a shorter intervention window at altitude, which increases risk regardless of the higher onset temperature.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+160+Case_Studies_in_Thermal_Engineering:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "While onset temperature increases at lower pressure, the venting-to-runaway interval is also shorter, meaning the window for intervention is reduced. A higher onset temperature does not categorically make operation safer when the dynamics after venting are more compressed. This is a conservative-sounding but incorrect conclusion that ignores the competing hazard factor.",
+            "error_type": "Ignoring multi-factor interaction; single-variable overclaim",
+            "evidence_refs": [
+              "TR_Dynamics+160+Case_Studies_in_Thermal_Engineering:C001",
+              "TR_Dynamics+160+Case_Studies_in_Thermal_Engineering:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Jet flame height peaks at 50 kPa rather than at the lowest (30 kPa) or highest (101 kPa) pressure, demonstrating non-monotonic behavior. This directly supports the conclusion that a simple monotonic model is insufficient to describe the pressure–combustion relationship over this range.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+160+Case_Studies_in_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence states that environmental pressure has little significance on mass loss, with no consistent directional trend. The absence of a mass loss trend implies pressure has limited influence on total ejected mass, not that energy release is strongly pressure-dependent. This inverts the correct inference.",
+            "error_type": "Causal inversion from a non-result",
+            "evidence_refs": [
+              "TR_Dynamics+160+Case_Studies_in_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Evidence explicitly states that dT/dt during thermal runaway is related to both internal battery pressure and external environmental pressure, so neither alone fully determines runaway severity. This is a direct admissible inference from the heat transfer model evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+160+Case_Studies_in_Thermal_Engineering:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The absence of flame lift-off does not imply jet fire hazard is negligible. Flame lift-off is one specific combustion behavior; the jet flame still reaches up to 0.28 m in height. Absence of lift-off is not equivalent to absence of hazard. This is a measurement scope distractor.",
+            "error_type": "Measurement scope distractor; absence of one phenomenon ≠ absence of hazard",
+            "evidence_refs": [
+              "TR_Dynamics+160+Case_Studies_in_Thermal_Engineering:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-factor hazard assessment under reduced ambient pressure, requiring integration of onset temperature, venting interval, flame behavior, and mass loss evidence without single-variable overclaiming.",
+        "primary_boundary": "A higher onset temperature at lower pressure does not categorically reduce hazard because the venting-to-runaway interval simultaneously decreases, and dT/dt depends on both internal and external pressure.",
+        "intended_error_modes": [
+          "Single-variable safety conclusion ignoring competing factor",
+          "Inverting a non-result (no mass loss trend) into a strong causal claim",
+          "Treating absence of one combustion feature as evidence of negligible hazard"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding categorical safety improvement from higher onset temperature alone",
+          "Inferring strong pressure dependence of energy release from the mass loss data",
+          "Treating flame lift-off absence as a proxy for overall fire hazard level"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery researcher is comparing thermal runaway characteristics across different cell designs. The following relationships are established for a set of cells: the trigger temperature T2 is determined by the collapse temperature of the separator; the maximum temperature T3 is determined by the redox reaction between cathode and anode; T3 tends to be higher for cells with higher energy density; and the maximum temperature rise rate near T2 shows high correlation with energy density. In a modified experiment, the separator and electrolyte are removed from a cell before thermal abuse testing. The cell's mass decreases by approximately 13%, T2 shifts upward to near the onset temperature of the cathode–anode redox reaction, and T3 remains high. A design team proposes two strategies: Strategy P modifies the separator to increase its collapse temperature; Strategy Q replaces the cathode material with a lower-energy-density variant. Which of the following conclusions are admissible?",
+        "options": [
+          "A. Strategy P directly targets the mechanism that determines T2, so it is expected to raise T2 without necessarily reducing T3.",
+          "B. Strategy Q would be expected to reduce both T3 and the maximum temperature rise rate near T2, since both are correlated with energy density.",
+          "C. The experiment removing separator and electrolyte demonstrates that internal short circuit is the dominant heat source during thermal runaway, because T3 remains high even without the electrolyte.",
+          "D. A thermal model that assigns the majority of heat generation to internal short circuit will overestimate the contribution of ISC and underestimate T3 relative to full-cell measurements.",
+          "E. If a cell passes a standard abuse test, it can be inferred that its T2 is high enough that the cathode–anode redox reaction cannot be triggered under any realistic operating condition.",
+          "F. The high T3 observed after separator and electrolyte removal is consistent with the cathode–anode redox reaction proceeding independently of the electrolyte-mediated short circuit pathway."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "T2 is determined by separator collapse temperature, so Strategy P directly raises T2. T3 is determined by the cathode–anode redox reaction, which is a separate mechanism. Raising T2 does not necessarily alter T3. This is a counterintuitive but correct conclusion because engineers often assume raising T2 also reduces T3.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+161+UnknownJournal:C007"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "T3 tends to be higher for cells with higher energy density, and the maximum temperature rise rate near T2 has high correlation with energy density. Strategy Q reduces energy density, so both T3 and the maximum rise rate would be expected to decrease. Both trends point in the same direction.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+161+UnknownJournal:C004",
+              "TR_Dynamics+161+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The experiment removing separator and electrolyte was designed to test ISC contribution. The evidence concludes the opposite: ISC does not make major contributions to total heat generation, and T3 remains high because the cathode–anode redox reaction still occurs. The high T3 without electrolyte refutes ISC dominance, not confirms it.",
+            "error_type": "Causal inversion; mechanism confusion",
+            "evidence_refs": [
+              "TR_Dynamics+161+UnknownJournal:C008"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "A model overweighting ISC would underestimate T3, not overestimate it, because ISC contributes only 9% of total heat. The evidence states that models using separate cathode/anode kinetic equations predict T3 much lower than measured. Overweighting ISC (which ceases at 249.2°C) would similarly underpredict T3, not overpredict it. The direction of error stated in the option is correct, but the causal attribution to ISC overestimation is partially confused with the separate-equations modeling failure.",
+            "error_type": "Partial mechanism confusion; the correct failure mode is underprediction of T3, but attributing it specifically to ISC overestimation conflates two distinct modeling errors",
+            "evidence_refs": [
+              "TR_Dynamics+161+UnknownJournal:C009",
+              "TR_Dynamics+161+UnknownJournal:C006"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "A higher T2 means better thermal stability and improved likelihood of passing standard abuse tests, but passing an abuse test does not guarantee that the cathode–anode redox reaction cannot be triggered under any realistic condition. This is an overclaim that converts a probabilistic safety indicator into an absolute guarantee.",
+            "error_type": "Causal overclaim; converting a probabilistic indicator into a universal safety guarantee",
+            "evidence_refs": [
+              "TR_Dynamics+161+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "When separator and electrolyte are removed, ISC cannot occur (no electrolyte circuit), yet T3 remains high at 877.2°C. This is mechanistically consistent with the cathode–anode redox reaction proceeding independently of the ISC pathway, confirming that the redox reaction does not require electrolyte mediation to generate high temperatures.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+161+UnknownJournal:C008",
+              "TR_Dynamics+161+UnknownJournal:C010"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinguishing the separate determinants of T2 and T3, evaluating the role of ISC versus cathode–anode redox in total heat generation, and assessing design strategy admissibility.",
+        "primary_boundary": "T2 and T3 are governed by different mechanisms (separator collapse vs. cathode–anode redox), so interventions targeting one do not necessarily affect the other. ISC is not the dominant heat source.",
+        "intended_error_modes": [
+          "Assuming raising T2 also reduces T3",
+          "Inverting the ISC experiment conclusion",
+          "Overclaiming that passing an abuse test guarantees safety under all conditions"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding that high T3 after electrolyte removal proves ISC dominance",
+          "Treating abuse test passage as a universal safety guarantee",
+          "Assuming T2 and T3 respond proportionally to the same design intervention"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "In an NMC811|Gr full cell, the cathode–electrolyte reaction system is identified as the triggering reaction at the onset of uncontrollable self-heating, contributing approximately 90% of the instantaneous heat release rate at that temperature. However, when EC-free electrolyte is used, the maximum temperature during thermal runaway remains nearly as high as in the standard cell despite a meaningful increase in the trigger temperature. Separately, a staged heat accounting analysis shows that the oxygen released by the cathode is distributed between two competing pathways: reaction with the electrolyte solvent and reaction with the lithiated anode, with the latter generating a substantially larger fraction of total heat. Explain why suppressing the cathode–electrolyte triggering reaction through electrolyte reformulation raises the trigger temperature but fails to substantially reduce the maximum temperature reached during thermal runaway. Your answer must identify the specific mechanism responsible for the persistently high maximum temperature and explain why that mechanism is not addressed by removing the electrolyte solvent."
+      },
+      "ground_truth": {
+        "gold_answer": "The cathode–electrolyte reaction governs the trigger temperature T2 because it is the dominant heat source at the onset of uncontrollable self-heating. Removing EC from the electrolyte suppresses this reaction, raising T2. However, the maximum temperature T3 is determined by the cathode–anode redox reaction, specifically the reaction between oxygen released by the cathode and the lithiated anode (O2+LiC6). This pathway consumes approximately 59% of cathode-released oxygen and generates approximately 64–82% of total heat depending on electrolyte composition. Critically, this reaction does not depend on the electrolyte solvent as a reactant; it involves direct interaction between cathode-released oxygen and the lithiated graphite anode. Therefore, removing EC eliminates the cathode–electrolyte triggering pathway but leaves the dominant heat-generating cathode–anode redox pathway intact, resulting in a higher trigger temperature but a nearly unchanged maximum temperature.",
+        "must_include": [
+          "T2 is governed by the cathode–electrolyte reaction which is suppressed by EC removal",
+          "T3 is governed by the cathode–anode redox reaction (O2 reacting with lithiated anode)",
+          "The O2+LiC6 pathway generates the majority of total heat",
+          "This pathway does not require the electrolyte solvent as a reactant",
+          "EC removal addresses the trigger mechanism but not the dominant heat-generating mechanism"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming that EC-free electrolyte prevents thermal runaway propagation",
+          "Stating that ISC is responsible for the high T3",
+          "Claiming that the cathode–anode redox reaction requires electrolyte to proceed",
+          "Asserting that T3 is unchanged; evidence shows a small reduction from 791.7°C to 761.3°C which is permissible to note but should not be characterized as substantial suppression"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanistic decoupling of the trigger temperature determinant (cathode–electrolyte reaction) from the maximum temperature determinant (cathode–anode redox reaction via O2+LiC6), and why an intervention targeting the former does not suppress the latter.",
+        "primary_boundary": "The O2+LiC6 reaction pathway is independent of the electrolyte solvent, so electrolyte reformulation cannot substantially reduce T3 even when it successfully raises T2.",
+        "intended_error_modes": [
+          "Conflating trigger temperature suppression with maximum temperature suppression",
+          "Attributing high T3 to ISC rather than cathode–anode redox",
+          "Assuming that eliminating the dominant trigger reaction eliminates the dominant heat source"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,317 @@
+{
+  "TR_Modelling+38+IEEE_Transactions_on_Transportation_Electrification__TR_Modelling+87+The_Innovation__TR_Modelling+9+Journal_of_Energy_Storage": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A lithium-ion cell undergoes separator shrinkage, producing a broad-scale internal short circuit (ISC) that raises cell temperature to above 300\u00b0C. An engineer argues that the dominant heat source driving thermal runaway is Joule heating from the ISC current. Which of the following statements are consistent with established evidence about ISC heat contribution and thermal runaway mechanisms?",
+          "options": [
+            "A. Joule heat from ISC is always the dominant heat source because ISC directly delivers electrical energy into the cell interior.",
+            "B. Even when ISC is induced, sharply increased battery resistance can limit Joule heat, making ISC a minor contributor to total thermal runaway heat generation.",
+            "C. Chemical crosstalk between cathode oxygen released during decomposition and anode materials can generate heat and trigger thermal runaway independently of ISC severity.",
+            "D. ISC functions as a triggering mechanism that raises temperature sufficiently to initiate exothermic chemical reactions, which then dominate heat generation.",
+            "E. Cathode material decomposition and massive oxygen release occur before ISC is established and are therefore unrelated to separator shrinkage.",
+            "F. The Joule heat from ISC scales proportionally with short-circuit current and is unaffected by changes in internal resistance during the event."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "C",
+            "D"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "Evidence explicitly states ISC Joule heat may be limited by increased resistance and contributes minimally to TR heat generation.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Modelling+87+The_Innovation:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Directly supported: sharply increased battery resistance limits Joule heat from ISC, making its TR heat contribution minimal.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+87+The_Innovation:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Supported: chemical crosstalk between cathode oxygen and anode can directly generate heat and trigger TR without severe ISC.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+87+The_Innovation:C003"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Consistent with evidence: ISC raises temperature triggering TR reactions; ISC is triggering factor while chemical reactions dominate heat.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+38+IEEE_Transactions_on_Transportation_Electrification:C003",
+                "TR_Modelling+87+The_Innovation:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Evidence states cathode decomposition and oxygen release follow separator-shrinkage ISC temperature rise, not precede it.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Modelling+87+The_Innovation:C002"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Evidence shows internal resistance increases sharply during ISC, which limits current and Joule heat; proportional scaling is unsupported.",
+              "error_type": "unsupported_monotonicity",
+              "evidence_refs": [
+                "TR_Modelling+87+The_Innovation:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Distinguishing ISC as a triggering mechanism versus dominant heat source, and recognizing resistance-limited Joule heat",
+          "primary_boundary": "ISC Joule heat contribution is condition-dependent and may be minimal due to resistance increase; chemical reactions dominate TR heat",
+          "intended_error_modes": [
+            "causal_overclaim",
+            "mechanism_substitution",
+            "unsupported_monotonicity"
+          ],
+          "disallowed_extrapolations": [
+            "ISC Joule heat is always dominant",
+            "cathode decomposition is independent of ISC temperature rise"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery management system monitors a large parallel-cell pack of 6 Ah lithium iron phosphate cells during overcharging at 50% initial SOC. The system uses voltage change as the sole early-warning signal. A second system uses gas sensors. Which statements correctly characterize the detection capabilities and limitations of these approaches under these conditions?",
+          "options": [
+            "A. Voltage-only warning is reliable for very early detection because the voltage rise from 4.2 V to 5.2 V is a distinct, easily isolated signal in large parallel packs.",
+            "B. In large parallel packs, parallel cell connections suppress individual fault voltage signals, so voltage change alone cannot reliably achieve very early thermal runaway warning.",
+            "C. Gas sensor detection is feasible for early fault diagnosis but its effectiveness depends on the specific fault condition and battery material.",
+            "D. Gas generation in lithium iron phosphate overcharging begins only after surface temperature exceeds 100\u00b0C, making gas sensors ineffective for early warning.",
+            "E. The GASF-ResNet classifier can distinguish normal charging from very early and early-mid overcharging stages with high accuracy before surface temperature reaches 50\u00b0C.",
+            "F. Voltage-based warning is superior to gas sensing because voltage signals appear before any gas is generated during overcharging."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "Evidence states parallel cells suppress fault voltage signals, making very early voltage-only warning unreliable in large packs.",
+              "error_type": "boundary_overreach",
+              "evidence_refs": [
+                "TR_Modelling+9+Journal_of_Energy_Storage:C006"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Directly supported: large parallel cell counts suppress fault voltage signals, preventing very early warning from voltage alone.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+9+Journal_of_Energy_Storage:C006"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Supported: gas sensor early diagnosis is feasible but highly dependent on fault condition and battery material.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+9+Journal_of_Energy_Storage:C007"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Evidence shows gas generation was detected at 53\u00b0C surface temperature and 120% SOC, well below 100\u00b0C.",
+              "error_type": "boundary_overreach",
+              "evidence_refs": [
+                "TR_Modelling+9+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Supported: GASF-ResNet achieved 97.7% accuracy diagnosing TR stages before surface temperature reached 50\u00b0C in LFP cells.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+9+Journal_of_Energy_Storage:C009"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "No evidence supports voltage signals preceding gas generation; evidence instead highlights voltage signal suppression in parallel packs.",
+              "error_type": "unsupported_monotonicity",
+              "evidence_refs": [
+                "TR_Modelling+9+Journal_of_Energy_Storage:C005",
+                "TR_Modelling+9+Journal_of_Energy_Storage:C006"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Comparing voltage-based versus gas-sensor early warning reliability under large parallel pack conditions and LFP overcharging",
+          "primary_boundary": "Voltage suppression in parallel packs limits early warning; gas detection threshold is ~53\u00b0C/120% SOC for LFP; gas sensor effectiveness is condition-dependent",
+          "intended_error_modes": [
+            "boundary_overreach",
+            "scale_transfer_overclaim",
+            "unsupported_monotonicity"
+          ],
+          "disallowed_extrapolations": [
+            "Voltage always precedes gas signal",
+            "Gas sensors are universally effective regardless of chemistry"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A coupled mechanical-electrical-thermal simulation model for nail penetration of a cylindrical lithium-ion cell uses an ISC distance threshold r that varies with SOC. At SOC = 0.6, r = 1.5\u00d710\u207b\u2075 m; at SOC = 0.2, r = 1.0\u00d710\u207b\u2075 m. The model also sets TR side-reaction onset at 80\u00b0C. Which conclusions are supported by the evidence underlying this model?",
+          "options": [
+            "A. Higher SOC causes ISC to initiate earlier during mechanical deformation, justifying a larger distance threshold r at higher SOC.",
+            "B. The anode's mechanical stiffness and strength decrease as SOC increases because lithium extraction weakens the granular layer.",
+            "C. The cathode's mechanical properties are significantly altered by SOC, requiring SOC-dependent cathode parameters in the model.",
+            "D. The model's TR onset temperature of 80\u00b0C is lower than the 130\u00b0C threshold for large-scale SEI decomposition, suggesting the model captures an earlier initiating reaction.",
+            "E. This model can fully simulate force-electrical-thermal response under axial compression without modification.",
+            "F. Agreement between the model's temperature predictions and experimental data within 1\u00b0C confirms that the model's physical assumptions are mechanistically correct."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "D"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Directly supported: higher SOC causes earlier ISC onset, so r is set larger at higher SOC values in the model.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+38+IEEE_Transactions_on_Transportation_Electrification:C006",
+                "TR_Modelling+38+IEEE_Transactions_on_Transportation_Electrification:C012"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Evidence states anode stiffness and strength increase with SOC due to denser granular layer; the direction is reversed here.",
+              "error_type": "unsupported_monotonicity",
+              "evidence_refs": [
+                "TR_Modelling+38+IEEE_Transactions_on_Transportation_Electrification:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Evidence explicitly states SOC has little effect on cathode mechanical properties; SOC-dependent cathode parameters are unsupported.",
+              "error_type": "boundary_overreach",
+              "evidence_refs": [
+                "TR_Modelling+38+IEEE_Transactions_on_Transportation_Electrification:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Model onset is 80\u00b0C; large-scale SEI decomposition threshold is 130\u00b0C; the 80\u00b0C onset captures an earlier initiating event.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+38+IEEE_Transactions_on_Transportation_Electrification:C011",
+                "TR_Modelling+38+IEEE_Transactions_on_Transportation_Electrification:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Evidence explicitly states this model cannot simulate force-electrical-thermal response under axial compression due to a model limitation.",
+              "error_type": "boundary_overreach",
+              "evidence_refs": [
+                "TR_Modelling+38+IEEE_Transactions_on_Transportation_Electrification:C007"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Empirical fit within 1\u00b0C does not confirm physical correctness of model assumptions; calibration agreement \u2260 mechanistic validity.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Modelling+38+IEEE_Transactions_on_Transportation_Electrification:C009",
+                "TR_Modelling+87+The_Innovation:C008"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Evaluating model parameter choices against underlying physical evidence, including SOC effects on anode vs cathode, TR onset thresholds, model limitations, and calibration validity",
+          "primary_boundary": "SOC affects anode (not cathode) mechanics; model has axial compression limitation; calibration fit does not imply physical correctness",
+          "intended_error_modes": [
+            "unsupported_monotonicity",
+            "boundary_overreach",
+            "causal_overclaim"
+          ],
+          "disallowed_extrapolations": [
+            "Calibration accuracy implies physical correctness",
+            "Cathode mechanics are SOC-dependent",
+            "Model is valid for all loading modes"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A researcher proposes using a purely data-driven machine learning model trained on calorimetry data from one lithium iron phosphate chemistry at a fixed SOC to predict thermal runaway behavior across different chemistries, SOC levels, and states of health. The model achieves excellent fit on its training dataset. Identify two distinct reasons why this approach has fundamental limitations, and explain the physical or methodological basis for each limitation."
+        },
+        "ground_truth": {
+          "gold_answer": "First, thermodynamic parameters from calorimetry are specific to one chemical system and state because thermal runaway performance is influenced by materials, SOC, and SOH. Applying parameters calibrated on one chemistry and SOC to other systems constitutes an unsupported regime transfer; the underlying reaction kinetics and heat release profiles differ across chemistries and charge states. Second, purely data-driven models may fail outside their training data range and can produce unphysical predictions because they do not encode the underlying physical mechanisms governing thermal runaway. Excellent training-set fit confirms empirical interpolation accuracy but does not validate that the model captures the correct causal mechanisms, meaning extrapolation to new conditions or chemistries is unreliable.",
+          "must_include": [
+            "calorimetry parameters are specific to one chemical system or state",
+            "TR performance depends on materials, SOC, and SOH",
+            "purely data-driven models may fail outside training data range",
+            "data-driven models can produce unphysical predictions by neglecting physical mechanisms",
+            "training fit does not imply physical correctness or valid extrapolation"
+          ],
+          "disallowed_extrapolations": [
+            "Data-driven models are always unreliable regardless of training domain",
+            "Calorimetry data is universally transferable if the same cell format is used",
+            "High training accuracy guarantees adequate safety margin predictions"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Distinguishing regime-transfer limitations of calorimetry-derived parameters from the mechanistic-validity gap of purely data-driven models",
+          "primary_boundary": "Calorimetry parameters are chemistry/SOC/SOH-specific; data-driven models without physical constraints cannot reliably extrapolate",
+          "intended_error_modes": [
+            "scale_transfer_overclaim",
+            "causal_overclaim",
+            "boundary_overreach"
+          ]
+        }
+      }
+    ]
+  }
+}

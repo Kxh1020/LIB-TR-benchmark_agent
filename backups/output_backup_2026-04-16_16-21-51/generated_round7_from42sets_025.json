@@ -1,0 +1,317 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery energy storage system housed in a sealed enclosure experiences a single-cell thermal runaway event. The affected cell is at high state of charge. A clean agent suppression system activates immediately upon flame detection, successfully extinguishing visible flames within seconds. A process safety engineer must evaluate the post-suppression explosion hazard. Which of the following conclusions are admissible given these conditions?",
+        "options": [
+          "A. Suppression of flames reduces the immediate fire hazard but may increase the probability of a subsequent deflagration event by allowing flammable gas to accumulate without combustion consuming it.",
+          "B. Because the clean agent extinguished the flames, the thermal runaway gas generation process is also terminated, so flammable gas accumulation ceases after suppression.",
+          "C. A single high-SOC cell undergoing thermal runaway in a confined enclosure can generate sufficient flammable gas for a partial volume deflagration independent of whether flames were present.",
+          "D. The clean agent suppression system eliminates both the fire and explosion hazards simultaneously, since removing the ignition source prevents any subsequent gas ignition.",
+          "E. The presence of an active fire prior to suppression would have partially consumed the liberated flammable gases, meaning suppression that extinguishes the fire may leave a higher residual flammable gas inventory than if the fire had continued briefly.",
+          "F. Explosion risk following clean agent deployment is negligible because the agent itself dilutes the flammable gas below the lower explosive limit."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Clean agents extinguish flames but may allow flammable gas to accumulate, increasing explosion risk per C007.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+141+Journal_of_Loss_Prevention_in_the_Process_Industries:C007"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Gas generation is driven by thermal runaway chemistry, not by flame presence; suppression does not stop gas release.",
+            "error_type": "mechanism_confusion",
+            "evidence_refs": [
+              "TR_Gasventing+141+Journal_of_Loss_Prevention_in_the_Process_Industries:C007"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence shows a single high-capacity cell generates enough gas for partial volume deflagration in a confined enclosure per C004.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+141+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Removing ignition source does not eliminate accumulated flammable gas; re-ignition sources may persist in the enclosure.",
+            "error_type": "protective_mechanism_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+141+Journal_of_Loss_Prevention_in_the_Process_Industries:C007"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "An ongoing fire partially consumes liberated flammable gas; extinguishing it preserves that gas inventory, per C006.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+141+Journal_of_Loss_Prevention_in_the_Process_Industries:C006"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "No evidence supports that clean agent concentration is sufficient to dilute vent gas below LEL in a BESS enclosure.",
+            "error_type": "unsupported_extrapolation",
+            "evidence_refs": [
+              "TR_Gasventing+141+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Interaction between fire suppression, flammable gas accumulation, and explosion risk in confined BESS enclosures",
+        "primary_boundary": "Clean agent suppression addresses flames but not gas generation; fire itself partially mitigates explosion hazard by consuming gas",
+        "intended_error_modes": [
+          "protective_mechanism_overclaim",
+          "mechanism_confusion_suppression_stops_gas",
+          "unsupported_dilution_claim"
+        ],
+        "disallowed_extrapolations": [
+          "Clean agent dilutes gas below LEL",
+          "Flame extinction terminates thermal runaway gas release",
+          "Removing ignition source eliminates explosion hazard"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Two nominally identical lithium-ion cells of the same chemistry and capacity are subjected to thermal abuse. Cell A is at 100% SOC; Cell B is at 30% SOC. Both are in separate enclosures of equal volume. An engineer must assess the relative hazard profiles. The mean LEL of vent gas from cells at 100% SOC has been characterized across a broad population of cell varieties. Which statements about the comparative hazard are admissible?",
+        "options": [
+          "A. Cell A is more likely to produce flaming, torch-like ejection with large quantities of flammable gas, whereas Cell B is more likely to produce non-flaming gas or aerosol venting.",
+          "B. Because Cell B vents without flaming, it presents no explosion hazard, since flammable gas is only produced during flaming thermal runaway events.",
+          "C. The LEL characterization at 100% SOC cannot be directly applied to Cell B without additional evidence, because vent gas composition and quantity are SOC-dependent.",
+          "D. Cell A presents a higher combined fire and explosion hazard than Cell B, and the flammable gas from Cell A has a mean LEL on the order of 10% based on multi-variety characterization at full charge.",
+          "E. Cell B's non-flaming venting mode is inherently safer in all respects because the absence of flame eliminates both fire and explosion hazards simultaneously.",
+          "F. The failure mode difference between Cell A and Cell B is primarily driven by the quantity of flammable gas generated, not by the availability of an ignition source internal to the cell."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "High SOC produces flaming/flaring; low SOC produces non-flaming gas/aerosol venting, per C001 and C002.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+141+Journal_of_Loss_Prevention_in_the_Process_Industries:C001",
+              "TR_Gasventing+141+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Non-flaming venting still ejects flammable gas; explosion hazard exists even without immediate ignition.",
+            "error_type": "mechanism_confusion",
+            "evidence_refs": [
+              "TR_Gasventing+141+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "LEL data was collected at 100% SOC; applying it to lower SOC conditions is an unsupported extrapolation per C003.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+141+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "High SOC yields greater flammable gas and flaming hazard; mean LEL ~10% is supported for 100% SOC cells per C003.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+141+Journal_of_Loss_Prevention_in_the_Process_Industries:C001",
+              "TR_Gasventing+141+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Non-flaming venting still releases flammable gas into the enclosure; explosion hazard remains if gas accumulates and finds an ignition source.",
+            "error_type": "scope_expansion_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+141+Journal_of_Loss_Prevention_in_the_Process_Industries:C002",
+              "TR_Gasventing+141+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Evidence attributes failure mode difference to SOC level, not solely to gas quantity vs. ignition source availability; this is an unsupported mechanistic attribution.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+141+Journal_of_Loss_Prevention_in_the_Process_Industries:C001",
+              "TR_Gasventing+141+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "SOC-dependent failure mode and hazard type distinction; scope of LEL characterization data",
+        "primary_boundary": "Non-flaming venting does not eliminate explosion hazard; LEL data is SOC-specific",
+        "intended_error_modes": [
+          "non-flaming_means_safe_overclaim",
+          "scope_transfer_of_LEL_data",
+          "causal_attribution_error"
+        ],
+        "disallowed_extrapolations": [
+          "Non-flaming venting eliminates explosion risk",
+          "LEL at 100% SOC applies to lower SOC cells",
+          "Failure mode is solely determined by ignition availability"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A process engineer is designing a ventilation and hazardous material management plan for a BESS facility containing cells rated at 50 Wh each. During a worst-case thermal runaway scenario, the engineer must estimate toxic gas release and explosion risk. The facility uses a clean agent fire suppression system as the primary safety measure. Which of the following engineering judgments are admissible?",
+        "options": [
+          "A. HF gas production can be conservatively estimated at 200 mg per Wh of stored energy, making the per-cell HF yield calculable directly from the cell energy rating without requiring cell-specific chemistry data.",
+          "B. Because HF production scales with stored energy, a cell at 50% SOC would produce approximately half the HF of the same cell at 100% SOC under thermal runaway.",
+          "C. The clean agent suppression system can be credited with reducing toxic HF exposure risk because it eliminates the fire that drives HF generation.",
+          "D. Relying solely on clean agent suppression to manage explosion risk is inadequate because suppression may preserve rather than reduce the flammable gas inventory inside the enclosure.",
+          "E. The 200 mg HF per Wh estimate is a conservative upper bound applicable for facility-level toxic release consequence modeling, not a minimum expected yield.",
+          "F. Since HF generation is proportional to stored energy, cells with higher capacity ratings always present greater explosion hazard than lower-capacity cells regardless of SOC."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "HF production is directly proportional to electrical energy stored; 200 mg/Wh allows direct calculation from cell rating per C005.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+141+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence states proportionality to stored energy but does not confirm linear SOC scaling for HF yield at partial charge states.",
+            "error_type": "unsupported_extrapolation",
+            "evidence_refs": [
+              "TR_Gasventing+141+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "HF generation is driven by thermal runaway chemistry, not by the fire itself; suppressing flames does not stop HF production.",
+            "error_type": "mechanism_confusion",
+            "evidence_refs": [
+              "TR_Gasventing+141+Journal_of_Loss_Prevention_in_the_Process_Industries:C007"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Clean agents extinguish flames but may allow flammable gas accumulation, increasing explosion risk per C007; sole reliance is inadequate.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+141+Journal_of_Loss_Prevention_in_the_Process_Industries:C007"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Evidence describes 200 mg/Wh as a conservative estimate, meaning it represents an upper bound suitable for consequence modeling per C005.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+141+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Explosion hazard depends on SOC-dependent failure mode and gas quantity; capacity alone does not determine explosion hazard without SOC information.",
+            "error_type": "overgeneralization",
+            "evidence_refs": [
+              "TR_Gasventing+141+Journal_of_Loss_Prevention_in_the_Process_Industries:C001",
+              "TR_Gasventing+141+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "HF yield estimation scope, clean agent suppression limitations, and multi-hazard interaction in BESS facility design",
+        "primary_boundary": "200 mg/Wh is a conservative estimate for energy-proportional HF; clean agent suppression does not address gas accumulation or HF generation",
+        "intended_error_modes": [
+          "suppression_eliminates_HF_generation",
+          "SOC_linear_scaling_assumption",
+          "capacity_alone_determines_explosion_hazard"
+        ],
+        "disallowed_extrapolations": [
+          "Clean agent reduces HF by stopping fire",
+          "HF yield at partial SOC equals proportional fraction without evidence",
+          "Higher capacity always means higher explosion hazard regardless of SOC"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A safety engineer proposes that installing a clean agent suppression system in a confined BESS enclosure will reduce both fire and explosion risk compared to having no suppression system. Using engineering reasoning about the mechanisms involved in thermal runaway gas generation and the role of fire in a propagating thermal runaway event, evaluate whether this proposal is fully supported, partially supported, or contradicted. Identify the specific mechanism that makes this trade-off non-trivial and explain what additional design consideration the engineer must address."
+      },
+      "ground_truth": {
+        "gold_answer": "The proposal is only partially supported. Clean agent suppression effectively reduces fire hazard by extinguishing flames. However, it does not stop flammable and toxic gas generation, which is driven by thermal runaway chemistry independent of whether flames are present. Critically, an ongoing fire partially consumes the liberated flammable gases, reducing the quantity available for a deflagration. By extinguishing the fire, the clean agent may preserve a higher flammable gas inventory inside the enclosure, potentially increasing explosion risk. The engineer must therefore pair the suppression system with adequate enclosure ventilation or gas management to prevent flammable gas accumulation to deflagration-capable concentrations.",
+        "must_include": [
+          "clean agent extinguishes flames but does not stop gas generation",
+          "fire partially consumes flammable gas, so suppression may increase residual gas inventory",
+          "explosion risk may increase after clean agent deployment if gas accumulates",
+          "ventilation or gas management is required as a complementary measure"
+        ],
+        "disallowed_extrapolations": [
+          "Clean agent dilutes gas below LEL",
+          "Suppressing flames terminates thermal runaway chemistry",
+          "Clean agent suppression always increases net safety without qualification"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Trade-off between fire suppression benefit and explosion risk increase via flammable gas accumulation in confined enclosures",
+        "primary_boundary": "Fire partially mitigates explosion hazard by consuming gas; suppression removes this consumption pathway without stopping gas generation",
+        "intended_error_modes": [
+          "assuming suppression addresses all hazard pathways equally",
+          "ignoring the gas-consumption role of ongoing fire",
+          "treating clean agent as a complete safety solution without ventilation complement"
+        ]
+      }
+    }
+  ]
+}

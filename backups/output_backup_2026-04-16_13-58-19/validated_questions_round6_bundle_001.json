@@ -1,0 +1,135 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A 4 Ah lithium iron phosphate cell undergoes thermal runaway inside an 80 L enclosed chamber. Measurements confirm that the released gas explosion propagates at supersonic speed and produces an average maximum overpressure of 383 kPa in the closed configuration. An explosion vent is then installed on the chamber. Tests with varying vent sizes show that as the dimensionless venting coefficient Kv decreases from 74.26 to 6.19, both peak overpressure and deflagration index decrease substantially. However, a venting efficiency index that accounts for both overpressure reduction and vent area cost reaches a maximum at an intermediate Kv value of 8.25 before declining. An engineer evaluates whether increasing vent area indefinitely is the optimal design strategy. Which of the following conclusions are admissible?",
+        "options": [
+          "A. Increasing vent area beyond the optimal Kv value of 8.25 continues to reduce overpressure but does so with diminishing returns in venting efficiency, making arbitrarily large vents suboptimal by the efficiency criterion.",
+          "B. The supersonic propagation speed measured in the closed chamber confirms that the explosion regime is detonation, which means the explosion vent must be designed to contain rather than relieve the pressure wave to be effective.",
+          "C. At small vent areas, the risk of secondary explosion may increase relative to intermediate vent sizes, because delayed vent opening allows greater accumulation of combustible gases that can mix with external air after venting.",
+          "D. Because the explosion vent reduced average maximum overpressure by over 93%, it can be concluded that the explosion vent eliminates the structural risk to the chamber under all TR gas release scenarios.",
+          "E. The optimal venting coefficient Kv = 8.25 represents a design point where the tradeoff between overpressure reduction and vent area cost is most favorable, but this optimum is specific to the tested configuration and may not transfer directly to chambers of different volume or cell capacity.",
+          "F. Reducing Kv from 74.26 to 6.19 produces a monotonic decrease in both peak overpressure and deflagration index, which implies that the minimum achievable overpressure is obtained at the smallest possible Kv value regardless of other design constraints."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The venting efficiency index Ks reaches a maximum at Kv = 8.25 and then decreases as vent area increases further. This means larger vents beyond this point reduce overpressure but at a cost that exceeds the efficiency benefit, making them suboptimal by this criterion. This is a direct implication of the non-monotonic Ks behavior.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+161+Process_Safety_and_Environmental_Protection:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "While the supersonic propagation confirms detonation, the evidence shows that explosion vents do effectively reduce overpressure by over 93% even under these conditions. The claim that vents must 'contain rather than relieve' detonation waves is not supported and contradicts the demonstrated effectiveness of relief venting.",
+            "error_type": "mechanism confusion / unsupported design recommendation",
+            "evidence_refs": [
+              "TR_Gasventing+161+Process_Safety_and_Environmental_Protection:C001",
+              "TR_Gasventing+161+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence states that small vent areas cause delayed opening due to higher opening pressure, leading to prolonged accumulation and increased concentration of combustible gases. After venting, high-temperature unburned gases can mix with external air to form a combustible cloud risking secondary explosion. This is directly supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+161+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The 93% reduction is a measured average across tested configurations, but the residual overpressure range (7.2–27 kPa) and variability across Kv values means structural risk is reduced, not eliminated. Claiming elimination of structural risk under 'all TR gas release scenarios' is an inadmissible overclaim beyond the tested conditions.",
+            "error_type": "protective mechanism overclaim distractor",
+            "evidence_refs": [
+              "TR_Gasventing+161+Process_Safety_and_Environmental_Protection:C001"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The optimal Kv = 8.25 is identified within the specific 80 L chamber with a 4 Ah LFP cell. The evidence does not support transferring this specific optimum to different chamber volumes or cell capacities, making the qualification that it is configuration-specific an admissible and necessary caveat.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+161+Process_Safety_and_Environmental_Protection:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "While decreasing Kv does reduce peak overpressure and deflagration index monotonically, the venting efficiency index Ks is non-monotonic and peaks at Kv = 8.25. The statement that the minimum overpressure at the smallest Kv is optimal 'regardless of other design constraints' ignores the efficiency penalty and potential secondary explosion risk at very small Kv values.",
+            "error_type": "ignoring boundary conditions / ignoring multi-factor interaction",
+            "evidence_refs": [
+              "TR_Gasventing+161+Process_Safety_and_Environmental_Protection:C002",
+              "TR_Gasventing+161+Process_Safety_and_Environmental_Protection:C003",
+              "TR_Gasventing+161+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Optimal explosion vent design under TR gas explosion conditions, including the non-monotonic efficiency relationship and secondary explosion risk at small vent areas",
+        "primary_boundary": "Venting efficiency is non-monotonic with vent area; overpressure reduction does not eliminate structural risk; optimal Kv is configuration-specific; small vent areas introduce secondary explosion risk",
+        "intended_error_modes": [
+          "Claiming venting eliminates structural risk from measured average reduction",
+          "Assuming monotonic optimality of smallest Kv ignoring efficiency and secondary explosion",
+          "Misinterpreting detonation classification as requiring containment rather than relief"
+        ],
+        "disallowed_extrapolations": [
+          "Transferring optimal Kv to different chamber volumes or cell capacities",
+          "Claiming 93% reduction equates to elimination of structural risk",
+          "Applying detonation classification to conclude vents are ineffective"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "An NCM523 battery module is operated at 50% SOC and subjected to a combined loading scenario: the cells are preheated to 100°C and then rapidly penetrated. Post-test analysis shows surface temperatures exceeding 400°C and a temperature rise rate of approximately 78°C/s. The module enclosure has a fixed-area explosion vent with a high opening pressure rating. An engineer raises two concerns: (1) whether the thermal runaway severity at 50% SOC under this combined loading would be classified differently than under overheating alone at the same SOC, and (2) whether the high opening pressure of the fixed vent introduces an additional hazard beyond the primary explosion overpressure. Provide a technically justified answer to both concerns, identifying the mechanism responsible for each effect."
+      },
+      "ground_truth": {
+        "gold_answer": "Concern 1: Under overheating alone, the TR trigger temperature for NCM523 at 50% SOC is approximately 185.9°C, meaning the cell must be heated to that temperature before runaway initiates. Under the combined loading of rapid penetration at 100°C preheating, TR is triggered at a much lower effective thermal threshold because mechanical damage from penetration introduces internal short circuits or structural disruption that reduces the energy barrier for runaway initiation. The evidence shows that rapid penetration significantly reduced the TR trigger temperature threshold compared to overheating alone. At 50% SOC under combined loading, the cell enters severe TR (rise rate ~78°C/s, surface temperature ~440°C), which is a more dangerous outcome than what overheating alone at 100°C would produce, since overheating alone at 100°C would not reach the 185.9°C trigger threshold without additional heating. The mechanism is that mechanical damage under elevated temperature lowers the effective activation condition for exothermic reactions, enabling TR at conditions that would be sub-threshold under purely thermal loading. Concern 2: A high opening pressure on a fixed vent with small effective area causes delayed vent opening. During the delay, combustible gases released from TR continue to accumulate inside the enclosure, increasing both concentration and total quantity of flammable gas. When the vent finally opens, high-temperature unburned gases are ejected and can mix with external air to form a combustible cloud. If this cloud contacts hot surfaces or ignition sources outside the enclosure, a secondary explosion can occur. The mechanism is that delayed venting converts a controlled pressure relief event into an uncontrolled release of a pre-mixed combustible cloud, creating a secondary ignition hazard that is spatially displaced from the primary event and potentially more difficult to control.",
+        "must_include": [
+          "Rapid penetration reduces TR trigger temperature compared to overheating alone",
+          "Mechanical damage under elevated temperature lowers the effective threshold for TR initiation",
+          "50% SOC under combined loading falls in severe TR regime with rise rate exceeding 10°C/s",
+          "High opening pressure causes delayed vent opening",
+          "Delayed opening leads to accumulation of combustible gases",
+          "Post-venting mixing of hot unburned gases with external air can form a combustible cloud",
+          "Combustible cloud creates secondary explosion risk"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming the combined loading result applies to all mechanical abuse scenarios regardless of preheating temperature",
+          "Stating that the secondary explosion risk is eliminated by any specific vent design without evidence",
+          "Quantifying the TR trigger temperature under combined loading without evidence support",
+          "Generalizing the optimal Kv from the LFP test to this NCM523 module configuration"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism by which combined mechanical-thermal loading lowers TR trigger conditions relative to thermal-only loading, and the secondary explosion mechanism introduced by high-opening-pressure vents with small area",
+        "primary_boundary": "TR trigger temperature reduction is specific to combined loading; secondary explosion risk is specific to small vent area with high opening pressure; optimal vent parameters from one configuration do not transfer directly",
+        "intended_error_modes": [
+          "Confusing TR trigger temperature under overheating alone with combined loading trigger conditions",
+          "Treating high opening pressure as uniformly beneficial for structural protection without recognizing secondary explosion risk",
+          "Failing to connect delayed vent opening to combustible cloud formation mechanism"
+        ]
+      }
+    }
+  ]
+}

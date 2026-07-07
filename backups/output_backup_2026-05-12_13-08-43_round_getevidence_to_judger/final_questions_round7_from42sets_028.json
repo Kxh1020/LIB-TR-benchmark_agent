@@ -1,0 +1,37 @@
+{
+  "mcqs": [],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery safety engineer is designing a CO2 suppression system for a battery room where BVG may be released. Two release scenarios are considered: (1) a slow, diffusion-dominated release producing a near-premixed gas cloud at φ = 0.8, and (2) a high-pressure jet release producing a turbulent jet at φ = 0.5. The engineer has data showing that at φ = 0.8, increasing CO2 from 5% to 25% reduces peak explosion pressure by approximately 47% and reduces the maximum rate of pressure rise by over 90%, while explosion time increases by nearly 590%. At φ = 0.5 under jet conditions, complete inhibition requires CO2 exceeding 35%, while premixed conditions at φ = 0.5 require only CO2 exceeding 30%. Explain which scenario drives the suppression system design requirement, what CO2 concentration target is appropriate, and identify one mechanism-based reason why the rate of pressure rise is disproportionately more sensitive to CO2 concentration than peak pressure is under the φ = 0.8 premixed scenario."
+      },
+      "ground_truth": {
+        "gold_answer": "The jet release scenario at φ = 0.5 drives the design requirement because it demands the highest CO2 concentration for complete inhibition (exceeding 35%), compared to premixed conditions at φ = 0.5 (>30%) or the φ = 0.8 premixed scenario where 25% CO2 does not achieve complete inhibition but substantially reduces severity. The CO2 target should exceed 35% to ensure complete inhibition under the most demanding jet condition. Regarding disproportionate sensitivity: the rate of pressure rise reflects flame propagation speed, which depends exponentially on chain-branching reaction rates. CO2 preferentially disrupts chain-branching kinetics and absorbs heat that sustains flame acceleration, so even moderate CO2 additions collapse the rapid pressure rise phase while residual combustion still produces near-similar final pressures. Peak pressure is governed by total energy release, which requires more complete suppression to reduce significantly.",
+        "must_include": [
+          "jet scenario at φ = 0.5 sets the design requirement due to highest CO2 threshold (>35%)",
+          "CO2 target must exceed 35% for complete inhibition under jet conditions",
+          "rate of pressure rise is more sensitive to CO2 than peak pressure because it reflects flame acceleration kinetics rather than total energy release",
+          "CO2 affects flame propagation rate or chain-branching reactions more strongly than it affects total combustion enthalpy"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming 25% CO2 achieves complete inhibition at φ = 0.8",
+          "Asserting that the φ = 0.8 scenario drives design requirements",
+          "Stating CO2 acts solely through oxygen dilution without referencing kinetic or thermal mechanisms",
+          "Generalizing the disproportionate sensitivity relationship to all equivalence ratios or all diluents"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-scenario suppression system design sizing and mechanism-based explanation of differential metric sensitivity to CO2 concentration",
+        "primary_boundary": "Design is driven by the scenario requiring the highest CO2 threshold; disproportionate sensitivity of pressure rise rate vs. peak pressure must be explained through flame kinetics or thermal mechanism, not simple dilution",
+        "intended_error_modes": [
+          "selecting φ = 0.8 as design driver due to higher equivalence ratio",
+          "conflating partial reduction in severity with complete inhibition",
+          "attributing CO2 effect solely to oxygen displacement without kinetic reasoning",
+          "ignoring that jet conditions require higher threshold than premixed at same equivalence ratio"
+        ]
+      }
+    }
+  ]
+}

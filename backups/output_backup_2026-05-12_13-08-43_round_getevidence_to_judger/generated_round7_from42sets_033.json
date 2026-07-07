@@ -1,0 +1,318 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery venting gas (BVG) release occurs in a confined space where the ambient temperature is 90°C and the gas-air mixture is at an equivalence ratio of 1. A separate scenario involves the same gas at 30°C and the same equivalence ratio. An engineer asserts that the elevated-temperature scenario is substantially more ignition-sensitive and that even a very weak electrostatic discharge could trigger combustion. Which of the following conclusions are admissible given the described conditions?",
+        "options": [
+          "A. The minimum ignition energy at 90°C is approximately one-third lower than at 30°C, indicating a meaningful but bounded reduction in ignition sensitivity.",
+          "B. Because ignition energy decreases linearly with temperature, the energy required at 90°C is negligible and any ambient ignition source should be treated as sufficient.",
+          "C. A weak electrostatic discharge of 0.07 mJ would be sufficient to ignite the mixture at 90°C but not at 30°C under stoichiometric conditions.",
+          "D. The linear temperature dependence of ignition energy implies that extrapolation to temperatures above 120°C will reliably predict ignition energy without additional data.",
+          "E. The reduction in ignition energy between 30°C and 90°C is quantitatively consistent with a linear relationship, supporting the engineer's claim that elevated temperature increases ignition risk.",
+          "F. Because the ignition energy at 90°C remains above zero, the mixture cannot be considered self-igniting under the stated conditions without an external energy source."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "From 0.12 mJ at 30°C to 0.08 mJ at 90°C is a ~33% reduction, bounded and quantifiable from evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Linearity does not imply negligibility; 0.08 mJ is still a finite threshold requiring a specific energy source.",
+            "error_type": "causal overclaim / unjustified monotonicity extrapolation",
+            "evidence_refs": [
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C001",
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "0.07 mJ is below 0.08 mJ (90°C threshold) but below 0.12 mJ (30°C threshold), making this a regime-distinguishing boundary judgment.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence establishes linearity only within 30–120°C; extrapolation beyond this range is not supported.",
+            "error_type": "scope expansion beyond evidence boundary",
+            "evidence_refs": [
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The quantitative data at stoichiometric ratio confirm linear decrease with temperature, directly supporting elevated ignition risk.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C001",
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Appears conservative but conflates self-ignition with ignition sensitivity; the claim is trivially true but irrelevant to the stated risk comparison.",
+            "error_type": "conservative but incorrect — scope mismatch",
+            "evidence_refs": [
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Boundary reasoning on temperature-dependent ignition energy and admissibility of risk claims at specific thresholds",
+        "primary_boundary": "Linear temperature dependence is evidence-supported only within 30–120°C and at equivalence ratio 1; extrapolation and negligibility claims are not admissible",
+        "intended_error_modes": [
+          "unjustified extrapolation beyond measured range",
+          "treating linear trend as implying negligible threshold",
+          "scope mismatch on self-ignition claim"
+        ],
+        "disallowed_extrapolations": [
+          "Predicting ignition energy above 120°C from linear fit alone",
+          "Claiming any ambient source suffices because energy is 'low'"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is evaluating ignition risk for a BVG/DMC mixed gas release scenario. In one case the mixture is fuel-lean (equivalence ratio 0.7) with 50% DMC by proportion. In a second case, pure DMC is present at its most ignition-sensitive equivalence ratio. The engineer proposes that the lean BVG/DMC mixture at high DMC fraction poses a lower ignition hazard than pure DMC at its optimal ratio because BVG is the primary flammable component. Which of the following judgments are supported?",
+        "options": [
+          "A. The lean BVG/DMC mixture at 50% DMC proportion has a measured ignition energy of 8.1 mJ, which is substantially higher than pure DMC's minimum ignition energy of 0.84 mJ, contradicting the engineer's mechanistic premise.",
+          "B. The U-shaped ignition energy profile of the BVG/DMC mixture with equivalence ratio implies that the lean mixture at high DMC fraction represents a local ignition energy maximum, not a minimum hazard.",
+          "C. Because ignition energy at 50% DMC under lean conditions exceeds the experimental measurement range boundary, the mixture can be treated as non-ignitable for practical safety assessments.",
+          "D. The engineer's claim is incorrect: increasing DMC proportion under lean conditions raises ignition energy, meaning the high-DMC lean mixture is harder to ignite than pure DMC at its optimal ratio.",
+          "E. The minimum ignition energy of pure DMC occurs at an equivalence ratio of 1.3, so comparing it to a lean mixture at equivalence ratio 0.7 involves a regime mismatch that must be acknowledged before any hazard ranking.",
+          "F. Since BVG has a lower ignition energy than DMC at equivalence ratio 1.5, BVG always dominates ignition sensitivity regardless of mixture composition or equivalence ratio."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "8.1 mJ vs 0.84 mJ is a direct evidence-supported numerical comparison that refutes the engineer's premise.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C004",
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The U-shaped profile applies to BVG/DMC vs equivalence ratio, not to DMC proportion at fixed lean ratio; mechanism is misapplied.",
+            "error_type": "mechanism substitution — applying U-shape trend to wrong variable axis",
+            "evidence_refs": [
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C003",
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Exceeding the experimental range means the value is unmeasured, not that the mixture is non-ignitable; this is a protective mechanism overclaim.",
+            "error_type": "measurement scope overclaim — treating range limit as non-ignition boundary",
+            "evidence_refs": [
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence directly shows increasing DMC proportion under lean conditions raises ignition energy, making the lean high-DMC mixture harder to ignite than pure DMC at its optimal ratio.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C004",
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "DMC minimum is at equivalence ratio 1.3; comparing to a lean (0.7) scenario involves a regime difference that affects admissibility of direct hazard ranking.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "BVG dominance at one equivalence ratio cannot be universalized; mixture composition and ratio both modulate which component governs ignition sensitivity.",
+            "error_type": "overgeneralization from single-condition observation",
+            "evidence_refs": [
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C004",
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-factor ignition hazard ranking under regime-dependent and composition-dependent conditions",
+        "primary_boundary": "Ignition energy behavior under lean conditions with increasing DMC proportion is increasing, not decreasing; regime mismatch between DMC optimal ratio and lean BVG/DMC scenario must be preserved",
+        "intended_error_modes": [
+          "mechanism substitution applying U-shape to wrong variable",
+          "treating measurement range limit as non-ignition proof",
+          "overgeneralizing single-condition BVG dominance"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming non-ignitability from exceeding experimental range",
+          "Universal BVG dominance across all equivalence ratios and compositions"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "During a battery thermal runaway event, venting gas is released at 120°C into a space where the gas-air mixture reaches stoichiometric conditions. A safety engineer claims that because the ignition energy at this temperature is the lowest measured in the dataset, any realistic ignition source in the environment should be assumed sufficient to cause ignition, and no further energy threshold analysis is needed. A second engineer argues that the threshold still matters because not all sources deliver energy above 0.063 mJ. Which positions are defensible?",
+        "options": [
+          "A. The second engineer's position is defensible: 0.063 mJ is a finite, non-negligible threshold, and sources delivering less energy remain insufficient to ignite the mixture.",
+          "B. The first engineer's position is defensible only if it is established that all realistic ignition sources in the environment deliver energy exceeding 0.063 mJ, which is a site-specific determination not resolved by the temperature data alone.",
+          "C. Because ignition energy decreases linearly with temperature and 120°C is the highest measured temperature, the ignition energy at any temperature above 120°C must be below 0.063 mJ, confirming the first engineer's concern is valid for higher-temperature scenarios.",
+          "D. The first engineer's claim that no further threshold analysis is needed is not admissible, because the evidence establishes a specific threshold value rather than zero ignition energy.",
+          "E. The linear decrease in ignition energy with temperature means that at sufficiently elevated temperatures the threshold approaches zero, making the first engineer's practical assumption conservative rather than incorrect.",
+          "F. Both engineers are partially correct: the threshold is finite and source-specific analysis is required, but the reduced threshold at 120°C does meaningfully expand the set of sources capable of causing ignition compared to 30°C."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "0.063 mJ is a measured finite threshold; sources below this value remain insufficient, directly supporting the second engineer.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The temperature data establishes the threshold but not whether site sources exceed it; site-specific determination is required for the first engineer's claim.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C001",
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Extrapolating the linear fit above 120°C is outside the evidence boundary; no data supports predictions beyond the measured range.",
+            "error_type": "scope expansion beyond evidence boundary",
+            "evidence_refs": [
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence shows a specific nonzero threshold at 120°C; claiming no threshold analysis is needed contradicts the evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Appears conservative but incorrectly extends linear trend to imply near-zero threshold at unspecified high temperatures, which is unsupported extrapolation.",
+            "error_type": "conservative but incorrect — unjustified extrapolation framed as conservatism",
+            "evidence_refs": [
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Both positions have valid components: threshold is finite requiring source analysis, but lower threshold at 120°C expands the ignitable source set relative to 30°C.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C001",
+              "TR_Gasventing+149+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of safety engineering claims based on finite ignition energy thresholds and limits of temperature-trend extrapolation",
+        "primary_boundary": "Linear trend is evidence-supported only within 30–120°C; the threshold at 120°C is finite and nonzero, making 'no threshold analysis needed' inadmissible",
+        "intended_error_modes": [
+          "extrapolating linear trend above measured range",
+          "treating lowest measured value as effectively zero",
+          "framing unsupported extrapolation as conservative engineering judgment"
+        ],
+        "disallowed_extrapolations": [
+          "Predicting sub-0.063 mJ thresholds above 120°C",
+          "Treating linear trend as implying zero ignition energy at any reachable temperature"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A process safety engineer is assessing ignition risk for battery venting gas released into an environment where the gas-air mixture can form at various equivalence ratios and where dimethyl carbonate (DMC) vapor may also be present from electrolyte evaporation. The engineer observes that under lean combustion conditions, increasing the proportion of DMC in the BVG/DMC mixture dramatically raises the ignition energy required, while pure DMC at its most reactive equivalence ratio has a lower ignition energy than BVG at the same ratio. The engineer concludes that DMC addition is always beneficial from an ignition risk perspective because it raises ignition energy. Identify the specific condition under which this conclusion fails and explain the mechanistic reasoning that limits its generalizability."
+      },
+      "ground_truth": {
+        "gold_answer": "The conclusion fails when the mixture is near the equivalence ratio at which DMC reaches its minimum ignition energy (approximately 1.3), where pure DMC requires only 0.84 mJ for ignition — lower than BVG at the same equivalence ratio. Under lean conditions with high DMC proportion, ignition energy is indeed elevated (reaching 8.1 mJ at 50% DMC), making DMC addition appear protective. However, this protective effect is specific to the lean regime. When the overall mixture equivalence ratio shifts toward stoichiometric or moderately rich conditions, DMC's own ignition sensitivity becomes dominant, and its presence lowers rather than raises the mixture's ignition energy relative to BVG alone. The engineer's conclusion therefore cannot be generalized across equivalence ratios: DMC addition increases ignition energy under lean conditions but can decrease it near DMC's optimal combustion ratio, reversing the hazard direction.",
+        "must_include": [
+          "DMC minimum ignition energy of 0.84 mJ occurs at equivalence ratio 1.3",
+          "At equivalence ratio 1.3 or 1.5, DMC ignition energy is lower than BVG at the same ratio",
+          "The lean-condition benefit of DMC addition does not extend to stoichiometric or moderately rich conditions",
+          "Equivalence ratio regime determines whether DMC addition is protective or hazardous"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming DMC is always more or always less ignition-sensitive than BVG regardless of equivalence ratio",
+          "Asserting that the lean-condition trend extends to all equivalence ratios",
+          "Predicting ignition energies at equivalence ratios or DMC proportions outside the evidence range"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Regime-dependent admissibility of the claim that DMC addition universally raises ignition energy in BVG/DMC mixtures",
+        "primary_boundary": "DMC's protective effect under lean conditions reverses near its optimal equivalence ratio where it becomes more ignition-sensitive than BVG",
+        "intended_error_modes": [
+          "Overgeneralizing lean-condition observation to all equivalence ratios",
+          "Ignoring that DMC has its own equivalence-ratio-dependent ignition sensitivity profile",
+          "Treating a single-regime trend as a universal material property"
+        ]
+      }
+    }
+  ]
+}

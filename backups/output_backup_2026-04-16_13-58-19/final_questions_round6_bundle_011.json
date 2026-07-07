@@ -1,0 +1,134 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Two 18650 LiCoO2 batteries are tested under adiabatic conditions. One is charged to 4.2 V and the other is at 3.7 V (uncharged). The charged battery exhibits a sharp exponential increase in thermal reactive hazards beginning near 200°C, while the uncharged battery does not show this behavior. The porous separator in these cells is known to break down above 120°C, inducing internal short circuit. A safety engineer must assess which conclusions about the thermal hazard mechanism and the role of charge state are supported by these conditions. Which of the following are admissible?",
+        "options": [
+          "A. The separator breakdown above 120°C is a necessary condition for thermal runaway initiation in both charged and uncharged batteries, since it induces internal short circuit in both cases.",
+          "B. The sharp exponential increase in thermal reactive hazards near 200°C in the charged battery is consistent with reactions that are strongly dependent on the electrochemical energy stored at high charge state, not merely on temperature alone.",
+          "C. Because the uncharged battery does not exhibit a sharp thermal hazard increase, it can be concluded that separator breakdown does not occur in uncharged batteries under the same heating conditions.",
+          "D. The difference in thermal reactive hazard behavior between charged and uncharged batteries indicates that charge state modulates the severity of exothermic reactions triggered after separator breakdown, not merely the onset temperature.",
+          "E. The heat of reaction being substantially higher for charged batteries than for uncharged batteries is consistent with additional energy release pathways that are only active when the battery is at elevated charge state.",
+          "F. The exponential hazard increase near 200°C in charged batteries proves that the separator breakdown at 120°C is the rate-limiting step controlling the overall thermal runaway energy release."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "D",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "The evidence states separator breakdown above 120°C induces internal short circuit, but the uncharged battery does not show a sharp thermal hazard increase. Claiming separator breakdown is a necessary condition for thermal runaway in both cases overgeneralizes; the uncharged battery's behavior is not consistent with separator-induced short circuit driving thermal runaway in that case.",
+            "error_type": "overgeneralization_of_mechanism_across_charge_states",
+            "evidence_refs": [
+              "TR_Gasventing+191+Journal_of_Hazardous_Materials:C003",
+              "TR_Gasventing+191+Journal_of_Hazardous_Materials:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The evidence shows the exponential hazard increase near 200°C occurs only in charged batteries, not uncharged ones under the same heating. This is consistent with the conclusion that stored electrochemical energy (charge state) is a necessary co-factor, not temperature alone. This requires multi-step reasoning: temperature triggers reactions, but the severity depends on available electrochemical energy.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+191+Journal_of_Hazardous_Materials:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "This is a conservative-sounding but incorrect causal overclaim. The absence of a sharp thermal hazard increase in uncharged batteries does not imply separator breakdown does not occur; it only implies that separator breakdown alone, without sufficient stored electrochemical energy, does not produce the sharp exothermic escalation observed in charged batteries.",
+            "error_type": "causal_overclaim_from_absence_of_effect",
+            "evidence_refs": [
+              "TR_Gasventing+191+Journal_of_Hazardous_Materials:C003",
+              "TR_Gasventing+191+Journal_of_Hazardous_Materials:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The differential behavior between charged and uncharged batteries under the same heating conditions, combined with the known separator breakdown threshold, supports the conclusion that charge state modulates the severity of post-breakdown exothermic reactions. This is a multi-hop inference: same trigger (separator breakdown) → different outcomes → charge state modulates reaction severity.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+191+Journal_of_Hazardous_Materials:C002",
+              "TR_Gasventing+191+Journal_of_Hazardous_Materials:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The evidence states the heat of reaction for charged batteries is much higher than for uncharged batteries. This is consistent with additional energy release pathways active only at elevated charge state, which is a minimal and supported engineering inference from the heat of reaction comparison.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+191+Journal_of_Hazardous_Materials:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence identifies separator breakdown at 120°C as inducing internal short circuit and the exponential hazard increase near 200°C as a distinct subsequent event. Claiming that separator breakdown is the rate-limiting step for overall energy release conflates the trigger event with the energy release mechanism, and the 80°C gap between the two events does not support this causal compression.",
+            "error_type": "mechanism_compression_confusing_trigger_with_rate_limiting_step",
+            "evidence_refs": [
+              "TR_Gasventing+191+Journal_of_Hazardous_Materials:C003",
+              "TR_Gasventing+191+Journal_of_Hazardous_Materials:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Charge-state-dependent thermal hazard mechanism: distinguishing separator breakdown as a trigger from charge-state-dependent exothermic reaction severity as the energy release driver",
+        "primary_boundary": "Separator breakdown is a trigger at 120°C but does not alone determine thermal runaway severity; the exponential hazard increase near 200°C is charge-state-dependent; absence of sharp hazard increase in uncharged batteries does not prove absence of separator breakdown",
+        "intended_error_modes": [
+          "Treating separator breakdown as both necessary and sufficient for thermal runaway in all charge states",
+          "Inferring absence of separator breakdown from absence of sharp thermal hazard increase",
+          "Conflating trigger event (separator breakdown) with rate-limiting energy release step"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming separator breakdown does not occur in uncharged batteries",
+          "Asserting separator breakdown is the rate-limiting step for overall thermal runaway energy release",
+          "Generalizing charged-battery mechanism to uncharged batteries"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "An ESS container stores 18650 lithium-ion batteries at various states of charge. During a thermal abuse event, gas venting and explosion are observed. Pre-explosion gas sampling shows H2 and CO concentrations well below their lower flammability limits. Separately, the maximum temperatures recorded during thermal runaway increase monotonically with SOC, and the exhaust gas lower explosion limit follows a non-monotonic trend with SOC, peaking at an intermediate SOC level. A safety engineer must determine: (1) what the sub-LFL H2 and CO concentrations imply about the explosion trigger mechanism, and (2) why the intermediate SOC level having the highest lower explosion limit does not mean it is the safest overall operating condition. Provide a mechanistically justified answer addressing both points."
+      },
+      "ground_truth": {
+        "gold_answer": "(1) Sub-LFL concentrations of H2 and CO mean these gases alone cannot have been the primary ignition source for the explosion, since neither reached the minimum concentration required to sustain combustion. The explosion trigger must therefore involve other combustible species or mechanisms not captured by H2 and CO monitoring alone. (2) The highest lower explosion limit at intermediate SOC means the exhaust gas requires a higher minimum concentration to ignite, indicating lower exhaust gas explosion danger for that specific gas mixture. However, this does not make it the safest overall condition because thermal runaway severity, as measured by maximum temperature, continues to increase monotonically with SOC. An intermediate SOC cell still undergoes thermal runaway with substantially higher peak temperatures than lower SOC cells, posing greater thermal hazard even if its exhaust gas mixture is harder to ignite. Overall safety requires considering both thermal runaway severity and exhaust gas flammability, and these two risk dimensions do not peak at the same SOC.",
+        "must_include": [
+          "H2 and CO below LFL means they are not the primary explosion trigger",
+          "Other combustible species or mechanisms must account for the explosion",
+          "Highest LEL at intermediate SOC means that gas mixture requires higher concentration to ignite, indicating lower exhaust gas explosion danger",
+          "Thermal runaway maximum temperature increases monotonically with SOC, so intermediate SOC still carries substantial thermal severity",
+          "Overall safety requires combining thermal runaway severity and exhaust gas flammability risk, which do not align at the same SOC"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming H2 and CO are the only combustible gases and their sub-LFL values prove no explosion risk exists",
+          "Concluding that highest LEL makes intermediate SOC the safest condition overall without accounting for thermal runaway severity",
+          "Asserting that the non-monotonic LEL trend means no SOC level can be identified as safer for exhaust gas explosion risk",
+          "Inferring that 0% SOC is universally safe because thermal runaway did not occur under the specific test heating conditions"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-dimensional risk assessment combining explosion trigger identification from gas concentration data with the distinction between exhaust gas flammability risk and thermal runaway severity risk across SOC levels",
+        "primary_boundary": "Sub-LFL H2/CO rules out these gases as primary triggers but does not eliminate explosion risk from other sources; highest LEL at intermediate SOC reduces exhaust gas ignition risk but does not reduce thermal runaway severity, which remains monotonically SOC-dependent",
+        "intended_error_modes": [
+          "Conflating sub-LFL H2/CO with absence of any flammable gas explosion risk",
+          "Using highest LEL to declare intermediate SOC globally safest without considering thermal runaway temperature",
+          "Treating the non-monotonic LEL trend as preventing any comparative safety judgment across SOC levels"
+        ]
+      }
+    }
+  ]
+}

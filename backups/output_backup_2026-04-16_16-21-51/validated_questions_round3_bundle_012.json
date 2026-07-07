@@ -1,0 +1,140 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "In a battery module, thermal runaway propagation (TRP) is being analyzed. Testing has established that approximately 12% of the total heat released by an initiating cell is sufficient to trigger thermal runaway in an adjacent cell, and that the majority of this inter-cell heat transfer occurs through the battery shell rather than through the pole connector. The module contains cells at different states of charge: some at 30% SOC and others at 85% SOC. An engineer must assess which statements about propagation risk and heat transfer pathway are supported by the available evidence. Which of the following conclusions are admissible?",
+        "options": [
+          "A. Cells at 85% SOC will contribute to faster and more intense propagation than cells at 30% SOC if they enter thermal runaway, because higher SOC is associated with greater propagation intensity.",
+          "B. Because only 12% of the initiating cell's heat is required to trigger adjacent cell runaway, a module design that reduces shell-to-shell thermal conductance is more directly relevant to propagation prevention than one that focuses on pole connector insulation.",
+          "C. The 12% heat transfer threshold implies that if the initiating cell releases less than 12% of its total heat to neighbors, propagation cannot occur under any conditions.",
+          "D. Cells at 30% SOC cannot enter thermal runaway under any circumstances because lower SOC is associated with less intense propagation.",
+          "E. The dominance of shell-based heat transfer over pole-connector-based transfer means that thermal isolation strategies targeting the shell surface are more mechanistically justified than those targeting only the electrical connectors.",
+          "F. The 12% threshold for triggering adjacent cell runaway means that even modest reductions in inter-cell heat transfer through the shell could meaningfully affect whether propagation occurs.",
+          "G. Because the majority of heat transfers through the shell, increasing the electrical resistance of pole connectors will fully prevent thermal runaway propagation in this module."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "E",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence directly states that higher SOC leads to faster and more intense thermal runaway propagation. Cells at 85% SOC will therefore contribute more severely to propagation than those at 30% SOC if runaway is initiated.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+212+Batteries:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Since the majority of heat transfer enabling propagation occurs through the shell rather than the pole connector, and only 12% of total heat is needed to trigger adjacent runaway, reducing shell thermal conductance directly addresses the dominant heat transfer pathway. This requires two reasoning steps: dominant pathway is shell → reducing shell conductance targets the primary mechanism → more relevant than pole connector insulation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+212+Batteries:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The 12% figure represents the threshold for triggering adjacent cell runaway given the observed heat transfer conditions. It does not imply that below-12% transfer guarantees no propagation under all conditions; other pathways, cumulative effects, or different configurations could alter this. This is an inadmissible universal conclusion from a conditional experimental result.",
+            "error_type": "Overgeneralization distractor — conditional threshold converted to universal prevention guarantee",
+            "evidence_refs": [
+              "TR_Protection+212+Batteries:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Lower SOC is associated with less intense propagation, but this does not mean cells at 30% SOC cannot enter thermal runaway under any circumstances. SOC affects propagation intensity and speed, not whether thermal runaway can be triggered at all. This is a scope expansion error.",
+            "error_type": "Causal overclaim — SOC effect on propagation intensity misapplied to runaway trigger admissibility",
+            "evidence_refs": [
+              "TR_Protection+212+Batteries:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Because the majority of heat transfer enabling propagation occurs through the shell, thermal isolation strategies targeting the shell surface are mechanistically justified as the primary intervention point. This is a direct design implication from the identified dominant heat transfer pathway.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+212+Batteries:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The 12% threshold is relatively low, meaning the margin between sufficient and insufficient heat transfer for triggering propagation is not large. Even modest reductions in shell-based heat transfer could move the transferred fraction below this threshold, meaningfully affecting whether propagation occurs. This is a counterintuitive correct option: the low threshold actually means small interventions can have outsized effect.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+212+Batteries:C004"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "Because the majority of heat transfer occurs through the shell, not the pole connector, increasing pole connector electrical resistance addresses only the minor pathway. This cannot fully prevent propagation when the dominant mechanism is shell-based thermal conduction. This is a mechanism substitution distractor.",
+            "error_type": "Mechanism substitution distractor — intervention targets secondary pathway while primary pathway remains unaddressed",
+            "evidence_refs": [
+              "TR_Protection+212+Batteries:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of propagation risk conclusions and design intervention relevance given identified heat transfer pathway dominance and SOC effects",
+        "primary_boundary": "Distinguishing dominant (shell) vs. secondary (pole connector) heat transfer pathways for propagation; distinguishing SOC effect on propagation intensity from SOC effect on runaway trigger possibility",
+        "intended_error_modes": [
+          "Treating 12% threshold as a universal prevention guarantee rather than a conditional trigger level",
+          "Concluding low SOC cells cannot enter runaway based on propagation intensity evidence",
+          "Targeting secondary heat transfer pathway (pole connector) as sufficient for full propagation prevention",
+          "Missing that the low 12% threshold implies sensitivity to even modest shell insulation improvements"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding cells at low SOC are immune to thermal runaway from propagation intensity data",
+          "Concluding pole connector intervention alone can fully prevent propagation"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A lithium-ion battery module is subjected to thermal abuse. The cells are charged to approximately 90% SOC. No active cooling is applied. A temperature sensor records the surface temperature rising through 60°C, then 100°C, then approaching 130°C. An engineer proposes that water spray cooling should be applied as soon as a fire is visually observed, rather than at the 100°C reading, arguing that early intervention wastes cooling resources on a cell that may self-stabilize. Evaluate this proposal. In your response, identify: (1) what internal process is consistent with the 100°C surface reading that makes early intervention mechanistically justified, (2) what the evidence indicates about outcome certainty without cooling at this SOC level, and (3) why the engineer's proposed timing of intervention is inconsistent with the evidence on cooling effectiveness."
+      },
+      "ground_truth": {
+        "gold_answer": "At approximately 100°C, electrolyte breakdown and reaction with intercalated lithium atoms begins, generating flammable hydrocarbon gases internally. This reaction is exothermic and represents an active heat-generating process already underway at the 100°C surface reading, not a stable pre-runaway state. Waiting for visual fire confirmation means the cell has already progressed well beyond this stage. Evidence shows that without cooling, thermal runaway fire occurred every time under thermal abuse at approximately 90% SOC, meaning self-stabilization is not a credible outcome at this SOC level — the engineer's assumption that the cell may self-stabilize is unsupported. Furthermore, evidence shows that water spray applied at 100°C successfully prevented thermal runaway, and explicitly states that water is more effective as a temperature reducer (prevention) than as a fire suppressant (post-ignition). Delaying intervention until fire is visible means cooling is being applied in the less effective role (suppression) rather than the more effective role (prevention). The proposal is therefore inconsistent with the evidence on three grounds: it underestimates the activity of internal reactions at 100°C, it assumes a self-stabilization outcome that is contradicted by the high-SOC no-cooling data, and it inverts the evidence-supported optimal timing for water intervention.",
+        "must_include": [
+          "Electrolyte decomposition and reaction with intercalated lithium begins at approximately 100°C, generating flammable gases — this is an active exothermic process, not a stable state",
+          "Without cooling at approximately 90% SOC, thermal runaway fire occurred every time — self-stabilization is not supported",
+          "Water spray at 100°C successfully prevented thermal runaway",
+          "Evidence states water is more effective as a temperature reducer than as a fire suppressant",
+          "Delaying to fire observation means intervention occurs in the less effective suppression role rather than the prevention role"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming that water spray at 100°C guarantees prevention under all SOC conditions beyond the approximately 90% SOC tested",
+          "Claiming that electrolyte reactions at 100°C alone constitute full thermal runaway",
+          "Claiming that separator melting has already occurred at 100°C surface temperature"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanistic justification for early cooling intervention timing relative to thermal progression stages and evidence on cooling effectiveness role",
+        "primary_boundary": "Distinguishing water's role as temperature reducer (prevention, effective at 100°C) from fire suppressant (post-ignition, less effective); distinguishing active exothermic reaction state at 100°C from assumed stable pre-runaway state",
+        "intended_error_modes": [
+          "Accepting the engineer's resource-conservation argument without evaluating the internal reaction state at 100°C",
+          "Ignoring the high-SOC no-cooling outcome data when assessing self-stabilization probability",
+          "Treating water intervention as equally effective at any stage of thermal progression"
+        ]
+      }
+    }
+  ]
+}

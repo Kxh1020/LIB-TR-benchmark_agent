@@ -1,0 +1,103 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A simulation study of thermal runaway propagation in a battery pack compares a full model (including both natural convection and thermal radiation) against two reduced models: one omitting natural convection and one omitting thermal radiation. The omission of natural convection produces a peak temperature that is 150 K lower and a time-to-peak that is 52 seconds earlier compared to the full model. The omission of thermal radiation produces a peak temperature that is 52.4 K lower and a time-to-peak that is 125 seconds earlier. In a separate set of simulations, the cell-to-cell gap is varied. At zero gap, natural convection does not alter the sequence in which cells enter thermal runaway. At nonzero gaps, larger gaps increase the time interval before the last cell enters thermal runaway. An engineer concludes that for pack-level thermal runaway propagation modeling, radiation is the more important heat transfer mechanism to include accurately because omitting it causes a larger time-to-peak error. Which of the following evaluations of this conclusion and the underlying evidence are correct?",
+        "options": [
+          "A. The engineer's conclusion is not supported: omitting natural convection causes a larger peak temperature error (150 K) than omitting radiation (52.4 K), indicating that natural convection has a greater influence on peak temperature prediction accuracy.",
+          "B. The engineer's conclusion is partially supported for time-to-peak accuracy but does not extend to peak temperature accuracy, because the two omissions produce errors of opposite relative magnitude depending on which metric is considered.",
+          "C. At zero cell-to-cell gap, including or excluding natural convection in the model does not affect the predicted sequence of cell triggering, which is consistent with the absence of airflow in that configuration.",
+          "D. Increasing cell-to-cell gap improves pack energy density while simultaneously slowing thermal runaway propagation, making larger gaps unambiguously preferable from a combined safety and performance standpoint.",
+          "E. The time-to-peak error from omitting radiation is larger in magnitude than that from omitting convection, which means radiation governs the timing of peak temperature more strongly than convection does under the simulated conditions.",
+          "F. The relative importance of natural convection versus radiation for peak temperature prediction cannot be determined from these comparisons because the two mechanisms were not varied simultaneously in a controlled factorial design."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Omitting natural convection produces a 150 K peak temperature error versus 52.4 K for omitting radiation. For peak temperature accuracy, natural convection is the more critical mechanism to include, directly contradicting the engineer's conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+197+Case_Studies_in_Thermal_Engineering:C001",
+              "TR_Modelling+197+Case_Studies_in_Thermal_Engineering:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The relative importance of the two mechanisms reverses depending on the metric: radiation omission causes a larger time-to-peak error (125 s vs 52 s), while convection omission causes a larger peak temperature error (150 K vs 52.4 K). The engineer's conclusion holds for one metric but not the other, making it only partially supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+197+Case_Studies_in_Thermal_Engineering:C001",
+              "TR_Modelling+197+Case_Studies_in_Thermal_Engineering:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "At zero gap there is no airflow, so natural convection cannot alter the sequence of cell triggering. This is consistent with the stated mechanism and confirms that the effect of convection on triggering sequence is gap-dependent.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+197+Case_Studies_in_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Larger gaps increase the time interval before the last cell enters thermal runaway (a safety benefit) but compromise pack energy density. These effects trade off against each other; neither is unambiguously preferable without a design-specific weighting. The claim of unambiguous preference is unsupported.",
+            "error_type": "trade_off_ignored",
+            "evidence_refs": [
+              "TR_Modelling+197+Case_Studies_in_Thermal_Engineering:C003",
+              "TR_Modelling+197+Case_Studies_in_Thermal_Engineering:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Omitting radiation causes a 125-second time-to-peak error versus 52 seconds for omitting convection. Under the simulated conditions, radiation more strongly governs the timing of peak temperature, which is the specific metric on which the engineer's conclusion was based.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+197+Case_Studies_in_Thermal_Engineering:C001",
+              "TR_Modelling+197+Case_Studies_in_Thermal_Engineering:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The comparisons are single-mechanism ablation studies, which are a standard and valid method for assessing individual mechanism contributions. The relative magnitudes of the errors are directly comparable and do support conclusions about which mechanism has greater influence on each metric, even without a full factorial design.",
+            "error_type": "epistemic_overcaution_that_is_incorrect",
+            "evidence_refs": [
+              "TR_Modelling+197+Case_Studies_in_Thermal_Engineering:C001",
+              "TR_Modelling+197+Case_Studies_in_Thermal_Engineering:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Metric-dependent relative importance of natural convection versus thermal radiation in thermal runaway propagation modeling, and the trade-off between gap size, propagation delay, and energy density.",
+        "primary_boundary": "The relative importance of convection vs. radiation reverses depending on whether peak temperature or time-to-peak is the metric of interest; neither mechanism is universally dominant.",
+        "intended_error_modes": [
+          "Accepting the engineer's conclusion without checking metric dependence",
+          "Claiming larger gaps are unambiguously preferable without acknowledging the energy density trade-off",
+          "Applying excessive epistemic caution to reject valid ablation-study comparisons"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding that one mechanism is universally more important across all metrics",
+          "Claiming larger gaps are always preferable from a combined safety-performance standpoint",
+          "Requiring factorial experimental design to draw any comparative conclusion from ablation studies"
+        ]
+      }
+    }
+  ],
+  "short_answers": []
+}

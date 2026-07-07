@@ -1,0 +1,299 @@
+{
+  "TR_Gasventing+47+Batteries__TR_Gasventing+48+Batteries__TR_Gasventing+49+Batteries": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A prismatic Li(Ni0.8Co0.1Mn0.1)O2 battery (58 Ah) undergoes thermal runaway triggered by external heating. At 15 seconds before voltage collapse, the expansion force begins a rapid rise, reaching a peak of 1980 N at 13.5 seconds before voltage collapse. The safety valve opens at 1.5 seconds after voltage collapse, releasing gases and particles at a momentary velocity of 90 m/s. Temperature measurements 1 cm above the valve show a maximum rate of rise of 93\u00b0C/s between 13 and 5 seconds before voltage collapse. Which of the following statements about the sequence and coupling of physical processes are admissible?",
+          "options": [
+            "A. The expansion force peak precedes the maximum temperature rise rate, indicating that mechanical deformation of the cell casing is driven primarily by gas generation from electrolyte decomposition rather than by thermal expansion of the electrode stack.",
+            "B. The momentary gas velocity of 90 m/s at valve opening is sufficient to eject solid particles to heights exceeding 3 m, implying that the kinetic energy imparted by the pressure differential across the valve dominates over gravitational and drag forces during the initial ejection phase.",
+            "C. The temperature rise rate of 93\u00b0C/s measured 1 cm above the valve reflects the convective heat transfer from ejected gases and is therefore a reliable indicator of the internal cell temperature at the moment of maximum exothermic reaction rate.",
+            "D. The 12-fold increase in expansion force within 2.5 seconds suggests that the internal pressure rise is governed by a threshold-crossing exothermic reaction, rather than a gradual accumulation of decomposition products.",
+            "E. The time interval between expansion force peak (13.5 s before voltage collapse) and valve opening (1.5 s after voltage collapse) indicates that the valve rupture disk is designed to fail at a pressure significantly higher than the pressure corresponding to the expansion force peak."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "D"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The expansion force peak occurs at -13.5 s, while the maximum temperature rise rate occurs between -13 s and -5 s. The temporal precedence of force over temperature rise, combined with the magnitude of force increase (12-fold in 2.5 s), indicates that gas generation from decomposition reactions is the primary driver of mechanical deformation, not thermal expansion of solid components.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+49+Batteries:C001",
+                "TR_Gasventing+49+Batteries:C002"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "The measured momentary velocity of 90 m/s at valve opening and the observed particle ejection height of up to 3.4 m are consistent with kinetic energy dominance during the initial ejection phase. The velocity magnitude supports the height observation through basic projectile motion, confirming that pressure-driven kinetic energy transfer is the controlling mechanism.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+49+Batteries:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "The temperature measurement is taken 1 cm above the valve, in the gas phase, and reflects convective heat transfer from ejected gases. This external measurement cannot reliably indicate the internal cell temperature at the moment of maximum exothermic reaction rate due to thermal lag, spatial separation, and the influence of gas flow dynamics. This is a scale transfer violation from external measurement to internal state.",
+              "error_type": "scale_transfer_violation",
+              "evidence_refs": [
+                "TR_Gasventing+49+Batteries:C002"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "The 12-fold increase in expansion force within 2.5 seconds indicates a rapid, threshold-crossing exothermic reaction rather than gradual accumulation. The sharp temporal profile is consistent with a regime transition where a critical temperature or decomposition threshold is crossed, triggering accelerated gas generation.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+49+Batteries:C001"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The expansion force is measured externally on the cell casing and does not directly correspond to internal pressure. The valve opening occurs after voltage collapse, which is a distinct event marker. The time interval between force peak and valve opening reflects the progression of internal reactions and pressure buildup, not a designed pressure differential for valve rupture. This conflates external force measurement with internal pressure threshold design.",
+              "error_type": "measurement_scope_violation",
+              "evidence_refs": [
+                "TR_Gasventing+49+Batteries:C001",
+                "TR_Gasventing+49+Batteries:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Temporal coupling and causal sequencing of mechanical, thermal, and gas-dynamic processes during thermal runaway",
+          "primary_boundary": "Distinguishing between external measurements and internal state inference; separating pressure-driven mechanical effects from thermal expansion effects",
+          "intended_error_modes": [
+            "scale_transfer_violation: inferring internal temperature from external gas-phase measurement",
+            "measurement_scope_violation: conflating external force with internal pressure threshold"
+          ],
+          "disallowed_extrapolations": [
+            "Using external temperature measurement to infer internal reaction rate",
+            "Assuming expansion force directly represents internal pressure magnitude"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "Two 18650 lithium-ion cells are tested under identical thermal abuse conditions: Cell P (high-power NCA chemistry, SonyVTC5A) and Cell E (high-energy NMC811 chemistry, LGMJ1). The transition time from safety valve opening to thermal runaway is 69.46 \u00b1 12.67 s for Cell P and 189.54 \u00b1 87.56 s for Cell E. The linearized gas flow rate during thermal runaway is 22.15 gs\u207b\u00b9 for Cell P and 27.92 gs\u207b\u00b9 for Cell E. The peak gas velocity is 260.9 ms\u207b\u00b9 for Cell P (bumpy pattern) and 398.5 ms\u207b\u00b9 for Cell E (single peak asymmetrical pattern). Mass loss during thermal runaway is 57.50% for Cell P and 63.45% for Cell E. Which of the following comparative judgments are supported?",
+          "options": [
+            "A. The longer transition time for Cell E indicates that the NMC811 chemistry has a higher activation energy for the dominant exothermic decomposition reaction compared to the NCA chemistry in Cell P.",
+            "B. The higher peak gas velocity for Cell E, despite its longer transition time, suggests that the pressure buildup rate during the final stage of thermal runaway is steeper for NMC811 than for NCA, even though the overall progression is slower.",
+            "C. The higher linearized gas flow rate for Cell E (27.92 gs\u207b\u00b9 vs. 22.15 gs\u207b\u00b9) combined with higher mass loss (63.45% vs. 57.50%) indicates that the NMC811 chemistry produces more gaseous decomposition products per unit mass of active material than the NCA chemistry.",
+            "D. The bumpy gas velocity pattern for Cell P suggests multiple sequential venting events or pressure oscillations, whereas the single peak pattern for Cell E indicates a single, catastrophic pressure release event.",
+            "E. The ratio of peak gas velocity to linearized gas flow rate is higher for Cell E than for Cell P, indicating that Cell E exhibits a more impulsive venting behavior with a shorter duration of peak gas release."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "D",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "While the transition time difference is real, attributing it solely to activation energy of a single dominant reaction is an overclaim. The transition time is influenced by multiple factors including thermal conductivity, heat capacity, reaction kinetics of multiple reactions, and cell geometry. The evidence does not isolate activation energy as the controlling variable.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+48+Batteries:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Cell E has a longer transition time (189.54 s vs. 69.46 s) but a higher peak gas velocity (398.5 ms\u207b\u00b9 vs. 260.9 ms\u207b\u00b9). This indicates that despite slower overall progression, the final pressure buildup and release rate is steeper for NMC811. This is a counterintuitive but mechanistically consistent conclusion: slower heating allows more complete decomposition, leading to higher accumulated pressure and a more violent final release.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+48+Batteries:C002",
+                "TR_Gasventing+48+Batteries:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "The linearized gas flow rate and mass loss are both higher for Cell E, but this does not necessarily mean more gaseous products per unit mass of active material. The mass loss includes both gaseous and solid ejecta, and the gas flow rate is a temporal average. The comparison does not account for differences in cell capacity, total mass, or the proportion of mass loss that is gaseous versus solid. This is an unjustified normalization.",
+              "error_type": "unjustified_normalization",
+              "evidence_refs": [
+                "TR_Gasventing+48+Batteries:C001",
+                "TR_Gasventing+48+Batteries:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "The bumpy velocity pattern for Cell P versus the single peak pattern for Cell E directly supports the interpretation of multiple sequential events versus a single catastrophic event. This is a straightforward interpretation of the observed velocity profiles and is consistent with different venting dynamics between the two chemistries.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+48+Batteries:C002"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "For Cell E: peak velocity 398.5 ms\u207b\u00b9, flow rate 27.92 gs\u207b\u00b9, ratio \u2248 14.3. For Cell P: peak velocity 260.9 ms\u207b\u00b9, flow rate 22.15 gs\u207b\u00b9, ratio \u2248 11.8. The higher ratio for Cell E indicates a more impulsive release with a shorter duration of peak gas release, consistent with the single peak asymmetrical pattern. This is a valid inference from the ratio of two measured quantities.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+48+Batteries:C001",
+                "TR_Gasventing+48+Batteries:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Comparative chemistry-dependent venting dynamics and the relationship between transition time, gas flow rate, peak velocity, and venting pattern",
+          "primary_boundary": "Distinguishing between supported comparative conclusions and unsupported mechanistic attributions or normalizations",
+          "intended_error_modes": [
+            "causal_overclaim: attributing transition time difference to a single reaction parameter",
+            "unjustified_normalization: inferring per-unit-mass gas production without accounting for confounding factors"
+          ],
+          "disallowed_extrapolations": [
+            "Attributing transition time solely to activation energy",
+            "Inferring per-unit-mass gas production from aggregate measurements without normalization"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "Two large-format pouch cells are tested under thermal abuse conditions: Cell A (211 Ah, 342.06 Wh/kg, LiNi0.9Co0.05Mn0.05O2) and Cell B (256 Ah, 325.82 Wh/kg). Cell A reaches a peak chamber temperature of 557.5\u00b0C and peak chamber pressure of 386.5 kPa, with a mass loss rate of 73%. Cell B reaches a peak chamber temperature of 409.86\u00b0C and peak chamber pressure of 330.5 kPa, with a mass loss rate of 64.87%. The normalized gas production at standard conditions (0\u00b0C, 101 kPa) is 1.958 L/Ah for Cell A and 2.182 L/Ah for Cell B. The mixed vent gases from Cell A have a lower flammable limit (LFL) of 8.49% and a flammable range of 49.81%, while Cell B has an LFL of 7.43% and a flammable range of 44.45%. Which of the following statements about the relationship between cell design parameters and thermal runaway severity are defensible?",
+          "options": [
+            "A. The higher energy density of Cell A (342.06 Wh/kg vs. 325.82 Wh/kg) is the primary driver of its higher peak chamber temperature and pressure, indicating that energy density is a monotonic predictor of thermal runaway severity.",
+            "B. The higher normalized gas production for Cell B (2.182 L/Ah vs. 1.958 L/Ah) despite its lower peak chamber temperature and pressure suggests that gas production per unit capacity is not the sole determinant of peak thermal and pressure hazards.",
+            "C. The lower LFL of Cell B (7.43% vs. 8.49%) indicates a higher ignition risk, but the narrower flammable range of Cell B (44.45% vs. 49.81%) partially offsets this risk by reducing the concentration window in which ignition can occur.",
+            "D. The higher mass loss rate of Cell A (73% vs. 64.87%) combined with its higher peak chamber temperature indicates that the higher energy density leads to more complete combustion of cell materials, resulting in greater mass conversion to gaseous products.",
+            "E. The difference in peak chamber pressure between Cell A and Cell B (386.5 kPa vs. 330.5 kPa) can be attributed primarily to the difference in normalized gas production, since gas production directly determines chamber pressure under constant volume conditions.",
+            "F. Cell B's higher capacity (256 Ah vs. 211 Ah) contributes to its higher normalized gas production per unit capacity, suggesting that larger-capacity cells generate more gas per Ah due to less efficient heat dissipation during thermal runaway."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "C"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "While Cell A has higher energy density and higher peak temperature/pressure, attributing this solely to energy density and claiming monotonic predictability is an overgeneralization. The two cells differ in multiple parameters (capacity, chemistry composition, geometry), and the evidence does not isolate energy density as the sole controlling variable. This is a causal overclaim from a two-point comparison.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+47+Batteries:C002",
+                "TR_Gasventing+47+Batteries:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Cell B has higher normalized gas production (2.182 L/Ah vs. 1.958 L/Ah) but lower peak chamber temperature (409.86\u00b0C vs. 557.5\u00b0C) and pressure (330.5 kPa vs. 386.5 kPa). This demonstrates that gas production per unit capacity does not solely determine peak thermal and pressure hazards, as other factors such as gas composition, reaction kinetics, and heat release rate also play significant roles.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+47+Batteries:C002",
+                "TR_Gasventing+47+Batteries:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Cell B has a lower LFL (7.43% vs. 8.49%), meaning it can ignite at a lower concentration, which increases ignition risk. However, Cell B also has a narrower flammable range (44.45% vs. 49.81%), which reduces the concentration window for ignition. This is a valid trade-off judgment based on the two flammability metrics.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+47+Batteries:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "The higher mass loss rate of Cell A (73% vs. 64.87%) indicates more severe mass loss, but attributing this to 'more complete combustion' is unsupported. Mass loss includes both gaseous products and ejected solid/liquid materials. The evidence does not distinguish between combustion-driven mass loss and ejection-driven mass loss, nor does it support the claim of 'more complete combustion.'",
+              "error_type": "mechanism_substitution",
+              "evidence_refs": [
+                "TR_Gasventing+47+Batteries:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The peak chamber pressure difference (386.5 kPa vs. 330.5 kPa) cannot be attributed primarily to normalized gas production, because Cell B actually has higher normalized gas production (2.182 L/Ah vs. 1.958 L/Ah) but lower peak pressure. This contradicts the proposed causal relationship. Peak pressure is influenced by gas production rate, temperature, and chamber volume, not just total gas production.",
+              "error_type": "causal_contradiction",
+              "evidence_refs": [
+                "TR_Gasventing+47+Batteries:C002",
+                "TR_Gasventing+47+Batteries:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "While Cell B has higher capacity and higher normalized gas production per Ah, attributing this to 'less efficient heat dissipation' is an unsupported mechanistic claim. The evidence does not provide information about heat dissipation efficiency or its relationship to capacity. This is a causal overclaim from a correlation.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+47+Batteries:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Relationship between cell design parameters (energy density, capacity) and thermal runaway severity metrics (temperature, pressure, mass loss, gas production, flammability)",
+          "primary_boundary": "Distinguishing between supported correlations and unsupported causal attributions; recognizing when one metric does not solely determine another",
+          "intended_error_modes": [
+            "causal_overclaim: attributing multi-factor outcomes to a single parameter",
+            "causal_contradiction: proposing a causal relationship contradicted by the data",
+            "mechanism_substitution: assuming a specific mechanism without supporting evidence"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming energy density is a monotonic predictor of severity from two data points",
+            "Attributing pressure difference to gas production when the relationship is contradicted",
+            "Inferring combustion completeness from mass loss without distinguishing ejection from combustion"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A recoil force measurement method is used to determine gas flow rate and gas velocity during thermal runaway venting of lithium-ion cells. The method measures only the recoil force and weight force, without requiring knowledge of vent pressure, vent temperature, vent area size, or ejecta composition. Simulated gas flow rates from existing thermal runaway propagation models for 18650 cells range from 2.5 gs\u207b\u00b9 to 3.5 gs\u207b\u00b9. Experimental measurements using the recoil force method yield gas flow rates of 22.15 \u00b1 14.70 gs\u207b\u00b9 for high-power NCA cells and 27.92 \u00b1 9.50 gs\u207b\u00b9 for high-energy NMC811 cells. Explain why the simulated gas flow rates are one order of magnitude lower than the experimental measurements, and discuss what this discrepancy implies about the validity of using simulation models for predicting venting behavior in thermal runaway propagation scenarios."
+        },
+        "ground_truth": {
+          "gold_answer": "The simulated gas flow rates (2.5\u20133.5 gs\u207b\u00b9) are one order of magnitude lower than the experimental measurements (22.15\u201327.92 gs\u207b\u00b9) because existing simulation models likely underestimate the gas generation rate, the pressure buildup rate, or the effective vent area during thermal runaway. The recoil force method captures the actual momentum transfer from high-velocity gas ejection, which reflects the true gas flow dynamics, whereas simulations may rely on simplified assumptions about reaction kinetics, heat transfer, or venting behavior. This discrepancy implies that simulation models may significantly underpredict the severity and speed of thermal runaway propagation, leading to unconservative safety assessments. For thermal runaway propagation scenarios, relying solely on simulated gas flow rates could result in inadequate spacing, insufficient ventilation, or underestimation of the time available for intervention. The experimental method provides a more accurate basis for designing propagation mitigation strategies.",
+          "must_include": [
+            "Simulated gas flow rates are one order of magnitude lower than experimental measurements",
+            "Simulation models likely underestimate gas generation rate, pressure buildup, or effective vent area",
+            "Recoil force method captures actual momentum transfer and true gas flow dynamics",
+            "Discrepancy implies simulations may underpredict severity and speed of thermal runaway propagation",
+            "Relying on simulated values could lead to unconservative safety assessments or inadequate mitigation strategies"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming the recoil force method is inherently more accurate without acknowledging it measures actual behavior",
+            "Attributing the discrepancy to a single specific model parameter without evidence",
+            "Recommending abandonment of simulation models rather than calibration or validation",
+            "Claiming the discrepancy invalidates all simulation approaches"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Discrepancy between simulated and experimentally measured gas flow rates and its implications for safety assessment",
+          "primary_boundary": "Distinguishing between model limitations and experimental reality; evaluating the safety implications of underprediction",
+          "intended_error_modes": [
+            "Overgeneralizing the cause of discrepancy to a single parameter",
+            "Failing to connect the discrepancy to safety implications",
+            "Dismissing simulation models entirely rather than recognizing the need for validation"
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,322 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A 15 mm thick lithium-ion pouch cell with out-of-plane thermal conductivity of 0.25 W/mK is discharged at 15C under natural convection at 30°C ambient. The model predicts that only SEI decomposition occurs, generating insufficient heat to trigger subsequent reactions. An engineer proposes two modifications to prevent any risk of thermal runaway escalation: (i) raise ambient temperature to 40°C to accelerate heat dissipation through increased convective driving force, and (ii) increase out-of-plane thermal conductivity from 0.25 W/mK to 0.35 W/mK. Which of the following statements correctly characterize the thermal behavior under these modifications?",
+        "options": [
+          "A. Raising ambient temperature to 40°C at 15C discharge rate would increase the thermal margin against runaway by enhancing the temperature gradient available for convective dissipation.",
+          "B. Raising ambient temperature to 40°C at 15C discharge rate would cause thermal runaway, because the elevated ambient shifts the system into a regime where chain reactions can be initiated.",
+          "C. Increasing out-of-plane thermal conductivity from 0.25 W/mK to 0.35 W/mK at 15C discharge rate and 30°C ambient is sufficient to prevent thermal runaway.",
+          "D. At 15C discharge rate and 30°C ambient, the system is already safe regardless of thermal conductivity, because only SEI decomposition occurs and no further modification is needed.",
+          "E. Increasing thermal conductivity to 0.35 W/mK would be ineffective at 15C because the cell is already below the thermal runaway threshold at that discharge rate and ambient temperature.",
+          "F. The conclusion that raising ambient temperature to 40°C triggers thermal runaway is inconsistent with the observation that only SEI decomposition occurs at 15C and 30°C, because SEI decomposition alone cannot initiate chain reactions regardless of ambient temperature."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "C"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "Higher ambient temperature reduces the thermal driving force for convective heat removal, not increases it. The evidence explicitly states that ambient temperatures of 40°C or higher at 15C discharge result in thermal runaway, the opposite of what option A claims.",
+            "error_type": "mechanism_reversal",
+            "evidence_refs": [
+              "TR_Modelling+176+Applied_Thermal_Engineering:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The evidence states that at 15C discharge, ambient temperatures of 40°C or higher result in thermal runaway. Even though only SEI decomposition occurs at 30°C, raising the ambient to 40°C shifts the thermal balance sufficiently to trigger chain reactions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+176+Applied_Thermal_Engineering:C002",
+              "TR_Modelling+176+Applied_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence directly states that at 15 mm cell thickness with 0.25 W/mK thermal conductivity, thermal runaway can be prevented by increasing conductivity to 0.35 W/mK, confirming this modification is sufficient under the stated conditions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+176+Applied_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "This is a conservative but incorrect distractor. The system at 15C and 30°C ambient with 0.25 W/mK conductivity does not experience thermal runaway under those exact conditions, but the claim that no modification is needed ignores that the evidence identifies this as a marginal regime where small parameter changes (ambient temperature, conductivity) can tip the system into runaway.",
+            "error_type": "boundary_violation_conservative",
+            "evidence_refs": [
+              "TR_Modelling+176+Applied_Thermal_Engineering:C001",
+              "TR_Modelling+176+Applied_Thermal_Engineering:C002",
+              "TR_Modelling+176+Applied_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "This conflates the current safe state with immunity to parameter changes. The evidence shows the 15C/30°C case is at a boundary; the thermal conductivity modification is specifically relevant because the 15 mm cell at 0.25 W/mK is identified as a case where runaway can occur under slightly different conditions.",
+            "error_type": "scope_confusion",
+            "evidence_refs": [
+              "TR_Modelling+176+Applied_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "This option incorrectly asserts that SEI decomposition alone cannot initiate chain reactions regardless of ambient temperature. The evidence shows that ambient temperature elevation to 40°C does cause thermal runaway at 15C, meaning the ambient thermal loading supplements the SEI heat to cross the chain reaction threshold.",
+            "error_type": "causal_overclaim_negation",
+            "evidence_refs": [
+              "TR_Modelling+176+Applied_Thermal_Engineering:C002",
+              "TR_Modelling+176+Applied_Thermal_Engineering:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Regime boundary sensitivity: distinguishing between a currently safe operating point and a marginally stable one where small parameter changes in ambient temperature or thermal conductivity can trigger or prevent thermal runaway.",
+        "primary_boundary": "At 15C and 30°C ambient with 0.25 W/mK conductivity, the system is at a marginal boundary: raising ambient to 40°C triggers runaway; increasing conductivity to 0.35 W/mK prevents it.",
+        "intended_error_modes": [
+          "Assuming higher ambient temperature improves heat dissipation (mechanism reversal)",
+          "Treating current safe state as unconditionally safe regardless of parameter changes",
+          "Asserting SEI decomposition cannot contribute to chain reactions under any ambient condition"
+        ],
+        "disallowed_extrapolations": [
+          "Generalizing the 15C/30°C safe result to all ambient temperatures",
+          "Claiming conductivity modification is irrelevant because the base case is safe",
+          "Extending the chain reaction threshold analysis to different cell thicknesses or discharge rates"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "During nail penetration of a 21700 NMC cylindrical cell (4800 mAh, 100% SOC), two penetration geometries are compared: radial penetration to 10.05 mm depth and axial penetration to 15 mm depth. Measurements show that the maximum cell surface temperature and rate of temperature rise are higher in radial penetration (events occurring within 10 s) than in axial penetration (events within 20 s). The flame duration is approximately 4 s for radial and 18 s for axial penetration. The heat generated inside the nail itself is 9.77 J for radial and 14.66 J for axial penetration. An engineer also notes that the internal short circuit resistance (RISC) threshold for this cell is between 0.005 Ω and 0.006 Ω, and thermal runaway is only triggered below 0.005 Ω. Which of the following conclusions are supported by this evidence?",
+        "options": [
+          "A. The higher maximum surface temperature in radial penetration compared to axial penetration is primarily attributable to the greater heat generated inside the nail in the axial case.",
+          "B. The longer flame duration in axial penetration compared to radial penetration is consistent with a more sustained release of reactive material, even though peak temperature and temperature rise rate are lower in axial penetration.",
+          "C. Since the heat generated inside the nail is small relative to internal cell reaction heat in both penetration geometries, nail-generated Joule heating is not the dominant driver of the observed temperature differences between radial and axial cases.",
+          "D. Reducing RISC from 0.005 Ω to 0.001 Ω in the axial penetration geometry would necessarily prevent thermal runaway because the lower resistance reduces the Joule heating at the nail tip.",
+          "E. The observation that radial penetration produces a higher peak temperature and faster temperature rise than axial penetration means radial penetration always poses greater safety risk across all cell geometries and SOC levels.",
+          "F. The threshold RISC of 0.005 Ω for this 21700 NMC cell cannot be directly applied to determine the runaway threshold for a different cell format or capacity without additional justification."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "The nail generates more heat in the axial case (14.66 J vs 9.77 J), yet the radial case has higher surface temperature. This directly contradicts the claim that nail heat drives the temperature difference. The evidence states nail heat is negligible compared to internal cell reactions.",
+            "error_type": "causal_overclaim_mechanism_substitution",
+            "evidence_refs": [
+              "TR_Modelling+178+Applied_Thermal_Engineering:C009",
+              "TR_Modelling+178+Applied_Thermal_Engineering:C010"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The evidence shows axial penetration has longer flame duration (18 s vs 4 s) despite lower peak temperature and slower temperature rise. This is consistent with a more sustained but less intense release of reactive material, a counterintuitive but evidence-supported combination.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+178+Applied_Thermal_Engineering:C008",
+              "TR_Modelling+178+Applied_Thermal_Engineering:C009"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that nail-generated heat (9.77 J radial, 14.66 J axial) is neglected compared to heat from internal cell reactions. Since nail heat is small in both cases and is actually larger in the axial case where temperatures are lower, it cannot be the dominant driver of the radial-axial temperature difference.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+178+Applied_Thermal_Engineering:C010"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "This inverts the causal mechanism. Reducing RISC below the threshold accelerates thermal runaway evolution rather than preventing it. The evidence states that RISC below 0.005 Ω triggers thermal runaway and further reduction to 0.001 Ω accelerates it. Lower resistance means more current and more Joule heating at the short circuit site.",
+            "error_type": "mechanism_reversal",
+            "evidence_refs": [
+              "TR_Modelling+178+Applied_Thermal_Engineering:C004",
+              "TR_Modelling+178+Applied_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "This overgeneralizes a result obtained for a specific cell format and SOC to all geometries and SOC levels. The evidence is specific to 21700 NMC at 100% SOC. The evidence also states severity increases with SOC, meaning the relative ranking could differ at lower SOC.",
+            "error_type": "overgeneralization_beyond_conditions",
+            "evidence_refs": [
+              "TR_Modelling+178+Applied_Thermal_Engineering:C001",
+              "TR_Modelling+178+Applied_Thermal_Engineering:C009"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The RISC threshold is identified for a specific 21700 NMC cell with 4800 mAh capacity. Applying it to a different cell format or capacity without justification would be an unsupported extrapolation, as the threshold depends on cell-specific electrochemical and thermal properties.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+178+Applied_Thermal_Engineering:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-mechanism reasoning in nail penetration: distinguishing nail-generated heat from internal reaction heat, reconciling apparently contradictory observations (higher peak temperature but shorter flame in radial vs axial), and identifying scope limitations of threshold values.",
+        "primary_boundary": "Nail-generated Joule heating is negligible relative to internal cell reactions; the RISC threshold is cell-specific; radial vs axial differences in temperature profile and flame duration reflect different internal reaction dynamics, not nail heat differences.",
+        "intended_error_modes": [
+          "Attributing temperature differences to nail heat despite evidence that nail heat is negligible",
+          "Confusing reduced resistance with reduced heating (mechanism reversal for RISC)",
+          "Overgeneralizing penetration geometry results across SOC and cell formats"
+        ],
+        "disallowed_extrapolations": [
+          "Applying the 21700 NMC RISC threshold to other cell formats",
+          "Inferring that higher peak temperature always implies greater overall hazard (ignoring flame duration)",
+          "Concluding that nail heat drives surface temperature differences"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A thermal model of an LFP battery undergoing thermal runaway triggered by local overheating predicts a maximum temperature difference of 316°C within the battery at 970 s, compared to approximately 130°C in oven-test conditions. The model also shows that the anode-electrolyte reaction contributes up to 63.8% of total heat generated during thermal runaway, while internal short circuit contributes a small proportion of total heat but is identified as a crucial initiator of chain reactions. A convection coefficient study shows that increasing the convective cooling coefficient reduces maximum thermal runaway temperature and delays the onset time, but has weak connection with the onset temperature of thermal runaway. An engineer is evaluating cooling system design and safety diagnostic strategies. Which of the following statements are admissible given this evidence?",
+        "options": [
+          "A. Because internal short circuit generates only a small fraction of total heat during thermal runaway, eliminating internal short circuit risk would have limited impact on preventing thermal runaway initiation.",
+          "B. Enhancing convective cooling is more effective at reducing the peak severity of thermal runaway than at preventing its onset at a given internal temperature.",
+          "C. The temperature non-uniformity observed under local overheating conditions is substantially greater than under oven test conditions, which means surface temperature measurements alone may significantly underestimate internal peak temperatures during locally triggered thermal runaway.",
+          "D. Since the anode-electrolyte reaction dominates total heat generation, suppressing this reaction is both necessary and sufficient to prevent thermal runaway in LFP cells under all triggering conditions.",
+          "E. The weak dependence of onset temperature on convection coefficient implies that convective cooling primarily affects post-onset thermal runaway dynamics rather than the electrochemical threshold at which chain reactions begin.",
+          "F. The 316°C internal temperature difference observed at 970 s under local overheating can be directly used to determine the onset temperature of thermal runaway in oven test configurations."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "This is a conservative but incorrect distractor. The evidence explicitly states that internal short circuit is a crucial inducement of chain reactions despite contributing little total heat. Therefore, eliminating it would significantly impact initiation even though its heat contribution is small. The option conflates heat contribution with causal role in triggering.",
+            "error_type": "causal_role_vs_heat_contribution_confusion",
+            "evidence_refs": [
+              "TR_Modelling+177+Applied_Thermal_Engineering:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The evidence states convection coefficient has weak connection with onset temperature but reduces maximum thermal runaway temperature. This directly supports the conclusion that convective cooling is more effective at limiting peak severity than preventing onset.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+177+Applied_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence shows that local overheating produces up to 316°C internal temperature difference, far exceeding the ~130°C difference in oven tests. This large non-uniformity means surface temperature measurements would substantially underestimate internal peak temperatures in locally triggered scenarios.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+177+Applied_Thermal_Engineering:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence identifies the anode-electrolyte reaction as the dominant heat contributor but does not support the claim that suppressing it is both necessary and sufficient under all triggering conditions. The evidence also shows internal short circuit is a crucial initiator, meaning other pathways exist. The 'necessary and sufficient' claim is an unsupported overclaim.",
+            "error_type": "causal_overclaim_universalization",
+            "evidence_refs": [
+              "TR_Modelling+177+Applied_Thermal_Engineering:C001",
+              "TR_Modelling+177+Applied_Thermal_Engineering:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The evidence states convection coefficient has weak connection with onset temperature but strong relationship with onset time and maximum temperature. This implies convective cooling acts primarily on post-onset dynamics (time to runaway, peak temperature) rather than the electrochemical threshold triggering chain reactions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+177+Applied_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The 316°C temperature difference is specific to local overheating conditions at 970 s and reflects spatial non-uniformity within the battery. It cannot be directly transferred to determine onset temperature in oven test configurations, which have fundamentally different spatial temperature profiles (~130°C difference).",
+            "error_type": "condition_transfer_violation",
+            "evidence_refs": [
+              "TR_Modelling+177+Applied_Thermal_Engineering:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinguishing between heat contribution and causal role in thermal runaway initiation; understanding the scope of convective cooling effectiveness; recognizing measurement limitations under non-uniform temperature fields.",
+        "primary_boundary": "Internal short circuit has a disproportionate causal role relative to its heat contribution; convective cooling affects severity and timing but not onset temperature threshold; local overheating produces non-uniformity that invalidates surface-to-internal temperature extrapolation.",
+        "intended_error_modes": [
+          "Conflating small heat contribution with small causal importance for initiation",
+          "Overclaiming that the dominant heat reaction is both necessary and sufficient for runaway",
+          "Transferring non-uniformity data across fundamentally different test configurations"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding that eliminating the dominant heat reaction prevents all runaway pathways",
+          "Using local overheating temperature gradients to characterize oven test onset temperatures",
+          "Claiming convective cooling prevents onset rather than modifying post-onset dynamics"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A 21700 NMC cell (4800 mAh, 100% SOC) undergoes nail penetration testing. Experimental results show that under natural convection cooling, the predicted cell surface temperature is up to 350°C higher than under forced convection. Separately, under natural convection (h = 2 W/m²K), varying the cell surface emissivity produces up to 50°C difference in predicted surface temperature, while under forced convection (h = 71.7 W/m²K) the effect of emissivity on surface temperature is negligible. An engineer argues that improving surface emissivity is an effective strategy for reducing peak cell surface temperature under natural convection and should be prioritized as a thermal management intervention. A second engineer argues that switching to forced convection would make emissivity optimization irrelevant and would be far more impactful for preventing thermal runaway propagation. Evaluate both arguments. Identify which is better supported by the evidence, explain the mechanism that accounts for the difference in emissivity sensitivity between the two cooling regimes, and state whether either intervention alone is sufficient to prevent thermal runaway propagation based on the available evidence."
+      },
+      "ground_truth": {
+        "gold_answer": "The second engineer's argument is better supported. Under natural convection, emissivity variation produces up to 50°C difference in surface temperature, which is non-negligible but modest relative to the up to 350°C difference between natural and forced convection conditions. The mechanism underlying the emissivity sensitivity difference is that under natural convection, convective heat removal is weak (h = 2 W/m²K), so radiative heat transfer (which depends on emissivity) constitutes a significant fraction of total heat dissipation, making surface temperature sensitive to emissivity. Under forced convection (h = 71.7 W/m²K), convective heat removal dominates so strongly that radiative losses become negligible by comparison, and emissivity has no meaningful effect on surface temperature. Regarding sufficiency: the evidence states that forced convective cooling has the potential to prevent thermal runaway propagation in cell groups based on the 350°C surface temperature difference, but this is described as a potential, not a guarantee. The evidence does not state that emissivity optimization alone is sufficient to prevent propagation. Therefore, neither intervention is confirmed as individually sufficient by the evidence, but forced convection has substantially greater impact and is the more defensible priority.",
+        "must_include": [
+          "The second engineer's argument is better supported because the natural-to-forced convection difference (up to 350°C) far exceeds the emissivity effect under natural convection (up to 50°C).",
+          "Under natural convection, radiative heat transfer is a significant fraction of total dissipation because convective removal is weak, making surface temperature sensitive to emissivity.",
+          "Under forced convection, convective heat removal dominates and radiative losses become negligible, so emissivity has no meaningful effect.",
+          "The evidence describes forced convection as having the potential to prevent propagation, not as a guaranteed prevention; sufficiency is not confirmed for either intervention alone."
+        ],
+        "disallowed_extrapolations": [
+          "Claiming emissivity optimization is sufficient to prevent thermal runaway propagation under natural convection",
+          "Claiming forced convection guarantees prevention of thermal runaway propagation based solely on the surface temperature difference",
+          "Applying the 350°C or 50°C values to cell formats or conditions other than the 21700 NMC cell tested",
+          "Concluding that emissivity is irrelevant under all cooling conditions rather than specifically under forced convection"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism-based reasoning about regime-dependent heat transfer: understanding why emissivity sensitivity disappears under forced convection, quantifying the relative impact of emissivity optimization versus cooling mode change, and correctly interpreting 'potential' language in safety claims.",
+        "primary_boundary": "Emissivity matters under natural convection because radiation is a significant dissipation pathway; under forced convection it is negligible. The 350°C difference establishes forced convection as far more impactful, but the evidence only claims 'potential' for propagation prevention, not certainty.",
+        "intended_error_modes": [
+          "Treating the 50°C emissivity effect as sufficient justification for prioritizing emissivity optimization",
+          "Claiming forced convection guarantees prevention of propagation rather than indicating potential",
+          "Failing to explain the mechanism (radiation fraction of total dissipation) behind the regime-dependent emissivity sensitivity",
+          "Ignoring that the evidence uses 'potential' language and therefore cannot confirm sufficiency"
+        ]
+      }
+    }
+  ]
+}

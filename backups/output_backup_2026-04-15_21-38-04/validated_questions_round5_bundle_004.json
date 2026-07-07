@@ -1,0 +1,148 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A cylindrical lithium-ion cell undergoes nail penetration from its top cover at 100% SOC. The venting disk is destroyed by the nail, and internal pressure builds rapidly. Separately, it is known that the tensile strength of the cell casing drops to approximately 5% of its room-temperature value at 800°C, and that a mild steel casing of typical thickness requires less than 2 bar to split at temperatures above 600°C. During thermal runaway at 100% SOC, the maximum internal gas pressure is predicted to reach approximately 4.25 bar. An engineer is evaluating which failure modes are admissible under these combined conditions. Which of the following conclusions are supported?",
+        "options": [
+          "A. Sidewall rupture is more likely when the nail enters from the top cover than from the bottom, because the mechanism that would otherwise relieve internal pressure is rendered inoperative by the penetration itself.",
+          "B. At 100% SOC, the predicted internal pressure alone is insufficient to cause sidewall breach because the casing retains most of its structural strength at the temperatures reached during thermal runaway.",
+          "C. The thermal weakening of the casing material at elevated temperature and the pressure buildup at 100% SOC together create conditions under which pressure-induced sidewall breach is a credible failure mode.",
+          "D. Because the venting disk is destroyed during top-cover penetration, the cell will always vent safely through the nail hole, preventing sidewall rupture regardless of SOC.",
+          "E. The dependence of sidewall rupture likelihood on nail diameter and penetrating depth is the same whether the nail enters from the top or from the bottom of the cell.",
+          "F. The reduction in casing tensile strength at high temperature is relevant to sidewall breach risk only if internal pressure also exceeds the room-temperature burst threshold.",
+          "G. Penetration from the bottom of the cell shows little sensitivity of sidewall rupture likelihood to nail diameter or penetrating depth, which is mechanistically consistent with the bottom venting mechanism remaining functional in most cases."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence directly states that top-cover penetration damages the venting disk, removing pressure relief, which is the primary mechanism explaining higher sidewall rupture likelihood from the top versus the bottom.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+163+Applied_Energy:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The casing tensile strength drops to 5% of room-temperature value at 800°C, and the burst pressure for the casing falls below 2 bar above 600°C. At 4.25 bar internal pressure and elevated temperature, the casing is far more vulnerable, not less. This option incorrectly assumes the casing retains structural strength.",
+            "error_type": "condition_violation_distractor",
+            "evidence_refs": [
+              "TR_Dynamics+163+Applied_Energy:C005",
+              "TR_Dynamics+165+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The combination of thermal weakening (casing strength at 5% of room-temperature value at 800°C, burst pressure below 2 bar above 600°C) and 4.25 bar internal pressure at 100% SOC together make pressure-induced sidewall breach a credible failure mode. This requires multi-factor reasoning across both evidence sources.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+163+Applied_Energy:C005",
+              "TR_Dynamics+165+Journal_of_Power_Sources:C005",
+              "TR_Dynamics+165+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence does not support that the nail hole provides sufficient pressure relief to prevent sidewall rupture in all cases. In fact, top-cover penetration increases sidewall rupture likelihood precisely because the venting disk is disabled. The claim of 'always' safe venting is unsupported and contradicts observed sidewall ruptures.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Dynamics+163+Applied_Energy:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence explicitly states that sidewall rupture likelihood is affected by nail diameter and penetrating depth for top-cover penetration, but is little affected by these parameters for bottom penetration. The dependence is not the same for both entry directions.",
+            "error_type": "overgeneralization_distractor",
+            "evidence_refs": [
+              "TR_Dynamics+163+Applied_Energy:C001",
+              "TR_Dynamics+163+Applied_Energy:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "This is a conservative-appearing but incorrect option. The thermal weakening is relevant because the burst pressure threshold itself drops below 2 bar above 600°C—meaning the room-temperature burst threshold is not the operative criterion at elevated temperature. The option incorrectly frames the condition for relevance.",
+            "error_type": "condition_violation_distractor",
+            "evidence_refs": [
+              "TR_Dynamics+163+Applied_Energy:C005",
+              "TR_Dynamics+165+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "Evidence states sidewall rupture is little affected by penetrating depth and nail diameter for bottom penetration, and attributes the single observed exception to venting disk malfunction. This is mechanistically consistent with the bottom venting mechanism normally remaining functional and providing pressure relief regardless of nail geometry.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+163+Applied_Energy:C002",
+              "TR_Dynamics+163+Applied_Energy:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of sidewall rupture failure modes under combined thermal weakening and pressure buildup conditions, with entry-direction-dependent venting mechanism behavior.",
+        "primary_boundary": "The thermal weakening of the casing and the pressure buildup at 100% SOC must be evaluated jointly; neither alone is sufficient to conclude breach risk without the other, but together they are sufficient. The entry direction determines whether the venting mechanism is operative.",
+        "intended_error_modes": [
+          "Assuming casing retains room-temperature strength during thermal runaway",
+          "Overgeneralizing nail geometry dependence across both entry directions",
+          "Assuming nail hole provides equivalent pressure relief to the intact venting disk",
+          "Misidentifying the condition under which thermal weakening becomes relevant"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding that sidewall rupture never occurs from bottom penetration",
+          "Concluding that 4.25 bar is always sufficient for breach regardless of temperature",
+          "Generalizing nail-geometry sensitivity from top-cover to bottom-entry conditions"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A cylindrical lithium-ion cell at 100% SOC undergoes thermal runaway. Internal gas pressure reaches 4.25 bar, and the cell casing temperature rises above 600°C during the event. The casing material has a tensile strength that drops to 5% of its room-temperature value at 800°C, and the pressure required to split a typical mild steel casing of standard thickness falls below 2 bar at temperatures above 600°C. Separately, gas-phase reactions outside the cell contribute approximately 3 times more heat to the total than internal thermal abuse reactions within the cell components. An engineer argues that the primary heat generation hazard at 100% SOC is the internal cell chemistry, and that containing the cell in a rigid enclosure to prevent gas ejection would reduce total heat release by more than half. Identify the two specific errors in this engineer's argument, explaining the mechanism or evidence basis for each."
+      },
+      "ground_truth": {
+        "gold_answer": "Error 1: The engineer incorrectly identifies internal cell chemistry as the primary heat generation hazard. At 100% SOC, gas-phase reactions occurring outside the cell contribute approximately 3 times more heat than internal thermal abuse reactions within the cell components. This means internal reactions account for roughly 25% of total heat generation, while external gas-phase combustion accounts for approximately 75%. The primary hazard is therefore the combustion of ejected gases, not the internal chemistry. Error 2: The engineer's claim that containing the cell to prevent gas ejection would reduce total heat release by more than half is incorrect. Since internal reactions contribute only approximately 25% of total heat, preventing gas ejection and its associated combustion would eliminate approximately 75% of total heat—but the engineer's proposed mechanism (containing the cell to suppress internal chemistry) conflates the location of heat generation with the mechanism. Furthermore, a rigid enclosure that prevents gas ejection would trap the 4.25 bar internal pressure inside a casing whose burst strength has fallen below 2 bar above 600°C, making pressure-induced sidewall breach highly likely and potentially creating a more severe mechanical hazard. The containment strategy does not reduce internal pressure generation and may accelerate casing failure rather than mitigating it.",
+        "must_include": [
+          "Gas-phase reactions contribute approximately 3 times more heat than internal thermal abuse reactions, so internal reactions account for approximately 25% of total heat generation",
+          "The primary heat generation source at 100% SOC is external gas-phase combustion, not internal cell chemistry",
+          "Rigid containment to prevent gas ejection does not suppress internal pressure generation",
+          "At temperatures above 600°C, the casing burst pressure threshold falls below 2 bar, and 4.25 bar internal pressure makes pressure-induced sidewall breach highly likely if gas cannot vent",
+          "The engineer's containment strategy would likely increase mechanical failure risk rather than reduce total heat hazard as claimed"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming that rigid containment eliminates all thermal runaway hazard",
+          "Stating that internal reactions contribute zero heat",
+          "Asserting that gas-phase reaction suppression is achievable by any specific described method",
+          "Applying the 4.25 bar and casing failure data to cell formats or chemistries not described in the evidence"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Identification of the dominant heat generation pathway at 100% SOC and the mechanical consequences of suppressing gas ejection under thermally weakened casing conditions.",
+        "primary_boundary": "The 3:1 ratio of gas-phase to internal heat generation means internal reactions are the minor contributor. Containment strategy must be evaluated against both the heat generation pathway and the pressure-induced breach risk at elevated temperature.",
+        "intended_error_modes": [
+          "Assuming internal cell reactions dominate heat generation",
+          "Failing to account for pressure-induced casing failure when gas venting is suppressed",
+          "Treating containment as equivalent to heat suppression",
+          "Inverting the gas-phase to internal reaction heat ratio"
+        ]
+      }
+    }
+  ]
+}

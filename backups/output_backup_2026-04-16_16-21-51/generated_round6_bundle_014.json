@@ -1,0 +1,322 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An 86 Ah LFP battery undergoes thermal runaway under two separate abuse conditions. In the first condition, the safety vent opens when the surface temperature is below 50°C and liquid electrolyte is ejected. In the second condition, the vent opens at a surface temperature near 94°C and white smoke is released over an extended period. Both conditions ultimately produce CO2 and H2 as the dominant gas species, but the total gas volume under the second condition is substantially larger. An engineer is evaluating which statements about the venting mechanisms and hazard profiles of these two conditions are supported. Which of the following conclusions are admissible?",
+        "options": [
+          "A. The first condition drives vent opening primarily through internal pressure buildup from electrochemical gas generation rather than electrolyte volatilization, because liquid electrolyte ejection at low surface temperature indicates the electrolyte has not yet reached its volatilization threshold.",
+          "B. Because the second condition produces a larger total gas volume, it necessarily poses a higher explosion hazard than the first condition throughout the entire pre-thermal-runaway period.",
+          "C. The higher peak mass loss rate under the second condition compared to the first is consistent with a venting mechanism dominated by volatilized electrolyte rather than electrochemically generated gas.",
+          "D. The near-equal peak gas temperatures under both conditions (~342–343°C) confirm that the peak surface temperatures of the battery must also be approximately equal.",
+          "E. Under the first condition, the flammable gas mixture at the vent exit may present an ignition hazard for a longer pre-runaway window than under the second condition, despite the second condition producing a higher peak explosion index.",
+          "F. The observation that white smoke is released over an extended period under the second condition, combined with the higher average mass loss rate, indicates that the second condition involves a more sustained ejection phase than the first."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "E",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence states that under overcharging (first condition), the vent opens at 48.5°C with liquid electrolyte ejection, and identifies gas release inside the battery as the primary driver. Liquid ejection at low temperature directly supports that volatilization is not the mechanism; internal gas pressure from electrochemical reactions is. This requires two-step reasoning: low temperature eliminates volatilization as cause, and liquid-phase ejection confirms pressure-driven opening.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+198+Journal_of_Energy_Storage:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Larger total gas volume does not imply higher explosion hazard throughout the pre-runaway period. The evidence shows that under overcharging (first condition), XFED exceeds 1 for 1211 s before thermal runaway, whereas under overheating (second condition), XFED remains below 1 before thermal runaway. The second condition's higher total volume is concentrated post-runaway, not pre-runaway. This is a scope-expansion distractor that conflates total volume with pre-runaway hazard window.",
+            "error_type": "condition_violation_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+198+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The second condition (overheating) shows peak mass loss rates of 4.3 and 5.7 g/s versus 0.53 and 1.84 g/s under the first condition, and the primary mechanism is electrolyte volatilization. Volatilized electrolyte produces a large, sustained mass flux consistent with higher peak and average mass loss rates. This requires linking mechanism identity to the mass loss rate signature.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+198+Journal_of_Energy_Storage:C003",
+              "TR_Gasventing+198+Journal_of_Energy_Storage:C006"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence explicitly states that peak gas temperatures are nearly equal (~342–343°C) but peak surface temperatures differ significantly: 423°C under overcharging and 372.1°C under overheating. Equal gas temperature does not imply equal surface temperature. This is a measurement scope distractor that confuses gas-phase temperature with surface temperature.",
+            "error_type": "measurement_scope_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+198+Journal_of_Energy_Storage:C007"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Under overcharging (first condition), XFED exceeds 1 for 1211 s before thermal runaway, meaning the gas mixture at the vent is within explosive range for over 20 minutes pre-runaway. Under overheating (second condition), XFED remains below 1 before thermal runaway despite the higher peak XFED post-runaway. Therefore, the first condition presents a longer pre-runaway ignition hazard window, which is counterintuitive given the second condition's higher peak XFED.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+198+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The evidence states white smoke is released over an extended period under overheating, and the average mass loss rate under overheating (2.25 g/s) is approximately 9× higher than under overcharging (0.24 g/s). Together these observations support a more sustained ejection phase under the second condition.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+198+Journal_of_Energy_Storage:C002",
+              "TR_Gasventing+198+Journal_of_Energy_Storage:C006"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism-dependent venting behavior and pre-runaway vs. post-runaway hazard window distinction for LFP under two abuse modes",
+        "primary_boundary": "XFED above 1 pre-runaway (overcharging) vs. XFED below 1 pre-runaway (overheating) despite overheating producing higher total gas volume and peak XFED",
+        "intended_error_modes": [
+          "Conflating total gas volume with pre-runaway explosion hazard duration",
+          "Inferring equal surface temperature from equal gas temperature",
+          "Assuming higher peak hazard index implies higher hazard at all time points"
+        ],
+        "disallowed_extrapolations": [
+          "Generalizing XFED behavior to other LFP chemistries or cell formats",
+          "Inferring that overheating is always safer pre-runaway than overcharging",
+          "Assuming gas composition differences between the two conditions"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A safety engineer is comparing thermal runaway behavior across two large-format lithium-ion cell chemistries and test protocols. For a 157 Ah NMC811 prismatic cell, specific gas production increases approximately linearly with SOC from 25% to 100%, TR onset temperature decreases by a fixed increment per 25% SOC increase, and maximum surface temperature increases by approximately 90°C per 25% SOC increase. Separately, tests on a cylindrical NCA 21700 cell show that maximum heating rate during thermal runaway increases exponentially with SOC, while venting temperature is approximately SOC-independent and occurs near 180°C under heat ramp conditions. In both chemistries, the trigger method has been identified as a major variable affecting gas production rate, mass loss, and maximum temperature. The engineer must evaluate design and safety conclusions. Which of the following statements are admissible?",
+        "options": [
+          "A. For the NMC811 cell, a reduction in SOC from 100% to 75% is expected to reduce both the maximum surface temperature and the total gas production, but the fractional reduction in maximum surface temperature is larger than the fractional reduction in total gas production.",
+          "B. Because venting temperature in the NCA cell is independent of SOC, the pre-vent thermal behavior of that cell provides no useful information for predicting whether thermal runaway will occur.",
+          "C. The exponential SOC dependence of maximum heating rate in the NCA cell and the linear SOC dependence of total gas production in the NMC811 cell together imply that heating rate and gas production are governed by different physical mechanisms.",
+          "D. For the NMC811 cell at 100% SOC, a change in trigger method alone can cause mass loss to vary by up to 40 percentage points, which is comparable in magnitude to the total SOC-driven mass loss increase from 25% to 100% SOC.",
+          "E. A safety protocol that limits NMC811 cell SOC to 75% would eliminate the risk of thermal runaway under any trigger condition, because TR onset temperature increases as SOC decreases.",
+          "F. The SOC-independence of venting temperature in the NCA cell does not preclude SOC from influencing the severity of events that occur after venting."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "C",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "For the NMC811 cell, maximum temperature increases ~90°C per 25% SOC and total gas production increases linearly with SOC. From 100% to 75% SOC, the absolute temperature reduction is ~90°C on a base that is already several hundred degrees, while gas production drops by roughly 25% of the 25–100% range. Without knowing the absolute baseline temperature, the claim that the fractional temperature reduction is larger than the fractional gas production reduction cannot be established from the evidence. This is an unsupported numerical comparison distractor.",
+            "error_type": "unsupported_numerical_comparison",
+            "evidence_refs": [
+              "TR_Gasventing+200+Journal_of_Energy_Storage:C002",
+              "TR_Gasventing+200+Journal_of_Energy_Storage:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "SOC-independence of venting temperature does not mean pre-vent thermal behavior is uninformative. The NCA cell evidence shows self-heating onset detectable more than 35 hours before thermal runaway, providing a long warning window. Pre-vent thermal signals carry diagnostic value for mitigation even if the venting temperature threshold itself is SOC-independent. This is a conservative but incorrect distractor that misapplies the SOC-independence finding.",
+            "error_type": "scope_expansion_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+199+Journal_of_Energy_Storage:C001",
+              "TR_Gasventing+199+Journal_of_Energy_Storage:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "An exponential relationship between SOC and maximum heating rate (NCA) versus a linear relationship between SOC and total gas production (NMC811) indicates different functional dependencies on SOC. Different functional forms imply different governing mechanisms or rate-limiting steps for these two quantities. This requires combining cross-chemistry evidence and applying mechanism-form reasoning.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+199+Journal_of_Energy_Storage:C002",
+              "TR_Gasventing+200+Journal_of_Energy_Storage:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The evidence states that at 100% SOC, mass loss varied from 35% to 75% with different trigger methods, a range of 40 percentage points. The average increase in mass loss from 25% to 100% SOC was 35 percentage points. Therefore, trigger-method-driven variation at a fixed SOC (40 pp) is comparable in magnitude to the full SOC-driven variation (35 pp), making trigger method as influential as SOC for mass loss.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+200+Journal_of_Energy_Storage:C001",
+              "TR_Gasventing+200+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "While TR onset temperature increases as SOC decreases, this does not eliminate TR risk under all trigger conditions. The evidence shows that trigger method independently affects TR behavior and that TR still occurs at lower SOC values in the tested range. Claiming elimination of TR risk from SOC reduction alone is an overclaim that ignores trigger-method independence and the absence of a zero-TR threshold in the evidence.",
+            "error_type": "causal_overclaim_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+200+Journal_of_Energy_Storage:C001",
+              "TR_Gasventing+200+Journal_of_Energy_Storage:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "SOC-independence of venting temperature applies only to the trigger point for venting. Post-venting behavior, including maximum heating rate (which increases exponentially with SOC) and mass loss (which increases with SOC), remains SOC-dependent. Therefore, SOC-independence of one parameter does not generalize to SOC-independence of post-vent severity. This is counterintuitive because the SOC-independence finding might suggest SOC is broadly unimportant for this cell.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+199+Journal_of_Energy_Storage:C002",
+              "TR_Gasventing+199+Journal_of_Energy_Storage:C003",
+              "TR_Gasventing+199+Journal_of_Energy_Storage:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Scope of SOC-independence claims, trigger-method vs. SOC influence magnitude, and cross-chemistry mechanism inference",
+        "primary_boundary": "SOC-independence of venting temperature does not imply SOC-independence of post-vent severity; trigger method variation is comparable in magnitude to SOC variation for mass loss",
+        "intended_error_modes": [
+          "Overgeneralizing SOC-independence of venting temperature to all thermal runaway parameters",
+          "Assuming SOC reduction eliminates TR risk without accounting for trigger-method independence",
+          "Making unsupported fractional comparisons from absolute increment data"
+        ],
+        "disallowed_extrapolations": [
+          "Cross-chemistry extrapolation of exponential heating rate dependence to NMC811",
+          "Assuming a specific SOC threshold below which TR cannot be triggered",
+          "Inferring that trigger method dominates over SOC for all parameters"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "During accelerated rate calorimetry testing of an NCA 21700 cylindrical cell at 100% SOC, self-heating onset is detected at approximately 86°C, more than 35 hours before thermal runaway occurs. The total energy transferred to heating the cell during thermal runaway is measured at approximately 31 kJ, while the total stored electrical energy in the cell is approximately 60 kJ. A separate heat ramp test on the same cell chemistry shows venting occurring near 180°C regardless of SOC. A thermal management engineer is assessing the implications for early warning system design and energy balance modeling. Which of the following conclusions are admissible?",
+        "options": [
+          "A. The 35-hour window between self-heating onset and thermal runaway is sufficient to implement mitigation strategies, but this window duration cannot be assumed to apply under abuse conditions that impose faster external heating rates than the accelerated rate calorimetry protocol.",
+          "B. Because only approximately 50% of stored cell energy is transferred as heat to the cell itself during thermal runaway, the remaining energy is dissipated entirely as light and sound and therefore cannot contribute to propagation in a battery module.",
+          "C. The SOC-independence of venting temperature implies that a temperature-based vent detection threshold set at 175°C would provide equivalent warning time regardless of whether the cell is at 25% or 100% SOC.",
+          "D. The approximately 30 kJ of energy not accounted for by cell heating during thermal runaway is most plausibly associated with ejecta carrying thermal and kinetic energy, and this energy could contribute to thermal loading of adjacent cells in a module.",
+          "E. The onset of self-heating at 86°C under adiabatic conditions provides a detectable signal that precedes venting by a substantial thermal margin, suggesting that monitoring cell temperature for anomalous self-heating below the venting threshold could enable early intervention.",
+          "F. The total energy released during thermal runaway of this cell exceeds its stored electrical energy, confirming that exothermic chemical reactions contribute net energy beyond the initial electrical storage."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The 35-hour window is established under accelerated rate calorimetry, which is a near-adiabatic protocol. Under faster external heating (e.g., direct thermal abuse, overcharging at high rate), the time from self-heating onset to thermal runaway would be compressed. The conclusion that the window is sufficient is admissible for the tested protocol, but the caveat about faster heating rates is a necessary engineering qualification that prevents overgeneralization.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+199+Journal_of_Energy_Storage:C001"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The evidence attributes the residual ~30 kJ to ejecta carrying thermal and kinetic energy, not to light and sound. Ejecta can deposit thermal energy on adjacent cells, contributing to propagation. This is a mechanism substitution distractor that replaces the correct energy pathway with an implausible one while appearing to engage with the energy balance.",
+            "error_type": "mechanism_substitution_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+199+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "While venting temperature is SOC-independent near 180°C under heat ramp conditions, the evidence also notes that venting temperature under HWS testing is approximately 60°C lower. A threshold set at 175°C may not provide equivalent warning time across different test protocols or real-world conditions, and the SOC-independence finding applies specifically to heat ramp conditions. This is a condition-violation distractor that applies a finding beyond its stated protocol scope.",
+            "error_type": "condition_violation_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+199+Journal_of_Energy_Storage:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The evidence explicitly attributes the ~30 kJ residual energy to ejecta as thermal and kinetic energy. In a module configuration, ejecta impacting adjacent cells would transfer this thermal and kinetic energy, potentially triggering propagation. This is a scale-transfer reasoning step from cell-level energy balance to module-level propagation risk, supported by the evidence's own attribution.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+199+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Self-heating onset at 86°C precedes venting at approximately 180°C by a margin of ~94°C and more than 35 hours in time. Monitoring for anomalous self-heating below the venting threshold would therefore provide a substantial early warning window. This requires combining the self-heating onset temperature, the venting temperature, and the time gap to reach the engineering implication.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+199+Journal_of_Energy_Storage:C001",
+              "TR_Gasventing+199+Journal_of_Energy_Storage:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence states that approximately 31 kJ is transferred to cell heating and approximately 30 kJ goes to ejecta, totaling approximately 61 kJ, which is approximately equal to the stored electrical energy of ~60 kJ. This is consistent with the stored electrical energy being the primary energy source, not with total released energy exceeding stored energy. The option makes an unsupported claim about net exothermic chemical reaction contribution beyond electrical storage.",
+            "error_type": "causal_overclaim_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+199+Journal_of_Energy_Storage:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Energy balance interpretation, early warning window scope, and protocol-dependent venting temperature applicability",
+        "primary_boundary": "The 35-hour warning window and venting temperature SOC-independence are protocol-specific; ejecta energy is thermal/kinetic not radiative; total energy budget is approximately conserved relative to stored electrical energy",
+        "intended_error_modes": [
+          "Misidentifying ejecta energy as light/sound rather than thermal/kinetic",
+          "Overgeneralizing SOC-independence of venting temperature across protocols",
+          "Inferring net exothermic chemical energy contribution from approximate energy balance"
+        ],
+        "disallowed_extrapolations": [
+          "Assuming the 35-hour window applies under any heating protocol",
+          "Concluding that total chemical energy release exceeds stored electrical energy from this data",
+          "Generalizing venting temperature findings from heat ramp to all abuse conditions"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A 157 Ah NMC811 prismatic cell undergoes thermal runaway testing at 100% SOC using three different trigger methods. The measured mass loss values are 35%, 55%, and 75% respectively. A separate test series varying SOC from 25% to 100% using a single trigger method shows an average mass loss increase of 35 percentage points over that SOC range. An engineer argues that because SOC is the primary electrochemical variable in lithium-ion cells, it should dominate over trigger method in determining mass loss severity, and therefore the 40-percentage-point spread in mass loss at fixed SOC must reflect measurement uncertainty rather than a true trigger-method effect. Identify the specific reasoning error in this argument and explain what the data actually imply about the relative influence of SOC and trigger method on mass loss for this cell."
+      },
+      "ground_truth": {
+        "gold_answer": "The engineer's argument contains two linked errors. First, it assumes that electrochemical primacy of SOC implies SOC dominates all observable thermal runaway parameters, which is an unsupported generalization. Second, it dismisses the 40-percentage-point trigger-method spread as measurement uncertainty without basis. The data show that at fixed 100% SOC, trigger method alone produces a 40-percentage-point range in mass loss (35% to 75%), while the full SOC sweep from 25% to 100% produces an average increase of only 35 percentage points. Since the trigger-method-driven variation (40 pp) is comparable in magnitude to or exceeds the SOC-driven variation (35 pp) across the entire tested SOC range, the data imply that trigger method influences mass loss to a degree comparable to SOC. The correct conclusion is that both variables must be specified to characterize mass loss severity; neither dominates the other for this parameter in this cell.",
+        "must_include": [
+          "The 40-percentage-point spread from trigger method is comparable in magnitude to the 35-percentage-point increase from 25% to 100% SOC",
+          "Trigger method affects mass loss to a degree comparable to SOC, not subordinate to it",
+          "The argument incorrectly attributes the trigger-method spread to measurement uncertainty",
+          "Both SOC and trigger method must be specified to characterize mass loss"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming trigger method dominates SOC for all thermal runaway parameters",
+          "Generalizing this finding to other cell chemistries or formats without qualification",
+          "Inferring a specific mechanism by which trigger method affects mass loss beyond what the evidence states"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Relative influence of SOC versus trigger method on mass loss, and the admissibility of dismissing observed variation as measurement uncertainty",
+        "primary_boundary": "The trigger-method-driven variation at fixed SOC is comparable in magnitude to the full SOC-range variation; neither variable can be dismissed as secondary for mass loss",
+        "intended_error_modes": [
+          "Assuming electrochemical variable primacy implies observational dominance",
+          "Misattributing systematic variation to measurement uncertainty",
+          "Failing to compare the magnitude of trigger-method variation against SOC-driven variation"
+        ]
+      }
+    }
+  ]
+}

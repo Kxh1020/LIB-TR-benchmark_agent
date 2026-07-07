@@ -1,0 +1,322 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Ten nominally identical lithium cobalt oxide cells are subjected to accelerating rate calorimetry under identical conditions. The resulting dataset shows a nearly twofold spread in self-heating onset temperature, an order-of-magnitude spread in thermal runaway delay time, and a twofold spread in maximum temperature. A thermal runaway model is calibrated using DSC-derived kinetic parameters for the same chemistry, and the DSC repeatability study shows heat release standard deviations up to 22% of mean values, with certain exothermic peaks disappearing entirely in some repeat experiments. An engineer uses this combined dataset to evaluate four claims about model-based thermal runaway prediction for this chemistry. Which of the following conclusions are admissible given these conditions?",
+        "options": [
+          "A. The order-of-magnitude spread in delay time is more likely attributable to cell-to-cell variability in kinetic parameters than to measurement noise, because DSC uncertainty alone produces 2σ ranges on initiation temperature of only 9–17% and cannot account for a tenfold range in delay time.",
+          "B. A DSC-calibrated model that predicts a single deterministic onset temperature is sufficient for worst-case safety design because the twofold spread in onset temperature is within normal engineering tolerance.",
+          "C. The complete disappearance of certain DSC peaks in repeat experiments indicates that some exothermic reaction pathways may be absent or suppressed in specific cell samples, which is consistent with the observed cell-to-cell variability in thermal runaway severity.",
+          "D. Because DSC-informed kinetic uncertainty produces only 9–17% variation in simulated initiation temperature, the observed twofold variation in cell onset temperature cannot be fully explained by DSC kinetic uncertainty alone, implying additional sources of variability beyond what DSC-calibrated models capture.",
+          "E. The order-of-magnitude variation in delay time proves that DSC-based kinetic models are fundamentally invalid for ARC simulation and should be replaced entirely.",
+          "F. A probabilistic model that samples kinetic parameters from DSC uncertainty distributions will necessarily reproduce the full observed range of cell-to-cell thermal runaway behavior."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The DSC-informed kinetic uncertainty produces 2σ ranges of 9–17% on initiation temperature. A tenfold delay time spread is far outside what this kinetic uncertainty range can explain, making cell-to-cell variability in kinetic parameters the more admissible attribution. This requires multi-step reasoning: quantify DSC uncertainty scope, compare to observed spread, conclude DSC uncertainty is insufficient to explain delay time range.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+194+Chemical_Engineering_Journal:C001",
+              "TR_Modelling+194+Chemical_Engineering_Journal:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "A twofold spread in onset temperature (67.4°C to 123.8°C) represents a range of over 56°C, which is not within normal engineering tolerance for a safety-critical threshold. Using a single deterministic onset temperature ignores the lower bound of the distribution, which defines the worst case. This is a conservative-appearing but mechanistically wrong option.",
+            "error_type": "condition_violation_distractor",
+            "evidence_refs": [
+              "TR_Modelling+194+Chemical_Engineering_Journal:C001"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "DSC peak disappearance in repeat experiments indicates that certain exothermic pathways are not consistently present across samples. This is mechanistically consistent with the observed spread in maximum temperature and delay time across cells. The reasoning chain is: peak disappearance → absent reaction pathway → reduced heat release → lower maximum temperature or longer delay in affected cells.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+194+Chemical_Engineering_Journal:C002",
+              "TR_Modelling+194+Chemical_Engineering_Journal:C001"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "This is the admissible boundary conclusion: DSC kinetic uncertainty accounts for 9–17% variation in initiation temperature, but the observed cell spread is twofold (roughly 45–80% relative range). The gap between these scales implies additional variability sources not captured by DSC-calibrated models. This is counterintuitive because it implies that even a well-calibrated probabilistic DSC model is insufficient.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+194+Chemical_Engineering_Journal:C001",
+              "TR_Modelling+194+Chemical_Engineering_Journal:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The evidence shows DSC-calibrated models have limitations and produce bounded uncertainty ranges, but this does not make them fundamentally invalid. The claim that they should be replaced entirely is an unsupported overclaim. The evidence supports that they are insufficient alone, not that they are invalid.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Modelling+194+Chemical_Engineering_Journal:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Since the observed cell-to-cell spread exceeds what DSC kinetic uncertainty alone can explain (option D is correct), sampling only from DSC uncertainty distributions cannot necessarily reproduce the full observed range. This is a scope expansion distractor that conflates DSC kinetic uncertainty with total cell variability.",
+            "error_type": "scope_expansion_distractor",
+            "evidence_refs": [
+              "TR_Modelling+194+Chemical_Engineering_Journal:C001",
+              "TR_Modelling+194+Chemical_Engineering_Journal:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of DSC-calibrated kinetic models as complete explanations of cell-to-cell thermal runaway variability",
+        "primary_boundary": "DSC kinetic uncertainty (9–17% on initiation temperature) is insufficient to explain the observed tenfold delay time and twofold onset temperature spread, implying additional variability sources",
+        "intended_error_modes": [
+          "scope_expansion_distractor",
+          "causal_overclaim",
+          "condition_violation_distractor"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding DSC models are invalid rather than insufficient",
+          "Assuming DSC uncertainty sampling reproduces full cell variability",
+          "Treating twofold onset spread as within engineering tolerance for safety design"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A kinetic model for lithium-ion cell thermal runaway is constructed by fitting parameters exclusively to DSC data. The model includes an anode reaction term representing SEI decomposition followed by remaining exothermic reactions. When the model is used in ARC cell simulations, it fails to reproduce the experimentally observed temperature gap between SEI decomposition onset and the onset of remaining exothermic reactions. A separate model calibrated directly to ARC data for the same anode reaction uses a pre-exponential factor of A = 0.035 s⁻¹ for the low-temperature range, whereas DSC-inferred pre-exponential factors for the same reaction type typically range from 10¹⁰ to 10²⁰ s⁻¹. An engineer is asked to evaluate which modeling conclusions are defensible given this situation. Which of the following statements are admissible?",
+        "options": [
+          "A. The failure of DSC-calibrated models to reproduce the ARC temperature gap is consistent with the pre-exponential factor required for ARC fidelity being outside the range accessible by DSC-based inference, indicating a fundamental limitation of DSC-only calibration for this reaction.",
+          "B. The ARC-calibrated pre-exponential factor of 0.035 s⁻¹ is physically unreasonable and should be rejected, because it falls more than ten orders of magnitude below the lowest end of the DSC-inferred range.",
+          "C. Because the ARC-calibrated pre-exponential factor bridges the gap between SEI decomposition and remaining exothermic reactions, using DSC-only kinetics in ARC simulations will systematically underestimate the temperature at which the remaining reactions ignite relative to SEI onset.",
+          "D. A model that reproduces ARC behavior using A = 0.035 s⁻¹ may be valid for ARC conditions but cannot be assumed to reproduce DSC behavior, because the two experimental protocols probe different temperature ramp rates and thermal environments.",
+          "E. The discrepancy between DSC-inferred and ARC-calibrated pre-exponential factors proves that the underlying chemical reaction mechanism differs between DSC and ARC conditions, and therefore a single kinetic model cannot be valid for both.",
+          "F. The pre-exponential factor range of 10¹⁰ to 10²⁰ s⁻¹ from DSC data represents a sufficiently wide uncertainty band that ARC simulation results will be insensitive to which value within this range is selected."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The ARC-required pre-exponential factor (0.035 s⁻¹) is outside the DSC-inferred range (10¹⁰–10²⁰ s⁻¹) by many orders of magnitude. This directly implies that DSC-only calibration cannot produce the kinetic parameter needed to reproduce the ARC temperature gap, making DSC-only calibration a fundamental limitation for this specific reaction. The reasoning chain is: ARC gap requires low A → DSC cannot produce low A → DSC-only calibration is insufficient for ARC fidelity.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+194+Chemical_Engineering_Journal:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The evidence explicitly states that A = 0.035 s⁻¹ was obtained by direct fitting to ARC experimental data, not by theoretical derivation. Rejecting it as physically unreasonable based solely on its deviation from DSC-inferred values is an unjustified overclaim. The evidence presents it as a significant outlier but does not invalidate it. This is a conservative-appearing but incorrect distractor.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Modelling+194+Chemical_Engineering_Journal:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The direction of the error is inverted. A DSC-calibrated model with a high pre-exponential factor would predict faster reaction kinetics at low temperature, which would tend to close the gap between SEI onset and remaining reactions rather than widen it. The claim that DSC-only kinetics underestimates the temperature of remaining reaction onset is not directly supported and inverts the mechanism. This is a mechanism confusion distractor.",
+            "error_type": "mechanism_confusion_distractor",
+            "evidence_refs": [
+              "TR_Modelling+194+Chemical_Engineering_Journal:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "ARC and DSC probe different thermal environments and ramp rates. A kinetic model calibrated to ARC data is valid within ARC conditions but cannot be assumed to reproduce DSC observations, because the parameter fitting was performed under different experimental constraints. This is an admissible boundary conclusion that avoids overclaiming cross-protocol validity.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+194+Chemical_Engineering_Journal:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The discrepancy in pre-exponential factors is consistent with different experimental conditions producing different effective kinetic parameters, but it does not prove that the underlying chemical mechanism differs. Mechanism difference is one possible interpretation, but the evidence does not support this as a definitive conclusion. This is a causal overclaim distractor.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Modelling+194+Chemical_Engineering_Journal:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "DSC-informed kinetic uncertainty produces 2σ ranges of 9–17% on simulated initiation and maximum temperatures, indicating that the choice of pre-exponential factor within the DSC range does have significant impact. The claim of insensitivity is directly contradicted by the evidence on kinetic uncertainty effects.",
+            "error_type": "overgeneralization_distractor",
+            "evidence_refs": [
+              "TR_Modelling+194+Chemical_Engineering_Journal:C003",
+              "TR_Modelling+194+Chemical_Engineering_Journal:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of DSC-only kinetic calibration for ARC simulation fidelity and cross-protocol model validity",
+        "primary_boundary": "The ARC-required pre-exponential factor is outside the DSC-accessible range, making DSC-only calibration insufficient for ARC fidelity, but this does not prove mechanism difference or invalidate ARC-calibrated parameters",
+        "intended_error_modes": [
+          "causal_overclaim",
+          "mechanism_confusion_distractor",
+          "overgeneralization_distractor"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding mechanism difference from parameter discrepancy",
+          "Claiming DSC range insensitivity given known 9–17% uncertainty impact",
+          "Rejecting ARC-calibrated parameters as physically unreasonable"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A parallel lithium-ion battery module is instrumented with both voltage sensors at the module terminals and individual cell impedance measurement capability. During a controlled heating experiment, the following sequence is observed: at a cell temperature of 50.1°C, the impedance of one cell drops by approximately half of its SOC-dependent impedance range, triggering a first-stage warning; at 94.2°C, a second-stage warning is triggered; later, the cell undergoes thermal runaway. The module terminal voltage remains stable throughout the pre-runaway period even as the individual cell voltage drops. Separately, the impedance of the failing cell increases abruptly near the onset of thermal runaway. The first-stage warning precedes thermal runaway by 307 seconds and the second-stage warning by 181 seconds. An engineer evaluates the diagnostic architecture for this module. Which of the following conclusions are admissible?",
+        "options": [
+          "A. Module terminal voltage monitoring alone is insufficient as a thermal runaway precursor signal in this parallel configuration, because the parallel connection masks individual cell voltage drops.",
+          "B. The abrupt impedance increase near thermal runaway onset is a more reliable early warning indicator than the impedance drop at 50.1°C, because it provides a larger signal magnitude.",
+          "C. The 307-second advance warning from the first-stage indicator is achievable only because the impedance drop threshold was set at half the SOC-dependent impedance range; a more conservative threshold would necessarily provide a longer advance warning time.",
+          "D. The phase angle at approximately 1 kHz is a more suitable parameter for temperature-based thermal runaway warning than for SOC estimation in this cell, because its sensitivity to temperature is more than three times its sensitivity to SOC in terms of fluctuation range.",
+          "E. The sequential triggering of stage-I at 50.1°C and stage-II at 94.2°C, with decreasing advance warning times, is consistent with a thermal runaway process that accelerates as temperature increases, making earlier-stage indicators more valuable for intervention.",
+          "F. Because impedance changes by 3–4 orders of magnitude before thermal runaway, any impedance-based threshold set within this range will provide equivalent advance warning time regardless of where the threshold is placed."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that in a parallel module, individual cell voltage drops are not reflected in the module terminal voltage. Therefore, module-level voltage monitoring cannot detect the precursor voltage drop of a failing cell. This is a direct mechanistic conclusion supported by the parallel connection property.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+196+Journal_of_Energy_Chemistry:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The abrupt impedance increase occurs near thermal runaway onset and provides only 181 seconds or less of advance warning (it is the stage-III indicator), whereas the impedance drop at 50.1°C provides 307 seconds. Larger signal magnitude does not imply better early warning; the impedance drop at lower temperature provides more lead time. This is a mechanism confusion distractor that conflates signal magnitude with warning lead time.",
+            "error_type": "mechanism_confusion_distractor",
+            "evidence_refs": [
+              "TR_Modelling+196+Journal_of_Energy_Chemistry:C004",
+              "TR_Modelling+196+Journal_of_Energy_Chemistry:C005",
+              "TR_Modelling+196+Journal_of_Energy_Chemistry:C006"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "A more conservative (lower) threshold would trigger earlier in the impedance drop sequence, potentially providing longer advance warning. However, the claim that it 'necessarily' provides longer advance warning ignores the possibility that a lower threshold could be triggered by normal SOC or temperature variation rather than thermal runaway precursors, reducing its specificity. The evidence does not support that any lower threshold necessarily provides longer valid advance warning. Additionally, the direction of 'conservative' is ambiguous here — a higher threshold would trigger later and give less warning. This is a boundary condition distractor.",
+            "error_type": "condition_violation_distractor",
+            "evidence_refs": [
+              "TR_Modelling+196+Journal_of_Energy_Chemistry:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The evidence states that the phase angle at ~1 kHz has a temperature fluctuation range more than three times its SOC sensitivity range, and a variance more than seventeen times higher for temperature than for SOC. This directly supports using this parameter for temperature-based warning rather than SOC estimation. This is counterintuitive because 1 kHz is a frequency often associated with ohmic resistance (SOC-insensitive), yet the evidence shows it is temperature-sensitive.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+196+Journal_of_Energy_Chemistry:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Stage-I triggers at 50.1°C with 307 s advance warning; stage-II triggers at 94.2°C with 181 s advance warning. The decreasing advance warning time as temperature increases is consistent with accelerating thermal runaway dynamics. Earlier-stage indicators provide more intervention time, making them more valuable. This requires multi-step reasoning: compare warning times, infer acceleration, conclude on relative value of earlier indicators.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+196+Journal_of_Energy_Chemistry:C006"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The 3–4 orders of magnitude impedance change occurs over the entire pre-runaway temperature range. The advance warning time depends critically on where in this range the threshold is set relative to the thermal runaway onset. The claim of equivalence across threshold positions ignores the time-temperature relationship of the thermal runaway process and is directly contradicted by the different warning times at different stages.",
+            "error_type": "overgeneralization_distractor",
+            "evidence_refs": [
+              "TR_Modelling+196+Journal_of_Energy_Chemistry:C001",
+              "TR_Modelling+196+Journal_of_Energy_Chemistry:C006"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of impedance-based and voltage-based thermal runaway warning strategies in parallel module configurations",
+        "primary_boundary": "Parallel module topology masks cell-level voltage signals, making impedance monitoring necessary; threshold placement determines advance warning time, not signal magnitude alone",
+        "intended_error_modes": [
+          "mechanism_confusion_distractor",
+          "condition_violation_distractor",
+          "overgeneralization_distractor"
+        ],
+        "disallowed_extrapolations": [
+          "Equating signal magnitude with warning lead time",
+          "Assuming any lower threshold provides longer valid warning",
+          "Assuming threshold position within the 3–4 order impedance range is irrelevant to warning time"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A transition-metal-doped WSSe monolayer sensor is being evaluated for detecting thermal runaway gases from lithium-ion batteries. Three dopant candidates (Ti, Mo, Mn) are under consideration. The doped systems show adsorption energies approximately seven times higher than the undoped material. However, a design constraint requires that the sensor be regenerable at moderate temperatures without active heating — that is, the sensor surface must recover its baseline state within a practical time window at elevated ambient temperature. A second constraint is that the sensor must be electrically responsive, meaning its conductance must change detectably upon gas adsorption. Given that recovery time is negatively correlated with temperature and that higher adsorption energy prolongs desorption, and that Mo-doped WSSe has the largest bandgap reduction among the three dopants while also having the largest formation energy magnitude on the S-surface, explain the trade-off that must be resolved when selecting a dopant for this application, and identify which material property interaction creates the fundamental tension between sensitivity and regenerability in this sensor design."
+      },
+      "ground_truth": {
+        "gold_answer": "The fundamental trade-off is between adsorption strength (which governs sensitivity and electrical response) and desorption ease (which governs regenerability). Higher adsorption energy produces stronger chemisorption, which increases the sensor's response to target gases and is consistent with the ~7× enhancement over undoped WSSe. However, higher adsorption energy also prolongs the desorption process, meaning recovery at a given temperature takes longer. Since recovery time is negatively correlated with temperature, regeneration at moderate ambient temperature is slower for high-adsorption-energy systems. Mo-doped WSSe exemplifies this tension most acutely: it has the largest bandgap reduction (0.212 eV vs. 2.041 eV undoped, a reduction of 1.829 eV), indicating the strongest electrical response to adsorption events, and it has the largest formation energy magnitude on the S-surface (-3.776 eV), indicating the most stable doping configuration and likely the strongest adsorption. The property interaction creating the tension is that the same electronic structure modification responsible for enhanced adsorption (bandgap reduction through d-orbital hybridization with the dopant) also deepens the adsorption potential well, making desorption energetically costly. A dopant like Mn, with a smaller bandgap reduction (0.795 eV) and lower formation energy magnitude (-1.282 eV), would offer a less favorable sensitivity-regenerability trade-off in terms of electrical response but may recover more readily. The tension cannot be resolved by a single material parameter; it requires balancing bandgap reduction (sensitivity proxy) against adsorption energy magnitude (regenerability penalty).",
+        "must_include": [
+          "Higher adsorption energy prolongs desorption and reduces regenerability at moderate temperature",
+          "Recovery time is negatively correlated with temperature, so moderate-temperature regeneration is slower for high-adsorption-energy dopants",
+          "Mo-doped WSSe has the largest bandgap reduction and largest formation energy magnitude, making it the most sensitive but least easily regenerable",
+          "The trade-off is between adsorption strength (sensitivity/electrical response) and desorption ease (regenerability)",
+          "The same electronic modification that enhances sensitivity also deepens the adsorption well, creating the fundamental tension"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming one dopant is definitively optimal without acknowledging the trade-off",
+          "Asserting that higher temperature regeneration fully resolves the trade-off without constraint on operating conditions",
+          "Claiming the ~7× adsorption energy enhancement applies uniformly to all gas species without condition",
+          "Concluding that Mn is superior overall based solely on easier regenerability without accounting for reduced electrical response"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Trade-off between adsorption energy (sensitivity/electrical response) and desorption kinetics (regenerability) in transition-metal-doped WSSe gas sensors for thermal runaway detection",
+        "primary_boundary": "Higher adsorption energy simultaneously enhances sensitivity and impairs regenerability; the material property interaction (bandgap reduction coupled with adsorption well depth) creates an irreducible tension that cannot be resolved by optimizing a single parameter",
+        "intended_error_modes": [
+          "Selecting Mo as optimal without acknowledging regenerability penalty",
+          "Treating bandgap reduction and adsorption energy as independent design variables",
+          "Ignoring the temperature-recovery time relationship when evaluating moderate-temperature regenerability",
+          "Overgeneralizing the ~7× adsorption enhancement as uniformly beneficial without trade-off consideration"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Lithium-ion batteries at 0%, 50%, and 100% SOC are subjected to fire exposure. The 100% SOC battery produces peak heat release rate of approximately 5 kW; the 0% SOC battery produces approximately 2.3 kW. An explosion is observed during the second combustion stage for 50% and 100% SOC batteries but not for 0% SOC. Particle measurements show near-zero particle density during the second combustion stage at elevated SOC. Which conclusions about the combustion mechanism and SOC dependence are admissible?",
+        "options": [
+          "A. The absence of explosion at 0% SOC is consistent with the second combustion stage at that condition lacking the premixed flame character present at higher SOC.",
+          "B. The near-zero particle density during the second combustion stage at 100% SOC confirms that the second stage is dominated by a diffusion flame mechanism.",
+          "C. Higher SOC increases peak heat release rate monotonically, and this monotonic trend implies that explosion hazard also scales monotonically with SOC below 50%.",
+          "D. The elevated CO to CO2 ratio in the second combustion stage relative to the first stage is consistent with reduced mixing time in a partially premixed flame configuration.",
+          "E. Because explosion occurred at both 50% and 100% SOC but not at 0% SOC, a threshold SOC between 0% and 50% governs transition to explosion-capable combustion behavior.",
+          "F. Particle concentration detected only in the first combustion stage across all SOC conditions indicates the first stage is always a diffusion flame regardless of SOC."
+        ],
+        "options_note": "Select all correct options."
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "0% SOC second combustion was delayed and lacked explosion; absence of premixed flame character at 0% SOC is consistent with this observation and the evidence linking explosion to partially premixed combustion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+139+Journal_of_Loss_Prevention_in_the_Process_Industries:C002",
+              "TR_Gasventing+139+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Near-zero particle density at elevated SOC second stage confirms partially premixed flame, not diffusion flame; the option inverts the mechanistic conclusion.",
+            "error_type": "mechanism_confusion",
+            "evidence_refs": [
+              "TR_Gasventing+139+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Evidence supports monotonic HRR trend across tested SOCs but does not support inferring explosion hazard scales monotonically below 50% SOC; a threshold exists somewhere in that range with no data below 50%.",
+            "error_type": "unsupported_extrapolation",
+            "evidence_refs": [
+              "TR_Gasventing+139+Journal_of_Loss_Prevention_in_the_Process_Industries:C001",
+              "TR_Gasventing+139+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence directly links elevated CO/CO2 ratio in second stage to short mixing time in partially premixed flame, distinguishing it from first-stage diffusion flame behavior.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+139+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Explosion at 50% and 100% but not 0% SOC establishes a threshold between 0% and 50%; this is an admissible boundary inference from the three tested conditions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+139+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Evidence states particle concentration detected only in first stage, but does not assert first stage is always diffusion flame regardless of SOC; this overgeneralizes and inverts the scope of the measurement.",
+            "error_type": "overgeneralization",
+            "evidence_refs": [
+              "TR_Gasventing+139+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "SOC-dependent combustion stage character and explosion threshold reasoning",
+        "primary_boundary": "Admissible threshold inference from three-point data vs. extrapolation below tested range; diffusion vs. premixed flame regime identification",
+        "intended_error_modes": [
+          "inverting particle density interpretation",
+          "extrapolating HRR monotonicity to explosion hazard monotonicity",
+          "overgeneralizing first-stage combustion character"
+        ],
+        "disallowed_extrapolations": [
+          "claiming explosion threshold is precisely quantified",
+          "claiming first stage is universally diffusion flame at all SOC"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A rack-level battery enclosure and a module-level battery enclosure are both subject to an internal arc flash event. Calculated pressure rise for the rack enclosure is approximately an order of magnitude greater than for the module enclosure and exceeds the structural rating of the rack enclosure. However, the measured pressure during an actual event is significantly lower than the calculated value. Explain the physical mechanism responsible for this discrepancy, identify the design condition that enables it, and describe one safety engineering implication of relying on this mechanism for structural protection."
+      },
+      "ground_truth": {
+        "gold_answer": "The discrepancy arises because rack enclosures are vented, allowing pressure to be relieved during the arc event rather than building to the calculated unvented peak. Venting dissipates the pressure wave, so actual pressures remain below the structural failure threshold despite the calculated value exceeding it. The critical design condition enabling this is the presence and adequacy of enclosure venting. A key safety implication is that the protective effect depends entirely on vent area and path remaining unobstructed; if venting is blocked or insufficient, actual pressures approach the calculated values, which exceed enclosure structural limits and can cause catastrophic enclosure failure. Therefore, enclosure integrity and vent path maintenance are load-bearing assumptions in the safety case, not passive features.",
+        "must_include": [
+          "venting as the mechanism reducing actual pressure below calculated value",
+          "calculated pressure exceeds enclosure structural rating for rack enclosures",
+          "venting is the enabling design condition",
+          "safety implication involving dependence on vent path availability or obstruction risk"
+        ],
+        "disallowed_extrapolations": [
+          "claiming venting eliminates arc flash hazard entirely",
+          "comparing rack vs. module venting effectiveness without evidence",
+          "claiming module enclosures also require venting for the same reason"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism linking enclosure venting to pressure reduction and the conditional safety dependence this creates",
+        "primary_boundary": "Vented vs. calculated unvented pressure; structural protection as condition-dependent not inherent",
+        "intended_error_modes": [
+          "attributing pressure reduction to enclosure material strength rather than venting",
+          "treating calculated pressure as directly applicable to vented systems",
+          "ignoring conditionality of venting on vent path integrity"
+        ]
+      }
+    }
+  ]
+}

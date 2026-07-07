@@ -1,0 +1,101 @@
+{
+  "TR_Gasventing+122+Journal_of_Power_Sources__TR_Gasventing+123+Journal_of_Power_Sources__TR_Gasventing+153+Process_Safety_and_Environmental_Protection": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "F"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "D",
+        "F"
+      ],
+      "gold_answer": [
+        "C",
+        "D",
+        "F"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "(1) Target CO2 (or another carbonate-solvent decomposition product such as CO) as the primary venting indicator rather than prioritizing H2, because vent gas composition is SOC-dependent and H2 is not a consistently dominant/robust early marker across SOC, while CO2/CO are typical major components during safety venting. (2) Because venting can be very short and the vent-gas signature varies with SOC from 5% to 100%, the warning system must respond within the brief detection window of a vent event (i.e., very fast, on the order of the vent duration) and be tolerant to SOC-driven changes in gas composition\u2014otherwise it will miss low-SOC or high-SOC events. One claim that cannot be made from this evidence alone: that an H2 sensor by itself will reliably detect all safety-venting events (or guarantee early warning across the full 5\u2013100% SOC range).",
+      "gold_answer": "Methane (CH4) is the most appropriate primary detection target: it constitutes 93.1% of safety vent gas at 25% SOC and 87.1% at 100% SOC, making it the dominant species across the SOC range. H2 is not detected during safety venting of NMC-811 cells, so H2 sensors would not provide early warning of venting events. The SOC operating range imposes a critical response-time constraint: the detection window before thermal runaway shrinks from 262 s at 5% SOC to 142 s at 100% SOC\u2014a 120 s reduction. The system must therefore be designed to respond within 142 s at maximum SOC. One claim that cannot be made: the evidence does not establish that CH4 fraction or the detection window values apply to other cell chemistries or formats beyond NMC-811 21700 cells under the tested conditions.",
+      "score": 0.2,
+      "reason": "Correctly notes that H2 is not a robust marker, but it selects CO2/CO instead of the evidenced dominant vent gas (CH4). It also fails to state the binding response-time constraint of 142 s at 100% SOC and the 120 s reduction (262\u2192142 s), giving only vague timing guidance. The \"cannot claim\" boundary is not the required extrapolation limit to other chemistries/formats/conditions."
+    }
+  ],
+  "TR_Gasventing+22+Journal_of_Energy_Storage__TR_Gasventing+6+Journal_of_Energy_Storage__TR_Gasventing+7+Journal_of_Energy_Storage": [],
+  "TR_Mechanism+59+UnknownJournal__TR_Mechanism+60+Battery_Energy__TR_Mechanism+61+UnknownJournal": [
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "D",
+        "F"
+      ],
+      "gold_answer": [
+        "B",
+        "D",
+        "F"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "(1) A steel nail is electrically conductive, so at high SOC it can create a strong internal short that drives large current and rapid Joule heating; above the SOC threshold where enough stored electrical energy is available, this accelerates heat generation and can trigger more intense thermal runaway. At lower SOC (e.g., ~50%), the available electrical energy and short-circuit heat generation are reduced, so even with a conductive nail the runaway intensity is typically lower. A ceramic nail is electrically non-conductive, so it does not directly provide an external electronic short path; any runaway then depends more on mechanically induced internal damage (separator failure and local internal shorts) and the SOC-dependent energy available to sustain escalating reactions, making intensity still higher at ~90% SOC than at ~50% SOC if runaway is triggered.\n(2) Ceramic nails introduce a distinct mechanical hazard: because they are hard and brittle, they can fracture and generate sharp fragments that can cut/tear the separator and create multiple localized internal short sites and concentrated heating/ignition points. Steel nails generally remain intact and do not introduce fragment-driven, multi-site separator damage in the same way.",
+      "gold_answer": "At high SOC (>75%), nails with higher electrical and thermal conductivity enhance internal Joule heat release, intensifying thermal runaway; at low SOC (<50%), the same high-conductivity nails dissipate heat externally, weakening thermal runaway intensity. This means the nail conductivity effect reverses direction depending on SOC, so a steel nail at 90% SOC amplifies runaway while the same nail at 50% SOC mitigates it. Separately, ceramic nails\u2014despite being electrically non-conductive and thus unable to carry short-circuit current\u2014are more likely to trigger higher-temperature thermal runaway flames than steel nails, increasing fire risk through a distinct mechanism unrelated to Joule heating. Therefore, ceramic nails introduce a flame temperature hazard that cannot be inferred from their electrical properties alone, and steel nail behavior cannot be generalized across SOC levels.",
+      "score": 0.35,
+      "reason": "The prediction captures that a conductive steel nail at high SOC can drive higher short-circuit current and Joule heating, increasing runaway intensity. However, it misses the key evidence-based reversal: at low SOC the same high-conductivity nail should dissipate heat and mitigate runaway, not merely have \"reduced energy\". It also fails to identify the distinct ceramic-nail hazard from the gold (higher-temperature flames/fire risk unrelated to current), instead substituting an unsupported fragmentation/separator-tearing mechanism."
+    }
+  ],
+  "TR_Mechanism+62+UnknownJournal__TR_Mechanism+66+UnknownJournal__TR_Mechanism+69+UnknownJournal": [],
+  "TR_Modelling+101+Applied_Energy__TR_Modelling+131+Energy__TR_Modelling+14+Journal_of_Energy_Storage": [],
+  "TR_Modelling+38+IEEE_Transactions_on_Transportation_Electrification__TR_Modelling+87+The_Innovation__TR_Modelling+9+Journal_of_Energy_Storage": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "B",
+        "C",
+        "D"
+      ],
+      "gold_answer": [
+        "B",
+        "C",
+        "D"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "1) Lack of extrapolation/transferability: Training only on one LFP chemistry at a single SOC means the learned correlations are tied to that specific reaction set (SEI breakdown, cathode/anode decomposition, electrolyte reactions), heat-release rates, and triggering conditions. Different chemistries and SOC levels change thermodynamics/kinetics (available lithium, oxygen release propensity, impedance, reaction onset temperatures), so the model is being asked to extrapolate outside its support where purely data-driven fits have no physical constraints to remain valid.\n\n2) Missing state/physics variables and identifiability: Calorimetry at one SOC/SoH does not uniquely encode the internal electrochemical and degradation state that governs runaway (e.g., lithium inventory, SEI thickness, gas generation, impedance rise, localized defects). SoH and SOC effects are not just simple scalings of heat flow; they alter internal heat generation, heat capacity, heat transfer, and reaction pathways. Without mechanistic structure or additional measurements capturing these latent states, the model can fit the training curve yet fail under distribution shift because multiple underlying physical states can produce similar calorimetry signatures (non-unique mapping).",
+      "gold_answer": "First, thermodynamic parameters from calorimetry are specific to one chemical system and state because thermal runaway performance is influenced by materials, SOC, and SOH. Applying parameters calibrated on one chemistry and SOC to other systems constitutes an unsupported regime transfer; the underlying reaction kinetics and heat release profiles differ across chemistries and charge states. Second, purely data-driven models may fail outside their training data range and can produce unphysical predictions because they do not encode the underlying physical mechanisms governing thermal runaway. Excellent training-set fit confirms empirical interpolation accuracy but does not validate that the model captures the correct causal mechanisms, meaning extrapolation to new conditions or chemistries is unreliable.",
+      "score": 0.92,
+      "reason": "Prediction captures both required limitations: (1) calorimetry/learned relations are chemistry- and SOC/SOH-specific, so transferring to other chemistries/SOC is unsupported due to different kinetics/heat release; (2) purely data-driven fit can fail under distribution shift/extrapolation without physical constraints and training fit doesn\u2019t ensure causal/mechanistic correctness. It also adds identifiability/latent-state arguments consistent with the second point. Slightly less explicit about \u201cunphysical predictions\u201d as a standalone claim, but implied via lack of physical constraints."
+    }
+  ],
+  "TR_Propagation+4+Applied_Energy__TR_Propagation+5+Applied_Energy__TR_Propagation+6+eTransportation": [],
+  "TR_Protection+127+Journal_of_Energy_Storage__TR_Protection+131+Journal_of_Energy_Storage__TR_Protection+135+Journal_of_Energy_Storage": [],
+  "TR_Protection+136+Journal_of_Energy_Storage__TR_Protection+137+Journal_of_Energy_Storage__TR_Protection+140+Journal_of_Energy_Storage": [],
+  "TR_Protection+30+Chemical_Engineering_Journal__TR_Protection+78+Energy__TR_Protection+9+Energy": [],
+  "TR_trigger+129+Energy__TR_trigger+158+Journal_of_Energy_Storage__TR_trigger+197+Journal_of_Energy_Storage": [],
+  "TR_trigger+208+Journal_of_Energy_Storage__TR_trigger+217+Process_Safety_and_Environmental_Protection__TR_trigger+36+Journal_of_Energy_Storage": []
+}

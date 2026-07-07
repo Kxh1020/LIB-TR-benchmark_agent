@@ -1,0 +1,321 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A 100% SOC 18650 lithium-ion cell undergoes thermal runaway and reaches a surface temperature of approximately 700°C. A liquid nitrogen suppression system is activated immediately after runaway onset. The cell's surface temperature at the moment of LN application is above the critical TR suppression temperature (Ttr,cs) for 100% SOC. An engineer evaluates four outcome claims about this scenario. Which of the following conclusions are supported by the governing mechanisms and evidence constraints?",
+        "options": [
+          "A. Thermal runaway cannot be prevented once the surface temperature exceeds Ttr,cs, but continued LN application can still cool the cell to below 100°C after runaway has occurred.",
+          "B. Because the surface temperature already exceeds Ttr,cs, applying LN will have no measurable thermal effect on the cell and the temperature will continue to rise unimpeded.",
+          "C. The cooling rate delivered by LN at 700°C is higher than the cooling rate delivered by the same LN mass flow at lower temperatures such as 200°C, making early application less thermally efficient per unit mass.",
+          "D. The effective heat utilization efficiency of LN increases as more LN mass is applied sequentially, because each increment encounters a progressively cooler surface.",
+          "E. Applying LN after Ttr,cs is exceeded delays the onset of peak runaway temperature rather than preventing it, and the delay shortens as the surface temperature at application approaches the triggering temperature.",
+          "F. A mass of approximately 29 g of LN is sufficient to bring a post-runaway 700°C cell below 100°C within roughly 80 seconds, even though TR itself cannot be suppressed at that temperature."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "C002 confirms TR is unavoidable once Tw exceeds Ttr,cs. C004 confirms that 29.3 g LN can reduce a post-runaway 700°C cell to below 100°C within 80 s. These two claims together support the compound statement in A: prevention fails but post-runaway cooling succeeds.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+191+Journal_of_Power_Sources:C002",
+              "TR_Protection+191+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "C004 directly contradicts this: LN demonstrably reduces temperature from 700°C to below 100°C. The claim that LN has 'no measurable thermal effect' is a causal overclaim that ignores the documented cooling performance.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Protection+191+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "C006 states the average cooling rate decreases from 10.3°C/s at 800°C to 2.84°C/s at 0°C. Therefore at 700°C the instantaneous cooling rate is higher than at 200°C. This is counterintuitive relative to the naive expectation that early (lower-temperature) application is more efficient, but is mechanistically supported by the temperature-dependent cooling rate data.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+191+Journal_of_Power_Sources:C006"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "C005 states that effective heat utilization efficiency decreases (from 80% to 37.8%) as more LN mass is applied. The surface temperature drops with successive application, and C006 confirms cooling rate decreases at lower temperatures, so each increment is less efficient, not more. This option appears cautious and mechanistically plausible but inverts the documented trend.",
+            "error_type": "direction_reversal",
+            "evidence_refs": [
+              "TR_Protection+191+Journal_of_Power_Sources:C005",
+              "TR_Protection+191+Journal_of_Power_Sources:C006"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "C003 states the delaying effect is weakened (shorter delay) as Tw approaches the triggering temperature Ttr, but C002 states TR is unavoidable once Ttr,cs is already exceeded. The stem specifies the temperature already exceeds Ttr,cs, so the relevant regime is post-threshold, not the delay regime. The option conflates the pre-threshold delay mechanism with post-threshold behavior.",
+            "error_type": "regime_transfer_violation",
+            "evidence_refs": [
+              "TR_Protection+191+Journal_of_Power_Sources:C002",
+              "TR_Protection+191+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "C004 directly supports this: 29.3 g LN reduces a 9.24 Wh cell from ~700°C to below 100°C within 80 s. C002 confirms TR cannot be suppressed once Ttr,cs is exceeded. F correctly separates the suppression failure from the post-runaway cooling capability.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+191+Journal_of_Power_Sources:C004",
+              "TR_Protection+191+Journal_of_Power_Sources:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinction between TR prevention (pre-threshold) and post-runaway thermal control by LN, combined with temperature-dependent cooling rate behavior",
+        "primary_boundary": "Ttr,cs threshold separates the prevention regime from the post-runaway cooling regime; cooling rate and efficiency trends are temperature-dependent and non-trivially directional",
+        "intended_error_modes": [
+          "conflating prevention failure with total cooling failure (B)",
+          "inverting efficiency trend direction (D)",
+          "applying pre-threshold delay reasoning to post-threshold regime (E)"
+        ],
+        "disallowed_extrapolations": [
+          "claiming LN is thermally inert after TR onset",
+          "claiming efficiency improves with successive application",
+          "generalizing delay behavior to the post-Ttr,cs regime"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery module uses a composite phase change firewall between adjacent cells. The firewall substrate has a thermal conductivity of 0.048 W/(m·K) and the PCM adsorption capacity is currently at 45% of its original value due to aging. An engineer must assess whether the firewall can still prevent thermal runaway propagation from Cell1 to Cell2, and what the propagation time interval would be if propagation occurs. Consider the following statements:",
+        "options": [
+          "A. Because the substrate conductivity of 0.048 W/(m·K) lies between the known safe upper bound and the known failure threshold, the firewall's ability to prevent propagation under this conductivity alone cannot be confirmed as safe.",
+          "B. Because the PCM adsorption capacity of 45% lies between the known safe lower bound (50%) and the known failure threshold (40%), the firewall's ability to prevent propagation under this PCM degradation alone cannot be confirmed as safe.",
+          "C. The combination of elevated substrate conductivity and reduced PCM capacity means propagation is certain, because each parameter individually places the system in a regime where propagation has been observed.",
+          "D. If propagation does occur at a substrate conductivity near 0.051 W/(m·K), the time interval between Cell1 and Cell2 triggering is expected to be approximately 2900 seconds, and this interval would decrease if substrate conductivity were further increased.",
+          "E. Reducing the PCM adsorption capacity from 100% to 45% would raise the peak temperature at the Cell2 front surface by more than 13.9% relative to the 100% baseline, based on the documented trend between 100% and 50% capacity.",
+          "F. The firewall is confirmed safe against propagation because neither the substrate conductivity alone nor the PCM capacity alone has individually crossed its respective failure threshold."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "D",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "C002 establishes that the critical conductivity threshold lies between 0.046 and 0.051 W/(m·K). A value of 0.048 W/(m·K) falls within this unresolved interval. Therefore admissibility of safe operation cannot be confirmed from conductivity alone.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+192+International_Communications_in_Heat_and_Mass_Transfer:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "C004 establishes the critical PCM capacity threshold between 40% and 50%. A value of 45% falls within this unresolved interval. Therefore admissibility of safe operation cannot be confirmed from PCM capacity alone.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+192+International_Communications_in_Heat_and_Mass_Transfer:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Neither 0.048 W/(m·K) nor 45% PCM capacity has individually crossed its respective failure threshold (0.051 and 40%). Neither parameter alone places the system in a confirmed propagation regime. Claiming propagation is 'certain' from two individually sub-threshold parameters is an unjustified causal overclaim. This option appears cautious by invoking two risk factors but makes an unsupported certainty claim.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Protection+192+International_Communications_in_Heat_and_Mass_Transfer:C002",
+              "TR_Protection+192+International_Communications_in_Heat_and_Mass_Transfer:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "C005 states that at substrate conductivity 0.051 W/(m·K), D1,2 is 2900 s, and at 0.056 W/(m·K) it shrinks to 2372 s, with D1,2 decreasing in a gradient with increasing conductivity. Both the reference value and the directional trend are supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+192+International_Communications_in_Heat_and_Mass_Transfer:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "C003 shows that reducing PCM capacity from 100% to 50% raises peak Cell2 surface temperature by 13.9% (137°C to 156°C). A further reduction to 45% (below 50%) would continue this trend, implying the increase relative to 100% baseline would exceed 13.9%. This is a minimal monotonic extension of the documented trend within a small step beyond the last measured point.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+192+International_Communications_in_Heat_and_Mass_Transfer:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "This option appears conservative and reassuring but is incorrect because both parameters individually fall within unresolved boundary intervals (not below confirmed safe values). C002 shows safe operation only confirmed up to 0.046 W/(m·K), and C004 shows safe operation only confirmed down to 50% PCM. Values of 0.048 and 45% are in uncharacterized zones. Confirming safety requires both parameters to be within confirmed safe ranges, not merely below failure thresholds.",
+            "error_type": "boundary_misclassification",
+            "evidence_refs": [
+              "TR_Protection+192+International_Communications_in_Heat_and_Mass_Transfer:C002",
+              "TR_Protection+192+International_Communications_in_Heat_and_Mass_Transfer:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility judgment under dual-parameter boundary uncertainty in a composite firewall system, combined with propagation time interval behavior",
+        "primary_boundary": "Both substrate conductivity (0.046–0.051 W/(m·K)) and PCM capacity (40–50%) have unresolved critical intervals; values within these intervals cannot be confirmed safe or unsafe",
+        "intended_error_modes": [
+          "treating sub-failure-threshold values as confirmed safe (F)",
+          "treating two sub-threshold risks as jointly guaranteeing failure (C)",
+          "ignoring that 45% PCM is below the last confirmed safe point of 50%"
+        ],
+        "disallowed_extrapolations": [
+          "claiming combined sub-threshold parameters guarantee propagation",
+          "claiming confirmed safety when parameters lie in unresolved boundary intervals"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is evaluating water mist additives for suppressing thermal runaway in a lithium-ion battery system. Three candidate additives are under consideration: Tween 20 (a surfactant with moderate surface tension and moderate foamability), FS-51 (a fluorosurfactant with the lowest surface tension among tested additives and the highest foamability with an expansion ratio approximately 20% higher than Tween 20), and a binary mixture of Tween 20 and 1-heptanol. The engineer must select an additive strategy and justify it based on documented cooling performance. Which of the following conclusions are supported?",
+        "options": [
+          "A. FS-51's superior surface tension reduction relative to Tween 20 does not translate into superior cooling performance because its high foamability counteracts the benefit of reduced surface tension.",
+          "B. The binary mixture of Tween 20 and 1-heptanol provides a synergistic cooling enhancement over either single additive, making it the preferred formulation for maximizing heat dissipation.",
+          "C. Even with the best-performing additive (Tween 20), water mist heat dissipation capacity remains fundamentally insufficient to suppress the rapid temperature rise during active thermal runaway, regardless of additive selection.",
+          "D. FS-51 should be avoided in water mist systems for battery thermal runaway suppression because it actively reduces the cooling rate below that of pure water.",
+          "E. Selecting Tween 20 over pure water provides a 23.6% improvement in total heat dissipation, but this improvement does not resolve the fundamental mismatch between water mist heat dissipation rate and the heat generation rate during thermal runaway.",
+          "F. The cooling performance ranking of additives can be predicted directly from their surface tension values, with lower surface tension additives always providing higher cooling rates."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "C005 explicitly states FS-51 had the lowest surface tension (facilitating cooling) but the ultimate effect was to inhibit cooling due to high foamability. The mechanism chain surface tension reduction → enhanced cooling is broken by the competing foamability mechanism.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+193+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "C004 explicitly states that no matter what volume ratio was used, the binary mixture of Tween 20 and 1-heptanol did not exhibit better cooling performance than a single additive. The synergy claim directly contradicts documented evidence.",
+            "error_type": "direction_reversal_of_documented_result",
+            "evidence_refs": [
+              "TR_Protection+193+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "C002 states the maximum heat dissipation rate of water mist is only 3.54% of the heat generation rate during TR, making it insufficient to restrain rapid temperature rise. This limitation applies regardless of additive, since the best additive (Tween 20) provides only a 23.6% improvement over pure water (C001), which does not close the ~96% gap.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+193+Journal_of_Loss_Prevention_in_the_Process_Industries:C002",
+              "TR_Protection+193+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "C003 states FS-51 produced the lowest average cooling rate (5.47°C/s vs 6.60°C/s for pure water), confirming it inhibits rather than enhances cooling relative to pure water. This makes it actively detrimental in a water mist system.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+193+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "C001 confirms the 23.6% improvement with Tween 20. C002 confirms the fundamental rate mismatch (3.54% of heat generation rate). A 23.6% improvement on an already insufficient baseline does not resolve the order-of-magnitude gap between dissipation rate and generation rate.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+193+Journal_of_Loss_Prevention_in_the_Process_Industries:C001",
+              "TR_Protection+193+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "C005 directly falsifies this: FS-51 has the lowest surface tension but inhibits cooling rather than enhancing it. Surface tension alone does not predict cooling performance because foamability is an independent competing mechanism. A monotonic surface tension → cooling rate relationship is not supported.",
+            "error_type": "unjustified_monotonicity",
+            "evidence_refs": [
+              "TR_Protection+193+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-mechanism interaction between surface tension reduction and foamability in determining additive cooling performance, combined with the fundamental rate limitation of water mist during thermal runaway",
+        "primary_boundary": "Surface tension reduction is not a sufficient predictor of cooling performance when foamability is high; even optimized additives cannot close the heat generation vs dissipation rate gap during active TR",
+        "intended_error_modes": [
+          "predicting performance from surface tension alone (F)",
+          "assuming mixture synergy (B)",
+          "assuming Tween 20's improvement resolves the fundamental rate mismatch"
+        ],
+        "disallowed_extrapolations": [
+          "claiming any additive can suppress TR temperature rise given the documented rate ratio",
+          "ranking additives by surface tension alone"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery module uses a composite phase change firewall with a substrate thermal conductivity of 0.044 W/(m·K) and 55% PCM adsorption capacity. A second module of the same design has been aged so that its substrate conductivity has increased to 0.044 W/(m·K) but its PCM capacity has dropped to 45%. An engineer argues that the second module is safe against thermal runaway propagation because its substrate conductivity is still below the known propagation onset conductivity. Identify the specific flaw in this reasoning, explain which parameter creates the unresolved safety question, and state what additional information would be required to confirm or deny safe operation of the second module."
+      },
+      "ground_truth": {
+        "gold_answer": "The flaw is that the engineer evaluates only the substrate conductivity parameter and concludes safety based on it being below the conductivity failure threshold, while ignoring that the PCM adsorption capacity has independently degraded to 45%, which falls within the unresolved critical interval between the last confirmed safe value (50%) and the confirmed failure value (40%). The PCM capacity of 45% is below the last confirmed safe operating point (50%), meaning the firewall has not been confirmed to prevent propagation at this PCM level. The substrate conductivity being safe does not compensate for or override the PCM capacity uncertainty. To confirm safe operation, the engineer would need experimental or simulation data characterizing firewall behavior at PCM adsorption capacities between 40% and 50%, specifically at 45%, to determine whether the critical PCM threshold lies above or below 45%.",
+        "must_include": [
+          "PCM adsorption capacity of 45% falls within the unresolved critical interval (between 40% and 50%)",
+          "50% is the last confirmed safe PCM capacity; 45% is below this confirmed safe point",
+          "substrate conductivity being safe does not validate the system when PCM capacity is in an uncharacterized zone",
+          "additional data characterizing behavior at PCM capacities between 40% and 50% is required to resolve admissibility"
+        ],
+        "disallowed_extrapolations": [
+          "claiming the system is safe because substrate conductivity is below its threshold",
+          "claiming the system will definitely fail because 45% is below 50%",
+          "treating the two parameters as independent safety gates where passing one is sufficient",
+          "asserting a specific critical PCM threshold value not supported by the evidence"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility judgment under multi-parameter boundary uncertainty: recognizing that safety confirmation requires all relevant parameters to be within confirmed safe ranges, not merely below failure thresholds",
+        "primary_boundary": "PCM capacity of 45% lies between the confirmed safe lower bound (50%) and the confirmed failure value (40%), placing it in an unresolved interval that cannot be confirmed safe or unsafe without additional data",
+        "intended_error_modes": [
+          "accepting safety based on one parameter passing its threshold while ignoring a second parameter in an unresolved zone",
+          "treating 'below failure threshold' as equivalent to 'confirmed safe' when the safe operating range has a different boundary",
+          "assuming parameters are independent safety gates"
+        ]
+      }
+    }
+  ]
+}

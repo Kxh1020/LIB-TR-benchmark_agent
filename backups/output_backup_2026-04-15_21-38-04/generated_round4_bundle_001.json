@@ -1,0 +1,359 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An 18650 lithium-ion cell has undergone 45 charge/discharge cycles and is held at high state of charge. During a controlled heating test, a pressure-relief device inside the cell activates at approximately 80°C. Gas collected from the cell at this activation event is analyzed and found to consist of more than 99% of a single species. Shortly after, a distinct group of exothermic reactions is recorded in the temperature range 32–116°C, releasing approximately 3.3 kJ. A second group of exothermic reactions associated with electrolyte degradation on the anode is known to occur in the range 120–270°C. Which of the following conclusions are supported by this scenario?",
+        "options": [
+          "A. The gas species responsible for the early pressure-relief activation is molecular hydrogen, produced by recombination of atomic hydrogen stored in the anode graphite during cycling.",
+          "B. The energy released by the first group of exothermic reactions is primarily governed by the cell's state of charge at the time of the test, not by the number of prior cycles.",
+          "C. The first group of exothermic reactions cannot be attributed to electrolyte thermal degradation on the anode, because that process occurs at substantially higher temperatures than those observed here.",
+          "D. The early pressure-relief activation at 80°C in the aged cell indicates that SEI decomposition is the dominant reaction in the first exothermic group.",
+          "E. The heat released per mole during atomic hydrogen recombination is lower than the heat released per mole during combustion of molecular hydrogen in oxygen.",
+          "F. The energy released in the first exothermic group increases with cycle number, making the first group a more significant thermal hazard in aged cells than in fresh cells at equivalent SOC.",
+          "G. Because the pressure-relief device activates at a lower temperature in aged cells than in fresh cells, this difference is best explained by greater electrolyte decomposition in aged cells during the first exothermic stage."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The gas collected is >99% hydrogen, and the heat released matches the recombination of atomic hydrogen (H+H→H2) accumulated in anode graphite during cycling. This is the identified mechanism for the first exothermic group.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+169+UnknownJournal:C006",
+              "TR_Mechanism+169+UnknownJournal:C007"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The evidence explicitly states that the energy released by the first group of exothermic reactions does NOT depend on SOC but depends heavily on the number of charge/discharge cycles. This option inverts the correct dependency.",
+            "error_type": "Condition violation distractor",
+            "evidence_refs": [
+              "TR_Mechanism+169+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Electrolyte thermal degradation on the anode occurs at 120–270°C, while the first group of exothermic reactions appears at 32–116°C. The non-overlapping temperature ranges exclude electrolyte degradation as the cause.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+169+UnknownJournal:C010"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence identifies the first exothermic group as atomic hydrogen recombination, not SEI decomposition. SEI decomposition is associated with a different temperature regime and mechanism. This is a mechanism substitution distractor.",
+            "error_type": "Mechanism substitution distractor",
+            "evidence_refs": [
+              "TR_Mechanism+169+UnknownJournal:C007",
+              "TR_Mechanism+169+UnknownJournal:C010"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The evidence states that atomic hydrogen recombination releases 436 kJ/mole, which is MORE intensive than hydrogen combustion in oxygen at 285.8 kJ/mole. This option reverses the correct comparison.",
+            "error_type": "Numerical/directional inversion distractor",
+            "evidence_refs": [
+              "TR_Mechanism+169+UnknownJournal:C008"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The energy released by the first exothermic group increases monotonically with cycle number (0 kJ at NC=0, 1.08 kJ at NC=15, 2.14 kJ at NC=30, 3.29 kJ at NC=45), and this group does not exist in fresh cells. At equivalent SOC, aged cells release more energy in this stage, making it a greater hazard.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+169+UnknownJournal:C003",
+              "TR_Mechanism+169+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "The lower activation temperature in aged cells is explained by greater gas release from atomic hydrogen recombination (the first exothermic group), not by electrolyte decomposition. The first exothermic group is explicitly distinguished from electrolyte degradation. This is a conservative-sounding but mechanistically incorrect distractor.",
+            "error_type": "Mechanism confusion distractor",
+            "evidence_refs": [
+              "TR_Mechanism+169+UnknownJournal:C005",
+              "TR_Mechanism+169+UnknownJournal:C010"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Identification of the mechanism behind the first group of exothermic reactions in aged cells and its dependence on cycle number vs. SOC",
+        "primary_boundary": "The first exothermic group depends on cycle number, not SOC; it is caused by atomic hydrogen recombination, not electrolyte degradation or SEI decomposition",
+        "intended_error_modes": [
+          "Confusing SOC-dependence with cycle-number-dependence",
+          "Substituting SEI decomposition for atomic hydrogen recombination as the mechanism",
+          "Inverting the heat comparison between atomic hydrogen recombination and hydrogen combustion",
+          "Attributing early pressure-relief activation to electrolyte decomposition rather than hydrogen gas from recombination"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming the first exothermic group is present in fresh cells",
+          "Claiming electrolyte degradation occurs below 120°C based on this evidence",
+          "Generalizing the 3.29 kJ value to cells with more than 45 cycles without evidence"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A lithium-ion cell is overcharged at 0.5 C in an air environment. Thermal runaway occurs at 329% SOC with a charging energy of 16.9 Wh at the runaway event. When the same cell type is overcharged at 1 C or 2 C in the same air environment, thermal runaway occurs near 210% SOC with charging energy near 9.5 Wh. In a separate test, the same 0.5 C overcharge is applied in a quasi-adiabatic environment, and thermal runaway occurs at 200% SOC. Electrochemical impedance measurements show that the SEI resistance increases sharply at 155–165% SOC, and transition metal deposits (Mn, Co, Ni) appear on the anode surface at SOC ≥ 140%. At 0.5 C in air, a temperature buffering period with a very low temperature rise rate is observed before runaway; this period is absent at 1 C and 2 C. Which of the following statements are admissible conclusions from these conditions?",
+        "options": [
+          "A. The substantially higher SOC at thermal runaway for 0.5 C overcharge in air compared to quasi-adiabatic conditions demonstrates that heat dissipation quality, not charging rate alone, determines the SOC at which thermal runaway occurs.",
+          "B. The temperature buffering period at 0.5 C in air represents a window during which stopping overcharge can prevent thermal runaway, but this intervention opportunity does not exist at 1 C or 2 C in air.",
+          "C. The sharp rise in SEI resistance at 155–165% SOC is caused exclusively by SEI film thickening, with lithium deposition playing a negligible role at those SOC levels.",
+          "D. The higher charging energy at thermal runaway for 0.5 C compared to 1 C in air implies that slower overcharging is always safer because more energy must be input before failure.",
+          "E. Transition metal contamination of the anode surface at SOC ≥ 140% indicates that cathode structural degradation begins before the SEI resistance spike, and both processes are active in the SOC range leading to thermal runaway.",
+          "F. Because thermal runaway in adiabatic conditions occurs faster than in air regardless of charging rate, reducing heat dissipation from a cell during overcharge will consistently reduce the SOC at which thermal runaway occurs.",
+          "G. The maximum temperature reached during thermal runaway in an adiabatic environment shows large variation across charging rates, making adiabatic conditions the most variable thermal scenario."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "At 0.5 C, SOCTR is 309% in air but only 200% in quasi-adiabatic conditions. This large difference at the same charging rate directly demonstrates that heat dissipation quality, independent of charging rate, is a primary determinant of SOCTR.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+170+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that at 0.5 C in air, a temperature buffering period exists during which stopping overcharge prevents thermal runaway, and that this stage is not observed at 1 C and 2 C. This is a direct admissible conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+170+UnknownJournal:C013"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The evidence states the sharp RSEI rise at 155–165% SOC is due not only to SEI thickening but also to lithium deposition at the anode. Attributing it exclusively to SEI thickening is an unsupported overclaim that contradicts the stated mechanism.",
+            "error_type": "Mechanism oversimplification / causal overclaim distractor",
+            "evidence_refs": [
+              "TR_Mechanism+170+UnknownJournal:C006"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Although 0.5 C requires more input energy before runaway in air, this is because heat dissipation delays runaway to a higher SOC, not because 0.5 C is inherently safer. In quasi-adiabatic conditions, 0.5 C triggers runaway at lower SOC than 1 C in air. The 'always safer' generalization ignores environment dependence and is an unsupported universal claim.",
+            "error_type": "Overgeneralization distractor / scope expansion",
+            "evidence_refs": [
+              "TR_Mechanism+170+UnknownJournal:C004",
+              "TR_Mechanism+170+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Cathode structural gaps appear starting at 140% SOC, and transition metals appear on the anode at ≥140% SOC. The RSEI spike occurs at 155–165% SOC. This means cathode degradation (particle gap formation and metal dissolution) begins before the SEI resistance spike, and both are active in the overcharge range leading to runaway. This is a counterintuitive multi-mechanism conclusion requiring sequential reasoning.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+170+UnknownJournal:C008",
+              "TR_Mechanism+170+UnknownJournal:C009",
+              "TR_Mechanism+170+UnknownJournal:C006"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "While reducing heat dissipation generally lowers SOCTR, the statement 'consistently reduce' is too absolute. The evidence shows the relationship is environment- and rate-dependent. Additionally, the comparison between adiabatic and quasi-adiabatic at different rates shows non-uniform behavior. The claim overgeneralizes a directional trend into a universal rule.",
+            "error_type": "Overgeneralization / unjustified monotonicity distractor",
+            "evidence_refs": [
+              "TR_Mechanism+170+UnknownJournal:C001",
+              "TR_Mechanism+170+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "The evidence states that maximum temperature during thermal runaway under adiabatic conditions shows little variation across charging rates (approximately 720°C), while large differences occur in air and quasi-adiabatic environments due to airflow effects. This option directly inverts the stated finding.",
+            "error_type": "Directional inversion distractor",
+            "evidence_refs": [
+              "TR_Mechanism+170+UnknownJournal:C014"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-factor interaction between charging rate, heat dissipation environment, and SOC at thermal runaway; mechanism sequencing during overcharge",
+        "primary_boundary": "SOCTR and thermal runaway timing are jointly determined by charging rate AND heat dissipation environment; cathode degradation precedes the SEI resistance spike during overcharge; the temperature buffering window is rate-dependent",
+        "intended_error_modes": [
+          "Attributing SOCTR solely to charging rate, ignoring environment",
+          "Claiming 0.5 C is universally safer based on higher SOCTR in one environment",
+          "Attributing RSEI spike exclusively to SEI thickening, ignoring lithium deposition",
+          "Inverting the Tmax variability finding for adiabatic vs. non-adiabatic environments"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming the buffering period exists at 1 C or 2 C",
+          "Claiming adiabatic Tmax varies significantly across charging rates",
+          "Inferring that reducing heat dissipation always increases safety margin"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Ethylene carbonate (EC) is subjected to electron beam irradiation in two conditions: neat EC at a dose of approximately 1.5 MGy, and EC containing 1 M LiPF6 at a lower dose of 0.85 MGy. In both cases, oligomeric products with masses up to 1–2 kDa are detected. The polymer produced under radiolysis exhibits chain branching and pendant carbonate groups, and at high radiation doses, the largest oligomers become insoluble in water while retaining solubility in EC and polar organic solvents. A reference linear copolymer of ethylene oxide and EC units is produced by anionic polymerization of intact EC molecules. Which of the following conclusions are consistent with the evidence?",
+        "options": [
+          "A. LiPF6 promotes further polymerization of EC under radiolysis even at a lower radiation dose than neat EC, indicating that the salt lowers the effective dose threshold for oligomer formation.",
+          "B. The branched structure with pendant carbonate groups produced by radiolysis is structurally distinct from the linear ethylene oxide/EC copolymer produced by anionic polymerization, so the two polymers cannot be assumed to have equivalent electrochemical properties.",
+          "C. Because LiPF6 facilitates polymerization but does not alter the resulting polymer structure, the salt's primary role is to accelerate chain growth rather than to redirect the reaction pathway.",
+          "D. The water insolubility of the largest radiolytic oligomers at high dose proves that these species have fully crosslinked into a three-dimensional network and can no longer dissolve in any solvent.",
+          "E. The radiolytically generated polymer can form a three-dimensional organic network additionally crosslinked through lithium ions, a structural feature absent in the anionic polymerization product.",
+          "F. Since oligomers of up to 1–2 kDa are produced in both neat EC and EC/LiPF6 systems, the maximum achievable oligomer mass under radiolysis is independent of LiPF6 concentration.",
+          "G. The excellent solubility of high-dose radiolytic oligomers in EC and polar organic solvents, despite their water insolubility, is consistent with the presence of polar functional groups such as carbonate groups in the oligomer backbone."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "C",
+          "E",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "The evidence shows that LiPF6 facilitates further polymerization at a lower dose, but this does not establish that LiPF6 lowers a dose threshold for oligomer formation. The evidence supports enhanced extent of polymerization, not a threshold shift. This is a causal overclaim that converts a comparative observation into a mechanistic threshold claim.",
+            "error_type": "Causal overclaim / threshold invention distractor",
+            "evidence_refs": [
+              "TR_Mechanism+168+UnknownJournal:C002",
+              "TR_Mechanism+168+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "While the structural difference between the radiolytic and anionic polymerization products is supported, the conclusion about non-equivalent electrochemical properties is an unsupported extrapolation. The evidence describes structural differences but does not address electrochemical properties. This option is partially correct but contains an unsupported second claim.",
+            "error_type": "Scope expansion distractor",
+            "evidence_refs": [
+              "TR_Mechanism+168+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence states LiPF6 facilitates polymerization but has little effect on the resulting polymer structure. This directly supports the conclusion that the salt accelerates chain growth without redirecting the reaction pathway toward a different product structure.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+168+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence states the largest oligomers become insoluble in water but retain excellent solubility in EC and polar organic solvents. Water insolubility does not prove complete crosslinking into an insoluble network; the continued solubility in organic solvents contradicts the claim of complete insolubility. This is a measurement scope overclaim distractor.",
+            "error_type": "Measurement scope overclaim / absolute language distractor",
+            "evidence_refs": [
+              "TR_Mechanism+168+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that the radiolytically generated polymer can form a 3D organic network additionally crosslinked through lithium ions, and that the anionic polymerization product is a linear chain copolymer. This structural feature is therefore absent in the anionic product.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+168+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence shows that LiPF6 at 0.85 MGy produces mass spectra extending to 1000–2000 a.m.u., comparable to or exceeding neat EC at higher dose. This suggests LiPF6 increases the extent of polymerization, making the maximum achievable mass dependent on LiPF6 presence. Claiming independence from LiPF6 concentration contradicts the comparative result.",
+            "error_type": "Overgeneralization / ignoring condition effect distractor",
+            "evidence_refs": [
+              "TR_Mechanism+168+UnknownJournal:C002",
+              "TR_Mechanism+168+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "The radiolytic polymer has pendant carbonate groups, which are polar functional groups. Solubility in polar organic solvents and EC (also polar) while being insoluble in water is mechanistically consistent with the presence of polar but non-ionic or hydrophobic carbonate-containing chains. This is a counterintuitive but evidence-grounded conclusion requiring reasoning about structure-solubility relationships.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+168+UnknownJournal:C004",
+              "TR_Mechanism+168+UnknownJournal:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Structural and mechanistic differences between radiolytic and anionic polymerization of EC; role of LiPF6 in radiolytic polymerization; solubility behavior of radiolytic oligomers",
+        "primary_boundary": "LiPF6 affects extent but not structure of polymerization; water insolubility does not imply complete crosslinking; structural differences between radiolytic and anionic products do not directly imply electrochemical property differences without additional evidence",
+        "intended_error_modes": [
+          "Converting a comparative dose result into a threshold shift claim for LiPF6",
+          "Inferring electrochemical property differences from structural differences alone",
+          "Interpreting water insolubility as complete network crosslinking despite continued organic solvent solubility",
+          "Claiming maximum oligomer mass is independent of LiPF6 despite evidence of enhanced polymerization"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming LiPF6 lowers a dose threshold for oligomer initiation",
+          "Claiming complete insolubility of high-dose oligomers in all solvents",
+          "Inferring electrochemical behavior from structural characterization alone"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A lithium-ion cell is overcharged at 2 C in an adiabatic environment. During the overcharge, only a single voltage plateau is observed rather than the two distinct plateaus seen in less thermally confined conditions. Separately, a cell overcharged at 0.5 C in air exhibits two distinct voltage plateaus before thermal runaway. Explain the mechanistic reason why the adiabatic 2 C condition produces only one voltage plateau, and identify which physical processes are responsible for each plateau in the two-plateau scenario. Then explain why the SOC at which thermal runaway occurs is lower in the adiabatic environment than in air for the same 0.5 C charging rate, even though the adiabatic cell reaches thermal runaway faster."
+      },
+      "ground_truth": {
+        "gold_answer": "In the two-plateau scenario (0.5 C in air), the first voltage plateau corresponds to SEI film decomposition and the second corresponds to the reaction of the electrolyte with lithium embedded in the anode; these two processes occur in distinct, sequential temperature ranges because heat dissipation in air keeps the temperature rise slow enough to separate the two thermal stages. In the adiabatic 2 C condition, the rapid temperature rise compresses the temperature range of the intermediate stage (approximately 66.5–93.5°C), causing both SEI decomposition and the electrolyte-embedded lithium reaction to occur simultaneously rather than sequentially, producing only a single merged voltage plateau. The lower SOCTR in the adiabatic environment at 0.5 C compared to air at 0.5 C occurs because poor heat dissipation in the adiabatic case allows heat generated by side reactions to accumulate, accelerating the progression of exothermic processes and triggering thermal runaway at a lower degree of overcharge. In air, the same side reactions generate heat that is partially dissipated to the environment, allowing the cell to reach a much higher SOC before the thermal feedback loop becomes self-sustaining. The faster time to runaway in adiabatic conditions is therefore a consequence of heat accumulation, not a contradiction: the cell arrives at the runaway threshold sooner in absolute time because internal temperature rises faster, even though less charge has been input.",
+        "must_include": [
+          "The single plateau in adiabatic 2C results from simultaneous occurrence of SEI decomposition and electrolyte-embedded lithium reaction due to rapid temperature rise compressing the intermediate temperature stage",
+          "In the two-plateau case, the first plateau corresponds to SEI decomposition and the second to electrolyte reaction with embedded lithium",
+          "Heat dissipation in air separates the two processes into distinct sequential stages",
+          "Lower SOCTR in adiabatic vs. air at 0.5C is caused by heat accumulation accelerating side reactions and advancing thermal runaway at lower SOC",
+          "Faster time to runaway in adiabatic conditions reflects heat accumulation, not a contradiction with lower SOCTR"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming the single plateau in adiabatic conditions is caused by a different electrochemical mechanism unrelated to temperature rise rate",
+          "Claiming the two-plateau behavior is unique to 0.5 C and cannot occur at other rates in air without evidence",
+          "Claiming adiabatic conditions always produce lower maximum temperature than air conditions",
+          "Inferring that the buffering period observed at 0.5 C in air is present in adiabatic conditions"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Coupling between heat dissipation environment, temperature rise rate, and the sequential vs. simultaneous occurrence of SEI decomposition and electrolyte-lithium reactions; mechanism linking heat accumulation to SOCTR reduction",
+        "primary_boundary": "The merging of two voltage plateaus into one is a consequence of thermal compression of sequential reaction stages under rapid temperature rise, not a change in the underlying electrochemical reactions; SOCTR reduction in adiabatic conditions is a heat accumulation effect, not a rate effect",
+        "intended_error_modes": [
+          "Attributing the single plateau to a missing reaction rather than simultaneous occurrence of two reactions",
+          "Confusing faster time to runaway with higher SOCTR",
+          "Attributing lower SOCTR in adiabatic conditions to charging rate rather than heat dissipation quality",
+          "Failing to connect the temperature buffering period in air to the separation of the two plateau stages"
+        ]
+      }
+    }
+  ]
+}

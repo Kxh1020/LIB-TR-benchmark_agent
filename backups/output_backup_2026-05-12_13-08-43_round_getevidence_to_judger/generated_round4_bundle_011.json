@@ -1,0 +1,371 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A prismatic lithium-ion battery with a SiOx-containing anode is tested under accelerating rate calorimetry at 100% SOC. Its self-heating onset temperature is measured at 78°C and its thermal runaway triggering temperature at 138°C. A separate 38 Ah NCM battery with a graphite anode at 100% SOC shows an onset exothermic temperature of 76°C but a thermal runaway triggering temperature of 188°C. Both cells are at full charge. An engineer is asked to evaluate which mechanistic differences are consistent with the observed gap in triggering temperatures between the two chemistries, and which safety-relevant conclusions about the SiOx-containing cell are admissible. Which of the following statements are supported by the described evidence?",
+        "options": [
+          "A. The lower thermal runaway triggering temperature of the SiOx-containing cell is consistent with premature SEI decomposition driven by volume-change-induced cracking in the anode material, which reduces the temperature at which the SEI decomposition–regeneration balance is broken.",
+          "B. Because both cells have nearly identical onset exothermic temperatures near 76–78°C, the difference in triggering temperatures must be attributed entirely to differences in cathode chemistry rather than anode behavior.",
+          "C. The gap between onset temperature and triggering temperature is larger for the NCM graphite cell than for the SiOx-containing cell, which is consistent with the SiOx cell having a narrower thermal margin between initial exothermic activity and full thermal runaway.",
+          "D. The maximum temperature during thermal runaway of the SiOx-containing cell exceeding 1200°C, compared to less than 1000°C for most traditional cells, implies that internal short circuit is the dominant heat source in the SiOx cell.",
+          "E. The SiOx-containing cell's onset temperature being only slightly lower than the NCM graphite cell's onset temperature, combined with a substantially lower triggering temperature, indicates that the rate of heat accumulation between onset and triggering is faster in the SiOx cell.",
+          "F. A thermal runaway triggering temperature of 138°C in the SiOx cell is consistent with separator shutdown beginning near 144°C, suggesting the separator provides no thermal protection margin for this chemistry at full charge.",
+          "G. Concluding that the SiOx cell is categorically more dangerous than all graphite-anode cells under all operating conditions is not admissible from the described measurements alone."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence states that significant volume changes of SiOx contribute to uneven SEI formation and that cracks and voids accelerate SEI decomposition prematurely, lowering thermal stability. The graphite anode evidence shows SEI decomposition–regeneration balance is not broken until ~270°C. The SiOx mechanism is consistent with this balance being disrupted at a lower temperature, explaining the lower Ttr.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+199+UnknownJournal:C004",
+              "TR_Mechanism+200+UnknownJournal:C006"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The evidence explicitly attributes the lower thermal stability of the SiOx cell to anode-side SEI behavior, not cathode chemistry differences. Attributing the triggering temperature gap entirely to cathode differences contradicts the stated causal mechanism.",
+            "error_type": "Mechanism substitution / causal overclaim",
+            "evidence_refs": [
+              "TR_Mechanism+199+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "NCM graphite cell: onset 76°C, Ttr 188°C → margin of 112°C. SiOx cell: onset 78°C, Ttr 138°C → margin of 60°C. The SiOx cell has a narrower margin between onset and triggering, which is directly calculable from the stated values and consistent with the described accelerated SEI decomposition mechanism.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+199+UnknownJournal:C001",
+              "TR_Mechanism+200+UnknownJournal:C001"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence for the NCM graphite cell explicitly states that internal short circuit is not the major heat source during thermal runaway, based on electrode-only DSC experiments. Attributing the SiOx cell's higher Tmax to ISC dominance is an unsupported causal overclaim that contradicts the stated finding about heat sources.",
+            "error_type": "Causal overclaim / mechanism substitution",
+            "evidence_refs": [
+              "TR_Mechanism+200+UnknownJournal:C005",
+              "TR_Mechanism+199+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Similar onset temperatures but a substantially lower triggering temperature in the SiOx cell means the same initial exothermic activity escalates to full thermal runaway over a smaller temperature interval, implying faster heat accumulation rate in that window. This is a valid multi-step inference from the two threshold values combined with the mechanism of accelerated SEI decomposition.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+199+UnknownJournal:C001",
+              "TR_Mechanism+199+UnknownJournal:C004",
+              "TR_Mechanism+200+UnknownJournal:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The separator shutdown begins at ~144°C and the SiOx cell Ttr is 138°C. The triggering temperature is below separator shutdown onset, meaning the separator shutdown has not yet occurred when thermal runaway is triggered. This does not mean the separator provides no protection; it means thermal runaway is triggered before separator shutdown can act, which is a different claim. The option's conclusion ('no thermal protection margin') is an overclaim and conflates the shutdown mechanism with the triggering sequence.",
+            "error_type": "Scope expansion / mechanism timing error",
+            "evidence_refs": [
+              "TR_Mechanism+199+UnknownJournal:C001",
+              "TR_Mechanism+200+UnknownJournal:C009"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "The measurements are conducted at 100% SOC under specific test conditions. The evidence shows SOC-dependent behavior and condition-dependent triggering. Generalizing to all operating conditions from a single SOC test is an inadmissible extrapolation. This conservative-sounding statement is correct because it respects the scope boundary of the evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+199+UnknownJournal:C001",
+              "TR_Mechanism+200+UnknownJournal:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of mechanistic and comparative safety conclusions from threshold temperature data across two chemistries with different anode materials",
+        "primary_boundary": "Causal attribution of triggering temperature differences must be grounded in stated anode-side SEI mechanisms, not inferred from cathode differences or ISC dominance; scope is limited to 100% SOC conditions",
+        "intended_error_modes": [
+          "Mechanism substitution: attributing SiOx Ttr gap to cathode rather than anode SEI behavior",
+          "Causal overclaim: attributing high Tmax to ISC dominance when evidence negates ISC as primary heat source",
+          "Mechanism timing error: conflating separator shutdown temperature with triggering temperature sequence",
+          "Overgeneralization: extending 100% SOC result to all operating conditions"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding ISC is dominant heat source in SiOx cell based on Tmax alone",
+          "Attributing triggering temperature gap entirely to cathode chemistry",
+          "Claiming separator provides no protection without accounting for sequence timing",
+          "Generalizing danger ranking across all SOC and operating conditions"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A 38 Ah NCM battery is subjected to nail penetration tests at two different states of charge: 30% SOC and 90% SOC. The nail radius is held constant at 2 mm and penetration speed at 2 mm/s. At 30% SOC, the voltage drop during the first internal short circuit event is approximately 1.5 V and the maximum temperature rise is substantially lower than at 90% SOC, where the voltage drop reaches approximately 1.9 V and the maximum temperature can reach approximately 800°C. In a separate set of tests on the same cell chemistry at 30% SOC, penetration speed is varied: at 0.5 mm/s the temperature peak reaches approximately 800°C and the first unit cell short-circuit current reaches 60 A, while at speeds of 2.0 mm/s and above the temperature variation trend remains consistent and the short-circuit current is significantly lower. An engineer must assess the thermal hazard of a nail penetration event. Which of the following conclusions are admissible?",
+        "options": [
+          "A. At 30% SOC and slow penetration speed (0.5 mm/s), the thermal hazard as measured by peak temperature can be comparable to the hazard at 90% SOC and standard penetration speed (2 mm/s), despite the lower stored energy at 30% SOC.",
+          "B. Increasing nail penetration speed from 0.5 mm/s to 2.0 mm/s at 30% SOC reduces peak temperature, indicating that faster penetration is always safer regardless of SOC or nail geometry.",
+          "C. The higher voltage drop at 90% SOC compared to 30% SOC during the first short-circuit event is consistent with a larger electrochemical driving force available at higher charge states, not with a larger short-circuit resistance.",
+          "D. At 30% SOC and 2 mm/s, the incremental short-circuit current added when the nail penetrates the second unit cell is smaller than the surge when it penetrates the first unit cell, which is consistent with the first short-circuit event establishing a low-resistance path that partially limits the incremental contribution of subsequent short-circuit points.",
+          "E. Because peak temperature at 0.5 mm/s and 30% SOC reaches 800°C, which equals the peak temperature at 90% SOC and 2 mm/s, the underlying heat generation mechanisms must be identical in both cases.",
+          "F. The observation that temperature variation trends are consistent for penetration speeds at or above 2.0 mm/s at 30% SOC means that nail radius has no effect on peak temperature in that speed regime.",
+          "G. Penetration speed is a parameter that can independently shift the thermal hazard regime at a given SOC, such that low-speed penetration at moderate SOC may produce hazard levels that exceed those expected from SOC alone."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence states that at 0.5 mm/s and 30% SOC, peak temperature reaches ~800°C, which is the same as the peak temperature at 90% SOC and 2 mm/s. This is counterintuitive because 30% SOC has less stored energy, yet the thermal outcome is comparable due to the penetration speed effect. This is directly supported by the evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+198+UnknownJournal:C003",
+              "TR_Mechanism+198+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The evidence shows faster penetration reduces temperature at 30% SOC, but this is a condition-specific result. Generalizing to 'always safer regardless of SOC or nail geometry' is an inadmissible overgeneralization. The evidence does not support this universal claim across all conditions.",
+            "error_type": "Overgeneralization / condition violation",
+            "evidence_refs": [
+              "TR_Mechanism+198+UnknownJournal:C005",
+              "TR_Mechanism+198+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Higher SOC means more stored electrochemical energy and a higher open-circuit voltage, which increases the driving force for short-circuit current and thus the voltage drop across the short-circuit resistance. A larger short-circuit resistance would reduce current and thus reduce the voltage drop, not increase it. The evidence shows higher voltage drop at higher SOC, consistent with higher driving force, not higher resistance.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+198+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence explicitly states that when the nail advances into the second unit cell, the current increases from 47 A to 60 A with a lower increment than the first short-circuit event. The reasoning that the first short-circuit path partially limits incremental contribution of subsequent events is mechanistically consistent with parallel resistance addition reducing the marginal current increment.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+198+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Equal peak temperatures do not imply identical heat generation mechanisms. At 30% SOC and 0.5 mm/s, the high temperature arises from prolonged contact time allowing more heat accumulation, while at 90% SOC the higher stored energy drives higher short-circuit current. Same outcome temperature does not require same mechanism. This is a causal overclaim from a coincidental numerical equality.",
+            "error_type": "Causal overclaim from correlation",
+            "evidence_refs": [
+              "TR_Mechanism+198+UnknownJournal:C003",
+              "TR_Mechanism+198+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence about consistent temperature trends at speeds ≥2.0 mm/s refers to speed variation at fixed nail radius. Separate evidence shows nail radius independently affects peak temperature (300°C to over 400°C as radius increases from 1.2 to 3.5 mm). The consistency of temperature trends with speed does not eliminate the nail radius effect. These are independent variables and the option conflates them.",
+            "error_type": "Scope expansion / variable conflation",
+            "evidence_refs": [
+              "TR_Mechanism+198+UnknownJournal:C005",
+              "TR_Mechanism+198+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "The evidence demonstrates that penetration speed at 30% SOC can produce 800°C peak temperature (at 0.5 mm/s), matching the hazard level of 90% SOC at standard speed. This confirms that penetration speed independently shifts the thermal hazard regime, and that SOC alone does not determine hazard level.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+198+UnknownJournal:C003",
+              "TR_Mechanism+198+UnknownJournal:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-parameter thermal hazard assessment in nail penetration: interaction between SOC, penetration speed, and nail geometry as independent hazard drivers",
+        "primary_boundary": "Penetration speed effect is condition-specific (30% SOC, fixed geometry); nail radius effect is separately established; equal outcomes do not imply equal mechanisms; speed trend consistency does not eliminate geometry effects",
+        "intended_error_modes": [
+          "Overgeneralization of speed-safety relationship across all conditions",
+          "Causal overclaim from equal peak temperature values",
+          "Variable conflation between speed consistency and geometry independence",
+          "Ignoring that 30% SOC at slow speed can match 90% SOC hazard level"
+        ],
+        "disallowed_extrapolations": [
+          "Universal claim that faster penetration is always safer",
+          "Inferring identical mechanisms from identical peak temperatures",
+          "Concluding nail radius is irrelevant from speed-consistency observation",
+          "Treating SOC as the sole determinant of thermal hazard"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A 38 Ah NCM battery is characterized using both accelerating rate calorimetry (ARC) and differential scanning calorimetry (DSC) of extracted electrode materials. ARC measurements use surface-mounted temperature sensors. DSC analysis of the cathode material shows a structural phase transition at 300°C and a second phase transition at 400°C. Separate electrode-only DSC experiments show the cathode alone undergoes thermal runaway at 189°C and the anode alone at approximately 240°C. The total heat generation calculated from DSC material analysis is 371,087 J, while the total heat generation calculated from ARC surface temperature measurements is 314,296 J. The battery does not undergo thermal runaway at 0% or 25% SOC but does at SOC values above 35%. The self-heat rate threshold defining the thermal runaway triggering temperature is 10°C/min. An engineer is evaluating the heat source hierarchy and measurement limitations for this system. Which of the following conclusions are admissible?",
+        "options": [
+          "A. The fact that either electrode alone can undergo thermal runaway without the other electrode present indicates that internal short circuit is not required as the primary initiating heat source for thermal runaway in this system.",
+          "B. The ARC-derived total heat generation being lower than the DSC-derived value is best explained by the ARC surface temperature underestimating the internal temperature, causing the ARC calculation to undercount heat released near the cell core.",
+          "C. The structural phase transition of the cathode material at 300°C is the event that defines the thermal runaway triggering temperature in ARC testing, since it represents the onset of irreversible cathode decomposition.",
+          "D. Because the SEI decomposition and regeneration occur simultaneously between 100°C and 270°C, a battery whose surface temperature is measured at 200°C during ARC testing has definitively broken the SEI decomposition–regeneration balance.",
+          "E. The SOC threshold above which thermal runaway occurs (35%) implies that the electrochemical energy stored above this threshold is necessary to sustain the exothermic reaction cascade, and batteries below this threshold cannot generate sufficient heat from electrode reactions alone.",
+          "F. The cathode phase transition from rhombohedral to spinel at 300°C and from LiM2O4-type spinel to Co3O4-type spinel at 400°C occur above the measured thermal runaway triggering temperature of 188°C, indicating these transitions are consequences of thermal runaway progression rather than its initiating cause.",
+          "G. The difference between DSC-derived and ARC-derived heat totals cannot be used to determine the exact internal temperature profile of the battery during thermal runaway."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "F",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence explicitly states that because either electrode alone can undergo thermal runaway, internal short circuit is not the major heat source during thermal runaway. This is a direct admissible conclusion from the electrode-only DSC experiments.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+200+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Evidence states that ARC measures surface temperature and the inner temperature may be higher, which explains why the ARC-derived heat calculation (314,296 J) is lower than the DSC value (371,087 J). The mechanism chain is: surface temperature < internal temperature → ARC underestimates temperature rise → ARC underestimates heat released. This is directly supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+200+UnknownJournal:C007"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The thermal runaway triggering temperature (TTR) is defined as the temperature at which self-heat rate reaches 10°C/min, measured at 188°C in ARC testing. The cathode phase transition at 300°C occurs well above this TTR. Attributing TTR to the 300°C phase transition is a factual contradiction with the stated TTR definition and measured value.",
+            "error_type": "Mechanism timing error / definition violation",
+            "evidence_refs": [
+              "TR_Mechanism+200+UnknownJournal:C001",
+              "TR_Mechanism+200+UnknownJournal:C008",
+              "TR_Mechanism+200+UnknownJournal:C010"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence states that SEI decomposition and regeneration occur simultaneously between 100°C and 270°C, and the balance is not broken until temperature rises to 270°C or higher. A surface temperature of 200°C does not confirm that the internal temperature has reached 270°C, because ARC measures surface temperature and internal temperature may be higher. The surface measurement cannot definitively establish the internal thermal state. This option violates the measurement scope limitation explicitly stated in the evidence.",
+            "error_type": "Measurement scope violation / surface-to-internal extrapolation",
+            "evidence_refs": [
+              "TR_Mechanism+200+UnknownJournal:C006",
+              "TR_Mechanism+200+UnknownJournal:C007"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The evidence states that thermal runaway occurs above 35% SOC but does not provide a mechanistic explanation that the stored electrochemical energy above 35% is necessary to sustain the reaction cascade. The evidence also shows that electrode reactions alone (without ISC) can drive thermal runaway, and that electrode-only DSC experiments show thermal runaway. The claim that batteries below 35% SOC cannot generate sufficient heat from electrode reactions alone is an unsupported extrapolation beyond what the threshold observation establishes.",
+            "error_type": "Unsupported mechanistic extrapolation from threshold observation",
+            "evidence_refs": [
+              "TR_Mechanism+200+UnknownJournal:C002",
+              "TR_Mechanism+200+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "TTR is 188°C. The cathode phase transitions occur at 300°C and 400°C, both above TTR. Since thermal runaway is already triggered at 188°C, the phase transitions at higher temperatures occur during the progression of thermal runaway, not as its initiating cause. This is a valid multi-step temporal reasoning conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+200+UnknownJournal:C001",
+              "TR_Mechanism+200+UnknownJournal:C008",
+              "TR_Mechanism+200+UnknownJournal:C010"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "The evidence explains the heat total discrepancy as arising from surface vs. internal temperature measurement, but does not provide a method to reconstruct the exact internal temperature profile from this difference alone. The ARC-DSC heat difference is a scalar quantity that reflects a systematic underestimate, not a spatially resolved temperature profile. This is an admissible limitation statement.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+200+UnknownJournal:C007"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Heat source hierarchy in thermal runaway, measurement scope limitations of ARC surface temperature, and temporal ordering of thermal events relative to triggering temperature",
+        "primary_boundary": "TTR is defined by self-heat rate threshold at 188°C; cathode phase transitions at 300°C and 400°C are post-triggering events; ARC surface temperature cannot establish internal temperature state; SOC threshold observation does not mechanistically explain the below-threshold behavior",
+        "intended_error_modes": [
+          "Confusing post-triggering cathode phase transitions with the triggering mechanism",
+          "Extrapolating surface ARC temperature to internal SEI balance state",
+          "Inferring mechanistic necessity from SOC threshold observation",
+          "Treating heat total discrepancy as sufficient to reconstruct internal temperature profile"
+        ],
+        "disallowed_extrapolations": [
+          "Attributing TTR to cathode structural transitions that occur above TTR",
+          "Concluding internal SEI balance is broken from surface temperature measurement alone",
+          "Claiming below-threshold SOC cells cannot generate sufficient heat from electrode reactions",
+          "Using ARC-DSC heat difference to determine exact internal temperature distribution"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery engineer is comparing two lithium-ion cells at 100% SOC. Cell A uses a SiOx-containing anode and has a thermal runaway triggering temperature of 138°C and a maximum temperature rise rate of 349°C/s. Cell B uses a graphite anode and has a thermal runaway triggering temperature of 188°C, with SEI decomposition and regeneration occurring simultaneously between 100°C and 270°C, and the decomposition–regeneration balance not breaking until above 270°C. The engineer proposes that Cell A's lower triggering temperature is caused by the same SEI decomposition mechanism that governs Cell B, just shifted to a lower temperature due to the SiOx anode. Evaluate whether this proposal is mechanistically complete, identify what additional anode-specific mechanism the evidence requires to explain Cell A's behavior, and explain why the gap between onset temperature (~78°C) and triggering temperature (138°C) in Cell A is narrower than in Cell B (onset ~76°C, triggering 188°C), using the mechanism you identified."
+      },
+      "ground_truth": {
+        "gold_answer": "The engineer's proposal is mechanistically incomplete. While SEI decomposition is relevant to both cells, the evidence identifies an additional anode-specific mechanism in Cell A: the significant volume changes of SiOx during cycling cause uneven SEI formation, and the resulting cracks and voids in the SEI layer accelerate SEI decomposition prematurely. This is distinct from the gradual thermal SEI decomposition in graphite cells. In Cell B, the SEI decomposition and regeneration are balanced over the range of 100–270°C, meaning the system can partially repair SEI damage up to 270°C before the balance is broken. In Cell A, the pre-existing structural damage to the SEI from volume-change-induced cracking means the decomposition–regeneration balance is disrupted at a lower temperature, because the damaged SEI cannot sustain regeneration as effectively. This explains why the margin between onset of exothermic activity (~78°C) and full thermal runaway triggering (138°C) is only ~60°C in Cell A, compared to ~112°C in Cell B: the accelerated and structurally compromised SEI decomposition in Cell A causes heat accumulation to escalate more rapidly over a smaller temperature interval, without the extended regeneration-buffered regime that characterizes Cell B.",
+        "must_include": [
+          "Volume changes of SiOx cause uneven SEI formation and cracks or voids that accelerate SEI decomposition prematurely",
+          "Cell B has a SEI decomposition–regeneration balance maintained up to ~270°C that Cell A lacks in the same way",
+          "The narrower onset-to-triggering margin in Cell A (~60°C vs ~112°C) is explained by the compromised SEI structure allowing faster heat escalation",
+          "The proposal is incomplete because it omits the structural damage mechanism specific to SiOx volume changes"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming Cell A is more dangerous than Cell B under all conditions or at all SOC levels",
+          "Attributing Cell A's behavior to cathode differences rather than anode SEI structural damage",
+          "Stating that internal short circuit is the cause of the lower triggering temperature",
+          "Asserting that the SEI regeneration mechanism is entirely absent in Cell A without qualification"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanistic completeness of SEI-based explanation for triggering temperature differences between SiOx and graphite anode cells, and quantitative reasoning about onset-to-triggering thermal margin",
+        "primary_boundary": "The SiOx mechanism involves structural SEI damage from volume changes, not merely a temperature-shifted version of the graphite SEI decomposition pathway; the onset-to-triggering margin difference is a calculable consequence of the accelerated decomposition mechanism",
+        "intended_error_modes": [
+          "Accepting the engineer's proposal as complete without identifying the volume-change-induced structural damage mechanism",
+          "Attributing the triggering temperature difference to cathode chemistry rather than anode SEI behavior",
+          "Failing to connect the narrower thermal margin to the compromised SEI regeneration capacity",
+          "Generalizing the safety comparison beyond the 100% SOC test conditions"
+        ]
+      }
+    }
+  ]
+}

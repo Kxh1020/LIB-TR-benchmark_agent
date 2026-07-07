@@ -1,0 +1,149 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A 38 Ah NCM battery is characterized using both accelerating rate calorimetry (ARC) and differential scanning calorimetry (DSC) of extracted electrode materials. ARC measurements use surface-mounted temperature sensors. DSC analysis of the cathode material shows a structural phase transition at 300°C and a second phase transition at 400°C. Separate electrode-only DSC experiments show the cathode alone undergoes thermal runaway at 189°C and the anode alone at approximately 240°C. The total heat generation calculated from DSC material analysis is 371,087 J, while the total heat generation calculated from ARC surface temperature measurements is 314,296 J. The battery does not undergo thermal runaway at 0% or 25% SOC but does at SOC values above 35%. The self-heat rate threshold defining the thermal runaway triggering temperature is 10°C/min. An engineer is evaluating the heat source hierarchy and measurement limitations for this system. Which of the following conclusions are admissible?",
+        "options": [
+          "A. The fact that either electrode alone can undergo thermal runaway without the other electrode present indicates that internal short circuit is not required as the primary initiating heat source for thermal runaway in this system.",
+          "B. The ARC-derived total heat generation being lower than the DSC-derived value is best explained by the ARC surface temperature underestimating the internal temperature, causing the ARC calculation to undercount heat released near the cell core.",
+          "C. The structural phase transition of the cathode material at 300°C is the event that defines the thermal runaway triggering temperature in ARC testing, since it represents the onset of irreversible cathode decomposition.",
+          "D. Because the SEI decomposition and regeneration occur simultaneously between 100°C and 270°C, a battery whose surface temperature is measured at 200°C during ARC testing has definitively broken the SEI decomposition–regeneration balance.",
+          "E. The SOC threshold above which thermal runaway occurs (35%) implies that the electrochemical energy stored above this threshold is necessary to sustain the exothermic reaction cascade, and batteries below this threshold cannot generate sufficient heat from electrode reactions alone.",
+          "F. The cathode phase transition from rhombohedral to spinel at 300°C and from LiM2O4-type spinel to Co3O4-type spinel at 400°C occur above the measured thermal runaway triggering temperature of 188°C, indicating these transitions are consequences of thermal runaway progression rather than its initiating cause.",
+          "G. The difference between DSC-derived and ARC-derived heat totals cannot be used to determine the exact internal temperature profile of the battery during thermal runaway."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "F",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence explicitly states that because either electrode alone can undergo thermal runaway, internal short circuit is not the major heat source during thermal runaway. This is a direct admissible conclusion from the electrode-only DSC experiments.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+200+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Evidence states that ARC measures surface temperature and the inner temperature may be higher, which explains why the ARC-derived heat calculation (314,296 J) is lower than the DSC value (371,087 J). The mechanism chain is: surface temperature < internal temperature → ARC underestimates temperature rise → ARC underestimates heat released. This is directly supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+200+UnknownJournal:C007"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The thermal runaway triggering temperature (TTR) is defined as the temperature at which self-heat rate reaches 10°C/min, measured at 188°C in ARC testing. The cathode phase transition at 300°C occurs well above this TTR. Attributing TTR to the 300°C phase transition is a factual contradiction with the stated TTR definition and measured value.",
+            "error_type": "Mechanism timing error / definition violation",
+            "evidence_refs": [
+              "TR_Mechanism+200+UnknownJournal:C001",
+              "TR_Mechanism+200+UnknownJournal:C008",
+              "TR_Mechanism+200+UnknownJournal:C010"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence states that SEI decomposition and regeneration occur simultaneously between 100°C and 270°C, and the balance is not broken until temperature rises to 270°C or higher. A surface temperature of 200°C does not confirm that the internal temperature has reached 270°C, because ARC measures surface temperature and internal temperature may be higher. The surface measurement cannot definitively establish the internal thermal state. This option violates the measurement scope limitation explicitly stated in the evidence.",
+            "error_type": "Measurement scope violation / surface-to-internal extrapolation",
+            "evidence_refs": [
+              "TR_Mechanism+200+UnknownJournal:C006",
+              "TR_Mechanism+200+UnknownJournal:C007"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The evidence states that thermal runaway occurs above 35% SOC but does not provide a mechanistic explanation that the stored electrochemical energy above 35% is necessary to sustain the reaction cascade. The evidence also shows that electrode reactions alone (without ISC) can drive thermal runaway, and that electrode-only DSC experiments show thermal runaway. The claim that batteries below 35% SOC cannot generate sufficient heat from electrode reactions alone is an unsupported extrapolation beyond what the threshold observation establishes.",
+            "error_type": "Unsupported mechanistic extrapolation from threshold observation",
+            "evidence_refs": [
+              "TR_Mechanism+200+UnknownJournal:C002",
+              "TR_Mechanism+200+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "TTR is 188°C. The cathode phase transitions occur at 300°C and 400°C, both above TTR. Since thermal runaway is already triggered at 188°C, the phase transitions at higher temperatures occur during the progression of thermal runaway, not as its initiating cause. This is a valid multi-step temporal reasoning conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+200+UnknownJournal:C001",
+              "TR_Mechanism+200+UnknownJournal:C008",
+              "TR_Mechanism+200+UnknownJournal:C010"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "The evidence explains the heat total discrepancy as arising from surface vs. internal temperature measurement, but does not provide a method to reconstruct the exact internal temperature profile from this difference alone. The ARC-DSC heat difference is a scalar quantity that reflects a systematic underestimate, not a spatially resolved temperature profile. This is an admissible limitation statement.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+200+UnknownJournal:C007"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Heat source hierarchy in thermal runaway, measurement scope limitations of ARC surface temperature, and temporal ordering of thermal events relative to triggering temperature",
+        "primary_boundary": "TTR is defined by self-heat rate threshold at 188°C; cathode phase transitions at 300°C and 400°C are post-triggering events; ARC surface temperature cannot establish internal temperature state; SOC threshold observation does not mechanistically explain the below-threshold behavior",
+        "intended_error_modes": [
+          "Confusing post-triggering cathode phase transitions with the triggering mechanism",
+          "Extrapolating surface ARC temperature to internal SEI balance state",
+          "Inferring mechanistic necessity from SOC threshold observation",
+          "Treating heat total discrepancy as sufficient to reconstruct internal temperature profile"
+        ],
+        "disallowed_extrapolations": [
+          "Attributing TTR to cathode structural transitions that occur above TTR",
+          "Concluding internal SEI balance is broken from surface temperature measurement alone",
+          "Claiming below-threshold SOC cells cannot generate sufficient heat from electrode reactions",
+          "Using ARC-DSC heat difference to determine exact internal temperature distribution"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery engineer is comparing two lithium-ion cells at 100% SOC. Cell A uses a SiOx-containing anode and has a thermal runaway triggering temperature of 138°C and a maximum temperature rise rate of 349°C/s. Cell B uses a graphite anode and has a thermal runaway triggering temperature of 188°C, with SEI decomposition and regeneration occurring simultaneously between 100°C and 270°C, and the decomposition–regeneration balance not breaking until above 270°C. The engineer proposes that Cell A's lower triggering temperature is caused by the same SEI decomposition mechanism that governs Cell B, just shifted to a lower temperature due to the SiOx anode. Evaluate whether this proposal is mechanistically complete, identify what additional anode-specific mechanism the evidence requires to explain Cell A's behavior, and explain why the gap between onset temperature (~78°C) and triggering temperature (138°C) in Cell A is narrower than in Cell B (onset ~76°C, triggering 188°C), using the mechanism you identified."
+      },
+      "ground_truth": {
+        "gold_answer": "The engineer's proposal is mechanistically incomplete. While SEI decomposition is relevant to both cells, the evidence identifies an additional anode-specific mechanism in Cell A: the significant volume changes of SiOx during cycling cause uneven SEI formation, and the resulting cracks and voids in the SEI layer accelerate SEI decomposition prematurely. This is distinct from the gradual thermal SEI decomposition in graphite cells. In Cell B, the SEI decomposition and regeneration are balanced over the range of 100–270°C, meaning the system can partially repair SEI damage up to 270°C before the balance is broken. In Cell A, the pre-existing structural damage to the SEI from volume-change-induced cracking means the decomposition–regeneration balance is disrupted at a lower temperature, because the damaged SEI cannot sustain regeneration as effectively. This explains why the margin between onset of exothermic activity (~78°C) and full thermal runaway triggering (138°C) is only ~60°C in Cell A, compared to ~112°C in Cell B: the accelerated and structurally compromised SEI decomposition in Cell A causes heat accumulation to escalate more rapidly over a smaller temperature interval, without the extended regeneration-buffered regime that characterizes Cell B.",
+        "must_include": [
+          "Volume changes of SiOx cause uneven SEI formation and cracks or voids that accelerate SEI decomposition prematurely",
+          "Cell B has a SEI decomposition–regeneration balance maintained up to ~270°C that Cell A lacks in the same way",
+          "The narrower onset-to-triggering margin in Cell A (~60°C vs ~112°C) is explained by the compromised SEI structure allowing faster heat escalation",
+          "The proposal is incomplete because it omits the structural damage mechanism specific to SiOx volume changes"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming Cell A is more dangerous than Cell B under all conditions or at all SOC levels",
+          "Attributing Cell A's behavior to cathode differences rather than anode SEI structural damage",
+          "Stating that internal short circuit is the cause of the lower triggering temperature",
+          "Asserting that the SEI regeneration mechanism is entirely absent in Cell A without qualification"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanistic completeness of SEI-based explanation for triggering temperature differences between SiOx and graphite anode cells, and quantitative reasoning about onset-to-triggering thermal margin",
+        "primary_boundary": "The SiOx mechanism involves structural SEI damage from volume changes, not merely a temperature-shifted version of the graphite SEI decomposition pathway; the onset-to-triggering margin difference is a calculable consequence of the accelerated decomposition mechanism",
+        "intended_error_modes": [
+          "Accepting the engineer's proposal as complete without identifying the volume-change-induced structural damage mechanism",
+          "Attributing the triggering temperature difference to cathode chemistry rather than anode SEI behavior",
+          "Failing to connect the narrower thermal margin to the compromised SEI regeneration capacity",
+          "Generalizing the safety comparison beyond the 100% SOC test conditions"
+        ]
+      }
+    }
+  ]
+}

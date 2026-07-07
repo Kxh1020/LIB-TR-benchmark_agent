@@ -1,0 +1,318 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery safety engineer is comparing sodium-ion cells (NTM chemistry) and lithium iron phosphate cells (LFP) under identical external heating protocols across multiple states of charge. The NTM cells show a lower safety valve opening temperature than LFP cells at every SOC tested, yet the NTM cells never exhibit thermal runaway while LFP cells do at most SOCs. A colleague argues that the lower valve opening temperature in NTM cells is evidence of superior thermal stability. Which of the following conclusions are consistent with the described behavior?",
+        "options": [
+          "A. The earlier valve opening in NTM cells is consistent with lower internal thermal stability, yet this earlier venting may reduce internal pressure buildup before runaway thresholds are reached.",
+          "B. Because LFP cells open their safety valves at higher temperatures, the internal chemistry of LFP cells is more thermally stable than that of NTM cells.",
+          "C. The absence of thermal runaway in NTM cells across all SOCs cannot be attributed solely to the valve opening temperature difference, since LFP cells also vent but still undergo runaway.",
+          "D. The lower valve opening temperature in NTM cells directly proves that NTM electrodes decompose at lower temperatures than LFP electrodes.",
+          "E. A higher safety valve opening temperature in LFP cells, combined with thermal runaway occurrence, is consistent with the internal materials of LFP cells being less thermally stable than the valve opening temperature alone would suggest.",
+          "F. Since NTM cells vent at lower temperatures, they release more total gas mass per unit SOC than LFP cells."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence shows NTM vents earlier and never reaches runaway; earlier venting as a pressure-relief pathway is mechanistically consistent with this outcome.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+127+Journal_of_Power_Sources:C001",
+              "TR_Gasventing+127+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence explicitly states the higher LFP valve opening temperature indicates the material inside SIBs is less thermally stable, inverting this claim.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+127+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "LFP cells vent yet still undergo runaway, so valve opening temperature alone cannot explain NTM runaway absence; multi-factor reasoning required.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+127+Journal_of_Power_Sources:C001",
+              "TR_Gasventing+127+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Valve opening temperature reflects mechanical design, not electrode decomposition temperature directly; this is an unsupported causal attribution.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Gasventing+127+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Evidence states higher LFP Topen yet LFP undergoes runaway, and explicitly concludes SIB internal material is less thermally stable, supporting this interpretation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+127+Journal_of_Power_Sources:C001",
+              "TR_Gasventing+127+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Evidence shows LFP mass loss rates are 2–7 times larger than NTM at the same SOC, directly contradicting this claim.",
+            "error_type": "overgeneralization",
+            "evidence_refs": [
+              "TR_Gasventing+127+Journal_of_Power_Sources:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Relationship between safety valve opening temperature, internal thermal stability, and thermal runaway occurrence across chemistries",
+        "primary_boundary": "Higher valve opening temperature in LFP does not imply greater internal thermal stability; evidence inverts this intuition",
+        "intended_error_modes": [
+          "mechanism_substitution",
+          "causal_overclaim",
+          "ignoring multi-factor interaction"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring electrode decomposition temperature from valve opening temperature",
+          "Treating valve opening as sufficient condition for runaway prevention"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "During a thermal abuse investigation, engineers monitor multiple signals from NTM sodium-ion and LFP lithium-ion cells simultaneously: surface temperature, voltage, CO concentration, H2 concentration, CO2 concentration, and explosive gas level. For NTM cells, CO responds before voltage. For LFP cells, voltage responds before any gas species. A fire safety system must be designed to provide the earliest possible warning for each chemistry. Which of the following design conclusions are admissible given this response ordering?",
+        "options": [
+          "A. Using CO as the primary trigger for NTM cell warning systems is admissible because CO responds earlier than all other monitored parameters in NTM cells.",
+          "B. For LFP cells, a CO-based trigger would provide earlier warning than a voltage-based trigger because CO reaches higher absolute concentrations during runaway.",
+          "C. A single sensor strategy using voltage as the universal early warning parameter is not admissible for NTM cells, since voltage responds after CO in that chemistry.",
+          "D. For LFP cells, surface temperature is a more reliable early warning parameter than voltage because temperature is a direct physical indicator of heat generation.",
+          "E. The response ordering difference between NTM and LFP cells means that a chemistry-agnostic warning system optimized for one chemistry will be suboptimal for the other.",
+          "F. Because CO concentration in NTM cells remains below lethal thresholds at all SOCs, the CO-based early warning for NTM cells carries lower false-alarm risk than a voltage-based system for LFP cells."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence explicitly states CO responds first among all parameters for NTM SIBs, directly supporting CO as the earliest warning trigger.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+127+Journal_of_Power_Sources:C006"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "For LFP, voltage responds before CO; CO-based trigger would be later, not earlier, regardless of absolute CO concentrations during runaway.",
+            "error_type": "condition_violation",
+            "evidence_refs": [
+              "TR_Gasventing+127+Journal_of_Power_Sources:C006"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence shows voltage responds after CO and H2 in NTM cells; applying a voltage-first strategy to NTM cells violates the observed response ordering.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+127+Journal_of_Power_Sources:C006"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence shows surface temperature responds after voltage for LFP cells, making it a later rather than earlier warning parameter.",
+            "error_type": "condition_violation",
+            "evidence_refs": [
+              "TR_Gasventing+127+Journal_of_Power_Sources:C006"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The inverted response orderings between NTM and LFP directly imply that optimizing for one chemistry degrades performance for the other.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+127+Journal_of_Power_Sources:C006"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "False-alarm risk depends on signal specificity and threshold design, not solely on whether concentrations remain below lethal levels; this inference is unsupported.",
+            "error_type": "scope_expansion",
+            "evidence_refs": [
+              "TR_Gasventing+127+Journal_of_Power_Sources:C006",
+              "TR_Gasventing+127+Journal_of_Power_Sources:C008"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Chemistry-specific early warning parameter selection based on signal response ordering",
+        "primary_boundary": "Response ordering is chemistry-specific; a universal parameter optimized for one chemistry is inadmissible for the other",
+        "intended_error_modes": [
+          "condition_violation",
+          "scope_expansion",
+          "mechanism_confusion"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring warning quality from absolute concentration magnitude rather than response timing",
+          "Treating surface temperature as primary for LFP"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An enclosed battery storage facility houses both NTM sodium-ion and LFP lithium-ion packs. A ventilation failure occurs while both pack types are simultaneously subjected to thermal stress at 100% SOC. Engineers must assess acute inhalation hazard from released gases. Known: LFP cells at 100% SOC produce H2 concentrations far exceeding those of NTM cells, and the fractional effective dose (FED) for asphyxiation from LFP vent gases is approximately 29 times that of NTM vent gases at 100% SOC. CO from LFP cells at 60% SOC and above exceeds lethal thresholds, while NTM CO remains below lethal thresholds at all SOCs. Which conclusions about the acute gas hazard are admissible?",
+        "options": [
+          "A. At 100% SOC, LFP cells present a substantially greater asphyxiation hazard than NTM cells, driven primarily by the much higher H2 release from LFP cells undergoing thermal runaway.",
+          "B. NTM cells at 100% SOC present no meaningful gas hazard because their CO concentrations remain below lethal thresholds.",
+          "C. The combined CO and asphyxiation hazard from LFP cells at 100% SOC is greater than from NTM cells at the same SOC, consistent with the thermal runaway behavior difference between the two chemistries.",
+          "D. Because NTM cells do not undergo thermal runaway at any SOC, the total gas volume released by NTM cells is negligible compared to LFP cells regardless of SOC.",
+          "E. The FED difference between LFP and NTM at 100% SOC means that LFP vent gases would reach incapacitating concentrations at a substantially lower released volume than NTM vent gases under the same enclosure conditions.",
+          "F. Since LFP cells produce CO above lethal thresholds only at 60% SOC and above, the CO hazard from LFP cells at 0% SOC is equivalent to that from NTM cells at 0% SOC."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "FED is 28.9 times higher for LFP at 100% SOC; H2 dominates LFP gas release and LFP undergoes runaway while NTM does not, supporting this conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+127+Journal_of_Power_Sources:C004",
+              "TR_Gasventing+127+Journal_of_Power_Sources:C007",
+              "TR_Gasventing+127+Journal_of_Power_Sources:C001"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "NTM FED at 100% SOC is 2.53, which exceeds 1.0, indicating meaningful asphyxiation hazard even without lethal CO levels; sub-lethal CO does not eliminate total gas hazard.",
+            "error_type": "ignoring_multi-factor_interaction",
+            "evidence_refs": [
+              "TR_Gasventing+127+Journal_of_Power_Sources:C004",
+              "TR_Gasventing+127+Journal_of_Power_Sources:C008"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Both CO exceeding lethal thresholds and FED being 28.9x higher for LFP at 100% SOC are consistent with the thermal runaway difference driving greater combined gas hazard.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+127+Journal_of_Power_Sources:C001",
+              "TR_Gasventing+127+Journal_of_Power_Sources:C004",
+              "TR_Gasventing+127+Journal_of_Power_Sources:C008"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "NTM cells have measurable mass loss rates (2–4 g/s) across all SOCs; absence of runaway does not mean negligible gas release.",
+            "error_type": "overgeneralization",
+            "evidence_refs": [
+              "TR_Gasventing+127+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "A 28.9-fold FED difference directly implies LFP reaches incapacitating FED thresholds at proportionally lower released volumes than NTM under identical enclosure geometry.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+127+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "LFP at 0% SOC produces 140 ppm CO (below lethal threshold) while NTM at 0% SOC produces 48 ppm; concentrations differ and are not equivalent.",
+            "error_type": "condition_violation",
+            "evidence_refs": [
+              "TR_Gasventing+127+Journal_of_Power_Sources:C008"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-species gas hazard assessment combining FED, CO lethality, and H2 release across chemistries at 100% SOC",
+        "primary_boundary": "Sub-lethal CO does not imply no gas hazard; FED accounts for combined species effects including asphyxiants",
+        "intended_error_modes": [
+          "ignoring multi-factor interaction",
+          "overgeneralization from runaway absence",
+          "condition_violation at boundary SOC"
+        ],
+        "disallowed_extrapolations": [
+          "Treating absence of thermal runaway as absence of gas hazard",
+          "Equating CO hazard equivalence from SOC threshold argument without checking absolute concentrations"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery safety engineer observes that NTM sodium-ion cells release gas with CO2 as the dominant species, while LFP lithium-ion cells release gas dominated by H2, with H2 concentrations in LFP cells reaching roughly 60 times those in NTM cells at 100% SOC. The engineer also notes that LFP cells have a maximum mass loss rate 2–7 times greater than NTM cells at the same SOC, and that LFP cells undergo thermal runaway while NTM cells do not. The engineer proposes that because NTM cells emit primarily CO2 rather than H2, NTM cells present a lower flammability hazard but a comparable or greater asphyxiation hazard compared to LFP cells. Evaluate whether this proposal is admissible, identifying which part is supported and which part is not, and explain the mechanism linking gas composition, thermal runaway, and the two distinct hazard types."
+      },
+      "ground_truth": {
+        "gold_answer": "The lower flammability hazard claim for NTM cells is admissible: H2 is highly flammable and explosive, and LFP cells release H2 at concentrations far exceeding those of NTM cells, combined with much higher mass loss rates and thermal runaway occurrence, making LFP cells substantially more flammable. The comparable or greater asphyxiation hazard claim for NTM cells is not admissible: the FED for asphyxiation from LFP vent gases at 100% SOC is approximately 29 times that of NTM cells, meaning LFP presents far greater asphyxiation hazard. CO2 from NTM cells is an asphyxiant, but the total gas volume and combined species concentration from LFP cells undergoing thermal runaway dominates the asphyxiation risk. The mechanism chain is: thermal runaway in LFP drives higher gas generation rates and higher H2 and CO concentrations, both of which simultaneously increase flammability and asphyxiation hazard beyond what NTM cells produce without runaway.",
+        "must_include": [
+          "Lower flammability hazard for NTM is supported due to much lower H2 release",
+          "Greater asphyxiation hazard claim for NTM is not supported; LFP FED is approximately 29 times higher",
+          "Thermal runaway in LFP drives both higher gas volume and higher hazardous species concentrations",
+          "CO2 dominance in NTM does not compensate for the much larger total gas release from LFP"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming NTM presents no asphyxiation hazard because FED is lower than LFP",
+          "Claiming CO2 dominance alone determines asphyxiation hazard without accounting for total gas volume and FED",
+          "Inferring that absence of thermal runaway in NTM eliminates all gas hazard"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Decomposition of a two-part hazard claim into flammability and asphyxiation components, evaluated against gas composition, mass loss rate, and FED evidence",
+        "primary_boundary": "Dominant gas species determines flammability character, but asphyxiation hazard is determined by total gas volume and FED, not species identity alone",
+        "intended_error_modes": [
+          "Accepting the asphyxiation parity claim because CO2 is an asphyxiant",
+          "Ignoring that thermal runaway amplifies total gas generation and therefore both hazard types in LFP",
+          "Treating gas species identity as the sole determinant of both hazard types"
+        ]
+      }
+    }
+  ]
+}

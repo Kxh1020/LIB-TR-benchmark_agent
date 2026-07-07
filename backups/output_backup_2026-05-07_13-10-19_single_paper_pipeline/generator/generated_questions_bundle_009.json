@@ -1,0 +1,331 @@
+{
+  "TR_Propagation+4+Applied_Energy__TR_Propagation+5+Applied_Energy__TR_Propagation+6+eTransportation": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery module uses liquid cooling plates shared between adjacent cell groups. During a thermal runaway propagation (TRP) event, engineers propose inserting aerogel pads between every cell pair to slow propagation. Which of the following conclusions about this strategy are supported by engineering evidence?",
+          "options": [
+            "A. Aerogel between cells reduces heat transfer through the rear battery surface by more than 50%, meaningfully slowing intra-module propagation.",
+            "B. Aerogel between cells is the dominant control for inter-module propagation because it intercepts the primary heat transfer path.",
+            "C. The propagation path between modules is governed by the cooling plate arrangement, making inter-module aerogel insulation of limited effectiveness.",
+            "D. Beyond a critical aerogel thickness of approximately 3 mm, additional thickness yields diminishing returns because its thermal resistance approaches the same order of magnitude as parallel heat paths.",
+            "E. Concentrating all aerogel between a single cell pair rather than distributing it evenly always produces a longer total propagation interval than uniform distribution.",
+            "F. Replacing polystyrene with aerogel uniformly between every cell fully prevents thermal runaway propagation within the module."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "D"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Aerogel replacement of polystyrene reduces rear-surface heat transfer by 55.3%, directly slowing intra-module propagation.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Propagation+5+Applied_Energy:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Over 70% of inter-module heat flows through the cooling plate; aerogel between cells cannot intercept this dominant path.",
+              "error_type": "regime transfer error",
+              "evidence_refs": [
+                "TR_Propagation+5+Applied_Energy:C005",
+                "TR_Propagation+5+Applied_Energy:C008"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Cooling plate arrangement fully determines inter-module propagation path; thermal resistance design between modules has limited effect.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Propagation+5+Applied_Energy:C008"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Beyond ~3 mm aerogel, thermal resistance falls to the same order as other paths, eliminating further benefit from increased thickness.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Propagation+5+Applied_Energy:C007"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Evidence shows a single concentrated aerogel pad between one cell pair produced a shorter propagation interval than uniform polystyrene distribution.",
+              "error_type": "unsupported monotonicity",
+              "evidence_refs": [
+                "TR_Propagation+5+Applied_Energy:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Aerogel slows but does not fully prevent intra-module propagation; complete blocking is not claimed for uniform aerogel distribution.",
+              "error_type": "boundary overreach",
+              "evidence_refs": [
+                "TR_Propagation+5+Applied_Energy:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Distinguishing intra-module vs. inter-module heat transfer paths and the scope of aerogel insulation effectiveness",
+          "primary_boundary": "Aerogel effectiveness is limited to the rear-surface conduction path; cooling plate dominates inter-module propagation",
+          "intended_error_modes": [
+            "regime transfer error",
+            "boundary overreach",
+            "unsupported monotonicity"
+          ],
+          "disallowed_extrapolations": [
+            "Aerogel prevents all propagation",
+            "Aerogel controls inter-module path",
+            "More aerogel always better without limit"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A pack designer compares NMC-811 and LFP prismatic cells for a passenger vehicle battery. NMC-811 cells reach average thermal runaway temperatures of 899\u00b0C; LFP cells reach 524\u00b0C. Aluminum melts at 660\u00b0C. PE insulation melts at 100\u00b0C; PTFE at 320\u00b0C; mica at 1300\u00b0C. Which conclusions are directly supported?",
+          "options": [
+            "A. NMC-811 modules require temperature-resistant housing materials such as steel rather than aluminum to maintain structural integrity during thermal runaway.",
+            "B. LFP modules may safely use aluminum housing because their thermal runaway temperatures remain below the aluminum melting point.",
+            "C. Both NMC-811 and LFP venting gas temperatures exceed the melting points of PE and PTFE, so neither material is suitable for electrical insulation along the venting path.",
+            "D. NMC-811 venting gas ignition in the presence of oxygen is unavoidable because vent temperatures exceed the ignition temperature of ethylene (440\u00b0C), whereas LFP vent temperatures do not reach this threshold.",
+            "E. Because LFP cells maintain structural integrity with only 21% mass loss, LFP venting gas poses no thermal hazard to adjacent electrical insulation.",
+            "F. Aluminum cell cans in NMC-811 modules remain intact during thermal runaway, ensuring venting occurs only through intended safety vents.",
+            "G. Mica sheets are a suitable high-voltage insulation material along the venting path for both NMC-811 and LFP chemistries."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "G"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "NMC-811 peak temperature (899\u00b0C) exceeds aluminum melting point (660\u00b0C), requiring steel or equivalent temperature-resistant housing.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Propagation+6+eTransportation:C001",
+                "TR_Propagation+6+eTransportation:C002"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "LFP peak temperature (524\u00b0C) stays below aluminum melting point (660\u00b0C), permitting aluminum housing use.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Propagation+6+eTransportation:C001",
+                "TR_Propagation+6+eTransportation:C002"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Venting gas temperatures for both chemistries exceed PE (100\u00b0C) and PTFE (320\u00b0C) melting points, disqualifying both as venting-path insulators.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Propagation+6+eTransportation:C008"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "NMC-811 vent temperatures repeatedly exceed 440\u00b0C ethylene ignition threshold; LFP vent temperatures do not reach this threshold.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Propagation+6+eTransportation:C007"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "LFP venting gas temperatures still exceed PE and PTFE melting points; low mass loss does not eliminate thermal hazard to insulation.",
+              "error_type": "causal overclaim",
+              "evidence_refs": [
+                "TR_Propagation+6+eTransportation:C008",
+                "TR_Propagation+6+eTransportation:C006"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "NMC-811 temperatures exceed aluminum can melting point, causing side wall ruptures and unintended gas leakage outside safety vents.",
+              "error_type": "boundary overreach",
+              "evidence_refs": [
+                "TR_Propagation+6+eTransportation:C014"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Correct",
+              "justification": "Mica melting point (1300\u00b0C) exceeds venting gas temperatures of both chemistries, making it suitable insulation along the venting path.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Propagation+6+eTransportation:C008"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Applying material melting and ignition thresholds to chemistry-specific thermal runaway temperatures to determine housing and insulation material admissibility",
+          "primary_boundary": "Threshold comparisons are chemistry-specific; LFP and NMC-811 conclusions cannot be interchanged",
+          "intended_error_modes": [
+            "boundary overreach",
+            "causal overclaim",
+            "mechanism substitution"
+          ],
+          "disallowed_extrapolations": [
+            "Low mass loss implies no thermal hazard",
+            "Aluminum cans survive NMC-811 runaway intact"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "In a three-cell battery module, FRPCM and AEGF layers are placed between cells. Test data show that increasing AEGF thickness extends the TR interval between cells 1 and 2 but the interval between cells 2 and 3 is consistently shorter than between cells 1 and 2. Increasing FRPCM thickness increases total module mass loss. Which statements are supported?",
+          "options": [
+            "A. The shorter interval between cells 2 and 3 occurs because cell 3 absorbs heat from both the heating plate and the TR of cell 1 before cell 2 undergoes TR.",
+            "B. Increasing AEGF thickness reliably reduces the maximum temperature reached by the triggering cell.",
+            "C. Increasing FRPCM thickness increases overall module mass loss because thicker PCM absorbs more heat, promoting greater phase-change material liquid leakage.",
+            "D. Increasing AEGF thickness does not substantially affect overall module mass loss.",
+            "E. PCMs maintain structural integrity and resist leakage under the extreme temperatures of TRP events, just as they do under normal thermal management conditions.",
+            "F. Complete TRP blocking is achievable only by increasing AEGF thickness alone, without any FRPCM contribution."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "D"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Cell 3 pre-absorbs heat from the heating plate and cell 1 TR before cell 2 triggers, shortening the cell 2-to-3 interval.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Propagation+4+Applied_Energy:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Increased AEGF thickness insulates heat inward, causing temperature increase in the triggering cell, not a reduction.",
+              "error_type": "unsupported monotonicity",
+              "evidence_refs": [
+                "TR_Propagation+4+Applied_Energy:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Thicker FRPCM absorbs more heat, promotes greater PA liquid leakage, and increases overall module mass loss.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Propagation+4+Applied_Energy:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Increasing AEGF thickness at constant FRPCM thickness does not substantially impact overall module mass loss.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Propagation+4+Applied_Energy:C005"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "PCMs resist leakage under normal thermal management temperatures but become susceptible to melting and leakage under TRP extreme temperatures.",
+              "error_type": "boundary overreach",
+              "evidence_refs": [
+                "TR_Propagation+4+Applied_Energy:C006"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Complete TRP blocking was observed with combined FRPCM+AEGF configurations; evidence does not support AEGF alone as sufficient.",
+              "error_type": "causal overclaim",
+              "evidence_refs": [
+                "TR_Propagation+4+Applied_Energy:C002",
+                "TR_Propagation+4+Applied_Energy:C007"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Distinguishing the separate effects of FRPCM and AEGF thickness on TR interval, maximum temperature, and mass loss, including non-monotonic temperature behavior",
+          "primary_boundary": "AEGF increases TR interval but can increase triggering cell temperature; PCM leakage occurs only under TRP extremes",
+          "intended_error_modes": [
+            "unsupported monotonicity",
+            "boundary overreach",
+            "causal overclaim"
+          ],
+          "disallowed_extrapolations": [
+            "AEGF reduces triggering cell temperature",
+            "PCM leakage resistance holds under TRP conditions",
+            "AEGF alone blocks TRP"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A pack engineer is comparing NMC-811 and LFP cell modules for compliance with the GB 38031-2020 standard, which requires a thermal event alarm at least five minutes before any passenger compartment hazard. The engineer observes that NMC-811 cells have a thermal runaway reaction velocity nine times faster in energy terms than LFP cells, and that NMC-811 cells lose an average of 45.8% of their mass during thermal runaway while LFP cells lose only 21.1%. Explain, using at least two distinct mechanisms, why LFP modules are more likely to meet the five-minute requirement without additional protective measures, and why the same cannot be assumed for NMC-811 modules."
+        },
+        "ground_truth": {
+          "gold_answer": "LFP modules are more likely to meet the five-minute alarm requirement for two distinct reasons. First, LFP cells have a dramatically lower thermal runaway reaction velocity (2.19 Wh/s versus 20.33 Wh/s for NMC-811), meaning energy is released nine times more slowly, giving more time between successive cell events and allowing a five-minute window to be satisfied with only ~360 Wh propagating. Second, LFP cells experience only ~21% mass loss, maintaining mechanical integrity and cell-to-cell contact, which keeps thermal contact resistance low and propagation velocity relatively stable and slow. In contrast, NMC-811 cells lose ~45.8% mass, creating gaps between cells that increase thermal contact resistance and produce exponentially increasing pause times\u2014but the baseline propagation velocity is so high that the complete five-cell NMC-811 module can propagate fully within the five-minute window. Therefore, NMC-811 compliance requires additional protective measures, while LFP likely does not.",
+          "must_include": [
+            "LFP reaction velocity is nine times lower than NMC-811 in energy terms",
+            "LFP mass loss (~21%) preserves mechanical integrity and maintains low thermal contact resistance",
+            "NMC-811 mass loss (~45.8%) increases cell-to-cell gaps and thermal contact resistance",
+            "Complete five-cell NMC-811 module can propagate within the five-minute window",
+            "LFP five-minute requirement can likely be met without additional measures"
+          ],
+          "disallowed_extrapolations": [
+            "LFP cells cannot undergo thermal runaway propagation at all",
+            "NMC-811 mass loss alone prevents propagation by increasing contact resistance sufficiently",
+            "The five-minute requirement is automatically met by any chemistry with aerogel insulation"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Linking cell-level reaction velocity and mass loss mechanisms to module-level propagation timing and regulatory compliance",
+          "primary_boundary": "LFP compliance conclusion applies to the specific measured propagation velocity; NMC-811 non-compliance is based on complete module propagating within five minutes",
+          "intended_error_modes": [
+            "Attributing NMC-811 slow-down solely to mass-loss-induced contact resistance without recognizing baseline velocity still exceeds the threshold",
+            "Assuming mass loss prevents propagation rather than modulating its rate",
+            "Overgeneralizing LFP safety to claim LFP cannot propagate"
+          ]
+        }
+      }
+    ]
+  }
+}

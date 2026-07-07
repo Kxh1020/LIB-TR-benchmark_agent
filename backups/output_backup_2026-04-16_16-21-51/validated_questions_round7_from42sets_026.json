@@ -1,0 +1,128 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An emergency response planner compares downwind hazard zones for an electric vehicle fire and an internal combustion engine vehicle fire occurring in the same enclosed space. Dispersion modeling using identical room geometry and ventilation shows both fires produce safety distances of approximately 4–5 m. The planner concludes the two scenarios present equivalent toxic hazards and applies the same evacuation protocol. Which of the following assessments of this conclusion are supported by engineering reasoning?",
+        "options": [
+          "A. The conclusion is valid because identical safety distances confirm that toxic gas concentrations at the boundary are equivalent for both vehicle types.",
+          "B. The conclusion is flawed because similar safety distances can coexist with substantially different HF concentration profiles within the hazard zone.",
+          "C. The conclusion is flawed because the EV produces significantly more HF, meaning concentrations within the safety perimeter are higher for the EV even when boundary distances are similar.",
+          "D. The conclusion is valid provided that HF yield per unit energy is the same for both vehicles, which can be assumed when safety distances are equal.",
+          "E. Equal safety distances imply equal peak toxic concentrations at the source, so the evacuation protocol equivalence is justified.",
+          "F. Safety distance equality does not preclude the possibility that one scenario presents a greater inhalation dose risk within the hazard zone due to higher concentrations of a specific gas."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "Safety distance reflects where concentration drops to IDLH; it does not indicate concentration equivalence within the zone.",
+            "error_type": "measurement_scope_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+142+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "EV and ICEV share similar safety distances yet the EV produces far higher HF concentrations, demonstrating profile divergence within the zone.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+142+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence directly shows EV produces substantially more HF with higher downwind concentrations despite similar safety distances.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+142+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Equal safety distances do not imply equal HF yield per unit energy; the evidence shows the opposite for EV vs ICEV.",
+            "error_type": "unjustified_assumption",
+            "evidence_refs": [
+              "TR_Gasventing+142+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Safety distance is set by IDLH boundary, not peak source concentration; equal distances do not imply equal peak concentrations.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+142+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Higher HF concentrations within the EV hazard zone mean greater inhalation dose risk even when the outer boundary distance is matched.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+142+Journal_of_Loss_Prevention_in_the_Process_Industries:C005",
+              "TR_Gasventing+142+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinction between safety distance as an IDLH boundary metric and the concentration profile within the hazard zone; EV vs ICEV HF hazard divergence.",
+        "primary_boundary": "Safety distance equality does not imply hazard equivalence within the zone when source gas compositions differ substantially.",
+        "intended_error_modes": [
+          "equating boundary distance with internal concentration equivalence",
+          "assuming equal safety distances imply equal yields",
+          "ignoring within-zone dose risk"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring equal HF yields from equal safety distances",
+          "Applying ICEV evacuation protocols to EV fires based solely on distance parity"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery fire risk analyst is determining which toxic gas should govern the safety distance calculation for a lithium-ion battery fire scenario. The analyst notes that carbon monoxide is typically produced in the largest absolute quantities during battery fires and proposes using CO as the governing species for safety distance calculations. Separately, another analyst argues that the governing species should be selected based on the ratio of expected downwind concentration to its IDLH value, not on absolute quantity alone. Using engineering reasoning about toxic gas hazard ranking and the physical basis for safety distance determination, evaluate both proposals and identify which approach is more defensible and why. Address the role of HF specifically."
+      },
+      "ground_truth": {
+        "gold_answer": "The second analyst's approach is more defensible. Safety distance is defined as the distance at which downwind concentration drops to the IDLH of the governing species. A gas with a very low IDLH can set the safety distance even when produced in smaller absolute quantities than a gas with a high IDLH, because the concentration must fall to a much lower threshold before the hazard boundary is reached. HF has the lowest IDLH among commonly reported battery fire gases at 30 ppm, compared to CO at 1200 ppm. This 40-fold difference in IDLH means HF governs safety distance in burning battery fire scenarios even when CO is more abundant by mass. Evidence confirms that in all burning simulation cases, HF was the gas requiring the largest downwind distance to drop below its IDLH, making it the governing species. Using CO as the governing species based on absolute quantity would systematically underestimate the required safety distance.",
+        "must_include": [
+          "Safety distance is set by the species requiring the greatest distance to fall below its IDLH, not by absolute quantity",
+          "HF has the lowest IDLH at 30 ppm versus CO at 1200 ppm",
+          "HF governed safety distance in all burning simulation cases",
+          "Using CO as governing species would underestimate required safety distance"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming HF always governs safety distance in non-burning scenarios without evidence",
+          "Asserting that CO concentration is always lower than HF concentration in battery fires",
+          "Generalizing the burning-case HF dominance to all battery failure modes or chemistries without qualification"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Relationship between IDLH values, absolute gas quantities, and the physical basis for safety distance determination; HF as the governing species in burning battery fire scenarios.",
+        "primary_boundary": "Safety distance is governed by the species with the lowest IDLH relative to its produced concentration, not by absolute mass; this is a threshold-based rather than quantity-based criterion.",
+        "intended_error_modes": [
+          "Selecting governing species based on absolute production quantity rather than IDLH-normalized concentration",
+          "Assuming CO dominance due to higher absolute yield",
+          "Failing to account for the 40-fold IDLH difference between HF and CO"
+        ]
+      }
+    }
+  ]
+}

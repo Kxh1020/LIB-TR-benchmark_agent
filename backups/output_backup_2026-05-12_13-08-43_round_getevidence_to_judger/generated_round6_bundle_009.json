@@ -1,0 +1,352 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery module uses a cooling fan to assist gas detection during thermal runaway venting events. During the initial burst of the first venting event, an engineer observes that the gas plume trajectory and spread appear nearly identical whether the fan is operating or not. However, after the initial burst subsides, the fan significantly reduces the time required for the gas sensor at the suction pipe to register a detection signal. The engineer proposes two design modifications: (A) increasing fan intensity by 30% to further reduce detection time, and (B) repositioning the sensor to the middle cell location rather than the last cell location to exploit the largest venting-direction-dependent detection time difference. Which of the following conclusions about these proposals and the underlying system behavior are supported?",
+        "options": [
+          "A. The fan's limited influence during the initial venting burst is mechanistically consistent with the venting-driven gas momentum dominating over fan-induced flow, not with a fan malfunction or insufficient fan power.",
+          "B. Repositioning the sensor to the middle cell location would reduce worst-case detection time across all venting scenarios because the middle cell exhibits the largest detection time difference between venting directions.",
+          "C. Increasing fan intensity by 30% is expected to yield detection time improvements of roughly 20% or less for the last cell venting cases, and this improvement is directionally asymmetric depending on which side venting occurs.",
+          "D. The 81% reduction in detection time achieved by fan operation implies that fan-assisted detection is sufficient to guarantee detection before second venting in all cylindrical cell configurations.",
+          "E. The detection time difference between left- and right-side venting at the last battery cell is smaller than at the middle cell, meaning the last cell location is less sensitive to venting direction asymmetry.",
+          "F. Because increasing fan intensity improves detection time by only about 20%, further increasing fan intensity beyond 30% would provide no additional benefit and could be excluded from design consideration.",
+          "G. At 30% increased fan intensity, achieving detection within 1000 s across all last-cell venting cases is supported, but the detection time gap between left- and right-side venting narrows as fan intensity increases."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that the fan rarely affects gas flow during early venting because venting momentum is significantly larger than fan-induced flow. This is a mechanistic explanation, not a measurement artifact or power limitation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+183+Case_Studies_in_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The largest detection time difference between venting directions at the middle cell does not imply lowest worst-case detection time there. The difference metric reflects directional sensitivity, not absolute detection speed. Repositioning based on this metric conflates two distinct performance measures.",
+            "error_type": "Mechanism confusion / scope expansion distractor",
+            "evidence_refs": [
+              "TR_Gasventing+183+Case_Studies_in_Thermal_Engineering:C006"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence states that 30% increased fan intensity yields 22.28% improvement for left-side and 19.57% for right-side venting in last-cell cases, both below 25%, and the values differ by direction, confirming asymmetry.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+183+Case_Studies_in_Thermal_Engineering:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The 81% reduction in detection time applies to a specific suction pipe configuration and does not establish that detection occurs before second venting (24.2 s for cylindrical cells) across all configurations. Generalizing a single detection time improvement to a universal safety guarantee violates the evidence boundary.",
+            "error_type": "Overgeneralization / causal overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+183+Case_Studies_in_Thermal_Engineering:C001",
+              "TR_Gasventing+183+Case_Studies_in_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The evidence states the detection time difference between venting directions is largest at the middle cell and smallest at the last cell, directly supporting this conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+183+Case_Studies_in_Thermal_Engineering:C006"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence does not support a conclusion that further fan intensity increases beyond 30% provide no benefit. The evidence shows detection time difference between left- and right-side venting increases with fan intensity, suggesting continued sensitivity to fan speed. Concluding zero benefit is an unsupported extrapolation.",
+            "error_type": "Unsupported extrapolation / unjustified monotonicity reversal",
+            "evidence_refs": [
+              "TR_Gasventing+183+Case_Studies_in_Thermal_Engineering:C007"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "The evidence states that the detection time difference between left- and right-side venting increases with fan intensity, meaning the gap widens, not narrows. This option reverses the stated directional trend.",
+            "error_type": "Direction reversal distractor",
+            "evidence_refs": [
+              "TR_Gasventing+183+Case_Studies_in_Thermal_Engineering:C007"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of design conclusions about fan intensity and sensor placement given evidence-bounded detection time behavior and directional asymmetry",
+        "primary_boundary": "Detection time difference between venting directions reflects directional sensitivity, not absolute detection speed; fan influence is momentum-regime-dependent",
+        "intended_error_modes": [
+          "Conflating directional detection time difference with absolute detection speed (B)",
+          "Overgeneralizing a single detection improvement to a universal safety guarantee (D)",
+          "Reversing the stated trend of detection time gap with fan intensity (G)",
+          "Claiming zero benefit from further fan increase without evidence (F)"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring that middle cell sensor placement minimizes worst-case detection time",
+          "Concluding that fan-assisted detection guarantees pre-second-venting detection in all cylindrical cell cases",
+          "Asserting that further fan intensity increases beyond 30% provide no benefit"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery module designer is selecting a thermal insulation material (TIM) to place between cells to mitigate thermal runaway propagation (TRP). Four candidate materials are tested under identical TRP conditions. Material W achieves the highest temperature difference between the triggered cell and the adjacent cell. Material X shows a continuous, non-stepped mass loss profile in thermogravimetric analysis, reaching over 33% mass loss at 900°C, and after TRP testing exhibits approximately 69% contour area shrinkage. Material Y shows only 2.51% mass loss at 900°C. Material Z is a mica plate whose binder contains nitrogen-based adhesive. The designer must evaluate both thermal performance and gas hazard implications of each material. Which of the following conclusions are supported?",
+        "options": [
+          "A. Material X's failure to prevent propagation in all cells is mechanistically consistent with its structural shrinkage causing loss of contact between the insulation and cell surfaces, rather than being solely attributable to its bulk thermal conductivity.",
+          "B. Material Z's elevated NO2 emission during TRP testing indicates that the cells in the module experienced more severe electrochemical decomposition reactions than in groups using other TIM materials.",
+          "C. Material W's superior temperature difference performance compared to Material Y cannot be inferred from mass loss data alone, because TGA mass loss reflects thermal stability but not necessarily in-situ insulation continuity under mechanical stress.",
+          "D. A designer who selects Material X solely because it slows propagation rate—extending jet fire intervals—is making an admissible safety decision if propagation prevention is not required by the application specification.",
+          "E. Material Y's low mass loss at 900°C is sufficient to conclude that it will maintain structural integrity and prevent thermal runaway propagation under all TRP test conditions.",
+          "F. The NO2 elevation in the Material Z group is a reliable indicator that mica-based binders universally produce hazardous gas emissions under thermal abuse, regardless of binder composition.",
+          "G. Among the tested materials, the one with the highest temperature difference between triggered and adjacent cells also has the lowest mass loss at 900°C, and these two properties together support its selection for medium-to-high temperature insulation applications."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence directly links Material X's (aluminosilicate ceramic fiber) TRP failure to its 69% contour area shrinkage causing thermal insulation failure, providing a structural mechanism rather than a bulk conductivity explanation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+184+Case_Studies_in_Thermal_Engineering:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The evidence explicitly attributes the elevated NO2 in the mica plate group to oxidative decomposition of the nitrogen-based adhesive in the binder, not to electrochemical reactions within the cells. Attributing it to cell-level electrochemistry is a direct causal reversal.",
+            "error_type": "Causal mechanism confusion",
+            "evidence_refs": [
+              "TR_Gasventing+184+Case_Studies_in_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "TGA mass loss measures thermal stability of the material in isolation. Structural integrity under in-situ mechanical and thermal stress during TRP (which caused 69% shrinkage in Material X despite it being a different material) requires separate assessment. Mass loss alone cannot rank insulation continuity under dynamic stress conditions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+184+Case_Studies_in_Thermal_Engineering:C005",
+              "TR_Gasventing+184+Case_Studies_in_Thermal_Engineering:C006"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Material X (aluminosilicate ceramic fiber) did significantly slow propagation rate even though it did not prevent propagation entirely. If the application specification requires only rate reduction rather than full prevention, selecting it is admissible. The evidence supports that it extended jet fire intervals substantially.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+184+Case_Studies_in_Thermal_Engineering:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Low TGA mass loss indicates good thermal stability but does not guarantee structural integrity or propagation prevention under all TRP conditions. The evidence supports Material Y (Nano SiAG felt) for medium-to-high temperature ranges but does not claim universal propagation prevention.",
+            "error_type": "Overgeneralization / measurement scope overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+184+Case_Studies_in_Thermal_Engineering:C006"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence attributes the NO2 elevation specifically to the nitrogen-based adhesive in the mica binder used in this test, not to mica-based binders universally. Generalizing to all mica-based binders regardless of composition is an unsupported overgeneralization.",
+            "error_type": "Overgeneralization distractor",
+            "evidence_refs": [
+              "TR_Gasventing+184+Case_Studies_in_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "The evidence identifies Nano SiAG felt as having both the highest temperature difference (578°C) and the lowest mass loss (2.51% at 900°C) among tested materials, and explicitly states it performs well as an insulating material in medium-to-high temperature ranges. Both properties are evidence-supported for the same material.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+184+Case_Studies_in_Thermal_Engineering:C001",
+              "TR_Gasventing+184+Case_Studies_in_Thermal_Engineering:C006"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of TIM selection conclusions given multi-property evidence including thermal stability, structural integrity, gas hazard, and propagation performance",
+        "primary_boundary": "TGA mass loss reflects thermal stability but not in-situ structural continuity; NO2 attribution is binder-specific not cell-electrochemical; propagation rate reduction is admissible even without full prevention",
+        "intended_error_modes": [
+          "Attributing TIM-group gas emissions to cell electrochemistry rather than binder decomposition (B)",
+          "Overgeneralizing low mass loss to universal propagation prevention (E)",
+          "Generalizing mica binder gas hazard beyond the specific adhesive composition tested (F)",
+          "Treating mass loss as sufficient for ranking in-situ insulation continuity (C distractor logic)"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring that NO2 elevation reflects cell-level reaction severity",
+          "Concluding that low TGA mass loss guarantees propagation prevention under all conditions",
+          "Generalizing mica binder findings to all nitrogen-containing binders universally"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is designing a CO2-based fire suppression and gas dilution system for a battery enclosure containing both LFP and NCA lithium-ion cells. The system must render battery vent gas non-flammable across the full operating SOC range of 0% to 130%. The engineer has the following information: at any given SOC, the LFP vent gas has a higher lower flammability limit and a narrower flammability range than NCA vent gas. The maximum diluent ratio threshold required to render LFP vent gas non-flammable across the full SOC range is 3.4, and for NCA it is 4.2. Additionally, as SOC decreases, the upper flammability limit remains nearly constant while the lower flammability limit rises sharply, causing the flammability window to narrow and eventually close at a critically low SOC. The engineer must decide on a single CO2 delivery capacity for a mixed-chemistry module. Which of the following conclusions are supported?",
+        "options": [
+          "A. Designing the CO2 system to a diluent ratio of 3.4 is insufficient for a mixed-chemistry module containing NCA cells, because the NCA cells require a higher diluent ratio to achieve non-flammability across the full SOC range.",
+          "B. At very low SOC conditions, the vent gas from either chemistry becomes non-flammable without any CO2 dilution, because the lower and upper flammability limits converge to the same value.",
+          "C. The higher flammability hazard index of NCA compared to LFP at the same SOC is primarily driven by NCA having a lower lower flammability limit and a wider flammability range, not by differences in upper flammability limit.",
+          "D. Increasing CO2 diluent ratio from 0 to 4 reduces the flammability range of NCA vent gas by a larger absolute percentage than it reduces LFP vent gas flammability range at the same SOC, making CO2 suppression disproportionately more effective for NCA.",
+          "E. Because the upper flammability limit is nearly constant across SOC for both chemistries, changes in flammability hazard with decreasing SOC are driven primarily by changes in the lower flammability limit.",
+          "F. A CO2 system designed to a diluent ratio of 4.2 guarantees safe operation for all SOC values and both chemistries, including overcharged conditions above 100% SOC.",
+          "G. The 19% lower maximum diluent ratio threshold for LFP compared to NCA implies that an LFP-only module requires proportionally less CO2 suppression infrastructure, but this advantage diminishes if the module operates primarily at high SOC where both chemistries have wide flammability ranges."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The maximum diluent ratio threshold for NCA is 4.2 while for LFP it is 3.4. A mixed-chemistry module must accommodate the more demanding chemistry, so 3.4 is insufficient for NCA cells across the full SOC range.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+185+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The evidence states that UFL and LFL converge to equal values at critically low SOC for both chemistries, forming a flammability peninsula. When UFL equals LFL, the flammability window closes and the gas is non-flammable without dilution. This is counterintuitive—lower SOC can eliminate flammability—but is directly supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+185+Journal_of_Energy_Storage:C001"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence states that at the same SOC, LFP has a higher LFL and lower RF than NCA, resulting in lower HF. The UFL is nearly constant across SOC for both chemistries. Therefore the HF difference between chemistries is driven by differences in LFL and RF, not by UFL differences.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+185+Journal_of_Energy_Storage:C001",
+              "TR_Gasventing+185+Journal_of_Energy_Storage:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The evidence shows that at DR=4, NCA RF drops by 87% while LFP RF drops by 49%. The NCA reduction is larger in absolute percentage terms, confirming that CO2 suppression produces a disproportionately larger RF reduction for NCA than LFP.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+185+Journal_of_Energy_Storage:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The evidence states UFL remains nearly constant as SOC decreases while LFL rises sharply. Therefore changes in the flammability window (and thus hazard) with decreasing SOC are dominated by LFL changes.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+185+Journal_of_Energy_Storage:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The maximum DRF of 4.2 for NCA is defined for the SOC range 0%–130%. While this covers overcharged conditions up to 130%, the claim that it 'guarantees safe operation' is an overclaim because the DRF is a threshold derived from flammability analysis of vent gas composition, and other hazard pathways (ignition sources, enclosure leakage) are not addressed by dilution ratio alone.",
+            "error_type": "Protective mechanism overclaim / scope expansion",
+            "evidence_refs": [
+              "TR_Gasventing+185+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "The evidence does not provide data on how the flammability range difference between LFP and NCA varies with SOC in a way that would support the claim that the LFP advantage diminishes at high SOC. The statement introduces a conditional trend not supported by the evidence.",
+            "error_type": "Unsupported extrapolation / invented conditional trend",
+            "evidence_refs": [
+              "TR_Gasventing+185+Journal_of_Energy_Storage:C002",
+              "TR_Gasventing+185+Journal_of_Energy_Storage:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of CO2 suppression system design conclusions for mixed-chemistry modules given flammability limit behavior across SOC and chemistry",
+        "primary_boundary": "DRF values define non-flammability thresholds for vent gas only; low-SOC flammability closure is counterintuitive but evidence-supported; NCA/LFP differential is driven by LFL and RF, not UFL",
+        "intended_error_modes": [
+          "Overclaiming that DRF=4.2 guarantees all-hazard safety (F)",
+          "Inventing a high-SOC convergence trend not in evidence (G)",
+          "Missing the counterintuitive low-SOC flammability closure (B)"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring that DRF compliance addresses non-flammability hazards beyond vent gas composition",
+          "Claiming LFP advantage diminishes at high SOC without supporting evidence",
+          "Attributing HF differences to UFL rather than LFL and RF"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery module contains four cells in series with no thermal insulation material between them. During a thermal runaway propagation test, the time intervals between successive jet fire events for cells 2, 3, and 4 are 53 s, 30 s, and 15 s respectively. The module designer proposes replacing the air gaps with aluminosilicate ceramic fiber insulation to improve safety. After the modification, the jet fire intervals extend to 130 s, 120 s, and 37 s for cells 2, 3, and 4 respectively, but thermal runaway still propagates to all four cells. A colleague argues that the modification is a safety improvement and should be accepted. A second colleague argues that because propagation was not prevented, the modification provides no meaningful safety benefit and should be rejected. Evaluate both positions. In your answer, identify what the time interval data reveals about the physical mechanism by which the insulation affects propagation, explain why the second colleague's rejection criterion is too narrow, and identify one material property of aluminosilicate ceramic fiber that limits its ability to prevent propagation entirely."
+      },
+      "ground_truth": {
+        "gold_answer": "The time interval data shows that aluminosilicate ceramic fiber significantly slows the rate of thermal runaway propagation: the intervals between successive jet fire events increase substantially (e.g., from 53 s to 130 s for cell 2, from 30 s to 120 s for cell 3), indicating that the insulation reduces the rate of heat transfer from the triggered cell to adjacent cells, delaying but not blocking the thermal energy accumulation required to trigger runaway in each successive cell. The first colleague is correct that this represents a meaningful safety improvement: slowing propagation rate extends the time available for detection, intervention, and evacuation, which has direct safety value even without full prevention. The second colleague's rejection criterion—that any propagation means no benefit—is too narrow because it conflates the binary outcome (propagation yes/no) with the time-dependent severity of propagation, which is a separate and safety-relevant dimension. The material property that limits aluminosilicate ceramic fiber from preventing propagation entirely is its severe structural shrinkage under high-temperature conditions: the material undergoes approximately 69% contour area shrinkage after TRP testing, causing it to lose contact with cell surfaces and resulting in thermal insulation failure, which allows heat to bypass the insulation through the exposed gaps.",
+        "must_include": [
+          "The insulation slows propagation rate by reducing heat transfer rate to adjacent cells, as evidenced by extended jet fire time intervals",
+          "Slowing propagation rate has safety value by extending time for detection or intervention, even without full prevention",
+          "The second colleague's criterion conflates binary propagation outcome with time-dependent propagation severity",
+          "Aluminosilicate ceramic fiber undergoes severe structural shrinkage (approximately 69% contour area) after TRP testing, causing thermal insulation failure"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming that aluminosilicate ceramic fiber prevents propagation under any conditions",
+          "Attributing the insulation failure to bulk thermal conductivity rather than structural shrinkage",
+          "Concluding that the extended intervals guarantee sufficient time for intervention in all deployment scenarios",
+          "Generalizing the shrinkage failure mode to all ceramic fiber materials"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinguishing propagation rate reduction from propagation prevention as separate safety metrics, and identifying the structural failure mechanism that limits aluminosilicate ceramic fiber performance",
+        "primary_boundary": "Propagation rate reduction is a distinct and admissible safety metric from propagation prevention; structural shrinkage is the identified mechanism of insulation failure, not bulk thermal conductivity",
+        "intended_error_modes": [
+          "Accepting the second colleague's binary prevention criterion as the only valid safety metric",
+          "Attributing insulation failure to thermal conductivity rather than structural shrinkage",
+          "Overstating the safety benefit by claiming the extended intervals guarantee safe intervention time"
+        ]
+      }
+    }
+  ]
+}

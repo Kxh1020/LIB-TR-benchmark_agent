@@ -1,0 +1,334 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A sodium-ion battery (SIB) module is being evaluated for use in a confined enclosure. Seven nominally identical SIBs—matched on capacity, open-circuit voltage, and internal resistance—are subjected to thermal abuse at 75% SOC. Three cells explode; four do not. Post-test analysis shows that the exploded cells have a maximum pressure rise rate approximately five times higher than the non-exploded cells, while maximum surface temperature rise rates are comparable between the two groups. Counterintuitively, the non-exploded cells reach a higher peak surface temperature than the exploded cells. An engineer proposes that explosion risk at this SOC is primarily controlled by the total heat accumulated at the cell surface. A second engineer argues that the governing factor is the rate at which internal pressure builds relative to the cell's structural pressure-relief capacity. Which of the following conclusions are admissible given these observations?",
+        "options": [
+          "A. The comparable surface temperature rise rates between exploded and non-exploded cells indicate that surface thermal measurements are insufficient to distinguish explosion-prone cells from non-explosion-prone cells at this SOC.",
+          "B. Because non-exploded cells reach higher peak surface temperatures, the thermal energy released per cell is greater in the non-explosion scenario, confirming that heat accumulation is the primary driver of explosion risk at 75% SOC.",
+          "C. The five-fold difference in maximum pressure rise rate between exploded and non-exploded cells, combined with the higher peak temperature of non-exploded cells, is consistent with explosion being governed by pressure relief dynamics rather than total heat accumulation.",
+          "D. The stochastic split between explosion and non-explosion outcomes under identical pre-screened parameters implies that microstructural variability within cells can shift the failure mode at this SOC, even when macroscopic electrical parameters are matched.",
+          "E. Since three out of seven cells exploded at 75% SOC, the explosion probability at this SOC can be treated as a fixed material property that will remain stable across different confined enclosure geometries.",
+          "F. The observation that surface temperature rise rates are comparable between the two groups proves that internal electrochemical reaction rates are identical in both cases.",
+          "G. Explosion risk in this SOC regime is better characterized by pressure dynamics than by surface temperature monitoring alone."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "If surface temperature rise rates are comparable between exploded and non-exploded cells, then surface thermal measurements cannot discriminate between the two failure modes at this SOC. This is a direct admissible inference from the comparable (dT/dt)Max observation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+174+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Higher peak surface temperature in non-exploded cells does not confirm that heat accumulation drives explosion. The evidence explicitly states that explosion risk is more critically constrained by pressure relief capacity, not heat accumulation extent. This is a causal overclaim that inverts the supported mechanism.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Mechanism+174+UnknownJournal:C006"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The five-fold pressure rise rate difference combined with the non-exploded cells having higher peak temperatures is mechanistically consistent with explosion being governed by whether pressure buildup overwhelms structural relief capacity before maximum thermal output is reached, as supported by the evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+174+UnknownJournal:C005",
+              "TR_Mechanism+174+UnknownJournal:C006"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Seven identical pre-screened cells producing three explosions and four non-explosions directly supports the conclusion that microstructural variability—not captured by macroscopic electrical parameters—determines the failure mode at 75% SOC.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+174+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The 3/7 explosion rate is an empirical observation under specific test conditions. Treating it as a fixed material property stable across different enclosure geometries is an unsupported extrapolation; confinement geometry affects pressure relief dynamics and would alter the outcome distribution.",
+            "error_type": "unsupported_extrapolation_scope_expansion",
+            "evidence_refs": [
+              "TR_Mechanism+174+UnknownJournal:C002",
+              "TR_Mechanism+174+UnknownJournal:C006"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Comparable surface temperature rise rates reflect similar surface heating dynamics but cannot prove that internal electrochemical reaction rates are identical. Surface measurements do not directly access internal reaction kinetics; this is a measurement scope overclaim.",
+            "error_type": "measurement_scope_overclaim",
+            "evidence_refs": [
+              "TR_Mechanism+174+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "Given that pressure rise rate differs five-fold between outcomes while surface temperature rise rates are comparable, pressure dynamics provide more discriminating information about explosion risk than surface temperature monitoring alone at this SOC.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+174+UnknownJournal:C005",
+              "TR_Mechanism+174+UnknownJournal:C006"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinguishing pressure-relief-governed explosion risk from heat-accumulation-governed failure at a critical SOC transition state, and evaluating the diagnostic adequacy of surface thermal measurements.",
+        "primary_boundary": "The admissible conclusion is that explosion at 75% SOC is governed by pressure relief dynamics, not total heat accumulation—as evidenced by the counterintuitive finding that non-exploded cells reach higher peak temperatures. Surface temperature rise rates cannot distinguish explosion-prone cells.",
+        "intended_error_modes": [
+          "Causal inversion: interpreting higher non-explosion peak temperature as evidence that heat accumulation drives explosion (Option B)",
+          "Measurement scope overclaim: treating comparable surface temperature rise rates as proof of identical internal reaction rates (Option F)",
+          "Unsupported extrapolation: treating an empirical explosion fraction as a fixed material property independent of enclosure geometry (Option E)"
+        ],
+        "disallowed_extrapolations": [
+          "Explosion probability at 75% SOC is a fixed material constant independent of boundary conditions",
+          "Surface temperature rise rate equivalence implies internal electrochemical equivalence",
+          "Higher peak temperature in non-explosion cases implies greater total energy release drives explosion"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is comparing sodium-ion batteries (SIBs) and lithium-ion batteries (LIBs) for use in a confined battery cabinet. Available data show that SIBs have higher first voltage drop temperatures and lower maximum thermal runaway temperatures than LIBs. However, SIBs at 75% and 100% SOC generate substantially higher explosion pressures than LIBs under confined conditions. Separately, normalized gas release analysis across SOC levels shows that among non-exploding SIB conditions, the 50% SOC case presents the highest cumulative gas and heat release, while 25% SOC produces the lowest. At 100% SOC, extensive decomposition of both electrolyte and electrode materials generates a large gas volume rapidly, overwhelming venting capacity. The engineer must assess safety risk for confined deployment. Which of the following statements are admissible?",
+        "options": [
+          "A. The higher first voltage drop temperature of SIBs compared to LIBs indicates that SIBs are safer than LIBs for confined deployment across all SOC levels.",
+          "B. For confined deployment at high SOC, the mechanical and overpressure risk from SIBs may exceed that from LIBs despite SIBs having lower maximum thermal runaway temperatures.",
+          "C. At 50% SOC, SIBs present a higher cumulative gas and heat release risk than at 25% SOC under non-exploding conditions, even though 50% SOC does not reach the explosion regime.",
+          "D. Because 25% SOC SIBs produce only minor gas emissions insufficient to cause mechanical failure, they present negligible safety risk in any deployment configuration.",
+          "E. The non-linear relationship between SOC and cumulative risk means that selecting an intermediate SOC for storage does not necessarily minimize cumulative gas and heat release risk.",
+          "F. At 100% SOC, the inevitability of catastrophic explosion is attributable solely to electrode material decomposition, with electrolyte breakdown playing a secondary role."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "Higher first voltage drop temperature indicates greater thermal stability onset, but this metric alone does not establish overall safety superiority across all SOC levels. At 75% and 100% SOC, SIBs generate significantly higher explosion pressures than LIBs, making a blanket safety superiority claim inadmissible.",
+            "error_type": "overgeneralization_from_single_metric",
+            "evidence_refs": [
+              "TR_Mechanism+174+UnknownJournal:C007"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that SIBs at 75% and 100% SOC generate significantly higher explosion pressures than LIBs under confined conditions, despite SIBs having lower maximum TR temperatures. This counterintuitive result is directly supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+174+UnknownJournal:C007"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Normalized analysis shows 50% SOC has the greatest cumulative gas and heat release risk among non-exploding conditions, which is higher than 25% SOC. This is directly supported and represents a non-trivial finding since 50% SOC does not reach explosion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+174+UnknownJournal:C008"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence establishes that 25% SOC produces minor gas emissions insufficient for mechanical failure under the tested conditions. Extending this to 'negligible safety risk in any deployment configuration' is an unsupported scope expansion; different enclosure geometries, stacking configurations, or thermal environments could alter outcomes.",
+            "error_type": "scope_expansion_distractor",
+            "evidence_refs": [
+              "TR_Mechanism+174+UnknownJournal:C001"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The non-linear relationship between SOC and cumulative risk, with 50% SOC showing the highest cumulative risk among non-exploding conditions, directly implies that choosing an intermediate SOC does not guarantee minimized cumulative risk. This is an admissible engineering implication of the non-linearity.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+174+UnknownJournal:C008"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence states that at 100% SOC, extensive decomposition of both electrolyte and electrode materials generates the gas volume that overwhelms venting. Attributing the explosion solely to electrode decomposition while relegating electrolyte breakdown to secondary status contradicts the stated dual-source mechanism.",
+            "error_type": "mechanism_substitution_single_cause_overclaim",
+            "evidence_refs": [
+              "TR_Mechanism+174+UnknownJournal:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Evaluating admissible safety comparisons between SIBs and LIBs in confined deployment, accounting for non-linear SOC-risk relationships and the distinction between thermal stability metrics and mechanical overpressure risk.",
+        "primary_boundary": "Lower maximum TR temperature does not imply lower mechanical/overpressure risk; cumulative risk is non-monotonic with SOC; single-metric safety comparisons are inadmissible.",
+        "intended_error_modes": [
+          "Single-metric overgeneralization: using first voltage drop temperature alone to declare SIBs universally safer (Option A)",
+          "Scope expansion: treating low-SOC non-explosion result as negligible risk in any configuration (Option D)",
+          "Single-cause attribution: assigning 100% SOC explosion solely to electrode decomposition (Option F)"
+        ],
+        "disallowed_extrapolations": [
+          "Higher thermal stability onset temperature implies overall safety superiority across all SOC levels",
+          "Non-explosion at 25% SOC under tested conditions implies negligible risk in all configurations",
+          "Explosion at 100% SOC is caused solely by one decomposition pathway"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery safety engineer is designing a detection and protection system for a 55-gallon drum containing a single 18650 NMC cell. Simulation results indicate that gas sensing can detect thermal runaway at 85 seconds after initiation, well before a propagation critical time of 710 seconds, while the drum surface temperature change at 710 seconds is less than 0.001°C—undetectable by a surface-mounted temperature sensor. The cell itself can reach over 800°C during thermal runaway via external short circuit. The engineer knows that for NMC chemistry, cathode decomposition begins near 240°C, anode decomposition near 180°C, and SEI breakdown above 130°C. The engineer must choose between gas-based detection and surface temperature-based detection for early warning. Separately, a module-level design question arises: a broad-scale internal short circuit can drive cell temperature to 300°C or higher, triggering cathode decomposition and oxygen release, but the joule heat from the short circuit itself may be limited by sharply increased battery resistance. Which of the following conclusions are admissible?",
+        "options": [
+          "A. Gas-based detection provides earlier warning than surface temperature sensing for thermal runaway in this enclosed configuration, because the gas signal precedes the propagation critical time while the surface temperature change is undetectable at that same time.",
+          "B. Surface temperature sensing is an adequate substitute for gas sensing in enclosed drum configurations because the cell reaches over 800°C, which would eventually produce a detectable surface temperature change.",
+          "C. The limited joule heat contribution from an internal short circuit, due to increased battery resistance, means that an internal short circuit cannot initiate thermal runaway in NMC cells.",
+          "D. For NMC cells, the sequence of thermally triggered side reactions under heating proceeds from SEI decomposition at the lowest temperature threshold, through anode decomposition, to cathode decomposition at the highest threshold among the three.",
+          "E. Calorimetry-derived thermodynamic parameters for an NMC cell at one SOC and health state cannot be directly applied to predict thermal runaway behavior of the same chemistry at a different SOC or state of health.",
+          "F. Because cathode decomposition in NMC begins near 240°C and a broad-scale internal short circuit can drive temperature to 300°C or higher, cathode decomposition and oxygen release are mechanistically plausible consequences of a broad-scale internal short circuit in NMC cells."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "E",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Gas sensing detects thermal runaway at 85 seconds, before the 710-second propagation critical time. Surface temperature change is less than 0.001°C at 710 seconds and cannot trigger detection. Gas-based detection is therefore earlier and admissible as the superior early warning method in this configuration.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+175+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Although the cell eventually reaches over 800°C, the surface temperature change is undetectable at the propagation critical time of 710 seconds. The eventual high cell temperature does not make surface sensing adequate for early warning; the detection timing relative to propagation is what matters, and surface sensing fails this criterion.",
+            "error_type": "condition_violation_timing_ignored",
+            "evidence_refs": [
+              "TR_Mechanism+175+UnknownJournal:C005",
+              "TR_Mechanism+175+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The evidence states that joule heat from ISC may be limited and contribute minimally to thermal runaway heat generation, but this does not mean ISC cannot initiate thermal runaway. The temperature rise from a broad-scale ISC can reach 300°C or higher, which is sufficient to trigger cathode decomposition. Limited joule heat contribution does not preclude initiation via the temperature pathway.",
+            "error_type": "causal_overclaim_from_partial_mechanism",
+            "evidence_refs": [
+              "TR_Mechanism+176+UnknownJournal:C001",
+              "TR_Mechanism+176+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "SEI decomposition begins above 130°C, anode decomposition near 180°C, and NMC cathode decomposition near 240°C. This ordering is directly supported and represents the correct thermal threshold sequence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+175+UnknownJournal:C001",
+              "TR_Mechanism+175+UnknownJournal:C002",
+              "TR_Mechanism+175+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that thermodynamic parameters from calorimetry are specific to one chemical system or state, as thermal runaway performance is influenced by materials, SOC, and state of health. Direct application across different SOC or health states is inadmissible.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+176+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "A broad-scale ISC can drive cell temperature to 300°C or higher, and NMC cathode decomposition begins near 240°C. Combining these two supported facts, cathode decomposition and oxygen release are mechanistically plausible consequences. This is a valid multi-hop inference within evidence boundaries.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+176+UnknownJournal:C001",
+              "TR_Mechanism+175+UnknownJournal:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Evaluating detection method adequacy, thermal threshold sequencing, calorimetry parameter transferability, and the relationship between ISC joule heat limitation and thermal runaway initiation capacity.",
+        "primary_boundary": "Limited joule heat from ISC does not preclude thermal runaway initiation via temperature elevation; surface temperature sensing is inadequate for early warning in enclosed configurations despite eventual high cell temperatures; calorimetry parameters are system-state-specific.",
+        "intended_error_modes": [
+          "Timing-blind adequacy claim: treating eventual high cell temperature as justification for surface sensing adequacy without accounting for detection timing (Option B)",
+          "Partial mechanism overclaim: concluding ISC cannot initiate TR because its joule heat contribution is limited, ignoring the temperature elevation pathway (Option C)"
+        ],
+        "disallowed_extrapolations": [
+          "Eventually high cell temperature implies surface sensing is adequate for early warning",
+          "Limited joule heat from ISC implies ISC cannot initiate thermal runaway",
+          "Calorimetry parameters measured at one SOC/SOH apply universally to the same chemistry"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A sodium-ion battery at 75% SOC is subjected to thermal abuse in a confined test chamber. Among seven nominally identical cells, three explode and four do not. In the exploded cells, the maximum pressure rise rate is approximately five times higher than in the non-exploded cells, while maximum surface temperature rise rates are comparable between the two groups. The non-exploded cells reach a higher peak surface temperature than the exploded cells. Separately, it is known that as SOC decreases from 75% to 25% in non-exploding SIBs, the proportion of CO in the vent gas increases while hydrocarbon gas proportion decreases. An engineer argues that because the non-exploded cells reach higher peak temperatures, they must have undergone more extensive electrochemical reactions and therefore represent a higher energy-release scenario. Identify the primary flaw in this argument, explain the mechanism that actually distinguishes the exploded from the non-exploded cells at this SOC, and state what the gas composition trend at lower SOC implies about the dominant reaction pathway in that regime."
+      },
+      "ground_truth": {
+        "gold_answer": "The primary flaw is that the engineer conflates peak surface temperature with total energy release and uses it as the primary indicator of explosion risk. The evidence shows that explosion risk at 75% SOC is not governed by the extent of heat accumulation but by the rate at which internal pressure builds relative to the cell's pressure-relief capacity. The exploded cells have a maximum pressure rise rate approximately five times higher than non-exploded cells, consistent with shock wave generation during mechanical rupture, while their surface temperature rise rates are comparable—meaning the thermal dynamics at the surface are similar, but the pressure dynamics differ critically. The higher peak surface temperature in non-exploded cells is consistent with a scenario where thermal energy continues to accumulate after pressure is relieved gradually, whereas in exploded cells, rapid pressure buildup overwhelms structural integrity before maximum thermal output is reached, terminating the thermal accumulation process. The gas composition trend—increasing CO proportion and decreasing hydrocarbon proportion as SOC decreases from 75% to 25%—implies that at lower SOC, the dominant gas-generating reaction pathway shifts toward CO-producing reactions rather than hydrocarbon-generating reactions, suggesting that the low charge state of the battery is more conducive to CO generation chemistry.",
+        "must_include": [
+          "Explosion risk at 75% SOC is governed by pressure relief dynamics, not total heat accumulation",
+          "Five-fold difference in maximum pressure rise rate distinguishes exploded from non-exploded cells",
+          "Comparable surface temperature rise rates mean surface thermal measurements cannot distinguish the two failure modes",
+          "Higher peak temperature in non-exploded cells is consistent with continued thermal accumulation after gradual pressure relief",
+          "Decreasing SOC from 75% to 25% increases CO proportion and decreases hydrocarbon proportion in vent gas",
+          "Low SOC promotes CO generation reactions"
+        ],
+        "disallowed_extrapolations": [
+          "Higher peak surface temperature proves greater total internal energy release",
+          "The 3/7 explosion fraction is a fixed material property independent of test conditions",
+          "Surface temperature rise rate equivalence proves identical internal reaction rates",
+          "CO increase at low SOC implies complete combustion of all carbon-containing species"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinguishing pressure-relief-governed explosion mechanism from heat-accumulation-based reasoning, and interpreting gas composition trends as indicators of reaction pathway shifts with SOC.",
+        "primary_boundary": "Peak surface temperature is not a valid proxy for explosion risk when pressure dynamics are the governing factor; gas composition changes with SOC reflect reaction pathway dominance, not combustion completeness in isolation.",
+        "intended_error_modes": [
+          "Conflating peak surface temperature with total energy release or reaction extent",
+          "Ignoring the pressure rise rate as the discriminating variable between explosion and non-explosion",
+          "Interpreting CO increase at low SOC as evidence of incomplete combustion rather than a shift in dominant reaction pathway"
+        ]
+      }
+    }
+  ]
+}

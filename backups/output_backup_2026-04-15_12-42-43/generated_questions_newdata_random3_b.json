@@ -1,0 +1,948 @@
+{
+  "TR_Modelling+19+Journal_of_Energy_Storage__TR_Modelling+20+Journal_of_Energy_Storage__TR_Modelling+21+Journal_of_Energy_Storage": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery management system uses a single time-series metric to monitor individual cells in a large LFP pack. Engineers observe that a subset of cells shows slightly elevated metric values compared to the fleet average, but the deviation is small and no unified threshold cleanly separates these cells from normal ones. The team proposes issuing a fault flag whenever any cell exceeds a fixed scalar threshold derived from the single metric. Which of the following conclusions about this diagnostic approach are supported by engineering reasoning?",
+          "options": [
+            "A. A single-feature threshold approach may produce an unacceptably high rate of missed detections for faulty cells because pre-runaway deviations are often too subtle to be cleanly separated from normal cell variation using one metric alone.",
+            "B. Setting the threshold lower to reduce missed detections will necessarily eliminate false positives, since the two error types are independently controlled in single-feature systems.",
+            "C. The inability to cleanly separate faulty from normal cells using one metric implies that a multimodal or multidimensional feature approach would improve discrimination, even if it increases algorithmic complexity.",
+            "D. If the single metric successfully flags a cell as anomalous at any point before thermal runaway, this is sufficient evidence that the threshold is correctly calibrated for fleet-wide deployment.",
+            "E. A threshold that balances false positive and false negative rates simultaneously cannot be defined for a single feature when the faulty and normal distributions overlap significantly.",
+            "F. Increasing the number of monitored cells in the fleet will automatically resolve the threshold ambiguity because statistical averaging will sharpen the separation between faulty and normal populations."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence states single-feature distinction between faulty and normal cells is minor before TR, making unified threshold unreliable.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+19+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "False positive and false negative rates are coupled via a shared threshold; lowering it trades one error type for the other.",
+              "error_type": "mechanism_confusion",
+              "evidence_refs": [
+                "TR_Modelling+19+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence supports that single-feature limitations motivate multidimensional approaches; complexity is a known trade-off, not a disqualifier.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+19+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "A single successful flag does not validate fleet-wide calibration; it ignores false positive and false negative balance across the full population.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Modelling+19+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "When faulty and normal distributions overlap, any single threshold will simultaneously incur both error types; a balanced threshold requires distribution separation.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+19+Journal_of_Energy_Storage:C003",
+                "TR_Modelling+19+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Fleet size increases statistical power for population-level inference but does not resolve per-cell feature overlap; the separation problem is distributional, not sample-size limited.",
+              "error_type": "scope_expansion",
+              "evidence_refs": [
+                "TR_Modelling+19+Journal_of_Energy_Storage:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of single-feature threshold diagnostics for pre-TR fault detection given overlapping faulty/normal distributions",
+          "primary_boundary": "Single-feature threshold cannot simultaneously balance false positive and false negative rates when pre-TR deviations are minor; this is a distributional constraint, not a calibration problem",
+          "intended_error_modes": [
+            "Believing false positive and false negative rates are independently controllable",
+            "Treating a single successful detection as threshold validation",
+            "Confusing fleet-size scaling with feature-space separation"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming multidimensional approaches always outperform single-feature ones regardless of context",
+            "Asserting that no threshold can ever work for single-feature systems"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A cylindrical lithium-ion cell at 100% SOC undergoes thermal runaway. Internal pressure builds rapidly and reaches the safety valve opening threshold within approximately 94 ms. Once the valve opens, internal pressure drops to near atmospheric within a fraction of a millisecond. The resulting pyrolysis gas jet reaches peak velocity near the outlet within 2 ms, but the jet fire that follows lags behind the gas velocity peak and persists for approximately 6 ms. A combustion gas sample taken at the outlet at the moment of peak gas concentration shows CO2 as the dominant species. An engineer proposes that the safety valve opening is the rate-limiting event controlling fire onset and that suppressing valve opening would prevent jet fire formation. Which options correctly evaluate this proposal and the associated thermal runaway sequence?",
+          "options": [
+            "A. The lag between peak gas velocity and jet fire onset indicates that fire ignition depends on accumulation of combustion heat rather than instantaneous gas release, so suppressing valve opening would delay but not necessarily prevent jet fire if internal pressure continues to build.",
+            "B. Because internal pressure drops to near atmospheric within 0.03 ms of valve opening, the valve opening event itself is the primary energy release mechanism, and preventing it would eliminate the fire hazard.",
+            "C. The dominance of CO2 at peak concentration is consistent with near-complete combustion of the pyrolysis gases at that moment, but this observation alone does not confirm the identity of the precursor reactions.",
+            "D. The 94 ms pressure buildup phase represents the period during which suppression interventions would be most effective, since the valve has not yet opened and internal conditions are still evolving.",
+            "E. The jet fire lagging behind the gas velocity peak means that the fire is driven by downstream heat accumulation, not by the initial kinetic energy of the gas jet, making velocity-based suppression strategies insufficient to prevent ignition.",
+            "F. Since peak CO2 fraction reaches 70% at the outlet, this confirms that the primary pyrolysis reaction is complete oxidation of carbon-containing electrode materials, and no other reaction pathways contribute significantly."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence shows fire lags gas velocity due to combustion heat accumulation; valve suppression delays but does not eliminate the pressure-driven hazard pathway.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+20+Journal_of_Energy_Storage:C004",
+                "TR_Modelling+20+Journal_of_Energy_Storage:C001"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Rapid pressure drop after valve opening shows the valve is a release pathway, not the energy source; preventing it redirects rather than eliminates the hazard.",
+              "error_type": "protective_mechanism_overclaim",
+              "evidence_refs": [
+                "TR_Modelling+20+Journal_of_Energy_Storage:C002"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "CO2 dominance at peak is an observation of combustion product distribution; it does not identify which specific reactions produced it.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+20+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "The 94 ms phase is pre-valve; intervention feasibility depends on detection and actuation speed, which are not supported as achievable within this window by the evidence.",
+              "error_type": "unsupported_extrapolation",
+              "evidence_refs": [
+                "TR_Modelling+20+Journal_of_Energy_Storage:C001"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Evidence explicitly states jet fire lags gas velocity due to combustion heat accumulation, indicating heat-driven ignition rather than kinetic-energy-driven ignition.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+20+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "CO2 fraction at one time point reflects combustion product distribution at that instant; it cannot confirm reaction completeness or rule out other pathways.",
+              "error_type": "measurement_scope_overclaim",
+              "evidence_refs": [
+                "TR_Modelling+20+Journal_of_Energy_Storage:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Causal relationship between valve opening, gas jetting, combustion heat accumulation, and jet fire onset; admissibility of valve-suppression as fire prevention strategy",
+          "primary_boundary": "Jet fire is driven by downstream combustion heat accumulation, not by valve opening as the rate-limiting event; suppressing valve opening does not eliminate the underlying energy source",
+          "intended_error_modes": [
+            "Treating valve opening as the energy source rather than a release pathway",
+            "Inferring reaction identity from product concentration at a single time point",
+            "Assuming pre-valve intervention is feasible without evidence on detection/actuation timescales"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming CO2 dominance proves complete oxidation of specific electrode materials",
+            "Asserting valve suppression eliminates jet fire risk"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery module designer is evaluating thermal runaway propagation (TRP) mitigation strategies for a 1\u00d74 cylindrical cell cluster. Three configurations are compared: no inter-cell insulation, standard thermal insulation layers, and composite phase-change insulating material. Testing shows that standard insulation increases average TRP propagation time by 5 to 7 times compared to no insulation, while composite phase-change material completely prevents thermal diffusion to adjacent cells. The cluster operates at varying SOC levels, and a separate study shows that below 25% SOC, no TRP occurs within a 1\u00d75 cluster. A designer concludes that either standard insulation at any SOC or composite phase-change material alone is sufficient to guarantee zero TRP in all module configurations. Which options correctly assess this conclusion and the design trade-offs involved?",
+          "options": [
+            "A. The conclusion is not fully supported because standard insulation delays but does not prevent TRP; zero TRP guarantee requires either composite phase-change material or SOC management below the threshold at which TRP does not occur.",
+            "B. Composite phase-change material achieving zero TRP in a 1\u00d74 cluster is sufficient evidence to guarantee zero TRP in larger or differently configured modules, since the thermal isolation mechanism is material-dependent rather than geometry-dependent.",
+            "C. Reducing SOC below 25% is a more operationally flexible strategy than composite insulation because it eliminates TRP without requiring physical modification of the module, though it imposes a usable energy constraint.",
+            "D. The 5 to 7 times increase in propagation time from standard insulation is a meaningful safety improvement because it extends the time available for detection and intervention, even though it does not prevent propagation.",
+            "E. Because composite phase-change material completely inhibits thermal diffusion in the tested configuration, its use eliminates the need for SOC-based management strategies in all deployment scenarios.",
+            "F. Standard insulation at high SOC provides equivalent protection to composite phase-change material at low SOC, since both approaches reduce TRP propagation rate by comparable mechanisms."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "D"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence shows standard insulation delays but does not stop TRP; only composite phase-change material or sub-25% SOC achieves zero TRP.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+21+Journal_of_Energy_Storage:C003",
+                "TR_Modelling+21+Journal_of_Energy_Storage:C004",
+                "TR_Modelling+21+Journal_of_Energy_Storage:C002"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Evidence is from a 1\u00d74 cluster; extrapolating zero-TRP guarantee to larger or differently configured modules exceeds the evidence scope.",
+              "error_type": "scale_transfer_beyond_evidence",
+              "evidence_refs": [
+                "TR_Modelling+21+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "While SOC reduction is operationally applicable, the evidence does not support characterizing it as more flexible than insulation without context on the specific deployment constraints.",
+              "error_type": "unsupported_comparative_claim",
+              "evidence_refs": [
+                "TR_Modelling+21+Journal_of_Energy_Storage:C002"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "A 5\u20137\u00d7 increase in propagation time directly extends the intervention window; this is a meaningful safety benefit even without full prevention.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+21+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Evidence supports composite material eliminating TRP in the tested configuration only; generalizing to all deployment scenarios is an unsupported extrapolation.",
+              "error_type": "overgeneralization",
+              "evidence_refs": [
+                "TR_Modelling+21+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Standard insulation only delays TRP while composite phase-change material prevents it entirely; these are categorically different outcomes, not equivalent protection levels.",
+              "error_type": "mechanism_confusion",
+              "evidence_refs": [
+                "TR_Modelling+21+Journal_of_Energy_Storage:C003",
+                "TR_Modelling+21+Journal_of_Energy_Storage:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility boundary between TRP delay and TRP prevention; conditions under which each mitigation strategy achieves zero-TRP guarantee",
+          "primary_boundary": "Standard insulation delays TRP but does not prevent it; zero TRP requires composite phase-change material or SOC below threshold; neither strategy generalizes unconditionally beyond tested configuration",
+          "intended_error_modes": [
+            "Treating delay as equivalent to prevention",
+            "Extrapolating zero-TRP result from 1\u00d74 cluster to arbitrary module sizes",
+            "Claiming composite material eliminates need for SOC management in all scenarios"
+          ],
+          "disallowed_extrapolations": [
+            "Asserting composite phase-change material guarantees zero TRP in all module geometries",
+            "Claiming standard insulation and composite material provide equivalent protection"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A battery safety engineer is comparing two thermal runaway (TR) triggering scenarios for NCM cells in a module: (1) a single acute thermal abuse event that rapidly drives a cell into TR, and (2) repeated slight overcharge cycles that gradually accumulate heat and eventually trigger TR. The engineer observes that once TR occurs in scenario 2, it spreads to adjacent cells faster and releases more energy than in scenario 1, despite the overcharge rate being mild. Explain the engineering mechanism that accounts for why a slower, lower-intensity trigger can produce a more severe and faster-propagating TR event than an acute high-intensity trigger, and identify what implication this has for early warning system design."
+        },
+        "ground_truth": {
+          "gold_answer": "Repeated slight overcharge cycles produce a longer incubation period during which heat accumulates progressively within the cell. By the time TR is triggered, the cell has already stored significantly more internal energy than a cell driven to TR by a rapid external thermal event, which does not allow the same degree of pre-TR heat accumulation. This elevated internal energy state at TR onset results in a more energetic event and faster propagation to adjacent cells. The engineering implication is that early warning systems must detect the slow, cumulative pre-TR signatures during the incubation period\u2014potentially days before the event\u2014rather than relying on threshold exceedance of acute abuse signals. Systems that only monitor for rapid anomalies will miss the overcharge-induced incubation pathway entirely, and the consequence of missing it is a more severe TR event than would occur from the acute abuse scenarios the system was designed to detect.",
+          "must_include": [
+            "heat accumulation during incubation period as the mechanism for elevated energy at TR onset",
+            "longer incubation period under slight overcharge compared to thermal or mechanical abuse",
+            "greater hazard and faster propagation once TR occurs due to accumulated energy",
+            "early warning systems must detect cumulative pre-TR signatures during incubation, not only acute threshold exceedances"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming slight overcharge always produces TR regardless of overcharge magnitude or duration",
+            "Asserting that thermal or mechanical abuse cannot produce severe TR under any conditions",
+            "Generalizing the propagation speed comparison to all cell chemistries without qualification"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Mechanism by which slow heat accumulation during overcharge incubation produces more severe TR than acute abuse, and the diagnostic implication for warning system design",
+          "primary_boundary": "The severity difference is caused by pre-TR energy accumulation, not by the overcharge rate itself; warning systems must be sensitive to slow cumulative signals, not only rapid anomalies",
+          "intended_error_modes": [
+            "Attributing higher severity to higher overcharge rate rather than to accumulated heat",
+            "Assuming early warning systems designed for acute abuse are sufficient for overcharge-induced TR",
+            "Confusing incubation period length with reduced hazard"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Modelling+22+Energy_Reports__TR_Modelling+23+Energy_Storage_Materials__TR_Modelling+24+Applied_Energy": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A lithium-ion battery pack containing LFP cells is configured without electrical tab connections between cells. During a fault, one cell undergoes complete electrochemical energy release over approximately 10 seconds. A separate simulation then forces the same cell into thermal runaway by applying an instantaneous 250\u00b0C temperature rise under adiabatic boundary conditions. An engineer must judge which conclusions about pack-level thermal runaway propagation (TRP) are admissible across these two scenarios.",
+          "options": [
+            "A. Complete electrochemical energy release from a single LFP cell is insufficient to raise the abused cell to the decomposition onset temperature, so TRP does not occur in the electrically isolated pack.",
+            "B. The instantaneous 250\u00b0C forcing under adiabatic conditions causes TRP because the adiabatic boundary prevents heat dissipation, not because the LFP chemistry itself is inherently prone to propagation.",
+            "C. Under adiabatic conditions with the 250\u00b0C forcing, adjacent cells decompose partially due to heat transfer from the abused cell, confirming that proximity alone determines TRP risk regardless of boundary condition.",
+            "D. Switching from adiabatic to convective boundary conditions with the same 250\u00b0C forcing reduces adjacent cell decomposition and can prevent full TRP, demonstrating that heat dissipation rate is a controlling factor in propagation.",
+            "E. Because TRP does not occur under electrochemical energy release alone, LFP packs are safe against TRP under all external thermal forcing scenarios.",
+            "F. The two scenarios are mechanistically equivalent because both ultimately deposit thermal energy into the abused cell."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "D"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence explicitly states electrochemical energy release from one LFP cell does not reach decomposition onset, and TRP does not occur in the isolated pack.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+22+Energy_Reports:C001"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The adiabatic condition enables TRP, but the claim that LFP is not inherently prone to propagation is an unsupported extrapolation beyond the stated evidence scope.",
+              "error_type": "unsupported_extrapolation",
+              "evidence_refs": [
+                "TR_Modelling+22+Energy_Reports:C002",
+                "TR_Modelling+22+Energy_Reports:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Evidence shows boundary condition critically changes adjacent cell decomposition from 40% to 15%, so proximity alone does not determine TRP risk.",
+              "error_type": "condition_violation",
+              "evidence_refs": [
+                "TR_Modelling+22+Energy_Reports:C003"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Evidence directly shows convective boundary reduces adjacent decomposition and prevents TRP compared to adiabatic case with identical forcing.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+22+Energy_Reports:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "TRP resilience under electrochemical release does not generalize to all thermal forcing; adiabatic 250\u00b0C forcing causes TRP in the same chemistry.",
+              "error_type": "overgeneralization",
+              "evidence_refs": [
+                "TR_Modelling+22+Energy_Reports:C001",
+                "TR_Modelling+22+Energy_Reports:C002"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The two scenarios differ fundamentally in energy magnitude and rate; electrochemical release cannot raise the cell to decomposition onset, while 250\u00b0C forcing does.",
+              "error_type": "mechanism_confusion",
+              "evidence_refs": [
+                "TR_Modelling+22+Energy_Reports:C001",
+                "TR_Modelling+22+Energy_Reports:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of TRP conclusions under different energy input modes and boundary conditions for LFP packs",
+          "primary_boundary": "Electrochemical energy release vs. thermal forcing as TRP triggers; adiabatic vs. convective boundary as propagation controller",
+          "intended_error_modes": [
+            "overgeneralization from one scenario to all scenarios",
+            "ignoring boundary condition as controlling variable",
+            "mechanism equivalence claim between different energy deposition modes"
+          ],
+          "disallowed_extrapolations": [
+            "LFP packs are universally TRP-safe",
+            "proximity alone determines propagation",
+            "chemistry type determines adiabatic vs. convective outcome"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A thermal runaway model for a battery pack is constructed without electrical tab connections between cells. The same pack geometry is then remodeled with tabs included. Separately, it is known that gas venting within a rigid airtight casing accelerates TRP, and that preheating from earlier cells in a propagation sequence reduces the time to failure of subsequent cells. An engineer evaluates which modeling and design conclusions are admissible.",
+          "options": [
+            "A. Omitting tab connections from a pack model can cause the model to predict a safe outcome where a more complete model would predict TRP, making tab inclusion a safety-critical modeling decision.",
+            "B. Because tabs are primarily electrical conductors, their thermal contribution to TRP is negligible compared to gas venting and can be omitted without affecting safety predictions.",
+            "C. Rigid airtight casings reduce TRP risk by containing vented gases and preventing external ignition.",
+            "D. The accelerating effect of preheating on subsequent cell failure times means that TRP propagation speed increases as more cells enter runaway, not remains constant.",
+            "E. Tab connections and gas venting are independent heat transfer pathways; including both in a model always produces conservative (worst-case) TRP predictions.",
+            "F. A model that correctly predicts no TRP without tabs may still be inadequate for safety certification if tabs are present in the physical system."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "D",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence states tab inclusion can mean the difference between predicting a safe vs. unsafe TRP outcome, directly supporting this conclusion.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+22+Energy_Reports:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Evidence identifies tabs as a significant heat transfer path that changes safety predictions; dismissing their thermal role is directly contradicted.",
+              "error_type": "mechanism_confusion",
+              "evidence_refs": [
+                "TR_Modelling+22+Energy_Reports:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Evidence states rigid airtight casings lead to TRP sooner due to confined gas venting; containment increases rather than reduces TRP risk.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Modelling+22+Energy_Reports:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Preheating from prior cells reduces time to failure of subsequent cells, implying propagation accelerates rather than proceeding at constant speed.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+22+Energy_Reports:C005"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "No evidence supports that combining both pathways always yields worst-case predictions; interactions between mechanisms are not established as simply additive.",
+              "error_type": "unsupported_extrapolation",
+              "evidence_refs": [
+                "TR_Modelling+22+Energy_Reports:C004",
+                "TR_Modelling+22+Energy_Reports:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "If tabs change the predicted outcome from safe to unsafe, a tab-free model cannot certify safety for a physical system with tabs present.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+22+Energy_Reports:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of modeling completeness and design conclusions regarding tabs, gas venting, and TRP acceleration",
+          "primary_boundary": "Tabs as significant heat transfer paths vs. negligible electrical conductors; rigid casings as TRP accelerators vs. containment safety measures",
+          "intended_error_modes": [
+            "dismissing tab thermal role",
+            "inverting casing confinement effect on TRP risk",
+            "unjustified additivity of heat transfer pathways"
+          ],
+          "disallowed_extrapolations": [
+            "combined model always worst-case",
+            "gas containment always reduces external risk without increasing internal TRP risk"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A 24 Ah lithium-ion battery is tested under two protocols: an oven test and an adiabatic thermal runaway test. The oven test yields a thermal runaway onset temperature (T2) approximately 48\u00b0C lower than the adiabatic test. As battery thickness increases beyond a critical value during the oven test, T2 at internal jelly-roll positions drops sharply due to a reversal in the sequence by which thermal runaway is triggered inside the battery. Under adiabatic conditions, T2 remains approximately constant with increasing thickness, but peak temperature rate (T3) at the surface decreases while T3 at internal positions increases. An engineer must determine which conclusions about test protocol selection and thickness effects are admissible.",
+          "options": [
+            "A. The oven test consistently underestimates the thermal runaway onset temperature relative to the adiabatic test, so using oven-test T2 values for safety margins is conservative.",
+            "B. Increasing battery thickness beyond a threshold during oven testing can decrease T2 at internal positions because the thermal runaway trigger sequence reverses, making thicker batteries potentially more vulnerable to internal onset at lower temperatures.",
+            "C. Under adiabatic conditions, the surface temperature rate during thermal runaway increases with battery thickness because internal heat generation has a shorter path to the surface.",
+            "D. The divergence between oven and adiabatic T2 values means that neither test alone fully characterizes the thermal runaway onset behavior across all thickness regimes.",
+            "E. Because adiabatic T2 is higher than oven T2, the adiabatic test is always the more conservative protocol for determining pack-level safety limits.",
+            "F. The reversal of the thermal runaway trigger sequence with increasing thickness is a surface-driven phenomenon caused by increased convective losses at the outer layers."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Oven T2 is 48.1\u00b0C lower than adiabatic T2; using the lower value as a safety threshold is conservative by definition.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+24+Applied_Energy:C001"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Evidence shows T2 at internal positions drops sharply when thickness crosses a threshold due to trigger sequence reversal, supporting this counterintuitive conclusion.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+24+Applied_Energy:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Under adiabatic conditions, surface T3 decreases with increasing thickness; the opposite of what this option claims.",
+              "error_type": "condition_violation",
+              "evidence_refs": [
+                "TR_Modelling+24+Applied_Energy:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "While plausible, the evidence does not establish that adiabatic testing fails to characterize any thickness regime; this is an unsupported scope expansion beyond stated evidence.",
+              "error_type": "unsupported_extrapolation",
+              "evidence_refs": [
+                "TR_Modelling+24+Applied_Energy:C001",
+                "TR_Modelling+24+Applied_Energy:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Higher adiabatic T2 means it is less conservative for onset detection; using it as a safety limit would be non-conservative, not conservative.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Modelling+24+Applied_Energy:C001"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Evidence attributes the sequence reversal to internal thickness-dependent heat propagation paths, not to surface convective losses; the mechanism is misidentified.",
+              "error_type": "mechanism_confusion",
+              "evidence_refs": [
+                "TR_Modelling+24+Applied_Energy:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of test protocol comparisons and thickness-dependent thermal runaway onset conclusions",
+          "primary_boundary": "Oven vs. adiabatic T2 conservatism; thickness threshold effect on trigger sequence and internal T2",
+          "intended_error_modes": [
+            "inverting surface T3 trend under adiabatic conditions",
+            "misidentifying adiabatic test as always conservative",
+            "attributing trigger sequence reversal to surface convection"
+          ],
+          "disallowed_extrapolations": [
+            "neither test characterizes all regimes without evidence",
+            "thickness effect on T2 is monotonic"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A battery engineer is designing a large-format lithium-ion cell and must select between two cathode chemistries: LCO and LFP. The engineer knows that thermal runaway involves a sequence of exothermic reactions beginning with SEI decomposition around 80\u2013120\u00b0C, followed by anode-electrolyte reaction near 100\u00b0C, electrolyte decomposition above 200\u00b0C, and binder reactions above 260\u00b0C. The engineer also knows that cathode chemistry affects the total heat released when the cathode reacts with the electrolyte. Explain, using the reaction sequence and chemistry-dependent heat release, why selecting LFP over LCO reduces thermal runaway severity, and identify which stage of the reaction sequence is most directly affected by cathode chemistry selection."
+        },
+        "ground_truth": {
+          "gold_answer": "The early stages of thermal runaway (SEI decomposition, anode-electrolyte reaction) are independent of cathode chemistry and occur in both LCO and LFP cells at similar temperatures. The cathode chemistry most directly affects the heat released when the cathode material reacts with the electrolyte. LFP releases substantially less heat in this reaction than LCO, which ranks highest among common cathode materials. Because this cathode-electrolyte reaction contributes to the total heat driving temperature escalation through subsequent stages (electrolyte decomposition above 200\u00b0C, binder reactions above 260\u00b0C), lower cathode heat release reduces the likelihood that the cell reaches these higher-temperature thresholds, thereby reducing overall thermal runaway severity. The cathode-electrolyte reaction stage is the one most directly differentiated by chemistry selection.",
+          "must_include": [
+            "SEI decomposition and anode-electrolyte reactions are not determined by cathode chemistry",
+            "LCO has the highest heat release among cathode materials; LFP has the lowest",
+            "cathode-electrolyte reaction heat release is the stage most directly affected by cathode chemistry",
+            "lower heat release from LFP reduces temperature escalation toward higher-threshold reactions"
+          ],
+          "disallowed_extrapolations": [
+            "LFP cells cannot undergo thermal runaway",
+            "cathode chemistry affects the onset temperature of SEI decomposition",
+            "LFP eliminates electrolyte decomposition or binder reactions entirely",
+            "the heat release ranking implies a proportional reduction in peak temperature"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Mechanism-based reasoning about how cathode chemistry selection interacts with the staged exothermic reaction sequence in thermal runaway",
+          "primary_boundary": "Cathode chemistry affects heat release at the cathode-electrolyte reaction stage but does not alter the onset temperatures or occurrence of earlier stages such as SEI decomposition",
+          "intended_error_modes": [
+            "claiming LFP prevents thermal runaway entirely",
+            "attributing SEI onset temperature differences to cathode chemistry",
+            "treating heat release ranking as proportional to peak temperature reduction"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Modelling+16+Journal_of_Energy_Storage__TR_Modelling+17+Journal_of_Energy_Storage__TR_Modelling+18+Journal_of_Energy_Storage": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A lithium-ion cell undergoes nail penetration at 30% SOC and 2 mm/s. Measurements show that as the nail advances through successive unit cells, the voltage drop in each subsequent cell is smaller than in the first, while the total short-circuit current continues to increase. An engineer proposes that this pattern indicates the first unit cell bears the greatest electrical stress and that increasing nail radius will reduce peak temperature by distributing current across more contact area. Which of the following conclusions about this scenario are admissible?",
+          "options": [
+            "A. The decreasing voltage drop per unit cell with increasing penetration depth is consistent with non-short-circuited cells progressively losing discharge capacity as each new short-circuit path is added.",
+            "B. Increasing nail radius from a small to a large value will reduce peak temperature because the short-circuit resistance is distributed over a larger contact area.",
+            "C. The total short-circuit current increasing while per-cell voltage drop decreases is mechanistically consistent with parallel discharge paths forming across multiple short-circuit points.",
+            "D. The first unit cell experiencing the largest voltage drop implies it will also exhibit the highest thermal power generation among all unit cells at any SOC.",
+            "E. At 90% SOC under identical penetration conditions, the voltage drop during the first internal short-circuit event would be expected to exceed that observed at 30% SOC.",
+            "F. Nail penetration speed above a threshold value produces a consistent temperature response, whereas speeds below that threshold can produce substantially higher peak temperatures."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "As each new short-circuit point forms, remaining cells discharge through all existing paths, reducing the incremental voltage drop per new cell.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+16+Journal_of_Energy_Storage:C001",
+                "TR_Modelling+16+Journal_of_Energy_Storage:C002"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Evidence shows larger nail radius increases peak temperature; distributing contact area does not reduce but raises peak temperature.",
+              "error_type": "causal overclaim / mechanism reversal",
+              "evidence_refs": [
+                "TR_Modelling+16+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Multiple short-circuit loops in parallel allow cumulative current to rise even as each individual cell's voltage drop contribution decreases.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+16+Journal_of_Energy_Storage:C002"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Highest thermal power depends on SOC; at 90% SOC thermal power rises substantially, so the claim cannot be generalized across all SOC conditions.",
+              "error_type": "overgeneralization across SOC regime",
+              "evidence_refs": [
+                "TR_Modelling+16+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "At 90% SOC the first ISC voltage drop reaches approximately 2 V versus approximately 1.5 V at 30% SOC, consistent with higher stored energy.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+16+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "At 0.5 mm/s peak temperature reaches ~800\u00b0C; for speeds at or above 2.0 mm/s the temperature trend is consistent, indicating a speed threshold effect.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+16+Journal_of_Energy_Storage:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-hop reasoning linking parallel short-circuit formation, voltage drop distribution, nail geometry effects, and speed-dependent thermal response",
+          "primary_boundary": "Larger nail radius increases rather than decreases peak temperature; speed threshold separates consistent from anomalously high thermal response",
+          "intended_error_modes": [
+            "Assuming larger contact area distributes and reduces thermal load",
+            "Overgeneralizing first-cell voltage drop to highest thermal power at all SOC",
+            "Missing the non-monotonic speed dependence"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming nail radius effect generalizes beyond the tested range",
+            "Inferring system-level pack safety from cell-level nail test results"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery engineer is analyzing thermal runaway (TR) risk across different charging conditions for a lithium-ion cell. Testing at various charging currents reveals that the highest TR temperature occurs at the highest current tested, but the second-highest TR temperature is recorded at the lowest current tested\u2014not at an intermediate value. The engineer also observes that TR final temperature varies with charging voltage, with the highest voltage producing the highest TR temperature. Which conclusions about these charging condition effects are admissible?",
+          "options": [
+            "A. The non-monotonic relationship between charging current and TR temperature is consistent with low currents allowing extended time for lithium-ion reduction to metallic lithium, increasing deposited metallic lithium available for exothermic reaction.",
+            "B. Because TR temperature increases with charging voltage, operating at the lowest tested voltage eliminates the risk of TR by preventing metallic lithium deposition entirely.",
+            "C. The observation that the second-highest TR temperature occurs at the lowest current implies that intermediate charging currents produce the safest operating condition among those tested.",
+            "D. Higher SOC increases stored Gibbs energy, which raises the probability of spontaneous exothermic reactions; this mechanism is independent of whether abuse is thermal or electrical in origin.",
+            "E. The variation in TR final temperature with charging voltage is large enough to conclude that voltage is a more dominant TR risk factor than SOC level.",
+            "F. At the highest charging current tested, the combination of high metallic lithium deposition rate and high TR temperature suggests both electrochemical and thermal pathways are simultaneously intensified."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence explicitly states low current causes sluggish kinetics and low diffusivity, allowing ample time for ions to reduce to metallic Li, producing the second-highest TR temperature.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+17+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Evidence shows even the lowest tested voltage (2.5 V) still produces TR at 400\u00b0C; lowest voltage reduces but does not eliminate TR risk.",
+              "error_type": "protective mechanism overclaim",
+              "evidence_refs": [
+                "TR_Modelling+17+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "If both extremes of current produce the two highest TR temperatures, intermediate currents are relatively safer among the tested set, consistent with the non-monotonic trend.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+17+Journal_of_Energy_Storage:C003",
+                "TR_Modelling+17+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Evidence links SOC to Gibbs energy and spontaneous reaction probability but does not state this mechanism is independent of abuse type; this is an unsupported extrapolation.",
+              "error_type": "unsupported scope generalization",
+              "evidence_refs": [
+                "TR_Modelling+17+Journal_of_Energy_Storage:C002"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The voltage effect spans ~38\u00b0C (400\u2013438\u00b0C) while SOC effect spans a much larger range; evidence does not support ranking voltage above SOC as dominant factor.",
+              "error_type": "magnitude overclaim without comparative evidence",
+              "evidence_refs": [
+                "TR_Modelling+17+Journal_of_Energy_Storage:C001",
+                "TR_Modelling+17+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "At 6.75 A both the highest TR temperature (940\u00b0C) and highest metallic Li deposition rate (3.68 mol/m\u00b3s) are simultaneously recorded, indicating coupled intensification.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+17+Journal_of_Energy_Storage:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Non-monotonic current-TR temperature relationship and mechanism of low-current metallic lithium deposition; admissibility of comparative risk claims",
+          "primary_boundary": "Low current produces high TR temperature via kinetic mechanism, not via energy storage; lowest voltage reduces but does not eliminate TR",
+          "intended_error_modes": [
+            "Assuming monotonic current-temperature relationship",
+            "Overclaiming that lowest voltage eliminates TR",
+            "Assuming SOC-Gibbs energy mechanism is abuse-mode independent without evidence"
+          ],
+          "disallowed_extrapolations": [
+            "Ranking voltage vs SOC as dominant factors without comparative data",
+            "Generalizing intermediate current safety beyond the tested current range"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "During an adiabatic thermal abuse test, a lithium-ion cell's voltage decline rate begins accelerating once the cell temperature exceeds approximately 100\u00b0C. A thermal model that omits internal short-circuit heat generation predicts lower temperatures than measured after this threshold and also delays the predicted onset of full thermal runaway. The separator material used in the cell begins to shrink near 100\u00b0C and completely melts near 167\u00b0C. Which of the following conclusions about this system's thermal progression are admissible?",
+          "options": [
+            "A. The accelerating voltage decline above 100\u00b0C is consistent with the onset of a micro internal short circuit, which itself may be initiated by early separator shrinkage near that temperature.",
+            "B. Because the model without ISC heat generation underestimates temperature after 100\u00b0C, ISC heat generation is a necessary contributor to accurately predicting TR trigger timing.",
+            "C. SEI decomposition, which begins at 80\u2013120\u00b0C, is the primary heat source responsible for the accelerating voltage decline observed above 100\u00b0C.",
+            "D. The separator melting completely at 167\u00b0C guarantees that a full macro internal short circuit has occurred by that temperature in any cell of this chemistry.",
+            "E. Omitting ISC heat generation from a thermal model is conservative for safety assessment because it delays predicted TR onset, providing a longer estimated safe operating window.",
+            "F. The temperature range at which separator shrinkage begins is consistent with the temperature at which voltage decline acceleration was observed, supporting a mechanistic link between separator dimensional change and early internal short-circuit formation."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Voltage decline acceleration above 99.6\u00b0C is hypothesized as MISC onset; separator begins shrinking near 100\u00b0C, making physical contact a plausible concurrent mechanism.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+18+Journal_of_Energy_Storage:C004",
+                "TR_Modelling+18+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Model without ISC heat generation produces lower temperatures and delayed TR trigger time, directly demonstrating ISC heat generation is necessary for accurate TR timing prediction.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+18+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "SEI decomposition generates small heat and is the starting point for self-heating, not the primary source of accelerating voltage decline; ISC is the more consistent explanation above 100\u00b0C.",
+              "error_type": "mechanism substitution",
+              "evidence_refs": [
+                "TR_Modelling+18+Journal_of_Energy_Storage:C001",
+                "TR_Modelling+18+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Separator shrinkage degree depends on material, thickness, and manufacturing process; complete melting at 167\u00b0C does not guarantee macro ISC in all cells of any chemistry.",
+              "error_type": "overgeneralization ignoring condition dependence",
+              "evidence_refs": [
+                "TR_Modelling+18+Journal_of_Energy_Storage:C002",
+                "TR_Modelling+18+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Delaying predicted TR onset is non-conservative for safety; it underestimates hazard severity and timing, making the omission unsafe rather than conservative.",
+              "error_type": "safety direction reversal \u2014 conservative framing but incorrect conclusion",
+              "evidence_refs": [
+                "TR_Modelling+18+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Separator shrinkage onset near 100\u00b0C and voltage decline acceleration above 99.6\u00b0C occupy the same temperature range, supporting a mechanistic connection between the two phenomena.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+18+Journal_of_Energy_Storage:C003",
+                "TR_Modelling+18+Journal_of_Energy_Storage:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Mechanistic linkage between separator shrinkage, micro ISC onset, and model accuracy; admissibility of safety conservatism claim for omitting ISC heat generation",
+          "primary_boundary": "Omitting ISC heat generation is non-conservative (underestimates hazard); separator melting does not guarantee ISC universally due to material variability",
+          "intended_error_modes": [
+            "Attributing voltage decline to SEI decomposition instead of ISC",
+            "Treating model underestimation as conservative for safety",
+            "Overgeneralizing separator melting temperature to guaranteed ISC across all chemistries"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming separator melting universally causes macro ISC regardless of cell construction",
+            "Treating delayed TR prediction as a safe design margin"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A lithium-ion cell is subjected to thermal abuse in an adiabatic environment. A thermal model is developed to predict the onset of thermal runaway. The model accurately captures temperature evolution up to approximately 100\u00b0C but increasingly underestimates measured temperature above that point, and predicts thermal runaway onset later than observed experimentally. The separator in this cell begins to shrink near 100\u00b0C and fully melts near 167\u00b0C. Explain the most likely physical reason for the model's underestimation above 100\u00b0C and identify what this implies about the safety risk of using this model for TR onset prediction. Your answer should address the mechanism responsible and the direction of the safety error introduced."
+        },
+        "ground_truth": {
+          "gold_answer": "Above approximately 100\u00b0C, separator shrinkage can create physical contact between electrodes, initiating a micro internal short circuit (MISC). The heat generated by this ISC is not captured in the model, causing the model to underestimate temperature after MISC onset. Because the model predicts lower temperatures and delays the predicted TR trigger time relative to reality, it is non-conservative for safety assessment: it overestimates the time available before TR and underestimates the thermal hazard severity, which could lead to inadequate safety margins if used directly for design or protection system timing.",
+          "must_include": [
+            "separator shrinkage near 100\u00b0C initiates physical electrode contact",
+            "micro internal short circuit (ISC or MISC) generates heat not included in model",
+            "model underestimates temperature after ISC onset",
+            "model delays predicted TR trigger time",
+            "this is non-conservative for safety \u2014 it underestimates hazard, not overestimates it"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming SEI decomposition is the primary heat source above 100\u00b0C causing the discrepancy",
+            "Claiming the model is conservative because it delays TR prediction",
+            "Asserting separator melting at 167\u00b0C guarantees full macro ISC in all cell designs",
+            "Generalizing the model error magnitude to other chemistries or cell constructions without evidence"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Causal chain from separator shrinkage to MISC heat generation to model underestimation, and correct identification of safety error direction",
+          "primary_boundary": "Delayed TR prediction is non-conservative, not conservative; ISC heat generation is the missing mechanism, not SEI decomposition",
+          "intended_error_modes": [
+            "Misidentifying SEI decomposition as the dominant missing mechanism",
+            "Incorrectly labeling delayed TR prediction as a conservative safety margin",
+            "Failing to connect separator shrinkage temperature to MISC onset temperature"
+          ]
+        }
+      }
+    ]
+  }
+}

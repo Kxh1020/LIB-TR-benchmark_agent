@@ -1,0 +1,355 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A lithium-ion battery pack is subjected to thermal abuse testing at two state-of-charge levels: 25% and 100%. At 25% SOC, the onset temperature of thermal runaway is measured as substantially higher than at 100% SOC, and the maximum temperature rate at 100% SOC is observed to be roughly two orders of magnitude greater than at 0% SOC. A thermal management engineer is evaluating which conclusions about the kinetic and thermodynamic behavior of the cell are supported by these observations. Which of the following conclusions are admissible based on this evidence?",
+        "options": [
+          "A. The large difference in maximum temperature rate between low and high SOC is primarily a consequence of the lower onset temperature at high SOC providing more time for exothermic reactions to accumulate energy before venting.",
+          "B. The kinetic parameters governing exothermic reactions increase with SOC, with the most pronounced change occurring in the transition from moderate to high SOC rather than uniformly across the full SOC range.",
+          "C. Because the onset temperature of thermal runaway decreases monotonically with SOC, the onset temperature at 50% SOC must be exactly halfway between the values measured at 25% and 100% SOC.",
+          "D. The approximately 185-fold difference in maximum temperature rate between 0% and 100% SOC is consistent with a scenario in which both the activation energy and pre-exponential factor of the exothermic reactions are substantially higher at 100% SOC.",
+          "E. The decrease in onset temperature with increasing SOC implies that the first detectable temperature deviation from baseline also decreases significantly with SOC.",
+          "F. A battery at 50% SOC will exhibit a maximum temperature during thermal runaway that is closer to the 100% SOC value than to the 0% SOC value, because kinetic parameters rise steeply above 50% SOC.",
+          "G. The onset temperature of thermal runaway is a more sensitive indicator of SOC-dependent thermal stability than the maximum temperature rate during thermal runaway."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "The evidence attributes the large difference in maximum temperature rate to the increase in kinetic parameters (Ea and A) with SOC, not to a longer accumulation time enabled by lower onset temperature. The mechanism chain is kinetic amplification, not temporal accumulation. This is a mechanism substitution distractor.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Modelling+200+Journal_of_Energy_Storage:C003",
+              "TR_Modelling+200+Journal_of_Energy_Storage:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that kinetic parameters Ea and A rise significantly when SOC increases from 50% to 90%, indicating the change is not uniform but concentrated in the moderate-to-high SOC transition. This is a counterintuitive correct option because a naive reading might expect uniform monotonic increase.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+200+Journal_of_Energy_Storage:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The evidence shows that kinetic parameters rise significantly between 50% and 90% SOC, implying the onset temperature does not decrease linearly with SOC. Assuming exact midpoint interpolation imposes a linear functional form not supported by the evidence.",
+            "error_type": "unjustified_monotonicity",
+            "evidence_refs": [
+              "TR_Modelling+200+Journal_of_Energy_Storage:C001",
+              "TR_Modelling+200+Journal_of_Energy_Storage:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The approximately 185-fold difference in maximum temperature rate is directly consistent with both Ea and A being substantially elevated at 100% SOC, since both parameters amplify the reaction rate in the Arrhenius expression. This requires a two-step reasoning chain: kinetic parameter increase → exponential rate amplification → large temperature rate difference.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+200+Journal_of_Energy_Storage:C003",
+              "TR_Modelling+200+Journal_of_Energy_Storage:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The evidence explicitly states that the first detectable temperature deviation (T1) exhibits only minor changes with SOC, while T2 (onset of thermal runaway) decreases significantly. This option confuses T1 and T2 behavior, which is a condition violation distractor.",
+            "error_type": "condition_violation",
+            "evidence_refs": [
+              "TR_Modelling+200+Journal_of_Energy_Storage:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "While kinetic parameters do rise steeply above 50% SOC, the evidence does not support a direct quantitative inference about the maximum temperature at 50% SOC relative to the 0% and 100% endpoints. This is an unsupported extrapolation from the kinetic trend to a temperature magnitude prediction.",
+            "error_type": "unsupported_extrapolation",
+            "evidence_refs": [
+              "TR_Modelling+200+Journal_of_Energy_Storage:C002",
+              "TR_Modelling+200+Journal_of_Energy_Storage:C004"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "This appears conservative and epistemically modest but is incorrect. The evidence shows T1 (first temperature deviation) changes only minimally with SOC, while T2 (onset temperature) changes by 69.5°C and maximum temperature rate changes by a factor of 185. The maximum temperature rate is a far more sensitive indicator of SOC-dependent thermal stability than onset temperature alone. This is a conservative-but-wrong distractor.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Modelling+200+Journal_of_Energy_Storage:C001",
+              "TR_Modelling+200+Journal_of_Energy_Storage:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinguishing which kinetic and thermodynamic parameters are SOC-sensitive and which are not, and tracing the mechanism chain from kinetic parameter increase to temperature rate amplification.",
+        "primary_boundary": "T1 (first temperature deviation) is SOC-insensitive while T2 and dT/dt_max are strongly SOC-sensitive; kinetic parameter increase is nonuniform and concentrated in the 50–90% SOC range.",
+        "intended_error_modes": [
+          "mechanism_substitution (A)",
+          "unjustified_linear_interpolation (C)",
+          "T1_T2_confusion (E)",
+          "unsupported_magnitude_extrapolation (F)",
+          "conservative_but_wrong_sensitivity_comparison (G)"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring linear SOC dependence of onset temperature",
+          "Inferring T1 sensitivity from T2 sensitivity",
+          "Predicting absolute maximum temperature at intermediate SOC from kinetic trend alone"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "In a two-cell battery module, cell 1 is triggered into thermal runaway by an external heater while cell 2 is monitored for propagation. Experimental results show: (i) at 20% SOC, cell 2 reaches a maximum temperature of approximately 253°C, which is below its thermal runaway onset temperature, so propagation does not occur; (ii) as SOC increases from 20% to 70%, the thermal runaway propagation interval (TRPI) decreases; (iii) above 70% SOC, TRPI increases again and peaks near 90% SOC; (iv) increasing the external heating power from 150 W to 350 W causes the maximum temperature cell 2 can reach to decrease from approximately 160°C to approximately 100°C, while simultaneously increasing the TRPI. An engineer is assessing which conclusions about propagation risk management are supported by these observations.",
+        "options": [
+          "A. The non-monotonic relationship between SOC and TRPI means that a module operating near 90% SOC presents a lower propagation risk than one operating near 70% SOC, based solely on TRPI as the risk metric.",
+          "B. Increasing heating power reduces propagation risk because it shortens the time cell 1 spends in thermal runaway, thereby reducing the total heat transferred to cell 2.",
+          "C. The observation that cell 2 does not reach its onset temperature at 20% SOC is consistent with cell 1's maximum temperature being insufficient to drive cell 2 past its onset threshold given the thermal coupling between cells.",
+          "D. The increase in TRPI with heating power, combined with the decrease in maximum temperature cell 2 can reach, indicates that higher heating power causes cell 1 to complete thermal runaway more rapidly, reducing the duration of heat exposure to cell 2.",
+          "E. The non-monotonic TRPI behavior with SOC implies that optimizing SOC alone is insufficient to guarantee propagation prevention, since the propagation risk metric does not decrease continuously as SOC is reduced from 90% to 20%.",
+          "F. Because TRPI reaches a minimum at 70% SOC, the thermal runaway onset temperature of cell 2 must also be at its lowest at 70% SOC.",
+          "G. At 20% SOC, the failure of propagation provides sufficient evidence to conclude that no thermal runaway propagation can occur in this cell chemistry at any SOC below 20%."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "C",
+          "D",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "A longer TRPI at 90% SOC compared to 70% SOC does not imply lower propagation risk. TRPI measures the time interval before propagation occurs, not whether propagation occurs at all. A longer TRPI with propagation still occurring is not safer than a shorter TRPI. Additionally, the maximum temperature and severity of cell 1's runaway at 90% SOC are higher, potentially making propagation more severe once it occurs. This conflates TRPI with propagation probability.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Modelling+201+Journal_of_Energy_Storage:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The evidence shows that increasing heating power increases TRPI and decreases the maximum temperature cell 2 reaches, which is consistent with cell 1 completing thermal runaway faster (less heat exposure duration to cell 2). However, the claim that this 'reduces propagation risk' is an unsupported system-level safety conclusion from a component-level observation. The evidence does not state that propagation is prevented at higher heating power, only that TRPI increases and cell 2's maximum temperature decreases. This is a scope expansion distractor.",
+            "error_type": "scope_expansion",
+            "evidence_refs": [
+              "TR_Modelling+201+Journal_of_Energy_Storage:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "At 20% SOC, cell 1 reaches approximately 390°C maximum temperature, and cell 2 reaches approximately 253°C, which is below cell 2's onset temperature. This is mechanistically consistent: the heat transferred from cell 1 to cell 2 is insufficient to drive cell 2 past its onset threshold. The conclusion follows directly from the thermal coupling mechanism and the measured temperatures.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+201+Journal_of_Energy_Storage:C001"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "This is a counterintuitive correct option. Higher heating power causes cell 1 to reach thermal runaway faster (shorter Stage I duration), meaning cell 1's thermal runaway phase is completed more rapidly, reducing the duration over which heat is transferred to cell 2. This explains both the longer TRPI (less pre-TR heating of cell 2) and the lower maximum temperature cell 2 reaches. The mechanism chain is: higher power → faster TR onset of cell 1 → shorter heat exposure duration to cell 2 → lower cell 2 temperature and longer apparent TRPI.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+201+Journal_of_Energy_Storage:C003",
+              "TR_Modelling+201+Journal_of_Energy_Storage:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The non-monotonic TRPI behavior means that reducing SOC from 90% to 70% actually decreases TRPI (increases propagation speed), so SOC reduction alone does not monotonically reduce propagation risk. This is a boundary reasoning conclusion: the non-monotonic relationship invalidates a simple 'lower SOC is always safer' design heuristic.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+201+Journal_of_Energy_Storage:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "TRPI depends on multiple factors including heat transfer rate, cell 1's thermal runaway severity, and cell 2's onset temperature. The minimum TRPI at 70% SOC reflects the combined effect of these factors, not necessarily the minimum onset temperature of cell 2. Attributing TRPI minimum solely to onset temperature minimum is a single-variable causal overclaim.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Modelling+201+Journal_of_Energy_Storage:C002"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "This appears conservative (limiting the claim to SOC below 20%) but is an unsupported generalization. The evidence only demonstrates non-propagation at 20% SOC under the specific test conditions. Extrapolating to all SOC values below 20% or to all conditions is beyond the evidence scope. This is a conservative-but-wrong distractor.",
+            "error_type": "unsupported_extrapolation",
+            "evidence_refs": [
+              "TR_Modelling+201+Journal_of_Energy_Storage:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Understanding the non-monotonic relationship between SOC and TRPI, the counterintuitive effect of heating power on propagation interval, and the limits of using TRPI as a propagation risk metric.",
+        "primary_boundary": "TRPI is non-monotonic with SOC (minimum at 70%, not at maximum SOC); higher heating power increases TRPI by shortening cell 1's TR duration, not by reducing total heat output; non-propagation at 20% SOC cannot be generalized to all sub-20% conditions.",
+        "intended_error_modes": [
+          "TRPI_as_risk_proxy_confusion (A)",
+          "scope_expansion_safety_claim (B)",
+          "single_variable_onset_temperature_attribution (F)",
+          "conservative_overgeneralization (G)"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring propagation prevention from TRPI increase alone",
+          "Generalizing 20% SOC non-propagation to all lower SOC values",
+          "Attributing TRPI minimum solely to onset temperature minimum"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Nine nominally identical 18650 LCO cells at 100% SOC are tested under the same thermal abuse protocol. Self-heating onset temperatures (Texo) range from 67.4°C to 123.8°C across the batch. For cells with similar Texo near 77°C, thermal runaway delay times still range from approximately 802 to 1584 minutes. A kinetic model with a single reaction step predicts that the upper and lower bounds of thermal runaway delay time span approximately one order of magnitude, and all experimental data fall within these bounds. The model also predicts that when Texo exceeds 120°C, up to 25% of the reactant may be consumed before the exothermicity threshold is detected, and that accounting for this reactant consumption can extend the predicted delay time by a factor of approximately two at the higher end of Texo values. An engineer is evaluating which conclusions about cell variability and model applicability are supported by this evidence.",
+        "options": [
+          "A. The wide range of delay times observed among cells with similar Texo (~77°C) demonstrates that Texo alone is not a sufficient predictor of thermal runaway delay time, and additional cell-to-cell variation in kinetic parameters or internal state must contribute.",
+          "B. Because all experimental data fall within the one-order-of-magnitude bounds of the one-step kinetic model, the model can be used to predict the exact thermal runaway delay time for a given cell with acceptable engineering precision.",
+          "C. The consumption of up to 25% of reactant before exothermicity detection at Texo above 120°C implies that cells with higher Texo will systematically exhibit shorter actual delay times than the model predicts when reactant depletion is neglected.",
+          "D. The approximately twofold extension of predicted delay time when reactant consumption is accounted for is most significant for cells at the higher end of the Texo range, not for cells with low Texo values.",
+          "E. The one-order-of-magnitude span of the model's predicted bounds indicates that the one-step kinetic model provides a precise point estimate of delay time, with the span reflecting only measurement uncertainty in the experimental data.",
+          "F. The cell-to-cell variability in delay time among cells with similar Texo is consistent with the hypothesis that the kinetic parameters of the exothermic reactions vary between nominally identical cells.",
+          "G. The fact that experimental data fall within the model's predicted bounds proves that the one-step kinetic model correctly captures the dominant reaction mechanism governing thermal runaway in these cells."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence directly shows that cells with similar Texo (~77°C) exhibit delay times ranging from 802 to 1584 minutes, a nearly twofold spread at similar onset temperatures. This requires the inference that Texo alone cannot predict delay time and that other sources of variability (kinetic parameters, internal state) must contribute. This is a multi-step reasoning conclusion: similar Texo → similar initial detection condition → yet different delay times → additional variability sources required.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+202+Journal_of_Energy_Storage:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The evidence explicitly states that the model's bounds span approximately one order of magnitude, indicating large uncertainty. Falling within one-order-of-magnitude bounds is not equivalent to precise point prediction. This is a measurement scope distractor that conflates bounding with precision.",
+            "error_type": "measurement_scope_overclaim",
+            "evidence_refs": [
+              "TR_Modelling+202+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "This option reverses the direction of the effect. Reactant consumption before detection means that when the system is detected as exothermic, less reactant remains to drive thermal runaway, which would tend to elongate the delay time (less energy available for runaway), not shorten it. The evidence states that accounting for reactant consumption elongates the predicted delay time. This is a direction-of-effect reversal distractor.",
+            "error_type": "causal_direction_reversal",
+            "evidence_refs": [
+              "TR_Modelling+202+Journal_of_Energy_Storage:C003",
+              "TR_Modelling+202+Journal_of_Energy_Storage:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The evidence states that the twofold extension of delay time due to reactant consumption is specifically observed under the higher end of Texo values, and that up to 25% reactant consumption occurs when Texo exceeds 120°C. This is a condition-dependent conclusion: the reactant depletion effect is most significant at high Texo, not uniformly across all cells. This is counterintuitive because one might expect higher Texo cells to be less affected by this correction.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+202+Journal_of_Energy_Storage:C003",
+              "TR_Modelling+202+Journal_of_Energy_Storage:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The evidence explicitly characterizes the one-order-of-magnitude span as indicating large uncertainty in the model's prediction, not as a precise point estimate. The span reflects model uncertainty, not merely experimental measurement uncertainty. This is a conservative-but-wrong distractor that appears to acknowledge model limitations while mischaracterizing their source.",
+            "error_type": "scope_misattribution",
+            "evidence_refs": [
+              "TR_Modelling+202+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The large spread in delay times among cells with similar Texo is consistent with cell-to-cell variation in kinetic parameters of the exothermic reactions. This is a minimal engineering implication: if onset conditions are similar but outcomes differ substantially, the governing kinetic parameters must vary. The evidence supports this as a plausible contributing factor without requiring it to be the sole explanation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+202+Journal_of_Energy_Storage:C002"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "Falling within the bounds of a model does not prove the model captures the correct mechanism. The bounds span one order of magnitude, meaning the model is broadly consistent with but not validated by the data. This is a causal overclaim: consistency with bounds is necessary but not sufficient to establish mechanistic correctness. This is also a conservative-appearing but logically flawed option.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Modelling+202+Journal_of_Energy_Storage:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinguishing what cell-to-cell variability in delay time implies about the sufficiency of Texo as a predictor, understanding the directional effect of reactant consumption on delay time, and recognizing the limits of bounding versus point prediction.",
+        "primary_boundary": "Texo is insufficient as a sole predictor of delay time; reactant consumption elongates (not shortens) delay time at high Texo; one-order-of-magnitude bounds indicate large uncertainty, not precision; data consistency with bounds does not validate mechanism.",
+        "intended_error_modes": [
+          "measurement_scope_overclaim (B)",
+          "causal_direction_reversal (C)",
+          "model_span_misattribution (E)",
+          "consistency_implies_correctness_fallacy (G)"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring precise delay time prediction from bounding model",
+          "Inferring mechanism correctness from data-within-bounds",
+          "Inferring that high Texo shortens delay time due to reactant consumption"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery module engineer observes that during Stage II of thermal runaway in a sealed lithium-ion cell, the cell exhibits visible swelling followed by a sudden decrease in the rate of temperature rise at the transition into Stage III. Separately, propagation interval data from a two-cell module show that increasing the external heating power applied to cell 1 results in a longer propagation interval and a lower maximum temperature reached by cell 2. Explain the physical mechanism responsible for the temperature rate decrease at the Stage II–III transition, and explain why higher heating power applied to cell 1 produces a longer propagation interval to cell 2 rather than a shorter one. Your answer should identify the governing mechanism for each phenomenon and explain why each outcome is counterintuitive relative to a naive expectation."
+      },
+      "ground_truth": {
+        "gold_answer": "The temperature rate decrease at the Stage II–III transition is caused by the opening of the cell's bleed valve when internal gas pressure accumulates to a threshold value. During Stage II, exothermic reactions generate large quantities of gas, causing internal pressure to rise and the cell to swell. When pressure reaches the valve threshold, the valve opens and ejects gas, which carries thermal energy out of the cell and relieves the pressure driving further reaction. This causes a sudden drop in the rate of temperature rise at the start of Stage III. The counterintuitive aspect is that the cell appears to 'cool down' or decelerate thermally precisely when internal reactions are most active, because the venting event is a pressure-relief mechanism that dissipates energy rather than an indication of reaction cessation.\n\nFor the propagation interval, higher heating power causes cell 1 to reach its thermal runaway onset temperature more rapidly, compressing the duration of Stage I (the pre-runaway heating phase). Because cell 1 completes its thermal runaway event in a shorter elapsed time, the total duration over which it transfers heat to cell 2 is reduced. Cell 2 therefore receives less cumulative heat input, reaches a lower maximum temperature, and the propagation interval (measured from cell 1's thermal runaway onset) is longer because cell 2 takes more time to accumulate sufficient heat to reach its own onset threshold—or may not reach it at all. The counterintuitive aspect is that applying more power to trigger cell 1 makes propagation to cell 2 slower and less severe, because the increased power accelerates cell 1 through its runaway faster, not slower, reducing heat exposure time to cell 2.",
+        "must_include": [
+          "Bleed valve opening triggered by internal pressure reaching a threshold as the mechanism for the temperature rate decrease",
+          "Gas ejection during venting carries energy out of the cell, causing the temperature rate to decrease",
+          "Higher heating power causes cell 1 to reach thermal runaway onset faster, shortening the heat exposure duration to cell 2",
+          "Shorter heat exposure duration results in lower maximum temperature for cell 2 and longer propagation interval",
+          "Identification of the counterintuitive nature of each phenomenon"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming that venting prevents thermal runaway rather than transiently reducing temperature rate",
+          "Claiming that higher heating power prevents propagation in all cases or at all SOC levels",
+          "Attributing the temperature rate decrease to reaction completion rather than pressure-relief venting",
+          "Claiming that propagation interval is determined solely by heating power without reference to cell 1's runaway duration"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism identification for pressure-relief venting as the cause of Stage II–III temperature rate transition, and the counterintuitive relationship between heating power and propagation interval via cell 1 runaway duration.",
+        "primary_boundary": "Venting reduces temperature rate transiently but does not prevent thermal runaway; higher heating power reduces propagation severity by shortening cell 1's heat-transfer duration, not by reducing total energy output.",
+        "intended_error_modes": [
+          "Attributing temperature rate decrease to reaction completion or electrolyte depletion rather than valve opening",
+          "Assuming higher heating power increases propagation risk by delivering more energy to the system",
+          "Confusing total energy delivered with heat transfer duration as the controlling variable for cell 2 temperature"
+        ]
+      }
+    }
+  ]
+}

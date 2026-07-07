@@ -1,0 +1,320 @@
+{
+  "TR_Mechanism+62+UnknownJournal__TR_Mechanism+66+UnknownJournal__TR_Mechanism+69+UnknownJournal": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A 5 Ah NCA||Gr pouch battery undergoes thermal runaway under heating. At the triggering point, the surface thermocouple reads 179.9\u00b0C while an embedded internal sensor simultaneously records 438.3\u00b0C. An engineer uses only the surface measurement to analyze the thermal runaway mechanism. Which of the following conclusions are directly supported by this measurement gap?",
+          "options": [
+            "A. The surface temperature at the triggering point underestimates the internal temperature by approximately 258\u00b0C, meaning surface-only analysis systematically underrepresents the thermal severity at the moment of triggering.",
+            "B. Surface-only analysis will incorrectly suggest that internal short circuit occurs after the triggering point and therefore does not contribute to triggering, misrepresenting the causal sequence.",
+            "C. The maximum rate of internal temperature rise during thermal runaway is approximately 13 times higher than the maximum surface temperature rate, so surface rate monitoring alone cannot characterize the internal thermal dynamics.",
+            "D. Because the internal temperature exceeds 438\u00b0C at triggering, the cathode\u2013electrolyte reaction is confirmed as the dominant heat source before triggering.",
+            "E. Surface temperature measurement is equivalent to internal temperature measurement for determining the onset of thermal runaway, provided the thermocouple is placed at the geometric center of the cell face.",
+            "F. The 258\u00b0C gap implies that any model using surface temperature as the input heat-source boundary condition will overestimate the triggering threshold."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "C"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence directly states a 258.4\u00b0C difference between internal and surface temperature at the triggering point.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+66+UnknownJournal:C001"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Evidence explicitly states surface-only analysis leads to the wrong conclusion that ISC occurs after triggering and does not contribute.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+66+UnknownJournal:C002"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence reports internal max rate 198.58\u00b0C/s vs surface 15.21\u00b0C/s, a ratio of ~13\u00d7, confirming surface rate cannot characterize internal dynamics.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+66+UnknownJournal:C003"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Evidence attributes 53.8% of pre-triggering heat to anode+electrolyte, not cathode\u2013electrolyte; dominant source identification is not supported by temperature magnitude alone.",
+              "error_type": "causal overclaim",
+              "evidence_refs": [
+                "TR_Mechanism+66+UnknownJournal:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Evidence demonstrates a 258\u00b0C gap and 13\u00d7 rate difference, directly refuting equivalence of surface and internal measurements.",
+              "error_type": "boundary overreach",
+              "evidence_refs": [
+                "TR_Mechanism+66+UnknownJournal:C001",
+                "TR_Mechanism+66+UnknownJournal:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Evidence shows surface measurement underestimates internal temperature, so a surface-based model would underestimate, not overestimate, the triggering threshold.",
+              "error_type": "mechanism substitution",
+              "evidence_refs": [
+                "TR_Mechanism+66+UnknownJournal:C001",
+                "TR_Mechanism+66+UnknownJournal:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Measurement-versus-internal-state gap and its consequences for mechanism inference and model input validity",
+          "primary_boundary": "Conclusions are restricted to NCA||Gr pouch cell under the specific heating protocol; surface\u2013internal gap does not by itself identify dominant heat sources",
+          "intended_error_modes": [
+            "causal overclaim from temperature magnitude",
+            "boundary overreach asserting measurement equivalence",
+            "direction-of-error reversal for model threshold"
+          ],
+          "disallowed_extrapolations": [
+            "Inferring dominant heat source from temperature value alone",
+            "Generalizing surface\u2013internal equivalence under any thermocouple placement",
+            "Claiming surface-based model overestimates rather than underestimates threshold"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "Two 18650 NCM batteries are externally short-circuited at the same C-rate: Battery A at 50% SOC and Battery B at 100% SOC. Engineers monitor surface temperature at three axial positions: T1 (positive electrode end), T2 (center), T3 (negative electrode end). Which statements about the thermal and electrical behavior are supported?",
+          "options": [
+            "A. Battery A exhibits a faster surface temperature rise rate than Battery B under the same C-rate, because higher internal impedance at low SOC produces more intense Joule heating at short-circuit onset.",
+            "B. Battery B reaches a higher maximum surface temperature than Battery A, because higher lithium content generates larger short-circuit current and greater accumulated Joule and reaction heat that is difficult to dissipate.",
+            "C. At all SOC levels and C-rates, T1 records the highest temperature because the positive electrode undergoes the most exothermic reactions during short circuit.",
+            "D. Battery B's voltage trace during short circuit displays a distinct platform near 2.75 V caused by separator pore closure at elevated temperature, which impedes Li\u207a transport.",
+            "E. Battery A's voltage trace shows a saddle-like falling\u2013rising\u2013falling profile, where the voltage rebound is driven by reduced concentration polarization as rising internal temperature increases Li\u207a conductivity.",
+            "F. Discharge capacity after short circuit is primarily determined by SOC level, with higher SOC yielding proportionally higher residual capacity regardless of C-rate."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "D",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence states low-SOC batteries have higher internal impedance causing more significant Joule heating and faster surface temperature rise rate.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+62+UnknownJournal:C002",
+                "TR_Mechanism+62+UnknownJournal:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Evidence states high-SOC batteries generate higher currents and accumulated heat difficult to dissipate, reaching higher maximum temperatures.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+62+UnknownJournal:C002",
+                "TR_Mechanism+62+UnknownJournal:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Evidence states T3 (negative electrode) is highest and T1 (positive electrode) is lowest due to heat-dissipating safety cap and pressure relief valve structures near T1.",
+              "error_type": "mechanism substitution",
+              "evidence_refs": [
+                "TR_Mechanism+62+UnknownJournal:C006"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Evidence directly attributes the ~2.75 V voltage platform in high-SOC batteries to high-temperature-induced separator pore closure blocking Li\u207a transport.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+62+UnknownJournal:C007"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Evidence describes a saddle-like voltage profile for 50% SOC batteries with voltage rebound caused by rising temperature enhancing Li\u207a conductivity and reducing concentration polarization.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+62+UnknownJournal:C008"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Evidence states discharge capacity has no strong relationship to SOC and decreases linearly with increasing short-circuit current rate, not proportionally with SOC.",
+              "error_type": "unsupported monotonicity",
+              "evidence_refs": [
+                "TR_Mechanism+62+UnknownJournal:C010"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "SOC-dependent differentiation of temperature rise rate vs. maximum temperature, voltage signature mechanisms, and axial temperature distribution during external short circuit",
+          "primary_boundary": "Findings apply to 18650 NCM cells under external short circuit; axial temperature ordering is structure-dependent and not a universal electrochemical result",
+          "intended_error_modes": [
+            "mechanism substitution for axial temperature ordering",
+            "unsupported monotonicity for capacity\u2013SOC relationship",
+            "single-variable reasoning conflating rise rate with maximum temperature"
+          ],
+          "disallowed_extrapolations": [
+            "Generalizing T1 as hottest end to other cell formats",
+            "Asserting SOC as primary determinant of residual discharge capacity"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "Under adiabatic conditions, LFP and NCM batteries are compared for thermal runaway heat sourcing. For LFP, the ratio of external triggering energy to total self-heat generation averages 24.5%; for NCM this ratio is approximately 5\u20138%. A researcher claims these ratios imply that external heating is the dominant energy source for NCM thermal runaway. Which statements correctly evaluate this claim and related thermal runaway energetics?",
+          "options": [
+            "A. The researcher's claim is incorrect: a 5\u20138% triggering ratio for NCM means internal chemical reactions supply approximately 92\u201395% of total heat, making external heating a minor contributor.",
+            "B. The researcher's claim is incorrect: a 24.5% triggering ratio for LFP means internal reactions supply approximately 75% of total heat, so external heating is still not the dominant source even for LFP.",
+            "C. For a 280 Ah LFP battery, the minimum triggering energy of thermal runaway is approximately 670 kJ regardless of the heating power applied, corresponding to about 20.8% of its theoretical stored energy.",
+            "D. Because NCM has a lower triggering ratio than LFP, NCM batteries are inherently safer under adiabatic thermal abuse since less external energy is needed to trigger runaway.",
+            "E. Battery thickness in LFP cells has little impact on maximum temperature during thermal runaway but causes triggering time to increase approximately linearly with thickness.",
+            "F. Increasing the number of thinner cells inside a single LFP battery reduces thermal runaway propagation risk by distributing heat over more interfaces."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence states internal chemical interactions account for ~95% of NCM heat sources, directly refuting the researcher's claim that external heating dominates.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+69+UnknownJournal:C002"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Evidence states LFP batteries obtain ~80% of energy from internal reactions (24.5% triggering ratio), so external heating is not dominant for LFP either.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+69+UnknownJournal:C001"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence explicitly states triggering energy is constant at ~670 kJ for the 280 Ah LFP battery across multiple heating powers, with only 2.5% inaccuracy.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+69+UnknownJournal:C003"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "A lower triggering ratio means less external energy is needed relative to total heat, implying NCM is more susceptible to runaway, not safer; this is a direction-of-inference error.",
+              "error_type": "causal overclaim",
+              "evidence_refs": [
+                "TR_Mechanism+69+UnknownJournal:C002"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Evidence states battery thickness has little impact on maximum temperature but triggering time grows approximately linearly with thickness.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+69+UnknownJournal:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Evidence states thinner (more numerous) cells accelerate propagation via positive feedback between cell temperature and heat generation; thermal isolation layers are recommended, not the configuration itself.",
+              "error_type": "boundary overreach",
+              "evidence_refs": [
+                "TR_Mechanism+69+UnknownJournal:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Correct inference from triggering-energy ratios about dominant heat sources, and the non-monotonic safety implication of lower triggering ratios",
+          "primary_boundary": "Ratio-based conclusions apply under adiabatic conditions; lower triggering ratio does not imply greater safety",
+          "intended_error_modes": [
+            "causal overclaim inverting safety implication of lower triggering ratio",
+            "boundary overreach asserting thinner cells reduce propagation risk",
+            "scale transfer error from ratio to dominant-source identity"
+          ],
+          "disallowed_extrapolations": [
+            "Inferring NCM is safer because its triggering ratio is lower",
+            "Asserting more cells unconditionally reduces propagation risk without thermal isolation"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "For a fully charged NCA||Gr pouch battery undergoing thermal runaway, evidence identifies multiple heat-contributing mechanisms in the self-heating stage before the triggering point. (1) Rank the three dominant contributors by their percentage share of heat accumulation in this pre-triggering stage. (2) Explain why internal short circuit, despite being only the second-largest contributor by percentage, is described as directly triggering thermal runaway. (3) State one reason why using a model calibrated to match experimental temperature data (with \u03b7 = 0.4 for ISC energy conversion) does not by itself confirm that the model's physical assumptions about internal short circuit are correct."
+        },
+        "ground_truth": {
+          "gold_answer": "(1) In the self-heating stage (T1 to T2), the anode+electrolyte system contributes the largest share at 53.8%, internal short circuit contributes 27.5%, and the cathode+anode system contributes 18.7%. (2) Although ISC accounts for only 27.5% of cumulative heat, its energy is released instantaneously rather than gradually, causing the temperature rate to reach 1\u00b0C/s and directly crossing the thermal runaway triggering threshold; the rate of release, not the total quantity, determines triggering. (3) Model calibration (\u03b7 = 0.4 producing best-fit temperatures) demonstrates empirical agreement with experimental outputs but does not validate the physical correctness of the assumed ISC mechanism or \u03b7 value, because other combinations of assumptions could produce equally good fits to the same data.",
+          "must_include": [
+            "anode+electrolyte at 53.8% is the largest pre-triggering contributor",
+            "internal short circuit at 27.5% is second",
+            "cathode+anode at 18.7% is third",
+            "ISC heat is released instantaneously, causing temperature rate to reach 1\u00b0C/s",
+            "instantaneous release rate, not cumulative percentage, directly triggers runaway",
+            "calibration agreement does not confirm physical correctness of model assumptions"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming cathode\u2013electrolyte reaction is a dominant pre-triggering contributor based on this evidence",
+            "Asserting \u03b7 = 0.4 is the physically correct ISC energy conversion efficiency rather than a calibration parameter",
+            "Generalizing the heat contribution percentages to other chemistries or SOC levels"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Heat source ranking in pre-triggering stage, distinction between cumulative heat share and instantaneous release rate as the triggering mechanism, and limits of model calibration as evidence of physical validity",
+          "primary_boundary": "Percentages and mechanism descriptions apply specifically to fully charged NCA||Gr pouch cells under the described heating protocol; calibration validity is distinct from mechanistic validity",
+          "intended_error_modes": [
+            "Confusing cumulative heat percentage with triggering role (ranking ISC as non-triggering because it is not the largest contributor)",
+            "Asserting model calibration implies physical correctness of ISC assumptions",
+            "Substituting cathode\u2013electrolyte reaction as a major pre-triggering contributor"
+          ]
+        }
+      }
+    ]
+  }
+}

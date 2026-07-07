@@ -1,0 +1,35 @@
+{
+  "mcqs": [],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A safety engineer is comparing the toxic gas hazard from NTM sodium-ion batteries and LFP lithium-ion batteries at 100% SOC. The LFP cells undergo thermal runaway while the NTM SIBs do not. The engineer notes that the FED (fractional effective dose) value for LFP cells is approximately 29 times higher than for NTM SIBs at 100% SOC. CO concentrations from LFP cells at 60% SOC and above exceed the lethal threshold, while NTM SIB CO concentrations remain well below that threshold at all SOCs. However, the engineer also observes that NTM SIBs have a lower safety valve opening temperature than LFP cells. Explain why the lower safety valve opening temperature of NTM SIBs does not imply that NTM SIBs present a greater toxic gas hazard than LFP cells, and identify which gas species and which parameter most directly differentiate the toxic hazard between the two chemistries at high SOC."
+      },
+      "ground_truth": {
+        "gold_answer": "The lower safety valve opening temperature of NTM SIBs means the internal materials begin releasing gas at a lower temperature threshold, but this does not translate to greater toxic hazard because the NTM SIBs do not undergo thermal runaway at any tested SOC. Without thermal runaway, the exothermic reactions that generate large quantities of toxic gases such as CO and H2 do not occur at the same scale as in LFP cells. The toxic hazard is determined by the concentration and composition of gases actually released, not by the valve opening temperature alone. CO is the primary toxic gas species that differentiates the two chemistries: LFP cells at 60% SOC and above produce CO concentrations exceeding the lethal threshold, while NTM SIBs remain well below that threshold at all SOCs. The FED value, which integrates the toxic gas concentrations into an asphyxiation hazard metric, is approximately 29 times higher for LFP cells at 100% SOC, directly quantifying the hazard difference. Therefore, valve opening temperature is a thermal stability indicator, not a toxic hazard indicator; the relevant differentiating parameters are CO concentration relative to the lethal threshold and the FED value.",
+        "must_include": [
+          "Absence of thermal runaway in NTM SIBs means large-scale toxic gas generation does not occur despite lower valve opening temperature",
+          "CO concentration exceeding the lethal threshold in LFP cells at 60% SOC and above is the primary toxic differentiator",
+          "FED value quantifies the integrated asphyxiation hazard and is approximately 29 times higher for LFP at 100% SOC",
+          "Valve opening temperature is a thermal stability indicator, not a direct toxic hazard metric"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding NTM SIBs are completely safe because they do not undergo thermal runaway under tested conditions",
+          "Inferring that lower valve opening temperature always implies greater gas release or greater hazard",
+          "Generalizing the toxic hazard comparison to SOC levels or conditions not covered by the evidence"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Decoupling thermal stability indicators (valve opening temperature) from toxic gas hazard indicators (CO concentration, FED) across two battery chemistries with different TR behavior",
+        "primary_boundary": "Valve opening temperature governs when gas release begins but does not determine the magnitude or toxicity of gases released; toxic hazard is determined by gas composition and concentration relative to physiological thresholds, which depend on whether thermal runaway occurs",
+        "intended_error_modes": [
+          "Conflating lower valve opening temperature with greater gas release or greater toxic hazard",
+          "Ignoring the absence of thermal runaway as the mechanistic reason for low toxic gas output in SIBs",
+          "Treating FED as a secondary metric rather than the primary integrated hazard quantifier"
+        ]
+      }
+    }
+  ]
+}

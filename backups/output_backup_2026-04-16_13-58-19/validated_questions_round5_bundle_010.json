@@ -1,0 +1,143 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A lithium-ion cell with an NMC cathode and graphite anode uses an ionic liquid electrolyte with an inorganic anion. During a calorimetric abuse test, a small exothermic event is detected near 120°C, followed by a more violent heat release near 280°C. A separate cell using an organic anion (TFSI) ionic liquid electrolyte is tested under identical conditions. An engineer must assess which conclusions about the comparative thermal behavior of these two cells are admissible based on the described chemistry and observed reaction sequence.",
+        "options": [
+          "A. The exothermic event near 120°C in both cells is consistent with reduction of the ionic liquid by the lithiated graphite anode following partial SEI film disruption.",
+          "B. The inorganic anion cell will exhibit a lower onset temperature for exothermic reactions and a larger total enthalpy release compared to the TFSI cell, making it thermally more hazardous in that respect.",
+          "C. Because the ionic liquid electrolyte is non-flammable, the violent heat release near 280°C is prevented, and the cell can be considered safe against thermal runaway.",
+          "D. The violent heat generation near 280°C is driven primarily by combustion reactions involving electrolyte and separator, fueled by oxygen released from the NMC cathode, not by the electrolyte flammability alone.",
+          "E. The lower CO2 generation from ionic liquid electrolytes compared to carbonate electrolytes directly implies that peak chamber pressure during thermal runaway will also be lower.",
+          "F. Replacing a carbonate electrolyte with an ionic liquid electrolyte eliminates the primary exothermic reaction sequence because the carbonate oxidation pathway is removed.",
+          "G. The onset temperature of the cathode-side oxidation reaction in the ionic liquid cell begins at a temperature substantially higher than the anode-side SEI-related event."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "D",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that small exothermic peaks near 120°C are ascribed to chemical reduction of ionic liquids by LixC6 anode when partial SEI film destruction occurs. This applies to ionic liquid cells generally, not just one anion type.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+183+2006_12th_Biennial_IEEE_Conference_on_Electromagnetic_Field_Computation:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The evidence states inorganic anions make onset temperatures lower and total enthalpies larger compared to organic anion (TFSI) electrolytes. This is a direct admissible comparative conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+183+2006_12th_Biennial_IEEE_Conference_on_Electromagnetic_Field_Computation:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The evidence explicitly states that cell safety does not directly connect to non-flammability of electrolytes based on the thermal runaway mechanism. Non-flammability does not prevent the violent heat release near 280°C, which is driven by cathode oxygen release and combustion of separator. This is a conservative-sounding but mechanistically incorrect claim.",
+            "error_type": "protective_mechanism_overclaim",
+            "evidence_refs": [
+              "TR_Dynamics+183+2006_12th_Biennial_IEEE_Conference_on_Electromagnetic_Field_Computation:C001",
+              "TR_Dynamics+183+2006_12th_Biennial_IEEE_Conference_on_Electromagnetic_Field_Computation:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The evidence states the violent heat generation near 280°C is due to combustion reactions of electrolyte and separator based on released oxygen from the cathode. This is a multi-step mechanistic chain: cathode oxygen release → combustion of electrolyte and separator → violent heat, independent of bulk electrolyte flammability.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+183+2006_12th_Biennial_IEEE_Conference_on_Electromagnetic_Field_Computation:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Lower CO2 generation from ionic liquid electrolytes is noted as a potential safety advantage, but the evidence on chamber pressure (from the heating method study) shows that gas generation rate, not CO2 fraction alone, drives peak pressure. Inferring lower peak pressure from lower CO2 generation is an unsupported cross-paper extrapolation and ignores other gas species contributions.",
+            "error_type": "causal_overclaim_and_scope_expansion",
+            "evidence_refs": [
+              "TR_Dynamics+183+2006_12th_Biennial_IEEE_Conference_on_Electromagnetic_Field_Computation:C002",
+              "TR_Dynamics+182+Case_Studies_in_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence shows that ionic liquid cells still exhibit exothermic reactions at both anode and cathode sides. The carbonate structure is absent, reducing CO2, but the reaction sequence involving anode reduction and cathode oxidation still occurs. Replacing carbonate electrolyte does not eliminate the primary exothermic sequence.",
+            "error_type": "mechanism_substitution_overclaim",
+            "evidence_refs": [
+              "TR_Dynamics+183+2006_12th_Biennial_IEEE_Conference_on_Electromagnetic_Field_Computation:C003",
+              "TR_Dynamics+183+2006_12th_Biennial_IEEE_Conference_on_Electromagnetic_Field_Computation:C004"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "The evidence places the anode-side SEI-related event at ~120°C and the cathode-side oxidation onset at ~220°C, with violent cathode-driven reactions at ~280°C. The cathode onset is substantially higher than the anode-side event, making this admissible.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+183+2006_12th_Biennial_IEEE_Conference_on_Electromagnetic_Field_Computation:C003",
+              "TR_Dynamics+183+2006_12th_Biennial_IEEE_Conference_on_Electromagnetic_Field_Computation:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism-based admissibility of safety conclusions for ionic liquid electrolyte cells under thermal abuse, including the role of anion type, reaction sequence staging, and the decoupling of electrolyte flammability from cell safety.",
+        "primary_boundary": "Non-flammability of ionic liquid electrolyte does not prevent thermal runaway; the violent heat release is driven by cathode oxygen release and combustion of separator, not bulk electrolyte flammability.",
+        "intended_error_modes": [
+          "Protective mechanism overclaim: assuming non-flammable electrolyte prevents thermal runaway",
+          "Causal overclaim: inferring lower peak pressure from lower CO2 generation alone",
+          "Mechanism substitution: assuming removal of carbonate structure eliminates all exothermic reactions"
+        ],
+        "disallowed_extrapolations": [
+          "Do not infer that lower CO2 generation implies lower peak pressure without accounting for total gas generation rate",
+          "Do not generalize non-flammability as equivalent to thermal safety",
+          "Do not assume inorganic anion results apply to TFSI cells without comparison"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A lithium-ion cell using an ionic liquid electrolyte with an inorganic anion undergoes thermal abuse testing. Two distinct exothermic events are detected: a small one near 120°C and a more violent one near 280°C. A colleague argues that because the ionic liquid electrolyte is non-flammable, the cell is inherently safer than one using a conventional carbonate electrolyte, and that the violent exothermic event near 280°C would not occur in a real cell because the electrolyte cannot combust. Identify the specific mechanistic error in this argument, explain what actually drives the violent heat release near 280°C in the ionic liquid cell, and state whether lower CO2 generation from the ionic liquid electrolyte constitutes a direct safety advantage against the 280°C event."
+      },
+      "ground_truth": {
+        "gold_answer": "The colleague's argument contains two errors. First, cell safety does not directly connect to electrolyte non-flammability based on the thermal runaway mechanism; non-flammability of the bulk electrolyte does not prevent the internal exothermic reaction sequence. Second, the violent heat release near 280°C in the ionic liquid cell is driven by combustion reactions of the electrolyte and separator fueled by oxygen released from the NMC cathode (cathode decomposition releasing oxygen), not by the bulk flammability of the electrolyte itself. Therefore, even a non-flammable electrolyte can participate in combustion reactions when exposed to cathode-released oxygen under confinement at elevated temperature. Regarding CO2: lower CO2 generation from ionic liquid electrolytes (due to absence of carbonate structure) may represent a potential safety advantage in terms of gas pressure contribution from CO2 specifically, but it does not address the primary driver of the 280°C violent event, which is cathode oxygen release driving combustion of electrolyte and separator. Lower CO2 generation is not a direct mitigation of the 280°C exothermic event.",
+        "must_include": [
+          "Cell safety does not directly connect to non-flammability of electrolytes based on the thermal runaway mechanism",
+          "The violent heat release near 280°C is driven by combustion reactions of electrolyte and separator based on oxygen released from the cathode",
+          "Non-flammable electrolyte can still participate in combustion when cathode-released oxygen is present",
+          "Lower CO2 generation does not directly mitigate the 280°C cathode-driven exothermic event"
+        ],
+        "disallowed_extrapolations": [
+          "Do not claim that ionic liquid electrolytes eliminate thermal runaway",
+          "Do not claim that lower CO2 generation implies lower peak pressure without accounting for total gas generation rate and other species",
+          "Do not claim that inorganic anion ionic liquids are safer than TFSI ionic liquids overall; the evidence shows inorganic anions produce lower onset temperatures and larger enthalpies"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanistic decoupling of electrolyte flammability from thermal runaway safety, and identification of cathode oxygen release as the primary driver of violent heat generation in ionic liquid cells.",
+        "primary_boundary": "Non-flammability of ionic liquid electrolyte does not prevent the cathode-oxygen-driven combustion reaction near 280°C; the safety claim based on non-flammability is mechanistically invalid for this failure mode.",
+        "intended_error_modes": [
+          "Conflating bulk electrolyte flammability with thermal runaway safety",
+          "Attributing the 280°C event to electrolyte combustion in the conventional sense rather than cathode-oxygen-driven combustion",
+          "Treating lower CO2 generation as a direct mitigation of the violent exothermic event"
+        ]
+      }
+    }
+  ]
+}

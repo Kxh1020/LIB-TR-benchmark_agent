@@ -1,0 +1,143 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Nine nominally identical 18650 LCO cells at 100% SOC are tested under the same thermal abuse protocol. Self-heating onset temperatures (Texo) range from 67.4°C to 123.8°C across the batch. For cells with similar Texo near 77°C, thermal runaway delay times still range from approximately 802 to 1584 minutes. A kinetic model with a single reaction step predicts that the upper and lower bounds of thermal runaway delay time span approximately one order of magnitude, and all experimental data fall within these bounds. The model also predicts that when Texo exceeds 120°C, up to 25% of the reactant may be consumed before the exothermicity threshold is detected, and that accounting for this reactant consumption can extend the predicted delay time by a factor of approximately two at the higher end of Texo values. An engineer is evaluating which conclusions about cell variability and model applicability are supported by this evidence.",
+        "options": [
+          "A. The wide range of delay times observed among cells with similar Texo (~77°C) demonstrates that Texo alone is not a sufficient predictor of thermal runaway delay time, and additional cell-to-cell variation in kinetic parameters or internal state must contribute.",
+          "B. Because all experimental data fall within the one-order-of-magnitude bounds of the one-step kinetic model, the model can be used to predict the exact thermal runaway delay time for a given cell with acceptable engineering precision.",
+          "C. The consumption of up to 25% of reactant before exothermicity detection at Texo above 120°C implies that cells with higher Texo will systematically exhibit shorter actual delay times than the model predicts when reactant depletion is neglected.",
+          "D. The approximately twofold extension of predicted delay time when reactant consumption is accounted for is most significant for cells at the higher end of the Texo range, not for cells with low Texo values.",
+          "E. The one-order-of-magnitude span of the model's predicted bounds indicates that the one-step kinetic model provides a precise point estimate of delay time, with the span reflecting only measurement uncertainty in the experimental data.",
+          "F. The cell-to-cell variability in delay time among cells with similar Texo is consistent with the hypothesis that the kinetic parameters of the exothermic reactions vary between nominally identical cells.",
+          "G. The fact that experimental data fall within the model's predicted bounds proves that the one-step kinetic model correctly captures the dominant reaction mechanism governing thermal runaway in these cells."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence directly shows that cells with similar Texo (~77°C) exhibit delay times ranging from 802 to 1584 minutes, a nearly twofold spread at similar onset temperatures. This requires the inference that Texo alone cannot predict delay time and that other sources of variability (kinetic parameters, internal state) must contribute. This is a multi-step reasoning conclusion: similar Texo → similar initial detection condition → yet different delay times → additional variability sources required.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+202+Journal_of_Energy_Storage:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The evidence explicitly states that the model's bounds span approximately one order of magnitude, indicating large uncertainty. Falling within one-order-of-magnitude bounds is not equivalent to precise point prediction. This is a measurement scope distractor that conflates bounding with precision.",
+            "error_type": "measurement_scope_overclaim",
+            "evidence_refs": [
+              "TR_Modelling+202+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "This option reverses the direction of the effect. Reactant consumption before detection means that when the system is detected as exothermic, less reactant remains to drive thermal runaway, which would tend to elongate the delay time (less energy available for runaway), not shorten it. The evidence states that accounting for reactant consumption elongates the predicted delay time. This is a direction-of-effect reversal distractor.",
+            "error_type": "causal_direction_reversal",
+            "evidence_refs": [
+              "TR_Modelling+202+Journal_of_Energy_Storage:C003",
+              "TR_Modelling+202+Journal_of_Energy_Storage:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The evidence states that the twofold extension of delay time due to reactant consumption is specifically observed under the higher end of Texo values, and that up to 25% reactant consumption occurs when Texo exceeds 120°C. This is a condition-dependent conclusion: the reactant depletion effect is most significant at high Texo, not uniformly across all cells. This is counterintuitive because one might expect higher Texo cells to be less affected by this correction.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+202+Journal_of_Energy_Storage:C003",
+              "TR_Modelling+202+Journal_of_Energy_Storage:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The evidence explicitly characterizes the one-order-of-magnitude span as indicating large uncertainty in the model's prediction, not as a precise point estimate. The span reflects model uncertainty, not merely experimental measurement uncertainty. This is a conservative-but-wrong distractor that appears to acknowledge model limitations while mischaracterizing their source.",
+            "error_type": "scope_misattribution",
+            "evidence_refs": [
+              "TR_Modelling+202+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The large spread in delay times among cells with similar Texo is consistent with cell-to-cell variation in kinetic parameters of the exothermic reactions. This is a minimal engineering implication: if onset conditions are similar but outcomes differ substantially, the governing kinetic parameters must vary. The evidence supports this as a plausible contributing factor without requiring it to be the sole explanation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+202+Journal_of_Energy_Storage:C002"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "Falling within the bounds of a model does not prove the model captures the correct mechanism. The bounds span one order of magnitude, meaning the model is broadly consistent with but not validated by the data. This is a causal overclaim: consistency with bounds is necessary but not sufficient to establish mechanistic correctness. This is also a conservative-appearing but logically flawed option.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Modelling+202+Journal_of_Energy_Storage:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinguishing what cell-to-cell variability in delay time implies about the sufficiency of Texo as a predictor, understanding the directional effect of reactant consumption on delay time, and recognizing the limits of bounding versus point prediction.",
+        "primary_boundary": "Texo is insufficient as a sole predictor of delay time; reactant consumption elongates (not shortens) delay time at high Texo; one-order-of-magnitude bounds indicate large uncertainty, not precision; data consistency with bounds does not validate mechanism.",
+        "intended_error_modes": [
+          "measurement_scope_overclaim (B)",
+          "causal_direction_reversal (C)",
+          "model_span_misattribution (E)",
+          "consistency_implies_correctness_fallacy (G)"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring precise delay time prediction from bounding model",
+          "Inferring mechanism correctness from data-within-bounds",
+          "Inferring that high Texo shortens delay time due to reactant consumption"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery module engineer observes that during Stage II of thermal runaway in a sealed lithium-ion cell, the cell exhibits visible swelling followed by a sudden decrease in the rate of temperature rise at the transition into Stage III. Separately, propagation interval data from a two-cell module show that increasing the external heating power applied to cell 1 results in a longer propagation interval and a lower maximum temperature reached by cell 2. Explain the physical mechanism responsible for the temperature rate decrease at the Stage II–III transition, and explain why higher heating power applied to cell 1 produces a longer propagation interval to cell 2 rather than a shorter one. Your answer should identify the governing mechanism for each phenomenon and explain why each outcome is counterintuitive relative to a naive expectation."
+      },
+      "ground_truth": {
+        "gold_answer": "The temperature rate decrease at the Stage II–III transition is caused by the opening of the cell's bleed valve when internal gas pressure accumulates to a threshold value. During Stage II, exothermic reactions generate large quantities of gas, causing internal pressure to rise and the cell to swell. When pressure reaches the valve threshold, the valve opens and ejects gas, which carries thermal energy out of the cell and relieves the pressure driving further reaction. This causes a sudden drop in the rate of temperature rise at the start of Stage III. The counterintuitive aspect is that the cell appears to 'cool down' or decelerate thermally precisely when internal reactions are most active, because the venting event is a pressure-relief mechanism that dissipates energy rather than an indication of reaction cessation.\n\nFor the propagation interval, higher heating power causes cell 1 to reach its thermal runaway onset temperature more rapidly, compressing the duration of Stage I (the pre-runaway heating phase). Because cell 1 completes its thermal runaway event in a shorter elapsed time, the total duration over which it transfers heat to cell 2 is reduced. Cell 2 therefore receives less cumulative heat input, reaches a lower maximum temperature, and the propagation interval (measured from cell 1's thermal runaway onset) is longer because cell 2 takes more time to accumulate sufficient heat to reach its own onset threshold—or may not reach it at all. The counterintuitive aspect is that applying more power to trigger cell 1 makes propagation to cell 2 slower and less severe, because the increased power accelerates cell 1 through its runaway faster, not slower, reducing heat exposure time to cell 2.",
+        "must_include": [
+          "Bleed valve opening triggered by internal pressure reaching a threshold as the mechanism for the temperature rate decrease",
+          "Gas ejection during venting carries energy out of the cell, causing the temperature rate to decrease",
+          "Higher heating power causes cell 1 to reach thermal runaway onset faster, shortening the heat exposure duration to cell 2",
+          "Shorter heat exposure duration results in lower maximum temperature for cell 2 and longer propagation interval",
+          "Identification of the counterintuitive nature of each phenomenon"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming that venting prevents thermal runaway rather than transiently reducing temperature rate",
+          "Claiming that higher heating power prevents propagation in all cases or at all SOC levels",
+          "Attributing the temperature rate decrease to reaction completion rather than pressure-relief venting",
+          "Claiming that propagation interval is determined solely by heating power without reference to cell 1's runaway duration"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism identification for pressure-relief venting as the cause of Stage II–III temperature rate transition, and the counterintuitive relationship between heating power and propagation interval via cell 1 runaway duration.",
+        "primary_boundary": "Venting reduces temperature rate transiently but does not prevent thermal runaway; higher heating power reduces propagation severity by shortening cell 1's heat-transfer duration, not by reducing total energy output.",
+        "intended_error_modes": [
+          "Attributing temperature rate decrease to reaction completion or electrolyte depletion rather than valve opening",
+          "Assuming higher heating power increases propagation risk by delivering more energy to the system",
+          "Confusing total energy delivered with heat transfer duration as the controlling variable for cell 2 temperature"
+        ]
+      }
+    }
+  ]
+}

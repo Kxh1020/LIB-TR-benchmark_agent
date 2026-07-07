@@ -1,0 +1,36 @@
+{
+  "mcqs": [],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery module contains four cells in series with no thermal insulation material between them. During a thermal runaway propagation test, the time intervals between successive jet fire events for cells 2, 3, and 4 are 53 s, 30 s, and 15 s respectively. The module designer proposes replacing the air gaps with aluminosilicate ceramic fiber insulation to improve safety. After the modification, the jet fire intervals extend to 130 s, 120 s, and 37 s for cells 2, 3, and 4 respectively, but thermal runaway still propagates to all four cells. A colleague argues that the modification is a safety improvement and should be accepted. A second colleague argues that because propagation was not prevented, the modification provides no meaningful safety benefit and should be rejected. Evaluate both positions. In your answer, identify what the time interval data reveals about the physical mechanism by which the insulation affects propagation, explain why the second colleague's rejection criterion is too narrow, and identify one material property of aluminosilicate ceramic fiber that limits its ability to prevent propagation entirely."
+      },
+      "ground_truth": {
+        "gold_answer": "The time interval data shows that aluminosilicate ceramic fiber significantly slows the rate of thermal runaway propagation: the intervals between successive jet fire events increase substantially (e.g., from 53 s to 130 s for cell 2, from 30 s to 120 s for cell 3), indicating that the insulation reduces the rate of heat transfer from the triggered cell to adjacent cells, delaying but not blocking the thermal energy accumulation required to trigger runaway in each successive cell. The first colleague is correct that this represents a meaningful safety improvement: slowing propagation rate extends the time available for detection, intervention, and evacuation, which has direct safety value even without full prevention. The second colleague's rejection criterion—that any propagation means no benefit—is too narrow because it conflates the binary outcome (propagation yes/no) with the time-dependent severity of propagation, which is a separate and safety-relevant dimension. The material property that limits aluminosilicate ceramic fiber from preventing propagation entirely is its severe structural shrinkage under high-temperature conditions: the material undergoes approximately 69% contour area shrinkage after TRP testing, causing it to lose contact with cell surfaces and resulting in thermal insulation failure, which allows heat to bypass the insulation through the exposed gaps.",
+        "must_include": [
+          "The insulation slows propagation rate by reducing heat transfer rate to adjacent cells, as evidenced by extended jet fire time intervals",
+          "Slowing propagation rate has safety value by extending time for detection or intervention, even without full prevention",
+          "The second colleague's criterion conflates binary propagation outcome with time-dependent propagation severity",
+          "Aluminosilicate ceramic fiber undergoes severe structural shrinkage (approximately 69% contour area) after TRP testing, causing thermal insulation failure"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming that aluminosilicate ceramic fiber prevents propagation under any conditions",
+          "Attributing the insulation failure to bulk thermal conductivity rather than structural shrinkage",
+          "Concluding that the extended intervals guarantee sufficient time for intervention in all deployment scenarios",
+          "Generalizing the shrinkage failure mode to all ceramic fiber materials"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinguishing propagation rate reduction from propagation prevention as separate safety metrics, and identifying the structural failure mechanism that limits aluminosilicate ceramic fiber performance",
+        "primary_boundary": "Propagation rate reduction is a distinct and admissible safety metric from propagation prevention; structural shrinkage is the identified mechanism of insulation failure, not bulk thermal conductivity",
+        "intended_error_modes": [
+          "Accepting the second colleague's binary prevention criterion as the only valid safety metric",
+          "Attributing insulation failure to thermal conductivity rather than structural shrinkage",
+          "Overstating the safety benefit by claiming the extended intervals guarantee safe intervention time"
+        ]
+      }
+    }
+  ]
+}

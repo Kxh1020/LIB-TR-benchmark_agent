@@ -1,0 +1,323 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery engineer is evaluating thermal runaway propagation (TRP) risk in two configurations of a 15-cell cylindrical cell cluster: one fully enclosed with no gaps, and one in open space. In the enclosed configuration, all 15 cells enter thermal runaway within 103 seconds. In the open-space configuration, jelly rolls eject from several cells mid-sequence, and only 8 of 15 cells ultimately enter thermal runaway. The engineer observes that row-to-row propagation speed in air is approximately 9 times faster than in an inert atmosphere under otherwise identical conditions. Which of the following conclusions are supported by this scenario?",
+        "options": [
+          "A. The survival of 7 cells in open space is primarily caused by heat dissipation to the environment after jelly roll ejection, not by the absence of a flammable atmosphere.",
+          "B. Enclosure confinement accelerates TRP mainly because it prevents oxygen access, thereby concentrating combustion heat within the cluster.",
+          "C. The approximately 17-fold difference in total TRP duration between enclosed and open configurations implies that open-space TRP is always self-limiting regardless of cell chemistry.",
+          "D. The 9-fold difference in row-to-row propagation speed between air and inert atmosphere indicates that flaming combustion is a dominant heat transfer pathway in air, not merely a secondary contributor.",
+          "E. Per-cell heat release being higher in the enclosed configuration than in open space is consistent with confinement enhancing combustion completeness rather than simply trapping pre-existing heat.",
+          "F. Because open-space TRP was not self-sustainable in this test, no additional thermal protection is required for open-format battery modules at ambient temperatures above 17°C."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that after jelly roll ejection, the remaining shells cooled quickly and could not transfer sufficient heat to trigger TR in following cells. The survival mechanism is heat removal via ejection, not oxygen depletion. This is a direct causal chain: ejection → reduced heat source → cooling → survival.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+185+International_Journal_of_Heat_and_Mass_Transfer:C001"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The evidence attributes confinement acceleration to heat retention and cascading fire enhancement, not to oxygen concentration effects. The inert-atmosphere comparison shows that flaming combustion in air drives the 9x speed increase, meaning oxygen presence accelerates propagation rather than its absence being the mechanism in enclosure. This option confuses the mechanism.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Protection+185+International_Journal_of_Heat_and_Mass_Transfer:C002",
+              "TR_Protection+185+International_Journal_of_Heat_and_Mass_Transfer:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The evidence shows open-space TRP was not self-sustainable in this specific test due to jelly roll ejection, but this cannot be generalized to all chemistries or conditions. The evidence does not support a universal claim about open-space TRP self-limitation. This is an overgeneralization distractor.",
+            "error_type": "overgeneralization",
+            "evidence_refs": [
+              "TR_Protection+185+International_Journal_of_Heat_and_Mass_Transfer:C001",
+              "TR_Protection+185+International_Journal_of_Heat_and_Mass_Transfer:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "A 9-fold speed difference between air and inert atmosphere, under otherwise identical conditions, directly implicates flaming combustion as a dominant heat transfer pathway. If combustion were secondary, the speed difference would be marginal. This is a multi-step inference: atmosphere difference → combustion presence/absence → speed ratio → dominance conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+185+International_Journal_of_Heat_and_Mass_Transfer:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Per-cell heat release is higher in confined space (71.4 kJ/cell) than open space (48.8 kJ/cell). Since confinement does not add fuel, the increase must reflect enhanced combustion completeness due to the cascading fire environment. This is counterintuitive because confinement might be expected only to retain heat, not increase it, but the evidence explicitly attributes the increase to enhanced combustion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+185+International_Journal_of_Heat_and_Mass_Transfer:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "This option makes an unsupported system-level safety recommendation from a single experimental observation. The evidence provides a threshold temperature of 17.4°C below which propagation is limited, but does not support eliminating thermal protection above that threshold. This is a scope expansion distractor that conflates a propagation boundary condition with a design recommendation.",
+            "error_type": "scope_expansion_distractor",
+            "evidence_refs": [
+              "TR_Protection+185+International_Journal_of_Heat_and_Mass_Transfer:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism attribution for confinement effects and combustion role in TRP acceleration",
+        "primary_boundary": "The per-cell heat release increase in confinement reflects enhanced combustion, not merely heat retention; flaming combustion is dominant not secondary in air-based TRP",
+        "intended_error_modes": [
+          "mechanism_substitution: attributing confinement effect to oxygen concentration rather than heat retention and combustion enhancement",
+          "overgeneralization: extending open-space non-sustainability to all chemistries",
+          "scope_expansion: converting a threshold observation into a design safety recommendation"
+        ],
+        "disallowed_extrapolations": [
+          "Universal claim that open-space TRP is always self-limiting",
+          "Claim that confinement works by restricting oxygen",
+          "System-level safety recommendation from single-condition propagation data"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery pack designer is evaluating liquid nitrogen (LN) injection as a thermal runaway propagation suppression strategy for a prismatic module array. Without intervention, the module directly above the thermal runaway (TR) source reaches 131.2°C, the module below reaches 63.17°C, and lateral modules increase by only 27.8°C. When 11 kg of LN is injected, all adjacent module temperatures drop below room temperature and fire duration is reduced to approximately one-third of the unprotected case. Testing with 18 kg of LN shows a slightly higher adjacent module peak temperature (34.2°C) compared to the 11 kg case (31.2°C), despite a higher cooling rate (0.97°C/s vs 0.05°C/s). LN utilization efficiency decreases monotonically as injection mass increases from 11 kg to 18 kg. Which of the following conclusions are admissible given these conditions?",
+        "options": [
+          "A. The temperature asymmetry between the upper and lower adjacent modules without LN intervention is consistent with buoyancy-driven convective flow carrying heat preferentially upward, not with symmetric conductive spreading.",
+          "B. Increasing LN injection mass beyond 11 kg guarantees lower peak temperatures in adjacent modules because higher cooling rates always dominate over fluid dynamic disturbances.",
+          "C. The decrease in LN utilization efficiency with increasing injection mass indicates that the additional LN beyond 11 kg absorbs less heat per unit mass, implying diminishing thermal protection returns per kilogram injected.",
+          "D. The slightly higher adjacent module peak temperature at 18 kg compared to 11 kg, despite the higher cooling rate, is consistent with transient fluid dynamic disturbances from rapid LN vaporization temporarily redistributing heat to adjacent modules.",
+          "E. Because lateral modules experienced only radiative heat transfer in the unprotected case, LN injection would be unnecessary for lateral modules in any prismatic module configuration.",
+          "F. The one-third reduction in fire duration with 11 kg LN injection demonstrates that LN suppresses the electrochemical reactions driving TR, not merely the external combustion."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The upper module reaching 131.2°C while the lower reaches only 63.17°C and lateral modules increase by only 27.8°C is directly consistent with buoyancy-driven upward convection carrying flame and hot gas preferentially upward. Symmetric conduction would produce more uniform temperature distribution. This requires reasoning from the temperature asymmetry pattern to the physical mechanism.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+186+International_Journal_of_Heat_and_Mass_Transfer:C001",
+              "TR_Protection+186+International_Journal_of_Heat_and_Mass_Transfer:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The evidence directly contradicts this: 18 kg LN produces a higher adjacent module peak temperature than 11 kg despite higher cooling rate, attributed to convective turbulence and pressure disturbances. This option is a conservative-sounding but incorrect monotonicity claim that ignores the documented non-monotonic behavior.",
+            "error_type": "unjustified_monotonicity",
+            "evidence_refs": [
+              "TR_Protection+186+International_Journal_of_Heat_and_Mass_Transfer:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence shows LN utilization efficiency (heat absorbed per gram) decreases monotonically from 31.7 J/g at 11 kg to 17.34 J/g at 18 kg. This directly implies that each additional kilogram of LN beyond 11 kg absorbs less heat per unit mass, constituting diminishing thermal protection returns. This is a two-step inference: efficiency trend → per-kilogram protection return.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+186+International_Journal_of_Heat_and_Mass_Transfer:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "This is the counterintuitive correct option. Despite 18 kg LN achieving a higher cooling rate, adjacent module peak temperature is slightly higher than at 11 kg. The evidence attributes this to transient thermal and fluid dynamic disturbances from rapid vaporization. The solver must reason that cooling rate and peak temperature are not monotonically linked when turbulent redistribution is present.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+186+International_Journal_of_Heat_and_Mass_Transfer:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "This is a scope expansion distractor. The observation that lateral modules experienced limited heating in this specific configuration cannot be generalized to all prismatic module configurations. The evidence explicitly notes that lateral propagation is limited to radiative heat transfer in tightly packed configurations, but this condition-specific observation cannot justify a universal design recommendation.",
+            "error_type": "scope_expansion_distractor",
+            "evidence_refs": [
+              "TR_Protection+186+International_Journal_of_Heat_and_Mass_Transfer:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence shows LN reduces fire duration and cools adjacent modules, but there is no evidence that LN suppresses internal electrochemical reactions driving TR. The fire duration reduction is consistent with external combustion suppression and thermal isolation. Claiming LN addresses the internal electrochemical mechanism is an unsupported causal overclaim.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Protection+186+International_Journal_of_Heat_and_Mass_Transfer:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Non-monotonic relationship between LN injection mass, cooling rate, and adjacent module peak temperature; mechanism of LN protection scope",
+        "primary_boundary": "Higher LN injection mass does not guarantee lower adjacent module peak temperatures due to fluid dynamic disturbances; LN protection is limited to external thermal management, not internal electrochemical suppression",
+        "intended_error_modes": [
+          "unjustified_monotonicity: assuming more LN always gives better thermal protection",
+          "scope_expansion: generalizing configuration-specific lateral heating observation to all configurations",
+          "causal_overclaim: attributing fire duration reduction to electrochemical suppression rather than external combustion management"
+        ],
+        "disallowed_extrapolations": [
+          "LN suppresses internal TR electrochemical reactions",
+          "Lateral module heating observations generalize to all prismatic configurations",
+          "Cooling rate monotonically determines adjacent module peak temperature"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is designing a water mist (WM) suppression system for 18650 lithium-ion cells operating across a range of states of charge (SOC). Available data show that the critical suppression temperature (the highest temperature at which WM can prevent thermal runaway) decreases from approximately 257°C at 25% SOC to approximately 187°C at 100% SOC. At 25% SOC, the required cooling rate for suppression is 1.87 times the critical heating rate; at 100% SOC, this ratio rises to 4.98. Under continuous heating after WM application, thermal runaway is completely prevented at 25% SOC but only delayed by approximately 21 minutes at 100% SOC. When WM is applied above the critical suppression temperature, the maximum surface temperature is reduced by approximately 300°C compared to unprotected cells, but thermal runaway still occurs. Which of the following conclusions are admissible?",
+        "options": [
+          "A. A WM system calibrated to activate at a fixed temperature suitable for 25% SOC cells may fail to prevent thermal runaway in 100% SOC cells even if it activates before the critical suppression temperature of the 25% SOC case.",
+          "B. The reduction in critical suppression temperature with increasing SOC implies that WM systems must activate earlier in absolute temperature terms to protect higher-SOC cells, making high-SOC protection strictly easier to achieve with faster detection systems.",
+          "C. Because WM application above the critical temperature still reduces surface temperature by approximately 300°C, it provides a meaningful reduction in heat available for propagation to adjacent cells even when it cannot prevent thermal runaway in the treated cell.",
+          "D. The increasing ratio of required cooling rate to critical heating rate with SOC indicates that the internal heat generation rate accelerates faster with SOC than the WM system's cooling capacity can scale, making suppression progressively more demanding at higher SOC.",
+          "E. At 100% SOC, the approximately 21-minute delay in thermal runaway onset under continuous heating after WM application confirms that WM permanently eliminates the thermal hazard at this SOC.",
+          "F. The fact that thermal runaway is completely prevented at 25% SOC but only delayed at 100% SOC under the same WM application protocol is consistent with the critical suppression temperature being lower and the required cooling-to-heating rate ratio being higher at elevated SOC."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The critical suppression temperature at 100% SOC (approximately 187°C) is lower than at 25% SOC (approximately 257°C). A system activating at, say, 220°C would activate before the 25% SOC critical temperature but after the 100% SOC critical temperature, failing to prevent TR in the higher-SOC cell. This requires two-step reasoning: fixed activation temperature → compare to SOC-dependent critical temperatures → admissibility judgment.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+187+Energy_Conversion_and_Management:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "This is the conservative-sounding but incorrect distractor. While the critical suppression temperature is lower at higher SOC (meaning activation must occur at a lower absolute temperature), this makes protection harder, not easier. The required cooling-to-heating rate ratio also increases with SOC (1.87 to 4.98), compounding the difficulty. The option incorrectly concludes that lower activation temperature makes faster detection sufficient.",
+            "error_type": "causal_overclaim_and_direction_error",
+            "evidence_refs": [
+              "TR_Protection+187+Energy_Conversion_and_Management:C002",
+              "TR_Protection+187+Energy_Conversion_and_Management:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence states that above the critical temperature, TR is unstoppable but maximum surface temperature is reduced by approximately 300°C. A 300°C reduction in peak temperature directly reduces the thermal energy available for heat transfer to adjacent cells, which is relevant for propagation mitigation even when cell-level TR cannot be prevented. This is a counterintuitive correct option because it assigns positive safety value to a failed suppression attempt.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+187+Energy_Conversion_and_Management:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The option correctly identifies the trend (increasing ratio with SOC) but provides an unsupported mechanistic explanation attributing it specifically to internal heat generation accelerating faster than WM cooling capacity scaling. The evidence reports the ratio trend but does not decompose it into these two separate rate components. This is a partially correct option with an unsupported causal mechanism appended.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Protection+187+Energy_Conversion_and_Management:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The evidence explicitly states that at 100% SOC, thermal runaway is only delayed by approximately 21 minutes under continuous heating, not permanently eliminated. The option directly contradicts the evidence by claiming permanent hazard elimination. This is a straightforward boundary violation.",
+            "error_type": "condition_violation",
+            "evidence_refs": [
+              "TR_Protection+187+Energy_Conversion_and_Management:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "This option requires integrating two evidence claims: (1) complete prevention at 25% SOC vs. delay at 100% SOC, and (2) lower critical suppression temperature and higher cooling-to-heating rate ratio at 100% SOC. The differential outcome is mechanistically consistent with both conditions being harder to satisfy at 100% SOC. This is multi-hop reasoning connecting outcome difference to mechanism difference.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+187+Energy_Conversion_and_Management:C002",
+              "TR_Protection+187+Energy_Conversion_and_Management:C003",
+              "TR_Protection+187+Energy_Conversion_and_Management:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "SOC-dependent WM suppression admissibility and the distinction between prevention, delay, and mitigation under varying SOC conditions",
+        "primary_boundary": "WM provides complete prevention only at low SOC; at high SOC it provides delay and surface temperature mitigation but not prevention; a fixed-threshold WM system may be inadequate for high-SOC cells even if adequate for low-SOC cells",
+        "intended_error_modes": [
+          "direction_error: concluding lower critical temperature makes protection easier rather than harder",
+          "causal_overclaim: decomposing the cooling-to-heating ratio trend into unsupported sub-mechanisms",
+          "condition_violation: treating delay as permanent hazard elimination"
+        ],
+        "disallowed_extrapolations": [
+          "WM permanently eliminates thermal hazard at 100% SOC",
+          "Lower critical suppression temperature implies easier protection with faster detection",
+          "The cooling-to-heating rate ratio trend is attributable to a specific decomposition of internal vs external rates"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery safety engineer is comparing two suppression strategies for a prismatic battery module array that has entered thermal runaway: (1) water mist (WM) applied before a critical temperature threshold, and (2) liquid nitrogen (LN) injection after thermal runaway is already underway. The engineer observes that WM completely prevents thermal runaway in cells at 25% SOC when applied early enough, but only delays it at 100% SOC. LN injection reduces fire duration to approximately one-third and drops adjacent module temperatures below room temperature, but cannot prevent thermal runaway in the already-affected module. Additionally, applying WM above the critical suppression temperature still reduces peak surface temperature by approximately 300°C even though thermal runaway proceeds. Explain why neither strategy alone provides complete protection across all SOC levels and all stages of thermal runaway progression, and identify the specific mechanism limitation that prevents each strategy from being universally effective."
+      },
+      "ground_truth": {
+        "gold_answer": "Water mist is limited by a SOC-dependent critical suppression temperature: at 25% SOC it can prevent TR when applied early, but at 100% SOC the critical temperature is approximately 70°C lower and the required cooling-to-heating rate ratio is approximately 2.7 times higher, meaning WM cannot match the internal heat generation rate at high SOC even when applied before the critical temperature. Once TR is underway (above the critical temperature), WM cannot stop it regardless of SOC; it can only reduce peak surface temperature by approximately 300°C, which mitigates propagation risk but does not prevent the cell-level event. LN injection is effective at suppressing external combustion and isolating adjacent modules thermally, but it does not address the internal electrochemical reactions that drive TR in the already-affected module; the affected module still undergoes TR, just with a shortened fire duration. Therefore, WM fails at high SOC due to insufficient cooling rate relative to internal heat generation, and fails at any SOC once the critical temperature is exceeded because the internal reaction is self-sustaining. LN fails to prevent TR in the source module because it acts externally and cannot suppress the internal exothermic chemistry. A complete protection strategy would require early detection enabling WM activation before the SOC-adjusted critical temperature, combined with LN or equivalent thermal isolation to prevent propagation if the source cell TR cannot be stopped.",
+        "must_include": [
+          "WM effectiveness is SOC-dependent with a lower critical suppression temperature at higher SOC",
+          "At 100% SOC the required cooling-to-heating rate ratio is substantially higher than at 25% SOC, making suppression harder",
+          "Above the critical suppression temperature WM cannot prevent TR but reduces peak surface temperature by approximately 300°C",
+          "LN reduces fire duration and protects adjacent modules but does not prevent TR in the already-affected module",
+          "LN acts externally and does not suppress internal electrochemical reactions driving TR",
+          "Neither strategy addresses both early-stage prevention at high SOC and post-onset propagation suppression simultaneously"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming LN suppresses internal electrochemical reactions",
+          "Claiming WM is equally effective at all SOC levels if applied early enough",
+          "Claiming that the 300°C surface temperature reduction by WM above critical temperature prevents propagation entirely",
+          "Recommending a specific combined system design without basis in the evidence",
+          "Claiming that LN injection prevents TR in the source module"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism-level limitations of WM and LN suppression strategies across SOC regimes and TR progression stages",
+        "primary_boundary": "WM is limited by SOC-dependent critical temperature and cooling rate requirements; LN is limited to external thermal management and cannot address internal TR chemistry; neither provides complete protection across all conditions",
+        "intended_error_modes": [
+          "Claiming LN prevents TR in the source module",
+          "Claiming WM is universally effective if applied early regardless of SOC",
+          "Treating the 300°C surface temperature reduction as equivalent to propagation prevention",
+          "Conflating fire duration reduction with TR prevention"
+        ]
+      }
+    }
+  ]
+}

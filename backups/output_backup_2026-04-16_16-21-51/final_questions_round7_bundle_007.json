@@ -1,0 +1,131 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is designing explosion protection for a battery storage facility where vented gases from thermal runaway may mix with battery vent gases (BVG) containing carbonate solvents (EMC, DMC). Tests show that adding carbonate content to BVG lowers the lower flammability limit of the mixture while simultaneously raising the limiting oxygen concentration (LOC) and maximum explosion pressure. The engineer concludes that increasing carbonate fraction in the vent gas simultaneously makes ignition easier and makes inerting-based suppression harder. Which options correctly characterize the engineering implications?",
+        "options": [
+          "A. A lower LFL in carbonate-enriched BVG mixtures means a smaller released gas concentration is sufficient to form a flammable atmosphere, increasing ignition risk at early stages of venting.",
+          "B. A higher LOC in carbonate-enriched mixtures means that a greater oxygen displacement is required to render the atmosphere non-ignitable, making nitrogen inerting less effective at the same dilution level.",
+          "C. Because carbonate addition raises maximum explosion pressure, the structural design pressure for containment must increase proportionally with carbonate fraction to maintain equivalent safety margins.",
+          "D. The simultaneous decrease in LFL and increase in LOC from carbonate addition represents a compounding hazard: ignition becomes easier while suppression by oxygen reduction requires more effort.",
+          "E. Since EMC has a lower LFL than DMC, replacing DMC with EMC in a carbonate-BVG mixture would reduce the LFL further, but this conclusion requires that the LFL trend observed for carbonate mixtures with BVG applies to individual carbonate substitutions.",
+          "F. Higher maximum rate of pressure rise in carbonate-enriched mixtures implies that explosion venting panel sizing based on BVG-only data would be non-conservative when carbonates are present."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence confirms LFL decreases with carbonate addition; lower LFL directly means flammable conditions are reached at lower gas concentrations.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+136+Fuel:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Evidence shows LOC increases with carbonate fraction; higher LOC means more oxygen must be displaced for inerting, reducing effectiveness at fixed dilution.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+136+Fuel:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Evidence shows PMax increases with carbonate fraction but does not establish a proportional relationship; assuming proportionality is an unsupported numerical extrapolation.",
+            "error_type": "numerical exaggeration and unsupported proportionality claim",
+            "evidence_refs": [
+              "TR_Gasventing+136+Fuel:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence supports both effects simultaneously; this compound hazard conclusion follows directly from the co-occurrence of LFL decrease and LOC increase with carbonate addition.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+136+Fuel:C003",
+              "TR_Gasventing+136+Fuel:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Individual carbonate LFL values are measured separately; applying the mixture trend to single-component substitution requires an assumption not supported by the evidence.",
+            "error_type": "scope transfer from mixture trend to individual component substitution",
+            "evidence_refs": [
+              "TR_Gasventing+136+Fuel:C002",
+              "TR_Gasventing+136+Fuel:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Evidence shows (dp/dt)Max increases with carbonate content; venting panel sizing based on BVG-only rate data would underestimate the deflagration index, making it non-conservative.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+136+Fuel:C001",
+              "TR_Gasventing+136+Fuel:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-factor hazard interaction between LFL reduction and LOC increase from carbonate addition, and implications for ignition risk and suppression design",
+        "primary_boundary": "Proportionality of PMax increase is not supported; individual carbonate substitution effects cannot be inferred from mixture trends without additional evidence",
+        "intended_error_modes": [
+          "assuming proportional structural design requirement from PMax trend",
+          "transferring mixture LFL trend to individual component substitution"
+        ],
+        "disallowed_extrapolations": [
+          "Proportional containment pressure scaling with carbonate fraction",
+          "Predicting LFL of individual carbonate substitutions from mixture trend data"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery storage facility houses 18650 lithium-ion cells of mixed cathode chemistries. During a thermal runaway event, a cell vents gas that mixes with ambient air. An engineer notes two observations: (1) the flame temperature measured 20 mm above a burning cell exceeds the temperature typically found in gaps between cells in a module array; (2) the soot number in vented gas during the explosion phase is lower at 100% SOC than at 50% SOC for NCA and LCO cells. The engineer concludes that higher SOC always produces more particulate hazard during thermal runaway events. Explain whether this conclusion is admissible, identifying the mechanism that limits its validity and the specific condition under which the observed reversal occurs."
+      },
+      "ground_truth": {
+        "gold_answer": "The conclusion is not fully admissible. During the venting phase, soot number does increase with SOC for NCA and LCO, consistent with higher SOC producing more particulate. However, during the explosion phase, the soot number peaks at 50% SOC and then decreases at higher SOC. The mechanism is that at higher SOC the explosion becomes more violent, and this violent explosion disperses or dilutes the soot such that the measured soot number is reduced relative to the 50% SOC case. Therefore the relationship between SOC and particulate hazard is phase-dependent: monotonically increasing during venting but non-monotonic during explosion, with the reversal occurring above 50% SOC in the explosion phase. The engineer's generalization ignores this phase-dependent behavior and the reversal mechanism driven by explosion violence.",
+        "must_include": [
+          "soot number increases with SOC during venting phase",
+          "soot number peaks at 50% SOC during explosion phase and decreases above it",
+          "violent explosion at high SOC is the mechanism causing the reversal",
+          "the conclusion is phase-dependent and not universally valid",
+          "the reversal occurs above 50% SOC in the explosion phase"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming the reversal applies to LMO cells under the same conditions",
+          "Claiming the flame temperature observation alone determines propagation to neighboring cells without accounting for actual gap dimensions",
+          "Asserting that lower soot number at 100% SOC means lower overall hazard at high SOC"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Phase-dependent non-monotonic relationship between SOC and soot number, and the mechanism linking explosion violence to the reversal",
+        "primary_boundary": "The SOC-soot relationship is monotonic during venting but non-monotonic during explosion; the reversal above 50% SOC is driven by explosion violence, not by reduced particulate generation",
+        "intended_error_modes": [
+          "Treating venting-phase trend as universal across all phases",
+          "Ignoring the explosion-phase reversal mechanism",
+          "Conflating lower measured soot number with reduced hazard without considering explosion violence"
+        ]
+      }
+    }
+  ]
+}

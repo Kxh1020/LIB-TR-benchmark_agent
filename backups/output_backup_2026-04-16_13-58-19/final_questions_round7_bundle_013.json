@@ -1,0 +1,97 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Two LFP cell formats—a larger-capacity cell (LFP-L) and a smaller-capacity cell (LFP-SS)—are tested under thermal runaway conditions. At 100% SOC, LFP-SS produces more gas per unit capacity than LFP-L across all test environments, yet LFP-L reaches a higher maximum temperature. At 110% SOC, the upper explosive limit (UEL) of LFP-SS gas becomes lower than that of LFP-L, attributed to further decomposition of higher hydrocarbons into low-carbon species. An engineer must select which statements about these two formats are admissible.",
+        "options": [
+          "A. At 100% SOC, LFP-SS presents a wider flammable concentration range than LFP-L because both its LEL and UEL are higher, which directly implies greater ignition probability in a vented enclosure.",
+          "B. The higher maximum temperature of LFP-L at both 100% and 110% SOC, combined with lower gas production per unit capacity, suggests that LFP-L stores more energy in forms that manifest as heat rather than gas-phase products.",
+          "C. At 110% SOC, LFP-L gas has a higher UEL than LFP-SS, which is counterintuitive given LFP-SS produces more gas per capacity, and is explained by the composition shift toward low-carbon hydrocarbons in LFP-SS at elevated SOC.",
+          "D. Because LFP-SS produces more gas per capacity than LFP-L under all tested conditions, LFP-SS will always generate a larger absolute gas volume in any real installation regardless of cell capacity.",
+          "E. The presence of oxygen in an air environment increases peak pressure change for LFP-SS compared to nitrogen, indicating that enclosure atmosphere is a relevant variable in pressure hazard assessment for this cell format.",
+          "F. The reversal of UEL ordering between 100% and 110% SOC demonstrates that flammability limit comparisons between cell formats are SOC-dependent and cannot be generalized from a single charge level."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "C",
+          "E",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "Higher LEL and UEL for LFP-SS does not directly imply greater ignition probability; a wider flammable range requires LEL lower and UEL higher, not both shifted upward.",
+            "error_type": "mechanism confusion distractor",
+            "evidence_refs": [
+              "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "LFP-L has higher peak temperature and lower gas per capacity; this pattern is consistent with energy partitioning favoring thermal over gas-phase release.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C001",
+              "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "At 110% SOC, LFP-SS UEL drops below LFP-L due to CxHy decomposition into low-carbon species in LFP-SS; this counterintuitive reversal is mechanistically explained.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Gas production per capacity is higher for LFP-SS, but absolute volume depends on total cell capacity; larger LFP-L cells could produce more total gas despite lower per-capacity rate.",
+            "error_type": "scale transfer beyond evidence",
+            "evidence_refs": [
+              "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Air environment yields higher pressure change than N2 for LFP-SS at 100% SOC, confirming enclosure atmosphere affects pressure hazard.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "UEL ordering reverses between 100% and 110% SOC, directly demonstrating that flammability comparisons between formats are SOC-dependent.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "SOC-dependent flammability limit reversal and format-dependent energy partitioning between heat and gas",
+        "primary_boundary": "Higher LEL and UEL together do not imply wider flammable range; per-capacity gas rate cannot be extrapolated to absolute volume without knowing cell capacity",
+        "intended_error_modes": [
+          "misinterpreting shifted LEL/UEL as wider flammable range",
+          "extrapolating per-capacity rate to absolute volume across cell sizes"
+        ],
+        "disallowed_extrapolations": [
+          "Absolute gas volume from per-capacity rate without capacity information",
+          "Universal flammability ordering from single SOC data point"
+        ]
+      }
+    }
+  ],
+  "short_answers": []
+}

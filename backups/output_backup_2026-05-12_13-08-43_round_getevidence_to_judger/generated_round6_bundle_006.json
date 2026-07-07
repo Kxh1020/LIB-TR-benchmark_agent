@@ -1,0 +1,321 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An LFP battery undergoing thermal abuse is monitored continuously from the onset of safety venting through full thermal runaway. HF concentration is measured in situ at high temporal resolution, while total HF yield is also integrated over each stage. The battery is held at a moderate SOC and subjected to a constant external heat flux sufficient to eventually trigger thermal runaway. An engineer reviewing the data makes several claims about HF emission behavior. Which of the following conclusions are supported by the described conditions and known mechanisms?",
+        "options": [
+          "A. The HF concentration measured in situ during safety venting exceeds that measured during thermal runaway, because electrolyte decomposition producing HF occurs preferentially at the lower temperatures characteristic of the venting stage.",
+          "B. The total HF yield integrated over the full event would be higher if the same battery were subjected to a lower heat flux, because slower heating allows more complete hydrolysis of intermediate fluorinated species before they are expelled.",
+          "C. Sampling HF through a conventional line-based collection system would likely underestimate peak HF concentration relative to in situ measurement, because adsorption and surface reactions within sampling lines reduce the detected signal.",
+          "D. Because thermal runaway involves higher temperatures than safety venting, it is the dominant stage for HF production across all tested conditions.",
+          "E. The in situ peak HF mole fraction during safety venting is expected to be within the same order of magnitude as values reported by prior literature using conventional sampling methods.",
+          "F. At sufficiently low heat flux, a battery at 0% SOC may undergo safety venting without progressing to thermal runaway, which would limit total HF exposure but would not eliminate it entirely."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence states HF production is consistently higher during safety venting than during thermal runaway because the primary HF source is electrolyte decomposition at relatively low temperatures, which corresponds to the venting stage.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+176+Proceedings_of_the_Combustion_Institute:C001"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence states lower heat flux leads to a decrease in total HF generation, not an increase, because intermediate fluorinated species are expelled before their hydrolysis reactions that require higher temperatures can occur. This option reverses the causal direction.",
+            "error_type": "causal_overclaim_reversal",
+            "evidence_refs": [
+              "TR_Gasventing+176+Proceedings_of_the_Combustion_Institute:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence explicitly attributes the two-orders-of-magnitude discrepancy between in situ LAS measurements and prior literature to adsorption and surface reactions inside sampling lines that reduce detected concentrations in conventional methods.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+176+Proceedings_of_the_Combustion_Institute:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence directly contradicts this: HF production is consistently higher during safety venting than during thermal runaway across all tested conditions, despite thermal runaway involving higher temperatures.",
+            "error_type": "mechanism_confusion",
+            "evidence_refs": [
+              "TR_Gasventing+176+Proceedings_of_the_Combustion_Institute:C001"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence states in situ peak HF mole fraction is two orders of magnitude higher than prior literature values, not within the same order of magnitude. This option is a conservative-sounding but factually incorrect claim.",
+            "error_type": "numerical_underestimation",
+            "evidence_refs": [
+              "TR_Gasventing+176+Proceedings_of_the_Combustion_Institute:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Evidence states that at 0% SOC and lower heat flux values (27 and 36 kW/m2), the battery only exhibited safety venting without progressing to thermal runaway. Safety venting still occurs and still produces HF, so total HF exposure is limited but not eliminated.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+176+Proceedings_of_the_Combustion_Institute:C002",
+              "TR_Gasventing+176+Proceedings_of_the_Combustion_Institute:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "HF emission stage-dependence, measurement methodology effects, and heat-flux-dependent progression to thermal runaway",
+        "primary_boundary": "HF production is higher during safety venting than thermal runaway despite lower temperatures; lower heat flux reduces total HF rather than increasing it",
+        "intended_error_modes": [
+          "temperature-magnitude heuristic (higher temperature → more HF) leading to selection of D",
+          "intuitive but incorrect belief that slower heating allows more complete reactions, leading to selection of B",
+          "underestimating measurement method discrepancy, leading to selection of E"
+        ],
+        "disallowed_extrapolations": [
+          "Generalizing heat-flux effects on HF yield without accounting for intermediate species hydrolysis pathway",
+          "Assuming thermal runaway stage dominates HF production based on temperature alone",
+          "Treating conventional sampling results as equivalent to in situ measurements"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A sealed enclosure contains battery venting gas (BVG) released from an LFP cell that reached thermal runaway at 80% SOC. The enclosure pressure gradually rises. An engineer must assess the explosion hazard of this gas mixture and evaluate the effect of adding a fire suppressant. The BVG composition at this SOC is known to include CO as the dominant combustible component at roughly 50%, H2 at roughly 25%, and an increasing proportion of C2H4 relative to lower SOC conditions, with inert gas reduced to approximately 20%. A 5% addition of DMMP is being considered. Which of the following statements are supported by the described conditions?",
+        "options": [
+          "A. Among the combustible species present in the BVG, C2H4 requires the lowest pressure to trigger explosion at the third explosion limit, making it the component most responsible for shifting explosion risk toward lower temperatures as SOC increases.",
+          "B. Because CO constitutes the largest fraction of the combustible gas, CO dominates the explosion limit behavior of the BVG mixture, and the Z-shaped explosion curve is primarily attributable to CO chemistry.",
+          "C. Adding 5% DMMP to a stoichiometric BVG mixture at this SOC would reduce the laminar burning velocity by approximately 97% and net heat release by approximately 99%, making the mixture effectively non-flammable under those conditions.",
+          "D. As enclosure pressure increases, the BVG at 80% SOC is more susceptible to explosion at lower temperatures compared to BVG at 25% SOC, because of the increased C2H4 proportion and its stronger low-temperature chain reactions at high pressure.",
+          "E. H2O would provide suppression performance comparable to DMMP for this BVG mixture because both agents reduce the H radical concentration, which is the primary radical driving temperature rise.",
+          "F. The Z-shaped explosion curve characteristic of this BVG is driven primarily by H2 chemistry, even though CO is present at higher molar fraction."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence states that at the third explosion limit, the pressure needed to trigger explosion increases in order C2H4, CH4, H2, CO — meaning C2H4 has the lowest explosion pressure. Evidence also states that increasing SOC increases C2H4 proportion, causing explosion temperature to move to the low-temperature region.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+175+Proceedings_of_the_Combustion_Institute:C005",
+              "TR_Gasventing+175+Proceedings_of_the_Combustion_Institute:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence explicitly states the Z-shaped explosion curve demonstrates the dominance of H2 in the explosion response, not CO, despite CO being present at a higher molar fraction. This is a counterintuitive but evidence-supported finding that B contradicts.",
+            "error_type": "mechanism_confusion_fraction_vs_dominance",
+            "evidence_refs": [
+              "TR_Gasventing+175+Proceedings_of_the_Combustion_Institute:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence states that at equivalence ratio 1.0 with 5% DMMP, laminar burning velocity decreases by 97.4% and net heat release decreases by 99.7%. The stem specifies a stoichiometric BVG mixture, matching the equivalence ratio condition in the evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+174+Chemical_Engineering_Journal:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence states that with increasing SOC, C2H4 proportion increases, the nonlinear characteristics of the third explosion limit become more prominent due to C2H4's stronger low-temperature chain reactions at high pressure, causing the overall explosion temperature to move to the low-temperature region. 80% SOC exceeds the ~75% stability threshold.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+175+Proceedings_of_the_Combustion_Institute:C004",
+              "TR_Gasventing+175+Proceedings_of_the_Combustion_Institute:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence states H2O reduces laminar burning velocity by only 20%, while DMMP reduces it by 97%. Although H radical promotion is identified as the primary driver of temperature rise, H2O's suppression performance is far inferior to DMMP, making this comparison invalid.",
+            "error_type": "mechanism_correct_but_magnitude_wrong",
+            "evidence_refs": [
+              "TR_Gasventing+174+Chemical_Engineering_Journal:C004",
+              "TR_Gasventing+174+Chemical_Engineering_Journal:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Evidence explicitly states the Z-shaped explosion curve demonstrates the dominance of H2 in the explosion response, even though CO is present at a higher molar fraction (~50% vs ~25%). This is counterintuitive but directly supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+175+Proceedings_of_the_Combustion_Institute:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Explosion limit behavior of multi-component BVG, role of minor species vs. dominant species, suppressant effectiveness comparison",
+        "primary_boundary": "H2 dominates explosion curve shape despite CO being the largest fraction; C2H4 controls low-temperature explosion risk at high SOC despite being a minor component; H2O suppression is far inferior to DMMP",
+        "intended_error_modes": [
+          "Attributing explosion behavior to the most abundant combustible species (CO) rather than H2",
+          "Assuming all radical-scavenging suppressants perform comparably because they share a mechanism",
+          "Ignoring the counterintuitive dominance of minor species in explosion limit shape"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding DMMP renders mixture non-flammable under all equivalence ratios, not just stoichiometric",
+          "Extending C2H4 explosion pressure ranking to low-pressure conditions",
+          "Assuming CO fraction directly predicts explosion limit shape"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Two LFP batteries are subjected to identical external heating: Battery A is at 100% SOC charged at 1.0C, and Battery B is at 20% SOC. Both reach thermal runaway. A fire safety engineer is evaluating the combustion hazard of the gases released and the time available for intervention between safety venting onset and thermal runaway. Which of the following conclusions are admissible based on the described conditions and known mechanisms?",
+        "options": [
+          "A. Battery A produces venting gas with a higher laminar burning velocity and flame temperature than Battery B, because higher SOC results in a greater proportion of combustible species and lower inert gas content in the venting gas.",
+          "B. The time interval between safety venting onset and thermal runaway is longer for Battery A than for Battery B at the same heat flux, because the higher electrochemical energy at 100% SOC accelerates the internal reactions driving thermal runaway.",
+          "C. For Battery B, the venting gas composition is dominated by CO2 exceeding 60%, which reduces the combustion hazard relative to Battery A but does not eliminate it entirely, since some combustible fraction remains.",
+          "D. The peak HF concentration released during safety venting is expected to be higher than during thermal runaway for both batteries, because the primary HF source involves reactions occurring at temperatures characteristic of the venting stage.",
+          "E. Battery B at 20% SOC cannot reach thermal runaway under any heat flux level, because the inert CO2 dominance in its venting gas suppresses the internal exothermic reactions.",
+          "F. The fire suppression challenge posed by Battery A's venting gas is primarily attributable to its CO content, since CO constitutes the largest combustible fraction and drives the Z-shaped explosion limit behavior."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence states that at 100% SOC, LFP battery gas has a flame temperature of 2261.6 K and laminar burning velocity of 73.2 cm/s, representing the highest hazard condition. Evidence also shows that at SOC below ~25%, CO2 dominates at over 60%, reducing combustible fraction. The multi-step reasoning connects SOC → gas composition → combustion properties.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+174+Chemical_Engineering_Journal:C001",
+              "TR_Gasventing+175+Proceedings_of_the_Combustion_Institute:C001"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence states the thermal runaway delay time decreases with increasing SOC at constant heat flux, meaning Battery A (100% SOC) has a shorter, not longer, interval between venting and thermal runaway. This option reverses the direction of the SOC effect.",
+            "error_type": "causal_direction_reversal",
+            "evidence_refs": [
+              "TR_Gasventing+176+Proceedings_of_the_Combustion_Institute:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence states that below ~25% SOC, CO2 dominates at over 60%, reducing combustible content. However, some combustible fraction remains, and the statement does not overclaim complete elimination of hazard. This is a conservative but correctly bounded conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+175+Proceedings_of_the_Combustion_Institute:C001"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence states HF production is consistently higher during safety venting than during thermal runaway across all tested conditions, because the primary HF source is electrolyte decomposition at relatively low temperatures. This applies to both batteries.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+176+Proceedings_of_the_Combustion_Institute:C001"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence shows that even at 0% SOC, thermal runaway can be triggered at sufficiently high heat flux (53 kW/m2). The CO2 dominance in venting gas composition reflects electrochemical state but does not prevent thermal runaway under all conditions. This is a conservative-sounding but incorrect absolute claim.",
+            "error_type": "absolute_overclaim_from_composition",
+            "evidence_refs": [
+              "TR_Gasventing+176+Proceedings_of_the_Combustion_Institute:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Evidence states the Z-shaped explosion curve demonstrates the dominance of H2 in the explosion response, not CO, despite CO being present at the highest molar fraction. Attributing the explosion limit behavior to CO because it is the most abundant combustible species is a mechanism confusion error.",
+            "error_type": "mechanism_confusion_fraction_vs_dominance",
+            "evidence_refs": [
+              "TR_Gasventing+175+Proceedings_of_the_Combustion_Institute:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "SOC-dependent gas hazard, venting-to-thermal-runaway interval direction, HF stage dependence, and explosion mechanism attribution",
+        "primary_boundary": "Higher SOC shortens (not lengthens) the venting-to-thermal-runaway interval; CO2 dominance at low SOC reduces but does not eliminate hazard; H2 drives explosion curve shape despite CO being more abundant",
+        "intended_error_modes": [
+          "Intuitive but incorrect belief that more energy at high SOC means more time before thermal runaway",
+          "Assuming CO2 dominance at low SOC prevents thermal runaway under all conditions",
+          "Attributing explosion behavior to the most abundant combustible species rather than H2"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding Battery B cannot reach thermal runaway based solely on gas composition",
+          "Attributing Z-shaped explosion limit to CO based on its molar dominance",
+          "Assuming venting-to-thermal-runaway interval increases with energy content"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "An LFP battery at 80% SOC undergoes thermal runaway and releases venting gas into a confined space. Two engineers are debating the explosion hazard. Engineer 1 argues that CO, being the largest combustible fraction at approximately 50%, is the species most responsible for the explosion limit behavior of the mixture. Engineer 2 argues that despite being present at roughly half the molar fraction of CO, H2 governs the shape of the explosion limit curve, and that C2H4, present at an even smaller fraction, is the species that most shifts the explosion risk toward lower temperatures at elevated pressure. Identify which engineer is correct on each claim, explain the mechanistic reasoning that distinguishes the roles of H2 and C2H4 from CO in this mixture, and describe how the explosion hazard at 80% SOC differs from that at 20% SOC in terms of both gas composition and explosion limit behavior."
+      },
+      "ground_truth": {
+        "gold_answer": "Engineer 2 is correct on both claims. Although CO constitutes approximately 50% of the combustible gas at high SOC, the Z-shaped explosion limit curve is driven by H2 chemistry, not CO. H2 dominates the explosion response because its chain-branching kinetics govern the characteristic shape of the explosion limit boundary. C2H4, despite being a minor component, has stronger low-temperature chemical chain reactions than H2 at high-pressure conditions, meaning it requires the lowest pressure to trigger explosion at the third explosion limit among the combustible species present. As SOC increases from 20% to 80%, the C2H4 proportion increases, making the nonlinear characteristics of the third explosion limit more prominent and shifting the overall explosion temperature toward the low-temperature region, meaning the mixture becomes more susceptible to explosion at lower temperatures under elevated pressure. At 20% SOC, CO2 dominates the BVG composition at over 60%, suppressing combustion hazard, and the combustible fraction is low. At 80% SOC, CO2 has decreased to approximately 20%, CO is approximately 50%, H2 approximately 25%, and C2H4 is elevated, producing a gas that is both more combustible and more prone to low-temperature explosion at high pressure. Engineer 1's error is attributing explosion limit shape to the most abundant combustible species rather than to the species whose kinetics govern the relevant explosion mechanism.",
+        "must_include": [
+          "H2 governs the Z-shaped explosion limit curve despite CO being the largest combustible fraction",
+          "C2H4 has the lowest explosion pressure at the third explosion limit due to stronger low-temperature chain reactions at high pressure",
+          "Increasing SOC increases C2H4 proportion and shifts explosion temperature to lower values",
+          "At 20% SOC, CO2 exceeds 60% and dominates the mixture, reducing combustion hazard",
+          "At 80% SOC, inert gas is approximately 20%, CO approximately 50%, H2 approximately 25%, with elevated C2H4",
+          "Engineer 1 is incorrect because molar fraction does not determine which species governs explosion limit shape"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming C2H4 governs the Z-shaped curve shape rather than H2",
+          "Claiming CO2 dominance at low SOC prevents any explosion risk",
+          "Claiming the explosion hazard increases monotonically with CO fraction rather than being driven by H2 and C2H4 mechanisms",
+          "Attributing the third explosion limit shift to H2 rather than C2H4"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Species-specific roles in explosion limit behavior versus molar abundance, SOC-dependent BVG composition and hazard evolution",
+        "primary_boundary": "Molar dominance of CO does not translate to dominance of explosion limit behavior; H2 governs curve shape while C2H4 governs low-temperature explosion risk at high pressure; these are mechanistically distinct roles",
+        "intended_error_modes": [
+          "Attributing explosion behavior to the most abundant species (CO) rather than the kinetically dominant species (H2, C2H4)",
+          "Conflating the species that drives explosion curve shape (H2) with the species that lowers explosion temperature at high pressure (C2H4)",
+          "Assuming low SOC CO2 dominance eliminates rather than reduces explosion risk"
+        ]
+      }
+    }
+  ]
+}

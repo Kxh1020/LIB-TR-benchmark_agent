@@ -1,0 +1,315 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A two-car garage (enclosure volume ~12,400 L) contains vented battery gas from a thermal runaway event. Testing shows that structural damage including ejected garage doors occurs at internal peak pressures near 2.5–2.8 kPa. An engineer uses a standard 25% of the well-mixed lower flammability limit (LFL) as the explosion hazard threshold for design calculations. Which conclusions are admissible given these conditions?",
+        "options": [
+          "A. The 25% well-mixed LFL threshold substantially overestimates the gas volume needed to produce structural damage, because damaging deflagrations can occur at gas concentrations well below that threshold.",
+          "B. Structural damage at 2.5–2.8 kPa is inconsistent with established minor-damage thresholds, indicating the garage structure is unusually weak.",
+          "C. Because LFP surrogate gas produces higher pressure and impulse per liter than NCA surrogate gas, a smaller LFP gas release is sufficient to reach the structural damage threshold.",
+          "D. The 25% well-mixed LFL criterion is a conservative and sufficient safety margin for enclosures containing battery vent gas, because it accounts for non-uniform mixing.",
+          "E. A deflagration causing structural damage can occur even when the total gas volume corresponds to only 1–2.5% of the enclosure LFL, making the 25% design threshold non-conservative for this scenario.",
+          "F. Peak internal pressure alone determines whether structural damage occurs, so impulse per unit volume is not a relevant design parameter when comparing gas chemistries."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Damaging deflagrations occurred at 1–2.5% enclosure LFL, far below the 25% design threshold, confirming overestimation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+125+Fuel:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence states observed pressures were ~50% below established minor-damage thresholds, contradicting the claim of unusual weakness.",
+            "error_type": "condition_violation",
+            "evidence_refs": [
+              "TR_Gasventing+125+Fuel:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "LFP gas yields greater pressure and impulse per liter due to higher burning velocity, so less volume is needed to reach a damage threshold.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+125+Fuel:C001",
+              "TR_Gasventing+125+Fuel:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence shows 25% LFL is non-conservative; structural damage occurs at 1–2.5% LFL, so this threshold is insufficient for battery vent gas scenarios.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+125+Fuel:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Directly supported: damaging deflagrations occurred at 1–2.5% enclosure LFL, meaning 25% LFL is not a conservative threshold here.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+125+Fuel:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Impulse per liter differs between NCA and LFP gases and affects damage potential; dismissing it ignores a mechanistically relevant parameter.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Gasventing+125+Fuel:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of the 25% LFL design threshold for battery vent gas explosion hazard in enclosed spaces",
+        "primary_boundary": "Structural damage occurs at 1–2.5% enclosure LFL, not 25%; the standard threshold is non-conservative for this scenario",
+        "intended_error_modes": [
+          "Treating 25% LFL as conservative without checking against observed damage thresholds",
+          "Ignoring impulse as a relevant parameter when comparing gas chemistries",
+          "Misreading the pressure comparison as evidence of structural anomaly rather than threshold inadequacy"
+        ],
+        "disallowed_extrapolations": [
+          "Generalizing LFP vs NCA pressure difference to all enclosure geometries",
+          "Concluding that 25% LFL is never appropriate for any gas hazard scenario"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "In deflagration experiments using NCA battery vent gas surrogate, a 1651 L gas bag produced a peak overpressure of 6.25 kPa inside a garage enclosure. A 3302 L bag—double the volume—produced only 4.12 kPa. The garage door in both tests was a low-strength panel. A predictive vented explosion model consistently over-predicted the rate of pressure rise across all bag volumes tested. Which of the following conclusions are supported?",
+        "options": [
+          "A. Doubling the gas volume does not necessarily increase peak overpressure when the enclosure has a low-strength vent panel, because early pressure relief can limit the internal pressure rise.",
+          "B. The over-prediction by the model means it is unsafe to use for design calculations, because it will underestimate the actual explosion hazard.",
+          "C. The pressure decrease from 1651 L to 3302 L indicates that the 3302 L experiment did not achieve full combustion of the gas mixture.",
+          "D. The predictive model provides conservative estimates of the rate of pressure rise and may be suitable for use in explosion hazard design calculations.",
+          "E. The non-monotonic relationship between gas volume and peak overpressure is attributable to the garage door acting as a deflagration vent at larger gas volumes.",
+          "F. Because the model over-predicts pressure rise rate, it will also over-predict peak overpressure for all gas volumes, making it uniformly conservative across the tested range."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The low-strength door relieved pressure early at 3302 L, limiting peak overpressure despite greater gas volume—a non-monotonic result explained by venting.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+125+Fuel:C006"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Over-predicting pressure rise rate is conservative, not unsafe; it leads to more protective design margins, not underestimation of hazard.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+125+Fuel:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Evidence attributes the pressure decrease to early venting through the garage door, not to incomplete combustion of the gas.",
+            "error_type": "mechanism_confusion",
+            "evidence_refs": [
+              "TR_Gasventing+125+Fuel:C006"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Consistent over-prediction of pressure rise rate across all tested cases supports use as a conservative design tool.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+125+Fuel:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Evidence explicitly attributes the 3302 L pressure decrease to the low-strength door acting as a deflagration vent panel.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+125+Fuel:C006"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Over-predicting rate of pressure rise does not guarantee over-prediction of peak overpressure when venting changes the governing mechanism at large volumes.",
+            "error_type": "overgeneralization",
+            "evidence_refs": [
+              "TR_Gasventing+125+Fuel:C005",
+              "TR_Gasventing+125+Fuel:C006"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Non-monotonic volume–pressure relationship caused by vent panel behavior, and the correct interpretation of model conservatism",
+        "primary_boundary": "Model over-prediction of pressure rise rate is conservative and useful for design; peak overpressure is not monotonic with gas volume when low-strength vents are present",
+        "intended_error_modes": [
+          "Interpreting model over-prediction as unsafe rather than conservative",
+          "Assuming larger gas volume always produces higher peak pressure",
+          "Attributing pressure decrease to incomplete combustion rather than early venting"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding the model is conservative for peak overpressure across all conditions",
+          "Generalizing the non-monotonic behavior to enclosures without low-strength vent panels"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "During full-scale garage deflagration tests, structural damage—including cracked wall studs, dislodged drywall, deformed door hardware, and ejected garage doors—was recorded. The peak internal pressures at which this damage occurred were approximately 50% below the minor structural damage thresholds established by Jarrett and Baker. The LFP surrogate gas required approximately 91 L to produce this damage level, while NCA surrogate required 124–310 L. Which conclusions are admissible?",
+        "options": [
+          "A. The Jarrett and Baker thresholds are non-conservative for predicting structural damage in enclosures containing battery vent gas deflagrations.",
+          "B. Because LFP gas requires less volume to cause structural damage than NCA gas, LFP cells pose a greater explosion hazard per unit of vented gas volume in enclosed spaces.",
+          "C. The observed structural damage can be attributed primarily to impulse loading rather than peak overpressure, since peak pressures were below established damage thresholds.",
+          "D. The Jarrett and Baker thresholds remain valid for battery vent gas scenarios because the observed damage is minor and consistent with their lower bound.",
+          "E. The wide volume range for NCA gas (124–310 L) to cause equivalent damage indicates that NCA gas deflagration behavior is more sensitive to partial-volume effects than LFP gas.",
+          "F. Structural damage at pressures below established thresholds suggests that the thresholds were developed for different loading conditions and may not transfer directly to internal deflagration scenarios in residential enclosures."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Significant structural damage occurred at pressures ~50% below Jarrett and Baker thresholds, directly demonstrating non-conservatism of those thresholds here.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+125+Fuel:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "LFP requires ~91 L versus 124–310 L for NCA to produce equivalent damage, consistent with higher burning velocity yielding greater pressure and impulse per liter.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+125+Fuel:C001",
+              "TR_Gasventing+125+Fuel:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Evidence does not support attributing damage to impulse over peak pressure; the evidence notes both pressure and impulse differences without isolating impulse as the cause.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+125+Fuel:C003",
+              "TR_Gasventing+125+Fuel:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Damage at 50% below threshold contradicts validity of those thresholds for this scenario; calling it consistent with their lower bound misrepresents the evidence.",
+            "error_type": "condition_violation",
+            "evidence_refs": [
+              "TR_Gasventing+125+Fuel:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The NCA volume range reflects partial-volume deflagration test conditions, not a demonstrated sensitivity difference; this inference is not supported by the evidence.",
+            "error_type": "unsupported_extrapolation",
+            "evidence_refs": [
+              "TR_Gasventing+125+Fuel:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Damage below established thresholds is admissibly explained by the thresholds being developed for different loading scenarios, not internal residential deflagrations.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+125+Fuel:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of established structural damage thresholds for battery vent gas deflagration scenarios and chemistry-dependent hazard comparison",
+        "primary_boundary": "Jarrett and Baker thresholds are non-conservative here; damage occurred at ~50% below threshold; LFP requires less volume than NCA for equivalent damage",
+        "intended_error_modes": [
+          "Accepting established thresholds as valid because damage appears minor",
+          "Attributing damage mechanism to impulse without evidentiary basis",
+          "Inferring sensitivity differences from a volume range without mechanistic support"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding Jarrett and Baker thresholds are invalid for all explosion scenarios",
+          "Quantifying the exact hazard ratio between LFP and NCA beyond what volume comparison supports"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A safety engineer is designing ventilation requirements for a residential garage where electric vehicle battery thermal runaway events may release flammable vent gas. The engineer proposes using 25% of the well-mixed lower flammability limit (LFL) as the design threshold, reasoning that this provides a conservative safety margin before explosion hazard conditions are reached. Full-scale deflagration tests have shown that structural damage to a standard two-car garage can occur when the released gas volume corresponds to only 1–2.5% of the enclosure LFL, and that LFP chemistry gas requires less volume than NCA chemistry gas to produce equivalent structural damage. Evaluate the adequacy of the 25% LFL design threshold for this application, and identify what additional factor related to gas chemistry must be incorporated into the hazard assessment. Limit your answer to the key engineering reasoning."
+      },
+      "ground_truth": {
+        "gold_answer": "The 25% well-mixed LFL threshold is non-conservative for this application. Structural damage—including ejected garage doors and cracked structural elements—has been demonstrated at gas volumes corresponding to only 1–2.5% of the enclosure LFL, which is an order of magnitude below the 25% design threshold. This means the standard criterion substantially underestimates the explosion hazard from battery vent gas in enclosed residential spaces. The additional chemistry-dependent factor that must be incorporated is burning velocity: LFP vent gas has a higher burning velocity than NCA vent gas, producing greater pressure and impulse per liter of released gas. Therefore, the critical release volume threshold for LFP chemistry is lower than for NCA chemistry, and a single LFL-based threshold applied uniformly across chemistries will underestimate hazard for LFP systems. The design threshold must account for both the partial-volume deflagration risk and the chemistry-specific burning velocity.",
+        "must_include": [
+          "25% LFL threshold is non-conservative or insufficient for battery vent gas scenarios",
+          "structural damage occurs at 1–2.5% enclosure LFL, far below the 25% threshold",
+          "LFP gas requires less volume than NCA to cause equivalent damage",
+          "higher burning velocity of LFP gas produces greater pressure and impulse per liter",
+          "burning velocity or chemistry must be incorporated into the hazard threshold"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming 25% LFL is never appropriate for any gas hazard scenario outside battery venting",
+          "Quantifying a specific revised threshold value not supported by the evidence",
+          "Attributing the damage exclusively to impulse rather than acknowledging both pressure and impulse",
+          "Generalizing LFP vs NCA comparison to pack-level or system-level fire propagation behavior"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Adequacy of the 25% LFL design threshold for battery vent gas explosion hazard and the role of burning velocity in chemistry-dependent risk assessment",
+        "primary_boundary": "Structural damage occurs at 1–2.5% LFL, making 25% LFL non-conservative; LFP burning velocity amplifies hazard per unit volume relative to NCA",
+        "intended_error_modes": [
+          "Accepting 25% LFL as conservative because it is a standard engineering practice",
+          "Ignoring chemistry-dependent burning velocity when comparing LFP and NCA hazard",
+          "Treating the LFL threshold as sufficient if non-uniform mixing is assumed to reduce effective concentration"
+        ]
+      }
+    }
+  ]
+}

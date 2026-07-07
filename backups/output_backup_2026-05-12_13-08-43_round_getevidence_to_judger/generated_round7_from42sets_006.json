@@ -1,0 +1,317 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is analyzing internal pressure buildup in a 100% SOC NCM 811 cylindrical cell during thermal abuse. At the safety valve opening event, the total internal pressure is confirmed to fall within the manufacturer's specified burst range. The engineer notes that two pressure contributors are present: gas from redox reactions and electrolyte vapor. Which of the following conclusions about the pressure balance at the venting event are supported by this scenario?",
+        "options": [
+          "A. The redox-generated gas pressure alone is sufficient to account for the majority of the total internal pressure at the venting event, making electrolyte vapor a secondary contributor.",
+          "B. The electrolyte vapor pressure exceeds the redox gas pressure at the venting event, meaning vapor-phase electrolyte is the primary driver of safety valve activation.",
+          "C. The combined pressure of both contributors at venting is consistent with the manufacturer's burst threshold, confirming that neither contributor alone fully explains the valve opening.",
+          "D. Because total pressure lies within the manufacturer's range, the safety valve design is confirmed to be optimal and no rupture risk exists beyond the venting event.",
+          "E. The redox gas pressure at venting is approximately three times the electrolyte vapor pressure, indicating that chemical reaction-driven gas generation dominates valve activation.",
+          "F. Electrolyte vapor pressure at venting represents roughly one-quarter of the total internal pressure, consistent with it being a non-negligible but secondary contributor."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "E",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Pg (~996 kPa) exceeds PELE (~302 kPa), making redox gas the dominant contributor to total pressure (~1298 kPa).",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C002",
+              "TR_Gasventing+122+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Directly contradicts evidence: redox gas (~996 kPa) is nearly three times electrolyte vapor (~302 kPa) at venting.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Misleadingly implies neither contributor dominates; evidence shows redox gas is the primary driver, not a co-equal contributor.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C002",
+              "TR_Gasventing+122+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Pressure within manufacturer range confirms model validity, not absence of post-venting rupture risk; C005 shows high-threshold settings increase rupture risk.",
+            "error_type": "protective_mechanism_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C003",
+              "TR_Gasventing+122+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Evidence explicitly states Pg (~996 kPa) is nearly three times PELE (~302 kPa) at venting, confirming redox gas dominance.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "302 kPa out of 1298 kPa total is ~23%, consistent with a non-negligible secondary role; derivable from C002 and C003.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C002",
+              "TR_Gasventing+122+Journal_of_Power_Sources:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Relative contributions of redox gas pressure versus electrolyte vapor pressure to total internal pressure at the venting event",
+        "primary_boundary": "Redox gas dominates at venting (~3× electrolyte vapor); total pressure within manufacturer range validates model but does not eliminate post-venting risk",
+        "intended_error_modes": [
+          "Inverting the dominant pressure contributor (B)",
+          "Treating both contributors as co-equal to avoid committing to a dominant mechanism (C)",
+          "Conflating model validation with safety guarantee (D)"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding that pressure within manufacturer range means no rupture risk under any condition",
+          "Generalizing the 3:1 ratio to other SOC levels or chemistries not stated in evidence"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery safety engineer is reviewing the thermal runaway progression of a high-SOC NCM 811 cell. Calorimetric data shows that from the onset temperature to the separator collapse temperature (Tsc), the rate of gas generation and the rate of temperature rise do not scale proportionally. However, as temperature approaches Tsc, this relationship becomes approximately proportional. The engineer must decide whether to model the pre-Tsc reaction pathway as a single lumped process. Which conclusions are admissible?",
+        "options": [
+          "A. The non-proportional scaling between gas generation rate and temperature rise rate before Tsc is consistent with multiple sequential or parallel reaction steps occurring in that regime.",
+          "B. The approximately proportional relationship near Tsc indicates that a single dominant reaction has taken over, making a single-step model admissible specifically near Tsc but not across the full pre-Tsc range.",
+          "C. Because the relationship becomes approximately proportional near Tsc, the entire pre-Tsc process can be adequately represented by a single-step reaction model for engineering design purposes.",
+          "D. The non-linear pre-Tsc behavior implies that gas pressure buildup is negligible until Tsc is reached, so venting design need only account for post-Tsc conditions.",
+          "E. The transition from non-proportional to approximately proportional behavior near Tsc suggests a regime change in the dominant reaction mechanism as temperature increases toward Tsc.",
+          "F. A single-step lumped model is conservative for all pre-Tsc conditions because it will overestimate gas generation rate at lower temperatures."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence explicitly states non-linearity before Tsc implies multi-step reactions; non-proportional rates are mechanistically consistent with this.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Approximate linearity near Tsc supports single-step modeling only in that sub-regime; applying it to the full pre-Tsc range is unsupported by evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Overgeneralizes the near-Tsc linearity to the full pre-Tsc range; evidence explicitly states the relationship is not linear until approaching Tsc.",
+            "error_type": "overgeneralization_of_regime",
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Non-linearity does not imply negligible gas pressure before Tsc; evidence shows significant Pg at venting (well before Tsc at ~3923 kPa).",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C001",
+              "TR_Gasventing+122+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Transition from non-proportional to proportional behavior is consistent with a regime change in dominant reaction mechanism near Tsc.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "No evidence supports that a single-step model overestimates at lower temperatures; this is an unsupported quantitative claim about model conservatism.",
+            "error_type": "unsupported_extrapolation",
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of single-step reaction modeling across the pre-Tsc temperature range given non-linear gas generation behavior",
+        "primary_boundary": "Approximate linearity near Tsc permits single-step modeling only in that sub-regime; non-linearity across the full pre-Tsc range requires multi-step representation",
+        "intended_error_modes": [
+          "Extending near-Tsc linearity to the entire pre-Tsc domain (C)",
+          "Inferring negligible pre-Tsc gas pressure from non-linearity (D)",
+          "Claiming conservatism of a single-step model without evidential basis (F)"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding that multi-step reactions imply negligible gas generation before Tsc",
+          "Applying near-Tsc single-step approximation to full thermal runaway modeling"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A cell manufacturer is considering raising the burst pressure threshold of the safety valve in a high-SOC NCM 811 cell to reduce nuisance venting during normal operation. Internal pressure at the separator collapse temperature Tsc is known to be substantially higher than at the normal venting event. An engineer argues that a higher burst threshold improves containment. A safety reviewer disagrees. Which of the following statements are admissible given the known pressure relationships and safety implications?",
+        "options": [
+          "A. Raising the burst threshold above the normal venting pressure increases the risk that gas generated during thermal runaway accumulates to levels associated with rupture or explosion rather than controlled venting.",
+          "B. Because Pg at Tsc is over six times the electrolyte vapor pressure at Tsc, a higher burst threshold primarily delays electrolyte vapor release rather than redox gas release, making it a safe design choice.",
+          "C. A higher burst threshold may be acceptable if the threshold remains below the pressure level reached at Tsc, since controlled venting would still occur before the most dangerous pressure state.",
+          "D. The engineer's containment argument is admissible because higher thresholds allow more gas to accumulate, which increases the driving force for controlled directional venting and reduces explosion risk.",
+          "E. The safety reviewer's concern is supported: delaying venting by raising the threshold means thermal runaway gases are not released in time, increasing the likelihood of uncontrolled cell rupture.",
+          "F. Raising the burst threshold has no effect on rupture risk because the total internal pressure at the normal venting event already lies within the manufacturer's specified range."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "C005 directly states that a high burst threshold prevents timely gas venting during thermal runaway, resulting in rupture and explosion risk.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Redox gas dominates pressure at Tsc (>6× electrolyte vapor); a higher threshold delays redox gas venting, not primarily electrolyte vapor, making this mechanistically inverted.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C001",
+              "TR_Gasventing+122+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Appears cautious but is unsupported: evidence does not establish that any threshold below Tsc pressure is safe; C005 warns against high thresholds without this qualification.",
+            "error_type": "conservative_but_unsupported_boundary",
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Accumulating more gas before venting increases explosion risk, not directional venting efficiency; this reverses the safety implication stated in C005.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Directly supported by C005: high threshold → untimely venting → rupture and explosion, confirming the safety reviewer's concern.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Normal venting pressure within manufacturer range validates model calibration, not that threshold changes are risk-neutral; ignores C005's explicit safety warning.",
+            "error_type": "scope_expansion_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C003",
+              "TR_Gasventing+122+Journal_of_Power_Sources:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Safety implications of raising the safety valve burst pressure threshold in the context of thermal runaway gas generation dynamics",
+        "primary_boundary": "Higher burst threshold delays gas venting during thermal runaway, increasing rupture/explosion risk regardless of normal-operation pressure validation",
+        "intended_error_modes": [
+          "Inverting the dominant gas contributor to justify higher threshold (B)",
+          "Constructing a plausible but unsupported conditional safety window (C)",
+          "Reversing the causal direction of gas accumulation and explosion risk (D)",
+          "Misusing model validation as a risk-neutrality argument (F)"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring a safe threshold range from the manufacturer pressure specification",
+          "Concluding that directional venting benefit outweighs accumulation risk at higher thresholds"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A 100% SOC NCM 811 cell undergoes thermal abuse. At the safety valve opening event, the internal pressure is confirmed to lie within the manufacturer's specified burst range. At a higher temperature corresponding to separator collapse, the internal gas pressure from redox reactions is substantially greater than at the venting event and is over six times the electrolyte vapor pressure at that same temperature. Between the onset temperature and separator collapse, the rate of temperature rise and the rate of gas generation do not scale proportionally, but this relationship becomes approximately proportional near separator collapse. \n\nAn engineer proposes that: (1) the safety valve threshold should be raised to reduce nuisance venting, and (2) the pre-separator-collapse reaction chemistry can be modeled as a single lumped step for all thermal runaway simulations. Evaluate both proposals, identifying the specific mechanism-based reasoning that supports or refutes each."
+      },
+      "ground_truth": {
+        "gold_answer": "Proposal 1 (raise burst threshold) is inadmissible. Raising the threshold means gas generated during thermal runaway is not vented in time. Because redox-driven gas pressure dominates total internal pressure at the venting event (approximately three times the electrolyte vapor contribution) and reaches even higher levels at separator collapse, delaying venting allows dangerous pressure accumulation. This increases the risk of uncontrolled rupture or explosion rather than controlled release. The fact that normal venting pressure lies within the manufacturer's range validates the current threshold calibration, not the safety of a higher one.\n\nProposal 2 (single-step lumped model for all pre-Tsc conditions) is inadmissible for the full pre-Tsc range. The non-proportional relationship between gas generation rate and temperature rise rate from onset to near separator collapse indicates that multiple reaction steps govern this regime. A single-step model is only approximately valid near separator collapse where the relationship becomes approximately proportional. Applying a single-step model across the entire pre-Tsc range would misrepresent the reaction pathway and could produce incorrect pressure and temperature predictions at intermediate temperatures.",
+        "must_include": [
+          "Raising burst threshold delays venting of redox-generated gas, increasing rupture/explosion risk",
+          "Redox gas dominates pressure at venting event relative to electrolyte vapor",
+          "Non-proportional gas generation and temperature rate before Tsc implies multi-step reactions",
+          "Single-step model is only approximately valid near Tsc, not across the full pre-Tsc range",
+          "Manufacturer pressure range validation does not justify raising the threshold"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming a safe intermediate threshold exists between normal venting and Tsc pressure",
+          "Asserting that single-step model is conservative or bounding for all pre-Tsc conditions",
+          "Generalizing pressure ratios or reaction behavior to other SOC levels or chemistries not stated"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of two engineering proposals: burst threshold modification and reaction modeling simplification, evaluated against pressure dominance relationships and non-linear gas generation behavior",
+        "primary_boundary": "Higher burst threshold increases rupture risk via delayed venting of dominant redox gas; single-step model is valid only near Tsc where proportionality holds, not across the full pre-Tsc regime",
+        "intended_error_modes": [
+          "Treating manufacturer pressure range as justification for threshold increase",
+          "Extending near-Tsc proportionality to the full pre-Tsc modeling domain",
+          "Underweighting redox gas dominance relative to electrolyte vapor in venting design"
+        ]
+      }
+    }
+  ]
+}

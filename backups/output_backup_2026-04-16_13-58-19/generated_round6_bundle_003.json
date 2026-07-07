@@ -1,0 +1,331 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A lithium-ion battery safety engineer is evaluating thermal runaway hazard at two test sites: one at sea level (ambient pressure ~101 kPa) and one at high altitude (ambient pressure ~64 kPa). Under identical external radiant heating, batteries at the high-altitude site ignite faster than those at sea level. The engineer also observes that peak heat release rate (HRR) across SOC levels at sea level shows values of approximately 2.9 kW at 0% SOC, 5.1 kW at 50% SOC, and 2.8 kW at 100% SOC. Which of the following conclusions are admissible given these observations?",
+        "options": [
+          "A. The faster ignition at high altitude is consistent with a lower pressure threshold required for initial gas ejection, which advances the onset of flammable gas release.",
+          "B. Because peak HRR is lower at 100% SOC than at 50% SOC, a fully charged battery releases less total energy during combustion than a half-charged battery under these conditions.",
+          "C. The non-monotonic peak HRR versus SOC relationship implies that combustion completeness, not only available chemical energy, influences the peak HRR value.",
+          "D. Reducing ambient pressure from sea level to high altitude will proportionally reduce total heat release per battery, since the power function scaling coefficient decreases at lower pressure.",
+          "E. The observation that 100% SOC batteries have the highest CO/CO2 ratio is consistent with reduced combustion efficiency at full charge, which can suppress peak HRR relative to 50% SOC despite greater stored energy.",
+          "F. The faster ignition at high altitude demonstrates that ambient pressure is the sole controlling variable for ignition timing, independent of SOC."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence states that lower ambient pressure reduces the pressure required for rupture and ejection, so flammable gas is released earlier, advancing ignition onset. This is a direct mechanism chain: lower ambient pressure → earlier rupture threshold reached → earlier gas ejection → faster ignition.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+165+Applied_Thermal_Engineering:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Peak HRR is not equivalent to total heat release. A lower peak HRR at 100% SOC compared to 50% SOC does not imply lower total energy release; the total heat release depends on the integral of HRR over time and is not determined by peak value alone. This conflates peak rate with cumulative energy.",
+            "error_type": "Mechanism confusion: peak rate conflated with total energy",
+            "evidence_refs": [
+              "TR_Gasventing+165+Applied_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "If peak HRR were determined solely by stored chemical energy, it would increase monotonically with SOC. The observed non-monotonic pattern (50% SOC peak higher than both 0% and 100%) requires an additional factor. The sharp increase in CO/CO2 at 100% SOC indicates reduced combustion efficiency, which is a mechanism that can suppress peak HRR independently of stored energy. This multi-step reasoning supports the admissibility of combustion completeness as a contributing factor.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+165+Applied_Thermal_Engineering:C003",
+              "TR_Gasventing+165+Applied_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence shows that the scaling coefficient in the power function for bundled batteries is lower at high altitude (16.99 vs 22.57), but this applies to total heat release scaling with cell number in bundles, not to proportional reduction for single cells. Claiming proportional reduction for single-cell total heat release is an unsupported extrapolation of bundle-level scaling behavior.",
+            "error_type": "Scope expansion: bundle scaling coefficient applied to single-cell total energy",
+            "evidence_refs": [
+              "TR_Gasventing+165+Applied_Thermal_Engineering:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The evidence explicitly links the high CO/CO2 ratio at 100% SOC to decreased combustion efficiency. Reduced combustion efficiency means less complete oxidation of combustible gases, which would reduce the heat released per unit of fuel burned, providing a mechanistic explanation for why peak HRR at 100% SOC is lower than at 50% SOC despite higher stored electrochemical energy. This is a counterintuitive but evidence-supported conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+165+Applied_Thermal_Engineering:C003",
+              "TR_Gasventing+165+Applied_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Evidence shows that ignition time also varies with SOC at a fixed pressure (364 s at 0%, 342 s at 50%, 315 s at 100% SOC at sea level). Therefore ambient pressure is not the sole controlling variable; SOC independently affects ignition timing. This option violates the multi-variable nature of the system.",
+            "error_type": "Single-variable overclaim ignoring SOC dependence",
+            "evidence_refs": [
+              "TR_Gasventing+165+Applied_Thermal_Engineering:C001",
+              "TR_Gasventing+165+Applied_Thermal_Engineering:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of mechanistic conclusions about non-monotonic HRR versus SOC and altitude-dependent ignition, distinguishing peak rate from total energy and single-variable from multi-variable control",
+        "primary_boundary": "Peak HRR is not equivalent to total heat release; combustion efficiency modifies the HRR-SOC relationship independently of stored energy; ambient pressure is not the sole ignition-timing variable",
+        "intended_error_modes": [
+          "Conflating peak HRR with total heat release",
+          "Single-variable attribution of ignition timing to pressure alone",
+          "Applying bundle-level scaling coefficient to single-cell total energy"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring total heat release ordering from peak HRR ordering",
+          "Extending bundle power-function scaling to single-cell proportional reduction",
+          "Treating ambient pressure as the only ignition-timing variable"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery safety test facility uses 400-W external heating to induce thermal runaway in lithium-ion cells at various states of charge. Measured impact overpressures during the intense ejection stage are approximately 11 kPa, 12 kPa, and 19 kPa at 20%, 40%, and 60% SOC respectively, but jump to approximately 87 kPa and 107 kPa at 80% and 100% SOC. Corresponding maximum pressure-rise rates are approximately 43, 65, and 49 kPa/s at the lower SOC levels, but rise to approximately 674 and 694 kPa/s at 80% and 100% SOC. The temperatures at which the intense ejection pressure begins are 318, 285, 273, 262, and 242°C at 20% through 100% SOC respectively. A separate test shows that at 0% SOC with 400-W heating, only a minor venting pressure occurs with no thermal runaway. An engineer must evaluate injury risk and system behavior. Which of the following statements are admissible?",
+        "options": [
+          "A. The pressure-rise rate data indicate a regime transition between 60% and 80% SOC rather than a continuous monotonic increase, implying that hazard assessments based only on low-SOC tests would substantially underestimate peak dynamic loading at high SOC.",
+          "B. Because the ejection onset temperature decreases with increasing SOC, a thermal protection system calibrated to trigger at 270°C would provide adequate warning time before intense ejection at all SOC levels tested.",
+          "C. The injury risk from impact pressure transitions from below the 1% lethality threshold at 20–60% SOC to above it at 80–100% SOC under 400-W heating, consistent with the observed pressure-rise rate regime transition.",
+          "D. The absence of thermal runaway at 0% SOC under 400-W heating confirms that 400-W heating is insufficient to cause any internal exothermic reaction in lithium-ion cells regardless of SOC.",
+          "E. The data support the conclusion that both peak overpressure magnitude and pressure-rise rate are non-monotonically related to SOC, with a local maximum near 40% SOC.",
+          "F. The decreasing ejection onset temperature with increasing SOC suggests that higher-SOC cells contain more reactive internal conditions that initiate the ejection sequence at lower temperatures."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The pressure-rise rate data show values of 43–65 kPa/s at 20–60% SOC and then jump to 674–694 kPa/s at 80–100% SOC—more than a tenfold increase—while the intermediate values do not show a smooth progression. This constitutes a regime transition, not a continuous monotonic trend. A hazard assessment using only low-SOC data would miss this transition and severely underestimate dynamic pressure loading at high SOC.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+166+Applied_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "At 80% SOC the ejection onset temperature is 262°C, and at 100% SOC it is 242°C—both below 270°C. A system calibrated to trigger at 270°C would not activate before intense ejection begins at 80% or 100% SOC, failing to provide adequate warning at the most hazardous conditions. This option is conservative-sounding but mechanistically incorrect for high SOC.",
+            "error_type": "Condition violation: threshold valid only for low SOC, not high SOC",
+            "evidence_refs": [
+              "TR_Gasventing+166+Applied_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence explicitly states that injury risk from impact pressure at 20%, 40%, and 60% SOC under 400-W heating is below the LD1 curve, while at 80% and 100% SOC it is above LD1. This aligns with the pressure-rise rate regime transition observed between 60% and 80% SOC, making this a consistent and admissible conclusion linking the mechanical hazard metric to the injury risk classification.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+166+Applied_Thermal_Engineering:C002",
+              "TR_Gasventing+166+Applied_Thermal_Engineering:C003",
+              "TR_Gasventing+166+Applied_Thermal_Engineering:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The 0% SOC result under 400-W heating shows no thermal runaway, but the evidence also shows that 100% SOC under 100-W heating (much lower power) also produces no thermal runaway. The absence of thermal runaway at 0% SOC under 400-W is SOC-specific, not a general statement about 400-W being insufficient for any SOC. In fact, 400-W heating does cause thermal runaway at 20–100% SOC. This option overgeneralizes a condition-specific result.",
+            "error_type": "Overgeneralization from a single SOC condition to all SOC levels",
+            "evidence_refs": [
+              "TR_Gasventing+166+Applied_Thermal_Engineering:C001",
+              "TR_Gasventing+166+Applied_Thermal_Engineering:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Peak overpressure magnitude increases monotonically with SOC (10.8 → 11.9 → 19.2 → 86.5 → 107.2 kPa). There is no local maximum near 40% SOC for overpressure. The pressure-rise rate does show a non-monotonic feature (64.6 kPa/s at 40% is higher than 49.2 kPa/s at 60%), but the claim that both metrics are non-monotonic with a local maximum near 40% SOC is incorrect for the overpressure magnitude.",
+            "error_type": "Incorrect characterization: overpressure is monotonic; applying non-monotonicity of rate to magnitude",
+            "evidence_refs": [
+              "TR_Gasventing+166+Applied_Thermal_Engineering:C002",
+              "TR_Gasventing+166+Applied_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The ejection onset temperature decreases systematically from 318°C at 20% SOC to 242°C at 100% SOC. This monotonic decrease with SOC is consistent with higher-SOC cells having more reactive internal states—more lithiated anode, more delithiated cathode—that lower the temperature threshold for the reactions driving gas ejection. This is a mechanistically grounded and evidence-consistent conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+166+Applied_Thermal_Engineering:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Regime transition in pressure hazard metrics between low and high SOC, admissibility of threshold-based protection calibration, and mechanistic interpretation of decreasing onset temperature with SOC",
+        "primary_boundary": "Pressure-rise rate undergoes a regime transition between 60% and 80% SOC; a 270°C trigger threshold is inadequate at 80% and 100% SOC; peak overpressure is monotonic with SOC, not non-monotonic",
+        "intended_error_modes": [
+          "Applying a low-SOC calibrated threshold to high-SOC conditions",
+          "Overgeneralizing 0% SOC no-runaway result to all SOC levels at 400 W",
+          "Confusing non-monotonicity of pressure-rise rate with non-monotonicity of peak overpressure magnitude"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring that 400-W heating is universally insufficient for thermal runaway from the 0% SOC result",
+          "Treating a threshold valid at 60% SOC as valid at 80% or 100% SOC",
+          "Asserting non-monotonic overpressure when evidence shows monotonic increase"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Three lithium-ion cell chemistries—LCO, NMC, and LFP—are subjected to thermal abuse under a controlled heating ramp. Across nine experiments, the average temperature at which safety venting begins is 193°C, the average exothermic onset temperature is 238°C, and the average peak surface temperature is 567°C. High-speed imaging shows that LCO initiates flame via a hot spot at the vent cap, while NMC ejects hot solid particles that ignite surrounding flammable gas. LFP shows no flame propagation at any of the three SOC levels tested. Increasing SOC is observed to decrease the temperature at which venting begins and increase the maximum self-heat rate for all three chemistries. An engineer must assess which conclusions about ignition mechanism and propagation risk are supported. Which of the following are admissible conclusions?",
+        "options": [
+          "A. LFP's absence of flame propagation across all tested SOC levels indicates that LFP cells present no fire hazard under thermal abuse conditions.",
+          "B. The difference in flame initiation mechanism between LCO and NMC implies that suppression strategies effective against hot-particle ignition may not address vent-cap hot-spot ignition, and vice versa.",
+          "C. Because increasing SOC lowers the venting onset temperature for all three chemistries, a high-SOC LFP cell will vent at a lower temperature than a low-SOC LCO cell, but this does not imply that the high-SOC LFP cell will produce flame propagation.",
+          "D. The average exothermic onset temperature of 238°C, being higher than the average venting onset of 193°C, confirms that venting always precedes exothermic self-heating in these cells under the tested heating ramp.",
+          "E. The 45°C gap between average venting onset and average exothermic onset means that a thermal management system triggering an alert at 200°C provides a reliable intervention window before exothermic runaway for all cells regardless of SOC.",
+          "F. The peak surface temperature of 567°C on average suggests that surrounding materials with ignition temperatures below this value could be at risk during thermal runaway, but the surface temperature alone does not characterize internal peak temperatures."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "The evidence states LFP shows no flame propagation, not that it presents no fire hazard. Absence of flame propagation is a specific observation about one failure mode; it does not rule out other hazards such as gas release, pressure ejection, or heat transfer to adjacent components. This is a scope expansion from a specific observation to a general safety claim.",
+            "error_type": "Scope expansion: absence of one failure mode generalized to absence of all fire hazard",
+            "evidence_refs": [
+              "TR_Gasventing+167+Applied_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "LCO ignites via a thermal hot spot at the vent cap, while NMC ignites via ejected hot solid particles. These are mechanistically distinct ignition pathways. A suppression strategy targeting particle ignition (e.g., catching or quenching particles) would not address a vent-cap hot-spot mechanism, and vice versa. This is a direct and admissible engineering implication of the mechanistic difference.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+167+Applied_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "SOC lowers venting onset temperature for all chemistries, so a high-SOC LFP cell would vent at a lower temperature than a low-SOC LCO cell under the same ramp. However, the evidence separately establishes that LFP does not produce flame propagation at any tested SOC. These two facts are independently supported and their combination is admissible: the venting temperature ordering can be true while the flame propagation behavior remains chemistry-dependent. This is counterintuitive because it decouples venting temperature from flame risk.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+167+Applied_Thermal_Engineering:C004",
+              "TR_Gasventing+167+Applied_Thermal_Engineering:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The averages (193°C for venting, 238°C for exothermic onset) are computed across nine experiments and represent central tendencies. Individual cells may show different orderings due to variability. The word 'always' converts an average-based observation into a universal claim, which is not supported. Additionally, the evidence does not state that venting always precedes exothermic onset in every individual experiment.",
+            "error_type": "Overgeneralization: average-based trend stated as universal rule",
+            "evidence_refs": [
+              "TR_Gasventing+167+Applied_Thermal_Engineering:C001",
+              "TR_Gasventing+167+Applied_Thermal_Engineering:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The 45°C gap is based on averages across all chemistries and SOC levels. Since increasing SOC lowers the venting onset temperature, high-SOC cells may vent at temperatures closer to or below 200°C, and the exothermic onset also shifts with SOC. A 200°C alert threshold may not provide a reliable intervention window for high-SOC cells where venting onset approaches or falls below 200°C. The claim that it is reliable 'regardless of SOC' violates the SOC-dependence established in the evidence.",
+            "error_type": "Condition violation: average-based threshold applied universally, ignoring SOC-dependent shift",
+            "evidence_refs": [
+              "TR_Gasventing+167+Applied_Thermal_Engineering:C001",
+              "TR_Gasventing+167+Applied_Thermal_Engineering:C002",
+              "TR_Gasventing+167+Applied_Thermal_Engineering:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The average peak surface temperature of 567°C is a measured surface value. It is admissible to note that materials with ignition temperatures below 567°C could be at risk from surface contact or radiation. It is also admissible to note that surface temperature does not characterize internal peak temperatures, which may differ substantially. Both parts of this statement are evidence-consistent and represent appropriate scope limitation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+167+Applied_Thermal_Engineering:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of chemistry-specific flame initiation mechanism implications, decoupling of venting temperature from flame propagation risk, and scope limitations of average-based threshold conclusions",
+        "primary_boundary": "Absence of flame propagation ≠ absence of fire hazard; average-based thresholds cannot be stated as universal across SOC; surface temperature does not characterize internal temperature",
+        "intended_error_modes": [
+          "Generalizing absence of flame propagation to absence of all fire hazard",
+          "Converting average-based temperature gap into a universal SOC-independent intervention window",
+          "Treating average onset temperatures as universal ordering guarantees"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring no fire hazard from no flame propagation",
+          "Applying average venting-to-exothermic gap as reliable for all SOC levels",
+          "Treating surface peak temperature as equivalent to internal peak temperature"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A lithium-ion battery module is being designed for use at high altitude (ambient pressure approximately 64 kPa) with cells that will operate at 100% SOC. Based on the relationships between ambient pressure, SOC, ignition timing, ejection onset temperature, and combustion efficiency, explain the combined effect of these two conditions (high altitude and full charge) on fire and pressure hazard relative to a sea-level, 50% SOC baseline. Your answer should address at least two distinct hazard dimensions and identify whether the effects of altitude and SOC on each dimension are reinforcing or opposing."
+      },
+      "ground_truth": {
+        "gold_answer": "High altitude (lower ambient pressure) and 100% SOC both independently accelerate ignition onset: lower pressure reduces the threshold required for initial gas ejection, advancing flammable gas release, while higher SOC lowers the temperature at which venting and exothermic reactions begin. These effects are reinforcing on ignition timing—the high-altitude, full-charge condition will ignite faster than the sea-level, 50% SOC baseline from both mechanisms acting in the same direction. For peak heat release rate (HRR), the situation is more complex: at 100% SOC, combustion efficiency decreases sharply (evidenced by elevated CO/CO2 ratio), which suppresses peak HRR relative to 50% SOC despite greater stored energy. Therefore, the full-charge condition does not necessarily produce the highest peak HRR—the 50% SOC baseline may actually yield a higher peak HRR. The altitude effect on total heat release per bundle is captured by a lower scaling coefficient at reduced pressure, meaning the high-altitude condition reduces total heat release in bundled configurations relative to sea level. For pressure hazard during ejection, 100% SOC produces dramatically higher impact overpressure and pressure-rise rate (regime transition above 60% SOC), placing the injury risk above the 1% lethality threshold. The altitude and SOC effects on pressure hazard are also reinforcing: lower ambient pressure advances ejection timing while higher SOC dramatically increases ejection intensity. In summary: ignition timing hazard—altitude and SOC effects are reinforcing (both increase risk); peak HRR hazard—SOC effect is counterintuitive (100% SOC may reduce peak HRR vs. 50% SOC due to combustion inefficiency); pressure/ejection hazard—altitude and SOC effects are reinforcing (both increase risk, with SOC effect being dominant in magnitude).",
+        "must_include": [
+          "Lower ambient pressure reduces the pressure threshold for ejection, advancing ignition onset",
+          "Higher SOC lowers venting and exothermic onset temperatures, also advancing ignition onset",
+          "These two effects are reinforcing on ignition timing",
+          "At 100% SOC, combustion efficiency decreases (elevated CO/CO2), which can suppress peak HRR relative to 50% SOC",
+          "Peak HRR is non-monotonic with SOC; 50% SOC produces higher peak HRR than 100% SOC",
+          "Pressure hazard (overpressure and pressure-rise rate) increases dramatically at high SOC, with a regime transition above 60% SOC",
+          "Injury risk from impact pressure at 100% SOC exceeds the 1% lethality threshold",
+          "At least two distinct hazard dimensions must be addressed with explicit reinforcing or opposing characterization"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming that high altitude directly reduces peak HRR for single cells based only on bundle scaling coefficient evidence",
+          "Claiming that 100% SOC always produces the highest peak HRR",
+          "Asserting that lower ambient pressure eliminates thermal runaway risk or prevents ejection",
+          "Treating the bundle-level power function scaling as directly applicable to single-cell total energy at altitude",
+          "Claiming that the injury risk at 100% SOC reaches or exceeds the 10% lethality threshold under all heating conditions"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-dimensional hazard interaction between ambient pressure and SOC, requiring identification of reinforcing versus opposing effects across ignition timing, peak HRR, and pressure ejection hazard dimensions",
+        "primary_boundary": "Peak HRR is non-monotonic with SOC due to combustion efficiency effects; bundle scaling coefficients cannot be directly applied to single-cell energy; pressure hazard undergoes a regime transition above 60% SOC that is not captured by low-SOC data",
+        "intended_error_modes": [
+          "Assuming all hazard dimensions increase monotonically with both altitude and SOC",
+          "Conflating peak HRR with total stored energy or total heat release",
+          "Applying bundle-level scaling to single-cell behavior",
+          "Missing the regime transition in pressure-rise rate between 60% and 80% SOC",
+          "Treating combustion efficiency as irrelevant to peak HRR"
+        ]
+      }
+    }
+  ]
+}

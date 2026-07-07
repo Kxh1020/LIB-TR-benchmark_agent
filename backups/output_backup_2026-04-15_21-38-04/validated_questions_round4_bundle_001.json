@@ -1,0 +1,112 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A lithium-ion cell is overcharged at 0.5 C in an air environment. Thermal runaway occurs at 329% SOC with a charging energy of 16.9 Wh at the runaway event. When the same cell type is overcharged at 1 C or 2 C in the same air environment, thermal runaway occurs near 210% SOC with charging energy near 9.5 Wh. In a separate test, the same 0.5 C overcharge is applied in a quasi-adiabatic environment, and thermal runaway occurs at 200% SOC. Electrochemical impedance measurements show that the SEI resistance increases sharply at 155–165% SOC, and transition metal deposits (Mn, Co, Ni) appear on the anode surface at SOC ≥ 140%. At 0.5 C in air, a temperature buffering period with a very low temperature rise rate is observed before runaway; this period is absent at 1 C and 2 C. Which of the following statements are admissible conclusions from these conditions?",
+        "options": [
+          "A. The substantially higher SOC at thermal runaway for 0.5 C overcharge in air compared to quasi-adiabatic conditions demonstrates that heat dissipation quality, not charging rate alone, determines the SOC at which thermal runaway occurs.",
+          "B. The temperature buffering period at 0.5 C in air represents a window during which stopping overcharge can prevent thermal runaway, but this intervention opportunity does not exist at 1 C or 2 C in air.",
+          "C. The sharp rise in SEI resistance at 155–165% SOC is caused exclusively by SEI film thickening, with lithium deposition playing a negligible role at those SOC levels.",
+          "D. The higher charging energy at thermal runaway for 0.5 C compared to 1 C in air implies that slower overcharging is always safer because more energy must be input before failure.",
+          "E. Transition metal contamination of the anode surface at SOC ≥ 140% indicates that cathode structural degradation begins before the SEI resistance spike, and both processes are active in the SOC range leading to thermal runaway.",
+          "F. Because thermal runaway in adiabatic conditions occurs faster than in air regardless of charging rate, reducing heat dissipation from a cell during overcharge will consistently reduce the SOC at which thermal runaway occurs.",
+          "G. The maximum temperature reached during thermal runaway in an adiabatic environment shows large variation across charging rates, making adiabatic conditions the most variable thermal scenario."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "At 0.5 C, SOCTR is 309% in air but only 200% in quasi-adiabatic conditions. This large difference at the same charging rate directly demonstrates that heat dissipation quality, independent of charging rate, is a primary determinant of SOCTR.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+170+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that at 0.5 C in air, a temperature buffering period exists during which stopping overcharge prevents thermal runaway, and that this stage is not observed at 1 C and 2 C. This is a direct admissible conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+170+UnknownJournal:C013"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The evidence states the sharp RSEI rise at 155–165% SOC is due not only to SEI thickening but also to lithium deposition at the anode. Attributing it exclusively to SEI thickening is an unsupported overclaim that contradicts the stated mechanism.",
+            "error_type": "Mechanism oversimplification / causal overclaim distractor",
+            "evidence_refs": [
+              "TR_Mechanism+170+UnknownJournal:C006"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Although 0.5 C requires more input energy before runaway in air, this is because heat dissipation delays runaway to a higher SOC, not because 0.5 C is inherently safer. In quasi-adiabatic conditions, 0.5 C triggers runaway at lower SOC than 1 C in air. The 'always safer' generalization ignores environment dependence and is an unsupported universal claim.",
+            "error_type": "Overgeneralization distractor / scope expansion",
+            "evidence_refs": [
+              "TR_Mechanism+170+UnknownJournal:C004",
+              "TR_Mechanism+170+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Cathode structural gaps appear starting at 140% SOC, and transition metals appear on the anode at ≥140% SOC. The RSEI spike occurs at 155–165% SOC. This means cathode degradation (particle gap formation and metal dissolution) begins before the SEI resistance spike, and both are active in the overcharge range leading to runaway. This is a counterintuitive multi-mechanism conclusion requiring sequential reasoning.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+170+UnknownJournal:C008",
+              "TR_Mechanism+170+UnknownJournal:C009",
+              "TR_Mechanism+170+UnknownJournal:C006"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "While reducing heat dissipation generally lowers SOCTR, the statement 'consistently reduce' is too absolute. The evidence shows the relationship is environment- and rate-dependent. Additionally, the comparison between adiabatic and quasi-adiabatic at different rates shows non-uniform behavior. The claim overgeneralizes a directional trend into a universal rule.",
+            "error_type": "Overgeneralization / unjustified monotonicity distractor",
+            "evidence_refs": [
+              "TR_Mechanism+170+UnknownJournal:C001",
+              "TR_Mechanism+170+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "The evidence states that maximum temperature during thermal runaway under adiabatic conditions shows little variation across charging rates (approximately 720°C), while large differences occur in air and quasi-adiabatic environments due to airflow effects. This option directly inverts the stated finding.",
+            "error_type": "Directional inversion distractor",
+            "evidence_refs": [
+              "TR_Mechanism+170+UnknownJournal:C014"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-factor interaction between charging rate, heat dissipation environment, and SOC at thermal runaway; mechanism sequencing during overcharge",
+        "primary_boundary": "SOCTR and thermal runaway timing are jointly determined by charging rate AND heat dissipation environment; cathode degradation precedes the SEI resistance spike during overcharge; the temperature buffering window is rate-dependent",
+        "intended_error_modes": [
+          "Attributing SOCTR solely to charging rate, ignoring environment",
+          "Claiming 0.5 C is universally safer based on higher SOCTR in one environment",
+          "Attributing RSEI spike exclusively to SEI thickening, ignoring lithium deposition",
+          "Inverting the Tmax variability finding for adiabatic vs. non-adiabatic environments"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming the buffering period exists at 1 C or 2 C",
+          "Claiming adiabatic Tmax varies significantly across charging rates",
+          "Inferring that reducing heat dissipation always increases safety margin"
+        ]
+      }
+    }
+  ],
+  "short_answers": []
+}

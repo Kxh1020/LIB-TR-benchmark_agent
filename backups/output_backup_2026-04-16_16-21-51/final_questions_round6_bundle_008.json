@@ -1,0 +1,134 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Airborne particulates collected from thermal runaway events of NMC and LFP cells are characterized for particle size, elemental composition, and biological effect. NMC-derived particulates have a larger count mean diameter and higher mass concentration than LFP-derived particulates. Manganese is detected in NMC-derived particulate extracts but not in LFP-derived extracts regardless of state of charge. In cell culture experiments using airway epithelial cells, NMC-derived particulates at a dose corresponding to 5 years of cumulative occupational exposure produce a statistically significant increase in reactive oxygen species (ROS) relative to control, while the same particulates at a 1-year dose do not. LFP-derived particulates produce no significant ROS elevation at either dose or at either 24-hour or 7-day exposure time points. Dispersion of both particulate types in water promotes agglomerate formation, while dispersion in cell culture medium reduces particle size and promotes uniform distribution. An occupational health engineer must evaluate which conclusions about inhalation hazard are supported. Which of the following are admissible?",
+        "options": [
+          "A. The absence of ROS elevation from LFP-derived particulates at both doses and both time points supports the conclusion that LFP-derived TR particulates do not induce oxidative stress in airway epithelial cells under the tested conditions.",
+          "B. Because NMC-derived particulates contain manganese and LFP-derived particulates do not, manganese is established as the sole mechanistic driver of the ROS response observed at the 5-year NMC dose.",
+          "C. The dose-dependent threshold behavior of NMC-derived particulates—significant ROS at 5-year but not 1-year dose—implies that short-term single-incident exposures to NMC TR particulates are unlikely to produce the same oxidative stress response observed at the 5-year cumulative dose.",
+          "D. The agglomerate formation observed when particulates are dispersed in water means that in vivo inhalation exposures would also produce agglomerated particles reaching the airway epithelium, making the cell culture results an underestimate of actual toxicity.",
+          "E. NMC-derived TR particulates pose a greater inhalation-related oxidative stress hazard than LFP-derived TR particulates under the tested exposure conditions.",
+          "F. The larger particle size and higher mass concentration of NMC-derived particulates compared to LFP-derived particulates are sufficient to explain the differential ROS response without invoking compositional differences."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence states LFP-derived TR-PM did not induce higher ROS at either dose or either time point relative to control. This directly supports the stated conclusion under the tested conditions, with appropriate scope limitation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+180+Environment_International:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "While manganese is exclusively found in NMC-derived extracts, the evidence does not establish it as the sole driver of ROS. Multiple compositional differences exist between NMC and LFP particulates (particle size, other metals, organic content), and the evidence does not isolate manganese as the causal agent. This is a causal overclaim.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+180+Environment_International:C002",
+              "TR_Gasventing+180+Environment_International:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence shows a threshold between 1-year and 5-year cumulative doses for NMC-derived particulates. A single-incident short-term exposure would correspond to a dose far below the 1-year cumulative level, which already produced no significant ROS elevation. The conclusion is a minimal and supported implication of the dose-threshold evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+180+Environment_International:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence states that dispersion in cell culture medium reduces particle size and promotes uniform distribution, which is the relevant condition for the cell culture experiments. Inferring that in vivo airway conditions would replicate water-dispersion agglomeration behavior—rather than the protein-rich fluid environment of the airway—is an unsupported extrapolation. The cell culture medium result actually suggests the opposite of agglomeration in a physiologically relevant medium.",
+            "error_type": "condition_violation_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+180+Environment_International:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "NMC-derived particulates produced significant ROS elevation at the 5-year dose while LFP-derived particulates produced none at either dose or time point. This directly supports NMC as posing greater oxidative stress hazard under the tested conditions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+180+Environment_International:C003",
+              "TR_Gasventing+180+Environment_International:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Particle size and mass concentration differences alone are insufficient to explain differential ROS, because the evidence also identifies compositional differences (e.g., manganese presence) that could independently contribute. Attributing the differential response solely to physical size parameters while excluding compositional factors is an unsupported single-variable causal claim.",
+            "error_type": "single_variable_causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+180+Environment_International:C001",
+              "TR_Gasventing+180+Environment_International:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissible conclusions about differential inhalation hazard between NMC and LFP TR particulates; dose-threshold interpretation; compositional versus physical property attribution of biological response.",
+        "primary_boundary": "ROS response is dose-threshold dependent and chemistry-dependent; manganese presence is correlational not established as sole causal driver; cell culture medium dispersion behavior cannot be directly mapped to water-dispersion behavior for in vivo inference.",
+        "intended_error_modes": [
+          "Attributing ROS response solely to manganese (B)",
+          "Inferring in vivo agglomeration from water-dispersion data while ignoring cell culture medium result (D)",
+          "Attributing differential ROS to physical size alone while ignoring composition (F)"
+        ],
+        "disallowed_extrapolations": [
+          "Manganese as sole mechanistic driver without isolation evidence",
+          "Water-dispersion agglomeration as representative of in vivo conditions",
+          "Particle size as sufficient explanation for differential biological response"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A lithium-ion cell undergoes thermal runaway in a sealed enclosure. Three different external heating configurations are tested in separate trials: one applies heat through a small-area point contact, one through a large distributed surface, and one through a wrapped coil covering most of the cell surface. Across these trials, the configuration that triggers thermal runaway earliest and produces the highest peak chamber pressure also yields the lowest post-thermal-runaway peak cell temperature. Simultaneously, the configuration that produces the highest post-thermal-runaway peak cell temperature yields the widest flammable concentration range and lowest lower flammability limit in the vented gas, and also shows the highest hydrogen concentration in the vent gas. Explain the mechanistic reasoning that accounts for: (1) why the configuration with the highest peak chamber pressure has the lowest post-TR peak temperature, and (2) why the configuration with the highest post-TR peak temperature has the highest hydrogen concentration in vent gas despite being identified as the most hazardous by flammability metrics."
+      },
+      "ground_truth": {
+        "gold_answer": "(1) The configuration producing the highest peak chamber pressure does so because it generates gas at the highest rate during thermal runaway, not because the ambient or cell temperature is highest. Rapid early gas generation vents thermal energy and consumes reactive intermediates quickly, leaving less chemical energy available to sustain high-temperature combustion after the peak event. The result is a lower post-TR steady-state cell temperature despite the higher instantaneous pressure. The pressure is driven by gas generation rate, not by thermal environment. (2) The configuration with the highest post-TR peak temperature corresponds to lower heating efficiency distributed over a smaller contact area, which means the cell undergoes a slower, less complete oxidation process. Under lower heating efficiency conditions, reactants are not rapidly oxidized, leaving more hydrogen-producing precursors available. Higher heating efficiency configurations oxidize reactants more rapidly, consuming the precursors before they can generate hydrogen, resulting in lower H2 concentration. The heating rod configuration therefore shows the highest H2 concentration precisely because its lower heating efficiency leaves more unreacted material available for H2 production. The wide flammable range and low lower flammability limit arise from the overall gas composition produced under these conditions, not from the H2 concentration alone.",
+        "must_include": [
+          "Gas generation rate is the primary driver of peak pressure, not ambient or post-TR temperature",
+          "Rapid gas generation during TR dissipates or consumes energy, reducing post-TR peak temperature",
+          "Lower heating efficiency leaves more unreacted precursors available for H2 production",
+          "Higher heating efficiency causes more complete oxidation, reducing H2 yield",
+          "Flammable concentration range and lower flammability limit are the relevant explosion hazard metrics, not H2 concentration alone"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming that lower post-TR temperature means lower overall hazard",
+          "Claiming that highest H2 concentration alone explains the widest flammable range",
+          "Claiming that the coil configuration is safer than the rod configuration in all respects",
+          "Inferring total gas yield from peak pressure"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanistic coupling between heating geometry, gas generation rate, post-TR temperature, H2 production, and explosion hazard metrics; counterintuitive inverse relationship between peak pressure and post-TR temperature.",
+        "primary_boundary": "Peak pressure is determined by gas generation rate not thermal environment; H2 yield is inversely related to heating efficiency due to oxidation completeness; explosion hazard is determined by flammable range and lower flammability limit, not by any single gas species concentration.",
+        "intended_error_modes": [
+          "Attributing high pressure to high temperature rather than to gas generation rate",
+          "Interpreting low post-TR temperature as indicating low hazard",
+          "Attributing high H2 to high heating efficiency rather than to low oxidation completeness",
+          "Conflating H2 concentration with explosion hazard ranking"
+        ]
+      }
+    }
+  ]
+}

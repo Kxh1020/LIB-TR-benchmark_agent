@@ -1,0 +1,385 @@
+{
+  "TR_Propagation+4+Applied_Energy__TR_Propagation+5+Applied_Energy__TR_Propagation+6+eTransportation": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery module uses liquid cooling plates as the primary thermal management interface between cells. During a thermal runaway propagation event initiated at one end cell, engineers observe that replacing the air gap between modules with aerogel insulation delays the onset of thermal runaway in adjacent modules by only 36\u201349 seconds, despite aerogel's well-established insulating properties. Simultaneously, within a single module, the propagation interval between successive cells decreases by approximately 72% as the event progresses from the first to later cells. A design team proposes two interventions: (I) thickening the aerogel layer between modules to further delay inter-module propagation, and (II) prioritizing suppression of heat accumulation within the module during the earliest stages of propagation. Which of the following conclusions are admissible given these conditions?",
+          "options": [
+            "A. The limited effectiveness of aerogel between modules is primarily attributable to the dominant heat transfer pathway through the liquid cooling plates rather than through the inter-module gap, making aerogel thickness increases at that interface unlikely to produce proportional propagation delay.",
+            "B. The 72% reduction in intra-module propagation interval indicates that the thermal runaway reaction rate within each cell accelerates as propagation proceeds, requiring faster electrochemical suppression at later stages.",
+            "C. Intervention II is more strategically critical than Intervention I because the accelerating intra-module propagation dynamic means that heat accumulation in early stages determines whether later cells reach runaway faster, and this pathway is not controlled by the inter-module insulation.",
+            "D. Because liquid cooling plates dissipate more than 70% of the energy during propagation, increasing coolant flow rate is guaranteed to prevent inter-module propagation regardless of module configuration.",
+            "E. The decreasing intra-module propagation interval is consistent with progressive heat accumulation in the module that pre-heats later cells before the preceding cell undergoes runaway, rather than an intrinsic change in individual cell reaction kinetics.",
+            "F. Aerogel insulation between modules is ineffective under any configuration because the dominant heat transfer pathway bypasses it entirely.",
+            "G. Intervention I addresses a secondary heat transfer pathway while Intervention II targets the mechanism responsible for the accelerating propagation trend, making them non-equivalent in strategic priority."
+          ],
+          "correct_options": [
+            "A",
+            "C",
+            "E",
+            "G"
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E",
+            "G"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The evidence directly states that over 70% of inter-module heat flows through the bottom cooling plate, which explains why aerogel at the inter-module gap produces only marginal delay. This is a mechanistic inference supported by the dominant pathway evidence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Propagation+5+Applied_Energy:C005",
+                "TR_Propagation+5+Applied_Energy:C002"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The 72% reduction in propagation interval reflects heat accumulation pre-heating later cells, not an acceleration of the internal electrochemical reaction rate within each cell. Attributing it to faster electrochemical kinetics is a mechanism substitution error.",
+              "error_type": "mechanism_substitution",
+              "evidence_refs": [
+                "TR_Propagation+5+Applied_Energy:C001"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "The evidence explicitly states that controlling initial thermal spread within the module is more critical than mitigating propagation between modules. Intervention II directly addresses the intra-module accumulation mechanism that drives the accelerating trend, while Intervention I addresses a pathway that carries less than 30% of inter-module heat.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Propagation+5+Applied_Energy:C001",
+                "TR_Propagation+5+Applied_Energy:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "While liquid cooling plates are the dominant dissipation pathway, the evidence does not support a guarantee that increasing coolant flow prevents inter-module propagation regardless of configuration. This is an inadmissible overclaim extending a component-level observation to a universal system-level safety guarantee.",
+              "error_type": "causal_overclaim_and_scope_expansion",
+              "evidence_refs": [
+                "TR_Propagation+5+Applied_Energy:C002"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "The evidence from the analogous intra-cell sequence (C4 in TR_Propagation+4) and the heat accumulation mechanism described in TR_Propagation+5:C001 support the interpretation that pre-heating of later cells by accumulated heat\u2014not a change in individual cell reaction kinetics\u2014explains the decreasing interval. This is mechanistically consistent and evidence-grounded.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Propagation+5+Applied_Energy:C001",
+                "TR_Propagation+4+Applied_Energy:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The evidence shows aerogel does produce a delay of 36\u201349 seconds, so it is not entirely ineffective. The claim that it is ineffective 'under any configuration' is an overgeneralization that contradicts the measured delay. The limitation is quantitative and pathway-specific, not absolute.",
+              "error_type": "overgeneralization",
+              "evidence_refs": [
+                "TR_Propagation+5+Applied_Energy:C005"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Correct",
+              "justification": "Intervention I targets the inter-module gap, which carries less than 30% of heat transfer, while Intervention II targets the intra-module accumulation that drives the 72% interval reduction. The evidence supports that these address different mechanisms with different strategic weights, making them non-equivalent in priority.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Propagation+5+Applied_Energy:C001",
+                "TR_Propagation+5+Applied_Energy:C002",
+                "TR_Propagation+5+Applied_Energy:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Identification of dominant heat transfer pathway and its implication for insulation intervention priority in multi-module thermal runaway propagation",
+          "primary_boundary": "Aerogel effectiveness is limited by the dominant cooling-plate pathway; intra-module accumulation is the primary accelerating mechanism, not individual cell kinetics",
+          "intended_error_modes": [
+            "mechanism_substitution: attributing interval reduction to cell-level kinetic acceleration rather than pre-heating accumulation",
+            "causal_overclaim: guaranteeing propagation prevention from increased coolant flow",
+            "overgeneralization: declaring aerogel completely ineffective rather than quantitatively limited"
+          ],
+          "disallowed_extrapolations": [
+            "Coolant flow rate increase guarantees inter-module propagation prevention",
+            "Aerogel is universally ineffective regardless of configuration",
+            "72% interval reduction implies faster internal electrochemical reaction"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A prismatic cell module is being designed for two candidate chemistries: NMC-811 and LFP. During thermal runaway testing of individual cells, NMC-811 cells reach average peak temperatures of approximately 900\u00b0C and lose roughly 45% of their mass, while LFP cells reach approximately 524\u00b0C and lose roughly 21% of their mass. The NMC-811 thermal runaway reaction proceeds approximately nine times faster in energy terms than LFP. In the NMC-811 module, the time interval between successive cell thermal runaways increases exponentially, and this increase is localized entirely in the pause phase between events rather than in the internal reaction duration. In the LFP module, propagation velocity is five times lower overall. A structural engineer evaluating housing material selection and a safety engineer evaluating detection strategy must both make decisions based on these conditions. Which of the following conclusions are admissible?",
+          "options": [
+            "A. The exponential increase in NMC-811 inter-cell propagation intervals is consistent with progressive increases in thermal contact resistance caused by mass ejection reducing mechanical clamping, rather than with any slowing of the internal thermal runaway reaction itself.",
+            "B. Because NMC-811 peak temperatures exceed the melting point of aluminum, using aluminum cell module housings for NMC-811 is inadmissible without additional thermal barriers, whereas aluminum remains structurally viable for LFP module housings under the same conditions.",
+            "C. The five times lower propagation velocity of LFP relative to NMC-811 implies that LFP cells individually generate less heat during thermal runaway, making them inherently safer at the cell level regardless of module configuration.",
+            "D. Voltage-based thermal runaway detection is less reliable for LFP than for NMC-811 in a slowly propagating parallel-connected configuration, because the voltage may remain within normal operating range and be indistinguishable from a high current load condition.",
+            "E. The higher mass loss in NMC-811 cells initially appears to accelerate propagation by increasing thermal contact, but the evidence indicates it actually progressively slows propagation by creating gaps that increase thermal contact resistance.",
+            "F. Because LFP venting gas does not ignite under the tested conditions, LFP battery packs require no venting path separation from high-voltage components.",
+            "G. The structural integrity difference between NMC-811 and LFP cells after thermal runaway is a contributing factor to the difference in their module-level propagation velocities."
+          ],
+          "correct_options": [
+            "A",
+            "B",
+            "D",
+            "E",
+            "G"
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "D",
+            "E",
+            "G"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The evidence explicitly states that the exponential increase in inter-cell time span is found only in the pause time component, consistent with increasing thermal contact resistance from mass ejection reducing mechanical integrity and creating gaps. The internal reaction time does not show this trend.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Propagation+6+eTransportation:C014",
+                "TR_Propagation+6+eTransportation:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "NMC-811 peak temperatures (~900\u00b0C) exceed aluminum's melting point (660\u00b0C), making aluminum structurally inadmissible for adjacent components without additional protection. LFP peak temperatures (~524\u00b0C) remain below this threshold, making aluminum viable for LFP housings. This is a direct evidence-supported boundary conclusion.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Propagation+6+eTransportation:C001",
+                "TR_Propagation+6+eTransportation:C002"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "The five times lower module-level propagation velocity of LFP is a module-level outcome influenced by multiple factors including mass loss, contact resistance, and propagation dynamics\u2014not a direct indicator that LFP cells generate less heat individually. This conflates module-level propagation velocity with cell-level heat generation, an inadmissible scale transfer.",
+              "error_type": "scale_transfer_beyond_evidence",
+              "evidence_refs": [
+                "TR_Propagation+6+eTransportation:C004",
+                "TR_Propagation+6+eTransportation:C001"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "The evidence states that voltage-based detection is unreliable for slowly propagating chemistries or parallel-connected cells because voltage does not fully collapse and remains within normal operating range, making it indistinguishable from high current load. LFP's lower propagation velocity makes this limitation directly applicable.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Propagation+6+eTransportation:C013",
+                "TR_Propagation+6+eTransportation:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "This is counterintuitive but evidence-supported: high mass loss in NMC-811 reduces mechanical integrity and creates gaps, increasing thermal contact resistance and slowing propagation in the pause phase. The initial expectation might be that mass loss accelerates contact, but the mechanism runs in the opposite direction.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Propagation+6+eTransportation:C005",
+                "TR_Propagation+6+eTransportation:C014"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "While LFP venting gas does not ignite under tested conditions, the evidence also states that venting gas temperatures exceed the melting points of common electrical insulation materials (PE, PTFE) for both chemistries, creating arcing risk. Concluding that no venting path separation is needed for LFP is an inadmissible safety overclaim that ignores the insulation melting risk.",
+              "error_type": "protective_mechanism_overclaim",
+              "evidence_refs": [
+                "TR_Propagation+6+eTransportation:C006",
+                "TR_Propagation+6+eTransportation:C007"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Correct",
+              "justification": "LFP cells maintain mechanical integrity with ~21% mass loss, preserving thermal contact and consistent propagation, while NMC-811 cells lose ~45% mass, creating gaps and increasing thermal contact resistance that affects propagation timing. The evidence directly links structural integrity difference to propagation behavior difference.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Propagation+6+eTransportation:C005",
+                "TR_Propagation+6+eTransportation:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-mechanism reasoning connecting mass loss, thermal contact resistance, propagation velocity, material selection boundaries, and detection reliability across NMC-811 and LFP chemistries",
+          "primary_boundary": "Module-level propagation velocity cannot be directly equated with cell-level heat generation; mass loss counterintuitively slows NMC-811 propagation via contact resistance; LFP venting gas still poses insulation melting risk despite non-ignition",
+          "intended_error_modes": [
+            "scale_transfer: inferring cell-level heat generation from module-level propagation velocity",
+            "protective_mechanism_overclaim: concluding no venting separation needed because LFP gas does not ignite",
+            "mechanism_confusion: expecting mass loss to accelerate rather than slow propagation"
+          ],
+          "disallowed_extrapolations": [
+            "Lower propagation velocity implies lower cell-level heat generation",
+            "Non-igniting venting gas eliminates all high-voltage insulation risks",
+            "Pause time increase reflects accelerating internal cell reaction"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "An engineer is comparing two thermal barrier configurations for a three-cell battery module. In Configuration A, flame-retardant phase change material (FRPCM) and an aerogel-based gap filler (AEGF) are distributed evenly between all cells. In Configuration B, a single thick aerogel layer is placed only between the third and fourth cells of a larger module, while the remaining inter-cell gaps use the baseline material. Testing shows that Configuration B accelerates overall thermal runaway propagation time by approximately 46% compared to evenly distributed aerogel. Separately, increasing AEGF thickness in a module with fixed FRPCM thickness is observed to improve thermal insulation between cells and extend propagation intervals, but does not necessarily reduce maximum cell temperature and can in some cases increase it. A safety review board must evaluate which design principles are supported by these observations. Which of the following conclusions are admissible?",
+          "options": [
+            "A. Concentrating aerogel insulation at a single inter-cell location can accelerate overall module propagation compared to distributing the same insulation material evenly, because cells upstream of the concentrated barrier accumulate heat more rapidly without distributed dissipation.",
+            "B. Increasing AEGF thickness always reduces maximum cell temperature in a module with fixed FRPCM, because greater insulation reduces heat transfer to adjacent cells.",
+            "C. The observation that concentrated aerogel placement accelerates propagation demonstrates that insulation material placement geometry is a controlling variable for module-level propagation outcome, independent of the total insulation quantity.",
+            "D. A module design that extends propagation time intervals between cells necessarily also reduces the maximum temperature reached by downstream cells.",
+            "E. Increasing AEGF thickness while holding FRPCM thickness constant is admissible as a strategy to extend propagation intervals, but cannot be assumed to simultaneously reduce peak temperatures in all downstream cells.",
+            "F. The acceleration of propagation in Configuration B is primarily caused by the aerogel material generating additional heat when subjected to high temperatures from the initial thermal runaway event.",
+            "G. Both the concentrated-barrier result and the AEGF thickness result indicate that optimizing a single thermal management parameter in isolation may produce outcomes that are beneficial for one safety metric while being neutral or detrimental for another."
+          ],
+          "correct_options": [
+            "A",
+            "C",
+            "E",
+            "G"
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E",
+            "G"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The evidence shows that placing a single thick aerogel layer between cells 3 and 4 accelerates overall propagation by 46.2% compared to evenly distributed aerogel. The mechanism is that cells upstream of the barrier accumulate heat without the distributed thermal buffering that even distribution provides, consistent with the heat accumulation mechanism described in the evidence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Propagation+5+Applied_Energy:C004",
+                "TR_Propagation+5+Applied_Energy:C001"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The evidence explicitly states that increasing AEGF thickness does not necessarily reduce maximum battery temperature and can even cause temperature increases despite the same FRPCM thickness. This option contradicts a directly stated evidence boundary.",
+              "error_type": "condition_violation",
+              "evidence_refs": [
+                "TR_Propagation+4+Applied_Energy:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "The concentrated vs. distributed aerogel comparison directly demonstrates that placement geometry\u2014not just total insulation quantity\u2014controls module-level propagation outcome. This is a direct admissible inference from the 46.2% acceleration result.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Propagation+5+Applied_Energy:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "The evidence shows that increasing AEGF thickness extends propagation intervals but does not necessarily reduce maximum temperature and can increase it. These two metrics are decoupled, making the claim that extended intervals necessarily imply reduced downstream peak temperatures inadmissible.",
+              "error_type": "unjustified_monotonicity",
+              "evidence_refs": [
+                "TR_Propagation+4+Applied_Energy:C005",
+                "TR_Propagation+4+Applied_Energy:C002"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "This directly reflects the evidence boundary: AEGF thickness increase reliably extends propagation intervals but cannot be assumed to reduce peak temperatures in all downstream cells, as the evidence shows temperature can increase. This is a conditional admissibility conclusion.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Propagation+4+Applied_Energy:C005",
+                "TR_Propagation+4+Applied_Energy:C002"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "There is no evidence that aerogel generates additional heat when exposed to thermal runaway temperatures. The acceleration mechanism is related to heat distribution and accumulation patterns in the module, not to aerogel combustion or exothermic behavior. This is an invented mechanism not supported by evidence.",
+              "error_type": "mechanism_invention",
+              "evidence_refs": [
+                "TR_Propagation+5+Applied_Energy:C004"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Correct",
+              "justification": "Both observations support this: concentrated aerogel extends barrier at one location but accelerates overall propagation; increased AEGF extends intervals but may increase peak temperatures. Both demonstrate that single-parameter optimization can produce trade-offs between safety metrics, which is an admissible multi-factor interaction conclusion.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Propagation+5+Applied_Energy:C004",
+                "TR_Propagation+4+Applied_Energy:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Trade-off reasoning between propagation interval extension and peak temperature reduction as decoupled safety metrics; placement geometry as a controlling variable independent of total insulation quantity",
+          "primary_boundary": "Extending propagation intervals and reducing peak temperatures are not equivalent or necessarily co-achieved by the same insulation design choices; placement geometry matters independently of total material quantity",
+          "intended_error_modes": [
+            "unjustified_monotonicity: assuming extended intervals imply reduced peak temperatures",
+            "condition_violation: asserting AEGF thickness always reduces maximum temperature",
+            "mechanism_invention: attributing propagation acceleration to aerogel heat generation"
+          ],
+          "disallowed_extrapolations": [
+            "Propagation interval extension implies peak temperature reduction",
+            "Aerogel generates heat when exposed to thermal runaway",
+            "More insulation material always improves all safety metrics simultaneously"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A battery pack designer is comparing NMC-811 and LFP chemistries for a passenger vehicle application. At the cell level, NMC-811 has a 34% gravimetric energy density advantage over LFP. At the pack level, this advantage shrinks to 16%, and the volumetric energy density advantage disappears entirely. Separately, NMC-811 cells during thermal runaway reach temperatures exceeding 900\u00b0C, produce venting gas at a rate approximately 4.4 times higher than LFP, and experience side wall ruptures due to aluminum can melting, while LFP cells vent exclusively through intended safety vents. Explain the two distinct engineering mechanisms responsible for: (1) the reduction of the gravimetric energy density advantage from cell level to pack level, and (2) the requirement for steel rather than aluminum in NMC-811 module housings but not in LFP module housings. Then identify one safety system design parameter\u2014other than housing material\u2014that must be dimensioned differently between NMC-811 and LFP packs due to the venting gas production rate difference, and state the direction of that difference."
+        },
+        "ground_truth": {
+          "gold_answer": "(1) The gravimetric advantage shrinks from 34% to 16% because NMC-811 packs incur 37% integration losses during cell-to-pack integration (including safety measures and structural components), compared to only 20% for LFP packs. The higher safety requirements and structural overhead for NMC-811 consume a disproportionately larger fraction of the cell-level mass advantage. (2) NMC-811 peak temperatures (~900\u00b0C) exceed the melting point of aluminum (660\u00b0C), causing aluminum cell cans and adjacent structural components to lose structural integrity and rupture, which creates unintended venting pathways. LFP peak temperatures (~524\u00b0C) remain below aluminum's melting point, so aluminum retains structural integrity throughout the thermal runaway event. Therefore steel or equivalent temperature-resistant materials are required for NMC-811 module components adjacent to cells, while aluminum remains viable for LFP. (3) Pressure relief elements and venting channels must be dimensioned significantly larger in NMC-811 packs than in LFP packs, because NMC-811 produces venting gas at approximately 2.44 L/Ah compared to approximately 0.56\u20131.12 L/Ah for LFP\u2014a factor of roughly 2\u20134 times higher flow rate that must be accommodated to prevent pressure buildup.",
+          "must_include": [
+            "Higher integration losses for NMC-811 (37%) versus LFP (20%) as the mechanism for gravimetric advantage reduction",
+            "NMC-811 peak temperature exceeding aluminum melting point (660\u00b0C) as the mechanism requiring steel",
+            "LFP peak temperature remaining below aluminum melting point as the reason aluminum is admissible for LFP",
+            "Pressure relief elements or venting channels must be larger for NMC-811 than LFP due to higher venting gas production rate"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming the volumetric advantage is retained at pack level for NMC-811",
+            "Claiming steel is required for LFP module housings",
+            "Claiming venting path separation from high-voltage components is unnecessary for LFP based solely on non-ignition of LFP venting gas",
+            "Claiming the gravimetric advantage disappears entirely at pack level"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-mechanism reasoning connecting cell-to-pack integration loss asymmetry, thermal runaway temperature boundaries relative to material melting points, and venting gas production rate differences to specific design parameter implications",
+          "primary_boundary": "Integration loss difference explains gravimetric advantage reduction but not elimination; aluminum melting point is the specific thermal threshold governing housing material selection; venting channel sizing is driven by gas production rate not ignition behavior",
+          "intended_error_modes": [
+            "Conflating volumetric and gravimetric advantage trends",
+            "Attributing housing material requirement to ignition behavior rather than structural melting threshold",
+            "Failing to identify integration losses as the mechanism for pack-level advantage reduction",
+            "Selecting insulation material rather than venting channel sizing as the gas-rate-dependent parameter"
+          ]
+        }
+      }
+    ]
+  }
+}

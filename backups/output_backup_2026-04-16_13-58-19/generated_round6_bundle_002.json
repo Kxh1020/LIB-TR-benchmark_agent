@@ -1,0 +1,356 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is evaluating overcharge-induced thermal runaway risk for LFP batteries at two charging rates: 1C and 2C. At 1C, the released gas mixture has a lower explosion limit (LEL) of approximately 7.26% and an H2 content of 50%. At 2C, the LEL drops to approximately 5.99% and H2 content rises to 61%. The engineer must assess which conclusions about ignition risk and early warning capability are supported by these conditions. Which of the following statements are admissible based on this information?",
+        "options": [
+          "A. The gas mixture produced at 2C presents a greater ignition risk than at 1C because a lower LEL means the mixture reaches the flammable range at a lower fuel concentration in air.",
+          "B. Because H2 is detected before CO and CO2 during thermal runaway gas emission, it provides an earlier warning signal regardless of whether thermal runaway is ultimately triggered or only venting occurs.",
+          "C. The higher H2 fraction at 2C is the sole cause of the lower LEL at 2C, and no other gas composition changes contribute to this shift.",
+          "D. At 0.5C overcharge, the absence of thermal runaway means the released gas poses no ignition hazard, since the tank pressure remains well below that of higher-rate conditions.",
+          "E. The increase in H2 content with charging rate is consistent with a broadening of the flammable range, since higher H2 fraction lowers the LEL and raises the upper explosion limit.",
+          "F. The 2C condition produces a higher maximum temperature rise rate than the 1C condition, which is consistent with more severe electrochemical and thermal reactions generating a larger proportion of combustible gases.",
+          "G. The LEL trend across charging rates implies that the gas mixture produced at 1.5C is more hazardous than that produced at 1C, but less hazardous than that produced at 2C."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "E",
+          "F",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "A lower LEL means the gas mixture enters the flammable range at a lower concentration in air, directly implying greater ignition risk. The LEL at 2C (5.99%) is lower than at 1C (7.26%), so this conclusion is admissible.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+162+Journal_of_Cleaner_Production:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The evidence states H2 appears before CO and CO2 during TR gas emission, but the 0.5C condition only produces venting, not TR. Generalizing H2 early-warning capability to all conditions including non-TR venting overstates the evidence scope. The claim 'regardless of whether thermal runaway is ultimately triggered' is not supported.",
+            "error_type": "overgeneralization beyond stated condition boundary",
+            "evidence_refs": [
+              "TR_Gasventing+162+Journal_of_Cleaner_Production:C003",
+              "TR_Gasventing+162+Journal_of_Cleaner_Production:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "While H2 fraction increase is associated with LEL decrease, asserting it is the sole cause is an unsupported causal overclaim. Gas mixture LEL depends on the full composition; other components also shift with charging rate.",
+            "error_type": "causal overclaim / single-variable attribution",
+            "evidence_refs": [
+              "TR_Gasventing+162+Journal_of_Cleaner_Production:C001",
+              "TR_Gasventing+162+Journal_of_Cleaner_Production:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "At 0.5C, venting still occurs and gas is released (3 kPa tank pressure). The absence of thermal runaway does not eliminate ignition hazard from the vented gas. Concluding 'no ignition hazard' from low pressure alone is an inadmissible scope expansion.",
+            "error_type": "condition violation / scope expansion from pressure to hazard elimination",
+            "evidence_refs": [
+              "TR_Gasventing+162+Journal_of_Cleaner_Production:C003",
+              "TR_Gasventing+162+Journal_of_Cleaner_Production:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Evidence from the gas composition studies shows that increasing H2 content lowers the LFL and raises the UFL, broadening the flammable range. The trend of increasing H2 with charging rate is consistent with this broadening effect.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+162+Journal_of_Cleaner_Production:C001",
+              "TR_Gasventing+164+Journal_of_Industrial_and_Engineering_Chemistry:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The 2C condition produces a maximum temperature rise rate of 25.07°C/s versus 15.275°C/s at 1C. A higher temperature rise rate is consistent with more severe reactions, which is mechanistically linked to greater generation of combustible gases including H2.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+162+Journal_of_Cleaner_Production:C006",
+              "TR_Gasventing+162+Journal_of_Cleaner_Production:C001"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "The LEL values are monotonically ordered: 7.26% (1C) > 6.54% (1.5C) > 5.99% (2C). A lower LEL corresponds to higher ignition hazard, so 1.5C is intermediate between 1C and 2C in hazard level. This is a direct admissible inference from the monotonic trend.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+162+Journal_of_Cleaner_Production:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of ignition hazard and early-warning conclusions from charging-rate-dependent gas composition and LEL data",
+        "primary_boundary": "LEL reduction implies greater ignition risk, but absence of TR does not imply absence of gas hazard; H2 early warning is supported only within TR conditions, not for venting-only events",
+        "intended_error_modes": [
+          "overgeneralizing H2 warning capability to non-TR venting conditions",
+          "attributing LEL change solely to H2 fraction without accounting for full composition",
+          "concluding no hazard from low pressure at 0.5C despite confirmed venting"
+        ],
+        "disallowed_extrapolations": [
+          "H2 early-warning applies universally regardless of TR occurrence",
+          "Single-component attribution of LEL shift",
+          "Low tank pressure implies no flammable gas release"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A safety engineer is comparing battery vent gas (BVG) flammability across three lithium-ion battery chemistries: NCA, LFP, and LCO. The engineer knows that NCA BVG has the widest flammable range, followed by LFP and then LCO. The engineer also knows that CO2 content in BVG significantly narrows the flammable range by raising the LFL more than the UFL, while H2 content broadens it by lowering the LFL and raising the UFL. Additionally, the flammable range of BVG expands with increasing initial gas temperature in a nearly linear fashion for both NCA and LFP, independent of SOC and battery type. The engineer must assess design and safety conclusions for a battery enclosure operating at elevated ambient temperature (450 K). Which of the following conclusions are admissible?",
+        "options": [
+          "A. At 450 K, the flammable range of BVG from any of the three chemistries will be wider than at 300 K, so the minimum gas concentration required to sustain ignition decreases for all three.",
+          "B. If NCA BVG has a wider flammable range than LCO BVG at 300 K, then at 450 K the NCA BVG flammable range remains wider than LCO BVG, since the linear temperature dependence applies equally to both.",
+          "C. A safety intervention that dilutes BVG with CO2 will reduce explosion risk more effectively by raising the LFL than by lowering the UFL, making LFL-based ignition prevention the more efficient dilution strategy.",
+          "D. Because the temperature dependence of flammability limits is linear and independent of SOC, the absolute flammable range width at 450 K can be calculated precisely from 300 K data without additional measurements.",
+          "E. A battery enclosure designed for LCO chemistry at 300 K flammability limits would be inadequate for NCA chemistry under the same temperature conditions, since NCA BVG has a wider flammable range.",
+          "F. Adding CH4 to BVG as a diluent would narrow the flammable range, making it a viable inert dilution strategy for reducing explosion risk.",
+          "G. The linear temperature dependence of flammability limits implies that above some sufficiently high temperature, the LFL could approach zero, meaning any BVG concentration would become flammable."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence states that as temperature increases from 300 K to 500 K, UFL increases and LFL decreases for NCA and LFP batteries, and this trend is nearly linear and not affected by battery type. At 450 K (within the 300–500 K range), both LFL decrease and UFL increase are expected, meaning the minimum concentration for ignition (LFL) decreases for all chemistries covered by this trend.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+164+Journal_of_Industrial_and_Engineering_Chemistry:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The evidence states the linear temperature trend is not affected by SOC and battery type for NCA and LFP, but does not include LCO in this characterization. Extending the linear independence conclusion to LCO is an unsupported extrapolation. Furthermore, the relative ordering at elevated temperature cannot be confirmed without LCO-specific temperature data.",
+            "error_type": "scope expansion to chemistry not covered by evidence",
+            "evidence_refs": [
+              "TR_Gasventing+164+Journal_of_Industrial_and_Engineering_Chemistry:C004",
+              "TR_Gasventing+164+Journal_of_Industrial_and_Engineering_Chemistry:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence states that increasing CO2 content raises LFL more pronouncedly than UFL. Therefore CO2 dilution preferentially raises the LFL, making LFL-based prevention the more efficient mechanism. This is a direct mechanistic inference from the asymmetric sensitivity of LFL vs. UFL to CO2.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+164+Journal_of_Industrial_and_Engineering_Chemistry:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "While the trend is described as nearly linear, 'nearly linear' does not mean exactly linear or that precise calculation is possible without additional measurements. Claiming precise calculation from 300 K data alone overstates the evidence, which uses 'nearly linear' as a qualitative descriptor.",
+            "error_type": "numerical precision overclaim from qualitative trend description",
+            "evidence_refs": [
+              "TR_Gasventing+164+Journal_of_Industrial_and_Engineering_Chemistry:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "NCA BVG has the widest flammable range among the three chemistries. A safety design calibrated to LCO's narrower flammable range would underestimate the ignition hazard of NCA BVG under the same temperature conditions. This is a direct and admissible design implication.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+164+Journal_of_Industrial_and_Engineering_Chemistry:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Evidence shows that increasing CH4 content narrows the flammable range, but CH4 is itself a combustible gas. Using a combustible gas as a 'diluent' to reduce explosion risk is mechanistically unsound and introduces additional fuel. The narrowing of the flammable range does not make CH4 a viable inert dilution strategy.",
+            "error_type": "mechanism confusion: narrowing flammable range conflated with inert dilution safety",
+            "evidence_refs": [
+              "TR_Gasventing+164+Journal_of_Industrial_and_Engineering_Chemistry:C003"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "The evidence describes a nearly linear trend over the range 300–500 K. Extrapolating this trend to arbitrarily high temperatures to conclude LFL approaches zero is an inadmissible extrapolation beyond the stated evidence range. Physical limits prevent LFL from reaching zero.",
+            "error_type": "extrapolation beyond evidence range / monotonicity overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+164+Journal_of_Industrial_and_Engineering_Chemistry:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of flammability range conclusions across chemistry, temperature, and dilution strategy conditions",
+        "primary_boundary": "Linear temperature dependence is established for NCA and LFP only; CO2 dilution raises LFL more than UFL; CH4 narrows range but is combustible; extrapolation beyond 300–500 K range is inadmissible",
+        "intended_error_modes": [
+          "extending NCA/LFP temperature independence to LCO without evidence",
+          "treating 'nearly linear' as exact for precise calculation",
+          "confusing flammable range narrowing by CH4 with inert dilution safety",
+          "extrapolating linear LFL trend to zero at high temperature"
+        ],
+        "disallowed_extrapolations": [
+          "LCO follows same temperature-independence as NCA and LFP",
+          "Precise flammability values calculable from linear approximation",
+          "CH4 addition constitutes a safe inert dilution strategy",
+          "Linear LFL decrease continues indefinitely with temperature"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "During nail penetration testing of a lithium-ion pouch cell, measurements show that the contact resistance between the nail and electrode layers is several orders of magnitude larger than the nail's own internal resistance. A simulation study compares two modeling assumptions: (1) uniform contact resistance distribution along the nail, and (2) inhomogeneous contact resistance distribution. The inhomogeneous model predicts maximum heat production 300% higher than the uniform model. The cell is tested at two SOC levels: low SOC and high SOC. It is known that initial SOC is positively correlated with gas production during thermal runaway, and that at low SOC, thermal runaway is less violent and produces more CO2, resulting in a higher lower flammability limit (LFL) of the vent gas. Which of the following statements are admissible?",
+        "options": [
+          "A. The total short-circuit resistance during nail penetration is dominated by contact resistance rather than nail resistance, so modeling assumptions about contact resistance distribution have a larger effect on predicted heat generation than assumptions about nail material conductivity.",
+          "B. Because the inhomogeneous model predicts 300% higher maximum heat production, the uniform assumption is always non-conservative and should never be used in safety assessments.",
+          "C. At high SOC, the vent gas LFL is lower than at low SOC, meaning the gas mixture becomes flammable at a lower concentration in air, which represents a greater ignition hazard compared to the low SOC condition.",
+          "D. The 300% difference in predicted maximum heat production between inhomogeneous and uniform models implies that the actual temperature rise during nail penetration is also 300% higher under inhomogeneous conditions.",
+          "E. At low SOC, the higher CO2 content in vent gas raises the LFL, which is consistent with CO2 acting to narrow the flammable range by raising the LFL more than the UFL.",
+          "F. The positive correlation between SOC and gas production means that a cell at high SOC will always reach thermal runaway upon nail penetration, while a cell at low SOC will not.",
+          "G. The dominance of contact resistance over nail resistance implies that reducing nail diameter to increase contact resistance per unit area would reduce local heat generation at the nail tip."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Since contact resistance dominates total short-circuit resistance by several orders of magnitude, the distribution and magnitude of contact resistance determines heat generation far more than nail conductivity. Modeling assumptions about contact resistance therefore have a proportionally larger effect on predicted heat than nail material assumptions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+163+Renewable_Energy:C002",
+              "TR_Gasventing+163+Renewable_Energy:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The evidence states maximum heat production under inhomogeneous assumption was 300% higher, but this is a comparison of peak values under specific conditions. Concluding the uniform assumption is 'always non-conservative' and 'should never be used' is an inadmissible universal generalization from a single comparative result.",
+            "error_type": "overgeneralization from specific comparison to universal rule",
+            "evidence_refs": [
+              "TR_Gasventing+163+Renewable_Energy:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence states LFL decreases with increasing SOC because low SOC produces more CO2 and requires higher fuel concentration for ignition. Therefore at high SOC, LFL is lower, meaning the mixture reaches the flammable range at a lower concentration, representing greater ignition hazard.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+163+Renewable_Energy:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Heat production and temperature rise are related but not identical; temperature rise depends on heat capacity, thermal conductivity, and heat dissipation pathways. A 300% difference in maximum heat production does not translate directly to a 300% difference in temperature rise. This is a mechanism substitution error.",
+            "error_type": "direct numerical transfer between heat production and temperature rise without accounting for thermal system properties",
+            "evidence_refs": [
+              "TR_Gasventing+163+Renewable_Energy:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Evidence states that at low SOC, more CO2 is produced, raising the LFL. Separately, evidence shows CO2 content increase raises LFL more than UFL, narrowing the flammable range. These two pieces of evidence are mutually consistent: the mechanism by which low SOC raises LFL is the CO2-driven narrowing of the flammable range.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+163+Renewable_Energy:C005",
+              "TR_Gasventing+164+Journal_of_Industrial_and_Engineering_Chemistry:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "SOC is positively correlated with gas production, but this does not imply a binary threshold where high SOC always causes TR and low SOC never does. The evidence establishes a correlation, not a deterministic threshold based solely on SOC for nail penetration.",
+            "error_type": "converting correlation into deterministic threshold without evidence support",
+            "evidence_refs": [
+              "TR_Gasventing+163+Renewable_Energy:C004"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "Contact resistance dominates total resistance, but the relationship between nail diameter and contact resistance per unit area is not established in the evidence. Furthermore, even if contact resistance per unit area increased, total heat generation depends on both resistance and current distribution. This is an unsupported design inference.",
+            "error_type": "unsupported design inference from resistance dominance principle",
+            "evidence_refs": [
+              "TR_Gasventing+163+Renewable_Energy:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of heat generation modeling conclusions and SOC-dependent flammability inferences from nail penetration and vent gas evidence",
+        "primary_boundary": "Contact resistance dominance justifies modeling sensitivity claims but not universal non-conservatism of uniform models; 300% heat production difference does not translate directly to temperature rise; SOC-gas production correlation does not define a TR threshold",
+        "intended_error_modes": [
+          "universalizing the 300% heat production comparison as a modeling rule",
+          "directly equating heat production difference with temperature rise difference",
+          "converting SOC-gas production correlation into a binary TR threshold",
+          "inferring nail geometry design implications from resistance dominance without supporting evidence"
+        ],
+        "disallowed_extrapolations": [
+          "Uniform contact resistance model is always non-conservative",
+          "300% heat production difference implies 300% temperature difference",
+          "High SOC deterministically causes TR under nail penetration",
+          "Nail diameter reduction increases contact resistance per unit area as a design strategy"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "An LFP battery pack is being evaluated for overcharge safety. At a charging rate of 2C, the released gas has an H2 content of 61% and a lower explosion limit (LEL) of 5.99%. At 0.5C, the battery does not reach thermal runaway but only experiences venting, and the LEL of the released gas is higher. A design engineer proposes that limiting the maximum charging rate to 0.5C is sufficient to eliminate explosion hazard from released gas, because thermal runaway does not occur at that rate.\n\nIdentify the specific flaw in this reasoning. In your answer, explain what the 0.5C condition does and does not prevent, and describe the mechanism by which the remaining hazard persists even without thermal runaway. Then explain how the relationship between H2 content and LEL across charging rates is relevant to evaluating the relative magnitude of the hazard at different rates."
+      },
+      "ground_truth": {
+        "gold_answer": "The flaw is that the absence of thermal runaway at 0.5C does not eliminate the explosion hazard from released gas. At 0.5C, the battery still undergoes venting and releases gas into the enclosure, as evidenced by the measured tank pressure of 3 kPa. The released gas contains combustible components and has a finite LEL; if the gas accumulates to a concentration above its LEL in the presence of an ignition source, ignition remains possible. Thermal runaway is not a prerequisite for flammable gas release. The mechanism of hazard is gas accumulation and ignition, which depends on gas composition, LEL, and enclosure ventilation, not solely on whether thermal runaway occurs. Regarding charging rate and LEL: higher charging rates produce gas with higher H2 content and lower LEL, meaning the 2C gas becomes flammable at lower concentrations than the 0.5C gas. While the 0.5C condition does reduce the LEL-related hazard relative to 2C (lower H2 content, higher LEL), it does not reduce it to zero. The engineer's reasoning conflates the absence of thermal runaway with the absence of any flammable gas hazard, which is an inadmissible inference.",
+        "must_include": [
+          "Venting still occurs at 0.5C even without thermal runaway",
+          "Vented gas has a finite LEL and can accumulate to a flammable concentration",
+          "Thermal runaway is not required for flammable gas release",
+          "Higher H2 content at higher charging rates lowers LEL, increasing ignition hazard",
+          "0.5C reduces but does not eliminate the flammable gas hazard"
+        ],
+        "disallowed_extrapolations": [
+          "0.5C produces no combustible gas",
+          "LEL at 0.5C is above any realistic accumulation concentration in all enclosure geometries",
+          "Thermal runaway is the only pathway to dangerous gas concentrations"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinguishing between thermal runaway prevention and flammable gas hazard elimination; mechanism of gas accumulation hazard independent of TR occurrence",
+        "primary_boundary": "Venting occurs at 0.5C without TR; flammable gas hazard persists as long as combustible gas is released above LEL; TR prevention is not equivalent to explosion hazard elimination",
+        "intended_error_modes": [
+          "Conflating absence of thermal runaway with absence of flammable gas release",
+          "Treating LEL reduction at lower charging rates as hazard elimination rather than hazard reduction",
+          "Ignoring that 0.5C still produces measurable tank pressure indicating gas release"
+        ]
+      }
+    }
+  ]
+}

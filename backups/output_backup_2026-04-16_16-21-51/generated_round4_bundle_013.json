@@ -1,0 +1,338 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A LiFePO4|graphite cell is assembled with two different electrolyte formulations and stored at 70°C for 7 days. Electrolyte A is a conventional carbonate-based system; Electrolyte B contains fluorinated ether solvents and lithium salts known to decompose into LiF at elevated temperature. After storage, the anode SEI from Electrolyte A shows reduced inorganic components and accumulation of intermediate phosphorus-containing species, while the SEI from Electrolyte B shows a significant increase in LiF content. Both cells are then subjected to accelerated rate calorimetry at 100% SOC to determine self-heating onset temperature. Which of the following conclusions are admissible based on the described conditions?",
+        "options": [
+          "A. The increase in LiF content in the Electrolyte B SEI at 70°C is a consequence of elevated temperature promoting decomposition of specific electrolyte components, not a property of the SEI formed at room temperature.",
+          "B. The accumulation of intermediate phosphorus-containing species in the Electrolyte A SEI at 70°C indicates that the SEI has reached a stable final composition and no further anode-electrolyte reaction will occur.",
+          "C. The cell with Electrolyte B is expected to exhibit a higher self-heating onset temperature than the cell with Electrolyte A, consistent with the more thermally stable SEI formed under high-temperature storage.",
+          "D. Because Electrolyte B suppresses iron dissolution more effectively than Electrolyte A at 70°C, the primary mechanism responsible for the higher self-heating onset temperature in Electrolyte B cells is cathode stabilization rather than anode SEI improvement.",
+          "E. The reduction in inorganic Li2CO3 and LiF in the Electrolyte A SEI at 70°C is consistent with an ongoing reaction between the electrolyte and the graphite anode under those conditions.",
+          "F. The improved capacity retention at 70°C after extended cycling in Electrolyte B cells can be fully attributed to suppression of iron dissolution alone, independent of anode SEI stability."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence states that the high LiF content in the Electrolyte B SEI at 70°C is due to high temperature promoting decomposition of FEC, LiDFOB, and LiFSI. This means the LiF enrichment is temperature-activated, not a pre-existing room-temperature property, making this conclusion admissible.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+204+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The evidence explicitly states that the presence of intermediate products in the Electrolyte A SEI at 70°C indicates the SEI is NOT stable and continuous reaction between electrolyte and anode occurs. This option directly contradicts the evidence.",
+            "error_type": "causal_overclaim_contradicting_evidence",
+            "evidence_refs": [
+              "TR_Mechanism+204+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence directly reports that the self-heating onset temperature for the LFP|Gr cell with the fluorinated ether-based electrolyte (86°C) is higher than with the conventional carbonate electrolyte (57°C). The thermally stable LiF-rich SEI formed at high temperature is consistent with this improved onset temperature.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+204+UnknownJournal:C002",
+              "TR_Mechanism+204+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "While cathode iron dissolution is suppressed by Electrolyte B, the evidence also shows distinct anode SEI differences (LiF enrichment vs. intermediate accumulation) that are directly linked to thermal stability. Attributing the higher onset temperature exclusively to cathode stabilization ignores the anode SEI mechanism and represents a causal overclaim that selects one factor from a multi-factor system.",
+            "error_type": "single_factor_attribution_in_multi_factor_system",
+            "evidence_refs": [
+              "TR_Mechanism+204+UnknownJournal:C001",
+              "TR_Mechanism+204+UnknownJournal:C004",
+              "TR_Mechanism+204+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Evidence states that the decreased inorganic components and increased intermediate species in the Electrolyte A SEI at 70°C indicate the SEI is not stable and continuous electrolyte-anode reaction occurs. This option correctly restates the mechanistic implication in scenario language.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+204+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence shows both cathode iron dissolution suppression and anode SEI stabilization with Electrolyte B. Attributing capacity retention improvement solely to iron dissolution suppression ignores the anode SEI contribution and represents an unsupported single-variable attribution.",
+            "error_type": "scope_expansion_single_variable",
+            "evidence_refs": [
+              "TR_Mechanism+204+UnknownJournal:C001",
+              "TR_Mechanism+204+UnknownJournal:C003",
+              "TR_Mechanism+204+UnknownJournal:C004",
+              "TR_Mechanism+204+UnknownJournal:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of mechanistic conclusions about SEI composition changes and their relationship to thermal stability onset temperature under high-temperature electrolyte conditions",
+        "primary_boundary": "Multi-factor attribution boundary: both cathode and anode mechanisms contribute to thermal stability improvement; neither alone is sufficient to explain the full outcome",
+        "intended_error_modes": [
+          "Selecting single-factor attribution (D or F) over multi-factor interaction",
+          "Misreading intermediate accumulation as SEI stabilization (B)",
+          "Failing to recognize that LiF enrichment in Electrolyte B is temperature-activated, not intrinsic (A)"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding that cathode stabilization alone drives onset temperature improvement",
+          "Concluding that capacity retention is fully explained by iron dissolution suppression",
+          "Generalizing SEI stability conclusions to other chemistries or temperatures"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is comparing overcharge-induced thermal runaway behavior across three commercial cell chemistries: LFP, NCM, and LCO. Tests are conducted at multiple charging rates. The following observations are recorded: (1) at a given overcharge rate, LFP cells reach thermal runaway earlier than NCM or LCO in terms of overcharging tolerance; (2) LFP cells produce only smoke with no fire or explosion, while NCM and LCO exhibit more severe thermal events; (3) LCO cells reach the highest peak temperatures under high-rate overcharge; (4) higher charging rates across all chemistries are associated with earlier onset of large-scale internal short circuits and increased risk of violent thermal runaway; (5) peak mechanical expansion force at the end of the gas accumulation stage decreases as overcharge rate increases. The engineer must assess safety risk for a battery management system design that must handle both the probability of thermal runaway initiation and the severity of the resulting thermal event. Which of the following conclusions are admissible?",
+        "options": [
+          "A. LFP chemistry presents a lower thermal runaway hazard than NCM under overcharge conditions, even though LFP exhibits lower overcharging tolerance.",
+          "B. Because LFP cells enter thermal runaway at lower overcharge levels, they necessarily pose a greater overall safety risk than LCO cells in any application context.",
+          "C. The observation that peak expansion force decreases at higher overcharge rates implies that higher charging rates produce less internal gas overall during the overcharge process.",
+          "D. A battery management system designed to prevent thermal runaway initiation should treat LFP chemistry as requiring earlier intervention thresholds than NCM or LCO, based on overcharging tolerance alone.",
+          "E. The higher peak temperatures reached by LCO cells under high-rate overcharge, compared to LFP, are consistent with LCO having a greater thermal hazard magnitude once thermal runaway occurs.",
+          "F. Higher overcharge rates reducing the time available for thorough internal gas-producing side reactions is a mechanistic explanation consistent with the observed decrease in peak expansion force at higher rates.",
+          "G. Since violent thermal runaway and gas explosions are more likely at higher charging rates across all chemistries, the risk ranking among chemistries becomes irrelevant at sufficiently high rates."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "E",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence explicitly states LFP has the lowest TR hazard (smoke only, no fire or explosion) despite having the lowest overcharging tolerance. This counterintuitive result—lower tolerance but lower hazard—is directly supported. The conclusion is admissible and requires distinguishing risk (probability/trigger) from hazard (severity).",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+206+UnknownJournal:C001",
+              "TR_Mechanism+206+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "This conflates TR risk (initiation likelihood) with overall safety risk. Evidence distinguishes TR risk order (LFP > LCO > NCM) from TR hazard order (LCO > NCM > LFP). Claiming LFP poses greater overall safety risk than LCO in any context ignores hazard severity and represents an inadmissible overgeneralization.",
+            "error_type": "overgeneralization_conflating_risk_and_hazard",
+            "evidence_refs": [
+              "TR_Mechanism+206+UnknownJournal:C001",
+              "TR_Mechanism+206+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The evidence states that lower overcharge rates allow more time for thorough internal gas production side reactions, explaining higher peak expansion force at lower rates. The decrease in peak force at higher rates reflects less time for gas accumulation, not necessarily less total gas. Inferring reduced total gas production from reduced peak force is an unsupported scope expansion.",
+            "error_type": "measurement_scope_overclaim",
+            "evidence_refs": [
+              "TR_Mechanism+206+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence shows LFP has the lowest overcharging tolerance, meaning it reaches the trigger threshold for large-scale short circuits and TR earlier. A BMS designed to prevent initiation must intervene earlier for LFP. This is a direct engineering implication from the overcharging tolerance comparison.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+206+UnknownJournal:C001",
+              "TR_Mechanism+206+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Evidence directly reports LCO reaching 917.2°C under 3C overcharge versus LFP at 252.7°C, and states LCO has the highest thermal hazard. The conclusion that higher peak temperatures are consistent with greater hazard magnitude is admissible and directly supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+206+UnknownJournal:C004",
+              "TR_Mechanism+206+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Evidence explicitly states that lower overcharge rates allow more time for thorough internal gas production side reactions, which is the proposed mechanism for higher peak expansion force at lower rates. Option F restates this causal mechanism in scenario language and is directly supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+206+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "While higher rates increase risk across all chemistries, the evidence does not support that chemistry-dependent hazard differences disappear at high rates. LCO still reaches 917°C versus LFP at 252.7°C under the same 3C rate, showing that chemistry ranking persists. This option makes an unsupported universal claim about rate-dependent convergence.",
+            "error_type": "unsupported_convergence_extrapolation",
+            "evidence_refs": [
+              "TR_Mechanism+206+UnknownJournal:C002",
+              "TR_Mechanism+206+UnknownJournal:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinguishing thermal runaway risk (initiation probability/tolerance) from thermal runaway hazard (severity of outcome) across chemistries and charging rates, and admissible BMS design implications",
+        "primary_boundary": "Risk vs. hazard distinction: low overcharging tolerance does not imply high hazard severity; these are independent dimensions requiring separate engineering responses",
+        "intended_error_modes": [
+          "Conflating low overcharging tolerance with high overall safety risk (B)",
+          "Inferring total gas production from peak expansion force measurement (C)",
+          "Assuming chemistry risk ranking disappears at high rates (G)"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding that LFP is more dangerous overall than LCO based on tolerance alone",
+          "Inferring total gas quantity from peak mechanical force",
+          "Claiming rate effects eliminate chemistry-dependent hazard differences"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A researcher uses an accelerated rate calorimetry method to study thermal runaway in 18650-type NCM111 cells at varying states of charge between 50% and 120% SOC. Three characteristic temperatures are identified: T1 (self-heating onset), T2 (separator collapse), and T3 (maximum temperature during thermal runaway). Peak pressure P3 is also recorded. The following trends are observed: T1 increases as SOC decreases; T3 decreases as SOC decreases; P3 varies more strongly with SOC than T3 does. A kinetic model is trained on this dataset using a neural-network-assisted method. The researcher proposes using this model to predict thermal runaway behavior in a prismatic 50 Ah NCM811 cell for a vehicle application. Which of the following statements about the experimental findings and the proposed model application are admissible?",
+        "options": [
+          "A. The stronger variation of P3 with SOC compared to T3 indicates that the total amount of gas released during thermal runaway is more sensitive to SOC than the peak temperature reached.",
+          "B. Because T1 increases monotonically as SOC decreases from 120% to 50%, a cell at 50% SOC can be considered thermally safe under all operating conditions without further thermal management.",
+          "C. The fact that T3 decreases with decreasing SOC is consistent with the cell being less reactive and having suppressed exothermic reactions at lower charge states.",
+          "D. Applying the kinetic parameters from this NCM111 18650 study directly to predict thermal runaway onset in a 50 Ah NCM811 prismatic cell is not supported without additional validation data for that cell format and chemistry.",
+          "E. The lower activation energies associated with the violent thermal runaway stage reactions, compared to self-heating stage reactions, imply that once the violent stage is initiated, it proceeds more slowly and is easier to interrupt.",
+          "F. The monotonic increase in T1 with decreasing SOC means that reducing SOC is always sufficient to prevent thermal runaway initiation in NCM cells under any abuse condition."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence directly states that variations in P3 between cells with different SOCs are much more obvious than those of T3, indicating that total released gas amount differs greatly with SOC. This conclusion is admissible and directly supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+205+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "While T1 is higher at lower SOC, this means the self-heating onset is delayed, not that the cell is thermally safe under all conditions. The evidence does not support a claim of unconditional safety at 50% SOC. This is an inadmissible overgeneralization from a threshold comparison.",
+            "error_type": "overgeneralization_from_threshold_comparison",
+            "evidence_refs": [
+              "TR_Mechanism+205+UnknownJournal:C001",
+              "TR_Mechanism+205+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence explicitly states that T3 decreases with decreased SOC and that this indicates the cell is less reactive with suppressed exothermic reactions at lower SOC. This conclusion is directly supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+205+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence explicitly states that the kinetic parameters are primarily applicable to 18650-type NCM111 cells and that incorporating more experimental data is essential to extend applicability to cells with different capacities and cathode materials. Applying these parameters to NCM811 prismatic cells without additional data is not supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+205+UnknownJournal:C006"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence states that lower activation energies in the violent TR stage cause those reactions to proceed at a faster rate, not slower. This option inverts the correct causal relationship between activation energy and reaction rate, making it directly contradictory to the evidence.",
+            "error_type": "causal_inversion",
+            "evidence_refs": [
+              "TR_Mechanism+205+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence shows T1 increases monotonically with decreasing SOC within the 50–120% range studied, but does not support the claim that SOC reduction alone is always sufficient to prevent thermal runaway under any abuse condition. This is an inadmissible universal claim that ignores other abuse pathways and the conditional nature of the evidence.",
+            "error_type": "universal_claim_from_conditional_evidence",
+            "evidence_refs": [
+              "TR_Mechanism+205+UnknownJournal:C001",
+              "TR_Mechanism+205+UnknownJournal:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of conclusions about SOC-dependent thermal runaway parameters and the scope limitations of kinetic models trained on specific cell formats and chemistries",
+        "primary_boundary": "Scope limitation boundary: kinetic parameters derived from NCM111 18650 cells cannot be directly transferred to different capacities and cathode materials without additional data",
+        "intended_error_modes": [
+          "Inverting the activation energy-reaction rate relationship (E)",
+          "Overgeneralizing monotonic T1 trend to unconditional safety at low SOC (B and F)",
+          "Ignoring explicit model applicability limitations when proposing cross-chemistry transfer (D)"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming low SOC guarantees thermal safety under all abuse conditions",
+          "Applying NCM111 18650 kinetic parameters to NCM811 prismatic cells without validation",
+          "Inferring slow reaction rate from low activation energy"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery engineer is evaluating two electrolyte formulations for a LiFePO4|graphite cell intended for high-temperature operation. Formulation X is a conventional carbonate-based system. Formulation Y contains fluorinated ether solvents and a mixture of lithium salts that are known to generate LiF as a decomposition product at elevated temperature. After high-temperature storage, the anode SEI from Formulation X shows accumulation of intermediate phosphorus-fluorine species and reduced inorganic components, while the SEI from Formulation Y shows substantially increased LiF content. Separately, cathode dissolution testing at the same elevated temperature shows that Formulation Y suppresses iron dissolution by more than two orders of magnitude compared to Formulation X.\n\nThe engineer concludes that Formulation Y's improvement in self-heating onset temperature, observed in calorimetry testing at full charge, is entirely due to cathode stabilization through suppression of iron dissolution, and that the anode SEI differences are secondary and irrelevant to thermal stability.\n\nIdentify the specific mechanistic error in this conclusion and explain what the anode SEI evidence implies about the thermal stability of the cell with Formulation X at elevated temperature. Your answer should address: (1) what the SEI composition change in Formulation X indicates about ongoing electrochemical processes at high temperature, and (2) why attributing the onset temperature improvement solely to cathode stabilization is not supported."
+      },
+      "ground_truth": {
+        "gold_answer": "The engineer's conclusion contains a single-factor attribution error. The anode SEI evidence is not secondary: the accumulation of intermediate phosphorus-fluorine species and the reduction of stable inorganic components (such as Li2CO3 and LiF) in the Formulation X SEI at elevated temperature indicates that the SEI formed under those conditions is thermally unstable and that continuous reaction between the electrolyte and the graphite anode is ongoing. This ongoing anode-electrolyte reaction is itself a heat-generating process that lowers the self-heating onset temperature. In contrast, Formulation Y promotes increased LiF content in the SEI at elevated temperature through temperature-activated decomposition of its fluorinated components, forming a more stable interphase that suppresses further anode-electrolyte reaction. The improvement in self-heating onset temperature therefore has contributions from both the anode SEI stabilization and cathode iron dissolution suppression. Attributing the improvement solely to cathode stabilization ignores the mechanistic evidence that an unstable anode SEI in Formulation X actively contributes to early self-heating onset, and that Formulation Y addresses this anode-side mechanism directly through LiF enrichment.",
+        "must_include": [
+          "The intermediate species accumulation in Formulation X SEI indicates the SEI is not stable at elevated temperature",
+          "Continuous reaction between electrolyte and graphite anode occurs with Formulation X at high temperature",
+          "LiF enrichment in Formulation Y SEI is caused by temperature-activated decomposition of fluorinated electrolyte components",
+          "Both anode SEI stabilization and cathode iron dissolution suppression contribute to the improved onset temperature",
+          "Attributing the improvement solely to cathode stabilization ignores the anode mechanism"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming that anode SEI alone is responsible for the onset temperature improvement",
+          "Claiming that iron dissolution suppression has no role in thermal stability",
+          "Generalizing the SEI stability conclusions to other cell chemistries or temperatures beyond the stated conditions",
+          "Quantifying the relative contribution of anode vs. cathode mechanisms without supporting evidence"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-factor attribution of thermal stability improvement: distinguishing anode SEI stability contributions from cathode dissolution suppression, and recognizing that unstable SEI composition implies ongoing exothermic reactions",
+        "primary_boundary": "Neither anode SEI stabilization nor cathode dissolution suppression alone is sufficient to explain the full thermal stability improvement; both mechanisms are evidenced and both contribute",
+        "intended_error_modes": [
+          "Single-factor attribution to cathode stabilization while dismissing anode SEI evidence",
+          "Misreading intermediate SEI species accumulation as a stable final state rather than evidence of ongoing reaction",
+          "Failing to connect LiF enrichment in Formulation Y to temperature-activated decomposition of specific electrolyte components"
+        ]
+      }
+    }
+  ]
+}

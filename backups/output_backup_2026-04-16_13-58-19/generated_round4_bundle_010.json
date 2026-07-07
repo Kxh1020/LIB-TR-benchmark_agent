@@ -1,0 +1,342 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An NMC811|Gr cell with a fluorinated electrolyte undergoes accelerated rate calorimetry testing. The cell enters thermal runaway at a trigger temperature approximately 18–20 °C higher than an equivalent cell with conventional carbonate electrolyte. However, both cells reach a maximum temperature of approximately 770 °C and release essentially identical total heat (~13.4 kJ) during the full thermal runaway event. A partial-cell experiment using only the cathode paired with the fluorinated electrolyte does not enter thermal runaway. Given these observations, which of the following conclusions are supported by engineering reasoning?",
+        "options": [
+          "A. The fluorinated electrolyte primarily delays the onset of thermal runaway rather than reducing the total energy released during the full event.",
+          "B. The dominant heat-generating reaction after thermal runaway onset involves the cathode-released oxygen reacting with the anode, and this reaction is not substantially suppressed by the fluorinated electrolyte.",
+          "C. Because the partial cathode-fluorinated electrolyte cell does not enter thermal runaway, replacing the electrolyte with a fluorinated variant is sufficient to prevent thermal runaway in a full NMC811|Gr cell under the same abuse conditions.",
+          "D. The fluorinated electrolyte eliminates the self-heating stage entirely, which is why the trigger temperature is elevated.",
+          "E. The near-identical maximum temperatures across electrolyte types indicate that the heat released by cathode-anode cross-talk reactions is the primary determinant of peak temperature, not the electrolyte oxidation pathway.",
+          "F. The inability of the cathode-fluorinated electrolyte partial cell to enter thermal runaway confirms that the anode-side reactions are necessary to initiate the full thermal runaway sequence in a complete cell."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The fluorinated electrolyte raises T2 by ~20 °C but does not change total heat released (~13.4 kJ) or T3 (~770 °C), meaning its effect is a delay in onset, not a reduction in total energy release.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+196+ENERGY_andamp;_ENVIRONMENTAL_MATERIALS:C001",
+              "TR_Mechanism+196+ENERGY_andamp;_ENVIRONMENTAL_MATERIALS:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The cathode-anode cross-talk (Ca + An) accounts for 66% of total heat after thermal runaway onset. Since total heat is the same across electrolytes, this dominant reaction is not substantially suppressed by the fluorinated electrolyte.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+196+ENERGY_andamp;_ENVIRONMENTAL_MATERIALS:C005",
+              "TR_Mechanism+196+ENERGY_andamp;_ENVIRONMENTAL_MATERIALS:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The partial-cell result shows the fluorinated electrolyte resists cathode-side oxidation, but the full cell still enters thermal runaway because anode-side reactions (LiC6 + electrolyte) provide sufficient heat to trigger chain reactions. The partial-cell result cannot be extrapolated to full-cell prevention.",
+            "error_type": "scope_expansion_distractor",
+            "evidence_refs": [
+              "TR_Mechanism+196+ENERGY_andamp;_ENVIRONMENTAL_MATERIALS:C003",
+              "TR_Mechanism+196+ENERGY_andamp;_ENVIRONMENTAL_MATERIALS:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence shows the self-heating stage still occurs with fluorinated electrolyte (anode reactions with LiPF6 and FEC contribute 13% of heat in the self-heating stage); the trigger temperature is elevated, not the self-heating stage eliminated.",
+            "error_type": "mechanism_confusion_distractor",
+            "evidence_refs": [
+              "TR_Mechanism+196+ENERGY_andamp;_ENVIRONMENTAL_MATERIALS:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The identical T3 (~770 °C) and total heat (~13.4 kJ) across electrolyte types, combined with the 66% heat share from cathode-anode cross-talk, supports the inference that peak temperature is governed by this cross-talk reaction rather than the electrolyte oxidation pathway.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+196+ENERGY_andamp;_ENVIRONMENTAL_MATERIALS:C002",
+              "TR_Mechanism+196+ENERGY_andamp;_ENVIRONMENTAL_MATERIALS:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The partial-cell result shows the cathode-fluorinated electrolyte combination alone does not enter thermal runaway, which is consistent with the anode playing a role, but does not confirm that anode reactions are necessary to initiate thermal runaway—it only shows the cathode-fluorinated electrolyte interface is insufficient to self-sustain it. The evidence attributes initiation in the full cell to anode-electrolyte reactions providing the early heat accumulation, but 'necessary' is a stronger claim than the evidence supports as a universal causal statement.",
+            "error_type": "causal_overclaim_distractor",
+            "evidence_refs": [
+              "TR_Mechanism+196+ENERGY_andamp;_ENVIRONMENTAL_MATERIALS:C003",
+              "TR_Mechanism+196+ENERGY_andamp;_ENVIRONMENTAL_MATERIALS:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinguishing onset delay from total energy suppression, and partial-cell results from full-cell behavior under fluorinated electrolyte conditions",
+        "primary_boundary": "Fluorinated electrolyte raises trigger temperature but does not reduce total heat or peak temperature; partial-cell non-runaway cannot be extrapolated to full-cell prevention",
+        "intended_error_modes": [
+          "scope_expansion from partial cell to full cell",
+          "mechanism confusion between self-heating elimination and onset delay",
+          "causal overclaim about anode necessity"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming fluorinated electrolyte prevents thermal runaway in full cells",
+          "Claiming self-heating stage is eliminated rather than delayed",
+          "Asserting anode reactions are universally necessary for TR initiation from partial-cell data alone"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Two SC-NCM811|Gr cells are tested under identical accelerated rate calorimetry conditions after 200 charge-discharge cycles. Cell A used a perfluorinated electrolyte and Cell B used a conventional electrolyte. Cell A shows a thermal runaway trigger temperature T2 that is 12.5 °C higher and a maximum temperature T3 that is 41.2 °C lower than Cell B. Post-cycling characterization shows that Cell A's cathode has a thin, uniform CEI layer (~8 nm), while Cell B's cathode has a thick, uneven CEI layer (~20 nm) with visible impurities. Additionally, the cathode combined with conventional electrolyte produces an exothermic peak with enthalpy ~172 J/g, while the cathode combined with perfluorinated electrolyte produces an exothermic peak with enthalpy ~84 J/g. Which of the following conclusions are supported?",
+        "options": [
+          "A. The reduction in T3 for Cell A is mechanistically consistent with the lower reaction enthalpy between the cathode and perfluorinated electrolyte, since less heat is generated during the cathode-electrolyte exothermic interaction.",
+          "B. The thicker, uneven CEI layer in Cell B indicates that conventional electrolyte promotes more extensive side reactions at the cathode surface, which contributes to reduced thermal stability.",
+          "C. Because Cell A's T3 is 41.2 °C lower than Cell B's, the perfluorinated electrolyte can be concluded to suppress the cathode-anode cross-talk reaction, which is the dominant post-runaway heat source.",
+          "D. The difference in CEI layer thickness between Cell A and Cell B is the sole cause of the difference in T2 between the two cells, since CEI layer integrity directly controls the onset of thermal runaway.",
+          "E. The conventional electrolyte accelerates the cathodic phase transition and oxygen release, and the resulting oxygen availability amplifies the exothermic cathode-electrolyte interaction, contributing to the higher T3 in Cell B.",
+          "F. The capacity retention advantage of the perfluorinated electrolyte after 200 cycles implies that its thermal safety improvement is primarily a consequence of reduced lithium inventory loss rather than reduced cathode-electrolyte reactivity.",
+          "G. The absence of CO2 emission from the cathode-perfluorinated electrolyte combination during heating is consistent with the lower reaction enthalpy observed for that pairing."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "E",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The perfluorinated electrolyte produces ~half the cathode-electrolyte reaction enthalpy (~84 vs ~172 J/g). This reduced heat generation is mechanistically consistent with the lower T3, since less energy is released during the cathode-electrolyte exothermic stage.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+197+Journal_of_The_Electrochemical_Society:C002",
+              "TR_Mechanism+197+Journal_of_The_Electrochemical_Society:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The thicker, uneven CEI with impurities in Cell B reflects more extensive side reactions at the cathode surface under conventional electrolyte, and particle cracking exposing new cathode surface further intensifies these reactions, reducing thermal stability.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+197+Journal_of_The_Electrochemical_Society:C007",
+              "TR_Mechanism+197+Journal_of_The_Electrochemical_Society:C008"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The lower T3 in Cell A is consistent with reduced cathode-electrolyte reactivity, but the evidence does not support that the cathode-anode cross-talk reaction is suppressed. In fluorinated electrolyte full cells, cross-talk still occurs and remains the dominant post-runaway heat source. Attributing T3 reduction specifically to cross-talk suppression is an unsupported causal overclaim.",
+            "error_type": "causal_overclaim_distractor",
+            "evidence_refs": [
+              "TR_Mechanism+197+Journal_of_The_Electrochemical_Society:C002",
+              "TR_Mechanism+196+ENERGY_andamp;_ENVIRONMENTAL_MATERIALS:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "CEI layer thickness is one contributing factor but the evidence does not support it as the sole cause of T2 differences. Multiple factors including electrolyte reactivity with the anode and oxygen release kinetics also affect T2. Asserting sole causation is an unsupported single-variable overclaim.",
+            "error_type": "single_variable_overclaim_distractor",
+            "evidence_refs": [
+              "TR_Mechanism+197+Journal_of_The_Electrochemical_Society:C007",
+              "TR_Mechanism+197+Journal_of_The_Electrochemical_Society:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The conventional electrolyte advances oxygen production temperature by ~50 °C and releases more oxygen, accelerating cathodic phase transition. This increased oxygen availability would amplify exothermic interactions, contributing to higher T3 in Cell B.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+197+Journal_of_The_Electrochemical_Society:C005",
+              "TR_Mechanism+197+Journal_of_The_Electrochemical_Society:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The thermal safety improvement is directly linked to reduced cathode-electrolyte reactivity (lower enthalpy, no CO2, thinner CEI) as evidenced by calorimetry and gas analysis. The capacity retention improvement may share a common cause (better CEI), but attributing thermal safety improvement primarily to lithium inventory retention rather than reduced reactivity is not supported and reverses the causal direction.",
+            "error_type": "mechanism_substitution_distractor",
+            "evidence_refs": [
+              "TR_Mechanism+197+Journal_of_The_Electrochemical_Society:C006",
+              "TR_Mechanism+197+Journal_of_The_Electrochemical_Society:C004",
+              "TR_Mechanism+197+Journal_of_The_Electrochemical_Society:C009"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "CO2 absence confirms no redox reaction between the perfluorinated electrolyte and cathode during heating. The absence of an oxidation reaction is mechanistically consistent with the lower reaction enthalpy (~84 J/g vs ~172 J/g), since the conventional electrolyte's higher enthalpy likely includes contributions from oxidative decomposition producing CO2.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+197+Journal_of_The_Electrochemical_Society:C006",
+              "TR_Mechanism+197+Journal_of_The_Electrochemical_Society:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanistic linkage between CEI layer quality, cathode-electrolyte reactivity, oxygen release kinetics, and thermal runaway temperature parameters under perfluorinated vs conventional electrolyte",
+        "primary_boundary": "Reduced T3 is attributable to lower cathode-electrolyte reactivity, not to suppression of cathode-anode cross-talk; CEI thickness is a contributing factor not a sole cause",
+        "intended_error_modes": [
+          "causal overclaim attributing T3 reduction to cross-talk suppression",
+          "single-variable attribution of T2 to CEI thickness alone",
+          "mechanism substitution attributing thermal safety to capacity retention rather than reactivity reduction"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming perfluorinated electrolyte suppresses cathode-anode cross-talk",
+          "Claiming CEI thickness is the sole determinant of T2",
+          "Inferring thermal safety from cycling performance data alone"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery engineer is analyzing the self-heating stage of thermal runaway in a graphite-anode lithium-ion cell using EMC-based electrolyte. The SEI layer on the anode contains lithium methyl carbonate (LMC) as its dominant organic component (>50% by composition). Calorimetry data shows that pure LMC decomposition is endothermic, but when LMC is mixed with the electrolyte, an exothermic reaction occurs near 100 °C. The SEI layer itself has an organic inner layer and an inorganic outer layer, and under thermal load the organic layer converts to an inorganic layer. The engineer proposes that the self-heating stage is driven by the exothermic LMC-electrolyte interaction and that eliminating LMC from the SEI would suppress the self-heating onset. Which of the following assessments of this proposal are consistent with the evidence?",
+        "options": [
+          "A. The proposal correctly identifies the LMC-electrolyte exothermic interaction as the mechanism responsible for self-heating onset near 100 °C, making it a supported causal attribution.",
+          "B. The proposal's logic is undermined by the fact that LMC decomposition alone is endothermic; the exothermic behavior requires the presence of electrolyte, so the SEI composition alone does not determine whether self-heating occurs.",
+          "C. Because LMC accounts for more than 50% of the SEI layer with EMC electrolyte, eliminating LMC from the SEI would necessarily prevent the organic-to-inorganic SEI conversion under thermal load.",
+          "D. The organic-to-inorganic SEI conversion under thermal load is driven by decomposition of lithium alkyl carbonate compounds, of which LMC is the dominant species; therefore, reducing LMC content would reduce the driving force for this conversion.",
+          "E. The self-heating stage can be attributed solely to SEI decomposition reactions, since the evidence identifies SEI decomposition as the heat source at approximately 100 °C.",
+          "F. The proposal is partially supported in that LMC-electrolyte interaction contributes to self-heating, but the conclusion that eliminating LMC would suppress onset requires the additional assumption that no other SEI-electrolyte exothermic interactions occur at similar temperatures."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that the LMC-electrolyte exothermic reaction occurs around 100 °C and corresponds to the self-heating stage, making this a supported causal attribution.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+195+UnknownJournal:C005",
+              "TR_Mechanism+195+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Pure LMC decomposition is endothermic; the exothermic reaction requires electrolyte presence. This means SEI composition alone is insufficient to determine self-heating behavior—the electrolyte interaction is a necessary co-factor, which is a counterintuitive constraint that limits the engineer's proposal.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+195+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The organic-to-inorganic SEI conversion is driven by lithium alkyl carbonate (ROCOOLi) decomposition broadly, not exclusively by LMC. Eliminating LMC would reduce the dominant contributor but would not necessarily prevent the conversion if other ROCOOLi species remain. The claim of 'necessarily prevent' is an unsupported overclaim.",
+            "error_type": "overgeneralization_distractor",
+            "evidence_refs": [
+              "TR_Mechanism+195+UnknownJournal:C004",
+              "TR_Mechanism+195+UnknownJournal:C001"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The organic-to-inorganic conversion is driven mainly by ROCOOLi decomposition, and LMC is the dominant ROCOOLi species (>50%). Reducing LMC content would therefore reduce the primary driving force for this conversion, which is a supported directional inference.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+195+UnknownJournal:C004",
+              "TR_Mechanism+195+UnknownJournal:C001"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The evidence identifies SEI decomposition as a source of heat at ~100 °C but does not state it is the sole source. Attributing self-heating solely to SEI decomposition ignores the requirement for electrolyte co-reaction and potentially other concurrent reactions. 'Solely' is an unsupported absolute claim.",
+            "error_type": "causal_overclaim_distractor",
+            "evidence_refs": [
+              "TR_Mechanism+195+UnknownJournal:C002",
+              "TR_Mechanism+195+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The proposal is partially supported by evidence, but the conclusion about suppression of onset by eliminating LMC requires the assumption that LMC is the only or dominant SEI-electrolyte exothermic contributor at ~100 °C. This assumption is not fully established by the evidence, making the conclusion conditionally valid at best.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+195+UnknownJournal:C005",
+              "TR_Mechanism+195+UnknownJournal:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of the causal claim that LMC elimination suppresses self-heating onset, given the endothermic-alone vs exothermic-with-electrolyte distinction and the multi-component nature of SEI",
+        "primary_boundary": "LMC decomposition alone is endothermic; exothermic behavior requires electrolyte co-presence; LMC is dominant but not exclusive ROCOOLi species",
+        "intended_error_modes": [
+          "overgeneralization from dominant component to exclusive component",
+          "sole-cause attribution of self-heating to SEI decomposition ignoring electrolyte co-requirement"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming LMC elimination necessarily prevents organic-to-inorganic SEI conversion",
+          "Claiming SEI decomposition is the sole heat source at 100 °C"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "An NMC811|Gr cell cycled with a perfluorinated electrolyte shows a thermal runaway trigger temperature T2 that is approximately 12.5 °C higher and a peak temperature T3 that is approximately 41.2 °C lower than an equivalent cell cycled with conventional electrolyte. Separately, calorimetry of cathode-electrolyte combinations shows that the cathode paired with conventional electrolyte produces roughly twice the reaction enthalpy of the cathode paired with perfluorinated electrolyte, and no CO2 is detected from the cathode-perfluorinated electrolyte combination during heating. The conventional electrolyte also advances the onset of oxygen release from the cathode by approximately 50 °C relative to the cathode alone. Explain the mechanistic pathway by which the perfluorinated electrolyte produces a lower T3, identifying the key reactions involved and the evidence that supports your reasoning. Also identify one limitation on concluding that the perfluorinated electrolyte provides comprehensive thermal safety improvement."
+      },
+      "ground_truth": {
+        "gold_answer": "The lower T3 with perfluorinated electrolyte results from reduced cathode-electrolyte reactivity. The conventional electrolyte undergoes an oxidative redox reaction with the cathode (evidenced by CO2 production and ~172 J/g enthalpy), and it also accelerates cathodic phase transition and oxygen release by ~50 °C, increasing available oxygen for further exothermic reactions. The perfluorinated electrolyte does not undergo a redox reaction with the cathode (no CO2 detected), produces only ~84 J/g enthalpy in the cathode-electrolyte interaction, and does not accelerate oxygen release to the same degree. This reduced heat generation during the cathode-electrolyte exothermic stage results in less total energy input to the system, lowering T3. The limitation is that T2 is raised by only 12.5 °C and the cell still enters thermal runaway, indicating that anode-side reactions (which are not eliminated by the fluorinated electrolyte) remain sufficient to trigger the runaway sequence. Therefore, the perfluorinated electrolyte reduces peak severity but does not prevent thermal runaway onset, and its benefit is conditional on the anode-side heat accumulation remaining below a critical threshold—which is not guaranteed under all abuse conditions.",
+        "must_include": [
+          "Reduced cathode-electrolyte reaction enthalpy (~half) with perfluorinated electrolyte",
+          "Absence of CO2 confirming no redox reaction between perfluorinated electrolyte and cathode",
+          "Conventional electrolyte accelerates oxygen release from cathode by ~50 °C, increasing exothermic reactivity",
+          "Lower T3 is mechanistically linked to reduced heat generation during cathode-electrolyte interaction",
+          "Limitation: cell still enters thermal runaway despite perfluorinated electrolyte; anode-side reactions remain sufficient to trigger runaway"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming perfluorinated electrolyte prevents thermal runaway entirely",
+          "Claiming the reduction in T3 is due to suppression of cathode-anode cross-talk reactions",
+          "Claiming the CEI layer thickness alone explains the T3 difference without referencing reaction enthalpy or oxygen release kinetics",
+          "Generalizing the T3 reduction to all electrolyte formulations or all cathode chemistries beyond NMC811"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-step mechanistic chain linking perfluorinated electrolyte properties to T3 reduction via cathode-electrolyte reactivity, oxygen release kinetics, and reaction enthalpy, with admissibility boundary on comprehensive safety claims",
+        "primary_boundary": "Perfluorinated electrolyte reduces T3 through reduced cathode-electrolyte reactivity but does not prevent thermal runaway; anode-side reactions remain the trigger pathway",
+        "intended_error_modes": [
+          "Attributing T3 reduction to cross-talk suppression rather than cathode-electrolyte reactivity reduction",
+          "Overclaiming that perfluorinated electrolyte prevents thermal runaway",
+          "Ignoring the oxygen release acceleration role of conventional electrolyte in amplifying exothermic reactions"
+        ]
+      }
+    }
+  ]
+}

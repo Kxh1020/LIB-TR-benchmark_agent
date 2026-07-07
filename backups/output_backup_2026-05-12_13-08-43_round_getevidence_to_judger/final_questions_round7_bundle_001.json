@@ -1,0 +1,130 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "In oven-heated thermal runaway tests, working Li-ion cells show thermal runaway near 190°C with sparks, flames, and gas explosions occurring roughly 15 seconds post-runaway. Dead cells of the same type reach thermal runaway at 201–205°C but produce no sparks, flames, or explosions. A separate ARC measurement on the same working cell type identifies thermal runaway onset near 140°C. An engineer must assess what these results collectively imply about thermal runaway characterization and hazard comparison.",
+        "options": [
+          "A. The 50°C difference between oven and ARC thermal runaway temperatures for the same cell type reflects a genuine difference in cell chemistry between the two test populations.",
+          "B. Reporting a single thermal runaway temperature for a cell type without specifying the test method and its definition is insufficient for cross-study comparison.",
+          "C. Dead cells present a lower fire and explosion hazard than working cells under the same oven heating conditions, despite undergoing thermal runaway.",
+          "D. Because dead cells reach thermal runaway at higher temperatures than working cells, dead cells are inherently safer under all abuse conditions.",
+          "E. The gas explosion observed approximately 15 seconds after thermal runaway in working cells indicates that ignitable gas accumulates during the runaway event before finding an ignition source.",
+          "F. The ARC-measured onset near 140°C establishes the true thermal runaway threshold, making the oven-measured 190°C an experimental artifact that should be disregarded."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "Evidence attributes the 50°C difference to test method and definition differences, not to chemistry differences between test populations.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+118+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Evidence explicitly states thermal runaway temperature depends on test method and its definition, making method specification mandatory for valid comparison.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+118+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Dead cells undergo thermal runaway but produce no sparks, flames, or explosions, directly demonstrating lower fire/explosion hazard despite thermal runaway occurrence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+118+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence covers only oven heating conditions; generalizing dead cell safety advantage to all abuse conditions exceeds the evidence scope.",
+            "error_type": "overgeneralization",
+            "evidence_refs": [
+              "TR_Gasventing+118+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The ~15-second delay between thermal runaway and gas explosion is consistent with gas accumulation followed by delayed ignition, supported by the described sequence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+118+Journal_of_Power_Sources:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Evidence treats both measurements as valid method-dependent results; neither is designated as artifact. Dismissing one measurement contradicts the stated limitation.",
+            "error_type": "measurement_scope_violation",
+            "evidence_refs": [
+              "TR_Gasventing+118+Journal_of_Power_Sources:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Test-method dependence of thermal runaway temperature and the distinction between thermal runaway occurrence and fire/explosion hazard",
+        "primary_boundary": "Method-dependence applies to temperature values only; dead cell hazard reduction is condition-specific to oven heating, not universal",
+        "intended_error_modes": [
+          "causal_overclaim",
+          "overgeneralization",
+          "measurement_scope_violation"
+        ],
+        "disallowed_extrapolations": [
+          "Treating ARC value as the true threshold",
+          "Extending dead cell safety advantage beyond oven conditions",
+          "Attributing temperature difference to chemistry rather than method"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "An LFP cell undergoes overcharge abuse. Engineers observe that the vent gas mixture contains CO2 alongside flammable species. They propose that CO2 concentration in the vent gas could serve as a passive inerting agent, making the released gas mixture non-flammable without additional safety measures. Separately, a test engineer notes that in most overcharge trials venting and thermal runaway occur without explosion, but two trials produced explosions preceded by cell surface temperatures reaching 300–350°C. Evaluate the admissibility of the CO2 inerting proposal and explain what the two explosive trials indicate about the conditions governing explosion risk in LFP overcharge."
+      },
+      "ground_truth": {
+        "gold_answer": "The CO2 inerting proposal is not admissible. Evidence shows that the quantity of CO2 present in LFP overcharge vent gases is insufficient to prevent flammability, because flammable gases such as H2 are also present and counterbalance any inerting effect of CO2. Relying on CO2 alone as a passive safety measure is therefore unsupported. Regarding the two explosive trials: the evidence associates the explosions with cell surface temperatures reaching 300–350°C, attributed to a strong internal short circuit, whereas the seven non-explosive trials did not reach these temperatures. This indicates that explosion risk is not a fixed consequence of overcharge-induced thermal runaway but is conditional on the severity of internal short circuit development, which drives temperatures well above those seen in the reproducible non-explosive cases. The distinction implies that explosion is a threshold-dependent outcome linked to the intensity of internal short circuit, not simply to venting or thermal runaway occurrence.",
+        "must_include": [
+          "CO2 quantity is insufficient to prevent flammability in LFP vent gases",
+          "Flammable gases such as H2 counterbalance CO2 inerting effect",
+          "Explosions in the two outlier trials are associated with surface temperatures of 300–350°C",
+          "Higher temperatures linked to strong internal short circuit",
+          "Explosion is not a universal consequence of overcharge thermal runaway but is condition-dependent"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming CO2 provides any measurable inerting benefit under these conditions",
+          "Concluding that all overcharge events will produce explosions",
+          "Attributing the non-explosive majority outcome to CO2 inerting",
+          "Generalizing the internal short circuit mechanism to other chemistries without evidence"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of CO2 as passive inerting agent in LFP vent gas and the conditional nature of explosion risk under overcharge",
+        "primary_boundary": "CO2 insufficiency for inerting is explicitly stated; explosion conditionality is tied to internal short circuit severity and temperature, not to venting alone",
+        "intended_error_modes": [
+          "protective_mechanism_overclaim for CO2",
+          "overgeneralization of explosion risk to all overcharge events",
+          "ignoring the role of internal short circuit severity as the distinguishing condition"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,354 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A sodium-ion battery (SIB) and an LFP battery of equal energy capacity undergo thermal runaway under identical external heating. The SIB triggers thermal runaway at a surface temperature approximately 140°C lower than the LFP, with a safety-valve-to-thermal-runaway interval roughly 14 times shorter. The SIB also produces approximately four times more gas per unit energy. A safety engineer must compare the hazard profiles of the two systems. Which conclusions are admissible?",
+        "options": [
+          "A. The shorter safety-valve-to-thermal-runaway interval in the SIB is the primary driver of its higher mass loss rate per unit energy.",
+          "B. The SIB presents a greater challenge for active fire suppression response than the LFP, because the available intervention window before thermal runaway is substantially shorter.",
+          "C. The higher gas production per unit energy in the SIB directly implies a higher peak explosion pressure in all confinement geometries.",
+          "D. The lower thermal runaway trigger temperature of the SIB means that ambient thermal management failures that would not trigger LFP runaway could trigger SIB runaway.",
+          "E. Because the SIB produces more gas and has a shorter warning interval, its explosive limit range is necessarily wider than that of the LFP.",
+          "F. The LFP battery's higher trigger temperature alone is sufficient to classify it as safe for use in thermally uncontrolled environments.",
+          "G. The SIB's larger explosive limit range compared to the LFP is consistent with its higher gas volume per unit energy, but the causal link between gas volume and explosive limit range requires knowledge of gas composition."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "D",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "Mass loss rate and warning interval are both consequences of thermal runaway severity; no causal link between them is supported.",
+            "error_type": "causal overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+132+Journal_of_Power_Sources:C002",
+              "TR_Gasventing+132+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "A 12 s vs 173 s intervention window directly limits response feasibility; this is a supported admissible safety implication.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+132+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Explosion pressure depends on confinement geometry and equivalence ratio, not gas volume alone; system-level overclaim.",
+            "error_type": "scope expansion distractor",
+            "evidence_refs": [
+              "TR_Gasventing+134+Fire_Safety_Journal:C002",
+              "TR_Gasventing+132+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "A 58°C trigger temperature places SIB within ranges reachable by moderate thermal management failures that would not affect LFP at 197°C.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+132+Journal_of_Power_Sources:C001"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Explosive limit range depends on gas composition, not gas volume; the conclusion overgeneralizes from volume to flammability limits.",
+            "error_type": "mechanism confusion distractor",
+            "evidence_refs": [
+              "TR_Gasventing+132+Journal_of_Power_Sources:C003",
+              "TR_Gasventing+132+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Higher trigger temperature reduces but does not eliminate thermal risk; classifying as safe for uncontrolled environments is an unsupported overclaim.",
+            "error_type": "protective mechanism overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+132+Journal_of_Power_Sources:C001"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "The wider ELR for SIB is evidenced, and gas composition governs flammability limits; this correctly identifies the boundary of the admissible inference.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+132+Journal_of_Power_Sources:C003",
+              "TR_Gasventing+132+Journal_of_Power_Sources:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissible safety comparisons between SIB and LFP thermal runaway hazard profiles",
+        "primary_boundary": "Gas volume per unit energy does not directly determine explosive limit range or explosion pressure without composition and confinement data",
+        "intended_error_modes": [
+          "causal overclaim between correlated metrics",
+          "scope expansion from cell to system explosion pressure",
+          "protective mechanism overclaim for LFP"
+        ],
+        "disallowed_extrapolations": [
+          "gas volume → explosion pressure without confinement geometry",
+          "higher trigger temperature → safe in uncontrolled environments",
+          "shorter warning interval → higher mass loss rate causally"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An 18650 LFP cell at 100% SOC undergoes thermal runaway under external heating at approximately 27°C/min. HF is detected in the vent plume immediately after safety venting onset. The venting window before thermal runaway is approximately 5 minutes. A parallel test on an NMC cell under identical heating shows a venting window of approximately 1 minute. HF peak concentrations in LFP at 50% SOC are approximately half those at 100% SOC. Which of the following conclusions are admissible?",
+        "options": [
+          "A. The 5-minute venting window in LFP provides a longer practical interval for HF-based early warning detection than the NMC venting window under these heating conditions.",
+          "B. Because HF appears immediately at venting onset in LFP, the absence of HF detection before venting can be used to confirm that thermal runaway has not yet initiated.",
+          "C. Reducing LFP SOC from 100% to 50% before storage approximately halves the peak HF hazard concentration during a thermal runaway event.",
+          "D. The longer venting window in LFP compared to NMC implies that LFP has a lower peak HF concentration during thermal runaway under these conditions.",
+          "E. Safety models calibrated using HF data collected through unheated metallic transfer lines are likely to underestimate the actual HF hazard, regardless of cell chemistry.",
+          "F. The SOC dependence of HF in LFP means that a 0% SOC LFP cell will produce no HF during thermal runaway.",
+          "G. The venting window duration is heating-rate dependent, so the 5-minute LFP window cannot be directly applied to scenarios with substantially different heating rates."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "5 min vs 1 min venting window directly supports longer HF-based detection opportunity under the stated heating conditions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+133+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Absence of HF before venting is expected; it cannot confirm thermal runaway has not initiated since TR follows venting, not the reverse.",
+            "error_type": "measurement scope distractor",
+            "evidence_refs": [
+              "TR_Gasventing+133+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence directly supports approximately halved peak HF at 50% vs 100% SOC for LFP; this is an admissible quantitative inference.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+133+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Venting window duration reflects thermal stability, not HF concentration; no evidence links longer window to lower HF peak.",
+            "error_type": "mechanism confusion distractor",
+            "evidence_refs": [
+              "TR_Gasventing+133+Journal_of_Power_Sources:C001",
+              "TR_Gasventing+133+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Evidence explicitly states unheated metallic lines cause underestimation of HF, affecting safety models regardless of chemistry.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+133+Journal_of_Power_Sources:C006"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "SOC dependence is demonstrated between 50% and 100%; extrapolating to zero HF at 0% SOC is beyond the evidence scope.",
+            "error_type": "overgeneralization distractor",
+            "evidence_refs": [
+              "TR_Gasventing+133+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "The venting window was measured at ~27°C/min; applying it to different heating rates requires regime transfer not supported by the evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+133+Journal_of_Power_Sources:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of HF-based early warning inferences and SOC-dependent hazard reduction claims for LFP cells",
+        "primary_boundary": "Venting window duration and HF concentration are distinct properties; SOC dependence cannot be extrapolated to zero SOC without evidence",
+        "intended_error_modes": [
+          "mechanism confusion between venting window and HF concentration",
+          "overgeneralization of SOC trend to zero SOC",
+          "measurement scope error treating absence of HF as TR confirmation"
+        ],
+        "disallowed_extrapolations": [
+          "longer venting window implies lower HF peak",
+          "0% SOC implies zero HF",
+          "venting window at one heating rate applies universally"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Vent gases from lithium-ion batteries with NCA cathode chemistry exhibit laminar burning velocities between 0.2 m/s and 1.1 m/s, exceeding those of typical hydrocarbons. In a 1-meter partially confined channel experiment, the maximum measured explosion pressure at an equivalence ratio near stoichiometric was approximately 1.36 kPa gauge. A CFD simulation of the same geometry predicted 1.45 kPa gauge at equivalence ratio 1.0. Pressure and flame-front velocity oscillations near the channel opening were not reproduced by the simulation. Which conclusions are admissible?",
+        "options": [
+          "A. The close agreement between measured and simulated peak explosion pressure at near-stoichiometric conditions suggests the CFD model captures the dominant pressure-generating mechanism in the channel interior.",
+          "B. Because the CFD underpredicts oscillatory behavior near the channel opening, it cannot be used to estimate peak explosion pressure anywhere in the channel geometry.",
+          "C. The higher laminar burning velocity of NCA vent gases relative to typical hydrocarbons implies that explosion pressure in a given geometry will always exceed that produced by hydrocarbon combustion.",
+          "D. The explosion pressures measured in the 1-meter channel cannot be directly applied to predict explosion pressures in larger or differently confined geometries without additional validation.",
+          "E. The discrepancy between measured and simulated oscillatory behavior near the channel opening indicates a limitation specific to the near-exit flow regime, not necessarily the entire domain.",
+          "F. The range of explosion pressures reported for partly confined geometries with various vent gas profiles indicates that a single equivalence ratio is sufficient to characterize worst-case explosion hazard for all Li-ion vent gas scenarios.",
+          "G. The laminar burning velocity range of 0.2–1.1 m/s for NCA vent gases spans conditions that could produce substantially different explosion pressures depending on mixture composition and confinement."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "E",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Peak pressure agreement within 7% at near-stoichiometric conditions supports that the dominant interior pressure mechanism is captured by CFD.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+134+Fire_Safety_Journal:C003",
+              "TR_Gasventing+134+Fire_Safety_Journal:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The oscillation failure is localized to the channel opening; peak interior pressure is well-predicted. Blanket rejection of CFD is an overclaim.",
+            "error_type": "scope expansion distractor",
+            "evidence_refs": [
+              "TR_Gasventing+134+Fire_Safety_Journal:C005",
+              "TR_Gasventing+134+Fire_Safety_Journal:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Higher LBV increases explosion potential but explosion pressure also depends on confinement, equivalence ratio, and geometry; universal claim is unsupported.",
+            "error_type": "overgeneralization distractor",
+            "evidence_refs": [
+              "TR_Gasventing+134+Fire_Safety_Journal:C001",
+              "TR_Gasventing+134+Fire_Safety_Journal:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Explosion pressure is geometry- and confinement-dependent; scale transfer from a 1-m channel to other geometries requires additional validation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+134+Fire_Safety_Journal:C002",
+              "TR_Gasventing+134+Fire_Safety_Journal:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Evidence explicitly localizes the CFD failure to near-exit oscillations; this is a regime-specific limitation, not a global model failure.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+134+Fire_Safety_Journal:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The wide pressure range across vent gas profiles demonstrates that a single equivalence ratio cannot characterize worst-case for all scenarios.",
+            "error_type": "condition violation distractor",
+            "evidence_refs": [
+              "TR_Gasventing+134+Fire_Safety_Journal:C002"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "A fivefold range in LBV across mixture compositions implies strong sensitivity of explosion pressure to mixture and confinement conditions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+134+Fire_Safety_Journal:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of CFD model conclusions and explosion pressure generalization from confined channel experiments",
+        "primary_boundary": "CFD limitation is localized to near-exit oscillations; peak interior pressure prediction remains valid; geometry-specific results cannot be universally extrapolated",
+        "intended_error_modes": [
+          "scope expansion of CFD failure to entire domain",
+          "overgeneralization of LBV advantage to all confinement scenarios",
+          "single equivalence ratio characterization of worst-case"
+        ],
+        "disallowed_extrapolations": [
+          "1-m channel results to arbitrary geometries without validation",
+          "higher LBV always implies higher explosion pressure",
+          "CFD oscillation failure invalidates peak pressure prediction"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery safety engineer is comparing NMC and LFP 18650 cells for use in an enclosed energy storage module. NMC cells trigger thermal runaway at lower temperatures than LFP cells, with higher-SOC NMC cells triggering at even lower temperatures. NMC cells lose 57–61% of their mass at 100% SOC during thermal runaway, while LFP cells lose approximately 11–13% with little SOC dependence. The venting window before thermal runaway is approximately 1 minute for NMC and approximately 5 minutes for LFP under the same external heating rate. HF is detectable immediately after safety venting in both chemistries. Explain which chemistry presents a greater challenge for occupant safety in an enclosed space, and identify two distinct mechanisms that drive this conclusion. Also identify one safety inference that cannot be drawn from this information alone."
+      },
+      "ground_truth": {
+        "gold_answer": "NMC presents a greater challenge for occupant safety in an enclosed space due to two distinct mechanisms. First, the venting window before thermal runaway is approximately 1 minute for NMC versus 5 minutes for LFP, meaning the interval available for HF detection, alarm activation, and occupant evacuation is substantially shorter for NMC. Second, NMC cells at 100% SOC lose 57–61% of their mass during thermal runaway compared to 11–13% for LFP, indicating a much larger release of combustible and toxic material into the enclosed space. One inference that cannot be drawn from this information alone is the absolute HF concentration hazard for NMC relative to LFP, because peak HF concentration data for NMC under these conditions is not provided; the shorter warning window and higher mass loss establish greater challenge, but the comparative HF peak concentration requires chemistry-specific measurement data.",
+        "must_include": [
+          "NMC has shorter venting window (~1 min vs ~5 min) reducing evacuation time",
+          "NMC has substantially higher mass loss during thermal runaway (57–61% vs 11–13%)",
+          "At least one admissible inference that cannot be drawn without additional data",
+          "HF appears at venting onset in both chemistries but comparative peak HF for NMC vs LFP is not established by this evidence"
+        ],
+        "disallowed_extrapolations": [
+          "NMC produces more HF than LFP based solely on mass loss difference",
+          "LFP is safe in enclosed spaces because of longer venting window",
+          "SOC independence of LFP mass loss implies SOC independence of LFP HF production",
+          "The 1-minute NMC window applies at all heating rates"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-mechanism occupant safety comparison between NMC and LFP in enclosed environments, with admissibility boundary on HF concentration inference",
+        "primary_boundary": "Mass loss and venting window support occupant safety comparison; peak HF concentration comparison between chemistries requires direct measurement not provided",
+        "intended_error_modes": [
+          "inferring higher NMC HF from higher mass loss without composition data",
+          "declaring LFP safe based on longer window alone",
+          "treating SOC independence of mass loss as implying SOC independence of all hazard metrics"
+        ]
+      }
+    }
+  ]
+}

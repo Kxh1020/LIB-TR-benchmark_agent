@@ -1,0 +1,98 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "During dispersion modeling of a non-burning lithium-ion battery venting event at 100% SOC, an engineer evaluates how wind speed affects the downwind distance at which HF concentration drops below its immediately dangerous to life and health threshold. The modeling shows that safety distance peaks at a specific intermediate wind speed and decreases at both lower and higher wind speeds. Which statements about this behavior and its implications are admissible?",
+        "options": [
+          "A. The non-monotonic relationship between wind speed and safety distance arises because increasing wind speed first enhances advective transport of the toxic plume before dilution effects become dominant at higher speeds.",
+          "B. Because HF has the lowest IDLH among commonly reported battery failure gases, it will set the safety distance boundary in non-burning venting scenarios regardless of wind speed.",
+          "C. For non-burning venting, assuming that higher wind speed always reduces hazard distance is an unsafe simplification that can underestimate risk at intermediate wind speeds.",
+          "D. The peak safety distance at intermediate wind speed implies that calm conditions are always more hazardous than moderate wind conditions for non-burning battery venting.",
+          "E. In burning battery failure scenarios, safety distance also peaks at an intermediate wind speed for the same dilution-advection mechanism described for non-burning cases.",
+          "F. A safety perimeter designed only for the highest anticipated wind speed may be inadequate under moderate wind conditions for a non-burning venting event."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence explicitly describes the advection-then-dilution mechanism producing the non-monotonic wind speed dependence for non-burning cases.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+142+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence shows HF sets safety distance in burning simulations; for non-burning cases this dominance is not established, and the claim generalizes beyond evidence scope.",
+            "error_type": "scope_expansion",
+            "evidence_refs": [
+              "TR_Gasventing+142+Journal_of_Loss_Prevention_in_the_Process_Industries:C004",
+              "TR_Gasventing+142+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The non-monotonic peak means a single high-wind design assumption misses the worst-case intermediate wind speed; assuming monotonicity is an unsafe simplification.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+142+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Calm conditions produce shorter safety distances than the peak at intermediate speed; the evidence shows safety distance increases up to the peak, so calm is not always most hazardous.",
+            "error_type": "direction_error",
+            "evidence_refs": [
+              "TR_Gasventing+142+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "For burning cases, the non-monotonic behavior is driven by plume buoyancy from heat release rate, a different mechanism; the dilution-advection peak is specific to non-burning cases.",
+            "error_type": "regime_transfer_violation",
+            "evidence_refs": [
+              "TR_Gasventing+142+Journal_of_Loss_Prevention_in_the_Process_Industries:C002",
+              "TR_Gasventing+142+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Since safety distance peaks at intermediate wind speed, a perimeter sized only for high wind underestimates the hazard zone under moderate wind conditions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+142+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Non-monotonic wind speed dependence of toxic safety distance for non-burning battery venting and its design implications",
+        "primary_boundary": "The non-monotonic peak is specific to non-burning cases; burning cases involve a different governing mechanism (plume buoyancy vs. dilution-advection balance)",
+        "intended_error_modes": [
+          "regime_transfer from non-burning to burning cases",
+          "direction_error on calm vs. moderate wind hazard ranking",
+          "scope_expansion of HF dominance from burning to non-burning"
+        ],
+        "disallowed_extrapolations": [
+          "Applying non-burning wind-speed peak behavior to burning scenarios",
+          "Claiming HF always sets safety distance regardless of scenario type"
+        ]
+      }
+    }
+  ],
+  "short_answers": []
+}

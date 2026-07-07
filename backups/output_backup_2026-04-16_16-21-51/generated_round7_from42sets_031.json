@@ -1,0 +1,322 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery pack venting system releases thermal runaway gases into a confined enclosure where ignition sources are present. Engineers are evaluating ignition risk across two temperature zones: Zone A operates near 900 K and Zone B operates near 1300 K. Both zones have identical gas compositions and equivalence ratios. Which statements about ignition delay time behavior across these zones are admissible based on the known temperature-dependence characteristics of TR gases?",
+        "options": [
+          "A. Reducing Zone A temperature by 100 K will increase ignition delay time by approximately an order of magnitude, representing a substantially larger absolute risk reduction than an equivalent temperature reduction in Zone B.",
+          "B. Zone B presents a higher ignition risk than Zone A because elevated temperatures always reduce ignition delay time monotonically regardless of the temperature regime.",
+          "C. A 200 K temperature reduction in Zone A would be expected to produce a larger proportional change in ignition delay time than a 200 K reduction in Zone B.",
+          "D. The reduced temperature sensitivity in Zone B implies that passive thermal management measures targeting Zone B conditions will yield diminishing returns in ignition delay time extension compared to equivalent interventions in Zone A.",
+          "E. Because Zone B already exhibits attenuated temperature dependence, increasing Zone B temperature further poses negligible additional ignition risk relative to Zone A.",
+          "F. The ignition delay time in Zone A cannot be estimated without knowing the specific gas composition ratio, making comparative risk assessment between zones inadmissible."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Within 800–1200 K, ~one order of magnitude per 100 K change is supported; Zone B attenuation means equivalent reduction yields far less benefit.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+147+Fuel:C001",
+              "TR_Gasventing+147+Fuel:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Monotonic assumption violates the regime-transition evidence; above 1200 K sensitivity is markedly attenuated, not continuously strong.",
+            "error_type": "unjustified monotonicity",
+            "evidence_refs": [
+              "TR_Gasventing+147+Fuel:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Zone A falls in the high-sensitivity regime (800–1200 K); Zone B falls in the attenuated regime; proportional change is larger in Zone A.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+147+Fuel:C001",
+              "TR_Gasventing+147+Fuel:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Attenuated sensitivity above 1200 K directly implies thermal interventions at Zone B conditions yield smaller ignition delay gains per unit temperature change.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+147+Fuel:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Attenuated sensitivity does not imply negligible risk; further temperature increase still reduces delay time, and absolute delay times remain short.",
+            "error_type": "causal overclaim from partial trend",
+            "evidence_refs": [
+              "TR_Gasventing+147+Fuel:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Evidence supports regime-level delay time characterization independent of detailed composition; comparative assessment between zones is admissible.",
+            "error_type": "scope restriction not supported by evidence",
+            "evidence_refs": [
+              "TR_Gasventing+147+Fuel:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Regime-dependent temperature sensitivity of ignition delay time and its implications for risk mitigation strategy",
+        "primary_boundary": "The order-of-magnitude-per-100K relationship holds within 800–1200 K but is markedly attenuated above 1200 K; conclusions must respect this regime boundary",
+        "intended_error_modes": [
+          "unjustified monotonicity across regimes",
+          "treating attenuated sensitivity as negligible risk",
+          "scope restriction overclaim"
+        ],
+        "disallowed_extrapolations": [
+          "Extending the 800–1200 K sensitivity rule above 1200 K",
+          "Concluding negligible risk from attenuated sensitivity",
+          "Requiring composition data to make regime-level comparative judgments"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Three battery chemistries—LCO/NMC, NMC, and LFP—vent gases during thermal runaway into an open enclosure. A fire safety engineer must assess flame propagation hazard under stoichiometric and lean fuel conditions. The engineer observes that all three gas mixtures reach peak laminar burning velocity at a specific equivalence ratio below stoichiometric and that adiabatic overpressure rises steeply at low equivalence ratios before flattening. Which of the following conclusions are admissible?",
+        "options": [
+          "A. Under lean conditions, a small increase in gas concentration poses a disproportionately larger overpressure hazard than an equivalent concentration increase under rich conditions.",
+          "B. LFP chemistry vented gases present the lowest flame propagation hazard among the three chemistries under identical fuel-air mixture conditions.",
+          "C. Because all three chemistries show the same non-monotonic burning velocity trend with equivalence ratio, their peak burning velocities occur at the same equivalence ratio value.",
+          "D. Designing ventilation to maintain rich rather than lean gas concentrations in the enclosure would reduce overpressure sensitivity but may not reduce peak flame speed hazard.",
+          "E. The non-monotonic burning velocity behavior means that both very lean and very rich gas accumulations present lower flame propagation risk than intermediate concentrations, supporting a binary safe-zone interpretation.",
+          "F. LCO/NMC gases pose a greater laminar flame propagation hazard than LFP gases under stoichiometric conditions."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence states overpressure is more sensitive to equivalence ratio under lean than rich conditions; small lean-side concentration changes carry larger overpressure consequences.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+147+Fuel:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "LBV ranking LCO/NMC > NMC > LFP under identical equivalence ratio conditions directly supports LFP as lowest flame propagation hazard.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+147+Fuel:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Evidence establishes the shared non-monotonic trend but does not state that peak LBV occurs at the same equivalence ratio for all three chemistries.",
+            "error_type": "unsupported extrapolation from shared trend to identical peak location",
+            "evidence_refs": [
+              "TR_Gasventing+147+Fuel:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Rich conditions reduce overpressure sensitivity per evidence, but peak LBV still occurs at an intermediate equivalence ratio; rich accumulation does not eliminate flame speed hazard.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+147+Fuel:C004",
+              "TR_Gasventing+147+Fuel:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Non-monotonic LBV does not define binary safe zones; lean and rich extremes reduce LBV but overpressure remains sensitive on the lean side, and ignition risk persists.",
+            "error_type": "causal overclaim and scope expansion from non-monotonic trend",
+            "evidence_refs": [
+              "TR_Gasventing+147+Fuel:C004",
+              "TR_Gasventing+147+Fuel:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "LBV ranking places LCO/NMC above LFP under identical equivalence ratio conditions, which includes stoichiometric conditions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+147+Fuel:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-chemistry flame hazard ranking combined with equivalence ratio dependence of overpressure and burning velocity",
+        "primary_boundary": "Shared non-monotonic trend does not imply identical peak locations; overpressure sensitivity asymmetry between lean and rich regimes must be preserved",
+        "intended_error_modes": [
+          "inferring identical peak equivalence ratio from shared trend shape",
+          "treating non-monotonic LBV as defining binary safe zones",
+          "ignoring residual flame speed hazard under rich conditions"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding peak LBV equivalence ratio is identical across chemistries",
+          "Treating rich accumulation as a complete overpressure mitigation strategy"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An enclosure safety test uses NMC chemistry TR gases at a fixed lean equivalence ratio. The test engineer proposes two modifications: (M1) shift the mixture to a rich equivalence ratio while holding temperature at 950 K; (M2) hold the lean equivalence ratio fixed but raise the ambient temperature from 950 K to 1050 K. The engineer claims both modifications reduce overall fire hazard equally. A reviewer challenges this claim. Which statements correctly characterize the hazard changes introduced by each modification?",
+        "options": [
+          "A. M1 reduces adiabatic overpressure hazard because overpressure sensitivity is lower under rich conditions, but it may increase or maintain laminar burning velocity if the mixture moves closer to the peak LBV equivalence ratio.",
+          "B. M2 reduces ignition delay time by approximately one order of magnitude, increasing ignition hazard, which directly contradicts the engineer's claim that M2 reduces overall fire hazard.",
+          "C. M1 and M2 affect independent hazard dimensions—M1 primarily affects flame propagation and overpressure, M2 primarily affects ignition timing—making a direct equivalence claim between them inadmissible without specifying which hazard metric is prioritized.",
+          "D. M2 has negligible effect on ignition delay time because 950 K to 1050 K is within the attenuated sensitivity regime above 1200 K.",
+          "E. Because NMC gases have intermediate LBV relative to LCO/NMC and LFP, shifting equivalence ratio under M1 has no meaningful effect on flame propagation hazard for NMC specifically.",
+          "F. M1 cannot reduce overpressure hazard because the non-monotonic LBV trend means rich conditions still produce significant flame temperatures."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "C"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Rich shift reduces overpressure sensitivity per evidence, but if the new equivalence ratio is closer to the LBV peak, burning velocity may not decrease; multi-factor reasoning required.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+147+Fuel:C004",
+              "TR_Gasventing+147+Fuel:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "950–1050 K is within the 800–1200 K high-sensitivity regime; ~one order of magnitude reduction in ignition delay time increases ignition hazard, contradicting the engineer's claim.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+147+Fuel:C001"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "M1 and M2 operate on different hazard pathways; claiming equivalence requires specifying a common metric, which the engineer did not do—making the equivalence claim inadmissible.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+147+Fuel:C001",
+              "TR_Gasventing+147+Fuel:C004",
+              "TR_Gasventing+147+Fuel:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "950–1050 K falls within the 800–1200 K high-sensitivity regime, not the attenuated regime above 1200 K; this option misapplies the regime boundary.",
+            "error_type": "condition violation—misidentifying the regime boundary",
+            "evidence_refs": [
+              "TR_Gasventing+147+Fuel:C001",
+              "TR_Gasventing+147+Fuel:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "NMC having intermediate LBV rank does not exempt it from equivalence ratio effects on LBV; the non-monotonic trend applies to all three chemistries including NMC.",
+            "error_type": "mechanism confusion—ranking position does not negate equivalence ratio dependence",
+            "evidence_refs": [
+              "TR_Gasventing+147+Fuel:C003",
+              "TR_Gasventing+147+Fuel:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Significant flame temperature under rich conditions does not negate the overpressure sensitivity reduction; overpressure and flame temperature are distinct hazard metrics.",
+            "error_type": "mechanism substitution—conflating flame temperature with overpressure sensitivity",
+            "evidence_refs": [
+              "TR_Gasventing+147+Fuel:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-dimensional hazard assessment requiring simultaneous reasoning about ignition delay regime, overpressure sensitivity, and LBV equivalence ratio dependence",
+        "primary_boundary": "The 800–1200 K high-sensitivity regime must not be confused with the attenuated >1200 K regime; overpressure sensitivity and LBV are distinct hazard dimensions that cannot be conflated",
+        "intended_error_modes": [
+          "misidentifying regime boundary for M2",
+          "using LBV rank position to dismiss equivalence ratio effects",
+          "conflating flame temperature with overpressure hazard"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming M2 falls in attenuated regime",
+          "Treating intermediate LBV rank as immunity to equivalence ratio effects",
+          "Using flame temperature as a proxy for overpressure sensitivity"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A fire protection engineer is designing a gas detection and suppression system for a battery room where LFP and NMC cells are co-located. During thermal runaway events, both cell types vent combustible gases. The engineer proposes a single detection threshold calibrated to the LFP gas mixture's laminar burning velocity characteristics, arguing that if it is safe for LFP it is safe for NMC. The suppression system activates when detected gas concentration crosses a lean-to-stoichiometric threshold. Identify two distinct technical flaws in the engineer's design logic and explain the mechanism by which each flaw could result in inadequate protection, referencing the relevant combustion behavior of TR gases."
+      },
+      "ground_truth": {
+        "gold_answer": "Flaw 1: The engineer assumes LFP-calibrated thresholds are conservative for NMC gases, but NMC gases have a higher laminar burning velocity than LFP under identical equivalence ratio conditions. A detection threshold set to LFP's flame propagation characteristics will be crossed at a gas concentration that already presents a significantly higher flame propagation hazard for NMC gases, meaning the suppression system activates too late relative to the NMC hazard level. Flaw 2: The engineer calibrates the threshold at the lean-to-stoichiometric boundary without accounting for the fact that adiabatic overpressure is most sensitive to equivalence ratio changes under lean conditions. Even at gas concentrations below the detection threshold—within the lean regime—small increases in NMC gas concentration produce disproportionately large overpressure escalation. The suppression system therefore fails to capture the steepest portion of the overpressure hazard curve, leaving a window of high overpressure risk before the threshold is reached.",
+        "must_include": [
+          "NMC has higher laminar burning velocity than LFP under identical equivalence ratio conditions",
+          "LFP-calibrated threshold underestimates NMC flame propagation hazard",
+          "Overpressure is more sensitive to equivalence ratio changes under lean conditions than rich conditions",
+          "Pre-threshold lean-regime concentration changes carry disproportionate overpressure hazard"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming LFP gases are non-flammable or pose no hazard",
+          "Stating that NMC and LFP peak LBV occurs at the same equivalence ratio without evidence support",
+          "Asserting that the suppression system provides zero protection rather than inadequate protection",
+          "Introducing specific numerical thresholds not supported by the evidence"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Application of chemistry-dependent LBV ranking and equivalence ratio-dependent overpressure sensitivity to evaluate detection threshold adequacy",
+        "primary_boundary": "LFP-to-NMC extrapolation of LBV-based thresholds is inadmissible because LBV ranking is chemistry-dependent; lean-regime overpressure sensitivity means pre-threshold concentrations are not low-hazard",
+        "intended_error_modes": [
+          "Assuming lower-LBV chemistry provides conservative threshold for higher-LBV chemistry",
+          "Ignoring lean-regime overpressure sensitivity when setting concentration-based detection thresholds",
+          "Treating stoichiometric threshold as capturing the full hazard curve"
+        ]
+      }
+    }
+  ]
+}

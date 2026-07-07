@@ -1,0 +1,324 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A cylindrical Ni-rich cell undergoes thermal runaway testing under controlled oven heating. The cell has a thicker, ceramic-rich separator compared to a reference cell with a thinner, predominantly polymeric separator. Both cells are tested at 100% SOC. An engineer observes that the thicker-separator cell reaches its hard internal short circuit and final venting at a higher temperature than the reference cell. The engineer then proposes the following conclusions about the relationship between separator architecture and thermal runaway progression. Which of the following conclusions are admissible based on the described conditions?",
+        "options": [
+          "A. The delay in hard internal short circuit onset for the thicker-separator cell is mechanistically consistent with the separator requiring a higher temperature to fully collapse, since greater total thickness and higher ceramic fraction both resist deformation.",
+          "B. Because the thicker-separator cell vents at a higher temperature, it will necessarily reach a lower maximum temperature during thermal runaway than the reference cell at the same SOC.",
+          "C. The shift of final venting to a higher temperature in the thicker-separator cell implies that the exothermic reactions active at that stage are more energetic, which can increase rather than decrease the risk of mechanical failure of the cell casing.",
+          "D. The ceramic-to-polymeric layer ratio is the sole determinant of the temperature at which hard internal short circuit occurs, independent of total separator thickness.",
+          "E. The observation that venting temperature differs between the two cells is sufficient to conclude that their maximum post-runaway temperatures will also differ, even without measuring peak temperature directly.",
+          "F. A thicker separator with higher ceramic fraction delays the onset of the accelerated thermal runaway stage by raising the temperature at which the separator collapses, but does not alter the self-heating rate once that stage begins."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence states that the thicker separator fully collapses at higher temperature, directly causing the delay in hard ISC and final venting. Greater total thickness and higher ceramic fraction both contribute to resistance to collapse, making this mechanistically admissible.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+157+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Higher venting temperature does not necessarily reduce maximum temperature; the evidence shows that lower SOC (which also shifts venting to higher temperature) is associated with lower maximum temperature, but this is due to reduced stored energy, not separator thickness. Attributing lower peak temperature to separator thickness alone is an unsupported causal overclaim.",
+            "error_type": "causal overclaim / mechanism substitution",
+            "evidence_refs": [
+              "TR_Dynamics+157+UnknownJournal:C003",
+              "TR_Dynamics+157+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence states that the shift of final venting to higher temperature is accompanied by stronger exothermic reactions and higher pressure rate acceleration, which collapsed the gasket seal in 50% SOC cells. This demonstrates that venting at higher temperature can increase mechanical failure risk—a counterintuitive but evidence-supported conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+157+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence attributes the delay to total separator thickness being significantly greater, not exclusively to the ceramic-to-polymeric ratio. Isolating ratio as the sole determinant ignores the role of total thickness and is an unsupported single-variable attribution.",
+            "error_type": "single-variable causal overclaim",
+            "evidence_refs": [
+              "TR_Dynamics+157+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Venting temperature and peak post-runaway temperature are distinct quantities. The evidence shows that SOC—not venting temperature per se—is the primary driver of maximum temperature differences. Inferring peak temperature from venting temperature alone without direct measurement is an unsupported scope expansion.",
+            "error_type": "scope expansion / measurement scope violation",
+            "evidence_refs": [
+              "TR_Dynamics+157+UnknownJournal:C003",
+              "TR_Dynamics+157+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The evidence establishes that the self-heating rate at the onset of the accelerated stage (approximately 48 °C/min) is the same regardless of SOC and cell technology, meaning separator architecture shifts the temperature threshold for that stage but does not change the rate once initiated.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+157+UnknownJournal:C001",
+              "TR_Dynamics+157+UnknownJournal:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Relationship between separator architecture (thickness, ceramic fraction) and thermal runaway stage temperatures versus post-runaway severity",
+        "primary_boundary": "Separator thickness delays ISC and venting onset temperature but does not control the self-heating rate once the accelerated stage begins; higher venting temperature can increase mechanical failure risk rather than reduce it",
+        "intended_error_modes": [
+          "Assuming higher venting temperature implies lower peak temperature (mechanism substitution)",
+          "Isolating ceramic ratio as sole determinant while ignoring total thickness",
+          "Inferring peak temperature from venting temperature without direct measurement"
+        ],
+        "disallowed_extrapolations": [
+          "Separator architecture controls maximum post-runaway temperature independently of SOC",
+          "Ceramic fraction alone determines ISC onset temperature",
+          "Higher venting temperature always reduces thermal runaway severity"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A 53 Ah NCM pouch cell at 100% SOC is subjected separately to three thermal runaway triggers: nail penetration, lateral external heating, and overcharge at 1C. Measurements show that the internal temperature during nail penetration reaches approximately 1005 °C while the surface temperature peaks at 774 °C. Under lateral heating, the surface trigger temperature is 233 °C and thermal runaway spreads to the rear surface in approximately 20 s. Under overcharge, thermal runaway is triggered at a surface temperature of 117 °C after the cell has been charged to approximately 128% SOC. An engineer must assess which diagnostic and mechanistic conclusions are supported by these observations. Which of the following are admissible conclusions?",
+        "options": [
+          "A. For nail penetration, surface temperature measurement alone is insufficient to characterize the peak thermal state of the cell interior during thermal runaway, because the internal temperature substantially exceeds the surface temperature.",
+          "B. The lower surface trigger temperature under overcharge compared to lateral heating indicates that overcharge generates less total heat than lateral heating before thermal runaway onset.",
+          "C. The longer injection duration under overcharge compared to nail penetration is consistent with a greater cumulative energy input to the cell before thermal runaway is triggered.",
+          "D. The 20-second propagation time across the cell thickness under lateral heating implies that the same propagation rate would be observed in a multi-cell module under identical heating conditions.",
+          "E. Under nail penetration, the fact that internal temperature rise precedes surface temperature rise indicates that heat originates internally and diffuses outward, rather than being imposed from the cell surface.",
+          "F. The surface trigger temperature under overcharge being lower than under lateral heating is sufficient to conclude that overcharge is the least hazardous of the three abuse modes tested."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence directly shows a ~231 °C gap between internal (1005 °C) and surface (774 °C) temperatures during nail penetration, establishing that surface measurement underestimates peak internal thermal state.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+158+World_Electric_Vehicle_Journal:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Trigger surface temperature reflects the condition at which thermal runaway is initiated, not the total heat generated before that point. Overcharge involves electrochemical energy accumulation over 1020 s to 128.3% SOC; the lower trigger temperature does not imply less total energy input. This is a mechanism confusion distractor.",
+            "error_type": "mechanism confusion / causal overclaim",
+            "evidence_refs": [
+              "TR_Dynamics+158+World_Electric_Vehicle_Journal:C002",
+              "TR_Dynamics+158+World_Electric_Vehicle_Journal:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence states that injection time is positively correlated with energy input before thermal runaway, and overcharge has the longest injection duration (29 s vs. 22 s for nail penetration), supporting the conclusion of greater cumulative energy input.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+158+World_Electric_Vehicle_Journal:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The 20-second propagation time is a cell-level measurement for a single pouch cell under lateral heating. Extrapolating this rate to a multi-cell module involves scale transfer beyond the evidence scope, as module-level propagation depends on inter-cell spacing, thermal conductivity, and configuration.",
+            "error_type": "scale transfer beyond evidence",
+            "evidence_refs": [
+              "TR_Dynamics+158+World_Electric_Vehicle_Journal:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that internal temperature rise occurs much earlier than surface temperature rise after nail penetration, indicating internal heat generation diffusing outward—consistent with the described conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+158+World_Electric_Vehicle_Journal:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Overcharge produces the highest peak surface temperature (935 °C) and longest injection duration of the three modes, indicating greater overall energy release. The lower trigger temperature reflects only the initiation threshold, not overall hazard severity. This is a conservative-appearing but mechanistically incorrect conclusion.",
+            "error_type": "condition violation / partial-information overclaim",
+            "evidence_refs": [
+              "TR_Dynamics+158+World_Electric_Vehicle_Journal:C001",
+              "TR_Dynamics+158+World_Electric_Vehicle_Journal:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinguishing trigger temperature, internal temperature, injection duration, and peak temperature as independent indicators of thermal runaway mechanism and severity across abuse modes",
+        "primary_boundary": "Trigger surface temperature reflects initiation threshold, not total energy input or overall hazard; internal and surface temperatures are decoupled; cell-level propagation time cannot be directly transferred to module level",
+        "intended_error_modes": [
+          "Equating low trigger temperature with low total energy input",
+          "Using trigger temperature as a proxy for overall hazard ranking",
+          "Extrapolating single-cell propagation time to module-level behavior"
+        ],
+        "disallowed_extrapolations": [
+          "Trigger temperature directly indicates total heat generated before thermal runaway",
+          "Cell-level lateral propagation time applies directly to multi-cell modules",
+          "Lower trigger temperature implies lower overall abuse hazard"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A parallel-connected lithium-ion battery module undergoes thermal runaway propagation testing under varying discharge rates applied to the module prior to and during the propagation event. As discharge rate increases from 0 C to 3 C, the maximum temperature rate drops substantially, propagation time extends, and propagation rate declines by approximately three times. At 3 C discharge, batteries that previously produced visible flame instead emit only white smoke. Thermal conduction between adjacent cells accounts for 57–73% of inter-cell heat exchange throughout the propagation process regardless of discharge rate. An engineer evaluates several design and safety conclusions based on these observations. Which of the following conclusions are admissible?",
+        "options": [
+          "A. Increasing discharge rate before and during a thermal runaway event reduces the stored electrochemical energy available to sustain propagation, which is mechanistically consistent with the observed reduction in temperature rate and propagation speed.",
+          "B. Because thermal conduction dominates inter-cell heat exchange at all tested discharge rates, eliminating direct cell-to-cell thermal contact would be sufficient to prevent propagation entirely under 3 C discharge conditions.",
+          "C. The transition from visible flame to white smoke emission at 3 C discharge indicates a change in the combustion or decomposition regime, but does not by itself confirm that propagation has been arrested.",
+          "D. The reduction in propagation rate at 3 C discharge to approximately one-third of the undischarged rate demonstrates that discharge rate is the only variable controlling propagation speed in this module configuration.",
+          "E. The observation that propagation time extends while propagation rate declines under higher discharge rates is internally consistent, since slower cell-to-cell spread necessarily requires more total time to traverse the same number of cells.",
+          "F. Since thermal conduction accounts for 57–73% of heat exchange between adjacent cells, radiation and convection together contribute the remaining fraction and cannot be neglected as secondary propagation pathways even at high discharge rates."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Discharging reduces stored electrochemical energy in the cells, which is the energy source for thermal runaway intensity. The evidence shows that higher discharge rate reduces maximum temperature rate and propagation speed, consistent with reduced available energy driving less intense and slower propagation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+159+Journal_of_Energy_Storage:C001",
+              "TR_Dynamics+159+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Even if thermal conduction is the dominant pathway (57–73%), the remaining 27–43% from radiation and convection is non-negligible. Eliminating conduction alone would not prevent propagation entirely; it would only reduce it. This is a protective mechanism overclaim distractor.",
+            "error_type": "protective mechanism overclaim / ignoring secondary pathways",
+            "evidence_refs": [
+              "TR_Dynamics+159+Journal_of_Energy_Storage:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence shows that at 3 C, cells emit white smoke instead of flame, indicating a change in the thermal decomposition or combustion character. However, the evidence also shows propagation still occurs at 3 C (propagation rate = 0.5 battery/min), so the absence of flame does not mean propagation is arrested.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+159+Journal_of_Energy_Storage:C004",
+              "TR_Dynamics+159+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence demonstrates discharge rate as an effective variable but does not establish it as the only controlling variable. Cell spacing, thermal conductivity, and module configuration are known system parameters affecting propagation. Claiming single-variable control is an unsupported overgeneralization.",
+            "error_type": "single-variable causal overclaim",
+            "evidence_refs": [
+              "TR_Dynamics+159+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "If propagation rate (batteries/min) declines, then traversing the same number of cells takes longer, so propagation time increases. This is internally consistent and directly supported by the evidence showing both trends simultaneously.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+159+Journal_of_Energy_Storage:C002",
+              "TR_Dynamics+159+Journal_of_Energy_Storage:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "If thermal conduction accounts for 57–73%, then radiation and convection together account for 27–43%, which is a substantial fraction. The evidence does not show this fraction diminishes with discharge rate, so these pathways remain relevant secondary contributors to propagation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+159+Journal_of_Energy_Storage:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of safety and mechanistic conclusions about discharge-rate-mediated thermal runaway propagation mitigation in a parallel module",
+        "primary_boundary": "Discharge rate reduces but does not eliminate propagation; dominant conduction pathway does not make secondary pathways negligible; flame suppression does not equal propagation arrest",
+        "intended_error_modes": [
+          "Overclaiming that eliminating the dominant heat pathway prevents propagation entirely",
+          "Treating discharge rate as the sole controlling variable",
+          "Interpreting absence of visible flame as propagation arrest"
+        ],
+        "disallowed_extrapolations": [
+          "Eliminating conduction alone prevents propagation",
+          "Discharge rate is the only variable controlling propagation speed",
+          "White smoke emission confirms propagation has stopped"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A Ni-rich cylindrical cell at 50% SOC undergoes oven-induced thermal runaway. Compared to an identical cell at 100% SOC, the 50% SOC cell exhibits delayed onset of internal short circuit, higher temperatures at each stage transition, and lower maximum post-runaway temperature. However, the 50% SOC cell also experiences violent ejection of its jelly roll during final venting, which does not occur in the 100% SOC cell. Explain the mechanistic chain that connects the lower SOC to the jelly roll ejection outcome, and identify why this outcome is counterintuitive relative to the lower energy content of the 50% SOC cell. Your answer should address the role of the stage transition temperature shift and the pressure dynamics during the accelerated thermal runaway stage."
+      },
+      "ground_truth": {
+        "gold_answer": "At 50% SOC, reduced stored electrochemical energy shifts all stage transition temperatures (T1, T2, T3) to higher values because the internal short circuit is delayed to higher temperatures. This means that when final venting occurs in the 50% SOC cell, it happens at a higher temperature than in the 100% SOC cell. At this higher temperature, the exothermic reactions active during the accelerated stage are more intense and the pressure rate acceleration is greater. The elevated pressure rate during this stage is sufficient to collapse the gasket seal of the cell casing—a structural failure that does not occur in the 100% SOC cell because its final venting happens at a lower temperature with less pressure rate acceleration. The counterintuitive aspect is that the lower-energy cell (50% SOC) produces a more mechanically violent failure event (jelly roll ejection) than the higher-energy cell (100% SOC), because the delay mechanism forces the energy release to occur at a higher temperature where pressure dynamics are more aggressive, even though the total energy available is lower.",
+        "must_include": [
+          "Lower SOC delays internal short circuit to higher temperature",
+          "Delay shifts final venting to higher temperature",
+          "Higher venting temperature is associated with stronger exothermic reactions and higher pressure rate acceleration",
+          "Elevated pressure rate acceleration collapses the gasket seal",
+          "Gasket collapse causes jelly roll ejection",
+          "This outcome is counterintuitive because lower SOC implies lower stored energy yet produces more violent mechanical failure"
+        ],
+        "disallowed_extrapolations": [
+          "Lower SOC always causes jelly roll ejection regardless of cell design",
+          "The gasket collapse is caused by lower stored energy directly rather than by the temperature-shifted pressure dynamics",
+          "Maximum post-runaway temperature is higher in 50% SOC cells",
+          "The self-heating rate during the accelerated stage is higher in 50% SOC cells"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-step causal chain linking SOC-dependent stage temperature shift to pressure-driven mechanical failure, and recognition of the counterintuitive severity inversion",
+        "primary_boundary": "The mechanism connecting lower SOC to jelly roll ejection operates through temperature-shifted pressure dynamics, not through higher stored energy; lower maximum temperature and more violent mechanical failure coexist without contradiction",
+        "intended_error_modes": [
+          "Attributing jelly roll ejection to higher stored energy rather than to the temperature-shifted pressure acceleration",
+          "Assuming lower SOC uniformly reduces all hazard indicators including mechanical failure risk",
+          "Confusing maximum post-runaway temperature with mechanical failure severity"
+        ]
+      }
+    }
+  ]
+}

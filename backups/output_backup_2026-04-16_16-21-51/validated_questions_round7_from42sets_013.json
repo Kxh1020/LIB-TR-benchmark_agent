@@ -1,0 +1,131 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "During thermal abuse of an LFP pouch cell, gas species are detected in a defined temporal sequence. Methane appears first, followed by HF and H2, with CO2 and CO detected last. The temperature thresholds associated with CH4 and H2 generation differ by approximately 130°C. A safety engineer is evaluating which mechanistic and diagnostic conclusions about this sequence are admissible.",
+        "options": [
+          "A. The early appearance of methane relative to H2 is consistent with the lower temperature threshold for anode-electrolyte solvent decomposition compared to the threshold for binder-lithium reactions.",
+          "B. Detection of H2 by a sensor before any CH4 signal has appeared would indicate that the binder-lithium reaction is occurring without prior electrolyte decomposition, which is mechanistically admissible given the evidence.",
+          "C. A sensor array that detects only CO and CO2 cannot confirm whether the cell has already passed through the CH4 and H2 generation stages, because CO and CO2 are detected last in the sequence.",
+          "D. The detection of HF before H2 implies that fluorine-containing species in the electrolyte decompose at a lower temperature than the binder-lithium reaction threshold.",
+          "E. Because CH4 is generated first, a methane sensor alone is sufficient to characterize the full gas hazard profile of LFP thermal runaway for ventilation system design.",
+          "F. The sequential gas detection pattern means that a sensor detecting CO2 as the first signal in an enclosure has likely already missed the earlier methane and HF warning stages."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "CH4 generation threshold is ~120°C (DMC decomposition) and H2 threshold is ~250°C (binder-lithium reaction), directly explaining CH4 appearing before H2 in the sequence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C008",
+              "TR_Gasventing+129+Journal_of_Power_Sources:C009",
+              "TR_Gasventing+129+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "H2 requires >250°C via binder-lithium reaction, which occurs after CH4 generation at >120°C; H2 appearing before CH4 contradicts the mechanistic temperature sequence.",
+            "error_type": "condition violation — contradicts temperature-ordered mechanism sequence",
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C008",
+              "TR_Gasventing+129+Journal_of_Power_Sources:C009"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "CO and CO2 are detected last; their presence alone confirms only that the final stage has been reached, not whether earlier CH4 and H2 stages occurred or were missed.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence states HF appears after CH4 but before H2; the evidence does not provide HF's specific temperature threshold, making this mechanistic inference unsupported.",
+            "error_type": "unsupported mechanistic inference — HF threshold not established in evidence",
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "CH4 being first does not make it sufficient for full hazard characterization; HF, H2, CO, and CO2 each present distinct hazards not captured by methane monitoring alone.",
+            "error_type": "scope overclaim — single-gas monitoring cannot characterize full hazard profile",
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Since CO2 is detected last in the sequence, a CO2-first signal in an enclosure implies the earlier methane, HF, and H2 stages have already occurred and their warning windows were missed.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanistic and diagnostic admissibility of conclusions derived from the temperature-ordered gas detection sequence in LFP thermal runaway",
+        "primary_boundary": "Gas sequence is temperature-threshold-ordered; CO2/CO detection last means earlier stages are already complete; single-gas monitoring insufficient for full hazard profile",
+        "intended_error_modes": [
+          "inverting temperature-ordered sequence for H2 vs CH4",
+          "inferring HF threshold without evidence",
+          "treating first-detected gas as sufficient for full characterization"
+        ],
+        "disallowed_extrapolations": [
+          "HF specific temperature threshold not in evidence",
+          "single-gas sufficiency for full hazard profile",
+          "H2 before CH4 mechanistic admissibility"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "An LFP pouch cell battery enclosure is instrumented with a TDLAS sensor configured to detect methane. During a thermal abuse event, the TDLAS system records a rising methane signal beginning approximately 300 seconds before thermal runaway occurs, then the signal abruptly drops to zero and remains at zero throughout and after the thermal runaway event. A technician interprets the signal loss as evidence that methane generation has ceased. Identify the mechanistic reason why this interpretation is incorrect, explain what the signal loss most likely indicates about the physical state of the enclosure, and describe one design implication for sensor system architecture in battery safety monitoring."
+      },
+      "ground_truth": {
+        "gold_answer": "The signal loss does not indicate cessation of methane generation. TDLAS operates by transmitting a laser beam across the measurement path; when dense smoke is generated during thermal runaway, it physically obstructs the laser path and reduces transmitted light intensity to zero, making the sensor blind regardless of actual gas concentration. The signal loss therefore indicates that the enclosure has entered the smoke-generating phase of thermal runaway, not that gas production has stopped. The design implication is that TDLAS should not be used as the sole sensor for monitoring through the full thermal runaway event. A complementary sensor that does not rely on optical transmission — such as an electrochemical or NDIR-type detector — should be included to maintain gas detection capability after the optical path is compromised by smoke.",
+        "must_include": [
+          "smoke generated during thermal runaway obstructs the laser path",
+          "signal loss reflects optical blockage not cessation of gas generation",
+          "TDLAS is limited to the pre-runaway or early-stage phase",
+          "a non-optical complementary sensor is needed for post-runaway monitoring"
+        ],
+        "disallowed_extrapolations": [
+          "claiming NDIR is definitively proven effective post-runaway by the evidence",
+          "claiming methane generation stops at any specific temperature",
+          "claiming the 300 s warning window is universal across all cell capacities"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism of TDLAS signal failure during thermal runaway and its implication for sensor system architecture",
+        "primary_boundary": "TDLAS signal loss is caused by smoke-induced optical obstruction, not gas concentration change; this limits TDLAS to pre-runaway monitoring only",
+        "intended_error_modes": [
+          "interpreting signal loss as gas generation cessation",
+          "assuming TDLAS provides continuous monitoring through full event",
+          "failing to identify need for complementary non-optical sensing"
+        ]
+      }
+    }
+  ]
+}

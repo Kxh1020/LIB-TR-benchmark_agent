@@ -1,0 +1,1709 @@
+{
+  "TR_Mechanism+168+UnknownJournal__TR_Mechanism+169+UnknownJournal__TR_Mechanism+170+UnknownJournal": {
+    "mcqs": [
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A lithium-ion cell is overcharged at 0.5 C in an air environment. Thermal runaway occurs at 329% SOC with a charging energy of 16.9 Wh at the runaway event. When the same cell type is overcharged at 1 C or 2 C in the same air environment, thermal runaway occurs near 210% SOC with charging energy near 9.5 Wh. In a separate test, the same 0.5 C overcharge is applied in a quasi-adiabatic environment, and thermal runaway occurs at 200% SOC. Electrochemical impedance measurements show that the SEI resistance increases sharply at 155–165% SOC, and transition metal deposits (Mn, Co, Ni) appear on the anode surface at SOC ≥ 140%. At 0.5 C in air, a temperature buffering period with a very low temperature rise rate is observed before runaway; this period is absent at 1 C and 2 C. Which of the following statements are admissible conclusions from these conditions?",
+          "options": [
+            "A. The substantially higher SOC at thermal runaway for 0.5 C overcharge in air compared to quasi-adiabatic conditions demonstrates that heat dissipation quality, not charging rate alone, determines the SOC at which thermal runaway occurs.",
+            "B. The temperature buffering period at 0.5 C in air represents a window during which stopping overcharge can prevent thermal runaway, but this intervention opportunity does not exist at 1 C or 2 C in air.",
+            "C. The sharp rise in SEI resistance at 155–165% SOC is caused exclusively by SEI film thickening, with lithium deposition playing a negligible role at those SOC levels.",
+            "D. The higher charging energy at thermal runaway for 0.5 C compared to 1 C in air implies that slower overcharging is always safer because more energy must be input before failure.",
+            "E. Transition metal contamination of the anode surface at SOC ≥ 140% indicates that cathode structural degradation begins before the SEI resistance spike, and both processes are active in the SOC range leading to thermal runaway.",
+            "F. Because thermal runaway in adiabatic conditions occurs faster than in air regardless of charging rate, reducing heat dissipation from a cell during overcharge will consistently reduce the SOC at which thermal runaway occurs.",
+            "G. The maximum temperature reached during thermal runaway in an adiabatic environment shows large variation across charging rates, making adiabatic conditions the most variable thermal scenario."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "At 0.5 C, SOCTR is 309% in air but only 200% in quasi-adiabatic conditions. This large difference at the same charging rate directly demonstrates that heat dissipation quality, independent of charging rate, is a primary determinant of SOCTR.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+170+UnknownJournal:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "The evidence explicitly states that at 0.5 C in air, a temperature buffering period exists during which stopping overcharge prevents thermal runaway, and that this stage is not observed at 1 C and 2 C. This is a direct admissible conclusion.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+170+UnknownJournal:C013"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "The evidence states the sharp RSEI rise at 155–165% SOC is due not only to SEI thickening but also to lithium deposition at the anode. Attributing it exclusively to SEI thickening is an unsupported overclaim that contradicts the stated mechanism.",
+              "error_type": "Mechanism oversimplification / causal overclaim distractor",
+              "evidence_refs": [
+                "TR_Mechanism+170+UnknownJournal:C006"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Although 0.5 C requires more input energy before runaway in air, this is because heat dissipation delays runaway to a higher SOC, not because 0.5 C is inherently safer. In quasi-adiabatic conditions, 0.5 C triggers runaway at lower SOC than 1 C in air. The 'always safer' generalization ignores environment dependence and is an unsupported universal claim.",
+              "error_type": "Overgeneralization distractor / scope expansion",
+              "evidence_refs": [
+                "TR_Mechanism+170+UnknownJournal:C004",
+                "TR_Mechanism+170+UnknownJournal:C005"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Cathode structural gaps appear starting at 140% SOC, and transition metals appear on the anode at ≥140% SOC. The RSEI spike occurs at 155–165% SOC. This means cathode degradation (particle gap formation and metal dissolution) begins before the SEI resistance spike, and both are active in the overcharge range leading to runaway. This is a counterintuitive multi-mechanism conclusion requiring sequential reasoning.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+170+UnknownJournal:C008",
+                "TR_Mechanism+170+UnknownJournal:C009",
+                "TR_Mechanism+170+UnknownJournal:C006"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "While reducing heat dissipation generally lowers SOCTR, the statement 'consistently reduce' is too absolute. The evidence shows the relationship is environment- and rate-dependent. Additionally, the comparison between adiabatic and quasi-adiabatic at different rates shows non-uniform behavior. The claim overgeneralizes a directional trend into a universal rule.",
+              "error_type": "Overgeneralization / unjustified monotonicity distractor",
+              "evidence_refs": [
+                "TR_Mechanism+170+UnknownJournal:C001",
+                "TR_Mechanism+170+UnknownJournal:C005"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Incorrect",
+              "justification": "The evidence states that maximum temperature during thermal runaway under adiabatic conditions shows little variation across charging rates (approximately 720°C), while large differences occur in air and quasi-adiabatic environments due to airflow effects. This option directly inverts the stated finding.",
+              "error_type": "Directional inversion distractor",
+              "evidence_refs": [
+                "TR_Mechanism+170+UnknownJournal:C014"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-factor interaction between charging rate, heat dissipation environment, and SOC at thermal runaway; mechanism sequencing during overcharge",
+          "primary_boundary": "SOCTR and thermal runaway timing are jointly determined by charging rate AND heat dissipation environment; cathode degradation precedes the SEI resistance spike during overcharge; the temperature buffering window is rate-dependent",
+          "intended_error_modes": [
+            "Attributing SOCTR solely to charging rate, ignoring environment",
+            "Claiming 0.5 C is universally safer based on higher SOCTR in one environment",
+            "Attributing RSEI spike exclusively to SEI thickening, ignoring lithium deposition",
+            "Inverting the Tmax variability finding for adiabatic vs. non-adiabatic environments"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming the buffering period exists at 1 C or 2 C",
+            "Claiming adiabatic Tmax varies significantly across charging rates",
+            "Inferring that reducing heat dissipation always increases safety margin"
+          ]
+        }
+      }
+    ],
+    "short_answers": []
+  },
+  "TR_Mechanism+171+UnknownJournal__TR_Mechanism+172+UnknownJournal__TR_Mechanism+173+UnknownJournal": {
+    "mcqs": [
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery electrolyte engineer is studying the evolution of the solid electrolyte interphase (SEI) on graphite anodes in LiPF6-based electrolytes. During initial formation cycling in a 1.0 M LiPF6/EC electrolyte, only ethylene gas is detected as a gaseous product, and the primary SEI components are lithium ethylene dicarbonate (LEDC) and LiF. When the same electrolyte system is stored at 55°C for 2 days with either Li2CO3 or LEDC present, both carbonate species decompose quantitatively in the presence of LiPF6 in DMC, producing gaseous CO2, LiF, and various electrolyte-soluble species. A separate experiment shows that adding vinylene carbonate (VC) as an additive inhibits EC reduction, reducing LEDC and ethylene generation, while generating poly(VC) and CO2, with the CO2 subsequently reduced to Li2CO3. The engineer must assess which conclusions about SEI composition, stability, and additive effects are admissible.",
+          "options": [
+            "A. The SEI formed in LiPF6/EC during initial cycling is predominantly composed of LEDC and LiF, with ethylene as the only gaseous byproduct of the formation process.",
+            "B. Elevated temperature storage of a graphite anode SEI containing LEDC in a LiPF6-based electrolyte can lead to SEI porosity increase because decomposition products include gases and electrolyte-soluble species that reduce the quantity of insoluble SEI components.",
+            "C. Adding VC to a LiPF6/EC electrolyte suppresses ethylene evolution during formation because VC is preferentially reduced ahead of EC, shifting the primary reduction pathway away from LEDC generation toward poly(VC) and Li2CO3 formation.",
+            "D. The Li2CO3 generated from CO2 reduction in VC-containing electrolytes is thermally stable in the presence of LiPF6 at moderate temperatures and therefore accumulates indefinitely in the SEI without further reaction.",
+            "E. Because LEDC decomposes more rapidly than Li2CO3 under identical LiPF6/DMC storage conditions at 55°C, SEI layers containing predominantly LEDC are less stable than those containing predominantly Li2CO3 under these conditions.",
+            "F. The quantitative decomposition of both Li2CO3 and LEDC in LiPF6/DMC at 55°C after 2 days confirms that neither carbonate species can persist in the SEI under any elevated temperature condition in LiPF6-based electrolytes.",
+            "G. VC addition to LiPF6/EC electrolyte changes the primary gaseous product of formation cycling from ethylene to CO2, consistent with VC preferentially generating CO2 rather than LEDC during reduction."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "C",
+            "G"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence explicitly states OEMS analysis confirms ethylene as the only gas evolved during initial formation in 1.0 M LiPF6/EC, and the initial SEI is predominantly LEDC and LiF.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+171+UnknownJournal:C001"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Evidence states that decomposition products of LEDC reacting with LiPF6 include gases and electrolyte-soluble species, and explicitly concludes this reduces insoluble SEI components and makes the SEI more porous. This is a direct evidence-supported causal chain.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+171+UnknownJournal:C003",
+                "TR_Mechanism+171+UnknownJournal:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence states VC reduction inhibits EC reduction, decreasing LEDC and ethylene generation, with VC preferentially reduced to poly(VC) and CO2. This mechanistic chain directly supports option C.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+171+UnknownJournal:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Evidence directly contradicts this: Li2CO3 stored with LiPF6 in DMC at 55°C quantitatively decomposes after only 2 days. The claim that Li2CO3 accumulates indefinitely without further reaction is directly falsified by the evidence.",
+              "error_type": "Direct contradiction of stated evidence; ignoring condition-dependent decomposition",
+              "evidence_refs": [
+                "TR_Mechanism+171+UnknownJournal:C002"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The evidence states both LEDC and Li2CO3 decompose quantitatively after 2 days at 55°C under the same conditions. The evidence does not provide a comparative rate between the two under identical conditions sufficient to conclude LEDC decomposes more rapidly than Li2CO3. The LEDC decomposition is described as more complex, not necessarily faster. This comparative rate claim is not admissible from the evidence.",
+              "error_type": "Unsupported comparative rate claim; evidence shows both decompose quantitatively but does not establish relative rates",
+              "evidence_refs": [
+                "TR_Mechanism+171+UnknownJournal:C002",
+                "TR_Mechanism+171+UnknownJournal:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The evidence shows quantitative decomposition under specific conditions (LiPF6/DMC, 55°C, 2 days). Generalizing this to 'any elevated temperature condition' is an inadmissible overgeneralization beyond the stated experimental scope. The evidence does not cover all temperature ranges or electrolyte compositions.",
+              "error_type": "Overgeneralization from specific conditions to universal claim",
+              "evidence_refs": [
+                "TR_Mechanism+171+UnknownJournal:C002",
+                "TR_Mechanism+171+UnknownJournal:C003"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Correct",
+              "justification": "Evidence states VC inhibits EC reduction (reducing ethylene) and VC is preferentially reduced to generate CO2. With ethylene suppressed and CO2 generated as the primary gaseous product of VC reduction, this conclusion is mechanistically supported. This is a counterintuitive correct option because engineers familiar only with EC-based SEI might expect ethylene to remain the dominant gas.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+171+UnknownJournal:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of conclusions about SEI composition, thermal stability of carbonate species, and VC additive effects on formation gas evolution and SEI chemistry",
+          "primary_boundary": "Distinguishing condition-specific decomposition results from universal stability claims, and distinguishing admissible mechanistic conclusions from unsupported comparative rate claims",
+          "intended_error_modes": [
+            "Assuming Li2CO3 generated from VC reduction is stable in LiPF6 electrolyte",
+            "Overgeneralizing quantitative decomposition at specific conditions to all elevated temperatures",
+            "Inferring comparative decomposition rates from evidence that only establishes quantitative endpoint"
+          ],
+          "disallowed_extrapolations": [
+            "Concluding LEDC decomposes faster than Li2CO3 without direct rate comparison evidence",
+            "Generalizing 55°C/2-day/DMC results to all LiPF6-based electrolyte conditions",
+            "Inferring that VC-derived Li2CO3 is stable in LiPF6 environments"
+          ]
+        }
+      }
+    ],
+    "short_answers": []
+  },
+  "TR_Mechanism+174+UnknownJournal__TR_Mechanism+175+UnknownJournal__TR_Mechanism+176+UnknownJournal": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A sodium-ion battery (SIB) module is being evaluated for use in a confined enclosure. Seven nominally identical SIBs—matched on capacity, open-circuit voltage, and internal resistance—are subjected to thermal abuse at 75% SOC. Three cells explode; four do not. Post-test analysis shows that the exploded cells have a maximum pressure rise rate approximately five times higher than the non-exploded cells, while maximum surface temperature rise rates are comparable between the two groups. Counterintuitively, the non-exploded cells reach a higher peak surface temperature than the exploded cells. An engineer proposes that explosion risk at this SOC is primarily controlled by the total heat accumulated at the cell surface. A second engineer argues that the governing factor is the rate at which internal pressure builds relative to the cell's structural pressure-relief capacity. Which of the following conclusions are admissible given these observations?",
+          "options": [
+            "A. The comparable surface temperature rise rates between exploded and non-exploded cells indicate that surface thermal measurements are insufficient to distinguish explosion-prone cells from non-explosion-prone cells at this SOC.",
+            "B. Because non-exploded cells reach higher peak surface temperatures, the thermal energy released per cell is greater in the non-explosion scenario, confirming that heat accumulation is the primary driver of explosion risk at 75% SOC.",
+            "C. The five-fold difference in maximum pressure rise rate between exploded and non-exploded cells, combined with the higher peak temperature of non-exploded cells, is consistent with explosion being governed by pressure relief dynamics rather than total heat accumulation.",
+            "D. The stochastic split between explosion and non-explosion outcomes under identical pre-screened parameters implies that microstructural variability within cells can shift the failure mode at this SOC, even when macroscopic electrical parameters are matched.",
+            "E. Since three out of seven cells exploded at 75% SOC, the explosion probability at this SOC can be treated as a fixed material property that will remain stable across different confined enclosure geometries.",
+            "F. The observation that surface temperature rise rates are comparable between the two groups proves that internal electrochemical reaction rates are identical in both cases.",
+            "G. Explosion risk in this SOC regime is better characterized by pressure dynamics than by surface temperature monitoring alone."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "D",
+            "G"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "If surface temperature rise rates are comparable between exploded and non-exploded cells, then surface thermal measurements cannot discriminate between the two failure modes at this SOC. This is a direct admissible inference from the comparable (dT/dt)Max observation.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+174+UnknownJournal:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Higher peak surface temperature in non-exploded cells does not confirm that heat accumulation drives explosion. The evidence explicitly states that explosion risk is more critically constrained by pressure relief capacity, not heat accumulation extent. This is a causal overclaim that inverts the supported mechanism.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Mechanism+174+UnknownJournal:C006"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "The five-fold pressure rise rate difference combined with the non-exploded cells having higher peak temperatures is mechanistically consistent with explosion being governed by whether pressure buildup overwhelms structural relief capacity before maximum thermal output is reached, as supported by the evidence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+174+UnknownJournal:C005",
+                "TR_Mechanism+174+UnknownJournal:C006"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Seven identical pre-screened cells producing three explosions and four non-explosions directly supports the conclusion that microstructural variability—not captured by macroscopic electrical parameters—determines the failure mode at 75% SOC.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+174+UnknownJournal:C002"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The 3/7 explosion rate is an empirical observation under specific test conditions. Treating it as a fixed material property stable across different enclosure geometries is an unsupported extrapolation; confinement geometry affects pressure relief dynamics and would alter the outcome distribution.",
+              "error_type": "unsupported_extrapolation_scope_expansion",
+              "evidence_refs": [
+                "TR_Mechanism+174+UnknownJournal:C002",
+                "TR_Mechanism+174+UnknownJournal:C006"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Comparable surface temperature rise rates reflect similar surface heating dynamics but cannot prove that internal electrochemical reaction rates are identical. Surface measurements do not directly access internal reaction kinetics; this is a measurement scope overclaim.",
+              "error_type": "measurement_scope_overclaim",
+              "evidence_refs": [
+                "TR_Mechanism+174+UnknownJournal:C005"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Correct",
+              "justification": "Given that pressure rise rate differs five-fold between outcomes while surface temperature rise rates are comparable, pressure dynamics provide more discriminating information about explosion risk than surface temperature monitoring alone at this SOC.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+174+UnknownJournal:C005",
+                "TR_Mechanism+174+UnknownJournal:C006"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Distinguishing pressure-relief-governed explosion risk from heat-accumulation-governed failure at a critical SOC transition state, and evaluating the diagnostic adequacy of surface thermal measurements.",
+          "primary_boundary": "The admissible conclusion is that explosion at 75% SOC is governed by pressure relief dynamics, not total heat accumulation—as evidenced by the counterintuitive finding that non-exploded cells reach higher peak temperatures. Surface temperature rise rates cannot distinguish explosion-prone cells.",
+          "intended_error_modes": [
+            "Causal inversion: interpreting higher non-explosion peak temperature as evidence that heat accumulation drives explosion (Option B)",
+            "Measurement scope overclaim: treating comparable surface temperature rise rates as proof of identical internal reaction rates (Option F)",
+            "Unsupported extrapolation: treating an empirical explosion fraction as a fixed material property independent of enclosure geometry (Option E)"
+          ],
+          "disallowed_extrapolations": [
+            "Explosion probability at 75% SOC is a fixed material constant independent of boundary conditions",
+            "Surface temperature rise rate equivalence implies internal electrochemical equivalence",
+            "Higher peak temperature in non-explosion cases implies greater total energy release drives explosion"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "An engineer is comparing sodium-ion batteries (SIBs) and lithium-ion batteries (LIBs) for use in a confined battery cabinet. Available data show that SIBs have higher first voltage drop temperatures and lower maximum thermal runaway temperatures than LIBs. However, SIBs at 75% and 100% SOC generate substantially higher explosion pressures than LIBs under confined conditions. Separately, normalized gas release analysis across SOC levels shows that among non-exploding SIB conditions, the 50% SOC case presents the highest cumulative gas and heat release, while 25% SOC produces the lowest. At 100% SOC, extensive decomposition of both electrolyte and electrode materials generates a large gas volume rapidly, overwhelming venting capacity. The engineer must assess safety risk for confined deployment. Which of the following statements are admissible?",
+          "options": [
+            "A. The higher first voltage drop temperature of SIBs compared to LIBs indicates that SIBs are safer than LIBs for confined deployment across all SOC levels.",
+            "B. For confined deployment at high SOC, the mechanical and overpressure risk from SIBs may exceed that from LIBs despite SIBs having lower maximum thermal runaway temperatures.",
+            "C. At 50% SOC, SIBs present a higher cumulative gas and heat release risk than at 25% SOC under non-exploding conditions, even though 50% SOC does not reach the explosion regime.",
+            "D. Because 25% SOC SIBs produce only minor gas emissions insufficient to cause mechanical failure, they present negligible safety risk in any deployment configuration.",
+            "E. The non-linear relationship between SOC and cumulative risk means that selecting an intermediate SOC for storage does not necessarily minimize cumulative gas and heat release risk.",
+            "F. At 100% SOC, the inevitability of catastrophic explosion is attributable solely to electrode material decomposition, with electrolyte breakdown playing a secondary role."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "Higher first voltage drop temperature indicates greater thermal stability onset, but this metric alone does not establish overall safety superiority across all SOC levels. At 75% and 100% SOC, SIBs generate significantly higher explosion pressures than LIBs, making a blanket safety superiority claim inadmissible.",
+              "error_type": "overgeneralization_from_single_metric",
+              "evidence_refs": [
+                "TR_Mechanism+174+UnknownJournal:C007"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "The evidence explicitly states that SIBs at 75% and 100% SOC generate significantly higher explosion pressures than LIBs under confined conditions, despite SIBs having lower maximum TR temperatures. This counterintuitive result is directly supported.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+174+UnknownJournal:C007"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Normalized analysis shows 50% SOC has the greatest cumulative gas and heat release risk among non-exploding conditions, which is higher than 25% SOC. This is directly supported and represents a non-trivial finding since 50% SOC does not reach explosion.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+174+UnknownJournal:C008"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "The evidence establishes that 25% SOC produces minor gas emissions insufficient for mechanical failure under the tested conditions. Extending this to 'negligible safety risk in any deployment configuration' is an unsupported scope expansion; different enclosure geometries, stacking configurations, or thermal environments could alter outcomes.",
+              "error_type": "scope_expansion_distractor",
+              "evidence_refs": [
+                "TR_Mechanism+174+UnknownJournal:C001"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "The non-linear relationship between SOC and cumulative risk, with 50% SOC showing the highest cumulative risk among non-exploding conditions, directly implies that choosing an intermediate SOC does not guarantee minimized cumulative risk. This is an admissible engineering implication of the non-linearity.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+174+UnknownJournal:C008"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The evidence states that at 100% SOC, extensive decomposition of both electrolyte and electrode materials generates the gas volume that overwhelms venting. Attributing the explosion solely to electrode decomposition while relegating electrolyte breakdown to secondary status contradicts the stated dual-source mechanism.",
+              "error_type": "mechanism_substitution_single_cause_overclaim",
+              "evidence_refs": [
+                "TR_Mechanism+174+UnknownJournal:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Evaluating admissible safety comparisons between SIBs and LIBs in confined deployment, accounting for non-linear SOC-risk relationships and the distinction between thermal stability metrics and mechanical overpressure risk.",
+          "primary_boundary": "Lower maximum TR temperature does not imply lower mechanical/overpressure risk; cumulative risk is non-monotonic with SOC; single-metric safety comparisons are inadmissible.",
+          "intended_error_modes": [
+            "Single-metric overgeneralization: using first voltage drop temperature alone to declare SIBs universally safer (Option A)",
+            "Scope expansion: treating low-SOC non-explosion result as negligible risk in any configuration (Option D)",
+            "Single-cause attribution: assigning 100% SOC explosion solely to electrode decomposition (Option F)"
+          ],
+          "disallowed_extrapolations": [
+            "Higher thermal stability onset temperature implies overall safety superiority across all SOC levels",
+            "Non-explosion at 25% SOC under tested conditions implies negligible risk in all configurations",
+            "Explosion at 100% SOC is caused solely by one decomposition pathway"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery safety engineer is designing a detection and protection system for a 55-gallon drum containing a single 18650 NMC cell. Simulation results indicate that gas sensing can detect thermal runaway at 85 seconds after initiation, well before a propagation critical time of 710 seconds, while the drum surface temperature change at 710 seconds is less than 0.001°C—undetectable by a surface-mounted temperature sensor. The cell itself can reach over 800°C during thermal runaway via external short circuit. The engineer knows that for NMC chemistry, cathode decomposition begins near 240°C, anode decomposition near 180°C, and SEI breakdown above 130°C. The engineer must choose between gas-based detection and surface temperature-based detection for early warning. Separately, a module-level design question arises: a broad-scale internal short circuit can drive cell temperature to 300°C or higher, triggering cathode decomposition and oxygen release, but the joule heat from the short circuit itself may be limited by sharply increased battery resistance. Which of the following conclusions are admissible?",
+          "options": [
+            "A. Gas-based detection provides earlier warning than surface temperature sensing for thermal runaway in this enclosed configuration, because the gas signal precedes the propagation critical time while the surface temperature change is undetectable at that same time.",
+            "B. Surface temperature sensing is an adequate substitute for gas sensing in enclosed drum configurations because the cell reaches over 800°C, which would eventually produce a detectable surface temperature change.",
+            "C. The limited joule heat contribution from an internal short circuit, due to increased battery resistance, means that an internal short circuit cannot initiate thermal runaway in NMC cells.",
+            "D. For NMC cells, the sequence of thermally triggered side reactions under heating proceeds from SEI decomposition at the lowest temperature threshold, through anode decomposition, to cathode decomposition at the highest threshold among the three.",
+            "E. Calorimetry-derived thermodynamic parameters for an NMC cell at one SOC and health state cannot be directly applied to predict thermal runaway behavior of the same chemistry at a different SOC or state of health.",
+            "F. Because cathode decomposition in NMC begins near 240°C and a broad-scale internal short circuit can drive temperature to 300°C or higher, cathode decomposition and oxygen release are mechanistically plausible consequences of a broad-scale internal short circuit in NMC cells."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "D",
+            "E",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Gas sensing detects thermal runaway at 85 seconds, before the 710-second propagation critical time. Surface temperature change is less than 0.001°C at 710 seconds and cannot trigger detection. Gas-based detection is therefore earlier and admissible as the superior early warning method in this configuration.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+175+UnknownJournal:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Although the cell eventually reaches over 800°C, the surface temperature change is undetectable at the propagation critical time of 710 seconds. The eventual high cell temperature does not make surface sensing adequate for early warning; the detection timing relative to propagation is what matters, and surface sensing fails this criterion.",
+              "error_type": "condition_violation_timing_ignored",
+              "evidence_refs": [
+                "TR_Mechanism+175+UnknownJournal:C005",
+                "TR_Mechanism+175+UnknownJournal:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "The evidence states that joule heat from ISC may be limited and contribute minimally to thermal runaway heat generation, but this does not mean ISC cannot initiate thermal runaway. The temperature rise from a broad-scale ISC can reach 300°C or higher, which is sufficient to trigger cathode decomposition. Limited joule heat contribution does not preclude initiation via the temperature pathway.",
+              "error_type": "causal_overclaim_from_partial_mechanism",
+              "evidence_refs": [
+                "TR_Mechanism+176+UnknownJournal:C001",
+                "TR_Mechanism+176+UnknownJournal:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "SEI decomposition begins above 130°C, anode decomposition near 180°C, and NMC cathode decomposition near 240°C. This ordering is directly supported and represents the correct thermal threshold sequence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+175+UnknownJournal:C001",
+                "TR_Mechanism+175+UnknownJournal:C002",
+                "TR_Mechanism+175+UnknownJournal:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "The evidence explicitly states that thermodynamic parameters from calorimetry are specific to one chemical system or state, as thermal runaway performance is influenced by materials, SOC, and state of health. Direct application across different SOC or health states is inadmissible.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+176+UnknownJournal:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "A broad-scale ISC can drive cell temperature to 300°C or higher, and NMC cathode decomposition begins near 240°C. Combining these two supported facts, cathode decomposition and oxygen release are mechanistically plausible consequences. This is a valid multi-hop inference within evidence boundaries.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+176+UnknownJournal:C001",
+                "TR_Mechanism+175+UnknownJournal:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Evaluating detection method adequacy, thermal threshold sequencing, calorimetry parameter transferability, and the relationship between ISC joule heat limitation and thermal runaway initiation capacity.",
+          "primary_boundary": "Limited joule heat from ISC does not preclude thermal runaway initiation via temperature elevation; surface temperature sensing is inadequate for early warning in enclosed configurations despite eventual high cell temperatures; calorimetry parameters are system-state-specific.",
+          "intended_error_modes": [
+            "Timing-blind adequacy claim: treating eventual high cell temperature as justification for surface sensing adequacy without accounting for detection timing (Option B)",
+            "Partial mechanism overclaim: concluding ISC cannot initiate TR because its joule heat contribution is limited, ignoring the temperature elevation pathway (Option C)"
+          ],
+          "disallowed_extrapolations": [
+            "Eventually high cell temperature implies surface sensing is adequate for early warning",
+            "Limited joule heat from ISC implies ISC cannot initiate thermal runaway",
+            "Calorimetry parameters measured at one SOC/SOH apply universally to the same chemistry"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A sodium-ion battery at 75% SOC is subjected to thermal abuse in a confined test chamber. Among seven nominally identical cells, three explode and four do not. In the exploded cells, the maximum pressure rise rate is approximately five times higher than in the non-exploded cells, while maximum surface temperature rise rates are comparable between the two groups. The non-exploded cells reach a higher peak surface temperature than the exploded cells. Separately, it is known that as SOC decreases from 75% to 25% in non-exploding SIBs, the proportion of CO in the vent gas increases while hydrocarbon gas proportion decreases. An engineer argues that because the non-exploded cells reach higher peak temperatures, they must have undergone more extensive electrochemical reactions and therefore represent a higher energy-release scenario. Identify the primary flaw in this argument, explain the mechanism that actually distinguishes the exploded from the non-exploded cells at this SOC, and state what the gas composition trend at lower SOC implies about the dominant reaction pathway in that regime."
+        },
+        "ground_truth": {
+          "gold_answer": "The primary flaw is that the engineer conflates peak surface temperature with total energy release and uses it as the primary indicator of explosion risk. The evidence shows that explosion risk at 75% SOC is not governed by the extent of heat accumulation but by the rate at which internal pressure builds relative to the cell's pressure-relief capacity. The exploded cells have a maximum pressure rise rate approximately five times higher than non-exploded cells, consistent with shock wave generation during mechanical rupture, while their surface temperature rise rates are comparable—meaning the thermal dynamics at the surface are similar, but the pressure dynamics differ critically. The higher peak surface temperature in non-exploded cells is consistent with a scenario where thermal energy continues to accumulate after pressure is relieved gradually, whereas in exploded cells, rapid pressure buildup overwhelms structural integrity before maximum thermal output is reached, terminating the thermal accumulation process. The gas composition trend—increasing CO proportion and decreasing hydrocarbon proportion as SOC decreases from 75% to 25%—implies that at lower SOC, the dominant gas-generating reaction pathway shifts toward CO-producing reactions rather than hydrocarbon-generating reactions, suggesting that the low charge state of the battery is more conducive to CO generation chemistry.",
+          "must_include": [
+            "Explosion risk at 75% SOC is governed by pressure relief dynamics, not total heat accumulation",
+            "Five-fold difference in maximum pressure rise rate distinguishes exploded from non-exploded cells",
+            "Comparable surface temperature rise rates mean surface thermal measurements cannot distinguish the two failure modes",
+            "Higher peak temperature in non-exploded cells is consistent with continued thermal accumulation after gradual pressure relief",
+            "Decreasing SOC from 75% to 25% increases CO proportion and decreases hydrocarbon proportion in vent gas",
+            "Low SOC promotes CO generation reactions"
+          ],
+          "disallowed_extrapolations": [
+            "Higher peak surface temperature proves greater total internal energy release",
+            "The 3/7 explosion fraction is a fixed material property independent of test conditions",
+            "Surface temperature rise rate equivalence proves identical internal reaction rates",
+            "CO increase at low SOC implies complete combustion of all carbon-containing species"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Distinguishing pressure-relief-governed explosion mechanism from heat-accumulation-based reasoning, and interpreting gas composition trends as indicators of reaction pathway shifts with SOC.",
+          "primary_boundary": "Peak surface temperature is not a valid proxy for explosion risk when pressure dynamics are the governing factor; gas composition changes with SOC reflect reaction pathway dominance, not combustion completeness in isolation.",
+          "intended_error_modes": [
+            "Conflating peak surface temperature with total energy release or reaction extent",
+            "Ignoring the pressure rise rate as the discriminating variable between explosion and non-explosion",
+            "Interpreting CO increase at low SOC as evidence of incomplete combustion rather than a shift in dominant reaction pathway"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Mechanism+177+UnknownJournal__TR_Mechanism+178+ENERGY_andamp;_ENVIRONMENTAL_MATERIALS__TR_Mechanism+179+UnknownJournal": {
+    "mcqs": [
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery safety engineer is analyzing thermal runaway risk across the service life of lithium-ion cells stored at elevated temperature (55°C, 100% SOC) versus cells cycled at low temperature (−5°C, 1C). Accelerating rate calorimetry data show that stored cells exhibit an increase in the onset temperature for abnormal self-heating and an increase in the time interval between onset and full thermal runaway, while low-temperature cycled cells show the opposite trend with both parameters decreasing substantially as state of health declines. The engineer must determine which statements about the underlying mechanisms and safety implications are defensible. Which of the following are admissible conclusions?",
+          "options": [
+            "A. The improvement in thermal runaway onset temperature for the elevated-temperature stored cells is counterintuitive relative to the expectation that high-temperature storage accelerates degradation, but it is consistent with the dominant aging mechanism at high temperature not producing anode deposits that lower characteristic temperatures.",
+            "B. The decrease in thermal runaway onset temperature for low-temperature cycled cells is most directly explained by the formation of anode deposits that react exothermically with electrolyte at lower temperatures than the native anode material.",
+            "C. Because both storage at 55°C and cycling at −5°C result in capacity loss, the thermal runaway hazard at equivalent state of health must be similar regardless of the aging pathway taken to reach that state of health.",
+            "D. The time interval between onset of self-heating and full thermal runaway provides information about the rate of exothermic reaction progression, and its reduction in low-temperature cycled cells indicates that the reaction cascade accelerates more rapidly in those cells.",
+            "E. The observation that T3 (the temperature at which full thermal runaway occurs) remains constant across different states of health for low-temperature cycled cells implies that the total energy released during thermal runaway is independent of aging state.",
+            "F. A cell that has been stored at 55°C and 100% SOC until significant capacity loss has occurred presents a lower thermal runaway risk at the onset stage than a fresh cell of the same chemistry cycled to 80% state of health at −5°C."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "D",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "This is counterintuitive because high-temperature storage is generally associated with accelerated degradation and worsened safety. However, the evidence shows that high-temperature aging is dominated by SEI growth, electrolyte decomposition, and active material losses—not lithium plating. Since lithium plating is the key mechanism that lowers T1 and T2, its absence in high-temperature storage explains why T1 actually rises. This requires multi-step mechanism reasoning.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+179+UnknownJournal:C003",
+                "TR_Mechanism+177+UnknownJournal:C003",
+                "TR_Mechanism+179+UnknownJournal:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "The evidence directly establishes that lithium plating is the key reason for deterioration of thermal runaway performance during aging, leading to decreases in T1 and T2. At low temperatures, lithium plating is the dominant aging mechanism. The exothermic reaction between plated lithium and electrolyte at lower temperatures than the native anode material is the mechanistic explanation for the observed T1 decrease.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+179+UnknownJournal:C004",
+                "TR_Mechanism+177+UnknownJournal:C003",
+                "TR_Mechanism+178+ENERGY_andamp;_ENVIRONMENTAL_MATERIALS:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "This is a conservative but incorrect option. The evidence explicitly shows that thermal runaway behavior depends on the aging pathway, not just the state of health reached. Low-temperature cycled cells at 80% SOH show dramatically worsened thermal runaway metrics compared to elevated-temperature stored cells at similar capacity loss. Thermal runaway hazard at equivalent SOH is pathway-dependent.",
+              "error_type": "condition_violation_ignoring_pathway_dependence",
+              "evidence_refs": [
+                "TR_Mechanism+179+UnknownJournal:C002",
+                "TR_Mechanism+179+UnknownJournal:C003",
+                "TR_Mechanism+179+UnknownJournal:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "The time interval between onset and full thermal runaway (DtTR) decreasing by 70% at 80% SOH for low-temperature cycled cells directly indicates that the exothermic reaction cascade progresses more rapidly in those cells. This is a mechanistically coherent interpretation of DtTR as a rate indicator for the reaction progression.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+179+UnknownJournal:C002",
+                "TR_Mechanism+179+UnknownJournal:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The evidence states that T3 remained constant at different SOH for low-temperature cycled cells, but this does not imply that total energy released is independent of aging state. T3 is a temperature threshold, not a measure of total heat. The evidence separately shows that the ratio of total heat released to electrochemical energy increases with cycle number, which contradicts the implication of constant total energy release.",
+              "error_type": "measurement_scope_distractor",
+              "evidence_refs": [
+                "TR_Mechanism+179+UnknownJournal:C002",
+                "TR_Mechanism+177+UnknownJournal:C002"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "The evidence shows that elevated-temperature stored cells exhibit T1 rising to 96.3°C and DtTR reaching 2.85 times initial value, while low-temperature cycled cells at 80% SOH show T1 dropping to 52.4°C and DtTR decreasing by 70%. A cell with T1 near 96°C presents a lower onset-stage risk than one with T1 near 52°C. This comparative conclusion is directly supported by the evidence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+179+UnknownJournal:C002",
+                "TR_Mechanism+179+UnknownJournal:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Aging pathway dependence of thermal runaway characteristic temperatures, with mechanism discrimination between lithium plating and high-temperature degradation modes",
+          "primary_boundary": "Thermal runaway hazard is not determined solely by state of health but by the aging mechanism that produced that state of health; T3 constancy does not imply constant total heat release",
+          "intended_error_modes": [
+            "Assuming equivalent SOH implies equivalent thermal runaway risk regardless of aging path",
+            "Inferring total energy release from a single temperature threshold measurement",
+            "Missing the counterintuitive result that high-temperature storage improves thermal runaway onset metrics"
+          ],
+          "disallowed_extrapolations": [
+            "Treating T3 as a proxy for total heat released",
+            "Concluding that capacity fade rate determines thermal runaway severity independently of mechanism",
+            "Generalizing the 55°C storage improvement to all elevated-temperature aging conditions"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A lithium-ion cell with a graphite anode is cycled at −5°C until it reaches 80% state of health. A second cell of identical fresh chemistry is stored at 55°C and 100% SOC until it reaches a similar level of capacity loss. Both cells are then subjected to accelerating rate calorimetry. Explain, using the governing degradation mechanisms at each temperature, why the two cells are expected to show different thermal runaway onset temperatures and different times between onset and full thermal runaway, even though they have reached similar states of health. Your answer should identify the dominant aging mechanism in each case, explain how that mechanism affects the anode-electrolyte thermodynamic system, and state why cathode behavior is not expected to be the differentiating factor."
+        },
+        "ground_truth": {
+          "gold_answer": "At −5°C, the dominant aging mechanism is lithium plating on the graphite anode. Plated lithium is highly reactive with the electrolyte and initiates exothermic reactions at lower temperatures than the native graphite-electrolyte system. This lowers the onset temperature for abnormal self-heating (T1) and the thermal runaway triggering temperature (T2), and dramatically shortens the time interval between onset and full thermal runaway. At 55°C, the dominant aging mechanisms are SEI growth, electrolyte decomposition, and active material losses—none of which deposit reactive metallic lithium on the anode. As a result, the anode-electrolyte exothermic reactivity is not amplified; in fact, T1 increases and the time to thermal runaway lengthens relative to the fresh cell. The cathode is not the differentiating factor because thermal stability measurements of fresh and degraded cathodes across all aging paths show similar heat generation profiles, indicating that cathode degradation does not change significantly during aging regardless of the path taken. Therefore, the divergence in thermal runaway behavior between the two cells is entirely attributable to anode-side changes driven by the respective dominant aging mechanisms.",
+          "must_include": [
+            "lithium plating as dominant mechanism at low temperature",
+            "SEI growth / electrolyte decomposition / active material loss as dominant mechanisms at high temperature",
+            "plated lithium reacts exothermically with electrolyte at lower temperatures, reducing T1 and T2",
+            "time to thermal runaway (DtTR) decreases for low-temperature cycled cells and increases for high-temperature stored cells",
+            "cathode thermal stability is similar across aging paths and does not differentiate the two cases",
+            "thermal runaway behavior depends on anode-electrolyte exothermic reactions"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming that high-temperature storage eliminates all thermal runaway risk",
+            "Attributing the difference to cathode decomposition differences",
+            "Claiming that equal state of health implies equal thermal runaway hazard without referencing mechanism",
+            "Stating that T3 changes explain the difference in thermal runaway severity"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Mechanism-dependent divergence of thermal runaway characteristic parameters under different aging pathways at equivalent state of health",
+          "primary_boundary": "Thermal runaway hazard is pathway-dependent through anode mechanism; cathode contribution is invariant across aging paths and cannot explain the differential",
+          "intended_error_modes": [
+            "Attributing differential thermal runaway behavior to cathode degradation differences",
+            "Assuming equivalent SOH implies equivalent thermal runaway risk",
+            "Failing to connect lithium plating specifically to lowered T1/T2 via anode-electrolyte reactivity",
+            "Confusing T3 constancy with absence of thermal runaway severity change"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Mechanism+180+UnknownJournal__TR_Mechanism+181+UnknownJournal__TR_Mechanism+182+International_Journal_of_Heat_and_Mass_Transfer": {
+    "mcqs": [],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A cell engineer is designing a graphite/NMC cell with EC/DMC/LiPF6 electrolyte and is considering using 0.4 vol% vinylene carbonate (VC) additive formed at a slow C/10 rate to improve SEI quality. A safety reviewer raises two concerns: (1) that this formulation may produce unusually high amounts of a specific fluorine-containing gas species during thermal abuse, and (2) that at temperatures near 130°C, the residual VC in this formulation creates a distinct venting risk not present in VC-free cells. The engineer responds that the gas onset temperature for this formulation will at least be higher than for VC-free cells, providing a safety margin. Evaluate the engineer's response and the reviewer's two concerns. For each of the three claims, state whether it is supported, unsupported, or contradicted by the described evidence, and identify the specific mechanism or threshold relevant to each judgment."
+        },
+        "ground_truth": {
+          "gold_answer": "The engineer's response is contradicted by the evidence. The onset temperature for CO2, POF3, and H2 evolution is near 70–80°C for all VC concentrations and formation rates tested, including the high-VC/slow-formation condition. There is no evidence that VC content raises the gas onset temperature; the threshold is invariant across conditions. The reviewer's first concern is supported: cells with 0.4 vol% VC and C/10 formation rate produce approximately three times more POF3 than other conditions, indicating that this specific combination amplifies fluorophosphate gas release during thermal abuse. The reviewer's second concern is also supported: at temperatures near 130°C, residual VC can trigger cross-polymerization of EC and VC under strong CO2 evolution, potentially causing rapid internal pressure increase and cell venting. This mechanism is specific to cells retaining residual VC and does not apply to VC-free formulations.",
+          "must_include": [
+            "Gas onset temperature (~70–80°C) is invariant across VC concentrations and formation rates, contradicting the engineer's claim of a higher onset temperature",
+            "High VC (0.4 vol%) with slow formation (C/10) produces approximately three times more POF3 than other conditions, supporting the reviewer's first concern",
+            "Residual VC at ~130°C can trigger cross-polymerization with EC under strong CO2 evolution causing rapid pressure increase and venting, supporting the reviewer's second concern",
+            "The POF3 amplification is specific to the combination of high VC content and low formation rate, not attributable to either factor alone"
+          ],
+          "disallowed_extrapolations": [
+            "VC suppresses all gas species during thermal abuse",
+            "The POF3 increase implies higher overall thermal runaway risk without further evidence",
+            "The venting risk at 130°C applies to all VC concentrations equally",
+            "Formation rate alone controls POF3 evolution magnitude"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility judgment on three simultaneous claims about a specific VC/formation-rate combination: gas onset temperature invariance, condition-specific POF3 amplification, and VC-specific venting mechanism at elevated temperature.",
+          "primary_boundary": "Gas onset temperature is invariant across all tested conditions (C002), making the engineer's claim inadmissible. POF3 amplification is specific to the high-VC/slow-formation combination (C003). The venting risk at ~130°C is specific to cells with residual VC (C005).",
+          "intended_error_modes": [
+            "Accepting the engineer's claim that VC raises gas onset temperature",
+            "Attributing POF3 amplification to VC content alone without requiring the slow formation rate condition",
+            "Generalizing the 130°C venting risk to all VC concentrations rather than specifically to cells with residual VC"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Mechanism+183+UnknownJournal__TR_Mechanism+184+Energy_Storage_Materials__TR_Mechanism+185+UnknownJournal": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "An NCM811|graphite cell with standard electrolyte undergoes accelerating rate calorimetry. The cathode-electrolyte exothermic reaction is identified as the thermal runaway trigger at approximately 218°C, while the dry cathode alone shows its decomposition peak at a higher temperature. A flame-retardant additive is then incorporated into the electrolyte. DSC testing of the modified cathode-electrolyte mixture shows that the additive acts as a reducing agent, causing reactive oxygen species to be converted to oxygen gas at a temperature roughly 80°C lower than the unmodified cathode-electrolyte reaction peak. In a subsequent full-cell abuse test with the modified electrolyte, the thermal runaway trigger temperature T2 is measured at 198°C. Which of the following conclusions are supported by this scenario?",
+          "options": [
+            "A. The additive reduces the thermal runaway trigger temperature relative to the unmodified cell, meaning the modified cell enters thermal runaway at a lower temperature despite the intended flame-retardant function.",
+            "B. Because the additive lowers the oxygen release onset temperature, the cathode-electrolyte reaction is no longer the thermal runaway trigger in the modified cell; the dry cathode decomposition becomes the new trigger.",
+            "C. The earlier oxygen release caused by the additive is mechanistically consistent with the observed reduction in T2, because it advances the onset of the exothermic cathode-electrolyte interaction.",
+            "D. The additive eliminates the exothermic cathode-electrolyte reaction entirely, as evidenced by the shift in oxygen release to lower temperature.",
+            "E. A flame-retardant additive that lowers the oxygen release temperature of the cathode-electrolyte system cannot simultaneously lower T2, because flame retardancy and thermal runaway susceptibility are governed by independent mechanisms.",
+            "F. The observation that T2 decreases with additive incorporation is consistent with the electrolyte having a destabilizing effect on cathode phase structure, since electrolyte presence is known to promote earlier phase transition and oxygen release relative to the dry cathode."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "T2 drops from 218°C to 198°C with the additive, directly indicating the modified cell enters thermal runaway at a lower temperature. This is counterintuitive given the additive's flame-retardant label but is directly supported by the evidence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+183+UnknownJournal:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The evidence does not support a change in which reaction serves as the trigger. The cathode-electrolyte reaction remains the trigger mechanism; the additive shifts its onset temperature downward rather than replacing it with a different trigger. The dry cathode peak appearing later (not earlier) than the cathode-electrolyte reaction disqualifies it as the new trigger.",
+              "error_type": "mechanism substitution",
+              "evidence_refs": [
+                "TR_Mechanism+183+UnknownJournal:C002",
+                "TR_Mechanism+183+UnknownJournal:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "The additive shifts oxygen release onset ~80°C lower, advancing the cathode-electrolyte exothermic interaction. This mechanistically explains why T2 decreases: the trigger reaction is initiated earlier. The causal chain (lower oxygen release onset → earlier exothermic cathode-electrolyte reaction → lower T2) is supported by the evidence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+183+UnknownJournal:C003",
+                "TR_Mechanism+183+UnknownJournal:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "The evidence shows the oxygen release peak shifts to lower temperature, not that the reaction is eliminated. The exothermic cathode-electrolyte reaction still occurs and T2 is still measurable, confirming the reaction persists.",
+              "error_type": "causal overclaim",
+              "evidence_refs": [
+                "TR_Mechanism+183+UnknownJournal:C003",
+                "TR_Mechanism+183+UnknownJournal:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "This option appears cautious and mechanistically plausible but is incorrect. The evidence directly demonstrates that the same additive both provides flame-retardant function and lowers T2, meaning the two effects are not independent in this system. The option's premise is contradicted by the observed outcome.",
+              "error_type": "condition violation distractor",
+              "evidence_refs": [
+                "TR_Mechanism+183+UnknownJournal:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "The evidence states that electrolyte presence accelerates phase transition and oxygen release relative to the dry cathode by releasing lattice strain spontaneously. The additive enhances this destabilizing interaction further by acting as a reducing agent, which is consistent with the observed T2 reduction. The reasoning chain from electrolyte-induced lattice strain release to earlier oxygen release to lower T2 is supported.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+183+UnknownJournal:C005",
+                "TR_Mechanism+183+UnknownJournal:C003",
+                "TR_Mechanism+183+UnknownJournal:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Mechanism by which a flame-retardant additive paradoxically lowers thermal runaway trigger temperature through earlier cathode-electrolyte oxygen release",
+          "primary_boundary": "The additive shifts the cathode-electrolyte reaction onset to lower temperature rather than eliminating it, and this shift is mechanistically linked to the observed T2 reduction",
+          "intended_error_modes": [
+            "Assuming flame-retardant label implies improved thermal runaway resistance",
+            "Mechanism substitution: assuming trigger reaction changes rather than shifts",
+            "Causal overclaim: assuming oxygen release shift implies reaction elimination",
+            "Conservative but incorrect: asserting independence of flame retardancy and TR susceptibility"
+          ],
+          "disallowed_extrapolations": [
+            "Concluding the additive is net beneficial or net detrimental at system level without additional evidence",
+            "Generalizing the T2 reduction to other cathode chemistries",
+            "Inferring T3 change from T2 change"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery safety engineer is comparing separator design options for a cell that must operate safely up to at least 180°C before internal short circuit (ISC) is acceptable. Available separator options are: (i) standard polyethylene (PE), (ii) polypropylene (PP), and (iii) PE with ceramic coating. The engineer also knows that NCM cathode materials with higher nickel content release more heat during decomposition, and that the SEI layer on the anode begins generating detectable exothermic heat at 80°C or above, with onset potentially as low as 57°C. The engineer wants to select the separator that delays ISC beyond the 180°C threshold and also considers that the separator melting process itself is endothermic. Which of the following statements are admissible given these conditions?",
+          "options": [
+            "A. The PE separator fails to meet the 180°C ISC threshold because its collapse temperature is approximately 130°C, making it inadmissible for this application regardless of cathode chemistry.",
+            "B. The PP separator marginally fails the 180°C threshold because its collapse temperature is approximately 170°C, and the endothermic melting enthalpy of PP (-190 J/g) is insufficient to compensate for the exothermic heat from SEI decomposition that begins below 180°C.",
+            "C. The ceramic-coated separator is the only option that can meet the 180°C ISC threshold, since its collapse temperature range of 200–260°C exceeds the threshold, whereas PE and PP collapse below 180°C.",
+            "D. Because separator melting is endothermic, a PP separator will always absorb enough heat to prevent ISC in cells where SEI decomposition is the only active exothermic process below 180°C.",
+            "E. The endothermic character of separator melting is relevant to the thermal energy balance but does not change the temperature at which ISC occurs, since ISC onset is governed by the collapse temperature, not by the heat absorbed during melting.",
+            "F. For a high-nickel NCM cathode cell, selecting a ceramic-coated separator over PE delays the ISC onset temperature by at least 70°C, which reduces the probability that cathode decomposition heat will couple with ISC-induced short-circuit heating during the early phase of thermal runaway."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "PE separator collapse temperature is ~130°C, which is below the 180°C threshold. This is a direct admissibility judgment: PE is inadmissible for this requirement. The conclusion holds regardless of cathode chemistry because the threshold is defined by the separator collapse temperature alone.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+184+Energy_Storage_Materials:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The PP collapse temperature (~170°C) does place it below the 180°C threshold, making it inadmissible. However, the reasoning about SEI exothermic heat compensating for PP endothermic melting is not supported by the evidence and introduces an unsupported quantitative trade-off. The inadmissibility of PP is correctly identified but the mechanistic justification is an unsupported causal chain. More critically, the option conflates the ISC threshold (collapse temperature) with a thermal energy balance argument that is not how ISC onset is determined.",
+              "error_type": "causal overclaim combining correct conclusion with unsupported mechanism",
+              "evidence_refs": [
+                "TR_Mechanism+184+Energy_Storage_Materials:C004",
+                "TR_Mechanism+184+Energy_Storage_Materials:C005",
+                "TR_Mechanism+184+Energy_Storage_Materials:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Ceramic-coated separator collapse temperature (200–260°C) exceeds 180°C; PE (~130°C) and PP (~170°C) do not. The ceramic-coated option is the only one of the three that meets the stated threshold. This is a direct admissibility comparison supported by the evidence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+184+Energy_Storage_Materials:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "This option appears conservative but is incorrect. The endothermic melting of PP absorbs heat but does not prevent ISC; ISC occurs when the separator collapses, which is a structural event determined by the collapse temperature (~170°C), not by whether the thermal energy balance is net positive or negative. The option incorrectly treats endothermic melting as a mechanism that prevents ISC.",
+              "error_type": "conservative but incorrect: mechanism confusion between thermal energy absorption and structural collapse temperature",
+              "evidence_refs": [
+                "TR_Mechanism+184+Energy_Storage_Materials:C004",
+                "TR_Mechanism+184+Energy_Storage_Materials:C005"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "The evidence defines ISC onset by collapse temperature (a structural threshold), not by the thermal energy balance during melting. The endothermic enthalpy affects the local thermal energy budget but does not shift the collapse temperature. This is a mechanistically correct distinction between thermal energy absorption and structural failure temperature.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+184+Energy_Storage_Materials:C004",
+                "TR_Mechanism+184+Energy_Storage_Materials:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The ceramic-coated separator shifts ISC onset from ~130°C (PE) to 200–260°C, a minimum shift of 70°C, which is directionally correct. However, the conclusion that this 'reduces the probability that cathode decomposition heat will couple with ISC-induced heating during early thermal runaway' is a system-level safety inference that goes beyond what the component-level collapse temperature data supports. The evidence does not establish the coupling mechanism between ISC onset timing and cathode decomposition heat release at the system level.",
+              "error_type": "scope expansion: system-level safety inference from component-level collapse temperature data",
+              "evidence_refs": [
+                "TR_Mechanism+184+Energy_Storage_Materials:C005",
+                "TR_Mechanism+184+Energy_Storage_Materials:C001"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Separator selection admissibility based on collapse temperature thresholds and the distinction between endothermic melting enthalpy and structural ISC onset temperature",
+          "primary_boundary": "ISC onset is governed by collapse temperature (structural), not by thermal energy balance during melting; ceramic coating is the only option meeting the 180°C threshold",
+          "intended_error_modes": [
+            "Conflating endothermic melting enthalpy with ISC prevention",
+            "Treating thermal energy balance as the mechanism controlling ISC onset",
+            "Extending component-level collapse temperature data to system-level coupling conclusions",
+            "Accepting a correct conclusion paired with an unsupported mechanism"
+          ],
+          "disallowed_extrapolations": [
+            "Predicting exact ISC onset temperature within the ceramic coating range (200–260°C)",
+            "Concluding that ceramic coating eliminates thermal runaway",
+            "Inferring that endothermic melting has no effect on any aspect of thermal runaway progression"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A cell engineer is comparing two NCM811-based cell designs: one using a silicon-carbon (SiC) anode and one using a graphite anode, both paired with the same NCM811 cathode and electrolyte. Kinetic substitution analysis on the SiC-based cell shows that replacing only the anode-electrolyte reaction kinetics with graphite-electrolyte kinetics raises the thermal runaway onset temperature by approximately 12% and reduces the maximum internal temperature by approximately 27%. Replacing only the cathode-anode reaction kinetics with NCM111-graphite kinetics reduces the maximum temperature rise rate by approximately 94% but does not change the onset temperature. The engineer proposes that switching from SiC to graphite anode will be sufficient to bring the cell's thermal runaway severity to a level comparable to NCM111-graphite cells. Evaluate whether this proposal is admissible, identifying which thermal runaway metrics are and are not addressed by the anode substitution alone, and explain why the proposal as stated is not fully supported."
+        },
+        "ground_truth": {
+          "gold_answer": "The proposal is only partially admissible. Substituting the SiC anode with a graphite anode addresses the thermal runaway onset temperature (Tonset) and contributes to reducing the maximum internal temperature, because the anode-electrolyte interaction controls Tonset and contributes approximately 27% to Tmax reduction. However, the maximum temperature rise rate (dT/dt)max is dominated by cathode-anode interactions, not anode-electrolyte interactions. The ~94% reduction in (dT/dt)max was observed only when cathode-anode kinetics were substituted (i.e., both cathode and anode chemistry changed together). Anode substitution alone does not change the cathode material, so the cathode-anode interaction pair is not fully replaced by graphite-equivalent kinetics. Therefore, the anode substitution alone cannot reproduce the ~94% reduction in (dT/dt)max. The proposal as stated is inadmissible for the claim of achieving full NCM111-graphite equivalence because it neglects the cathode contribution to the dominant (dT/dt)max mechanism.",
+          "must_include": [
+            "Anode-electrolyte kinetics control onset temperature (Tonset); anode substitution addresses this metric",
+            "Cathode-anode kinetics dominate (dT/dt)max; anode substitution alone does not replace the cathode-anode interaction pair",
+            "The ~94% (dT/dt)max reduction requires both cathode and anode kinetic substitution, not anode alone",
+            "The proposal is partially but not fully admissible; it addresses onset temperature but not maximum rise rate equivalence"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming anode substitution alone achieves full NCM111-graphite thermal runaway equivalence",
+            "Attributing the full ~400°C Tmax difference between NCM811-SiC and NCM111-graphite to anode substitution alone",
+            "Concluding that cathode substitution alone would be sufficient without addressing anode-electrolyte kinetics"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Decomposition of thermal runaway metrics (Tonset, Tmax, (dT/dt)max) by controlling interaction pair and the inadmissibility of single-component substitution for full chemistry equivalence",
+          "primary_boundary": "Cathode-anode kinetics control (dT/dt)max independently of anode-electrolyte kinetics; these are separable contributions requiring separate interventions",
+          "intended_error_modes": [
+            "Assuming anode substitution addresses all thermal runaway metrics equally",
+            "Conflating the full chemistry comparison (NCM811-SiC vs NCM111-graphite) with single-component substitution effects",
+            "Ignoring that cathode-anode interaction requires cathode participation, not anode alone"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Mechanism+186+UnknownJournal__TR_Mechanism+187+UnknownJournal__TR_Mechanism+188+UnknownJournal": {
+    "mcqs": [],
+    "short_answers": []
+  },
+  "TR_Mechanism+189+UnknownJournal__TR_Mechanism+190+UnknownJournal__TR_Mechanism+191+UnknownJournal": {
+    "mcqs": [],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A Gr|NMC811 cell uses a concentrated LiFSI-based electrolyte. During accelerating rate calorimetry, the cell enters thermal runaway at a lower trigger temperature than an identical cell using conventional LiPF6/EC:EMC electrolyte. Isolated component calorimetry shows that the cathode combined with the concentrated LiFSI electrolyte does not reach thermal runaway conditions below 290 °C, while the lithiated anode combined with concentrated LiFSI releases approximately eight times more heat than the anode alone at around 210 °C. A safety engineer argues that replacing the LiFSI solvent with a non-flammable alternative will resolve the lower trigger temperature problem because it removes the combustion hazard. Identify the primary mechanistic flaw in this argument, explain which component interaction is responsible for the lower thermal runaway trigger temperature in the LiFSI-based cell, and state what the non-flammable solvent substitution would and would not address."
+        },
+        "ground_truth": {
+          "gold_answer": "The primary flaw is that the engineer conflates two distinct hazard pathways: (1) the external flammability of the electrolyte solvent when oxidized by oxygen outside the cell, and (2) the internal exothermic reduction of the electrolyte by the lithiated anode inside the cell. The lower thermal runaway trigger temperature in the LiFSI-based cell is caused by the highly exothermic reaction between the lithiated graphite anode and the LiFSI salt, which releases approximately eight times more heat than the anode alone at around 210 °C. The cathode-electrolyte interaction with the concentrated LiFSI electrolyte does not trigger thermal runaway below 290 °C and is therefore not the dominant initiation pathway. Replacing the flammable DMC solvent with a non-flammable solvent such as TMP would address the external combustion risk if the electrolyte were exposed to air or ignition sources after venting, but it would not remove the anode-LiFSI salt exothermic reaction, which is the internal mechanism responsible for the lower trigger temperature. Evidence shows that the non-flammable TMP formulation actually triggers thermal runaway at an even lower temperature than the flammable DMC formulation, confirming that solvent non-flammability does not mitigate and may not improve the internal thermal runaway initiation pathway driven by the anode-salt interaction.",
+          "must_include": [
+            "Distinction between external flammability (oxidation by oxygen) and internal electrolyte reduction by the lithiated anode as separate hazard pathways",
+            "Identification of the anode-LiFSI salt interaction as the dominant exothermic event responsible for the lower trigger temperature",
+            "Statement that cathode-electrolyte reactions are not the initiation driver below 290 °C",
+            "Statement that non-flammable solvent substitution addresses external combustion but not the internal anode-driven exothermic pathway",
+            "Recognition that the non-flammable TMP formulation produces an even lower thermal runaway trigger temperature, contradicting the engineer's premise"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming that non-flammable solvents universally improve thermal runaway resistance",
+            "Attributing the lower trigger temperature to cathode decomposition or cathode-electrolyte reactions",
+            "Concluding that LiFSI salt replacement alone would fully resolve the thermal runaway initiation problem without supporting evidence",
+            "Asserting that the conventional LiPF6 electrolyte is safer in all respects based solely on its higher trigger temperature"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Mechanistic distinction between external flammability and internal anode-driven exothermic reduction as separate thermal safety dimensions in LiFSI-based electrolyte cells.",
+          "primary_boundary": "Solvent flammability governs post-venting external combustion; anode-electrolyte salt reduction governs internal thermal runaway initiation. These are independent pathways and interventions targeting one do not necessarily affect the other.",
+          "intended_error_modes": [
+            "Conflating external flammability with internal thermal runaway resistance",
+            "Misidentifying the cathode-electrolyte interaction as the dominant initiation pathway",
+            "Assuming non-flammable solvents improve the internal thermal runaway trigger temperature"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Mechanism+192+UnknownJournal__TR_Mechanism+193+UnknownJournal__TR_Mechanism+194+UnknownJournal": {
+    "mcqs": [],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A pouch cell at 100% SOC is penetrated by an 8 mm nail. Post-test inspection shows the separator was not melted. A second identical cell is penetrated by a 3 mm nail under otherwise identical conditions. The engineer observes that the 8 mm nail produced a higher initial temperature rise rate and a higher peak temperature than the 3 mm nail, but both cells had peak temperatures below 403.1 K. The engineer concludes that because the 8 mm nail caused more severe thermal response, it must have triggered additional reaction pathways beyond those activated by the 3 mm nail, and therefore the 8 mm nail test is more useful for evaluating separator integrity under extreme reaction conditions.\n\nIdentify the specific reasoning error in the engineer's conclusion, explain which reaction pathways are admissible under the observed temperature conditions for both nail sizes, and state what the intact separator post-test actually indicates about the thermal events that occurred."
+        },
+        "ground_truth": {
+          "gold_answer": "The engineer's reasoning error is inferring that a higher peak temperature within the same sub-403.1 K range activates additional reaction pathways beyond those activated at lower temperatures within that range. Because both tests produced peak temperatures below 403.1 K, both cells experienced the same set of admissible reactions: SEI decomposition (363.1–393.1 K) and the reaction between anode electrode materials and electrolyte (approximately 373.1 K). Electrolyte thermal decomposition (473.1–573.1 K) and separator melting were not reached in either test. The intact separator confirms that peak temperatures did not reach the separator melting threshold, and the absence of shrinkage or melting is consistent with temperatures remaining below 403.1 K in both cases. The 8 mm nail produced a higher peak temperature and faster initial rise, but this difference in magnitude within the sub-403.1 K regime does not cross any reaction threshold that would activate qualitatively different reaction pathways. Therefore, the claim that the 8 mm test activated additional pathways is inadmissible; both tests are bounded by the same reaction window, and the 8 mm test does not provide information about separator behavior under conditions where separator-activating temperatures would be reached.",
+          "must_include": [
+            "Both tests remained below 403.1 K peak temperature",
+            "Admissible reactions for both tests: SEI decomposition and anode-electrolyte reaction only",
+            "Electrolyte decomposition and separator melting thresholds were not reached in either test",
+            "Intact separator confirms temperatures did not reach separator melting threshold",
+            "Higher peak temperature within the same sub-threshold range does not activate qualitatively different reaction pathways",
+            "The engineer's error is inferring qualitatively different reaction pathways from a quantitative temperature difference that does not cross a reaction threshold"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming the 8 mm nail test activates cathode decomposition reactions",
+            "Inferring that nail diameter controls which reactions occur independent of temperature thresholds",
+            "Concluding that the 8 mm test is more informative about separator integrity under extreme conditions when temperatures did not approach separator melting threshold",
+            "Generalizing nail diameter effects to conditions where temperatures exceed 403.1 K"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Reaction pathway admissibility as determined by temperature thresholds, and the reasoning error of inferring qualitative mechanistic differences from quantitative differences within the same thermal regime",
+          "primary_boundary": "All peak temperatures below 403.1 K bound admissible reactions to SEI decomposition and anode-electrolyte reaction regardless of nail diameter; crossing a reaction threshold requires reaching that threshold temperature, not merely a higher temperature within the sub-threshold range",
+          "intended_error_modes": [
+            "Inferring additional reaction pathways from higher temperature within the same sub-threshold regime",
+            "Conflating quantitative severity increase with qualitative mechanism change",
+            "Treating nail diameter as a direct determinant of reaction pathways rather than temperature as the determinant"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Mechanism+195+UnknownJournal__TR_Mechanism+196+ENERGY_andamp;_ENVIRONMENTAL_MATERIALS__TR_Mechanism+197+Journal_of_The_Electrochemical_Society": {
+    "mcqs": [],
+    "short_answers": []
+  },
+  "TR_Mechanism+198+UnknownJournal__TR_Mechanism+199+UnknownJournal__TR_Mechanism+200+UnknownJournal": {
+    "mcqs": [
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A 38 Ah NCM battery is characterized using both accelerating rate calorimetry (ARC) and differential scanning calorimetry (DSC) of extracted electrode materials. ARC measurements use surface-mounted temperature sensors. DSC analysis of the cathode material shows a structural phase transition at 300°C and a second phase transition at 400°C. Separate electrode-only DSC experiments show the cathode alone undergoes thermal runaway at 189°C and the anode alone at approximately 240°C. The total heat generation calculated from DSC material analysis is 371,087 J, while the total heat generation calculated from ARC surface temperature measurements is 314,296 J. The battery does not undergo thermal runaway at 0% or 25% SOC but does at SOC values above 35%. The self-heat rate threshold defining the thermal runaway triggering temperature is 10°C/min. An engineer is evaluating the heat source hierarchy and measurement limitations for this system. Which of the following conclusions are admissible?",
+          "options": [
+            "A. The fact that either electrode alone can undergo thermal runaway without the other electrode present indicates that internal short circuit is not required as the primary initiating heat source for thermal runaway in this system.",
+            "B. The ARC-derived total heat generation being lower than the DSC-derived value is best explained by the ARC surface temperature underestimating the internal temperature, causing the ARC calculation to undercount heat released near the cell core.",
+            "C. The structural phase transition of the cathode material at 300°C is the event that defines the thermal runaway triggering temperature in ARC testing, since it represents the onset of irreversible cathode decomposition.",
+            "D. Because the SEI decomposition and regeneration occur simultaneously between 100°C and 270°C, a battery whose surface temperature is measured at 200°C during ARC testing has definitively broken the SEI decomposition–regeneration balance.",
+            "E. The SOC threshold above which thermal runaway occurs (35%) implies that the electrochemical energy stored above this threshold is necessary to sustain the exothermic reaction cascade, and batteries below this threshold cannot generate sufficient heat from electrode reactions alone.",
+            "F. The cathode phase transition from rhombohedral to spinel at 300°C and from LiM2O4-type spinel to Co3O4-type spinel at 400°C occur above the measured thermal runaway triggering temperature of 188°C, indicating these transitions are consequences of thermal runaway progression rather than its initiating cause.",
+            "G. The difference between DSC-derived and ARC-derived heat totals cannot be used to determine the exact internal temperature profile of the battery during thermal runaway."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "F",
+            "G"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence explicitly states that because either electrode alone can undergo thermal runaway, internal short circuit is not the major heat source during thermal runaway. This is a direct admissible conclusion from the electrode-only DSC experiments.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+200+UnknownJournal:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Evidence states that ARC measures surface temperature and the inner temperature may be higher, which explains why the ARC-derived heat calculation (314,296 J) is lower than the DSC value (371,087 J). The mechanism chain is: surface temperature < internal temperature → ARC underestimates temperature rise → ARC underestimates heat released. This is directly supported.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+200+UnknownJournal:C007"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "The thermal runaway triggering temperature (TTR) is defined as the temperature at which self-heat rate reaches 10°C/min, measured at 188°C in ARC testing. The cathode phase transition at 300°C occurs well above this TTR. Attributing TTR to the 300°C phase transition is a factual contradiction with the stated TTR definition and measured value.",
+              "error_type": "Mechanism timing error / definition violation",
+              "evidence_refs": [
+                "TR_Mechanism+200+UnknownJournal:C001",
+                "TR_Mechanism+200+UnknownJournal:C008",
+                "TR_Mechanism+200+UnknownJournal:C010"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Evidence states that SEI decomposition and regeneration occur simultaneously between 100°C and 270°C, and the balance is not broken until temperature rises to 270°C or higher. A surface temperature of 200°C does not confirm that the internal temperature has reached 270°C, because ARC measures surface temperature and internal temperature may be higher. The surface measurement cannot definitively establish the internal thermal state. This option violates the measurement scope limitation explicitly stated in the evidence.",
+              "error_type": "Measurement scope violation / surface-to-internal extrapolation",
+              "evidence_refs": [
+                "TR_Mechanism+200+UnknownJournal:C006",
+                "TR_Mechanism+200+UnknownJournal:C007"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The evidence states that thermal runaway occurs above 35% SOC but does not provide a mechanistic explanation that the stored electrochemical energy above 35% is necessary to sustain the reaction cascade. The evidence also shows that electrode reactions alone (without ISC) can drive thermal runaway, and that electrode-only DSC experiments show thermal runaway. The claim that batteries below 35% SOC cannot generate sufficient heat from electrode reactions alone is an unsupported extrapolation beyond what the threshold observation establishes.",
+              "error_type": "Unsupported mechanistic extrapolation from threshold observation",
+              "evidence_refs": [
+                "TR_Mechanism+200+UnknownJournal:C002",
+                "TR_Mechanism+200+UnknownJournal:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "TTR is 188°C. The cathode phase transitions occur at 300°C and 400°C, both above TTR. Since thermal runaway is already triggered at 188°C, the phase transitions at higher temperatures occur during the progression of thermal runaway, not as its initiating cause. This is a valid multi-step temporal reasoning conclusion.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+200+UnknownJournal:C001",
+                "TR_Mechanism+200+UnknownJournal:C008",
+                "TR_Mechanism+200+UnknownJournal:C010"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Correct",
+              "justification": "The evidence explains the heat total discrepancy as arising from surface vs. internal temperature measurement, but does not provide a method to reconstruct the exact internal temperature profile from this difference alone. The ARC-DSC heat difference is a scalar quantity that reflects a systematic underestimate, not a spatially resolved temperature profile. This is an admissible limitation statement.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+200+UnknownJournal:C007"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Heat source hierarchy in thermal runaway, measurement scope limitations of ARC surface temperature, and temporal ordering of thermal events relative to triggering temperature",
+          "primary_boundary": "TTR is defined by self-heat rate threshold at 188°C; cathode phase transitions at 300°C and 400°C are post-triggering events; ARC surface temperature cannot establish internal temperature state; SOC threshold observation does not mechanistically explain the below-threshold behavior",
+          "intended_error_modes": [
+            "Confusing post-triggering cathode phase transitions with the triggering mechanism",
+            "Extrapolating surface ARC temperature to internal SEI balance state",
+            "Inferring mechanistic necessity from SOC threshold observation",
+            "Treating heat total discrepancy as sufficient to reconstruct internal temperature profile"
+          ],
+          "disallowed_extrapolations": [
+            "Attributing TTR to cathode structural transitions that occur above TTR",
+            "Concluding internal SEI balance is broken from surface temperature measurement alone",
+            "Claiming below-threshold SOC cells cannot generate sufficient heat from electrode reactions",
+            "Using ARC-DSC heat difference to determine exact internal temperature distribution"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A battery engineer is comparing two lithium-ion cells at 100% SOC. Cell A uses a SiOx-containing anode and has a thermal runaway triggering temperature of 138°C and a maximum temperature rise rate of 349°C/s. Cell B uses a graphite anode and has a thermal runaway triggering temperature of 188°C, with SEI decomposition and regeneration occurring simultaneously between 100°C and 270°C, and the decomposition–regeneration balance not breaking until above 270°C. The engineer proposes that Cell A's lower triggering temperature is caused by the same SEI decomposition mechanism that governs Cell B, just shifted to a lower temperature due to the SiOx anode. Evaluate whether this proposal is mechanistically complete, identify what additional anode-specific mechanism the evidence requires to explain Cell A's behavior, and explain why the gap between onset temperature (~78°C) and triggering temperature (138°C) in Cell A is narrower than in Cell B (onset ~76°C, triggering 188°C), using the mechanism you identified."
+        },
+        "ground_truth": {
+          "gold_answer": "The engineer's proposal is mechanistically incomplete. While SEI decomposition is relevant to both cells, the evidence identifies an additional anode-specific mechanism in Cell A: the significant volume changes of SiOx during cycling cause uneven SEI formation, and the resulting cracks and voids in the SEI layer accelerate SEI decomposition prematurely. This is distinct from the gradual thermal SEI decomposition in graphite cells. In Cell B, the SEI decomposition and regeneration are balanced over the range of 100–270°C, meaning the system can partially repair SEI damage up to 270°C before the balance is broken. In Cell A, the pre-existing structural damage to the SEI from volume-change-induced cracking means the decomposition–regeneration balance is disrupted at a lower temperature, because the damaged SEI cannot sustain regeneration as effectively. This explains why the margin between onset of exothermic activity (~78°C) and full thermal runaway triggering (138°C) is only ~60°C in Cell A, compared to ~112°C in Cell B: the accelerated and structurally compromised SEI decomposition in Cell A causes heat accumulation to escalate more rapidly over a smaller temperature interval, without the extended regeneration-buffered regime that characterizes Cell B.",
+          "must_include": [
+            "Volume changes of SiOx cause uneven SEI formation and cracks or voids that accelerate SEI decomposition prematurely",
+            "Cell B has a SEI decomposition–regeneration balance maintained up to ~270°C that Cell A lacks in the same way",
+            "The narrower onset-to-triggering margin in Cell A (~60°C vs ~112°C) is explained by the compromised SEI structure allowing faster heat escalation",
+            "The proposal is incomplete because it omits the structural damage mechanism specific to SiOx volume changes"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming Cell A is more dangerous than Cell B under all conditions or at all SOC levels",
+            "Attributing Cell A's behavior to cathode differences rather than anode SEI structural damage",
+            "Stating that internal short circuit is the cause of the lower triggering temperature",
+            "Asserting that the SEI regeneration mechanism is entirely absent in Cell A without qualification"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Mechanistic completeness of SEI-based explanation for triggering temperature differences between SiOx and graphite anode cells, and quantitative reasoning about onset-to-triggering thermal margin",
+          "primary_boundary": "The SiOx mechanism involves structural SEI damage from volume changes, not merely a temperature-shifted version of the graphite SEI decomposition pathway; the onset-to-triggering margin difference is a calculable consequence of the accelerated decomposition mechanism",
+          "intended_error_modes": [
+            "Accepting the engineer's proposal as complete without identifying the volume-change-induced structural damage mechanism",
+            "Attributing the triggering temperature difference to cathode chemistry rather than anode SEI behavior",
+            "Failing to connect the narrower thermal margin to the compromised SEI regeneration capacity",
+            "Generalizing the safety comparison beyond the 100% SOC test conditions"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Mechanism+201+UnknownJournal__TR_Mechanism+202+UnknownJournal__TR_Mechanism+203+UnknownJournal": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A lithium-ion battery is subjected to controlled external heating. Cooling at 293.15 K is applied to the bottom of the negative electrode region. The battery has not yet reached the temperature range at which the SEI membrane begins to decompose exothermically (353.15–393.15 K). An engineer proposes that applying the cooling earlier within this pre-SEI-decomposition window will produce a stronger suppression effect than applying it just before the threshold. A second engineer argues that once thermal runaway is triggered, the dominant heat source is the positive electrode reaction, so cooling directed at the negative electrode is addressing the wrong target. Which of the following conclusions are supported by the described conditions and the underlying mechanisms?",
+          "options": [
+            "A. The timing of cooling application within the pre-SEI-decomposition window does not affect whether thermal runaway is suppressed, because the suppression mechanism operates by inhibiting the negative electrode material reaction regardless of when cooling begins in that window.",
+            "B. Cooling at 293.15 K applied after SEI decomposition has begun can still reliably suppress thermal runaway by the same mechanism, since the negative electrode reaction has not yet peaked.",
+            "C. Because the positive electrode reaction generates approximately three times the heat of the negative electrode reaction during thermal runaway, redirecting cooling to the positive electrode region would be more effective at suppression than cooling the negative electrode before SEI decomposition.",
+            "D. The fact that the positive electrode reaction is the dominant heat source during full thermal runaway does not invalidate cooling the negative electrode before SEI decomposition, because the suppression target at that stage is the negative electrode reaction that triggers the cascade.",
+            "E. Thermal runaway initiation under 473.15 K external heating is driven by the negative electrode material reaction, making the negative electrode the appropriate intervention target in the pre-SEI-decomposition stage.",
+            "F. The exothermic decomposition of the SEI membrane between 353.15 and 393.15 K is the primary heat source that directly drives the battery to thermal runaway without requiring subsequent electrode reactions."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "D",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence states that when cooling at 293.15 K is applied before SEI decomposition starts, the advance time has no effect on the suppression outcome. The mechanism is suppression of the negative electrode material reaction, and timing within that pre-threshold window is irrelevant to success.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+201+UnknownJournal:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The evidence specifies that effective suppression requires cooling to be applied before SEI decomposition starts. Applying cooling after SEI decomposition has begun is outside the stated boundary for reliable suppression; the evidence does not support this extension.",
+              "error_type": "Condition violation distractor — correct for a different regime than stated",
+              "evidence_refs": [
+                "TR_Mechanism+201+UnknownJournal:C002",
+                "TR_Mechanism+201+UnknownJournal:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Although the positive electrode reaction generates ~3x the heat of the negative electrode reaction during full thermal runaway, the suppression strategy targets the pre-SEI-decomposition stage where the negative electrode reaction is the trigger. Redirecting cooling to the positive electrode at this stage ignores the causal sequence: suppressing the trigger (negative electrode reaction) prevents the cascade from reaching the stage where positive electrode dominance matters.",
+              "error_type": "Mechanism confusion — correct heat-source comparison applied to wrong stage of the sequence",
+              "evidence_refs": [
+                "TR_Mechanism+201+UnknownJournal:C002",
+                "TR_Mechanism+201+UnknownJournal:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "This is counterintuitive but correct. The positive electrode dominance is a feature of fully developed thermal runaway. The pre-SEI-decomposition cooling works by suppressing the negative electrode reaction that initiates the cascade, so the positive electrode's larger heat contribution during runaway does not undermine the logic of early negative electrode cooling. The two facts apply to different stages.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+201+UnknownJournal:C002",
+                "TR_Mechanism+201+UnknownJournal:C003",
+                "TR_Mechanism+201+UnknownJournal:C005"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Evidence directly states that thermal runaway is triggered by heat generation of the negative electrode material reaction under 473.15 K heating, making the negative electrode the appropriate target for pre-cascade intervention.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+201+UnknownJournal:C001"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The evidence identifies SEI decomposition as a trigger that initiates subsequent exothermic reactions leading to thermal runaway, not as the primary heat source that directly drives runaway. The cascade requires subsequent electrode reactions; SEI decomposition is the initiating event, not the dominant energy source.",
+              "error_type": "Causal overclaim — attributes the full runaway outcome to the initiating reaction alone",
+              "evidence_refs": [
+                "TR_Mechanism+203+UnknownJournal:C001",
+                "TR_Mechanism+201+UnknownJournal:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Stage-dependent intervention logic: distinguishing the trigger mechanism from the dominant heat source during full thermal runaway, and understanding why pre-SEI-decomposition cooling targets the negative electrode regardless of positive electrode dominance later.",
+          "primary_boundary": "Cooling effectiveness is conditioned on being applied before SEI decomposition onset; the positive electrode's heat dominance applies to the fully developed runaway stage, not the initiation stage.",
+          "intended_error_modes": [
+            "Applying full-runaway heat-source ranking to the pre-cascade intervention stage",
+            "Extending pre-SEI cooling efficacy to post-SEI-decomposition conditions",
+            "Treating SEI decomposition as the primary heat source rather than the cascade trigger"
+          ],
+          "disallowed_extrapolations": [
+            "Cooling after SEI decomposition onset is equally effective",
+            "Positive electrode cooling is superior at all stages because it is the dominant heat source during runaway",
+            "SEI decomposition alone drives thermal runaway without subsequent electrode reactions"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery cell is cycled under constant charge/discharge conditions. The SEI layer on the negative electrode grows rapidly during early charge cycles due to diffusion limitation. As cycling continues, the layer thickens, its resistance increases, and the growth rate slows. Separately, a cell from the same batch operated at 1C rate does not generate sufficient heat to trigger SEI decomposition, while a cell operated at 2C rate does exhibit SEI decomposition effects. The SEI decomposition temperature range is known to be 353.15–393.15 K, and SEI decomposition is understood to trigger subsequent exothermic reactions leading to thermal runaway. A capacity fade is observed in cells with significant SEI growth, causing affected cells to reach cutoff voltage earlier than others. Which of the following conclusions are admissible given these conditions?",
+          "options": [
+            "A. The transition from diffusion-limited to kinetics-limited SEI growth implies that capacity fade rate will also slow as the SEI layer thickens, because the same resistance increase that slows SEI growth also reduces the rate of cyclable lithium consumption.",
+            "B. At 1C rate, the absence of SEI decomposition effects means the cell is operating safely with respect to thermal runaway risk, regardless of how many cycles have been completed.",
+            "C. The earlier cutoff voltage reached by heavily SEI-affected cells is a consequence of reduced cyclable lithium rather than a change in the electrochemical rate capability of the electrode.",
+            "D. Operating at 2C rather than 1C increases thermal runaway risk primarily because higher current generates more heat, which can raise cell temperature into the SEI decomposition range and initiate the exothermic cascade.",
+            "E. Because SEI growth rate decreases as the layer thickens, a cell that has undergone many cycles presents lower thermal runaway risk than a fresh cell when both are operated at the same C rate, since the reduced SEI growth rate means less ongoing heat generation from SEI formation.",
+            "F. The rate of heat release from SEI decomposition, once initiated, increases exponentially with temperature rather than linearly, meaning that once the decomposition temperature range is entered, the process self-accelerates rather than reaching a stable rate."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "D",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "The evidence links the slowing of SEI growth to increased layer resistance, but does not establish that capacity fade rate slows by the same mechanism or at the same rate. Capacity fade results from cyclable lithium reduction, and the relationship between SEI growth rate and lithium consumption rate is not stated to be directly proportional. This is a plausible but unsupported causal chain extension.",
+              "error_type": "Unsupported causal chain extension from SEI growth rate to capacity fade rate",
+              "evidence_refs": [
+                "TR_Mechanism+203+UnknownJournal:C005",
+                "TR_Mechanism+203+UnknownJournal:C006"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The evidence states that 1C rate does not generate sufficient heat to trigger SEI decomposition, but this is a condition-specific observation about heat generation, not a general safety guarantee. It does not account for other abuse conditions, accumulated damage, or elevated ambient temperature. Concluding safety regardless of cycle count is an inadmissible overgeneralization from a single operating condition observation. This is a conservative-appearing but incorrect distractor.",
+              "error_type": "Overgeneralization — extending a single-condition result to a universal safety claim",
+              "evidence_refs": [
+                "TR_Mechanism+203+UnknownJournal:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "The evidence attributes earlier cutoff voltage to capacity fade from cyclable lithium reduction. However, stating that this is due to reduced cyclable lithium rather than rate capability change presents a false dichotomy that is not fully supported. The evidence identifies cyclable lithium reduction as the cause but does not rule out rate capability contributions. More critically, the option's framing implies a clean mechanistic exclusion that the evidence does not establish.",
+              "error_type": "Causal exclusion claim beyond evidence scope",
+              "evidence_refs": [
+                "TR_Mechanism+203+UnknownJournal:C006"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Evidence states that 2C rate was required to observe SEI decomposition effects because higher C rates generate more heat due to higher current flow. SEI decomposition triggers subsequent exothermic reactions leading to thermal runaway. The mechanism chain — higher current → more heat → temperature enters SEI decomposition range → cascade initiated — is directly supported.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+203+UnknownJournal:C004",
+                "TR_Mechanism+203+UnknownJournal:C001"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "This is a counterintuitive-appearing but incorrect option. While SEI growth rate decreases with layer thickness, the thermal runaway risk is not primarily determined by ongoing SEI formation heat but by the decomposition of the existing SEI layer once temperature thresholds are reached. A thicker, more established SEI layer still decomposes exothermically if the temperature range is entered. The evidence does not support the conclusion that reduced growth rate implies reduced thermal runaway risk.",
+              "error_type": "Mechanism confusion — conflating SEI formation heat with SEI decomposition risk",
+              "evidence_refs": [
+                "TR_Mechanism+203+UnknownJournal:C001",
+                "TR_Mechanism+203+UnknownJournal:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Evidence explicitly states that the rate of SEI decomposition reaction and heat release increases exponentially with temperature due to the activation energy barrier mechanism. This means once the decomposition temperature range is entered, the process self-accelerates rather than proceeding at a constant rate.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+203+UnknownJournal:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Distinguishing SEI formation heat from SEI decomposition risk; understanding exponential self-acceleration of decomposition once initiated; recognizing that reduced SEI growth rate does not reduce decomposition-triggered runaway risk.",
+          "primary_boundary": "SEI growth rate slowing does not reduce thermal runaway risk from SEI decomposition; the decomposition risk depends on temperature reaching the threshold range, not on ongoing formation rate.",
+          "intended_error_modes": [
+            "Conflating SEI formation rate with SEI decomposition hazard",
+            "Treating 1C safety observation as a universal safety guarantee across all conditions",
+            "Extending the growth-rate-to-capacity-fade relationship without evidence support",
+            "Assuming linear rather than exponential heat release from SEI decomposition"
+          ],
+          "disallowed_extrapolations": [
+            "Reduced SEI growth rate implies reduced thermal runaway risk",
+            "1C safe operation guarantees safety regardless of accumulated cycling history",
+            "SEI formation heat is the primary driver of thermal runaway risk rather than SEI decomposition heat"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A battery engineer is designing a thermal management intervention for a lithium-ion cell that is being externally heated toward thermal runaway. The engineer knows that: (1) thermal runaway is initiated by the negative electrode material reaction under the heating conditions; (2) the SEI membrane decomposes exothermically within a specific temperature range before the negative electrode reaction dominates; (3) once full thermal runaway develops, the positive electrode reaction generates approximately three times the heat of the negative electrode reaction; (4) cooling at 293.15 K applied to the negative electrode region before SEI decomposition begins reliably suppresses thermal runaway, and the timing of application within that pre-decomposition window does not affect the outcome. The engineer proposes two alternative intervention strategies: Strategy X applies cooling to the positive electrode region at the onset of full thermal runaway, targeting the dominant heat source at that stage. Strategy Y applies cooling to the negative electrode region before SEI decomposition begins, targeting the initiating reaction. Explain which strategy is more likely to suppress thermal runaway and why, specifically addressing why the positive electrode's larger heat contribution during full runaway does not make Strategy X superior to Strategy Y."
+        },
+        "ground_truth": {
+          "gold_answer": "Strategy Y is more likely to suppress thermal runaway. The suppression mechanism of cooling the negative electrode before SEI decomposition begins is to inhibit the negative electrode material reaction, which is the trigger for the thermal runaway cascade. By interrupting the cascade at its initiation point, the subsequent stages — including the stage at which the positive electrode reaction dominates — are prevented from occurring. Strategy X targets the positive electrode at the stage of full thermal runaway, but by that point the cascade is already in progress and the system is in an uncontrollable state. The positive electrode's ~3× heat contribution is a feature of the fully developed runaway, not of the initiation stage. Cooling the dominant heat source during runaway does not address the trigger mechanism and therefore cannot reliably suppress the event. The critical insight is that the causal sequence matters: suppressing the trigger (negative electrode reaction, pre-SEI-decomposition) prevents the system from ever reaching the stage where positive electrode dominance is relevant. Strategy X addresses the wrong stage of the sequence, while Strategy Y addresses the correct stage.",
+          "must_include": [
+            "Strategy Y is more effective because it targets the initiating reaction before the cascade begins",
+            "Cooling the negative electrode before SEI decomposition suppresses the negative electrode material reaction that triggers thermal runaway",
+            "By the time full thermal runaway develops (Strategy X's intervention point), the cascade is already underway and cannot be reliably stopped by targeting the positive electrode",
+            "The positive electrode's larger heat contribution is relevant only during fully developed runaway, not during the initiation stage",
+            "The causal sequence — negative electrode reaction triggers cascade — is the reason stage-of-intervention matters more than heat-source magnitude"
+          ],
+          "disallowed_extrapolations": [
+            "Strategy X can suppress thermal runaway if applied with sufficient cooling capacity",
+            "The timing of Strategy Y within the pre-SEI-decomposition window affects its effectiveness",
+            "Cooling the positive electrode at any stage is equivalent in effectiveness to cooling the negative electrode before SEI decomposition",
+            "The three-times heat ratio implies the positive electrode is always the correct intervention target"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Stage-dependent intervention logic: understanding that the causal position of a reaction in the thermal runaway sequence determines intervention effectiveness, independent of the heat magnitude that reaction contributes during fully developed runaway.",
+          "primary_boundary": "Intervention effectiveness is determined by whether the target is the trigger mechanism at the correct stage, not by the magnitude of heat generation of the targeted reaction during full runaway.",
+          "intended_error_modes": [
+            "Selecting Strategy X because the positive electrode is the dominant heat source during runaway",
+            "Failing to recognize that targeting the dominant heat source during full runaway does not prevent the cascade from having already started",
+            "Treating heat magnitude as the primary criterion for intervention target selection rather than causal position in the sequence"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Mechanism+204+UnknownJournal__TR_Mechanism+205+UnknownJournal__TR_Mechanism+206+UnknownJournal": {
+    "mcqs": [
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "An engineer is comparing overcharge-induced thermal runaway behavior across three commercial cell chemistries: LFP, NCM, and LCO. Tests are conducted at multiple charging rates. The following observations are recorded: (1) at a given overcharge rate, LFP cells reach thermal runaway earlier than NCM or LCO in terms of overcharging tolerance; (2) LFP cells produce only smoke with no fire or explosion, while NCM and LCO exhibit more severe thermal events; (3) LCO cells reach the highest peak temperatures under high-rate overcharge; (4) higher charging rates across all chemistries are associated with earlier onset of large-scale internal short circuits and increased risk of violent thermal runaway; (5) peak mechanical expansion force at the end of the gas accumulation stage decreases as overcharge rate increases. The engineer must assess safety risk for a battery management system design that must handle both the probability of thermal runaway initiation and the severity of the resulting thermal event. Which of the following conclusions are admissible?",
+          "options": [
+            "A. LFP chemistry presents a lower thermal runaway hazard than NCM under overcharge conditions, even though LFP exhibits lower overcharging tolerance.",
+            "B. Because LFP cells enter thermal runaway at lower overcharge levels, they necessarily pose a greater overall safety risk than LCO cells in any application context.",
+            "C. The observation that peak expansion force decreases at higher overcharge rates implies that higher charging rates produce less internal gas overall during the overcharge process.",
+            "D. A battery management system designed to prevent thermal runaway initiation should treat LFP chemistry as requiring earlier intervention thresholds than NCM or LCO, based on overcharging tolerance alone.",
+            "E. The higher peak temperatures reached by LCO cells under high-rate overcharge, compared to LFP, are consistent with LCO having a greater thermal hazard magnitude once thermal runaway occurs.",
+            "F. Higher overcharge rates reducing the time available for thorough internal gas-producing side reactions is a mechanistic explanation consistent with the observed decrease in peak expansion force at higher rates.",
+            "G. Since violent thermal runaway and gas explosions are more likely at higher charging rates across all chemistries, the risk ranking among chemistries becomes irrelevant at sufficiently high rates."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "D",
+            "E",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence explicitly states LFP has the lowest TR hazard (smoke only, no fire or explosion) despite having the lowest overcharging tolerance. This counterintuitive result—lower tolerance but lower hazard—is directly supported. The conclusion is admissible and requires distinguishing risk (probability/trigger) from hazard (severity).",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+206+UnknownJournal:C001",
+                "TR_Mechanism+206+UnknownJournal:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "This conflates TR risk (initiation likelihood) with overall safety risk. Evidence distinguishes TR risk order (LFP > LCO > NCM) from TR hazard order (LCO > NCM > LFP). Claiming LFP poses greater overall safety risk than LCO in any context ignores hazard severity and represents an inadmissible overgeneralization.",
+              "error_type": "overgeneralization_conflating_risk_and_hazard",
+              "evidence_refs": [
+                "TR_Mechanism+206+UnknownJournal:C001",
+                "TR_Mechanism+206+UnknownJournal:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "The evidence states that lower overcharge rates allow more time for thorough internal gas production side reactions, explaining higher peak expansion force at lower rates. The decrease in peak force at higher rates reflects less time for gas accumulation, not necessarily less total gas. Inferring reduced total gas production from reduced peak force is an unsupported scope expansion.",
+              "error_type": "measurement_scope_overclaim",
+              "evidence_refs": [
+                "TR_Mechanism+206+UnknownJournal:C003"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Evidence shows LFP has the lowest overcharging tolerance, meaning it reaches the trigger threshold for large-scale short circuits and TR earlier. A BMS designed to prevent initiation must intervene earlier for LFP. This is a direct engineering implication from the overcharging tolerance comparison.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+206+UnknownJournal:C001",
+                "TR_Mechanism+206+UnknownJournal:C002"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Evidence directly reports LCO reaching 917.2°C under 3C overcharge versus LFP at 252.7°C, and states LCO has the highest thermal hazard. The conclusion that higher peak temperatures are consistent with greater hazard magnitude is admissible and directly supported.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+206+UnknownJournal:C004",
+                "TR_Mechanism+206+UnknownJournal:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Evidence explicitly states that lower overcharge rates allow more time for thorough internal gas production side reactions, which is the proposed mechanism for higher peak expansion force at lower rates. Option F restates this causal mechanism in scenario language and is directly supported.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+206+UnknownJournal:C003"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Incorrect",
+              "justification": "While higher rates increase risk across all chemistries, the evidence does not support that chemistry-dependent hazard differences disappear at high rates. LCO still reaches 917°C versus LFP at 252.7°C under the same 3C rate, showing that chemistry ranking persists. This option makes an unsupported universal claim about rate-dependent convergence.",
+              "error_type": "unsupported_convergence_extrapolation",
+              "evidence_refs": [
+                "TR_Mechanism+206+UnknownJournal:C002",
+                "TR_Mechanism+206+UnknownJournal:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Distinguishing thermal runaway risk (initiation probability/tolerance) from thermal runaway hazard (severity of outcome) across chemistries and charging rates, and admissible BMS design implications",
+          "primary_boundary": "Risk vs. hazard distinction: low overcharging tolerance does not imply high hazard severity; these are independent dimensions requiring separate engineering responses",
+          "intended_error_modes": [
+            "Conflating low overcharging tolerance with high overall safety risk (B)",
+            "Inferring total gas production from peak expansion force measurement (C)",
+            "Assuming chemistry risk ranking disappears at high rates (G)"
+          ],
+          "disallowed_extrapolations": [
+            "Concluding that LFP is more dangerous overall than LCO based on tolerance alone",
+            "Inferring total gas quantity from peak mechanical force",
+            "Claiming rate effects eliminate chemistry-dependent hazard differences"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A researcher uses an accelerated rate calorimetry method to study thermal runaway in 18650-type NCM111 cells at varying states of charge between 50% and 120% SOC. Three characteristic temperatures are identified: T1 (self-heating onset), T2 (separator collapse), and T3 (maximum temperature during thermal runaway). Peak pressure P3 is also recorded. The following trends are observed: T1 increases as SOC decreases; T3 decreases as SOC decreases; P3 varies more strongly with SOC than T3 does. A kinetic model is trained on this dataset using a neural-network-assisted method. The researcher proposes using this model to predict thermal runaway behavior in a prismatic 50 Ah NCM811 cell for a vehicle application. Which of the following statements about the experimental findings and the proposed model application are admissible?",
+          "options": [
+            "A. The stronger variation of P3 with SOC compared to T3 indicates that the total amount of gas released during thermal runaway is more sensitive to SOC than the peak temperature reached.",
+            "B. Because T1 increases monotonically as SOC decreases from 120% to 50%, a cell at 50% SOC can be considered thermally safe under all operating conditions without further thermal management.",
+            "C. The fact that T3 decreases with decreasing SOC is consistent with the cell being less reactive and having suppressed exothermic reactions at lower charge states.",
+            "D. Applying the kinetic parameters from this NCM111 18650 study directly to predict thermal runaway onset in a 50 Ah NCM811 prismatic cell is not supported without additional validation data for that cell format and chemistry.",
+            "E. The lower activation energies associated with the violent thermal runaway stage reactions, compared to self-heating stage reactions, imply that once the violent stage is initiated, it proceeds more slowly and is easier to interrupt.",
+            "F. The monotonic increase in T1 with decreasing SOC means that reducing SOC is always sufficient to prevent thermal runaway initiation in NCM cells under any abuse condition."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "D"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence directly states that variations in P3 between cells with different SOCs are much more obvious than those of T3, indicating that total released gas amount differs greatly with SOC. This conclusion is admissible and directly supported.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+205+UnknownJournal:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "While T1 is higher at lower SOC, this means the self-heating onset is delayed, not that the cell is thermally safe under all conditions. The evidence does not support a claim of unconditional safety at 50% SOC. This is an inadmissible overgeneralization from a threshold comparison.",
+              "error_type": "overgeneralization_from_threshold_comparison",
+              "evidence_refs": [
+                "TR_Mechanism+205+UnknownJournal:C001",
+                "TR_Mechanism+205+UnknownJournal:C002"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence explicitly states that T3 decreases with decreased SOC and that this indicates the cell is less reactive with suppressed exothermic reactions at lower SOC. This conclusion is directly supported.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+205+UnknownJournal:C003"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Evidence explicitly states that the kinetic parameters are primarily applicable to 18650-type NCM111 cells and that incorporating more experimental data is essential to extend applicability to cells with different capacities and cathode materials. Applying these parameters to NCM811 prismatic cells without additional data is not supported.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Mechanism+205+UnknownJournal:C006"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Evidence states that lower activation energies in the violent TR stage cause those reactions to proceed at a faster rate, not slower. This option inverts the correct causal relationship between activation energy and reaction rate, making it directly contradictory to the evidence.",
+              "error_type": "causal_inversion",
+              "evidence_refs": [
+                "TR_Mechanism+205+UnknownJournal:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The evidence shows T1 increases monotonically with decreasing SOC within the 50–120% range studied, but does not support the claim that SOC reduction alone is always sufficient to prevent thermal runaway under any abuse condition. This is an inadmissible universal claim that ignores other abuse pathways and the conditional nature of the evidence.",
+              "error_type": "universal_claim_from_conditional_evidence",
+              "evidence_refs": [
+                "TR_Mechanism+205+UnknownJournal:C001",
+                "TR_Mechanism+205+UnknownJournal:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of conclusions about SOC-dependent thermal runaway parameters and the scope limitations of kinetic models trained on specific cell formats and chemistries",
+          "primary_boundary": "Scope limitation boundary: kinetic parameters derived from NCM111 18650 cells cannot be directly transferred to different capacities and cathode materials without additional data",
+          "intended_error_modes": [
+            "Inverting the activation energy-reaction rate relationship (E)",
+            "Overgeneralizing monotonic T1 trend to unconditional safety at low SOC (B and F)",
+            "Ignoring explicit model applicability limitations when proposing cross-chemistry transfer (D)"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming low SOC guarantees thermal safety under all abuse conditions",
+            "Applying NCM111 18650 kinetic parameters to NCM811 prismatic cells without validation",
+            "Inferring slow reaction rate from low activation energy"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A battery engineer is evaluating two electrolyte formulations for a LiFePO4|graphite cell intended for high-temperature operation. Formulation X is a conventional carbonate-based system. Formulation Y contains fluorinated ether solvents and a mixture of lithium salts that are known to generate LiF as a decomposition product at elevated temperature. After high-temperature storage, the anode SEI from Formulation X shows accumulation of intermediate phosphorus-fluorine species and reduced inorganic components, while the SEI from Formulation Y shows substantially increased LiF content. Separately, cathode dissolution testing at the same elevated temperature shows that Formulation Y suppresses iron dissolution by more than two orders of magnitude compared to Formulation X.\n\nThe engineer concludes that Formulation Y's improvement in self-heating onset temperature, observed in calorimetry testing at full charge, is entirely due to cathode stabilization through suppression of iron dissolution, and that the anode SEI differences are secondary and irrelevant to thermal stability.\n\nIdentify the specific mechanistic error in this conclusion and explain what the anode SEI evidence implies about the thermal stability of the cell with Formulation X at elevated temperature. Your answer should address: (1) what the SEI composition change in Formulation X indicates about ongoing electrochemical processes at high temperature, and (2) why attributing the onset temperature improvement solely to cathode stabilization is not supported."
+        },
+        "ground_truth": {
+          "gold_answer": "The engineer's conclusion contains a single-factor attribution error. The anode SEI evidence is not secondary: the accumulation of intermediate phosphorus-fluorine species and the reduction of stable inorganic components (such as Li2CO3 and LiF) in the Formulation X SEI at elevated temperature indicates that the SEI formed under those conditions is thermally unstable and that continuous reaction between the electrolyte and the graphite anode is ongoing. This ongoing anode-electrolyte reaction is itself a heat-generating process that lowers the self-heating onset temperature. In contrast, Formulation Y promotes increased LiF content in the SEI at elevated temperature through temperature-activated decomposition of its fluorinated components, forming a more stable interphase that suppresses further anode-electrolyte reaction. The improvement in self-heating onset temperature therefore has contributions from both the anode SEI stabilization and cathode iron dissolution suppression. Attributing the improvement solely to cathode stabilization ignores the mechanistic evidence that an unstable anode SEI in Formulation X actively contributes to early self-heating onset, and that Formulation Y addresses this anode-side mechanism directly through LiF enrichment.",
+          "must_include": [
+            "The intermediate species accumulation in Formulation X SEI indicates the SEI is not stable at elevated temperature",
+            "Continuous reaction between electrolyte and graphite anode occurs with Formulation X at high temperature",
+            "LiF enrichment in Formulation Y SEI is caused by temperature-activated decomposition of fluorinated electrolyte components",
+            "Both anode SEI stabilization and cathode iron dissolution suppression contribute to the improved onset temperature",
+            "Attributing the improvement solely to cathode stabilization ignores the anode mechanism"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming that anode SEI alone is responsible for the onset temperature improvement",
+            "Claiming that iron dissolution suppression has no role in thermal stability",
+            "Generalizing the SEI stability conclusions to other cell chemistries or temperatures beyond the stated conditions",
+            "Quantifying the relative contribution of anode vs. cathode mechanisms without supporting evidence"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-factor attribution of thermal stability improvement: distinguishing anode SEI stability contributions from cathode dissolution suppression, and recognizing that unstable SEI composition implies ongoing exothermic reactions",
+          "primary_boundary": "Neither anode SEI stabilization nor cathode dissolution suppression alone is sufficient to explain the full thermal stability improvement; both mechanisms are evidenced and both contribute",
+          "intended_error_modes": [
+            "Single-factor attribution to cathode stabilization while dismissing anode SEI evidence",
+            "Misreading intermediate SEI species accumulation as a stable final state rather than evidence of ongoing reaction",
+            "Failing to connect LiF enrichment in Formulation Y to temperature-activated decomposition of specific electrolyte components"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Mechanism+207+The_Cambridge_Photographic_Atlas_of_Galaxies__TR_Mechanism+208+Advanced_Functional_Materials__TR_Mechanism+209+Renewable_Energy": {
+    "mcqs": [],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A lithium-ion cell with an NMC cathode is cycled under conditions where the working temperature rises above 80°C during operation. The cell has been charged to above 80% state-of-charge. An engineer observes that the cell temperature continues to rise even after the external heat source is removed. Separately, the engineer notes that overcharge tests on similar cells show that the onset temperature for exothermic reactions at the negative electrode drops sharply when the cell is pushed above 100% SOC. Explain the two distinct mechanisms that make this cell progressively more dangerous as both temperature and SOC increase beyond their respective thresholds, and identify what governs the thermal stability of the NMC cathode under these conditions."
+        },
+        "ground_truth": {
+          "gold_answer": "Two distinct mechanisms contribute to the escalating danger. First, when the working temperature exceeds 80°C, exothermic chemical reactions are triggered that further heat the battery, creating a self-reinforcing feedback cycle where heat generation accelerates rather than stabilizes—this is the thermal runaway feedback mechanism. Second, at the negative electrode, the onset temperature for exothermic reactions decreases sharply once the cell exceeds 100% SOC, dropping from above 180°C to approximately 80°C, because metallic lithium deposited during overcharge is highly reactive and initiates exothermic reactions at much lower temperatures than intercalated lithium. These two thresholds can interact: a cell above 100% SOC has a dramatically lowered reaction onset temperature that falls within the range where the thermal feedback cycle is already active above 80°C, compressing the safety margin. The thermal stability of the NMC cathode is governed by the Ni4+ content after charging: Ni is the least stable transition metal element and undergoes the fastest reduction from Ni4+ to Ni2+ during thermal decomposition, so higher Ni content after charge corresponds to lower thermal stability. Mn improves thermal stability while Co maintains it.",
+          "must_include": [
+            "Exothermic reactions above 80°C create a self-reinforcing feedback cycle that continues heating the cell after external heat is removed",
+            "Above 100% SOC, onset temperature for negative electrode exothermic reactions drops from above 180°C to approximately 80°C due to metallic lithium deposition",
+            "Metallic lithium plays an important role in thermal runaway during overcharge",
+            "NMC cathode thermal stability is governed by Ni4+ content after charging",
+            "Ni is the least stable element and undergoes the fastest reduction during thermal decomposition",
+            "Mn improves and Co maintains thermal stability of NMC"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming the 80°C threshold and the 100% SOC threshold are the same mechanism",
+            "Asserting that exceeding 80°C alone is sufficient to cause thermal runaway without the feedback cycle condition",
+            "Generalizing NMC Ni4+ governance of thermal stability to LFP or LTO chemistries",
+            "Quantifying the rate of temperature rise or the exact heat generation values beyond what is stated"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-threshold interaction between temperature-driven exothermic feedback and SOC-driven reduction in onset temperature, combined with Ni4+ governance of NMC cathode thermal stability.",
+          "primary_boundary": "The 80°C thermal feedback threshold and the 100% SOC negative electrode onset temperature drop are distinct mechanisms that can interact; NMC stability is governed by Ni4+ specifically, not by cathode voltage alone.",
+          "intended_error_modes": [
+            "Conflating the 80°C working temperature threshold with the negative electrode onset temperature reduction",
+            "Attributing NMC thermal instability to Co or Mn rather than Ni4+ content",
+            "Treating the two thresholds as independent without recognizing their potential interaction when both are exceeded simultaneously"
+          ]
+        }
+      }
+    ]
+  }
+}

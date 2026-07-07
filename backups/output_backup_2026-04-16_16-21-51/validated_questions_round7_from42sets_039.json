@@ -1,0 +1,229 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Two lithium iron phosphate battery formats—one large-format (LFP-L) and one small-format (LFP-SS)—are tested under thermal runaway conditions in an inert atmosphere at 100% and 110% SOC. LFP-SS consistently produces more gas per unit capacity than LFP-L across all conditions, yet LFP-L reaches substantially higher peak temperatures. At 110% SOC, the peak temperature ratio between LFP-L and LFP-SS widens compared to 100% SOC. Which of the following conclusions are admissible given these conditions?",
+        "options": [
+          "A. Higher gas production per unit capacity in LFP-SS does not necessarily correspond to higher peak temperature, indicating that gas yield and thermal severity are not directly coupled through a single shared mechanism.",
+          "B. The widening temperature ratio at 110% SOC compared to 100% SOC implies that LFP-L's thermal response is more sensitive to SOC elevation than LFP-SS.",
+          "C. Because LFP-SS generates more gas per Ah, it must release more total chemical energy during thermal runaway, making it inherently more thermally hazardous than LFP-L at equivalent capacity.",
+          "D. The consistent gas production advantage of LFP-SS across all three test conditions is sufficient to conclude that format geometry is the sole controlling variable for gas yield.",
+          "E. The observed temperature and gas yield trends together confirm that peak temperature is primarily determined by gas volume rather than by energy stored in the cell.",
+          "F. A system designer cannot assume that the format with lower gas production per Ah will also exhibit lower peak temperature, as the evidence shows the opposite relationship."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "LFP-SS has higher gas/Ah yet lower peak temperature than LFP-L, directly demonstrating decoupling of gas yield from thermal severity.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C001",
+              "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Ratio rises from 1.27 to 1.39 as SOC increases from 100% to 110%, showing LFP-L temperature amplifies more with SOC than LFP-SS.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C001",
+              "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Gas yield does not imply total energy release; LFP-L has lower gas/Ah but higher temperature, contradicting the claimed energy-hazard mapping.",
+            "error_type": "causal overclaim from single variable",
+            "evidence_refs": [
+              "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C001",
+              "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence shows consistent gas yield difference but does not isolate geometry as the sole variable; other factors (chemistry, electrode design) are uncontrolled.",
+            "error_type": "single-variable overclaim / scope expansion",
+            "evidence_refs": [
+              "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "LFP-SS has higher gas volume yet lower temperature, directly falsifying the claim that gas volume primarily determines peak temperature.",
+            "error_type": "mechanism substitution / causal overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C001",
+              "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "LFP-SS lower gas/Ah yet lower peak temperature inverts the intuitive safety ranking, making the design inference inadmissible without further evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C001",
+              "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of inferring thermal hazard rank from gas yield rank across battery formats",
+        "primary_boundary": "Gas production per Ah and peak temperature are not monotonically coupled; LFP-SS higher gas/Ah yet lower temperature breaks the single-variable inference",
+        "intended_error_modes": [
+          "causal overclaim from gas yield to thermal energy",
+          "single-variable geometry attribution",
+          "mechanism substitution (gas volume drives temperature)"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring total energy release from gas volume alone",
+          "Attributing format geometry as sole gas yield driver",
+          "Generalizing temperature rank from gas rank"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "At 100% SOC, LFP-SS gas has both a higher lower explosive limit (LEL) and a higher upper explosive limit (UEL) than LFP-L gas. At 110% SOC, the UEL relationship reverses: LFP-SS UEL becomes lower than LFP-L UEL. The reversal is linked to changes in the hydrocarbon fraction of the vented gas. A process safety engineer must characterize ignition hazard for both cell types across SOC levels. Which of the following conclusions are admissible?",
+        "options": [
+          "A. At 100% SOC, LFP-SS gas requires a higher minimum concentration to ignite than LFP-L gas, meaning LFP-SS presents a lower ignition risk at lean mixture conditions near the LEL.",
+          "B. The SOC-dependent reversal of the UEL relationship means that ranking the two cell types by ignition hazard at one SOC level cannot be reliably extrapolated to the other SOC level without composition data.",
+          "C. Because LFP-SS has a higher LEL at 100% SOC, its vented gas is safer across all mixture concentrations and at all SOC levels compared to LFP-L.",
+          "D. The decrease in higher-carbon hydrocarbon content at elevated SOC in LFP-SS is consistent with more intense internal reactions converting complex hydrocarbons into simpler species.",
+          "E. At 110% SOC, LFP-L gas poses a greater ignition hazard at rich mixture conditions near the UEL than LFP-SS gas, because LFP-L's UEL is higher under those conditions.",
+          "F. The flammability window width (UEL minus LEL) is necessarily larger for LFP-SS than LFP-L at both SOC levels because LFP-SS produces more total gas volume per Ah."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "D",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Higher LEL for LFP-SS at 100% SOC means a greater concentration is needed to reach ignition threshold, reducing lean-mixture ignition risk.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "UEL ranking reverses between 100% and 110% SOC; a single-SOC ranking cannot be generalized without composition information at each SOC.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Higher LEL applies only at 100% SOC and only near lean conditions; the UEL reversal at 110% SOC and rich-mixture behavior are not captured by this claim.",
+            "error_type": "overgeneralization across SOC and mixture concentration range",
+            "evidence_refs": [
+              "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence states more intense reactions at 110% SOC decompose CxHy into CH4 and C2H6, consistent with conversion of complex to simpler hydrocarbon species.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "At 110% SOC, LFP-L UEL exceeds LFP-SS UEL; a higher UEL extends the rich-mixture ignition range, increasing hazard near the upper limit.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Flammability window depends on gas composition, not gas volume; the UEL reversal at 110% SOC directly contradicts a volume-based flammability width ranking.",
+            "error_type": "mechanism substitution — gas volume substituted for composition as flammability determinant",
+            "evidence_refs": [
+              "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C004",
+              "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "SOC-dependent admissibility of ignition hazard rankings based on LEL/UEL reversal and hydrocarbon composition shift",
+        "primary_boundary": "Flammability limits are composition-dependent, not volume-dependent; rankings are regime-specific and cannot be extrapolated across SOC levels",
+        "intended_error_modes": [
+          "overgeneralizing LEL advantage to all conditions",
+          "inferring flammability window from gas volume",
+          "ignoring SOC-dependent composition shift"
+        ],
+        "disallowed_extrapolations": [
+          "Applying 100% SOC LEL/UEL ranking to 110% SOC",
+          "Inferring flammability range from gas production rate alone"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "Two lithium iron phosphate battery formats are tested under thermal runaway conditions. The small-format cell (LFP-SS) consistently produces more gas per unit capacity than the large-format cell (LFP-L) across all test conditions, yet LFP-L reaches higher peak temperatures. Additionally, when SOC is raised from 100% to 110%, the ratio of LFP-L peak temperature to LFP-SS peak temperature increases. In an air environment, LFP-SS shows higher peak pressure change per Ah than in nitrogen, with the difference attributed to reactions occurring after gas is ejected from the cell. A process safety engineer must assess whether gas production per Ah is a reliable proxy for thermal severity and whether inert-atmosphere pressure data is conservative for air-environment facility design. Provide a mechanistically justified assessment of both questions, identifying the specific reasoning that supports or refutes each proxy relationship."
+      },
+      "ground_truth": {
+        "gold_answer": "Gas production per Ah is not a reliable proxy for thermal severity. LFP-SS consistently produces more gas per Ah than LFP-L yet achieves lower peak temperatures under all tested conditions. This decoupling indicates that gas yield and peak temperature are governed by at least partially independent mechanisms—gas volume reflects the extent of decomposition reactions producing gaseous species, while peak temperature reflects the total heat released by all exothermic reactions, including those that do not produce gas. The widening temperature ratio at 110% SOC further shows that the thermal response of LFP-L amplifies more strongly with increasing energy content than LFP-SS, reinforcing that format-specific internal reaction pathways—not gas yield—control thermal severity. Regarding inert-atmosphere pressure data: nitrogen-environment testing produces lower peak pressure change per Ah than air-environment testing for LFP-SS at 100% SOC (0.62 vs. 0.82 kPa/Ah). The higher air-environment value is mechanistically attributed to oxygen in the surrounding atmosphere reacting with ejected gas and material after venting, exacerbating combustion and decomposition. Because this post-ejection oxidative pathway is absent in nitrogen, nitrogen-environment pressure data underestimates the pressure load in air-exposed facilities. Therefore, nitrogen-environment data is not conservative for facility pressure design in air environments; it represents a lower bound, not an upper bound, on pressure hazard.",
+        "must_include": [
+          "Gas production per Ah is not a reliable proxy for thermal severity because LFP-SS higher gas/Ah corresponds to lower peak temperature than LFP-L",
+          "Gas yield and peak temperature reflect different underlying reaction pathways",
+          "Nitrogen environment yields lower pressure change per Ah than air environment",
+          "The air–nitrogen pressure difference is caused by post-ejection oxidative reactions with ambient oxygen",
+          "Nitrogen-environment pressure data underestimates air-environment pressure and is therefore not conservative for air-exposed facility design"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming gas volume is the primary driver of peak temperature",
+          "Asserting nitrogen testing is conservative or worst-case for all safety parameters",
+          "Attributing the temperature difference solely to cell geometry without acknowledging reaction pathway differences",
+          "Generalizing the air–nitrogen pressure ratio to LFP-L or to other SOC levels without evidence"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of gas production per Ah as a thermal severity proxy and of nitrogen-environment pressure data as a conservative design basis",
+        "primary_boundary": "Both proxy relationships fail: gas yield and thermal severity are decoupled; nitrogen pressure is a lower bound, not an upper bound, in air environments",
+        "intended_error_modes": [
+          "Treating higher gas production as implying higher thermal hazard",
+          "Assuming inert-atmosphere testing captures worst-case pressure",
+          "Ignoring post-ejection oxidative reaction pathway in air",
+          "Conflating format geometry with reaction pathway as the sole explanatory variable"
+        ]
+      }
+    }
+  ]
+}

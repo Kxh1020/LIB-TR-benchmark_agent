@@ -1,0 +1,1015 @@
+{
+  "TR_Dynamics+43+Fire_and_Materials": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "D"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "D"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "D"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "The data directly support that increasing charge rate (0.5C to 3C) over five cycles, under the same 1C discharge, is associated with a much larger temperature rise and a strongly increased heating rate (0.18 to 1.11 °C/min), i.e., heating accelerates with higher charge rate/cycling. The only mechanism described in the evidence is that at high discharge rates (>5C) SEI film decomposition becomes an important and growing heat source. Because the reported condition is 1C discharge (not >5C) and no direct indicator of SEI decomposition is provided, the data do not directly support attributing the 3C/1C heating-rate acceleration primarily to increasing SEI decomposition with cycling; that causal attribution is not admissible from the given evidence.",
+      "gold_answer": "The charge-rate data directly support that heating rate increases nonlinearly with charge rate under fixed 1C discharge, with the largest jump occurring between 2C and 3C charge (0.50 to 1.11°C/min). This is a well-supported quantitative observation. However, the SEI decomposition mechanism described in the evidence is explicitly conditioned on discharge rates above 5C. In the engineer's scenario, the discharge rate is only 1C, which lies well below this threshold. Attributing the accelerated heating at 3C charge / 1C discharge to SEI decomposition is therefore not admissible based on the available evidence. The data show the heating acceleration but do not identify its mechanism at these sub-5C conditions. The proposal conflates a mechanism valid in one rate regime with observations from a different rate regime, constituting an unsupported boundary overreach.",
+      "score": 0.97,
+      "reason": "Matches the gold: correctly states the observed heating-rate increase (0.18 to 1.11 °C/min), notes SEI decomposition evidence is bounded to >5C discharge, and concludes SEI-based causal attribution at 1C discharge is not admissible because mechanism isn’t identified under these conditions. Minor omission: doesn’t mention the specific largest jump between 2C and 3C."
+    }
+  ],
+  "TR_Dynamics+44+Fire_and_Materials": [
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "(a) The sharp current drop at 1C when the pack reaches about 95°C is consistent with a temperature-triggered protective response that rapidly increases the pack’s effective resistance or interrupts conduction (e.g., separator shutdown/close-off, PTC/CID-type action, or equivalent contact resistance rise), forcing the charger into compliance so current collapses while preventing further rapid heating. (b) Increasing C-rate increases heat generation (mainly I^2R and polarization heat) faster than the pack can reject it. Up to ~1.5C, the heat generation rate remains low enough that the protective response can activate in time and reduce current before self-heating becomes runaway. At 2C, the higher heat generation rate drives temperature up so quickly and strongly that the protective response is insufficient, delayed, or bypassed, so exothermic reactions outpace heat removal and the current reduction cannot arrest the positive feedback, placing the runaway threshold above 1.5C but at or below 2C.",
+      "gold_answer": "(a) At 1C charging, when pack temperature reaches approximately 95°C, the separator melts and closes its pores. This blocks ionic transport through the separator, interrupting the charging process and causing the rapid drop in charging current. This is a proposed protective mechanism, though it is characterized with medium confidence. (b) At 1C and 1.5C, swelling occurs but heat generation rate is insufficient to overwhelm the separator-closure response or to sustain runaway. At 2C the higher heat generation rate either prevents the separator response from terminating runaway-triggering conditions in time, or drives cell temperatures beyond the threshold before the protective response can arrest progression, resulting in thermal runaway. The evidence establishes a threshold strictly between 1.5C and 2C but does not specify its exact value.",
+      "score": 0.78,
+      "reason": "(a) Mentions separator shutdown/close-off as a possible mechanism but hedges with multiple alternatives (PTC/CID, contact resistance) rather than clearly identifying separator melting/pore closure as the proposed cause; does not note the medium-confidence/proposed nature explicitly. (b) Correctly links higher C-rate to higher heat generation and explains why 2C can outrun protective response, and correctly states threshold >1.5C and <=2C. However, it misses the specific observation that 1C and 1.5C produce swelling but not runaway."
+    }
+  ],
+  "TR_Dynamics+46+PLOS_ONE": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "B",
+        "C",
+        "E"
+      ],
+      "gold_answer": [
+        "B",
+        "C",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "B",
+        "C",
+        "F"
+      ],
+      "gold_answer": [
+        "B",
+        "C",
+        "F"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "A Warburg element represents semi-infinite diffusion, which in EIS appears as an approximately 45° straight-line tail at low frequency. Here the low-frequency response is instead a depressed semicircle with a large diameter, indicating a distributed RC/charge-transfer plus non-ideal capacitive behavior (e.g., surface film/heterogeneity) rather than diffusion-limited transport, so adding Warburg would be physically inconsistent. Using Warburg anyway would force an artificial diffusion tail, misfit the arc, and bias estimated parameters (inflate apparent diffusion effects and distort Rct/CPE values), leading to incorrect low-frequency/time-domain relaxation prediction.\n\nAt high frequency the response is dominated by instantaneous Ohmic drops from electronic/ionic conduction and contact/lead resistance; capacitive/diffusive processes cannot respond fast enough, so impedance is essentially real and constant. Thus a single resistor captures the sharp voltage rise due to Ohmic polarization. Using anything more complex is unnecessary; conversely, if one did not model it as a pure resistor and introduced reactive elements, the model would create spurious frequency-dependent phase/voltage dynamics and misestimate the series resistance, causing wrong prediction of immediate voltage steps under current transients.",
+      "gold_answer": "A Warburg element models semi-infinite diffusion and appears in EIS as a 45° straight line in the low-frequency region. The HPPC data show a depressed semicircle with large diameter instead of a straight line at 0.005–0.05 Hz; this shape is better described by a parallel RC combination capturing the polarization arc geometry. Using a Warburg element here would misrepresent the frequency-domain shape, producing an inaccurate impedance fit and incorrect time-constant estimation for that process. For the high-frequency region, the rapid voltage rise is governed by Ohmic polarization, which is resistive and instantaneous relative to electrochemical timescales. A single resistor captures this behavior adequately. Using a complex multi-element high-frequency ECM would over-parameterize the model, introducing unnecessary parameters without improving fit for this physical mechanism.",
+      "score": 1.0,
+      "reason": "Prediction matches gold: explains Warburg requires 45° low-frequency line and is inappropriate given depressed semicircle; proposes RC/charge-transfer type modeling instead; states incorrect Warburg would misfit arc and distort time constants/parameters. For high frequency, correctly attributes sharp rise to instantaneous Ohmic polarization modeled by a single resistor and notes extra elements would be unnecessary/over-parameterized (and could introduce spurious dynamics). No disallowed universal claims."
+    }
+  ],
+  "TR_Dynamics+47+Fire": [
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Total mass loss during propagation is dominated by how much gas/vapor and ejecta are generated and expelled, which depends on both stored electrochemical energy (SOC) and the aging path (room-temperature vs. low-temperature) because they change internal impedance, lithium inventory/plating, and the extent/timing of venting.\n\nAt 100% SOC the cells have maximum reactive lithium and cathode delithiation, so heat release is high. Low-temperature aging is associated with stronger lithium plating/SEI growth and more unstable/reactive interfacial species; when fully charged these provide additional fast reactions and gas generation, promoting violent venting/ejection and therefore higher module mass loss than RT-aged modules.\n\nAt 50% SOC the available electrochemical energy is much lower, so runaway severity becomes more limited by whether the cell can reach and sustain the temperatures needed for extensive decomposition and sustained venting. Room-temperature aged cells typically have higher resistance/greater heat generation under abuse and more accumulated degradants that can decompose once heated, so they still vent substantially and lose more mass. Low-temperature aged cells at 50% SOC have less driving energy and, with plating/reactive inventory largely reduced at mid-SOC, produce less gas and less vigorous venting, so their total expelled mass is smaller.\n\nThus the ranking reverses because at high SOC the low-temperature aging signature (plating/reactive interfaces) amplifies gas/ejecta generation, while at mid-SOC the reduced energy and reduced plating contribution shifts control to impedance-driven heating and decomposition products that are more pronounced in RT-aged modules.",
+      "gold_answer": "At 100% SOC, low-temperature aging produces lithium dendrites in the anode that are highly reactive with the electrolyte, and the high surface area of lithium metal promotes extensive SEI layer formation and subsequent decomposition during TR, driving greater mass loss than in RT-aged modules. At 50% SOC, the mechanism reverses: low-temperature aged modules suffer early safety valve rupture, which causes a minor internal pressure release before TR fully develops, preventing the battery from ejecting excess gas and thereby reducing total mass loss. RT-aged modules at 50% SOC do not experience this early valve failure, so they retain internal pressure and eject more material during TR, resulting in higher mass loss. The reversal is therefore caused by a pressure-management failure specific to low-temperature aged modules at 50% SOC, not a reduction in their intrinsic reactivity.",
+      "score": 0.35,
+      "reason": "Prediction matches the 100% SOC part (low-temperature aging → lithium plating/dendrites/SEI reactivity → more gas/ejecta → higher mass loss). But it misses the key 50% SOC mechanism in the gold: early safety valve rupture in low-temperature aged modules causing early pressure release that prevents later ejecta and reduces mass loss. Instead it attributes the 50% SOC reversal mainly to reduced energy/plating and impedance/decomposition differences, which is explicitly disallowed (it suggests reduced plating/reactivity at mid-SOC as the cause)."
+    }
+  ],
+  "TR_Dynamics+50+Journal_of_The_Electrochemical_Society": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "D"
+      ],
+      "gold_answer": [
+        "A",
+        "B"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "(1) For the same 100 Ah capacity, the lower-gravimetric-energy-density design (Cell Y) is expected to show higher mass loss per Ah in both fractions (gas and particles) than the higher-gravimetric-energy-density design (Cell X), consistent with the TR dataset trend that mass-loss-per-capacity scales inversely with gravimetric energy density. The particle fraction is expected to dominate the total (about 5.00 g Ah⁻¹ vs about 2.05 g Ah⁻¹ gas on average), so the bigger absolute separation between X and Y is expected to be in particle ejecta rather than gas.\n(2) The gas fraction is more amenable to design intervention because its variance across the dataset is smaller (about 1.6–2.7 g Ah⁻¹) than the particle fraction (about 2.9–7.2 g Ah⁻¹), indicating it is more controllable/less sensitive to uncontrolled failure-mode scatter, whereas particle ejection is more variable and dominated by mechanical rupture/fragmentation outcomes.\n(3) The heat-generation data implies that the thermal energy released in TR is large compared with the stored electrical energy and is not limited by the nominal electrical capacity; i.e., TR energy hazard is primarily from exothermic reactions and can exceed what would be expected from electrical energy alone.",
+      "gold_answer": "Cell X (high gravimetric energy density) is expected to show a higher gas fraction and a lower particle fraction in its total TR mass loss relative to Cell Y (low gravimetric energy density), as reported for the 25-cell dataset. The total mass loss for both cells is expected to be approximately 7.05 g Ah⁻¹ × 100 Ah = 705 g, since capacity dominates the linear relationship. The gas fraction (≈2.05 g Ah⁻¹) exhibits narrow cross-cell variance (1.6–2.7 g Ah⁻¹), indicating it is primarily capacity-driven and cannot be substantially reduced through cell design changes. The particle fraction (≈5.00 g Ah⁻¹) shows wider variance (2.9–7.2 g Ah⁻¹) and is cell-design-dependent, making it the more actionable target for design intervention. Regarding thermal hazard, total generated heat averages 19.45 kJ Ah⁻¹, which is on average 1.41 times the stored electrical energy (up to 1.72×), meaning TR releases significantly more energy than the cell stores electrically, demanding thermal management margins that substantially exceed cell electrical energy content.",
+      "score": 0.25,
+      "reason": "Part (1) is incorrect: the gold says high energy density (Cell X) has higher gas fraction and lower particle fraction than Cell Y, but the prediction claims Cell Y is higher in both. Part (2) is reversed: gold says particle fraction is more amenable to design intervention (wide variance) and gas is largely capacity-driven (narrow variance), while prediction says gas is more amenable. Part (3) is only partially correct: it notes TR heat can exceed stored electrical energy but misses the required quantitative evidence (19.45 kJ Ah⁻¹ and ~1.41×)."
+    }
+  ],
+  "TR_Dynamics+51+2009_International_Conference_on_Measuring_Technology_and_Mechatronics_Automatio": [
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "C"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "score": 1
+    }
+  ],
+  "TR_Dynamics+52+UnknownJournal": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "B",
+        "C",
+        "E"
+      ],
+      "gold_answer": [
+        "B",
+        "C",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "E",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E",
+        "F"
+      ],
+      "score": 1
+    }
+  ],
+  "TR_Dynamics+53+International_Journal_of_Energy_Research": [
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "E",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E",
+        "F"
+      ],
+      "score": 1
+    }
+  ],
+  "TR_Dynamics+54+Applied_Energy": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "D"
+      ],
+      "gold_answer": [
+        "A",
+        "D"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "F"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Claim 1 flaw: nominal capacity is not the same as the maximum available capacity (Qmax); Qmax changes with temperature and aging, so using a fixed nominal value injects a systematic scaling/bias error into SoC/SOE/state estimates and prevents the filter from matching voltage dynamics across conditions. Contradicting evidence: multi‑scale EKF experiments showing improved fit/estimation when Qmax is allowed to vary (or is estimated) and that using fixed nominal capacity produces consistent SoC bias/voltage residuals that depend on temperature and accumulate with aging.\n\nClaim 2 flaw: accurate SoC estimation does not remove the need to estimate capacity because SoC is normalized by capacity; without tracking Qmax, the SoC estimator can remain internally consistent while absolute charge/energy (and long‑term SoC calibration) drift as capacity fades, and state/parameter coupling makes SoC and capacity not independently observable without a dedicated capacity state/estimator. Contradicting evidence: multi‑scale EKF experiments where adding a capacity estimator (or augmenting the EKF with a capacity state) reduces long‑term SoC drift and voltage residuals across cycles/aging, and where the filter cannot maintain accuracy over aging when capacity is held fixed even if short‑term SoC looks good.",
+      "gold_answer": "First claim is flawed: nominal capacity is defined as fixed and temperature/aging-independent, but maximum available discharge capacity is explicitly a function of temperature and aging level. Substituting nominal for available capacity introduces systematic error under non-nominal conditions, making SoC estimates inaccurate when the cell has aged or operates off-temperature. Second claim is flawed: experimental evidence shows that when capacity estimation is disabled and an inaccurate initial capacity (20 Ah vs. true 31.2 Ah) is used, both voltage and SoC estimation errors increase substantially compared to cases where capacity is estimated concurrently. This demonstrates that SoC accuracy depends on an accurate concurrent capacity estimate, not just the SoC filter quality alone.",
+      "score": 0.85,
+      "reason": "Claim 1 matches: correctly distinguishes nominal (fixed) vs maximum available capacity varying with temperature/aging and notes systematic bias if substituted. Claim 2 is directionally correct that SoC depends on capacity and concurrent capacity estimation helps, but it does not cite the key specific experimental evidence/condition from the benchmark (capacity estimator disabled with wrong initial capacity 20 Ah vs 31.2 Ah causing both voltage and SoC errors to rise), and adds some broader observability/drift generalizations beyond the stated test."
+    }
+  ],
+  "TR_Dynamics+57+Applied_Energy": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "D",
+        "E",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "D",
+        "E",
+        "F"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "E",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E",
+        "F"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "B",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "F"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Below 250 °C, most heat comes from anode–electrolyte reactions; cathode reactions become important only after ~250 °C. In sample 3 (cathode + anode, no electrolyte), heating first causes the lithiated anode to become highly reactive and to transfer/react lithium directly with the cathode material at the solid–solid contact points. Once the temperature is high enough (~290 °C), this direct cathode–anode redox/chemical reaction (lithium transfer to/into the cathode with concurrent reduction/oxidation of cathode components) accelerates abruptly, giving a distinct exothermic peak. The peak is absent when cathode and anode are tested separately because neither electrode alone can execute the coupled redox process: the anode by itself lacks an oxidizing counterpart to accept electrons/host lithium in this temperature range, and the cathode by itself lacks a strong reductant (lithiated anode lithium source) to drive the rapid solid–solid reaction, so no sharp exotherm appears.",
+      "gold_answer": "Step 1: Around 250 °C, the cathode active material undergoes self-decomposition and releases oxygen. Step 2: This released oxygen is available to react with the anode active material present in the same sample. Step 3: The exothermic reaction between released cathode oxygen and anode active material produces the distinct peak near 290 °C observed in the Cat+An sample. Absence in separate tests: When cathode is tested alone or with only electrolyte below 250 °C, no anode material is present to consume the released oxygen in an exothermic reaction at that temperature. When anode is tested alone with electrolyte, no oxygen source from cathode decomposition exists. Both reactants must co-exist for the 290 °C peak to manifest.",
+      "score": 0.35,
+      "reason": "Prediction correctly notes the 290 °C peak occurs only when cathode and anode co-exist and is absent when tested separately due to lack of the coupled counterpart. However, it gives the wrong mechanism: it attributes the peak to direct solid–solid cathode–anode redox/lithium transfer, omitting the required cathode oxygen release near ~250 °C and subsequent oxidation of anode by that released oxygen, which is central to the gold explanation."
+    }
+  ],
+  "TR_Dynamics+59+Applied_Energy": [
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "B",
+        "C",
+        "D",
+        "F"
+      ],
+      "gold_answer": [
+        "B",
+        "C",
+        "D",
+        "F"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Capacity estimation can deteriorate around 35–45% SOC because that region typically has a relatively flat OCV–SOC slope (and weak incremental voltage response), so voltage-based information carries less sensitivity to SOC/capacity changes; with reduced observability, the RLS update relies more on noisy measurements and model mismatch, amplifying estimation error. To preserve overall capacity estimation accuracy, current sensor noise is more critical to manage, because capacity (Ah) is fundamentally obtained by integrating current over time; bias or noise in current directly accumulates into charge-throughput error, whereas voltage noise mainly perturbs instantaneous correction and is less integrative.",
+      "gold_answer": "At 35–45% SOC, the OCV-SOC curve is nearly flat, causing the derivative χ (∂OCV/∂SOC) to approach zero. Since local observability of the state-space system requires χ≠0 simultaneously with a finite RC time constant, a near-zero χ threatens the full-rank condition of the observability matrix, potentially causing capacity estimates to degrade or diverge in that SOC interval. Regarding sensor noise, voltage sensor noise—particularly bias noise—is more critical to manage than current sensor noise. Current sensor bias and variance noise terms are multiplied by small quantities such as χk−1ηiΔt and Ro,k, attenuating their contribution to capacity error. Voltage sensor noise lacks this attenuation pathway and therefore exerts a larger influence on capacity estimation error.",
+      "score": 0.45,
+      "reason": "Correctly attributes 35–45% SOC degradation to a flat OCV–SOC slope (χ≈0) leading to reduced sensitivity/observability, though it does not mention the specific observability condition (χ≠0 with finite RC time constant/full-rank observability matrix). The sensor-noise conclusion is reversed: it claims current noise is more critical, while the gold states voltage (especially bias) dominates because current-noise effects are attenuated by small multiplicative factors."
+    }
+  ],
+  "TR_Dynamics+60+Applied_Energy": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Flaw 1: Treating the internal short circuit (ISC) as the primary heat source and focusing only on reducing ISC intensity is inconsistent with the evidence that ISC heat is not the dominant contributor once runaway develops; exothermic chemical reactions become the main heat source and can sustain/accelerate thermal runaway even when ISC heating is reduced. Mechanistically, lowering ISC heat may delay the onset but cannot stop reaction-driven self-heating and propagation.\n\nFlaw 2: Ignoring thermal conductivity as a design lever is incorrect because changing thermal conductivity changes heat spreading and therefore the safety/trigger regions for runaway. Mechanistically, higher in-plane/through-plane conductivity redistributes and removes heat from hotspots, shifting the boundary between safe and runaway behavior; thus cell-level safety cannot be predicted or improved by ISC intensity reduction alone without accounting for anisotropic heat transport and the resulting temperature field that governs reaction rates.",
+      "gold_answer": "Flaw 1: ISC contributes only ~10% of total thermal runaway heat. The dominant heat sources are the redox chemical reactions (SEI decomposition, electrode–electrolyte reactions, electrolyte decomposition) triggered after separator collapse. Targeting ISC intensity alone neglects the ~90% of heat from chemical reactions, so runaway severity would remain largely unchanged. Flaw 2: Thermal conductivity is a highly effective design lever for expanding the safety region. Battery 3's substantially higher through-plane conductivity (228.5% increase) produces a much broader safety region than Battery 1 despite identical kinetics. The engineer's strategy ignores this passive geometric dissipation pathway. The positive electrode–electrolyte reaction rate is also identified as the dominant sensitivity parameter for ignition delay, suggesting kinetic modification of that specific reaction is more impactful than ISC reduction.",
+      "score": 0.72,
+      "reason": "Captures both main flaws: (1) ISC is not the dominant heat source during runaway because chemical reactions dominate and can sustain runaway even if ISC is reduced; (2) thermal conductivity materially affects heat spreading and the safety/runaway region, so ignoring it is a flaw. However, it omits key required specifics: ISC being ~10% of total heat and the sensitivity result that the positive electrode–electrolyte reaction rate dominates ignition delay."
+    }
+  ],
+  "TR_Dynamics+62+Applied_Thermal_Engineering": [
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "D"
+      ],
+      "gold_answer": [
+        "A",
+        "D"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Claim (1) is broadly supported: 0.20 vs 0.15 W/mK is the same order of magnitude, so the surrogate can be considered thermally representative for many purposes (with some error). Claim (2) requires qualification: higher k reduces internal temperature gradients and makes external convection more effective, so a surrogate with higher k will reach the convection-limited (saturation) regime at least as readily as, and typically sooner than, a lower-k real cell. Therefore a saturation limit seen at h = 150 W/m²K on the higher-k surrogate cannot be transferred “directly” to the lower-k real cell without adjustment; the real cell may show less benefit from increasing h and may have a different (often lower) effective cooling performance and potentially different apparent saturation behavior.",
+      "gold_answer": "Claim 1 is supported: k = 0.20 vs. 0.15 W/mK are similar, so the surrogate's thermal response is expected to approximate the real cell's behavior. Claim 2 requires qualification. The cooling saturation limit at h = 150 W/m²K is established for k = 0.15 W/mK. Since the surrogate has slightly higher k (0.20 W/mK), and evidence shows higher-k cells can continue gaining Tcritical above h = 150 W/m²K, the saturation threshold may differ between the two. Directly transferring the saturation limit from surrogate to real cell without accounting for the conductivity difference is an overreach; the real cell at k = 0.15 W/mK saturates at h = 150 W/m²K, but the surrogate at k = 0.20 W/mK may not saturate at exactly the same point.",
+      "score": 0.7,
+      "reason": "Correctly supports Claim 1 based on similar k values and correctly says Claim 2 needs qualification and cannot be transferred directly. However, it reverses the key saturation trend implied in the gold: it argues higher k would saturate sooner/more readily, whereas the gold states higher-k cells may continue improving beyond h=150 (i.e., saturate later/differently). It also omits that h=150 saturation was established specifically for k=0.15."
+    }
+  ],
+  "TR_Dynamics+63+Applied_Thermal_Engineering": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "E",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 0
+    }
+  ],
+  "TR_Dynamics+64+Applied_Thermal_Engineering": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B"
+      ],
+      "gold_answer": [
+        "A",
+        "B"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "E",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E",
+        "F"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Step 1: Overcharge causes lithium plating on the anode, creating highly reactive metallic lithium that can participate in exothermic reactions and localized heating. Step 2: That heat accelerates further reactions (e.g., SEI/electrolyte breakdown and increasing internal short/impedance growth), so the cell reaches the thermal-runaway threshold at a lower additional overcharge margin, i.e., earlier in time at progressively higher SOC. Between cycles, the plated lithium does not remain as clean metal; it is largely consumed/converted into “dead lithium” and additional SEI by reacting with electrolyte, which increases parasitic reactivity/impedance and makes the next overcharge reach runaway sooner at higher SOC.",
+      "gold_answer": "Deposited lithium metal on the anode does not return to the electrode in subsequent charge cycles. Instead, it reacts exothermically with the electrolyte, releasing heat. This reaction consumes lithium that would otherwise participate in normal cycling, thereby reducing coulombic efficiency. Because the deposited lithium continuously reacts with electrolyte across cycles, cumulative heat generation increases. As overcharge progresses to higher SOC levels, more lithium is deposited, more electrolyte-reaction heat is released, and the thermal state of the cell escalates more rapidly, causing thermal runaway to occur earlier relative to continued charging—explaining why runaway onset SOC is lower under adiabatic conditions where this heat cannot dissipate.",
+      "score": 0.85,
+      "reason": "Prediction captures the key chain: lithium plating leads to exothermic electrolyte/SEI reactions that generate heat, and greater plating at higher SOC increases heat and advances thermal runaway; it also states plated Li is consumed into dead Li/SEI between cycles rather than returning. However, it is less explicit about coulombic efficiency reduction as a required link (focuses more on impedance/shorts), so it’s slightly incomplete."
+    }
+  ],
+  "TR_Dynamics+65+Applied_Thermal_Engineering": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "C",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Error 1: Treating 8.3 m/s (from tracking solid particles) as a reliable upper bound on jet velocity. Particle-tracking generally gives the particle speed, not the gas/core jet speed; particles have inertia, slip relative to the gas, and can lag the fastest portion of the flow. Thus the measured particle velocity is typically a lower-bound (or at least not a guaranteed upper-bound) for the actual jet velocity, so using it as an upper bound is incorrect.\n\nError 2: Assuming an unignited third-stage jet has negligible thermal hazard versus a jet fire. Even without ignition, the vented effluent can be hot and may carry significant sensible heat plus hot solids/aerosols that can impinge on nearby components, causing heating, burns, and secondary ignition of surrounding materials. Also, the unignited flammable jet can ignite later upon mixing with air or encountering an ignition source, so dismissing its hazard based solely on “no flame” is an engineering error.",
+      "gold_answer": "Error 1 – Velocity bound direction: The 8.3 m/s particle-tracked value is a lower bound, not an upper bound, of actual jet velocity. Because solid particles have non-negligible mass, they lag behind the gas stream; the true gas-phase jet velocity is therefore higher than the measured particle velocity. Error 2 – Thermal hazard magnitude: The maximum temperature of the unignited third-stage jet is similar in magnitude to reported jet fire temperatures. Dismissing it as negligible underestimates the hazard; the evidence explicitly states the thermal hazard of the unignited jet must be emphasized, not discounted relative to ignited jet fires.",
+      "score": 0.75,
+      "reason": "Correctly identifies Error 1: particle-tracked 8.3 m/s is not an upper bound and is a lower-bound due to particle inertia/slip. For Error 2, correctly rejects the claim that an unignited jet is negligible and notes it can still be hazardous, but misses the key grounding that the unignited jet’s maximum temperature is comparable to jet-fire temperatures (the specific contradiction in the gold)."
+    }
+  ],
+  "TR_Dynamics+68+Energy_Conversion_and_Management": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "B",
+        "C",
+        "E"
+      ],
+      "gold_answer": [
+        "B",
+        "C",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "D",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "D",
+        "F"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Strategy 1 is not valid for the rapid reaction/thermal runaway phase: external cooling can help delay or mitigate pre-runaway heating but cannot suppress runaway once the self-heating reactions accelerate, because the heat generation rate becomes internally driven and exceeds what external heat removal can offset. Strategy 2 is valid: after extinguishment, cooling should be maintained until the cell temperature is confirmed below Tsa before withdrawing resources.",
+      "gold_answer": "Strategy 1 is only partially valid. External thermal management can extend the slow reaction period by reducing internal cell temperature, but it cannot control the rapid reaction phase because internal temperature control is limited during that phase. The mechanistic limitation is that external cooling lacks the ability to sufficiently regulate temperature at the internal cell boundaries during rapid reactions, which are identified as the primary driver of uncontrolled thermal runaway. Strategy 2 is valid: Tsa is the temperature at which heat generation equals heat dissipation and represents the threshold below which self-accelerating reactions cannot sustain themselves. Lowering cell temperature below Tsa after a fire is the correct criterion to prevent re-ignition.",
+      "score": 0.75,
+      "reason": "Correctly states Strategy 1 is only effective pre-runaway/slow phase and cannot control the rapid reaction phase, and gives a broadly correct mechanistic reason (internal heat generation outpaces external removal). However, it misses the specific evidence-based mechanism that the key limitation is inability to regulate temperature at internal cell boundaries/limited internal temperature control during the rapid phase. Strategy 2 is judged valid and includes cooling below Tsa, but does not define Tsa as the heat-generation-equals-heat-dissipation threshold."
+    }
+  ],
+  "TR_Dynamics+69+Energy": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "D",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "D",
+        "F"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "A single fixed peak-power limit is insufficient because the maximum allowable power is set by whichever constraint binds first, and that binding constraint shifts with operating condition (temperature and SOH). Temperature-driven mechanism: at low temperature the cell is more voltage-limited (higher polarization/impedance causes the terminal voltage to hit the lower voltage limit before the current limit), while at warm temperature it is more current-limited. Aging-driven mechanism: RO increases with aging, increasing I·RO drop and resistive heating, so the same current produces a larger voltage sag, making the voltage/power capability decrease and changing which constraint binds.",
+      "gold_answer": "A single fixed peak power value is insufficient because peak power is defined relative to present battery conditions and must simultaneously respect limits on current, voltage, SOC, and power. At −10°C, elevated internal resistance causes the voltage limit to bind before the current limit, placing the system in a voltage-restricted regime where the effective peak power differs from the current-limited regime at 30°C. Using a fixed value calibrated for one regime can cause over-voltage violations or trigger self-protection under the other. Aging independently increases ohmic resistance RO, which amplifies voltage drop per unit current and makes voltage-limit binding more likely even at moderate temperatures. Together, these mechanisms mean the binding constraint shifts with both temperature and aging state, requiring a condition-adaptive estimator rather than a fixed limit.",
+      "score": 0.92,
+      "reason": "Covers the key idea that peak power depends on which constraint binds and that binding shifts with temperature and aging; correctly identifies low-temp voltage-limited behavior due to higher impedance and aging-driven RO increase increasing voltage sag. Slightly misses explicit mention of simultaneous SOC/power limits and the operational risk phrasing (over-current/over-voltage/self-protection), but overall semantically aligned."
+    }
+  ],
+  "TR_Dynamics+70+Energy": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "C",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "C"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "C",
+        "F"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 1
+    }
+  ],
+  "TR_Dynamics+71+Energy": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "B",
+        "C"
+      ],
+      "gold_answer": [
+        "B",
+        "C"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "B",
+        "C",
+        "F"
+      ],
+      "gold_answer": [
+        "B",
+        "C",
+        "F"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "(1) Graphite anodes rely on a metastable SEI that decomposes around 90–120°C, exposing lithiated graphite to reactive electrolyte and triggering early exothermic reactions; LTO operates at higher potential and forms little/no unstable SEI and has minimal lithiated-carbon-type reactivity, so the uncharged LTO anode shows little thermal activity and a higher/absent early onset. (2) Electrode-only DSC misses whole-cell interactions that set runaway onset, such as electrode/electrolyte reactions under confinement, cross-talk between anode and cathode, SOC-dependent lithium inventory, separator meltdown/shrink, gas generation/pressure effects, and heat/impedance feedback; thus component DSC cannot capture the coupled, self-heating acceleration in an assembled cell or changes with loading, so it may not predict the actual ARC runaway onset temperature.",
+      "gold_answer": "First, graphite anodes become thermally unstable at 90–120°C due to decomposition of metastable SEI layer components, providing an early low-temperature exothermic trigger. In contrast, uncharged LTO ceramic anodes show no significant thermal activity in the studied range due to high intrinsic thermal stability, removing this early trigger. This distinction means graphite-containing cells can initiate self-heating at far lower temperatures than LTO-containing cells at equivalent SOC. Second, evidence explicitly states there is no direct correlation between DSC onset temperatures of separated electrodes and whole-cell ARC onset temperatures. Component tests isolate individual electrodes or electrode-electrolyte pairs, missing coupled interactions, internal pressure effects, and the integrating effect of full-cell thermal dynamics. Therefore DSC component data cannot reliably predict whole-cell onset.",
+      "score": 1.0,
+      "reason": "Matches all required points: identifies graphite SEI decomposition at 90–120°C as the early exothermic trigger, notes discharged LTO shows minimal thermal activity due to higher stability, and explains that separated-electrode DSC onsets do not directly correlate with whole-cell ARC onset because full-cell coupled interactions/pressure/thermal dynamics are missing."
+    }
+  ],
+  "TR_Dynamics+72+Energy": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "D"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "B",
+        "C",
+        "E"
+      ],
+      "gold_answer": [
+        "B",
+        "C",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "D"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "The 2‑RC model’s component‑level structural limitations are: (1) it represents the battery’s polarization/diffusion dynamics with only two discrete first‑order RC time constants, so it cannot capture the distributed/long‑memory behavior seen in real cells; and (2) its use of ideal (integer‑order) lumped R and C elements makes the impedance/dynamic response shape inflexible, so the same small set of elements cannot match the battery’s behavior over varying operating conditions. A naive improvement is to add more RC stages, which can better fit dynamics but increases model order and brings documented costs such as more parameters to identify/tune, higher computational burden, and reduced filter robustness/observability (greater risk of overfitting and sensitivity to noise). The FUDS EKF results (fractional: 7.54 mV RMSE and SOC error ≤0.02 vs 2‑RC: 13.32 mV and 0.07) show the fractional model already substantially outperforms the 2‑RC without increasing RC order, indicating that adding more RC stages is not necessary to reach that level of estimation accuracy under those conditions.",
+      "gold_answer": "The two structural limitations of the 2-RC model are: (1) it neglects solid-state diffusion of lithium ions, missing slow transport dynamics that affect voltage accuracy; and (2) it uses an ideal capacitor, which cannot accurately simulate the electrochemical double-layer effect. The naive fix of adding more RC stages can improve model accuracy but introduces high complexity, difficult parameter identification, and long simulation time. The FUDS comparison shows that the fractional-order model achieves nearly half the RMSE (7.54 vs. 13.32 mV) and over three times better SOC accuracy (within 0.02 vs. 0.07) compared to the 2-RC model, suggesting that the fractional approach addresses these structural gaps more efficiently than simply adding RC stages, without incurring the associated complexity costs.",
+      "score": 0.62,
+      "reason": "Correctly states the trade-off of adding RC stages (more parameters/complexity/compute) and correctly reports the FUDS RMSE and SOC error numbers and the conclusion that extra RC stages aren’t necessary under FUDS. However, it misses the two specific component-level structural limitations required: neglect of solid-state diffusion and the ideal capacitor’s inability to capture the double-layer effect; it instead gives more generic/indirect limitations (distributed dynamics/inflexible impedance)."
+    }
+  ],
+  "TR_Dynamics+73+Energy": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C"
+      ],
+      "gold_answer": [
+        "A",
+        "C"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "B",
+        "E"
+      ],
+      "gold_answer": [
+        "B",
+        "C",
+        "E"
+      ],
+      "score": 0
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Flaw: she equates lower training-time complexity with being faster overall and “always preferred,” ignoring inference/estimation cost and other trade-offs. Evidence: while LSSVM can train faster (solving linear equations), the estimation phase for LSSVM generally requires summing contributions from all training samples, so its inference complexity scales with the training set size, whereas standard SVM prediction scales with the number of support vectors (often much smaller). Net trade-off: LSSVM tends to reduce training time but can increase estimation-time cost and memory (dense solution, no sparsity); SVM often trains slower but yields sparse models that can be faster at estimation.",
+      "gold_answer": "The flaw is conflating training complexity with estimation complexity. Both LSSVM and SVM share the same estimation time complexity O(m), where m is the number of support vectors. LSSVM has lower training complexity O(n²) versus SVM's O(n³), which is an advantage during training. However, LSSVM generally produces more support vectors than SVM. Since estimation cost scales with support vector count, LSSVM incurs higher estimation-phase cost despite its training advantage. Therefore, LSSVM is faster to train but slower to estimate, and the engineer's blanket preference claim is unsupported without specifying whether the deployment bottleneck is training or inference.",
+      "score": 0.6,
+      "reason": "Correctly identifies the reasoning flaw (training vs inference) and the trade-off (LSSVM trains faster but can be slower at estimation due to less sparsity). However, it contradicts the key evidence required: the gold states both have estimation complexity O(m) (support-vector based), whereas the prediction claims LSSVM inference scales with all training samples. It also omits the explicit O(n^2) vs O(n^3) training complexities."
+    }
+  ],
+  "TR_Dynamics+74+Energy": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "B",
+        "D"
+      ],
+      "gold_answer": [
+        "B",
+        "D"
+      ],
+      "score": 1
+    }
+  ],
+  "TR_Dynamics+75+Energy": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C"
+      ],
+      "gold_answer": [
+        "A",
+        "C"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "C",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "C",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "D"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "D"
+      ],
+      "score": 1
+    }
+  ],
+  "TR_Dynamics+76+Energy": [
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "D"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "score": 1
+    }
+  ],
+  "TR_Dynamics+77+Energy": [
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "E",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "C",
+        "E"
+      ],
+      "score": 0
+    }
+  ],
+  "TR_Dynamics+78+Energy": [
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "Overcharge TR releases more total energy, but in an open environment much of that energy is carried away in vented hot gases/jets and flame and is lost to convection/radiation to the surroundings rather than conducted into the neighbor. Overheating applies sustained, localized heating through the shell/contact region, so a larger fraction of the input heat flows by conduction into the adjacent cell. Thus propagation speed is governed by the inter‑cell heat transfer rate Q≈kAΔT/L (effective thermal conductivity k across the gap/contact, contact area A, separation/thermal resistance L and any contact pressure/interface resistance), plus the competing heat losses to ambient; overheating maintains high ΔT at the interface and lower relative losses, giving faster neighbor heating despite lower total heat release.",
+      "gold_answer": "The apparent contradiction is resolved by recognizing that TR propagation speed to cell 2# is governed by the rate of heat transfer through the shell between cells, not by the total heat released inside cell 1#. Under overheating, cell 1#'s back-surface temperature is higher, producing greater conductive heat transfer power to cell 2# through the shell. Additionally, overcharging causes approximately twice the mass loss of overheating, making cell 1# more hollow, which reduces mechanical contact stress between the cells and thereby lowers the effective thermal conductance of the shell-to-shell interface. Consequently, even though overcharging generates far more total energy, the lower surface temperature and reduced contact stress under overcharging result in less heat transferred per unit time to cell 2#, slowing propagation.",
+      "score": 0.55,
+      "reason": "Prediction correctly states that propagation rate is governed by inter-cell conductive heat transfer (Q~kAΔT/L) rather than total heat release, matching the key decoupling and shell-transfer mechanism. However, it misses two required specifics: (1) that the back-surface temperature of cell 1# is higher under overheating, and (2) the mass-loss → reduced contact stress → reduced effective thermal conductance explanation for slower propagation under overcharging. It instead attributes the difference mainly to energy carried away by jets/ambient losses, which is not the gold mechanism."
+    }
+  ],
+  "TR_Dynamics+79+Energy_Storage_Materials": [
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "D",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "D",
+        "F"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "The ~1000× resistance rise before ISC means the cell is in a very high-impedance regime when the short forms, so the short-circuit current is strongly limited and the instantaneous Joule heating (I^2R) and heat generation rate are too small to create a detectable temperature-rate spike at the moment of ISC; instead the resistance increase effectively throttles the short. The >90% retained discharge capacity at the ISC stop point implies most of the electrochemical capacity/chemical energy remains stored (the cell has not significantly self-discharged or reacted away its active material) even though an internal short path has just appeared. For ISC to trigger local thermal runaway, the effective resistance at/after ISC would need to be much lower (i.e., the cell would have to be in a low-resistance/low-impedance regime rather than the ~1000× elevated-resistance regime), allowing much larger short-circuit current and concentrated heating sufficient to raise local temperature and accelerate exothermic reactions.",
+      "gold_answer": "The ~1000× resistance increase before ISC results from three concurrent processes: electrolyte depletion via solvent evaporation, formation of thick deposits reducing electrode porosity, and PE pore closure (separator shutdown). At ~1000× initial resistance, Joule heating power at the ISC site (P = I²R, but I is severely limited by the high resistance) is negligible; consequently, no visible rise in the temperature-rate profile is observed. The >90% retained capacity in the liquid-nitrogen-stopped coin cell confirms that most chemical energy (stored in electrode materials) had not been released during ISC—the electrochemical energy was still available, consistent with the near-zero thermal output at ISC. For ISC to trigger local thermal runaway, battery resistance at the ISC moment would need to be low—at or near the initial value (R0) or up to 5× R0—placing it in the regime where local temperature rise exceeds 100°C. The bare-PE 21Ah cell exemplifies this: ISC at 124°C with most electrolyte still present kept resistance low, producing large joule heat and triggering local TR propagation.",
+      "score": 0.72,
+      "reason": "Prediction correctly links the ~1000× resistance rise to limited short-circuit current, negligible Joule heating, and thus no temperature-rate spike at ISC, and correctly interprets >90% retained capacity as unreleased chemical/ electrochemical energy. However, it omits the required three specific mechanisms causing the resistance increase (electrolyte depletion, deposits/porosity loss, PE pore closure), does not specify the low-resistance regime threshold (≈R0 to 5×R0 / >100°C local rise), and does not reference the contrasting bare-PE 21Ah example."
+    }
+  ],
+  "TR_Dynamics+80+Electric_Power_Systems_Research": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q2",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "F"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "F"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "B",
+        "D"
+      ],
+      "gold_answer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "SOC via OCV–SOC lookup is degraded at −15°C because the OCV–SOC relationship is temperature-dependent: the OCV at a given SOC shifts with temperature (and low-temperature polarization/relaxation effects are larger), so using a 25°C reference curve maps the measured OCV to the wrong SOC. SOH via series-resistance is degraded because cell internal resistance increases at low temperature due to slower electrochemical kinetics and reduced ionic conductivity, so the measured resistance reflects temperature-induced impedance rise rather than true aging relative to the 40 mΩ new value. An additional instrumentation challenge (independent of temperature) is that the resistance-based SOH requires accurate milliohm-level measurement, i.e., precise sensing of very small voltage drops under a known current with careful handling of contact/lead resistance and measurement noise.",
+      "gold_answer": "For SOC: temperature variation introduces an offset in the OCV-SOC curve relative to the 25°C reference, so voltage readings at −15°C map to incorrect SOC values. Additionally, OCV-SOC correlation requires equilibrium rest; if the pack is operating, this condition is also violated. For SOH: ohmic and polarization resistances increase significantly at low temperature, meaning a measured resistance increase does not isolate degradation from temperature-induced elevation, conflating aging with thermal effects. The additional instrumentation challenge is that low battery resistance values (e.g., 40 mΩ baseline) combined with sensor noise and low measurement precision make accurate resistance-based SOH estimation inherently difficult, independent of temperature—small degradation increments fall within the noise floor of available sensors.",
+      "score": 0.85,
+      "reason": "Matches the key mechanisms: temperature-dependent OCV–SOC curve shift causing SOC mis-mapping, and low-temperature impedance increase (kinetics/ionic conductivity) confounding resistance-based SOH vs aging. Also correctly identifies the temperature-independent challenge of milliohm-level resistance measurement with noise/lead/contact resistance. Slightly misses the explicit requirement that OCV-SOC needs equilibrium rest (pack operating violates this), only alluding to relaxation/polarization."
+    }
+  ],
+  "TR_Dynamics+81+Journal_of_Energy_Storage": [
+    {
+      "qid": "Q1",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C",
+        "E"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "score": 1
+    },
+    {
+      "qid": "S1",
+      "question_type": "short_answer",
+      "prediction": "If GO’s own adsorption were the main cause, then adding 5% GO as a physical mixture should give a similar improvement, but the 5% GO + 95% exfoliated kaolinite mixture reaches only 166.65 mg/g—far below 250 mg/g—so the co-processed material’s extra capacity is not explained by GO simply adding its independent uptake. If exfoliation/surface area were the only cause, then the ~2.1× BET area increase (10.38 to 21.47 m²/g) would predict only a comparable (~2.1×) rise over 0-G/K/P (111 mg/g), i.e., ~233 mg/g, yet 5-G/K/P reaches 250 mg/g and the mixture (with similar components) does not. Thus the enhancement must involve additional effects from co-processing (e.g., altered accessibility/interaction sites), not just GO’s standalone contribution or surface-area increase alone.",
+      "gold_answer": "(a) The physical mixture contains the identical 5% GO mass fraction as 5-G/K/P yet yields only 166.65 mg/g versus 250 mg/g. If GO's own adsorption capacity were solely responsible, both materials should perform equivalently. The gap therefore rules out a simple GO contribution mechanism. (b) The BET surface area of 5-G/K/P is ~2.1× that of 0-G/K/P, but the Langmuir capacity ratio is ~2.25× (250/111). This near-proportionality might superficially suggest surface area drives capacity, yet the physical mixture—which also contains high-surface-area components—still falls far below 250 mg/g. This indicates that structural features generated during co-processing (e.g., nanoscrolls formation) create adsorption sites not replicable by simply increasing surface area through separate exfoliation. Neither factor alone is sufficient; the enhancement requires co-processing-induced synergistic structural changes.",
+      "score": 0.95,
+      "reason": "Correctly uses the physical-mixture control (same 5% GO but much lower capacity) to rule out GO-alone, and argues BET area increase alone can’t explain the full performance especially given the mixture’s lower uptake. It attributes the remaining gain to co-processing synergy/created sites, though it doesn’t explicitly mention nanoscrolls (only gives a generic example), so minor incompleteness."
+    }
+  ],
+  "TR_Dynamics+82+Journal_of_Energy_Storage": [
+    {
+      "qid": "Q3",
+      "question_type": "mcq",
+      "prediction": [
+        "A",
+        "C"
+      ],
+      "gold_answer": [
+        "A",
+        "C",
+        "D",
+        "F"
+      ],
+      "score": 0
+    }
+  ]
+}

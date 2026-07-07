@@ -1,0 +1,104 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A thermosensitive microcapsule fire extinguishing agent is coated on the surface of lithium-ion cells in a two-cell module. The capsule wall material has an endothermic absorption range of 51 to 119 degrees C and ruptures above 119 degrees C to release a bromine-containing fire suppressant. In a thermal runaway propagation test, cell 1 undergoes thermal runaway first. Measurements show that cell 1's peak temperature is reduced by 18 degrees C compared to natural cooling, and cell 2 reaches a peak of 63 degrees C. An engineer evaluating this system makes the following claims. Which claims are admissible under the described evidence?",
+        "options": [
+          "A. The bromine-containing suppressant reduces peak temperature primarily by absorbing heat through an endothermic phase transition in the capsule wall material before rupture.",
+          "B. The suppressant released from cell 1's capsules can contribute to limiting cell 2's temperature rise, because the released material acts on the combustion chain reaction rather than solely on the surface of the originating cell.",
+          "C. Because cell 2 reaches only 63 degrees C, the capsule coating on cell 2 does not rupture during this test, meaning cell 2's suppressant remains unreleased and provides no active contribution during the event.",
+          "D. The 14 degree C reduction in single-cell peak temperature and the 18 degree C reduction observed for cell 1 in the module test are consistent with each other, confirming that module-level confinement has no effect on suppressant performance.",
+          "E. The thermal protection provided by the microcapsule system eliminates the production of toxic off-gases from the cells during thermal runaway.",
+          "F. The endothermic absorption by the capsule wall material below 119 degrees C and the chemical radical-capture action of the bromine compound above 119 degrees C represent two distinct and sequential contributions to temperature mitigation."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "The endothermic peak of the capsule wall is attributed to the wall material absorbing heat before rupture, which is a physical absorption mechanism. However, the primary chemical suppression mechanism after rupture is the bromine element capturing free radicals in the combustion chain reaction. Attributing the bromine compound's temperature reduction to endothermic phase transition confuses the wall material's pre-rupture behavior with the core material's post-rupture chemical mechanism. This is a mechanism substitution distractor.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Protection+217+Polymers:C003",
+              "TR_Protection+217+Polymers:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The bromine compound acts by capturing free radicals in the combustion chain reaction, which is a gas-phase or distributed chemical mechanism rather than a surface-contact-only mechanism. This means suppressant released from cell 1's capsules can act on the combustion environment surrounding cell 2, contributing to the observed reduction in cell 2's peak temperature. This is an admissible inference from the radical-capture mechanism.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+217+Polymers:C005",
+              "TR_Protection+217+Polymers:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Capsule rupture requires temperature to exceed 119 degrees C. Cell 2 reaches only 63 degrees C, which is below this threshold. Therefore, cell 2's capsule wall remains intact and the core suppressant material is not released from cell 2's coating during the test. This is a direct threshold-based admissible conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+217+Polymers:C002",
+              "TR_Protection+217+Polymers:C003",
+              "TR_Protection+217+Polymers:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The single-cell test shows a 14 degree C reduction while the module test shows an 18 degree C reduction for cell 1. These values differ, which is inconsistent with the claim that module confinement has no effect. The difference could reflect confinement effects, thermal interaction, or different test conditions. Claiming consistency to conclude no confinement effect is an unsupported overgeneralization and ignores the numerical discrepancy.",
+            "error_type": "overgeneralization_distractor",
+            "evidence_refs": [
+              "TR_Protection+217+Polymers:C001",
+              "TR_Protection+217+Polymers:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The evidence states that the bromine compound reduces the formation of flammable gases by disrupting the oxidation process, but this is a reduction in flammable gas formation, not elimination of all toxic off-gases. Furthermore, evidence from a separate source confirms that lithium-ion cells produce large quantities of toxic gases even at 30% SOC during thermal runaway. Claiming elimination of toxic off-gases is an unsupported protective mechanism overclaim.",
+            "error_type": "protective_mechanism_overclaim",
+            "evidence_refs": [
+              "TR_Protection+217+Polymers:C005",
+              "TR_Protection+216+IEEE_Industry_Applications_Magazine:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Below 119 degrees C, the capsule wall material undergoes endothermic absorption (physical heat absorption). Above 119 degrees C, the wall ruptures and releases the bromine compound, which then captures free radicals chemically. These are two distinct mechanisms operating in sequential temperature regimes, both supported by the evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+217+Polymers:C003",
+              "TR_Protection+217+Polymers:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Sequential and spatially distributed suppression mechanisms of thermosensitive microcapsule agents, and admissibility of conclusions about rupture threshold, chemical mechanism scope, and toxic gas claims",
+        "primary_boundary": "Capsule rupture threshold at 119 degrees C determines whether active chemical suppression is released; bromine radical-capture mechanism is not confined to the originating cell surface; temperature reductions are partial, not eliminative",
+        "intended_error_modes": [
+          "Attributing bromine chemical action to endothermic phase transition (mechanism substitution)",
+          "Claiming toxic gas elimination from a partial flammable gas reduction result (protective mechanism overclaim)",
+          "Using numerically different reduction values to claim no confinement effect (overgeneralization)"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding that suppression eliminates toxic off-gassing",
+          "Concluding that module-level and single-cell performance are equivalent",
+          "Concluding that cell 2 capsules contribute actively when cell 2 temperature is below rupture threshold"
+        ]
+      }
+    }
+  ],
+  "short_answers": []
+}

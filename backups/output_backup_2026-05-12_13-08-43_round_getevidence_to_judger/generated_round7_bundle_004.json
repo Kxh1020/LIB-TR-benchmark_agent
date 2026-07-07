@@ -1,0 +1,312 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is comparing thermal runaway hazard between 18650-format NMC811/SiC lithium-ion cells and 18650-format sodium-ion cells (NaMn1/3Fe1/3Ni1/3O2 cathode) under identical continuous heating at 128 W. The SIBs exhibit a TR onset temperature approximately 10–15°C higher than LIBs, no gas ignition is observed, and total mass loss is lower. The engineer must determine which conclusions about the SIB hazard profile are admissible given these observations.",
+        "options": [
+          "A The higher TR onset temperature of the SIBs is sufficient evidence to conclude they are safer than LIBs across all abuse conditions.",
+          "B The absence of gas ignition in SIBs is primarily attributable to the cathode material having greater thermal stability than the LIB cathode material.",
+          "C Because SIB venting gas velocity cannot be estimated without ignition, the mass flow rate during SIB thermal runaway cannot be calculated from the same optical method used for LIBs.",
+          "D The lower total mass loss in SIBs compared to LIBs confirms that SIB cells store less electrochemical energy and therefore cannot reach temperatures above 400°C under any heating condition.",
+          "E The longer transition time from safety valve opening to TR event in SIBs compared to 18650 LIBs under the same heating rate indicates the SIBs provide more time for early intervention.",
+          "F Surface temperature measurements remaining below 400°C in SIBs directly prove that no exothermic internal reactions occurred during the venting event."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "A 10–15°C higher onset temperature under one heating condition cannot support a universal safety claim across all abuse conditions.",
+            "error_type": "overgeneralization_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+126+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Evidence explicitly attributes absence of SIB ignition primarily to cathode material thermal stability difference relative to LIB cathode.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+126+Journal_of_Power_Sources:C008"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence states mass flow rate for SIBs could not be estimated precisely because the optical velocity method requires ignition, which SIBs did not exhibit.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+126+Journal_of_Power_Sources:C009"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Lower mass loss reflects lower energy content and absence of ignition under tested conditions; it does not bound temperature under all possible heating scenarios.",
+            "error_type": "condition_violation_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+126+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "SIB transition time averaged 154 s versus 115 s for 18650 LIBs under 128 W heating, supporting the admissible conclusion of greater intervention window.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+126+Journal_of_Power_Sources:C010"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Surface temperature is an indirect measurement; it cannot definitively prove absence of internal exothermic reactions, only that surface remained below 400°C.",
+            "error_type": "measurement_scope_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+126+Journal_of_Power_Sources:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of safety conclusions about SIBs versus LIBs based on observable TR parameters and measurement limitations",
+        "primary_boundary": "Observable differences in onset temperature, ignition behavior, and mass loss support specific mechanistic claims but cannot be generalized to universal safety superiority or used to bound unmeasured internal states",
+        "intended_error_modes": [
+          "overgeneralization from single-condition comparison",
+          "measurement scope expansion from surface to internal state",
+          "causal overclaim from correlated observations"
+        ],
+        "disallowed_extrapolations": [
+          "Universal safety claim from single-condition onset temperature difference",
+          "Temperature bound under all conditions from single test mass loss result"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "NTM sodium-ion batteries and LFP lithium-ion batteries of identical format are heated under the same protocol across five SOC levels (0%, 60%, 80%, 90%, 100%). LFP cells undergo thermal runaway at all SOCs above 0%, while NTM SIBs do not undergo thermal runaway at any SOC. The safety valve opening temperature of LFP cells is approximately 30% higher than that of NTM SIBs. For early warning system design, engineers must select appropriate indicator parameters.",
+        "options": [
+          "A For NTM SIBs, CO concentration is the first parameter to respond and is therefore the most suitable early warning indicator of thermal hazard.",
+          "B Because LFP cells have a higher safety valve opening temperature, they provide more time between valve opening and thermal runaway onset than NTM SIBs.",
+          "C For LFP LIBs, voltage drop is the first parameter to respond, making it the most suitable early warning signal for that chemistry.",
+          "D The dominant gas released by NTM SIBs is H2, consistent with the electrolyte decomposition reactions that dominate at elevated temperatures.",
+          "E The fact that NTM SIBs do not undergo thermal runaway at any tested SOC means CO monitoring alone is sufficient to prevent thermal runaway in SIB systems.",
+          "F H2 concentration from LFP cells at 100% SOC far exceeds that from NTM SIBs, and this difference is consistent with LFP cells exhibiting thermal runaway while NTM SIBs do not."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence explicitly states CO responds first in NTM SIBs and is recommended as the early warning parameter for that chemistry.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+127+Journal_of_Power_Sources:C006"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Higher valve opening temperature does not imply longer transition time to TR; LFP cells undergo TR while SIBs do not, making the comparison mechanistically invalid.",
+            "error_type": "causal_overclaim_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+127+Journal_of_Power_Sources:C001",
+              "TR_Gasventing+127+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence states voltage responds first in LFP LIBs and is recommended as the early warning parameter for that chemistry.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+127+Journal_of_Power_Sources:C006"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence states CO2 is the dominant gas in NTM SIBs, not H2; H2 dominates in LFP LIBs.",
+            "error_type": "mechanism_confusion_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+127+Journal_of_Power_Sources:C007"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "CO monitoring is an early warning indicator, not a prevention mechanism; absence of TR in tested conditions does not mean CO monitoring alone prevents TR.",
+            "error_type": "protective_mechanism_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+127+Journal_of_Power_Sources:C006",
+              "TR_Gasventing+127+Journal_of_Power_Sources:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "LFP H2 reaches 5412 ppm at 100% SOC versus maximum 92 ppm in SIBs; this large difference aligns with LFP undergoing TR and SIBs not doing so.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+127+Journal_of_Power_Sources:C007",
+              "TR_Gasventing+127+Journal_of_Power_Sources:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Chemistry-dependent early warning parameter selection and admissibility of mechanistic inferences from gas composition and valve opening temperature differences",
+        "primary_boundary": "Early warning parameter suitability is chemistry-specific and cannot be generalized; valve opening temperature difference does not directly imply transition time difference when one chemistry undergoes TR and the other does not",
+        "intended_error_modes": [
+          "mechanism substitution for dominant gas identity",
+          "causal overclaim from valve temperature to transition time",
+          "protective mechanism overclaim from early warning to prevention"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring transition time ordering from valve opening temperature alone",
+          "Treating early warning indicator as a prevention mechanism"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "During thermal runaway of two 280Ah LFP cells inside a battery pack, a pressure balance valve opens 36 times. The ejected material consists of approximately 2% non-condensable gas and 20% condensed electrolyte liquid by mass. The four interior corners of the pack show black ablation marks. An engineer evaluates design implications and hazard characterization for energy storage system safety.",
+        "options": [
+          "A The condensed electrolyte liquid accumulating inside the pack poses an arcing hazard that cannot be dismissed as negligible given its mass fraction relative to ejected gas.",
+          "B Because 72.2% of valve opening events occur at the lowest pressure reduction rate (0.0–0.5 kPa/s), the pressure balance valve primarily functions as a slow-bleed device and is unlikely to experience high-rate pressure relief events.",
+          "C Batteries located at the corners and edges of the module require additional electrical insulation protection due to preferential accumulation of TR airflow and electrolyte aerosols at those locations.",
+          "D The first valve opening occurring at a pressure slightly above the manufacturer-specified threshold, followed by subsequent openings at lower pressures, is consistent with a reduced effective opening threshold after initial actuation.",
+          "E The 1:10 mass ratio of ejected gas to condensed liquid means that thermal management strategies focused exclusively on gas venting will address the dominant ejected mass fraction.",
+          "F The dominant non-condensable gas being H2 at over 55% molar fraction means that the primary explosion hazard from LFP TR is driven by CO accumulation rather than flammable gas buildup."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence explicitly identifies the 1080.9 g electrolyte flow as an arcing hazard that cannot be ignored in energy storage systems.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "While 72.2% of events are low-rate, the evidence records a maximum rate of 1.5–2.0 kPa/s; stating high-rate events are unlikely misrepresents the distribution.",
+            "error_type": "numerical_exaggeration_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence identifies corner accumulation of TR airflow and electrolyte aerosols as the basis for recommending enhanced insulation at edges and corners.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "First opening at ~107 kPa versus subsequent openings at ~105.7–106.2 kPa, both above the 104.825 kPa specification, is consistent with a reduced effective threshold after first actuation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Condensed liquid accounts for ~20% versus ~2% for gas; a gas-only venting strategy addresses the minority mass fraction, leaving the dominant liquid fraction unmanaged.",
+            "error_type": "scope_expansion_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "H2 is the dominant gas at 55.22% molar fraction; attributing the primary flammable gas hazard to CO rather than H2 inverts the evidence-supported composition.",
+            "error_type": "mechanism_confusion_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Design implications from ejected material composition, valve actuation behavior, and spatial accumulation patterns in a battery pack during thermal runaway",
+        "primary_boundary": "Condensed electrolyte liquid constitutes the dominant ejected mass fraction; valve behavior shows threshold reduction after first actuation; corner accumulation is a spatial hazard requiring targeted design response",
+        "intended_error_modes": [
+          "ignoring dominant mass fraction in favor of gas-only analysis",
+          "misidentifying primary flammable gas from composition data",
+          "overstating rarity of high-rate valve events from frequency distribution"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding high-rate valve events cannot occur from their low frequency",
+          "Attributing primary explosion risk to CO when H2 dominates by molar fraction"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A safety engineer is comparing the toxic gas hazard from NTM sodium-ion batteries and LFP lithium-ion batteries at 100% SOC. The LFP cells undergo thermal runaway while the NTM SIBs do not. The engineer notes that the FED (fractional effective dose) value for LFP cells is approximately 29 times higher than for NTM SIBs at 100% SOC. CO concentrations from LFP cells at 60% SOC and above exceed the lethal threshold, while NTM SIB CO concentrations remain well below that threshold at all SOCs. However, the engineer also observes that NTM SIBs have a lower safety valve opening temperature than LFP cells. Explain why the lower safety valve opening temperature of NTM SIBs does not imply that NTM SIBs present a greater toxic gas hazard than LFP cells, and identify which gas species and which parameter most directly differentiate the toxic hazard between the two chemistries at high SOC."
+      },
+      "ground_truth": {
+        "gold_answer": "The lower safety valve opening temperature of NTM SIBs means the internal materials begin releasing gas at a lower temperature threshold, but this does not translate to greater toxic hazard because the NTM SIBs do not undergo thermal runaway at any tested SOC. Without thermal runaway, the exothermic reactions that generate large quantities of toxic gases such as CO and H2 do not occur at the same scale as in LFP cells. The toxic hazard is determined by the concentration and composition of gases actually released, not by the valve opening temperature alone. CO is the primary toxic gas species that differentiates the two chemistries: LFP cells at 60% SOC and above produce CO concentrations exceeding the lethal threshold, while NTM SIBs remain well below that threshold at all SOCs. The FED value, which integrates the toxic gas concentrations into an asphyxiation hazard metric, is approximately 29 times higher for LFP cells at 100% SOC, directly quantifying the hazard difference. Therefore, valve opening temperature is a thermal stability indicator, not a toxic hazard indicator; the relevant differentiating parameters are CO concentration relative to the lethal threshold and the FED value.",
+        "must_include": [
+          "Absence of thermal runaway in NTM SIBs means large-scale toxic gas generation does not occur despite lower valve opening temperature",
+          "CO concentration exceeding the lethal threshold in LFP cells at 60% SOC and above is the primary toxic differentiator",
+          "FED value quantifies the integrated asphyxiation hazard and is approximately 29 times higher for LFP at 100% SOC",
+          "Valve opening temperature is a thermal stability indicator, not a direct toxic hazard metric"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding NTM SIBs are completely safe because they do not undergo thermal runaway under tested conditions",
+          "Inferring that lower valve opening temperature always implies greater gas release or greater hazard",
+          "Generalizing the toxic hazard comparison to SOC levels or conditions not covered by the evidence"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Decoupling thermal stability indicators (valve opening temperature) from toxic gas hazard indicators (CO concentration, FED) across two battery chemistries with different TR behavior",
+        "primary_boundary": "Valve opening temperature governs when gas release begins but does not determine the magnitude or toxicity of gases released; toxic hazard is determined by gas composition and concentration relative to physiological thresholds, which depend on whether thermal runaway occurs",
+        "intended_error_modes": [
+          "Conflating lower valve opening temperature with greater gas release or greater toxic hazard",
+          "Ignoring the absence of thermal runaway as the mechanistic reason for low toxic gas output in SIBs",
+          "Treating FED as a secondary metric rather than the primary integrated hazard quantifier"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,224 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A two-car garage (enclosure ~130 m³) experiences a deflagration from battery vent gas released during thermal runaway. Experimental data show that partial deflagration of approximately 91 L of LFP surrogate gas or 124–310 L of NCA surrogate gas produces sufficient pressure to eject the garage door. The LFP surrogate yields higher pressure and impulse per liter than NCA surrogate. Peak internal pressures causing significant structural damage were measured at approximately 2.5–2.8 kPa. Which of the following conclusions are supported?",
+        "options": [
+          "A. The LFP surrogate's higher pressure output per liter means a smaller released volume of LFP gas is needed to reach the door-ejection threshold compared to NCA gas.",
+          "B. Because peak pressures causing structural damage were below established minor-damage thresholds, the Jarrett and Baker thresholds are conservative enough to be used directly for garage-scale battery explosion design without modification.",
+          "C. The gas volumes sufficient to eject the garage door correspond to well-mixed flammable concentrations substantially below the 25% LFL criterion commonly used for explosion hazard assessment, indicating that standard LFL-based hazard thresholds may underestimate structural risk in this geometry.",
+          "D. The Mulpuru vented explosion model over-predicts the rate of pressure rise relative to experimental results, making it suitable as a conservative design tool for estimating explosion pressure in similar enclosures.",
+          "E. For the largest tested NCA gas volume, the peak overpressure was lower than for a smaller volume, which demonstrates that increasing released gas volume monotonically increases peak overpressure in vented enclosures.",
+          "F. The structural damage observed at pressures 50% below established thresholds implies those thresholds cannot be applied without accounting for enclosure-specific vent characteristics."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "LFP yields greater pressure per liter due to higher burning velocity; therefore less volume is needed to reach the same pressure threshold.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+125+Fuel:C001",
+              "TR_Gasventing+125+Fuel:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence shows significant damage occurred at pressures ~50% below those thresholds, indicating the thresholds are non-conservative for this geometry, not conservative enough for direct use.",
+            "error_type": "Causal overclaim: threshold conservatism inverted relative to evidence",
+            "evidence_refs": [
+              "TR_Gasventing+125+Fuel:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Damaging volumes correspond to only 1–2.5% LFL of the enclosure, far below the 25% LFL criterion, supporting the conclusion that standard criteria underestimate risk here.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+125+Fuel:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The model over-predicted pressure rise rate in every tested case, consistent with its use as a conservative design tool for pressure rise estimation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+125+Fuel:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The largest volume (3302 L) produced lower peak overpressure than the 1651 L case due to early pressure relief through the garage door acting as a vent panel, demonstrating non-monotonic behavior.",
+            "error_type": "Unjustified monotonicity: ignores regime change from vent panel activation",
+            "evidence_refs": [
+              "TR_Gasventing+125+Fuel:C006"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Damage at pressures 50% below standard thresholds indicates those thresholds do not account for enclosure-specific factors such as low-strength vent panels.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+125+Fuel:C003",
+              "TR_Gasventing+125+Fuel:C006"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of standard explosion thresholds and LFL-based criteria for battery vent gas deflagration in residential enclosures",
+        "primary_boundary": "Standard thresholds are non-conservative for this geometry; peak pressure is non-monotonic with gas volume due to vent panel activation",
+        "intended_error_modes": [
+          "Treating established thresholds as conservative when evidence shows they are non-conservative",
+          "Assuming monotonic pressure increase with gas volume without accounting for venting regime change"
+        ],
+        "disallowed_extrapolations": [
+          "Generalizing Mulpuru model conservatism to all enclosure geometries",
+          "Applying LFL-based thresholds without enclosure-specific vent characterization"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is evaluating ignition and combustion hazards of battery vent gases from NMC/LMO cells at two states of charge (30% and 100%). Available data indicate: laminar burning velocity at 100% SoC is approximately 50% higher than at 30% SoC; fluorinated compounds at typical vent gas concentrations do not affect ignition delay; ignition delay time is insensitive to oxygen content; and carbonate-containing mixtures ignite up to an order of magnitude slower than H2/CO-rich mixtures at 730°C. Which conclusions are admissible?",
+        "options": [
+          "A. Removing fluorinated compounds from the vent gas stream would not meaningfully reduce ignition delay time under these conditions.",
+          "B. The 50% higher burning velocity at 100% SoC compared to 30% SoC directly implies that the ignition delay time is also approximately 50% shorter at 100% SoC.",
+          "C. In an oxygen-depleted environment, the vent gas mixture from a fully charged cell remains capable of igniting at approximately the same delay time as in air, provided temperature is sufficient.",
+          "D. At 730°C, a vent gas mixture dominated by carbonates ignites more slowly than a mixture dominated by H2 and CO, making the carbonate-dominated mixture comparatively less reactive at that temperature.",
+          "E. Because ignition delay is insensitive to oxygen content, enclosure ventilation strategies aimed at diluting oxygen are unlikely to prevent ignition if the gas temperature exceeds approximately 550°C.",
+          "F. The higher burning velocity at 100% SoC compared to 30% SoC is primarily caused by the higher fluorinated compound content at elevated SoC."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence states fluorinated compounds at typical concentrations do not affect ignition delay; removal would therefore not meaningfully change it.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+124+UnknownJournal:C001"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Burning velocity and ignition delay are distinct combustion properties; evidence does not link a 50% burning velocity increase to a proportional ignition delay reduction.",
+            "error_type": "Mechanism substitution: burning velocity conflated with ignition delay",
+            "evidence_refs": [
+              "TR_Gasventing+124+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence states ignition does not require high oxygen content and occurs at approximately the same delay time in oxygen-depleted conditions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+124+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "At 730°C, carbonate-containing mixtures ignite up to an order of magnitude slower than the most reactive H2/CO-rich mixtures, confirming lower reactivity.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+124+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "If ignition delay is insensitive to oxygen content, oxygen dilution cannot prevent ignition above the ~550°C threshold; this is a direct mechanistic implication.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+124+UnknownJournal:C002",
+              "TR_Gasventing+124+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Evidence attributes the SoC-dependent burning velocity difference to gas composition changes with SoC, and explicitly states fluorinated compounds do not affect ignition; attributing it to fluorinated content is unsupported.",
+            "error_type": "Causal overclaim: fluorinated compound content incorrectly identified as cause of burning velocity difference",
+            "evidence_refs": [
+              "TR_Gasventing+124+UnknownJournal:C001",
+              "TR_Gasventing+124+UnknownJournal:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of ignition and combustion hazard conclusions for battery vent gas under varying SoC and atmospheric conditions",
+        "primary_boundary": "Burning velocity and ignition delay are distinct properties; fluorinated compounds do not drive ignition behavior; oxygen dilution is ineffective above the temperature threshold",
+        "intended_error_modes": [
+          "Conflating burning velocity with ignition delay time",
+          "Attributing SoC-dependent combustion behavior to fluorinated compound content rather than bulk gas composition"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring proportional ignition delay reduction from burning velocity ratio",
+          "Claiming oxygen dilution prevents ignition above 550°C"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery safety engineer is designing a gas-based early warning system for a storage room containing NMC-811 21700 cells at various states of charge. The engineer proposes using a single-species sensor targeting CH4, reasoning that CH4 is the most abundant species during safety venting at all SoC levels and that its concentration increases with SoC. A colleague argues that an H2 sensor should be added. Explain, using mechanism-based reasoning, why the colleague's argument is justified, and identify one specific limitation of relying solely on CH4 detection for this application."
+      },
+      "ground_truth": {
+        "gold_answer": "CH4 is the dominant species during safety venting at all SoC levels and its concentration increases with SoC. However, H2 is absent during safety venting across all tested SoC levels but appears during thermal runaway with concentration strongly increasing with SoC (from 0.20% at 5% SoC to 12.9% at 100% SoC). This means H2 detection provides a stage-discriminating signal: its presence specifically indicates that thermal runaway has initiated rather than that safety venting alone is occurring. A CH4-only sensor cannot distinguish between the safety venting stage and the thermal runaway stage because CH4 is present in both events. The critical limitation is that CH4 detection alone cannot alert the system to the transition from safety venting to thermal runaway, which is precisely the boundary where emergency intervention is most time-critical. Furthermore, at high SoC the detection window between venting onset and thermal runaway is compressed to approximately 142 seconds, making stage discrimination more urgent, not less.",
+        "must_include": [
+          "H2 is absent during safety venting but present during thermal runaway",
+          "H2 concentration increases strongly with SoC during thermal runaway",
+          "CH4 alone cannot discriminate between safety venting and thermal runaway stages",
+          "H2 detection provides a stage-specific or transition-specific signal",
+          "The detection window is compressed at high SoC, increasing urgency of stage discrimination"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming CH4 is absent during thermal runaway",
+          "Claiming H2 is present during safety venting at any SoC",
+          "Asserting that H2 concentration is independent of SoC during thermal runaway",
+          "Recommending a specific sensor threshold or alarm value not supported by evidence"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Stage-discriminating function of H2 detection versus CH4 detection in battery vent gas early warning, combined with SoC-dependent window compression",
+        "primary_boundary": "H2 is a thermal runaway stage marker, not a venting stage marker; CH4 presence in both stages prevents stage discrimination",
+        "intended_error_modes": [
+          "Treating CH4 abundance as sufficient for complete early warning",
+          "Failing to recognize that H2 absence during venting makes it a positive stage-transition indicator",
+          "Ignoring the compressed detection window at high SoC as a factor increasing the value of stage discrimination"
+        ]
+      }
+    }
+  ]
+}

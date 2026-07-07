@@ -1,0 +1,360 @@
+{
+  "TR_Protection+136+Journal_of_Energy_Storage__TR_Protection+137+Journal_of_Energy_Storage__TR_Protection+140+Journal_of_Energy_Storage": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery module uses an aluminum cooling plate shared between adjacent cells. During normal 2C discharge, the aluminum plate maintains acceptable temperature uniformity. However, when a single cell undergoes thermal runaway, the adjacent cell reaches 801\u00b0C within approximately 95 seconds. A redesign replaces the aluminum plate with a PCM-fin structure. Under the same thermal runaway initiation conditions, the adjacent cell no longer exceeds 100\u00b0C. An engineer proposes using a PCM material with higher thermal conductivity in the PCM-fin structure to further improve temperature uniformity during normal discharge. Which of the following conclusions are admissible given this scenario?",
+          "options": [
+            "A. Increasing PCM thermal conductivity in the PCM-fin structure may reduce peak temperature during normal discharge but simultaneously increases the risk of thermal runaway propagation to adjacent cells.",
+            "B. The aluminum plate's superior thermal conductivity during normal operation is the same property that enables rapid heat transfer to adjacent cells during thermal runaway, making these two performance attributes inseparable without a structural redesign.",
+            "C. The PCM-fin structure's ability to prevent adjacent cells from exceeding 100\u00b0C during thermal runaway is sufficient to confirm that no thermal runaway propagation occurs at the module level under any heating condition.",
+            "D. Enhancing auxiliary cooling intensity can resolve the conflict between requiring high PCM thermal conductivity for normal temperature management and the propagation risk that high conductivity introduces during thermal runaway.",
+            "E. Because the PCM-fin structure reduced adjacent cell temperature from 801\u00b0C to below 100\u00b0C, it can be concluded that the PCM-fin structure eliminates all pathways for thermal energy transfer between cells.",
+            "F. The temperature reduction benefit of the PCM-fin structure during normal discharge is approximately 1.4\u00b0C in maximum temperature, which is insufficient to justify its use given the complexity of the design.",
+            "G. The contradiction between high PCM thermal conductivity for normal cooling and propagation risk during thermal runaway cannot be resolved by any single design parameter adjustment."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "D"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence directly states that PCM with high thermal conductivity benefits temperature reduction but may lead to thermal runaway propagation, establishing this as an admissible trade-off conclusion.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+136+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "The stem establishes that the aluminum plate's high thermal conductivity causes rapid heat conduction to adjacent cells during thermal runaway, while also providing good cooling during normal operation. This is a mechanistically admissible inference: the same material property drives both behaviors, which is why structural redesign is needed.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+136+Journal_of_Energy_Storage:C004",
+                "TR_Protection+136+Journal_of_Energy_Storage:C001"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "The evidence states the PCM-fin structure prevented adjacent cells from exceeding 100\u00b0C under the specific scenario tested, but this cannot be generalized to 'any heating condition.' This is a scope expansion distractor that overgeneralizes a specific test result.",
+              "error_type": "scope_expansion_overclaim",
+              "evidence_refs": [
+                "TR_Protection+136+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Evidence explicitly states that the contradiction between high PCM thermal conductivity for cooling and propagation risk can be resolved by enhancing auxiliary cooling intensity.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+136+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The evidence shows the PCM-fin structure limits adjacent cell temperature below 100\u00b0C but does not support the claim that all thermal energy transfer pathways are eliminated. This is a causal overclaim that converts partial mitigation into complete elimination.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Protection+136+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "This option uses the 1.4\u00b0C normal-discharge benefit in isolation to dismiss the design, ignoring the critical thermal runaway isolation capability. The design judgment requires multi-factor reasoning across both normal and fault conditions, not single-metric comparison.",
+              "error_type": "ignoring_multi_factor_interaction",
+              "evidence_refs": [
+                "TR_Protection+136+Journal_of_Energy_Storage:C001",
+                "TR_Protection+136+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Incorrect",
+              "justification": "This appears conservative but is directly contradicted by evidence that enhancing auxiliary cooling intensity resolves the contradiction. A conservative-sounding absolute claim that conflicts with an explicit evidence-supported resolution mechanism.",
+              "error_type": "conservative_but_incorrect_boundary_violation",
+              "evidence_refs": [
+                "TR_Protection+136+Journal_of_Energy_Storage:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Trade-off between PCM thermal conductivity for normal cooling performance versus thermal runaway propagation risk, and the mechanism by which auxiliary cooling resolves this contradiction.",
+          "primary_boundary": "High PCM thermal conductivity simultaneously improves normal cooling and increases propagation risk; this is a genuine trade-off, not a contradiction resolvable by PCM selection alone, but resolvable through auxiliary cooling enhancement.",
+          "intended_error_modes": [
+            "scope expansion: generalizing specific test result to all conditions",
+            "causal overclaim: converting partial mitigation to complete elimination",
+            "single-metric judgment ignoring multi-factor interaction",
+            "conservative absolute claim contradicted by explicit evidence"
+          ],
+          "disallowed_extrapolations": [
+            "Concluding PCM-fin structure eliminates all heat transfer between cells",
+            "Concluding the contradiction is unresolvable by any design parameter",
+            "Concluding the 1.4\u00b0C benefit alone determines design admissibility"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "An engineer is evaluating insulation layer strategies for a next-generation 628 Ah thick-structure LiFePO4 battery to suppress internal thermal propagation during thermal runaway. Two candidate configurations are compared: Configuration X uses a single centralized insulation layer of 2.11 mm; Configuration Y uses three distributed insulation layers totaling the same material volume but each layer thinner than 2.11 mm. The engineer's primary objectives are: (1) complete suppression of internal thermal propagation during thermal runaway, and (2) minimal impact on heat dissipation during normal operation after a thermal event. The predictions are derived from models calibrated on 314 Ah battery data. Which of the following conclusions are admissible?",
+          "options": [
+            "A. Configuration X meets the threshold for complete suppression of internal thermal propagation, while Configuration Y does not, because the individual layer thicknesses in Y fall below the critical threshold even if total material volume is equal.",
+            "B. Configuration Y will impede heat dissipation during normal operation more than Configuration X, because distributed layers interfere with thermal pathways throughout the cell structure rather than at a single location.",
+            "C. The 2.11 mm critical thickness derived from the model should be treated as a lower-bound estimate for real 628 Ah thick-structure batteries, because the model was calibrated on smaller cells and likely underestimates thermal runaway severity.",
+            "D. If the engineer selects Configuration X, complete prevention of thermal runaway propagation at the module level is guaranteed, provided the insulation material maintains its properties during the thermal event.",
+            "E. Configuration Y may achieve staged thermal runaway development rather than complete suppression, which could be an acceptable intermediate safety outcome depending on system-level design requirements.",
+            "F. Because both configurations use the same total insulation material volume, their thermal suppression performance during thermal runaway will be equivalent regardless of layer distribution.",
+            "G. The finding that a single insulation layer increases post-event steady-state temperature by less than 0.15\u00b0C supports the conclusion that Configuration X does not meaningfully compromise long-term thermal management during normal cycling."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence establishes 2.11 mm as the critical threshold for complete suppression in thick-structure batteries. Configuration X meets this threshold; Configuration Y's individual layers are each below it. The critical parameter is individual layer thickness, not total volume.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+137+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Evidence states that three distributed insulation layers significantly impede heat dissipation, while a single centralized layer has negligible impact. This is a counterintuitive correct result: more layers distributed throughout the cell impede dissipation more than one thicker centralized layer.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+137+Journal_of_Energy_Storage:C006"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence explicitly states that the model, being calibrated on 314 Ah battery data, likely underestimates thermal runaway severity and required insulation thicknesses for 628 Ah batteries. Therefore the 2.11 mm value should be treated as a lower bound.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+137+Journal_of_Energy_Storage:C008",
+                "TR_Protection+137+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Evidence states that relying solely on thermal insulation and cooling cannot guarantee 100% prevention of thermal runaway propagation. This option overclaims by asserting module-level propagation prevention is guaranteed, which is a system-level overclaim from component-level evidence.",
+              "error_type": "system_level_overclaim_from_component_evidence",
+              "evidence_refs": [
+                "TR_Protection+137+Journal_of_Energy_Storage:C009"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Evidence states that thicknesses below the critical threshold enable staged thermal runaway development. This is an admissible intermediate outcome that may be acceptable in some system designs, and the evidence supports this as a distinct behavioral regime below the threshold.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+137+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "This option incorrectly equates total material volume with performance equivalence. The evidence shows that layer configuration (single centralized vs. distributed) fundamentally changes both suppression effectiveness and heat dissipation behavior, independent of total volume.",
+              "error_type": "ignoring_configuration_dependence",
+              "evidence_refs": [
+                "TR_Protection+137+Journal_of_Energy_Storage:C004",
+                "TR_Protection+137+Journal_of_Energy_Storage:C006"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Incorrect",
+              "justification": "The evidence reports temperature increase after 2000 s of natural cooling, which is a post-event dissipation metric, not a normal cycling thermal management metric. Applying this result to normal cycling conclusions exceeds the measurement scope.",
+              "error_type": "measurement_scope_extrapolation",
+              "evidence_refs": [
+                "TR_Protection+137+Journal_of_Energy_Storage:C006"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of insulation configuration conclusions given threshold-dependent suppression behavior, model calibration limitations, and the counterintuitive finding that distributed layers impede dissipation more than a single centralized layer.",
+          "primary_boundary": "Critical thickness applies per individual layer, not total volume; model-derived thresholds are lower bounds due to calibration on smaller cells; single-layer configuration is superior for dissipation despite intuition favoring distribution.",
+          "intended_error_modes": [
+            "volume equivalence fallacy ignoring configuration effects",
+            "system-level propagation guarantee from component-level insulation result",
+            "measurement scope extrapolation from post-event cooling to normal cycling"
+          ],
+          "disallowed_extrapolations": [
+            "Equating total insulation volume with equivalent suppression performance",
+            "Guaranteeing module-level propagation prevention from cell-level insulation",
+            "Applying post-event natural cooling temperature increase to normal operation thermal management"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A thermal management engineer compares three dielectric oils for immersion cooling of 26700 LFP cylindrical cells under overcharge-induced abuse conditions: dimethyl silicone oil (convection coefficient ~100 W/m\u00b2\u00b7K), No.15 hydraulic oil (~80 W/m\u00b2\u00b7K), and No.10 transformer oil (~210 W/m\u00b2\u00b7K). All three oils, when the cell is fully immersed, prevent thermal runaway and keep the temperature rise rate below the 1\u00b0C/s threshold. No.10 transformer oil delays safety valve opening the longest among the three. However, No.10 transformer oil has a relatively low flash point. No.15 hydraulic oil contains alkaline additives. The engineer must select one oil for a large-scale stationary energy storage application where fire safety is the dominant constraint. Which of the following conclusions are admissible?",
+          "options": [
+            "A. No.10 transformer oil's highest convection coefficient and longest safety valve delay make it the preferred choice for large-scale stationary applications where fire safety is the dominant constraint.",
+            "B. Despite No.10 transformer oil providing the longest delay to safety valve opening, its low flash point introduces a fire risk that limits its suitability for large-scale application under the stated fire-safety-dominant constraint.",
+            "C. No.15 hydraulic oil's alkaline additives provide a secondary benefit of chemically neutralizing HF released after safety valve opening, which is a mechanism not available in dimethyl silicone oil.",
+            "D. Because all three oils prevent thermal runaway at full immersion, the selection between them for large-scale application can be made solely on the basis of convection heat transfer coefficient.",
+            "E. Transformer oil and hydraulic oil, when subjected to elevated temperatures during a thermal event, may produce additional flammable gases through thermal cracking, which is a hazard not associated with the battery cells themselves but with the immersion medium.",
+            "F. The safety valve opening delay provided by No.10 transformer oil is counterproductive from a safety perspective because longer containment of internal pressure increases the risk of a more energetic release event.",
+            "G. Dimethyl silicone oil is admissible as a large-scale immersion cooling medium under fire-safety-dominant constraints, given that it prevents thermal runaway, reduces hazardous gas concentrations below permissible limits, and does not carry the flash point limitation identified for transformer oil."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "C",
+            "G"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "This option correctly identifies No.10 transformer oil's thermal performance advantages but ignores the explicit fire safety constraint. The low flash point of transformer oil limits its large-scale application, making this option inadmissible under the stated constraint. This is a condition violation distractor.",
+              "error_type": "condition_violation_ignoring_stated_constraint",
+              "evidence_refs": [
+                "TR_Protection+140+Journal_of_Energy_Storage:C009",
+                "TR_Protection+140+Journal_of_Energy_Storage:C004",
+                "TR_Protection+140+Journal_of_Energy_Storage:C013"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Evidence explicitly states that No.10 transformer oil's low flash point poses a fire risk and limits its large-scale application. The longest safety valve delay does not override the fire safety limitation under the stated dominant constraint.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+140+Journal_of_Energy_Storage:C009",
+                "TR_Protection+140+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence establishes that HF neutralization in No.15 hydraulic oil occurs due to alkaline additives (phosphate or amine-based inhibitors), and dimethyl silicone oil does not contain such additives. This is a mechanistically distinct secondary benefit supported by evidence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+140+Journal_of_Energy_Storage:C010"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "This appears to be a reasonable engineering simplification but is incorrect because it ignores flash point, thermal cracking behavior, and chemical interaction properties that are all relevant to large-scale safety selection. Single-parameter selection ignores multi-factor interaction.",
+              "error_type": "single_parameter_selection_ignoring_multi_factor_interaction",
+              "evidence_refs": [
+                "TR_Protection+140+Journal_of_Energy_Storage:C009",
+                "TR_Protection+140+Journal_of_Energy_Storage:C011"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The thermal cracking of transformer and hydraulic oils does produce additional flammable gases, but the framing that this hazard is 'not associated with the battery cells themselves' is misleading and unsupported. The flammable gas load increase occurs during the battery thermal event, making it a combined system hazard. The evidence does not support separating these hazard sources.",
+              "error_type": "causal_misattribution",
+              "evidence_refs": [
+                "TR_Protection+140+Journal_of_Energy_Storage:C011"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The evidence does not support the claim that longer safety valve delay is counterproductive. Delayed valve opening is presented as a safety benefit associated with better thermal management. This option invents a mechanism not supported by the evidence.",
+              "error_type": "unsupported_mechanism_invention",
+              "evidence_refs": [
+                "TR_Protection+140+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Correct",
+              "justification": "Dimethyl silicone oil prevents thermal runaway at full immersion, reduces CO and HF below permissible limits, and does not carry the flash point limitation of transformer oil. Under the fire-safety-dominant constraint, this combination of properties makes it admissible for large-scale use based on the evidence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+140+Journal_of_Energy_Storage:C001",
+                "TR_Protection+140+Journal_of_Energy_Storage:C005",
+                "TR_Protection+140+Journal_of_Energy_Storage:C014",
+                "TR_Protection+140+Journal_of_Energy_Storage:C009"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-factor oil selection under a fire-safety-dominant constraint, requiring reasoning about trade-offs between thermal performance, flash point risk, chemical interaction mechanisms, and thermal cracking hazards.",
+          "primary_boundary": "Highest convection coefficient does not determine admissibility when flash point constraint is dominant; all three oils prevent thermal runaway but differ in secondary safety properties relevant to large-scale deployment.",
+          "intended_error_modes": [
+            "selecting highest-performance thermal option while ignoring stated dominant constraint",
+            "single-parameter selection ignoring multi-factor safety interaction",
+            "causal misattribution separating oil thermal cracking from battery event hazard",
+            "inventing counterproductive mechanism for safety valve delay"
+          ],
+          "disallowed_extrapolations": [
+            "Concluding any oil is suitable for NCM or NCA cells based on LFP cylindrical cell data",
+            "Concluding module or pack level safety from single-cell immersion results",
+            "Ranking oils solely by convection coefficient for safety-critical selection"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A safety engineer is evaluating whether full immersion of 26700 LFP cylindrical cells in dimethyl silicone oil can be adopted as a thermal runaway prevention strategy for a large-scale battery energy storage system. The engineer observes that at full immersion depth, combustible hydrocarbon gas emissions are completely eliminated, CO and H2 are reduced by approximately 99%, and cell mass loss drops from 41% to 4.3%. The temperature rise rate remains well below the thermal runaway threshold. However, a colleague argues that these results are sufficient to justify deploying this strategy at module and pack level for all lithium-ion cell chemistries used in the facility, which includes NCM and NCA cells in addition to LFP cylindrical formats.\n\nExplain the specific engineering limitations that make the colleague's generalization inadmissible, and identify what additional evidence would be required before the strategy could be responsibly extended to the broader deployment the colleague proposes."
+        },
+        "ground_truth": {
+          "gold_answer": "The colleague's generalization is inadmissible on two distinct grounds. First, the experimental evidence was obtained exclusively on 26700 LFP cylindrical cells. NCM and NCA chemistries have different thermal runaway onset temperatures, reaction enthalpies, gas generation profiles, and electrolyte compositions. The suppression mechanisms observed for LFP cells cannot be assumed to apply equivalently to NCM or NCA cells without direct experimental validation, because the thermal runaway severity and gas generation characteristics differ between chemistries. Second, the evidence was generated at the single-cell level. Module and pack configurations introduce additional variables including cell-to-cell heat transfer pathways, confinement effects on gas pressure accumulation, spacing and structural constraints on immersion fluid circulation, and the possibility that thermal runaway in one cell could propagate to neighbors through pathways not present in isolated cell tests. The single-cell results do not establish whether the immersion cooling rate is sufficient to prevent propagation in a confined multi-cell arrangement. To justify the broader deployment, the engineer would need: (1) thermal runaway immersion cooling tests on NCM and NCA cells in the same cylindrical format and in other form factors used in the facility; (2) module-level and pack-level tests demonstrating that full immersion suppresses propagation under realistic confinement and loading conditions; and (3) confirmation that the flash point and thermal cracking behavior of dimethyl silicone oil remain acceptable under the higher thermal loads generated by NCM and NCA chemistries during thermal runaway.",
+          "must_include": [
+            "The study was conducted only on 26700 LFP cylindrical cells, not NCM or NCA chemistries",
+            "NCM and NCA cells have different thermal runaway characteristics that may not be suppressed equivalently",
+            "Results are at single-cell level and cannot be directly extrapolated to module or pack level",
+            "Module and pack level validation is required before system-level deployment",
+            "Different cell chemistries require separate experimental validation"
+          ],
+          "disallowed_extrapolations": [
+            "Concluding that immersion cooling is ineffective for NCM or NCA cells based on absence of evidence",
+            "Concluding that module-level propagation would definitely occur based on single-cell results",
+            "Asserting specific numerical thresholds for NCM or NCA thermal runaway suppression not present in the evidence",
+            "Claiming dimethyl silicone oil is unsuitable for other chemistries without supporting evidence"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility boundaries of single-cell, single-chemistry immersion cooling results for generalization to multi-chemistry, multi-scale deployment.",
+          "primary_boundary": "Evidence scope is limited to 26700 LFP cylindrical cells at single-cell level; generalization to other chemistries and to module/pack level requires explicit validation not supported by existing evidence.",
+          "intended_error_modes": [
+            "Treating absence of evidence for NCM/NCA as evidence of equivalence",
+            "Scaling single-cell suppression results directly to module/pack level without accounting for confinement and propagation",
+            "Ignoring the chemistry-dependence of thermal runaway characteristics when evaluating suppression strategy transferability"
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,320 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An LFP battery pack installed in a confined utility room undergoes thermal runaway at 100% SOC in a nitrogen-purged environment. Post-event gas sampling confirms a dramatically shifted composition compared to a 25% SOC event. A safety engineer must assess explosion hazard and toxic exposure risk for first responders entering the space. Which conclusions about the 100% SOC gas mixture are admissible based on the composition shift alone?",
+        "options": [
+          "A. The fire-suppression effectiveness of the vented gas is reduced at 100% SOC relative to 25% SOC because the proportion of the primary fire-retardant component decreases substantially.",
+          "B. The explosive hazard window is wider at 100% SOC than at 25% SOC because the upper explosion limit expands significantly while the lower explosion limit remains comparatively stable.",
+          "C. The higher H2 fraction at 100% SOC guarantees that any ignition will produce a detonation rather than a deflagration.",
+          "D. At 100% SOC, the gas mixture is less hazardous to first responders because the dominant combustible component, H2, disperses more rapidly than heavier gases.",
+          "E. The shift in gas composition at 100% SOC means the mixture is more likely to sustain combustion once ignited, but does not by itself confirm whether ignition will occur.",
+          "F. Because CO2 proportion drops from approximately 50% to approximately 16% as SOC increases from 25% to 100%, a CO2-based suppression strategy effective at low SOC may be insufficient at high SOC."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "E",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "CO2 drops from 50.4% to 16.3% as SOC rises; CO2 is identified as the primary fire-retardant component, so suppression capacity decreases.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+158+Fuel:C001"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "UEL expands from ~17% to ~55% with increasing SOC while LEL remains 5–11%, directly widening the explosive window at high SOC.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+158+Fuel:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Evidence supports wider explosive window and higher combustible fraction but does not establish detonation vs. deflagration distinction; this is an unsupported overclaim.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+158+Fuel:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Dispersal rate of H2 is not addressed in the evidence; this introduces a mechanism not supported by the evidence bundle and ignores the increased combustible fraction risk.",
+            "error_type": "unsupported_mechanism_substitution",
+            "evidence_refs": [
+              "TR_Gasventing+158+Fuel:C001"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Higher H2 and wider UEL support greater post-ignition hazard; ignition probability depends on ignition sources not characterized by composition alone—admissible conditional conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+158+Fuel:C005",
+              "TR_Gasventing+158+Fuel:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "CO2 fraction at 100% SOC (~16%) is roughly one-third of its 25% SOC value (~50%), directly implying CO2-based suppression designed for low-SOC conditions may be undersized at high SOC.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+158+Fuel:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of safety conclusions from SOC-dependent gas composition shifts in LFP thermal runaway",
+        "primary_boundary": "Composition shift supports combustion and suppression hazard inferences but does not support detonation mode claims or dispersal-based safety arguments",
+        "intended_error_modes": [
+          "causal_overclaim from H2 fraction to detonation",
+          "mechanism substitution using dispersal argument",
+          "ignoring CO2 suppression role"
+        ],
+        "disallowed_extrapolations": [
+          "detonation vs deflagration distinction from composition alone",
+          "dispersal rate inference from molecular weight without stem support"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "In a gas pipeline maintenance facility, LFP battery thermal runaway gases vent into a space where residual methane is present. Testing shows explosion overpressure peaks near 4–6% methane and reaches approximately 0.62 MPa, while free radical concentration peaks at 8–9% methane. A safety designer proposes that suppressing radical chain reactions at the 8–9% methane range will be the most effective strategy for reducing structural damage from overpressure. Evaluate the following claims about this proposal and the underlying explosion dynamics.",
+        "options": [
+          "A. The proposal is mechanistically flawed because peak overpressure and peak radical concentration occur at different methane concentrations, indicating that radical activity alone does not govern macroscopic pressure output.",
+          "B. Targeting radical suppression at 8–9% methane is appropriate because that concentration range produces the highest free radical density, which directly causes peak overpressure.",
+          "C. At methane concentrations above 8%, structural damage risk from overpressure decreases even though radical activity remains high, because oxygen deficiency limits complete combustion.",
+          "D. The fact that peak overpressure occurs at lower methane concentrations than peak radical concentration suggests that mixture stoichiometry and energy release rate, not radical peak density, primarily determine the macroscopic pressure hazard.",
+          "E. Suppressing radical activity at 8–9% methane would reduce post-explosion CO formation because incomplete combustion at that concentration range is driven by radical chain propagation rather than oxygen availability.",
+          "F. A safety intervention that reduces methane concentration below 4% is more likely to reduce overpressure hazard than one targeting radical suppression at 8–9% methane."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence explicitly states temporal decoupling between radical activity and macroscopic overpressure; radical peak at 8–9% does not coincide with pressure peak at 4–6%.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+158+Fuel:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence directly contradicts direct causation of peak overpressure by peak radical concentration; this is the primary causal overclaim the evidence refutes.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+158+Fuel:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Above 8% methane, oxygen deficiency causes incomplete combustion; overpressure peak is at 4–6%, so above 8% the pressure hazard is reduced despite high radical activity.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+158+Fuel:C003",
+              "TR_Gasventing+158+Fuel:C002",
+              "TR_Gasventing+158+Fuel:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Overpressure peaks at 4–6% (near stoichiometric) while radicals peak at 8–9%; this decoupling supports stoichiometry and energy release as primary overpressure drivers.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+158+Fuel:C004",
+              "TR_Gasventing+158+Fuel:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence attributes CO increase above 8% methane to oxygen deficiency, not radical chain propagation; this option misidentifies the governing mechanism for incomplete combustion.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Gasventing+158+Fuel:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Keeping methane below 4% (below the LEL range) prevents reaching the peak overpressure regime at 4–6%; this directly addresses the overpressure hazard rather than a decoupled radical metric.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+158+Fuel:C002",
+              "TR_Gasventing+158+Fuel:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Temporal decoupling between radical peak concentration and peak overpressure, and its implication for suppression strategy design",
+        "primary_boundary": "Radical concentration peak does not coincide with overpressure peak; suppression targeting radicals at 8–9% does not address the primary pressure hazard at 4–6%",
+        "intended_error_modes": [
+          "causal overclaim linking radical density to overpressure",
+          "mechanism substitution attributing CO formation to radicals rather than oxygen deficiency"
+        ],
+        "disallowed_extrapolations": [
+          "radical suppression effectiveness on overpressure without evidence of coupling",
+          "CO formation mechanism from radical activity at high methane"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery energy storage system using LFP cells operates across a range of SOC levels. During a fire investigation, analysts find that the vented gas mixture ignited but the explosion was less severe than predicted by models calibrated on low-SOC data. The cells were confirmed at approximately 90% SOC at the time of thermal runaway. Which of the following statements about the explosion hazard characterization at this SOC are consistent with the evidence?",
+        "options": [
+          "A. At approximately 90% SOC, the gas mixture contains a substantially higher proportion of H2 than at 25% SOC, which expands the range of mixture concentrations capable of sustaining ignition.",
+          "B. The lower explosion limit at 90% SOC is expected to be dramatically lower than at 25% SOC, explaining why ignition occurred at a lower gas concentration than the low-SOC model predicted.",
+          "C. The wider explosive window at high SOC primarily reflects an expansion of the upper explosion limit rather than a shift in the lower explosion limit, meaning the ignition threshold is not substantially reduced.",
+          "D. If the actual gas-air mixture concentration at ignition was above the upper explosion limit for the high-SOC gas, the mixture would not have supported propagating combustion regardless of the H2 content.",
+          "E. The lower severity than predicted could be consistent with the actual mixture concentration being outside the explosive window, even though the SOC was high and the gas composition was more combustible.",
+          "F. Because H2 proportion increases with SOC, the peak overpressure during any ignition event necessarily increases proportionally with SOC."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "H2 surges to 73.3% at 100% SOC from 42.9% at 25% SOC; UEL expands substantially, widening the concentration range supporting ignition.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+158+Fuel:C001",
+              "TR_Gasventing+158+Fuel:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "LEL remains relatively stable (5–11%) across all SOC levels; a dramatic LEL reduction at high SOC is not supported and contradicts the evidence.",
+            "error_type": "overgeneralization_of_trend",
+            "evidence_refs": [
+              "TR_Gasventing+158+Fuel:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence states UEL expands from ~17% to ~55% with SOC while LEL remains 5–11%; the widening is UEL-driven, not LEL-driven—a counterintuitive but evidence-supported conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+158+Fuel:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Above the UEL, mixture is too rich to support propagating combustion regardless of H2 content; this is a fundamental combustion principle consistent with the defined explosive window.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+158+Fuel:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Lower severity is admissibly explained by mixture concentration falling outside the explosive window even at high SOC; high combustibility of composition does not guarantee the mixture was within explosive limits at the point of ignition.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+158+Fuel:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Peak overpressure depends on methane concentration and mixture stoichiometry, not solely on H2 proportion; proportional scaling of overpressure with SOC is not supported by evidence.",
+            "error_type": "unjustified_monotonicity",
+            "evidence_refs": [
+              "TR_Gasventing+158+Fuel:C002",
+              "TR_Gasventing+158+Fuel:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "SOC-dependent explosive window behavior and admissible explanations for lower-than-predicted explosion severity at high SOC",
+        "primary_boundary": "UEL expansion dominates the SOC effect on explosive window; LEL is relatively stable; high SOC increases post-ignition hazard but does not lower ignition threshold substantially",
+        "intended_error_modes": [
+          "attributing LEL reduction to high SOC",
+          "assuming proportional overpressure scaling with H2 content or SOC"
+        ],
+        "disallowed_extrapolations": [
+          "LEL shift at high SOC",
+          "direct proportionality between SOC and peak overpressure"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "An LFP battery energy storage installation vents thermal runaway gases into a shared space with a natural gas supply line that has a slow leak. A safety engineer notes that at high SOC, the vented gas has a much higher proportion of H2 and a much lower proportion of CO2 compared to low SOC. The engineer also knows that explosion overpressure peaks at a specific methane concentration range, that above a higher methane threshold incomplete combustion produces elevated CO, and that free radical concentration peaks at a different methane concentration than peak overpressure. Explain why designing a suppression system based solely on minimizing free radical activity at the methane concentration producing peak radical density would be inadequate, and identify what additional hazard—distinct from overpressure—becomes dominant above the threshold where oxygen deficiency occurs. In your answer, address how the SOC-dependent shift in gas composition affects the adequacy of a fixed CO2-based suppression strategy."
+      },
+      "ground_truth": {
+        "gold_answer": "Targeting radical suppression at the methane concentration producing peak radical density (approximately 8–9%) is inadequate for overpressure control because peak explosion overpressure occurs at a lower methane concentration (approximately 4–6%), revealing a temporal and mechanistic decoupling between radical activity and macroscopic pressure output. Radical peak density does not coincide with the most structurally damaging explosion condition, so a suppression strategy optimized for radical reduction at 8–9% methane would not address the primary overpressure hazard. Above approximately 8% methane, oxygen deficiency causes incomplete combustion, shifting the dominant hazard from overpressure to toxicity: CO production increases sharply while CO2 decreases, creating a secondary toxic and asphyxiation hazard for occupants and responders. Regarding SOC dependence: at high SOC, CO2 proportion in the vented gas drops from approximately 50% to approximately 16%. Since CO2 is the primary fire-retardant component in the vented mixture, a fixed CO2-based suppression system calibrated for low-SOC conditions will be substantially undersized at high SOC, where the gas is simultaneously more combustible (higher H2) and provides less intrinsic fire-retardant dilution. The suppression strategy must therefore account for both the methane concentration regime governing the dominant hazard mode and the SOC-dependent reduction in the vented gas's self-suppressing capacity.",
+        "must_include": [
+          "peak overpressure occurs at 4–6% methane, not at the radical peak concentration of 8–9%",
+          "temporal or mechanistic decoupling between radical activity and macroscopic overpressure",
+          "above approximately 8% methane, oxygen deficiency causes incomplete combustion with elevated CO and reduced CO2",
+          "the dominant hazard above 8% methane shifts to toxicity rather than overpressure",
+          "CO2 proportion in vented gas decreases substantially from low to high SOC",
+          "CO2-based suppression effective at low SOC is insufficient at high SOC due to reduced CO2 fraction in vented gas"
+        ],
+        "disallowed_extrapolations": [
+          "claiming radical suppression has no role in any explosion mitigation strategy",
+          "asserting that high SOC guarantees ignition or detonation",
+          "stating that LEL decreases substantially with SOC",
+          "claiming peak overpressure scales proportionally with H2 content or SOC"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Integration of radical-overpressure decoupling, oxygen-deficiency toxicity regime, and SOC-dependent suppression adequacy into a multi-hazard safety assessment",
+        "primary_boundary": "Radical peak concentration does not govern overpressure peak; above 8% methane the hazard mode shifts; CO2 suppression capacity degrades at high SOC",
+        "intended_error_modes": [
+          "conflating radical peak with overpressure peak",
+          "ignoring the toxicity hazard shift above 8% methane",
+          "assuming CO2-based suppression remains adequate regardless of SOC"
+        ]
+      }
+    }
+  ]
+}

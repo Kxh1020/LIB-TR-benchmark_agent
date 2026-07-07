@@ -1,0 +1,320 @@
+{
+  "TR_Protection+127+Journal_of_Energy_Storage__TR_Protection+131+Journal_of_Energy_Storage__TR_Protection+135+Journal_of_Energy_Storage": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A 4-cell lithium-ion battery module is fitted with 2 mm nano-glass fiber insulation between cells. Under thermal runaway initiated in Cell 1, surface temperature monitoring confirms Cell 2 eventually reaches the runaway trigger threshold (dT/dt \u2265 1\u00b0C/s for >3 s). Which statements correctly characterize the thermal behavior of this configuration?",
+          "options": [
+            "A. Nano-glass fiber insulation increases average thermal spreading time per cell by approximately 7.36\u00d7 relative to no insulation.",
+            "B. Nano-glass fiber insulation eliminates total inter-cell heat transfer, preventing Cell 2 from ever reaching runaway temperature.",
+            "C. Nano-glass fiber insulation slows heat transfer but cannot reduce total thermal energy transferred, so neighboring cells eventually reach runaway temperature.",
+            "D. Nano-glass fiber insulation outperforms aerogel insulation because aerogel reinforcing fibers lose structural integrity at high temperatures.",
+            "E. The thermal runaway trigger criterion based on surface dT/dt accurately reflects the internal temperature at the cell core at the moment of detection.",
+            "F. Nanofiber materials can melt at high temperatures, degrading their thermal resistance and limiting their suppression effectiveness relative to aerogel."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Directly supported: nano-glass fiber insulation increased average spreading time by 7.36\u00d7 vs. no insulation.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+127+Journal_of_Energy_Storage:C002"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Boundary overreach: insulation slows but cannot eliminate total heat transfer; runaway still occurs in neighbors.",
+              "error_type": "boundary_overreach",
+              "evidence_refs": [
+                "TR_Protection+127+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Supported: nanofiber layers only slow thermal transfer; total heat transfer is not reduced, so neighbors eventually run away.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+127+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Mechanism substitution: aerogel outperforms nanofiber because aerogel fibers maintain structure; nanofiber melts, not aerogel.",
+              "error_type": "mechanism_substitution",
+              "evidence_refs": [
+                "TR_Protection+127+Journal_of_Energy_Storage:C007"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Surface dT/dt is a proxy; internal temperature at cell core is not directly observable and may differ from surface reading.",
+              "error_type": "measurement_vs_internal_state",
+              "evidence_refs": [
+                "TR_Protection+127+Journal_of_Energy_Storage:C009"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Supported: nanofiber melts in high-temperature environments, destroying fiber structure and reducing thermal resistance vs. aerogel.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+127+Journal_of_Energy_Storage:C007"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Distinguishing the delay mechanism of nanofiber insulation from elimination of heat transfer, and understanding why aerogel outperforms nanofiber",
+          "primary_boundary": "Non-phase-change insulation slows but cannot eliminate propagation; aerogel superiority is due to high-temperature structural stability of reinforcing fibers",
+          "intended_error_modes": [
+            "boundary_overreach",
+            "mechanism_substitution",
+            "measurement_vs_internal_state"
+          ],
+          "disallowed_extrapolations": [
+            "Nanofiber insulation achieving zero propagation",
+            "Aerogel failing at high temperature",
+            "Surface dT/dt equating to internal core temperature"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery module engineer evaluates two thermal protection strategies for NCM pouch cells: (Strategy X) composite phase change insulation (nanofiber + PCM with phase change temperature 85\u2013100\u00b0C), and (Strategy Y) gaseous fire extinguishing agent injection. The goal is zero thermal runaway propagation beyond the first triggered cell. Which conclusions are supported?",
+          "options": [
+            "A. Strategy X can achieve zero propagation because PCM absorbs heat from the runaway cell, keeping neighboring cell temperatures below the runaway trigger threshold.",
+            "B. Strategy Y reliably achieves zero propagation because gaseous agents extinguish flames and simultaneously cool cells below the temperature at which exothermic reactions sustain.",
+            "C. Strategy X effectiveness depends on the PCM absorbing sufficient heat; if the PCM is fully consumed before the runaway event ends, propagation suppression may fail.",
+            "D. Strategy Y extinguishes flames rapidly but often fails to sufficiently reduce cell temperature post-extinguishment, allowing exothermic reactions to persist and potentially re-ignite.",
+            "E. Both strategies are equivalent in long-term propagation suppression because flame extinction and heat absorption achieve the same thermodynamic outcome.",
+            "F. Strategy X is confirmed to prevent propagation to all non-first cells in the module under the tested conditions."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "D",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Supported: PCM absorbs runaway heat, blocking transfer to neighbors and keeping their temperature below trigger threshold.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+127+Journal_of_Energy_Storage:C006"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Causal overclaim: gaseous agents extinguish flames but do not sufficiently lower cell temperature; exothermic reactions persist.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Protection+131+Journal_of_Energy_Storage:C008"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Unsupported inference: PCM depletion scenario is not reported in evidence; cannot assert this failure mode from available data.",
+              "error_type": "unsupported_extrapolation",
+              "evidence_refs": [
+                "TR_Protection+127+Journal_of_Energy_Storage:C005",
+                "TR_Protection+127+Journal_of_Energy_Storage:C006"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Supported: gaseous agents extinguish flames quickly but insufficient cooling allows exothermic reactions to persist, risking re-ignition.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+131+Journal_of_Energy_Storage:C008"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Mechanism substitution: flame extinction and heat absorption differ thermodynamically; gaseous agents do not cool cells adequately.",
+              "error_type": "mechanism_substitution",
+              "evidence_refs": [
+                "TR_Protection+131+Journal_of_Energy_Storage:C008"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Supported: composite PCM insulation extended propagation interval to infinite length; only the first cell underwent runaway.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+127+Journal_of_Energy_Storage:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Distinguishing confirmed zero-propagation capability of PCM composites from the confirmed limitation of gaseous extinguishing agents in suppressing exothermic reactions post-extinguishment",
+          "primary_boundary": "Gaseous agents extinguish flames but do not cool cells; PCM composites confirmed to achieve zero propagation under tested conditions",
+          "intended_error_modes": [
+            "causal_overclaim",
+            "mechanism_substitution",
+            "unsupported_extrapolation"
+          ],
+          "disallowed_extrapolations": [
+            "Gaseous agents achieving zero propagation",
+            "PCM failure due to depletion without evidence",
+            "Equivalence of flame extinction and heat absorption"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "Ba(OH)\u2082\u00b78H\u2082O microcapsules (shell rupture >120\u00b0C, dosage 4 g/Ah) are embedded in NCM811/graphite pouch cells. Under lateral heating abuse, trigger time is delayed by 291.9 s and maximum temperature reduced by 188.8\u00b0C. Under nail penetration abuse, trigger time is delayed by only 2 s and maximum temperature reduced by 65.2\u00b0C. Increasing dosage to 6 g/Ah unexpectedly shortens trigger time. Which statements are supported?",
+          "options": [
+            "A. The microcapsule protective effect is abuse-mode-dependent: lateral heating allows gradual temperature rise that activates the rupture threshold, whereas nail penetration causes rapid local heating that limits microcapsule activation time.",
+            "B. Increasing microcapsule dosage monotonically improves thermal runaway delay time because more water is available to absorb heat.",
+            "C. At 6 g/Ah, excessive microcapsule content accelerates low-temperature side reactions near 120\u00b0C involving lithiated graphite, reducing trigger time relative to 4 g/Ah.",
+            "D. Direct addition of unencapsulated Ba(OH)\u2082\u00b78H\u2082O would achieve equivalent cycling stability to the encapsulated version because the thermal protection mechanism is identical.",
+            "E. The encapsulation strategy preserves cycling performance by isolating Ba(OH)\u2082\u00b78H\u2082O from the electrolyte during normal operation, preventing LiPF\u2086 hydrolysis.",
+            "F. The reduction in maximum temperature rise rate from 190.30\u00b0C/s to 90.57\u00b0C/s under ARC conditions confirms that microcapsules eliminate all exothermic reactions above 200\u00b0C."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Supported by differential outcomes: lateral heating produces gradual warming enabling shell rupture; nail penetration is too rapid for effective activation.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+135+Journal_of_Energy_Storage:C010",
+                "TR_Protection+135+Journal_of_Energy_Storage:C011",
+                "TR_Protection+135+Journal_of_Energy_Storage:C001"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Unsupported monotonicity: 6 g/Ah dosage reduces trigger time vs. 4 g/Ah due to accelerated low-temperature side reactions.",
+              "error_type": "unsupported_monotonicity",
+              "evidence_refs": [
+                "TR_Protection+135+Journal_of_Energy_Storage:C007"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Supported: excessive microcapsule content at 6 g/Ah accelerates low-temperature side reactions near 120\u00b0C, shortening trigger time.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+135+Journal_of_Energy_Storage:C007"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Boundary overreach: unencapsulated Ba(OH)\u2082\u00b78H\u2082O causes LiPF\u2086 hydrolysis, catastrophic capacity fading within 9 cycles.",
+              "error_type": "boundary_overreach",
+              "evidence_refs": [
+                "TR_Protection+135+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Supported: encapsulation isolates water from electrolyte during normal operation, preventing hydrolysis and preserving cycling stability.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+135+Journal_of_Energy_Storage:C004",
+                "TR_Protection+135+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Overclaim: ARC data shows reduced temperature rise rate; DSC shows no significant peaks after 200\u00b0C, but this reflects altered reaction sequence, not elimination of all reactions.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Protection+135+Journal_of_Energy_Storage:C012",
+                "TR_Protection+135+Journal_of_Energy_Storage:C013"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Non-monotonic dosage effect, abuse-mode dependence of microcapsule activation, and encapsulation necessity for cycling stability",
+          "primary_boundary": "Optimal dosage is 4 g/Ah; beyond this, low-temperature side reactions are accelerated. Lateral heating vs. nail penetration produces fundamentally different activation conditions.",
+          "intended_error_modes": [
+            "unsupported_monotonicity",
+            "boundary_overreach",
+            "causal_overclaim"
+          ],
+          "disallowed_extrapolations": [
+            "Monotonic improvement with dosage increase",
+            "Equivalence of encapsulated and unencapsulated forms for cycling",
+            "Complete elimination of exothermic reactions above 200\u00b0C"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A battery module engineer is comparing two cooling gas environments\u2014nitrogen and argon\u2014for suppressing thermal runaway propagation under forced convective cooling. Both gases are chemically inert. The engineer argues that argon, having higher density than nitrogen, should provide superior cooling and thus better propagation suppression. Evaluate this argument using the relevant physical mechanisms, and explain what condition would be required to achieve complete suppression of thermal runaway propagation under a 3C discharge rate."
+        },
+        "ground_truth": {
+          "gold_answer": "The engineer's argument is incorrect. Although argon has higher density than nitrogen, its lower heat capacity is the dominant factor governing cooling rate. Higher density alone does not compensate for reduced heat capacity; the product of density and specific heat capacity determines convective heat removal capacity. Therefore, argon exhibits lower cooling effectiveness than nitrogen or air. For complete suppression of thermal runaway propagation at a 3C discharge rate, the cooling environment must provide a convective heat transfer coefficient exceeding 40 W/m\u00b2-K (achievable at approximately 1 m/s flow speed) and an ambient pressure of at least 3 bar. Operating at 2 bar with 0.5 m/s flow only slows propagation without fully suppressing it; both flow speed and pressure thresholds must be jointly satisfied.",
+          "must_include": [
+            "argon's lower heat capacity dominates over its higher density in determining cooling effectiveness",
+            "argon provides lower cooling effectiveness than nitrogen",
+            "convective heat transfer coefficient exceeding 40 W/m\u00b2-K required for complete suppression at 2C; at 3C, pressure of at least 3 bar is also needed",
+            "both flow speed and ambient pressure thresholds must be jointly met at 3C discharge"
+          ],
+          "disallowed_extrapolations": [
+            "Argon is superior to nitrogen due to higher density alone",
+            "40 W/m\u00b2-K is sufficient for complete suppression at 3C without pressure consideration",
+            "2 bar ambient pressure alone achieves complete suppression at 3C",
+            "Cooling gas choice is irrelevant to propagation suppression"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-variable reasoning: heat capacity vs. density trade-off in gas cooling effectiveness, and joint threshold conditions for complete propagation suppression at 3C",
+          "primary_boundary": "At 3C discharge, complete suppression requires both \u22651 m/s flow (>40 W/m\u00b2-K) AND \u22653 bar pressure; 2 bar only slows propagation. Argon's lower heat capacity dominates over its density advantage.",
+          "intended_error_modes": [
+            "Asserting density dominates over heat capacity for cooling effectiveness",
+            "Applying the 2C suppression threshold (40 W/m\u00b2-K) directly to 3C without pressure adjustment",
+            "Treating single-variable optimization (pressure or flow alone) as sufficient for complete suppression at 3C"
+          ]
+        }
+      }
+    ]
+  }
+}

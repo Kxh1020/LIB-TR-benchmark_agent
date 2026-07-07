@@ -1,0 +1,353 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A cylindrical 21,700 NMC811 cell is tested under accelerated rate calorimetry. The cell exhibits a self-heating onset near 65°C, followed by a period of relatively stable self-heating, and then a sharp acceleration in heat release rate. The temperature at which the rate of temperature rise first reaches 1°C/s is recorded as the thermal runaway trigger temperature. Separately, DSC analysis of the charged cathode mixed with electrolyte shows two exothermic peaks at 215°C and 230°C, while the dry charged cathode alone shows oxygen release initiating near 240°C. An engineer proposes adding TPFPB (an anion receptor) to the electrolyte to improve ionic conductivity. Which of the following conclusions about the thermal behavior of this system are supported by the described evidence?",
+        "options": [
+          "A. The reaction between the charged cathode and electrolyte is the primary trigger for thermal runaway onset, because it occurs at temperatures consistent with the observed thermal runaway trigger temperature and precedes anode-related reactions in time order.",
+          "B. Adding TPFPB to the electrolyte will improve safety margins by raising the thermal runaway trigger temperature, because anion receptors stabilize the cathode-electrolyte interface.",
+          "C. The presence of electrolyte lowers the temperature at which oxygen is released from the charged cathode compared to the dry cathode alone, which mechanistically explains why the cathode-electrolyte reaction can trigger thermal runaway at lower temperatures than dry cathode decomposition.",
+          "D. The transition from stable self-heating to violently accelerated heat release is best identified by the temperature at which the cell first begins to generate any detectable heat above ambient, because that marks the departure from thermal equilibrium.",
+          "E. Adding TPFPB reduces the thermal runaway trigger temperature relative to the baseline cell, making the battery more susceptible to thermal runaway onset rather than more resistant.",
+          "F. The maximum temperature reached during thermal runaway in this cell chemistry is primarily controlled by the onset temperature of the cathode-electrolyte reaction, so interventions that shift that onset will proportionally change the peak temperature.",
+          "G. The dry cathode can sustain greater lattice strain before oxygen release than the cathode in the presence of electrolyte, implying that electrolyte removal would delay phase transformation and oxygen release under identical thermal loading."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The DSC evidence shows cathode-electrolyte exothermic peaks at 215°C and 230°C, consistent with the ARC-measured T2 of ~218°C for thermal runaway trigger. The time-order analysis explicitly identifies cathode-electrolyte reaction as the trigger, preceding other reactions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+177+Lecture_Notes_in_Electrical_Engineering:C002",
+              "TR_Dynamics+177+Lecture_Notes_in_Electrical_Engineering:C001"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "TPFPB addition actually decreased T2 by 20°C (to 198°C), making the battery more susceptible to thermal runaway, not less. The claim that anion receptors stabilize the interface is an unsupported mechanism inversion.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Dynamics+177+Lecture_Notes_in_Electrical_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence shows dry cathode oxygen release initiates near 240°C, while cathode with electrolyte shows a sharp oxygen peak at ~230°C. This shift to lower temperature in the presence of electrolyte is mechanistically linked to the cathode-electrolyte reaction triggering thermal runaway at temperatures below dry cathode decomposition.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+177+Lecture_Notes_in_Electrical_Engineering:C003",
+              "TR_Dynamics+177+Lecture_Notes_in_Electrical_Engineering:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence defines the departure from quasi-equilibrium (transition from stable self-heating to violent acceleration) at Tonset (~105°C for NMC811 M50 cell), not at the first detectable self-heating onset (~65°C). These are distinct thresholds with distinct physical meanings; conflating them violates the staged thermal runaway framework.",
+            "error_type": "condition_violation",
+            "evidence_refs": [
+              "TR_Dynamics+176+Journal_of_Energy_Chemistry:C003",
+              "TR_Dynamics+177+Lecture_Notes_in_Electrical_Engineering:C001"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "TPFPB addition lowered T2 by 20°C to 198°C, attributed to TPFPB's reducibility causing earlier oxygen gas release. This is counterintuitive—an additive intended to improve ionic performance worsens thermal safety by advancing the trigger temperature downward.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+177+Lecture_Notes_in_Electrical_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "No evidence supports a proportional relationship between cathode-electrolyte reaction onset temperature and peak temperature. The maximum temperature (T3 ~750°C) is determined by total energy release across all reactions, not proportionally by the trigger onset. This is a causal overclaim extending beyond the evidence scope.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Dynamics+177+Lecture_Notes_in_Electrical_Engineering:C001"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "Evidence explicitly states the dry cathode can withstand more c-lattice expansion than cathode in the presence of electrolyte, and that electrolyte accelerates phase transition and oxygen release by spontaneously releasing lattice strain. This directly supports the conclusion that electrolyte removal would delay these processes.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+177+Lecture_Notes_in_Electrical_Engineering:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism identification for thermal runaway trigger in NCM811 cells and the role of electrolyte and additives in modifying cathode decomposition temperature",
+        "primary_boundary": "Distinguishing between the self-heating onset temperature, the quasi-equilibrium departure temperature, and the thermal runaway trigger temperature as distinct thresholds with distinct physical meanings; and recognizing that electrolyte presence and TPFPB both lower rather than raise critical temperatures",
+        "intended_error_modes": [
+          "Mechanism inversion: assuming TPFPB improves safety because it is an additive",
+          "Threshold conflation: treating first detectable self-heating as the departure from quasi-equilibrium",
+          "Causal overclaim: assuming proportional relationship between trigger onset and peak temperature"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding that TPFPB improves thermal stability",
+          "Assuming peak temperature is proportionally controlled by trigger onset temperature",
+          "Treating self-heating onset and quasi-equilibrium departure as the same event"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Two battery chemistries—sodium-ion (SIB) and lithium-ion (LIB)—are compared under two distinct operating regimes. Under normal discharge at 3C rate, SIBs generate less surface heat than LIBs by approximately 2.7°C. However, under 15% overcharge, SIBs generate more surface heat than LIBs by approximately 1.5°C and additionally exhibit full thermal runaway reaching a peak temperature near 274°C, while LIBs do not exhibit thermal runaway under the same overcharge heating conditions. At 15% overcharge, SIB residual capacity drops to 67.72% while LIB residual capacity remains at 99.07%. At 0°C and 0.5C discharge, SIBs retain 13.93% more capacity than LIBs. An engineer is evaluating these two chemistries for deployment in a stationary energy storage application that requires both low-temperature performance and tolerance of occasional overcharge events. Which of the following conclusions are admissible given the described evidence?",
+        "options": [
+          "A. SIBs are preferable to LIBs for low-temperature discharge performance at moderate rates, but this advantage does not imply equivalent or superior safety under overcharge conditions.",
+          "B. Because SIBs generate less surface heat than LIBs under normal high-rate discharge, SIBs present a lower thermal hazard than LIBs across all operating conditions including abusive ones.",
+          "C. The thermal behavior of SIBs under overcharge represents a regime change relative to normal operation: the chemistry that is thermally cooler under normal discharge becomes the more thermally hazardous one under overcharge abuse.",
+          "D. The 33.35% gap in residual capacity between SIBs and LIBs at 15% overcharge is sufficient to conclude that SIBs have fundamentally inferior electrode materials compared to LIBs, regardless of operating condition.",
+          "E. For the described stationary application, selecting SIBs based solely on their low-temperature capacity advantage would be an incomplete engineering judgment because the overcharge safety behavior represents a qualitatively different failure mode.",
+          "F. The surface temperature difference of 1.5°C between SIBs and LIBs under 15% overcharge is the primary indicator that SIBs will undergo thermal runaway while LIBs will not, meaning surface temperature monitoring alone is sufficient to predict thermal runaway onset in this scenario."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "SIBs show 13.93% higher capacity retention at 0°C, confirming low-temperature advantage. However, under 15% overcharge, SIBs undergo thermal runaway while LIBs do not, demonstrating that normal-condition thermal advantage does not extend to abusive conditions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+175+International_Journal_of_Electrochemical_Science:C001",
+              "TR_Dynamics+175+International_Journal_of_Electrochemical_Science:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "This is a conservative-sounding but incorrect overgeneralization. The evidence explicitly shows that SIBs, despite generating less surface heat under normal discharge, exhibit thermal runaway under overcharge while LIBs do not. The normal-condition thermal advantage does not generalize to all conditions.",
+            "error_type": "overgeneralization_across_regimes",
+            "evidence_refs": [
+              "TR_Dynamics+175+International_Journal_of_Electrochemical_Science:C005",
+              "TR_Dynamics+175+International_Journal_of_Electrochemical_Science:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Under normal 3C discharge, SIBs are thermally cooler by 2.7°C. Under 15% overcharge, SIBs are thermally hotter by 1.5°C and undergo thermal runaway. This constitutes a regime change where the relative thermal ranking inverts and the failure mode changes qualitatively.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+175+International_Journal_of_Electrochemical_Science:C005",
+              "TR_Dynamics+175+International_Journal_of_Electrochemical_Science:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The residual capacity gap at 15% overcharge reflects behavior under a specific abusive condition, not a universal material property. Generalizing this to a conclusion about fundamental electrode material inferiority across all conditions is an inadmissible scope expansion, especially given SIBs' demonstrated advantage at low temperature.",
+            "error_type": "scope_expansion_distractor",
+            "evidence_refs": [
+              "TR_Dynamics+175+International_Journal_of_Electrochemical_Science:C004",
+              "TR_Dynamics+175+International_Journal_of_Electrochemical_Science:C001"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The application requires both low-temperature performance and overcharge tolerance. SIBs satisfy the first criterion but fail the second by undergoing thermal runaway at 15% overcharge. Selecting based on only one criterion while ignoring a qualitatively different failure mode is an incomplete engineering judgment.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+175+International_Journal_of_Electrochemical_Science:C001",
+              "TR_Dynamics+175+International_Journal_of_Electrochemical_Science:C002",
+              "TR_Dynamics+175+International_Journal_of_Electrochemical_Science:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "A 1.5°C surface temperature difference is a small differential that does not by itself explain or predict thermal runaway. The evidence shows SIBs undergo thermal runaway while LIBs do not under the same heating conditions, but the causal mechanism is not reducible to this small surface temperature difference. Surface temperature monitoring at this resolution cannot serve as the primary thermal runaway predictor.",
+            "error_type": "measurement_scope_distractor",
+            "evidence_refs": [
+              "TR_Dynamics+175+International_Journal_of_Electrochemical_Science:C005",
+              "TR_Dynamics+175+International_Journal_of_Electrochemical_Science:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Regime-dependent reversal of relative thermal hazard between SIBs and LIBs, and the inadmissibility of generalizing normal-operation thermal behavior to abusive conditions",
+        "primary_boundary": "The boundary between normal discharge regime (where SIBs are thermally cooler) and overcharge abuse regime (where SIBs become thermally more hazardous and undergo thermal runaway); conclusions valid in one regime are not transferable to the other",
+        "intended_error_modes": [
+          "Overgeneralization of normal-condition thermal advantage to all conditions",
+          "Treating a small surface temperature differential as a sufficient predictor of thermal runaway",
+          "Generalizing condition-specific residual capacity gap to fundamental material inferiority"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding SIBs are thermally safer than LIBs across all conditions based on normal-discharge data",
+          "Using 1.5°C surface temperature difference as a standalone thermal runaway predictor",
+          "Inferring fundamental electrode material quality from a single abusive condition result"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A 21,700 NMC811 cylindrical cell is subjected to an EV-ARC test. The following sequence is observed: self-heating begins near 65°C; at approximately 105°C the temperature rise rate increases sharply and consistently, marking a transition to accelerated heat release; at 143°C the temperature rise rate reaches 1°C/s; the bottom vent ruptures mechanically when internal gas pressure reaches 2 MPa; the gas vented includes hydrogen (~25%), carbon dioxide (~38%), carbon monoxide (~16%), methane (~18%), and ethane (~3%); the maximum temperature reaches 728°C at a peak rate of 7688°C/min. A safety engineer is asked to evaluate which temperature threshold is most appropriate to use as the intervention trigger for a battery management system designed to prevent full thermal runaway propagation in a module.",
+        "options": [
+          "A. The temperature at which self-heating first becomes detectable (~65°C) is the most conservative and therefore most appropriate intervention trigger, because any earlier intervention is always preferable for safety.",
+          "B. The threshold at which the temperature rise rate first increases sharply and consistently (~105°C) represents the last point before the system departs from quasi-equilibrium, making it a more mechanistically justified intervention trigger than the 1°C/s threshold.",
+          "C. The 1°C/s threshold temperature (~143°C) is the most appropriate intervention trigger because it is the conventional definition of thermal runaway onset and represents a well-defined, measurable transition.",
+          "D. Once the temperature rise rate reaches 1°C/s at ~143°C, the subsequent progression to 728°C at 7688°C/min means that any intervention triggered at or after this point must account for the extremely limited time available before peak temperature is reached.",
+          "E. The mechanical vent rupture at 2 MPa internal pressure is a reliable early-warning signal that precedes the 1°C/s thermal runaway trigger temperature, and therefore vent rupture detection should replace temperature-based triggering.",
+          "F. The gas composition vented during thermal runaway—dominated by carbon dioxide and containing significant hydrogen and carbon monoxide—indicates that both combustion-supporting and flammable species are present, which is relevant to propagation hazard assessment at the module level.",
+          "G. Because the maximum temperature (728°C) is more than five times the self-heating onset temperature (65°C in Celsius), the energy released after the 1°C/s trigger point is negligible compared to total stored energy, and intervention at 143°C will reliably prevent significant temperature rise."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "While appearing conservative, triggering intervention at the self-heating onset (~65°C) is not necessarily most appropriate because self-heating at this stage is stable and the system is still in quasi-equilibrium. Triggering too early may cause unnecessary system shutdowns and does not reflect a mechanistically justified threshold. The claim that 'earlier is always preferable' is an unsupported absolute that ignores operational trade-offs.",
+            "error_type": "conservative_but_incorrect",
+            "evidence_refs": [
+              "TR_Dynamics+176+Journal_of_Energy_Chemistry:C003",
+              "TR_Dynamics+177+Lecture_Notes_in_Electrical_Engineering:C001"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The ~105°C threshold is explicitly defined as the departure from quasi-equilibrium, transitioning from stable self-heating to violently accelerated heat release. Intervening at this point—before the system enters the violent acceleration stage—is mechanistically more justified than waiting for the 1°C/s threshold, which occurs after the system has already departed from quasi-equilibrium.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+176+Journal_of_Energy_Chemistry:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "While 143°C is a conventional and well-defined threshold, the evidence shows that at this point the system has already transitioned to Stage III (violently accelerated heat release) and will reach 728°C at 7688°C/min. Describing it as 'most appropriate' without acknowledging the extremely limited intervention window after this point is an incomplete and potentially misleading safety judgment.",
+            "error_type": "ignoring_boundary_conditions",
+            "evidence_refs": [
+              "TR_Dynamics+176+Journal_of_Energy_Chemistry:C004",
+              "TR_Dynamics+176+Journal_of_Energy_Chemistry:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "At 7688°C/min, the time from 143°C to 728°C is extremely short (on the order of seconds to low minutes). Any intervention triggered at or after the 1°C/s threshold must account for this severely constrained response window, which is a critical engineering constraint for module-level propagation prevention.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+176+Journal_of_Energy_Chemistry:C004",
+              "TR_Dynamics+176+Journal_of_Energy_Chemistry:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The evidence states vent rupture occurs when internal pressure reaches 2 MPa, but does not establish that this precedes the 1°C/s trigger temperature in the thermal runaway sequence. The temporal ordering of vent rupture relative to the 143°C trigger is not established by the evidence, making the claim that vent rupture detection should replace temperature-based triggering an unsupported recommendation.",
+            "error_type": "unsupported_causal_ordering",
+            "evidence_refs": [
+              "TR_Dynamics+176+Journal_of_Energy_Chemistry:C001",
+              "TR_Dynamics+176+Journal_of_Energy_Chemistry:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The gas composition includes flammable species (hydrogen ~25%, carbon monoxide ~16%, methane ~18%, ethane ~3%) alongside carbon dioxide (~38%). The co-presence of flammable gases and an oxidizer-supporting environment is directly relevant to propagation hazard at the module level, where vented gases from one cell can interact with neighboring cells or ignition sources.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+176+Journal_of_Energy_Chemistry:C002"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "The numerical comparison of temperatures in Celsius does not represent energy ratios. The claim that energy released after 143°C is negligible is not supported and is physically implausible given that the peak rate of 7688°C/min occurs after this point. This is a numerical reasoning error that misuses temperature values as energy proxies.",
+            "error_type": "numerical_exaggeration_distractor",
+            "evidence_refs": [
+              "TR_Dynamics+176+Journal_of_Energy_Chemistry:C005",
+              "TR_Dynamics+176+Journal_of_Energy_Chemistry:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Selection of mechanistically justified intervention thresholds in a staged thermal runaway sequence, and the engineering implications of the extremely rapid progression after the 1°C/s trigger point",
+        "primary_boundary": "The boundary between the quasi-equilibrium departure threshold (~105°C) and the conventional thermal runaway trigger (~143°C): the former is the last point before violent acceleration begins, the latter is already within the violent acceleration stage with severely limited intervention time",
+        "intended_error_modes": [
+          "Treating earliest detectable threshold as automatically most appropriate without considering operational trade-offs",
+          "Accepting the conventional 1°C/s definition as 'most appropriate' without accounting for post-trigger dynamics",
+          "Assuming vent rupture precedes thermal runaway trigger without evidence of temporal ordering",
+          "Misusing Celsius temperature ratios as energy ratios"
+        ],
+        "disallowed_extrapolations": [
+          "Establishing temporal ordering of vent rupture relative to thermal runaway trigger temperature",
+          "Concluding that intervention at 143°C reliably prevents significant temperature rise given the post-trigger rate",
+          "Treating earlier intervention as universally preferable without operational context"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery engineer is evaluating whether adding TPFPB (an anion receptor additive) to the electrolyte of an NCM811 full battery improves or degrades thermal safety, and proposes the following mechanistic explanation: TPFPB lowers the thermal runaway trigger temperature because it reduces the temperature at which oxygen gas is released from the charged cathode. A colleague challenges this, arguing that the lower trigger temperature must instead be due to TPFPB destabilizing the SEI on the anode, since anion receptors are known to interact with fluorine-containing species. Using the available evidence about cathode-electrolyte interactions and oxygen release behavior in NCM811 systems, evaluate which mechanistic explanation is better supported, identify the specific evidence that distinguishes between them, and explain why the dry cathode reference condition is critical to this mechanistic argument."
+      },
+      "ground_truth": {
+        "gold_answer": "The engineer's explanation is better supported. TPFPB lowers T2 by 20°C (to 198°C from 218°C), and this is attributed to TPFPB's reducibility causing oxygen gas release at lower temperature from the charged NCM811 cathode. The critical distinguishing evidence is the comparison between dry cathode and cathode-with-electrolyte oxygen release: the dry cathode initiates oxygen release near 240°C, while the cathode with electrolyte shows a sharp oxygen peak near 230°C, and with TPFPB this shift is further advanced. The dry cathode reference condition is critical because it establishes a baseline for cathode-intrinsic decomposition temperature independent of electrolyte effects. The fact that electrolyte alone shifts oxygen release from ~240°C to ~230°C, and TPFPB further lowers T2 to 198°C, forms a consistent mechanistic chain: electrolyte and TPFPB both reduce the cathode's ability to retain lattice strain, accelerating phase transformation and oxygen release at progressively lower temperatures. The colleague's SEI-destabilization hypothesis is not supported by the presented evidence, which specifically links the T2 reduction to cathode-side oxygen release behavior rather than anode-side reactions. Furthermore, the DSC evidence identifies cathode-electrolyte reaction as the thermal runaway trigger based on time ordering, not anode-related processes.",
+        "must_include": [
+          "TPFPB lowers T2 by 20°C to 198°C",
+          "TPFPB attributed to reducibility causing earlier oxygen gas release from cathode",
+          "Dry cathode oxygen release initiates near 240°C; with electrolyte shifted to ~230°C",
+          "Dry cathode reference establishes cathode-intrinsic decomposition baseline independent of electrolyte",
+          "Cathode-electrolyte reaction identified as thermal runaway trigger by time ordering",
+          "Colleague's SEI hypothesis is not supported by the presented evidence",
+          "Electrolyte accelerates phase transition and oxygen release by reducing lattice strain retention"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming TPFPB affects anode SEI stability based on the presented evidence",
+          "Concluding that TPFPB improves any aspect of thermal safety",
+          "Asserting that the T2 reduction with TPFPB proportionally changes peak temperature T3",
+          "Generalizing the oxygen release shift to cathode chemistries other than NCM811"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanistic attribution of TPFPB-induced reduction in thermal runaway trigger temperature to cathode-side oxygen release rather than anode-side SEI effects, using the dry cathode reference as a mechanistic anchor",
+        "primary_boundary": "The boundary between cathode-electrolyte reaction as the established trigger mechanism (supported by time-ordering DSC evidence and oxygen release profiles) versus anode SEI destabilization (plausible in general but not supported by the specific evidence presented)",
+        "intended_error_modes": [
+          "Accepting the colleague's SEI hypothesis because anion receptors are generally known to interact with fluorine species—a plausible but unsupported mechanism substitution",
+          "Failing to use the dry cathode reference condition to anchor the mechanistic argument",
+          "Conflating the trigger temperature reduction with a proportional change in peak temperature"
+        ]
+      }
+    }
+  ]
+}

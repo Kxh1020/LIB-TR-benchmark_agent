@@ -1,0 +1,1262 @@
+{
+  "TR_Gasventing+159+Process_Safety_and_Environmental_Protection__TR_Gasventing+160+Process_Safety_and_Environmental_Protection__TR_Gasventing+161+Process_Safety_and_Environmental_Protection": {
+    "mcqs": [
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A 4 Ah lithium iron phosphate cell undergoes thermal runaway inside an 80 L enclosed chamber. Measurements confirm that the released gas explosion propagates at supersonic speed and produces an average maximum overpressure of 383 kPa in the closed configuration. An explosion vent is then installed on the chamber. Tests with varying vent sizes show that as the dimensionless venting coefficient Kv decreases from 74.26 to 6.19, both peak overpressure and deflagration index decrease substantially. However, a venting efficiency index that accounts for both overpressure reduction and vent area cost reaches a maximum at an intermediate Kv value of 8.25 before declining. An engineer evaluates whether increasing vent area indefinitely is the optimal design strategy. Which of the following conclusions are admissible?",
+          "options": [
+            "A. Increasing vent area beyond the optimal Kv value of 8.25 continues to reduce overpressure but does so with diminishing returns in venting efficiency, making arbitrarily large vents suboptimal by the efficiency criterion.",
+            "B. The supersonic propagation speed measured in the closed chamber confirms that the explosion regime is detonation, which means the explosion vent must be designed to contain rather than relieve the pressure wave to be effective.",
+            "C. At small vent areas, the risk of secondary explosion may increase relative to intermediate vent sizes, because delayed vent opening allows greater accumulation of combustible gases that can mix with external air after venting.",
+            "D. Because the explosion vent reduced average maximum overpressure by over 93%, it can be concluded that the explosion vent eliminates the structural risk to the chamber under all TR gas release scenarios.",
+            "E. The optimal venting coefficient Kv = 8.25 represents a design point where the tradeoff between overpressure reduction and vent area cost is most favorable, but this optimum is specific to the tested configuration and may not transfer directly to chambers of different volume or cell capacity.",
+            "F. Reducing Kv from 74.26 to 6.19 produces a monotonic decrease in both peak overpressure and deflagration index, which implies that the minimum achievable overpressure is obtained at the smallest possible Kv value regardless of other design constraints."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The venting efficiency index Ks reaches a maximum at Kv = 8.25 and then decreases as vent area increases further. This means larger vents beyond this point reduce overpressure but at a cost that exceeds the efficiency benefit, making them suboptimal by this criterion. This is a direct implication of the non-monotonic Ks behavior.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+161+Process_Safety_and_Environmental_Protection:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "While the supersonic propagation confirms detonation, the evidence shows that explosion vents do effectively reduce overpressure by over 93% even under these conditions. The claim that vents must 'contain rather than relieve' detonation waves is not supported and contradicts the demonstrated effectiveness of relief venting.",
+              "error_type": "mechanism confusion / unsupported design recommendation",
+              "evidence_refs": [
+                "TR_Gasventing+161+Process_Safety_and_Environmental_Protection:C001",
+                "TR_Gasventing+161+Process_Safety_and_Environmental_Protection:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence states that small vent areas cause delayed opening due to higher opening pressure, leading to prolonged accumulation and increased concentration of combustible gases. After venting, high-temperature unburned gases can mix with external air to form a combustible cloud risking secondary explosion. This is directly supported.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+161+Process_Safety_and_Environmental_Protection:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "The 93% reduction is a measured average across tested configurations, but the residual overpressure range (7.2–27 kPa) and variability across Kv values means structural risk is reduced, not eliminated. Claiming elimination of structural risk under 'all TR gas release scenarios' is an inadmissible overclaim beyond the tested conditions.",
+              "error_type": "protective mechanism overclaim distractor",
+              "evidence_refs": [
+                "TR_Gasventing+161+Process_Safety_and_Environmental_Protection:C001"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "The optimal Kv = 8.25 is identified within the specific 80 L chamber with a 4 Ah LFP cell. The evidence does not support transferring this specific optimum to different chamber volumes or cell capacities, making the qualification that it is configuration-specific an admissible and necessary caveat.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+161+Process_Safety_and_Environmental_Protection:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "While decreasing Kv does reduce peak overpressure and deflagration index monotonically, the venting efficiency index Ks is non-monotonic and peaks at Kv = 8.25. The statement that the minimum overpressure at the smallest Kv is optimal 'regardless of other design constraints' ignores the efficiency penalty and potential secondary explosion risk at very small Kv values.",
+              "error_type": "ignoring boundary conditions / ignoring multi-factor interaction",
+              "evidence_refs": [
+                "TR_Gasventing+161+Process_Safety_and_Environmental_Protection:C002",
+                "TR_Gasventing+161+Process_Safety_and_Environmental_Protection:C003",
+                "TR_Gasventing+161+Process_Safety_and_Environmental_Protection:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Optimal explosion vent design under TR gas explosion conditions, including the non-monotonic efficiency relationship and secondary explosion risk at small vent areas",
+          "primary_boundary": "Venting efficiency is non-monotonic with vent area; overpressure reduction does not eliminate structural risk; optimal Kv is configuration-specific; small vent areas introduce secondary explosion risk",
+          "intended_error_modes": [
+            "Claiming venting eliminates structural risk from measured average reduction",
+            "Assuming monotonic optimality of smallest Kv ignoring efficiency and secondary explosion",
+            "Misinterpreting detonation classification as requiring containment rather than relief"
+          ],
+          "disallowed_extrapolations": [
+            "Transferring optimal Kv to different chamber volumes or cell capacities",
+            "Claiming 93% reduction equates to elimination of structural risk",
+            "Applying detonation classification to conclude vents are ineffective"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "An NCM523 battery module is operated at 50% SOC and subjected to a combined loading scenario: the cells are preheated to 100°C and then rapidly penetrated. Post-test analysis shows surface temperatures exceeding 400°C and a temperature rise rate of approximately 78°C/s. The module enclosure has a fixed-area explosion vent with a high opening pressure rating. An engineer raises two concerns: (1) whether the thermal runaway severity at 50% SOC under this combined loading would be classified differently than under overheating alone at the same SOC, and (2) whether the high opening pressure of the fixed vent introduces an additional hazard beyond the primary explosion overpressure. Provide a technically justified answer to both concerns, identifying the mechanism responsible for each effect."
+        },
+        "ground_truth": {
+          "gold_answer": "Concern 1: Under overheating alone, the TR trigger temperature for NCM523 at 50% SOC is approximately 185.9°C, meaning the cell must be heated to that temperature before runaway initiates. Under the combined loading of rapid penetration at 100°C preheating, TR is triggered at a much lower effective thermal threshold because mechanical damage from penetration introduces internal short circuits or structural disruption that reduces the energy barrier for runaway initiation. The evidence shows that rapid penetration significantly reduced the TR trigger temperature threshold compared to overheating alone. At 50% SOC under combined loading, the cell enters severe TR (rise rate ~78°C/s, surface temperature ~440°C), which is a more dangerous outcome than what overheating alone at 100°C would produce, since overheating alone at 100°C would not reach the 185.9°C trigger threshold without additional heating. The mechanism is that mechanical damage under elevated temperature lowers the effective activation condition for exothermic reactions, enabling TR at conditions that would be sub-threshold under purely thermal loading. Concern 2: A high opening pressure on a fixed vent with small effective area causes delayed vent opening. During the delay, combustible gases released from TR continue to accumulate inside the enclosure, increasing both concentration and total quantity of flammable gas. When the vent finally opens, high-temperature unburned gases are ejected and can mix with external air to form a combustible cloud. If this cloud contacts hot surfaces or ignition sources outside the enclosure, a secondary explosion can occur. The mechanism is that delayed venting converts a controlled pressure relief event into an uncontrolled release of a pre-mixed combustible cloud, creating a secondary ignition hazard that is spatially displaced from the primary event and potentially more difficult to control.",
+          "must_include": [
+            "Rapid penetration reduces TR trigger temperature compared to overheating alone",
+            "Mechanical damage under elevated temperature lowers the effective threshold for TR initiation",
+            "50% SOC under combined loading falls in severe TR regime with rise rate exceeding 10°C/s",
+            "High opening pressure causes delayed vent opening",
+            "Delayed opening leads to accumulation of combustible gases",
+            "Post-venting mixing of hot unburned gases with external air can form a combustible cloud",
+            "Combustible cloud creates secondary explosion risk"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming the combined loading result applies to all mechanical abuse scenarios regardless of preheating temperature",
+            "Stating that the secondary explosion risk is eliminated by any specific vent design without evidence",
+            "Quantifying the TR trigger temperature under combined loading without evidence support",
+            "Generalizing the optimal Kv from the LFP test to this NCM523 module configuration"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Mechanism by which combined mechanical-thermal loading lowers TR trigger conditions relative to thermal-only loading, and the secondary explosion mechanism introduced by high-opening-pressure vents with small area",
+          "primary_boundary": "TR trigger temperature reduction is specific to combined loading; secondary explosion risk is specific to small vent area with high opening pressure; optimal vent parameters from one configuration do not transfer directly",
+          "intended_error_modes": [
+            "Confusing TR trigger temperature under overheating alone with combined loading trigger conditions",
+            "Treating high opening pressure as uniformly beneficial for structural protection without recognizing secondary explosion risk",
+            "Failing to connect delayed vent opening to combustible cloud formation mechanism"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Gasventing+162+Journal_of_Cleaner_Production__TR_Gasventing+163+Renewable_Energy__TR_Gasventing+164+Journal_of_Industrial_and_Engineering_Chemistry": {
+    "mcqs": [
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "During nail penetration testing of a lithium-ion pouch cell, measurements show that the contact resistance between the nail and electrode layers is several orders of magnitude larger than the nail's own internal resistance. A simulation study compares two modeling assumptions: (1) uniform contact resistance distribution along the nail, and (2) inhomogeneous contact resistance distribution. The inhomogeneous model predicts maximum heat production 300% higher than the uniform model. The cell is tested at two SOC levels: low SOC and high SOC. It is known that initial SOC is positively correlated with gas production during thermal runaway, and that at low SOC, thermal runaway is less violent and produces more CO2, resulting in a higher lower flammability limit (LFL) of the vent gas. Which of the following statements are admissible?",
+          "options": [
+            "A. The total short-circuit resistance during nail penetration is dominated by contact resistance rather than nail resistance, so modeling assumptions about contact resistance distribution have a larger effect on predicted heat generation than assumptions about nail material conductivity.",
+            "B. Because the inhomogeneous model predicts 300% higher maximum heat production, the uniform assumption is always non-conservative and should never be used in safety assessments.",
+            "C. At high SOC, the vent gas LFL is lower than at low SOC, meaning the gas mixture becomes flammable at a lower concentration in air, which represents a greater ignition hazard compared to the low SOC condition.",
+            "D. The 300% difference in predicted maximum heat production between inhomogeneous and uniform models implies that the actual temperature rise during nail penetration is also 300% higher under inhomogeneous conditions.",
+            "E. At low SOC, the higher CO2 content in vent gas raises the LFL, which is consistent with CO2 acting to narrow the flammable range by raising the LFL more than the UFL.",
+            "F. The positive correlation between SOC and gas production means that a cell at high SOC will always reach thermal runaway upon nail penetration, while a cell at low SOC will not.",
+            "G. The dominance of contact resistance over nail resistance implies that reducing nail diameter to increase contact resistance per unit area would reduce local heat generation at the nail tip."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Since contact resistance dominates total short-circuit resistance by several orders of magnitude, the distribution and magnitude of contact resistance determines heat generation far more than nail conductivity. Modeling assumptions about contact resistance therefore have a proportionally larger effect on predicted heat than nail material assumptions.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+163+Renewable_Energy:C002",
+                "TR_Gasventing+163+Renewable_Energy:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The evidence states maximum heat production under inhomogeneous assumption was 300% higher, but this is a comparison of peak values under specific conditions. Concluding the uniform assumption is 'always non-conservative' and 'should never be used' is an inadmissible universal generalization from a single comparative result.",
+              "error_type": "overgeneralization from specific comparison to universal rule",
+              "evidence_refs": [
+                "TR_Gasventing+163+Renewable_Energy:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence states LFL decreases with increasing SOC because low SOC produces more CO2 and requires higher fuel concentration for ignition. Therefore at high SOC, LFL is lower, meaning the mixture reaches the flammable range at a lower concentration, representing greater ignition hazard.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+163+Renewable_Energy:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Heat production and temperature rise are related but not identical; temperature rise depends on heat capacity, thermal conductivity, and heat dissipation pathways. A 300% difference in maximum heat production does not translate directly to a 300% difference in temperature rise. This is a mechanism substitution error.",
+              "error_type": "direct numerical transfer between heat production and temperature rise without accounting for thermal system properties",
+              "evidence_refs": [
+                "TR_Gasventing+163+Renewable_Energy:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Evidence states that at low SOC, more CO2 is produced, raising the LFL. Separately, evidence shows CO2 content increase raises LFL more than UFL, narrowing the flammable range. These two pieces of evidence are mutually consistent: the mechanism by which low SOC raises LFL is the CO2-driven narrowing of the flammable range.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+163+Renewable_Energy:C005",
+                "TR_Gasventing+164+Journal_of_Industrial_and_Engineering_Chemistry:C002"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "SOC is positively correlated with gas production, but this does not imply a binary threshold where high SOC always causes TR and low SOC never does. The evidence establishes a correlation, not a deterministic threshold based solely on SOC for nail penetration.",
+              "error_type": "converting correlation into deterministic threshold without evidence support",
+              "evidence_refs": [
+                "TR_Gasventing+163+Renewable_Energy:C004"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Incorrect",
+              "justification": "Contact resistance dominates total resistance, but the relationship between nail diameter and contact resistance per unit area is not established in the evidence. Furthermore, even if contact resistance per unit area increased, total heat generation depends on both resistance and current distribution. This is an unsupported design inference.",
+              "error_type": "unsupported design inference from resistance dominance principle",
+              "evidence_refs": [
+                "TR_Gasventing+163+Renewable_Energy:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of heat generation modeling conclusions and SOC-dependent flammability inferences from nail penetration and vent gas evidence",
+          "primary_boundary": "Contact resistance dominance justifies modeling sensitivity claims but not universal non-conservatism of uniform models; 300% heat production difference does not translate directly to temperature rise; SOC-gas production correlation does not define a TR threshold",
+          "intended_error_modes": [
+            "universalizing the 300% heat production comparison as a modeling rule",
+            "directly equating heat production difference with temperature rise difference",
+            "converting SOC-gas production correlation into a binary TR threshold",
+            "inferring nail geometry design implications from resistance dominance without supporting evidence"
+          ],
+          "disallowed_extrapolations": [
+            "Uniform contact resistance model is always non-conservative",
+            "300% heat production difference implies 300% temperature difference",
+            "High SOC deterministically causes TR under nail penetration",
+            "Nail diameter reduction increases contact resistance per unit area as a design strategy"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "An LFP battery pack is being evaluated for overcharge safety. At a charging rate of 2C, the released gas has an H2 content of 61% and a lower explosion limit (LEL) of 5.99%. At 0.5C, the battery does not reach thermal runaway but only experiences venting, and the LEL of the released gas is higher. A design engineer proposes that limiting the maximum charging rate to 0.5C is sufficient to eliminate explosion hazard from released gas, because thermal runaway does not occur at that rate.\n\nIdentify the specific flaw in this reasoning. In your answer, explain what the 0.5C condition does and does not prevent, and describe the mechanism by which the remaining hazard persists even without thermal runaway. Then explain how the relationship between H2 content and LEL across charging rates is relevant to evaluating the relative magnitude of the hazard at different rates."
+        },
+        "ground_truth": {
+          "gold_answer": "The flaw is that the absence of thermal runaway at 0.5C does not eliminate the explosion hazard from released gas. At 0.5C, the battery still undergoes venting and releases gas into the enclosure, as evidenced by the measured tank pressure of 3 kPa. The released gas contains combustible components and has a finite LEL; if the gas accumulates to a concentration above its LEL in the presence of an ignition source, ignition remains possible. Thermal runaway is not a prerequisite for flammable gas release. The mechanism of hazard is gas accumulation and ignition, which depends on gas composition, LEL, and enclosure ventilation, not solely on whether thermal runaway occurs. Regarding charging rate and LEL: higher charging rates produce gas with higher H2 content and lower LEL, meaning the 2C gas becomes flammable at lower concentrations than the 0.5C gas. While the 0.5C condition does reduce the LEL-related hazard relative to 2C (lower H2 content, higher LEL), it does not reduce it to zero. The engineer's reasoning conflates the absence of thermal runaway with the absence of any flammable gas hazard, which is an inadmissible inference.",
+          "must_include": [
+            "Venting still occurs at 0.5C even without thermal runaway",
+            "Vented gas has a finite LEL and can accumulate to a flammable concentration",
+            "Thermal runaway is not required for flammable gas release",
+            "Higher H2 content at higher charging rates lowers LEL, increasing ignition hazard",
+            "0.5C reduces but does not eliminate the flammable gas hazard"
+          ],
+          "disallowed_extrapolations": [
+            "0.5C produces no combustible gas",
+            "LEL at 0.5C is above any realistic accumulation concentration in all enclosure geometries",
+            "Thermal runaway is the only pathway to dangerous gas concentrations"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Distinguishing between thermal runaway prevention and flammable gas hazard elimination; mechanism of gas accumulation hazard independent of TR occurrence",
+          "primary_boundary": "Venting occurs at 0.5C without TR; flammable gas hazard persists as long as combustible gas is released above LEL; TR prevention is not equivalent to explosion hazard elimination",
+          "intended_error_modes": [
+            "Conflating absence of thermal runaway with absence of flammable gas release",
+            "Treating LEL reduction at lower charging rates as hazard elimination rather than hazard reduction",
+            "Ignoring that 0.5C still produces measurable tank pressure indicating gas release"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Gasventing+165+Applied_Thermal_Engineering__TR_Gasventing+166+Applied_Thermal_Engineering__TR_Gasventing+167+Applied_Thermal_Engineering": {
+    "mcqs": [],
+    "short_answers": []
+  },
+  "TR_Gasventing+168+Applied_Thermal_Engineering__TR_Gasventing+169+International_Journal_of_Heat_and_Mass_Transfer__TR_Gasventing+170+Applied_Thermal_Engineering": {
+    "mcqs": [
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "Two cylindrical lithium-ion cell chemistries, NCA and NMC811, are subjected to identical accelerating rate calorimetry tests in a nitrogen atmosphere at 100% SOC. NCA cells reach thermal runaway onset at a slightly lower average temperature than NMC811 cells. However, NMC811 cells reach a higher average maximum temperature during thermal runaway, release a higher fraction of CO2 relative to CO, and produce approximately 66% more hydrocarbons. Additionally, prior to thermal runaway, NMC811 cells show a progressive increase in CO and CO2 release, whereas NCA cells show no such progressive pre-runaway gas increase and instead exhibit more abrupt gas ejection once thermal runaway begins. A battery safety engineer must assess which chemistry presents a greater fire and toxicity hazard and which offers better pre-runaway diagnostic opportunity. Which of the following conclusions are admissible?",
+          "options": [
+            "A. NCA cells present a greater hazard than NMC811 cells because their lower onset temperature means thermal runaway is triggered under less extreme conditions.",
+            "B. The progressive pre-runaway gas increase in NMC811 cells provides a longer detection window compared to NCA cells, where the transition to thermal runaway is more abrupt.",
+            "C. NMC811 cells present a greater post-onset combustion and toxicity hazard than NCA cells, given their higher peak temperatures and substantially greater hydrocarbon release.",
+            "D. Because NMC811 cells produce more CO2 relative to CO, their gas emissions are less hazardous than NCA cells, since CO2 is non-flammable.",
+            "E. The difference in onset temperature between NCA and NMC811 is large enough to be the primary basis for selecting NMC811 as the safer chemistry for high-temperature environments.",
+            "F. NCA cells' abrupt gas ejection pattern at thermal runaway onset implies that mechanical venting designs relying on gradual pressure build-up for actuation may be less reliable for NCA than for NMC811."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "C",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "While NCA has a slightly lower onset temperature (128.9°C vs 130.6°C), the difference is marginal (~1.7°C). Declaring NCA the greater hazard based solely on this small onset temperature difference ignores the higher peak temperature and greater hydrocarbon release of NMC811, which represent more severe post-onset hazards.",
+              "error_type": "single-variable overclaim ignoring multi-factor interaction",
+              "evidence_refs": [
+                "TR_Gasventing+169+International_Journal_of_Heat_and_Mass_Transfer:C001",
+                "TR_Gasventing+169+International_Journal_of_Heat_and_Mass_Transfer:C002",
+                "TR_Gasventing+169+International_Journal_of_Heat_and_Mass_Transfer:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "The evidence explicitly states that NMC811 shows a progressive increase in CO and CO2 before thermal runaway, while NCA does not and instead ejects gases abruptly. A progressive pre-runaway signal provides a longer detection window, making B admissible.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+169+International_Journal_of_Heat_and_Mass_Transfer:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "NMC811 cells reach higher average maximum temperatures (670.3°C vs 654.3°C) and release 66% more hydrocarbons than NCA. Both factors directly indicate greater post-onset combustion severity and toxicity hazard, making this conclusion admissible.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+169+International_Journal_of_Heat_and_Mass_Transfer:C002",
+                "TR_Gasventing+169+International_Journal_of_Heat_and_Mass_Transfer:C003"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "While CO2 is non-flammable, this reasoning ignores that NMC811 also releases 66% more hydrocarbons than NCA, which are flammable and toxic. Concluding lower hazard from CO2 fraction alone while ignoring the hydrocarbon data is a selective and unsupported claim.",
+              "error_type": "selective use of evidence / ignoring multi-factor interaction",
+              "evidence_refs": [
+                "TR_Gasventing+169+International_Journal_of_Heat_and_Mass_Transfer:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The onset temperature difference between NCA and NMC811 is approximately 1.7°C, which is a marginal difference. Treating this as the primary basis for chemistry selection in high-temperature environments overstates the significance of a small difference while ignoring the more severe post-onset behavior of NMC811.",
+              "error_type": "numerical exaggeration / single-variable overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+169+International_Journal_of_Heat_and_Mass_Transfer:C001"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "NCA cells show abrupt gas ejection at thermal runaway onset without progressive pre-runaway pressure build-up. A venting design that relies on gradual pressure accumulation to actuate would therefore have less time to respond for NCA cells, making this a supported engineering implication.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+169+International_Journal_of_Heat_and_Mass_Transfer:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-factor hazard comparison between NCA and NMC811 chemistries, distinguishing onset conditions from post-onset severity and detection opportunity.",
+          "primary_boundary": "The onset temperature difference is too small to be the primary safety discriminator; post-onset behavior (peak temperature, hydrocarbon release, gas ejection pattern) provides the dominant hazard distinction.",
+          "intended_error_modes": [
+            "Selecting chemistry based on onset temperature alone while ignoring post-onset severity",
+            "Concluding lower hazard from CO2 fraction while ignoring hydrocarbon data",
+            "Treating a ~1.7°C onset temperature difference as a practically significant design basis"
+          ],
+          "disallowed_extrapolations": [
+            "Generalizing hazard ranking to non-inert atmospheres",
+            "Applying ARC results directly to module or pack level without accounting for thermal coupling",
+            "Treating CO2/CO ratio as a complete toxicity index without considering hydrocarbon content"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A fleet operator is evaluating LiFePO4 batteries for a stationary energy storage application. Testing reveals that naturally aged batteries (approximately 5 years old) undergo thermal runaway earlier than new batteries under identical heating conditions, and produce greater amounts of smoke at both 0% and 100% SOC. At 100% SOC, thermal runaway produces multiple violent jet flames for both new and aged cells, while at 0% SOC only a weak flame is observed. Average mass loss during thermal runaway is approximately 110 g at 100% SOC and approximately 92 g at 0% SOC. Soot from thermal runaway contains F and P as corrosive components. In a late-stage fire scenario occurring indoors, C1–C4 gases accumulate in the enclosure. The operator is drafting safety protocols and asks which of the following statements are supported by this evidence.",
+          "options": [
+            "A. Storing batteries at 0% SOC eliminates the fire hazard during thermal runaway, since only a weak flame is produced at that state.",
+            "B. Aged batteries pose an elevated thermal runaway risk compared to new batteries under the same operating conditions, independent of SOC.",
+            "C. The greater mass loss at 100% SOC compared to 0% SOC is consistent with higher gas release at elevated SOC contributing to material ejection.",
+            "D. Soot exposure from LiFePO4 thermal runaway presents a respiratory and dermal hazard regardless of whether the battery is new or aged, due to the presence of F and P.",
+            "E. In an indoor thermal runaway event, ventilation management during the late fire stage is a relevant safety measure because accumulated C1–C4 gases can displace oxygen.",
+            "F. Because aged batteries produce more smoke, their soot is chemically distinct from new battery soot in all respects, and new battery soot can be considered non-hazardous by comparison."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "At 0% SOC a weak flame is produced, not no flame. The evidence does not state that fire hazard is eliminated at 0% SOC; it states the flame is weaker. This option overstates the protective effect of low SOC.",
+              "error_type": "absolute overclaim / boundary violation",
+              "evidence_refs": [
+                "TR_Gasventing+170+Applied_Thermal_Engineering:C001"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "The evidence states aged batteries undergo thermal runaway earlier than new batteries under the same SOC conditions, indicating elevated risk from aging independent of SOC state.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+170+Applied_Thermal_Engineering:C002"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "The evidence attributes the higher mass loss at 100% SOC (~110 g vs ~92 g) to greater chemical reaction intensity and gas release at higher SOC. The reasoning chain from SOC to reaction intensity to gas release to mass loss is directly supported.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+170+Applied_Thermal_Engineering:C003"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "The evidence identifies F and P as corrosive components in LiFePO4 battery soot causing respiratory and dermal harm. This applies to soot composition generally; the evidence does not restrict this hazard to aged batteries only, and both new and aged batteries produce soot containing these elements.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+170+Applied_Thermal_Engineering:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "The evidence explicitly states that C1–C4 gas accumulation in indoor or confined settings can lower oxygen levels, increasing asphyxiation and hypoxia risk, and that ventilation during the late stage is crucial. This directly supports E.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+170+Applied_Thermal_Engineering:C009"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The evidence shows that aged battery soot contains additional bond types (O–C=O and π bonds) compared to new battery soot, indicating chemical differences. However, new battery soot still contains C–C, C–O, and O–H bonds and the same corrosive F and P elements. Concluding new battery soot is non-hazardous is an unsupported overclaim that ignores shared hazardous components.",
+              "error_type": "scope expansion / unsupported safety conclusion from partial chemical difference",
+              "evidence_refs": [
+                "TR_Gasventing+170+Applied_Thermal_Engineering:C008",
+                "TR_Gasventing+170+Applied_Thermal_Engineering:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-factor safety assessment combining SOC effects, aging effects, soot hazard, and confined-space gas accumulation risk for LiFePO4 batteries.",
+          "primary_boundary": "Low SOC reduces but does not eliminate fire hazard; chemical differences between new and aged soot do not render new battery soot non-hazardous; corrosive element hazard applies regardless of battery age.",
+          "intended_error_modes": [
+            "Treating weak flame as no flame to conclude fire hazard elimination at 0% SOC",
+            "Inferring non-hazardous status for new battery soot from chemical differences with aged soot",
+            "Ignoring that shared F and P content makes both new and aged soot hazardous"
+          ],
+          "disallowed_extrapolations": [
+            "Concluding that SOC management alone is sufficient to prevent fire hazard",
+            "Treating soot chemical composition differences as a complete hazard ranking",
+            "Extending indoor confinement gas accumulation risk to open outdoor environments without qualification"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "In overcharge testing of LiFePO4 prismatic batteries, normalized gas release (measured in L/Ah) increases substantially as battery capacity increases from 50 Ah to 280 Ah under the same 1C overcharge rate. Separately, for 100 Ah batteries under 1C overcharge, total gas generation increases and then plateaus once pre-load force exceeds approximately 2 kN, attributed to sufficient internal contact of active materials. A battery safety engineer is designing a venting system for a new 200 Ah LiFePO4 prismatic cell module. Explain why using the normalized gas release value measured from a 50 Ah cell of the same chemistry would lead to an unsafe venting system design for the 200 Ah cell, and identify what additional mechanical condition must be specified when characterizing gas generation for the 200 Ah cell to ensure the design basis is representative."
+        },
+        "ground_truth": {
+          "gold_answer": "Using the 50 Ah normalized gas release value (0.7 L/Ah) for a 200 Ah cell design would underestimate actual gas generation because normalized gas release increases with capacity — reaching 1.7 L/Ah at 280 Ah — meaning larger cells generate disproportionately more gas per unit capacity than smaller cells. Applying the lower value from the 50 Ah cell would result in a venting system sized for less gas than the 200 Ah cell will actually produce, creating a pressure accumulation hazard. The additional mechanical condition that must be specified is the pre-load force applied to the cell during testing: gas generation depends on whether internal active material contact is sufficient, which changes above a threshold force (approximately 2 kN for 100 Ah cells). If the 200 Ah cell characterization test is conducted at a pre-load force below the threshold that ensures sufficient internal contact, the measured gas generation will underrepresent the gas generation that occurs under representative module compression conditions, again leading to an under-designed venting system.",
+          "must_include": [
+            "Normalized gas release increases with battery capacity, so the 50 Ah value underestimates gas generation for a 200 Ah cell",
+            "Applying the 50 Ah normalized value leads to undersizing the venting system",
+            "Pre-load force must be specified because gas generation increases and plateaus above a threshold force due to sufficient internal active material contact",
+            "Testing at insufficient pre-load force would underrepresent actual gas generation under module compression"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming a specific normalized gas release value for the 200 Ah cell without evidence",
+            "Asserting that the force threshold for 100 Ah cells (2 kN) applies directly to 200 Ah cells",
+            "Concluding that pre-load force is the only relevant mechanical parameter without basis",
+            "Generalizing the capacity-normalized gas scaling relationship as linear or monotonic beyond the evidence range"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Scale-dependent gas generation and the role of mechanical pre-load force as a test condition that must be controlled to obtain a representative design basis for venting system sizing.",
+          "primary_boundary": "The capacity scaling of normalized gas release means smaller-cell data cannot be directly applied to larger cells. The force threshold effect means test conditions must match representative module mechanical loading; the specific force threshold value from 100 Ah cells cannot be directly transferred to 200 Ah cells.",
+          "intended_error_modes": [
+            "Assuming normalized gas release is capacity-independent and the 50 Ah value is portable",
+            "Ignoring mechanical pre-load as a test condition variable",
+            "Applying the 2 kN threshold from 100 Ah cells directly to 200 Ah cells without qualification"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Gasventing+171+Applied_Thermal_Engineering__TR_Gasventing+172+UnknownJournal__TR_Gasventing+173+Applied_Thermal_Engineering": {
+    "mcqs": [],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A battery safety engineer is reviewing two aspects of thermal runaway gas behavior in LFP cells. First, during thermal runaway, the gas mixture composition evolves over time: hydrogen-producing reactions terminate early, followed by termination of olefinic reactions, with CO2 becoming dominant in later stages. Second, as thermal runaway progresses, the flammable range of the gas mixture narrows. The engineer proposes that the narrowing of the flammable range in later stages is directly caused by the shift in gas composition toward CO2 dominance, and therefore that early-stage venting gases are more hazardous than late-stage gases from an explosion risk perspective. Evaluate the admissibility of this proposal. Identify what the evidence supports, what it does not support, and whether the engineer's causal claim and comparative hazard conclusion are justified. Explain the reasoning chain required."
+        },
+        "ground_truth": {
+          "gold_answer": "The engineer's proposal contains two components that must be evaluated separately. The first component—that the flammable range of the gas mixture narrows as thermal runaway progresses—is directly supported by the evidence. The second component—that this narrowing is caused by the shift toward CO2 dominance—is mechanistically plausible and consistent with the evidence (CO2 is a diluent that reduces flammability), but the evidence does not explicitly establish this as the sole or confirmed causal mechanism; it is an admissible inference but not a proven causal claim. The third component—that early-stage gases are more hazardous from an explosion risk perspective than late-stage gases—is admissible as a directional conclusion because the flammable range is wider early in the process when hydrogen-producing and olefinic reactions are active, and narrows as these terminate and CO2 dominates. However, the engineer should not claim this as a precise quantitative comparison without additional data on gas concentrations and mixture fractions at each stage. The reasoning chain is: reaction sequence (H2-producing → olefinic → CO2-dominant) → compositional shift toward less flammable species → narrowing flammable range → reduced explosion risk in later stages. The causal link between CO2 dominance and flammable range narrowing is mechanistically consistent but should be stated as a supported inference rather than a proven cause-effect relationship. The comparative hazard conclusion (early more hazardous than late) is admissible in directional terms.",
+          "must_include": [
+            "The narrowing of the flammable range as TR progresses is directly supported by evidence",
+            "The causal attribution to CO2 dominance is mechanistically consistent but not explicitly proven by the evidence alone",
+            "Early-stage gases having a wider flammable range than late-stage gases is an admissible directional conclusion",
+            "The reaction sequence (H2-producing terminates first, then olefinic, then CO2 dominant) supports the compositional shift reasoning",
+            "The engineer's causal claim is an admissible inference but overstates certainty if presented as established cause-effect"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming the causal mechanism is proven rather than inferred",
+            "Quantifying the relative hazard difference between early and late stages without supporting data",
+            "Concluding that late-stage gases are non-flammable or safe",
+            "Applying this conclusion to non-LFP chemistries or different TR conditions"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of causal inference linking gas composition evolution to flammable range narrowing, and the validity of comparative hazard conclusions across TR stages",
+          "primary_boundary": "Evidence supports the trend (narrowing flammable range) and the sequence (reaction termination order and CO2 dominance) but does not explicitly prove the causal link between CO2 dominance and flammable range narrowing; directional hazard comparison is admissible but quantitative comparison is not",
+          "intended_error_modes": [
+            "causal_overclaim from correlation",
+            "overgeneralization of hazard conclusion",
+            "treating admissible inference as proven mechanism",
+            "ignoring boundary between directional and quantitative conclusions"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Gasventing+174+Chemical_Engineering_Journal__TR_Gasventing+175+Proceedings_of_the_Combustion_Institute__TR_Gasventing+176+Proceedings_of_the_Combustion_Institute": {
+    "mcqs": [],
+    "short_answers": []
+  },
+  "TR_Gasventing+177+Journal_of_Energy_Chemistry__TR_Gasventing+178+Journal_of_Energy_Chemistry__TR_Gasventing+179+Computational_and_Theoretical_Chemistry": {
+    "mcqs": [],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A CuO-decorated InSe monolayer material is being evaluated for detecting thermal runaway failure gases from lithium batteries. At 298 K, the material shows dramatically different desorption behavior for CO2 compared to CO, C2H2, and C2H4. An engineer proposes using a single CuO-InSe sensor module to simultaneously perform two distinct functions: (1) rapid real-time detection of CO2 as an early thermal runaway indicator, and (2) selective capture and retention of CO for subsequent offline quantification.\n\nExplain whether this dual-function proposal is physically admissible based on the described material behavior. Then identify one additional capability of the CuO-InSe material, related to the retained gases, that would be useful for assessing the stage of thermal runaway failure, and explain the physical basis for that capability."
+        },
+        "ground_truth": {
+          "gold_answer": "The dual-function proposal is admissible. At 298 K, CO2 desorbs from CuO-InSe on a timescale of approximately 10^-9 s, enabling rapid sensor response for real-time CO2 detection. In contrast, CO has a desorption time of approximately 6.6×10^12 s at 298 K, meaning CO remains effectively bound to the surface on any practical timescale, enabling its capture and retention for offline analysis. These two behaviors are mechanistically independent and can coexist in the same material at the same operating temperature.\n\nThe additional capability is temperature-controlled selective separation of CO, C2H2, and C2H4. Because the desorption times of these three gases decrease at different rates with increasing temperature, controlled heating of the CuO-InSe material can sequentially release each gas at a characteristic temperature, allowing them to be distinguished from one another. Since different gases are associated with different stages of thermal runaway progression, this selective release capability enables identification of which failure stage has occurred.",
+          "must_include": [
+            "CO2 desorption is rapid at 298 K enabling real-time sensing",
+            "CO desorption time is extremely long at 298 K enabling retention/adsorption",
+            "The two functions are compatible because they rely on opposite desorption behaviors of different gases",
+            "Temperature-controlled separation of CO, C2H2, and C2H4 is possible because their desorption times differ and decrease at different rates with temperature",
+            "This separation is useful for identifying thermal runaway stage"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming CO2 can also be retained or concentrated by CuO-InSe",
+            "Claiming pristine InSe has equivalent capability",
+            "Claiming the separation is based on chemical selectivity unrelated to desorption kinetics",
+            "Specifying exact desorption temperatures for each gas beyond what is stated in the evidence",
+            "Claiming the band gap change alone explains the dual sensing/adsorption function"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Dual-function admissibility judgment based on contrasting desorption kinetics, and temperature-programmed desorption as a stage-identification tool",
+          "primary_boundary": "Dual function is admissible only because CO2 and CO have opposite desorption regimes at 298 K; temperature separation capability is based on differential desorption rate dependence, not chemical identity alone",
+          "intended_error_modes": [
+            "Claiming the dual function is inadmissible because one material cannot serve two purposes",
+            "Confusing rapid CO2 desorption with inability to detect CO2",
+            "Attributing stage-identification capability to band gap changes rather than desorption kinetics",
+            "Overstating by claiming exact temperature thresholds for each gas separation"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Gasventing+180+Environment_International__TR_Gasventing+181+Nano_Energy__TR_Gasventing+182+Case_Studies_in_Thermal_Engineering": {
+    "mcqs": [
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "Airborne particulates collected from thermal runaway events of NMC and LFP cells are characterized for particle size, elemental composition, and biological effect. NMC-derived particulates have a larger count mean diameter and higher mass concentration than LFP-derived particulates. Manganese is detected in NMC-derived particulate extracts but not in LFP-derived extracts regardless of state of charge. In cell culture experiments using airway epithelial cells, NMC-derived particulates at a dose corresponding to 5 years of cumulative occupational exposure produce a statistically significant increase in reactive oxygen species (ROS) relative to control, while the same particulates at a 1-year dose do not. LFP-derived particulates produce no significant ROS elevation at either dose or at either 24-hour or 7-day exposure time points. Dispersion of both particulate types in water promotes agglomerate formation, while dispersion in cell culture medium reduces particle size and promotes uniform distribution. An occupational health engineer must evaluate which conclusions about inhalation hazard are supported. Which of the following are admissible?",
+          "options": [
+            "A. The absence of ROS elevation from LFP-derived particulates at both doses and both time points supports the conclusion that LFP-derived TR particulates do not induce oxidative stress in airway epithelial cells under the tested conditions.",
+            "B. Because NMC-derived particulates contain manganese and LFP-derived particulates do not, manganese is established as the sole mechanistic driver of the ROS response observed at the 5-year NMC dose.",
+            "C. The dose-dependent threshold behavior of NMC-derived particulates—significant ROS at 5-year but not 1-year dose—implies that short-term single-incident exposures to NMC TR particulates are unlikely to produce the same oxidative stress response observed at the 5-year cumulative dose.",
+            "D. The agglomerate formation observed when particulates are dispersed in water means that in vivo inhalation exposures would also produce agglomerated particles reaching the airway epithelium, making the cell culture results an underestimate of actual toxicity.",
+            "E. NMC-derived TR particulates pose a greater inhalation-related oxidative stress hazard than LFP-derived TR particulates under the tested exposure conditions.",
+            "F. The larger particle size and higher mass concentration of NMC-derived particulates compared to LFP-derived particulates are sufficient to explain the differential ROS response without invoking compositional differences."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The evidence states LFP-derived TR-PM did not induce higher ROS at either dose or either time point relative to control. This directly supports the stated conclusion under the tested conditions, with appropriate scope limitation.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+180+Environment_International:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "While manganese is exclusively found in NMC-derived extracts, the evidence does not establish it as the sole driver of ROS. Multiple compositional differences exist between NMC and LFP particulates (particle size, other metals, organic content), and the evidence does not isolate manganese as the causal agent. This is a causal overclaim.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+180+Environment_International:C002",
+                "TR_Gasventing+180+Environment_International:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "The evidence shows a threshold between 1-year and 5-year cumulative doses for NMC-derived particulates. A single-incident short-term exposure would correspond to a dose far below the 1-year cumulative level, which already produced no significant ROS elevation. The conclusion is a minimal and supported implication of the dose-threshold evidence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+180+Environment_International:C003"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "The evidence states that dispersion in cell culture medium reduces particle size and promotes uniform distribution, which is the relevant condition for the cell culture experiments. Inferring that in vivo airway conditions would replicate water-dispersion agglomeration behavior—rather than the protein-rich fluid environment of the airway—is an unsupported extrapolation. The cell culture medium result actually suggests the opposite of agglomeration in a physiologically relevant medium.",
+              "error_type": "condition_violation_distractor",
+              "evidence_refs": [
+                "TR_Gasventing+180+Environment_International:C005"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "NMC-derived particulates produced significant ROS elevation at the 5-year dose while LFP-derived particulates produced none at either dose or time point. This directly supports NMC as posing greater oxidative stress hazard under the tested conditions.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+180+Environment_International:C003",
+                "TR_Gasventing+180+Environment_International:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Particle size and mass concentration differences alone are insufficient to explain differential ROS, because the evidence also identifies compositional differences (e.g., manganese presence) that could independently contribute. Attributing the differential response solely to physical size parameters while excluding compositional factors is an unsupported single-variable causal claim.",
+              "error_type": "single_variable_causal_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+180+Environment_International:C001",
+                "TR_Gasventing+180+Environment_International:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissible conclusions about differential inhalation hazard between NMC and LFP TR particulates; dose-threshold interpretation; compositional versus physical property attribution of biological response.",
+          "primary_boundary": "ROS response is dose-threshold dependent and chemistry-dependent; manganese presence is correlational not established as sole causal driver; cell culture medium dispersion behavior cannot be directly mapped to water-dispersion behavior for in vivo inference.",
+          "intended_error_modes": [
+            "Attributing ROS response solely to manganese (B)",
+            "Inferring in vivo agglomeration from water-dispersion data while ignoring cell culture medium result (D)",
+            "Attributing differential ROS to physical size alone while ignoring composition (F)"
+          ],
+          "disallowed_extrapolations": [
+            "Manganese as sole mechanistic driver without isolation evidence",
+            "Water-dispersion agglomeration as representative of in vivo conditions",
+            "Particle size as sufficient explanation for differential biological response"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A lithium-ion cell undergoes thermal runaway in a sealed enclosure. Three different external heating configurations are tested in separate trials: one applies heat through a small-area point contact, one through a large distributed surface, and one through a wrapped coil covering most of the cell surface. Across these trials, the configuration that triggers thermal runaway earliest and produces the highest peak chamber pressure also yields the lowest post-thermal-runaway peak cell temperature. Simultaneously, the configuration that produces the highest post-thermal-runaway peak cell temperature yields the widest flammable concentration range and lowest lower flammability limit in the vented gas, and also shows the highest hydrogen concentration in the vent gas. Explain the mechanistic reasoning that accounts for: (1) why the configuration with the highest peak chamber pressure has the lowest post-TR peak temperature, and (2) why the configuration with the highest post-TR peak temperature has the highest hydrogen concentration in vent gas despite being identified as the most hazardous by flammability metrics."
+        },
+        "ground_truth": {
+          "gold_answer": "(1) The configuration producing the highest peak chamber pressure does so because it generates gas at the highest rate during thermal runaway, not because the ambient or cell temperature is highest. Rapid early gas generation vents thermal energy and consumes reactive intermediates quickly, leaving less chemical energy available to sustain high-temperature combustion after the peak event. The result is a lower post-TR steady-state cell temperature despite the higher instantaneous pressure. The pressure is driven by gas generation rate, not by thermal environment. (2) The configuration with the highest post-TR peak temperature corresponds to lower heating efficiency distributed over a smaller contact area, which means the cell undergoes a slower, less complete oxidation process. Under lower heating efficiency conditions, reactants are not rapidly oxidized, leaving more hydrogen-producing precursors available. Higher heating efficiency configurations oxidize reactants more rapidly, consuming the precursors before they can generate hydrogen, resulting in lower H2 concentration. The heating rod configuration therefore shows the highest H2 concentration precisely because its lower heating efficiency leaves more unreacted material available for H2 production. The wide flammable range and low lower flammability limit arise from the overall gas composition produced under these conditions, not from the H2 concentration alone.",
+          "must_include": [
+            "Gas generation rate is the primary driver of peak pressure, not ambient or post-TR temperature",
+            "Rapid gas generation during TR dissipates or consumes energy, reducing post-TR peak temperature",
+            "Lower heating efficiency leaves more unreacted precursors available for H2 production",
+            "Higher heating efficiency causes more complete oxidation, reducing H2 yield",
+            "Flammable concentration range and lower flammability limit are the relevant explosion hazard metrics, not H2 concentration alone"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming that lower post-TR temperature means lower overall hazard",
+            "Claiming that highest H2 concentration alone explains the widest flammable range",
+            "Claiming that the coil configuration is safer than the rod configuration in all respects",
+            "Inferring total gas yield from peak pressure"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Mechanistic coupling between heating geometry, gas generation rate, post-TR temperature, H2 production, and explosion hazard metrics; counterintuitive inverse relationship between peak pressure and post-TR temperature.",
+          "primary_boundary": "Peak pressure is determined by gas generation rate not thermal environment; H2 yield is inversely related to heating efficiency due to oxidation completeness; explosion hazard is determined by flammable range and lower flammability limit, not by any single gas species concentration.",
+          "intended_error_modes": [
+            "Attributing high pressure to high temperature rather than to gas generation rate",
+            "Interpreting low post-TR temperature as indicating low hazard",
+            "Attributing high H2 to high heating efficiency rather than to low oxidation completeness",
+            "Conflating H2 concentration with explosion hazard ranking"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Gasventing+183+Case_Studies_in_Thermal_Engineering__TR_Gasventing+184+Case_Studies_in_Thermal_Engineering__TR_Gasventing+185+Journal_of_Energy_Storage": {
+    "mcqs": [],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A battery module contains four cells in series with no thermal insulation material between them. During a thermal runaway propagation test, the time intervals between successive jet fire events for cells 2, 3, and 4 are 53 s, 30 s, and 15 s respectively. The module designer proposes replacing the air gaps with aluminosilicate ceramic fiber insulation to improve safety. After the modification, the jet fire intervals extend to 130 s, 120 s, and 37 s for cells 2, 3, and 4 respectively, but thermal runaway still propagates to all four cells. A colleague argues that the modification is a safety improvement and should be accepted. A second colleague argues that because propagation was not prevented, the modification provides no meaningful safety benefit and should be rejected. Evaluate both positions. In your answer, identify what the time interval data reveals about the physical mechanism by which the insulation affects propagation, explain why the second colleague's rejection criterion is too narrow, and identify one material property of aluminosilicate ceramic fiber that limits its ability to prevent propagation entirely."
+        },
+        "ground_truth": {
+          "gold_answer": "The time interval data shows that aluminosilicate ceramic fiber significantly slows the rate of thermal runaway propagation: the intervals between successive jet fire events increase substantially (e.g., from 53 s to 130 s for cell 2, from 30 s to 120 s for cell 3), indicating that the insulation reduces the rate of heat transfer from the triggered cell to adjacent cells, delaying but not blocking the thermal energy accumulation required to trigger runaway in each successive cell. The first colleague is correct that this represents a meaningful safety improvement: slowing propagation rate extends the time available for detection, intervention, and evacuation, which has direct safety value even without full prevention. The second colleague's rejection criterion—that any propagation means no benefit—is too narrow because it conflates the binary outcome (propagation yes/no) with the time-dependent severity of propagation, which is a separate and safety-relevant dimension. The material property that limits aluminosilicate ceramic fiber from preventing propagation entirely is its severe structural shrinkage under high-temperature conditions: the material undergoes approximately 69% contour area shrinkage after TRP testing, causing it to lose contact with cell surfaces and resulting in thermal insulation failure, which allows heat to bypass the insulation through the exposed gaps.",
+          "must_include": [
+            "The insulation slows propagation rate by reducing heat transfer rate to adjacent cells, as evidenced by extended jet fire time intervals",
+            "Slowing propagation rate has safety value by extending time for detection or intervention, even without full prevention",
+            "The second colleague's criterion conflates binary propagation outcome with time-dependent propagation severity",
+            "Aluminosilicate ceramic fiber undergoes severe structural shrinkage (approximately 69% contour area) after TRP testing, causing thermal insulation failure"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming that aluminosilicate ceramic fiber prevents propagation under any conditions",
+            "Attributing the insulation failure to bulk thermal conductivity rather than structural shrinkage",
+            "Concluding that the extended intervals guarantee sufficient time for intervention in all deployment scenarios",
+            "Generalizing the shrinkage failure mode to all ceramic fiber materials"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Distinguishing propagation rate reduction from propagation prevention as separate safety metrics, and identifying the structural failure mechanism that limits aluminosilicate ceramic fiber performance",
+          "primary_boundary": "Propagation rate reduction is a distinct and admissible safety metric from propagation prevention; structural shrinkage is the identified mechanism of insulation failure, not bulk thermal conductivity",
+          "intended_error_modes": [
+            "Accepting the second colleague's binary prevention criterion as the only valid safety metric",
+            "Attributing insulation failure to thermal conductivity rather than structural shrinkage",
+            "Overstating the safety benefit by claiming the extended intervals guarantee safe intervention time"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Gasventing+186+Journal_of_Energy_Storage__TR_Gasventing+187+Journal_of_Energy_Storage__TR_Gasventing+188+Journal_of_Energy_Storage": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A LiNi1/3Co1/3Mn1/3O2/graphite cylindrical cell is subjected to thermal abuse testing at two different states of charge: 5% SOC and 90% SOC. The 5% SOC cell reaches a peak temperature near 289 °C with its separator shrinking but remaining structurally present and electrode material staying attached to current collectors. The 90% SOC cell reaches a substantially higher peak temperature, its separator is completely destroyed, and electrode material detaches from collectors. A safety engineer must assess which conclusions about the relationship between SOC and thermal runaway severity are admissible from these observations. Which of the following conclusions are supported?",
+          "options": [
+            "A. The difference in internal structural damage between the two SOC conditions is consistent with a threshold-like transition in reaction intensity rather than a simple proportional scaling of the same degradation mechanism.",
+            "B. Because the 5% SOC cell separator survives structurally, it can be concluded that no exothermic reactions occurred inside that cell during the thermal abuse event.",
+            "C. The observation that electrode material remains attached at 5% SOC but detaches at 90% SOC is sufficient to conclude that the current collector material itself melts at high SOC but not at low SOC.",
+            "D. The substantially higher peak temperature at 90% SOC compared to 5% SOC is consistent with greater stored electrochemical energy driving more intense exothermic reactions at higher charge states.",
+            "E. The structural survival of the separator at 5% SOC implies that thermal runaway propagation to an adjacent cell in a module would be prevented under all conditions at that SOC.",
+            "F. The gas deflagration and particle ejection observed exclusively at 90% SOC but not at 5% SOC indicates that the mechanical hazard from thermal runaway is SOC-dependent, with qualitatively different hazard modes emerging at high charge states."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "D",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The transition from separator shrinkage and attached electrodes at 5% SOC to complete separator destruction and detached electrodes at 90% SOC, combined with the appearance of deflagration only above 90% SOC, is consistent with a threshold-like change in reaction character rather than a smooth proportional scaling. This is a multi-step inference from the structural evidence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+186+Journal_of_Energy_Storage:C007",
+                "TR_Gasventing+186+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Separator survival does not imply absence of exothermic reactions; it implies the thermal conditions were insufficient to destroy the separator. The cell still reached ~289 °C, consistent with some exothermic activity. This is a measurement-scope overclaim.",
+              "error_type": "measurement scope overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+186+Journal_of_Energy_Storage:C003",
+                "TR_Gasventing+186+Journal_of_Energy_Storage:C007"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Electrode material detachment is consistent with binder decomposition or thermal degradation of the electrode coating, not necessarily current collector melting. The evidence does not support inferring collector melting from this observation.",
+              "error_type": "mechanism substitution / unsupported causal attribution",
+              "evidence_refs": [
+                "TR_Gasventing+186+Journal_of_Energy_Storage:C007"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Higher SOC corresponds to more stored electrochemical energy available for exothermic reactions. The linear relationship between SOC and peak temperature, combined with the observed temperature difference, is consistent with this mechanism. This is a direct evidence-supported causal inference.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+186+Journal_of_Energy_Storage:C001",
+                "TR_Gasventing+186+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Separator survival at the cell level under the specific thermal abuse conditions tested does not generalize to propagation prevention in a module under all conditions. This is a scale transfer beyond evidence scope and an overgeneralization from a single test condition.",
+              "error_type": "scale transfer beyond evidence / overgeneralization",
+              "evidence_refs": [
+                "TR_Gasventing+186+Journal_of_Energy_Storage:C007"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Gas deflagration and particle ejection were observed at 90% and 100% SOC but not at lower SOC values. This directly supports the conclusion that mechanical hazard modes are SOC-dependent and qualitatively different at high charge states.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+186+Journal_of_Energy_Storage:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of SOC-dependent hazard mode conclusions from structural and thermal observations during thermal runaway",
+          "primary_boundary": "Structural survival of separator at low SOC does not imply absence of reactions or propagation immunity; qualitative hazard mode change at high SOC is supported but mechanism details (e.g., collector melting) are not",
+          "intended_error_modes": [
+            "Inferring absence of exothermic reactions from separator survival (measurement scope overclaim)",
+            "Attributing electrode detachment to current collector melting without evidence (mechanism substitution)",
+            "Extrapolating cell-level separator survival to module-level propagation prevention (scale transfer overclaim)"
+          ],
+          "disallowed_extrapolations": [
+            "Separator survival implies no exothermic reactions occurred",
+            "Cell-level low-SOC behavior prevents propagation in all module configurations",
+            "Electrode detachment implies current collector melting"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A battery safety researcher observes that during thermal runaway of a LiNi1/3Co1/3Mn1/3O2/graphite cell at 100% SOC, 25 distinct gas species are identified in the vented gases, compared to only 6 gas species at 5% SOC. The researcher also notes that HF concentration in the released gases is higher at 100% SOC than at 5% SOC, and that gas deflagration with particle ejection occurs at 90% and 100% SOC but not at lower charge states. A colleague proposes that because the number of gas species increases with SOC, the primary safety concern at high SOC is gas toxicity, and that mechanical hazards from particle ejection are secondary and can be addressed independently of the gas management strategy. Evaluate whether this proposed prioritization and the independence assumption are admissible based on the available evidence. Identify the specific reasoning error in the colleague's proposal and explain what the evidence actually supports regarding the relationship between gas generation severity and mechanical hazard at high SOC."
+        },
+        "ground_truth": {
+          "gold_answer": "The colleague's proposal contains two admissibility errors. First, the prioritization of gas toxicity over mechanical hazards is not supported by the evidence as a general hierarchy. The evidence shows that at high SOC (90–100%), both increased gas species count and diversity (including higher HF concentration) AND gas deflagration with particle ejection occur together. These are co-occurring hazard modes at high SOC, not independently ranked ones. The evidence does not establish that gas toxicity is the primary hazard and mechanical ejection is secondary. Second, the independence assumption is not admissible. Gas deflagration — the mechanism that drives particle ejection — is itself a gas-phase phenomenon. The particle ejection at high SOC is caused by or co-occurs with gas deflagration, meaning the gas generation severity and the mechanical hazard are mechanistically coupled at high SOC. A gas management strategy that addresses vented gas composition but not deflagration pressure or ejection dynamics would be incomplete. What the evidence actually supports is that high SOC creates a qualitatively different and more severe hazard regime in which gas toxicity, gas quantity (more species, higher HF), and mechanical hazard (deflagration, particle ejection) all intensify together. The appropriate conclusion is that high-SOC thermal runaway requires an integrated hazard management approach addressing both gas and mechanical consequences, not a sequential or independent treatment of each.",
+          "must_include": [
+            "Gas deflagration and particle ejection are co-occurring with increased gas species count at high SOC, not independent hazard modes",
+            "The evidence does not support a toxicity-over-mechanical priority ranking",
+            "Gas deflagration mechanistically links the gas hazard and the mechanical ejection hazard",
+            "High SOC represents a qualitatively different hazard regime where multiple hazard modes intensify simultaneously",
+            "Independence assumption is not admissible because particle ejection is driven by gas-phase deflagration"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming that mechanical hazard is always more severe than gas toxicity at high SOC",
+            "Claiming that the number of gas species is the sole determinant of toxicity risk",
+            "Asserting that deflagration is the only mechanism of particle ejection without evidence for that exclusivity",
+            "Generalizing the high-SOC hazard coupling to low-SOC conditions where deflagration was not observed"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of hazard prioritization and independence assumptions when multiple co-occurring hazard modes are mechanistically coupled at high SOC",
+          "primary_boundary": "Evidence shows co-occurrence and mechanical coupling of gas and particle ejection hazards at high SOC; it does not support independent treatment or a ranked priority between gas toxicity and mechanical hazard",
+          "intended_error_modes": [
+            "Treating co-occurring hazard modes as independently addressable when they share a common mechanism (gas deflagration)",
+            "Inferring a hazard priority ranking from the observation that more gas species appear at high SOC",
+            "Ignoring the mechanistic link between gas generation severity and particle ejection at high SOC"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Gasventing+189+Journal_of_Energy_Storage__TR_Gasventing+190+Journal_of_Energy_Storage__TR_Gasventing+191+Journal_of_Hazardous_Materials": {
+    "mcqs": [
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "Two 18650 LiCoO2 batteries are tested under adiabatic conditions. One is charged to 4.2 V and the other is at 3.7 V (uncharged). The charged battery exhibits a sharp exponential increase in thermal reactive hazards beginning near 200°C, while the uncharged battery does not show this behavior. The porous separator in these cells is known to break down above 120°C, inducing internal short circuit. A safety engineer must assess which conclusions about the thermal hazard mechanism and the role of charge state are supported by these conditions. Which of the following are admissible?",
+          "options": [
+            "A. The separator breakdown above 120°C is a necessary condition for thermal runaway initiation in both charged and uncharged batteries, since it induces internal short circuit in both cases.",
+            "B. The sharp exponential increase in thermal reactive hazards near 200°C in the charged battery is consistent with reactions that are strongly dependent on the electrochemical energy stored at high charge state, not merely on temperature alone.",
+            "C. Because the uncharged battery does not exhibit a sharp thermal hazard increase, it can be concluded that separator breakdown does not occur in uncharged batteries under the same heating conditions.",
+            "D. The difference in thermal reactive hazard behavior between charged and uncharged batteries indicates that charge state modulates the severity of exothermic reactions triggered after separator breakdown, not merely the onset temperature.",
+            "E. The heat of reaction being substantially higher for charged batteries than for uncharged batteries is consistent with additional energy release pathways that are only active when the battery is at elevated charge state.",
+            "F. The exponential hazard increase near 200°C in charged batteries proves that the separator breakdown at 120°C is the rate-limiting step controlling the overall thermal runaway energy release."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "D",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "The evidence states separator breakdown above 120°C induces internal short circuit, but the uncharged battery does not show a sharp thermal hazard increase. Claiming separator breakdown is a necessary condition for thermal runaway in both cases overgeneralizes; the uncharged battery's behavior is not consistent with separator-induced short circuit driving thermal runaway in that case.",
+              "error_type": "overgeneralization_of_mechanism_across_charge_states",
+              "evidence_refs": [
+                "TR_Gasventing+191+Journal_of_Hazardous_Materials:C003",
+                "TR_Gasventing+191+Journal_of_Hazardous_Materials:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "The evidence shows the exponential hazard increase near 200°C occurs only in charged batteries, not uncharged ones under the same heating. This is consistent with the conclusion that stored electrochemical energy (charge state) is a necessary co-factor, not temperature alone. This requires multi-step reasoning: temperature triggers reactions, but the severity depends on available electrochemical energy.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+191+Journal_of_Hazardous_Materials:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "This is a conservative-sounding but incorrect causal overclaim. The absence of a sharp thermal hazard increase in uncharged batteries does not imply separator breakdown does not occur; it only implies that separator breakdown alone, without sufficient stored electrochemical energy, does not produce the sharp exothermic escalation observed in charged batteries.",
+              "error_type": "causal_overclaim_from_absence_of_effect",
+              "evidence_refs": [
+                "TR_Gasventing+191+Journal_of_Hazardous_Materials:C003",
+                "TR_Gasventing+191+Journal_of_Hazardous_Materials:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "The differential behavior between charged and uncharged batteries under the same heating conditions, combined with the known separator breakdown threshold, supports the conclusion that charge state modulates the severity of post-breakdown exothermic reactions. This is a multi-hop inference: same trigger (separator breakdown) → different outcomes → charge state modulates reaction severity.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+191+Journal_of_Hazardous_Materials:C002",
+                "TR_Gasventing+191+Journal_of_Hazardous_Materials:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "The evidence states the heat of reaction for charged batteries is much higher than for uncharged batteries. This is consistent with additional energy release pathways active only at elevated charge state, which is a minimal and supported engineering inference from the heat of reaction comparison.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+191+Journal_of_Hazardous_Materials:C002"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The evidence identifies separator breakdown at 120°C as inducing internal short circuit and the exponential hazard increase near 200°C as a distinct subsequent event. Claiming that separator breakdown is the rate-limiting step for overall energy release conflates the trigger event with the energy release mechanism, and the 80°C gap between the two events does not support this causal compression.",
+              "error_type": "mechanism_compression_confusing_trigger_with_rate_limiting_step",
+              "evidence_refs": [
+                "TR_Gasventing+191+Journal_of_Hazardous_Materials:C003",
+                "TR_Gasventing+191+Journal_of_Hazardous_Materials:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Charge-state-dependent thermal hazard mechanism: distinguishing separator breakdown as a trigger from charge-state-dependent exothermic reaction severity as the energy release driver",
+          "primary_boundary": "Separator breakdown is a trigger at 120°C but does not alone determine thermal runaway severity; the exponential hazard increase near 200°C is charge-state-dependent; absence of sharp hazard increase in uncharged batteries does not prove absence of separator breakdown",
+          "intended_error_modes": [
+            "Treating separator breakdown as both necessary and sufficient for thermal runaway in all charge states",
+            "Inferring absence of separator breakdown from absence of sharp thermal hazard increase",
+            "Conflating trigger event (separator breakdown) with rate-limiting energy release step"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming separator breakdown does not occur in uncharged batteries",
+            "Asserting separator breakdown is the rate-limiting step for overall thermal runaway energy release",
+            "Generalizing charged-battery mechanism to uncharged batteries"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "An ESS container stores 18650 lithium-ion batteries at various states of charge. During a thermal abuse event, gas venting and explosion are observed. Pre-explosion gas sampling shows H2 and CO concentrations well below their lower flammability limits. Separately, the maximum temperatures recorded during thermal runaway increase monotonically with SOC, and the exhaust gas lower explosion limit follows a non-monotonic trend with SOC, peaking at an intermediate SOC level. A safety engineer must determine: (1) what the sub-LFL H2 and CO concentrations imply about the explosion trigger mechanism, and (2) why the intermediate SOC level having the highest lower explosion limit does not mean it is the safest overall operating condition. Provide a mechanistically justified answer addressing both points."
+        },
+        "ground_truth": {
+          "gold_answer": "(1) Sub-LFL concentrations of H2 and CO mean these gases alone cannot have been the primary ignition source for the explosion, since neither reached the minimum concentration required to sustain combustion. The explosion trigger must therefore involve other combustible species or mechanisms not captured by H2 and CO monitoring alone. (2) The highest lower explosion limit at intermediate SOC means the exhaust gas requires a higher minimum concentration to ignite, indicating lower exhaust gas explosion danger for that specific gas mixture. However, this does not make it the safest overall condition because thermal runaway severity, as measured by maximum temperature, continues to increase monotonically with SOC. An intermediate SOC cell still undergoes thermal runaway with substantially higher peak temperatures than lower SOC cells, posing greater thermal hazard even if its exhaust gas mixture is harder to ignite. Overall safety requires considering both thermal runaway severity and exhaust gas flammability, and these two risk dimensions do not peak at the same SOC.",
+          "must_include": [
+            "H2 and CO below LFL means they are not the primary explosion trigger",
+            "Other combustible species or mechanisms must account for the explosion",
+            "Highest LEL at intermediate SOC means that gas mixture requires higher concentration to ignite, indicating lower exhaust gas explosion danger",
+            "Thermal runaway maximum temperature increases monotonically with SOC, so intermediate SOC still carries substantial thermal severity",
+            "Overall safety requires combining thermal runaway severity and exhaust gas flammability risk, which do not align at the same SOC"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming H2 and CO are the only combustible gases and their sub-LFL values prove no explosion risk exists",
+            "Concluding that highest LEL makes intermediate SOC the safest condition overall without accounting for thermal runaway severity",
+            "Asserting that the non-monotonic LEL trend means no SOC level can be identified as safer for exhaust gas explosion risk",
+            "Inferring that 0% SOC is universally safe because thermal runaway did not occur under the specific test heating conditions"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-dimensional risk assessment combining explosion trigger identification from gas concentration data with the distinction between exhaust gas flammability risk and thermal runaway severity risk across SOC levels",
+          "primary_boundary": "Sub-LFL H2/CO rules out these gases as primary triggers but does not eliminate explosion risk from other sources; highest LEL at intermediate SOC reduces exhaust gas ignition risk but does not reduce thermal runaway severity, which remains monotonically SOC-dependent",
+          "intended_error_modes": [
+            "Conflating sub-LFL H2/CO with absence of any flammable gas explosion risk",
+            "Using highest LEL to declare intermediate SOC globally safest without considering thermal runaway temperature",
+            "Treating the non-monotonic LEL trend as preventing any comparative safety judgment across SOC levels"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Gasventing+192+Journal_of_Energy_Storage__TR_Gasventing+193+Journal_of_Energy_Storage__TR_Gasventing+194+Journal_of_Energy_Storage": {
+    "mcqs": [],
+    "short_answers": []
+  },
+  "TR_Gasventing+195+Journal_of_Energy_Storage__TR_Gasventing+196+Journal_of_Energy_Storage__TR_Gasventing+197+Journal_of_Energy_Storage": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "An NCM 811 lithium-ion battery is stored at 50% SOC in an open environment. A safety engineer argues that this SOC represents the safest storage condition based on explosion-related metrics. A second engineer counters that storing at 50% SOC does not eliminate explosion risk and that the lower explosion limit behavior across SOC levels is non-monotonic, which complicates straightforward SOC minimization strategies. Which of the following statements are consistent with both engineers' positions and the underlying physical reasoning?",
+          "options": [
+            "A. At 50% SOC, the lower explosion limit of the vent gas reaches its highest value among tested SOC levels, meaning a higher concentration of gas must accumulate before ignition becomes possible in open-space conditions.",
+            "B. Because the upper explosion limit increases continuously with SOC, the explosion range at 50% SOC is narrower than at 100% SOC, but the explosion pressure at 50% SOC at the lower explosion limit still exceeds 0.2 MPa, confirming that hazard is reduced but not eliminated.",
+            "C. The non-monotonic behavior of the lower explosion limit with SOC is driven by a monotonic increase in multi-carbon chain gas fraction as SOC rises, which directly lowers the ignition threshold at all SOC levels above 50%.",
+            "D. Since the maximum explosion flame temperature at 50% SOC is the lowest among tested conditions, this SOC can be considered thermally safe for all battery chemistries under open-space storage.",
+            "E. The highest explosion pressure among tested conditions occurs at 100% SOC at the lower explosion limit, which is consistent with the trend that higher SOC batteries release vent gas compositions with greater explosive energy.",
+            "F. A storage recommendation of 50% SOC is fully justified on explosion safety grounds because the lower explosion limit is maximized there, even though the explosion range still widens with increasing SOC above this point."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence states that LEL reaches a maximum at 50% SOC for NCM 811, meaning a higher gas concentration is required before the mixture enters the flammable range, which directly supports the first engineer's position on open-space safety.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+196+Journal_of_Energy_Storage:C003",
+                "TR_Gasventing+196+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "The UEL increases continuously with SOC so the explosion range at 50% SOC is narrower than at 100% SOC. The minimum explosion pressure at LEL across all groups is the 50% SOC case, but it still exceeds 0.2 MPa, confirming hazard reduction without elimination. This satisfies both engineers' claims simultaneously.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+196+Journal_of_Energy_Storage:C002",
+                "TR_Gasventing+196+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Evidence states that LEL presents an inverted tendency with multi-carbon chain gas fraction — as multi-carbon chain gas fraction decreases, LEL increases. Option C inverts this by claiming the fraction increases monotonically with SOC, which contradicts the evidence that the fraction decreases at the SOC range where LEL increases.",
+              "error_type": "mechanism_inversion",
+              "evidence_refs": [
+                "TR_Gasventing+196+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "The lowest flame temperature conclusion is specific to NCM 811 under the tested conditions. Extending this to 'all battery chemistries' is an unsupported generalization beyond the evidence scope.",
+              "error_type": "overgeneralization_across_chemistries",
+              "evidence_refs": [
+                "TR_Gasventing+196+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Evidence explicitly states the 100% SOC battery at LEL showed the highest explosion pressure of 0.4585 MPa. This is consistent with higher SOC producing more energetic vent gas compositions, as supported by the widening explosion range and increasing UEL with SOC.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+196+Journal_of_Energy_Storage:C005",
+                "TR_Gasventing+196+Journal_of_Energy_Storage:C002"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "This appears cautious but is incorrect because it overstates the justification. The 50% SOC recommendation is supported for open-space conditions based on LEL maximization, but the explosion range still widens with SOC above 50% and the UEL continues increasing, meaning the recommendation cannot be described as fully justified on all explosion safety grounds without qualification.",
+              "error_type": "causal_overclaim_from_partial_metric",
+              "evidence_refs": [
+                "TR_Gasventing+196+Journal_of_Energy_Storage:C002",
+                "TR_Gasventing+196+Journal_of_Energy_Storage:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Non-monotonic LEL behavior with SOC and its implications for storage safety recommendations, combined with admissibility of hazard-reduction vs. hazard-elimination claims",
+          "primary_boundary": "50% SOC maximizes LEL and minimizes explosion flame temperature and pressure at LEL, but does not eliminate explosion risk; UEL and explosion range still increase with SOC above 50%",
+          "intended_error_modes": [
+            "inverting the causal relationship between multi-carbon chain gas fraction and LEL",
+            "overgeneralizing chemistry-specific results to all battery types",
+            "treating hazard reduction as hazard elimination"
+          ],
+          "disallowed_extrapolations": [
+            "Applying NCM 811 LEL/UEL trends to other chemistries without evidence",
+            "Concluding that 50% SOC is safe under all conditions, not just open-space",
+            "Treating LEL maximization as sufficient for complete explosion safety justification"
+          ]
+        }
+      }
+    ],
+    "short_answers": []
+  },
+  "TR_Gasventing+198+Journal_of_Energy_Storage__TR_Gasventing+199+Journal_of_Energy_Storage__TR_Gasventing+200+Journal_of_Energy_Storage": {
+    "mcqs": [
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "During accelerated rate calorimetry testing of an NCA 21700 cylindrical cell at 100% SOC, self-heating onset is detected at approximately 86°C, more than 35 hours before thermal runaway occurs. The total energy transferred to heating the cell during thermal runaway is measured at approximately 31 kJ, while the total stored electrical energy in the cell is approximately 60 kJ. A separate heat ramp test on the same cell chemistry shows venting occurring near 180°C regardless of SOC. A thermal management engineer is assessing the implications for early warning system design and energy balance modeling. Which of the following conclusions are admissible?",
+          "options": [
+            "A. The 35-hour window between self-heating onset and thermal runaway is sufficient to implement mitigation strategies, but this window duration cannot be assumed to apply under abuse conditions that impose faster external heating rates than the accelerated rate calorimetry protocol.",
+            "B. Because only approximately 50% of stored cell energy is transferred as heat to the cell itself during thermal runaway, the remaining energy is dissipated entirely as light and sound and therefore cannot contribute to propagation in a battery module.",
+            "C. The SOC-independence of venting temperature implies that a temperature-based vent detection threshold set at 175°C would provide equivalent warning time regardless of whether the cell is at 25% or 100% SOC.",
+            "D. The approximately 30 kJ of energy not accounted for by cell heating during thermal runaway is most plausibly associated with ejecta carrying thermal and kinetic energy, and this energy could contribute to thermal loading of adjacent cells in a module.",
+            "E. The onset of self-heating at 86°C under adiabatic conditions provides a detectable signal that precedes venting by a substantial thermal margin, suggesting that monitoring cell temperature for anomalous self-heating below the venting threshold could enable early intervention.",
+            "F. The total energy released during thermal runaway of this cell exceeds its stored electrical energy, confirming that exothermic chemical reactions contribute net energy beyond the initial electrical storage."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "D",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The 35-hour window is established under accelerated rate calorimetry, which is a near-adiabatic protocol. Under faster external heating (e.g., direct thermal abuse, overcharging at high rate), the time from self-heating onset to thermal runaway would be compressed. The conclusion that the window is sufficient is admissible for the tested protocol, but the caveat about faster heating rates is a necessary engineering qualification that prevents overgeneralization.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+199+Journal_of_Energy_Storage:C001"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The evidence attributes the residual ~30 kJ to ejecta carrying thermal and kinetic energy, not to light and sound. Ejecta can deposit thermal energy on adjacent cells, contributing to propagation. This is a mechanism substitution distractor that replaces the correct energy pathway with an implausible one while appearing to engage with the energy balance.",
+              "error_type": "mechanism_substitution_distractor",
+              "evidence_refs": [
+                "TR_Gasventing+199+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "While venting temperature is SOC-independent near 180°C under heat ramp conditions, the evidence also notes that venting temperature under HWS testing is approximately 60°C lower. A threshold set at 175°C may not provide equivalent warning time across different test protocols or real-world conditions, and the SOC-independence finding applies specifically to heat ramp conditions. This is a condition-violation distractor that applies a finding beyond its stated protocol scope.",
+              "error_type": "condition_violation_distractor",
+              "evidence_refs": [
+                "TR_Gasventing+199+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "The evidence explicitly attributes the ~30 kJ residual energy to ejecta as thermal and kinetic energy. In a module configuration, ejecta impacting adjacent cells would transfer this thermal and kinetic energy, potentially triggering propagation. This is a scale-transfer reasoning step from cell-level energy balance to module-level propagation risk, supported by the evidence's own attribution.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+199+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Self-heating onset at 86°C precedes venting at approximately 180°C by a margin of ~94°C and more than 35 hours in time. Monitoring for anomalous self-heating below the venting threshold would therefore provide a substantial early warning window. This requires combining the self-heating onset temperature, the venting temperature, and the time gap to reach the engineering implication.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+199+Journal_of_Energy_Storage:C001",
+                "TR_Gasventing+199+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The evidence states that approximately 31 kJ is transferred to cell heating and approximately 30 kJ goes to ejecta, totaling approximately 61 kJ, which is approximately equal to the stored electrical energy of ~60 kJ. This is consistent with the stored electrical energy being the primary energy source, not with total released energy exceeding stored energy. The option makes an unsupported claim about net exothermic chemical reaction contribution beyond electrical storage.",
+              "error_type": "causal_overclaim_distractor",
+              "evidence_refs": [
+                "TR_Gasventing+199+Journal_of_Energy_Storage:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Energy balance interpretation, early warning window scope, and protocol-dependent venting temperature applicability",
+          "primary_boundary": "The 35-hour warning window and venting temperature SOC-independence are protocol-specific; ejecta energy is thermal/kinetic not radiative; total energy budget is approximately conserved relative to stored electrical energy",
+          "intended_error_modes": [
+            "Misidentifying ejecta energy as light/sound rather than thermal/kinetic",
+            "Overgeneralizing SOC-independence of venting temperature across protocols",
+            "Inferring net exothermic chemical energy contribution from approximate energy balance"
+          ],
+          "disallowed_extrapolations": [
+            "Assuming the 35-hour window applies under any heating protocol",
+            "Concluding that total chemical energy release exceeds stored electrical energy from this data",
+            "Generalizing venting temperature findings from heat ramp to all abuse conditions"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A 157 Ah NMC811 prismatic cell undergoes thermal runaway testing at 100% SOC using three different trigger methods. The measured mass loss values are 35%, 55%, and 75% respectively. A separate test series varying SOC from 25% to 100% using a single trigger method shows an average mass loss increase of 35 percentage points over that SOC range. An engineer argues that because SOC is the primary electrochemical variable in lithium-ion cells, it should dominate over trigger method in determining mass loss severity, and therefore the 40-percentage-point spread in mass loss at fixed SOC must reflect measurement uncertainty rather than a true trigger-method effect. Identify the specific reasoning error in this argument and explain what the data actually imply about the relative influence of SOC and trigger method on mass loss for this cell."
+        },
+        "ground_truth": {
+          "gold_answer": "The engineer's argument contains two linked errors. First, it assumes that electrochemical primacy of SOC implies SOC dominates all observable thermal runaway parameters, which is an unsupported generalization. Second, it dismisses the 40-percentage-point trigger-method spread as measurement uncertainty without basis. The data show that at fixed 100% SOC, trigger method alone produces a 40-percentage-point range in mass loss (35% to 75%), while the full SOC sweep from 25% to 100% produces an average increase of only 35 percentage points. Since the trigger-method-driven variation (40 pp) is comparable in magnitude to or exceeds the SOC-driven variation (35 pp) across the entire tested SOC range, the data imply that trigger method influences mass loss to a degree comparable to SOC. The correct conclusion is that both variables must be specified to characterize mass loss severity; neither dominates the other for this parameter in this cell.",
+          "must_include": [
+            "The 40-percentage-point spread from trigger method is comparable in magnitude to the 35-percentage-point increase from 25% to 100% SOC",
+            "Trigger method affects mass loss to a degree comparable to SOC, not subordinate to it",
+            "The argument incorrectly attributes the trigger-method spread to measurement uncertainty",
+            "Both SOC and trigger method must be specified to characterize mass loss"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming trigger method dominates SOC for all thermal runaway parameters",
+            "Generalizing this finding to other cell chemistries or formats without qualification",
+            "Inferring a specific mechanism by which trigger method affects mass loss beyond what the evidence states"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Relative influence of SOC versus trigger method on mass loss, and the admissibility of dismissing observed variation as measurement uncertainty",
+          "primary_boundary": "The trigger-method-driven variation at fixed SOC is comparable in magnitude to the full SOC-range variation; neither variable can be dismissed as secondary for mass loss",
+          "intended_error_modes": [
+            "Assuming electrochemical variable primacy implies observational dominance",
+            "Misattributing systematic variation to measurement uncertainty",
+            "Failing to compare the magnitude of trigger-method variation against SOC-driven variation"
+          ]
+        }
+      }
+    ]
+  }
+}

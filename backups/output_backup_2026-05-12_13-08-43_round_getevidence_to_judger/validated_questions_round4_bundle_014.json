@@ -1,0 +1,38 @@
+{
+  "mcqs": [],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A lithium-ion cell with an NMC cathode is cycled under conditions where the working temperature rises above 80°C during operation. The cell has been charged to above 80% state-of-charge. An engineer observes that the cell temperature continues to rise even after the external heat source is removed. Separately, the engineer notes that overcharge tests on similar cells show that the onset temperature for exothermic reactions at the negative electrode drops sharply when the cell is pushed above 100% SOC. Explain the two distinct mechanisms that make this cell progressively more dangerous as both temperature and SOC increase beyond their respective thresholds, and identify what governs the thermal stability of the NMC cathode under these conditions."
+      },
+      "ground_truth": {
+        "gold_answer": "Two distinct mechanisms contribute to the escalating danger. First, when the working temperature exceeds 80°C, exothermic chemical reactions are triggered that further heat the battery, creating a self-reinforcing feedback cycle where heat generation accelerates rather than stabilizes—this is the thermal runaway feedback mechanism. Second, at the negative electrode, the onset temperature for exothermic reactions decreases sharply once the cell exceeds 100% SOC, dropping from above 180°C to approximately 80°C, because metallic lithium deposited during overcharge is highly reactive and initiates exothermic reactions at much lower temperatures than intercalated lithium. These two thresholds can interact: a cell above 100% SOC has a dramatically lowered reaction onset temperature that falls within the range where the thermal feedback cycle is already active above 80°C, compressing the safety margin. The thermal stability of the NMC cathode is governed by the Ni4+ content after charging: Ni is the least stable transition metal element and undergoes the fastest reduction from Ni4+ to Ni2+ during thermal decomposition, so higher Ni content after charge corresponds to lower thermal stability. Mn improves thermal stability while Co maintains it.",
+        "must_include": [
+          "Exothermic reactions above 80°C create a self-reinforcing feedback cycle that continues heating the cell after external heat is removed",
+          "Above 100% SOC, onset temperature for negative electrode exothermic reactions drops from above 180°C to approximately 80°C due to metallic lithium deposition",
+          "Metallic lithium plays an important role in thermal runaway during overcharge",
+          "NMC cathode thermal stability is governed by Ni4+ content after charging",
+          "Ni is the least stable element and undergoes the fastest reduction during thermal decomposition",
+          "Mn improves and Co maintains thermal stability of NMC"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming the 80°C threshold and the 100% SOC threshold are the same mechanism",
+          "Asserting that exceeding 80°C alone is sufficient to cause thermal runaway without the feedback cycle condition",
+          "Generalizing NMC Ni4+ governance of thermal stability to LFP or LTO chemistries",
+          "Quantifying the rate of temperature rise or the exact heat generation values beyond what is stated"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-threshold interaction between temperature-driven exothermic feedback and SOC-driven reduction in onset temperature, combined with Ni4+ governance of NMC cathode thermal stability.",
+        "primary_boundary": "The 80°C thermal feedback threshold and the 100% SOC negative electrode onset temperature drop are distinct mechanisms that can interact; NMC stability is governed by Ni4+ specifically, not by cathode voltage alone.",
+        "intended_error_modes": [
+          "Conflating the 80°C working temperature threshold with the negative electrode onset temperature reduction",
+          "Attributing NMC thermal instability to Co or Mn rather than Ni4+ content",
+          "Treating the two thresholds as independent without recognizing their potential interaction when both are exceeded simultaneously"
+        ]
+      }
+    }
+  ]
+}

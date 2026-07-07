@@ -1,0 +1,38 @@
+{
+  "mcqs": [],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery pack is installed in a confined equipment enclosure. During a thermal runaway event in one cell, an engineer considers two suppression options: (1) ultrafine water mist with droplet diameter approximately 10 µm, and (2) conventional fine water mist with droplet diameter approximately 120 µm. The thermal runaway event raises cell temperature to over 800°C within seconds. The engineer notes that the enclosure is partially sealed.\n\nExplain, using the relevant physical mechanisms, why the confined enclosure environment compounds the specific limitation of ultrafine water mist in this scenario. Your answer should identify: (a) how the confined environment changes the thermal event relative to an open environment, (b) the specific physical property of ultrafine droplets that limits their effectiveness in high-temperature regions, and (c) why the combination of (a) and (b) creates a greater challenge for ultrafine mist suppression in this scenario than either factor alone would suggest."
+      },
+      "ground_truth": {
+        "gold_answer": "(a) In a confined environment, thermal runaway consequences are significantly more severe than in open environments because restricted heat dissipation prevents thermal energy from dispersing and enhanced gas-phase reactions exacerbate flame propagation and pressure accumulation. This means the high-temperature zone near the reacting cell is hotter, more sustained, and more energetically intense than it would be in an open deployment. (b) Ultrafine water mist droplets (~10 µm) have comparatively low momentum, which restricts their penetration and distribution specifically in high-temperature regions. Despite their small size potentially enabling good vapor-phase distribution at moderate temperatures, they cannot physically reach the hottest zones where suppression is most needed. (c) The confinement-amplified severity increases both the peak temperature and the spatial extent of the high-temperature region that the droplets must penetrate. Because ultrafine droplets already have restricted penetration into high-temperature zones, the larger and more intense high-temperature region created by confinement means a greater fraction of the suppression agent fails to reach the fire core. The two factors interact multiplicatively: confinement expands the zone that ultrafine droplets cannot penetrate, while the droplet momentum limitation prevents compensation by increasing injection pressure alone. Neither factor alone would create the same degree of suppression gap.",
+        "must_include": [
+          "confined environment increases severity relative to open environment due to restricted heat dissipation and enhanced gas-phase reactions",
+          "ultrafine droplets have low momentum which restricts penetration into high-temperature regions",
+          "confinement expands or intensifies the high-temperature region that ultrafine droplets cannot penetrate",
+          "the two factors interact or compound each other rather than acting independently"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming ultrafine mist is completely ineffective or inadmissible in all confined-space scenarios",
+          "Claiming conventional fine mist is always superior in all metrics",
+          "Asserting that droplet evaporation before reaching the battery surface is the primary stated limitation",
+          "Quantifying suppression effectiveness differences numerically beyond what the evidence states",
+          "Claiming the low momentum limitation applies equally at all temperatures including moderate temperatures"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Interaction between confinement-amplified thermal runaway severity and ultrafine droplet momentum limitation on suppression effectiveness",
+        "primary_boundary": "The momentum limitation of ultrafine droplets is specific to high-temperature regions; confinement amplifies severity but does not make ultrafine mist categorically inadmissible; the compounding effect requires multi-step reasoning combining both evidence claims",
+        "intended_error_modes": [
+          "Treating the two factors as independent rather than interacting",
+          "Overstating the limitation as a complete prohibition",
+          "Ignoring that confinement increases severity rather than being neutral",
+          "Substituting evaporation as the primary limitation instead of momentum-based penetration restriction"
+        ]
+      }
+    }
+  ]
+}

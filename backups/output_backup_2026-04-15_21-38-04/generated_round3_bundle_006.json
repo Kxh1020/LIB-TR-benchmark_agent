@@ -1,0 +1,357 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery module engineer is evaluating three fire suppression agents for a lithium-ion battery pack: a fluorinated ketone (Agent F), a hydrofluorocarbon (Agent H), and water spray. Laboratory tests show that all three agents successfully extinguish open flames on the module. The engineer observes that Agent F dissipates roughly 4.5 times more heat than Agent H during suppression, and water spray dissipates roughly 18.5 times more heat than Agent H. Despite this, post-suppression monitoring shows that thermal runaway continues to propagate through the module after application of both Agent F and Agent H, while water spray halts propagation entirely. The engineer is asked to evaluate which conclusions about these agents are admissible based on this information. Which of the following statements are admissible?",
+        "options": [
+          "A. Flame extinction by a suppression agent is not a sufficient condition for preventing thermal runaway propagation in a battery module.",
+          "B. Agent F provides greater protection than Agent H against thermal runaway propagation because it dissipates more heat, even though neither prevents propagation.",
+          "C. The ability of water spray to prevent thermal runaway propagation is attributable primarily to its superior heat dissipation capacity relative to the fluorinated agents.",
+          "D. Agent F delays thermal runaway propagation relative to Agent H, which is a distinct outcome from preventing propagation entirely.",
+          "E. Because Agent H fails to prevent propagation despite extinguishing flames, no fluorinated agent can prevent thermal runaway propagation regardless of application rate.",
+          "F. The heat dissipation difference between Agent F and water spray alone is sufficient to explain why one prevents propagation and the other does not.",
+          "G. A suppression system designed solely around flame extinction performance metrics may be inadequate for battery module thermal runaway protection."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence explicitly shows that both Agent F and Agent H extinguish open flames yet fail to prevent thermal runaway propagation, directly establishing that flame extinction is not sufficient for propagation prevention.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+194+Process_Safety_and_Environmental_Protection:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "While Agent F dissipates more heat and prolongs propagation time, the evidence states neither agent prevents propagation. Claiming Agent F provides 'greater protection' in a meaningful safety sense conflates delay with prevention, and the comparison of propagation outcomes is not stated as proportional to heat dissipation difference.",
+            "error_type": "causal overclaim linking heat dissipation magnitude to protection level without evidence of proportionality",
+            "evidence_refs": [
+              "TR_Protection+194+Process_Safety_and_Environmental_Protection:C002",
+              "TR_Protection+194+Process_Safety_and_Environmental_Protection:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "While water spray's high heat dissipation is consistent with preventing propagation, the evidence does not establish that heat dissipation is the sole or primary mechanism. This is a causal overclaim from a correlation between heat dissipation and outcome.",
+            "error_type": "causal overclaim from correlation; mechanism attribution not supported",
+            "evidence_refs": [
+              "TR_Protection+194+Process_Safety_and_Environmental_Protection:C001",
+              "TR_Protection+194+Process_Safety_and_Environmental_Protection:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The evidence states Agent F prolongs propagation time to 256 s versus 159 s without agent, confirming a measurable delay effect. This is a distinct, admissible outcome that does not claim prevention, correctly distinguishing delay from prevention.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+194+Process_Safety_and_Environmental_Protection:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "This generalizes from one agent at one application condition to all fluorinated agents at all conditions, which is an unsupported extrapolation beyond the evidence scope.",
+            "error_type": "overgeneralization from specific agent to entire agent class",
+            "evidence_refs": [
+              "TR_Protection+194+Process_Safety_and_Environmental_Protection:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence shows a correlation between heat dissipation and propagation outcome, but does not establish that the heat dissipation difference alone is sufficient to explain the binary difference in propagation prevention. Other mechanisms may contribute.",
+            "error_type": "single-variable causal sufficiency claim not supported by evidence",
+            "evidence_refs": [
+              "TR_Protection+194+Process_Safety_and_Environmental_Protection:C001",
+              "TR_Protection+194+Process_Safety_and_Environmental_Protection:C002"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "Since agents that extinguish flames can still fail to prevent thermal runaway propagation, a design strategy based solely on flame extinction metrics is demonstrably insufficient for battery module protection. This is a minimal admissible engineering implication of the evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+194+Process_Safety_and_Environmental_Protection:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinction between flame extinction performance and thermal runaway propagation prevention as independent safety criteria",
+        "primary_boundary": "Flame extinction is necessary but not sufficient for propagation prevention; heat dissipation magnitude alone does not establish causal sufficiency for propagation arrest",
+        "intended_error_modes": [
+          "Conflating heat dissipation magnitude with protection level",
+          "Treating correlation between heat dissipation and outcome as causal sufficiency",
+          "Overgeneralizing from one agent to an entire agent class",
+          "Accepting single-variable explanation for a multi-mechanism outcome"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding that no fluorinated agent can prevent propagation under any conditions",
+          "Attributing water spray effectiveness solely to heat dissipation without evidence of mechanism isolation",
+          "Ranking agents by protection level based solely on heat dissipation when propagation outcomes differ qualitatively"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A thermal management engineer is designing a barrier system to suppress thermal runaway propagation (TRP) in a confined battery module at 100% SOC. Two candidate barrier materials are available: zirconia ceramic (thermal conductivity ~3 W/m·K at room temperature, infrared reflectance >85% across relevant wavelengths, average ~96.8% in the 3–4 µm range) and aerogel felt (thermal conductivity ~0.018 W/m·K at room temperature). Three barrier configurations are tested in confined space at 100% SOC, with TRP delay times recorded between the first and second cells: Configuration P uses 3 mm zirconia alone (delay: 402 s, 170 s); Configuration Q uses 1 mm zirconia with 2 mm aerogel felt (delay: 459 s, 351 s); Configuration R uses 2 mm zirconia with 1 mm aerogel felt (delay: 815 s, 179 s). The engineer must select a configuration and justify the choice. Which of the following conclusions are admissible?",
+        "options": [
+          "A. Configuration R outperforms Configuration P for the first cell interval despite using less total barrier thickness, indicating that the ratio of zirconia to aerogel felt affects performance non-proportionally.",
+          "B. Because aerogel felt has two orders of magnitude lower thermal conductivity than zirconia, increasing aerogel felt thickness always improves TRP suppression performance regardless of zirconia thickness.",
+          "C. Configuration Q achieves a more uniform delay distribution across successive cells than Configuration R, which may be relevant when the design criterion requires consistent inter-cell delay rather than maximum first-interval delay.",
+          "D. The superior performance of Configuration R over Configuration P for the first cell interval is attributable solely to the high infrared reflectance of zirconia, since aerogel felt provides no radiation blocking.",
+          "E. Zirconia's role in TRP suppression is primarily through infrared radiation reflection rather than conductive insulation, given its relatively high thermal conductivity compared to aerogel felt.",
+          "F. Configuration R's significantly longer first-interval delay compared to Configuration Q, despite both containing the same total thickness of combined materials, demonstrates that the spatial arrangement of barrier layers influences suppression performance.",
+          "G. The confined space condition increases both peak temperature and temperature rise rate relative to open space, which implies that barrier configurations validated in open space may underestimate required suppression performance in confined deployments."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "F",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Configuration R (2 mm zirconia + 1 mm aerogel, total 3 mm) achieves 815 s versus Configuration P (3 mm zirconia, total 3 mm) at 402 s for the first interval, with less zirconia and more aerogel in R. This non-proportional improvement at equal total thickness confirms that composition ratio, not just total thickness, matters non-proportionally.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+195+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Comparing Q (1 mm zirconia + 2 mm aerogel) versus R (2 mm zirconia + 1 mm aerogel) at equal total thickness shows R outperforms Q for the first interval despite having less aerogel. This directly contradicts a monotonic 'more aerogel always better' rule, making this statement inadmissible.",
+            "error_type": "unjustified monotonicity claim contradicted by direct comparison within the evidence",
+            "evidence_refs": [
+              "TR_Protection+195+Process_Safety_and_Environmental_Protection:C005",
+              "TR_Protection+195+Process_Safety_and_Environmental_Protection:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Configuration Q shows delay times of 459 s and 351 s (ratio ~1.3:1), while Configuration R shows 815 s and 179 s (ratio ~4.6:1). Q has more uniform distribution across successive cells, which is an admissible observation relevant to design criteria emphasizing consistency over maximum initial delay.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+195+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "This attributes R's advantage over P solely to infrared reflectance of zirconia and claims aerogel provides no radiation blocking. The evidence does not isolate radiation as the sole mechanism, and the comparison involves both conductive and radiative pathways. This is a single-mechanism attribution without sufficient basis.",
+            "error_type": "single-mechanism causal attribution; mechanism isolation not supported by evidence",
+            "evidence_refs": [
+              "TR_Protection+195+Process_Safety_and_Environmental_Protection:C001",
+              "TR_Protection+195+Process_Safety_and_Environmental_Protection:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "While zirconia has high infrared reflectance and relatively high thermal conductivity compared to aerogel, the evidence does not establish that radiation reflection is the primary mechanism over conduction blocking. This is an unsupported mechanistic ranking claim.",
+            "error_type": "unsupported mechanism dominance claim from material property comparison alone",
+            "evidence_refs": [
+              "TR_Protection+195+Process_Safety_and_Environmental_Protection:C001",
+              "TR_Protection+195+Process_Safety_and_Environmental_Protection:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Configurations Q and R both use a total of 3 mm combined barrier (1+2 vs 2+1) but achieve substantially different first-interval delay times (459 s vs 815 s). This directly demonstrates that spatial arrangement of the same total material affects suppression performance.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+195+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "The evidence shows that confined space increases both maximum surface temperature and maximum temperature rise rate relative to open space for both SOC levels. This implies that open-space validation underestimates the thermal load in confined deployments, making this an admissible engineering implication.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+195+Process_Safety_and_Environmental_Protection:C003",
+              "TR_Protection+195+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Non-monotonic interaction between barrier layer composition, spatial arrangement, and TRP suppression performance; confinement effect on thermal severity",
+        "primary_boundary": "More aerogel felt does not monotonically improve performance; spatial arrangement of equal total material produces different outcomes; open-space results do not bound confined-space performance",
+        "intended_error_modes": [
+          "Assuming higher aerogel fraction always improves performance due to lower thermal conductivity",
+          "Attributing performance differences to a single mechanism without isolation evidence",
+          "Ignoring that spatial arrangement of same-thickness materials produces different outcomes",
+          "Assuming open-space validation is conservative for confined deployment"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding that aerogel thickness is the dominant control variable independent of zirconia thickness",
+          "Isolating radiation reflection as the sole suppression mechanism from material property data alone",
+          "Assuming monotonic relationship between any single material thickness and suppression performance"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A safety engineer is analyzing thermal runaway propagation (TRP) in a 40 Ah LiFePO4 battery module. Without any suppression measures, the time intervals between successive battery TR events are recorded as: 497 s (cells 1→2), 639 s (cells 2→3), and 266 s (cells 3→4). The back surface temperatures of each cell at the moment of its own TR event are measured as 82°C, 96.8°C, 113.8°C, and 129.4°C respectively. The engineer then tests three suppression configurations: insulation material alone, insulation with composite phase change material (CPCM), and insulation with liquid cooling (LC). The total heat absorbed by the adjacent cell under these configurations is 73.64 kJ, 63.76 kJ, and 43.74 kJ respectively. Insulation alone reduces heat transfer to the adjacent cell by approximately 72% in the early stage of a TR event but only approximately 30% in the later stage. Which of the following conclusions are admissible?",
+        "options": [
+          "A. The non-monotonic pattern of inter-cell TRP time intervals (increasing then decreasing) is consistent with a progressive preheating mechanism that eventually overcomes the thermal resistance between cells.",
+          "B. Because insulation alone achieves only ~30% heat reduction in the later stage of a TR event, insulation alone is insufficient as a standalone protection strategy when the later-stage heat transfer is the dominant driver of propagation.",
+          "C. The greater effectiveness of insulation in the early stage compared to the later stage implies that the dominant heat transfer pathway shifts between the two stages, and insulation alone cannot address the later-stage pathway as effectively.",
+          "D. Adding CPCM to insulation reduces total heat absorbed by the adjacent cell by more than adding LC to insulation, making CPCM the preferred supplementary measure for minimizing total heat absorption.",
+          "E. The progressive increase in back surface temperature at the moment of each cell's TR event confirms that each successive cell enters thermal runaway from a higher initial thermal state, which is consistent with the observed acceleration of propagation in the final interval.",
+          "F. Since LC reduces total heat absorbed more than CPCM, LC must also reduce peak surface temperatures of adjacent cells more than CPCM under all conditions.",
+          "G. The combination of insulation and LC achieves heat suppression ratios that remain consistent across modules of different capacities, suggesting this combination's suppression performance is not strongly dependent on battery capacity within the tested range."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The interval increases from 497 s to 639 s then drops sharply to 266 s, which is non-monotonic. The evidence attributes the acceleration to heat accumulation and preheating, consistent with a mechanism where accumulated heat eventually overcomes thermal resistance. This is an admissible mechanistic interpretation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+196+Process_Safety_and_Environmental_Protection:C001",
+              "TR_Protection+196+Process_Safety_and_Environmental_Protection:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "While insulation is less effective in the later stage, the evidence does not establish that the later stage is the dominant driver of propagation. This is a conditional claim requiring additional evidence about which stage drives propagation. The statement is presented as a definitive conclusion without that support.",
+            "error_type": "unsupported causal dominance claim; which stage drives propagation is not established by the evidence",
+            "evidence_refs": [
+              "TR_Protection+196+Process_Safety_and_Environmental_Protection:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The differential effectiveness of insulation across stages (72% vs 30%) is consistent with a shift in the dominant heat transfer pathway between stages. Insulation primarily addresses conductive pathways, and its reduced effectiveness in the later stage implies other pathways (e.g., radiation, convection from hot gases) become more significant. This is an admissible mechanistic inference.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+196+Process_Safety_and_Environmental_Protection:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence shows LC reduces total heat absorbed to 43.74 kJ while CPCM reduces it to 63.76 kJ, meaning LC is more effective than CPCM at reducing total heat absorption. This option reverses the comparison, making it factually incorrect.",
+            "error_type": "reversal of comparative direction stated in evidence",
+            "evidence_refs": [
+              "TR_Protection+196+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The back surface temperatures at TR onset increase monotonically from 82°C to 129.4°C across cells 1–4, directly confirming progressive preheating. The final interval acceleration (266 s vs 639 s) is consistent with cells entering TR from a higher initial thermal state requiring less additional heat input.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+196+Process_Safety_and_Environmental_Protection:C001",
+              "TR_Protection+196+Process_Safety_and_Environmental_Protection:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence explicitly states that adding CPCM did not significantly affect peak surface temperatures of the adjacent cell, while LC reduced total heat absorbed more. The evidence does not support that LC reduces peak surface temperatures more than CPCM under all conditions; in fact, peak temperature effects are distinguished from total heat absorption effects.",
+            "error_type": "scope expansion from total heat absorption to peak temperature; evidence explicitly distinguishes these outcomes",
+            "evidence_refs": [
+              "TR_Protection+196+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "The evidence reports heat suppression ratios of approximately 65–72% for the insulation and LC combination across both 40 Ah and 280 Ah modules, explicitly described as stable and consistent across different capacities. This is a directly admissible conclusion from the scaling evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+196+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-stage heat transfer effectiveness, preheating acceleration mechanism, and comparative suppression performance of insulation combined with active cooling versus phase change materials",
+        "primary_boundary": "Total heat absorption reduction and peak temperature reduction are distinct outcomes; LC superiority in total heat does not imply LC superiority in peak temperature; later-stage heat transfer pathway shift limits insulation effectiveness",
+        "intended_error_modes": [
+          "Conflating total heat absorption reduction with peak temperature reduction",
+          "Assuming the less effective stage is necessarily the dominant driver of propagation",
+          "Reversing the comparative effectiveness of LC versus CPCM",
+          "Ignoring that peak temperature effects are explicitly distinguished from total heat effects in the evidence"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding that LC reduces peak surface temperatures more than CPCM without direct evidence",
+          "Concluding that later-stage heat transfer is the dominant propagation driver without evidence of stage dominance",
+          "Extending the capacity-independence conclusion beyond the tested capacity range"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery module uses a 0.5 mm aerogel thermal insulation panel between cells, and a separate test shows that without any suppression agent, thermal runaway propagation occurs when approximately 16 kJ of heat transfers between adjacent cells. A fluorinated ketone suppression agent is applied during a thermal runaway event and successfully extinguishes visible flames. Post-suppression monitoring confirms that thermal runaway propagation continues through the module despite the agent application. The module designer argues that replacing the fluorinated ketone with a suppression agent that dissipates more heat during application would be sufficient to prevent propagation, provided the dissipated heat exceeds 16 kJ. Critically evaluate this argument. Identify the specific reasoning flaw and explain what additional measure the evidence indicates is necessary."
+      },
+      "ground_truth": {
+        "gold_answer": "The designer's argument contains two compounding flaws. First, it assumes that suppressing heat transfer below the 16 kJ propagation threshold is achievable by agent heat dissipation alone, but the 0.5 mm aerogel panel is already established as insufficient to prevent propagation on its own, meaning the thermal resistance of the barrier is inadequate regardless of agent performance. Second, the argument treats flame extinction as a proxy for heat removal sufficient to prevent propagation, but the evidence directly shows that agents capable of extinguishing flames can fail to prevent propagation, demonstrating that flame extinction and propagation prevention are decoupled outcomes. The 16 kJ threshold applies to heat transfer between cells in the absence of any suppression agent; applying this threshold to agent-assisted scenarios requires knowing how much residual heat continues to transfer after agent application, which is not controlled solely by agent heat dissipation capacity. The evidence indicates that auxiliary cooling measures are essential when passive insulation alone is insufficient, meaning the necessary additional measure is an active cooling intervention rather than simply a more heat-dissipating suppression agent.",
+        "must_include": [
+          "Flame extinction does not guarantee prevention of thermal runaway propagation",
+          "The 0.5 mm aerogel panel alone cannot prevent thermal runaway propagation",
+          "The 16 kJ threshold applies to the no-agent baseline condition and cannot be directly applied to agent-assisted scenarios without accounting for residual heat transfer",
+          "Auxiliary cooling measures are necessary in addition to passive insulation or suppression agents"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding that any suppression agent dissipating more than 16 kJ will prevent propagation",
+          "Concluding that fluorinated ketone agents are categorically ineffective for all battery chemistries or configurations",
+          "Concluding that water spray alone is always sufficient without specifying that it was the agent shown to prevent propagation in the tested configuration"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Decoupling of flame extinction from propagation prevention; inapplicability of a bare-module heat threshold to agent-assisted scenarios; necessity of auxiliary cooling beyond passive insulation",
+        "primary_boundary": "The 16 kJ threshold is a baseline condition value, not a design target applicable to agent-assisted configurations; flame extinction and propagation prevention are independent safety outcomes",
+        "intended_error_modes": [
+          "Treating the 16 kJ threshold as a universal design target applicable across all configurations",
+          "Accepting flame extinction as a sufficient indicator of propagation prevention",
+          "Assuming that increasing agent heat dissipation capacity linearly translates to reduced inter-cell heat transfer",
+          "Ignoring the established inadequacy of the 0.5 mm aerogel panel as a standalone barrier"
+        ]
+      }
+    }
+  ]
+}

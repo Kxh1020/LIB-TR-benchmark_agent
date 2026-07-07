@@ -1,0 +1,40 @@
+{
+  "mcqs": [],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A lithium-ion battery model is constructed in which the cathode accounts for inter-particle lithium redistribution due to phase separation, and the anode uses standard SEI decomposition kinetics with an onset above 60°C. The cell is cycled adiabatically at a very low rate. The model predicts that during SEI regeneration following the initial decomposition, the cell experiences capacity loss, voltage reduction, and increased heat generation rate. An engineer proposes that once SEI regeneration begins, the thermal event becomes self-reinforcing even without any further increase in the external heat source. Explain the mechanism by which SEI regeneration creates a self-reinforcing thermal progression, identifying the specific physical quantities involved and the direction of their changes, and state whether the cathode's inter-particle redistribution behavior is necessary for this self-reinforcing loop to operate once regeneration has begun."
+      },
+      "ground_truth": {
+        "gold_answer": "SEI regeneration consumes cyclable lithium, which reduces cell capacity and lowers cell voltage. The lower cell voltage results from higher overpotentials caused by the additional passivating layers formed during regeneration and increased transport losses. Both higher overpotentials and increased transport losses directly increase the rate of heat generation within the cell. Under adiabatic conditions, this increased heat generation raises cell temperature, which in turn accelerates SEI decomposition kinetics (Arrhenius-governed), exposing more anode surface to electrolyte and driving further SEI regeneration. This creates a self-reinforcing loop: regeneration → capacity and voltage loss → higher overpotentials and transport losses → higher heat generation rate → higher temperature → faster SEI decomposition → more regeneration. Once this loop is established, the cathode inter-particle redistribution is not necessary for the loop to continue operating, because the loop is driven by anode-side SEI chemistry and the resulting electrochemical-thermal coupling. The redistribution behavior contributed to initiating the thermal event earlier by elevating heat generation at intermediate depths of discharge, but the self-reinforcing regeneration loop operates independently of the cathode model once it is triggered.",
+        "must_include": [
+          "SEI regeneration causes loss of cyclable lithium leading to capacity loss",
+          "Capacity loss and additional passivating layers increase overpotentials",
+          "Increased overpotentials and transport losses increase heat generation rate",
+          "Under adiabatic conditions, increased heat generation raises temperature",
+          "Higher temperature accelerates SEI decomposition (Arrhenius kinetics above 60°C)",
+          "This creates a self-reinforcing loop between heat generation and SEI decomposition",
+          "The cathode inter-particle redistribution is NOT necessary for the self-reinforcing loop once regeneration has begun; it contributed to earlier initiation but not to the loop mechanism itself"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming the cathode redistribution mechanism is part of the self-reinforcing loop",
+          "Claiming the loop requires external heating to continue",
+          "Attributing the self-reinforcing behavior to separator melting or electrolyte salt decomposition",
+          "Stating that SEI regeneration directly causes separator failure as part of the primary loop"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism of self-reinforcing thermal progression through SEI regeneration and electrochemical-thermal coupling, and the distinction between what initiated the event versus what sustains the loop",
+        "primary_boundary": "The cathode redistribution behavior governs initiation timing but not the self-reinforcing loop mechanism, which is entirely anode-side and electrochemical-thermal in nature",
+        "intended_error_modes": [
+          "Conflating initiation mechanism (cathode redistribution heat) with sustaining mechanism (SEI regeneration loop)",
+          "Omitting the role of overpotentials and transport losses in heat generation increase",
+          "Failing to identify the Arrhenius temperature dependence as the feedback amplifier",
+          "Incorrectly including separator melting or electrolyte decomposition as part of the primary self-reinforcing loop"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,322 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery module engineer is evaluating water mist (WM) suppression for a lithium-ion battery pack. Testing shows that during thermal runaway (TR) of a single 18650 cell, the heating power at TR onset is approximately 51 W and peaks near 2450 W. The WM system delivers a calculated cooling power of approximately 41 W under the assumption that all droplets evaporate immediately on the battery surface above 100°C. The module is well-ventilated, and adjacent batteries are in close proximity. The engineer observes that WM application can reduce surface temperature rapidly—exceeding 100 K/s cooling rate—and can bring surface temperature down to near 100°C within seconds on batteries not yet in TR. Based on these conditions, which of the following conclusions are admissible?",
+        "options": [
+          "A. Water mist is effective at preventing thermal runaway propagation to adjacent batteries that have not yet entered TR, even though it cannot suppress TR once it has begun in the triggering cell.",
+          "B. Because water mist cooling power exceeds the battery heating power at TR onset, WM can arrest thermal runaway in the triggering cell if applied immediately at the first sign of temperature rise.",
+          "C. The maximum temperature of a battery already in thermal runaway can still exceed 850 K during WM application, because the peak heating power is more than an order of magnitude greater than the WM cooling capacity.",
+          "D. The WM system's effectiveness in preventing propagation depends on whether adjacent batteries are cooled below a critical temperature threshold before they receive sufficient heat from the triggering cell to initiate their own TR.",
+          "E. Water mist is inadmissible as a propagation-prevention strategy because its cooling power is always insufficient relative to the thermal energy released during TR.",
+          "F. The rapid surface cooling observed during WM application on non-TR batteries is consistent with WM being the dominant mechanism preventing propagation, but this conclusion cannot be extended to batteries already experiencing TR."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence shows WM cooling power (41 W) is negligible against TR heating power (up to 2450 W), so WM cannot suppress TR in the triggering cell. However, WM can cool adjacent batteries rapidly (>100 K/s) and prevent them from reaching TR threshold, supporting propagation prevention. This is consistent with evidence that WM can prevent TR propagation with minimal water consumption.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+188+Applied_Energy:C003",
+              "TR_Protection+188+Applied_Energy:C001",
+              "TR_Protection+188+Applied_Energy:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "At TR onset the battery heating power (51 W) already slightly exceeds WM cooling power (41 W), and peak heating power reaches 2450 W. Even at onset, WM cooling is insufficient to arrest TR. This option misreads the numerical relationship and overstates WM capability.",
+            "error_type": "Numerical boundary violation — WM cooling power is less than even the onset heating power, not greater.",
+            "evidence_refs": [
+              "TR_Protection+188+Applied_Energy:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Peak battery heating power during TR is over 60 times the WM cooling power, making WM thermally negligible during TR. The evidence explicitly states that maximum battery temperature can still exceed 850 K under WM application.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+188+Applied_Energy:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence shows that when a battery's pre-heated temperature exceeds a critical threshold (Tc1), TR propagation occurs even during WM application because rapid heat transfer from the triggering cell overwhelms WM cooling. This implies a threshold-dependent mechanism for WM effectiveness on adjacent batteries.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+188+Applied_Energy:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "This is a conservative-sounding but incorrect conclusion. Evidence shows WM can prevent TR propagation with a water consumption of 1.95×10⁻⁴ kg/Wh, the lowest among compared strategies. WM is admissible as a propagation-prevention strategy even though it cannot suppress TR in the triggering cell.",
+            "error_type": "Overgeneralization — extends the limitation of WM during TR to a blanket rejection of WM as a propagation strategy.",
+            "evidence_refs": [
+              "TR_Protection+188+Applied_Energy:C005",
+              "TR_Protection+188+Applied_Energy:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The rapid cooling of non-TR batteries is consistent with WM being effective for propagation prevention. However, extending this to batteries already in TR is not supported—WM cooling is negligible against TR heating power. This correctly scopes the mechanism.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+188+Applied_Energy:C001",
+              "TR_Protection+188+Applied_Energy:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility boundary of water mist cooling: effective for propagation prevention but not TR suppression in triggering cell.",
+        "primary_boundary": "WM cooling power (41 W) vs. battery heating power at TR onset (51 W) and peak (2450 W) — WM is insufficient during TR but sufficient for cooling adjacent non-TR batteries.",
+        "intended_error_modes": [
+          "Confusing WM effectiveness for propagation prevention with WM effectiveness for TR suppression",
+          "Misreading the numerical comparison at TR onset as favorable for WM",
+          "Overgeneralizing WM ineffectiveness during TR to a complete rejection of WM as a strategy"
+        ],
+        "disallowed_extrapolations": [
+          "WM can arrest TR in triggering cell",
+          "WM is universally ineffective as a safety strategy",
+          "Rapid surface cooling implies WM controls internal temperature during TR"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is designing a thermal barrier system using SiO2 aerogel composite blankets (thermal conductivity 0.021 W/m·K, significant mass loss only above 300°C) between adjacent lithium-ion cells in a module. Testing at 100% SOC shows that under full contact (no barrier), the time interval between thermal runaway (TR) events for Battery 1# and Battery 2# is 26 s, and Battery 2# reaches a peak temperature rise rate of 63°C/s. With a 0.5 mm barrier, the interval extends to 247 s and the peak rise rate of Battery 2# increases to 144.6°C/s. With a 1 mm barrier, the interval extends to 394 s and the peak rise rate is 117.25°C/s. With a 2 mm barrier, Battery 2# does not reach the runaway threshold. Heat transferred to Battery 2# before TR decreases from 5.9 kJ (full contact) to 5.4, 4.3, and 1.8 kJ at 0.5, 1, and 2 mm thickness. The engineer notes that without a barrier, heat transfer occurs primarily through conduction and flame radiation, while with a barrier, thermal radiation dominates. Which of the following conclusions are admissible based on these conditions?",
+        "options": [
+          "A. The increase in Battery 2# peak temperature rise rate from 63°C/s to 144.6°C/s when a 0.5 mm barrier is introduced, despite a longer propagation delay, is consistent with a shift in dominant heat transfer mode from conduction-dominated to radiation-dominated delivery.",
+          "B. Because barrier thickness linearly extends propagation delay, a 4 mm barrier would be expected to provide approximately twice the delay of a 2 mm barrier while also preventing TR propagation at all SOC levels.",
+          "C. The 2 mm barrier prevents TR propagation at 100% SOC by reducing pre-TR heat transfer to Battery 2# below a threshold that is insufficient to initiate runaway, not by eliminating heat transfer entirely.",
+          "D. The non-monotonic behavior of Battery 2# peak temperature rise rate with barrier thickness (increasing from 63 to 144.6°C/s then decreasing to 117.25°C/s) indicates that thin barriers may concentrate heat delivery in a shorter time window even while extending the overall propagation interval.",
+          "E. Since the aerogel retains structural integrity above 300°C and TR temperatures can exceed 850 K, the barrier material is thermally stable throughout the entire TR event and its insulating performance is unaffected.",
+          "F. At 100% SOC, the reduction in pre-TR heat transfer from 5.9 kJ to 1.8 kJ with a 2 mm barrier is sufficient to prevent TR propagation, but this threshold cannot be assumed to apply at lower SOC without additional evidence.",
+          "G. The propagation delay extension from 26 s to 247 s with a 0.5 mm barrier demonstrates that even sub-millimeter aerogel barriers provide meaningful propagation delay, supporting their use in space-constrained module designs."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Without a barrier, conduction and flame radiation both contribute. With a barrier blocking conduction, radiation becomes dominant. Radiation can deliver heat rapidly in bursts, potentially producing a higher instantaneous temperature rise rate even though total pre-TR heat is lower and the delay is longer. This mechanism chain is consistent with the observed data.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+190+Energy:C013",
+              "TR_Protection+190+Energy:C014"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence states that increasing thickness linearly extends delay, but the 2 mm barrier already completely prevents TR propagation. Predicting that 4 mm provides twice the delay of 2 mm is inadmissible because the 2 mm case has no propagation to delay further. Additionally, extending the linear delay relationship beyond the tested range is an unsupported extrapolation.",
+            "error_type": "Extrapolation beyond evidence scope and regime transfer beyond the prevention threshold.",
+            "evidence_refs": [
+              "TR_Protection+190+Energy:C003",
+              "TR_Protection+190+Energy:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "With a 2 mm barrier, heat transferred to Battery 2# before TR drops to 1.8 kJ, and Battery 2# shows only a modest temperature increase without crossing the runaway threshold. This is consistent with heat transfer being reduced below a critical initiation threshold, not eliminated. The barrier reduces but does not zero out heat transfer.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+190+Energy:C010",
+              "TR_Protection+190+Energy:C014"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The peak rise rate increases from 63°C/s (full contact) to 144.6°C/s (0.5 mm) then decreases to 117.25°C/s (1 mm). This non-monotonic behavior is counterintuitive—a barrier increases the instantaneous severity metric even while reducing total heat transfer and extending delay. This is consistent with the heat transfer mode shift concentrating energy delivery.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+190+Energy:C014",
+              "TR_Protection+190+Energy:C013"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The aerogel shows significant mass loss only above 300°C and retains ≥96% mass at 1000°C, indicating high thermal stability. However, TR temperatures can exceed 850 K (~577°C), which is above 300°C. The evidence does not state that insulating performance is unaffected at these temperatures—it only characterizes mass loss, not thermal conductivity at elevated temperatures. Claiming unaffected insulating performance is an unsupported extrapolation.",
+            "error_type": "Scope expansion — mass stability data does not directly confirm insulating performance stability at TR temperatures.",
+            "evidence_refs": [
+              "TR_Protection+190+Energy:C011",
+              "TR_Protection+188+Applied_Energy:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "At 0% SOC, a 1 mm barrier suffices to prevent propagation, while at 50%, 75%, and 100% SOC a 2 mm barrier is required. The 1.8 kJ threshold observed at 100% SOC with 2 mm cannot be assumed universal across SOC levels because the energy available and activation energy differ by SOC. This correctly scopes the conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+190+Energy:C004",
+              "TR_Protection+190+Energy:C010",
+              "TR_Protection+190+Energy:C008"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "While the 0.5 mm barrier does extend delay significantly (26 s to 247 s), at 100% SOC it does not prevent TR propagation—Battery 2# still experiences TR with a peak rise rate of 144.6°C/s. Recommending sub-millimeter barriers for space-constrained designs based on delay extension alone ignores that propagation still occurs, which is a safety-critical distinction.",
+            "error_type": "System-level safety recommendation from partial result; ignores that propagation still occurs.",
+            "evidence_refs": [
+              "TR_Protection+190+Energy:C007",
+              "TR_Protection+190+Energy:C014"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Non-monotonic peak rise rate behavior with barrier thickness, heat transfer mode shift, and admissibility boundaries for barrier thickness recommendations.",
+        "primary_boundary": "2 mm barrier prevents TR propagation at 100% SOC; sub-mm barriers extend delay but do not prevent propagation; linear delay relationship does not extend beyond the prevention threshold.",
+        "intended_error_modes": [
+          "Extrapolating linear delay trend beyond prevention threshold",
+          "Treating mass stability as equivalent to insulating performance stability",
+          "Recommending sub-mm barriers as sufficient based on delay data alone",
+          "Missing the non-monotonic rise rate behavior"
+        ],
+        "disallowed_extrapolations": [
+          "4 mm barrier delay prediction from linear trend",
+          "Insulating performance unchanged at TR temperatures from mass loss data alone",
+          "1.8 kJ threshold applies at all SOC levels",
+          "Sub-mm barriers are sufficient for safety in high-SOC applications"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery safety engineer is comparing thermal runaway propagation behavior across SOC levels in a module where cells are in full contact (no barrier). Measured data show: at 0% SOC, the time interval between TR events for adjacent cells is 75 s; at 50% SOC, 46 s; at 75% SOC, 29 s; at 100% SOC, 26 s. Peak temperatures of the adjacent cell (Battery 2#) relative to 0% SOC increase by approximately 104%, 116%, and 181% at 50%, 75%, and 100% SOC respectively. Activation energy for TR decreases from 4.25 eV at 0% SOC to 2.61, 2.54, and 2.34 eV at 50%, 75%, and 100% SOC. Mass loss of Battery 2# after TR increases monotonically with SOC. A separate well-ventilated module study found that heat accumulation dominated TR propagation over combustion heat release, and that propagation time intervals in one row decreased with SOC while a second row maintained approximately constant 30 s intervals regardless of SOC. Which of the following conclusions are admissible?",
+        "options": [
+          "A. The decrease in propagation time interval from 75 s to 26 s as SOC increases from 0% to 100% is consistent with decreasing activation energy lowering the energy barrier for TR initiation in the adjacent cell.",
+          "B. Because peak temperature of Battery 2# increases by 181% at 100% SOC compared to 0% SOC, the heat generated during TR scales approximately linearly with SOC across the full range.",
+          "C. The approximately constant 30 s propagation interval in the second row of the well-ventilated module, regardless of SOC, suggests that the propagation pathway to that row is governed by a mechanism that is less sensitive to SOC than the direct cell-to-cell conduction pathway.",
+          "D. The monotonic increase in mass loss with SOC indicates that higher SOC cells release more material during TR, which is consistent with greater energy content and more extensive electrochemical reactions at higher states of charge.",
+          "E. Since activation energy decreases most sharply between 0% and 50% SOC (from 4.25 to 2.61 eV) compared to subsequent increments, the marginal increase in propagation risk is greatest in the lower SOC range, making 0% to 50% SOC transitions the primary safety concern.",
+          "F. The convergence of propagation time intervals at high SOC (29 s at 75% vs. 26 s at 100%) compared to the larger gap at low SOC (75 s at 0% vs. 46 s at 50%) suggests diminishing returns in propagation speed acceleration as SOC approaches 100%.",
+          "G. The dominance of heat accumulation over combustion heat release in TR propagation, observed under well-ventilated conditions, implies that in confined or poorly ventilated environments combustion heat release would become the dominant propagation driver."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Lower activation energy means the adjacent cell requires less thermal energy input to initiate TR. Combined with higher heat output from the triggering cell at higher SOC, both factors reinforce faster propagation. The correlation between decreasing activation energy and decreasing propagation interval is mechanistically consistent.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+190+Energy:C006",
+              "TR_Protection+190+Energy:C008"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The peak temperature increases are 104%, 116%, and 181% at 50%, 75%, and 100% SOC. These increments are not uniform (12% additional from 50% to 75%, but 65% additional from 75% to 100%), indicating a non-linear, accelerating relationship rather than linear scaling with SOC.",
+            "error_type": "Functional form error — states linear scaling when data shows non-linear acceleration.",
+            "evidence_refs": [
+              "TR_Protection+190+Energy:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The second row maintains ~30 s intervals regardless of SOC while the first row shows strong SOC dependence. This differential behavior implies the heat transfer pathway to the second row is mediated by a mechanism less sensitive to SOC—consistent with heat accumulation being the dominant propagation driver in the first row while the second row receives heat through a more indirect or geometry-controlled pathway.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+188+Applied_Energy:C007",
+              "TR_Protection+188+Applied_Energy:C006"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Mass loss increases monotonically from 11.83% at 0% SOC to 29.24% at 100% SOC. Greater mass loss is consistent with more extensive material ejection and electrochemical reaction products at higher energy states, which is a direct implication of higher stored electrochemical energy at higher SOC.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+190+Energy:C009"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "While activation energy drops most steeply from 0% to 50% SOC, this does not make the 0-50% SOC transition the primary safety concern. At 0% SOC, propagation intervals are longest (75 s) and peak temperatures are lowest. The largest absolute propagation risk (shortest intervals, highest temperatures, greatest mass loss) occurs at high SOC. The activation energy drop at low SOC reflects a change in chemical kinetics but does not translate to the greatest practical safety hazard under the stated conditions.",
+            "error_type": "Causal overclaim — attributes primary safety concern to activation energy kinetics alone while ignoring total energy content and propagation severity at high SOC.",
+            "evidence_refs": [
+              "TR_Protection+190+Energy:C008",
+              "TR_Protection+190+Energy:C006",
+              "TR_Protection+190+Energy:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The time interval decreases from 75 s (0% SOC) to 46 s (50% SOC)—a 29 s reduction—then from 46 s to 29 s (17 s reduction) and 29 s to 26 s (3 s reduction). The incremental acceleration in propagation speed diminishes at high SOC, consistent with diminishing returns as SOC approaches 100%.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+190+Energy:C006"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "The evidence states that heat accumulation dominated TR propagation in the well-ventilated setup where thermal feedback from combustion was negligible. The evidence does not support inferring that combustion heat release would become dominant in confined environments—this is a regime transfer beyond the stated evidence scope. The claim is mechanistically plausible but not evidence-admissible.",
+            "error_type": "Regime transfer beyond evidence scope — extrapolates from well-ventilated conditions to confined environments without supporting evidence.",
+            "evidence_refs": [
+              "TR_Protection+188+Applied_Energy:C006"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "SOC-dependent propagation mechanisms, admissibility of trend extrapolations, and regime-specific dominance of heat accumulation vs. combustion.",
+        "primary_boundary": "Linear vs. non-linear SOC scaling; activation energy kinetics vs. total energy content as primary safety driver; well-ventilated condition scope for heat accumulation dominance.",
+        "intended_error_modes": [
+          "Assuming linear scaling of peak temperature with SOC",
+          "Misidentifying low-SOC activation energy drop as primary safety concern",
+          "Extrapolating well-ventilated heat accumulation dominance to confined environments"
+        ],
+        "disallowed_extrapolations": [
+          "Linear temperature scaling with SOC",
+          "Combustion dominance in confined environments inferred from well-ventilated data",
+          "0-50% SOC range as primary safety concern based on activation energy alone"
+        ]
+      }
+    }
+  ],
+  "short_answers": []
+}

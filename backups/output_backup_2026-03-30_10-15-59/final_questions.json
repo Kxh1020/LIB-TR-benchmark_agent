@@ -1,0 +1,1713 @@
+{
+  "\u4ea7\u6c14\u673a\u7406__\u4ea7\u6c14\u673a\u74062__\u4ea7\u6c14\u673a\u74063": {
+    "mcqs": [
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "Two identical cylindrical cells at the same SOC undergo nail penetration with the same nail material and insertion speed. The only difference is contact condition: Test U has deliberately uniform nail\u2013cell contact; Test I has intentionally inhomogeneous contact. Using only electrical/thermal reasoning about where resistance and heating occur, which judgments are supported?",
+          "options": [
+            "A Test I can plausibly create higher peak local heating at the contact interface than Test U, even if the overall short-circuit path is the same.",
+            "B If the nail material resistivity is reduced, total Joule heating must drop in both tests because nail resistance dominates the circuit.",
+            "C Because contact resistance dominates total resistance, design changes that only alter nail internal resistance are not guaranteed to strongly reduce heating at the interface.",
+            "D Uniform contact is guaranteed to be safer because it reduces uncertainty in the local heat source distribution.",
+            "E If Test I shows a higher maximum heat production than Test U, that observation is consistent with the contact-resistance field being nonuniform rather than requiring a different chemistry.",
+            "F Since both tests use the same SOC, the maximum heat production must be identical; differences can only be measurement noise."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Joule heat concentrates at the nail\u2013cell contact; inhomogeneous contact can elevate peak local heat.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u4ea7\u6c14\u673a\u74063:C001",
+                "\u4ea7\u6c14\u673a\u74063:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Total resistance is dominated by contact resistance, not nail internal resistance, so dominance claim is wrong.",
+              "error_type": "mechanism_confusion",
+              "evidence_refs": [
+                "\u4ea7\u6c14\u673a\u74063:C002"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "If contact resistance dominates, lowering nail resistance alone may have limited effect on dominant heating location.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u4ea7\u6c14\u673a\u74063:C002",
+                "\u4ea7\u6c14\u673a\u74063:C001"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Uniformity does not guarantee lower peaks; safety conclusion overreaches beyond heating-location reasoning.",
+              "error_type": "engineering_recommendation_leap",
+              "evidence_refs": [
+                "\u4ea7\u6c14\u673a\u74063:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Higher maxima under inhomogeneous contact are directly consistent with nonuniform contact resistance effects on heat production.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u4ea7\u6c14\u673a\u74063:C003",
+                "\u4ea7\u6c14\u673a\u74063:C002"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Same SOC doesn\u2019t force identical peak heating; contact resistance distribution can change maxima substantially.",
+              "error_type": "single_factor_simplification",
+              "evidence_refs": [
+                "\u4ea7\u6c14\u673a\u74063:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Mechanism-based discrimination of heating differences in nail penetration via contact-resistance dominance",
+          "primary_boundary": "Contact-resistance distribution affects peak heating even when global conditions (SOC, nail) match",
+          "intended_error_modes": [
+            "Assuming nail bulk resistance dominates",
+            "Equating same SOC with same heat maxima",
+            "Making a conservative but unjustified safety guarantee from uniform contact"
+          ],
+          "disallowed_extrapolations": [
+            "Concluding overall cell safety outcome solely from contact uniformity",
+            "Attributing differences to chemistry without need"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A module designer must choose a safety valve venting pressure for cells: 1 MPa vs 3.448 MPa. The enclosure is stiff (little compliance). A hazard review focuses on two competing concerns: early venting may release flammable/toxic products; delayed venting may increase internal pressure before release. Based only on these constraints, which statements are defensible?",
+          "options": [
+            "A Choosing the lower venting pressure can reduce the peak internal pressure reached before venting, but may increase the chance of releasing hazardous gases earlier in the event timeline.",
+            "B Choosing the higher venting pressure is always safer because it delays release of gases and therefore reduces hazard to occupants.",
+            "C From venting pressure alone, you cannot defensibly conclude whether thermal runaway will be prevented; venting pressure mainly affects pressure management, not the existence of heat-generating reactions.",
+            "D If LiPF6 decomposition begins, selecting a higher venting pressure will necessarily reduce HF generation because gases are kept contained longer.",
+            "E In a stiff enclosure, increasing venting pressure can plausibly increase mechanical loading on cell casing before venting, even if it reduces frequency of nuisance vents.",
+            "F If the venting pressure is lower, oxygen release from the cathode becomes less likely because internal pressure is relieved sooner."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Lower set pressure plausibly vents sooner, trading lower peak pressure against earlier hazardous release.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u4ea7\u6c14\u673a\u74063:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Safety is a trade-off; delaying venting can raise internal pressure in a stiff enclosure.",
+              "error_type": "overgeneralization",
+              "evidence_refs": [
+                "\u4ea7\u6c14\u673a\u74063:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence links runaway to overheating and decomposition reactions; venting pressure doesn\u2019t establish preventing those reactions.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u4ea7\u6c14\u673a\u74062:C002",
+                "\u4ea7\u6c14\u673a\u74062:C003",
+                "\u4ea7\u6c14\u673a\u74063:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "HF generation follows LiPF6 decomposition chemistry, not containment time; containment doesn\u2019t imply reduced generation.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "\u4ea7\u6c14\u673a\u74063:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Higher vent threshold permits higher internal pressure before venting; stiff enclosure offers little pressure relief.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u4ea7\u6c14\u673a\u74063:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Cathode oxygen release depends on exceeding thermal stability temperature, not directly on venting pressure.",
+              "error_type": "mechanism_substitution",
+              "evidence_refs": [
+                "\u4ea7\u6c14\u673a\u74062:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Safety trade-off reasoning for venting set-pressure under confinement and gas/toxic release concerns",
+          "primary_boundary": "Venting pressure influences pressure timeline and release timing, not whether thermally triggered reactions occur",
+          "intended_error_modes": [
+            "Concluding 'higher pressure is always safer' (conservative-sounding but wrong)",
+            "Assuming containment reduces chemical generation rates",
+            "Linking venting pressure to cathode oxygen release likelihood"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming vent setting prevents thermal runaway without additional thermal controls",
+            "Inferring gas composition changes solely from vent pressure"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "During an abuse test, a cell is heated and you observe (i) early small gas/pressure increase near ~110\u00b0C, then (ii) later rapid temperature rise. You may choose ONE additional measurement (surface temperature, internal temperature, cell voltage, or enclosure pressure rate-of-rise) to best discriminate whether the system is still in an early decomposition/gassing stage versus entering self-accelerating runaway. Which measurement do you choose, and what specific discrimination logic makes that choice admissible?"
+        },
+        "ground_truth": {
+          "gold_answer": "Choose internal temperature (or, if not feasible, a proxy for self-heating like pressure rate-of-rise tied to rapid gas generation) because runaway is defined by internally accelerating heat generation: overheating triggers TR and decomposition reactions produce more heat/gas. Surface temperature or voltage alone cannot bound internal hot spots; early gas at ~110\u00b0C can come from LiPF6/SEI-related processes without implying runaway. The discrimination logic must hinge on detecting internal self-acceleration (dT/dt increasing without added external heating), not merely presence of gas.",
+          "must_include": [
+            "Explicitly distinguishes early gassing/decomposition from self-accelerating heating",
+            "Uses limitation that surface temperature/voltage may not represent internal maxima",
+            "Connects runaway to overheating/temperature-driven decomposition producing additional heat/gas"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming oxygen release is present without establishing cathode stability exceedance",
+            "Claiming vent pressure setting alone determines whether runaway occurs",
+            "Assuming surface temperature is an upper bound on internal temperature"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Selecting an informative diagnostic signal under observability limits to separate regimes (early decomposition vs runaway)",
+          "primary_boundary": "Presence of gas at ~110\u00b0C does not imply runaway; internal self-acceleration is the discriminant",
+          "intended_error_modes": [
+            "Relying on surface temperature as internal bound",
+            "Treating voltage stability as proof of no hazardous reactions",
+            "Jumping to cathode oxygen release without temperature-regime evidence"
+          ]
+        }
+      }
+    ]
+  },
+  "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-001__\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-002__\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-003": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery team considers adding a small fraction of an immiscible additive that preferentially wets the separator, intending to reduce abuse severity by restricting ion transport. They must still pass a 1C cycling check (3.0\u20134.3 V) with \u201cnearly unchanged behavior\u201d and also reduce peak temperature in impact/penetration abuse. Which conclusions are most defensible from these constraints?",
+          "options": [
+            "A. It is plausible to reduce abuse peak temperature while leaving 1C cycling behavior nearly unchanged, because the additive\u2019s blocking effect can be dormant/limited during normal operation yet become impactful during abuse.",
+            "B. If EIS shows a large increase in series and charge-transfer resistances, then 1C cycling must degrade substantially; otherwise the EIS result is physically inconsistent.",
+            "C. From the additive being immiscible and wetting the separator, it is defensible that the safety benefit mechanism involves suppressing Li+ transport via a physical blocking layer rather than improving thermal conductivity.",
+            "D. Because thermal runaway is tied to a temperature threshold, any approach that lowers peak temperature in one cell format guarantees pack-level fire prevention during crashes.",
+            "E. A conservative interpretation is that, even if peak temperature is reduced in impact and penetration tests, no inference can be made about whether internal-shorting heat generation changed.",
+            "F. If peak temperature is reduced in both impact and penetration tests, then the additive must be acting by preventing the internal short from forming in the first place."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence supports large abuse temperature reduction alongside nearly unchanged 1C cycling; mechanism can be condition-dependent between normal and abuse regimes.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-001:C002",
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-001:C003",
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-003:C005",
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-001:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Large EIS resistance increases can coexist with \u201cnearly same\u201d 1C cycling in evidence; \u201cmust degrade\u201d overclaims necessity.",
+              "error_type": "unjustified_monotonicity",
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-001:C005",
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-003:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence gives a specific mechanism: immiscible additive wets separator, repels electrolyte, forms blocking layer suppressing Li+ transport.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-001:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Cell-level peak temperature reduction does not justify pack-level \u201cguarantee\u201d; scale-transfer and crash scenarios aren\u2019t established by evidence.",
+              "error_type": "scope_expansion",
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-002:C003",
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-001:C002",
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-001:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Peak temperature reduction alone doesn\u2019t identify whether shorting heat generation changed; evidence links blocking to transport, not short formation/heat partition.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-001:C002",
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-001:C003",
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-001:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Temperature reduction does not imply prevention of short formation; evidence supports transport suppression, not elimination of internal shorts.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-001:C004",
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-001:C002",
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-001:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissible mechanism inference under dual constraints (abuse mitigation + normal cycling acceptability) and avoiding causal/scale overclaims.",
+          "primary_boundary": "Mechanism identification (transport blocking) vs overclaiming prevention/guarantee; cell evidence vs pack conclusions.",
+          "intended_error_modes": [
+            "Assuming increased impedance must ruin cycling",
+            "Attributing peak-temperature reduction to preventing shorts",
+            "Illicit scale transfer to pack-level guarantees"
+          ],
+          "disallowed_extrapolations": [
+            "Guaranteeing pack-level fire prevention from cell peak temperature reduction",
+            "Concluding internal short cannot form",
+            "Inferring improved thermal conductivity as the primary mechanism"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A mitigation concept triggers only when a local hotspot reaches 110\u2013130 \u00b0C. The cell is normally operated/stored well below this range, but the design goal is to stop thermal runaway. Separate evidence indicates secondary reactions activate near 110 \u00b0C at a shorting site and that ~120 \u00b0C is near a critical thermal-runaway point. Which design-judgment statements are defensible?",
+          "options": [
+            "A. A trigger set much above normal operation can still be too late to prevent runaway, because the activation band overlaps temperatures where secondary reactions and near-critical runaway behavior are already plausible.",
+            "B. Because normal operation is below the trigger, such a mechanism cannot affect safety under overcharge, crush, or collision; it is effectively irrelevant in abuse.",
+            "C. A trigger in the 110\u2013130 \u00b0C range may reduce nuisance activation during normal use but forces the design to manage a narrow margin between \u201ctriggered\u201d and \u201calready escalating.\u201d",
+            "D. Since thermal runaway is associated with exothermic chain reactions, any mechanism that triggers above 110 \u00b0C necessarily increases fire risk by adding heat at the worst time.",
+            "E. It is reasonable to treat 90 \u00b0C as a universal thermal-runaway onset for all relevant cases; therefore a 110\u2013130 \u00b0C trigger is categorically nonviable.",
+            "F. If the mechanism triggers at 110\u2013130 \u00b0C, then observing no activation during parking in day\u2013night temperature swings proves the vehicle is safe from thermal-runaway fires while parked."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence places secondary reactions near 110 \u00b0C and critical point near ~120 \u00b0C, so high trigger can coincide with already dangerous regimes.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-003:C001",
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-003:C002",
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-002:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Abuse can raise temperature into the trigger band; evidence says runaway is prone under overcharge/crush/collision.",
+              "error_type": "condition_violation",
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-002:C004",
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-003:C002"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Higher trigger reduces nuisance vs normal temperatures, but evidence notes 110\u2013130 \u00b0C is near critical runaway, implying tight timing margin.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-003:C002",
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-003:C001"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Triggering temperature alone doesn\u2019t imply adding heat; evidence does not state the mitigation increases heat generation.",
+              "error_type": "mechanism_substitution",
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-002:C005",
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-003:C002"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Evidence includes multiple thresholds (90 \u00b0C, ~110 \u00b0C, ~120 \u00b0C); treating 90 \u00b0C as universal onset overgeneralizes.",
+              "error_type": "overgeneralization",
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-001:C001",
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-003:C001",
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-003:C002"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Lack of activation during parking doesn\u2019t prove absence of parked-fire risk; evidence indicates parked fires occur and depend on other factors.",
+              "error_type": "diagnostic_overclaim",
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-002:C002",
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-002:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Regime-transfer and timing-margin judgment for thermally triggered mitigation near critical runaway temperatures.",
+          "primary_boundary": "Normal-operation nonactivation vs abuse escalation; trigger band overlap with reaction activation/critical runaway.",
+          "intended_error_modes": [
+            "Assuming nonactivation in normal use implies irrelevance in abuse",
+            "Treating one temperature threshold as universal",
+            "Mistaking non-trigger observations as proof of safety"
+          ],
+          "disallowed_extrapolations": [
+            "Concluding mechanism is irrelevant under abuse solely because normal temps are lower",
+            "Using a single onset temperature as universal across scenarios",
+            "Inferring guaranteed safety from no trigger during parking"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "In an impact screening test, a reference cell shows a small surface temperature rise peaking within ~0.5 min. A modified design shows only ~30% of that rise; the team interprets this as \u201cinternal-shorting heat is negligible.\u201d They want to use this test to argue crash safety. Which statements are defensible?",
+          "options": [
+            "A. It is defensible that, for this specific impact test, heat generation associated with internal shorting is small relative to other contributions, because the modified design drives the temperature rise far below the reference trend.",
+            "B. The result alone cannot justify that an internal short did not occur; reduced temperature rise could reflect reduced short-related heating without eliminating short formation.",
+            "C. Because the temperature peak arrives within about half a minute, the dominant heat source must be electrochemical chain reactions rather than mechanical effects.",
+            "D. A conservative conclusion is that the test provides no information at all about internal shorting, because surface temperature cannot see internal hotspots.",
+            "E. If the modified design reduces \u0394T to ~30% of reference, then it must also prevent secondary reactions near 110 \u00b0C at short sites in any crash scenario.",
+            "F. These results can be directly extended to claim that parked-vehicle fires due to day\u2013night temperature variation will be reduced by the same factor."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence explicitly suggests negligible internal-shorting heat generation given \u0394T ~30% of reference in that impact context.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-003:C003",
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-003:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Negligible shorting heat does not imply no short occurred; evidence supports a heat-partition inference, not event absence.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-003:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Time-to-peak and small \u0394T do not identify chain-reaction dominance; evidence attributes differences to shorting heat being negligible.",
+              "error_type": "mechanism_confusion",
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-003:C003",
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-003:C004",
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-002:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Too conservative: evidence uses \u0394T reduction to infer shorting heat is negligible; thus the test can inform internal heating contributions.",
+              "error_type": "conservative_but_wrong",
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-003:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Extends a specific impact \u0394T result to all crash scenarios and to preventing 110 \u00b0C secondary reactions; not supported.",
+              "error_type": "regime_transfer_overreach",
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-003:C001",
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-003:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Impact-test temperature rise does not transfer to parked-fire mechanisms tied to environmental temperature swings and behavior factors.",
+              "error_type": "scope_expansion",
+              "evidence_refs": [
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-002:C002",
+                "\u5de5\u7a0b\u9632\u62a4\u7b56\u75651-003:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Signal/diagnostic reasoning: what a surface \u0394T reduction can and cannot prove about internal shorting and broader safety claims.",
+          "primary_boundary": "Inferring relative heat contribution in a specific test vs asserting absence of shorts or broad crash/parking safety improvements.",
+          "intended_error_modes": [
+            "Equating low \u0394T with no internal short",
+            "Overly conservative dismissal of informative diagnostics",
+            "Improper regime/scale transfer from impact screening to other hazards"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming universal crash safety from a single screening test",
+            "Claiming secondary reactions are prevented in all scenarios",
+            "Claiming parked-fire reduction from impact \u0394T data"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "You must justify (or reject) a proposal: add an immiscible separator-wetting additive to reduce abuse severity, while keeping normal cycling acceptable. Provide a defensible argument that separates (i) what the evidence supports about mechanism and abuse temperature reduction from (ii) what it does NOT support about pack-level fire prevention or short-circuit elimination. Keep your answer within the stated conditions."
+        },
+        "ground_truth": {
+          "gold_answer": "Supported: the additive can form a blocking layer in the separator that suppresses Li+ transport, and tests show large reductions in peak temperature during penetration/impact while 1C cycling behavior can remain nearly unchanged. Not supported: concluding it prevents internal shorts from forming, or guaranteeing pack-level fire prevention/crash safety; cell-level peak-temperature reduction and transport suppression do not establish those scale/regime claims.",
+          "must_include": [
+            "Mechanism: immiscible + separator-wetting \u2192 blocking layer \u2192 suppressed Li+ transport",
+            "Abuse outcome: peak temperature reduction in penetration/impact",
+            "Normal-use constraint: nearly unchanged 1C cycling can still be consistent",
+            "Boundary: cannot guarantee pack-level fire prevention or claim short elimination"
+          ],
+          "disallowed_extrapolations": [
+            "Guarantees about pack-level fires/crash safety",
+            "Universal thermal-runaway thresholds applied to all cases",
+            "Claims that internal shorts cannot occur"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Evidence-bounded engineering justification with explicit non-implications and scale/regime limits.",
+          "primary_boundary": "Mechanism and cell-level abuse mitigation vs unjustified claims about eliminating shorts or preventing pack-level fires.",
+          "intended_error_modes": [
+            "Jumping from cell tests to pack guarantees",
+            "Treating transport blocking as proof of no short formation",
+            "Ignoring that trigger/threshold evidence is regime-dependent"
+          ]
+        }
+      }
+    ]
+  },
+  "\u5efa\u6a21\u9884\u6d4b71__\u5efa\u6a21\u9884\u6d4b94__\u5efa\u6a21\u9884\u6d4b95": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A cylindrical Li-ion cell is heated in a controlled chamber while only the surface temperature and its rise-rate are monitored. You observe a clear rise-rate threshold crossing (your lab\u2019s criterion for \u201cself-heating onset\u201d), but the surface temperature remains nearly steady for a short interval afterward, with no quasi-exponential rise yet. Under these constraints, which conclusions are defensible about the cell\u2019s internal state and risk stage?",
+          "options": [
+            "A It is defensible that at least one exothermic side-reaction regime has begun, even if the surface temperature is briefly quasi-steady.",
+            "B It is defensible to conclude thermal runaway has already been triggered because self-heating onset implies an uncontrollable temperature increase.",
+            "C It is defensible that an internal short circuit is already present, because any self-heating onset requires separator failure.",
+            "D It is defensible that the system is in a pre-trigger stage where TR need not have started yet, even though self-heating is detectable.",
+            "E It is defensible to treat the brief post-threshold quasi-steady surface temperature as inconsistent with any side reaction, so the threshold crossing is likely a sensor artifact.",
+            "F It is defensible to conclude the separator has not been damaged yet, because the temperature is not quasi-exponential."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "D"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Self-heating onset is defined by a rise-rate threshold; a short transition zone can occur without immediate large heat release.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u5efa\u6a21\u9884\u6d4b71:C004",
+                "\u5efa\u6a21\u9884\u6d4b94:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "TR is a triggered, quasi-exponential, self-sustaining escalation; self-heating onset alone does not meet that trigger definition.",
+              "error_type": "regime_transfer_overclaim",
+              "evidence_refs": [
+                "\u5efa\u6a21\u9884\u6d4b71:C001",
+                "\u5efa\u6a21\u9884\u6d4b71:C003",
+                "\u5efa\u6a21\u9884\u6d4b71:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "ISC is linked to separator failure and TR trigger temperature, not implied by early self-heating detection alone.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "\u5efa\u6a21\u9884\u6d4b71:C002",
+                "\u5efa\u6a21\u9884\u6d4b71:C003",
+                "\u5efa\u6a21\u9884\u6d4b71:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "T1 (self-heating onset) precedes the TR trigger regime at T2; no quasi-exponential rise suggests not yet at trigger stage.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u5efa\u6a21\u9884\u6d4b71:C002",
+                "\u5efa\u6a21\u9884\u6d4b71:C003",
+                "\u5efa\u6a21\u9884\u6d4b71:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "A brief transition zone after crossing critical temperatures is expected; quasi-steady surface temperature doesn\u2019t rule out reactions.",
+              "error_type": "measurement_misinterpretation",
+              "evidence_refs": [
+                "\u5efa\u6a21\u9884\u6d4b94:C005",
+                "\u5efa\u6a21\u9884\u6d4b71:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Absence of quasi-exponential surface rise does not prove no separator damage; trigger is defined at T2/ISC but surface may lag internal.",
+              "error_type": "measurement_scope_overclaim",
+              "evidence_refs": [
+                "\u5efa\u6a21\u9884\u6d4b71:C003",
+                "\u5efa\u6a21\u9884\u6d4b71:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Distinguish self-heating onset (T1) from TR trigger (T2) using measurement limits and transition-zone behavior.",
+          "primary_boundary": "Rate-threshold self-heating detection does not imply TR trigger or ISC; surface signals may lag internal processes.",
+          "intended_error_modes": [
+            "Equating any self-heating with TR",
+            "Inferring ISC from early heat signals",
+            "Rejecting reactions due to short quasi-steady surface temperature"
+          ],
+          "disallowed_extrapolations": [
+            "ISC presence inferred from T1 alone",
+            "TR declaration without quasi-exponential trigger behavior"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A simplified safety model flags different hazard stages using temperature thresholds: SEI decomposition, negative-electrolyte reaction, positive-electrolyte reaction, and electrolyte decomposition. Another part of the model triggers internal short circuit (ISC) when the jellyroll node reaches separator melting. An engineer proposes using only an external surface temperature sensor to infer which internal stage has begun. Which statements are defensible?",
+          "options": [
+            "A If surface temperature is just above the earliest reaction threshold, it is defensible that higher-temperature reactions may still be absent, because stages need not start simultaneously.",
+            "B It is defensible to map each internal reaction onset to the same surface temperature value, because temperature is a state variable and must be uniform within a cell.",
+            "C It is defensible that triggering ISC by jellyroll reaching separator melting does not guarantee the surface sensor has already observed that melting-point temperature.",
+            "D It is defensible to conclude that once the electrolyte decomposition threshold is crossed anywhere, TR is automatically triggered.",
+            "E A conservative conclusion is that surface sensing alone is insufficient to uniquely identify whether ISC has been triggered, even if the surface exceeds some reaction threshold.",
+            "F If surface temperature exceeds the separator melting point, it is defensible to conclude ISC has definitely already triggered somewhere inside."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Threshold-defined reaction stages occur at different temperatures; being above an early threshold doesn\u2019t imply later ones have started.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u5efa\u6a21\u9884\u6d4b94:C001",
+                "\u5efa\u6a21\u9884\u6d4b94:C002",
+                "\u5efa\u6a21\u9884\u6d4b94:C003",
+                "\u5efa\u6a21\u9884\u6d4b94:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Uniform internal temperature is not supported; stage inference from surface alone oversteps measurement scope and ignores gradients.",
+              "error_type": "measurement_scope_overclaim",
+              "evidence_refs": [
+                "\u5efa\u6a21\u9884\u6d4b95:C001"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "ISC trigger is defined by jellyroll temperature reaching melting; surface may lag and need not match internal node temperature.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u5efa\u6a21\u9884\u6d4b95:C001"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "TR trigger is associated with separator failure/ISC and quasi-exponential rise; crossing a chemistry threshold alone doesn\u2019t establish TR trigger.",
+              "error_type": "regime_transfer_overclaim",
+              "evidence_refs": [
+                "\u5efa\u6a21\u9884\u6d4b71:C001",
+                "\u5efa\u6a21\u9884\u6d4b71:C003",
+                "\u5efa\u6a21\u9884\u6d4b94:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Surface temperature thresholds alone cannot uniquely diagnose internal ISC triggering, which is tied to internal separator melting condition.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u5efa\u6a21\u9884\u6d4b95:C001",
+                "\u5efa\u6a21\u9884\u6d4b71:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Surface exceeding melting point does not prove jellyroll node already reached it or that ISC has triggered; inference exceeds defined trigger condition.",
+              "error_type": "trigger_inference_overclaim",
+              "evidence_refs": [
+                "\u5efa\u6a21\u9884\u6d4b95:C001"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Use threshold staging plus internal-vs-surface measurement boundary to judge what can be inferred about reaction stages and ISC.",
+          "primary_boundary": "Internal ISC trigger is defined at a jellyroll node; surface temperature cannot be assumed equal to internal maxima/minima.",
+          "intended_error_modes": [
+            "Assuming uniform temperature within a cell",
+            "Equating crossing any chemical threshold with TR trigger",
+            "Treating surface > melting point as proof of internal ISC"
+          ],
+          "disallowed_extrapolations": [
+            "One-to-one mapping of internal thresholds to surface readings",
+            "TR trigger inferred from chemistry thresholds without ISC/trigger behavior"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "You must write an operational rule-set for a lab controller that classifies a heated Li-ion cell into three stages using only temperature and temperature rise-rate: (i) self-heating onset, (ii) TR trigger, (iii) post-trigger propagation risk to a neighbor cell. State a defensible rule-set and explicitly note at least two limitations where the controller cannot make a unique internal diagnosis."
+        },
+        "ground_truth": {
+          "gold_answer": "Defensible rules: (i) declare self-heating onset when measured temperature rise-rate exceeds a chosen empirical threshold (T1 criterion). (ii) declare TR trigger only when temperature transitions from a stable/slowly varying level into a quasi-exponential, self-sustaining rise (T2 behavior), not merely from T1. (iii) for propagation risk, treat it as increasing when thermal coupling is stronger (lower equivalent thermal resistance via smaller spacing) and/or ambient temperature is higher; near a coupling-resistance threshold, small changes can shift propagation mode. Limitations: surface measurements may not equal jellyroll temperature, so ISC at separator melting cannot be uniquely inferred; crossing reaction temperature thresholds does not by itself prove TR trigger; timing between cells does not uniquely identify coupling resistance or mechanism.",
+          "must_include": [
+            "Self-heating onset defined by rise-rate threshold",
+            "TR trigger defined by quasi-exponential/self-sustaining rise (not just onset)",
+            "Propagation risk depends on ambient temperature and spacing/thermal resistance",
+            "At least two explicit non-identifiability/measurement limitations"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming ISC is confirmed from surface temperature alone",
+            "Claiming TR is triggered whenever any reaction threshold is crossed",
+            "Inferring exact coupling resistance value from a single delay"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Translate definitions and condition-effects into an admissible operational classifier while acknowledging non-identifiability boundaries.",
+          "primary_boundary": "Rate/temperature observations cannot uniquely diagnose internal ISC or specific reaction onset locations; trigger vs onset must be separated.",
+          "intended_error_modes": [
+            "Conflating T1 with T2",
+            "Overconfident internal diagnosis from surface signals",
+            "Overinterpreting propagation timing as mechanistic proof"
+          ]
+        }
+      }
+    ]
+  },
+  "\u673a\u68b0\u6ee5\u75282__\u673a\u68b0\u6ee5\u75283__\u673a\u68b0\u6ee5\u75284": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A pouch Li-ion cell at 100% SOC is being heated while held under a constant mechanical squeeze. You only measure (i) cell thickness and (ii) terminal voltage. You observe thickness gradually decreasing with temperature, then an abrupt thickness drop at the same time the voltage collapses. Under higher squeeze, this coincidence happens earlier and the jet fire lasts less time but is more intense. Which conclusions are defensible from these observations?",
+          "options": [
+            "A It is defensible that thermal runaway onset coincides with a sudden mechanical collapse in the squeezed state, even though the gradual thinning before onset does not by itself prove internal shorting.",
+            "B It is defensible to treat the gradual pre-onset thinning as direct evidence that an internal short circuit has already initiated, because resistance must be decreasing monotonically with strain.",
+            "C For sufficiently high squeezing levels, it is defensible that mechanical damage dominates the triggering pathway, so the triggering temperature can be substantially lower than in low-squeeze cases.",
+            "D It is defensible to conclude that higher squeeze reduces the total energy released, since the jet fire duration is shorter.",
+            "E If the voltage collapse occurs exactly at the abrupt thickness drop, it is defensible to conclude that voltage is an unambiguous trigger indicator that mechanical damage\u2014not heating\u2014caused the event."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Thickness drops abruptly at TR onset; gradual thinning is pre-onset behavior and not sufficient alone to prove shorting.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u673a\u68b0\u6ee5\u75283:C002"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Pre-onset thinning does not justify claiming a short already initiated; monotonic shorting inference is unsupported here.",
+              "error_type": "correlation_to_causation",
+              "evidence_refs": [
+                "\u673a\u68b0\u6ee5\u75283:C002"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "At high squeeze, TR occurs faster and is mostly due to extrusion-induced mechanical damage, with lower triggering temperature.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u673a\u68b0\u6ee5\u75283:C003",
+                "\u673a\u68b0\u6ee5\u75283:C004",
+                "\u673a\u68b0\u6ee5\u75283:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Shorter jet duration does not imply less total energy; intensity (temperature/area) increases under higher squeeze.",
+              "error_type": "unjustified_monotonicity",
+              "evidence_refs": [
+                "\u673a\u68b0\u6ee5\u75283:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Coincidence of voltage collapse with onset does not uniquely assign causation to mechanics over heating.",
+              "error_type": "overdetermined_causality",
+              "evidence_refs": [
+                "\u673a\u68b0\u6ee5\u75283:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissible inference from coupled thickness/voltage signals under squeeze-heating and regime change at high squeeze",
+          "primary_boundary": "Signal coincidence vs causal attribution; high-squeeze regime vs general regime",
+          "intended_error_modes": [
+            "Treating pre-onset mechanical deformation as proof of internal short",
+            "Inferring energy release from duration alone",
+            "Over-attributing trigger cause from voltage signal"
+          ],
+          "disallowed_extrapolations": [
+            "Universal monotonic link between strain and short circuit initiation from these measurements",
+            "Energy-release quantification from jet duration without intensity integration"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A simplified mech-electrical abuse model uses a separator strain criterion: for thickness-direction strain \u03b5z below a failure value, separator resistance decreases with \u03b5z; once \u03b5z reaches the failure value, resistance switches to a fixed low short-circuit value. You are deciding whether this model can justify design claims about safety under compression. Which statements are defensible?",
+          "options": [
+            "A Below the failure strain, increasing compression can increase short-circuit current at a given terminal voltage even before any discrete short is \u201cactivated,\u201d because resistance is already dropping.",
+            "B Because the resistance\u2013strain relation is linear before failure, the model implies porosity must also change linearly with strain over the same range.",
+            "C The model supports a regime change at the failure strain: beyond it, additional compression no longer changes the modeled short resistance, so predicted short-circuit current becomes insensitive to further strain if voltage and other resistances are unchanged.",
+            "D It is defensible to claim the model guarantees no thermal runaway below the failure strain, because it does not activate the short-circuit state there.",
+            "E If a test shows thermal runaway at strains below the failure value, that observation alone would falsify the resistance-switching model structure."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Before failure, R decreases with \u03b5z, so at fixed V a larger current is consistent even without the \u201cactivated\u201d short state.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u673a\u68b0\u6ee5\u75282:C003",
+                "\u673a\u68b0\u6ee5\u75282:C004",
+                "\u673a\u68b0\u6ee5\u75282:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Porosity\u2013strain is not linear (quadratic fit); linear resistance does not force linear porosity evolution.",
+              "error_type": "mechanism_substitution",
+              "evidence_refs": [
+                "\u673a\u68b0\u6ee5\u75282:C001",
+                "\u673a\u68b0\u6ee5\u75282:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "After \u03b5z\u2265\u03b5f, R is set to a constant Rsc; with fixed V and other resistances, Isc no longer depends on further strain.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u673a\u68b0\u6ee5\u75282:C002",
+                "\u673a\u68b0\u6ee5\u75282:C004",
+                "\u673a\u68b0\u6ee5\u75282:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "No-short activation does not guarantee no TR; other pathways or heating could still cause runaway.",
+              "error_type": "safety_overclaim",
+              "evidence_refs": [
+                "\u673a\u68b0\u6ee5\u75282:C002"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "TR below \u03b5f could arise from mechanisms not represented; it challenges completeness, not necessarily the resistance-switching structure alone.",
+              "error_type": "model_validity_fallacy",
+              "evidence_refs": [
+                "\u673a\u68b0\u6ee5\u75282:C002",
+                "\u673a\u68b0\u6ee5\u75282:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Regime-switch reasoning and model admissibility limits for strain-based short modeling",
+          "primary_boundary": "What the resistance-switch model can imply vs what safety outcomes it cannot guarantee",
+          "intended_error_modes": [
+            "Assuming linear resistance implies linear porosity",
+            "Interpreting absence of modeled short as safety guarantee",
+            "Overclaiming falsification from out-of-model failure modes"
+          ],
+          "disallowed_extrapolations": [
+            "Inferring TR prevention from electrical criterion alone",
+            "Equating model fit/structure with completeness of abuse mechanisms"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "You must choose ONE screening test to rank worst-case TR severity for an NCM811 cell design change. Your lab can do either nail penetration or external overheating, at either 50% or 100% SOC, but not all combinations. Using only the given scenario constraints, propose a defensible single test choice and justify why it is the most conservative for severity ranking without claiming it covers all hazards."
+        },
+        "ground_truth": {
+          "gold_answer": "Choose nail penetration at 100% SOC. Evidence indicates (i) for NCM811, nail penetration produces more severe TR than external overheating, and (ii) higher SOC produces much higher peak temperatures and SOC effect is more significant than penetration depth. This makes 100% SOC + nail a defensible worst-severity screen, while explicitly noting it does not eliminate the need to assess other triggers at pack level.",
+          "must_include": [
+            "Pick nail penetration",
+            "Specify 100% SOC",
+            "Justify using: nail more severe than overheating for NCM811",
+            "Justify using: higher SOC increases severity / SOC more significant",
+            "Explicit limitation: does not cover all abuse modes or pack-level hazards"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming overheating can be ignored in all safety cases",
+            "Claiming this single test guarantees worst case for every design/geometry",
+            "Introducing new quantitative thresholds beyond the prompt"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Design strategy judgment: selecting a single conservative screening test under evidence-limited comparisons",
+          "primary_boundary": "Conservative screening vs unjustified elimination of other hazards",
+          "intended_error_modes": [
+            "Choosing 50% SOC due to perceived safety without evidence",
+            "Claiming one trigger mode covers all hazards",
+            "Confusing depth effects with SOC dominance"
+          ]
+        }
+      }
+    ]
+  },
+  "\u6c14\u4f53\u6392\u653e65__\u6c14\u4f53\u6392\u653e79__\u6c14\u4f53\u6392\u653e81": {
+    "mcqs": [
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A lab compares three abuse-heating methods on identical Li-ion cells at 100% SOC in the same sealed test setup. Reported outcomes: heating coil gives the highest peak pressure and peak total gas generated; it also yields the highest CO2 fraction among the three methods. Separately, the measured \u201cflammable concentration range\u201d ranks largest for heating rod, then heating coil, then heating plate. Which interpretations are defensible without adding unstated assumptions?",
+          "options": [
+            "A. Higher total gas generation does not imply a larger flammable concentration range; composition shifts can dominate the range ranking.",
+            "B. Because the coil produces the most CO2, it must have the smallest flammable concentration range among the three methods.",
+            "C. The ranking of peak pressure across methods cannot be inferred from the flammable concentration range ranking alone.",
+            "D. It is admissible that the coil method simultaneously yields the highest peak pressure yet not the largest flammable concentration range.",
+            "E. Since CO2 fraction is highest for the coil, the coil must be safest with respect to flammability.",
+            "F. Without gas speciation beyond CO2, no statement can be made about whether the flammable concentration range could be larger for rod than coil."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "D"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence shows coil has most gas but not largest flammable range, so composition can control ranking.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u6c14\u4f53\u6392\u653e81:C003",
+                "\u6c14\u4f53\u6392\u653e81:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Despite higher CO2 for coil, plate has the smallest flammable range, so \u201cmust be smallest\u201d fails.",
+              "error_type": "overclaim_from_single_factor",
+              "evidence_refs": [
+                "\u6c14\u4f53\u6392\u653e81:C004",
+                "\u6c14\u4f53\u6392\u653e81:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Flammable range ranking differs from pressure ranking; pressure cannot be deduced from range alone.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u6c14\u4f53\u6392\u653e81:C002",
+                "\u6c14\u4f53\u6392\u653e81:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Directly consistent: coil has highest peak pressure, while rod has the largest flammable range.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u6c14\u4f53\u6392\u653e81:C002",
+                "\u6c14\u4f53\u6392\u653e81:C005"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Highest CO2 fraction alone does not establish overall flammability risk; the flammable range is not smallest for coil.",
+              "error_type": "engineering_recommendation_leap",
+              "evidence_refs": [
+                "\u6c14\u4f53\u6392\u653e81:C004",
+                "\u6c14\u4f53\u6392\u653e81:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The flammable concentration range ranking is already given; it states rod exceeds coil regardless of missing speciation.",
+              "error_type": "ignoring_given_metric",
+              "evidence_refs": [
+                "\u6c14\u4f53\u6392\u653e81:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Separating pressure/gas-quantity effects from flammability-window effects; avoiding single-factor causality from CO2 fraction.",
+          "primary_boundary": "Do not treat CO2 fraction as a sufficient predictor of overall flammability range or safety across methods.",
+          "intended_error_modes": [
+            "Assuming more CO2 always means less flammable range",
+            "Inferring pressure behavior solely from flammability range",
+            "Overly cautious refusal to use provided metric ranking"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming overall safety superiority of a heating method beyond the defined flammable-range metric",
+            "Inferring gas species other than CO2 from the stated results"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "You are selecting a sensing layer for early warning of gases released during thermal runaway. A candidate material is CuO-decorated InSe, which is reported to have a smaller band gap than pristine InSe and higher adsorption for CO, C2H2, and C2H4. Assume all other sensor design choices (geometry, temperature control, electronics) are unchanged. Which claims about what can be concluded are defensible?",
+          "options": [
+            "A. It is defensible that CuO decoration could increase sensor signal sensitivity to CO/C2H2/C2H4 because stronger adsorption can produce larger perturbations at the surface.",
+            "B. It is defensible that CuO decoration must reduce false positives in real packs because it is thermodynamically stable.",
+            "C. It is defensible that CuO decoration could enable earlier detection in time during a runaway event, since gas content can increase as runaway continues.",
+            "D. From the evidence, it is defensible that CuO-decorated InSe will detect H2 better than pristine InSe.",
+            "E. A lower band gap makes it defensible that electrical readout changes could be larger for a given adsorption-driven perturbation, but this does not by itself guarantee selectivity among gases.",
+            "F. Since thermal runaway emits CO2 as well, improved adsorption of CO implies improved adsorption of CO2 on CuO-InSe."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Higher adsorption for target gases supports plausibility of stronger sensor response via surface interaction mechanisms.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u6c14\u4f53\u6392\u653e79:C002"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Stability of decoration does not establish reduced false positives or pack-level performance without additional evidence.",
+              "error_type": "scope_expansion",
+              "evidence_refs": [
+                "\u6c14\u4f53\u6392\u653e79:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "If gases increase as runaway continues, improved adsorption can plausibly help detect at lower partial pressures earlier in time.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u6c14\u4f53\u6392\u653e79:C002",
+                "\u6c14\u4f53\u6392\u653e79:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "No evidence is provided about H2 adsorption or sensing on CuO-InSe versus pristine InSe.",
+              "error_type": "unsupported_target_extension",
+              "evidence_refs": [
+                "\u6c14\u4f53\u6392\u653e79:C002",
+                "\u6c14\u4f53\u6392\u653e79:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Band-gap reduction supports potential readout sensitivity changes, but selectivity is not implied by band gap alone.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u6c14\u4f53\u6392\u653e79:C001"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Emission of CO2 and improved CO adsorption do not imply CO2 adsorption improvement; that transfer is not supported.",
+              "error_type": "invalid_regime_transfer",
+              "evidence_refs": [
+                "\u6c14\u4f53\u6392\u653e79:C002",
+                "\u6c14\u4f53\u6392\u653e79:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissible inference from adsorption and band-gap changes to plausible sensing implications while respecting selectivity and species limits.",
+          "primary_boundary": "Do not extrapolate adsorption improvements across untested gases or to pack-level false-positive rates.",
+          "intended_error_modes": [
+            "Assuming stability implies reliability/false-positive reduction",
+            "Assuming improvements for CO transfer to CO2 or H2",
+            "Equating lower band gap with guaranteed selectivity"
+          ],
+          "disallowed_extrapolations": [
+            "Guaranteeing detection timing improvements without considering system integration",
+            "Claiming universal sensing performance across all runaway gases"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A safety engineer proposes: \u201cIncreasing CO2 fraction in battery vent gas always reduces flammability hazard, so injecting CO2 is universally beneficial.\u201d Using only the following constraints: (i) in a standardized ignition vessel, ignition is defined by a \u22657% pressure rise; (ii) measured flammability limits shift with CO2 fraction such that both LFL and UFL can increase as CO2 increases. Give a defensible critique of the proposal and state one bounded conclusion you can still support."
+        },
+        "ground_truth": {
+          "gold_answer": "Critique: the proposal overclaims monotonic hazard reduction. Evidence shows CO2 can raise LFL (harder to ignite at low fuel) but can also raise UFL, potentially widening the flammable window depending on mixture state; \u201cuniversally beneficial\u201d is not admissible. Also, the conclusion is limited to the tested ignition criterion and conditions. Bounded conclusion: under the specified vessel test, increasing CO2 can increase LFL and can also increase UFL; therefore CO2 addition does not guarantee a narrower flammable range or lower flammability risk.",
+          "must_include": [
+            "CO2 can increase LFL and also increase UFL",
+            "Therefore hazard reduction / narrowing of flammable range is not guaranteed",
+            "Boundary: only under the stated test method/criterion (pressure-rise ignition) and conditions"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming CO2 injection always improves real-pack safety",
+            "Claiming CO2 always inerting/narrows flammability without conditions",
+            "Inferring effects at other temperatures/pressures not stated"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Non-implication reasoning: rejecting a universal safety recommendation when evidence shows bidirectional/competing shifts in flammability limits.",
+          "primary_boundary": "Do not convert condition-specific flammability-limit shifts into universal safety guidance.",
+          "intended_error_modes": [
+            "Assuming diluent intuition overrides measured UFL behavior",
+            "Ignoring the ignition-definition boundary",
+            "Equating higher LFL with lower overall hazard without considering UFL shift"
+          ]
+        }
+      }
+    ]
+  },
+  "\u70ed\u5931\u63a7\u4f20\u64ad\u884c\u4e3a1__\u70ed\u5931\u63a7\u4f20\u64ad\u884c\u4e3a2__\u70ed\u5931\u63a7\u4f20\u64ad\u884c\u4e3a3": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A single prismatic Li-ion cell is heated by an external heater at the same power density in three placements: large-area face, side, or bottom. Thermal runaway (TR) is operationally declared only when three concurrent cues occur: a very fast temperature-rise rate at a monitored point, sustained mass-loss rate above a criterion, and obvious white smoke venting. You must decide what conclusions about TR severity and internal propagation are defensible across heater placements.",
+          "options": [
+            "A It is defensible that the heater placement can change TR trigger time even when heater power density is held constant.",
+            "B It is defensible that the placement that triggers TR fastest also has the fastest internal TR propagation within the cell.",
+            "C It is defensible that the placement with the slowest internal TR propagation can still exhibit the highest peak vent jet velocity.",
+            "D It is defensible to rank overall TR \u201cseverity\u201d solely by which placement produces the highest jet velocity, because jet velocity is part of the TR criteria.",
+            "E It is not defensible to compare TR trigger times across placements because the TR definition mixes thermal, mass-loss, and smoke cues."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "With equal power density, different heating locations still show different trigger times; concluding placement affects tTR is admissible.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u70ed\u5931\u63a7\u4f20\u64ad\u884c\u4e3a1:C002",
+                "\u70ed\u5931\u63a7\u4f20\u64ad\u884c\u4e3a1:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Fastest triggering (large-area face) does not coincide with fastest internal propagation; propagation is much slower there.",
+              "error_type": "invalid_monotonicity_overclaim",
+              "evidence_refs": [
+                "\u70ed\u5931\u63a7\u4f20\u64ad\u884c\u4e3a1:C003",
+                "\u70ed\u5931\u63a7\u4f20\u64ad\u884c\u4e3a1:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Large-area face heating shows slow internal propagation yet the largest jet velocity; these two severity proxies can decouple.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u70ed\u5931\u63a7\u4f20\u64ad\u884c\u4e3a1:C004",
+                "\u70ed\u5931\u63a7\u4f20\u64ad\u884c\u4e3a1:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Jet velocity is not part of the TR occurrence criteria; ranking \u201cseverity\u201d solely by it oversteps the stated definition.",
+              "error_type": "metric_mismatch",
+              "evidence_refs": [
+                "\u70ed\u5931\u63a7\u4f20\u64ad\u884c\u4e3a1:C001",
+                "\u70ed\u5931\u63a7\u4f20\u64ad\u884c\u4e3a1:C005"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "A mixed-cue definition can still be applied consistently across controlled comparisons; it doesn\u2019t invalidate comparing trigger times.",
+              "error_type": "conservative_but_wrong_scope_invalidation",
+              "evidence_refs": [
+                "\u70ed\u5931\u63a7\u4f20\u64ad\u884c\u4e3a1:C001",
+                "\u70ed\u5931\u63a7\u4f20\u64ad\u884c\u4e3a1:C002",
+                "\u70ed\u5931\u63a7\u4f20\u64ad\u884c\u4e3a1:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissible comparative conclusions under a multi-cue TR definition; decoupling of trigger time, internal propagation, and venting intensity.",
+          "primary_boundary": "Do not infer monotonic linkage between different severity proxies (tTR, internal \u03bdTR, jet velocity) or misuse the TR definition metric.",
+          "intended_error_modes": [
+            "Assuming fastest trigger implies fastest propagation",
+            "Treating a dramatic external signal (jet velocity) as the defining TR metric",
+            "Overly cautious claim that mixed criteria prevent any comparison"
+          ],
+          "disallowed_extrapolations": [
+            "Equating jet velocity with TR occurrence or overall severity",
+            "Inferring causality between trigger time and propagation speed without evidence"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A 4-cell module is tested for TR propagation. In the baseline module, successive cells reach higher peak temperatures as propagation proceeds. In a modified module, a 3\u2011mm aerogel felt is inserted between adjacent cells; only the first cell experiences TR, while the second cell still undergoes safety venting and its surface temperatures peak well below typical TR temperatures. Choose which inferences about propagation mechanism and mitigation are defensible.",
+          "options": [
+            "A It is defensible that pre-heating from earlier TR events can make later cells reach higher peak temperatures during propagation.",
+            "B It is defensible that adding a thin thermal barrier can stop TR propagation yet still allow non-TR safety venting in an adjacent cell.",
+            "C It is defensible that because only the first cell had TR with aerogel, the aerogel eliminated all meaningful heat transfer to the second cell.",
+            "D It is defensible that, in the baseline module, most of the triggering energy for an adjacent cell originates from the runaway cell itself rather than external sources.",
+            "E It is defensible to generalize that any 3\u2011mm barrier placed anywhere in a pack will prevent propagation regardless of layout, because it worked in the module."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "D"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Peak temperatures increasing along the sequence are attributed to a pre-heating effect; this mechanism inference is supported.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u70ed\u5931\u63a7\u4f20\u64ad\u884c\u4e3a2:C001"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "With aerogel, propagation is prevented but adjacent-cell safety venting still occurs with moderate peak temperatures.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u70ed\u5931\u63a7\u4f20\u64ad\u884c\u4e3a2:C003",
+                "\u70ed\u5931\u63a7\u4f20\u64ad\u884c\u4e3a2:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Safety venting and elevated temperatures indicate some heating still occurs; \u201celiminated all meaningful heat transfer\u201d overclaims.",
+              "error_type": "overclaim_elimination",
+              "evidence_refs": [
+                "\u70ed\u5931\u63a7\u4f20\u64ad\u884c\u4e3a2:C003",
+                "\u70ed\u5931\u63a7\u4f20\u64ad\u884c\u4e3a2:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "During propagation, the TR cell\u2019s released energy accounts for more than 65% of triggering the adjacent cell.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u70ed\u5931\u63a7\u4f20\u64ad\u884c\u4e3a2:C002"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Evidence supports a specific module configuration; extending to arbitrary pack layouts and placements is a scale/scope overreach.",
+              "error_type": "invalid_scale_transfer",
+              "evidence_refs": [
+                "\u70ed\u5931\u63a7\u4f20\u64ad\u884c\u4e3a2:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Mechanism-plus-boundary reasoning: preheating sequence effects; mitigation that blocks TR propagation without eliminating all heating; limits of scale transfer.",
+          "primary_boundary": "Do not infer zero heat transfer or universal pack-level guarantees from a module-level barrier result.",
+          "intended_error_modes": [
+            "Assuming 'no propagation' implies 'no heating'",
+            "Overgeneralizing a specific barrier result to any pack geometry",
+            "Missing that venting can occur without TR"
+          ],
+          "disallowed_extrapolations": [
+            "Barrier guarantees in all pack configurations",
+            "Concluding complete thermal isolation from partial mitigation evidence"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery safety monitoring system uses a two-regime strategy: below 60\u00b0C it predicts temperature using a time-series model; once any battery is detected above 60\u00b0C it switches to using thermal images to predict TR propagation. Another subsystem flags \u201cvoltage drop onset\u201d at an average battery temperature of 120\u00b0C. You must judge which statements about using these thresholds for safety actions are defensible.",
+          "options": [
+            "A Switching the prediction approach at 60\u00b0C is defensible as a way to address a regime change where abnormal heat generation becomes relevant.",
+            "B If a battery exceeds 60\u00b0C, it is defensible to conclude TR has begun, because the monitoring system switches into propagation prediction mode.",
+            "C It is defensible that a voltage-drop-onset model temperature (120\u00b0C average) can occur after the monitoring switch temperature (60\u00b0C) without implying inconsistency.",
+            "D It is defensible to treat the 60\u00b0C switch as irrelevant once voltage drop is expected at 120\u00b0C, because only electrical signals matter for propagation.",
+            "E It is defensible to conclude that if voltage drop has not occurred, TR propagation cannot be underway."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Abnormal heat generation above 60\u00b0C supports using 60\u00b0C as a regime boundary for model switching.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u70ed\u5931\u63a7\u4f20\u64ad\u884c\u4e3a3:C001",
+                "\u70ed\u5931\u63a7\u4f20\u64ad\u884c\u4e3a3:C002"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "A model-switch trigger (above 60\u00b0C) indicates abnormal heating, not TR occurrence; TR is not defined here by 60\u00b0C.",
+              "error_type": "trigger_vs_event_confusion",
+              "evidence_refs": [
+                "\u70ed\u5931\u63a7\u4f20\u64ad\u884c\u4e3a3:C001",
+                "\u70ed\u5931\u63a7\u4f20\u64ad\u884c\u4e3a3:C002"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "The 60\u00b0C switch threshold and 120\u00b0C average voltage-drop temperature represent different phenomena and can be sequential without conflict.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u70ed\u5931\u63a7\u4f20\u64ad\u884c\u4e3a3:C002",
+                "\u70ed\u5931\u63a7\u4f20\u64ad\u884c\u4e3a3:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Evidence motivates 60\u00b0C switching due to thermal regime change; dismissing it because of a later electrical marker is unjustified.",
+              "error_type": "unsupported_mechanism_substitution",
+              "evidence_refs": [
+                "\u70ed\u5931\u63a7\u4f20\u64ad\u884c\u4e3a3:C001",
+                "\u70ed\u5931\u63a7\u4f20\u64ad\u884c\u4e3a3:C002",
+                "\u70ed\u5931\u63a7\u4f20\u64ad\u884c\u4e3a3:C005"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Voltage-drop onset at an average temperature is not stated as a necessary condition for propagation; absence doesn\u2019t rule out propagation.",
+              "error_type": "necessity_overclaim",
+              "evidence_refs": [
+                "\u70ed\u5931\u63a7\u4f20\u64ad\u884c\u4e3a3:C005",
+                "\u70ed\u5931\u63a7\u4f20\u64ad\u884c\u4e3a3:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Regime-transfer and diagnostic-boundary reasoning: distinguishing switching triggers from TR occurrence; reconciling thermal and electrical thresholds.",
+          "primary_boundary": "Do not equate a monitoring threshold with TR occurrence or treat one indicator (voltage drop) as necessary for propagation without support.",
+          "intended_error_modes": [
+            "Confusing abnormal heating with TR",
+            "Overreliance on electrical marker to ignore thermal regime change",
+            "Treating absence of voltage drop as proof of no propagation"
+          ],
+          "disallowed_extrapolations": [
+            "60\u00b0C implies TR occurrence",
+            "No voltage drop implies no TR propagation"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "You must choose one single sensor/criterion family to define \u201cTR occurrence\u201d for comparing different heater placements on the same cell: (i) temperature-rise-rate at one point, (ii) sustained mass-loss rate, or (iii) visible white smoke from the safety valve. Based on the multi-cue definition used in the scenario, argue which single family would be least defensible to use alone for cross-placement comparison, and why. Keep your reasoning tied to what the multi-cue definition is trying to prevent."
+        },
+        "ground_truth": {
+          "gold_answer": "Least defensible to use alone is the visible white-smoke cue. The multi-cue definition requires concurrent fast temperature rise and sustained mass loss in addition to smoke, implying smoke alone is an ambiguous proxy (venting/visibility/jetting can vary with heating placement) and could mis-rank onset compared with energetic internal escalation. Using only smoke risks conflating venting intensity/observability with the underlying runaway transition that the rate and mass-loss criteria jointly capture.",
+          "must_include": [
+            "Identify white smoke as least defensible single cue",
+            "Explain ambiguity/observability of smoke versus internal escalation",
+            "Reference that the original definition deliberately combines three cues to reduce proxy errors"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming any single cue is universally sufficient",
+            "Introducing new thresholds beyond the given criteria",
+            "Asserting smoke is always delayed/advanced relative to TR without evidence"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Metric/definition admissibility: why multi-cue TR definitions avoid proxy bias across different boundary conditions.",
+          "primary_boundary": "Do not turn one observable (especially a qualitative one) into a universal TR definition when the evidence defines TR as concurrent multi-indicator.",
+          "intended_error_modes": [
+            "Choosing a dramatic but proxy-prone observable (smoke/jetting) as primary",
+            "Ignoring that different heater placements can alter observability without changing internal state timing"
+          ]
+        }
+      }
+    ]
+  },
+  "\u70ed\u5931\u63a7\u52a8\u529b\u5b661__\u70ed\u5931\u63a7\u52a8\u529b\u5b662__\u70ed\u5931\u63a7\u52a8\u529b\u5b663": {
+    "mcqs": [
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A thermal-control concept uses two concentric PCM layers around a cylindrical cell. The cell is idealized as a constant-temperature heat source at 500 K; the outer wall is held at 300 K. PCM1 (inner) is RT82 and PCM2 (outer) is RT27; their diameters are 30 mm and 42 mm. You may add SWCNT nanoparticles at 2\u20136% volume fraction to a chosen PCM. Which design inferences are defensible from these constraints?",
+          "options": [
+            "A Adding 6% SWCNT to the outer PCM (RT27) can accelerate RT27 melting compared with pure RT27, but it does not by itself guarantee a lower cell temperature because the cell is held at fixed temperature.",
+            "B Because RT27 is farthest from the cell, improving its melting rate cannot affect the transient heat-flow path; only the inner PCM matters under any circumstance.",
+            "C If the goal is specifically to speed melting of RT27, increasing SWCNT fraction toward 6% is a supported direction within the studied range.",
+            "D Adding SWCNT to RT27 must always reduce total time to melt both PCM layers, regardless of what happens in RT82.",
+            "E From the given information, it is defensible to claim the same percent melting-rate increase would apply if SWCNT were added to RT82."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "SWCNT boosts RT27 melting rate, but fixed 500 K source means cell temperature is not an outcome variable here.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u70ed\u5931\u63a7\u52a8\u529b\u5b662:C001",
+                "\u70ed\u5931\u63a7\u52a8\u529b\u5b662:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Declaring outer layer irrelevant is too strong; layer coupling can matter even if only RT27 data are specified.",
+              "error_type": "scope_overclaim",
+              "evidence_refs": [
+                "\u70ed\u5931\u63a7\u52a8\u529b\u5b662:C002",
+                "\u70ed\u5931\u63a7\u52a8\u529b\u5b662:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Within 2\u20136% range, 6% SWCNT gives the reported maximum RT27 melting-rate enhancement versus pure RT27.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u70ed\u5931\u63a7\u52a8\u529b\u5b662:C004",
+                "\u70ed\u5931\u63a7\u52a8\u529b\u5b662:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "RT27 improvement doesn\u2019t ensure global melt-time reduction without information on RT82 behavior and coupling.",
+              "error_type": "unjustified_system_level_claim",
+              "evidence_refs": [
+                "\u70ed\u5931\u63a7\u52a8\u529b\u5b662:C002",
+                "\u70ed\u5931\u63a7\u52a8\u529b\u5b662:C005"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "RT27 result cannot be transferred to RT82 without evidence; different PCM properties may change nanoparticle effect.",
+              "error_type": "regime_transfer_overclaim",
+              "evidence_refs": [
+                "\u70ed\u5931\u63a7\u52a8\u529b\u5b662:C002",
+                "\u70ed\u5931\u63a7\u52a8\u529b\u5b662:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Boundary reasoning about what a fixed-temperature source model allows you to conclude, and limits of transferring nanoparticle performance across layers/materials.",
+          "primary_boundary": "Do not infer reduced cell temperature or total system melt time from RT27 melting-rate improvement alone; do not transfer RT27 enhancement to RT82.",
+          "intended_error_modes": [
+            "system_level_overreach",
+            "scale_transfer_error",
+            "overstated_layer_irrelevance"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming guaranteed cell cooling despite fixed cell temperature boundary condition",
+            "Applying RT27 nanoparticle improvement magnitude to RT82"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "Three external heating methods are compared on similar cells under identical nominal heating power. Method X triggers thermal runaway at a higher measured trigger temperature than methods Y and Z, yet triggers sooner, and later reaches the lowest peak cell temperature. Method X also produces the highest peak pressure during the event. Which interpretations are most defensible for method X relative to Y/Z?",
+          "options": [
+            "A A higher trigger temperature does not imply a slower route to thermal runaway; method X can couple heat more locally so onset occurs sooner even if the trigger temperature is higher.",
+            "B The combination \u201cearlier trigger + lower peak temperature\u201d is compatible with less total energy released into the cell during post-runaway heating, without needing X to be \u2018safer\u2019 overall.",
+            "C Because X has the highest peak pressure, it cannot also have the lowest peak temperature; that combination is physically inconsistent.",
+            "D The data are sufficient to conclude method X reduces internal reaction severity; therefore method X is the preferred safety-test method.",
+            "E If X triggers sooner than Y and Z, then its trigger temperature must be lower than both; otherwise the timing comparison is meaningless."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Method X shows higher trigger temperature yet shorter trigger time; localized coupling can reconcile faster triggering with higher local threshold measurement.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u70ed\u5931\u63a7\u52a8\u529b\u5b663:C002",
+                "\u70ed\u5931\u63a7\u52a8\u529b\u5b663:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "X yields lowest peak temperature; earlier trigger doesn\u2019t require higher peak severity, and \u2018safer overall\u2019 isn\u2019t implied.",
+              "error_type": null,
+              "evidence_refs": [
+                "\u70ed\u5931\u63a7\u52a8\u529b\u5b663:C003",
+                "\u70ed\u5931\u63a7\u52a8\u529b\u5b663:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Evidence shows X has highest peak pressure yet lowest peak temperature; the combination is observed and thus not inconsistent.",
+              "error_type": "mechanism_inconsistency_claim",
+              "evidence_refs": [
+                "\u70ed\u5931\u63a7\u52a8\u529b\u5b663:C004",
+                "\u70ed\u5931\u63a7\u52a8\u529b\u5b663:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "From trigger/peak metrics alone, concluding reduced internal reaction severity and recommending a preferred test method overreaches.",
+              "error_type": "engineering_recommendation_leap",
+              "evidence_refs": [
+                "\u70ed\u5931\u63a7\u52a8\u529b\u5b663:C002",
+                "\u70ed\u5931\u63a7\u52a8\u529b\u5b663:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Trigger time and trigger temperature can decouple; evidence explicitly shows earlier triggering with higher trigger temperature for X.",
+              "error_type": "invalid_dependency_assumption",
+              "evidence_refs": [
+                "\u70ed\u5931\u63a7\u52a8\u529b\u5b663:C002",
+                "\u70ed\u5931\u63a7\u52a8\u529b\u5b663:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Regime/metric decoupling: trigger temperature vs trigger time vs peak severity; reconcile apparently contradictory signals; avoid design-recommendation overreach.",
+          "primary_boundary": "Do not assume monotonic linkage between trigger temperature and trigger time; do not infer global safety preference from limited metrics.",
+          "intended_error_modes": [
+            "metric_conflation",
+            "physical_inconsistency_assertion",
+            "recommendation_overreach"
+          ],
+          "disallowed_extrapolations": [
+            "Concluding reduced internal reaction severity from peak temperature alone",
+            "Declaring a heating method 'preferred' without defining test objective and representativeness"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A lab reports that lowering ambient pressure increases thermal-runaway onset temperature (Ttr) but decreases the time between first venting and thermal runaway (tinterval) for the same fully charged cell type. Give a mechanism-consistent safety interpretation that an engineer can defend without claiming more than these two metrics support. State one implication for hazard management."
+        },
+        "ground_truth": {
+          "gold_answer": "An admissible interpretation is that lower pressure shifts the onset condition (higher measured Ttr) while accelerating escalation after venting (shorter tinterval), so risk cannot be judged from Ttr alone. The post-vent window for detection/mitigation shrinks at low pressure even if onset occurs at a higher temperature. A defensible hazard-management implication is to treat vent detection as higher urgency and design mitigation/venting controls for a shorter response time under low-pressure environments.",
+          "must_include": [
+            "Ttr increase does not imply overall safer",
+            "tinterval decreases implies reduced response window post-vent",
+            "Avoid inferring internal kinetics/chemistry change as proven"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming a specific reaction-rate change or oxygen-limited mechanism as the cause",
+            "Generalizing to module/pack propagation outcomes",
+            "Asserting monotonic flame behavior with pressure"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Conservative admissibility framing from two coupled metrics; derive a safety-operational implication without causal overclaim.",
+          "primary_boundary": "No mechanism attribution beyond what metrics support; no scale transfer to packs; no 'higher Ttr = safer' leap.",
+          "intended_error_modes": [
+            "over-causal attribution",
+            "single-metric safety inference",
+            "scope expansion to propagation"
+          ]
+        }
+      }
+    ]
+  }
+}

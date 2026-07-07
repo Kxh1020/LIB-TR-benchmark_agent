@@ -1,0 +1,322 @@
+{
+  "TR_Protection+30+Chemical_Engineering_Journal__TR_Protection+78+Energy__TR_Protection+9+Energy": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery pack uses a composite phase change material (CPCM) layer between cells as its primary thermal protection strategy. The CPCM has a latent heat density of approximately 150 kJ/kg and a thermal conductivity of 5 W/(m\u00b7K). During a thermal runaway event in one cell, the heat release rate exceeds 800 kJ/kg. An engineer evaluates the following statements about the expected system behavior after the CPCM's latent heat is fully consumed. Which of the following statements are admissible conclusions?",
+          "options": [
+            "A. Once the latent heat is exhausted, the high thermal conductivity of the CPCM will accelerate heat transfer to adjacent cells, increasing the risk of propagation.",
+            "B. The CPCM latent heat capacity is sufficient to absorb the heat released during thermal runaway, so propagation to adjacent cells is prevented after the phase change is complete.",
+            "C. If the CPCM material is flammable, its ignition after latent heat exhaustion introduces an additional heat source that intensifies the thermal runaway event.",
+            "D. Reducing CPCM thermal conductivity to 0.5 W/(m\u00b7K) eliminates the propagation risk entirely, because lower conductivity prevents all heat transfer to neighboring cells.",
+            "E. The thermal protection provided by the CPCM is regime-dependent: it is effective while latent heat remains available but becomes a propagation risk after exhaustion if conductivity is high.",
+            "F. The CPCM's performance as a barrier is determined solely by its thermal conductivity, independent of its latent heat capacity."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence directly supports that once latent heat is exhausted, high thermal conductivity of PCM accelerates thermal runaway propagation to adjacent cells.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+9+Energy:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The latent heat density of previously studied PCMs (~150 kJ/kg) is far too low to store the heat released during thermal runaway (~880 kJ/kg), so the CPCM cannot absorb sufficient heat to prevent propagation.",
+              "error_type": "protective_mechanism_overclaim",
+              "evidence_refs": [
+                "TR_Protection+9+Energy:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence states that burning of a flammable PCM introduces additional heat into the battery system, further intensifying thermal runaway.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+9+Energy:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "While lower thermal conductivity extends propagation time significantly (evidence shows 112.7s vs 23.5s), the evidence does not support complete elimination of propagation risk. This is a protective mechanism overclaim.",
+              "error_type": "protective_mechanism_overclaim",
+              "evidence_refs": [
+                "TR_Protection+78+Energy:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "This correctly characterizes the regime-dependent behavior: CPCM absorbs heat during phase change (protective) but once exhausted, high conductivity drives propagation. This combines C004 and C003 evidence into a valid mechanistic conclusion.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+9+Energy:C003",
+                "TR_Protection+9+Energy:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Both latent heat capacity and thermal conductivity govern CPCM behavior at different stages. Latent heat determines absorption capacity; conductivity determines post-exhaustion propagation rate. Single-variable attribution is unsupported.",
+              "error_type": "ignoring_multi_factor_interaction",
+              "evidence_refs": [
+                "TR_Protection+9+Energy:C003",
+                "TR_Protection+9+Energy:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Regime-dependent behavior of PCM thermal protection: protective during phase change, hazardous after latent heat exhaustion",
+          "primary_boundary": "CPCM transitions from protective to propagation-accelerating once latent heat is exhausted; this boundary is crossed when heat release exceeds latent heat capacity",
+          "intended_error_modes": [
+            "Overclaiming that CPCM prevents propagation (B) \u2014 ignores the latent heat mismatch",
+            "Overclaiming that low conductivity eliminates risk entirely (D) \u2014 delays but does not eliminate",
+            "Single-variable attribution ignoring latent heat role (F)"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming CPCM with 150 kJ/kg latent heat can absorb 880 kJ/kg thermal runaway heat",
+            "Claiming low conductivity alone eliminates propagation",
+            "Claiming conductivity alone determines CPCM safety performance"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery pack engineer is comparing two thermal management configurations for preventing thermal runaway propagation across a cooling plate. Configuration A uses a liquid cooling plate with coolant flow speed of 0.009 m/s. Configuration B uses the same plate at 0.013 m/s. A separate design parameter study varies the number of coolant channels from 1 to 5 while holding flow speed constant. The engineer must decide which design parameters most effectively control whether thermal runaway propagates to the far side of the cooling plate. Which of the following conclusions are supported?",
+          "options": [
+            "A. Increasing coolant flow speed from 0.009 m/s to 0.013 m/s changes the system outcome from full-pack thermal runaway propagation to containment on the originating side.",
+            "B. Increasing the number of coolant channels from 1 to 5 produces a comparable reduction in propagation risk as increasing flow speed from 0.009 m/s to 0.013 m/s.",
+            "C. At 0.009 m/s, the cooling plate fails to prevent propagation to the far side because heat transferred through the plate is sufficient to trigger thermal runaway in cells on that side.",
+            "D. The number of coolant channels is the dominant design variable controlling whether thermal runaway crosses the cooling plate, because more channels distribute flow more evenly.",
+            "E. Flow speed exhibits a threshold-like effect on propagation outcome, where a modest increase crosses a critical boundary that channel count variation does not.",
+            "F. Increasing flow speed beyond 0.013 m/s guarantees complete thermal runaway suppression in all cells regardless of pack configuration."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence states that at 0.009 m/s all batteries undergo thermal runaway, while at 0.013 m/s or higher, batteries on the far side do not trigger thermal runaway. This is a direct threshold crossing.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+78+Energy:C002"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Channel count variation from 1 to 5 changes propagation time by only 1.5s (26.2s to 24.7s), a minimal effect. Flow speed change produces a qualitative outcome change (full propagation vs. containment). These effects are not comparable.",
+              "error_type": "false_equivalence_between_parameters",
+              "evidence_refs": [
+                "TR_Protection+78+Energy:C005",
+                "TR_Protection+78+Energy:C002"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence explicitly states that at low flow speed, limited heat dissipation results in more heat transfer through the cooling plate, leading to thermal runaway of cells on the far side.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+78+Energy:C002"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Evidence shows channel count has minimal influence on total propagation time (24.7s vs 26.2s), while flow speed determines whether far-side propagation occurs at all. Channel count is not the dominant variable.",
+              "error_type": "mechanism_substitution",
+              "evidence_refs": [
+                "TR_Protection+78+Energy:C005",
+                "TR_Protection+78+Energy:C002"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Flow speed exhibits a threshold effect: below 0.013 m/s full propagation occurs; at or above it, far-side propagation is prevented. Channel count variation produces only a small continuous change in propagation time without a qualitative threshold crossing.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+78+Energy:C002",
+                "TR_Protection+78+Energy:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Evidence only supports that flow speeds at or above 0.013 m/s prevent far-side propagation in the tested configuration. Guaranteeing complete suppression in all pack configurations is an unsupported extrapolation beyond the evidence scope.",
+              "error_type": "scope_expansion_beyond_evidence",
+              "evidence_refs": [
+                "TR_Protection+78+Energy:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Identification of which cooling plate design parameter (flow speed vs. channel count) controls the qualitative propagation outcome, and recognition of threshold vs. continuous behavior",
+          "primary_boundary": "Flow speed has a threshold effect on propagation outcome; channel count has only a marginal continuous effect on propagation time",
+          "intended_error_modes": [
+            "Equating channel count effect with flow speed effect (B)",
+            "Misidentifying channel count as dominant variable (D)",
+            "Overgeneralizing the flow speed threshold to all pack configurations (F)"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming channel count controls far-side propagation outcome",
+            "Claiming flow speed above threshold guarantees suppression in all configurations",
+            "Treating the 0.013 m/s threshold as universally applicable"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A cathode design uses a double layer architecture where an LFP layer is deposited over an NCM active material, producing an NCM/LFP||graphite cell. At 100% SOC, this cell is subjected to nail penetration testing. The pristine NCM||graphite cell ignites immediately upon penetration. The double layer cell shows only a voltage disturbance and does not ignite. Separately, differential scanning calorimetry shows that the double layer cell has a higher onset temperature for exothermic reactions than the pristine NCM cell. An engineer evaluates the safety implications of this design. Which of the following conclusions are admissible?",
+          "options": [
+            "A. The double layer design reduces the severity of the nail penetration response at 100% SOC, consistent with the LFP surface layer moderating the electrochemical reaction at the penetration site.",
+            "B. The higher onset temperature of the double layer cell compared to the pristine NCM cell indicates that the SEI film formed on the double layer cathode is more thermally stable.",
+            "C. Because the double layer cell passes the nail penetration test without fire, it can be concluded that the double layer design eliminates all thermal runaway risk under any abuse condition.",
+            "D. The thermal runaway temperature of the double layer cell is substantially higher than that of the pristine NCM cell, demonstrating that the double layer design delays but does not necessarily prevent thermal runaway under sufficiently severe heating.",
+            "E. The improved nail penetration performance of the double layer cell proves that LFP is always a safer cathode material than NCM under all operating conditions.",
+            "F. The onset temperature difference between the two cell designs is small enough that it may reflect differences in SEI stability rather than a fundamental change in the thermal runaway mechanism."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "D",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The nail penetration result (voltage jitter only, no fire) compared to immediate combustion of pristine NCM supports that the LFP surface layer moderates the response. This is a mechanistically grounded admissible conclusion.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+30+Chemical_Engineering_Journal:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Evidence explicitly states that the higher onset temperature of the double layer cell indicates more stable SEI film formed on the double layer cathode.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+30+Chemical_Engineering_Journal:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Passing a nail penetration test at 100% SOC does not eliminate all thermal runaway risk under all abuse conditions. This is an unsupported overclaim that extends a single test result to universal safety.",
+              "error_type": "protective_mechanism_overclaim",
+              "evidence_refs": [
+                "TR_Protection+30+Chemical_Engineering_Journal:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Evidence shows the thermal runaway temperature is delayed by 193\u00b0C in the double layer design. The word 'delayed' implies the event still occurs under sufficient heating, making this a correct characterization of the safety benefit as delay rather than elimination.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+30+Chemical_Engineering_Journal:C002",
+                "TR_Protection+30+Chemical_Engineering_Journal:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The improved nail penetration result is specific to the double layer architecture at 100% SOC. Generalizing this to claim LFP is always safer than NCM under all conditions is an overgeneralization beyond the evidence scope and ignores the composite nature of the tested design.",
+              "error_type": "overgeneralization",
+              "evidence_refs": [
+                "TR_Protection+30+Chemical_Engineering_Journal:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "The onset temperature difference is 5\u00b0C (85\u00b0C vs 90\u00b0C), which is a modest difference. The evidence attributes this to SEI stability differences. This is an admissible conservative interpretation that the small difference reflects SEI stability rather than a fundamental mechanistic change.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+30+Chemical_Engineering_Journal:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of safety conclusions from nail penetration and calorimetry results for a double layer cathode design",
+          "primary_boundary": "Passing a specific abuse test supports improved performance under that condition but does not justify universal safety claims; thermal runaway is delayed not eliminated",
+          "intended_error_modes": [
+            "Overclaiming that passing nail test eliminates all TR risk (C)",
+            "Overgeneralizing LFP superiority from a composite architecture result (E)"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming double layer design eliminates thermal runaway under all conditions",
+            "Claiming LFP is universally safer than NCM based on double layer architecture test",
+            "Treating a 5\u00b0C onset temperature difference as evidence of a fundamentally different thermal runaway mechanism"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A battery pack thermal management system uses a composite phase change material (CPCM) with a thermal conductivity of 6 W/(m\u00b7K) between cells. During a thermal runaway event, the total propagation time across the pack is measured at approximately 23.5 seconds. An engineer proposes replacing the CPCM with a version having thermal conductivity of 0.5 W/(m\u00b7K), expecting this change to both slow propagation and reduce the peak temperature experienced by the CPCM surrounding the initiating cell. A colleague argues that the low-conductivity CPCM will create a more dangerous local thermal environment around the initiating cell even while slowing propagation. Evaluate both claims. Which claim is better supported, and what is the key trade-off that must be acknowledged when selecting CPCM thermal conductivity for thermal runaway protection?"
+        },
+        "ground_truth": {
+          "gold_answer": "Both claims are partially correct, but they describe different aspects of the same trade-off. The engineer is correct that reducing thermal conductivity from 6 W/(m\u00b7K) to 0.5 W/(m\u00b7K) substantially extends total propagation time (from approximately 23.5s to 112.7s), which is a meaningful safety benefit for preventing propagation to neighboring cells. However, the colleague is also correct: at low thermal conductivity, heat cannot dissipate rapidly from the initiating cell's vicinity, causing the maximum CPCM temperature around that cell to reach approximately 750.7 K with a large temperature gradient, compared to only approximately 552 K at high conductivity. The key trade-off is that low thermal conductivity slows propagation by reducing heat transfer to neighboring cells, but simultaneously creates a more severe and concentrated thermal environment around the initiating cell due to poor local heat dissipation. High thermal conductivity distributes heat more uniformly and reduces local peak temperatures but accelerates propagation. Neither extreme is unconditionally superior; the optimal selection depends on whether the primary design objective is limiting local severity or preventing system-wide propagation.",
+          "must_include": [
+            "Reducing thermal conductivity from 6 to 0.5 W/(m\u00b7K) increases total propagation time substantially",
+            "Low thermal conductivity results in higher maximum CPCM temperature around the initiating cell (approximately 750.7 K vs 552 K)",
+            "High thermal conductivity produces more uniform temperature distribution but faster propagation",
+            "The trade-off is between local thermal severity at the initiating cell and propagation rate to neighboring cells",
+            "Neither low nor high conductivity is unconditionally safer without specifying the design objective"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming low conductivity eliminates propagation risk entirely",
+            "Claiming high conductivity is always preferable because it reduces local peak temperature",
+            "Asserting a specific optimal conductivity value not supported by the evidence",
+            "Concluding that the CPCM can absorb all heat from thermal runaway based on conductivity alone without considering latent heat capacity"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Trade-off between CPCM thermal conductivity and the dual outcomes of propagation rate and local peak temperature severity",
+          "primary_boundary": "Low conductivity slows propagation but worsens local thermal environment; high conductivity improves local heat distribution but accelerates propagation \u2014 these effects are mechanistically coupled and cannot be optimized simultaneously without specifying the design objective",
+          "intended_error_modes": [
+            "Claiming low conductivity is unconditionally better because it slows propagation",
+            "Ignoring the local peak temperature penalty of low conductivity",
+            "Treating conductivity as the sole determinant of CPCM safety performance without considering latent heat"
+          ]
+        }
+      }
+    ]
+  }
+}

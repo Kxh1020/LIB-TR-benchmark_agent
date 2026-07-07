@@ -1,0 +1,131 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An LFP cell under thermal abuse in a sealed canister shows a small surface temperature drop of approximately 2°C at around 182°C, followed by a sharp pressure increase from roughly 1.9 to 4.5 bar, before eventually entering thermal runaway above 200°C with a peak pressure exceeding 31 bar. A process safety engineer reviewing this sequence must determine which conclusions about the intermediate pressure event are admissible. Which of the following statements are supported by this described behavior?",
+        "options": [
+          "A. The pressure increase from 1.9 to 4.5 bar is caused by gas release through the cell vent, not by the onset of thermal runaway reactions.",
+          "B. The temperature drop at 182°C indicates that the cell has dissipated enough heat to prevent thermal runaway from occurring.",
+          "C. The intermediate pressure event and the thermal runaway event are distinct sequential stages, with the vent opening occurring before thermal runaway onset.",
+          "D. The peak pressure rise rate of 290 bar/s is associated with the vent opening event at 182°C, not with the thermal runaway phase.",
+          "E. The canister confinement converts gas released during venting into a measurable pressure signal, making the vent opening detectable as a pressure event even before thermal runaway.",
+          "F. Because the surface temperature drops at vent opening, the internal cell temperature must also be decreasing at that moment."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence directly links the 1.9–4.5 bar rise to vent opening gas release, prior to thermal runaway onset above 200°C.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C001",
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The temperature drop is a surface evaporative/gas-release effect; thermal runaway still occurs above 200°C, so no prevention is implied.",
+            "error_type": "causal overclaim — interpreting a transient surface cooling as thermal runaway prevention",
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C001",
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Vent opening occurs at 182°C and thermal runaway onset is above 200°C; the evidence sequence supports these as distinct stages.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C001",
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The 290 bar/s pressure rise rate is explicitly associated with thermal runaway, not the vent opening event at 182°C.",
+            "error_type": "event misattribution — assigning thermal runaway rate to the earlier vent opening stage",
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Sealed canister confinement is the mechanism by which released gas produces a measurable pressure signal; this is a necessary implication of the described setup.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Surface temperature drop does not imply internal temperature decrease; surface measurement cannot be extrapolated to internal state during gas venting.",
+            "error_type": "measurement scope violation — inferring internal state from surface signal",
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinguishing vent opening as a precursor event from thermal runaway onset, and identifying what surface/pressure signals can and cannot indicate about internal state.",
+        "primary_boundary": "Surface temperature drop at vent opening does not indicate thermal runaway prevention; the 290 bar/s rate belongs to thermal runaway, not venting.",
+        "intended_error_modes": [
+          "Interpreting transient surface cooling as thermal arrest",
+          "Misattributing peak pressure rise rate to the earlier venting event",
+          "Inferring internal temperature from surface temperature during venting"
+        ],
+        "disallowed_extrapolations": [
+          "Surface temperature drop implies internal cooling",
+          "Vent opening prevents thermal runaway",
+          "Peak pressure rate is associated with vent opening"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "LFP cells are tested under identical thermal abuse conditions in a sealed canister with one, two, and three cells present. The measured vented gas volumes are approximately proportional to the number of cells. A process safety engineer proposes using this proportionality to predict the vented gas volume for a 20-cell confined module under the same abuse conditions. Separately, the engineer notes that NMC cells produce approximately three times the peak pressure of LFP cells under the same confinement. Explain: (1) under what conditions the proportional scaling of vented gas volume from LFP cells is admissible for the 20-cell module prediction, (2) what the primary limitation of this extrapolation is, and (3) whether the NMC-to-LFP pressure ratio can be directly applied to predict NMC module pressure from LFP module pressure data."
+      },
+      "ground_truth": {
+        "gold_answer": "The proportional scaling of vented gas volume is admissible only if the 20-cell module operates under the same confinement geometry and heating abuse conditions as the 1–3 cell tests, since the proportionality was established only under those specific conditions. The primary limitation is that the evidence base covers only 1–3 cells; extrapolating to 20 cells assumes no change in confinement behavior, thermal interaction between cells, or gas retention effects at larger scale — none of which are confirmed by the evidence. Cell-to-cell thermal interactions in a larger module could alter individual cell behavior, violating the independence assumption underlying proportionality. Regarding the NMC-to-LFP pressure ratio: the approximately 3× ratio was established at the single-cell level under identical confinement. Applying this ratio to module-level predictions requires assuming that the ratio is preserved at scale, which is not supported by the evidence. Module-level pressure depends on total gas volume, confinement geometry, and thermal propagation dynamics, all of which may differ between chemistries at scale. The ratio is therefore not directly transferable to module-level predictions without additional evidence.",
+        "must_include": [
+          "Proportional scaling is admissible only under the same confinement and heating abuse conditions as the original tests",
+          "Extrapolation to 20 cells exceeds the evidence base of 1–3 cells and assumes no change in inter-cell thermal interaction",
+          "The 3× NMC-to-LFP pressure ratio was established at single-cell level and cannot be directly applied to module-level predictions without additional evidence",
+          "Module-level pressure depends on factors beyond single-cell pressure ratio, including confinement geometry and propagation dynamics"
+        ],
+        "disallowed_extrapolations": [
+          "Proportionality holds at any scale regardless of confinement or interaction effects",
+          "The 3× pressure ratio is a universal scaling factor applicable to modules",
+          "Single-cell gas volume proportionality implies identical behavior at module scale"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Scale transfer admissibility for gas volume proportionality and pressure ratio, distinguishing cell-level evidence from module-level prediction validity.",
+        "primary_boundary": "Proportionality established over 1–3 cells under specific conditions cannot be directly extended to 20-cell modules without accounting for inter-cell interactions and changed confinement dynamics; the NMC/LFP pressure ratio is a cell-level result not transferable to module scale without additional evidence.",
+        "intended_error_modes": [
+          "Treating cell-level proportionality as a universal scaling law",
+          "Applying single-cell pressure ratios directly to module-level predictions",
+          "Ignoring inter-cell thermal interaction effects at larger scale"
+        ]
+      }
+    }
+  ]
+}

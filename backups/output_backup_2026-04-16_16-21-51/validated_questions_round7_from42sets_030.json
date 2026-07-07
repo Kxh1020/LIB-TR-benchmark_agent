@@ -1,0 +1,306 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery safety engineer is evaluating overcharge abuse scenarios for two pouch cell chemistries tested at the same 1C charge rate in an identical enclosed room. The LFP chemistry reaches thermal runaway in 14 minutes; the NMC chemistry requires 42–45 minutes. The engineer must determine which conclusions about the relative overcharge hazard timeline are admissible. Which of the following statements are supported by this comparison?",
+        "options": [
+          "A. Under 1C overcharge, LFP pouch cells present a shorter warning window before thermal runaway than NMC pouch cells, requiring faster detection and response systems.",
+          "B. The faster onset of thermal runaway in LFP cells under overcharge implies that LFP cells release more total energy during the event than NMC cells.",
+          "C. Because LFP cells reach thermal runaway roughly three times faster than NMC cells under the same overcharge rate, time-based overcharge protection thresholds calibrated for NMC would be inadequate for LFP.",
+          "D. The shorter time-to-thermal-runaway for LFP cells under overcharge indicates that LFP cells have higher peak cell temperatures during the event than NMC cells.",
+          "E. The difference in time-to-thermal-runaway between LFP and NMC under 1C overcharge cannot be attributed solely to chemistry differences without controlling for cell geometry and capacity."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "A shorter time-to-TR directly reduces the available detection and intervention window; this is a direct admissible implication of the timing comparison.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Time-to-TR does not imply total energy release; NMC cells show higher peak temperatures, contradicting an energy-release overclaim for LFP.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C001",
+              "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "A threefold difference in time-to-TR means NMC-calibrated time thresholds would not trigger before LFP thermal runaway; this is a direct admissible engineering implication.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence shows LFP peak temperatures (278–286°C) are far lower than NMC (505–669°C), so faster onset does not imply higher peak temperature.",
+            "error_type": "mechanism_confusion",
+            "evidence_refs": [
+              "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C003",
+              "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "While epistemically cautious, this option overclaims uncertainty: the evidence explicitly controls for overcharge rate and room conditions, making the chemistry comparison admissible within those bounds.",
+            "error_type": "conservative_but_wrong_scope_expansion",
+            "evidence_refs": [
+              "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissible implications of time-to-thermal-runaway differences between LFP and NMC under controlled overcharge conditions",
+        "primary_boundary": "Time-to-TR governs detection window and protection calibration but does not imply peak temperature or total energy release magnitude",
+        "intended_error_modes": [
+          "causal_overclaim linking speed to energy magnitude",
+          "mechanism confusion linking onset speed to peak temperature",
+          "conservative distractor overclaiming uncontrolled confounds"
+        ],
+        "disallowed_extrapolations": [
+          "inferring energy release from time-to-TR",
+          "inferring peak temperature from time-to-TR",
+          "dismissing chemistry comparison due to unstated geometry differences when conditions are controlled"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is designing thermal runaway mitigation strategies for two cylindrical 21700 cell formats: one NCA chemistry and one with an internal current interrupt device (CID). During thermal abuse testing, NCA cells at SOC ≥ 50% produce jet flames, spark fountains, and electrode ejection, while NCA cells at SOC = 10% produce only smoke and heat. CID-equipped cylindrical cells, when overcharged at the same rate, have the CID activate at approximately 10 minutes and do not progress to thermal runaway. Which conclusions are admissible when comparing these two cell types and abuse modes?",
+        "options": [
+          "A. The CID mechanism addresses overcharge-induced thermal runaway in cylindrical cells but provides no demonstrated protection against thermally triggered runaway in the same cells.",
+          "B. Reducing NCA cell SOC to 10% before thermal abuse eliminates the risk of jet flame and structural ejection events, making SOC management an effective substitute for CID protection.",
+          "C. The SOC-dependent severity transition in NCA cells between 10% and 50% indicates that the governing failure mechanism changes character across this range rather than scaling continuously.",
+          "D. Because CID activation prevents thermal runaway under overcharge, the same protection mechanism can be expected to suppress thermal runaway triggered by external heating.",
+          "E. An NCA cell at SOC = 100% subjected to thermal abuse poses a qualitatively different structural and fire hazard than the same cell at SOC = 10%, based on the described behavioral differences.",
+          "F. The absence of thermal runaway in CID-equipped cells during overcharge testing confirms that CID activation is sufficient to prevent all forms of thermal runaway regardless of abuse type."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence shows CID prevents overcharge-induced TR; no evidence supports CID effectiveness against thermal abuse, making this a bounded admissible conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Low SOC reduces severity under thermal abuse but does not eliminate all hazard pathways; claiming it substitutes for CID conflates abuse modes and overstates SOC management scope.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The qualitative jump from smoke-only at 10% SOC to jet flames and ejection at 50% SOC indicates a threshold-type regime change, not a continuous scaling of the same mechanism.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "CID is an electrical interrupt; its activation mechanism is pressure/current-based and specific to overcharge. Extrapolating its effectiveness to thermal abuse is unsupported.",
+            "error_type": "scope_expansion_beyond_evidence",
+            "evidence_refs": [
+              "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Jet flames, spark fountains, and electrode ejection at high SOC versus smoke-only at low SOC represent qualitatively distinct hazard profiles, directly supported by evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "CID effectiveness is demonstrated only for overcharge abuse; claiming it prevents all TR forms is an unsupported universal extrapolation from a single abuse mode result.",
+            "error_type": "overgeneralization",
+            "evidence_refs": [
+              "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Abuse-mode specificity of CID protection and SOC-dependent regime transitions in NCA thermal runaway severity",
+        "primary_boundary": "CID protection is demonstrated only for overcharge; SOC reduction changes hazard regime but does not substitute for electrical protection mechanisms",
+        "intended_error_modes": [
+          "protective mechanism overclaim extending CID to thermal abuse",
+          "mechanism substitution treating SOC management as equivalent to CID",
+          "overgeneralization of CID to all TR types"
+        ],
+        "disallowed_extrapolations": [
+          "CID effectiveness under thermal abuse",
+          "SOC management as complete hazard elimination",
+          "continuous severity scaling between SOC regimes"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A process safety analyst is comparing LFP and NMC pouch cell thermal runaway behavior under thermal abuse at SOC = 100%. LFP cells reach maximum temperatures of 278–286°C and do not ignite regardless of SOC. NMC cells reach 505–548°C under thermal abuse and 585–669°C under electrical abuse at the same SOC. The analyst must classify which conclusions about chemistry-dependent fire risk and abuse-mode sensitivity are defensible.",
+        "options": [
+          "A. The absence of ignition in LFP cells across all SOC levels under thermal abuse suggests that LFP pouch cells do not produce sufficient heat or reactive gas to support combustion under those conditions.",
+          "B. The higher peak temperature of NMC cells under electrical abuse compared to thermal abuse at the same SOC indicates that the exothermic reactions triggered by overcharging are more intense than those triggered by external heating alone.",
+          "C. Because LFP cells do not ignite during thermal runaway, they can be considered safe for use in enclosed spaces without additional fire suppression measures.",
+          "D. The temperature gap between LFP and NMC thermal runaway peaks at SOC = 100% is large enough that a single fixed temperature threshold for fire detection would perform differently for the two chemistries.",
+          "E. The difference in NMC peak temperatures between thermal and electrical abuse modes implies that abuse mode must be considered when sizing thermal management or suppression systems for NMC installations.",
+          "F. LFP cells reaching lower peak temperatures than NMC cells under identical abuse conditions proves that LFP chemistry has a fundamentally lower energy density."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "D",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "Non-ignition is observed but attributing it specifically to insufficient heat or reactive gas is a mechanistic overclaim not supported by the evidence; absence of sparks is cited as the cause.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "NMC electrical abuse temperatures (585–669°C) exceed thermal abuse temperatures (505–548°C) at the same SOC, directly supporting greater exothermic intensity under electrical abuse.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Non-ignition under thermal abuse does not eliminate all hazards in enclosed spaces; gas venting and pressure effects remain unaddressed by this claim.",
+            "error_type": "protective_mechanism_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "LFP peaks at 278–286°C versus NMC at 505–548°C represent a ~220°C gap; a single fixed threshold optimized for one chemistry would be poorly matched to the other.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C003",
+              "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "An ~80–120°C difference in NMC peak temperature between abuse modes at the same SOC is a direct engineering input for sizing thermal management and suppression systems.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Peak thermal runaway temperature reflects reaction kinetics and thermal stability, not electrochemical energy density; conflating these two properties is a mechanism confusion error.",
+            "error_type": "mechanism_confusion",
+            "evidence_refs": [
+              "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C003",
+              "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissible fire risk and system design conclusions from chemistry-dependent and abuse-mode-dependent peak temperature differences",
+        "primary_boundary": "Peak temperature differences support detection threshold and suppression sizing conclusions but do not imply energy density relationships or unconditional safety",
+        "intended_error_modes": [
+          "causal overclaim on ignition mechanism",
+          "system-level safety overclaim from component non-ignition",
+          "mechanism confusion between peak TR temperature and energy density"
+        ],
+        "disallowed_extrapolations": [
+          "LFP non-ignition implies no hazard in enclosed spaces",
+          "peak TR temperature as proxy for electrochemical energy density",
+          "single abuse-mode result generalizing to all abuse modes"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A facility stores both NCA 21700 cylindrical cells and LFP pouch cells. During a fire risk assessment, the engineer notes that NCA cells at SOC = 10% produce only smoke and heat during thermal runaway, while the same cells at SOC ≥ 50% produce jet flames, electrode ejection, and possible cell explosion. LFP pouch cells, regardless of SOC, do not ignite during thermal runaway. The engineer proposes that SOC management alone—keeping all NCA cells below 50% SOC and all LFP cells at any SOC—is sufficient to eliminate structural and fire hazards from thermal runaway in this facility. Identify the key limitations of this proposal and explain what hazards remain unaddressed, referencing the mechanisms and conditions that govern the observed behaviors."
+      },
+      "ground_truth": {
+        "gold_answer": "The proposal has two critical limitations. First, for NCA cells, maintaining SOC below 50% reduces the severity of thermal runaway from explosive and flame-producing events to smoke and heat release, but it does not eliminate thermal runaway itself or the associated gas and heat hazards. Smoke gas release and heat emission at low SOC still represent fire and toxicity risks in an enclosed facility, particularly if multiple cells are involved. The SOC threshold governs the character of the failure mode—not whether failure occurs. Second, for LFP cells, the absence of ignition is a consistent observation across SOC levels, but non-ignition does not mean no hazard: gas venting, pressure buildup, and heat release during thermal runaway can still pose risks in enclosed spaces, and the evidence does not support claiming these hazards are absent. Additionally, the proposal addresses only thermal abuse scenarios; it does not account for overcharge abuse, where the relevant protection mechanism for cylindrical cells is the CID device rather than SOC management. SOC management and electrical protection mechanisms address different failure pathways and cannot be treated as interchangeable.",
+        "must_include": [
+          "SOC below 50% reduces NCA thermal runaway severity but does not prevent thermal runaway or eliminate smoke and heat hazards",
+          "Non-ignition in LFP cells does not imply absence of gas venting or pressure hazards",
+          "SOC management addresses thermal abuse severity but not overcharge-initiated failure pathways",
+          "The SOC threshold in NCA cells defines a regime change in failure mode character, not a binary safe/unsafe boundary"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming SOC below 50% prevents thermal runaway in NCA cells",
+          "Claiming LFP non-ignition means LFP cells are hazard-free in enclosed spaces",
+          "Treating CID protection and SOC management as addressing the same failure mechanism",
+          "Generalizing the SOC = 10% NCA behavior as representative of all sub-50% SOC conditions without qualification"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Boundaries of SOC management as a hazard mitigation strategy across chemistry types and abuse modes",
+        "primary_boundary": "SOC management modifies failure mode severity and character in NCA cells but does not eliminate thermal runaway or address overcharge pathways; LFP non-ignition does not imply absence of all thermal runaway hazards",
+        "intended_error_modes": [
+          "Treating severity reduction as hazard elimination",
+          "Conflating non-ignition with complete safety",
+          "Substituting SOC management for abuse-mode-specific protection mechanisms such as CID"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Two 100% SOC NCM 811 pouch cells are arranged in a module with a barrier material between them. In a baseline test with no barrier, the second cell undergoes thermal runaway 105 seconds after the first, triggering at 196.2°C and reaching a peak temperature of 792.6°C—higher than the first cell's peak of 701.6°C. In a second test, a 1 mm thick neat epoxy resin (EP) barrier is inserted between the cells. The first cell undergoes thermal runaway at a similar time, but the second cell undergoes thermal runaway only 52 seconds after the first. In a third test, a 3 mm thick EP composite containing 3.0 wt% of a flame-retardant MoS2 filler (EP/PR-MoS2-3) is used as the barrier. In this test, no thermal runaway occurs in the second cell, which reaches a maximum temperature of 91.1°C. Post-test electrochemical characterization shows that the second cell in the EP-3 test has a charge transfer resistance approximately 60 times higher and a lithium-ion diffusion coefficient approximately 3600 times lower than the second cell in the EP/PR-MoS2-3 test, despite only a 25°C difference in their maximum surface temperatures. Which of the following statements are admissible conclusions from these observations?",
+        "options": [
+          "A. The neat EP barrier accelerates thermal runaway propagation relative to the no-barrier case because its combustion adds heat to the environment surrounding the second cell, reducing the time available for heat dissipation.",
+          "B. The 25°C difference in maximum surface temperature between the two surviving cells is sufficient to explain the large difference in their electrochemical degradation, because electrochemical degradation is highly sensitive to peak temperature in this range.",
+          "C. The EP/PR-MoS2-3 barrier's effectiveness in stopping propagation cannot be attributed solely to increased thickness, because the neat EP barrier at 1 mm already demonstrates that thickness without flame retardancy accelerates rather than delays propagation.",
+          "D. The electrochemical characterization data imply that surface temperature measurement alone is not a reliable indicator of internal electrochemical damage state when comparing cells exposed to barriers with different thermal and combustion properties.",
+          "E. The second cell's higher peak temperature in the no-barrier case compared to the first cell indicates that thermal runaway in NCM 811 cells is self-amplifying through a positive feedback mechanism that is independent of barrier material.",
+          "F. The flame-retardant filler in EP/PR-MoS2-3 prevents thermal runaway propagation primarily by increasing the thermal mass of the barrier rather than by modifying its combustion behavior.",
+          "G. A barrier material that undergoes combustion when exposed to thermal runaway heat can function as a net heat source rather than a heat sink for the adjacent cell, making its presence worse than no barrier under certain conditions."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that EP's thermal breakdown and combustion increases the heat surrounding battery 2, accelerating propagation. The reduction of Δt1 from 105 s to 52 s with the EP barrier directly supports this causal mechanism.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+201+Chemical_Engineering_Journal:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The evidence shows that a 25°C difference in maximum surface temperature corresponds to approximately 60-fold difference in charge transfer resistance and 3600-fold difference in diffusion coefficient. This is not consistent with temperature sensitivity alone explaining the difference; the evidence instead implies that the nature of heat exposure (duration, internal heat distribution, or other factors) differs between the two cases beyond what surface temperature captures. Attributing the difference to temperature sensitivity in this range is an unsupported causal claim.",
+            "error_type": "causal_overclaim_attributing_complex_outcome_to_single_variable",
+            "evidence_refs": [
+              "TR_Protection+201+Chemical_Engineering_Journal:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The neat EP barrier at 1 mm accelerates propagation rather than delaying it. Therefore, simply increasing EP thickness without flame retardancy would not produce the observed stopping behavior. The effectiveness of EP/PR-MoS2-3 must involve the flame-retardant properties, not thickness alone. This is a multi-step reasoning conclusion: thickness without flame retardancy → acceleration; therefore flame retardancy is a necessary contributor.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+201+Chemical_Engineering_Journal:C001",
+              "TR_Protection+201+Chemical_Engineering_Journal:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The evidence shows that two cells with only 25°C difference in maximum surface temperature have dramatically different internal electrochemical states (60× and 3600× differences in key parameters). This directly supports the conclusion that surface temperature is an unreliable indicator of internal damage when barrier combustion properties differ.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+201+Chemical_Engineering_Journal:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The second cell's higher peak temperature in the no-barrier case may reflect accumulated heat from the first cell's runaway plus the second cell's own exothermic reactions, but attributing this to a self-amplifying mechanism independent of barrier material is an overclaim. The evidence does not isolate this as a cell-chemistry-intrinsic positive feedback independent of external heat input. The comparison is between different barrier conditions, not a controlled test of intrinsic amplification.",
+            "error_type": "causal_overclaim_from_correlation",
+            "evidence_refs": [
+              "TR_Protection+201+Chemical_Engineering_Journal:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence attributes EP/PR-MoS2-3 effectiveness to its 'superior flame retardant and thermal insulation properties,' not primarily to thermal mass. Furthermore, the neat EP barrier demonstrates that a combustible barrier of similar or lower mass can accelerate propagation, which is inconsistent with thermal mass being the primary mechanism.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Protection+201+Chemical_Engineering_Journal:C001",
+              "TR_Protection+201+Chemical_Engineering_Journal:C002"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "The neat EP barrier reduces Δt1 from 105 s to 52 s, meaning the second cell undergoes thermal runaway faster with the barrier than without it. This directly demonstrates that a combustible barrier can function as a net heat source, making its presence worse than no barrier. This is counterintuitive because barriers are generally expected to provide protection.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+201+Chemical_Engineering_Journal:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of conclusions about barrier material behavior during thermal runaway propagation, specifically the counterintuitive result that a combustible barrier can accelerate propagation, and the diagnostic limitation of surface temperature as an indicator of internal damage.",
+        "primary_boundary": "The boundary between a barrier as a passive thermal insulator versus an active heat source when it undergoes combustion; and the boundary between surface temperature as a proxy for internal state when barrier combustion properties differ.",
+        "intended_error_modes": [
+          "Selecting B by assuming 25°C surface temperature difference explains electrochemical degradation difference",
+          "Selecting F by attributing effectiveness to thermal mass rather than flame retardancy",
+          "Missing G because it is counterintuitive that a barrier makes propagation worse"
+        ],
+        "disallowed_extrapolations": [
+          "Do not infer that thickness alone determines barrier effectiveness",
+          "Do not infer that surface temperature fully characterizes internal electrochemical damage state",
+          "Do not attribute the second cell's higher peak temperature in no-barrier case to an intrinsic cell-level amplification mechanism without evidence"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "In a battery module, a 1 mm thick neat epoxy resin barrier is placed between two 100% SOC NCM 811 pouch cells. Experimental data show that when this barrier is present, the second cell undergoes thermal runaway 52 seconds after the first cell, compared to 105 seconds in the absence of any barrier. Separately, electrochemical data from a different test show that two cells exposed to barriers of different flame-retardant properties have maximum surface temperatures differing by only 25°C, yet their charge transfer resistances differ by approximately 60-fold and their lithium-ion diffusion coefficients differ by approximately 3600-fold. \n\nA module safety engineer proposes the following: 'Any solid barrier between cells will improve safety by slowing thermal runaway propagation, and surface temperature monitoring after a propagation event is sufficient to assess whether the surviving cell has sustained significant internal damage.' \n\nIdentify the two specific engineering errors in this proposal, explain the physical mechanism underlying each error, and state what additional information or measurement would be needed to correct each error."
+      },
+      "ground_truth": {
+        "gold_answer": "Error 1: The claim that any solid barrier improves safety by slowing propagation is incorrect. A combustible barrier without flame-retardant properties can accelerate thermal runaway propagation rather than delay it. The mechanism is that when the barrier material undergoes thermal breakdown and combustion upon exposure to heat from the first cell's thermal runaway, it releases additional heat into the environment surrounding the second cell. This added heat reduces the time available before the second cell reaches its thermal runaway trigger temperature, making propagation faster than in the no-barrier case. To correct this error, the engineer needs to characterize the combustion behavior of the barrier material (e.g., peak heat release rate, ignitability) under conditions representative of thermal runaway heat exposure, and select barrier materials with demonstrated flame-retardant properties rather than assuming any solid barrier is protective.\n\nError 2: The claim that surface temperature monitoring is sufficient to assess internal electrochemical damage is incorrect. The evidence shows that cells with only a 25°C difference in maximum surface temperature can have dramatically different internal electrochemical states, with charge transfer resistance and lithium-ion diffusion coefficient differing by factors of approximately 60 and 3600 respectively. The mechanism underlying this discrepancy is that surface temperature is an indirect and spatially averaged measurement that does not capture the duration, spatial distribution, or internal thermal gradients experienced by the electrodes and electrolyte. Barriers with different thermal and combustion properties alter the heat transfer pathway to the cell interior in ways that are not fully reflected in the peak surface temperature. To correct this error, post-event electrochemical characterization (such as impedance spectroscopy to measure charge transfer resistance and diffusion coefficients) is required to assess internal damage state, and surface temperature alone should not be used as the sole diagnostic criterion.",
+        "must_include": [
+          "combustible barrier adds heat to surrounding environment, accelerating propagation rather than delaying it",
+          "neat EP barrier reduces propagation delay time compared to no barrier (105 s reduced to 52 s)",
+          "surface temperature is an unreliable indicator of internal electrochemical damage state",
+          "25°C surface temperature difference corresponds to orders-of-magnitude differences in charge transfer resistance and diffusion coefficient",
+          "electrochemical characterization (impedance spectroscopy or equivalent) is needed to assess internal damage",
+          "flame-retardant properties of barrier material must be characterized, not assumed protective"
+        ],
+        "disallowed_extrapolations": [
+          "Do not claim that all barriers accelerate propagation; only combustible barriers without flame retardancy are shown to do so",
+          "Do not claim that surface temperature is never useful; only that it is insufficient alone for internal damage assessment",
+          "Do not specify a particular threshold temperature above which internal damage occurs, as this is not supported by the evidence",
+          "Do not generalize the 60-fold and 3600-fold differences to other chemistries or SOC levels"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Identification and mechanistic explanation of two distinct engineering errors: (1) assuming any barrier improves safety regardless of its combustion behavior, and (2) assuming surface temperature adequately characterizes internal electrochemical damage state.",
+        "primary_boundary": "The boundary between a barrier as a passive thermal insulator and an active heat source when combustible; and the boundary between surface temperature as a proxy measurement and direct electrochemical characterization of internal state.",
+        "intended_error_modes": [
+          "Identifying only one of the two errors",
+          "Correctly identifying the barrier combustion error but attributing it to thickness rather than flame-retardant properties",
+          "Correctly identifying the surface temperature limitation but failing to specify what measurement would correct it",
+          "Overgeneralizing to claim all barriers are harmful or that surface temperature is never informative"
+        ]
+      }
+    }
+  ]
+}

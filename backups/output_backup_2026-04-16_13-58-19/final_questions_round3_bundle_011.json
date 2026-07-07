@@ -1,0 +1,113 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is designing a thermal management system for a battery module intended for a fast-charging electric vehicle application. The module uses large-format pouch cells. The engineer is comparing three cooling architectures: forced air cooling, indirect liquid cooling with optimized cold plates, and direct immersion cooling. Available performance data indicate that forced air systems provide heat transfer coefficients of 10–50 W/m²·K, optimized liquid cold plates reach 200–1000 W/m²·K, and immersion cooling can reduce peak cell temperature by up to 40% compared to air-cooled and indirect liquid-cooled systems under controlled pack-level conditions. Additionally, temperature differentials as small as 5°C across large-format pouch cell planes have been shown to cause nonuniform aging and eventual thermal instability. The engineer must also account for the fact that fast charging increases sensitivity to thermal stress and that operation above 45°C accelerates degradation. Which of the following conclusions are admissible based on these conditions?",
+        "options": [
+          "A. Forced air cooling is inadmissible for this fast-charging application because its heat transfer coefficient range causes thermal gradients that can exceed safety thresholds.",
+          "B. Because immersion cooling achieved up to 40% peak temperature reduction under controlled pack-level conditions, it can be specified as the standard cooling solution for all fast-charging electric vehicle platforms without further validation.",
+          "C. The 5°C differential threshold for nonuniform aging in large-format pouch cells implies that even indirect liquid cooling, despite its higher heat transfer coefficient than air, may be insufficient if it cannot maintain uniformity within that bound across the cell plane.",
+          "D. Immersion cooling's superiority over indirect liquid cooling in peak temperature reduction means it necessarily also achieves better temperature uniformity across all cell formats and operating conditions.",
+          "E. The combination of fast charging sensitivity to thermal stress and the 45°C degradation threshold means that any cooling architecture must be evaluated not only on peak temperature suppression but also on its ability to maintain spatial uniformity within the cell plane.",
+          "F. Nanofluid-enhanced immersion cooling, which offers convective heat transfer enhancements of 15–30% over standard immersion, is currently ready for mass deployment in fast-charging vehicle platforms given its laboratory-scale performance advantages.",
+          "G. The gap between air cooling's maximum heat transfer coefficient and the lower bound of optimized liquid cold plates represents a regime difference large enough to justify excluding air cooling from fast-charging module designs on thermal gradient grounds alone."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence explicitly states air cooling is unsuitable for high power or fast charging applications because its 10–50 W/m²·K coefficient causes thermal gradients that can exceed safety thresholds. The stem conditions match this directly.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+210+Thermal_Science_and_Engineering_Progress:C012"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence explicitly states that thermal performance improvements from immersion cooling cannot be directly generalized across all electric vehicle platforms or operating scenarios because they derive from controlled laboratory, module-level, or pack-level conditions. This option violates that boundary.",
+            "error_type": "Scope expansion distractor — generalizing controlled-condition results to all platforms",
+            "evidence_refs": [
+              "TR_Protection+210+Thermal_Science_and_Engineering_Progress:C009"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The 5°C threshold for nonuniform aging applies to large-format pouch cells specifically. Even indirect liquid cooling, which has a higher heat transfer coefficient than air, may not maintain uniformity within 5°C across the cell plane under all conditions. This requires reasoning from the uniformity threshold to evaluate indirect liquid cooling's admissibility — a counterintuitive conclusion because indirect liquid cooling is generally considered superior to air cooling.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+210+Thermal_Science_and_Engineering_Progress:C010",
+              "TR_Protection+210+Thermal_Science_and_Engineering_Progress:C001"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence supports immersion cooling's peak temperature reduction advantage but states that temperature uniformity of ±2–3°C is achieved only under specific experimental conditions including defined cell format, flow rate, heat flux, and pack geometry. Concluding that immersion necessarily achieves better uniformity across all cell formats and conditions is an unsupported generalization.",
+            "error_type": "Condition violation distractor — removing the specific conditions under which the uniformity result was obtained",
+            "evidence_refs": [
+              "TR_Protection+210+Thermal_Science_and_Engineering_Progress:C008",
+              "TR_Protection+210+Thermal_Science_and_Engineering_Progress:C009"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Combining the fast charging thermal stress sensitivity with the 45°C degradation threshold and the 5°C uniformity threshold for pouch cells requires multi-step reasoning: fast charging → elevated thermal stress → need for both peak suppression and spatial uniformity. This is supported by multiple evidence claims and represents a multi-factor interaction conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+210+Thermal_Science_and_Engineering_Progress:C013",
+              "TR_Protection+210+Thermal_Science_and_Engineering_Progress:C010"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Evidence explicitly states that nanofluid-enhanced immersion cooling remains at the research and prototype stage due to unresolved challenges related to nanoparticle stability, dielectric degradation, filtration, and long-term reliability. This option is a conservative-appearing claim about a promising technology that is nonetheless incorrect because it contradicts a stated limitation.",
+            "error_type": "Protective mechanism overclaim distractor — claiming deployment readiness contradicted by explicit limitation evidence",
+            "evidence_refs": [
+              "TR_Protection+210+Thermal_Science_and_Engineering_Progress:C014"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "Air cooling's maximum coefficient is 50 W/m²·K; the lower bound of optimized liquid cold plates is 200 W/m²·K — a factor of 4 difference at the boundary. Combined with the explicit statement that air cooling causes gradients exceeding safety thresholds in fast-charging applications, this regime difference is sufficient to exclude air cooling on thermal gradient grounds. This is counterintuitive as it makes a strong exclusionary claim that is nonetheless evidence-supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+210+Thermal_Science_and_Engineering_Progress:C001",
+              "TR_Protection+210+Thermal_Science_and_Engineering_Progress:C012"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of cooling architecture selection conclusions for fast-charging large-format pouch cell modules, requiring multi-factor reasoning across peak temperature, spatial uniformity, and deployment readiness",
+        "primary_boundary": "Immersion cooling results are condition-specific and cannot be generalized; uniformity threshold of 5°C applies specifically to large-format pouch cells; nanofluid systems are not deployment-ready; air cooling is explicitly excluded from fast-charging applications",
+        "intended_error_modes": [
+          "Generalizing controlled-condition immersion cooling results to all platforms",
+          "Assuming higher heat transfer coefficient implies better uniformity without condition qualification",
+          "Accepting nanofluid deployment readiness based on laboratory performance alone",
+          "Failing to apply the 5°C uniformity threshold to evaluate indirect liquid cooling"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring system-level deployment readiness from laboratory-scale performance",
+          "Concluding immersion cooling universally achieves ±2–3°C uniformity across all formats",
+          "Treating peak temperature reduction as a proxy for spatial uniformity"
+        ]
+      }
+    }
+  ],
+  "short_answers": []
+}

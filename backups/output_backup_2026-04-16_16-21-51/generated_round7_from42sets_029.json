@@ -1,0 +1,323 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is assessing the flammability hazard of battery vent gas (BVG) from NMC cells during a thermal abuse event. Measurements show that during the venting phase, H2 content is high and CO2 content is low, while during the thermal runaway (TR) phase, CO2 increases substantially and H2 decreases. The engineer must determine which phase presents the highest laminar burning velocity (Su) risk at standard conditions and which gas species relationship governs this outcome.",
+        "options": [
+          "A. The venting phase presents the highest Su risk because high H2 content dominates Su, and the subsequent CO2 rise during TR suppresses burning velocity.",
+          "B. The TR phase presents the highest Su risk because peak cell temperatures during NMC thermal runaway exceed 500°C, directly amplifying Su regardless of gas composition.",
+          "C. The global averaged BVG composition yields the highest Su for NMC cells, since averaging over the full event captures the combined contribution of all reactive species.",
+          "D. The venting phase Su is lower than the TR phase Su because cathode decomposition during NMC venting releases CO and CO2 that suppress combustion.",
+          "E. The TR phase Su exceeds the venting phase Su for NMC cells because H2 is released near maximum temperature in NMC cells, concentrating the reactive species in that phase.",
+          "F. The difference in Su between venting and TR phases for NMC cells is negligible, since peak Su depends primarily on equivalence ratio rather than phase-specific composition."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "NMC venting phase Su (222.6 cm/s) exceeds TR phase (77.2 cm/s); declining H2 and rising CO2 in TR phase explains the reduction.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C006"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Temperature enhancement of Su applies at 500°C ambient, not cell peak temperature; composition governs phase-specific Su at standard conditions.",
+            "error_type": "mechanism substitution",
+            "evidence_refs": [
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C005",
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C006"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Global averaged BVG yields lower Su than phase-specific maxima; averaging obscures the high-H2 venting phase peak.",
+            "error_type": "scope expansion distractor",
+            "evidence_refs": [
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C015",
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C006"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "NMC venting temperatures remain below cathode decomposition threshold; CO and CO2 from cathode degradation are an NCA venting characteristic, not NMC.",
+            "error_type": "condition violation distractor",
+            "evidence_refs": [
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C011"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "H2 released near maximum temperature is the NCA pattern, not NMC; for NMC, H2 emission begins during venting, making venting phase more H2-rich.",
+            "error_type": "mechanism confusion distractor",
+            "evidence_refs": [
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C010"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Phase-specific Su differences for NMC are large (222.6 vs 77.2 cm/s); equivalence ratio at peak Su is consistent but does not eliminate composition-driven phase differences.",
+            "error_type": "overgeneralization distractor",
+            "evidence_refs": [
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C004",
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C006"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Phase-specific Su hazard ranking for NMC cells driven by H2/CO2 composition evolution",
+        "primary_boundary": "NMC venting phase has higher Su than TR phase due to H2/CO2 inversion; this is chemistry-specific and does not generalize to NCA",
+        "intended_error_modes": [
+          "mechanism confusion between NCA and NMC H2 release timing",
+          "temperature-Su coupling misapplied to standard-condition phase comparison",
+          "global averaging assumed to capture worst case"
+        ],
+        "disallowed_extrapolations": [
+          "Applying NCA H2 release pattern to NMC",
+          "Inferring cell peak temperature directly sets ambient Su at standard conditions",
+          "Assuming global BVG is always conservative"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A safety engineer compares NCA, LFP, and NMC cylindrical cells under identical thermal abuse conditions at standard temperature. NCA cells reach peak temperatures above 560°C and pressures exceeding 4 barg; LFP cells reach approximately 358°C and below 2 barg; NMC cells reach above 575°C and above 4 barg. The engineer must identify which statements about flammability risk ranking and the gas-phase mechanism responsible are admissible given these conditions.",
+        "options": [
+          "A. NCA cells present higher Su at standard conditions than LFP cells primarily because NCA vent gas contains more H2 and less CO2 than LFP vent gas.",
+          "B. LFP cells present lower Su than NCA cells at standard conditions, and this ranking reverses at elevated temperatures because LFP TR-phase gas reaches higher Su at 500°C than NCA global BVG.",
+          "C. NMC cells present lower peak Su at standard conditions than NCA cells because NMC TR-phase temperatures are higher, which dilutes the reactive gas mixture.",
+          "D. The higher peak pressure in NCA and NMC cells compared to LFP cells is sufficient to conclude that NCA and NMC vent gases are more flammable than LFP vent gas under all conditions.",
+          "E. LFP venting phase gas is more hazardous than NCA venting phase gas at standard conditions because LFP H2 emission begins during venting, whereas NCA H2 release is concentrated near maximum temperature.",
+          "F. The Su ranking NCA > LFP at standard conditions is attributable to gas composition differences, not to differences in cell peak temperature during thermal runaway."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "E",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "NCA maximum Su (1.0 m/s) exceeds LFP (0.3 m/s); the mechanism is higher H2 and lower CO2 in NCA vent gas.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "LFP TR-phase Su at 500°C (735 cm/s) exceeds NCA global BVG at 500°C (345 cm/s), reversing the standard-condition ranking.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C005",
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Cell peak temperature does not dilute vent gas mixture; NMC venting-phase Su (222.6 cm/s) exceeds NCA standard-condition values through composition, not temperature dilution.",
+            "error_type": "mechanism confusion distractor",
+            "evidence_refs": [
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C006",
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C008"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Peak pressure reflects gas quantity and cell mechanics, not gas flammability; LFP TR-phase Su at 500°C exceeds NCA, contradicting a universal pressure-based flammability ranking.",
+            "error_type": "causal overclaim distractor",
+            "evidence_refs": [
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C009",
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "LFP and NMC H2 emission begins during venting; NCA H2 is released near maximum temperature, so LFP venting gas is more H2-rich and thus higher Su than NCA venting phase (32.5 cm/s).",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C010",
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C008"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Su ranking is driven by H2/CO2 composition differences between chemistries, not by the cell's peak temperature during TR.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C003",
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C009"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Chemistry-dependent Su ranking and the regime-reversal at elevated temperature for LFP vs NCA",
+        "primary_boundary": "Standard-condition Su ranking (NCA > LFP) reverses at 500°C; this is driven by gas composition, not cell peak temperature or peak pressure",
+        "intended_error_modes": [
+          "conflating cell peak temperature with vent gas flammability",
+          "using peak pressure as a flammability proxy",
+          "missing the temperature-driven ranking reversal for LFP"
+        ],
+        "disallowed_extrapolations": [
+          "Pressure ranking implies flammability ranking under all conditions",
+          "Cell peak temperature directly controls vent gas Su"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "During a thermal abuse test on LFP cells, an engineer observes that the TR-phase BVG yields Su = 105.9 cm/s, the venting-phase BVG yields 88.2 cm/s, and the global averaged BVG yields 42.0 cm/s. The engineer also notes that H2 is released at TR onset and CO2 mole fraction increases progressively from TR onset to its peak. The engineer must assess which conclusions about hazard characterization methodology are supported.",
+        "options": [
+          "A. Using the global averaged BVG composition underestimates the peak Su hazard for LFP cells by more than a factor of two compared to the TR-phase composition.",
+          "B. The lower Su of the global BVG compared to TR-phase BVG is caused by CO2 accumulation diluting the effective H2 contribution when averaged over the full event.",
+          "C. The venting phase presents a lower Su than the TR phase for LFP cells because venting temperatures in LFP remain below the cathode decomposition threshold, preventing H2 generation during venting.",
+          "D. Phase-specific gas analysis is necessary for LFP cells because global averaging produces a conservative overestimate of Su, which leads to over-designed safety systems.",
+          "E. The TR-phase Su being higher than the venting-phase Su for LFP cells is consistent with H2 being released at TR onset, which enriches the TR-phase gas relative to the venting-phase gas.",
+          "F. Since the peak of Su occurs at an equivalence ratio near 1.0 regardless of chemistry, the phase-specific composition differences in LFP cells do not affect the equivalence ratio at which maximum Su occurs."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "TR-phase Su (105.9 cm/s) is more than twice the global BVG Su (42.0 cm/s), confirming global averaging underestimates peak hazard by over a factor of two.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C007",
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C015"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "CO2 mole fraction increases from TR onset to peak, and global averaging incorporates this CO2-rich later gas, suppressing the averaged Su relative to TR-phase Su.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C007"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "LFP venting below cathode decomposition threshold explains absence of CO/CO2 from cathode, not absence of H2; H2 is released during LFP venting and at TR onset.",
+            "error_type": "mechanism confusion distractor",
+            "evidence_refs": [
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C010",
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C011"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Global averaging produces an underestimate, not an overestimate, of peak Su; the argument for phase-specific analysis is that global averaging is non-conservative, not overly conservative.",
+            "error_type": "direction-of-error reversal distractor",
+            "evidence_refs": [
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C015",
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C007"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "H2 released at TR onset enriches TR-phase gas; this H2 concentration drives TR-phase Su above venting-phase Su for LFP, consistent with the stated mechanism.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C007",
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C010"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Consistent peak Su at equivalence ratio ~1.0 means the ER at maximum does not shift, but the magnitude of Su at that ER differs substantially across phases due to composition.",
+            "error_type": "partial-correctness distractor",
+            "evidence_refs": [
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C004",
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C007"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of global-averaged BVG for LFP hazard characterization and the causal role of H2/CO2 in phase-specific Su differences",
+        "primary_boundary": "Global averaging underestimates (not overestimates) peak Su; phase-specific analysis is required because global averaging is non-conservative",
+        "intended_error_modes": [
+          "reversing the direction of global-averaging bias",
+          "confusing cathode decomposition threshold effect with H2 generation suppression",
+          "treating consistent ER at Su peak as eliminating composition-driven Su magnitude differences"
+        ],
+        "disallowed_extrapolations": [
+          "Global averaging is conservative for all chemistries",
+          "Below-threshold venting prevents all H2 release in LFP"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "An engineer is designing a gas dispersion and ignition risk model for a battery storage room containing NCA cells. The engineer proposes to use a single laminar burning velocity value derived from the globally averaged BVG composition across the entire thermal runaway event, measured at standard temperature conditions. Identify two distinct technical reasons why this approach may produce a non-conservative hazard estimate for NCA cells, and explain the physical mechanism underlying each reason."
+      },
+      "ground_truth": {
+        "gold_answer": "First, using the global averaged BVG composition for NCA cells underestimates Su because the TR phase and global phase have higher H2 mole fractions than the venting phase, and H2 is the primary driver of elevated Su. The global average dilutes the H2-rich TR-phase composition with the lower-H2 venting-phase gas, reducing the computed Su below the phase-specific TR maximum (44.4 cm/s vs 45.5 cm/s global, but critically the venting phase at 32.5 cm/s pulls the average down). Second, performing the analysis at standard temperature ignores the substantial Su enhancement at elevated temperatures: at 500°C, Su values increase dramatically across all chemistries. Since vent gas is released into a hot environment during a thermal runaway event, the actual Su experienced near the cell may be far higher than the standard-condition value. A model using only standard-condition global-averaged Su will underestimate both the peak burning velocity and the phase-specific window of maximum flammability risk.",
+        "must_include": [
+          "global averaging obscures phase-specific H2 concentration differences that drive Su variation across venting and TR phases",
+          "standard temperature underestimates Su because elevated temperature significantly enhances Su across all BVG compositions",
+          "H2 mole fraction is the primary species controlling Su magnitude in NCA vent gas",
+          "phase-specific analysis is necessary because significant discrepancies exist between global-averaged and phase-specific Su maxima"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming global averaging always underestimates Su for all chemistries without qualification",
+          "Asserting that NCA cells are more dangerous than LFP at elevated temperatures based on standard-condition ranking alone",
+          "Stating that peak cell temperature during TR directly sets the vent gas temperature for Su calculation without further justification"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Two independent sources of non-conservatism in a standard-condition global-averaged BVG Su model for NCA cells",
+        "primary_boundary": "Both phase-averaging and temperature effects independently introduce non-conservatism; neither alone fully characterizes the hazard",
+        "intended_error_modes": [
+          "Identifying only one source of non-conservatism",
+          "Confusing the direction of bias (claiming global averaging overestimates Su)",
+          "Failing to connect H2 mole fraction to Su as the governing mechanism",
+          "Applying LFP or NMC phase-ordering logic to NCA without recognizing NCA-specific H2 release timing"
+        ]
+      }
+    }
+  ]
+}

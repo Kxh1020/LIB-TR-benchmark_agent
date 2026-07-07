@@ -1,0 +1,324 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A sodium-ion battery (SIB) and an LFP battery of comparable energy capacity are subjected to identical constant-power heating in a sealed calorimetric enclosure. The SIB reaches thermal runaway at a surface temperature approximately 138°C lower than the LFP, and the interval between safety valve opening and thermal runaway onset is roughly 14 times shorter for the SIB. An engineer must assess which conclusions about relative hazard management are admissible from these conditions alone.",
+        "options": [
+          "A. The shorter valve-to-runaway interval for the SIB means that detection-based suppression systems designed around LFP response times are likely insufficient to prevent SIB thermal runaway escalation.",
+          "B. Because the SIB triggers at a lower surface temperature, internal electrochemical decomposition reactions in the SIB must begin at lower temperatures than any reaction pathway active in the LFP system.",
+          "C. The reduced time between safety valve actuation and thermal runaway in the SIB compresses the window for protective intervention, but does not by itself indicate that the peak energy release rate will exceed that of LFP.",
+          "D. The lower SIB trigger temperature confirms that the SIB cathode material is thermodynamically less stable than the LFP cathode under all operating conditions, not only under thermal abuse.",
+          "E. If both batteries are housed in the same module with identical spacing, the SIB's earlier onset temperature increases the probability that a neighboring cell reaches its own trigger threshold before active cooling can respond.",
+          "F. The large difference in trigger temperatures between SIB and LFP implies that any thermal management strategy effective for LFP will require only minor recalibration to remain effective for SIB."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "A 12 s vs 173 s valve-to-runaway gap means LFP-calibrated detection windows are structurally inadequate for SIB.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+132+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Surface temperature at trigger does not resolve internal reaction onset temperatures; internal vs surface thermal lag is unaddressed by the evidence.",
+            "error_type": "measurement scope overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+132+Journal_of_Power_Sources:C001"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The time interval evidence supports intervention window compression; peak energy release rate comparison requires separate evidence not provided.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+132+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Thermal abuse trigger temperature under forced heating cannot be generalized to thermodynamic stability under all operating conditions; scope violation.",
+            "error_type": "overgeneralization distractor",
+            "evidence_refs": [
+              "TR_Gasventing+132+Journal_of_Power_Sources:C001"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Lower trigger temperature reduces thermal margin for neighbors; this is a direct mechanistic implication of the trigger temperature differential in a shared module.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+132+Journal_of_Power_Sources:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "A ~138°C difference in trigger temperature represents a fundamental regime shift, not a minor recalibration; this is a conservative-sounding but mechanistically incorrect claim.",
+            "error_type": "conservative but incorrect distractor",
+            "evidence_refs": [
+              "TR_Gasventing+132+Journal_of_Power_Sources:C001",
+              "TR_Gasventing+132+Journal_of_Power_Sources:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of hazard management conclusions from trigger temperature and valve-to-runaway interval data",
+        "primary_boundary": "Surface trigger temperature and time interval support intervention window and propagation risk conclusions but cannot resolve internal reaction mechanisms or generalize to non-abuse operating conditions",
+        "intended_error_modes": [
+          "measurement scope overclaim",
+          "overgeneralization from abuse test to general operating stability",
+          "conservative recalibration underestimate"
+        ],
+        "disallowed_extrapolations": [
+          "Internal decomposition onset temperature from surface trigger temperature",
+          "Thermodynamic stability under normal operation from thermal abuse result",
+          "Peak energy release rate from time interval alone"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "During thermal runaway testing of energy-matched SIB and LFP cells, the SIB produces approximately four times more gas per unit energy and has a maximum mass loss rate per unit energy roughly 6.6 times higher than the LFP. The SIB vent gas explosive limit range (ELR) is 32.5% compared to 21.21% for LFP. An engineer evaluating enclosure venting and ignition risk for a battery module must determine which conclusions are defensible.",
+        "options": [
+          "A. The SIB's wider explosive limit range means that a vent gas concentration that would be outside the flammable envelope for LFP could remain within the flammable envelope for SIB, increasing ignition risk at the same dilution level.",
+          "B. Because the SIB mass loss rate per unit energy is approximately 6.6 times higher, the mechanical overpressure risk inside a sealed enclosure scales proportionally, making SIB enclosures 6.6 times more likely to rupture than equivalent LFP enclosures.",
+          "C. The combination of higher gas volume per unit energy and wider explosive limit range means the SIB presents a compounded gas-phase hazard relative to LFP, where both the quantity of flammable gas and the concentration window for ignition are simultaneously elevated.",
+          "D. The higher mass loss rate of the SIB indicates that solid or liquid ejection during thermal runaway is more severe, which could mechanically damage neighboring cells before thermal propagation pathways become dominant.",
+          "E. The fourfold difference in gas production per unit energy is sufficient to conclude that SIB modules require enclosure venting areas at least four times larger than equivalent LFP modules to maintain equivalent internal pressure limits.",
+          "F. The wider ELR for SIB vent gases implies that passive dilution strategies that reduce LFP vent gas concentrations below the upper explosive limit may not achieve the same safety margin for SIB under identical ventilation designs."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "A wider ELR directly means concentrations outside LFP flammability bounds remain inside SIB bounds; this is a direct mechanistic consequence of ELR difference.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+132+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Mechanical overpressure depends on gas generation rate and enclosure geometry, not mass loss rate alone; proportional scaling is an unsupported causal overclaim.",
+            "error_type": "causal overclaim distractor",
+            "evidence_refs": [
+              "TR_Gasventing+132+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Higher gas volume and wider ELR are independent hazard dimensions that compound; both are directly supported by evidence and their interaction is additive in risk.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+132+Journal_of_Power_Sources:C003",
+              "TR_Gasventing+132+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "While mass loss rate implies ejection severity, the claim that mechanical damage precedes thermal propagation as the dominant pathway is not supported by the evidence provided.",
+            "error_type": "mechanism substitution distractor",
+            "evidence_refs": [
+              "TR_Gasventing+132+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Vent area sizing depends on peak flow rate and enclosure geometry, not total gas volume ratio alone; a direct fourfold scaling rule is an unsupported numerical extrapolation.",
+            "error_type": "numerical exaggeration and scope expansion distractor",
+            "evidence_refs": [
+              "TR_Gasventing+132+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "A wider upper explosive limit for SIB means identical dilution achieving sub-UEL for LFP may still leave SIB gas within flammable range; directly follows from ELR comparison.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+132+Journal_of_Power_Sources:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of enclosure venting and ignition risk conclusions from gas production, mass loss rate, and explosive limit range comparisons",
+        "primary_boundary": "Gas volume and ELR data support concentration-window and compounded hazard conclusions but cannot directly determine enclosure sizing ratios or propagation sequence without additional geometric and flow rate data",
+        "intended_error_modes": [
+          "proportional scaling overclaim from mass loss rate",
+          "mechanism substitution of mechanical vs thermal propagation dominance",
+          "direct vent area calculation from total gas volume ratio"
+        ],
+        "disallowed_extrapolations": [
+          "Enclosure rupture probability from mass loss rate ratio",
+          "Dominant propagation pathway from mass loss rate alone",
+          "Vent area sizing ratio from gas volume ratio without flow rate data"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer comparing SIB and LFP cells of equal energy capacity under identical thermal abuse notes: SIB thermal runaway triggers at ~58°C surface temperature with a 12 s valve-to-runaway interval; LFP triggers at ~197°C with a 173 s interval. The SIB generates ~4× more gas per unit energy and has a ~6.6× higher peak mass loss rate per unit energy. The engineer proposes that SIB's lower trigger temperature is the primary factor driving its overall higher hazard profile relative to LFP.",
+        "options": [
+          "A. The proposal is incomplete because the compressed valve-to-runaway interval independently constrains emergency response regardless of trigger temperature, and both factors contribute to hazard severity through distinct pathways.",
+          "B. The proposal is well-supported because all other hazard metrics—gas production, mass loss rate, and explosive limit range—are direct downstream consequences of the lower trigger temperature.",
+          "C. The proposal is incomplete because the higher gas production rate and wider explosive limit range represent gas-phase hazards that persist after thermal runaway initiation and are not fully characterized by trigger temperature alone.",
+          "D. The proposal is valid only if the SIB and LFP are tested under identical enclosure confinement; under open conditions the trigger temperature differential would not translate to a meaningful hazard difference.",
+          "E. The proposal overstates the role of trigger temperature because the mass loss rate differential, being 6.6-fold larger than the gas production differential of fourfold, is the dominant hazard driver.",
+          "F. The proposal is partially correct in that trigger temperature determines the onset timing, but the magnitude of post-onset hazard is governed by mass loss rate and gas production, which are not determined by trigger temperature."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The 12 s interval is an independent hazard dimension from trigger temperature; both affect hazard through separate causal pathways, making the single-factor proposal incomplete.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+132+Journal_of_Power_Sources:C001",
+              "TR_Gasventing+132+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Gas production, mass loss rate, and ELR are not shown to be downstream consequences of trigger temperature; treating them as such is an unsupported causal chain.",
+            "error_type": "causal overclaim distractor",
+            "evidence_refs": [
+              "TR_Gasventing+132+Journal_of_Power_Sources:C003",
+              "TR_Gasventing+132+Journal_of_Power_Sources:C004",
+              "TR_Gasventing+132+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Gas-phase hazards from production volume and ELR are post-onset phenomena not captured by trigger temperature; the proposal omits these independent hazard dimensions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+132+Journal_of_Power_Sources:C003",
+              "TR_Gasventing+132+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence does not condition trigger temperature hazard on enclosure confinement; this introduces an unsupported conditional that is not present in the evidence.",
+            "error_type": "condition violation distractor",
+            "evidence_refs": [
+              "TR_Gasventing+132+Journal_of_Power_Sources:C001"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Comparing the 6.6-fold and fourfold ratios to rank dominant hazard drivers is an unsupported numerical ranking; different metrics measure different hazard dimensions and cannot be directly ranked this way.",
+            "error_type": "numerical exaggeration and causal overclaim distractor",
+            "evidence_refs": [
+              "TR_Gasventing+132+Journal_of_Power_Sources:C004",
+              "TR_Gasventing+132+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Trigger temperature governs onset timing; post-onset hazard magnitude is governed by mass loss rate and gas production, which are separate evidence-supported quantities not derived from trigger temperature.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+132+Journal_of_Power_Sources:C001",
+              "TR_Gasventing+132+Journal_of_Power_Sources:C004",
+              "TR_Gasventing+132+Journal_of_Power_Sources:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-factor hazard decomposition: admissibility of single-factor (trigger temperature) explanation for overall SIB hazard profile",
+        "primary_boundary": "Trigger temperature governs onset timing but does not determine post-onset gas-phase or mass ejection hazards; these are independent evidence-supported dimensions",
+        "intended_error_modes": [
+          "causal chain overclaim linking all metrics to trigger temperature",
+          "unsupported confinement conditionality",
+          "invalid numerical ranking of hazard dimensions across different metrics"
+        ],
+        "disallowed_extrapolations": [
+          "Gas production and mass loss rate as consequences of trigger temperature",
+          "Enclosure-dependence of trigger temperature hazard",
+          "Ranking hazard drivers by comparing fold-differences across different physical quantities"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery module houses energy-matched SIB and LFP cells under identical mechanical and thermal conditions. During a thermal runaway event, the SIB produces approximately four times more gas per unit energy, has a peak mass loss rate per unit energy about 6.6 times higher, a wider explosive limit range for its vent gases, and a valve-to-thermal-runaway interval roughly 14 times shorter than the LFP. An engineer argues that because the SIB's energy capacity is matched to the LFP, the absolute hazard at the module level is the same. Identify the specific reasons, grounded in the measured differences, why this argument is not admissible, and explain which distinct hazard dimensions are independently elevated for the SIB even at equal energy capacity."
+      },
+      "ground_truth": {
+        "gold_answer": "The argument fails because energy-normalization does not equalize hazard when the normalized rates and ranges themselves differ. Four distinct hazard dimensions are independently elevated for SIB at equal energy: (1) Gas volume hazard: SIB produces ~4× more gas per unit energy, so at equal energy the absolute gas volume released is ~4× higher, increasing enclosure pressurization and the quantity of potentially flammable gas available. (2) Explosive limit range: SIB vent gases have a wider ELR (32.5% vs 21.21%), meaning a larger range of dilution concentrations remains within the flammable envelope, so even if total gas were equal the ignition risk window would be wider for SIB. (3) Mass ejection severity: SIB mass loss rate per unit energy is ~6.6× higher, so at equal energy the peak ejection rate is ~6.6× higher, increasing mechanical damage risk to neighboring cells and structural components. (4) Emergency response window: the valve-to-runaway interval is ~14× shorter for SIB, meaning detection and suppression systems must act in a fundamentally compressed timeframe regardless of energy content. These four dimensions are independent; energy matching addresses none of them because each is a rate, range, or timing property, not a total energy property.",
+        "must_include": [
+          "fourfold higher gas production per unit energy means absolute gas volume is fourfold higher at equal energy",
+          "wider explosive limit range is independent of total gas volume and remains elevated regardless of energy matching",
+          "6.6-fold higher mass loss rate per unit energy means peak ejection rate is elevated at equal energy",
+          "valve-to-runaway interval is a timing property not addressed by energy matching",
+          "these are independent hazard dimensions, not all reducible to energy content"
+        ],
+        "disallowed_extrapolations": [
+          "Do not claim that trigger temperature alone explains the elevated hazard",
+          "Do not assert that enclosure geometry or confinement determines whether the hazard dimensions are elevated",
+          "Do not rank the four hazard dimensions by severity without evidence basis",
+          "Do not claim that any single metric is the dominant driver of overall module-level risk"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Decomposition of multi-dimensional hazard profile and refutation of energy-normalization equivalence argument",
+        "primary_boundary": "Energy normalization equalizes total energy but does not equalize rate, range, or timing properties; each hazard dimension must be evaluated on its own physical basis",
+        "intended_error_modes": [
+          "Accepting energy matching as sufficient for hazard equivalence",
+          "Reducing all hazard dimensions to a single dominant factor",
+          "Treating ELR and gas volume as the same hazard dimension",
+          "Ignoring the valve-to-runaway interval as an independent hazard dimension"
+        ]
+      }
+    }
+  ]
+}

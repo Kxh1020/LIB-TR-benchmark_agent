@@ -1,0 +1,355 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A lithium-ion pouch cell at 100% SOC is subjected to nail penetration with a 3 mm nail at 20 mm/s. Immediately upon penetration, the voltage collapses to near zero. Temperature sensors placed at the penetration site, cathode face, anode face, and cell bottom all begin rising, but the penetration-site sensor rises first. Post-test inspection confirms the separator was not melted or shrunk. Given these observations, which of the following conclusions are admissible?",
+        "options": [
+          "A. The highest peak temperature recorded during the test occurred at the cathode face rather than at the penetration site, because the nail remaining in the cell conducted heat away from the penetration zone.",
+          "B. The near-zero voltage immediately after penetration confirms that internal short-circuit resistance became negligible, and this alone is sufficient to conclude that cathode decomposition reactions were the primary heat source.",
+          "C. Because the separator was intact post-test, thermal decomposition of the electrolyte was the dominant heat-generating reaction during this test.",
+          "D. The 0.6–0.8 s lag in temperature rise at non-penetration sites is consistent with heat conduction from the penetration zone rather than simultaneous reaction initiation across the cell.",
+          "E. The reaction between anode electrode materials and electrolyte is admissible as a contributor to heat generation during this test, given the observed peak temperature range.",
+          "F. The penetration speed of 20 mm/s was the controlling variable determining peak temperature, and a slower speed would have produced substantially lower peak temperatures.",
+          "G. SEI decomposition cannot have occurred during this test because the voltage dropped too rapidly for the SEI layer to respond thermally."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence explicitly states that the penetration-site temperature was not the maximum; the cathode position reached the highest temperature because the nail conducted heat away from the penetration zone, lowering the local temperature there. This is counterintuitive relative to the expectation that the damage site would be hottest.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+193+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "While voltage collapse is consistent with internal short-circuit, the evidence does not support attributing the primary heat source to cathode decomposition reactions. The evidence identifies only SEI decomposition and anode-electrolyte reactions as occurring under these peak temperature conditions, not cathode decomposition. This is a causal overclaim from a voltage signal.",
+            "error_type": "Causal overclaim from indirect measurement; mechanism substitution",
+            "evidence_refs": [
+              "TR_Mechanism+193+UnknownJournal:C007"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Electrolyte thermal decomposition requires 473.1–573.1 K. The evidence states peak temperatures were below 403.1 K and the separator did not melt, making electrolyte decomposition inadmissible as a contributor under these test conditions. The intact separator is consistent with temperature limits, not with electrolyte decomposition dominance.",
+            "error_type": "Condition violation; regime transfer beyond stated temperature range",
+            "evidence_refs": [
+              "TR_Mechanism+193+UnknownJournal:C007",
+              "TR_Mechanism+193+UnknownJournal:C008"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The observed 0.6–0.8 s lag at remote sensor positions is mechanistically consistent with heat conduction propagating outward from the penetration zone. The penetration site heats first, and the lag pattern matches spatial heat diffusion rather than simultaneous distributed reaction initiation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+193+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The anode-electrolyte reaction proceeds at approximately 373.1 K. The observed peak temperatures in this test range were below 403.1 K but above 373.1 K, placing this reaction within the admissible temperature window. The evidence explicitly identifies this reaction as one that occurred during nail penetration tests at these conditions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+193+UnknownJournal:C007",
+              "TR_Mechanism+193+UnknownJournal:C008"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Evidence shows penetration speed across 10–40 mm/s had little effect on peak temperature, with average peak temperatures all approximately 373.1 K. Claiming that 20 mm/s was the controlling variable for peak temperature, and that slower speeds would produce substantially lower temperatures, contradicts the evidence directly.",
+            "error_type": "Overgeneralization; condition violation against stated insensitivity to penetration speed",
+            "evidence_refs": [
+              "TR_Mechanism+193+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "SEI decomposition occurs between 363.1–393.1 K. The peak temperatures in this test were below 403.1 K, meaning temperatures passed through the SEI decomposition range. The voltage drop rate is a mechanical/electrical event and does not preclude thermal SEI decomposition from occurring as temperatures rise through the relevant range.",
+            "error_type": "Mechanism confusion; incorrect causal attribution from voltage signal to thermal event preclusion",
+            "evidence_refs": [
+              "TR_Mechanism+193+UnknownJournal:C007",
+              "TR_Mechanism+193+UnknownJournal:C008"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissible reaction identification and spatial heat distribution during nail penetration below separator melting threshold",
+        "primary_boundary": "Peak temperature below 403.1 K limits admissible reactions to SEI decomposition and anode-electrolyte reaction; electrolyte decomposition and cathode decomposition are outside this temperature window",
+        "intended_error_modes": [
+          "Attributing primary heat source to cathode decomposition based on voltage signal alone",
+          "Inferring electrolyte decomposition from intact separator observation",
+          "Assuming penetration site must be hottest location",
+          "Treating penetration speed as controlling variable for peak temperature"
+        ],
+        "disallowed_extrapolations": [
+          "Generalizing nail penetration results to other abuse modes",
+          "Inferring cathode decomposition from voltage collapse alone",
+          "Extending peak temperature insensitivity to penetration speed outside tested range"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is evaluating thermal runaway risk in two ultrahigh-nickel LIB chemistries: one with 88% Ni content in the cathode (NCA88) and one with 91% Ni content (NCA91), both at 100% SOC. Calorimetric testing at a heating rate of 5 °C/min shows that the anode-side reaction heat for NCA91 is substantially higher than for NCA88 at this rate. At heating rates above 10 °C/min, a different reaction becomes the triggering event for thermal runaway if heat removal is insufficient. The induction period before thermal runaway is inversely proportional to SOC and is much shorter under rapid heating. Which of the following statements are admissible conclusions from this scenario?",
+        "options": [
+          "A. Under slow heating at 5 °C/min, NCA91 poses greater risk from anode-side reactions than NCA88, because the anode-side reaction heat is higher for NCA91 at this heating rate.",
+          "B. Because the triggering reaction at heating rates above 10 °C/min is different from the dominant reaction at 5 °C/min, the same cell chemistry ranking for thermal runaway risk applies regardless of heating rate.",
+          "C. A 3% increase in Ni content from NCA88 to NCA91 caused thermal runaway onset to occur earlier in reaction progress at 100% SOC, indicating that small compositional changes in ultrahigh-nickel cathodes can disproportionately affect the onset threshold.",
+          "D. Under slow heating at 5 °C/min, thermal runaway is least likely to occur in these ultrahigh-nickel cells because heat dissipation rate exceeds internal heat generation rate at this heating condition.",
+          "E. Under rapid heating at 10–20 °C/min, the high-alert period before thermal runaway is longer than under slow heating, providing more time for intervention.",
+          "F. The induction period being inversely proportional to SOC means that at lower SOC levels, operators have more time to respond before thermal runaway becomes unstoppable.",
+          "G. Since anode-side reaction heat is higher for NCA91 at 5 °C/min, NCA91 will also exhibit higher peak temperatures than NCA88 under all heating conditions."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence directly states that at 5 °C/min, the anode-side reaction heat for NCA91 (447.95 J/g) substantially exceeds that of NCA88 (178.61 J/g), and that lower heating rates cause more severe anode side reactions in ultrahigh-nickel LIBs. This conclusion is directly admissible.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+194+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The evidence shows that the triggering reaction changes at heating rates above 10 °C/min (Reaction II becomes the trigger rather than anode-side reactions). Claiming the same chemistry ranking applies regardless of heating rate ignores this regime change and constitutes an inadmissible overgeneralization across heating rate regimes.",
+            "error_type": "Regime transfer beyond stated conditions; ignoring mechanism change across threshold",
+            "evidence_refs": [
+              "TR_Mechanism+194+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence states NCA91 initiated thermal runaway at 0.65 of reaction progress versus 0.80 for NCA88, a 15% earlier onset from only a 3% Ni content increase. This supports the conclusion that small compositional changes can disproportionately affect onset threshold—a counterintuitive but evidence-supported conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+194+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence explicitly states that thermal runaway is least likely to occur under slow heating at 5 °C/min because the rate of heat dissipation exceeds internal heat generation at this condition. This is admissible and directly supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+194+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence states the opposite: under rapid heating (10–20 °C/min), the high-alert period is very narrow and much shorter (1–2 min), providing less time for intervention. This option reverses the correct relationship between heating rate and induction period duration.",
+            "error_type": "Direction reversal of stated trend",
+            "evidence_refs": [
+              "TR_Mechanism+194+UnknownJournal:C006"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The induction period being inversely proportional to SOC means lower SOC produces a longer induction period. A longer induction period before the warning zone is reached provides more time for intervention before thermal runaway becomes unstoppable. This is a valid two-step inference: inverse SOC relationship → longer period at lower SOC → more response time.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+194+UnknownJournal:C006",
+              "TR_Mechanism+194+UnknownJournal:C001"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "The evidence shows higher anode-side reaction heat for NCA91 at 5 °C/min, but the triggering reaction changes at higher heating rates, and no evidence supports that NCA91 produces higher peak temperatures under all heating conditions. This is an inadmissible generalization from a single heating rate condition to all conditions.",
+            "error_type": "Overgeneralization from single condition to all conditions; regime transfer beyond evidence scope",
+            "evidence_refs": [
+              "TR_Mechanism+194+UnknownJournal:C003",
+              "TR_Mechanism+194+UnknownJournal:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Regime-dependent thermal runaway triggering mechanism and the effect of Ni content and SOC on induction period and onset threshold",
+        "primary_boundary": "The dominant triggering reaction and risk ranking change across the 10 °C/min heating rate threshold; conclusions valid at 5 °C/min cannot be universalized across all heating rates",
+        "intended_error_modes": [
+          "Applying single-condition chemistry ranking universally across heating rates",
+          "Reversing the direction of induction period vs. heating rate relationship",
+          "Generalizing peak temperature ranking from one heating rate to all conditions"
+        ],
+        "disallowed_extrapolations": [
+          "Ranking thermal runaway risk across all heating rates from 5 °C/min data alone",
+          "Inferring peak temperature ordering from reaction heat at a single heating rate"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A lithium-ion cell is discharged at 10C rate to a cutoff voltage of 0.5 V. Post-discharge analysis reveals that the anode and cathode material structures suffered irreversible damage and discharge capacity dropped to zero. A separate cell discharged at 3C to the same cutoff voltage showed a non-monotonic temperature rise pattern: rate increased, then decreased, then increased again. The maximum surface temperature at 10C was 130.31°C versus 81.504°C at 3C. An engineer proposes that increasing discharge rate from 6C to 10C will produce a proportionally larger temperature increase than increasing from 3C to 6C, and that this temperature scaling can be used to predict thermal behavior at even higher rates. Which of the following statements correctly evaluate this proposal and the underlying discharge behavior?",
+        "options": [
+          "A. The proposal is inadmissible because the temperature increase from 3C to 6C (approximately 42°C) is substantially larger than the increase from 6C to 10C (approximately 6.5°C), demonstrating that heat production rate is nonlinearly related to discharge rate.",
+          "B. The proposal is admissible because higher discharge rates always produce higher temperatures, confirming a monotonic relationship that supports proportional extrapolation.",
+          "C. The irreversible structural damage at 10C but not necessarily at 3C suggests that a threshold in damage mechanism was crossed between these rates, meaning temperature alone is insufficient to characterize the failure mode at 10C.",
+          "D. The non-monotonic temperature rise rate observed at 3C discharge is consistent with a transition from Joule and polarization heat dominance to side-reaction heat dominance in the late discharge stage.",
+          "E. Copper current collector dissolution observed at 10C discharge is a consequence of the irreversible structural damage to electrode materials and therefore would also be expected at 6C discharge.",
+          "F. The reduced discharge capacity at 10C (851 mAh) compared to 3C (1917.2 mAh) means that less total energy was dissipated as heat at 10C, which explains why the temperature increase from 6C to 10C is smaller than from 3C to 6C.",
+          "G. The non-monotonic temperature rise rate at 3C implies that surface temperature measurements alone cannot fully characterize the internal heat generation sequence during high-rate discharge."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence states the temperature difference between 3C and 6C is much larger than between 6C and 10C, and that heat production rate is nonlinearly correlated with discharge rate. The temperature values (81.5°C, 123.9°C, 130.3°C) confirm this asymmetry. The proposal of proportional scaling is therefore inadmissible.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+192+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "While temperatures do increase with discharge rate (monotonic direction), the evidence explicitly states the relationship is nonlinear, with diminishing increments at higher rates. A monotonic relationship does not support proportional extrapolation, and this option conflates monotonicity with proportionality to justify an inadmissible extrapolation.",
+            "error_type": "Conflating monotonicity with proportionality; overgeneralization to extrapolation beyond evidence scope",
+            "evidence_refs": [
+              "TR_Mechanism+192+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence shows that 6C and 10C discharges caused irreversible structural damage to both anode and cathode materials with capacity reduced to zero, while 3C discharge reached 81.5°C without this outcome being stated. Additionally, copper current collector dissolution emerged specifically under 10C conditions. This indicates a damage threshold was crossed, and temperature alone does not capture the dissolution mechanism unique to 10C.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+192+UnknownJournal:C002",
+              "TR_Mechanism+192+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence directly states that the non-monotonic temperature rise rate pattern at 3C discharge (increase, decrease, increase) results from early dominance of Joule and polarization heat followed by a sharp rise in side-reaction heat generation in the late discharge stage. This is a direct evidence-supported causal explanation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+192+UnknownJournal:C001"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence states copper current collector dissolution emerged under 10C conditions specifically. The evidence also notes that 6C caused irreversible structural damage, but copper dissolution is identified as a distinct phenomenon at 10C. Assuming it would also occur at 6C is an unsupported extrapolation; the evidence does not state dissolution occurred at 6C.",
+            "error_type": "Unsupported extrapolation from 10C-specific observation to 6C conditions",
+            "evidence_refs": [
+              "TR_Mechanism+192+UnknownJournal:C002",
+              "TR_Mechanism+192+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "This option presents a plausible-sounding energy argument, but the evidence does not support this causal chain. Lower discharge capacity at 10C reflects kinetic limitations and earlier cutoff, not simply less total heat dissipation explaining the compressed temperature increment. The evidence attributes the nonlinear temperature-rate relationship to the nonlinear heat production rate, not to reduced total energy throughput. This is a mechanism substitution distractor.",
+            "error_type": "Mechanism substitution; unsupported causal chain from capacity reduction to temperature increment compression",
+            "evidence_refs": [
+              "TR_Mechanism+192+UnknownJournal:C004",
+              "TR_Mechanism+192+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "The non-monotonic surface temperature rise rate at 3C reflects a transition between dominant heat generation mechanisms (Joule/polarization to side-reaction heat). Surface temperature is a lagged, spatially averaged signal. The sequential shift in dominant mechanisms implies that surface temperature alone cannot resolve the internal heat generation sequence or identify when each mechanism becomes dominant.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Mechanism+192+UnknownJournal:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Nonlinear relationship between discharge rate and temperature, mechanism transitions during high-rate discharge, and admissibility of proportional extrapolation",
+        "primary_boundary": "Heat production rate is nonlinearly correlated with discharge rate; copper dissolution is a 10C-specific observation not admissibly generalized to 6C; surface temperature cannot fully characterize internal mechanism transitions",
+        "intended_error_modes": [
+          "Conflating monotonic trend with proportional scaling for extrapolation",
+          "Attributing 10C-specific copper dissolution to 6C based on shared structural damage outcome",
+          "Using capacity-energy argument to explain nonlinear temperature increments without evidence support"
+        ],
+        "disallowed_extrapolations": [
+          "Proportional temperature scaling to rates beyond tested range",
+          "Assuming copper dissolution occurs at 6C based on 10C evidence",
+          "Inferring complete internal heat generation sequence from surface temperature alone"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A pouch cell at 100% SOC is penetrated by an 8 mm nail. Post-test inspection shows the separator was not melted. A second identical cell is penetrated by a 3 mm nail under otherwise identical conditions. The engineer observes that the 8 mm nail produced a higher initial temperature rise rate and a higher peak temperature than the 3 mm nail, but both cells had peak temperatures below 403.1 K. The engineer concludes that because the 8 mm nail caused more severe thermal response, it must have triggered additional reaction pathways beyond those activated by the 3 mm nail, and therefore the 8 mm nail test is more useful for evaluating separator integrity under extreme reaction conditions.\n\nIdentify the specific reasoning error in the engineer's conclusion, explain which reaction pathways are admissible under the observed temperature conditions for both nail sizes, and state what the intact separator post-test actually indicates about the thermal events that occurred."
+      },
+      "ground_truth": {
+        "gold_answer": "The engineer's reasoning error is inferring that a higher peak temperature within the same sub-403.1 K range activates additional reaction pathways beyond those activated at lower temperatures within that range. Because both tests produced peak temperatures below 403.1 K, both cells experienced the same set of admissible reactions: SEI decomposition (363.1–393.1 K) and the reaction between anode electrode materials and electrolyte (approximately 373.1 K). Electrolyte thermal decomposition (473.1–573.1 K) and separator melting were not reached in either test. The intact separator confirms that peak temperatures did not reach the separator melting threshold, and the absence of shrinkage or melting is consistent with temperatures remaining below 403.1 K in both cases. The 8 mm nail produced a higher peak temperature and faster initial rise, but this difference in magnitude within the sub-403.1 K regime does not cross any reaction threshold that would activate qualitatively different reaction pathways. Therefore, the claim that the 8 mm test activated additional pathways is inadmissible; both tests are bounded by the same reaction window, and the 8 mm test does not provide information about separator behavior under conditions where separator-activating temperatures would be reached.",
+        "must_include": [
+          "Both tests remained below 403.1 K peak temperature",
+          "Admissible reactions for both tests: SEI decomposition and anode-electrolyte reaction only",
+          "Electrolyte decomposition and separator melting thresholds were not reached in either test",
+          "Intact separator confirms temperatures did not reach separator melting threshold",
+          "Higher peak temperature within the same sub-threshold range does not activate qualitatively different reaction pathways",
+          "The engineer's error is inferring qualitatively different reaction pathways from a quantitative temperature difference that does not cross a reaction threshold"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming the 8 mm nail test activates cathode decomposition reactions",
+          "Inferring that nail diameter controls which reactions occur independent of temperature thresholds",
+          "Concluding that the 8 mm test is more informative about separator integrity under extreme conditions when temperatures did not approach separator melting threshold",
+          "Generalizing nail diameter effects to conditions where temperatures exceed 403.1 K"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Reaction pathway admissibility as determined by temperature thresholds, and the reasoning error of inferring qualitative mechanistic differences from quantitative differences within the same thermal regime",
+        "primary_boundary": "All peak temperatures below 403.1 K bound admissible reactions to SEI decomposition and anode-electrolyte reaction regardless of nail diameter; crossing a reaction threshold requires reaching that threshold temperature, not merely a higher temperature within the sub-threshold range",
+        "intended_error_modes": [
+          "Inferring additional reaction pathways from higher temperature within the same sub-threshold regime",
+          "Conflating quantitative severity increase with qualitative mechanism change",
+          "Treating nail diameter as a direct determinant of reaction pathways rather than temperature as the determinant"
+        ]
+      }
+    }
+  ]
+}

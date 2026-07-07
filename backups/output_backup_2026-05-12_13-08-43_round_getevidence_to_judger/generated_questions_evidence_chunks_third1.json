@@ -1,0 +1,308 @@
+{
+  "TR_Gasventing+53+Batteries__TR_Gasventing+54+Batteries__TR_Gasventing+55+Batteries": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery pack designer is evaluating four 50 Ah cell chemistries for a stationary energy storage application where thermal runaway propagation must be minimized. The cells are arranged in a module with uniform spacing and no active cooling. Under identical external heating conditions, the following critical surface temperatures at thermal runaway onset are measured: Cell A (346\u00b0C), Cell B (292\u00b0C), Cell C (290\u00b0C), Cell D (281\u00b0C). The corresponding measured propagation rates in the module configuration are: Cell A (1.241 mm/s), Cell B (1.726 mm/s), Cell C (3.375 mm/s), Cell D (2.7 mm/s). Which of the following conclusions are defensible based on these measurements?",
+          "options": [
+            "A: Cell A exhibits both the highest thermal runaway onset temperature and the lowest propagation rate, indicating that high onset temperature is a sufficient predictor of low propagation risk in module configurations.",
+            "B: Cell C, despite having a higher onset temperature than Cell D, exhibits a faster propagation rate, demonstrating that onset temperature alone does not determine propagation behavior.",
+            "C: The inverse correlation between onset temperature and propagation rate observed for Cells A and C suggests that chemistries requiring higher external energy input to trigger thermal runaway will consistently propagate more slowly.",
+            "D: Cell B's intermediate onset temperature and propagation rate indicate that it represents an optimal balance between thermal stability and propagation resistance.",
+            "E: The data support the conclusion that propagation rate is governed by factors beyond onset temperature, such as material reactivity or heat release characteristics during thermal runaway."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "While Cell A does exhibit both the highest onset temperature and lowest propagation rate, this single observation is insufficient to establish onset temperature as a sufficient predictor. Cell C has a higher onset temperature than Cell D but a faster propagation rate, directly contradicting the sufficiency claim. This is a causal overclaim from limited correlation.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+53+Batteries:C001",
+                "TR_Gasventing+53+Batteries:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Cell C (290\u00b0C onset, 3.375 mm/s) and Cell D (281\u00b0C onset, 2.7 mm/s) demonstrate that a higher onset temperature does not guarantee a lower propagation rate. This is a direct boundary observation showing that onset temperature is not a sufficient predictor of propagation behavior.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+53+Batteries:C001",
+                "TR_Gasventing+53+Batteries:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "The inverse correlation holds for Cells A and C but is violated by the Cell C vs. Cell D comparison. Cell C has higher onset temperature than Cell D but faster propagation. This option overgeneralizes a pattern observed in a subset of the data to a universal rule, ignoring contradictory evidence.",
+              "error_type": "overgeneralization",
+              "evidence_refs": [
+                "TR_Gasventing+53+Batteries:C001",
+                "TR_Gasventing+53+Batteries:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "The claim that Cell B represents an 'optimal balance' is unsupported. Intermediate values do not inherently indicate optimality without a defined objective function or trade-off analysis. The stem provides no basis for evaluating what constitutes optimal performance in this application context.",
+              "error_type": "unsupported_extrapolation",
+              "evidence_refs": [
+                "TR_Gasventing+53+Batteries:C001",
+                "TR_Gasventing+53+Batteries:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "The lack of consistent correlation between onset temperature and propagation rate across all four chemistries indicates that propagation is governed by additional factors. The evidence explicitly attributes LFP's low propagation rate to 'lower thermal reactivity,' supporting the conclusion that material-specific heat release characteristics influence propagation independently of onset temperature.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+53+Batteries:C001",
+                "TR_Gasventing+53+Batteries:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Relationship between thermal runaway onset temperature and propagation rate in multi-cell configurations",
+          "primary_boundary": "Distinguishing between correlation and causation; identifying when a single parameter is insufficient to predict system-level behavior",
+          "intended_error_modes": [
+            "causal_overclaim_from_correlation",
+            "overgeneralization_from_subset",
+            "unsupported_optimality_claim"
+          ],
+          "disallowed_extrapolations": [
+            "onset_temperature_as_sufficient_predictor",
+            "universal_inverse_correlation",
+            "intermediate_values_imply_optimality"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "An engineer is designing a gas detection-based early warning system for a battery module containing NCM622 and NCM523 cells. During thermal abuse testing, the following sequence is observed for both chemistries: (1) safety valve opening, (2) visible gas venting, (3) rapid temperature rise (>50\u00b0C/s), (4) violent thermal runaway with flame ejection. For NCM622 and NCM523, events (1) and (3) occur within 2 seconds of each other. In contrast, for two other chemistries tested under identical conditions, a 15-second interval separates safety valve opening from rapid temperature rise. The engineer proposes using safety valve opening as a trigger for an automated suppression system. Which of the following assessments are justified?",
+          "options": [
+            "A: For NCM622 and NCM523 cells, safety valve opening provides insufficient lead time for automated suppression intervention, making it ineffective as an early warning indicator for these chemistries.",
+            "B: The 15-second interval observed in the other chemistries guarantees sufficient time for suppression system activation, making safety valve detection a universally reliable early warning strategy.",
+            "C: The near-simultaneous occurrence of valve opening and thermal runaway in NCM622 and NCM523 is attributable to their higher energy density, which accelerates the transition from venting to violent thermal runaway.",
+            "D: A detection strategy based on safety valve opening is chemistry-dependent and may be effective for some cell types but inadequate for high-energy-density NCM chemistries.",
+            "E: The observed timing differences indicate that all battery chemistries will exhibit either a <2 second or >15 second interval between valve opening and thermal runaway, with no intermediate behavior.",
+            "F: For NCM622 and NCM523, alternative early warning signals occurring before safety valve opening are necessary to achieve actionable lead time for suppression systems."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "D",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "A 2-second interval between safety valve opening and violent thermal runaway is insufficient for most automated suppression systems to detect the signal, process it, and deploy countermeasures. This directly supports the conclusion that valve opening is ineffective as an early warning for these chemistries.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+53+Batteries:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "While 15 seconds may provide adequate lead time for the tested chemistries, the option overgeneralizes this to a 'universally reliable' strategy. The evidence demonstrates chemistry-dependent behavior, and no basis exists for claiming that all other chemistries will exhibit similar timing. This is an unjustified scope expansion.",
+              "error_type": "overgeneralization",
+              "evidence_refs": [
+                "TR_Gasventing+53+Batteries:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "The evidence explicitly attributes the near-simultaneous valve opening and thermal runaway in NCM chemistries to their higher energy density. This is a direct causal claim supported by the evidence and represents a valid mechanistic explanation.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+53+Batteries:C003"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "The observed timing differences between NCM622/NCM523 and the other chemistries directly demonstrate that the effectiveness of safety valve opening as an early warning indicator is chemistry-dependent. This is a minimal, evidence-supported conclusion about system design constraints.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+53+Batteries:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The evidence provides only two data points (<2 seconds and 15 seconds) and does not support the claim that no intermediate timing behavior exists. This is an unjustified extrapolation from limited sampling to a universal bimodal distribution claim.",
+              "error_type": "unsupported_extrapolation",
+              "evidence_refs": [
+                "TR_Gasventing+53+Batteries:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Given that safety valve opening provides insufficient lead time for NCM622 and NCM523, achieving actionable warning time logically requires detection of precursor events that occur before valve opening. This is a minimal engineering implication from the inadequacy of valve-based detection.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+53+Batteries:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Chemistry-dependent timing of thermal runaway progression and implications for early warning system design",
+          "primary_boundary": "Distinguishing between chemistry-specific observations and universal claims; recognizing when a detection strategy is conditionally effective",
+          "intended_error_modes": [
+            "overgeneralization_to_universal_reliability",
+            "unjustified_bimodal_distribution_claim"
+          ],
+          "disallowed_extrapolations": [
+            "universal_applicability_from_subset",
+            "exhaustive_timing_categories_from_limited_data"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A failure analysis team is investigating gas evolution mechanisms in lithium-ion cells with NCM cathodes. During thermal abuse testing at elevated temperatures, the following observations are made: (1) Below 250\u00b0C, the gas composition consists primarily of H2, CO2, CO, and C2H4. (2) Above 250\u00b0C, significant quantities of HF, fluoroalkanes (e.g., C2H5F), and ethers (e.g., dimethyl ether) appear in the vent gas. (3) Isotopic labeling experiments using 18O-enriched cathode materials show that CO2 and CO generated during the initial charge cycle originate almost entirely from surface Li2CO3 decomposition, with negligible contribution from electrolyte decomposition at the cathode. (4) Separate testing shows that Li2CO3 decomposes at 3.8 V, generating highly reactive singlet oxygen (1O2) rather than molecular O2. Which of the following conclusions are supported by these observations?",
+          "options": [
+            "A: The appearance of HF and fluoroalkanes above 250\u00b0C is caused by oxygen release from NCM cathodes reacting with fluorinated electrolyte components, representing a regime transition in gas generation mechanisms.",
+            "B: The dominance of Li2CO3 decomposition as a CO2 source during initial cycling indicates that electrolyte decomposition at the cathode is negligible under all operating conditions.",
+            "C: The generation of singlet oxygen rather than molecular O2 from Li2CO3 decomposition implies that this pathway contributes to gas evolution indirectly through subsequent reactions rather than direct O2 release.",
+            "D: Below 250\u00b0C, gas evolution is governed primarily by SEI decomposition and electrolyte reduction at the anode, with minimal contribution from cathode-side reactions.",
+            "E: The threshold temperature of 250\u00b0C represents a universal transition point above which all NCM-based cells will exhibit fluorinated gas species, independent of electrolyte formulation or cell design.",
+            "F: The isotopic labeling results demonstrate that surface contamination removal is critical for reducing gas evolution during formation cycling, but provide no information about gas generation during thermal abuse."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The evidence explicitly states that above 250\u00b0C, HF, fluoroalkanes, and ethers are generated 'due to oxygen release from NCM cathodes.' This represents a clear regime transition where cathode oxygen release enables new reaction pathways with fluorinated electrolyte components that do not occur below 250\u00b0C.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+54+Batteries:C007"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The isotopic labeling evidence applies specifically to 'the initial cycle' (formation cycling). Extrapolating this to 'all operating conditions' including thermal abuse, overcharge, and long-term cycling is an unjustified scope expansion. The evidence does not support claims about cathode electrolyte decomposition under thermal abuse conditions.",
+              "error_type": "overgeneralization",
+              "evidence_refs": [
+                "TR_Gasventing+54+Batteries:C018"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "The evidence states that Li2CO3 decomposition generates 'highly reactive 1O2, which is not released as molecular oxygen (O2).' Since singlet oxygen is not released as O2 gas, its contribution to gas evolution must occur through subsequent reactions with other cell components, making this an indirect pathway.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+54+Batteries:C017"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "While the stem describes gas species consistent with SEI and electrolyte decomposition below 250\u00b0C, the evidence about Li2CO3 decomposition at 3.8 V demonstrates that cathode-side reactions do contribute to gas evolution even at lower temperatures. The claim of 'minimal contribution from cathode-side reactions' contradicts the isotopic labeling evidence showing significant CO2/CO from cathode surface Li2CO3.",
+              "error_type": "mechanism_confusion",
+              "evidence_refs": [
+                "TR_Gasventing+54+Batteries:C017",
+                "TR_Gasventing+54+Batteries:C018"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The 250\u00b0C threshold is observed for the specific cell chemistry and electrolyte formulation tested. Claiming this as a 'universal transition point' independent of electrolyte formulation is an unjustified overgeneralization. Different electrolyte formulations with varying fluorine content or thermal stability would be expected to exhibit different transition temperatures.",
+              "error_type": "overgeneralization",
+              "evidence_refs": [
+                "TR_Gasventing+54+Batteries:C007"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "The isotopic labeling experiments specifically address CO2 and CO generation 'during the initial cycle,' which refers to formation cycling. These results directly inform surface contamination effects during formation but do not address gas generation mechanisms during thermal abuse, which involves different temperature regimes and reaction pathways. This correctly identifies the scope limitation.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+54+Batteries:C018"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Temperature-dependent regime transitions in gas generation mechanisms and scope limitations of experimental observations",
+          "primary_boundary": "Distinguishing between condition-specific observations and universal claims; recognizing when experimental results apply to specific operating regimes",
+          "intended_error_modes": [
+            "overgeneralization_across_conditions",
+            "universal_threshold_claim",
+            "mechanism_confusion"
+          ],
+          "disallowed_extrapolations": [
+            "formation_cycling_results_to_thermal_abuse",
+            "specific_threshold_to_universal_behavior",
+            "single_electrolyte_to_all_formulations"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "During post-mortem analysis of ejected particles from a prismatic 51 Ah NMC622 cell that underwent thermal runaway at 100% SOC, investigators find intact separator foil fragments alongside re-solidified copper droplets. The melting temperature of copper is 1085\u00b0C, while the separator material degrades above 200\u00b0C. Explain what these two observations together indicate about the spatial temperature distribution within the cell during thermal runaway, and why both types of particles can coexist in the ejected material."
+        },
+        "ground_truth": {
+          "gold_answer": "The coexistence of intact separator fragments and molten copper droplets indicates that internal cell temperatures during thermal runaway were highly non-uniform spatially. Some regions reached temperatures exceeding 1085\u00b0C (sufficient to melt copper), while other regions remained below the separator degradation threshold of approximately 200\u00b0C. This spatial heterogeneity allows both low-temperature and high-temperature particles to be ejected during the same thermal runaway event. The particles were ejected at different times or from different locations within the cell, reflecting local temperature variations rather than a uniform internal temperature field.",
+          "must_include": [
+            "spatial temperature non-uniformity or heterogeneity",
+            "local temperatures exceeding 1085\u00b0C in some regions",
+            "other regions remaining below separator degradation temperature",
+            "particles originating from different locations or times during ejection"
+          ],
+          "disallowed_extrapolations": [
+            "claiming uniform internal temperature",
+            "claiming all particles experienced the same thermal history",
+            "claiming separator fragments indicate maximum cell temperature was below 200\u00b0C",
+            "claiming copper droplets indicate all internal regions exceeded 1085\u00b0C"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Spatial temperature heterogeneity during thermal runaway inferred from particle analysis",
+          "primary_boundary": "Recognizing that coexisting particles with different thermal histories indicate spatial non-uniformity rather than temporal sequencing alone",
+          "intended_error_modes": [
+            "assuming_uniform_temperature_field",
+            "confusing_local_and_global_temperature_states"
+          ]
+        }
+      }
+    ]
+  }
+}

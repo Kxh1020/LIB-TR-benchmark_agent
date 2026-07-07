@@ -1,0 +1,131 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Four lithium-ion cell chemistries—NMC 1, NMC 2, LFP, and LTO—are subjected to identical heating abuse in a sealed canister. NMC cells exhibit onset temperatures of 140–145°C; LTO onset is 163°C; LFP onset is 200°C. Peak pressures: NMC 2 at ~102 bar, LFP at ~32 bar, LTO at ~29 bar. LFP vented gas contains the highest H2 fraction; NMC gas contains the highest CO fraction. Which conclusions are admissible?",
+        "options": [
+          "A. The LTO cell's lower onset temperature relative to LFP does not imply greater overall thermal hazard, because its peak pressure and peak temperature remain lower than LFP's.",
+          "B. The higher CO fraction in NMC vented gas compared to LFP is consistent with a greater contribution from cathode decomposition reactions in NMC cells.",
+          "C. Because NMC cells produce approximately three times the peak pressure of LFP cells, NMC cells present three times the explosion hazard in all confinement configurations.",
+          "D. The higher H2 fraction in LFP vented gas compared to NMC implies that LFP cells generate more total gas volume per cell than NMC cells under identical abuse conditions.",
+          "E. A lower thermal runaway onset temperature is a sufficient indicator of higher peak pressure during thermal runaway across these chemistries.",
+          "F. Gas composition differences between LFP and NMC chemistries suggest that different electrochemical decomposition pathways dominate during thermal runaway for each chemistry."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "LTO onset (163°C) is lower than LFP (200°C) yet peak temperature (305°C) and peak pressure (28.8 bar) remain lower than LFP, so onset temperature does not predict overall hazard magnitude.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C003",
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "NMC produces highest CO, consistent with more extensive cathode decomposition releasing oxygen that reacts with carbon species; this is a minimal mechanistic inference supported by the chemistry difference.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C006",
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C007"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Peak pressure ratio applies under the stated confinement; generalizing explosion hazard to all confinement configurations is an unsupported scope expansion.",
+            "error_type": "scope_expansion_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Higher H2 fraction reflects composition, not total gas volume; total volume comparison across chemistries is not supported by the stated evidence.",
+            "error_type": "measurement_scope_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C006"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "LTO has lower onset than LFP but lower peak pressure; onset temperature alone is insufficient to predict peak pressure ranking.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C003",
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Distinct gas species distributions between LFP and NMC are consistent with different dominant decomposition pathways, which is a minimal mechanistic inference from the composition data.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C006"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Decoupling of onset temperature from peak hazard metrics; gas composition as a decomposition pathway indicator; boundary of confinement-specific results",
+        "primary_boundary": "Onset temperature is not a sufficient predictor of peak pressure or total hazard; composition fraction ≠ total volume",
+        "intended_error_modes": [
+          "causal_overclaim",
+          "scope_expansion",
+          "measurement_scope_confusion"
+        ],
+        "disallowed_extrapolations": [
+          "Onset temperature ranking predicts peak pressure ranking",
+          "H2 fraction implies total gas volume ranking",
+          "Pressure ratio generalizes across confinement geometries"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "An engineer is evaluating two scenarios involving NCM/graphite polymer lithium-ion cells under external heating abuse. In Scenario 1, a cell at 75% SOC vents without secondary ignition and produces a peak heat release rate of 4.38 kW and a maximum venting rate of 4.5 m/s. In Scenario 2, a cell at 100% SOC vents with secondary ignition, producing a peak heat release rate of 73.3 kW and a maximum venting rate of 9.4 m/s. Internal pressure at 75% SOC is 0.53 MPa and at 100% SOC is 1.39 MPa. The engineer proposes that reducing operating SOC from 100% to 75% is sufficient to manage all hazard dimensions proportionally. Evaluate this claim, identifying which hazard metrics change proportionally and which do not, and explain the engineering implication for hazard management strategy."
+      },
+      "ground_truth": {
+        "gold_answer": "The claim that all hazard dimensions scale proportionally with SOC reduction from 100% to 75% is not admissible. Internal pressure decreases from 1.39 to 0.53 MPa (a ~62% reduction), and venting rate decreases from 9.4 to 4.5 m/s (~52% reduction)—these are meaningful but not proportional reductions. Most critically, peak heat release rate drops from 73.3 kW (with secondary ignition at 100% SOC) to 4.38 kW at 75% SOC—a reduction of over 93%. This disproportionate drop occurs because secondary ignition at 100% SOC involves gas-phase combustion that amplifies heat release far beyond what the electrochemical and thermal decomposition alone produce. The venting rate and pressure changes are moderate, but the heat release change is regime-crossing: secondary ignition represents a qualitatively different hazard mode, not merely a higher-SOC continuation of the same mechanism. The engineering implication is that SOC reduction to 75% may be highly effective at eliminating the catastrophic fire hazard associated with secondary ignition, but it does not proportionally reduce mechanical hazards such as internal pressure and venting momentum. A complete hazard management strategy must address both the gas combustion risk (which SOC reduction strongly mitigates) and the mechanical venting hazard (which persists at reduced but not eliminated levels at 75% SOC).",
+        "must_include": [
+          "heat release rate reduction is disproportionately large due to secondary ignition being a qualitatively different mechanism",
+          "pressure and venting rate reductions are significant but not proportional to heat release reduction",
+          "secondary ignition at 100% SOC represents a regime change, not a continuous scaling",
+          "SOC reduction alone does not proportionally manage all hazard dimensions"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming that 75% SOC eliminates all thermal runaway risk",
+          "Claiming pressure scales linearly with SOC",
+          "Generalizing these results to other cell chemistries or formats without stated evidence"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Regime-crossing behavior of secondary ignition; disproportionate heat release amplification versus moderate pressure/venting changes; hazard management implications of SOC reduction",
+        "primary_boundary": "Secondary ignition is a qualitative regime change, not a continuous SOC-proportional amplification; different hazard metrics respond differently to SOC reduction",
+        "intended_error_modes": [
+          "Assuming all hazard metrics scale proportionally with SOC",
+          "Treating secondary ignition as a continuous amplification rather than a regime transition",
+          "Concluding SOC reduction to 75% eliminates thermal hazard rather than eliminating the secondary ignition regime"
+        ]
+      }
+    }
+  ]
+}

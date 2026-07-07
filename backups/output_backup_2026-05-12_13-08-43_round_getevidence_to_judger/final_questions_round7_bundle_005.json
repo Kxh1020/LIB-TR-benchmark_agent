@@ -1,0 +1,224 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "During thermal runaway of an LFP pouch cell, temperature exceeds 250°C. An analyst proposes that the H2 detected in effluent gases originates from electrolyte solvent decomposition, the same pathway responsible for early methane generation. A second analyst attributes H2 to binder-lithium reactions at the anode. Both analysts agree that CO2 and CO appear later in the gas sequence. Which assessment of these competing attributions is most consistent with the physical mechanisms involved?",
+        "options": [
+          "A Both attributions are equivalent because above 250°C all decomposition reactions occur simultaneously, making source separation impossible.",
+          "B The first analyst's attribution is incorrect; H2 at temperatures above 250°C is mechanistically linked to binder decomposition involving PVdF and CMC reacting with lithium, not to solvent decomposition.",
+          "C The second analyst's attribution is incorrect because electrolyte solvent decomposition is the dominant gas-generating pathway at all temperatures above 120°C.",
+          "D The first analyst's attribution applies specifically to CH4 generation above 120°C via dimethyl carbonate decomposition, and extending this pathway to explain H2 at higher temperatures contradicts the distinct temperature-dependent reaction assignments.",
+          "E Since CO2 and CO appear last in the detection sequence, they must originate from cathode decomposition, not from any anode-side reaction.",
+          "F The gas detection sequence alone is sufficient to determine reaction pathways without additional temperature-resolved characterization."
+        ],
+        "options_count": 6
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "Evidence identifies distinct temperature thresholds (120°C for CH4, 250°C for H2), implying separable temperature-dependent pathways, not simultaneous equivalence.",
+            "error_type": "threshold_boundary_ignored",
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C008",
+              "TR_Gasventing+129+Journal_of_Power_Sources:C009"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Evidence assigns H2 production specifically to binder (PVdF, CMC) reaction with lithium above 250°C, distinct from electrolyte solvent decomposition responsible for CH4.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C009"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Solvent decomposition above 120°C explains CH4, not H2. H2 mechanism activates above 250°C via a different pathway; one pathway does not dominate all temperatures for all gases.",
+            "error_type": "overgeneralization_across_temperature",
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C008",
+              "TR_Gasventing+129+Journal_of_Power_Sources:C009"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Applying the DMC solvent decomposition pathway (CH4, >120°C) to H2 at >250°C conflates two distinct temperature-resolved mechanisms with separate reactants.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C008",
+              "TR_Gasventing+129+Journal_of_Power_Sources:C009"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence identifies CO2 and CO detection sequence but does not attribute them exclusively to cathode decomposition; the evidence does not support this specific source assignment.",
+            "error_type": "unsupported_source_attribution",
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Detection sequence indicates timing but not reaction pathway. Determining mechanism requires temperature-resolved source identification, not sequence alone.",
+            "error_type": "measurement_scope_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+129+Journal_of_Power_Sources:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Temperature-threshold-dependent gas generation mechanisms in LFP cells",
+        "primary_boundary": "CH4 via solvent decomposition >120°C vs. H2 via binder-lithium reaction >250°C; these are distinct pathways not interchangeable",
+        "intended_error_modes": [
+          "conflating CH4 and H2 generation pathways",
+          "treating one mechanism as universally dominant",
+          "inferring cathode source from detection sequence alone"
+        ],
+        "disallowed_extrapolations": [
+          "attribution of CO/CO2 to specific electrode without evidence",
+          "claiming detection sequence alone resolves reaction pathways"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An energy storage container houses multiple battery modules venting flammable gases after thermal runaway. The container has pressure relief panels opening at 3 kPa and an escape door opening at 20 kPa. Simulations show peak internal overpressure reaching approximately 23 kPa. The door side shows higher overpressure at 10 m distance compared to the relief panel side. A safety engineer proposes that eliminating pressure relief panels and relying solely on the escape door would simplify design without increasing risk since the door provides the primary venting pathway. Evaluate this proposal and the associated overpressure behavior.",
+        "options": [
+          "A The proposal is defensible because the escape door opens at a higher pressure threshold and therefore provides more controlled venting than the relief panels.",
+          "B The proposal is not supported; relief panels open first at 3 kPa and reduce internal pressure accumulation before the door threshold is reached, and removing them would increase peak internal overpressure.",
+          "C The door side already presents higher blast risk at 10 m distance compared to the relief panel side, so redistributing all venting to the door would concentrate hazard rather than distribute it.",
+          "D The peak overpressure of 23 kPa is below the minimum damage threshold of 4.8 kPa, so neither venting configuration produces a safety-relevant hazard at any distance.",
+          "E Pressure relief panels are redundant because the escape door alone can vent sufficient gas volume given that it opens before peak pressure is reached.",
+          "F The maximum damage distance of approximately 10 m on the door side indicates that personnel and equipment beyond that distance face no overpressure hazard regardless of venting configuration."
+        ],
+        "options_count": 6
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "C"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "Higher opening threshold means the door activates later, allowing greater pressure accumulation. This increases rather than reduces risk compared to early-opening relief panels.",
+            "error_type": "threshold_direction_inversion",
+            "evidence_refs": [
+              "TR_Gasventing+130+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Relief panels open at 3 kPa, well before the 20 kPa door threshold. Sequential venting reduces pressure buildup; removing panels eliminates early-stage pressure relief.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+130+Journal_of_Power_Sources:C003",
+              "TR_Gasventing+130+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence shows door side has higher overpressure risk than relief panel side at equivalent distances. Concentrating all venting to the door would amplify this existing asymmetry.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+130+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Peak internal overpressure of 23 kPa far exceeds the 4.8 kPa minimum damage threshold; overpressure at 10 m is near threshold. The premise of the option is numerically incorrect.",
+            "error_type": "numerical_inversion",
+            "evidence_refs": [
+              "TR_Gasventing+130+Journal_of_Power_Sources:C003",
+              "TR_Gasventing+130+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Door opens at 20 kPa, after substantial pressure has already accumulated. Relief panels open at 3 kPa to prevent escalation to that level; the door does not compensate for missing early-stage venting.",
+            "error_type": "sequential_dependency_ignored",
+            "evidence_refs": [
+              "TR_Gasventing+130+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "10 m is the maximum damage distance under the tested configuration with both venting pathways active. Removing relief panels could change this distance; the claim does not hold across configurations.",
+            "error_type": "condition_generalization_beyond_test_setup",
+            "evidence_refs": [
+              "TR_Gasventing+130+Journal_of_Power_Sources:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Sequential pressure relief function and hazard asymmetry in vented energy storage containers",
+        "primary_boundary": "Relief panels provide early-stage pressure reduction that door cannot substitute; door-side hazard asymmetry is worsened by concentrating venting",
+        "intended_error_modes": [
+          "treating higher threshold as safer venting",
+          "ignoring sequential threshold activation",
+          "misreading 10 m damage distance as universal safe boundary"
+        ],
+        "disallowed_extrapolations": [
+          "damage distance under modified venting configurations",
+          "total gas volume handled by each panel type"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "An engineer is selecting between LFP and NMC chemistry for a battery system where two independent safety concerns must be simultaneously managed: (1) minimizing the risk of toxic gas exposure to nearby personnel during thermal runaway, specifically HF emission, and (2) minimizing fire and explosion risk as indicated by a composite risk index. The engineer notes that LFP cells smoke for more than 20 minutes under thermal abuse compared to approximately 5 minutes for NMC. Based on the physical relationships between chemistry, gas emissions, and risk index behavior, explain why selecting LFP to address both concerns simultaneously involves an inherent trade-off, and identify which concern LFP addresses more effectively and which it addresses less effectively."
+      },
+      "ground_truth": {
+        "gold_answer": "LFP addresses fire and explosion risk more effectively. Its composite risk index remains low (approximately 2.3–3.3) across all SOC levels, whereas NMC1 reaches 4.2 at 75% SOC. LFP's higher failure temperature (~250°C vs ~200°C for NMC) contributes to this thermal stability advantage. However, LFP addresses HF toxic exposure concern less effectively. LFP emits up to 4 L/kWh of HF at 100% SOC, substantially more than NMC cells which range at 0.5–1.4 L/kWh. Additionally, LFP's prolonged smoking duration exceeding 20 minutes compared to ~5 minutes for NMC extends personnel exposure duration, compounding the HF hazard. The trade-off is therefore: LFP is superior for fire/explosion risk management but inferior for toxic gas (HF) exposure management. The engineer cannot optimize both simultaneously with a single chemistry choice between these two options.",
+        "must_include": [
+          "LFP risk index remains lower than NMC across SOC",
+          "LFP HF emission up to 4 L/kWh exceeds NMC range of 0.5–1.4 L/kWh",
+          "LFP smoking duration exceeds 20 minutes extending exposure",
+          "trade-off between fire risk and toxic gas exposure cannot be resolved by LFP alone"
+        ],
+        "disallowed_extrapolations": [
+          "claiming LFP eliminates fire risk entirely",
+          "claiming NMC is safer overall",
+          "inferring HF emission rate from smoking duration directly",
+          "extending risk index comparison to chemistries not mentioned in evidence"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Chemistry-dependent trade-off between thermal stability risk index and toxic HF emission during thermal runaway",
+        "primary_boundary": "LFP lower composite risk index vs. higher HF emission relative to NMC; prolonged smoking duration compounds HF exposure without implying higher fire risk",
+        "intended_error_modes": [
+          "selecting LFP as uniformly safer without recognizing HF trade-off",
+          "conflating smoking duration with fire hazard magnitude",
+          "assuming lower risk index implies lower toxic gas emission"
+        ]
+      }
+    }
+  ]
+}

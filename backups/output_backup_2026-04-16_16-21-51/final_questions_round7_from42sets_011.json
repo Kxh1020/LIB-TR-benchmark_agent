@@ -1,0 +1,99 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery safety engineer is comparing sodium-ion cells (NTM chemistry) and lithium iron phosphate cells (LFP) under identical external heating protocols across multiple states of charge. The NTM cells show a lower safety valve opening temperature than LFP cells at every SOC tested, yet the NTM cells never exhibit thermal runaway while LFP cells do at most SOCs. A colleague argues that the lower valve opening temperature in NTM cells is evidence of superior thermal stability. Which of the following conclusions are consistent with the described behavior?",
+        "options": [
+          "A. The earlier valve opening in NTM cells is consistent with lower internal thermal stability, yet this earlier venting may reduce internal pressure buildup before runaway thresholds are reached.",
+          "B. Because LFP cells open their safety valves at higher temperatures, the internal chemistry of LFP cells is more thermally stable than that of NTM cells.",
+          "C. The absence of thermal runaway in NTM cells across all SOCs cannot be attributed solely to the valve opening temperature difference, since LFP cells also vent but still undergo runaway.",
+          "D. The lower valve opening temperature in NTM cells directly proves that NTM electrodes decompose at lower temperatures than LFP electrodes.",
+          "E. A higher safety valve opening temperature in LFP cells, combined with thermal runaway occurrence, is consistent with the internal materials of LFP cells being less thermally stable than the valve opening temperature alone would suggest.",
+          "F. Since NTM cells vent at lower temperatures, they release more total gas mass per unit SOC than LFP cells."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence shows NTM vents earlier and never reaches runaway; earlier venting as a pressure-relief pathway is mechanistically consistent with this outcome.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+127+Journal_of_Power_Sources:C001",
+              "TR_Gasventing+127+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence explicitly states the higher LFP valve opening temperature indicates the material inside SIBs is less thermally stable, inverting this claim.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+127+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "LFP cells vent yet still undergo runaway, so valve opening temperature alone cannot explain NTM runaway absence; multi-factor reasoning required.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+127+Journal_of_Power_Sources:C001",
+              "TR_Gasventing+127+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Valve opening temperature reflects mechanical design, not electrode decomposition temperature directly; this is an unsupported causal attribution.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Gasventing+127+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Evidence states higher LFP Topen yet LFP undergoes runaway, and explicitly concludes SIB internal material is less thermally stable, supporting this interpretation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+127+Journal_of_Power_Sources:C001",
+              "TR_Gasventing+127+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Evidence shows LFP mass loss rates are 2–7 times larger than NTM at the same SOC, directly contradicting this claim.",
+            "error_type": "overgeneralization",
+            "evidence_refs": [
+              "TR_Gasventing+127+Journal_of_Power_Sources:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Relationship between safety valve opening temperature, internal thermal stability, and thermal runaway occurrence across chemistries",
+        "primary_boundary": "Higher valve opening temperature in LFP does not imply greater internal thermal stability; evidence inverts this intuition",
+        "intended_error_modes": [
+          "mechanism_substitution",
+          "causal_overclaim",
+          "ignoring multi-factor interaction"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring electrode decomposition temperature from valve opening temperature",
+          "Treating valve opening as sufficient condition for runaway prevention"
+        ]
+      }
+    }
+  ],
+  "short_answers": []
+}

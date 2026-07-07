@@ -1,0 +1,333 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery safety engineer is comparing thermal runaway (TR) outcomes across three external heating configurations applied to the same cell type under otherwise identical conditions. Configuration A uses a localized point-contact heater (heating rod), Configuration B uses a distributed surface heater (heating plate), and Configuration C uses a wrapped coil heater. Measured outcomes show that Configuration C triggers TR earliest and produces the highest peak chamber pressure, yet its post-TR peak cell temperature is the lowest of the three. Configuration A produces the highest post-TR peak temperature and the widest flammable concentration range in the vented gas. Which of the following conclusions are admissible based on these observations?",
+        "options": [
+          "A. The highest peak chamber pressure under Configuration C is driven primarily by a higher gas generation rate rather than by the ambient thermal environment at the time of venting.",
+          "B. Because Configuration C triggers TR earliest and at the lowest post-TR peak temperature, it poses the least explosion hazard among the three configurations.",
+          "C. Configuration A's higher post-TR peak temperature directly causes its wider flammable concentration range, establishing post-TR temperature as the primary predictor of explosion risk across heating configurations.",
+          "D. The inverse relationship between post-TR peak temperature and peak gas generation across configurations indicates that rapid early gas release can limit the thermal energy available to sustain cell combustion.",
+          "E. Configuration A presents the greatest explosion risk among the three configurations based on its flammable concentration range and lower flammability limit.",
+          "F. The ordering of H2 concentration in vent gas—highest for Configuration A and lowest for Configuration C—is consistent with more complete oxidation of reactants under higher-efficiency heating conditions.",
+          "G. Because Configuration C produces the highest peak pressure, it must also produce the highest total molar gas yield after the system reaches steady state."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "E",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that under heating coil conditions the ambient temperature is lowest yet peak pressure is highest, and identifies higher gas generation rate as the primary driver of pressure increase. This matches the stem's Configuration C description.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+182+Case_Studies_in_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Explosion hazard is determined by flammable concentration range and lower flammability limit, not by post-TR peak temperature or triggering speed. Configuration C has the second-widest flammable range and an intermediate lower flammability limit; Configuration A is the most hazardous by these metrics. This option conflates low post-TR temperature with low explosion risk.",
+            "error_type": "mechanism_confusion_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+182+Case_Studies_in_Thermal_Engineering:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The evidence shows Configuration A has both the highest post-TR temperature and the widest flammable range, but the evidence also shows that gas composition (H2 concentration, lower flammability limit) varies with heating method in ways not reducible to post-TR temperature alone. The causal claim that post-TR temperature is the primary predictor of explosion risk across configurations is not supported and constitutes an overclaim.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+182+Case_Studies_in_Thermal_Engineering:C005",
+              "TR_Gasventing+182+Case_Studies_in_Thermal_Engineering:C006"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The evidence states that peak pressure and ambient temperature rise with increased gas generation while post-TR peak temperature decreases. This is counterintuitive but supported: rapid early gas generation under Configuration C correlates with lower post-TR peak temperature, consistent with early venting dissipating thermal energy or consuming reactants before sustained high-temperature combustion can develop.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+182+Case_Studies_in_Thermal_Engineering:C004",
+              "TR_Gasventing+182+Case_Studies_in_Thermal_Engineering:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The evidence directly identifies the heating rod configuration as having the widest flammable concentration range (51.11%) and the lowest lower flammability limit (7.97%), making it the most hazardous in terms of explosion risk. Configuration A in the stem corresponds to the heating rod.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+182+Case_Studies_in_Thermal_Engineering:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The evidence states H2 concentration descends from heating rod to heating plate to heating coil, and attributes this to rapid oxidation of reactants at higher heating efficiencies leaving insufficient reactants to produce H2. Configuration A (rod) has the highest H2 and Configuration C (coil) the lowest, consistent with this mechanism.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+182+Case_Studies_in_Thermal_Engineering:C006"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "The evidence shows all methods stabilize between 1.7 and 2 mol after the peak, regardless of peak gas generation. Configuration C has the highest peak but not a higher steady-state total. Inferring highest total molar yield from highest peak pressure violates the stated stabilization behavior.",
+            "error_type": "overgeneralization_from_peak_to_steady_state",
+            "evidence_refs": [
+              "TR_Gasventing+182+Case_Studies_in_Thermal_Engineering:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism linking heating geometry to gas generation rate, pressure, post-TR temperature, and explosion hazard metrics; admissibility of causal claims across these coupled variables.",
+        "primary_boundary": "Peak pressure is driven by gas generation rate, not ambient temperature; explosion hazard is determined by flammable range and lower flammability limit, not post-TR temperature; steady-state gas yield converges regardless of peak differences.",
+        "intended_error_modes": [
+          "Conflating low post-TR temperature with low explosion hazard (B)",
+          "Causal overclaim linking post-TR temperature to explosion risk as primary predictor (C)",
+          "Extrapolating peak gas generation to total molar yield (G)"
+        ],
+        "disallowed_extrapolations": [
+          "Post-TR peak temperature as universal predictor of explosion risk",
+          "Peak gas generation as predictor of steady-state total gas yield",
+          "Earliest TR triggering as indicator of lowest overall hazard"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "During thermal runaway combustion of 18,650-format lithium-ion cells at 100% SOC, CO concentration in the enclosed test environment is measured across four chemistries. Separately, the same experiment is repeated with a 10 Ah pouch cell of one chemistry, producing CO concentrations exceeding 10,000 ppm. The number of identified combustion organic products (COPs) across all cell types peaks at 100% SOC and is lower at both 50% SOC and at 150% SOC (overcharge). For 100% SOC NMC cells, as cell capacity increases from 2 Ah to 30 Ah, CO concentration rises sharply (from hundreds to tens of thousands of ppm), while concentrations of identified toxic organic COPs remain in the range of a few to tens of ppm without a comparable increase. An engineer must assess which gas-phase hazard scales most critically with cell capacity in confined spaces. Which of the following conclusions are admissible?",
+        "options": [
+          "A. CO concentration is the gas-phase hazard that scales most strongly with increasing cell capacity in confined spaces, while toxic organic COP concentrations do not show a comparable capacity-dependent increase.",
+          "B. The non-monotonic dependence of identified COP count on SOC—peaking at 100% rather than at the highest SOC tested—means that overcharged cells are safer than fully charged cells with respect to all combustion gas hazards.",
+          "C. Because toxic organic COP concentrations remain at low ppm levels across the capacity range tested, CO toxicity represents the dominant acute inhalation hazard as capacity scales upward.",
+          "D. The observation that COP count decreases from 100% to 150% SOC implies that the total chemical energy released during combustion also decreases in the overcharge regime.",
+          "E. A threefold increase in cell capacity produces a disproportionately larger increase in CO concentration, indicating that CO generation does not scale linearly with capacity.",
+          "F. The peak in toxic COP occurrence at 100% SOC compared to 150% SOC is sufficient to conclude that 100% SOC cells pose greater fire suppression challenges than overcharged cells."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence directly shows CO rising sharply with capacity (616 to 45,500 ppm over 2 to 30 Ah) while organic COP concentrations remain at a few to tens of ppm without obvious increase, supporting this as the primary capacity-scaling hazard.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+181+Nano_Energy:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The non-monotonic COP count does not mean overcharged cells are safer across all combustion gas hazards. The evidence addresses COP count and toxicity ranking but does not establish that CO or other hazards are lower at 150% SOC. Generalizing to 'all combustion gas hazards' is an unsupported scope expansion.",
+            "error_type": "scope_expansion_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+181+Nano_Energy:C001",
+              "TR_Gasventing+181+Nano_Energy:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Given that CO scales sharply with capacity while organic COP concentrations remain low and relatively flat, and given that CO at the measured concentrations (>10,000 ppm) exceeds levels causing serious illness and death, CO toxicity is the dominant acute inhalation hazard as capacity increases. This is a supported minimal engineering implication from the scaling data.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+181+Nano_Energy:C003",
+              "TR_Gasventing+181+Nano_Energy:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "COP count is a count of identified organic product species, not a measure of total chemical energy released. Inferring reduced total energy release from reduced COP count is a measurement scope violation; the evidence does not link COP count to total combustion energy.",
+            "error_type": "measurement_scope_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+181+Nano_Energy:C001"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The evidence shows CO increases 15–22 times when capacity increases approximately 3 times (from 18,650 to 10 Ah pouch), confirming disproportionate (superlinear) scaling. This directly supports the conclusion that CO generation does not scale linearly with capacity.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+181+Nano_Energy:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Fire suppression challenge depends on factors including flame intensity, combustion duration, and gas flammability, none of which are addressed by the COP toxicity ranking data. Inferring fire suppression difficulty from toxic COP occurrence frequency is an unsupported causal extrapolation.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+181+Nano_Energy:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Differential scaling of CO versus organic COP hazards with cell capacity; non-monotonic SOC dependence of COP count and its admissible interpretation; superlinear CO scaling.",
+        "primary_boundary": "COP count non-monotonicity applies to identified organic species only and cannot be generalized to all gas hazards or to total energy release; CO scaling is superlinear with capacity but organic COPs are not.",
+        "intended_error_modes": [
+          "Generalizing COP count reduction at overcharge to all hazards (B)",
+          "Inferring total energy release from COP count (D)",
+          "Inferring fire suppression difficulty from toxic COP ranking (F)"
+        ],
+        "disallowed_extrapolations": [
+          "COP count as proxy for total combustion energy",
+          "COP toxicity ranking as predictor of fire suppression difficulty",
+          "Overcharge safety generalization from COP count alone"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Airborne particulates collected from thermal runaway events of NMC and LFP cells are characterized for particle size, elemental composition, and biological effect. NMC-derived particulates have a larger count mean diameter and higher mass concentration than LFP-derived particulates. Manganese is detected in NMC-derived particulate extracts but not in LFP-derived extracts regardless of state of charge. In cell culture experiments using airway epithelial cells, NMC-derived particulates at a dose corresponding to 5 years of cumulative occupational exposure produce a statistically significant increase in reactive oxygen species (ROS) relative to control, while the same particulates at a 1-year dose do not. LFP-derived particulates produce no significant ROS elevation at either dose or at either 24-hour or 7-day exposure time points. Dispersion of both particulate types in water promotes agglomerate formation, while dispersion in cell culture medium reduces particle size and promotes uniform distribution. An occupational health engineer must evaluate which conclusions about inhalation hazard are supported. Which of the following are admissible?",
+        "options": [
+          "A. The absence of ROS elevation from LFP-derived particulates at both doses and both time points supports the conclusion that LFP-derived TR particulates do not induce oxidative stress in airway epithelial cells under the tested conditions.",
+          "B. Because NMC-derived particulates contain manganese and LFP-derived particulates do not, manganese is established as the sole mechanistic driver of the ROS response observed at the 5-year NMC dose.",
+          "C. The dose-dependent threshold behavior of NMC-derived particulates—significant ROS at 5-year but not 1-year dose—implies that short-term single-incident exposures to NMC TR particulates are unlikely to produce the same oxidative stress response observed at the 5-year cumulative dose.",
+          "D. The agglomerate formation observed when particulates are dispersed in water means that in vivo inhalation exposures would also produce agglomerated particles reaching the airway epithelium, making the cell culture results an underestimate of actual toxicity.",
+          "E. NMC-derived TR particulates pose a greater inhalation-related oxidative stress hazard than LFP-derived TR particulates under the tested exposure conditions.",
+          "F. The larger particle size and higher mass concentration of NMC-derived particulates compared to LFP-derived particulates are sufficient to explain the differential ROS response without invoking compositional differences."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence states LFP-derived TR-PM did not induce higher ROS at either dose or either time point relative to control. This directly supports the stated conclusion under the tested conditions, with appropriate scope limitation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+180+Environment_International:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "While manganese is exclusively found in NMC-derived extracts, the evidence does not establish it as the sole driver of ROS. Multiple compositional differences exist between NMC and LFP particulates (particle size, other metals, organic content), and the evidence does not isolate manganese as the causal agent. This is a causal overclaim.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+180+Environment_International:C002",
+              "TR_Gasventing+180+Environment_International:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence shows a threshold between 1-year and 5-year cumulative doses for NMC-derived particulates. A single-incident short-term exposure would correspond to a dose far below the 1-year cumulative level, which already produced no significant ROS elevation. The conclusion is a minimal and supported implication of the dose-threshold evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+180+Environment_International:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence states that dispersion in cell culture medium reduces particle size and promotes uniform distribution, which is the relevant condition for the cell culture experiments. Inferring that in vivo airway conditions would replicate water-dispersion agglomeration behavior—rather than the protein-rich fluid environment of the airway—is an unsupported extrapolation. The cell culture medium result actually suggests the opposite of agglomeration in a physiologically relevant medium.",
+            "error_type": "condition_violation_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+180+Environment_International:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "NMC-derived particulates produced significant ROS elevation at the 5-year dose while LFP-derived particulates produced none at either dose or time point. This directly supports NMC as posing greater oxidative stress hazard under the tested conditions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+180+Environment_International:C003",
+              "TR_Gasventing+180+Environment_International:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Particle size and mass concentration differences alone are insufficient to explain differential ROS, because the evidence also identifies compositional differences (e.g., manganese presence) that could independently contribute. Attributing the differential response solely to physical size parameters while excluding compositional factors is an unsupported single-variable causal claim.",
+            "error_type": "single_variable_causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+180+Environment_International:C001",
+              "TR_Gasventing+180+Environment_International:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissible conclusions about differential inhalation hazard between NMC and LFP TR particulates; dose-threshold interpretation; compositional versus physical property attribution of biological response.",
+        "primary_boundary": "ROS response is dose-threshold dependent and chemistry-dependent; manganese presence is correlational not established as sole causal driver; cell culture medium dispersion behavior cannot be directly mapped to water-dispersion behavior for in vivo inference.",
+        "intended_error_modes": [
+          "Attributing ROS response solely to manganese (B)",
+          "Inferring in vivo agglomeration from water-dispersion data while ignoring cell culture medium result (D)",
+          "Attributing differential ROS to physical size alone while ignoring composition (F)"
+        ],
+        "disallowed_extrapolations": [
+          "Manganese as sole mechanistic driver without isolation evidence",
+          "Water-dispersion agglomeration as representative of in vivo conditions",
+          "Particle size as sufficient explanation for differential biological response"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A lithium-ion cell undergoes thermal runaway in a sealed enclosure. Three different external heating configurations are tested in separate trials: one applies heat through a small-area point contact, one through a large distributed surface, and one through a wrapped coil covering most of the cell surface. Across these trials, the configuration that triggers thermal runaway earliest and produces the highest peak chamber pressure also yields the lowest post-thermal-runaway peak cell temperature. Simultaneously, the configuration that produces the highest post-thermal-runaway peak cell temperature yields the widest flammable concentration range and lowest lower flammability limit in the vented gas, and also shows the highest hydrogen concentration in the vent gas. Explain the mechanistic reasoning that accounts for: (1) why the configuration with the highest peak chamber pressure has the lowest post-TR peak temperature, and (2) why the configuration with the highest post-TR peak temperature has the highest hydrogen concentration in vent gas despite being identified as the most hazardous by flammability metrics."
+      },
+      "ground_truth": {
+        "gold_answer": "(1) The configuration producing the highest peak chamber pressure does so because it generates gas at the highest rate during thermal runaway, not because the ambient or cell temperature is highest. Rapid early gas generation vents thermal energy and consumes reactive intermediates quickly, leaving less chemical energy available to sustain high-temperature combustion after the peak event. The result is a lower post-TR steady-state cell temperature despite the higher instantaneous pressure. The pressure is driven by gas generation rate, not by thermal environment. (2) The configuration with the highest post-TR peak temperature corresponds to lower heating efficiency distributed over a smaller contact area, which means the cell undergoes a slower, less complete oxidation process. Under lower heating efficiency conditions, reactants are not rapidly oxidized, leaving more hydrogen-producing precursors available. Higher heating efficiency configurations oxidize reactants more rapidly, consuming the precursors before they can generate hydrogen, resulting in lower H2 concentration. The heating rod configuration therefore shows the highest H2 concentration precisely because its lower heating efficiency leaves more unreacted material available for H2 production. The wide flammable range and low lower flammability limit arise from the overall gas composition produced under these conditions, not from the H2 concentration alone.",
+        "must_include": [
+          "Gas generation rate is the primary driver of peak pressure, not ambient or post-TR temperature",
+          "Rapid gas generation during TR dissipates or consumes energy, reducing post-TR peak temperature",
+          "Lower heating efficiency leaves more unreacted precursors available for H2 production",
+          "Higher heating efficiency causes more complete oxidation, reducing H2 yield",
+          "Flammable concentration range and lower flammability limit are the relevant explosion hazard metrics, not H2 concentration alone"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming that lower post-TR temperature means lower overall hazard",
+          "Claiming that highest H2 concentration alone explains the widest flammable range",
+          "Claiming that the coil configuration is safer than the rod configuration in all respects",
+          "Inferring total gas yield from peak pressure"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanistic coupling between heating geometry, gas generation rate, post-TR temperature, H2 production, and explosion hazard metrics; counterintuitive inverse relationship between peak pressure and post-TR temperature.",
+        "primary_boundary": "Peak pressure is determined by gas generation rate not thermal environment; H2 yield is inversely related to heating efficiency due to oxidation completeness; explosion hazard is determined by flammable range and lower flammability limit, not by any single gas species concentration.",
+        "intended_error_modes": [
+          "Attributing high pressure to high temperature rather than to gas generation rate",
+          "Interpreting low post-TR temperature as indicating low hazard",
+          "Attributing high H2 to high heating efficiency rather than to low oxidation completeness",
+          "Conflating H2 concentration with explosion hazard ranking"
+        ]
+      }
+    }
+  ]
+}

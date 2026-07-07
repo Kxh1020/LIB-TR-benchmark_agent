@@ -1,0 +1,330 @@
+{
+  "TR_Protection+136+Journal_of_Energy_Storage__TR_Protection+137+Journal_of_Energy_Storage__TR_Protection+140+Journal_of_Energy_Storage": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A hybrid PCM\u2013liquid cooling plate uses 4 mm PCM thickness, 1.5 m/s coolant velocity, and 6 mm channel width during 2C discharge. An engineer proposes widening the channel to 10 mm while keeping cold plate volume constant to further reduce Tmax. Which statements correctly characterize the expected outcome of this design change?",
+          "options": [
+            "A. Widening the channel reduces frictional resistance and lowers pump energy consumption.",
+            "B. Widening the channel at constant cold plate volume reduces embedded PCM volume, offsetting the thermal benefit of the larger channel.",
+            "C. Widening the channel unconditionally improves Tmax because convective heat transfer area increases.",
+            "D. Pump power consumption increases as channel width decreases, so widening the channel from 6 mm to 10 mm reduces pump consumption.",
+            "E. The channel width parameter has the highest influence on Tmax among PCM thickness, coolant velocity, and channel width.",
+            "F. The cooling benefit of widening the channel is negligible because the structural trade-off between liquid cooling and PCM integration limits net gain."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "D",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Narrower channels increase frictional resistance and pump consumption; widening reduces resistance and pump energy.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+136+Journal_of_Energy_Storage:C018"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "At constant cold plate volume, a wider channel directly displaces PCM volume, negating convective gains.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+136+Journal_of_Energy_Storage:C017"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Unconditional Tmax improvement ignores the PCM volume trade-off that offsets convective benefit at constant plate volume.",
+              "error_type": "boundary overreach",
+              "evidence_refs": [
+                "TR_Protection+136+Journal_of_Energy_Storage:C017"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Evidence shows pump consumption rises from 15.6 J to 21.1 J as width decreases from 10 to 6 mm; widening reverses this.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+136+Journal_of_Energy_Storage:C018"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Orthogonal analysis ranks influence as PCM thickness > coolant velocity > channel width; channel width has lowest influence.",
+              "error_type": "mechanism substitution",
+              "evidence_refs": [
+                "TR_Protection+136+Journal_of_Energy_Storage:C011"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "The structural trade-off between liquid cooling and PCM integration causes channel width to exhibit the lowest net influence on Tmax.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+136+Journal_of_Energy_Storage:C017",
+                "TR_Protection+136+Journal_of_Energy_Storage:C011"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Trade-off between channel width, PCM volume displacement, and pump energy in a constant-volume hybrid cooling plate",
+          "primary_boundary": "Cold plate volume held constant; channel width effect on Tmax is dominated by PCM volume displacement, not convective area",
+          "intended_error_modes": [
+            "boundary overreach",
+            "mechanism substitution",
+            "unsupported monotonicity"
+          ],
+          "disallowed_extrapolations": [
+            "Widening channel always improves Tmax regardless of PCM volume constraint",
+            "Channel width is the dominant design parameter"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A 628 Ah LiFePO4 battery pack uses a single centralized thermal insulation layer between jelly rolls. The designer considers replacing it with three distributed insulation layers, each at 1.12 mm, to block internal propagation. The single layer requires 2.11 mm for thick-structure cells. Which statements are correct regarding this substitution?",
+          "options": [
+            "A. The three-layer configuration (3 \u00d7 1.12 mm = 3.36 mm total) uses more insulation material than the single 2.11 mm layer.",
+            "B. Three distributed layers obstruct radial heat conduction paths, leading to higher core temperatures and poorer heat dissipation than the single-layer approach.",
+            "C. Three distributed layers provide superior heat dissipation because they intercept heat at multiple locations along the thermal path.",
+            "D. The single centralized layer at 2.11 mm increases normal-operation cell temperature by less than 0.2\u00b0C compared to no insulation, indicating negligible thermal dissipation penalty.",
+            "E. Both configurations equally suppress internal thermal propagation because total insulation thickness is the only determinant of suppression effectiveness.",
+            "F. The single-layer approach is potentially more material-efficient than the three-layer configuration for thick-structure 628 Ah batteries."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "D",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "3 \u00d7 1.12 mm = 3.36 mm total exceeds the 2.11 mm single-layer requirement; directly supported by evidence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+137+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Three distributed layers block radial conduction paths, raising core temperatures and worsening heat dissipation versus single layer.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+137+Journal_of_Energy_Storage:C011"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Multi-location interception actually obstructs radial conduction, degrading heat dissipation; this is a causal overclaim.",
+              "error_type": "causal overclaim",
+              "evidence_refs": [
+                "TR_Protection+137+Journal_of_Energy_Storage:C011"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Single-layer insulation increases thick-cell temperature by only 0.11\u00b0C after 2000 s cooling, confirming negligible dissipation penalty.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+137+Journal_of_Energy_Storage:C006"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Distribution pattern, not only total thickness, determines heat conduction obstruction and core temperature; configuration matters.",
+              "error_type": "mechanism substitution",
+              "evidence_refs": [
+                "TR_Protection+137+Journal_of_Energy_Storage:C011",
+                "TR_Protection+137+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Single layer achieves suppression at 2.11 mm versus 3.36 mm for three layers, making it more material-efficient for thick-structure cells.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+137+Journal_of_Energy_Storage:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Comparison of single versus distributed insulation layer strategies for internal thermal propagation suppression in large-format LFP cells",
+          "primary_boundary": "Thick-structure 628 Ah cells; single-layer critical thickness is 2.11 mm; distributed layers obstruct radial conduction",
+          "intended_error_modes": [
+            "causal overclaim",
+            "mechanism substitution",
+            "scale transfer overclaim"
+          ],
+          "disallowed_extrapolations": [
+            "Total thickness is the sole determinant of suppression",
+            "Distributed layers always improve heat dissipation"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "An engineer evaluates three dielectric immersion liquids\u2014dimethyl silicone oil, No.10 transformer oil, and No.15 hydraulic oil\u2014for suppressing thermal runaway in 26700 LFP cylindrical cells under overcharge heating. All three prevent TR, burning, and explosion. Which statements correctly characterize the trade-offs among these fluids for practical deployment?",
+          "options": [
+            "A. No.10 transformer oil has the highest convective heat transfer coefficient (~210 W/m\u00b2\u00b7K) among the three fluids but poses a fire risk due to its relatively low flash point.",
+            "B. Dimethyl silicone oil is the optimal choice for comprehensive TR suppression based on integrated thermal and gas hazard indicators.",
+            "C. No.15 hydraulic oil releases gas from thermal decomposition before the LIB safety valve activates, interfering with gas detection systems.",
+            "D. No.10 transformer oil's superior heat transfer coefficient makes it unconditionally safer than dimethyl silicone oil for large-scale LIB thermal management.",
+            "E. Dimethyl silicone oil's Si\u2013O backbone provides thermal stability that prevents it from generating flammable decomposition products under the tested conditions.",
+            "F. No.15 hydraulic oil neutralizes HF via alkaline additives after safety valve opening, reducing peak HF concentration below the maximum permissible limit.",
+            "G. All three immersion fluids reduce peak CO concentration below the 447 ppm maximum exposure limit compared to the non-immersed group."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "C",
+            "E",
+            "F",
+            "G"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Transformer oil has ~210 W/m\u00b2\u00b7K coefficient but low flash point limits large-scale application; both facts are evidenced.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+140+Journal_of_Energy_Storage:C008",
+                "TR_Protection+140+Journal_of_Energy_Storage:C009"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Radar chart evaluation integrating ten indicators ranked dimethyl silicone oil first for comprehensive TR suppression.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+140+Journal_of_Energy_Storage:C020"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Hydraulic oil thermal decomposition gas precedes safety valve activation, confirmed to interfere with gas detector response.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+140+Journal_of_Energy_Storage:C007"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Transformer oil's low flash point creates fire risk that limits large-scale use; superior heat transfer does not override safety constraint.",
+              "error_type": "boundary overreach",
+              "evidence_refs": [
+                "TR_Protection+140+Journal_of_Energy_Storage:C009"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Dimethyl silicone oil's Si\u2013O backbone provides chemical inertness and thermal stability, reducing flammable gas generation versus hydrocarbon oils.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+140+Journal_of_Energy_Storage:C013"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Alkaline additives (phosphate or amine-based) in hydraulic oil neutralize HF after valve opening, reducing peak HF below 2.45 ppm limit.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+140+Journal_of_Energy_Storage:C012",
+                "TR_Protection+140+Journal_of_Energy_Storage:C011"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Correct",
+              "justification": "All three immersion groups produced CO at 55\u2013119 ppm, all below the 447 ppm limit, versus 4874 ppm non-immersed.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Protection+140+Journal_of_Energy_Storage:C010"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-criteria trade-off evaluation of three immersion liquids for LFP TR suppression including heat transfer, gas hazard, and safety constraints",
+          "primary_boundary": "26700 LFP cylindrical cells only; findings not validated for other chemistries or pack-level configurations",
+          "intended_error_modes": [
+            "boundary overreach",
+            "causal overclaim",
+            "unsupported monotonicity"
+          ],
+          "disallowed_extrapolations": [
+            "Superior heat transfer coefficient implies unconditional safety superiority",
+            "Results transfer to NCM or pack-level configurations"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A battery pack engineer is comparing thick-structure and thin-structure designs for a 628 Ah LiFePO4 cell. Experimental data show the thick-structure cell triggers thermal runaway at 395 s under identical heating, while the thin-structure cell triggers at 487 s and requires 18.7% more energy to initiate TR. However, the thick-structure cell exhibits a back-surface temperature 53\u00b0C lower than the thin-structure cell during TR. The engineer concludes that the thick-structure design is safer overall because it shows lower back-surface temperature during TR. Evaluate this conclusion, identifying the specific mechanism that creates the apparent contradiction and stating what additional protection strategy is required to make the thick-structure design viable in a pack."
+        },
+        "ground_truth": {
+          "gold_answer": "The conclusion is incorrect. The thick-structure cell is more vulnerable to TR initiation: it triggers earlier (395 s vs 487 s) and requires 18.7% less energy to reach TR onset, indicating inferior pre-TR thermal homogeneity. Its lower back-surface temperature during TR does not imply lower propagation risk to adjacent cells; it reflects a local measurement that may underestimate internal peak temperatures. The thin-structure cell's superior thermal homogeneity delays TR onset and demands more triggering energy. The apparent contradiction arises because back-surface temperature is a surface observable that does not fully represent heat transfer to neighbors. To make the thick-structure design viable, a centralized single insulation layer of at least 2.11 mm must be incorporated to suppress internal thermal propagation, since the thick structure alone does not prevent inter-jelly-roll propagation.",
+          "must_include": [
+            "thick-structure triggers TR earlier and requires less energy, indicating inferior pre-TR safety",
+            "back-surface temperature is a surface measurement and does not directly represent propagation risk to adjacent cells",
+            "thin-structure has superior thermal homogeneity and higher TR triggering energy",
+            "single centralized insulation layer of at least 2.11 mm is required to suppress internal propagation in thick-structure cells"
+          ],
+          "disallowed_extrapolations": [
+            "Lower back-surface temperature during TR implies unconditionally lower propagation risk to adjacent cells",
+            "Thick-structure design is inherently safer than thin-structure without additional insulation",
+            "The 2.11 mm threshold applies to thin-structure cells (it applies to thick-structure; thin-structure requires 2.85 mm)"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Distinguishing pre-TR initiation vulnerability from post-TR propagation risk, and identifying the insulation requirement to mitigate thick-structure cell propagation",
+          "primary_boundary": "628 Ah LiFePO4 thick-structure cells; 2.11 mm single-layer critical thickness applies to thick-structure; back-surface temperature is a surface observable not equivalent to inter-cell heat transfer magnitude",
+          "intended_error_modes": [
+            "confusing surface measurement with internal propagation risk",
+            "attributing overall safety to a single post-TR observable",
+            "ignoring pre-TR energy threshold difference as the primary safety discriminator"
+          ]
+        }
+      }
+    ]
+  }
+}

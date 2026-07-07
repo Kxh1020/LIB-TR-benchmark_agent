@@ -1,0 +1,129 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A 100% SOC NCM 811 cylindrical cell with an intact casing undergoes thermal runaway. At the safety valve burst temperature (405.5 K), internal pressure from redox-generated gas is approximately three times the electrolyte vapor pressure. As temperature rises further toward the separator collapsing temperature, the ratio of redox-gas pressure to electrolyte vapor pressure increases to over six. The temperature-to-gas-generation-rate relationship is nonlinear across this range but becomes approximately linear near the separator collapsing temperature. Which of the following conclusions are supported?",
+        "options": [
+          "A. Redox-generated gas pressure is the dominant contributor to safety valve bursting, not electrolyte vapor pressure, at the venting temperature.",
+          "B. Because the temperature–gas generation rate relationship is nonlinear before the separator collapsing temperature, a single-step reaction model is sufficient to describe internal pressure buildup in this regime.",
+          "C. Setting the safety valve burst threshold substantially above the manufacturer's specified range increases the risk of rupture and explosion because gas generated during thermal runaway cannot be vented in time.",
+          "D. The approximately linear relationship between temperature rate and gas generation rate near the separator collapsing temperature implies that a single dominant reaction controls pressure buildup at that stage.",
+          "E. At the venting temperature, electrolyte vapor pressure contributes meaningfully to total internal pressure but is not the primary driver of valve bursting.",
+          "F. The nonlinear temperature–gas generation relationship before the separator collapsing temperature indicates that total pressure at any intermediate temperature can be accurately predicted from a linear extrapolation of the venting-temperature values."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "At venting temperature, Pg (995.79 kPa) is nearly three times PELE (302.42 kPa); redox gas bears main responsibility for valve bursting.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Nonlinearity before Tsc explicitly indicates multi-step reactions; a single-step model is contradicted by the evidence.",
+            "error_type": "mechanism_inversion",
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence states that a high valve threshold prevents timely venting, causing rupture and explosion especially at high temperatures.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Approximate linearity near Tsc is described as an emergent behavior of multi-step reactions converging; it does not imply a single dominant reaction.",
+            "error_type": "causal_overclaim_from_linearity_observation",
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "PELE at venting is 302.42 kPa, contributing to total 1298.21 kPa; meaningful but not primary relative to Pg of 995.79 kPa.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C002",
+              "TR_Gasventing+122+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Nonlinearity before Tsc explicitly invalidates linear extrapolation from venting-temperature values to intermediate temperatures.",
+            "error_type": "unjustified_linear_extrapolation_across_nonlinear_regime",
+            "evidence_refs": [
+              "TR_Gasventing+122+Journal_of_Power_Sources:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Pressure contribution hierarchy at venting and the multi-step reaction interpretation of nonlinear temperature–gas rate relationship",
+        "primary_boundary": "Approximate linearity near Tsc reflects multi-step convergence, not single-step dominance; PELE is real but secondary",
+        "intended_error_modes": [
+          "Interpreting near-Tsc linearity as evidence of single-step reaction",
+          "Treating PELE as negligible rather than secondary",
+          "Assuming linear extrapolation is valid across the nonlinear pre-Tsc regime"
+        ],
+        "disallowed_extrapolations": [
+          "Single-step model adequacy from near-Tsc linearity",
+          "Linear pressure prediction across the full Tonset-to-Tsc range",
+          "High valve threshold improves safety by containing gas longer"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "An engineer designing a battery management system for a high-energy-density lithium-ion pack wants to use the SOC-dependent flammable gas fraction in vent gas as the basis for a hazard threshold. For LCO cells, flammable gas fraction remains below 25% up to a certain SOC, then jumps sharply. For LFP cells, flammable gas fraction rises more gradually but still crosses 30% by 50% SOC. The engineer proposes that a single SOC-based flammability threshold can be used for both chemistries. Evaluate whether this proposal is admissible, identifying the key mechanism-based limitation and the specific evidence that constrains the conclusion."
+      },
+      "ground_truth": {
+        "gold_answer": "The proposal is not admissible as a single universal threshold. LCO cells exhibit a threshold-type transition near 40% SOC where flammable gas fraction jumps sharply, while LFP cells show a more gradual increase that already exceeds 30% by 50% SOC. These are distinct SOC-dependent behaviors: LCO's transition is abrupt and threshold-like, making a single threshold potentially valid within that chemistry but set at a chemistry-specific SOC. Applying the same threshold to LFP would either be too conservative at low SOC or miss the gradual rise before 50% SOC. Additionally, NCA cells have higher hydrogen fractions and the highest flame speeds, meaning flammability hazard is not solely captured by flammable gas volume fraction—flame speed and gas composition must also be considered. A single SOC threshold cannot account for these chemistry-specific composition differences and the distinct functional forms of the SOC-flammability relationship across chemistries.",
+        "must_include": [
+          "LCO exhibits a threshold-type jump near 40% SOC, not a gradual increase",
+          "LFP flammable fraction exceeds 30% by 50% SOC with gradual increase",
+          "A single threshold cannot capture both abrupt and gradual SOC-dependent behaviors",
+          "Chemistry-specific composition differences (H2 vs CO2 fractions) affect flammability beyond volume fraction alone"
+        ],
+        "disallowed_extrapolations": [
+          "A corrected single threshold can be derived by averaging the two SOC transition points",
+          "NCA and NMC can be assumed to follow the same pattern as LCO",
+          "Flammable gas volume fraction alone is sufficient to characterize ignition hazard across chemistries"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of a chemistry-agnostic SOC-based flammability threshold given chemistry-specific threshold vs gradual SOC-flammability relationships",
+        "primary_boundary": "LCO shows abrupt threshold behavior; LFP shows gradual increase; these functional forms are incompatible with a single shared threshold",
+        "intended_error_modes": [
+          "Assuming a single averaged SOC threshold is conservative enough for all chemistries",
+          "Ignoring that flame speed depends on H2/CO2 ratio, not just flammable fraction volume",
+          "Treating the LCO threshold as applicable to LFP because both show increasing flammability with SOC"
+        ]
+      }
+    }
+  ]
+}

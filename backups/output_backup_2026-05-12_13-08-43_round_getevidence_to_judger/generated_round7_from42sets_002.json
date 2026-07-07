@@ -1,0 +1,350 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A lithium-ion cylindrical cell undergoes controlled oven heating to thermal runaway. Investigators observe three sequential venting events before and during runaway. FTIR gas analysis is conducted throughout. The cell is a working cell at moderate cycle ageing. Which of the following conclusions about gas emission timing and composition are supported by this experimental configuration?",
+        "options": [
+          "A. Toxic species including CO, HF, and POF3 are detectable across all three vent phases, with concentration increasing progressively toward runaway.",
+          "B. HF and POF3 are absent in the first and second vent phases and appear only coincident with the major cell safety vent opening during the third vent, regardless of whether fire subsequently occurs.",
+          "C. CO emissions follow the same temporal pattern as HF and POF3, appearing exclusively in the third vent phase.",
+          "D. The absence of fire during thermal runaway prevents detection of HF and POF3, since their formation requires combustion conditions.",
+          "E. Because the cell is a working cell, toxic gas emissions will be accompanied by ignition approximately 15 seconds post-runaway in all cases.",
+          "F. The third vent phase is the only phase where the large cell safety vent opens, making it the only phase where the full electrolyte decomposition product suite becomes detectable.",
+          "G. Gas composition data from the first two vent phases is sufficient to predict whether HF will be present at runaway."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "Evidence shows HF and POF3 are absent in first and second vents; progressive increase across all three phases is unsupported.",
+            "error_type": "Overgeneralization distractor",
+            "evidence_refs": [
+              "TR_Gasventing+118+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Evidence explicitly states HF and POF3 appear only in the third vent coincident with the large safety vent opening, independent of fire occurrence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+118+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Evidence states CO is detected in the third vent but does not restrict CO exclusively to that phase; CO pattern is not confirmed identical to HF/POF3.",
+            "error_type": "Mechanism substitution / unsupported equivalence",
+            "evidence_refs": [
+              "TR_Gasventing+118+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence explicitly states HF and POF3 are detected regardless of whether fire occurs, directly contradicting this option.",
+            "error_type": "Condition violation distractor",
+            "evidence_refs": [
+              "TR_Gasventing+118+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence states ignition occurred in about half of working cells, not all; 'all cases' is an overgeneralization.",
+            "error_type": "Overgeneralization distractor",
+            "evidence_refs": [
+              "TR_Gasventing+118+Journal_of_Power_Sources:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Evidence links the large cell safety vent opening specifically to the third vent phase and identifies this as the sole phase where HF and POF3 appear, supporting a structural mechanism explanation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+118+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "Evidence shows first two vent phases contain no HF or POF3; early-phase data cannot predict third-phase toxic species presence.",
+            "error_type": "Measurement scope distractor",
+            "evidence_refs": [
+              "TR_Gasventing+118+Journal_of_Power_Sources:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Temporal and mechanistic boundary for toxic gas species emission relative to vent phase sequence and fire occurrence",
+        "primary_boundary": "HF and POF3 emission is gated by the large safety vent opening in the third phase, not by fire occurrence or progressive venting",
+        "intended_error_modes": [
+          "Assuming toxic gas emission is fire-dependent",
+          "Assuming progressive accumulation across all vent phases",
+          "Overgeneralizing ignition probability to certainty for working cells",
+          "Treating early vent phases as predictive of third-phase composition"
+        ],
+        "disallowed_extrapolations": [
+          "CO follows identical phase restriction as HF/POF3",
+          "Fire is a necessary condition for toxic fluorinated species",
+          "All working cells ignite post-runaway"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer compares thermal runaway behavior between working cells and fully discharged (dead) cells of the same cylindrical lithium-ion chemistry under identical oven heating conditions. Both cell types reach thermal runaway. The engineer must assess which safety-relevant conclusions are admissible from this comparison for hazard classification purposes.",
+        "options": [
+          "A. Dead cells present a lower acute hazard than working cells during thermal runaway because they exhibit higher onset temperatures, lower peak temperatures, and absence of sparks, flames, or gas explosions.",
+          "B. Because dead cells still undergo thermal runaway, they must be classified identically to working cells for all transport and storage hazard categories.",
+          "C. The higher thermal runaway onset temperature in dead cells implies that the electrochemical energy stored in working cells contributes to lowering the thermal runaway trigger threshold.",
+          "D. The absence of gas explosion in dead cells confirms that gas generation does not occur during their thermal runaway.",
+          "E. Working cells exhibit lower temperature rise rates than dead cells during thermal runaway, making them less hazardous from a propagation standpoint.",
+          "F. The observed differences between dead and working cells are sufficient to support differentiated hazard ratings, but do not imply dead cells are safe under all thermal abuse scenarios.",
+          "G. Dead cells can be safely stored adjacent to ignition sources provided their thermal runaway temperature exceeds 200°C."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence directly supports all three comparative features: higher onset, lower peak temperature, and no sparks/flames/explosions for dead cells.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+118+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Identical classification ignores the documented differences in onset temperature, peak temperature, and absence of fire/explosion in dead cells—a conservative but mechanistically invalid claim.",
+            "error_type": "Conservative but incorrect distractor",
+            "evidence_refs": [
+              "TR_Gasventing+118+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The ~10–15°C lower onset temperature in working cells versus dead cells, under identical heating, implies stored electrochemical energy participates in lowering the trigger threshold—a minimal mechanistic implication.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+118+Journal_of_Power_Sources:C004",
+              "TR_Gasventing+118+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "No gas explosion does not mean no gas generation; it only means accumulated gases did not ignite. Gas generation may still occur without explosion.",
+            "error_type": "Causal overclaim / measurement scope distractor",
+            "evidence_refs": [
+              "TR_Gasventing+118+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence states dead cells have lower temperature rise rates, not working cells; this option reverses the documented comparison.",
+            "error_type": "Mechanism confusion distractor",
+            "evidence_refs": [
+              "TR_Gasventing+118+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Evidence supports differentiated hazard profiles while dead cells still undergo thermal runaway, making absolute safety claims inadmissible.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+118+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "Evidence shows dead cells still undergo thermal runaway; a specific temperature threshold does not authorize proximity to ignition sources as a general safety claim.",
+            "error_type": "Protective mechanism overclaim / scope expansion distractor",
+            "evidence_refs": [
+              "TR_Gasventing+118+Journal_of_Power_Sources:C002",
+              "TR_Gasventing+118+Journal_of_Power_Sources:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissible hazard differentiation between working and dead cells based on comparative thermal runaway characteristics",
+        "primary_boundary": "Dead cells exhibit measurably lower hazard indicators but still undergo thermal runaway; differentiated classification is admissible but absolute safety claims are not",
+        "intended_error_modes": [
+          "Equating thermal runaway occurrence with identical hazard classification",
+          "Inferring absence of explosion as absence of gas generation",
+          "Reversing the temperature rise rate comparison",
+          "Overclaiming safety from a single threshold value"
+        ],
+        "disallowed_extrapolations": [
+          "Dead cells are safe under all thermal abuse conditions",
+          "No gas explosion implies no gas generation",
+          "Identical runaway occurrence requires identical hazard rating"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery safety researcher reports that the thermal runaway temperature for a specific cylindrical lithium-ion cell chemistry is approximately 190°C based on oven external heating tests, while an accelerating rate calorimetry (ARC) measurement on the same cell type, analyzed using comparable criteria, yields approximately 140°C. The researcher must decide how to use these values in a safety standard submission.",
+        "options": [
+          "A. The 50°C discrepancy between methods indicates experimental error in one of the measurements and the lower value should be used as the conservative bound for all applications.",
+          "B. Both values are valid characterizations of the same cell, but they represent method-dependent and definition-dependent quantities that cannot be used interchangeably in safety specifications.",
+          "C. The ARC-derived value of approximately 140°C should be treated as the true onset temperature because ARC provides adiabatic conditions closer to internal self-heating than external oven heating.",
+          "D. Because the thermal runaway temperature differs by approximately 50°C between methods, neither value can be used to establish a safe operating limit without specifying the test method and definitional criteria.",
+          "E. The oven-derived 190°C value overestimates safety margin because external heating imposes a thermal gradient that delays the apparent onset relative to the cell's internal state.",
+          "F. The two values can be reconciled by applying a fixed correction factor, allowing a single universal thermal runaway temperature to be reported for this cell type.",
+          "G. Reporting a thermal runaway temperature for this cell without specifying the measurement method and onset definition is inadmissible for safety standard purposes."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "D",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "The discrepancy is attributed to method and definition differences, not experimental error; selecting the lower value as universal conservative bound is an unsupported extrapolation.",
+            "error_type": "Causal overclaim / unsupported extrapolation distractor",
+            "evidence_refs": [
+              "TR_Gasventing+118+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Evidence explicitly states that thermal runaway temperature depends on test method and definition, making the two values valid but non-interchangeable method-specific quantities.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+118+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Evidence does not establish that ARC conditions are more representative of internal self-heating for this purpose; asserting ARC as the 'true' value is an unsupported mechanistic preference.",
+            "error_type": "Mechanism substitution / unsupported hierarchy distractor",
+            "evidence_refs": [
+              "TR_Gasventing+118+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The 50°C method-dependent gap directly implies that any single reported value without method and definition specification is insufficient for safety limit establishment.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+118+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence attributes the difference to test method and definition, not specifically to thermal gradient effects; this option introduces an unsupported mechanistic explanation.",
+            "error_type": "Mechanism confusion distractor",
+            "evidence_refs": [
+              "TR_Gasventing+118+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Evidence provides no basis for a fixed correction factor; the difference is attributed to definitional and methodological differences that are not systematically correctable.",
+            "error_type": "Unsupported extrapolation distractor",
+            "evidence_refs": [
+              "TR_Gasventing+118+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "Evidence that the same cell yields values differing by 50°C depending on method and definition makes method-unspecified reporting inadmissible for safety standards.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+118+Journal_of_Power_Sources:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of thermal runaway temperature values in safety specifications given method- and definition-dependence",
+        "primary_boundary": "The 50°C inter-method discrepancy is attributed to test method and definitional differences, not measurement error; no universal value or correction factor is supported",
+        "intended_error_modes": [
+          "Attributing the discrepancy to experimental error",
+          "Asserting ARC as the privileged true measurement without evidence basis",
+          "Proposing a correction factor without evidential support",
+          "Accepting oven-derived value as overestimating safety margin via an unsupported thermal gradient mechanism"
+        ],
+        "disallowed_extrapolations": [
+          "ARC conditions are more physically representative for this cell type",
+          "A fixed correction factor reconciles the two methods",
+          "The lower value is universally conservative for all applications"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A cylindrical lithium-ion cell at moderate state of charge undergoes thermal runaway during oven heating. Post-event analysis shows that gas ignition occurred approximately 15 seconds after the thermal runaway event itself, and that HF was detected in the gas phase only during the third venting event coincident with thermal runaway—not during earlier venting phases. A safety engineer proposes that early venting gas composition can serve as a leading indicator to predict whether HF will be present at runaway, and that fire suppression applied immediately at runaway onset would prevent HF exposure to personnel. Evaluate both proposals, identifying the specific mechanistic or evidential basis for accepting or rejecting each."
+      },
+      "ground_truth": {
+        "gold_answer": "The first proposal is not supported. Evidence shows HF is absent in the first and second vent phases and appears only during the third vent coincident with the large cell safety vent opening. Early vent gas composition therefore contains no HF signal and cannot serve as a predictive indicator of HF presence at runaway; the two phases are mechanistically decoupled with respect to fluorinated species. The second proposal is also not supported. Evidence shows HF and POF3 are detected regardless of whether fire occurs, meaning HF emission is tied to the vent opening and electrolyte decomposition mechanism, not to combustion. Fire suppression at runaway onset would not prevent HF release because HF generation precedes or is independent of ignition. Personnel exposure risk from HF exists even in fire-free thermal runaway events.",
+        "must_include": [
+          "HF is absent in first and second vent phases",
+          "HF appears only in the third vent coincident with the large safety vent opening",
+          "Early vent composition cannot predict HF presence at runaway",
+          "HF is detected regardless of whether fire occurs",
+          "Fire suppression does not prevent HF emission",
+          "HF exposure risk exists in fire-free thermal runaway"
+        ],
+        "disallowed_extrapolations": [
+          "Early vent gases contain any HF signal useful for prediction",
+          "HF formation requires combustion conditions",
+          "Fire suppression eliminates toxic gas hazard",
+          "CO follows the same phase restriction as HF"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of two safety engineering proposals based on the mechanistic decoupling of vent phase composition from toxic species emission and the independence of HF generation from fire occurrence",
+        "primary_boundary": "HF emission is gated by the large safety vent opening in the third phase and is independent of fire; early vent phases provide no HF signal and fire suppression does not address the HF release pathway",
+        "intended_error_modes": [
+          "Assuming progressive gas composition evolution makes early vents predictive",
+          "Assuming HF requires combustion and is therefore suppressible by fire control",
+          "Conflating absence of fire with absence of toxic gas hazard",
+          "Treating all vent phases as mechanistically equivalent"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,317 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An LFP cell under thermal abuse in a sealed canister shows a small surface temperature drop of approximately 2°C at around 182°C, followed by a sharp pressure increase from roughly 1.9 to 4.5 bar, before eventually entering thermal runaway above 200°C with a peak pressure exceeding 31 bar. A process safety engineer reviewing this sequence must determine which conclusions about the intermediate pressure event are admissible. Which of the following statements are supported by this described behavior?",
+        "options": [
+          "A. The pressure increase from 1.9 to 4.5 bar is caused by gas release through the cell vent, not by the onset of thermal runaway reactions.",
+          "B. The temperature drop at 182°C indicates that the cell has dissipated enough heat to prevent thermal runaway from occurring.",
+          "C. The intermediate pressure event and the thermal runaway event are distinct sequential stages, with the vent opening occurring before thermal runaway onset.",
+          "D. The peak pressure rise rate of 290 bar/s is associated with the vent opening event at 182°C, not with the thermal runaway phase.",
+          "E. The canister confinement converts gas released during venting into a measurable pressure signal, making the vent opening detectable as a pressure event even before thermal runaway.",
+          "F. Because the surface temperature drops at vent opening, the internal cell temperature must also be decreasing at that moment."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence directly links the 1.9–4.5 bar rise to vent opening gas release, prior to thermal runaway onset above 200°C.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C001",
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The temperature drop is a surface evaporative/gas-release effect; thermal runaway still occurs above 200°C, so no prevention is implied.",
+            "error_type": "causal overclaim — interpreting a transient surface cooling as thermal runaway prevention",
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C001",
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Vent opening occurs at 182°C and thermal runaway onset is above 200°C; the evidence sequence supports these as distinct stages.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C001",
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The 290 bar/s pressure rise rate is explicitly associated with thermal runaway, not the vent opening event at 182°C.",
+            "error_type": "event misattribution — assigning thermal runaway rate to the earlier vent opening stage",
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Sealed canister confinement is the mechanism by which released gas produces a measurable pressure signal; this is a necessary implication of the described setup.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Surface temperature drop does not imply internal temperature decrease; surface measurement cannot be extrapolated to internal state during gas venting.",
+            "error_type": "measurement scope violation — inferring internal state from surface signal",
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinguishing vent opening as a precursor event from thermal runaway onset, and identifying what surface/pressure signals can and cannot indicate about internal state.",
+        "primary_boundary": "Surface temperature drop at vent opening does not indicate thermal runaway prevention; the 290 bar/s rate belongs to thermal runaway, not venting.",
+        "intended_error_modes": [
+          "Interpreting transient surface cooling as thermal arrest",
+          "Misattributing peak pressure rise rate to the earlier venting event",
+          "Inferring internal temperature from surface temperature during venting"
+        ],
+        "disallowed_extrapolations": [
+          "Surface temperature drop implies internal cooling",
+          "Vent opening prevents thermal runaway",
+          "Peak pressure rate is associated with vent opening"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery safety engineer compares four cell chemistries — NMC (two variants), LFP, and LTO — tested under identical thermal abuse in a sealed canister. NMC cells show onset temperatures of 140–145°C and peak temperatures of 835–998°C. LTO onset is 163°C with a peak of 305°C. LFP onset is 200°C with a peak of 399°C. NMC cells produce approximately three times the peak pressure of LFP and LTO cells. The engineer must assess design implications for a confined module. Which conclusions are admissible?",
+        "options": [
+          "A. LTO cells present lower thermal runaway onset risk than LFP cells because their onset temperature is lower, even though their peak temperature and pressure are also lower.",
+          "B. NMC cells pose a greater structural overpressure risk to a sealed enclosure than LFP or LTO cells under equivalent abuse conditions.",
+          "C. Because LTO cells have a lower onset temperature than LFP cells, substituting LTO for LFP in a module would reduce the risk of thermal runaway propagation to adjacent cells.",
+          "D. The combination of lowest onset temperature and highest peak temperature in NMC cells indicates greater overall thermal instability compared to LFP and LTO chemistries.",
+          "E. LFP cells are safer than LTO cells in all thermal abuse scenarios because their onset temperature is higher.",
+          "F. A module designer cannot conclude from peak pressure data alone that NMC cells are more hazardous than LTO cells, because hazard depends on both pressure and temperature jointly."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "LTO onset (163°C) is lower than LFP (200°C), confirming earlier triggering risk despite lower peak severity — a counterintuitive but evidence-supported conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "NMC produces approximately three times the peak pressure of LFP and LTO, directly implying greater structural overpressure risk in confined enclosures.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Lower onset temperature means LTO triggers earlier, which could increase propagation risk to adjacent cells, not reduce it — the reasoning direction is inverted.",
+            "error_type": "causal direction inversion — lower onset temperature increases, not decreases, propagation initiation risk",
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence explicitly states NMC cells have lowest onset and highest peak temperatures, indicating higher thermal instability than LFP or LTO.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Higher onset temperature does not make LFP safer in all scenarios; LFP has higher peak temperature and pressure than LTO, so the claim is not universally admissible.",
+            "error_type": "overgeneralization — applying a single metric (onset temperature) as a universal safety ranking",
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C003",
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "NMC produces both the highest pressure and highest temperature, so peak pressure data alone is sufficient to identify NMC as the greater overpressure hazard in this comparison.",
+            "error_type": "conservative but incorrect — appears epistemically cautious but contradicts the evidence showing NMC dominates on both metrics",
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C003",
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-metric chemistry hazard ranking and the non-monotonic relationship between onset temperature and overall thermal runaway severity.",
+        "primary_boundary": "Lower onset temperature does not imply lower overall hazard; LTO's lower onset than LFP does not make it safer for propagation. Single-metric safety ranking is inadmissible.",
+        "intended_error_modes": [
+          "Equating lower onset temperature with lower propagation risk",
+          "Using onset temperature as a universal safety ranking metric",
+          "Treating epistemic caution as correctness when evidence is sufficient for a strong conclusion"
+        ],
+        "disallowed_extrapolations": [
+          "LTO is safer than LFP because its onset is lower",
+          "LFP is universally safer than LTO",
+          "Peak pressure alone is insufficient to rank NMC vs LTO hazard when both pressure and temperature data are available"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "During post-incident gas analysis of thermally abused cells in a confined space, an engineer finds that the collected gas contains high concentrations of H2 and C2 hydrocarbons (C2H2, C2H4, C2H6) but low CO, alongside moderate CH4. A separate sample from a different cell type shows high CO (28–30%) and CH4 (10–13%) but low C2H4 and C2H6. The engineer must identify which cell chemistry is consistent with each gas profile and assess what the profiles imply about reaction pathways. Which conclusions are admissible?",
+        "options": [
+          "A. The high-H2, high-C2 hydrocarbon, low-CO profile is consistent with LFP cell venting, based on known gas composition differences between chemistries.",
+          "B. The high-CO, high-CH4, low-C2 profile is consistent with NMC cell venting.",
+          "C. The presence of C2H2 in the first sample confirms that the LFP cell cathode underwent direct oxidative decomposition as the primary gas-generating reaction.",
+          "D. Gas composition differences between the two profiles indicate that the dominant gas-generating reactions differ between LFP and NMC chemistries under thermal abuse.",
+          "E. Because CO is a combustion product, the high-CO profile in the second sample proves that ignition occurred inside the NMC cell before gas was released.",
+          "F. The high-H2 fraction in the LFP profile could reflect electrolyte decomposition or anode-electrolyte reactions, but the gas composition alone cannot identify which specific reaction pathway is solely responsible."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence states LFP produces highest H2, C2H2, C2H4, C2H6 and lowest CO, matching the described first profile.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C006"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Evidence states NMC produces highest CO and CH4 and lowest C2H4 and C2H6, matching the described second profile.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C006"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "C2H2 presence is consistent with LFP but the evidence does not attribute it specifically to cathode oxidative decomposition; this is a mechanism overclaim.",
+            "error_type": "causal overclaim — attributing a specific reaction pathway to a gas species without mechanistic evidence",
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C006"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Systematically different gas profiles between LFP and NMC imply different dominant reaction pathways, which is a minimal engineering implication from the composition data.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C006"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "CO can be produced by electrolyte decomposition reactions without combustion; high CO does not prove internal ignition before venting.",
+            "error_type": "mechanism substitution — attributing CO solely to combustion rather than thermal decomposition",
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C006"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Gas composition identifies chemistry-level trends but cannot isolate a single reaction pathway; this is a correct admissibility boundary on diagnostic inference from composition data.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+151+Process_Safety_and_Environmental_Protection:C006"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Using gas composition profiles to identify cell chemistry and assess reaction pathway admissibility, while avoiding overclaiming specific reaction mechanisms from composition data alone.",
+        "primary_boundary": "Gas composition can identify chemistry-consistent profiles and imply different dominant reactions, but cannot pinpoint a single specific reaction pathway or confirm internal ignition.",
+        "intended_error_modes": [
+          "Attributing a specific gas species to a single identified reaction without mechanistic evidence",
+          "Interpreting CO as a combustion indicator rather than a decomposition product"
+        ],
+        "disallowed_extrapolations": [
+          "C2H2 presence proves cathode oxidative decomposition",
+          "High CO proves internal ignition before venting",
+          "Gas composition alone identifies the sole responsible reaction pathway"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "LFP cells are tested under identical thermal abuse conditions in a sealed canister with one, two, and three cells present. The measured vented gas volumes are approximately proportional to the number of cells. A process safety engineer proposes using this proportionality to predict the vented gas volume for a 20-cell confined module under the same abuse conditions. Separately, the engineer notes that NMC cells produce approximately three times the peak pressure of LFP cells under the same confinement. Explain: (1) under what conditions the proportional scaling of vented gas volume from LFP cells is admissible for the 20-cell module prediction, (2) what the primary limitation of this extrapolation is, and (3) whether the NMC-to-LFP pressure ratio can be directly applied to predict NMC module pressure from LFP module pressure data."
+      },
+      "ground_truth": {
+        "gold_answer": "The proportional scaling of vented gas volume is admissible only if the 20-cell module operates under the same confinement geometry and heating abuse conditions as the 1–3 cell tests, since the proportionality was established only under those specific conditions. The primary limitation is that the evidence base covers only 1–3 cells; extrapolating to 20 cells assumes no change in confinement behavior, thermal interaction between cells, or gas retention effects at larger scale — none of which are confirmed by the evidence. Cell-to-cell thermal interactions in a larger module could alter individual cell behavior, violating the independence assumption underlying proportionality. Regarding the NMC-to-LFP pressure ratio: the approximately 3× ratio was established at the single-cell level under identical confinement. Applying this ratio to module-level predictions requires assuming that the ratio is preserved at scale, which is not supported by the evidence. Module-level pressure depends on total gas volume, confinement geometry, and thermal propagation dynamics, all of which may differ between chemistries at scale. The ratio is therefore not directly transferable to module-level predictions without additional evidence.",
+        "must_include": [
+          "Proportional scaling is admissible only under the same confinement and heating abuse conditions as the original tests",
+          "Extrapolation to 20 cells exceeds the evidence base of 1–3 cells and assumes no change in inter-cell thermal interaction",
+          "The 3× NMC-to-LFP pressure ratio was established at single-cell level and cannot be directly applied to module-level predictions without additional evidence",
+          "Module-level pressure depends on factors beyond single-cell pressure ratio, including confinement geometry and propagation dynamics"
+        ],
+        "disallowed_extrapolations": [
+          "Proportionality holds at any scale regardless of confinement or interaction effects",
+          "The 3× pressure ratio is a universal scaling factor applicable to modules",
+          "Single-cell gas volume proportionality implies identical behavior at module scale"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Scale transfer admissibility for gas volume proportionality and pressure ratio, distinguishing cell-level evidence from module-level prediction validity.",
+        "primary_boundary": "Proportionality established over 1–3 cells under specific conditions cannot be directly extended to 20-cell modules without accounting for inter-cell interactions and changed confinement dynamics; the NMC/LFP pressure ratio is a cell-level result not transferable to module scale without additional evidence.",
+        "intended_error_modes": [
+          "Treating cell-level proportionality as a universal scaling law",
+          "Applying single-cell pressure ratios directly to module-level predictions",
+          "Ignoring inter-cell thermal interaction effects at larger scale"
+        ]
+      }
+    }
+  ]
+}

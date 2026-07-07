@@ -1,0 +1,358 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A lithium-ion cell with an NMC cathode and graphite anode uses an ionic liquid electrolyte with an inorganic anion. During a calorimetric abuse test, a small exothermic event is detected near 120°C, followed by a more violent heat release near 280°C. A separate cell using an organic anion (TFSI) ionic liquid electrolyte is tested under identical conditions. An engineer must assess which conclusions about the comparative thermal behavior of these two cells are admissible based on the described chemistry and observed reaction sequence.",
+        "options": [
+          "A. The exothermic event near 120°C in both cells is consistent with reduction of the ionic liquid by the lithiated graphite anode following partial SEI film disruption.",
+          "B. The inorganic anion cell will exhibit a lower onset temperature for exothermic reactions and a larger total enthalpy release compared to the TFSI cell, making it thermally more hazardous in that respect.",
+          "C. Because the ionic liquid electrolyte is non-flammable, the violent heat release near 280°C is prevented, and the cell can be considered safe against thermal runaway.",
+          "D. The violent heat generation near 280°C is driven primarily by combustion reactions involving electrolyte and separator, fueled by oxygen released from the NMC cathode, not by the electrolyte flammability alone.",
+          "E. The lower CO2 generation from ionic liquid electrolytes compared to carbonate electrolytes directly implies that peak chamber pressure during thermal runaway will also be lower.",
+          "F. Replacing a carbonate electrolyte with an ionic liquid electrolyte eliminates the primary exothermic reaction sequence because the carbonate oxidation pathway is removed.",
+          "G. The onset temperature of the cathode-side oxidation reaction in the ionic liquid cell begins at a temperature substantially higher than the anode-side SEI-related event."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "D",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that small exothermic peaks near 120°C are ascribed to chemical reduction of ionic liquids by LixC6 anode when partial SEI film destruction occurs. This applies to ionic liquid cells generally, not just one anion type.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+183+2006_12th_Biennial_IEEE_Conference_on_Electromagnetic_Field_Computation:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The evidence states inorganic anions make onset temperatures lower and total enthalpies larger compared to organic anion (TFSI) electrolytes. This is a direct admissible comparative conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+183+2006_12th_Biennial_IEEE_Conference_on_Electromagnetic_Field_Computation:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The evidence explicitly states that cell safety does not directly connect to non-flammability of electrolytes based on the thermal runaway mechanism. Non-flammability does not prevent the violent heat release near 280°C, which is driven by cathode oxygen release and combustion of separator. This is a conservative-sounding but mechanistically incorrect claim.",
+            "error_type": "protective_mechanism_overclaim",
+            "evidence_refs": [
+              "TR_Dynamics+183+2006_12th_Biennial_IEEE_Conference_on_Electromagnetic_Field_Computation:C001",
+              "TR_Dynamics+183+2006_12th_Biennial_IEEE_Conference_on_Electromagnetic_Field_Computation:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The evidence states the violent heat generation near 280°C is due to combustion reactions of electrolyte and separator based on released oxygen from the cathode. This is a multi-step mechanistic chain: cathode oxygen release → combustion of electrolyte and separator → violent heat, independent of bulk electrolyte flammability.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+183+2006_12th_Biennial_IEEE_Conference_on_Electromagnetic_Field_Computation:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Lower CO2 generation from ionic liquid electrolytes is noted as a potential safety advantage, but the evidence on chamber pressure (from the heating method study) shows that gas generation rate, not CO2 fraction alone, drives peak pressure. Inferring lower peak pressure from lower CO2 generation is an unsupported cross-paper extrapolation and ignores other gas species contributions.",
+            "error_type": "causal_overclaim_and_scope_expansion",
+            "evidence_refs": [
+              "TR_Dynamics+183+2006_12th_Biennial_IEEE_Conference_on_Electromagnetic_Field_Computation:C002",
+              "TR_Dynamics+182+Case_Studies_in_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence shows that ionic liquid cells still exhibit exothermic reactions at both anode and cathode sides. The carbonate structure is absent, reducing CO2, but the reaction sequence involving anode reduction and cathode oxidation still occurs. Replacing carbonate electrolyte does not eliminate the primary exothermic sequence.",
+            "error_type": "mechanism_substitution_overclaim",
+            "evidence_refs": [
+              "TR_Dynamics+183+2006_12th_Biennial_IEEE_Conference_on_Electromagnetic_Field_Computation:C003",
+              "TR_Dynamics+183+2006_12th_Biennial_IEEE_Conference_on_Electromagnetic_Field_Computation:C004"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "The evidence places the anode-side SEI-related event at ~120°C and the cathode-side oxidation onset at ~220°C, with violent cathode-driven reactions at ~280°C. The cathode onset is substantially higher than the anode-side event, making this admissible.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+183+2006_12th_Biennial_IEEE_Conference_on_Electromagnetic_Field_Computation:C003",
+              "TR_Dynamics+183+2006_12th_Biennial_IEEE_Conference_on_Electromagnetic_Field_Computation:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism-based admissibility of safety conclusions for ionic liquid electrolyte cells under thermal abuse, including the role of anion type, reaction sequence staging, and the decoupling of electrolyte flammability from cell safety.",
+        "primary_boundary": "Non-flammability of ionic liquid electrolyte does not prevent thermal runaway; the violent heat release is driven by cathode oxygen release and combustion of separator, not bulk electrolyte flammability.",
+        "intended_error_modes": [
+          "Protective mechanism overclaim: assuming non-flammable electrolyte prevents thermal runaway",
+          "Causal overclaim: inferring lower peak pressure from lower CO2 generation alone",
+          "Mechanism substitution: assuming removal of carbonate structure eliminates all exothermic reactions"
+        ],
+        "disallowed_extrapolations": [
+          "Do not infer that lower CO2 generation implies lower peak pressure without accounting for total gas generation rate",
+          "Do not generalize non-flammability as equivalent to thermal safety",
+          "Do not assume inorganic anion results apply to TFSI cells without comparison"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Three methods of externally heating a lithium-ion cell to trigger thermal runaway are compared at identical power input (265 W) and 100% SOC: a heating coil wrapped around the cell, a heating rod inserted into the cell, and a heating plate in contact with the cell surface. The coil triggers thermal runaway fastest and produces the lowest peak temperature after runaway. The rod triggers runaway slowest but produces the highest peak temperature and the widest flammable concentration range in the released gases. The coil produces the highest peak chamber pressure despite the lowest ambient temperature among the three methods. An engineer must determine which conclusions about the relationship between triggering speed, peak temperature, gas hazard, and pressure are admissible.",
+        "options": [
+          "A. A faster triggering time under the coil method is consistent with a more localized and rapid energy deposition pattern that drives gas generation rate rather than total thermal energy delivered to the cell.",
+          "B. The inverse relationship between triggering speed and post-runaway peak temperature across the three methods implies that faster triggering necessarily reduces the severity of the thermal runaway reaction.",
+          "C. The heating rod's highest peak temperature and widest flammable concentration range together indicate that the gases it releases pose a greater ignition hazard than those from the coil, even though the coil produces higher peak chamber pressure.",
+          "D. Because peak chamber pressure is highest under the coil despite the lowest ambient temperature, the dominant driver of pressure in this configuration is gas generation rate rather than thermal expansion of ambient gas.",
+          "E. The stabilization of gas generation between 1.7 and 2 mol after the peak across all three methods suggests that the total gas inventory released at steady state is independent of the heating method.",
+          "F. The heating plate method can be considered the safest of the three because it produces neither the highest peak temperature nor the highest peak pressure.",
+          "G. The CO2 concentration being highest under the coil method and H2 concentration being highest under the rod method is consistent with the coil driving more electrolyte decomposition reactions relative to the rod."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The coil triggers fastest and produces the highest gas generation peak (7.72 mol) with lowest peak temperature, consistent with localized rapid energy deposition driving gas generation rate rather than maximizing total thermal energy accumulation. This is a multi-step mechanistic inference from the comparative data.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+182+Case_Studies_in_Thermal_Engineering:C001",
+              "TR_Dynamics+182+Case_Studies_in_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "While faster triggering correlates with lower peak temperature in this dataset, concluding that faster triggering necessarily reduces severity is an overgeneralization. The coil produces the highest peak pressure and gas generation, indicating that severity is multi-dimensional; lower peak temperature does not equate to lower overall severity.",
+            "error_type": "overgeneralization_and_single_variable_control",
+            "evidence_refs": [
+              "TR_Dynamics+182+Case_Studies_in_Thermal_Engineering:C002",
+              "TR_Dynamics+182+Case_Studies_in_Thermal_Engineering:C003",
+              "TR_Dynamics+182+Case_Studies_in_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The rod produces the widest flammable concentration range (51.11%) and lowest lower flammability limit (7.97%), making its gases most dangerous for ignition. This is true even though the coil produces higher peak pressure, because ignition hazard and pressure hazard are distinct safety dimensions. This is a counterintuitive correct option requiring multi-dimensional safety reasoning.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+182+Case_Studies_in_Thermal_Engineering:C005",
+              "TR_Dynamics+182+Case_Studies_in_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that under heating coil conditions, ambient temperature is lowest yet peak pressure is highest, and identifies higher gas generation rate as the primary driver. This is directly admissible.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+182+Case_Studies_in_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The evidence states all methods stabilize between 1.7 and 2 mol after the peak, but this does not mean total gas inventory at steady state is independent of heating method. The peak values differ substantially (7.72 mol for coil vs. lower for others), and the post-peak stabilization range is narrow but not identical. Inferring independence of heating method from a narrow stabilization range is an unsupported extrapolation.",
+            "error_type": "overgeneralization_from_limited_range",
+            "evidence_refs": [
+              "TR_Dynamics+182+Case_Studies_in_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The heating plate produces an intermediate peak temperature and intermediate peak pressure, but its flammable concentration range (46.94%) and lower flammability limit (8.26%) are intermediate as well. Declaring it 'safest' based on two metrics while ignoring gas flammability hazard is a multi-factor interaction error. Safety cannot be reduced to a single metric.",
+            "error_type": "single_variable_safety_judgment_ignoring_multi_factor_interaction",
+            "evidence_refs": [
+              "TR_Dynamics+182+Case_Studies_in_Thermal_Engineering:C002",
+              "TR_Dynamics+182+Case_Studies_in_Thermal_Engineering:C005"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "CO2 is highest under the coil (27.73%) and H2 is highest under the rod (25.06%). Higher CO2 is consistent with more electrolyte decomposition (carbonate-type reactions producing CO2), while higher H2 is consistent with different reaction pathways. This mechanistic interpretation is consistent with the gas composition data.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+182+Case_Studies_in_Thermal_Engineering:C006"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-dimensional safety hazard assessment across heating methods, requiring the solver to distinguish peak temperature, peak pressure, gas generation rate, and gas flammability as independent hazard dimensions that do not co-vary monotonically.",
+        "primary_boundary": "Faster triggering and lower peak temperature do not imply lower overall thermal runaway severity; pressure and gas flammability hazards can be higher even when peak temperature is lower.",
+        "intended_error_modes": [
+          "Single-variable severity reduction: assuming lower peak temperature means lower severity",
+          "Single-metric safety judgment: declaring heating plate safest based on two metrics while ignoring flammability",
+          "Overgeneralization from narrow post-peak stabilization range to independence of heating method"
+        ],
+        "disallowed_extrapolations": [
+          "Do not infer that lower peak temperature implies lower total hazard across all dimensions",
+          "Do not infer that post-peak gas stabilization implies identical total gas inventory",
+          "Do not rank overall safety based on a subset of hazard metrics"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery engineer is comparing five fast-charging protocols for lithium-ion cells. Two protocols use constant-current only (2C CC and 4C CC). Three use constant-current followed by constant-voltage (4C CC–CV with 15-minute CV phase, 4C CC–CV targeting 60% SOC, and 3C CC). Peak cell temperature stays below 50°C across all protocols. The engineer observes that 4C CC–CV 15 min reaches 80% state of health first, while 4C CC shows the least total capacity degradation. Under 3C CC and 4C CC, degradation rate slows in mid-to-late cycling as the SEI stabilizes, but under 2C CC, degradation worsens continuously. The engineer must judge which conclusions about protocol design trade-offs are admissible.",
+        "options": [
+          "A. The 4C CC protocol's lower total degradation compared to 4C CC–CV 15 min is consistent with the CV phase at high current contributing additional degradation beyond what the CC phase alone causes.",
+          "B. Because peak temperature stays below 50°C for all protocols, thermal effects are the dominant driver of capacity fade differences observed between protocols.",
+          "C. The continuous worsening of degradation under 2C CC, without the plateau seen at 3C CC and 4C CC, suggests that the SEI stabilization mechanism observed at higher C-rates does not operate in the same way under 2C CC cycling.",
+          "D. The rapid early degradation followed by mid-cycle plateau under 3C CC and 4C CC implies that these protocols are safer for long-term use than 2C CC, because their total lifetime degradation is bounded.",
+          "E. The 4C CC–CV 15 min protocol reaching 80% SOH first despite its early-cycle stability indicates that the late-cycle degradation acceleration is not predictable from early-cycle fade rate alone.",
+          "F. The degradation hierarchy across protocols can be fully explained by the charging current magnitude, since higher current always produces more degradation.",
+          "G. Under the conditions tested, the addition of a CV phase to a 4C CC protocol increases total capacity degradation relative to 4C CC alone, regardless of the CV phase duration or SOC target."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The degradation hierarchy places 4C CC–CV protocols above 4C CC, with the CV phase adding to degradation. The most parsimonious admissible conclusion is that the CV phase contributes additional degradation beyond the CC phase alone, consistent with the observed ranking.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+181+Thermal_Science_and_Engineering_Progress:C001"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Peak temperature stays below 50°C for all protocols, and yet significant differences in degradation exist between protocols. If thermal effects were the dominant driver, protocols with similar peak temperatures would show similar degradation. The evidence implies non-thermal mechanisms (SEI, lithium plating, etc.) differentiate the protocols, not thermal effects.",
+            "error_type": "causal_overclaim_ignoring_mechanism_differentiation",
+            "evidence_refs": [
+              "TR_Dynamics+181+Thermal_Science_and_Engineering_Progress:C005",
+              "TR_Dynamics+181+Thermal_Science_and_Engineering_Progress:C001"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence shows SEI stabilization occurs at 3C CC and 4C CC but continuous worsening at 2C CC. This is a counterintuitive correct option: lower C-rate does not produce the stabilization seen at higher rates, suggesting the SEI stabilization mechanism is rate-dependent and does not simply operate more gently at lower rates.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+181+Thermal_Science_and_Engineering_Progress:C003",
+              "TR_Dynamics+181+Thermal_Science_and_Engineering_Progress:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The plateau in degradation rate at 3C CC and 4C CC indicates slowing, not cessation, of degradation. Concluding that total lifetime degradation is bounded and therefore these protocols are safer for long-term use is an unsupported extrapolation beyond the tested cycle range. The evidence describes mid-to-late stage behavior within the test, not lifetime bounding.",
+            "error_type": "unsupported_extrapolation_beyond_test_scope",
+            "evidence_refs": [
+              "TR_Dynamics+181+Thermal_Science_and_Engineering_Progress:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The 4C CC–CV 15 min protocol shows minimal fade during early cycles but degrades rapidly later, reaching 80% SOH first. This directly supports the conclusion that early-cycle fade rate is not a reliable predictor of late-cycle behavior for this protocol.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+181+Thermal_Science_and_Engineering_Progress:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The degradation hierarchy cannot be explained by current magnitude alone. 4C CC produces less degradation than 3C CC and both 4C CC–CV variants, and 2C CC degrades continuously while 3C CC plateaus. A simple monotonic relationship between current and degradation is contradicted by the evidence.",
+            "error_type": "overgeneralization_monotonicity",
+            "evidence_refs": [
+              "TR_Dynamics+181+Thermal_Science_and_Engineering_Progress:C001",
+              "TR_Dynamics+181+Thermal_Science_and_Engineering_Progress:C003",
+              "TR_Dynamics+181+Thermal_Science_and_Engineering_Progress:C004"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "The evidence shows both 4C CC–CV 15 min and 4C CC–CV 60% SOC produce more degradation than 4C CC, but these are two specific CV configurations. Concluding that any CV phase addition increases degradation regardless of duration or SOC target generalizes beyond the two tested cases and is not admissible.",
+            "error_type": "overgeneralization_beyond_tested_conditions",
+            "evidence_refs": [
+              "TR_Dynamics+181+Thermal_Science_and_Engineering_Progress:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of protocol design conclusions from degradation hierarchy and temporal degradation pattern data, including the non-monotonic relationship between C-rate and degradation and the non-predictability of late-cycle behavior from early-cycle fade.",
+        "primary_boundary": "The degradation hierarchy is non-monotonic with respect to current magnitude; thermal effects below 50°C cannot explain inter-protocol differences; early-cycle stability does not predict late-cycle behavior.",
+        "intended_error_modes": [
+          "Thermal dominance claim when all protocols share similar peak temperatures",
+          "Monotonic current-degradation relationship contradicted by 4C CC outperforming 3C CC",
+          "Extrapolating plateau to lifetime bounding beyond tested range",
+          "Generalizing CV phase effect beyond two tested configurations"
+        ],
+        "disallowed_extrapolations": [
+          "Do not infer that lower C-rate always produces less degradation",
+          "Do not infer that plateau in degradation rate implies bounded total lifetime degradation",
+          "Do not generalize CV phase degradation effect to all CV durations and SOC targets"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A lithium-ion cell using an ionic liquid electrolyte with an inorganic anion undergoes thermal abuse testing. Two distinct exothermic events are detected: a small one near 120°C and a more violent one near 280°C. A colleague argues that because the ionic liquid electrolyte is non-flammable, the cell is inherently safer than one using a conventional carbonate electrolyte, and that the violent exothermic event near 280°C would not occur in a real cell because the electrolyte cannot combust. Identify the specific mechanistic error in this argument, explain what actually drives the violent heat release near 280°C in the ionic liquid cell, and state whether lower CO2 generation from the ionic liquid electrolyte constitutes a direct safety advantage against the 280°C event."
+      },
+      "ground_truth": {
+        "gold_answer": "The colleague's argument contains two errors. First, cell safety does not directly connect to electrolyte non-flammability based on the thermal runaway mechanism; non-flammability of the bulk electrolyte does not prevent the internal exothermic reaction sequence. Second, the violent heat release near 280°C in the ionic liquid cell is driven by combustion reactions of the electrolyte and separator fueled by oxygen released from the NMC cathode (cathode decomposition releasing oxygen), not by the bulk flammability of the electrolyte itself. Therefore, even a non-flammable electrolyte can participate in combustion reactions when exposed to cathode-released oxygen under confinement at elevated temperature. Regarding CO2: lower CO2 generation from ionic liquid electrolytes (due to absence of carbonate structure) may represent a potential safety advantage in terms of gas pressure contribution from CO2 specifically, but it does not address the primary driver of the 280°C violent event, which is cathode oxygen release driving combustion of electrolyte and separator. Lower CO2 generation is not a direct mitigation of the 280°C exothermic event.",
+        "must_include": [
+          "Cell safety does not directly connect to non-flammability of electrolytes based on the thermal runaway mechanism",
+          "The violent heat release near 280°C is driven by combustion reactions of electrolyte and separator based on oxygen released from the cathode",
+          "Non-flammable electrolyte can still participate in combustion when cathode-released oxygen is present",
+          "Lower CO2 generation does not directly mitigate the 280°C cathode-driven exothermic event"
+        ],
+        "disallowed_extrapolations": [
+          "Do not claim that ionic liquid electrolytes eliminate thermal runaway",
+          "Do not claim that lower CO2 generation implies lower peak pressure without accounting for total gas generation rate and other species",
+          "Do not claim that inorganic anion ionic liquids are safer than TFSI ionic liquids overall; the evidence shows inorganic anions produce lower onset temperatures and larger enthalpies"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanistic decoupling of electrolyte flammability from thermal runaway safety, and identification of cathode oxygen release as the primary driver of violent heat generation in ionic liquid cells.",
+        "primary_boundary": "Non-flammability of ionic liquid electrolyte does not prevent the cathode-oxygen-driven combustion reaction near 280°C; the safety claim based on non-flammability is mechanistically invalid for this failure mode.",
+        "intended_error_modes": [
+          "Conflating bulk electrolyte flammability with thermal runaway safety",
+          "Attributing the 280°C event to electrolyte combustion in the conventional sense rather than cathode-oxygen-driven combustion",
+          "Treating lower CO2 generation as a direct mitigation of the violent exothermic event"
+        ]
+      }
+    }
+  ]
+}

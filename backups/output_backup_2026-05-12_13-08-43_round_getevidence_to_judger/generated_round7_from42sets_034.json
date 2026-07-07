@@ -1,0 +1,316 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery recycler characterizes four black mass samples using a Grewer oven test and a self-heating ignition test. All four samples exceed 400°C maximum temperature in the Grewer oven test. However, only two of the four samples develop distinct temperature peaks and sustain temperatures above 640°C during self-heating ignition, while the other two do not. One of the non-sustaining samples initiates its exothermic reaction at a lower onset temperature than either sustaining sample. Which conclusions are admissible from these observations?",
+        "options": [
+          "A. Exceeding 400°C in the Grewer oven test is necessary but not sufficient to establish smoldering fire hazard, because the ability to sustain combustion requires a heat release rate that the Grewer test does not directly assess.",
+          "B. A lower exothermic onset temperature indicates greater smoldering hazard, because earlier heat release allows more time for thermal runaway to develop.",
+          "C. The two samples that do not sustain smoldering are fire-safe under all storage and processing conditions, because they failed to ignite in the self-heating ignition test.",
+          "D. The Grewer oven test result alone is sufficient to classify a black mass sample as a smoldering fire hazard, because all samples that exceeded 400°C demonstrated spontaneous combustion tendency.",
+          "E. A sample may initiate exothermic decomposition at a relatively low temperature yet still fail to sustain smoldering if the total heat released is insufficient to maintain the reaction front.",
+          "F. The smoldering hazard classification depends on both the onset temperature and the magnitude of heat release, not on onset temperature alone."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "E",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "All four passed Grewer but only two showed smoldering peaks, confirming Grewer is necessary but insufficient for smoldering classification.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+150+Journal_of_Loss_Prevention_in_the_Process_Industries:C001",
+              "TR_Gasventing+150+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Sample B had the lowest onset temperature yet failed to sustain smoldering, directly contradicting the monotonic relationship claimed.",
+            "error_type": "Causal overclaim / unjustified monotonicity",
+            "evidence_refs": [
+              "TR_Gasventing+150+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Non-sustaining samples still showed spontaneous combustion tendency in Grewer; absence of smoldering does not imply fire-safe under all conditions.",
+            "error_type": "Scope expansion / overgeneralization",
+            "evidence_refs": [
+              "TR_Gasventing+150+Journal_of_Loss_Prevention_in_the_Process_Industries:C001",
+              "TR_Gasventing+150+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Two samples exceeded 400°C but did not exhibit smoldering peaks, so the Grewer result alone does not establish smoldering hazard.",
+            "error_type": "Measurement scope overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+150+Journal_of_Loss_Prevention_in_the_Process_Industries:C001",
+              "TR_Gasventing+150+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Sample B had lower onset than A and C but insufficient heat release to sustain smoldering, directly supporting this mechanism.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+150+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Onset temperature and heat release magnitude together determine smoldering outcome; onset alone is insufficient, as shown by sample B.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+150+Journal_of_Loss_Prevention_in_the_Process_Industries:C002",
+              "TR_Gasventing+150+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinguishing necessary vs. sufficient conditions for smoldering hazard classification across multiple test methods",
+        "primary_boundary": "Grewer oven result establishes spontaneous combustion tendency but does not determine smoldering sustainability; heat release magnitude is the additional required factor",
+        "intended_error_modes": [
+          "Treating lower onset temperature as implying higher hazard (monotonicity assumption)",
+          "Treating Grewer test passage as sufficient for smoldering classification",
+          "Treating failure to sustain smoldering as fire-safe under all conditions"
+        ],
+        "disallowed_extrapolations": [
+          "Ranking overall fire hazard from onset temperature alone",
+          "Concluding non-smoldering samples pose no fire risk in any scenario"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Two black mass samples (A and C) that demonstrated smoldering fire hazard in self-heating ignition tests are subsequently tested for dust explosion risk. Neither sample produces a corrected pressure rise of 0.3 bar or more in a 20 L spherical chamber using 2 kJ pyrotechnic igniters across a wide range of dust concentrations. Neither can be ignited in a modified Hartmann apparatus at 1–10 J ignition energy. A process engineer proposes that because these samples are confirmed smoldering hazards, they should also be treated as dust explosion hazards in facility design. Which assessment is most defensible?",
+        "options": [
+          "A. The proposal is not supported, because the explosion screening tests showed no pressure rise meeting the explosion threshold despite high ignition energy, and smoldering hazard does not imply dust explosion hazard.",
+          "B. The proposal is defensible, because any material capable of smoldering at temperatures above 600°C necessarily has sufficient energy density to support a dust explosion under confinement.",
+          "C. The screening test results are inconclusive regarding explosion hazard, because 2 kJ ignition energy may be insufficient to initiate explosion in some dust types regardless of their intrinsic reactivity.",
+          "D. The absence of a pressure rise in the 20 L chamber test under the stated conditions provides direct evidence that these samples do not meet the dust explosion classification threshold under those test conditions.",
+          "E. The smoldering behavior confirms that the samples contain sufficient reactive material to pose dust explosion risk if particle size is reduced below the tested range.",
+          "F. Dust explosion hazard and smoldering fire hazard are governed by different physical mechanisms, so a positive result in one test does not predict the outcome of the other."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Explosion tests showed no qualifying pressure rise; smoldering and explosion are distinct hazard modes not mutually implying each other.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+150+Journal_of_Loss_Prevention_in_the_Process_Industries:C002",
+              "TR_Gasventing+150+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence shows smoldering samples A and C failed explosion tests; high smoldering temperature does not imply dust explosion capability.",
+            "error_type": "Causal overclaim / mechanism confusion",
+            "evidence_refs": [
+              "TR_Gasventing+150+Journal_of_Loss_Prevention_in_the_Process_Industries:C002",
+              "TR_Gasventing+150+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The 2 kJ pyrotechnic igniters used are standard high-energy ignition sources for dust explosion screening; claiming insufficiency is unsupported by evidence.",
+            "error_type": "Unsupported extrapolation beyond test conditions",
+            "evidence_refs": [
+              "TR_Gasventing+150+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "No corrected pressure rise of 0.3 bar or more was observed across wide dust concentrations, directly supporting non-classification as explosion hazard under those conditions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+150+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Introducing particle size reduction as a variable goes beyond the stated test conditions; evidence does not support this extrapolation.",
+            "error_type": "Scope expansion / unsupported extrapolation",
+            "evidence_refs": [
+              "TR_Gasventing+150+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Smoldering requires sustained heat release in a condensed phase; dust explosion requires rapid pressure rise from dispersed combustion — distinct mechanisms confirmed by divergent test outcomes.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+150+Journal_of_Loss_Prevention_in_the_Process_Industries:C002",
+              "TR_Gasventing+150+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of cross-hazard inference between smoldering fire and dust explosion classifications",
+        "primary_boundary": "Smoldering hazard classification does not transfer to dust explosion hazard; each requires independent test-based evidence",
+        "intended_error_modes": [
+          "Inferring dust explosion risk from smoldering temperature magnitude",
+          "Treating high-energy ignition sources as potentially insufficient without evidence",
+          "Extrapolating to untested particle size regimes"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding explosion safety across all particle sizes from standard screening test",
+          "Using smoldering peak temperature to predict explosion pressure rise"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Two black mass samples, A and D, are each mixed with water at 80°C in a 1:5 mass-to-volume ratio. Sample D generates approximately 134 times more hydrogen per unit mass than sample A under identical conditions, with sample D reaching a hydrogen concentration of 3.54% by volume in the headspace. A safety engineer must assess whether the hydrogen generated from sample A poses a flammability hazard under these conditions. Which statements are admissible?",
+        "options": [
+          "A. Sample A's hydrogen generation rate under these conditions is too low to approach flammable concentration limits, making it a lower flammability concern than sample D under the same test conditions.",
+          "B. Because both samples contain similar electrode material origins, the difference in hydrogen generation is likely due to measurement artifact rather than compositional difference.",
+          "C. Sample D's hydrogen concentration of 3.54% by volume approaches the lower flammability limit for hydrogen in air, indicating that the gas space above sample D warrants flammability hazard consideration.",
+          "D. The approximately 134-fold difference in hydrogen yield between samples A and D confirms that black mass composition governs hydrogen generation magnitude, and this difference cannot be attributed to test variability alone.",
+          "E. Since sample A produces negligible hydrogen compared to sample D, sample A presents no chemical reactivity hazard with water under any temperature condition.",
+          "F. Hydrogen flammability risk from water contact is primarily determined by the volume of gas generated per unit mass of material, not by the identity of the material's source chemistry."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Sample A yields 0.017 L H2/kg vs. 2.27 L H2/kg for D; the 134-fold difference makes flammable concentration far less likely for A under the same conditions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+150+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "A 134-fold difference in hydrogen yield is far beyond test variability; attributing it to measurement artifact is unsupported and implausible.",
+            "error_type": "Causal overclaim / mechanism confusion",
+            "evidence_refs": [
+              "TR_Gasventing+150+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "3.54% H2 by volume approaches the lower flammability limit of hydrogen (~4%), warranting flammability hazard consideration for sample D's headspace.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+150+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "A 134-fold difference under identical conditions is attributable to compositional differences, not test variability; this is an admissible mechanistic inference.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+150+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence covers only 80°C; extrapolating to 'any temperature condition' exceeds the evidence scope and constitutes an inadmissible overgeneralization.",
+            "error_type": "Scope expansion / condition violation",
+            "evidence_refs": [
+              "TR_Gasventing+150+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence shows that material identity (composition) strongly controls hydrogen yield; attributing risk solely to volume without material identity is unsupported.",
+            "error_type": "Mechanism substitution / ignoring multi-factor interaction",
+            "evidence_refs": [
+              "TR_Gasventing+150+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of flammability hazard conclusions from hydrogen generation data and the role of material composition in governing that generation",
+        "primary_boundary": "Conclusions about hydrogen flammability hazard are bounded to the 80°C test condition; low yield for sample A reduces but does not eliminate all reactivity concerns at other conditions",
+        "intended_error_modes": [
+          "Extrapolating low hydrogen yield at 80°C to safety at all temperatures",
+          "Attributing large inter-sample differences to measurement artifact",
+          "Claiming hydrogen flammability risk depends only on volume, not material identity"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring zero reactivity hazard for sample A at temperatures other than 80°C",
+          "Concluding that sample D is above the lower flammability limit without noting the proximity and headspace geometry dependence"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A recycling facility processes four black mass samples. Testing reveals that all four samples exhibit spontaneous combustion tendency in a hot air stream. Two samples develop self-sustaining smoldering after self-heating ignition, reaching temperatures above 640°C. One of the non-smoldering samples begins its exothermic reaction at a lower temperature than either smoldering sample. Two of the samples also fail to generate qualifying pressure rise in dust explosion screening tests despite high-energy ignition. One sample generates over 100 times more hydrogen per unit mass than another when contacted with hot water. Explain why a lower exothermic onset temperature does not necessarily indicate greater overall fire hazard in this context, and identify which combination of properties determines whether a black mass sample poses a smoldering fire hazard specifically."
+      },
+      "ground_truth": {
+        "gold_answer": "A lower exothermic onset temperature means a sample begins releasing heat at a lower temperature, but smoldering fire hazard requires both initiation of exothermic reaction and sufficient total heat release to sustain the reaction front. The sample that begins reacting at the lowest temperature fails to generate enough heat to maintain smoldering, so its earlier onset does not translate into greater smoldering hazard. Smoldering fire hazard is therefore determined by the combination of: (1) the ability to initiate exothermic decomposition (onset temperature) and (2) the magnitude of heat released being sufficient to sustain combustion after ignition. Neither condition alone is sufficient; both must be met simultaneously.",
+        "must_include": [
+          "onset temperature is necessary but not sufficient for smoldering hazard",
+          "total or sustained heat release magnitude determines whether smoldering is maintained",
+          "the sample with the lowest onset temperature failed to sustain smoldering due to insufficient heat release",
+          "smoldering hazard requires both initiation and sustained heat release"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming that lower onset temperature always indicates lower hazard in general",
+          "Inferring that samples without smoldering hazard are safe under all conditions",
+          "Using dust explosion or hydrogen generation results to support smoldering hazard conclusions"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism-based reasoning distinguishing onset temperature from heat release sufficiency as independent determinants of smoldering fire hazard",
+        "primary_boundary": "Onset temperature and heat release magnitude are independent variables; onset alone does not predict smoldering outcome",
+        "intended_error_modes": [
+          "Assuming monotonic relationship between onset temperature and hazard severity",
+          "Treating Grewer oven spontaneous combustion tendency as equivalent to smoldering fire hazard",
+          "Conflating different hazard modes (explosion, hydrogen generation) with smoldering classification"
+        ]
+      }
+    }
+  ]
+}

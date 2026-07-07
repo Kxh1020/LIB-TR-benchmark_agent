@@ -1,0 +1,191 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery pack enclosure contains two 280Ah LFP cells undergoing thermal runaway. A pressure balance valve rated at approximately 104.8 kPa opens 36 times during the event. Recorded data show 72.2% of openings occur at pressure reduction rates of 0.0–0.5 kPa/s, while the highest rate of 1.5–2.0 kPa/s occurs only once. The first opening threshold is measurably higher than all subsequent openings. An engineer assesses valve sizing and enclosure pressure management strategy.",
+        "options": [
+          "A. The valve's repeated cycling indicates that a single large-orifice relief event cannot adequately represent the pressure dynamics; sustained low-rate venting dominates the pressure management demand.",
+          "B. Because the first opening pressure exceeds the manufacturer specification while subsequent openings occur at a lower threshold, the valve exhibits a mechanical hysteresis or seating-change behavior that must be accounted for in repeated-event sizing.",
+          "C. The single occurrence of the maximum pressure reduction rate confirms that peak pressure events are the primary sizing criterion, and the 72.2% low-rate activations are negligible for valve design.",
+          "D. The pressure balance valve fully prevents internal pressure from exceeding safe limits during thermal runaway because it opened successfully on all 36 occasions.",
+          "E. Designing the enclosure solely around the maximum observed pressure reduction rate would overestimate the sustained venting demand, since most activation events involve substantially lower rates.",
+          "F. The difference between first-opening and subsequent-opening pressures implies that the valve cannot be modeled as a fixed-threshold device across the full thermal runaway event duration."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "E",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "36 openings with 72.2% at low rates shows sustained low-rate cycling dominates; a single large-event model misrepresents the demand profile.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Evidence explicitly shows first-opening threshold (~107 kPa) differs from subsequent openings (~105.7–106.2 kPa), indicating threshold shift requiring design consideration.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Treating 72.2% of activations as negligible inverts the statistical evidence; low-rate events constitute the dominant operational regime of the valve.",
+            "error_type": "numerical exaggeration / scope inversion",
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence confirms valve opened but does not establish that internal pressure remained within safe limits throughout; this is an unsupported safety claim.",
+            "error_type": "protective mechanism overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C003",
+              "TR_Gasventing+128+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Sizing only to the peak rate overstates sustained demand; the distribution shows the peak is a single outlier against a dominant low-rate regime.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The measurable difference between first and subsequent opening pressures means a single fixed-threshold model is inconsistent with observed valve behavior.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Interpreting pressure valve cycling statistics and threshold hysteresis to assess valve sizing and enclosure pressure management admissibility",
+        "primary_boundary": "Valve success in opening does not imply pressure safety guarantee; first-vs-subsequent threshold difference invalidates fixed-threshold modeling; peak-rate-only sizing misrepresents the dominant demand regime",
+        "intended_error_modes": [
+          "protective mechanism overclaim (valve opened = safe)",
+          "statistical inversion (treating 72.2% low-rate events as negligible)",
+          "fixed-threshold modeling ignoring threshold shift"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding safe pressure maintenance from successful valve actuation",
+          "Using single peak event as sole sizing criterion",
+          "Treating manufacturer-specified threshold as invariant across event duration"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Post-event inspection of a battery pack that experienced thermal runaway from two 280Ah LFP cells reveals concentrated black ablation marks at all four interior corners of the enclosure. No comparable marks appear along the flat interior wall sections. The pack design places cells in a central arrangement with no additional insulation at corner positions. An engineer is revising the module design to reduce secondary ignition and electrical failure risk.",
+        "options": [
+          "A. The corner ablation pattern is consistent with thermal runaway gas flow and electrolyte aerosol accumulation at geometric convergence zones, suggesting corners experience disproportionately higher exposure to ejected material.",
+          "B. Providing enhanced electrical insulation specifically at corner-adjacent battery positions is a design response directly supported by the observed failure pattern.",
+          "C. The flat wall sections should be prioritized for insulation upgrades because uniform coverage is more reliable than targeted corner protection.",
+          "D. The ablation marks at corners confirm that corner cells reached higher internal temperatures than centrally located cells during thermal runaway.",
+          "E. The observed corner accumulation pattern implies that enclosure geometry influences the spatial distribution of ejected material exposure, which is a factor admissible for module layout design decisions.",
+          "F. Because ablation marks indicate post-event residue rather than real-time temperature, no design inference about electrical insulation placement is admissible from this observation alone."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence attributes corner marks to airflow and aerosol accumulation at corners, consistent with geometric convergence concentrating ejected material.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Evidence explicitly recommends additional insulation protection for batteries at edges and corners based on the observed accumulation pattern.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Evidence supports targeted corner protection, not uniform coverage prioritization. Flat wall sections showed no comparable ablation, making uniform prioritization unsupported.",
+            "error_type": "overgeneralization / ignoring spatial distribution evidence",
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Ablation marks reflect external surface exposure to ejected material, not internal cell temperature. Inferring internal temperature from surface ablation exceeds measurement scope.",
+            "error_type": "measurement scope distractor / causal overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Evidence shows enclosure geometry (corners) concentrates ejected material, making geometry an admissible factor in module layout and insulation placement decisions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Evidence directly uses the ablation observation to recommend insulation design changes; the claim that no design inference is admissible contradicts the evidence-supported recommendation.",
+            "error_type": "conservative but incorrect / measurement scope overclaim in reverse",
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Inferring admissible design responses from spatial ablation patterns while distinguishing surface exposure evidence from internal temperature inference",
+        "primary_boundary": "Corner ablation supports airflow/aerosol accumulation inference and targeted insulation recommendation but does not support inference about internal cell temperatures",
+        "intended_error_modes": [
+          "measurement scope overclaim (surface marks → internal temperature)",
+          "overgeneralization (uniform coverage preferred over targeted)",
+          "conservative but incorrect (ablation marks insufficient for any design inference)"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring corner cell internal temperatures from external ablation",
+          "Recommending uniform insulation upgrade over targeted corner protection",
+          "Dismissing ablation evidence as non-actionable for design"
+        ]
+      }
+    }
+  ],
+  "short_answers": []
+}

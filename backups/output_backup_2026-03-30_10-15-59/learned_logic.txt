@@ -1,0 +1,57 @@
+## Stem Construction Rules
+1. Start with a realistic engineering scenario (test method/abuse mode/operating condition) and specify what is being evaluated (safety outcome, failure threshold, propagation, model validity).
+2. Provide **observations and constraints** (signals measured, boundary conditions, what is held constant) without interpreting them.
+3. Include at least **two interacting factors** (e.g., mechanical + thermal, geometry + SOC, confinement + ventilation) so single-variable reasoning is insufficient.
+4. Define the **regime** explicitly (early vs late stage, pre-failure vs post-failure, low vs high loading/pressure) and ask conclusions limited to that regime.
+5. Use **admissibility wording** (“supported/consistent/defensible/physically reasonable/wrong”) rather than “true/false” to force evidence-limited judgment.
+6. Specify **system boundaries** (cell vs module vs pack; internal vs surface measurements; local interface vs global response).
+7. Provide a **decision criterion** or operational definition (e.g., failure threshold defined by a signal after rest; TR defined by a rate criterion) so answers must align with definitions.
+8. Omit the key causal link or mechanism and require the solver to infer it from the given constraints and principles.
+9. When comparing methods/configurations, state “all else equal” controls to prevent trivial attribution to uncontrolled variables.
+10. For multi-select items, ensure the stem implies **multiple statements can simultaneously hold** (e.g., coupled mechanisms or stage-dependent behaviors).
+
+## Evidence Transformation Rules
+1. Convert measured signals/trends into questions about **what can be concluded** (not what happened), using limits of observability (e.g., surface vs internal sensing).
+2. Turn “parameter changes” into **threshold/monotonicity/peak** admissibility tasks (e.g., whether effects must be monotonic, whether a critical value exists).
+3. Use partial evidence to ask for **non-implication**: which conclusions are *not justified* even if they sound plausible.
+4. Transform comparative setups into **mechanism discrimination**: ask whether differences arise from development path vs fundamental mechanism.
+5. Map component-level phenomena to system-level judgments only when justified; otherwise ask which options **overstep scale transfer**.
+6. Use “defined failure criteria” to test whether statements respect the **metric** (e.g., voltage-loss criterion vs thermal runaway occurrence).
+7. Convert “observed staging” (multi-stage curves/processes) into reasoning about **state transitions** and what can/cannot be inferred at inflection points.
+8. Turn coupled hazards (thermal + mechanical + electrical) into **dominance/regime** reasoning: which mechanism dominates under which condition range.
+9. When chemistry is involved, ask for **thermo-kinetic defensibility** (activation energy trends, heating-rate effects) rather than naming reactions from memory.
+10. For modeling/validation contexts, convert “fits data” into questions about **identifiability and physical completeness**, not accuracy alone.
+
+## Distractor Design Rules
+1. **Overgeneralization distractor:** claim a variable “always” increases/decreases risk or response, ignoring non-monotonic or regime-limited behavior.
+2. **Scope expansion distractor:** infer pack/module behavior directly from a single-cell observation (or vice versa) without a transfer pathway.
+3. **Mechanism confusion distractor:** describe the right phenomenon but assign the wrong driver (electrical vs thermal vs mechanical vs transport limitation).
+4. **Condition-violation distractor:** use a statement true in another regime (e.g., steady-state, low rate, open environment) but invalid under stated constraints.
+5. **Boundary-condition ignoring distractor:** neglect stated controls (constant SOC, fixed heating power, identical environment) and attribute effects to them anyway.
+6. **Correlation→causation distractor:** treat an indicator signal as proof of an internal event rather than a proxy with limitations.
+7. **Local-to-global measurement distractor:** assume externally measured quantities accurately represent internal maxima/minima.
+8. **Model-validity fallacy distractor:** claim “multiple models fit data ⇒ physically correct” or “calibration ⇒ completeness.”
+9. **Single-factor simplification distractor:** ignore multi-factor interaction and attribute outcomes to one variable despite coupled mechanisms.
+10. **Engineering recommendation leap distractor:** jump from limited lab evidence to a universal design recommendation without acknowledging constraints/trade-offs.
+
+## Reasoning Enforcement Rules
+1. Require at least one **multi-step chain**: condition → intermediate mechanism/state → observable → admissible conclusion.
+2. Force **elimination reasoning** by making several options partially true but wrong due to scope, regime, or definition mismatch.
+3. Make at least one correct option rely on **measurement limitation reasoning** (what sensors can/cannot prove).
+4. Include **regime-switch reasoning** (low vs high load/pressure; pre-TR vs TR; confined vs open) so answers depend on conditions.
+5. Enforce **scale-transfer reasoning** (interface ↔ layer ↔ cell ↔ module) with explicit boundaries so unjustified extrapolation is penalized.
+6. Use **competing mechanisms** in the stem so the solver must decide which dominates under the stated constraints.
+7. Require **consistency with defined criteria** (TR definition, failure threshold, “supported” means not exceeding evidence).
+8. In method-comparison questions, require reasoning about **controlled variables** and what differences can legitimately be attributed to.
+
+## Difficulty Control Rules
+1. Provide information that is **incomplete but sufficient**, so solving depends on principles and constraints rather than missing facts.
+2. Avoid keyword-matching by using **near-synonymous phrasing** across options and embedding the real discriminator in conditions/definitions.
+3. Mix **global and local descriptors** (e.g., global curve vs local damage) so the solver must reconcile levels of description.
+4. Include distractors that are **correct in general** but invalid under the stated regime or measurement boundary.
+5. Increase difficulty by adding **one extra interacting variable** (e.g., pressure + chemistry + venting) rather than adding calculations.
+6. Control difficulty with **option granularity**: make options differ by scope words (always/only/primarily/may), thresholds, or stage qualifiers.
+7. Use multi-select format when the scenario naturally supports **multiple simultaneous truths**, raising the need for careful admissibility checks.
+8. Limit numerical cues; when numbers exist, use them as **threshold markers** rather than computation triggers.
+9. Add at least one option that is **counterintuitive but defensible**, forcing principle-based evaluation over intuition.
+10. In modeling questions, increase difficulty by testing **identifiability vs fit**, and **stress-state coverage vs single-test calibration**.

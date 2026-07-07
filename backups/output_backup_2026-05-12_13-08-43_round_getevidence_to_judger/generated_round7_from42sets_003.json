@@ -1,0 +1,315 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A commercial LFP cylindrical cell is subjected to overcharge at 2C. In seven of nine tests, the cell vents and enters thermal runaway without explosion. In two tests, surface temperatures reach 300–350°C and the cell explodes. The first detectable gas release occurs at 53°C surface temperature and 120% SOC, containing both flammable species (CH4, CO, H2) and CO2. An engineer must assess whether the CO2 in the vent gas provides a meaningful inerting effect that reduces explosion risk. Which conclusions are admissible?",
+        "options": [
+          "A. The CO2 present in vent gas is insufficient to suppress flammability because flammable gases such as H2 counterbalance its inerting effect, so explosion risk from the vent gas cannot be dismissed on the basis of CO2 presence alone.",
+          "B. Because CO2 is a known inerting agent and is detected in the first gas release, its presence establishes a baseline flammability suppression that reduces explosion risk relative to cells venting no CO2.",
+          "C. The occurrence of explosions only in two of nine tests demonstrates that the vent gas composition is the primary variable controlling whether explosion occurs, rather than the magnitude of internal short-circuit heating.",
+          "D. The fact that explosions were associated with surface temperatures of 300–350°C while non-explosive tests did not reach those temperatures suggests that thermal intensity, not vent gas composition alone, is the distinguishing factor between explosive and non-explosive outcomes.",
+          "E. Since HF appears only after all other gas concentrations begin to decline, HF generation cannot be a contributing cause of the initial vent gas flammability.",
+          "F. The detection of CO2 alongside flammable gases in the first vent event confirms that CO2-producing decomposition reactions are the dominant source of heat during the initial gas release phase."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence directly states CO2 is insufficient to prevent flammability, counterbalanced by flammable gases including H2.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+119+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence explicitly contradicts this; CO2 presence does not establish meaningful inerting given flammable gas co-presence.",
+            "error_type": "protective_mechanism_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+119+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Evidence attributes explosions to strong internal short circuits causing extreme temperatures, not primarily to vent gas composition differences.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+119+Journal_of_Power_Sources:C001"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence links explosions to 300–350°C surface temperatures from strong internal short circuits, distinguishing them from non-explosive tests by thermal intensity.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+119+Journal_of_Power_Sources:C001"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Evidence states HF appears only when other gases begin decreasing, decoupling HF from initial vent gas flammability mechanisms.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+119+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "CO2 detection alongside flammable gases does not establish CO2-producing reactions as the dominant heat source; evidence does not support this causal assignment.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Gasventing+119+Journal_of_Power_Sources:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of inerting claims for CO2 in vent gas and identification of the thermal vs. compositional factor controlling explosion outcome",
+        "primary_boundary": "CO2 presence does not establish flammability suppression when flammable gases are co-present; explosion distinction is thermal intensity, not gas composition",
+        "intended_error_modes": [
+          "protective_mechanism_overclaim for CO2 inerting",
+          "causal_overclaim attributing explosion frequency to gas composition",
+          "mechanism_substitution assigning heat dominance to CO2 reactions"
+        ],
+        "disallowed_extrapolations": [
+          "Do not infer that CO2 provides partial inerting benefit absent evidence",
+          "Do not generalize explosion frequency to other chemistries or rates",
+          "Do not assign dominant heat source from gas detection alone"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Overcharge and thermal abuse tests are conducted on LFP cells. In overcharge tests, gas is first detected at 53°C surface temperature and 120% SOC. When thermal abuse tests are applied to a pre-overcharged cell, the resulting vent gas composition closely resembles that from overcharge abuse. A battery safety engineer is evaluating whether electrochemical oxidoreduction reactions or temperature rise is the primary driver of the main gas release. Which of the following conclusions are supported by this evidence?",
+        "options": [
+          "A. Because vent gas composition is similar between overcharge and thermal abuse of overcharged cells, temperature rise is identified as the key parameter responsible for the main gas release, with oxidoreduction reactions playing a minor role.",
+          "B. The similarity in gas composition across both test types proves that the same set of chemical reactions occurs regardless of abuse mode, confirming that electrochemical and thermal pathways are mechanistically equivalent.",
+          "C. The early gas detection at 53°C and 120% SOC during overcharge is most consistent with thermally driven decomposition rather than electrochemical reactions, given that the surface temperature at that point is only modestly elevated.",
+          "D. The compositional similarity between the two test types is sufficient to conclude that overcharge-specific electrochemical reactions contribute negligibly to gas generation under any abuse condition, including standard charge.",
+          "E. If the primary gas release were driven by oxidoreduction reactions unique to overcharge, one would expect the thermal abuse test on an overcharged cell to yield a distinctly different gas composition, which is inconsistent with the observed similarity.",
+          "F. The detection of DMC, EMC, and carbonate-derived species in the first vent event confirms that separator decomposition is the initiating mechanism for gas release during overcharge."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence explicitly states that compositional similarity across test types indicates temperature, not oxidoreduction reactions, drives main gas release.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+119+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Compositional similarity supports temperature as the common driver but does not prove the reactions are mechanistically equivalent or interchangeable.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+119+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "53°C is modestly elevated but the evidence attributes main gas release to temperature as key parameter; inferring thermally driven decomposition at 53°C specifically is not supported and conflates initial detection with main release.",
+            "error_type": "condition_violation",
+            "evidence_refs": [
+              "TR_Gasventing+119+Journal_of_Power_Sources:C002",
+              "TR_Gasventing+119+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence applies to overcharge and thermal abuse of overcharged cells; extrapolating to standard charge conditions exceeds the evidence scope.",
+            "error_type": "overgeneralization",
+            "evidence_refs": [
+              "TR_Gasventing+119+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "This is the logical contrapositive of the evidence claim: if oxidoreduction were dominant, thermal abuse would yield different composition; similarity refutes that hypothesis.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+119+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "DMC and EMC are electrolyte solvent species; attributing their presence to separator decomposition is a mechanism substitution not supported by the evidence.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Gasventing+119+Journal_of_Power_Sources:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Causal attribution of main gas release to temperature vs. oxidoreduction reactions using comparative test evidence",
+        "primary_boundary": "Compositional similarity supports temperature as key parameter but does not establish mechanistic equivalence or generalize beyond the tested abuse conditions",
+        "intended_error_modes": [
+          "causal_overclaim equating compositional similarity with mechanistic equivalence",
+          "overgeneralization to non-overcharge conditions",
+          "mechanism_substitution for electrolyte species origin"
+        ],
+        "disallowed_extrapolations": [
+          "Do not extend conclusion to standard charge or discharge conditions",
+          "Do not interpret temperature as the sole driver under all abuse modes",
+          "Do not assign specific decomposition source from species identity alone"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "During overcharge testing of an LFP cell, HF is detected in vent gases only after the concentrations of all other previously detected species (DMC, EMC, CH4, CO, CO2, and others) begin to decline. An engineer is assessing the temporal and mechanistic relationship between HF generation and the broader gas release sequence. Which of the following statements are admissible given this observation?",
+        "options": [
+          "A. HF generation is mechanistically decoupled from the reactions producing the other vent gas species, because its appearance is temporally delayed relative to all other detected gases.",
+          "B. The delayed appearance of HF relative to other gases implies that HF is produced by a secondary reaction that requires the prior consumption or transformation of intermediate species generated earlier in the vent sequence.",
+          "C. Because HF appears after other gas concentrations decline, it can be concluded that HF is produced exclusively by hydrolysis of residual electrolyte salt after the primary thermal decomposition reactions are complete.",
+          "D. The temporal decoupling of HF from other gases means that HF cannot contribute to the initial flammability hazard of the vent gas plume, though it may represent a distinct toxicity hazard at a later stage.",
+          "E. The observation that HF appears last is inconsistent with HF being produced by the same reaction pathway as CO2, supporting the conclusion that CO2 and HF originate from different reaction mechanisms.",
+          "F. Since HF appears only when other gases are declining, its peak concentration must be lower than that of any previously detected species, making it the least hazardous component of the vent gas."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence directly states HF formation is decoupled from other reaction mechanisms based on its delayed temporal appearance.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+119+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "This is a plausible mechanistic hypothesis but is not supported by the evidence; the evidence establishes decoupling, not a specific secondary reaction dependency.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+119+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Evidence does not specify the HF production mechanism; claiming exclusive hydrolysis of residual salt invents a mechanism not present in the evidence.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Gasventing+119+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Because HF appears only after other gases decline, it is absent from the initial vent plume, ruling it out as a contributor to initial flammability while preserving its toxicity hazard role.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+119+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "CO2 is present in the initial vent event while HF appears only later; their temporal separation is inconsistent with a shared reaction pathway.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+119+Journal_of_Power_Sources:C002",
+              "TR_Gasventing+119+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Temporal sequence does not determine concentration magnitude; inferring lowest peak concentration from last appearance is unsupported and conflates timing with quantity.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+119+Journal_of_Power_Sources:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanistic and temporal decoupling of HF from other vent gas species and its implications for hazard sequencing",
+        "primary_boundary": "Temporal decoupling supports mechanistic independence and rules out HF contribution to initial flammability, but does not specify the HF production mechanism or imply lower concentration",
+        "intended_error_modes": [
+          "causal_overclaim inferring secondary reaction dependency from temporal delay",
+          "mechanism_substitution specifying HF source as hydrolysis without evidence",
+          "causal_overclaim equating last appearance with lowest concentration"
+        ],
+        "disallowed_extrapolations": [
+          "Do not specify the HF production mechanism beyond what evidence states",
+          "Do not infer concentration magnitude from temporal order",
+          "Do not generalize HF decoupling to other chemistries"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "An LFP cylindrical cell is overcharged at 2C. In nine tests, seven result in venting and thermal runaway without explosion, while two result in explosion preceded by surface temperatures of 300–350°C. The first gas release occurs at 53°C surface temperature and 120% SOC and contains both CO2 and flammable species including H2. Vent gas composition from overcharge tests closely matches that from thermal abuse tests on pre-overcharged cells. A safety engineer argues that: (1) the CO2 in the vent gas provides a meaningful reduction in explosion risk, and (2) the main gas release is primarily driven by overcharge-specific electrochemical reactions. Evaluate both claims, identifying the specific reasoning flaw in each and explaining what the evidence actually supports regarding each mechanism."
+      },
+      "ground_truth": {
+        "gold_answer": "Claim 1 is incorrect: the evidence states that the CO2 quantity in the vent gas is insufficient to prevent flammability because it is counterbalanced by flammable gases such as H2. The presence of CO2 does not establish a meaningful inerting effect when co-released with flammable species; the net vent gas mixture remains flammable. The reasoning flaw is a protective mechanism overclaim that treats CO2 detection as equivalent to effective flammability suppression without accounting for the competing flammable gas load. Claim 2 is also incorrect: the close similarity in vent gas composition between overcharge abuse and thermal abuse of a pre-overcharged cell indicates that temperature, not oxidoreduction reactions specific to overcharge, is the key parameter driving the main gas release. If overcharge-specific electrochemical reactions were dominant, thermal abuse alone would produce a distinctly different composition. The reasoning flaw is attributing a thermally driven outcome to an electrochemical mechanism, ignoring that the common variable across both test types is temperature elevation, not the electrochemical state of charge progression.",
+        "must_include": [
+          "CO2 is insufficient to prevent flammability due to flammable gases including H2",
+          "CO2 presence does not establish effective inerting when flammable species are co-present",
+          "Compositional similarity between overcharge and thermal abuse tests implicates temperature as the key parameter",
+          "Oxidoreduction reactions are identified as playing a minor role in the main gas release",
+          "If electrochemical reactions dominated, thermal abuse would yield different composition"
+        ],
+        "disallowed_extrapolations": [
+          "Do not specify the exact HF production mechanism",
+          "Do not claim CO2 provides zero inerting benefit under all conditions beyond what evidence states",
+          "Do not generalize the temperature-driven mechanism to chemistries other than LFP",
+          "Do not infer that explosion risk is zero in the seven non-explosive tests"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Simultaneous evaluation of two mechanistic claims: CO2 inerting adequacy and electrochemical vs. thermal driving force for gas release",
+        "primary_boundary": "CO2 inerting is negated by flammable gas co-presence; temperature rather than electrochemical reactions drives main gas release as evidenced by cross-test compositional similarity",
+        "intended_error_modes": [
+          "Accepting CO2 detection as sufficient for flammability suppression",
+          "Attributing gas release to electrochemical reactions without accounting for thermal abuse comparison",
+          "Failing to use the comparative test design as a controlled variable argument"
+        ]
+      }
+    }
+  ]
+}

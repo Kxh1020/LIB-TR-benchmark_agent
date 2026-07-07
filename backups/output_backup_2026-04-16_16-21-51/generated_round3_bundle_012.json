@@ -1,0 +1,352 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A lithium-ion battery module is operating under thermal abuse conditions. A temperature sensor on the cell surface registers 105°C. The module has no active cooling engaged at this point. An engineer is asked to assess which internal processes are consistent with this surface temperature reading and which safety-relevant conclusions are admissible. The cells were charged to approximately 90% SOC prior to the test. Which of the following statements are admissible based on engineering reasoning about the thermal progression of lithium-ion cells?",
+        "options": [
+          "A. The polymer separator is likely still structurally intact at this surface temperature, meaning internal short circuit from separator melting has not yet been confirmed.",
+          "B. Electrolyte decomposition reactions with intercalated lithium may already be underway, generating flammable hydrocarbon gases internally even though the surface temperature has not yet reached the separator melting threshold.",
+          "C. Because the surface temperature is below 130°C, no exothermic reactions have been initiated inside the cell, and the system remains in a thermally stable state.",
+          "D. At 90% SOC, the absence of active cooling means thermal runaway fire is a near-certain outcome if the temperature continues to rise without intervention, based on observed behavior under comparable conditions.",
+          "E. The surface temperature reading at 105°C definitively confirms that internal temperature is uniform and that no localized hot spots exist at the anode-electrolyte interface.",
+          "F. Initiating water spray cooling at this stage is more consistent with preventing thermal runaway than with suppressing a fire that has already started.",
+          "G. The cell has already entered full thermal runaway because the temperature exceeds the minimum threshold at which runaway onset can begin."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Separator melting is reported to begin at approximately 130°C. A surface temperature of 105°C is below this threshold, so separator-induced internal short circuit cannot yet be confirmed, making this admissible.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+214+Energies:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Electrolyte breakdown and reaction with intercalated lithium begins at approximately 100°C. At 105°C surface temperature, this reaction is consistent with being underway, generating flammable gases, even though the separator has not yet melted. This is a multi-step reasoning conclusion: 105°C > 100°C threshold → electrolyte reaction active → gas generation possible.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+214+Energies:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "This is a conservative-appearing but incorrect option. Exothermic reactions can begin at temperatures as low as 60°C at the anode-electrolyte interface, and electrolyte decomposition begins near 100°C. Stating no exothermic reactions have initiated at 105°C contradicts the established thermal progression sequence.",
+            "error_type": "Condition violation distractor — correct general heuristic about separator threshold misapplied to exclude earlier-onset reactions",
+            "evidence_refs": [
+              "TR_Protection+214+Energies:C001",
+              "TR_Protection+214+Energies:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence shows that without cooling, thermal runaway fire occurred every time under thermal abuse at approximately 90% SOC. This makes the conclusion about near-certain fire outcome admissible under these conditions, requiring the reasoning step: high SOC + no cooling + thermal abuse → fire every time observed.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+214+Energies:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Surface temperature measurement cannot confirm internal temperature uniformity or rule out localized hot spots at the anode-electrolyte interface. This is a measurement scope violation — surface readings do not directly reflect internal states.",
+            "error_type": "Measurement scope distractor",
+            "evidence_refs": [
+              "TR_Protection+214+Energies:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Evidence shows water spray applied at 100°C successfully prevented thermal runaway, and the evidence explicitly states water is more effective as a temperature reducer than as a fire suppressant. At 105°C, the cell has not yet entered full runaway, so cooling at this stage aligns with prevention rather than suppression. This is counterintuitive because engineers often associate water intervention with fire suppression.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+214+Energies:C005"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "While thermal runaway onset can begin as low as 60°C, the evidence describes a progression through multiple stages before full runaway. A surface temperature of 105°C is consistent with early-stage reactions but does not confirm full thermal runaway has occurred, particularly since the separator has not yet melted and catastrophic temperature escalation to 600–1000°C has not been described.",
+            "error_type": "Causal overclaim — conflates onset temperature threshold with confirmed full thermal runaway state",
+            "evidence_refs": [
+              "TR_Protection+214+Energies:C001",
+              "TR_Protection+212+Batteries:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-stage thermal progression of LIB cells and admissibility of stage-specific conclusions at a defined temperature",
+        "primary_boundary": "Distinguishing which internal processes are active at 105°C versus which require higher temperatures (separator melting at ~130°C) versus which have already been exceeded (electrolyte reaction at ~100°C, onset at ~60°C)",
+        "intended_error_modes": [
+          "Treating surface temperature as a complete proxy for internal state",
+          "Assuming no reactions occur below the separator melting threshold",
+          "Conflating onset temperature with confirmed full thermal runaway",
+          "Misidentifying water intervention as fire suppression rather than prevention at pre-runaway temperatures"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding internal temperature uniformity from surface readings",
+          "Concluding full thermal runaway from surface temperature alone without observing temperature escalation to 600-1000°C range"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery management system (BMS) is designed with two relay-based protection layers. The first relay activates a cooling fan when cell temperature exceeds 38°C. The second relay severs the power supply when temperature again exceeds 38°C after fan activation, with a documented response time below 0.5 seconds. The system also includes overcharge protection that disconnects the supply when cell voltage exceeds 4.2 V. A module is operating in rapid charging mode at approximately 1.3 A. The engineer observes that during a test, the temperature reaches 38°C and the fan activates, but temperature continues to rise. Which of the following conclusions about this system's behavior and protection logic are admissible?",
+        "options": [
+          "A. If the fan fails to arrest the temperature rise after activation, the power supply disconnection relay provides a secondary line of defense that can engage within less than 0.5 seconds of the threshold being re-evaluated.",
+          "B. The overcharge protection at 4.2 V per cell is directly relevant to the thermal event described, because voltage rise and temperature rise are coupled in this scenario.",
+          "C. The rapid charging mode generates more heat than slow charging mode under comparable conditions, which makes thermal threshold exceedance more likely during rapid charging.",
+          "D. A response time below 0.5 seconds for power disconnection is sufficient to guarantee that thermal runaway cannot occur once the threshold is crossed, regardless of SOC or prior thermal history.",
+          "E. The fan activation at 38°C addresses a temperature that is below the optimal performance range upper bound, meaning the fan engages before the cell exits its best operating window.",
+          "F. The two-relay architecture means that if the first relay (fan) is insufficient, the system can still terminate charging, but the effectiveness of this second intervention depends on whether sufficient heat has already accumulated prior to disconnection.",
+          "G. Because rapid charging operates within stated safe thermal limits, no thermal protection intervention should be expected to activate during normal rapid charging operation."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence states the microcontroller disables both relays to terminate power supply when temperature exceeds 38°C, with response time below 0.5 seconds. If fan activation is insufficient, this power disconnection relay provides a documented secondary intervention within the stated response time.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+213+2025_International_Conference_on_Frontier_Technologies_and_Solutions_(ICFTS):C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The overcharge protection triggers on voltage exceeding 4.2 V per cell. The thermal event described is temperature-driven, not necessarily voltage-driven. Asserting direct coupling between the two in this scenario is an unsupported causal overclaim; the stem does not indicate voltage is approaching 4.2 V.",
+            "error_type": "Causal overclaim — attributing coupling between two protection mechanisms without stated evidence of voltage rise",
+            "evidence_refs": [
+              "TR_Protection+213+2025_International_Conference_on_Frontier_Technologies_and_Solutions_(ICFTS):C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence explicitly states rapid charging mode generates a considerable amount of heat compared to slow charging mode. This makes thermal threshold exceedance more likely during rapid charging, requiring the reasoning step: higher current (1.3 A vs 0.52 A) → more heat generated → higher likelihood of reaching 38°C threshold.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+213+2025_International_Conference_on_Frontier_Technologies_and_Solutions_(ICFTS):C004",
+              "TR_Protection+213+2025_International_Conference_on_Frontier_Technologies_and_Solutions_(ICFTS):C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "This is a conservative-appearing but overclaiming option. The evidence states disconnection significantly mitigates thermal runaway risk, not that it guarantees prevention. At high SOC or with significant prior thermal accumulation, disconnection alone may not prevent runaway. This is a protective mechanism overclaim.",
+            "error_type": "Protective mechanism overclaim — 'significantly mitigated' is converted to 'guarantee cannot occur'",
+            "evidence_refs": [
+              "TR_Protection+213+2025_International_Conference_on_Frontier_Technologies_and_Solutions_(ICFTS):C002",
+              "TR_Protection+212+Batteries:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The optimal performance range is stated as 25–40°C. The fan activates at 38°C, which is within this range, not below it. The statement that the fan engages before the cell exits its best operating window is directionally correct but the phrasing 'below the optimal performance range upper bound' is accurate — however, the option states the fan activates 'before the cell exits its best operating window,' which is correct. Re-evaluating: 38°C is within 25–40°C, so the fan activates while still in the optimal range. This option is actually admissible. Reclassifying: this is correct.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+212+Batteries:C001",
+              "TR_Protection+213+2025_International_Conference_on_Frontier_Technologies_and_Solutions_(ICFTS):C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The two-relay architecture provides layered protection, but the effectiveness of power disconnection depends on thermal state at the time of disconnection. If significant heat has accumulated (e.g., at high SOC or after prolonged heating), disconnection removes the charging source but does not remove internal heat already stored. This requires multi-step reasoning: disconnection stops external heat input → but internal reactions already initiated may continue → effectiveness is state-dependent.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+213+2025_International_Conference_on_Frontier_Technologies_and_Solutions_(ICFTS):C002",
+              "TR_Protection+212+Batteries:C005"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "The evidence states rapid charging generates considerable heat and the system functioned within safe thermal limits. However, this does not mean thermal protection will never activate; the fan at 38°C may well engage during rapid charging precisely because of the heat generated. This distractor incorrectly infers that operating within safe limits means no threshold crossings occur.",
+            "error_type": "Condition violation distractor — 'within safe thermal limits' misinterpreted as 'no threshold activation'",
+            "evidence_refs": [
+              "TR_Protection+213+2025_International_Conference_on_Frontier_Technologies_and_Solutions_(ICFTS):C004",
+              "TR_Protection+213+2025_International_Conference_on_Frontier_Technologies_and_Solutions_(ICFTS):C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of conclusions about layered relay-based BMS protection logic under rapid charging thermal conditions",
+        "primary_boundary": "Distinguishing between 'significantly mitigates risk' and 'guarantees prevention'; distinguishing fan activation threshold relative to optimal operating range; identifying conditions under which second-layer protection effectiveness is limited",
+        "intended_error_modes": [
+          "Overclaiming that sub-0.5s disconnection guarantees no thermal runaway",
+          "Incorrectly coupling voltage-based overcharge protection to a temperature-driven event",
+          "Inferring no protection activation from 'within safe limits' language",
+          "Missing that heat accumulation prior to disconnection limits effectiveness of power cutoff"
+        ],
+        "disallowed_extrapolations": [
+          "Guaranteeing thermal runaway prevention from response time alone without accounting for SOC and thermal history",
+          "Assuming voltage and temperature protection mechanisms are always coupled"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "In a battery module, thermal runaway propagation (TRP) is being analyzed. Testing has established that approximately 12% of the total heat released by an initiating cell is sufficient to trigger thermal runaway in an adjacent cell, and that the majority of this inter-cell heat transfer occurs through the battery shell rather than through the pole connector. The module contains cells at different states of charge: some at 30% SOC and others at 85% SOC. An engineer must assess which statements about propagation risk and heat transfer pathway are supported by the available evidence. Which of the following conclusions are admissible?",
+        "options": [
+          "A. Cells at 85% SOC will contribute to faster and more intense propagation than cells at 30% SOC if they enter thermal runaway, because higher SOC is associated with greater propagation intensity.",
+          "B. Because only 12% of the initiating cell's heat is required to trigger adjacent cell runaway, a module design that reduces shell-to-shell thermal conductance is more directly relevant to propagation prevention than one that focuses on pole connector insulation.",
+          "C. The 12% heat transfer threshold implies that if the initiating cell releases less than 12% of its total heat to neighbors, propagation cannot occur under any conditions.",
+          "D. Cells at 30% SOC cannot enter thermal runaway under any circumstances because lower SOC is associated with less intense propagation.",
+          "E. The dominance of shell-based heat transfer over pole-connector-based transfer means that thermal isolation strategies targeting the shell surface are more mechanistically justified than those targeting only the electrical connectors.",
+          "F. The 12% threshold for triggering adjacent cell runaway means that even modest reductions in inter-cell heat transfer through the shell could meaningfully affect whether propagation occurs.",
+          "G. Because the majority of heat transfers through the shell, increasing the electrical resistance of pole connectors will fully prevent thermal runaway propagation in this module."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "E",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence directly states that higher SOC leads to faster and more intense thermal runaway propagation. Cells at 85% SOC will therefore contribute more severely to propagation than those at 30% SOC if runaway is initiated.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+212+Batteries:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Since the majority of heat transfer enabling propagation occurs through the shell rather than the pole connector, and only 12% of total heat is needed to trigger adjacent runaway, reducing shell thermal conductance directly addresses the dominant heat transfer pathway. This requires two reasoning steps: dominant pathway is shell → reducing shell conductance targets the primary mechanism → more relevant than pole connector insulation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+212+Batteries:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The 12% figure represents the threshold for triggering adjacent cell runaway given the observed heat transfer conditions. It does not imply that below-12% transfer guarantees no propagation under all conditions; other pathways, cumulative effects, or different configurations could alter this. This is an inadmissible universal conclusion from a conditional experimental result.",
+            "error_type": "Overgeneralization distractor — conditional threshold converted to universal prevention guarantee",
+            "evidence_refs": [
+              "TR_Protection+212+Batteries:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Lower SOC is associated with less intense propagation, but this does not mean cells at 30% SOC cannot enter thermal runaway under any circumstances. SOC affects propagation intensity and speed, not whether thermal runaway can be triggered at all. This is a scope expansion error.",
+            "error_type": "Causal overclaim — SOC effect on propagation intensity misapplied to runaway trigger admissibility",
+            "evidence_refs": [
+              "TR_Protection+212+Batteries:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Because the majority of heat transfer enabling propagation occurs through the shell, thermal isolation strategies targeting the shell surface are mechanistically justified as the primary intervention point. This is a direct design implication from the identified dominant heat transfer pathway.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+212+Batteries:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The 12% threshold is relatively low, meaning the margin between sufficient and insufficient heat transfer for triggering propagation is not large. Even modest reductions in shell-based heat transfer could move the transferred fraction below this threshold, meaningfully affecting whether propagation occurs. This is a counterintuitive correct option: the low threshold actually means small interventions can have outsized effect.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+212+Batteries:C004"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "Because the majority of heat transfer occurs through the shell, not the pole connector, increasing pole connector electrical resistance addresses only the minor pathway. This cannot fully prevent propagation when the dominant mechanism is shell-based thermal conduction. This is a mechanism substitution distractor.",
+            "error_type": "Mechanism substitution distractor — intervention targets secondary pathway while primary pathway remains unaddressed",
+            "evidence_refs": [
+              "TR_Protection+212+Batteries:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of propagation risk conclusions and design intervention relevance given identified heat transfer pathway dominance and SOC effects",
+        "primary_boundary": "Distinguishing dominant (shell) vs. secondary (pole connector) heat transfer pathways for propagation; distinguishing SOC effect on propagation intensity from SOC effect on runaway trigger possibility",
+        "intended_error_modes": [
+          "Treating 12% threshold as a universal prevention guarantee rather than a conditional trigger level",
+          "Concluding low SOC cells cannot enter runaway based on propagation intensity evidence",
+          "Targeting secondary heat transfer pathway (pole connector) as sufficient for full propagation prevention",
+          "Missing that the low 12% threshold implies sensitivity to even modest shell insulation improvements"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding cells at low SOC are immune to thermal runaway from propagation intensity data",
+          "Concluding pole connector intervention alone can fully prevent propagation"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A lithium-ion battery module is subjected to thermal abuse. The cells are charged to approximately 90% SOC. No active cooling is applied. A temperature sensor records the surface temperature rising through 60°C, then 100°C, then approaching 130°C. An engineer proposes that water spray cooling should be applied as soon as a fire is visually observed, rather than at the 100°C reading, arguing that early intervention wastes cooling resources on a cell that may self-stabilize. Evaluate this proposal. In your response, identify: (1) what internal process is consistent with the 100°C surface reading that makes early intervention mechanistically justified, (2) what the evidence indicates about outcome certainty without cooling at this SOC level, and (3) why the engineer's proposed timing of intervention is inconsistent with the evidence on cooling effectiveness."
+      },
+      "ground_truth": {
+        "gold_answer": "At approximately 100°C, electrolyte breakdown and reaction with intercalated lithium atoms begins, generating flammable hydrocarbon gases internally. This reaction is exothermic and represents an active heat-generating process already underway at the 100°C surface reading, not a stable pre-runaway state. Waiting for visual fire confirmation means the cell has already progressed well beyond this stage. Evidence shows that without cooling, thermal runaway fire occurred every time under thermal abuse at approximately 90% SOC, meaning self-stabilization is not a credible outcome at this SOC level — the engineer's assumption that the cell may self-stabilize is unsupported. Furthermore, evidence shows that water spray applied at 100°C successfully prevented thermal runaway, and explicitly states that water is more effective as a temperature reducer (prevention) than as a fire suppressant (post-ignition). Delaying intervention until fire is visible means cooling is being applied in the less effective role (suppression) rather than the more effective role (prevention). The proposal is therefore inconsistent with the evidence on three grounds: it underestimates the activity of internal reactions at 100°C, it assumes a self-stabilization outcome that is contradicted by the high-SOC no-cooling data, and it inverts the evidence-supported optimal timing for water intervention.",
+        "must_include": [
+          "Electrolyte decomposition and reaction with intercalated lithium begins at approximately 100°C, generating flammable gases — this is an active exothermic process, not a stable state",
+          "Without cooling at approximately 90% SOC, thermal runaway fire occurred every time — self-stabilization is not supported",
+          "Water spray at 100°C successfully prevented thermal runaway",
+          "Evidence states water is more effective as a temperature reducer than as a fire suppressant",
+          "Delaying to fire observation means intervention occurs in the less effective suppression role rather than the prevention role"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming that water spray at 100°C guarantees prevention under all SOC conditions beyond the approximately 90% SOC tested",
+          "Claiming that electrolyte reactions at 100°C alone constitute full thermal runaway",
+          "Claiming that separator melting has already occurred at 100°C surface temperature"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanistic justification for early cooling intervention timing relative to thermal progression stages and evidence on cooling effectiveness role",
+        "primary_boundary": "Distinguishing water's role as temperature reducer (prevention, effective at 100°C) from fire suppressant (post-ignition, less effective); distinguishing active exothermic reaction state at 100°C from assumed stable pre-runaway state",
+        "intended_error_modes": [
+          "Accepting the engineer's resource-conservation argument without evaluating the internal reaction state at 100°C",
+          "Ignoring the high-SOC no-cooling outcome data when assessing self-stabilization probability",
+          "Treating water intervention as equally effective at any stage of thermal progression"
+        ]
+      }
+    }
+  ]
+}

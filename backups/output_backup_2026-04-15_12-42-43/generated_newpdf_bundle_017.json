@@ -1,0 +1,324 @@
+{
+  "TR_trigger+208+Journal_of_Energy_Storage__TR_trigger+217+Process_Safety_and_Environmental_Protection__TR_trigger+36+Journal_of_Energy_Storage": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A LiCoO2/graphite soft-pack cell at 100% SOC is subjected to three-point bending until a bending angle of 60\u00b0 is reached, at which point an internal short circuit (ISC) is confirmed by voltage collapse. A second identical cell at 30% SOC is bent to the same 60\u00b0 angle. An engineer proposes the following statements about the heat generation mechanism and thermal outcome differences between the two tests. Which of the following statements are supported by the described conditions and the underlying physical mechanisms?",
+          "options": [
+            "A. At 60\u00b0 bending in the 100% SOC cell, the ISC resistance decreases and Joule heat from the short circuit becomes the dominant heat source, driving thermal runaway.",
+            "B. At 60\u00b0 bending in the 30% SOC cell, the absence of thermal runaway confirms that mechanical damage sufficient to cause ISC did not occur at this angle.",
+            "C. The 100% SOC cell reaches thermal runaway at 60\u00b0 while the 30% SOC cell does not, and the difference is attributable in part to the higher stored electrochemical energy available to sustain exothermic reactions at elevated SOC.",
+            "D. In the 100% SOC cell after ISC onset, the solid-phase ion diffusion coefficient decreases by more than 80%, primarily because electron transport through the short-circuit path outpaces ion transport to electrode surfaces.",
+            "E. Because the 30% SOC cell did not undergo thermal runaway at 60\u00b0, it can be concluded that no ISC occurred internally and the separator remained fully intact.",
+            "F. The critical bending angle for thermal runaway is independent of SOC, so the 30% SOC cell would reach thermal runaway if the bending angle were increased sufficiently beyond 60\u00b0."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "D"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence states that when bending surpasses the critical point, ISC resistance decreases and ISC Joule heat becomes the primary heat contributor. At 60\u00b0 in the fully charged cell, this regime is reached and thermal runaway is triggered, consistent with ISC-dominated heat generation.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+217+Process_Safety_and_Environmental_Protection:C001",
+                "TR_trigger+217+Process_Safety_and_Environmental_Protection:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The absence of thermal runaway at 30% SOC does not imply no ISC occurred. Evidence shows that at 40% SOC thermal runaway did occur (though at lower severity), and at 30% SOC it did not\u2014but the evidence does not state that mechanical damage or ISC was absent. The 30% SOC result reflects insufficient stored energy to sustain runaway, not necessarily absence of ISC.",
+              "error_type": "Causal overclaim / measurement scope distractor",
+              "evidence_refs": [
+                "TR_trigger+217+Process_Safety_and_Environmental_Protection:C002",
+                "TR_trigger+217+Process_Safety_and_Environmental_Protection:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence shows that with decreasing SOC at fixed 60\u00b0 bending, thermal runaway severity decreases and eventually does not occur at 30% SOC. The higher stored electrochemical energy at 100% SOC provides the energy needed to sustain exothermic reactions after ISC, which is a mechanistically supported inference.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+217+Process_Safety_and_Environmental_Protection:C002",
+                "TR_trigger+217+Process_Safety_and_Environmental_Protection:C003"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Evidence explicitly states that when ISC occurs due to bending, the solid-phase ion diffusion coefficient decreases by more than 80% because rapid electron movement through the collector generates Joule heat and electrolytes cannot transport ions to the electrode surface in time. This is a direct mechanistic claim supported by the evidence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+217+Process_Safety_and_Environmental_Protection:C005"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "This is a conservative-sounding but incorrect option. The absence of thermal runaway cannot be used to conclude that no ISC occurred or that the separator was intact. The evidence only states that thermal runaway did not occur at 30% SOC; it does not characterize the internal state of the separator or ISC occurrence.",
+              "error_type": "Measurement scope distractor / causal overclaim",
+              "evidence_refs": [
+                "TR_trigger+217+Process_Safety_and_Environmental_Protection:C002"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The evidence establishes 60\u00b0 as the critical angle for thermal runaway at 100% SOC, but does not provide a critical angle for 30% SOC. Claiming SOC-independence of the critical angle is an unsupported generalization; the evidence shows SOC strongly modulates thermal runaway outcome at the same angle.",
+              "error_type": "Overgeneralization / condition violation distractor",
+              "evidence_refs": [
+                "TR_trigger+217+Process_Safety_and_Environmental_Protection:C001",
+                "TR_trigger+217+Process_Safety_and_Environmental_Protection:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Mechanism of ISC-driven heat generation under bending abuse and SOC-dependence of thermal runaway admissibility",
+          "primary_boundary": "Absence of thermal runaway at 30% SOC does not imply absence of ISC; SOC modulates severity but the critical angle is defined only for 100% SOC",
+          "intended_error_modes": [
+            "Causal overclaim from outcome to mechanism",
+            "Measurement scope expansion",
+            "Overgeneralization of SOC-independence"
+          ],
+          "disallowed_extrapolations": [
+            "Inferring separator integrity from thermal outcome alone",
+            "Extending 100% SOC critical angle to lower SOC states without evidence"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A LiFePO4 battery is subjected to two separate abuse protocols. In Protocol A, only external heating is applied until thermal runaway occurs. In Protocol B, external heating is applied simultaneously with an external short circuit (ESC). In Protocol A, thermal runaway occurs but no combustion is observed. In Protocol B, combustion occurs after the safety valve opens. An engineer then varies the external resistance in Protocol B across multiple tests while keeping the heating rate constant, and observes that increasing external resistance reduces combustion duration and violence but increases the magnitude of exothermic side reactions after thermal runaway. Which of the following conclusions are admissible based on these observations?",
+          "options": [
+            "A. In Protocol B, the ignition source for flammable gases is the high-temperature electric conductor heated by Joule heat from the short circuit current, not the external heater.",
+            "B. In Protocol A, the absence of combustion confirms that the LiFePO4 chemistry does not generate flammable gases during thermal runaway.",
+            "C. Across the resistance variation tests in Protocol B, the primary driver of heat accumulation before safety valve opening is the external heating rather than the short circuit current.",
+            "D. Increasing external resistance in Protocol B reduces risk at all stages of the thermal runaway sequence, since both combustion duration and violence decrease.",
+            "E. The increase in exothermic side reactions after thermal runaway with higher external resistance suggests that reducing short circuit current intensity shifts more energy release into post-runaway chemical decomposition pathways.",
+            "F. Because combustion does not occur in Protocol A, the external short circuit is necessary and sufficient to cause combustion in Protocol B whenever a LiFePO4 battery undergoes thermal runaway."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence explicitly states that in the heating-ESC coupling condition, the electric conductor temperature exceeds 1000\u00b0C due to Joule heat and acts as the ignition source for the explosive gas mixture after the safety valve opens. This is a direct mechanistic claim.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+36+Journal_of_Energy_Storage:C002"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The evidence states that flammable and explosive gases are generated but are not ignited without an ignition source in Protocol A. The absence of combustion is due to the absence of an ignition source, not the absence of flammable gas generation. This option misattributes the mechanism.",
+              "error_type": "Mechanism confusion distractor",
+              "evidence_refs": [
+                "TR_trigger+36+Journal_of_Energy_Storage:C001"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence states that external heating contributes much more to accumulated heat at the moment of safety valve opening compared to the ESC under coupling abuse, and that external heating plays the key role in thermal runaway and combustion under this protocol.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+36+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "This is a conservative-sounding but incorrect option. While higher external resistance reduces combustion duration and violence, it simultaneously increases exothermic side reactions after thermal runaway. The net risk profile is not uniformly reduced; the trade-off between combustion intensity and post-runaway chemical energy release means the conclusion that risk decreases at all stages is not admissible.",
+              "error_type": "Ignoring multi-factor interaction / causal overclaim",
+              "evidence_refs": [
+                "TR_trigger+36+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "The evidence shows that increasing external resistance decreases short circuit current and reduces combustion but increases exothermic side reactions after thermal runaway. This pattern is consistent with the inference that lower short circuit current intensity shifts energy release from rapid combustion pathways toward post-runaway chemical decomposition, which is a mechanistically supported minimal implication.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+36+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The evidence shows that ESC is necessary to provide the ignition source (high-temperature conductor) in the coupling scenario, but the claim that ESC is sufficient for combustion whenever thermal runaway occurs is not supported. The evidence specifies a particular coupled abuse condition; generalizing to all LiFePO4 thermal runaway scenarios is an unsupported extrapolation.",
+              "error_type": "Overgeneralization / condition violation distractor",
+              "evidence_refs": [
+                "TR_trigger+36+Journal_of_Energy_Storage:C001",
+                "TR_trigger+36+Journal_of_Energy_Storage:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Role of ignition source in combustion onset and trade-off between combustion intensity and post-runaway side reactions under varying external resistance",
+          "primary_boundary": "Absence of combustion in Protocol A reflects absence of ignition source, not absence of flammable gas; higher resistance reduces combustion but increases side reactions, so risk is not uniformly reduced",
+          "intended_error_modes": [
+            "Mechanism confusion between gas absence and ignition absence",
+            "Ignoring trade-off between combustion and side reactions",
+            "Overgeneralization of coupling condition to all thermal runaway scenarios"
+          ],
+          "disallowed_extrapolations": [
+            "Concluding flammable gas is absent from LiFePO4 thermal runaway",
+            "Concluding ESC alone is sufficient for combustion under all conditions"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery management system uses internal pressure measurements to issue four escalating warning levels during overcharging of a lithium-ion cell. At warning level 1, overcharging is halted and the cell reaches a maximum temperature of approximately 28\u00b0C with no lasting deformation. At warning level 2, overcharging is halted and the cell reaches approximately 42\u00b0C; pressure returns to baseline after an initial surge, indicating the deformation is reversible. At warning level 4, overcharging is halted after the second pressure spike, but thermal runaway still occurs and the cell reaches approximately 705\u00b0C. The warning system also predicts escape time with errors within 20 seconds across all levels. An engineer evaluates the following design and safety claims about this warning architecture. Which statements are admissible?",
+          "options": [
+            "A. Intervention at warning level 1 is sufficient to prevent both thermal runaway and permanent structural damage to the cell under the described overcharging conditions.",
+            "B. The pressure-based warning system provides actionable escape time predictions with sufficient accuracy for emergency response planning, given that all prediction errors remain within 20 seconds.",
+            "C. Warning level 4 intervention demonstrates that pressure-based detection alone guarantees prevention of thermal runaway if overcharging is stopped promptly upon any warning signal.",
+            "D. The transition from reversible deformation at level 2 to irreversible thermal runaway at level 4 implies that a critical internal state is crossed between these warning levels, beyond which cessation of overcharging cannot arrest the exothermic progression.",
+            "E. Because escape time prediction errors are within 20 seconds across all four warning levels, the prediction accuracy is equivalent and no warning level provides a meaningfully earlier or safer intervention window than another.",
+            "F. The increase in maximum temperature from approximately 28\u00b0C at level 1 to 705\u00b0C at level 4 intervention indicates that the internal reaction heat production intensifies progressively as overcharging advances through warning levels."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "D",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence states that at level-1 intervention, maximum temperature reached only 28.4\u00b0C, no pressure change was observed, and no damage occurred. This directly supports the admissibility of the claim that level-1 intervention prevents both thermal runaway and permanent structural damage under these conditions.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+208+Journal_of_Energy_Storage:C001"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Evidence states that escape time prediction errors were within 20 seconds for all four warning levels. For emergency response planning, this level of accuracy is actionable. This is a minimal engineering implication supported by the stated error bounds.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+208+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Evidence explicitly shows that at warning level 4, overcharging cessation did not prevent thermal runaway\u2014the cell still reached 705\u00b0C. The claim that pressure-based detection guarantees prevention if overcharging is stopped upon any warning is directly contradicted by the level-4 result.",
+              "error_type": "Causal overclaim / condition violation distractor",
+              "evidence_refs": [
+                "TR_trigger+208+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Level-2 intervention results in reversible deformation and controlled temperature, while level-4 intervention cannot prevent thermal runaway. This implies a critical internal state is crossed between these levels beyond which the exothermic process is self-sustaining. This is a mechanistically supported inference from the described progression.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+208+Journal_of_Energy_Storage:C002",
+                "TR_trigger+208+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "This is a conservative-sounding but incorrect option. While prediction errors are all within 20 seconds, the warning levels differ dramatically in outcome severity (no damage vs. 705\u00b0C thermal runaway). Equivalent prediction accuracy does not imply equivalent safety windows; earlier warning levels provide intervention opportunities before the irreversible threshold is crossed.",
+              "error_type": "Ignoring multi-factor interaction / scope expansion distractor",
+              "evidence_refs": [
+                "TR_trigger+208+Journal_of_Energy_Storage:C001",
+                "TR_trigger+208+Journal_of_Energy_Storage:C003",
+                "TR_trigger+208+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Evidence states that at level 2 the reaction heat production had begun to intensify but remained controllable, and at level 4 thermal runaway with 705\u00b0C is reached. The progression from 28\u00b0C to 705\u00b0C across warning levels is consistent with progressively intensifying internal reaction heat, which is explicitly supported by the evidence description of level-2 conditions.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+208+Journal_of_Energy_Storage:C001",
+                "TR_trigger+208+Journal_of_Energy_Storage:C002",
+                "TR_trigger+208+Journal_of_Energy_Storage:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of safety claims about pressure-based warning levels and the irreversibility threshold between warning levels 2 and 4",
+          "primary_boundary": "Level-4 intervention failure demonstrates that pressure-based warning cannot guarantee prevention at all stages; equivalent prediction error bounds do not imply equivalent safety intervention windows",
+          "intended_error_modes": [
+            "Causal overclaim that any timely intervention prevents runaway",
+            "Ignoring outcome severity differences when comparing prediction accuracy across levels"
+          ],
+          "disallowed_extrapolations": [
+            "Generalizing level-1 or level-2 success to level-4 conditions",
+            "Treating equal prediction accuracy as equal safety equivalence"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A LiFePO4 battery is subjected to coupled external heating and external short circuit (ESC) abuse. Two engineers debate the role of each abuse factor. Engineer A argues that the ESC is the primary driver of thermal runaway because it provides the ignition source for combustion. Engineer B argues that external heating is the primary driver of thermal runaway because it contributes more to heat accumulation before the safety valve opens. Both engineers agree that combustion does not occur under external heating alone. Explain whether Engineer A's claim, Engineer B's claim, or both are admissible, and identify the specific mechanistic distinction that resolves the apparent conflict between their positions. Your answer must address what each abuse factor contributes to the overall failure sequence and whether these contributions operate at the same or different stages of the sequence."
+        },
+        "ground_truth": {
+          "gold_answer": "Both claims are partially admissible but address different stages of the failure sequence, which resolves the apparent conflict. Engineer B's claim is correct regarding the primary driver of thermal runaway itself: external heating contributes much more to the accumulated heat before safety valve opening, meaning it is the dominant factor in causing thermal runaway. Engineer A's claim is correct regarding the mechanism of combustion specifically: the ESC provides the high-temperature electric conductor (exceeding 1000\u00b0C due to Joule heat) that acts as the ignition source for the flammable gases released after the safety valve opens. The key mechanistic distinction is that thermal runaway and combustion are two distinct events in the failure sequence. External heating drives the thermal runaway, while the ESC enables combustion by providing an ignition source that is absent in the heating-only condition. Neither factor alone produces the complete coupled outcome: heating alone causes thermal runaway without combustion, and the ESC alone would not produce the same heat accumulation. The two factors operate at different stages\u2014heating dominates pre-valve heat accumulation, and ESC dominates post-valve ignition.",
+          "must_include": [
+            "External heating is the primary contributor to heat accumulation before safety valve opening and thus the primary driver of thermal runaway",
+            "The ESC provides the ignition source (high-temperature electric conductor due to Joule heat) for combustion after safety valve opens",
+            "Thermal runaway and combustion are distinct stages in the failure sequence",
+            "External heating alone causes thermal runaway without combustion because no ignition source is present",
+            "The two factors operate at different stages of the sequence, so both claims are partially correct but address different phenomena"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming ESC alone is sufficient to cause thermal runaway without external heating",
+            "Claiming that external heating provides the ignition source for combustion",
+            "Concluding that one factor is entirely responsible for both thermal runaway and combustion",
+            "Generalizing the conclusion to battery chemistries other than LiFePO4 or abuse conditions other than those described"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Mechanistic distinction between the roles of external heating and ESC in driving thermal runaway versus enabling combustion in coupled abuse conditions",
+          "primary_boundary": "Thermal runaway and combustion are distinct sequential events; external heating dominates pre-valve heat accumulation while ESC provides post-valve ignition\u2014these are not competing explanations but stage-specific contributions",
+          "intended_error_modes": [
+            "Treating thermal runaway and combustion as a single event and assigning a single primary cause",
+            "Concluding ESC is the primary driver of thermal runaway because it enables combustion",
+            "Dismissing Engineer A's claim entirely because heating contributes more heat",
+            "Ignoring the stage-specificity of each factor's contribution"
+          ]
+        }
+      }
+    ]
+  }
+}

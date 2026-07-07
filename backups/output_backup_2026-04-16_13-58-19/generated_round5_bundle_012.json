@@ -1,0 +1,335 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A lithium-ion cell with a graphite anode is subjected to accelerated thermal abuse starting from an ambient temperature of 25°C. The anode has a relatively large surface area due to fine particle size. The cell has undergone 45 charge/discharge cycles at 0°C and is at high SOC. An engineer is evaluating the sequence and character of thermal events as the cell heats up. Which of the following statements about the thermal runaway progression in this cell are admissible given the described conditions?",
+        "options": [
+          "A. The heat released during SEI decomposition will be greater in this cell than in an otherwise identical cell with a coarser anode particle size at the same lithium intercalation level, because SEI heat release scales with anode surface area rather than with intercalated lithium content.",
+          "B. The first exothermic reactions attributable to cycling-induced degradation will initiate at a lower temperature than in a fresh cell at the same SOC, because accumulated cycling reduces the activation energy of those reactions.",
+          "C. Because the cell is at high SOC, the cathode will begin releasing oxygen at a lower temperature than it would at low SOC, making the onset of cathode-driven reactions occur earlier in the heating sequence.",
+          "D. The SEI decomposition peak near 100°C is the rate-limiting step that determines the maximum temperature the cell can reach during thermal runaway, since all subsequent reactions depend on SEI failure.",
+          "E. The hydrogen released during the early exothermic group is primarily a product of cathode oxygen release reacting with the electrolyte, since hydrogen-rich gases dominate the early gas composition.",
+          "F. The energy released by the early group of exothermic reactions in this 45-cycle cell is independent of the cell's SOC, even though the cell's overall thermal runaway temperature is SOC-dependent.",
+          "G. Electrolyte decomposition contributes negligibly to the final cell temperature because it occurs after cathode reactions have already consumed most available reactants."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence states SEI heat release is independent of intercalated lithium amount but very sensitive to anode surface area. A finer particle size increases surface area, increasing meta-stable SEI and therefore heat release. This is a direct admissible inference.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+189+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Evidence states that with increasing hydrogen accumulation in graphite from cycling, activation energy decreases and initiation temperature of the exothermic reaction decreases. After 45 cycles the first exothermic group initiates at approximately 32°C versus no such reactions at NC=0, confirming lower initiation temperature in aged cells.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+188+UnknownJournal:C002",
+              "TR_Dynamics+188+UnknownJournal:C008",
+              "TR_Dynamics+188+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence states that with SOC growth, cathode thermal stability falls and oxygen release from the cathode grows, shifting thermal runaway to lower temperatures. This supports the conclusion that at high SOC, cathode-driven reactions onset earlier.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+188+UnknownJournal:C010"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "SEI decomposition is an early event in the sequence but the evidence describes subsequent reactions (anode-electrolyte at >120°C, cathode decomposition at ~170°C, electrolyte decomposition at >200°C with temperatures reaching over 600°C) that drive the maximum temperature far beyond what SEI decomposition alone could produce. SEI failure is a trigger, not the rate-limiting step for maximum temperature.",
+            "error_type": "causal overclaim — single-step trigger misidentified as the dominant heat source",
+            "evidence_refs": [
+              "TR_Dynamics+189+UnknownJournal:C001",
+              "TR_Dynamics+189+UnknownJournal:C003",
+              "TR_Dynamics+189+UnknownJournal:C004",
+              "TR_Dynamics+189+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence states the gas from the first exothermic group is more than 99% hydrogen and that this group is associated with cycling-induced degradation of the graphite anode (hydrogen accumulation in graphite). The evidence does not attribute this hydrogen to cathode oxygen reactions; rather, the hydrogen is linked to anode-side processes. Attributing it to cathode oxygen release contradicts the evidence.",
+            "error_type": "mechanism substitution — correct gas species attributed to wrong reaction pathway",
+            "evidence_refs": [
+              "TR_Dynamics+188+UnknownJournal:C005",
+              "TR_Dynamics+188+UnknownJournal:C008"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Evidence explicitly states that the temperature ranges and energy of the first group of exothermic reactions do not depend on SOC but depend heavily on the number of charge/discharge cycles. Simultaneously, the overall thermal runaway temperature is SOC-dependent via cathode stability. These two mechanisms operate independently, making this a counterintuitive but evidence-supported conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+188+UnknownJournal:C004",
+              "TR_Dynamics+188+UnknownJournal:C010"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "Evidence states that electrolyte decomposition combined with heat from combustion with released oxygen can elevate temperatures to over 600°C, indicating it is a major contributor to maximum cell temperature, not negligible.",
+            "error_type": "scope reversal — secondary framing applied to a dominant heat contributor",
+            "evidence_refs": [
+              "TR_Dynamics+189+UnknownJournal:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-stage thermal runaway sequence with SOC-dependent and cycle-dependent mechanisms operating independently on different reaction groups",
+        "primary_boundary": "The first exothermic group energy is cycle-dependent but SOC-independent, while overall thermal runaway temperature is SOC-dependent — these two dependencies must not be conflated",
+        "intended_error_modes": [
+          "causal overclaim treating SEI as rate-limiting for maximum temperature",
+          "mechanism substitution attributing anode-side hydrogen to cathode oxygen reactions",
+          "scope reversal minimizing electrolyte decomposition contribution"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring that SOC independence of the first reaction group implies SOC independence of the full thermal runaway sequence",
+          "Inferring that SEI decomposition temperature determines peak cell temperature",
+          "Generalizing hydrogen source from cathode reactions without evidence"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery engineer is designing a cathode for a lithium-ion cell intended for high-rate discharge applications. Two candidate cathode designs are compared: Design A has porosity ε ≈ 0.19 and Design B has porosity ε ≈ 0.35. Both cells operate at ambient temperature of 25°C. The engineer observes that at a discharge current of 9A, Design A reaches a lower maximum temperature than Design B. The engineer must determine whether this observation is thermally safe and understand its underlying cause before recommending a design. Which of the following conclusions are admissible based on this scenario?",
+        "options": [
+          "A. The lower maximum temperature of Design A at 9A discharge is not primarily evidence of better thermal management, but rather indicates the cell has shut down before completing full discharge due to excessive internal resistance.",
+          "B. The spatial location of peak ohmic heating within Design A shifts away from the cathode-separator interface compared to Design B, because lower porosity distributes concentration gradients more uniformly throughout the cathode thickness.",
+          "C. Reducing cathode porosity selectively amplifies joule heating relative to reaction heat and reversible heat, so the dominant heat generation mechanism in Design A differs from that in Design B.",
+          "D. At a discharge current below 7A, Design A and Design B could both remain below the unsafe temperature threshold, making porosity selection thermally inconsequential at low discharge rates.",
+          "E. The tortuosity increase from Design A's lower porosity primarily elevates reaction heat generation because restricted ion transport increases the rate of electrochemical side reactions at the cathode.",
+          "F. Design B is the safer choice for high-rate discharge because its higher porosity prevents cell self-shutdown and allows full energy extraction without thermal risk at any discharge current."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence explicitly states that the lower maximum temperature for low-porosity cathodes at high discharge rates is caused by cell self-shutdown before full discharge due to large internal resistance, not by improved thermal management. This is counterintuitive — lower temperature does not mean safer or better performing.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+187+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence states the maximum ohmic heating rate occurs at the cathode-separator interface due to higher concentration and potential gradients near that interface. Lower porosity increases tortuosity and worsens these gradients, so the peak location remains at or near the cathode-separator interface and is not redistributed more uniformly.",
+            "error_type": "mechanism reversal — lower porosity intensifies rather than distributes gradients at the interface",
+            "evidence_refs": [
+              "TR_Dynamics+187+UnknownJournal:C002",
+              "TR_Dynamics+187+UnknownJournal:C001"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence states that tortuosity significantly affects joule heating rate while its influence on reaction and reversible heat rates is negligible. Therefore lower porosity in Design A selectively amplifies joule heating, changing the relative contribution of heat generation mechanisms compared to Design B.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+187+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence states that when discharge current is below 7A, the maximum cell temperature within the porosity range ε ≈ 0.18–0.4 can remain outside the unsafe zone at 25°C ambient. Both designs fall within this porosity range, so both could remain thermally safe below 7A, making porosity selection less critical at low rates.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+187+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence states that tortuosity's influence on reaction heat rates is negligible; it is joule heating that is significantly affected. Attributing increased reaction heat to restricted ion transport contradicts the evidence.",
+            "error_type": "mechanism substitution — joule heating effect incorrectly attributed to reaction heat pathway",
+            "evidence_refs": [
+              "TR_Dynamics+187+UnknownJournal:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "This is a conservative-appearing but incorrect option. Evidence shows that above 7A, even Design B (ε ≈ 0.35) can reach the unsafe temperature region. The claim that higher porosity prevents thermal risk 'at any discharge current' is an unsupported overgeneralization beyond the evidence scope.",
+            "error_type": "overgeneralization — regime-limited safety conclusion stated as universal",
+            "evidence_refs": [
+              "TR_Dynamics+187+UnknownJournal:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Non-monotonic relationship between cathode porosity and thermal safety, where lower temperature at high rate paradoxically indicates premature shutdown rather than improved safety",
+        "primary_boundary": "The 7A threshold separates the regime where porosity range is thermally safe from the regime where it is not; self-shutdown at low porosity is a failure mode, not a safety feature",
+        "intended_error_modes": [
+          "interpreting lower temperature as better thermal management without recognizing self-shutdown",
+          "attributing tortuosity effects to reaction heat rather than joule heat",
+          "overgeneralizing high-porosity safety advantage across all discharge rates"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming Design B is safe at all discharge currents based on evidence that only covers behavior below 7A",
+          "Inferring that lower peak temperature always indicates a thermally safer design"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Two 18650 NCM/Graphite cells are compared: Cell X has completed 0 charge/discharge cycles (fresh) and Cell Y has completed 45 charge/discharge cycles at 0°C, reaching end-of-life capacity (70% of initial). Both cells are tested at identical SOC levels. A current interrupt device (CID) is present in both cells. An engineer monitors CID activation temperature and gas composition during thermal abuse. Which of the following statements are admissible conclusions from this comparison?",
+        "options": [
+          "A. Cell Y's CID activates at a lower temperature than Cell X's CID, and this difference is attributable to greater gas generation in Cell Y at lower temperatures due to cycling-induced exothermic reactions.",
+          "B. The gas generated prior to CID activation in Cell Y consists predominantly of hydrogen, and the amount of this hydrogen is determined primarily by the cell's SOC at the time of testing.",
+          "C. For Cell X, the CID activation temperature varies with SOC across the range of approximately 115–150°C, whereas for Cell Y, the CID activation temperature is approximately 75–85°C regardless of SOC.",
+          "D. The exothermic reactions responsible for early gas generation in Cell Y are initiated by cathode oxygen release, since cathode degradation is the primary mechanism of capacity fade at end of life.",
+          "E. Cell Y poses a higher thermal runaway probability than Cell X at the same SOC, and this probability difference is driven by both the lower initiation temperature of exothermic reactions and the higher energy released by those reactions in Cell Y.",
+          "F. Because Cell Y is at end-of-life capacity, its thermal runaway behavior is dominated by reduced cathode active material, which lowers the total energy available for exothermic reactions compared to Cell X."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence states that for NC=45 cells, the CID activates at approximately 75–85°C regardless of SOC, while for NC=0 cells it activates at approximately 115–150°C. The earlier activation in aged cells is attributed to greater gas release from the first group of exothermic reactions that appear with cycling.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+188+UnknownJournal:C006",
+              "TR_Dynamics+188+UnknownJournal:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence states that hydrogen amount released does not depend on SOC but depends heavily on the number of charge/discharge cycles. Attributing hydrogen quantity to SOC directly contradicts the evidence.",
+            "error_type": "condition violation — SOC stated as controlling variable when evidence specifies cycle count controls hydrogen amount",
+            "evidence_refs": [
+              "TR_Dynamics+188+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence directly supports this quantitative comparison: NC=0 cells show CID activation at 115–150°C depending on SOC, while NC=45 cells show CID activation at 75–85°C regardless of SOC.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+188+UnknownJournal:C006"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence attributes the early exothermic reactions in cycled cells to hydrogen accumulation in graphite (anode-side mechanism), not to cathode oxygen release. The cathode oxygen release mechanism is associated with SOC-dependent thermal runaway temperature shifts, not the first group of exothermic reactions.",
+            "error_type": "mechanism substitution — anode-side hydrogen accumulation mechanism replaced with cathode oxygen release",
+            "evidence_refs": [
+              "TR_Dynamics+188+UnknownJournal:C008",
+              "TR_Dynamics+188+UnknownJournal:C010"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Evidence states thermal runaway probability grows with cycle number and SOC. It also states that with increasing cycles, initiation temperature decreases considerably and released energy increases. Both factors contribute to higher thermal runaway probability in Cell Y.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+188+UnknownJournal:C001",
+              "TR_Dynamics+188+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "This is a conservative-appearing but incorrect distractor. Evidence shows that cycling increases released energy of exothermic reactions (from 0 kJ at NC=0 to 3.29 kJ at NC=45), contradicting the claim that end-of-life cells have lower total exothermic energy. Capacity fade does not imply reduced thermal hazard; the evidence shows the opposite trend.",
+            "error_type": "causal overclaim — capacity reduction incorrectly equated with reduced thermal energy release",
+            "evidence_refs": [
+              "TR_Dynamics+188+UnknownJournal:C004",
+              "TR_Dynamics+188+UnknownJournal:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Cycle-dependent versus SOC-dependent thermal runaway mechanisms and their independent effects on CID activation, gas composition, and thermal hazard severity",
+        "primary_boundary": "Hydrogen generation and first-group exothermic energy are cycle-count dependent and SOC-independent, while overall thermal runaway temperature is SOC-dependent — these must not be conflated",
+        "intended_error_modes": [
+          "attributing hydrogen amount to SOC rather than cycle count",
+          "attributing early exothermic reactions to cathode rather than anode mechanism",
+          "assuming end-of-life capacity reduction implies reduced thermal energy"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring that capacity fade at end of life reduces thermal runaway energy",
+          "Generalizing SOC dependence of thermal runaway temperature to the first exothermic group energy"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A lithium-ion cell with a graphite anode is being heated during a thermal abuse test. An engineer notes that the cell exhibits two distinct temperature-triggered transitions before reaching full thermal runaway: the first occurs in the range of 90–120°C and the second occurs above 120°C. The engineer proposes that both transitions are equally sensitive to the amount of lithium intercalated in the anode at the time of the test, and therefore that increasing the cell's SOC will proportionally increase the heat released at both transitions. Identify the specific error in the engineer's reasoning, explain the correct relationship between intercalated lithium content and each transition, and describe what parameter does control the heat release at the first transition."
+      },
+      "ground_truth": {
+        "gold_answer": "The engineer's reasoning is incorrect because the two transitions have different sensitivities to intercalated lithium content. The first transition (90–120°C) corresponds to SEI decomposition. The heat released during SEI decomposition is independent of the amount of intercalated lithium but is sensitive to the surface area of the anode, because surface area controls the amount of meta-stable SEI present. Therefore, increasing SOC does not proportionally increase heat release at this stage. The second transition (above 120°C) involves intercalated lithium in the anode reacting directly with electrolyte solvents after the SEI has decomposed; this reaction does depend on the availability of intercalated lithium and is therefore more directly linked to SOC. The engineer's error is applying a uniform SOC-proportional relationship across both transitions when only the second transition is governed by intercalated lithium content. The controlling parameter for heat release at the first transition is anode surface area, not SOC or intercalated lithium amount.",
+        "must_include": [
+          "SEI decomposition heat release is independent of intercalated lithium amount",
+          "SEI decomposition heat release is sensitive to anode surface area",
+          "the reaction above 120°C involves intercalated lithium reacting with electrolyte solvents and does depend on lithium availability",
+          "the engineer incorrectly applies SOC proportionality to the SEI decomposition stage",
+          "anode surface area controls heat release at the first transition"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming SEI decomposition heat is entirely independent of temperature",
+          "Claiming the second transition is also independent of intercalated lithium",
+          "Inferring that higher surface area always leads to earlier SEI decomposition onset temperature",
+          "Generalizing the surface area dependence to the second transition or cathode reactions"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Differential sensitivity of sequential anode thermal reactions to intercalated lithium content versus anode surface area, and the boundary between SEI-controlled and lithium-controlled heat generation",
+        "primary_boundary": "SEI decomposition heat is surface-area-controlled and lithium-independent; post-SEI anode-electrolyte reaction heat is lithium-dependent — these two mechanisms must not be treated as governed by the same parameter",
+        "intended_error_modes": [
+          "applying uniform SOC proportionality across mechanistically distinct thermal transitions",
+          "confusing intercalated lithium content with anode surface area as the controlling variable for SEI heat",
+          "assuming both pre- and post-SEI reactions scale with the same electrochemical state variable"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,330 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery venting gas mixture contains battery venting gas (BVG) blended with increasing proportions of carbonate solvent vapors (EMC/DMC mixture). Tests are conducted at 393 K and 0.10 MPa initial pressure in a closed vessel. An engineer observes that as carbonate content rises, the lower flammability limit decreases while the limiting oxygen concentration increases. Which conclusions are admissible from this behavior?",
+        "options": [
+          "A. The mixture becomes ignitable at lower fuel concentrations as carbonate content increases, meaning a smaller fuel leak is sufficient to enter the flammable range.",
+          "B. The increase in limiting oxygen concentration with carbonate addition means that inert gas inerting strategies require higher dilution to prevent ignition compared to pure BVG.",
+          "C. Because the lower flammability limit decreases with carbonate addition, the upper flammability limit must also decrease, narrowing the overall flammable range.",
+          "D. The higher maximum rate of pressure rise in carbonate-enriched mixtures compared to pure BVG indicates that if ignition occurs, the resulting pressure transient is more severe.",
+          "E. The decrease in lower flammability limit caused by carbonate addition is sufficient evidence that carbonate vapors are the sole driver of explosion severity in all battery vent gas scenarios.",
+          "F. Inerting a carbonate-enriched BVG mixture to prevent ignition requires maintaining a lower oxygen level than would be needed for pure BVG alone.",
+          "G. Since BVG alone has a wide flammability range (10.20%–47.50%), adding carbonates that lower the LFL necessarily makes the mixture more hazardous in all practical enclosure scenarios regardless of oxygen availability."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Decreasing LFL with carbonate addition directly means ignition threshold is reached at lower fuel concentrations, supported by C003.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+136+Fuel:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Rising LOC with carbonate content means more oxygen must be displaced to prevent ignition, making inerting harder than for pure BVG.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+136+Fuel:C003",
+              "TR_Gasventing+136+Fuel:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Evidence shows LFL decreases but does not support UFL decrease; BVG's wide range and carbonate UFL data do not confirm narrowing.",
+            "error_type": "unjustified monotonicity / unsupported extrapolation",
+            "evidence_refs": [
+              "TR_Gasventing+136+Fuel:C002",
+              "TR_Gasventing+136+Fuel:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "C005 shows (dp/dt)Max rises from 25.20 to 35.50 MPa/s as carbonate content increases, confirming more severe pressure transient upon ignition.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+136+Fuel:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Causal overclaim; LFL decrease is one hazard dimension. Explosion severity involves multiple parameters; sole-driver attribution is unsupported.",
+            "error_type": "causal overclaim / single-variable attribution",
+            "evidence_refs": [
+              "TR_Gasventing+136+Fuel:C003",
+              "TR_Gasventing+136+Fuel:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "LOC increases from 7.03% to 10.80% with carbonate addition per C005, directly requiring greater oxygen displacement for inerting.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+136+Fuel:C005"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "Conservative-sounding but incorrect; oxygen availability is a controlling variable via LOC, so hazard is not independent of oxygen level.",
+            "error_type": "ignoring boundary condition / ignoring LOC constraint",
+            "evidence_refs": [
+              "TR_Gasventing+136+Fuel:C003",
+              "TR_Gasventing+136+Fuel:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-parameter hazard interaction: simultaneous LFL decrease and LOC increase with carbonate addition and their independent safety implications",
+        "primary_boundary": "LFL and LOC change in opposite directions with carbonate addition; conclusions about one parameter cannot be transferred to the other without mechanism reasoning",
+        "intended_error_modes": [
+          "Assuming LFL decrease implies UFL decrease (unjustified monotonicity)",
+          "Treating LFL as the sole explosion hazard indicator (causal overclaim)",
+          "Ignoring oxygen availability as a controlling variable (ignoring LOC constraint)"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring UFL behavior from LFL trend alone",
+          "Concluding carbonate vapors are the sole driver of severity in all scenarios",
+          "Assuming wide BVG flammability range makes oxygen concentration irrelevant"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer compares three pure fuel vapors—EMC, DMC, and BVG—for explosion hazard characterization at 393 K and 0.10 MPa in an 8 L vessel. EMC shows the highest maximum explosion pressure and fastest rate of pressure rise. BVG has the widest flammability range. The engineer must select which vapor poses the greatest challenge for two distinct safety design tasks: (1) preventing ignition and (2) limiting structural damage if ignition occurs. Which pair of conclusions is admissible?",
+        "options": [
+          "A. For ignition prevention, BVG is most challenging because its flammability range extends to nearly 47.5% fuel concentration, requiring control over a much wider composition window than EMC or DMC.",
+          "B. For structural damage limitation after ignition, EMC is most challenging because it produces the highest maximum pressure and fastest pressure rise rate among the three vapors.",
+          "C. For ignition prevention, EMC is most challenging because its lower flammability limit of 2.35% means ignition can occur at very low vapor concentrations.",
+          "D. Because EMC has both the lowest LFL and the highest explosion pressure, it is strictly more hazardous than BVG in all battery enclosure scenarios regardless of venting composition.",
+          "E. For structural damage limitation, BVG is most challenging because its wide flammability range means a larger fraction of fuel-air compositions will detonate.",
+          "F. DMC presents a lower ignition prevention challenge than BVG because DMC's flammability range (3.50%–17.00%) is narrower, but a greater structural damage challenge because its maximum explosion pressure exceeds that of BVG."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "BVG's range of 10.20%–47.50% is far wider than EMC (2.35%–14.65%) or DMC (3.50%–17.00%), making composition control harder for ignition prevention.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+136+Fuel:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "EMC's PMax (0.62 MPa) and (dp/dt)Max (35.90 MPa/s) are highest among the three, directly supporting structural damage severity ranking.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+136+Fuel:C001"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Low LFL does increase ignition risk at low concentrations, but BVG's vastly wider range (10.20%–47.50%) represents a broader composition control challenge overall.",
+            "error_type": "partial correctness / ignoring multi-parameter comparison",
+            "evidence_refs": [
+              "TR_Gasventing+136+Fuel:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Overclaim; hazard ranking is task-dependent. BVG's wide range makes it more challenging for ignition prevention; 'all scenarios' generalization is unsupported.",
+            "error_type": "causal overclaim / unsupported universal generalization",
+            "evidence_refs": [
+              "TR_Gasventing+136+Fuel:C001",
+              "TR_Gasventing+136+Fuel:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Wide flammability range affects ignition prevention, not post-ignition structural damage; explosion pressure determines structural loading, not range width.",
+            "error_type": "mechanism confusion / scope expansion",
+            "evidence_refs": [
+              "TR_Gasventing+136+Fuel:C001",
+              "TR_Gasventing+136+Fuel:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "DMC range (3.50%–17.00%) is narrower than BVG (10.20%–47.50%) supporting easier ignition prevention; DMC PMax (0.59 MPa) exceeds BVG (0.45 MPa) supporting greater structural challenge.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+136+Fuel:C001",
+              "TR_Gasventing+136+Fuel:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Task-dependent hazard ranking: distinguishing ignition prevention challenge (flammability range) from post-ignition structural damage challenge (explosion pressure and rate of pressure rise)",
+        "primary_boundary": "Flammability range width governs ignition prevention difficulty; maximum explosion pressure and rate of pressure rise govern structural damage severity; these are independent rankings",
+        "intended_error_modes": [
+          "Conflating wide flammability range with high explosion severity",
+          "Selecting a single vapor as universally most hazardous across all tasks",
+          "Treating low LFL as the dominant ignition prevention challenge without considering range width"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding EMC is strictly more hazardous than BVG in all scenarios",
+          "Using range width as a proxy for post-ignition structural damage"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Battery venting gas (BVG) is tested at temperatures from 298 K to 393 K. Its limiting oxygen concentration (LOC) decreases from 7.39% to 7.03% over this range. The same BVG is then blended with carbonate vapors at 393 K; the LOC of the resulting mixture rises to 10.80% as carbonate content increases. A safety engineer must design an inerting system for a battery enclosure where venting may produce either pure BVG or carbonate-enriched BVG at elevated temperature. Which conclusions correctly inform the inerting system design?",
+        "options": [
+          "A. The inerting system must be designed to maintain oxygen below 7.03% to be effective against pure BVG at the highest operating temperature.",
+          "B. If the vented gas composition shifts toward carbonate-enriched BVG, the same inerting level that prevents ignition of pure BVG at 393 K will be insufficient to prevent ignition of the mixture.",
+          "C. Because LOC decreases with temperature for pure BVG, increasing enclosure temperature is an effective strategy to widen the safe operating window for the inerting system.",
+          "D. The inerting system setpoint should be based on the carbonate-enriched BVG LOC of 10.80%, as this represents the most conservative design target across all expected compositions.",
+          "E. The temperature-driven decrease in BVG LOC from 298 K to 393 K is large enough to require a fundamentally different inerting strategy at elevated temperature compared to ambient.",
+          "F. Designing the inerting system to maintain oxygen below 7.03% is necessary but not sufficient if carbonate-enriched venting is possible, because carbonate addition raises the LOC above that threshold."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "LOC of pure BVG at 393 K is 7.03%; inerting must maintain oxygen below this value to prevent ignition of pure BVG at maximum temperature.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+136+Fuel:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Carbonate addition raises LOC to 10.80%; an inerting level set for pure BVG at 7.03% oxygen would be above the carbonate-mixture LOC, leaving ignition possible.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+136+Fuel:C004",
+              "TR_Gasventing+136+Fuel:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Lower LOC at higher temperature means ignition is possible at lower oxygen levels, making the inerting task harder, not easier; the safe window narrows.",
+            "error_type": "direction-of-effect inversion / counterintuitive mechanism",
+            "evidence_refs": [
+              "TR_Gasventing+136+Fuel:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Counterintuitive but incorrect: higher LOC (10.80%) means ignition requires more oxygen, so inerting to below 7.03% would also protect against the carbonate mixture. The 10.80% target is less conservative, not more.",
+            "error_type": "direction-of-conservatism inversion",
+            "evidence_refs": [
+              "TR_Gasventing+136+Fuel:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The LOC change from 7.39% to 7.03% is only 0.36 percentage points, a modest shift that does not justify a fundamentally different strategy.",
+            "error_type": "magnitude exaggeration / unsupported threshold claim",
+            "evidence_refs": [
+              "TR_Gasventing+136+Fuel:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Maintaining oxygen below 7.03% protects against pure BVG but carbonate-enriched BVG has LOC of 10.80%, meaning that setpoint is insufficient for the mixture.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+136+Fuel:C004",
+              "TR_Gasventing+136+Fuel:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Inerting system design under variable venting composition: interaction between temperature-dependent LOC change and composition-dependent LOC change, and the correct direction of conservatism",
+        "primary_boundary": "Higher LOC means ignition requires more oxygen present; lower LOC means ignition can occur at lower oxygen levels. The most conservative inerting target is the lowest LOC value across all expected compositions.",
+        "intended_error_modes": [
+          "Inverting the direction of conservatism for LOC (treating higher LOC as requiring more conservative inerting)",
+          "Treating a small temperature-driven LOC change as requiring a fundamentally different strategy",
+          "Concluding that lower LOC at higher temperature widens the safe operating window"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring that temperature increase benefits inerting effectiveness",
+          "Using carbonate-mixture LOC as the conservative design target without recognizing it is the less stringent constraint"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery module vents a gas mixture that transitions from nearly pure BVG at early venting stages to a carbonate-enriched BVG mixture at later stages as electrolyte vapors are released. Explosion characterization data show that as carbonate content increases in BVG mixtures: the lower flammability limit decreases, the maximum explosion pressure increases, the maximum rate of pressure rise increases, and the limiting oxygen concentration increases. An engineer argues that the carbonate-enriched stage is unambiguously more dangerous than the pure BVG stage in all respects. A second engineer argues that the two stages present different types of hazard rather than one being uniformly more dangerous. Which engineer's position is better supported, and what is the specific mechanistic basis for your answer? Identify at least two distinct hazard dimensions that change in different directions or have different safety implications across the two stages."
+      },
+      "ground_truth": {
+        "gold_answer": "The second engineer's position is better supported. The carbonate-enriched stage is more hazardous in terms of post-ignition severity: higher maximum explosion pressure and higher maximum rate of pressure rise mean greater structural loading and faster pressure buildup if ignition occurs. However, the pure BVG stage presents a distinct challenge for ignition prevention: BVG alone has a very wide flammability range (10.20%–47.50%), meaning composition control to avoid the flammable window is harder for pure BVG than for carbonate-enriched mixtures where the LFL is lower but the range may be narrower. Additionally, the limiting oxygen concentration increases with carbonate addition, meaning inerting strategies must maintain lower oxygen levels for carbonate-enriched mixtures to prevent ignition—making inerting harder at that stage. The two stages therefore differ in which safety control is most challenged: post-ignition containment is more critical for carbonate-enriched venting, while flammable range management is more challenging for pure BVG. Neither stage is uniformly more dangerous across all hazard dimensions.",
+        "must_include": [
+          "Carbonate-enriched stage has higher maximum explosion pressure and rate of pressure rise, indicating greater post-ignition structural hazard",
+          "Pure BVG has a wider flammability range, presenting a greater composition-control challenge for ignition prevention",
+          "LOC increases with carbonate addition, making inerting more demanding at the carbonate-enriched stage",
+          "The two stages present different dominant hazard types rather than one being uniformly worse"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming carbonate-enriched mixture is more hazardous in all respects without acknowledging BVG's wider flammability range",
+          "Treating LFL decrease alone as sufficient to conclude carbonate-enriched stage is uniformly more dangerous",
+          "Inferring that wider flammability range always dominates over higher explosion pressure for overall hazard ranking"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-dimensional hazard comparison across venting stages: distinguishing ignition prevention challenge (flammability range, LOC) from post-ignition damage severity (PMax, dp/dt) and recognizing that these dimensions can rank differently",
+        "primary_boundary": "Hazard is multi-dimensional; a single stage being more hazardous on one dimension does not make it uniformly more dangerous across all safety-relevant dimensions",
+        "intended_error_modes": [
+          "Accepting the first engineer's position by focusing only on explosion pressure increase",
+          "Ignoring BVG's wide flammability range as a distinct ignition prevention challenge",
+          "Treating LOC increase as a safety improvement rather than an inerting design challenge"
+        ]
+      }
+    }
+  ]
+}

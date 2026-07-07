@@ -1,0 +1,2078 @@
+{
+  "TR_Gasventing+47+Batteries__TR_Gasventing+48+Batteries__TR_Gasventing+49+Batteries": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A prismatic Li(Ni0.8Co0.1Mn0.1)O2 battery (58 Ah) undergoes thermal runaway triggered by external heating. At 15 seconds before voltage collapse, the expansion force begins a rapid rise, reaching a peak of 1980 N at 13.5 seconds before voltage collapse. The safety valve opens at 1.5 seconds after voltage collapse, releasing gases and particles at a momentary velocity of 90 m/s. Temperature measurements 1 cm above the valve show a maximum rate of rise of 93\u00b0C/s between 13 and 5 seconds before voltage collapse. Which of the following statements about the sequence and coupling of physical processes are admissible?",
+          "options": [
+            "A. The expansion force peak precedes the maximum temperature rise rate, indicating that mechanical deformation of the cell casing is driven primarily by gas generation from electrolyte decomposition rather than by thermal expansion of the electrode stack.",
+            "B. The momentary gas velocity of 90 m/s at valve opening is sufficient to eject solid particles to heights exceeding 3 m, implying that the kinetic energy imparted by the pressure differential across the valve dominates over gravitational and drag forces during the initial ejection phase.",
+            "C. The temperature rise rate of 93\u00b0C/s measured 1 cm above the valve reflects the convective heat transfer from ejected gases and is therefore a reliable indicator of the internal cell temperature at the moment of maximum exothermic reaction rate.",
+            "D. The 12-fold increase in expansion force within 2.5 seconds suggests that the internal pressure rise is governed by a threshold-crossing exothermic reaction, rather than a gradual accumulation of decomposition products.",
+            "E. The time interval between expansion force peak (13.5 s before voltage collapse) and valve opening (1.5 s after voltage collapse) indicates that the valve rupture disk is designed to fail at a pressure significantly higher than the pressure corresponding to the expansion force peak."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "D"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The expansion force peak occurs at -13.5 s, while the maximum temperature rise rate occurs between -13 s and -5 s. The temporal precedence of force over temperature rise, combined with the magnitude of force increase (12-fold in 2.5 s), indicates that gas generation from decomposition reactions is the primary driver of mechanical deformation, not thermal expansion of solid components.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+49+Batteries:C001",
+                "TR_Gasventing+49+Batteries:C002"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "The measured momentary velocity of 90 m/s at valve opening and the observed particle ejection height of up to 3.4 m are consistent with kinetic energy dominance during the initial ejection phase. The velocity magnitude supports the height observation through basic projectile motion, confirming that pressure-driven kinetic energy transfer is the controlling mechanism.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+49+Batteries:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "The temperature measurement is taken 1 cm above the valve, in the gas phase, and reflects convective heat transfer from ejected gases. This external measurement cannot reliably indicate the internal cell temperature at the moment of maximum exothermic reaction rate due to thermal lag, spatial separation, and the influence of gas flow dynamics. This is a scale transfer violation from external measurement to internal state.",
+              "error_type": "scale_transfer_violation",
+              "evidence_refs": [
+                "TR_Gasventing+49+Batteries:C002"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "The 12-fold increase in expansion force within 2.5 seconds indicates a rapid, threshold-crossing exothermic reaction rather than gradual accumulation. The sharp temporal profile is consistent with a regime transition where a critical temperature or decomposition threshold is crossed, triggering accelerated gas generation.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+49+Batteries:C001"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The expansion force is measured externally on the cell casing and does not directly correspond to internal pressure. The valve opening occurs after voltage collapse, which is a distinct event marker. The time interval between force peak and valve opening reflects the progression of internal reactions and pressure buildup, not a designed pressure differential for valve rupture. This conflates external force measurement with internal pressure threshold design.",
+              "error_type": "measurement_scope_violation",
+              "evidence_refs": [
+                "TR_Gasventing+49+Batteries:C001",
+                "TR_Gasventing+49+Batteries:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Temporal coupling and causal sequencing of mechanical, thermal, and gas-dynamic processes during thermal runaway",
+          "primary_boundary": "Distinguishing between external measurements and internal state inference; separating pressure-driven mechanical effects from thermal expansion effects",
+          "intended_error_modes": [
+            "scale_transfer_violation: inferring internal temperature from external gas-phase measurement",
+            "measurement_scope_violation: conflating external force with internal pressure threshold"
+          ],
+          "disallowed_extrapolations": [
+            "Using external temperature measurement to infer internal reaction rate",
+            "Assuming expansion force directly represents internal pressure magnitude"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "Two 18650 lithium-ion cells are tested under identical thermal abuse conditions: Cell P (high-power NCA chemistry, SonyVTC5A) and Cell E (high-energy NMC811 chemistry, LGMJ1). The transition time from safety valve opening to thermal runaway is 69.46 \u00b1 12.67 s for Cell P and 189.54 \u00b1 87.56 s for Cell E. The linearized gas flow rate during thermal runaway is 22.15 gs\u207b\u00b9 for Cell P and 27.92 gs\u207b\u00b9 for Cell E. The peak gas velocity is 260.9 ms\u207b\u00b9 for Cell P (bumpy pattern) and 398.5 ms\u207b\u00b9 for Cell E (single peak asymmetrical pattern). Mass loss during thermal runaway is 57.50% for Cell P and 63.45% for Cell E. Which of the following comparative judgments are supported?",
+          "options": [
+            "A. The longer transition time for Cell E indicates that the NMC811 chemistry has a higher activation energy for the dominant exothermic decomposition reaction compared to the NCA chemistry in Cell P.",
+            "B. The higher peak gas velocity for Cell E, despite its longer transition time, suggests that the pressure buildup rate during the final stage of thermal runaway is steeper for NMC811 than for NCA, even though the overall progression is slower.",
+            "C. The higher linearized gas flow rate for Cell E (27.92 gs\u207b\u00b9 vs. 22.15 gs\u207b\u00b9) combined with higher mass loss (63.45% vs. 57.50%) indicates that the NMC811 chemistry produces more gaseous decomposition products per unit mass of active material than the NCA chemistry.",
+            "D. The bumpy gas velocity pattern for Cell P suggests multiple sequential venting events or pressure oscillations, whereas the single peak pattern for Cell E indicates a single, catastrophic pressure release event.",
+            "E. The ratio of peak gas velocity to linearized gas flow rate is higher for Cell E than for Cell P, indicating that Cell E exhibits a more impulsive venting behavior with a shorter duration of peak gas release."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "D",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "While the transition time difference is real, attributing it solely to activation energy of a single dominant reaction is an overclaim. The transition time is influenced by multiple factors including thermal conductivity, heat capacity, reaction kinetics of multiple reactions, and cell geometry. The evidence does not isolate activation energy as the controlling variable.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+48+Batteries:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Cell E has a longer transition time (189.54 s vs. 69.46 s) but a higher peak gas velocity (398.5 ms\u207b\u00b9 vs. 260.9 ms\u207b\u00b9). This indicates that despite slower overall progression, the final pressure buildup and release rate is steeper for NMC811. This is a counterintuitive but mechanistically consistent conclusion: slower heating allows more complete decomposition, leading to higher accumulated pressure and a more violent final release.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+48+Batteries:C002",
+                "TR_Gasventing+48+Batteries:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "The linearized gas flow rate and mass loss are both higher for Cell E, but this does not necessarily mean more gaseous products per unit mass of active material. The mass loss includes both gaseous and solid ejecta, and the gas flow rate is a temporal average. The comparison does not account for differences in cell capacity, total mass, or the proportion of mass loss that is gaseous versus solid. This is an unjustified normalization.",
+              "error_type": "unjustified_normalization",
+              "evidence_refs": [
+                "TR_Gasventing+48+Batteries:C001",
+                "TR_Gasventing+48+Batteries:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "The bumpy velocity pattern for Cell P versus the single peak pattern for Cell E directly supports the interpretation of multiple sequential events versus a single catastrophic event. This is a straightforward interpretation of the observed velocity profiles and is consistent with different venting dynamics between the two chemistries.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+48+Batteries:C002"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "For Cell E: peak velocity 398.5 ms\u207b\u00b9, flow rate 27.92 gs\u207b\u00b9, ratio \u2248 14.3. For Cell P: peak velocity 260.9 ms\u207b\u00b9, flow rate 22.15 gs\u207b\u00b9, ratio \u2248 11.8. The higher ratio for Cell E indicates a more impulsive release with a shorter duration of peak gas release, consistent with the single peak asymmetrical pattern. This is a valid inference from the ratio of two measured quantities.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+48+Batteries:C001",
+                "TR_Gasventing+48+Batteries:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Comparative chemistry-dependent venting dynamics and the relationship between transition time, gas flow rate, peak velocity, and venting pattern",
+          "primary_boundary": "Distinguishing between supported comparative conclusions and unsupported mechanistic attributions or normalizations",
+          "intended_error_modes": [
+            "causal_overclaim: attributing transition time difference to a single reaction parameter",
+            "unjustified_normalization: inferring per-unit-mass gas production without accounting for confounding factors"
+          ],
+          "disallowed_extrapolations": [
+            "Attributing transition time solely to activation energy",
+            "Inferring per-unit-mass gas production from aggregate measurements without normalization"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "Two large-format pouch cells are tested under thermal abuse conditions: Cell A (211 Ah, 342.06 Wh/kg, LiNi0.9Co0.05Mn0.05O2) and Cell B (256 Ah, 325.82 Wh/kg). Cell A reaches a peak chamber temperature of 557.5\u00b0C and peak chamber pressure of 386.5 kPa, with a mass loss rate of 73%. Cell B reaches a peak chamber temperature of 409.86\u00b0C and peak chamber pressure of 330.5 kPa, with a mass loss rate of 64.87%. The normalized gas production at standard conditions (0\u00b0C, 101 kPa) is 1.958 L/Ah for Cell A and 2.182 L/Ah for Cell B. The mixed vent gases from Cell A have a lower flammable limit (LFL) of 8.49% and a flammable range of 49.81%, while Cell B has an LFL of 7.43% and a flammable range of 44.45%. Which of the following statements about the relationship between cell design parameters and thermal runaway severity are defensible?",
+          "options": [
+            "A. The higher energy density of Cell A (342.06 Wh/kg vs. 325.82 Wh/kg) is the primary driver of its higher peak chamber temperature and pressure, indicating that energy density is a monotonic predictor of thermal runaway severity.",
+            "B. The higher normalized gas production for Cell B (2.182 L/Ah vs. 1.958 L/Ah) despite its lower peak chamber temperature and pressure suggests that gas production per unit capacity is not the sole determinant of peak thermal and pressure hazards.",
+            "C. The lower LFL of Cell B (7.43% vs. 8.49%) indicates a higher ignition risk, but the narrower flammable range of Cell B (44.45% vs. 49.81%) partially offsets this risk by reducing the concentration window in which ignition can occur.",
+            "D. The higher mass loss rate of Cell A (73% vs. 64.87%) combined with its higher peak chamber temperature indicates that the higher energy density leads to more complete combustion of cell materials, resulting in greater mass conversion to gaseous products.",
+            "E. The difference in peak chamber pressure between Cell A and Cell B (386.5 kPa vs. 330.5 kPa) can be attributed primarily to the difference in normalized gas production, since gas production directly determines chamber pressure under constant volume conditions.",
+            "F. Cell B's higher capacity (256 Ah vs. 211 Ah) contributes to its higher normalized gas production per unit capacity, suggesting that larger-capacity cells generate more gas per Ah due to less efficient heat dissipation during thermal runaway."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "C"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "While Cell A has higher energy density and higher peak temperature/pressure, attributing this solely to energy density and claiming monotonic predictability is an overgeneralization. The two cells differ in multiple parameters (capacity, chemistry composition, geometry), and the evidence does not isolate energy density as the sole controlling variable. This is a causal overclaim from a two-point comparison.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+47+Batteries:C002",
+                "TR_Gasventing+47+Batteries:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Cell B has higher normalized gas production (2.182 L/Ah vs. 1.958 L/Ah) but lower peak chamber temperature (409.86\u00b0C vs. 557.5\u00b0C) and pressure (330.5 kPa vs. 386.5 kPa). This demonstrates that gas production per unit capacity does not solely determine peak thermal and pressure hazards, as other factors such as gas composition, reaction kinetics, and heat release rate also play significant roles.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+47+Batteries:C002",
+                "TR_Gasventing+47+Batteries:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Cell B has a lower LFL (7.43% vs. 8.49%), meaning it can ignite at a lower concentration, which increases ignition risk. However, Cell B also has a narrower flammable range (44.45% vs. 49.81%), which reduces the concentration window for ignition. This is a valid trade-off judgment based on the two flammability metrics.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+47+Batteries:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "The higher mass loss rate of Cell A (73% vs. 64.87%) indicates more severe mass loss, but attributing this to 'more complete combustion' is unsupported. Mass loss includes both gaseous products and ejected solid/liquid materials. The evidence does not distinguish between combustion-driven mass loss and ejection-driven mass loss, nor does it support the claim of 'more complete combustion.'",
+              "error_type": "mechanism_substitution",
+              "evidence_refs": [
+                "TR_Gasventing+47+Batteries:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The peak chamber pressure difference (386.5 kPa vs. 330.5 kPa) cannot be attributed primarily to normalized gas production, because Cell B actually has higher normalized gas production (2.182 L/Ah vs. 1.958 L/Ah) but lower peak pressure. This contradicts the proposed causal relationship. Peak pressure is influenced by gas production rate, temperature, and chamber volume, not just total gas production.",
+              "error_type": "causal_contradiction",
+              "evidence_refs": [
+                "TR_Gasventing+47+Batteries:C002",
+                "TR_Gasventing+47+Batteries:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "While Cell B has higher capacity and higher normalized gas production per Ah, attributing this to 'less efficient heat dissipation' is an unsupported mechanistic claim. The evidence does not provide information about heat dissipation efficiency or its relationship to capacity. This is a causal overclaim from a correlation.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+47+Batteries:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Relationship between cell design parameters (energy density, capacity) and thermal runaway severity metrics (temperature, pressure, mass loss, gas production, flammability)",
+          "primary_boundary": "Distinguishing between supported correlations and unsupported causal attributions; recognizing when one metric does not solely determine another",
+          "intended_error_modes": [
+            "causal_overclaim: attributing multi-factor outcomes to a single parameter",
+            "causal_contradiction: proposing a causal relationship contradicted by the data",
+            "mechanism_substitution: assuming a specific mechanism without supporting evidence"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming energy density is a monotonic predictor of severity from two data points",
+            "Attributing pressure difference to gas production when the relationship is contradicted",
+            "Inferring combustion completeness from mass loss without distinguishing ejection from combustion"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A recoil force measurement method is used to determine gas flow rate and gas velocity during thermal runaway venting of lithium-ion cells. The method measures only the recoil force and weight force, without requiring knowledge of vent pressure, vent temperature, vent area size, or ejecta composition. Simulated gas flow rates from existing thermal runaway propagation models for 18650 cells range from 2.5 gs\u207b\u00b9 to 3.5 gs\u207b\u00b9. Experimental measurements using the recoil force method yield gas flow rates of 22.15 \u00b1 14.70 gs\u207b\u00b9 for high-power NCA cells and 27.92 \u00b1 9.50 gs\u207b\u00b9 for high-energy NMC811 cells. Explain why the simulated gas flow rates are one order of magnitude lower than the experimental measurements, and discuss what this discrepancy implies about the validity of using simulation models for predicting venting behavior in thermal runaway propagation scenarios."
+        },
+        "ground_truth": {
+          "gold_answer": "The simulated gas flow rates (2.5\u20133.5 gs\u207b\u00b9) are one order of magnitude lower than the experimental measurements (22.15\u201327.92 gs\u207b\u00b9) because existing simulation models likely underestimate the gas generation rate, the pressure buildup rate, or the effective vent area during thermal runaway. The recoil force method captures the actual momentum transfer from high-velocity gas ejection, which reflects the true gas flow dynamics, whereas simulations may rely on simplified assumptions about reaction kinetics, heat transfer, or venting behavior. This discrepancy implies that simulation models may significantly underpredict the severity and speed of thermal runaway propagation, leading to unconservative safety assessments. For thermal runaway propagation scenarios, relying solely on simulated gas flow rates could result in inadequate spacing, insufficient ventilation, or underestimation of the time available for intervention. The experimental method provides a more accurate basis for designing propagation mitigation strategies.",
+          "must_include": [
+            "Simulated gas flow rates are one order of magnitude lower than experimental measurements",
+            "Simulation models likely underestimate gas generation rate, pressure buildup, or effective vent area",
+            "Recoil force method captures actual momentum transfer and true gas flow dynamics",
+            "Discrepancy implies simulations may underpredict severity and speed of thermal runaway propagation",
+            "Relying on simulated values could lead to unconservative safety assessments or inadequate mitigation strategies"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming the recoil force method is inherently more accurate without acknowledging it measures actual behavior",
+            "Attributing the discrepancy to a single specific model parameter without evidence",
+            "Recommending abandonment of simulation models rather than calibration or validation",
+            "Claiming the discrepancy invalidates all simulation approaches"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Discrepancy between simulated and experimentally measured gas flow rates and its implications for safety assessment",
+          "primary_boundary": "Distinguishing between model limitations and experimental reality; evaluating the safety implications of underprediction",
+          "intended_error_modes": [
+            "Overgeneralizing the cause of discrepancy to a single parameter",
+            "Failing to connect the discrepancy to safety implications",
+            "Dismissing simulation models entirely rather than recognizing the need for validation"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Gasventing+50+Batteries__TR_Gasventing+51+Batteries__TR_Gasventing+52+Batteries": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery test facility operates at two altitude conditions: sea-level (95 kPa) and high-altitude (20 kPa). During thermal runaway testing of lithium-ion cells, engineers observe that reducing ambient pressure from 95 kPa to 20 kPa consistently shortens the time to first venting (safety valve opening or pouch rupture) across all tested cell formats. However, the time from first venting to spark ejection (indicating onset of vigorous exothermic reactions) shows format-dependent behavior: it decreases for cylindrical cells but increases for pouch cells. Peak heat release rate measurements show substantial reductions at low pressure for all formats. Which of the following conclusions are admissible based on these observations?",
+          "options": [
+            "A. The reduction in ambient pressure accelerates internal pressure buildup prior to venting, but the subsequent reaction propagation rate depends on cell geometry and internal gas transport characteristics.",
+            "B. Pouch cells exhibit delayed spark ejection at low pressure because reduced oxygen availability slows the transition from venting to combustion, while cylindrical cells are less sensitive to this effect due to their confined geometry.",
+            "C. The decrease in peak heat release rate at 20 kPa indicates that the total energy released during thermal runaway is lower at reduced pressure, making high-altitude operation inherently safer.",
+            "D. For cylindrical cells, the shortened time to spark ejection at low pressure suggests that reduced ambient pressure enhances the rate of exothermic decomposition reactions within the cell.",
+            "E. The format-dependent behavior of spark ejection timing indicates that pouch and cylindrical cells undergo fundamentally different thermal runaway mechanisms that are triggered by different pressure-dependent pathways."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The observation that venting time decreases uniformly across formats while spark ejection timing shows format-dependent behavior (decreasing for cylindrical, increasing for pouch) supports the conclusion that pre-venting pressure buildup is accelerated by reduced ambient pressure, but post-venting reaction propagation depends on cell-specific factors such as geometry and internal gas dynamics.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+50+Batteries:C002",
+                "TR_Gasventing+50+Batteries:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "The delayed spark ejection for pouch cells at low pressure (from 625s to 643s for 10Ah, 730s to 761s for 15Ah) combined with reduced oxygen availability at 20 kPa is consistent with slower transition to combustion. Cylindrical cells show opposite behavior (145s to 133s), suggesting their confined geometry creates different gas-phase conditions that are less dependent on ambient oxygen concentration.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+50+Batteries:C002",
+                "TR_Gasventing+50+Batteries:C006"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Peak heat release rate (HRR) measures power, not total energy. The reduction in peak HRR at low pressure indicates reduced combustion intensity, not reduced total energy release. The evidence shows increased CO/CO2 ratios at low pressure, indicating incomplete combustion rather than reduced energy content, making this a conflation of power and energy.",
+              "error_type": "mechanism_confusion",
+              "evidence_refs": [
+                "TR_Gasventing+50+Batteries:C001",
+                "TR_Gasventing+50+Batteries:C007"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "The shortened spark ejection time for cylindrical cells at low pressure does not indicate enhanced internal reaction rates. The evidence shows that reduced pressure accelerates venting (external pressure relief), which can trigger spark ejection earlier. This is a timing effect related to pressure relief dynamics, not an indication of faster internal decomposition kinetics.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+50+Batteries:C002",
+                "TR_Gasventing+50+Batteries:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The format-dependent timing behavior reflects differences in how pressure, geometry, and gas transport affect the progression from venting to combustion, not fundamentally different thermal runaway mechanisms. Both formats undergo the same sequence of internal reactions (SEI breakdown, separator melting, cathode decomposition); the pressure-dependent differences arise from how these formats respond to external pressure changes during gas release and ignition.",
+              "error_type": "overgeneralization",
+              "evidence_refs": [
+                "TR_Gasventing+50+Batteries:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Pressure-dependent thermal runaway progression and format-specific gas-phase dynamics",
+          "primary_boundary": "Distinguishing between pre-venting pressure buildup (uniform across formats) and post-venting combustion progression (format-dependent) under reduced ambient pressure",
+          "intended_error_modes": [
+            "Conflating peak power (HRR) with total energy release",
+            "Attributing timing changes to internal reaction kinetics rather than external pressure relief dynamics",
+            "Overgeneralizing format-dependent behavior to imply fundamentally different mechanisms"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming reduced pressure makes operation 'inherently safer' based solely on reduced peak HRR",
+            "Inferring internal reaction rate changes from external timing observations",
+            "Claiming different thermal runaway mechanisms for different formats without mechanistic evidence"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "During thermal runaway testing of lithium-ion cells at two ambient pressures (95 kPa and 20 kPa), gas composition analysis reveals that CO concentrations increase substantially at reduced pressure (e.g., from 0.19 vol.% to 0.28 vol.% for single cylindrical cells, and from 0.21 vol.% to 0.91 vol.% for 5-cell arrays). Simultaneously, the CO/CO2 ratio increases from 1.55 to 2.05 for single cells and from 0.96 to 1.99 for 5-cell arrays when pressure drops from 95 kPa to 20 kPa. For single cylindrical cells at 20 kPa, no combustion flames are observed throughout the entire thermal runaway event, despite visible spark ejection. Which of the following statements are consistent with these observations?",
+          "options": [
+            "A. The increased CO/CO2 ratio at reduced pressure indicates that gas-phase oxidation reactions are less complete, consistent with lower oxygen partial pressure limiting combustion efficiency.",
+            "B. The absence of sustained flames at 20 kPa for single cells, despite spark ejection, suggests that the oxygen mass concentration per unit volume falls below the threshold required for sustained ignition of the vented gas mixture.",
+            "C. The higher absolute CO concentration at 20 kPa indicates that more CO is produced during internal cell decomposition reactions at reduced ambient pressure.",
+            "D. For multi-cell configurations, the increase in CO concentration from 0.21 vol.% to 0.91 vol.% at reduced pressure demonstrates that cell-to-cell thermal propagation generates more incomplete combustion products than single-cell events.",
+            "E. The observation that flames do not occur at 20 kPa implies that thermal runaway severity is reduced at high altitude, making spark ejection a less significant safety concern in low-pressure environments."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The increased CO/CO2 ratio at reduced pressure directly indicates less complete oxidation of carbon species, consistent with lower oxygen partial pressure limiting combustion efficiency.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+50+Batteries:C007"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Evidence explicitly states that at 20 kPa, no flames occur because oxygen mass concentration per volume is below the stoichiometric ratio for ignition, consistent with spark ejection without sustained combustion.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+50+Batteries:C006"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "Higher CO at 20 kPa reflects reduced post-venting oxidation, not increased internal CO production. Internal decomposition is temperature-driven and not directly affected by ambient pressure.",
+              "error_type": "mechanism_confusion",
+              "evidence_refs": [
+                "TR_Gasventing+50+Batteries:C004",
+                "TR_Gasventing+50+Batteries:C007"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Multi-cell CO increase follows the same pressure-dependent combustion limitation mechanism, not evidence of inherently different propagation chemistry.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+50+Batteries:C004",
+                "TR_Gasventing+50+Batteries:C007"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Absence of flames indicates reduced post-venting combustion, not reduced internal thermal runaway severity. Higher CO and uncombusted hydrocarbons may increase toxicity risk.",
+              "error_type": "safety_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+50+Batteries:C006",
+                "TR_Gasventing+50+Batteries:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Gas-phase combustion efficiency and oxygen-limited ignition under reduced ambient pressure",
+          "primary_boundary": "Distinguishing between internal decomposition chemistry (temperature-driven) and external gas-phase combustion (oxygen-limited at low pressure)",
+          "intended_error_modes": [
+            "Attributing increased CO to internal production rather than reduced external oxidation",
+            "Inferring reduced thermal runaway severity from absence of flames",
+            "Misinterpreting multi-cell behavior as evidence of different propagation chemistry rather than scaled combustion limitation"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming ambient pressure affects internal decomposition reaction pathways",
+            "Concluding that absence of flames makes low-pressure operation safer without considering toxicity trade-offs"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "Thermal runaway testing is conducted on two lithium-ion chemistries: LiFePO4 (LFP) and LiCoO2 (LCO) cells at various states of charge (0%, 30%, 50%, 75%). Post-test analysis of emitted PM2.5 particles reveals that for LFP cells at 0% and 30% SOC (which did not flame), organic matter (OM) dominates the particle composition. For LFP cells at 50% and 75% SOC (which exhibited flaming combustion), phosphate (PO4\u00b3\u207b) dominates with 34-44% of PM2.5 mass, while OM fractions drop to 1-20%. Elemental carbon (EC) fraction increases from 0-7% at low SOC to 25-29% at 75% SOC for LFP cells. LCO cells flamed at all tested SOCs. During the tests, organic carbon (OC) is more abundant during cell venting phases, while EC and PO4\u00b3\u207b are more abundant when flaming combustion occurs. Which of the following conclusions are supported by these observations?",
+          "options": [
+            "A. The transition from OM-dominated to PO4\u00b3\u207b-dominated particle composition in LFP cells is primarily driven by whether flaming combustion occurs, rather than by the state of charge itself.",
+            "B. The increase in EC fraction with SOC for LFP cells indicates that higher energy content at elevated SOC leads to more complete thermal decomposition of organic electrolyte components.",
+            "C. The dominance of PO4\u00b3\u207b in particles from flaming LFP cells suggests that the cathode material (LiFePO4) undergoes thermal decomposition and releases phosphorus-containing species that are oxidized during combustion.",
+            "D. For LFP cells, the absence of flaming at 0% and 30% SOC can be attributed to insufficient combustible gas generation at low SOC, while at 50% and 75% SOC, sufficient electrolyte decomposition products are available to sustain combustion.",
+            "E. The observation that OC is more abundant during venting while EC and PO4\u00b3\u207b are more abundant during flaming indicates that venting releases primarily unburned organic species, while flaming converts these to carbonaceous soot and inorganic oxidation products."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The evidence explicitly states that ignition of the emissions stream, rather than cell SOC, is mostly responsible for the general composition of emitted PM2.5 particles. The compositional shift from OM-dominated (0-30% SOC, no flame) to PO4\u00b3\u207b-dominated (50-75% SOC, flaming) directly supports this conclusion.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+51+Batteries:C004",
+                "TR_Gasventing+51+Batteries:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The increase in EC with SOC is confounded with the occurrence of flaming combustion at higher SOC. The evidence indicates that EC is more abundant when flaming occurs, not that higher SOC directly causes more complete decomposition. The EC increase is a consequence of combustion conditions (flame presence), not a direct effect of SOC on decomposition completeness.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+51+Batteries:C002",
+                "TR_Gasventing+51+Batteries:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "The dominance of PO4\u00b3\u207b (34-44% of PM2.5 mass) specifically in flaming LFP cells, where the cathode is LiFePO4, strongly suggests that phosphorus from the cathode material is released during thermal decomposition and subsequently oxidized during combustion to form phosphate species in the particle phase.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+51+Batteries:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "While the observation that LFP cells do not flame at 0% and 30% SOC is consistent with insufficient combustible material, this conclusion requires assumptions about gas generation rates and flammability limits that are not directly supported by the particle composition data. The evidence shows what happens when flaming occurs, but does not provide direct evidence about gas generation rates or flammability thresholds at different SOCs.",
+              "error_type": "unsupported_extrapolation",
+              "evidence_refs": [
+                "TR_Gasventing+51+Batteries:C001"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "The evidence directly states that OC is more abundant during venting while EC and PO4\u00b3\u207b are more abundant during flaming. This pattern is consistent with venting releasing unburned organic vapors (OC) and flaming converting these to elemental carbon soot (EC) and oxidizing inorganic species to form PO4\u00b3\u207b.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+51+Batteries:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Relationship between combustion conditions, SOC, and particle composition during thermal runaway",
+          "primary_boundary": "Distinguishing between direct SOC effects and combustion-mediated effects on particle composition",
+          "intended_error_modes": [
+            "Attributing EC increase to SOC-dependent decomposition rather than combustion conditions",
+            "Making unsupported inferences about gas generation and flammability from particle composition data",
+            "Confusing correlation between SOC and flaming with direct causal relationship"
+          ],
+          "disallowed_extrapolations": [
+            "Inferring gas generation rates or flammability limits from particle composition",
+            "Claiming SOC directly controls decomposition completeness without accounting for combustion as mediating factor"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "During thermal runaway of a lithium-ion cell with a graphite anode and a transition metal oxide cathode, the cell temperature rises from ambient to approximately 1000\u00b0C. The sequence involves SEI breakdown (90-120\u00b0C), separator melting (135-165\u00b0C), electrolyte decomposition (200\u00b0C and above), and cathode oxygen release (150-310\u00b0C). If a cell undergoes thermal runaway initiated by external heating, explain why the separator melting event at 135-165\u00b0C can lead to accelerated self-heating even before the primary exothermic electrolyte decomposition reactions become dominant at 200\u00b0C. Your answer should identify the mechanism by which separator melting contributes to thermal acceleration and explain why this mechanism is distinct from the later high-temperature exothermic reactions."
+        },
+        "ground_truth": {
+          "gold_answer": "When the separator melts at 135-165\u00b0C, electrical contact between anode and cathode can occur, resulting in an internal short circuit and self-discharge. This self-discharge generates resistive heating (I\u00b2R losses) as current flows through the short circuit path, accelerating temperature rise before the major exothermic decomposition reactions at 200\u00b0C become dominant. This mechanism is distinct because it is electrochemical energy release (stored electrical energy converted to heat via short circuit) rather than chemical decomposition energy release (bond breaking and oxidation reactions). The separator melting enables a new heat generation pathway that is independent of the temperature-dependent reaction kinetics governing electrolyte and cathode decomposition.",
+          "must_include": [
+            "Internal short circuit or electrical contact between electrodes",
+            "Self-discharge or current flow generating resistive heating",
+            "Distinction between electrochemical energy release (short circuit) and chemical decomposition energy release"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming separator melting directly causes electrolyte decomposition",
+            "Stating that separator melting is the primary heat source during thermal runaway",
+            "Confusing separator melting temperature with thermal runaway onset temperature"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-stage thermal runaway progression and mechanism transition from electrochemical to chemical heat generation",
+          "primary_boundary": "Distinguishing between short-circuit-driven heating (separator melting consequence) and decomposition-driven heating (high-temperature reactions)",
+          "intended_error_modes": [
+            "Treating all heat generation as coming from chemical decomposition",
+            "Failing to recognize that separator melting enables a distinct electrochemical heating pathway",
+            "Confusing the temperature at which an event occurs with its contribution to thermal acceleration"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Gasventing+53+Batteries__TR_Gasventing+54+Batteries__TR_Gasventing+55+Batteries": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery pack designer is evaluating four 50 Ah cell chemistries for a stationary energy storage application where thermal runaway propagation must be minimized. The cells are arranged in a module with uniform spacing and no active cooling. Under identical external heating conditions, the following critical surface temperatures at thermal runaway onset are measured: Cell A (346\u00b0C), Cell B (292\u00b0C), Cell C (290\u00b0C), Cell D (281\u00b0C). The corresponding measured propagation rates in the module configuration are: Cell A (1.241 mm/s), Cell B (1.726 mm/s), Cell C (3.375 mm/s), Cell D (2.7 mm/s). Which of the following conclusions are defensible based on these measurements?",
+          "options": [
+            "A: Cell A exhibits both the highest thermal runaway onset temperature and the lowest propagation rate, indicating that high onset temperature is a sufficient predictor of low propagation risk in module configurations.",
+            "B: Cell C, despite having a higher onset temperature than Cell D, exhibits a faster propagation rate, demonstrating that onset temperature alone does not determine propagation behavior.",
+            "C: The inverse correlation between onset temperature and propagation rate observed for Cells A and C suggests that chemistries requiring higher external energy input to trigger thermal runaway will consistently propagate more slowly.",
+            "D: Cell B's intermediate onset temperature and propagation rate indicate that it represents an optimal balance between thermal stability and propagation resistance.",
+            "E: The data support the conclusion that propagation rate is governed by factors beyond onset temperature, such as material reactivity or heat release characteristics during thermal runaway."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "While Cell A does exhibit both the highest onset temperature and lowest propagation rate, this single observation is insufficient to establish onset temperature as a sufficient predictor. Cell C has a higher onset temperature than Cell D but a faster propagation rate, directly contradicting the sufficiency claim. This is a causal overclaim from limited correlation.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+53+Batteries:C001",
+                "TR_Gasventing+53+Batteries:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Cell C (290\u00b0C onset, 3.375 mm/s) and Cell D (281\u00b0C onset, 2.7 mm/s) demonstrate that a higher onset temperature does not guarantee a lower propagation rate. This is a direct boundary observation showing that onset temperature is not a sufficient predictor of propagation behavior.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+53+Batteries:C001",
+                "TR_Gasventing+53+Batteries:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "The inverse correlation holds for Cells A and C but is violated by the Cell C vs. Cell D comparison. Cell C has higher onset temperature than Cell D but faster propagation. This option overgeneralizes a pattern observed in a subset of the data to a universal rule, ignoring contradictory evidence.",
+              "error_type": "overgeneralization",
+              "evidence_refs": [
+                "TR_Gasventing+53+Batteries:C001",
+                "TR_Gasventing+53+Batteries:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "The claim that Cell B represents an 'optimal balance' is unsupported. Intermediate values do not inherently indicate optimality without a defined objective function or trade-off analysis. The stem provides no basis for evaluating what constitutes optimal performance in this application context.",
+              "error_type": "unsupported_extrapolation",
+              "evidence_refs": [
+                "TR_Gasventing+53+Batteries:C001",
+                "TR_Gasventing+53+Batteries:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "The lack of consistent correlation between onset temperature and propagation rate across all four chemistries indicates that propagation is governed by additional factors. The evidence explicitly attributes LFP's low propagation rate to 'lower thermal reactivity,' supporting the conclusion that material-specific heat release characteristics influence propagation independently of onset temperature.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+53+Batteries:C001",
+                "TR_Gasventing+53+Batteries:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Relationship between thermal runaway onset temperature and propagation rate in multi-cell configurations",
+          "primary_boundary": "Distinguishing between correlation and causation; identifying when a single parameter is insufficient to predict system-level behavior",
+          "intended_error_modes": [
+            "causal_overclaim_from_correlation",
+            "overgeneralization_from_subset",
+            "unsupported_optimality_claim"
+          ],
+          "disallowed_extrapolations": [
+            "onset_temperature_as_sufficient_predictor",
+            "universal_inverse_correlation",
+            "intermediate_values_imply_optimality"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "An engineer is designing a gas detection-based early warning system for a battery module containing NCM622 and NCM523 cells. During thermal abuse testing, the following sequence is observed for both chemistries: (1) safety valve opening, (2) visible gas venting, (3) rapid temperature rise (>50\u00b0C/s), (4) violent thermal runaway with flame ejection. For NCM622 and NCM523, events (1) and (3) occur within 2 seconds of each other. In contrast, for two other chemistries tested under identical conditions, a 15-second interval separates safety valve opening from rapid temperature rise. The engineer proposes using safety valve opening as a trigger for an automated suppression system. Which of the following assessments are justified?",
+          "options": [
+            "A: For NCM622 and NCM523 cells, safety valve opening provides insufficient lead time for automated suppression intervention, making it ineffective as an early warning indicator for these chemistries.",
+            "B: The 15-second interval observed in the other chemistries guarantees sufficient time for suppression system activation, making safety valve detection a universally reliable early warning strategy.",
+            "C: The near-simultaneous occurrence of valve opening and thermal runaway in NCM622 and NCM523 is attributable to their higher energy density, which accelerates the transition from venting to violent thermal runaway.",
+            "D: A detection strategy based on safety valve opening is chemistry-dependent and may be effective for some cell types but inadequate for high-energy-density NCM chemistries.",
+            "E: The observed timing differences indicate that all battery chemistries will exhibit either a <2 second or >15 second interval between valve opening and thermal runaway, with no intermediate behavior.",
+            "F: For NCM622 and NCM523, alternative early warning signals occurring before safety valve opening are necessary to achieve actionable lead time for suppression systems."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "D",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "A 2-second interval between safety valve opening and violent thermal runaway is insufficient for most automated suppression systems to detect the signal, process it, and deploy countermeasures. This directly supports the conclusion that valve opening is ineffective as an early warning for these chemistries.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+53+Batteries:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "While 15 seconds may provide adequate lead time for the tested chemistries, the option overgeneralizes this to a 'universally reliable' strategy. The evidence demonstrates chemistry-dependent behavior, and no basis exists for claiming that all other chemistries will exhibit similar timing. This is an unjustified scope expansion.",
+              "error_type": "overgeneralization",
+              "evidence_refs": [
+                "TR_Gasventing+53+Batteries:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "The evidence explicitly attributes the near-simultaneous valve opening and thermal runaway in NCM chemistries to their higher energy density. This is a direct causal claim supported by the evidence and represents a valid mechanistic explanation.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+53+Batteries:C003"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "The observed timing differences between NCM622/NCM523 and the other chemistries directly demonstrate that the effectiveness of safety valve opening as an early warning indicator is chemistry-dependent. This is a minimal, evidence-supported conclusion about system design constraints.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+53+Batteries:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The evidence provides only two data points (<2 seconds and 15 seconds) and does not support the claim that no intermediate timing behavior exists. This is an unjustified extrapolation from limited sampling to a universal bimodal distribution claim.",
+              "error_type": "unsupported_extrapolation",
+              "evidence_refs": [
+                "TR_Gasventing+53+Batteries:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "Given that safety valve opening provides insufficient lead time for NCM622 and NCM523, achieving actionable warning time logically requires detection of precursor events that occur before valve opening. This is a minimal engineering implication from the inadequacy of valve-based detection.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+53+Batteries:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Chemistry-dependent timing of thermal runaway progression and implications for early warning system design",
+          "primary_boundary": "Distinguishing between chemistry-specific observations and universal claims; recognizing when a detection strategy is conditionally effective",
+          "intended_error_modes": [
+            "overgeneralization_to_universal_reliability",
+            "unjustified_bimodal_distribution_claim"
+          ],
+          "disallowed_extrapolations": [
+            "universal_applicability_from_subset",
+            "exhaustive_timing_categories_from_limited_data"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A failure analysis team is investigating gas evolution mechanisms in lithium-ion cells with NCM cathodes. During thermal abuse testing at elevated temperatures, the following observations are made: (1) Below 250\u00b0C, the gas composition consists primarily of H2, CO2, CO, and C2H4. (2) Above 250\u00b0C, significant quantities of HF, fluoroalkanes (e.g., C2H5F), and ethers (e.g., dimethyl ether) appear in the vent gas. (3) Isotopic labeling experiments using 18O-enriched cathode materials show that CO2 and CO generated during the initial charge cycle originate almost entirely from surface Li2CO3 decomposition, with negligible contribution from electrolyte decomposition at the cathode. (4) Separate testing shows that Li2CO3 decomposes at 3.8 V, generating highly reactive singlet oxygen (1O2) rather than molecular O2. Which of the following conclusions are supported by these observations?",
+          "options": [
+            "A: The appearance of HF and fluoroalkanes above 250\u00b0C is caused by oxygen release from NCM cathodes reacting with fluorinated electrolyte components, representing a regime transition in gas generation mechanisms.",
+            "B: The dominance of Li2CO3 decomposition as a CO2 source during initial cycling indicates that electrolyte decomposition at the cathode is negligible under all operating conditions.",
+            "C: The generation of singlet oxygen rather than molecular O2 from Li2CO3 decomposition implies that this pathway contributes to gas evolution indirectly through subsequent reactions rather than direct O2 release.",
+            "D: Below 250\u00b0C, gas evolution is governed primarily by SEI decomposition and electrolyte reduction at the anode, with minimal contribution from cathode-side reactions.",
+            "E: The threshold temperature of 250\u00b0C represents a universal transition point above which all NCM-based cells will exhibit fluorinated gas species, independent of electrolyte formulation or cell design.",
+            "F: The isotopic labeling results demonstrate that surface contamination removal is critical for reducing gas evolution during formation cycling, but provide no information about gas generation during thermal abuse."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The evidence explicitly states that above 250\u00b0C, HF, fluoroalkanes, and ethers are generated 'due to oxygen release from NCM cathodes.' This represents a clear regime transition where cathode oxygen release enables new reaction pathways with fluorinated electrolyte components that do not occur below 250\u00b0C.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+54+Batteries:C007"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The isotopic labeling evidence applies specifically to 'the initial cycle' (formation cycling). Extrapolating this to 'all operating conditions' including thermal abuse, overcharge, and long-term cycling is an unjustified scope expansion. The evidence does not support claims about cathode electrolyte decomposition under thermal abuse conditions.",
+              "error_type": "overgeneralization",
+              "evidence_refs": [
+                "TR_Gasventing+54+Batteries:C018"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "The evidence states that Li2CO3 decomposition generates 'highly reactive 1O2, which is not released as molecular oxygen (O2).' Since singlet oxygen is not released as O2 gas, its contribution to gas evolution must occur through subsequent reactions with other cell components, making this an indirect pathway.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+54+Batteries:C017"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "While the stem describes gas species consistent with SEI and electrolyte decomposition below 250\u00b0C, the evidence about Li2CO3 decomposition at 3.8 V demonstrates that cathode-side reactions do contribute to gas evolution even at lower temperatures. The claim of 'minimal contribution from cathode-side reactions' contradicts the isotopic labeling evidence showing significant CO2/CO from cathode surface Li2CO3.",
+              "error_type": "mechanism_confusion",
+              "evidence_refs": [
+                "TR_Gasventing+54+Batteries:C017",
+                "TR_Gasventing+54+Batteries:C018"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The 250\u00b0C threshold is observed for the specific cell chemistry and electrolyte formulation tested. Claiming this as a 'universal transition point' independent of electrolyte formulation is an unjustified overgeneralization. Different electrolyte formulations with varying fluorine content or thermal stability would be expected to exhibit different transition temperatures.",
+              "error_type": "overgeneralization",
+              "evidence_refs": [
+                "TR_Gasventing+54+Batteries:C007"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "The isotopic labeling experiments specifically address CO2 and CO generation 'during the initial cycle,' which refers to formation cycling. These results directly inform surface contamination effects during formation but do not address gas generation mechanisms during thermal abuse, which involves different temperature regimes and reaction pathways. This correctly identifies the scope limitation.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+54+Batteries:C018"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Temperature-dependent regime transitions in gas generation mechanisms and scope limitations of experimental observations",
+          "primary_boundary": "Distinguishing between condition-specific observations and universal claims; recognizing when experimental results apply to specific operating regimes",
+          "intended_error_modes": [
+            "overgeneralization_across_conditions",
+            "universal_threshold_claim",
+            "mechanism_confusion"
+          ],
+          "disallowed_extrapolations": [
+            "formation_cycling_results_to_thermal_abuse",
+            "specific_threshold_to_universal_behavior",
+            "single_electrolyte_to_all_formulations"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "During post-mortem analysis of ejected particles from a prismatic 51 Ah NMC622 cell that underwent thermal runaway at 100% SOC, investigators find intact separator foil fragments alongside re-solidified copper droplets. The melting temperature of copper is 1085\u00b0C, while the separator material degrades above 200\u00b0C. Explain what these two observations together indicate about the spatial temperature distribution within the cell during thermal runaway, and why both types of particles can coexist in the ejected material."
+        },
+        "ground_truth": {
+          "gold_answer": "The coexistence of intact separator fragments and molten copper droplets indicates that internal cell temperatures during thermal runaway were highly non-uniform spatially. Some regions reached temperatures exceeding 1085\u00b0C (sufficient to melt copper), while other regions remained below the separator degradation threshold of approximately 200\u00b0C. This spatial heterogeneity allows both low-temperature and high-temperature particles to be ejected during the same thermal runaway event. The particles were ejected at different times or from different locations within the cell, reflecting local temperature variations rather than a uniform internal temperature field.",
+          "must_include": [
+            "spatial temperature non-uniformity or heterogeneity",
+            "local temperatures exceeding 1085\u00b0C in some regions",
+            "other regions remaining below separator degradation temperature",
+            "particles originating from different locations or times during ejection"
+          ],
+          "disallowed_extrapolations": [
+            "claiming uniform internal temperature",
+            "claiming all particles experienced the same thermal history",
+            "claiming separator fragments indicate maximum cell temperature was below 200\u00b0C",
+            "claiming copper droplets indicate all internal regions exceeded 1085\u00b0C"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Spatial temperature heterogeneity during thermal runaway inferred from particle analysis",
+          "primary_boundary": "Recognizing that coexisting particles with different thermal histories indicate spatial non-uniformity rather than temporal sequencing alone",
+          "intended_error_modes": [
+            "assuming_uniform_temperature_field",
+            "confusing_local_and_global_temperature_states"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Gasventing+56+Batteries__TR_Gasventing+57+Applied_Energy__TR_Gasventing+58+Batteries": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery safety engineer is evaluating thermal runaway propagation mitigation strategies for a lithium-ion battery pack. The pack consists of multiple cells arranged with adjustable spacing and is equipped with an active ventilation system. During a thermal runaway event, flammable gases (H2, CO, CH4) are released and accumulate in the pack enclosure. The engineer must balance two competing objectives: (1) reducing thermal runaway propagation speed between cells, and (2) minimizing the duration of exposure to explosive gas concentrations. Which of the following statements about design trade-offs are consistent with the interaction between cell spacing and ventilation?",
+          "options": [
+            "A. Increasing cell spacing reduces propagation speed but may prolong the pack's exposure to explosive gas mixtures by inhibiting rapid gas dispersion.",
+            "B. Increasing ventilation rate decreases gas concentration and shortens the duration of explosion risk exposure, independent of cell spacing effects.",
+            "C. Void volume within the pack enclosure has a dominant effect on the duration of explosion risk exposure, comparable to the effect of ventilation rate.",
+            "D. Without active ventilation, vented gases reach a saturation condition where subsequent cell failures do not significantly increase gas concentration.",
+            "E. Increasing cell spacing always improves overall safety by reducing both propagation speed and explosion risk duration simultaneously."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "D"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "This statement correctly captures the trade-off: increased cell distance reduces thermal runaway propagation speed but inhibits rapid dispersion of venting gases, causing prolonged explosion risk exposure.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+57+Applied_Energy:C002"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "This statement is supported by evidence showing that increasing ventilation rate decreases gas concentration and shortens the duration of explosion risk exposure. The independence claim is admissible as the evidence does not indicate coupling between ventilation and spacing effects on gas concentration dynamics.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+57+Applied_Energy:C001"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "This overstates the effect of void volume. Evidence indicates void volume has limited effect on the duration of explosion risk exposure, contradicting the claim of dominant or comparable effect.",
+              "error_type": "magnitude_exaggeration",
+              "evidence_refs": [
+                "TR_Gasventing+57+Applied_Energy:C003"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "This correctly describes the saturation condition observed in packs without active ventilation, where gases achieve saturation and flow straight out rather than accumulating further, keeping concentrations essentially constant as subsequent cells fail.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+57+Applied_Energy:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "This ignores the trade-off identified in the evidence: while increasing cell spacing reduces propagation speed, it inhibits rapid gas dispersion and prolongs explosion risk exposure, not improving both simultaneously.",
+              "error_type": "ignoring_trade_off",
+              "evidence_refs": [
+                "TR_Gasventing+57+Applied_Energy:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Trade-off between thermal propagation mitigation and gas explosion risk in battery pack design",
+          "primary_boundary": "Distinguishing between single-objective improvements and multi-objective trade-offs in safety design",
+          "intended_error_modes": [
+            "ignoring_trade_off",
+            "magnitude_exaggeration",
+            "assuming_monotonic_improvement"
+          ],
+          "disallowed_extrapolations": [
+            "specific numerical thresholds for spacing or ventilation rate",
+            "system-level safety certification claims"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A research team is conducting nail penetration tests on lithium-ion cells to characterize thermal runaway behavior. They are comparing two test configurations: (1) cells tested in an open-air environment, and (2) cells tested in a sealed chamber filled with nitrogen gas. Both configurations use the same cell chemistry (NMC prismatic, 100% SOC) and identical penetration parameters. Temperature and gas composition are monitored throughout the tests. Which of the following conclusions about the influence of test environment on thermal runaway characteristics are defensible?",
+          "options": [
+            "A. Cells tested in the nitrogen-filled chamber will exhibit lower peak temperatures than those tested in open air due to suppression of combustion-driven heat release.",
+            "B. Cells tested in open air will produce higher CO2 concentrations and lower H2 concentrations compared to those tested in nitrogen atmosphere.",
+            "C. The nitrogen environment will result in higher localized peak temperatures due to more constrained heat dissipation in the sealed chamber.",
+            "D. Increased humidity within the nitrogen environment will increase the concentration of measurable gaseous species by promoting vapor-phase reactions.",
+            "E. The test environment (air vs. nitrogen) affects gas composition but does not significantly influence the maximum temperature reached during thermal runaway."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "This is supported by evidence showing that in nitrogen-filled chambers, batteries reached much lower maximum temperatures (47\u00b0C) compared to air-filled chambers (122\u00b0C), demonstrating the suppressive influence of inert gas on combustion-driven temperature rise.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+58+Batteries:C007"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "This correctly describes the observed trend: air environments resulted in higher CO2 and lower H2 concentrations, while N2 environments produced the opposite trend.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+58+Batteries:C008"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "This confuses two separate effects. While closed chambers can constrain heat dissipation and lead to higher localized temperatures (as observed in closed N2-chamber vs. open setup comparison), the nitrogen atmosphere itself suppresses combustion and reduces peak temperatures. The evidence shows nitrogen environment produces lower, not higher, temperatures compared to air.",
+              "error_type": "mechanism_confusion",
+              "evidence_refs": [
+                "TR_Gasventing+58+Batteries:C006",
+                "TR_Gasventing+58+Batteries:C007"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "This reverses the observed effect. Evidence shows that increased humidity promoted condensation of vapor-phase products on chamber surfaces, reducing (not increasing) the concentration of measurable gaseous species.",
+              "error_type": "directional_error",
+              "evidence_refs": [
+                "TR_Gasventing+58+Batteries:C010"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "This contradicts the evidence showing that test environment has a major influence on maximum temperature: nitrogen environments suppress combustion and result in dramatically lower peak temperatures compared to air environments.",
+              "error_type": "ignoring_primary_effect",
+              "evidence_refs": [
+                "TR_Gasventing+58+Batteries:C007"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Influence of test environment (air vs. inert atmosphere) on thermal runaway temperature and gas composition",
+          "primary_boundary": "Distinguishing between combustion suppression effects and heat dissipation constraints",
+          "intended_error_modes": [
+            "mechanism_confusion",
+            "directional_error",
+            "ignoring_primary_effect"
+          ],
+          "disallowed_extrapolations": [
+            "specific temperature values for untested chemistries",
+            "safety certification claims based on single test condition"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery testing laboratory is developing a standardized nail penetration protocol to trigger thermal runaway with high repeatability. They are investigating the influence of penetration speed on the consistency of thermal runaway initiation. The protocol must balance the need for consistent triggering with practical test duration constraints. Cells are NMC prismatic format at 100% SOC, tested in controlled atmosphere. Which of the following statements about penetration speed effects on thermal runaway triggering are supported?",
+          "options": [
+            "A. Using a penetration speed of 1 mm/s, significantly lower than the 80 mm/s suggested in SAE standards, can reduce standard deviations in temperature and voltage profiles and allow more stable thermal runaway triggering.",
+            "B. Conductive nails produce greater temperature spikes during penetration compared to non-conductive nails, indicating that electrical short-circuit contribution dominates over mechanical damage in determining thermal response.",
+            "C. At 50% SOC, cells exhibit only swelling and gas release without entering thermal runaway, while cells at 100% SOC experience thermal runaway under identical penetration conditions.",
+            "D. Penetration speed has minimal influence on the onset temperature of thermal runaway but significantly affects the rate of temperature rise after initiation.",
+            "E. Hard-case prismatic cells withstand higher internal pressure before venting compared to pouch cells, but this difference does not affect the likelihood of thermal runaway initiation during nail penetration."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "This is directly supported by evidence showing that a penetration speed of 1 mm/s, much lower than the 80 mm/s in SAE standards, significantly lowered standard deviations in temperature and voltage profiles and allowed more stable and consistent triggering of thermal runaway.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+58+Batteries:C013"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "While the first part is correct (conductive nails cause greater temperature spikes), the causal claim that electrical short-circuit contribution dominates over mechanical damage is not supported by the evidence. The evidence only establishes the comparative observation, not the mechanism dominance.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+58+Batteries:C002"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "This correctly describes the SOC-dependent behavior observed in LCO pouch cells: cells at 50% SOC exhibited only swelling and gas release without thermal runaway, while 100% SOC cells experienced thermal runaway.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+58+Batteries:C014"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "This invents a distinction (onset temperature vs. rate of rise) that is not supported by the evidence. The evidence indicates penetration speed affects consistency of triggering and profile variability, not a specific decomposition into onset vs. rate effects.",
+              "error_type": "unsupported_mechanism_decomposition",
+              "evidence_refs": [
+                "TR_Gasventing+58+Batteries:C013"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "While the first part is correct (hard-case cells withstand higher pressure before venting), the claim that this does not affect thermal runaway initiation likelihood is not supported. The pressure difference and venting behavior could influence the thermal runaway progression, and the evidence does not establish independence.",
+              "error_type": "unsupported_independence_claim",
+              "evidence_refs": [
+                "TR_Gasventing+58+Batteries:C017"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Influence of test parameters (penetration speed, nail conductivity, SOC) on thermal runaway triggering consistency and behavior",
+          "primary_boundary": "Distinguishing between observed comparative effects and unsupported mechanistic or independence claims",
+          "intended_error_modes": [
+            "causal_overclaim",
+            "unsupported_mechanism_decomposition",
+            "unsupported_independence_claim"
+          ],
+          "disallowed_extrapolations": [
+            "optimal penetration speed for all cell formats",
+            "universal SOC threshold for thermal runaway across all chemistries"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A battery pack designer is comparing three candidate cell chemistries (LFP, NMC, NVPF) for an application where both explosion risk and thermal severity must be minimized. The designer has access to normalized vent gas volume data, gas composition data, maximum vent gas temperature data, and flammability window calculations for each chemistry when triggered by overtemperature. Explain which chemistry presents the lowest explosion risk and which presents the lowest thermal severity, and identify whether these two safety objectives can be simultaneously optimized by selecting a single chemistry. Your answer must distinguish between explosion risk (determined by flammability window and H2 content) and thermal severity (determined by peak vent gas temperature)."
+        },
+        "ground_truth": {
+          "gold_answer": "NVPF presents the lowest explosion risk due to its narrowest flammability window (7% to 28%) compared to NMC (7% to 46%) and LFP (6% to 45%). NVPF also presents the lowest thermal severity with a maximum vent gas temperature of 265\u00b0C, compared to LFP at 446\u00b0C and NMC at 1050\u00b0C. Therefore, NVPF simultaneously optimizes both safety objectives, allowing a single chemistry selection to minimize both explosion risk and thermal severity.",
+          "must_include": [
+            "NVPF has the narrowest flammability window",
+            "NVPF has the lowest maximum vent gas temperature",
+            "Both objectives can be met by selecting NVPF"
+          ],
+          "disallowed_extrapolations": [
+            "Claims about other trigger methods not specified in the prompt",
+            "Recommendations for system-level safety certification",
+            "Claims about cost or energy density trade-offs",
+            "Generalization to other cell formats or capacities"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-objective safety optimization across cell chemistries considering explosion risk and thermal severity",
+          "primary_boundary": "Distinguishing between two independent safety metrics and determining whether they can be simultaneously optimized",
+          "intended_error_modes": [
+            "confusing flammability window with total gas volume",
+            "assuming explosion risk and thermal severity are always coupled",
+            "selecting LFP based on lowest normalized gas volume without considering flammability window"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Gasventing+59+Energy_Advances__TR_Gasventing+60+Aerosol_Science_and_Technology__TR_Gasventing+61+UnknownJournal": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A thermal runaway event is triggered in a lithium-ion cell containing LiCoO2 cathode material and a fluoride-containing electrolyte salt. The cell is heated externally at a rate of 5\u00b0C/min until thermal runaway occurs. Post-event analysis reveals that solid residues collected near the cell contain a higher mass fraction of aluminium compared to airborne particulate matter collected from the smoke plume. Copper is detected in trace amounts in both fractions. Which of the following statements about the metal distribution and release mechanisms are consistent with the observed results?",
+          "options": [
+            "A. The higher aluminium fraction in solid residues is consistent with ejection of molten aluminium droplets that settle rapidly due to their size and mass, rather than remaining suspended in the smoke.",
+            "B. The trace copper levels in both fractions indicate that copper release is limited by its melting point, which is significantly higher than the peak temperatures typically reached during single-cell thermal runaway.",
+            "C. If the same cell chemistry were subjected to a multi-cell cascading thermal runaway event, the copper fraction in smoke particulate would be expected to increase due to higher sustained temperatures.",
+            "D. The aluminium distribution pattern would remain unchanged if the heating rate were increased to 20\u00b0C/min, because the melting point of aluminium is independent of heating rate.",
+            "E. The absence of significant nickel in the solid residues indicates that nickel-containing components do not participate in the thermal runaway reaction."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "C"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "This statement correctly interprets the observed aluminium distribution as a consequence of physical ejection and rapid settling of molten aluminium globules, which is the mechanism supported by the evidence for why aluminium is enriched in solid residues relative to smoke particulate.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+59+Energy_Advances:C002"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "This statement correctly identifies that copper's higher melting point (1083\u00b0C vs. 660\u00b0C for aluminium) limits its release during single-cell thermal runaway, which is consistent with the observed trace levels in both fractions.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+59+Energy_Advances:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "This statement correctly applies the evidence that multi-cell events generate higher temperatures, which would be expected to increase copper release and thus its fraction in smoke particulate, extending the single-cell observation to a multi-cell scenario in a mechanistically justified way.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+59+Energy_Advances:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "This statement incorrectly assumes that the aluminium distribution pattern is independent of heating rate. While the melting point is indeed independent of heating rate, the heating rate affects the thermal runaway dynamics, including the amount of electrolyte remaining and the violence of the event, which could alter ejection patterns and thus the distribution of aluminium between solid and airborne fractions.",
+              "error_type": "ignoring_condition_dependence",
+              "evidence_refs": [
+                "TR_Gasventing+61+UnknownJournal:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "This statement incorrectly interprets the absence of significant nickel in solid residues. The evidence indicates that nickel is slightly enriched in smoke particulate relative to solid residues, not absent from both. The statement also makes an unsupported causal claim about nickel not participating in the reaction.",
+              "error_type": "contradicts_evidence",
+              "evidence_refs": [
+                "TR_Gasventing+59+Energy_Advances:C005"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Metal release mechanisms and distribution patterns during thermal runaway as a function of melting point, ejection dynamics, and temperature regime",
+          "primary_boundary": "Distinguishing between physical properties (melting point) and dynamic conditions (heating rate, multi-cell vs. single-cell) that control metal release and distribution",
+          "intended_error_modes": [
+            "Assuming heating rate does not affect distribution patterns",
+            "Misinterpreting absence in one fraction as non-participation in the reaction",
+            "Ignoring temperature-dependent release mechanisms"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming exact temperature values for single-cell events",
+            "Generalizing to chemistries other than LiCoO2",
+            "Claiming quantitative predictions of copper fraction in multi-cell events"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "Two battery modules are subjected to abuse testing: Module A contains NMC cells with an electrolyte using a non-fluoride anion salt, and Module B contains LFP cells with a conventional fluoride-containing electrolyte salt. Module A undergoes nail penetration resulting in thermal runaway propagation across all cells. Module B undergoes overcharge until thermal runaway occurs in multiple cells, but propagation is not observed. Gas analysis is performed in a well-ventilated test chamber (air exchange rate sufficient to prevent accumulation). Which of the following conclusions about gas emissions and hazard profiles are supported by the test conditions and expected cell behavior?",
+          "options": [
+            "A. Module A is expected to produce higher PM2.5 and total particle number emission rates than Module B due to the occurrence of thermal runaway propagation.",
+            "B. Module B is expected to produce HF concentrations exceeding the NIOSH immediately dangerous to life and health threshold of 30 ppm for several minutes despite the well-ventilated conditions.",
+            "C. Module A is expected to produce negligible HF emissions due to the absence of fluoride in the electrolyte salt, even though electrolyte combustion occurs.",
+            "D. The CO2 emission rate from Module A is expected to be substantially lower than from Module B because LFP cells release more electrolyte per cell than NMC cells.",
+            "E. The absence of thermal runaway propagation in Module B indicates that LFP cells do not undergo exothermic decomposition reactions during overcharge abuse."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "C"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "This statement correctly applies the evidence that NMC nail penetration with propagation resulted in the highest PM2.5 and particle number emission rates, and that LFP without propagation yielded relatively less emissions. The reasoning correctly links propagation to higher emission rates.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+60+Aerosol_Science_and_Technology:C001",
+                "TR_Gasventing+60+Aerosol_Science_and_Technology:C002"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "This statement correctly applies the evidence that LFP overcharge produced HF peaks of 177 ppm that remained above 30 ppm for several minutes even under well-ventilated conditions. The conclusion is directly supported for Module B's test conditions.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+60+Aerosol_Science_and_Technology:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "This statement correctly applies the evidence that no HF was observed during NMC nail penetration testing when a non-fluoride anion salt was used, despite high rates of electrolyte combustion. The reasoning correctly identifies the electrolyte salt composition as the controlling factor for HF emissions.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+60+Aerosol_Science_and_Technology:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "This statement incorrectly predicts the CO2 emission relationship. The evidence indicates that NMC nail penetration with propagation produced peak CO2 values more than 20 times higher than LFP overcharge, indicating much larger mass of electrolyte combusted per second in Module A, not Module B. The statement reverses the expected relationship.",
+              "error_type": "contradicts_evidence",
+              "evidence_refs": [
+                "TR_Gasventing+60+Aerosol_Science_and_Technology:C005"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "This statement makes an unsupported causal inference. The absence of propagation does not imply the absence of exothermic decomposition reactions; it indicates that the heat generated was insufficient to trigger neighboring cells under the test configuration. LFP cells do undergo thermal runaway (as stated in the stem), which involves exothermic reactions.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+60+Aerosol_Science_and_Technology:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Relationship between cell chemistry, electrolyte composition, abuse mode, propagation behavior, and resulting gas emission profiles and hazards",
+          "primary_boundary": "Distinguishing between emissions controlled by electrolyte salt composition (HF), emissions controlled by propagation extent (PM, PN, CO2), and emissions controlled by cell chemistry",
+          "intended_error_modes": [
+            "Confusing propagation with reaction occurrence",
+            "Reversing the CO2 emission relationship between propagating and non-propagating events",
+            "Assuming HF production is independent of electrolyte salt composition"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming exact HF concentrations for Module A",
+            "Generalizing to other NMC or LFP cell designs",
+            "Claiming propagation behavior in different module configurations"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A series of thermal abuse tests is conducted on LiCoO2 pouch cells (3.7 V, 4.8 Ah) and cylindrical cells (3.7 V, 2.6 Ah) at various states of charge (SOC). Cells are heated externally at either 5\u00b0C/min or 20\u00b0C/min until thermal runaway occurs. Vent gas volume, combustion energy, and gas composition are measured. Across all tested SOCs, both cell formats show that vent gas volume and combustion energy increase with SOC. At 30% SOC, pouch cells heated at 20\u00b0C/min release 129% more combustion energy than those heated at 5\u00b0C/min, while cylindrical cells show a 64% increase. For a cargo compartment fire suppression system designed to maintain 5% Halon 1301 during knockdown and 3% sustained concentration, which of the following engineering judgments about vent gas behavior and suppression adequacy are defensible?",
+          "options": [
+            "A. The increase in vent gas volume and combustion energy with SOC is attributable to greater electrolyte content and higher cathode reactivity at elevated charge states.",
+            "B. The larger percent increase in combustion energy at 30% SOC for pouch cells compared to cylindrical cells, when comparing heating rates, suggests that pouch cell geometry allows more electrolyte retention during slow heating.",
+            "C. Cells heated at 5\u00b0C/min are expected to have less electrolyte remaining at the onset of thermal runaway compared to cells heated at 20\u00b0C/min, because slower heating allows more time for electrolyte to vaporize and vent before exothermic reactions dominate.",
+            "D. The 5% knockdown and 3% sustained Halon 1301 concentrations are sufficient to inert all ratios of vent gas-air mixtures from these cells across all tested SOCs.",
+            "E. Hydrogen concentration in vent gas is independent of cell format, as both pouch and cylindrical cells produce approximately 24% hydrogen by volume across all SOCs.",
+            "F. The shift from higher CO2 to higher CO with increasing SOC in pouch cells indicates incomplete combustion of electrolyte at higher charge states."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "C"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "This statement provides a mechanistically sound interpretation of the observed linear increase in vent gas volume and combustion energy with SOC, attributing it to greater available reactants (electrolyte and charged cathode material) at higher SOC. This is a minimal engineering implication consistent with the evidence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+61+UnknownJournal:C001"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "This statement correctly interprets the differential response between pouch and cylindrical cells (129% vs. 64% increase at 30% SOC) as potentially related to geometry-dependent electrolyte retention during slow heating. This is a defensible engineering inference that explains the observed difference through a plausible physical mechanism.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+61+UnknownJournal:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "This statement correctly applies the evidence-supported mechanism that slower heating rates allow more time for electrolyte to boil and vent before thermal runaway, resulting in less electrolyte remaining and thus reduced vent gas and combustion energy. This is the causal explanation provided in the evidence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+61+UnknownJournal:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "This statement directly contradicts the evidence, which indicates that 5% knockdown and 3% sustained Halon 1301 may not be sufficient to inert lithium-ion battery vent gas-air mixtures, and that 8.59% Halon 1301 is required to render all ratios inert. The statement makes an unsupported safety claim.",
+              "error_type": "contradicts_evidence",
+              "evidence_refs": [
+                "TR_Gasventing+61+UnknownJournal:C006"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "This statement incorrectly claims hydrogen concentration is independent of cell format. The evidence shows pouch cells produce 24\u00b14% hydrogen while cylindrical cells produce 12\u00b14% hydrogen, indicating a clear format dependence. The statement also incorrectly attributes the 24% value to both formats.",
+              "error_type": "contradicts_evidence",
+              "evidence_refs": [
+                "TR_Gasventing+61+UnknownJournal:C007"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "This statement makes an unsupported causal inference. While the evidence confirms that CO2 decreases and CO increases with SOC, attributing this to 'incomplete combustion' is not supported. The shift could be due to changes in decomposition pathways, reaction kinetics, or oxygen availability at different SOC levels, not necessarily incomplete combustion. The mechanism is not established by the evidence.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+61+UnknownJournal:C009"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Heating rate effects on electrolyte retention and vent gas characteristics, SOC dependence of vent gas properties, and suppression system adequacy judgment",
+          "primary_boundary": "Distinguishing between supported causal mechanisms (electrolyte vaporization timing), defensible inferences (geometry effects), and unsupported claims (suppression adequacy, combustion completeness)",
+          "intended_error_modes": [
+            "Accepting inadequate suppression concentrations as sufficient",
+            "Confusing cell format-dependent hydrogen production with format independence",
+            "Attributing CO/CO2 shift to a specific mechanism not established by evidence"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming exact electrolyte retention percentages",
+            "Generalizing to other cell chemistries or formats",
+            "Claiming specific combustion mechanisms without supporting evidence"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A safety engineer is evaluating the hazard profile of a thermal runaway event in a cargo compartment containing lithium-ion batteries. Two scenarios are under consideration: (1) a single-cell thermal runaway event in an NMC cell with non-fluoride electrolyte salt, and (2) a multi-cell cascading thermal runaway event in LFP cells with conventional fluoride-containing electrolyte. The compartment is equipped with a Halon 1301 suppression system designed to deliver 5% concentration during knockdown. Based on the expected gas emissions, particulate generation, and suppression system performance, identify the two most critical safety concerns that differentiate these scenarios and explain why the suppression system design may be inadequate for one or both scenarios."
+        },
+        "ground_truth": {
+          "gold_answer": "The two most critical differentiating safety concerns are: (1) HF generation: The LFP multi-cell scenario will produce HF due to the fluoride-containing electrolyte, with concentrations potentially exceeding 30 ppm (NIOSH IDLH threshold) for several minutes even in well-ventilated conditions, while the NMC scenario with non-fluoride electrolyte will produce negligible HF. (2) Particulate and combustion product generation: The NMC single-cell scenario, if it were to propagate, would produce substantially higher PM2.5, particle number, and CO2 emission rates compared to LFP without propagation, but as a single-cell event it would be less severe; however, the LFP multi-cell cascading event would generate sustained emissions. The suppression system is inadequate because 5% Halon 1301 is insufficient to inert lithium-ion battery vent gas-air mixtures; testing indicates 8.59% Halon 1301 is required to render all ratios inert. Additionally, the system does not address HF generation, which is a chemical hazard independent of flammability suppression.",
+          "must_include": [
+            "HF generation in LFP scenario due to fluoride-containing electrolyte",
+            "HF concentrations exceeding NIOSH IDLH threshold (30 ppm)",
+            "Negligible HF in NMC scenario with non-fluoride electrolyte",
+            "5% Halon 1301 is insufficient to inert vent gas-air mixtures",
+            "8.59% Halon 1301 required for complete inerting",
+            "Suppression system does not address HF toxicity"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming exact particulate emission rates without specifying propagation status",
+            "Claiming copper or aluminium emissions as primary hazards",
+            "Claiming specific temperature values for either scenario",
+            "Generalizing to other cell chemistries not mentioned",
+            "Claiming the NMC scenario is more hazardous without considering propagation status"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Comparative hazard assessment integrating chemistry-dependent gas emissions (HF), propagation-dependent particulate generation, and suppression system adequacy",
+          "primary_boundary": "Distinguishing between hazards controlled by electrolyte composition (HF), hazards controlled by propagation extent (PM, CO2), and suppression system limitations that apply regardless of chemistry",
+          "intended_error_modes": [
+            "Focusing only on flammability without considering toxicity",
+            "Assuming suppression system adequacy without checking concentration requirements",
+            "Confusing single-cell vs. multi-cell emission profiles",
+            "Ignoring the independence of HF hazard from flammability suppression"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Gasventing+62+UnknownJournal__TR_Gasventing+63+Electronics__TR_Gasventing+64+Energies": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery pack ventilation channel is designed to handle venting gas from lithium-ion cells during thermal runaway. The channel operates at an initial pressure of 154 kPa. During a thermal event, venting gas mixes with air at an equivalence ratio of 1.0 and ignites. Temperature measurements indicate the gas mixture temperature rises from 329 K to 400 K during propagation. An engineer must assess which statements about flame behavior and explosion risk are consistent with the observed temperature increase.",
+          "options": [
+            "A: The maximum flame velocity increases by a factor greater than 2.5, and the combustion mode transitions from slow deflagration to fast deflagration, significantly elevating explosion risk.",
+            "B: The flame velocity increase is primarily driven by pressure rise rather than temperature rise, so the combustion mode remains unchanged despite the temperature increase.",
+            "C: The propagation time decreases by approximately 60% relative to the initial condition, indicating a regime change in flame dynamics.",
+            "D: Because the equivalence ratio remains at 1.0 throughout, the flame velocity remains approximately constant regardless of temperature change.",
+            "E: The temperature increase to 400 K causes the flame velocity to exceed local sonic speed, which is not observed at 329 K under the same pressure and equivalence ratio."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence shows maximum flame velocity increases from 138.2 m/s at 329 K to 402.5 m/s at 400 K (factor of ~2.9), and at 400 K the combustion mode changes to fast deflagration with flame velocity exceeding local sonic speed, posing high explosion risk.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+64+Energies:C002",
+                "TR_Gasventing+64+Energies:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Evidence shows initial temperature has high sensitivity to flame velocity, and the combustion mode does change at 400 K. Pressure is held constant at 154 kPa, so the velocity increase is temperature-driven, not pressure-driven.",
+              "error_type": "mechanism_confusion",
+              "evidence_refs": [
+                "TR_Gasventing+64+Energies:C002",
+                "TR_Gasventing+64+Energies:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence states propagation time decreases by up to 60.6% relative to 300 K as temperature increases to 400 K, indicating a regime change in flame dynamics.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+64+Energies:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Evidence shows flame velocity is highly sensitive to initial temperature even when equivalence ratio is constant. Maximum flame velocity increases from 109.2 m/s at 300 K to 402.5 m/s at 400 K under constant equivalence ratio of 1.0.",
+              "error_type": "ignoring_condition_dependence",
+              "evidence_refs": [
+                "TR_Gasventing+64+Energies:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Evidence shows that at 400 K, flame velocity exceeds local sonic speed and deflagration mode occurs, whereas at 329 K (and other lower temperatures) under the same pressure and equivalence ratio, no deflagration appears and combustion mode does not change.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+64+Energies:C002",
+                "TR_Gasventing+64+Energies:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Temperature-dependent regime transition in venting gas combustion and its effect on flame velocity and explosion risk",
+          "primary_boundary": "Threshold temperature (400 K) at which combustion mode transitions from slow to fast deflagration",
+          "intended_error_modes": [
+            "attributing velocity increase to pressure rather than temperature",
+            "assuming equivalence ratio controls flame velocity independently of temperature",
+            "failing to recognize regime transition at critical temperature threshold"
+          ],
+          "disallowed_extrapolations": [
+            "generalizing flame behavior across temperature regimes without recognizing threshold effects",
+            "assuming linear scaling of flame velocity with temperature"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A safety engineer compares thermal runaway characteristics of LFP and NCM811 battery chemistries for use in an enclosed battery pack. Both chemistries undergo thermal runaway under identical test conditions. Gas composition analysis shows LFP produces gas with 50.82% H2 and 9.3% CO, while NCM811 produces gas with lower H2 content. Normalized gas production measurements show NCM811 produces 2.1 L/Ah while LFP produces 0.569 L/Ah. The engineer must determine which safety-related conclusions are admissible based on these measurements.",
+          "options": [
+            "A: LFP presents lower overall hazard than NCM811 because its normalized gas production volume is approximately one-fourth that of NCM811.",
+            "B: The lower flammability limit of the LFP gas mixture is lower than that of NCM811 due to the higher H2 fraction in LFP gas, despite LFP producing less total gas volume.",
+            "C: From a gas volume perspective, NCM811 poses greater hazard, but from a flammability composition perspective, LFP poses greater hazard due to its lower flammability limit.",
+            "D: The higher H2 content in LFP gas indicates that LFP thermal runaway is more energetic than NCM811 thermal runaway on a per-cell basis.",
+            "E: Because LFP produces significantly less gas volume, the risk of pressure-driven cell-to-cell propagation in the enclosed pack is lower for LFP than for NCM811.",
+            "F: The thermal stability ranking based on trigger temperature is consistent with the hazard ranking based on gas production volume."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "C"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "This conclusion considers only gas volume and ignores gas composition. Evidence shows that while LFP produces less gas volume, its gas has a lower flammability limit due to high H2 content, reversing the hazard ranking when composition is considered.",
+              "error_type": "single_factor_reasoning",
+              "evidence_refs": [
+                "TR_Gasventing+63+Electronics:C002",
+                "TR_Gasventing+63+Electronics:C003",
+                "TR_Gasventing+63+Electronics:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Evidence states LFP gas contains 50.82% H2 compared to lower H2 in NCM, and that the higher H2 content results in a lower LFL due to the relatively low LFL of H2 itself.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+63+Electronics:C003"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence explicitly states that based on gas production volume, NCM811 poses greater harm than LFP, but from the perspective of gas composition (flammability), the hazard ranking reverses with LFP > NCM811.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+63+Electronics:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "Higher H2 content in the vented gas does not necessarily indicate more energetic thermal runaway. H2 content reflects decomposition pathways and gas composition, not total energy release. Evidence does not support inferring energy release from gas composition alone.",
+              "error_type": "causal_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+63+Electronics:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "While LFP produces less gas volume, the evidence does not establish a direct relationship between normalized gas production and cell-to-cell propagation risk in an enclosed pack. Propagation depends on multiple factors including heat transfer, not just gas volume.",
+              "error_type": "unsupported_extrapolation",
+              "evidence_refs": [
+                "TR_Gasventing+63+Electronics:C002"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "Evidence shows LFP has higher trigger temperature (~184\u00b0C) than NCM811 (~130-140\u00b0C), indicating better thermal stability for LFP. However, the gas volume hazard ranking is NCM811 > LFP. These rankings are consistent. But the flammability composition hazard ranking is LFP > NCM811, which is inconsistent with thermal stability ranking. The statement is too broad and ignores the composition-based hazard reversal.",
+              "error_type": "overgeneralization",
+              "evidence_refs": [
+                "TR_Gasventing+63+Electronics:C001",
+                "TR_Gasventing+63+Electronics:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-factor hazard assessment requiring integration of gas volume and gas composition effects",
+          "primary_boundary": "Distinction between volume-based and composition-based hazard metrics, which produce opposite rankings",
+          "intended_error_modes": [
+            "single-factor reasoning (considering only volume or only composition)",
+            "inferring energy release from gas composition",
+            "extrapolating from gas volume to propagation risk without supporting mechanism",
+            "assuming consistency between thermal stability and all hazard metrics"
+          ],
+          "disallowed_extrapolations": [
+            "inferring cell-to-cell propagation behavior from normalized gas production alone",
+            "inferring thermal runaway energy from gas composition"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "During a thermal runaway event, venting gas from a lithium-ion battery mixes with air in a confined channel. The excess air coefficient (ratio of actual air to stoichiometric air) is varied from 1.0 to 0.8. At an excess air coefficient of 1.0, the combustion proceeds as slow deflagration with average flame velocity below 150 m/s. At an excess air coefficient of 0.8, measurements show maximum flame velocity reaches approximately 445 m/s, and the maximum overpressure caused by the combustion wave is 91.3 kPa, exceeding the overpressure caused by the ignition pressure wave (61.7 kPa). An engineer must assess which mechanistic conclusions are supported by these observations.",
+          "options": [
+            "A: The transition from excess air coefficient 1.0 to 0.8 causes a combustion mode change from slow deflagration to fast deflagration, significantly increasing explosion risk.",
+            "B: The increase in flame velocity from below 150 m/s to 445 m/s is primarily due to increased fuel concentration, but the combustion mode remains deflagration throughout.",
+            "C: At excess air coefficient 0.8, the combustion wave overpressure exceeds the ignition pressure wave overpressure, indicating the combustion process itself becomes the dominant pressure source.",
+            "D: The critical excess air coefficient at which combustion mode changes is approximately 0.9, marking the boundary between slow and fast deflagration regimes.",
+            "E: Reducing the excess air coefficient below 1.0 always increases flame velocity monotonically until stoichiometric conditions are reached."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "D"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence states that when excess air coefficient decreases to 0.8, average flame velocity exceeds local sonic speed and combustion mode changes from slow deflagration to fast deflagration, significantly increasing risk of combustion accident.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+64+Energies:C001",
+                "TR_Gasventing+64+Energies:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "Evidence shows the combustion mode does change at excess air coefficient 0.8, transitioning to fast deflagration. The statement incorrectly claims the mode remains unchanged.",
+              "error_type": "ignoring_regime_transition",
+              "evidence_refs": [
+                "TR_Gasventing+64+Energies:C001"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence explicitly states that at excess air coefficient 0.8, the peak overpressure caused by the combustion wave (91.3 kPa) exceeds that caused by the ignition pressure wave (61.7 kPa), indicating the combustion process becomes the dominant pressure source.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+64+Energies:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Evidence states that when the excess air coefficient is around 0.9, the combustion mode changes, marking the boundary between slow and fast deflagration.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+64+Energies:C001"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Evidence shows a regime transition occurs around excess air coefficient 0.9, indicating non-monotonic behavior. The statement incorrectly assumes monotonic increase in flame velocity, ignoring the threshold-dependent regime change.",
+              "error_type": "ignoring_threshold_effect",
+              "evidence_refs": [
+                "TR_Gasventing+64+Energies:C001"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Excess air coefficient threshold effect on combustion mode transition and pressure generation mechanism",
+          "primary_boundary": "Critical excess air coefficient (~0.9) separating slow and fast deflagration regimes",
+          "intended_error_modes": [
+            "assuming monotonic relationship between excess air coefficient and flame velocity",
+            "failing to recognize regime transition at critical threshold",
+            "ignoring shift in dominant pressure generation mechanism"
+          ],
+          "disallowed_extrapolations": [
+            "extrapolating slow deflagration behavior to fuel-rich conditions without recognizing mode change"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A battery safety researcher measures the breakdown voltage between two electrodes separated by 5 mm in two different venting gas atmospheres: NCA gas mixture (10% CO2, 37.1% CO, 42.8% H2, 7.1% CH4, 3% C2H4) and LFP gas mixture (48.4% CO2, 29.5% CO, 5.6% H2, 7% CH4, 0.5% C2H6). At room temperature, the NCA gas mixture exhibits higher breakdown voltage than the LFP mixture. At 300\u00b0C, the opposite is observed: LFP gas mixture exhibits higher breakdown voltage than NCA. Additionally, combustion analysis under fuel-rich conditions shows that NCA gas combustion sustainability is driven by H radicals rather than OH radicals. Explain what safety-relevant conclusion can be drawn about NCA gas combustion behavior in oxygen-limited environments, and identify which physical mechanism accounts for the temperature-dependent reversal in breakdown voltage ranking between the two gas mixtures."
+        },
+        "ground_truth": {
+          "gold_answer": "For NCA gas combustion: Because combustion sustainability is driven by H radicals rather than OH radicals under fuel-rich conditions, NCA gas combustion can be sustained even in environments with low oxygen availability, which has major implications for battery pack design where oxygen may be limited. For the breakdown voltage reversal: The reversal occurs because the two gas mixtures have different temperature-dependent ionization characteristics. At room temperature, NCA gas (with higher H2 content, 42.8% vs 5.6%) requires higher voltage to ionize. At elevated temperature (300\u00b0C), thermal energy assists ionization differently for the two mixtures, reversing the relative breakdown voltage. The mechanism is temperature-dependent ionization potential and collision frequency changes that affect differently the two gas compositions.",
+          "must_include": [
+            "NCA gas combustion can be sustained in low-oxygen or oxygen-limited environments",
+            "H radical-driven combustion mechanism enables sustainability without sufficient OH radicals",
+            "temperature-dependent ionization characteristics differ between the two gas mixtures",
+            "thermal energy at 300\u00b0C assists ionization differently for NCA vs LFP gas"
+          ],
+          "disallowed_extrapolations": [
+            "claiming NCA gas is more flammable than LFP gas in all conditions",
+            "attributing breakdown voltage reversal solely to H2 content without considering temperature-dependent ionization",
+            "claiming the reversal is due to chemical reaction rather than ionization physics",
+            "recommending specific pack designs without acknowledging the limited scope of the evidence"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Mechanism of H radical-driven combustion in oxygen-limited environments and temperature-dependent ionization behavior of gas mixtures",
+          "primary_boundary": "Distinguishing between combustion mechanism (H vs OH radical-driven) and electrical breakdown mechanism (temperature-dependent ionization)",
+          "intended_error_modes": [
+            "conflating combustion chemistry with electrical breakdown physics",
+            "attributing breakdown voltage reversal to a single compositional factor without considering temperature-dependent ionization",
+            "overgeneralizing flammability conclusions beyond the stated fuel-rich, low-oxygen conditions"
+          ]
+        }
+      }
+    ]
+  },
+  "TR_Gasventing+65+Energies__TR_Gasventing+66+Energies__TR_Gasventing+67+Energies": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A 50 Ah LFP prismatic cell at 100% SOC undergoes thermal abuse testing in a sealed chamber. The surface temperature reaches 195\u00b0C, at which point the safety valve opens and chamber pressure begins to rise at 110 kPa/s. The cell voltage drops to zero instantly, and the temperature rise rate increases to 37\u00b0C/min. The cell eventually reaches a maximum surface temperature of 320\u00b0C. Post-test analysis reveals that H2 comprises approximately 50% of the normalized gas volume, and the cell experienced 18% mass loss. Which of the following statements are consistent with the observed behavior?",
+          "options": [
+            "A. The voltage collapse at 195\u00b0C indicates that the safety valve opening directly caused internal short-circuit failure, triggering the accelerated temperature rise.",
+            "B. The chamber pressure rise rate of 110 kPa/s at valve opening reflects primarily gas generation from thermal decomposition reactions rather than release of pre-existing internal pressure.",
+            "C. The maximum surface temperature of 320\u00b0C is insufficient to fully evaporate ethylene carbonate (EC) from the electrolyte, implying that liquid ejection may occur during the event.",
+            "D. The 18% mass loss is attributable entirely to H2 gas release, since H2 comprises 50% of the gas volume and is the lightest species.",
+            "E. The temperature rise rate of 37\u00b0C/min at 195\u00b0C indicates that exothermic decomposition reactions have become self-sustaining, independent of external heating."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "The voltage collapse and accelerated temperature rise both occur when surface temperature reaches 190-210\u00b0C, which is the thermal runaway trigger temperature range for LFP at 100% SOC. The safety valve opening at ~160\u00b0C precedes this event. The voltage collapse indicates onset of thermal runaway reactions, not a consequence of valve opening causing short-circuit.",
+              "error_type": "causal_reversal",
+              "evidence_refs": [
+                "TR_Gasventing+65+Energies:C001",
+                "TR_Gasventing+65+Energies:C006"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The safety valve opens at approximately 160\u00b0C, well before the 195\u00b0C thermal runaway trigger. At valve opening, only a small amount of gas and electrolyte is released because the valve opening pressure threshold is reached. The 110 kPa/s pressure rise occurs during the first eruption stage when thermal runaway begins, not at the initial valve opening. The pressure rise reflects both pre-existing pressure release and accelerating gas generation.",
+              "error_type": "mechanism_confusion",
+              "evidence_refs": [
+                "TR_Gasventing+65+Energies:C009",
+                "TR_Gasventing+65+Energies:C010"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Ethylene carbonate has a boiling point of approximately 244\u00b0C. The maximum surface temperature of 320\u00b0C exceeds this, but LFP cells have been observed to eject liquid EC when surface temperatures do not exceed 350\u00b0C during thermal runaway, because internal temperature distribution is non-uniform and some regions may remain below the evaporation threshold. The 320\u00b0C maximum is close to this boundary.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+67+Energies:C005",
+                "TR_Gasventing+65+Energies:C002"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "H2 comprises 50% of the normalized gas volume, not 50% of the mass loss. Mass loss includes electrolyte vapor, other gas species (CO, CO2, hydrocarbons), and potentially liquid electrolyte ejection. H2 is the lightest species but contributes minimally to total mass loss despite its large volume fraction. The 18% mass loss cannot be attributed entirely to H2.",
+              "error_type": "unit_confusion",
+              "evidence_refs": [
+                "TR_Gasventing+65+Energies:C005",
+                "TR_Gasventing+65+Energies:C008"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "The temperature rise rate accelerates to 37\u00b0C/min when surface temperature reaches 190-210\u00b0C, which is the thermal runaway trigger range for LFP at 100% SOC. This acceleration indicates that exothermic decomposition reactions (SEI breakdown, electrolyte decomposition, cathode-electrolyte reactions) have become self-sustaining and dominate over external heating. The voltage collapse to zero confirms loss of electrochemical function and onset of internal chemical decomposition.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+65+Energies:C001"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Multi-stage thermal runaway progression and mechanism identification from observable signals",
+          "primary_boundary": "Distinguishing between valve opening effects, thermal runaway trigger, and temperature-dependent phase behavior; separating volume-based and mass-based composition metrics",
+          "intended_error_modes": [
+            "causal_reversal",
+            "mechanism_confusion",
+            "unit_confusion"
+          ],
+          "disallowed_extrapolations": [
+            "Assuming valve opening causes thermal runaway",
+            "Assuming chamber pressure rise reflects only pre-existing pressure",
+            "Assuming volume fraction equals mass fraction"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "Two sets of prismatic cells undergo thermal abuse testing at 100% SOC: Set A consists of 117 Ah NCM811 cells, and Set B consists of 50 Ah LFP cells. Both sets are tested under identical external heating rates of 5\u00b0C/min. Post-test gas analysis reveals that Set A produces CO at 2.25 \u00d7 10^5 ppmv with negligible CO2, while Set B produces CO2 at 1.65 \u00d7 10^5 ppmv with negligible CO. Set A reaches a maximum surface temperature of 511\u00b0C, while Set B reaches 320\u00b0C. Normalized gas production is measured at 0.09 mol/Ah for Set A and 0.03 mol/Ah for Set B. Which of the following conclusions are defensible from these observations?",
+          "options": [
+            "A. The absence of CO in Set B emissions indicates that LFP cells do not undergo electrolyte decomposition reactions that produce CO as an intermediate species.",
+            "B. The CO-to-CO2 conversion in Set B is attributable to the LFP cathode material remaining stable at the observed maximum temperature, preventing catalytic oxidation pathways that would otherwise consume oxygen and leave CO unreacted.",
+            "C. The threefold difference in normalized gas production (0.09 vs. 0.03 mol/Ah) implies that NCM811 cells undergo more extensive electrolyte decomposition than LFP cells under identical thermal abuse conditions.",
+            "D. The maximum temperature difference (511\u00b0C vs. 320\u00b0C) is the primary cause of the difference in normalized gas production, and if Set B were heated to 511\u00b0C, its normalized gas production would approach 0.09 mol/Ah.",
+            "E. The presence of CO rather than CO2 in Set A emissions indicates that the NCM811 cathode undergoes oxygen release at temperatures above 500\u00b0C, creating a reducing environment that prevents CO oxidation to CO2.",
+            "F. Set A cells pose a greater acute inhalation hazard than Set B cells in an enclosed space, since CO is more immediately toxic than CO2 at comparable concentrations."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "B",
+            "C",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "The absence of CO in Set B does not mean CO is not produced as an intermediate. The evidence indicates that CO is entirely converted to CO2 in LFP cells, implying that CO is produced but subsequently oxidized. The LFP cathode stability up to 500\u00b0C allows complete oxidation of CO to CO2, whereas NCM cathodes release oxygen and decompose at lower temperatures, leaving CO unreacted.",
+              "error_type": "mechanism_misinterpretation",
+              "evidence_refs": [
+                "TR_Gasventing+67+Energies:C002"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "LFP cathode material remains stable up to 500\u00b0C, and the maximum surface temperature of Set B (320\u00b0C) is well below this threshold. This stability prevents premature oxygen release and allows complete oxidation of CO to CO2. In contrast, NCM cathodes decompose and release oxygen at lower temperatures, creating conditions where CO remains unreacted.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+67+Energies:C002"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "The normalized gas production of 0.09 mol/Ah for NCM811 vs. 0.03 mol/Ah for LFP represents a threefold difference. This difference reflects more extensive decomposition reactions in NCM cells, including cathode decomposition, electrolyte breakdown, and SEI decomposition. The comparison is valid because both are normalized by capacity and tested under identical conditions (100% SOC, same heating rate).",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+66+Energies:C001"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "The difference in normalized gas production is primarily driven by chemistry-dependent decomposition mechanisms, not solely by maximum temperature. LFP cathodes remain stable up to 500\u00b0C, meaning even if heated to 511\u00b0C, the cathode would not undergo the same oxygen-release and structural decomposition as NCM cathodes. The normalized gas production difference reflects fundamental material stability differences, not just temperature.",
+              "error_type": "causal_oversimplification",
+              "evidence_refs": [
+                "TR_Gasventing+66+Energies:C001",
+                "TR_Gasventing+67+Energies:C002"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "While NCM cathodes do release oxygen at elevated temperatures, the statement incorrectly describes the environment as 'reducing.' Oxygen release creates an oxidizing environment locally, but the high reactivity and rapid consumption of oxygen by electrolyte and anode materials, combined with incomplete combustion, results in CO remaining unreacted rather than being oxidized to CO2. The mechanism is not a reducing environment but rather kinetic limitations and oxygen depletion.",
+              "error_type": "mechanism_inversion",
+              "evidence_refs": [
+                "TR_Gasventing+67+Energies:C001",
+                "TR_Gasventing+67+Energies:C002"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "CO has an IDLH (Immediately Dangerous to Life or Health) limit of 1200 ppm, while CO2's IDLH is 40,000 ppm. Set A produces CO at 2.25 \u00d7 10^5 ppmv (225,000 ppm), which is nearly 200 times the IDLH limit. Set B produces CO2 at 1.65 \u00d7 10^5 ppmv (165,000 ppm), which is approximately 4 times the IDLH limit. CO is far more immediately toxic at these concentrations, making Set A a greater acute inhalation hazard.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+67+Energies:C001",
+                "TR_Gasventing+67+Energies:C002",
+                "TR_Gasventing+67+Energies:C003"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Chemistry-dependent gas composition and toxicity; distinguishing temperature effects from material stability effects",
+          "primary_boundary": "Separating temperature-driven behavior from chemistry-driven behavior; identifying mechanism vs. outcome; toxicity threshold reasoning",
+          "intended_error_modes": [
+            "mechanism_misinterpretation",
+            "causal_oversimplification",
+            "mechanism_inversion"
+          ],
+          "disallowed_extrapolations": [
+            "Assuming absence of CO means no CO production",
+            "Assuming temperature alone determines gas production",
+            "Confusing oxidizing and reducing environments"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A 117 Ah NCM811 prismatic cell at 50% SOC is subjected to thermal abuse under two different ambient conditions: Test 1 at room temperature (25\u00b0C) and Test 2 at elevated ambient temperature (160-250\u00b0C). In Test 1, the safety valve opens and releases gas over an extended period without triggering thermal runaway, with a maximum gas releasing rate of 0.185 mol/s. In Test 2, the safety valve opens and thermal runaway is triggered shortly afterward, with a maximum gas releasing rate of 0.374 mol/s. Total gas production in Test 2 is approximately 10% higher than in Test 1, and the characteristic venting duration in Test 2 is approximately half that of Test 1. Which of the following statements are supported by these observations?",
+          "options": [
+            "A. The elevated ambient temperature in Test 2 provides sufficient energy to trigger thermal runaway immediately upon valve opening, whereas at room temperature the cell remains thermally stable after venting.",
+            "B. The doubling of maximum gas releasing rate in Test 2 (0.374 vs. 0.185 mol/s) is primarily attributable to increased internal pressure at elevated ambient temperature, which accelerates gas ejection velocity through the valve orifice.",
+            "C. The 10% increase in total gas production in Test 2 indicates that elevated ambient temperature causes additional decomposition reactions to occur that are not active at room temperature.",
+            "D. The halving of characteristic venting duration in Test 2 is consistent with thermal runaway being triggered during venting, which accelerates gas generation and shortens the release period compared to passive venting without thermal runaway.",
+            "E. At 50% SOC and room temperature, the energy released by valve opening and electrolyte vaporization is insufficient to initiate self-sustaining exothermic decomposition, whereas elevated ambient temperature reduces the thermal margin and allows runaway to initiate.",
+            "F. The maximum gas releasing rate is a direct function of ambient temperature and is independent of whether thermal runaway is triggered, since gas flow rate depends only on pressure differential and valve geometry."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "D",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Incorrect",
+              "justification": "The statement incorrectly implies that thermal runaway is triggered 'immediately upon valve opening' in Test 2. The evidence indicates that at 50% SOC, thermal runaway is not triggered when the safety valve first opens, even at elevated ambient temperature. Instead, the elevated ambient temperature reduces thermal margin and allows thermal runaway to be triggered shortly after valve opening, not immediately upon opening. The timing distinction is important.",
+              "error_type": "temporal_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+66+Energies:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The doubling of maximum gas releasing rate is not primarily due to increased internal pressure from elevated ambient temperature. Instead, it reflects the onset of thermal runaway in Test 2, which generates gas at a much higher rate due to rapid exothermic decomposition reactions. The maximum gas releasing rate is strongly correlated with whether thermal runaway occurs, not merely with ambient temperature or initial internal pressure.",
+              "error_type": "mechanism_substitution",
+              "evidence_refs": [
+                "TR_Gasventing+66+Energies:C003",
+                "TR_Gasventing+66+Energies:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "The 10% increase in total gas production does not necessarily indicate that new decomposition reactions become active at elevated temperature. Instead, it more likely reflects that existing decomposition reactions proceed more completely or that thermal runaway (which occurs in Test 2 but not Test 1) drives more extensive decomposition of the same reactants. The increase is modest and consistent with enhanced reaction kinetics and completeness rather than activation of entirely new pathways.",
+              "error_type": "mechanistic_overclaim",
+              "evidence_refs": [
+                "TR_Gasventing+66+Energies:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "At 50% SOC and room temperature, thermal runaway is not triggered when the valve opens, leading to a long period of passive gas release and electrolyte vaporization. In contrast, at elevated ambient temperature, thermal runaway is triggered during or shortly after venting, which dramatically accelerates gas generation through exothermic decomposition. This acceleration shortens the venting duration to approximately half, consistent with the observed behavior.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+66+Energies:C004",
+                "TR_Gasventing+66+Energies:C005"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "At 50% SOC, the cell contains less stored energy than at 100% SOC. At room temperature, valve opening and electrolyte vaporization provide cooling and pressure relief, preventing thermal runaway initiation. Elevated ambient temperature (160-250\u00b0C) reduces the thermal margin by pre-heating the cell closer to decomposition thresholds, allowing self-sustaining exothermic reactions to initiate during or after venting. This is consistent with the observation that thermal runaway occurs in Test 2 but not Test 1.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Gasventing+66+Energies:C004",
+                "TR_Gasventing+66+Energies:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The maximum gas releasing rate is strongly dependent on whether thermal runaway is triggered. When thermal runaway occurs, exothermic decomposition reactions generate gas at a much higher rate than passive venting and electrolyte vaporization. The doubling of gas releasing rate in Test 2 is attributable to thermal runaway onset, not merely to ambient temperature or valve geometry. Gas flow rate depends on gas generation rate, not only on pressure differential and valve geometry.",
+              "error_type": "ignoring_dominant_mechanism",
+              "evidence_refs": [
+                "TR_Gasventing+66+Energies:C003",
+                "TR_Gasventing+66+Energies:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Regime transition from passive venting to thermal runaway; ambient temperature effect on thermal margin and runaway initiation",
+          "primary_boundary": "Distinguishing between passive venting behavior and thermal runaway-driven gas release; identifying thermal margin and initiation conditions",
+          "intended_error_modes": [
+            "temporal_overclaim",
+            "mechanism_substitution",
+            "mechanistic_overclaim",
+            "ignoring_dominant_mechanism"
+          ],
+          "disallowed_extrapolations": [
+            "Assuming valve opening immediately triggers thermal runaway",
+            "Assuming gas release rate depends only on pressure and geometry",
+            "Assuming 10% gas increase implies new reaction pathways"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A 280 Ah LFP prismatic battery module is tested at three different SOC levels (0%, 50%, 100%) under identical thermal abuse conditions. At 0% SOC, the safety valve opens but no secondary eruption occurs. At 50% and 100% SOC, a secondary eruption occurs after the initial valve opening. The maximum surface temperatures follow the order: 100% SOC > 50% SOC > 0% SOC. Explain the physical mechanism that determines whether a secondary eruption occurs, and why this mechanism is SOC-dependent. Your answer should address the role of stored energy, decomposition reaction initiation, and the relationship between valve opening and thermal runaway triggering."
+        },
+        "ground_truth": {
+          "gold_answer": "At 0% SOC, the cell contains minimal stored electrochemical energy. When the safety valve opens at approximately 160\u00b0C, the pressure relief and electrolyte vaporization provide cooling, and the limited energy available is insufficient to initiate self-sustaining exothermic decomposition reactions. Therefore, no thermal runaway occurs and no secondary eruption is observed. At 50% and 100% SOC, the cell contains significantly more stored energy in the form of lithiated anode and charged cathode. After the initial valve opening, continued external heating or internal heat generation raises the cell temperature into the thermal runaway trigger range (190-210\u00b0C for LFP at 100% SOC). At this point, exothermic decomposition reactions (SEI breakdown, electrolyte decomposition, cathode-electrolyte reactions) become self-sustaining and accelerate rapidly. This generates a large amount of gas and heat in a short period, causing a violent secondary eruption. The SOC dependence arises because higher SOC corresponds to greater stored electrochemical energy, which provides more fuel for exothermic decomposition once initiated. The severity of thermal runaway and the violence of the secondary eruption both increase with SOC, as evidenced by the maximum temperature ordering.",
+          "must_include": [
+            "Stored electrochemical energy increases with SOC",
+            "At 0% SOC, energy is insufficient to sustain exothermic decomposition after valve opening",
+            "At 50% and 100% SOC, thermal runaway is triggered after valve opening",
+            "Thermal runaway involves self-sustaining exothermic decomposition reactions",
+            "Secondary eruption is caused by rapid gas and heat generation during thermal runaway"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming valve opening directly causes thermal runaway",
+            "Claiming thermal runaway always occurs when valve opens",
+            "Ignoring the role of stored energy in determining whether thermal runaway initiates",
+            "Claiming secondary eruption is purely a pressure phenomenon unrelated to chemical reactions"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "SOC-dependent thermal runaway initiation and secondary eruption mechanism",
+          "primary_boundary": "Distinguishing between valve opening (pressure relief event) and thermal runaway initiation (chemical energy release); understanding SOC as a stored energy parameter",
+          "intended_error_modes": [
+            "Confusing valve opening with thermal runaway trigger",
+            "Ignoring stored energy role",
+            "Treating secondary eruption as purely mechanical"
+          ]
+        }
+      }
+    ]
+  }
+}

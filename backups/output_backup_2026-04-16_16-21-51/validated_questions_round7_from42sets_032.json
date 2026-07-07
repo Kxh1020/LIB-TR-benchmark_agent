@@ -1,0 +1,37 @@
+{
+  "mcqs": [],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "An LFP battery storage facility operates cells at 75% SOC. During a venting event, the released gas mixture contains ethylene, carbon monoxide, ethane, and several other species. A safety engineer proposes two actions: (1) use the explosion limit of ethylene alone as a conservative upper bound for the mixture's explosion hazard, and (2) reduce cell SOC to 110% of rated capacity to move outside the peak explosion tendency region. Evaluate the admissibility of each proposed action, identifying the specific mechanism or evidence-based limitation that supports or invalidates each proposal."
+      },
+      "ground_truth": {
+        "gold_answer": "Action 1 is not admissible. Although ethylene has the highest individual explosion propensity among BVG components under stoichiometric conditions, the explosion limits of multi-component gas mixtures cannot be approximated by the limits of any single constituent species, including the most reactive one. The mixture exhibits behavior that is not predictable from weighted or single-species extrapolation, so using ethylene's limit as a mixture proxy lacks evidentiary support and may misrepresent the actual hazard envelope. Action 2 is not admissible. The evidence shows that LFP vent gas explosion tendency peaks between 50% and 100% SOC and is actually higher in this range than at overcharged states. Operating at 110% SOC does not move the system outside the high-risk region; it moves toward or into overcharge, which the evidence indicates has lower explosion tendency than the 50–100% SOC range. However, overcharge introduces other failure risks not addressed by this evidence, so the proposal cannot be justified on explosion propensity grounds alone.",
+        "must_include": [
+          "Mixture explosion limits cannot be approximated by individual component limits including the most reactive species",
+          "Ethylene has highest individual explosion propensity but this does not transfer to mixture prediction",
+          "LFP explosion tendency peaks at 50–100% SOC, not at overcharged states",
+          "Overcharged states show lower explosion tendency than 50–100% SOC range per evidence",
+          "Action 2 is based on a reversal of the actual SOC-explosion tendency relationship"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming ethylene's individual limit is conservative for any mixture configuration",
+          "Claiming overcharge is safe based solely on lower explosion tendency relative to 50–100% SOC",
+          "Applying NCA explosion tendency data to evaluate LFP behavior",
+          "Inferring mixture flammability envelope from any single-species or weighted-species calculation"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of single-species explosion limit proxies for multi-component mixtures, and the counterintuitive SOC-explosion tendency relationship showing overcharge is not the peak risk condition for LFP.",
+        "primary_boundary": "Individual species explosion propensity rankings cannot substitute for mixture explosion limit characterization; and the peak explosion risk SOC window (50–100%) is not the overcharge regime.",
+        "intended_error_modes": [
+          "Accepting ethylene limit as conservative upper bound for mixture",
+          "Assuming overcharge is the highest explosion risk condition",
+          "Treating the SOC-explosion tendency relationship as monotonically increasing toward overcharge"
+        ]
+      }
+    }
+  ]
+}

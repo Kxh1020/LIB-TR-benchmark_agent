@@ -6,8 +6,8 @@ CHAT_COMPLETIONS_URL = "https://api.qingyuntop.top/v1/chat/completions"
 
 
 PROMPT_FILES = {
-    "learn_logic": "learn_logic_prompt.md",
-    "evidence_extract": "evidence_extract_prompt.md",
+    "learn_principle": "learn_principle_prompt.md",
+    "get_evidence": "get_evidence_prompt.md",
     "generator": "generator_prompt.md",
     "validator": "validator_prompt.md",
     "evaluation": "evaluation_prompt.md",
@@ -17,54 +17,54 @@ PROMPT_FILES = {
 
 DATA_PATHS = {
     "data_dir": PROJECT_ROOT / "data",
-    "human_questions": PROJECT_ROOT / "data" / "human_questions.txt",
+    "human_questions": PROJECT_ROOT / "data" / "human_questions.json",
     "output_dir": PROJECT_ROOT / "output",
     "prompts_dir": PROJECT_ROOT / "prompts",
 }
 
 
-"""敏感apikey"""
+
 STAGE_CONFIG = {
-    "learn_logic": {
+    "learn_principle": {
         "provider": "openai",
         "base_url": "https://api.qingyuntop.top/v1/chat/completions",
-        "api_key": "YOUR_API_KEY",
-        "model_name": "gpt-5.2",
-        "temperature": 0.2,
+        "api_key": "sk-tnANfHE6FAX4Jjwq6ROMHNVDpzdzDQXzm9Fog8mfFqyypM0c",
+        "model_name": "claude-sonnet-4-6",
+        "temperature": 0.8,
     },
-    "evidence_extract": {
+    "get_evidence": {
         "provider": "openai",
         "base_url": "https://api.qingyuntop.top/v1/chat/completions",
-        "api_key": "YOUR_API_KEY",
-        "model_name": "gpt-5.2",
-        "temperature": 0.2,
+        "api_key": "sk-tnANfHE6FAX4Jjwq6ROMHNVDpzdzDQXzm9Fog8mfFqyypM0c",
+        "model_name": "claude-sonnet-4-6",
+        "temperature": 0.8,
     },
     "generator": {
         "provider": "openai",
         "base_url": "https://api.qingyuntop.top/v1/chat/completions",
-        "api_key": "YOUR_API_KEY",
-        "model_name": "gpt-5.2",
+        "api_key": "sk-tnANfHE6FAX4Jjwq6ROMHNVDpzdzDQXzm9Fog8mfFqyypM0c",
+        "model_name": "claude-sonnet-4-6",
         "temperature": 0.6,
     },
     "validator": {
         "provider": "openai",
         "base_url": "https://api.qingyuntop.top/v1/chat/completions",
-        "api_key": "YOUR_API_KEY",
+        "api_key": "sk-JQAQ6dDXG5YDnXePYMrb22qNhIdcHzdqBUbJk6mnnYLIpxjn",
         "model_name": "gpt-5.2",
         "temperature": 0.2,
     },
     "evaluation": {
         "provider": "openai",
         "base_url": "https://api.qingyuntop.top/v1/chat/completions",
-        "api_key": "YOUR_API_KEY",
+        "api_key": "sk-JQAQ6dDXG5YDnXePYMrb22qNhIdcHzdqBUbJk6mnnYLIpxjn",
         "model_name": "gpt-5.2",
         "temperature": 0.2,
     },
     "judger": {
         "provider": "openai",
         "base_url": "https://api.qingyuntop.top/v1/chat/completions",
-        "api_key": "YOUR_API_KEY",
-        "model_name": "gpt-5.2",
+        "api_key": "sk-JQAQ6dDXG5YDnXePYMrb22qNhIdcHzdqBUbJk6mnnYLIpxjn",
+        "model_name": "gpt-4o",
         "temperature": 0.2,
     },
 }

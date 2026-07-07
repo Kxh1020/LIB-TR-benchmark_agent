@@ -1,0 +1,319 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A 27 Ah NCM/graphite polymer lithium-ion cell is externally heated under controlled conditions. At 25% SOC, the cell reaches a maximum average surface temperature near 90°C with a peak temperature rate of 0.66°C/s and does not exhibit violent venting. At 100% SOC, the same heating protocol produces a maximum internal pressure of 1.39 MPa and a venting rate of 7.2 m/s. Which of the following conclusions are admissible from these observations?",
+        "options": [
+          "A. The 25% SOC cell's failure to reach violent venting is consistent with insufficient stored energy to sustain the exothermic reaction cascade required for thermal runaway onset under this heating protocol.",
+          "B. The internal pressure at 100% SOC is approximately ten times that at 25% SOC, indicating that the pressure-SOC relationship is linear across the full range.",
+          "C. The 0.66°C/s temperature rate observed at 25% SOC is near the threshold commonly associated with thermal runaway onset, yet the cell did not exhibit violent thermal runaway, indicating this rate alone is not sufficient to confirm runaway under all conditions.",
+          "D. Because the 25% SOC cell reached 90°C without violent venting, external heating to 90°C can be considered a safe operating limit for this cell chemistry regardless of SOC.",
+          "E. The monotonic increase in maximum internal pressure with SOC implies that the gas generation reactions driving pressure buildup are more active at higher states of charge.",
+          "F. The venting rate difference between 25% SOC and 100% SOC confirms that the vent valve opening pressure is SOC-dependent."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The 25% SOC cell's low surface temperature and absence of violent venting are consistent with insufficient stored electrochemical energy to drive runaway under this protocol.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+152+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Pressure values (0.14, 0.29, 0.53, 1.39 MPa) show a strongly nonlinear, accelerating increase with SOC, not a linear relationship.",
+            "error_type": "numerical_exaggeration_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+152+Process_Safety_and_Environmental_Protection:C001"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence explicitly notes 0.66°C/s is near the thermal runaway onset threshold, yet violent runaway did not occur, supporting a conditional rather than deterministic interpretation of this rate.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+152+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The 90°C non-runaway outcome applies only at 25% SOC; extrapolating this as a universal safe limit ignores the strong SOC dependence of internal pressure and heat release.",
+            "error_type": "condition_violation_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+152+Process_Safety_and_Environmental_Protection:C001",
+              "TR_Gasventing+152+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Monotonically increasing maximum internal pressure with SOC is consistent with greater gas-generating reaction activity at higher charge states, a minimal engineering implication of the pressure trend.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+152+Process_Safety_and_Environmental_Protection:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Venting rate differences reflect gas generation intensity and internal pressure magnitude, not necessarily a SOC-dependent vent valve opening pressure, which is a mechanical design parameter.",
+            "error_type": "causal_overclaim_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+152+Process_Safety_and_Environmental_Protection:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of conclusions about SOC-dependent pressure, venting, and thermal runaway threshold behavior",
+        "primary_boundary": "The 25% SOC non-runaway outcome is condition-specific and cannot be generalized as a safe temperature limit; the pressure-SOC relationship is nonlinear, not linear",
+        "intended_error_modes": [
+          "numerical_exaggeration",
+          "condition_violation_overgeneralization",
+          "causal_overclaim"
+        ],
+        "disallowed_extrapolations": [
+          "Linear pressure-SOC extrapolation",
+          "Universal safe temperature limit from single SOC observation",
+          "Vent valve opening pressure as SOC-dependent from venting rate data alone"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "During external heating tests on 27 Ah NCM/graphite polymer cells, a secondary ignition device is activated at 100% SOC. Without secondary ignition, the maximum heat release rate at 100% SOC is 5.54 kW and the venting rate is 7.2 m/s. With secondary ignition, the heat release rate rises to 73.3 kW and the venting rate increases to 9.4 m/s. The FED value for asphyxiant gases at 100% SOC is 0.033. An engineer must assess the hazard change introduced by secondary ignition. Which statements are admissible?",
+        "options": [
+          "A. Secondary ignition increases the heat release rate by more than an order of magnitude relative to the non-ignition case at 100% SOC, representing a qualitatively different hazard regime rather than a proportional escalation.",
+          "B. The modest increase in venting rate from 7.2 m/s to 9.4 m/s with secondary ignition suggests that gas generation volume is not substantially altered by ignition, even though the thermal hazard is dramatically amplified.",
+          "C. Because the FED value at 100% SOC is 0.033, secondary ignition does not meaningfully change the asphyxiant toxicity hazard since FED remains below 1.0 in both cases.",
+          "D. The increase in venting rate with secondary ignition confirms that ignition directly increases the rate of electrochemical decomposition reactions inside the cell.",
+          "E. The data support that at 100% SOC, the dominant hazard shift introduced by secondary ignition is thermal rather than mechanical or asphyxiant, based on the relative magnitudes of the changes observed.",
+          "F. Without secondary ignition, the 100% SOC heat release rate of 5.54 kW is lower than the 73.3 kW case, so the non-ignition scenario can be considered safe for nearby personnel in all enclosure configurations."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "73.3 kW vs 5.54 kW is a greater than tenfold increase, supporting a qualitatively different hazard regime, not merely a proportional scaling.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+152+Process_Safety_and_Environmental_Protection:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Venting rate increases only from 7.2 to 9.4 m/s (about 30%) while heat release increases over tenfold, indicating gas volume generation is relatively stable while combustion energy is dramatically amplified.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+152+Process_Safety_and_Environmental_Protection:C002",
+              "TR_Gasventing+152+Process_Safety_and_Environmental_Protection:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The FED value of 0.033 reflects asphyxiant gas concentration from the cell itself; secondary ignition may alter combustion products and local oxygen depletion in enclosures, which is not captured by this cell-level FED alone.",
+            "error_type": "scope_expansion_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+152+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The modest venting rate increase with ignition is more consistent with combustion-driven gas dynamics than with enhanced internal electrochemical decomposition; the evidence does not support ignition increasing internal decomposition rate.",
+            "error_type": "causal_overclaim_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+152+Process_Safety_and_Environmental_Protection:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The heat release rate increases by over 13-fold while venting rate increases by about 30%, supporting thermal hazard as the dominant shift introduced by secondary ignition.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+152+Process_Safety_and_Environmental_Protection:C002",
+              "TR_Gasventing+152+Process_Safety_and_Environmental_Protection:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "5.54 kW without ignition is still a significant heat release; declaring it safe in all enclosure configurations is an unsupported system-level generalization from a single open-condition cell test.",
+            "error_type": "scope_expansion_system_level_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+152+Process_Safety_and_Environmental_Protection:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Hazard regime shift introduced by secondary ignition: distinguishing thermal vs. mechanical vs. asphyxiant hazard changes",
+        "primary_boundary": "Venting rate change is modest while heat release change is dramatic; FED is a cell-level metric not directly applicable to enclosure-level asphyxiant hazard with ignition",
+        "intended_error_modes": [
+          "scope_expansion",
+          "causal_overclaim",
+          "measurement_scope_distractor"
+        ],
+        "disallowed_extrapolations": [
+          "Ignition increases internal decomposition rate",
+          "FED below 1.0 guarantees safe asphyxiant conditions in all configurations",
+          "Non-ignition scenario universally safe"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A safety engineer compares gas venting hazard across four SOC levels (25%, 50%, 75%, 100%) for the same cell type under identical external heating. The FED for asphyxiant gases at 25% SOC is 0.002, rising to 0.033 at 100% SOC. The maximum venting rate at 25% SOC is 0.9 m/s versus 7.2 m/s at 100% SOC. The 25% SOC cell did not exhibit violent venting. The engineer proposes that operating cells below 50% SOC eliminates meaningful asphyxiant risk in open environments. Which evaluation of this proposal is most defensible?",
+        "options": [
+          "A. The proposal is supported because the FED at 25% SOC is 0.002, which is negligible, and the cell did not exhibit violent venting, confirming that low-SOC operation removes both mechanical and toxic gas hazards.",
+          "B. The proposal overstates the conclusion: while FED values at low SOC are substantially lower, the evidence characterizes open-condition cell-level measurements and does not establish that enclosed or poorly ventilated environments would remain below harmful thresholds.",
+          "C. The proposal is undermined because the FED increase from 25% to 50% SOC is already an order of magnitude, suggesting that even 50% SOC cannot be considered low-risk for asphyxiant exposure.",
+          "D. The proposal is partially defensible for mechanical venting hazard reduction but is not admissible as a claim about asphyxiant safety without specifying the enclosure volume and ventilation rate.",
+          "E. The proposal is fully defensible because all FED values across all SOC levels remain below 1.0, which is the threshold for incapacitation.",
+          "F. The absence of violent venting at 25% SOC confirms that no toxic gases are generated at that SOC, supporting the engineer's proposal."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "The low FED and absence of violent venting at 25% SOC are cell-level open-condition results; concluding both mechanical and toxic hazards are eliminated in all environments overgeneralizes the evidence scope.",
+            "error_type": "scope_expansion_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+152+Process_Safety_and_Environmental_Protection:C004",
+              "TR_Gasventing+152+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "FED measurements are cell-level open-condition values; enclosure effects on gas accumulation are not captured, making the proposal inadmissible as a general asphyxiant safety claim.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+152+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "FED rises from 0.002 to 0.022 between 25% and 50% SOC, which is about an order of magnitude, but this does not by itself make 50% SOC high-risk; the absolute values remain very low in open conditions.",
+            "error_type": "numerical_exaggeration_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+152+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Venting rate reduction with lower SOC supports reduced mechanical hazard, but asphyxiant safety requires enclosure and ventilation context not provided by cell-level FED data alone.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+152+Process_Safety_and_Environmental_Protection:C003",
+              "TR_Gasventing+152+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "All cell-level FED values being below 1.0 does not guarantee safety in enclosed environments where gases can accumulate beyond cell-level concentrations.",
+            "error_type": "scope_expansion_conservative_but_wrong",
+            "evidence_refs": [
+              "TR_Gasventing+152+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Absence of violent venting does not mean zero toxic gas generation; it means insufficient energy to drive violent venting. Some gas release may still occur at low SOC.",
+            "error_type": "causal_overclaim_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+152+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of a low-SOC operational safety proposal for asphyxiant and mechanical venting hazard",
+        "primary_boundary": "Cell-level open-condition FED values cannot be directly applied to enclosed environments; mechanical and asphyxiant hazard reductions are separable claims with different evidence bases",
+        "intended_error_modes": [
+          "scope_expansion",
+          "measurement_scope_distractor",
+          "causal_overclaim",
+          "conservative_but_wrong"
+        ],
+        "disallowed_extrapolations": [
+          "FED below 1.0 guarantees safe asphyxiant conditions in all environments",
+          "Absence of violent venting implies absence of toxic gas generation"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "For a 27 Ah NCM/graphite polymer lithium-ion cell under external heating, the maximum internal pressure increases from 0.14 MPa at 25% SOC to 1.39 MPa at 100% SOC, while the maximum heat release rate without secondary ignition increases from 1.45 kW at 50% SOC to 5.54 kW at 100% SOC. With secondary ignition at 100% SOC, the heat release rate rises to 73.3 kW. The FED for asphyxiant gases at 100% SOC is 0.033, compared to 0.002 at 25% SOC. A process safety engineer must characterize the relative contributions of mechanical pressure, thermal, and asphyxiant hazards across the SOC range and explain how secondary ignition changes the hazard profile. What conclusions are admissible, and what are the key limitations of the available data for making system-level safety recommendations?"
+      },
+      "ground_truth": {
+        "gold_answer": "Admissible conclusions: (1) Mechanical pressure hazard increases nonlinearly and steeply with SOC, with the 100% SOC pressure nearly ten times that at 25% SOC, indicating that high-SOC operation presents a qualitatively more severe pressure hazard. (2) Thermal hazard without secondary ignition scales moderately with SOC, but secondary ignition at 100% SOC introduces a greater-than-tenfold amplification of heat release rate, shifting the dominant hazard from pressure-mechanical to thermal-combustion. (3) Asphyxiant hazard as measured by FED increases with SOC but remains at very low absolute values across all tested conditions in open environments, suggesting it is the least dominant hazard at the cell level under these test conditions. (4) The 25% SOC cell does not reach violent thermal runaway under this heating protocol, indicating a threshold-like behavior where below a certain SOC, the stored energy is insufficient to sustain runaway. Key limitations: FED values are cell-level open-condition measurements and cannot be directly applied to enclosed environments where gas accumulation may reach harmful concentrations. The heat release and pressure data characterize individual cell behavior; system-level hazard in a module or pack configuration would require accounting for propagation, confinement, and ventilation, none of which are addressed by these cell-level measurements. Secondary ignition conditions may not be representative of all deployment scenarios.",
+        "must_include": [
+          "Nonlinear increase in pressure with SOC",
+          "Secondary ignition causes greater-than-tenfold increase in heat release rate",
+          "FED values are low in absolute terms under open conditions but cannot be generalized to enclosed environments",
+          "25% SOC does not reach violent thermal runaway, indicating a threshold behavior",
+          "Cell-level data cannot be directly extrapolated to module or pack system-level hazard without accounting for confinement and propagation"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming FED below 1.0 guarantees safety in all environments",
+          "Claiming secondary ignition increases internal electrochemical decomposition rate",
+          "Claiming 25% SOC operation eliminates all toxic gas hazard",
+          "Extrapolating cell-level heat release directly to system-level fire hazard without qualification"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Integrated multi-hazard characterization across SOC range and secondary ignition condition, with admissibility boundaries on system-level generalization",
+        "primary_boundary": "Cell-level measurements under open conditions cannot be directly applied to enclosed system-level safety assessments; secondary ignition shifts dominant hazard type rather than uniformly amplifying all hazards",
+        "intended_error_modes": [
+          "scope_expansion to system level",
+          "treating FED as universally safe below 1.0",
+          "attributing ignition effects to internal electrochemical changes",
+          "ignoring threshold behavior at low SOC"
+        ]
+      }
+    }
+  ]
+}

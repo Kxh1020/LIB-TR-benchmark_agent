@@ -1,0 +1,330 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An NMC-811 21700 cell undergoes thermal abuse testing at 25% SoC and again at 100% SoC in identical N2 atmospheres. A gas detection system is positioned to monitor composition from the first venting event onward. An engineer reviews the gas composition data from the safety venting phase only and concludes that H2 detection could serve as an early warning signal distinguishing high-SoC cells from low-SoC cells during this phase. Which of the following statements about this conclusion and the underlying gas behavior are supported by the evidence?",
+        "options": [
+          "A. The conclusion is not admissible because H2 is absent during safety venting regardless of SoC, eliminating its diagnostic value in that phase.",
+          "B. CH4 concentration during safety venting increases with SoC and is consistently the dominant species, making it a more evidence-supported candidate for SoC-dependent early warning than H2.",
+          "C. The absence of H2 during safety venting but its strong SoC-dependent presence during thermal runaway means H2 detection marks the transition between the two phases rather than differentiating SoC within the venting phase.",
+          "D. Because total gas volume during thermal runaway is 3–5 times higher at 100% SoC than at 25% SoC, H2 dilution effects during safety venting suppress its detectability at all SoC levels.",
+          "E. CO2 is the preferred SoC indicator during safety venting because it is the second most abundant species and its concentration also increases with SoC.",
+          "F. The detection window between safety venting onset and thermal runaway is shorter at high SoC, which compounds the limitation of using H2 as an early warning signal during the venting phase.",
+          "G. CH4 and H2 are both consistently present during safety venting, but only H2 shows a strong enough SoC dependence to serve as a reliable discriminator."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "H2 is not detected during safety venting at any SoC, directly invalidating its use as a venting-phase SoC discriminator.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+123+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "CH4 is the most abundant gas during safety venting and its concentration rises with SoC, making it the evidence-supported SoC-sensitive species in that phase.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+123+Journal_of_Power_Sources:C001"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "H2 absence during venting and strong SoC-dependent presence during thermal runaway means H2 onset signals phase transition, not intra-venting SoC differentiation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+123+Journal_of_Power_Sources:C002",
+              "TR_Gasventing+123+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The 3–5 fold volume increase applies to total thermal runaway gas, not to safety venting; invoking dilution to explain H2 absence during venting is mechanistically unsupported.",
+            "error_type": "Mechanism substitution / scope expansion distractor",
+            "evidence_refs": [
+              "TR_Gasventing+123+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "CO2 concentrations during safety venting are far smaller than CH4 and the evidence does not support CO2 as a preferred SoC indicator over CH4.",
+            "error_type": "Causal overclaim / rank misattribution",
+            "evidence_refs": [
+              "TR_Gasventing+123+Journal_of_Power_Sources:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Shorter detection windows at high SoC further reduce the practical utility of any species that appears only at or after thermal runaway onset, compounding H2's limitation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+123+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "H2 is not detected during safety venting at any SoC; the premise that both species are present in that phase is false.",
+            "error_type": "Condition violation distractor",
+            "evidence_refs": [
+              "TR_Gasventing+123+Journal_of_Power_Sources:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of H2 as a venting-phase SoC discriminator versus CH4, and the phase-transition diagnostic role of H2 onset.",
+        "primary_boundary": "H2 is absent during safety venting at all SoC; its SoC dependence exists only during thermal runaway.",
+        "intended_error_modes": [
+          "Conflating safety venting phase with thermal runaway phase for H2 behavior",
+          "Applying total gas volume scaling to explain species absence during venting",
+          "Misranking CO2 over CH4 as SoC indicator"
+        ],
+        "disallowed_extrapolations": [
+          "Assuming H2 dilution by larger gas volumes explains its absence during venting",
+          "Generalizing SoC-dependent H2 trend from thermal runaway to safety venting phase"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery management system designer is evaluating whether a gas-triggered safety response can provide adequate intervention time for NMC-811 21700 cells across the full SoC operating range. The system is designed to trigger on first detectable gas release. The designer assumes that higher SoC cells produce more gas and therefore provide a stronger, easier-to-detect signal, translating to a longer effective warning window. Which of the following conclusions about this assumption are admissible?",
+        "options": [
+          "A. The assumption is flawed: although higher SoC cells produce more gas during safety venting, the time between first gas detection and thermal runaway onset is shorter at higher SoC, not longer.",
+          "B. The assumption is partially valid: greater gas volume at high SoC does improve signal detectability, but the net warning window is still shorter at high SoC because thermal runaway threshold temperatures drop with increasing SoC.",
+          "C. The assumption is consistent with the evidence because total gas volume scales 3–5 fold from 25% to 100% SoC, and a larger volume signal inherently allows earlier detection.",
+          "D. At 5% SoC, the detection window is approximately 120 seconds longer than at 100% SoC, which means a system calibrated on high-SoC behavior will underestimate available response time at low SoC.",
+          "E. The SoC dependence of the warning window is driven primarily by the difference in threshold temperatures for safety venting and thermal runaway, not by the magnitude of gas volume produced.",
+          "F. Because CH4 is the dominant species at all SoC levels, a CH4-specific sensor will provide equivalent warning windows regardless of SoC."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Higher SoC shortens the venting-to-thermal-runaway window despite producing more gas; the designer's assumption conflates signal strength with available response time.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+123+Journal_of_Power_Sources:C005",
+              "TR_Gasventing+123+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Signal detectability may improve with volume, but the governing factor for window duration is the thermal threshold gap, which narrows at high SoC, making the net window shorter.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+123+Journal_of_Power_Sources:C005",
+              "TR_Gasventing+123+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Volume scaling improves signal amplitude but does not extend the temporal window; the window is governed by threshold temperatures, not gas volume.",
+            "error_type": "Causal overclaim: volume magnitude conflated with temporal warning window",
+            "evidence_refs": [
+              "TR_Gasventing+123+Journal_of_Power_Sources:C004",
+              "TR_Gasventing+123+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The ~120 s difference is between 100% and 5% SoC, not 100% and 25% SoC; the direction is correct but the comparison boundary is misattributed, and the system calibration inference is unsupported.",
+            "error_type": "Numerical boundary misattribution and unsupported system-level inference",
+            "evidence_refs": [
+              "TR_Gasventing+123+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The evidence explicitly attributes window duration to threshold temperature differences for venting and thermal runaway, not to gas volume produced.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+123+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "CH4 dominance across SoC levels does not equate to equivalent warning windows; the window duration is set by thermal thresholds, not sensor species selectivity.",
+            "error_type": "Mechanism substitution: species dominance conflated with temporal window equivalence",
+            "evidence_refs": [
+              "TR_Gasventing+123+Journal_of_Power_Sources:C001",
+              "TR_Gasventing+123+Journal_of_Power_Sources:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Relationship between gas volume magnitude, signal detectability, and temporal warning window across SoC; governing mechanism for window duration.",
+        "primary_boundary": "Gas volume governs signal amplitude; thermal threshold gap governs temporal window. These are independent quantities.",
+        "intended_error_modes": [
+          "Conflating larger gas volume with longer warning window",
+          "Misidentifying the SoC boundary for the 120 s difference",
+          "Assuming species dominance implies window equivalence"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring that larger gas volume necessarily enables earlier detection in absolute time",
+          "Applying the 120 s figure to a 25%-to-100% SoC comparison"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Two NMC-811 21700 cells are driven to thermal runaway under identical heating conditions, one in an air atmosphere and one in a N2 atmosphere, both at 100% SoC. A researcher observes that the N2 test produces substantially more total gas than the air test at the same SoC. The researcher proposes that this difference is caused by combustion reactions consuming gas species in the air environment. Separately, the researcher notes that H2 concentration during thermal runaway is strongly SoC-dependent. Which of the following judgments about these two observations are admissible?",
+        "options": [
+          "A. The atmosphere-dependent gas volume difference is consistent with combustion consuming gas in air, but the evidence does not isolate combustion as the exclusive mechanism for the difference.",
+          "B. The SoC dependence of H2 during thermal runaway cannot be attributed to safety venting behavior because H2 is absent during safety venting at all SoC levels.",
+          "C. Because total gas volume in N2 at 100% SoC is approximately 6.5 L versus 3.9 L in air at the same SoC, the difference confirms that oxygen actively participates in reactions that reduce net gas output.",
+          "D. The strong SoC dependence of H2 during thermal runaway implies that H2 is also SoC-dependent during safety venting, since the same electrochemical state governs both events.",
+          "E. The 3–5 fold SoC-driven increase in total gas volume observed in both atmospheres indicates that SoC is a more dominant factor in total gas production than atmosphere composition.",
+          "F. H2 concentration during thermal runaway rising from 0.20% at 5% SoC to 12.9% at 100% SoC represents a monotonic trend, but this trend cannot be extrapolated to predict H2 behavior during the safety venting phase."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The air-N2 volume difference is consistent with combustion consumption, but the evidence does not rule out other atmosphere-dependent pathways; admissibility requires acknowledging this boundary.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+123+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "H2 absence during safety venting is confirmed across all SoC; its thermal runaway SoC dependence reflects a different reaction regime and cannot be back-attributed to the venting phase.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+123+Journal_of_Power_Sources:C002",
+              "TR_Gasventing+123+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "While the volume numbers are correct, concluding that oxygen 'actively participates' is a causal overclaim; the evidence supports a correlation but not a mechanistic isolation of oxygen participation.",
+            "error_type": "Causal overclaim from comparative observation",
+            "evidence_refs": [
+              "TR_Gasventing+123+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "SoC governing electrochemical state does not imply H2 appears during safety venting; the evidence explicitly shows H2 is absent during that phase regardless of SoC.",
+            "error_type": "Condition violation: applying thermal runaway SoC trend to venting phase",
+            "evidence_refs": [
+              "TR_Gasventing+123+Journal_of_Power_Sources:C002",
+              "TR_Gasventing+123+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The evidence shows SoC drives a 3–5 fold increase in both atmospheres, but ranking SoC as 'more dominant' than atmosphere requires a controlled comparison the evidence does not directly provide.",
+            "error_type": "Unsupported comparative dominance claim across independent variables",
+            "evidence_refs": [
+              "TR_Gasventing+123+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The H2 SoC trend during thermal runaway is supported and monotonic within the evidence; extrapolating it to the venting phase is inadmissible given confirmed H2 absence during venting.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+123+Journal_of_Power_Sources:C003",
+              "TR_Gasventing+123+Journal_of_Power_Sources:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Phase-specific gas behavior boundaries; admissibility of causal claims from comparative atmosphere data; cross-phase extrapolation of SoC-dependent H2 trends.",
+        "primary_boundary": "H2 SoC dependence is phase-specific (thermal runaway only); atmosphere-volume correlation does not isolate mechanism; SoC dominance ranking requires controlled comparison.",
+        "intended_error_modes": [
+          "Extrapolating thermal runaway H2 SoC trend to safety venting phase",
+          "Overclaiming oxygen participation mechanism from volume difference",
+          "Asserting SoC dominance over atmosphere without controlled comparison"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring H2 presence during safety venting from its thermal runaway SoC dependence",
+          "Claiming oxygen consumption is the exclusive explanation for air-N2 volume difference"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "An engineer is designing a passive gas-triggered safety interlock for NMC-811 21700 cells that must function reliably across the full SoC operating range (5% to 100%). The interlock triggers on detection of a threshold concentration of a target gas species during the safety venting phase. The engineer is choosing between CH4 and H2 as the trigger species and must also account for how the available response time after trigger varies with SoC. Explain which species is admissible as a trigger for the venting phase, identify the mechanism governing the SoC dependence of available response time after trigger, and describe the safety design implication of operating at high versus low SoC."
+      },
+      "ground_truth": {
+        "gold_answer": "CH4 is the admissible trigger species for the safety venting phase because it is consistently present and is the most abundant gas across all SoC levels during safety venting. H2 is not admissible as a venting-phase trigger because it is absent during safety venting at all tested SoC levels; H2 only appears during thermal runaway, so a H2-triggered interlock would not activate during the venting phase at all. The SoC dependence of available response time is governed by the threshold temperatures for safety venting onset and thermal runaway onset: both thresholds decrease with increasing SoC, and the gap between them narrows, compressing the time window between first gas detection and thermal runaway. At 100% SoC this window is approximately 142 seconds versus approximately 262 seconds at 5% SoC, a difference of about 120 seconds. The design implication is that the interlock must be calibrated to the worst-case condition, which is high SoC, because the response time available after CH4 detection is shortest there. A system calibrated only on low-SoC behavior would overestimate available response time at high SoC and may fail to actuate protective measures before thermal runaway initiates.",
+        "must_include": [
+          "CH4 is the correct trigger species for the safety venting phase",
+          "H2 is absent during safety venting at all SoC levels and therefore inadmissible as a venting-phase trigger",
+          "Available response time decreases with increasing SoC",
+          "The window compression is caused by decreasing threshold temperatures for both safety venting and thermal runaway with increasing SoC",
+          "High SoC represents the worst-case condition for interlock design due to shortest response window"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming H2 can serve as an early warning during safety venting at any SoC",
+          "Inferring that larger gas volume at high SoC compensates for the shorter response window",
+          "Asserting that CH4 concentration magnitude alone determines response window duration",
+          "Recommending a specific threshold concentration value not provided by the evidence"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Species admissibility for venting-phase detection; mechanism governing SoC-dependent response window; design calibration implication of window asymmetry.",
+        "primary_boundary": "H2 phase boundary (absent during venting, present during thermal runaway); thermal threshold gap as the governing mechanism for window duration rather than gas volume.",
+        "intended_error_modes": [
+          "Selecting H2 based on its strong SoC dependence during thermal runaway without recognizing its venting-phase absence",
+          "Attributing response window duration to gas volume rather than thermal threshold gap",
+          "Calibrating interlock to low-SoC conditions and assuming it covers high-SoC scenarios"
+        ]
+      }
+    }
+  ]
+}

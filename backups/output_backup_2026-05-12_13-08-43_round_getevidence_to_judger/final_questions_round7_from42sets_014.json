@@ -1,0 +1,99 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An energy storage container explosion scenario is modeled. Overpressure measurements at multiple distances show that sensors on the door side record values near or above 4.8 kPa at approximately 10 m, while sensors on the pressure relief panel side record values below this threshold at comparable distances. The 4.8 kPa value is used as the minimum structural damage threshold. A risk engineer compares hazard zones on each side of the container. Which conclusions are admissible?",
+        "options": [
+          "A. The door side presents greater structural damage risk at equivalent distances than the pressure relief panel side, based on the differential overpressure distribution.",
+          "B. The asymmetric overpressure distribution implies that the pressure relief panels are more effective at directing explosive energy away from the panel side than the door mechanism.",
+          "C. A location 10 m from the container on the door side is within the minimum damage zone, while an equivalent location on the panel side is outside it.",
+          "D. Because the door opens at a higher pressure threshold than the relief panels, the door side accumulates more energy before venting, which is consistent with higher far-field overpressure on that side.",
+          "E. The 4.8 kPa damage threshold establishes that any overpressure below this value at any distance poses zero structural risk to personnel or equipment.",
+          "F. The spatial asymmetry in overpressure distribution means that a single symmetric safety exclusion zone around the container would underestimate risk on the door side."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence directly states door side risk is higher than relief panel side based on measured overpressure distribution.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+130+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence shows lower overpressure on panel side but does not establish that panels actively redirect energy; lower threshold venting is the supported mechanism.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+130+Journal_of_Power_Sources:C004",
+              "TR_Gasventing+130+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence shows door-side sensors near 4.8 kPa at ~10 m while panel-side sensors are below threshold, directly supporting this spatial distinction.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+130+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Door opens at 20 kPa vs. panels at 3 kPa; higher threshold means more energy accumulates before door vents, consistent with higher far-field overpressure on door side.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+130+Journal_of_Power_Sources:C004",
+              "TR_Gasventing+130+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "4.8 kPa is a minimum damage threshold, not a zero-risk boundary; sub-threshold values may still present risk and the evidence does not support a zero-risk claim.",
+            "error_type": "protective_mechanism_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+130+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Asymmetric overpressure distribution means symmetric exclusion zones would underprotect on the door side, a direct safety implication of the spatial data.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+130+Journal_of_Power_Sources:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Asymmetric hazard zone derivation from differential venting threshold and overpressure distribution",
+        "primary_boundary": "Higher door threshold causes energy accumulation before venting, producing asymmetric far-field overpressure; symmetric exclusion zones are therefore inadmissible",
+        "intended_error_modes": [
+          "attributing panel-side safety to active energy redirection rather than earlier venting",
+          "treating minimum damage threshold as zero-risk boundary",
+          "applying symmetric safety zones to asymmetric hazard data"
+        ],
+        "disallowed_extrapolations": [
+          "Zero-risk inference below 4.8 kPa",
+          "Active directional energy control by relief panels without supporting mechanism evidence"
+        ]
+      }
+    }
+  ],
+  "short_answers": []
+}

@@ -1,0 +1,317 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An NCM622 battery module operates in a closed enclosure. An engineer observes that reducing SOC from 100% to 50% simultaneously increases average propagation time between cells and shifts gas composition toward higher CO2 fraction with sharply reduced CO and C2H4. The engineer must assess which conclusions about the hazard profile at 50% SOC are defensible. Which of the following statements are supported by this evidence?",
+        "options": [
+          "A. The increase in propagation time at 50% SOC indicates the thermal energy available to trigger adjacent cells is reduced, but this does not mean the flammability hazard of the vented gas is proportionally reduced.",
+          "B. The shift toward higher CO2 and lower CO at 50% SOC implies that the combustion reactions within the cell are more complete, making the vented gas mixture less flammable than at 100% SOC.",
+          "C. Because total gas moles decrease substantially from 100% to 50% SOC, the explosive limit range of the mixed gas at 50% SOC remains approximately 5 times that of methane.",
+          "D. The reduction in C2H4 content with decreasing SOC is consistent with reduced availability of electrolyte decomposition pathways, but the CO2 increase alone cannot confirm complete suppression of ignition risk.",
+          "E. At 50% SOC in a closed space, propagation between cells is slower but still occurs, so the module cannot be considered safe from thermal runaway propagation at this charge level.",
+          "F. The observed gas composition shift at lower SOC is sufficient to conclude that the vented gas mixture at 50% SOC falls entirely outside the flammable range."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Propagation time increase reflects reduced thermal driving force; gas flammability depends on composition, not propagation rate alone.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+153+Process_Safety_and_Environmental_Protection:C004",
+              "TR_Gasventing+153+Process_Safety_and_Environmental_Protection:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Higher CO2 fraction does not indicate more complete combustion inside the cell; it reflects changed reaction pathways. Flammability conclusion is unsupported.",
+            "error_type": "causal overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+153+Process_Safety_and_Environmental_Protection:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The ~5x explosive limit range relative to CH4 is stated only for SOC above 50%; applying it to 50% SOC violates the stated threshold condition.",
+            "error_type": "condition violation distractor",
+            "evidence_refs": [
+              "TR_Gasventing+153+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "C2H4 reduction is consistent with reduced decomposition pathways; CO2 increase alone is insufficient to confirm full ignition suppression without flammability data.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+153+Process_Safety_and_Environmental_Protection:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Evidence states no propagation below 25% SOC; at 50% SOC propagation still occurs, only more slowly. The module is not safe from propagation at 50%.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+153+Process_Safety_and_Environmental_Protection:C001",
+              "TR_Gasventing+153+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Gas composition shift is described but no evidence places the 50% SOC mixture entirely outside the flammable range; this is an unsupported extrapolation.",
+            "error_type": "scope expansion distractor",
+            "evidence_refs": [
+              "TR_Gasventing+153+Process_Safety_and_Environmental_Protection:C003",
+              "TR_Gasventing+153+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of hazard conclusions at intermediate SOC given composition and propagation evidence",
+        "primary_boundary": "The ~5x explosive limit range applies only above 50% SOC; propagation suppression threshold is below 25% SOC, not at 50%",
+        "intended_error_modes": [
+          "condition violation on explosive limit claim",
+          "causal overclaim linking CO2 increase to flammability suppression",
+          "scope expansion declaring gas non-flammable"
+        ],
+        "disallowed_extrapolations": [
+          "Applying the 5x explosive limit range to 50% SOC",
+          "Concluding 50% SOC is safe from propagation",
+          "Inferring complete flammability elimination from composition shift"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery storage facility engineer is evaluating three cell chemistries—LFP, NTM (sodium-ion), and NCM—for a thermally sensitive installation. Available data: NTM has the lowest activation energy among the three; NTM and LFP have nearly identical TNT-equivalent energy release during thermal runaway; NCM releases approximately 2.2 times more TNT-equivalent energy than NTM; NTM's self-accelerating decomposition temperature (SADT) increases most steeply with improved surface cooling among the three types. Which conclusions are defensible for this installation?",
+        "options": [
+          "A. NTM cells are more thermally reactive than LFP and NCM cells under identical storage conditions, because their lower activation energy means exothermic reactions initiate at lower temperatures.",
+          "B. Improving forced convective cooling at the cell surface yields a greater SADT benefit for NTM than for LFP or NCM, making enhanced cooling a more effective mitigation strategy for NTM in this context.",
+          "C. Because NTM and LFP release nearly equal TNT-equivalent energy, they pose equivalent blast hazard in all failure scenarios, and NCM poses approximately 2.2 times greater blast hazard than either.",
+          "D. An NCM installation requires more stringent blast-consequence planning than an equivalent NTM or LFP installation, but NTM's lower activation energy means its ignition prevention requirements are at least as stringent as NCM's.",
+          "E. The NTM battery's intermediate maximum temperature during thermal runaway compared to LFP and NCM implies it will always propagate thermal runaway to adjacent cells at a rate between those of LFP and NCM.",
+          "F. Under natural convection storage, NTM cells have a lower spontaneous ignition threshold temperature than LFP cells, consistent with their lower activation energy."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Lower activation energy directly implies exothermic reactions initiate at lower temperatures, confirming higher thermal reactivity for NTM over both LFP and NCM.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+154+Process_Safety_and_Environmental_Protection:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "NTM SADT increases most steeply with U among the three types, so improved surface cooling provides the greatest SADT benefit for NTM.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+154+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "TNT-equivalent energy equality applies to the specific tested cells; claiming equivalence across all failure scenarios is an unsupported universal generalization.",
+            "error_type": "overgeneralization distractor",
+            "evidence_refs": [
+              "TR_Gasventing+154+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "NCM's higher TNT energy requires more blast planning; NTM's lower activation energy means thermal ignition prevention is at least as critical as for NCM despite lower blast energy.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+154+Process_Safety_and_Environmental_Protection:C003",
+              "TR_Gasventing+154+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Intermediate maximum temperature does not imply intermediate propagation rate; propagation depends on multiple factors not reducible to peak temperature alone.",
+            "error_type": "causal overclaim / single-variable control",
+            "evidence_refs": [
+              "TR_Gasventing+154+Process_Safety_and_Environmental_Protection:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The 169.6°C spontaneous ignition threshold is given for NTM; no equivalent LFP threshold is provided in evidence, making the comparison unsupported.",
+            "error_type": "measurement scope distractor",
+            "evidence_refs": [
+              "TR_Gasventing+154+Process_Safety_and_Environmental_Protection:C002",
+              "TR_Gasventing+154+Process_Safety_and_Environmental_Protection:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-chemistry safety trade-off: thermal reactivity vs. energy release vs. cooling responsiveness",
+        "primary_boundary": "Lower activation energy implies higher thermal reactivity but does not determine blast consequence; TNT equivalence is cell-specific, not universal",
+        "intended_error_modes": [
+          "overgeneralizing TNT equivalence to all scenarios",
+          "reducing propagation rate to peak temperature alone",
+          "inferring LFP ignition threshold from NTM data"
+        ],
+        "disallowed_extrapolations": [
+          "Universal blast equivalence from single-cell TNT data",
+          "Propagation rate ordering from temperature ordering",
+          "LFP spontaneous ignition temperature from NTM evidence"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Two LFP cell formats—a larger-capacity cell (LFP-L) and a smaller-capacity cell (LFP-SS)—are tested under thermal runaway conditions. At 100% SOC, LFP-SS produces more gas per unit capacity than LFP-L across all test environments, yet LFP-L reaches a higher maximum temperature. At 110% SOC, the upper explosive limit (UEL) of LFP-SS gas becomes lower than that of LFP-L, attributed to further decomposition of higher hydrocarbons into low-carbon species. An engineer must select which statements about these two formats are admissible.",
+        "options": [
+          "A. At 100% SOC, LFP-SS presents a wider flammable concentration range than LFP-L because both its LEL and UEL are higher, which directly implies greater ignition probability in a vented enclosure.",
+          "B. The higher maximum temperature of LFP-L at both 100% and 110% SOC, combined with lower gas production per unit capacity, suggests that LFP-L stores more energy in forms that manifest as heat rather than gas-phase products.",
+          "C. At 110% SOC, LFP-L gas has a higher UEL than LFP-SS, which is counterintuitive given LFP-SS produces more gas per capacity, and is explained by the composition shift toward low-carbon hydrocarbons in LFP-SS at elevated SOC.",
+          "D. Because LFP-SS produces more gas per capacity than LFP-L under all tested conditions, LFP-SS will always generate a larger absolute gas volume in any real installation regardless of cell capacity.",
+          "E. The presence of oxygen in an air environment increases peak pressure change for LFP-SS compared to nitrogen, indicating that enclosure atmosphere is a relevant variable in pressure hazard assessment for this cell format.",
+          "F. The reversal of UEL ordering between 100% and 110% SOC demonstrates that flammability limit comparisons between cell formats are SOC-dependent and cannot be generalized from a single charge level."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "C",
+          "E",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "Higher LEL and UEL for LFP-SS does not directly imply greater ignition probability; a wider flammable range requires LEL lower and UEL higher, not both shifted upward.",
+            "error_type": "mechanism confusion distractor",
+            "evidence_refs": [
+              "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "LFP-L has higher peak temperature and lower gas per capacity; this pattern is consistent with energy partitioning favoring thermal over gas-phase release.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C001",
+              "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "At 110% SOC, LFP-SS UEL drops below LFP-L due to CxHy decomposition into low-carbon species in LFP-SS; this counterintuitive reversal is mechanistically explained.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Gas production per capacity is higher for LFP-SS, but absolute volume depends on total cell capacity; larger LFP-L cells could produce more total gas despite lower per-capacity rate.",
+            "error_type": "scale transfer beyond evidence",
+            "evidence_refs": [
+              "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Air environment yields higher pressure change than N2 for LFP-SS at 100% SOC, confirming enclosure atmosphere affects pressure hazard.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "UEL ordering reverses between 100% and 110% SOC, directly demonstrating that flammability comparisons between formats are SOC-dependent.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+155+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "SOC-dependent flammability limit reversal and format-dependent energy partitioning between heat and gas",
+        "primary_boundary": "Higher LEL and UEL together do not imply wider flammable range; per-capacity gas rate cannot be extrapolated to absolute volume without knowing cell capacity",
+        "intended_error_modes": [
+          "misinterpreting shifted LEL/UEL as wider flammable range",
+          "extrapolating per-capacity rate to absolute volume across cell sizes"
+        ],
+        "disallowed_extrapolations": [
+          "Absolute gas volume from per-capacity rate without capacity information",
+          "Universal flammability ordering from single SOC data point"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A safety engineer is comparing NTM (sodium-ion) and NCM lithium-ion cells for use in a confined energy storage room. The NTM cell has a lower activation energy than NCM, a lower TNT-equivalent energy release, but its self-accelerating decomposition temperature (SADT) increases more steeply with surface heat transfer coefficient than NCM. The engineer proposes that NTM is the safer choice in all respects because it releases less blast energy. Identify the specific flaw in this reasoning and explain what additional safety dimension the engineer has failed to account for, referencing the relevant physical mechanisms."
+      },
+      "ground_truth": {
+        "gold_answer": "The engineer's reasoning is flawed because it conflates blast energy release with overall thermal safety. While NTM does release less TNT-equivalent energy than NCM, its lower activation energy means exothermic decomposition reactions are initiated at lower temperatures, making NTM more thermally reactive and more susceptible to spontaneous ignition at lower storage temperatures. This means ignition prevention requirements for NTM are at least as stringent as for NCM despite the lower blast consequence. The engineer has failed to account for the initiation hazard dimension: a system can pose lower consequence per event but higher likelihood of event initiation. Additionally, the steep SADT dependence on surface cooling for NTM means that inadequate cooling has a more severe effect on NTM safety margins than on NCM, introducing a cooling-system reliability requirement that the engineer's blast-energy comparison does not capture.",
+        "must_include": [
+          "lower activation energy implies thermal reactions initiate at lower temperatures for NTM",
+          "lower blast energy does not mean lower ignition or initiation risk",
+          "NTM ignition prevention requirements are at least as stringent as NCM",
+          "SADT of NTM is more sensitive to surface cooling conditions than NCM"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming NTM is more dangerous than NCM in all respects",
+          "Assigning a specific spontaneous ignition temperature to NCM from NTM evidence",
+          "Concluding NTM will always ignite before NCM under identical conditions without specifying temperature regime"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinguishing initiation hazard (activation energy, SADT) from consequence hazard (TNT-equivalent energy) in multi-chemistry safety comparison",
+        "primary_boundary": "Lower blast energy does not imply lower overall hazard when activation energy and SADT sensitivity create a higher initiation risk",
+        "intended_error_modes": [
+          "single-metric safety ranking using only blast energy",
+          "ignoring activation energy as an initiation hazard indicator",
+          "ignoring cooling-system sensitivity as a safety dimension"
+        ]
+      }
+    }
+  ]
+}

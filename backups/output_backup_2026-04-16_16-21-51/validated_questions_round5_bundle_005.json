@@ -1,0 +1,253 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is evaluating a carbon-fiber-reinforced polymer (CFRP) sleeve fitted tightly around a standard 18650 cylindrical cell as a structural confinement strategy during thermal runaway. Mechanical testing has established that the cell's safety valve opens at approximately 1.69 MPa and the bare steel shell fractures at approximately 6.78 MPa. Simulation results indicate that adding the CFRP sleeve reduces the predicted shell fracture pressure to approximately 7.07 MPa compared to 8.79 MPa for the unsleeved shell. Experimental thermal runaway tests on sleeved cells show no sidewall rupture but do show axial denting of the shell. The engineer is asked to assess the safety implications of this design. Which of the following conclusions are admissible given this information?",
+        "options": [
+          "A. The CFRP sleeve prevents sidewall rupture by constraining outward radial expansion, but this confinement redirects thermally induced plastic deformation inward, producing axial denting as a consequence of the same mechanism that eliminates sidewall rupture.",
+          "B. Because the simulated fracture pressure of the sleeved shell is lower than that of the unsleeved shell, the CFRP sleeve structurally weakens the steel shell and therefore increases the risk of catastrophic shell failure during thermal runaway.",
+          "C. The axial denting observed in sleeved cells occurs because the CFRP prevents outward expansion of thermally softened steel in high-temperature zones, forcing the deformed material to displace inward.",
+          "D. The CFRP sleeve can be considered to fully eliminate the mechanical hazard of shell rupture during thermal runaway for this cell format, since no rupture was observed in any of the five tested samples.",
+          "E. The reduction in simulated fracture pressure from 8.79 MPa to 7.07 MPa when the CFRP sleeve is added indicates that the sleeve introduces a new failure mode rather than suppressing the existing one.",
+          "F. Under conditions of laterally concentrated temperature distribution during thermal runaway, shell fracture in an unsleeved cell would be expected to initiate at the point of maximum thermal loading rather than at the end-cap geometry boundary.",
+          "G. The safety valve opening pressure of approximately 1.69 MPa is well below the fracture pressure of both sleeved and unsleeved configurations, meaning the valve is expected to actuate before shell fracture under uniform pressure loading."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "F",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence states that CFRP prevents outward expansion, causing thermally softened steel to bend inward, producing axial denting. The same confinement mechanism that prevents sidewall rupture is the direct cause of axial denting—these are mechanistically linked, not independent outcomes.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+167+Journal_of_Power_Sources:C003",
+              "TR_Dynamics+167+Journal_of_Power_Sources:C007"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The lower simulated fracture pressure of the sleeved configuration (7.07 MPa vs. 8.79 MPa) does not mean the sleeve increases rupture risk. Experimentally, no sidewall rupture occurred with the sleeve. The simulation reflects a different load distribution, not a net weakening that leads to failure. This is a causal overclaim from a simulation comparison.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Dynamics+167+Journal_of_Power_Sources:C003",
+              "TR_Dynamics+167+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "This accurately describes the mechanism: high-temperature zones soften the steel, the CFRP blocks outward displacement, and the material is forced inward, creating axial dents. This is directly supported by the causal chain in the evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+167+Journal_of_Power_Sources:C007"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Five samples without rupture supports effectiveness under tested conditions but does not constitute full elimination of mechanical hazard across all conditions or cell states. This is a scope expansion from a limited sample set to a universal safety claim—a protective mechanism overclaim.",
+            "error_type": "protective_mechanism_overclaim",
+            "evidence_refs": [
+              "TR_Dynamics+167+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The lower simulated fracture pressure does not indicate a new failure mode. Experimentally, the sleeve prevented sidewall rupture. The simulation result reflects altered stress distribution under the sleeve, not the introduction of a distinct failure pathway. This conflates a simulation metric with a new physical failure mechanism.",
+            "error_type": "mechanism_confusion",
+            "evidence_refs": [
+              "TR_Dynamics+167+Journal_of_Power_Sources:C003",
+              "TR_Dynamics+167+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that under laterally concentrated temperature distribution, fracture originates at the point of highest heat concentration, not at the end-cap geometry boundary (which governs the uniform temperature case). This is a regime-dependent conclusion directly supported by the evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+167+Journal_of_Power_Sources:C006"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "The valve opening pressure (~1.69 MPa) is substantially below the fracture pressure of both sleeved (~7.07 MPa) and unsleeved (~8.79 MPa) configurations. Under uniform pressure loading, the valve would actuate first, providing a pressure relief pathway before fracture threshold is reached.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+167+Journal_of_Power_Sources:C001",
+              "TR_Dynamics+167+Journal_of_Power_Sources:C002",
+              "TR_Dynamics+167+Journal_of_Power_Sources:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanical safety implications of CFRP sleeve confinement during thermal runaway, including the coupled mechanism linking rupture prevention to axial denting, and the admissibility of safety claims from limited experimental data.",
+        "primary_boundary": "The CFRP sleeve prevents sidewall rupture through confinement but produces axial denting via the same mechanism; the lower simulated fracture pressure does not imply increased rupture risk given experimental evidence of no rupture; five-sample results do not support universal hazard elimination.",
+        "intended_error_modes": [
+          "causal_overclaim: inferring increased rupture risk from lower simulated fracture pressure",
+          "protective_mechanism_overclaim: claiming full hazard elimination from five-sample experimental result",
+          "mechanism_confusion: treating lower simulated fracture pressure as evidence of a new failure mode"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding that lower simulated fracture pressure means higher real-world rupture risk",
+          "Claiming the sleeve fully eliminates mechanical hazard based on five samples",
+          "Treating the axial denting as independent of the rupture-prevention mechanism"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A researcher is characterizing thermal runaway gas emissions from three cell types: NMC811/SiC 21700 lithium-ion (LIB), NMC811/SiC 18650 lithium-ion (LIB), and NaMn1/3Fe1/3Ni1/3O2 18650 sodium-ion (SIB). All cells are subjected to the same heating rate. Key observations: LIB venting gas temperatures exceeded 1000°C and in some cases reached the thermocouple measurement limit of 1370°C, while the actual temperature may have been higher. SIB peak venting gas temperatures did not exceed 350°C, and no gas ignition was observed. Average total mass loss was 77% for 21700 LIBs, 75% for 18650 LIBs, and 55% for 18650 SIBs. The SIB thermal runaway onset temperature was 10–15°C higher than for the 18650 LIBs. Optical velocity estimation of venting gas was not possible for the SIBs. A second engineer argues that the SIBs are categorically safer than LIBs under all thermal abuse conditions based on these results. Evaluate the following statements.",
+        "options": [
+          "A. The inability to optically estimate venting gas velocity for SIBs is a direct consequence of the absence of gas ignition, meaning the measurement methodology itself is contingent on a phenomenon that represents a primary hazard in LIBs.",
+          "B. The lower total mass loss in SIBs compared to LIBs, combined with the absence of gas ignition, is consistent with a less energetic thermal runaway event, but does not by itself establish that the SIB venting gas composition is non-hazardous.",
+          "C. Because peak venting gas temperatures for LIBs reached the thermocouple measurement limit, the reported LIB venting gas temperatures represent confirmed upper bounds on the actual temperatures.",
+          "D. The 10–15°C higher thermal runaway onset temperature of SIBs compared to LIBs, under the same heating rate, indicates that SIBs have a larger thermal margin before runaway initiation, but this margin does not directly characterize the severity of the runaway event once initiated.",
+          "E. The peak mass flow rate values of 2000 g/s for 18650 LIBs and 1500 g/s for 21700 LIBs, despite lasting only milliseconds, imply that the 18650 format poses a greater sustained mechanical pressure hazard than the 21700 format.",
+          "F. The second engineer's conclusion that SIBs are categorically safer under all thermal abuse conditions is not fully supported, because the available data characterizes only a specific SIB chemistry and format under a single heating protocol.",
+          "G. The venting gas velocity of LIBs exceeding 100 m/s at the onset of thermal runaway and decaying below 50 m/s after 200 ms is consistent with a transient, ignition-driven gas release rather than a sustained steady-state flow."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "D",
+          "F",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that optical velocity estimation was impossible for SIBs because the vented gas did not ignite. The optical method depends on visible ignition, which is itself the primary fire hazard in LIBs. This is a correct reasoning chain: absence of ignition → measurement limitation, and ignition = primary LIB hazard.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+168+Journal_of_Power_Sources:C007"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Lower mass loss and no ignition are consistent with lower energy release, but the evidence does not characterize SIB venting gas composition. Gas toxicity or reactivity hazards cannot be excluded from the available data. This is a correct admissibility boundary judgment.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+168+Journal_of_Power_Sources:C004",
+              "TR_Dynamics+168+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The evidence states the thermocouple reached its measurement limit of 1370°C and that actual temperatures may have been higher. Therefore, 1370°C is a lower bound on actual temperature, not a confirmed upper bound. This option inverts the measurement limitation.",
+            "error_type": "measurement_scope_inversion",
+            "evidence_refs": [
+              "TR_Dynamics+168+Journal_of_Power_Sources:C001"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The 10–15°C higher onset temperature indicates a larger thermal margin before initiation under the tested heating rate. However, onset temperature and post-onset severity are distinct parameters. The evidence does not link higher onset temperature to reduced severity once runaway begins.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+168+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The evidence explicitly states these peak values last only milliseconds. A millisecond-duration peak does not constitute a sustained mechanical pressure hazard. Inferring sustained hazard from a transient peak is a scope expansion that ignores the duration qualifier.",
+            "error_type": "scope_expansion_ignoring_duration",
+            "evidence_refs": [
+              "TR_Dynamics+168+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The data covers one SIB chemistry in 18650 format under one heating protocol. Generalizing to all thermal abuse conditions and all SIB chemistries is an unsupported extrapolation. This is a correct admissibility boundary judgment about the scope of the experimental evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+168+Journal_of_Power_Sources:C002",
+              "TR_Dynamics+168+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "The evidence shows LIB venting gas velocity exceeding 100 m/s at TR onset, attributed to gas ignition, then decaying below 50 m/s after 200 ms and below 25 m/s after 500 ms. This temporal decay pattern is consistent with a transient ignition-driven event, not a steady-state flow.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+168+Journal_of_Power_Sources:C006"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of comparative safety conclusions between LIBs and SIBs based on venting gas characterization data, including measurement limitations, scope boundaries, and the distinction between onset conditions and runaway severity.",
+        "primary_boundary": "The thermocouple limit establishes a lower bound, not an upper bound, on LIB venting temperature; peak mass flow rate duration must be considered before inferring sustained hazard; SIB safety conclusions are bounded to the tested chemistry, format, and protocol.",
+        "intended_error_modes": [
+          "measurement_scope_inversion: treating thermocouple limit as upper bound rather than lower bound",
+          "scope_expansion_ignoring_duration: inferring sustained hazard from millisecond-duration peak",
+          "overgeneralization: extending single-chemistry, single-protocol SIB results to all conditions"
+        ],
+        "disallowed_extrapolations": [
+          "Treating 1370°C as a confirmed maximum LIB venting temperature",
+          "Inferring sustained pressure hazard from millisecond peak mass flow rate",
+          "Concluding SIBs are categorically safer under all conditions from one chemistry and protocol"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A cylindrical 18650 cell fitted with a tight CFRP sleeve undergoes thermal runaway. Post-test inspection shows no sidewall rupture but reveals an axial dent on the steel shell. A colleague proposes that the axial dent is an independent failure mode introduced by the CFRP sleeve and that it represents an additional hazard not present in unsleeved cells. Separately, simulation data shows that the predicted shell fracture pressure is lower for the sleeved cell than for the unsleeved cell. Using engineering mechanism reasoning, explain: (1) why the axial dent is mechanistically linked to the same confinement effect that prevents sidewall rupture rather than being an independent failure mode, and (2) why the lower simulated fracture pressure of the sleeved configuration does not straightforwardly imply increased shell rupture risk during actual thermal runaway. Identify the specific physical conditions that must be present for axial denting to occur in the sleeved configuration."
+      },
+      "ground_truth": {
+        "gold_answer": "The axial dent and the prevention of sidewall rupture share the same physical cause: the CFRP sleeve constrains outward radial expansion of the steel shell. During thermal runaway, regions of the shell exposed to high local temperatures undergo thermal softening and develop unrecoverable plastic strain. In an unsleeved cell, this deformation would manifest as outward bulging or sidewall rupture. With the CFRP sleeve present, outward displacement is blocked. The thermally softened steel, unable to expand outward, is forced to displace inward, producing the axial dent. The dent is therefore a mechanical consequence of the same confinement mechanism that eliminates sidewall rupture—not an independent failure mode. The specific physical conditions required for axial denting are: (a) uneven temperature distribution along the cell length so that localized thermal softening occurs in discrete zones, and (b) the CFRP sleeve preventing outward expansion of those softened zones. Under uniform temperature distribution, the deformation would be uniform and fracture would be expected near the end-cap geometry boundary rather than as an axial dent. Regarding the simulated fracture pressure: the lower value for the sleeved configuration (approximately 7.07 MPa vs. 8.79 MPa unsleeved) reflects altered stress distribution under the composite constraint, not a net reduction in the shell's resistance to rupture under thermal runaway conditions. Experimentally, no sidewall rupture occurred in any sleeved sample. The simulation metric and the experimental outcome are not contradictory because the simulation models a specific loading scenario that may not replicate the actual thermomechanical loading during runaway. The lower simulated fracture pressure cannot be directly interpreted as higher rupture probability without accounting for how the CFRP redistributes and absorbs load during the actual event.",
+        "must_include": [
+          "CFRP prevents outward radial expansion as the shared mechanism for both dent formation and rupture prevention",
+          "Thermally softened steel in high-temperature zones develops unrecoverable plastic strain",
+          "Outward displacement blocked by CFRP forces inward displacement, producing axial dent",
+          "Uneven temperature distribution is a necessary condition for axial denting",
+          "Lower simulated fracture pressure does not imply higher rupture risk because experimental results show no rupture occurred",
+          "Simulation fracture pressure and experimental rupture outcome are not directly equivalent metrics"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming the CFRP sleeve eliminates all mechanical hazard under all conditions",
+          "Asserting that axial denting is more hazardous than sidewall rupture without supporting evidence",
+          "Concluding that the lower simulated fracture pressure proves the sleeve is structurally inferior in all loading scenarios",
+          "Generalizing the five-sample no-rupture result to a universal safety guarantee"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanistic linkage between CFRP confinement, axial denting, and sidewall rupture prevention; admissibility of safety inferences from simulated fracture pressure versus experimental outcomes.",
+        "primary_boundary": "Axial denting is not an independent failure mode but a mechanical consequence of the same confinement that prevents rupture; the lower simulated fracture pressure is a load-distribution artifact and does not directly predict higher rupture probability given contrary experimental evidence.",
+        "intended_error_modes": [
+          "Treating axial dent as an independent CFRP-introduced failure mode rather than a mechanistic consequence of confinement",
+          "Directly equating lower simulated fracture pressure with higher real-world rupture risk",
+          "Ignoring the role of uneven temperature distribution as a necessary condition for axial denting"
+        ]
+      }
+    }
+  ]
+}

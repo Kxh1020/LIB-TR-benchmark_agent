@@ -1,0 +1,317 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A 280Ah LFP battery pack undergoes thermal runaway. Post-event mass accounting shows ejected non-condensable gas at roughly 2% of total battery mass, while condensed liquid recovered from inside the pack represents roughly 20% of total battery mass. An engineer evaluating arc-fault risk inside the enclosure must determine which physical phenomenon most directly drives that risk and whether the gas composition data alone is sufficient to characterize it.",
+        "options": [
+          "A. The dominant arc-fault risk driver is the large quantity of condensed electrolyte liquid migrating within the pack, because the gas-to-liquid mass ratio of approximately 1:10 means liquid accumulation far exceeds gas accumulation in the enclosure.",
+          "B. The dominant arc-fault risk driver is the H2 fraction of ejected gas, because H2 constitutes more than half the molar gas release and is flammable, making gas composition the primary arc-fault hazard indicator.",
+          "C. Gas composition data alone is sufficient to characterize arc-fault risk because the non-condensable gas fraction accounts for the majority of the ejected mass.",
+          "D. The condensed electrolyte liquid contribution to arc-fault risk cannot be neglected even when gas composition is fully characterized, because the liquid mass released is approximately an order of magnitude greater than the gas mass.",
+          "E. Arc-fault risk is negligible if the pressure balance valve operates correctly, because controlled pressure relief prevents electrolyte liquid from accumulating inside the enclosure.",
+          "F. The wreckage fraction, at approximately 78% of total battery mass, represents the primary arc-fault concern because it contains the largest share of residual electrochemical energy."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence states gas:liquid mass ratio ~1:10 and explicitly identifies flowing electrolyte liquid as the arc-fault hazard source.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "H2 is a flammability hazard but evidence specifically attributes arc-fault risk to condensed electrolyte liquid flow, not gas composition.",
+            "error_type": "mechanism substitution",
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C001",
+              "TR_Gasventing+128+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Gas mass is ~2% of total battery mass; liquid is ~20%. Gas composition data understates the dominant ejected-mass contributor by a factor of ten.",
+            "error_type": "scope expansion / measurement scope distractor",
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence explicitly states electrolyte condensation cannot be ignored and that liquid mass is ~10× gas mass, requiring it to be included in any arc-fault assessment.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Pressure valve operation controls internal pressure, not electrolyte liquid flow paths. Evidence does not link valve function to prevention of liquid accumulation.",
+            "error_type": "protective mechanism overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C002",
+              "TR_Gasventing+128+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Wreckage fraction reflects structural residue, not a mobile arc-fault hazard. Evidence identifies flowing liquid, not solid wreckage, as the arc-fault concern.",
+            "error_type": "causal overclaim from mass fraction",
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Identifying the dominant arc-fault hazard mechanism from mass-fraction evidence and distinguishing gas composition sufficiency from liquid accumulation risk",
+        "primary_boundary": "Gas composition characterizes flammability hazard but does not capture the arc-fault hazard driven by condensed electrolyte liquid, which is ~10× greater by mass",
+        "intended_error_modes": [
+          "mechanism substitution (H2 flammability conflated with arc-fault)",
+          "measurement scope overclaim (gas data treated as complete hazard characterization)",
+          "protective mechanism overclaim (valve operation prevents liquid accumulation)"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding valve operation controls liquid migration",
+          "Treating wreckage mass fraction as arc-fault hazard proxy",
+          "Generalizing H2 molar fraction to dominant arc-fault driver"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery pack enclosure contains two 280Ah LFP cells undergoing thermal runaway. A pressure balance valve rated at approximately 104.8 kPa opens 36 times during the event. Recorded data show 72.2% of openings occur at pressure reduction rates of 0.0–0.5 kPa/s, while the highest rate of 1.5–2.0 kPa/s occurs only once. The first opening threshold is measurably higher than all subsequent openings. An engineer assesses valve sizing and enclosure pressure management strategy.",
+        "options": [
+          "A. The valve's repeated cycling indicates that a single large-orifice relief event cannot adequately represent the pressure dynamics; sustained low-rate venting dominates the pressure management demand.",
+          "B. Because the first opening pressure exceeds the manufacturer specification while subsequent openings occur at a lower threshold, the valve exhibits a mechanical hysteresis or seating-change behavior that must be accounted for in repeated-event sizing.",
+          "C. The single occurrence of the maximum pressure reduction rate confirms that peak pressure events are the primary sizing criterion, and the 72.2% low-rate activations are negligible for valve design.",
+          "D. The pressure balance valve fully prevents internal pressure from exceeding safe limits during thermal runaway because it opened successfully on all 36 occasions.",
+          "E. Designing the enclosure solely around the maximum observed pressure reduction rate would overestimate the sustained venting demand, since most activation events involve substantially lower rates.",
+          "F. The difference between first-opening and subsequent-opening pressures implies that the valve cannot be modeled as a fixed-threshold device across the full thermal runaway event duration."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "E",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "36 openings with 72.2% at low rates shows sustained low-rate cycling dominates; a single large-event model misrepresents the demand profile.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Evidence explicitly shows first-opening threshold (~107 kPa) differs from subsequent openings (~105.7–106.2 kPa), indicating threshold shift requiring design consideration.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Treating 72.2% of activations as negligible inverts the statistical evidence; low-rate events constitute the dominant operational regime of the valve.",
+            "error_type": "numerical exaggeration / scope inversion",
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence confirms valve opened but does not establish that internal pressure remained within safe limits throughout; this is an unsupported safety claim.",
+            "error_type": "protective mechanism overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C003",
+              "TR_Gasventing+128+Journal_of_Power_Sources:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Sizing only to the peak rate overstates sustained demand; the distribution shows the peak is a single outlier against a dominant low-rate regime.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The measurable difference between first and subsequent opening pressures means a single fixed-threshold model is inconsistent with observed valve behavior.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Interpreting pressure valve cycling statistics and threshold hysteresis to assess valve sizing and enclosure pressure management admissibility",
+        "primary_boundary": "Valve success in opening does not imply pressure safety guarantee; first-vs-subsequent threshold difference invalidates fixed-threshold modeling; peak-rate-only sizing misrepresents the dominant demand regime",
+        "intended_error_modes": [
+          "protective mechanism overclaim (valve opened = safe)",
+          "statistical inversion (treating 72.2% low-rate events as negligible)",
+          "fixed-threshold modeling ignoring threshold shift"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding safe pressure maintenance from successful valve actuation",
+          "Using single peak event as sole sizing criterion",
+          "Treating manufacturer-specified threshold as invariant across event duration"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Post-event inspection of a battery pack that experienced thermal runaway from two 280Ah LFP cells reveals concentrated black ablation marks at all four interior corners of the enclosure. No comparable marks appear along the flat interior wall sections. The pack design places cells in a central arrangement with no additional insulation at corner positions. An engineer is revising the module design to reduce secondary ignition and electrical failure risk.",
+        "options": [
+          "A. The corner ablation pattern is consistent with thermal runaway gas flow and electrolyte aerosol accumulation at geometric convergence zones, suggesting corners experience disproportionately higher exposure to ejected material.",
+          "B. Providing enhanced electrical insulation specifically at corner-adjacent battery positions is a design response directly supported by the observed failure pattern.",
+          "C. The flat wall sections should be prioritized for insulation upgrades because uniform coverage is more reliable than targeted corner protection.",
+          "D. The ablation marks at corners confirm that corner cells reached higher internal temperatures than centrally located cells during thermal runaway.",
+          "E. The observed corner accumulation pattern implies that enclosure geometry influences the spatial distribution of ejected material exposure, which is a factor admissible for module layout design decisions.",
+          "F. Because ablation marks indicate post-event residue rather than real-time temperature, no design inference about electrical insulation placement is admissible from this observation alone."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence attributes corner marks to airflow and aerosol accumulation at corners, consistent with geometric convergence concentrating ejected material.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Evidence explicitly recommends additional insulation protection for batteries at edges and corners based on the observed accumulation pattern.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Evidence supports targeted corner protection, not uniform coverage prioritization. Flat wall sections showed no comparable ablation, making uniform prioritization unsupported.",
+            "error_type": "overgeneralization / ignoring spatial distribution evidence",
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Ablation marks reflect external surface exposure to ejected material, not internal cell temperature. Inferring internal temperature from surface ablation exceeds measurement scope.",
+            "error_type": "measurement scope distractor / causal overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Evidence shows enclosure geometry (corners) concentrates ejected material, making geometry an admissible factor in module layout and insulation placement decisions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Evidence directly uses the ablation observation to recommend insulation design changes; the claim that no design inference is admissible contradicts the evidence-supported recommendation.",
+            "error_type": "conservative but incorrect / measurement scope overclaim in reverse",
+            "evidence_refs": [
+              "TR_Gasventing+128+Journal_of_Power_Sources:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Inferring admissible design responses from spatial ablation patterns while distinguishing surface exposure evidence from internal temperature inference",
+        "primary_boundary": "Corner ablation supports airflow/aerosol accumulation inference and targeted insulation recommendation but does not support inference about internal cell temperatures",
+        "intended_error_modes": [
+          "measurement scope overclaim (surface marks → internal temperature)",
+          "overgeneralization (uniform coverage preferred over targeted)",
+          "conservative but incorrect (ablation marks insufficient for any design inference)"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring corner cell internal temperatures from external ablation",
+          "Recommending uniform insulation upgrade over targeted corner protection",
+          "Dismissing ablation evidence as non-actionable for design"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A safety engineer is characterizing the total hazard release profile of a 280Ah LFP battery pack containing two cells that undergo complete thermal runaway. The engineer has access to full non-condensable gas composition data (species and molar quantities) and total gas mass. Explain why this gas-phase data alone is insufficient to characterize the complete hazard profile of ejected material, identify the additional hazard category that must be quantified, and describe one specific secondary risk mechanism that the gas data cannot capture but that the additional category introduces inside the enclosure."
+      },
+      "ground_truth": {
+        "gold_answer": "Gas-phase data captures only approximately 2% of total battery mass in ejected non-condensable gas, while condensed electrolyte liquid accounts for approximately 20% of total battery mass—roughly ten times the gas mass. The gas data therefore characterizes less than one-tenth of the total ejected material by mass and omits the condensed liquid phase entirely. The additional hazard category that must be quantified is the condensed electrolyte liquid ejected during thermal runaway. The specific secondary risk mechanism that gas data cannot capture is arc-fault hazard: the large quantity of conductive electrolyte liquid migrating within the battery pack can bridge electrically isolated conductors or components, creating arcing conditions that gas composition analysis provides no information about.",
+        "must_include": [
+          "condensed electrolyte liquid as a distinct ejected material category",
+          "gas mass is approximately 2% of total battery mass while liquid is approximately 20%",
+          "gas-to-liquid mass ratio of approximately 1:10 showing liquid dominates ejected mass",
+          "arc-fault or arcing hazard as the specific risk mechanism introduced by liquid migration that gas data cannot characterize"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming gas composition data is irrelevant or that flammability hazard from H2 is negligible",
+          "Asserting that the pressure balance valve operation eliminates the liquid migration hazard",
+          "Inferring that liquid mass fraction implies greater total energy release than gas phase",
+          "Generalizing the 1:10 ratio to all LFP chemistries or cell formats without qualification"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Recognizing that condensed electrolyte liquid constitutes a dominant ejected mass fraction introducing arc-fault risk that gas composition data structurally cannot capture",
+        "primary_boundary": "Gas composition data is bounded to the non-condensable gas phase (~2% of battery mass); it provides no information about the condensed liquid phase (~20% of battery mass) or the arc-fault mechanism that liquid migration introduces",
+        "intended_error_modes": [
+          "Treating gas composition as a complete hazard characterization",
+          "Conflating H2 flammability risk with arc-fault risk",
+          "Underweighting liquid phase because gas analysis is more commonly reported",
+          "Attributing arc-fault prevention to pressure valve operation"
+        ]
+      }
+    }
+  ]
+}

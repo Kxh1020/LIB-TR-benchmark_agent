@@ -1,0 +1,358 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An NCM622 cylindrical cell is subjected to thermal runaway under controlled heating. Engineers monitoring the event record both internal pressure and surface temperature as continuous signals. At a given state of charge, the pressure signal reaches its peak and then begins to decline well before the temperature signal reaches its maximum. The ejection of material from the cell is also observed. Based on the physical sequence of events in thermal runaway, which of the following conclusions are admissible?",
+        "options": [
+          "A. The pressure peak preceding the temperature peak indicates that gas generation from decomposition reactions is largely complete before the most energetic exothermic reactions occur.",
+          "B. Because internal pressure and mass loss rate are positively correlated during the eruption process, a cell that vents at higher pressure will necessarily eject more mass than one that vents at lower pressure under identical SOC conditions.",
+          "C. The time interval between maximum pressure and peak temperature is fixed regardless of SOC, so a single pressure threshold can be used to predict time-to-peak-temperature across all charge states.",
+          "D. At higher SOC, the time available between the pressure peak and the temperature peak is reduced, compressing the window during which pressure-based early warning could be acted upon.",
+          "E. The observation that pressure peaks before temperature implies that mechanical venting is the primary cause of the subsequent temperature rise, rather than internal electrochemical reactions.",
+          "F. The positive correlation between internal pressure and mass loss rate during eruption is consistent with a mechanism in which higher gas pressure drives greater material expulsion from the cell.",
+          "G. Because venting time decreases linearly with SOC while ejection duration decreases exponentially, at sufficiently high SOC the ejection duration becomes the longer of the two intervals."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The pressure peak preceding the temperature peak by a substantial interval is consistent with gas-generating decomposition reactions occurring before the peak exothermic reactions. This is a mechanistically admissible inference from the temporal ordering evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+171+Applied_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The positive correlation between pressure and mass loss rate is established during the eruption process, but this does not support a cross-cell comparison claim that higher venting pressure necessarily produces greater mass loss under identical SOC. The correlation is within-event, not a cross-condition universal rule.",
+            "error_type": "overgeneralization_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+171+Applied_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The evidence explicitly states the interval between maximum pressure and peak temperature ranges from 20.4 s to 288.5 s depending on SOC, directly contradicting the claim that the interval is fixed. A single threshold cannot predict time-to-peak-temperature across all SOC.",
+            "error_type": "condition_violation_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+171+Applied_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Higher SOC shortens the time to reach maximum temperature and compresses the pressure-to-temperature interval. This directly reduces the actionable warning window between the pressure signal peak and the thermal peak, which is an admissible safety implication.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+171+Applied_Thermal_Engineering:C002",
+              "TR_Gasventing+171+Applied_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The temporal sequence (pressure before temperature) does not establish that venting causes the temperature rise. The temperature peak is driven by internal exothermic reactions, not by the venting event itself. This is a causal overclaim that inverts the mechanism.",
+            "error_type": "causal_overclaim_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+171+Applied_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The positive correlation between internal pressure and mass loss rate during the eruption process is mechanistically consistent with higher gas pressure driving greater material expulsion. This is a minimal mechanistic inference supported by the evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+171+Applied_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "Venting time decreases linearly and ejection duration decreases exponentially with increasing SOC. An exponential decrease is faster than a linear decrease, so at high SOC the ejection duration becomes shorter relative to venting time, not longer. This option reverses the functional form implication.",
+            "error_type": "numerical_exaggeration_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+171+Applied_Thermal_Engineering:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Temporal sequencing of pressure and temperature signals in thermal runaway and its SOC-dependent safety implications",
+        "primary_boundary": "Correlation between pressure and mass loss is within-event; the pressure-temperature interval is SOC-dependent, not fixed; causal direction runs from internal reactions to temperature, not from venting to temperature",
+        "intended_error_modes": [
+          "causal_overclaim",
+          "overgeneralization",
+          "condition_violation",
+          "functional_form_reversal"
+        ],
+        "disallowed_extrapolations": [
+          "Cross-cell comparison of mass loss from within-event correlation",
+          "Fixed warning window across all SOC",
+          "Venting as primary cause of temperature rise"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A 280 Ah LFP battery is subjected to thermal abuse under four conditions varying heating area and power density. In one condition (small area, high power density: 5 W/cm²), the peak temperature reaches 394°C and gas yield is 152.28 L. In another condition (larger area, lower power density: 2.22 W/cm²), the peak temperature is 346°C and gas yield is 148.13 L. A consistent thermal threshold for pressure relief valve opening is identified across conditions. Engineers are evaluating which heating parameter most effectively initiates internal thermal reactions and which parameter most strongly controls gas generation. Which of the following conclusions are supported?",
+        "options": [
+          "A. Expanding the heating area is more effective than increasing power density at initiating internal thermal reactions and accelerating the thermal runaway process.",
+          "B. The lower peak temperature observed under larger-area, lower-power-density heating demonstrates that expanding the heating area reduces the severity of thermal runaway.",
+          "C. Because heating power density has minor influence before valve opening and greater influence after, the thermal threshold for valve opening is primarily determined by total heat input rather than by how that heat is spatially distributed.",
+          "D. The higher gas yield under high power density conditions is consistent with more extensive decomposition reactions being driven by the higher local thermal intensity after valve opening.",
+          "E. Since the gas yield difference between the two conditions is less than 3%, heating area and power density can be considered equivalent parameters for controlling gas generation.",
+          "F. The observation that peak temperature is higher under high power density despite a smaller heating area implies that power density, not heating area, is the dominant factor controlling peak temperature.",
+          "G. The influence of heating power density on thermal runaway behavior is predominantly expressed in the phase after the pressure relief valve activates, making pre-valve behavior a poor discriminator between power density conditions."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence directly states that expanding heating area is more effective than increasing power density at initiating internal thermal reactions and accelerating the TR process. This is an admissible conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+172+UnknownJournal:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "This is a conservative but incorrect distractor. The lower peak temperature under larger-area heating does not mean TR severity is reduced overall; the evidence shows expanding area accelerates TR initiation. Reduced peak temperature coexists with faster TR onset, so the conclusion that severity is reduced is not admissible.",
+            "error_type": "scope_expansion_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+172+UnknownJournal:C002",
+              "TR_Gasventing+172+UnknownJournal:C008"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence identifies a consistent average heat input threshold for valve opening and states that power density has minor impact before valve opening. Together these support the inference that the valve-opening threshold is governed by total heat input rather than spatial distribution.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+172+UnknownJournal:C004",
+              "TR_Gasventing+172+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Higher power density leads to greater gas yield, and the power density effect is primarily expressed after valve opening. This is mechanistically consistent with higher thermal intensity post-valve driving more extensive decomposition reactions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+172+UnknownJournal:C003",
+              "TR_Gasventing+172+UnknownJournal:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The small numerical difference in gas yield does not make the two parameters equivalent for controlling gas generation. The evidence distinguishes their mechanisms and effects, and equivalence cannot be inferred from a single numerical comparison without accounting for the different physical pathways involved.",
+            "error_type": "causal_overclaim_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+172+UnknownJournal:C003",
+              "TR_Gasventing+172+UnknownJournal:C009"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence shows that expanding heating area accelerates TR initiation and that peak temperature is lower under larger-area conditions despite lower power density. The relationship between power density and peak temperature cannot be isolated as dominant because heating area also affects the TR process through a different mechanism.",
+            "error_type": "single_variable_control_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+172+UnknownJournal:C002",
+              "TR_Gasventing+172+UnknownJournal:C008"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that heating power density influence on TR behavior primarily occurs after pressure relief valve activation, with minor impact before. This directly supports the conclusion that pre-valve behavior is a poor discriminator between power density conditions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+172+UnknownJournal:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Relative roles of heating area versus power density in controlling TR initiation, peak temperature, and gas generation in LFP batteries",
+        "primary_boundary": "Heating area controls TR initiation rate; power density controls post-valve gas generation and peak temperature; the valve-opening threshold is governed by total heat input; these mechanisms are distinct and not interchangeable",
+        "intended_error_modes": [
+          "single_variable_control",
+          "scope_expansion",
+          "numerical_equivalence_overclaim",
+          "mechanism_substitution"
+        ],
+        "disallowed_extrapolations": [
+          "Equivalence of area and power density from small gas yield difference",
+          "Lower peak temperature implies reduced overall severity",
+          "Power density as sole determinant of peak temperature"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery venting gas (BVG) mixture is present in an enclosed space at equivalence ratio of 0.7 (fuel-lean). A suppression system deploys HFC-227ea, but the quantity deployed is insufficient to achieve full suppression. Separately, engineers are evaluating a blended agent consisting of CO2 and HFC-227ea in volumetric ratios of 5:5 and 7:3. The explosion pressure of the BVG mixture without any agent is used as the baseline. Which of the following statements about explosion behavior under these conditions are admissible?",
+        "options": [
+          "A. Insufficient HFC-227ea under fuel-lean conditions poses a greater explosion enhancement risk than the same insufficient quantity under fuel-rich conditions, because the range of HFC-227ea concentrations that trigger enhancement is wider at lower equivalence ratios.",
+          "B. Adding CO2 to HFC-227ea in a 7:3 ratio reduces the explosion enhancement effect more than a 5:5 ratio, indicating that increasing the CO2 fraction progressively diminishes the enhancement.",
+          "C. The dominant mechanism by which insufficient HFC-227ea increases explosion pressure is an increase in the total quantity of burned gas, and this effect is most pronounced under fuel-lean conditions.",
+          "D. Under fuel-lean conditions, the explosion enhancement from insufficient HFC-227ea is negligible because the mixture is already below the stoichiometric ratio and cannot sustain significant combustion.",
+          "E. A suppression system using only HFC-227ea is inherently safer than a CO2-HFC-227ea blend for BVG mixtures at any equivalence ratio, because the blend introduces additional combustion products.",
+          "F. The reduction in explosion enhancement achieved by CO2 addition is mechanistically consistent with CO2 limiting the increase in total burned-gas quantity that HFC-227ea would otherwise cause.",
+          "G. Because insufficient HFC-227ea increases maximum explosion pressure at all three tested equivalence ratios, any deployment of HFC-227ea that does not achieve full suppression should be considered hazardous regardless of the fuel-lean or fuel-rich state of the mixture."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence states that the range of HFC-227ea concentrations triggering enhancement expands significantly at equivalence ratio of 0.7 (fuel-lean), making the enhancement more pronounced under fuel-lean conditions. This is a counterintuitive but evidence-supported conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+173+Applied_Thermal_Engineering:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The evidence states that CO2:HFC-227ea ratios of 5:5 and 7:3 reduce the explosion enhancement effect by 37% and 49% respectively. The 7:3 ratio (higher CO2 fraction) produces greater reduction, supporting a progressive relationship between CO2 fraction and enhancement reduction.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+173+Applied_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence identifies the increase in total burned-gas quantity as the dominant factor in explosion pressure enhancement by HFC-227ea, and states the most pronounced enhancement is at equivalence ratio of 0.7 (fuel-lean). Both parts of this statement are directly supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+173+Applied_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "This is a conservative but incorrect distractor. The evidence shows that insufficient HFC-227ea increases maximum explosion pressure by 12.43% at equivalence ratio of 0.7 (fuel-lean), the largest enhancement of the three tested conditions. The fuel-lean state does not make enhancement negligible; it makes it more pronounced.",
+            "error_type": "condition_violation_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+173+Applied_Thermal_Engineering:C001",
+              "TR_Gasventing+173+Applied_Thermal_Engineering:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The evidence does not support a universal claim that pure HFC-227ea is inherently safer than a CO2-HFC-227ea blend at any equivalence ratio. The evidence shows CO2 addition reduces the explosion enhancement effect of HFC-227ea, suggesting the blend can be safer when HFC-227ea is insufficient. This is an unsupported system-level safety recommendation.",
+            "error_type": "scope_expansion_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+173+Applied_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The evidence states that CO2 addition mitigates the increase in total burned-gas quantity caused by HFC-227ea, and that this increase in burned-gas quantity is the dominant mechanism for pressure enhancement. The mechanistic linkage between CO2 addition and burned-gas quantity limitation is directly supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+173+Applied_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "While insufficient HFC-227ea increases explosion pressure at all tested equivalence ratios, the magnitude of enhancement varies substantially (12.43% at 0.7, 9.77% at 1.0, 1.43% at 1.3). A uniform hazard classification that ignores this magnitude difference and equivalence ratio dependence is an inadmissible overgeneralization.",
+            "error_type": "overgeneralization_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+173+Applied_Thermal_Engineering:C001",
+              "TR_Gasventing+173+Applied_Thermal_Engineering:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Explosion enhancement mechanism of insufficient HFC-227ea in BVG mixtures and the mitigating role of CO2 blending, with equivalence ratio dependence",
+        "primary_boundary": "Enhancement is most pronounced under fuel-lean conditions, not fuel-rich; CO2 addition reduces enhancement by limiting burned-gas quantity increase; uniform hazard classification across equivalence ratios is inadmissible given magnitude variation",
+        "intended_error_modes": [
+          "condition_violation",
+          "scope_expansion",
+          "overgeneralization",
+          "conservative_but_wrong"
+        ],
+        "disallowed_extrapolations": [
+          "Universal safety ranking of pure vs blended agents",
+          "Negligible enhancement under fuel-lean conditions",
+          "Uniform hazard level across all equivalence ratios"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery safety engineer is reviewing two aspects of thermal runaway gas behavior in LFP cells. First, during thermal runaway, the gas mixture composition evolves over time: hydrogen-producing reactions terminate early, followed by termination of olefinic reactions, with CO2 becoming dominant in later stages. Second, as thermal runaway progresses, the flammable range of the gas mixture narrows. The engineer proposes that the narrowing of the flammable range in later stages is directly caused by the shift in gas composition toward CO2 dominance, and therefore that early-stage venting gases are more hazardous than late-stage gases from an explosion risk perspective. Evaluate the admissibility of this proposal. Identify what the evidence supports, what it does not support, and whether the engineer's causal claim and comparative hazard conclusion are justified. Explain the reasoning chain required."
+      },
+      "ground_truth": {
+        "gold_answer": "The engineer's proposal contains two components that must be evaluated separately. The first component—that the flammable range of the gas mixture narrows as thermal runaway progresses—is directly supported by the evidence. The second component—that this narrowing is caused by the shift toward CO2 dominance—is mechanistically plausible and consistent with the evidence (CO2 is a diluent that reduces flammability), but the evidence does not explicitly establish this as the sole or confirmed causal mechanism; it is an admissible inference but not a proven causal claim. The third component—that early-stage gases are more hazardous from an explosion risk perspective than late-stage gases—is admissible as a directional conclusion because the flammable range is wider early in the process when hydrogen-producing and olefinic reactions are active, and narrows as these terminate and CO2 dominates. However, the engineer should not claim this as a precise quantitative comparison without additional data on gas concentrations and mixture fractions at each stage. The reasoning chain is: reaction sequence (H2-producing → olefinic → CO2-dominant) → compositional shift toward less flammable species → narrowing flammable range → reduced explosion risk in later stages. The causal link between CO2 dominance and flammable range narrowing is mechanistically consistent but should be stated as a supported inference rather than a proven cause-effect relationship. The comparative hazard conclusion (early more hazardous than late) is admissible in directional terms.",
+        "must_include": [
+          "The narrowing of the flammable range as TR progresses is directly supported by evidence",
+          "The causal attribution to CO2 dominance is mechanistically consistent but not explicitly proven by the evidence alone",
+          "Early-stage gases having a wider flammable range than late-stage gases is an admissible directional conclusion",
+          "The reaction sequence (H2-producing terminates first, then olefinic, then CO2 dominant) supports the compositional shift reasoning",
+          "The engineer's causal claim is an admissible inference but overstates certainty if presented as established cause-effect"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming the causal mechanism is proven rather than inferred",
+          "Quantifying the relative hazard difference between early and late stages without supporting data",
+          "Concluding that late-stage gases are non-flammable or safe",
+          "Applying this conclusion to non-LFP chemistries or different TR conditions"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of causal inference linking gas composition evolution to flammable range narrowing, and the validity of comparative hazard conclusions across TR stages",
+        "primary_boundary": "Evidence supports the trend (narrowing flammable range) and the sequence (reaction termination order and CO2 dominance) but does not explicitly prove the causal link between CO2 dominance and flammable range narrowing; directional hazard comparison is admissible but quantitative comparison is not",
+        "intended_error_modes": [
+          "causal_overclaim from correlation",
+          "overgeneralization of hazard conclusion",
+          "treating admissible inference as proven mechanism",
+          "ignoring boundary between directional and quantitative conclusions"
+        ]
+      }
+    }
+  ]
+}

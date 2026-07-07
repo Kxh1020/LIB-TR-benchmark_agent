@@ -1,0 +1,37 @@
+{
+  "mcqs": [],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A lithium-ion battery facility operates at a fixed SOC of 40% during normal storage. During an uncontrolled heating event, the heating rate escalates from low to high power before thermal runaway is complete. An engineer claims that because 40% SOC is below the 60% SOC peak LEL condition, the vented gas at this SOC will always be more flammable than at 60% SOC, and therefore the facility is in a higher-risk state than a facility storing batteries at 60% SOC under the same heating escalation. Critically evaluate this claim, identifying which part is supported, which part is not, and what additional factor the engineer has failed to account for."
+      },
+      "ground_truth": {
+        "gold_answer": "The engineer's claim is partially supported but contains a significant error and omits a critical variable. The supported part: at 40% SOC, the LEL of vented gas is lower than at 60% SOC because 60% SOC represents the peak LEL condition. Lower LEL means the gas mixture becomes flammable at a smaller concentration, so the 40% SOC facility does face a more flammable vented gas composition than a 60% SOC facility under comparable heating conditions. The unsupported part: the claim that 40% SOC is 'always' more hazardous than 60% SOC regardless of heating power is not admissible. The LEL of vented gas also decreases monotonically with increasing heating power, independent of SOC. As the heating event escalates from low to high power, the LEL of the vented gas will decline further regardless of the SOC starting point. Therefore, the critical omission is that the engineer has failed to account for the heating power dependence of LEL. Under high heating power escalation, both the 40% and 60% SOC facilities will produce vented gas with LEL values lower than those measured at low heating power, and the relative hazard comparison between the two SOC conditions may shift depending on how each responds to the same power escalation. The engineer cannot conclude that the 40% SOC facility is in a higher-risk state without specifying the heating power level, because the heating power effect operates independently and can dominate the SOC effect at high power levels.",
+        "must_include": [
+          "40% SOC produces lower LEL than 60% SOC because 60% SOC is the LEL peak",
+          "Lower LEL means more flammable mixture, so the directional comparison is correct",
+          "Heating power independently and monotonically reduces LEL",
+          "The engineer omits the heating power variable",
+          "The claim of 'always' more hazardous is not admissible without specifying heating power"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming a specific numerical LEL value for 40% SOC without evidence",
+          "Asserting that heating power effect dominates SOC effect quantitatively",
+          "Generalizing the LEL-SOC relationship to chemistries not addressed in the evidence"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-factor admissibility judgment combining non-monotonic SOC dependence and monotonic heating power dependence of vented gas LEL to evaluate a comparative hazard claim.",
+        "primary_boundary": "The engineer's directional SOC comparison is correct but the 'always' qualifier fails because heating power is an independent variable that also reduces LEL; the comparison is only valid at a specified heating power level.",
+        "intended_error_modes": [
+          "Accepting the engineer's claim entirely because the SOC comparison direction is correct",
+          "Rejecting the claim entirely without recognizing the valid SOC-LEL comparison",
+          "Failing to identify heating power as the omitted variable",
+          "Treating the non-monotonic SOC relationship as monotonic across the full SOC range"
+        ]
+      }
+    }
+  ]
+}

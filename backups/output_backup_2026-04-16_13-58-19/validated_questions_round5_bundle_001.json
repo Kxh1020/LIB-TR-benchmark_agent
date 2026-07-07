@@ -1,0 +1,144 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is selecting an equivalent circuit model for a battery management system that must accurately track terminal voltage under both a standardized urban driving cycle (dynamic, variable current) and a pulse-discharge characterization test (HPPC). The candidate models include: a Shepherd model, a Nonlinear RC model, a PNGV model, a third-order RC model with one-state hysteresis (3RCH), and a three-RC network model with SOC-dependent parameters (3RC-SOC). Historical benchmark data shows that under HPPC testing, the 3RC-SOC model achieves the lowest average voltage error, while the Nonlinear RC model has the highest. Under urban driving cycle testing, the 3RC-SOC model again achieves the lowest average and maximum voltage errors, while the Shepherd model produces the highest maximum voltage error. The engineer also knows that the PNGV model accumulates voltage error over long simulation durations due to a specific structural feature. Which of the following conclusions are admissible for this selection decision?",
+        "options": [
+          "A. The Nonlinear RC model's poor performance under HPPC is attributable to its inability to represent the polarization dynamics of the battery, making it structurally mismatched to pulse-load characterization.",
+          "B. The PNGV model's long-duration voltage error accumulation is caused by capacitor charge buildup in its circuit topology, which means its error will grow monotonically with simulation time regardless of load profile.",
+          "C. The 3RC-SOC model's consistent top ranking across both test protocols justifies selecting it for the BMS application, but this conclusion holds only within the tested operating regimes and does not guarantee superior performance under all possible load conditions.",
+          "D. Because the Shepherd model produces the highest maximum voltage error under the urban driving cycle, it is also expected to produce the highest average voltage error under HPPC testing.",
+          "E. The Nonlinear RC model's highest average voltage error under HPPC, despite having a lower maximum error than the Shepherd model under urban driving cycle, indicates that average and maximum error metrics can rank models differently depending on the test protocol.",
+          "F. For a BMS application requiring accurate voltage tracking over extended continuous operation, the PNGV model presents a specific structural risk that the 3RC-SOC and 3RCH models do not share, based on the identified error accumulation mechanism.",
+          "G. Mathematical battery models as a class are unsuitable for BMS applications because their error range of 5–20% exceeds acceptable accuracy thresholds for any real-world deployment."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that the Nonlinear RC model cannot reflect the polarization phases of the Li-ion battery, which limits its accuracy. HPPC testing specifically exercises polarization dynamics through pulse loading. The structural limitation directly explains the poor HPPC performance.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+156+IEEE_Transactions_on_Vehicular_Technology:C004",
+              "TR_Dynamics+156+IEEE_Transactions_on_Vehicular_Technology:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The evidence states that PNGV produces long-term accumulation of voltage on the capacitor, which increases model voltage error. However, claiming this is monotonic regardless of load profile is an unjustified extrapolation. The rate and pattern of accumulation are load-profile-dependent; the evidence does not support a load-profile-independent monotonic claim.",
+            "error_type": "unjustified_monotonicity_extrapolation",
+            "evidence_refs": [
+              "TR_Dynamics+156+IEEE_Transactions_on_Vehicular_Technology:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The 3RC-SOC model achieves the lowest average and maximum voltage errors under both HPPC and ECE15 test protocols. Selecting it is admissible, but the qualification that this holds within tested regimes is required by the evidence scope. This is a boundary-qualified admissible conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+156+IEEE_Transactions_on_Vehicular_Technology:C002",
+              "TR_Dynamics+156+IEEE_Transactions_on_Vehicular_Technology:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "This is a conservative-sounding but incorrect distractor. The Shepherd model's highest maximum error under ECE15 does not imply it also has the highest average error under HPPC. The HPPC data shows the Nonlinear RC model has the highest average error under HPPC, not the Shepherd model. Cross-protocol rank transfer is not supported.",
+            "error_type": "cross_protocol_rank_transfer_overclaim",
+            "evidence_refs": [
+              "TR_Dynamics+156+IEEE_Transactions_on_Vehicular_Technology:C002",
+              "TR_Dynamics+156+IEEE_Transactions_on_Vehicular_Technology:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "This is a counterintuitive but correct conclusion. The Nonlinear RC model has the highest average error under HPPC (1.2211%) but a lower maximum error than the Shepherd model under ECE15 (2.7446% vs 2.8041%). This demonstrates that average and maximum error metrics can produce different model rankings depending on the test protocol — a multi-factor interaction between metric type and protocol.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+156+IEEE_Transactions_on_Vehicular_Technology:C002",
+              "TR_Dynamics+156+IEEE_Transactions_on_Vehicular_Technology:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The PNGV model has a specific structural feature (capacitor charge accumulation) that causes long-duration voltage error growth. The 3RC-SOC and 3RCH models do not share this identified structural feature. For extended continuous BMS operation, this is a specific, mechanistically grounded risk differential.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+156+IEEE_Transactions_on_Vehicular_Technology:C003"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "The 5–20% error range applies to mathematical battery models as a class, but the equivalent circuit models evaluated in this study (3RC-SOC, 3RCH) achieve average errors well below 1% under both test protocols. Applying the class-level limitation to all models universally ignores the demonstrated performance differentiation within the model class.",
+            "error_type": "overgeneralization_from_class_to_all_instances",
+            "evidence_refs": [
+              "TR_Dynamics+156+IEEE_Transactions_on_Vehicular_Technology:C001",
+              "TR_Dynamics+156+IEEE_Transactions_on_Vehicular_Technology:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Model selection admissibility based on multi-protocol error metrics, structural failure modes, and scope boundaries of benchmark comparisons",
+        "primary_boundary": "Model rankings are protocol-dependent and metric-dependent; cross-protocol rank transfer and universal class-level condemnation are both inadmissible extrapolations",
+        "intended_error_modes": [
+          "Transferring ECE15 rank ordering to HPPC without evidence (D)",
+          "Claiming PNGV error accumulation is monotonic regardless of load profile (B)",
+          "Applying mathematical model class error range to all equivalent circuit models (G)"
+        ],
+        "disallowed_extrapolations": [
+          "Extending PNGV capacitor accumulation to a load-profile-independent monotonic error growth claim",
+          "Applying 5–20% class error to high-accuracy equivalent circuit models with demonstrated sub-1% errors"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A lithium-ion cell is subjected to overcharge at a standard current rate (1C), during which the cell temperature rises to approximately 65°C. Incremental capacity analysis reveals two distinct degradation signatures simultaneously present. A follow-up experiment overcharges an identical cell at 0.1C, and only one degradation signature appears — one that was absent in the 1C experiment. The 1C overcharged cell also shows a serial resistance four times the initial value, while over-discharged and low-temperature cells show only approximately 1.5 times the initial value under the same measurement framework.\n\nExplain the mechanistic basis for the higher resistance increase in the 1C overcharged cell compared to the other fault conditions. In your answer, identify how the two degradation signatures relate to the resistance outcome, and explain what the 0.1C experiment reveals about the relative contribution of each mechanism. Also state one specific limitation of using serial resistance magnitude alone as a diagnostic tool for distinguishing between over-discharge and low-temperature fault conditions."
+      },
+      "ground_truth": {
+        "gold_answer": "The 1C overcharged cell experiences two simultaneously active degradation mechanisms: thermal degradation driven by the temperature rise to 65°C (ICA pattern 1) and electrochemical overcharge degradation from exceeding the voltage limit (ICA pattern 4). The evidence indicates that high temperature contributes the majority of degradation in the standard overcharge case. The four-times resistance increase is the aggregate outcome of both mechanisms acting together, which is more severe than either over-discharge or low-temperature fault acting alone. The 0.1C experiment suppresses temperature rise, eliminating the thermal degradation pathway. Under these conditions, only the pure electrochemical overcharge signature (pattern 4) appears, confirming that this signature is not thermally driven and that the thermal component is the dominant contributor to degradation at standard rate. The limitation of using serial resistance magnitude alone for distinguishing over-discharge from low-temperature fault is that both conditions produce approximately the same resistance magnitude (approximately 1.5 times initial). The distinguishing feature is not magnitude but the depth-of-discharge dependence: over-discharged cells show uniform resistance across the full DOD range, while low-temperature cells show DOD-dependent resistance. A single resistance measurement at one state of charge cannot capture this behavioral difference.",
+        "must_include": [
+          "Two mechanisms active simultaneously in 1C overcharge: thermal degradation and electrochemical overcharge degradation",
+          "High temperature contributes the majority of degradation at standard overcharge rate",
+          "0.1C experiment suppresses temperature, isolating the pure electrochemical overcharge signature",
+          "Over-discharge and low-temperature cells both show approximately 1.5 times initial resistance — same magnitude, cannot be distinguished by magnitude alone",
+          "DOD-dependence of resistance distinguishes low-temperature from over-discharge: over-discharge is uniform across DOD, low-temperature is DOD-dependent"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming that overcharge is always more hazardous than over-discharge from a safety standpoint based solely on resistance data",
+          "Claiming that the 0.1C experiment proves thermal degradation is the only mechanism in standard overcharge",
+          "Claiming that serial resistance can never be used diagnostically — the limitation is specific to magnitude-only comparison between over-discharge and low-temperature faults"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism decomposition of overcharge degradation into thermal and electrochemical components, and the diagnostic limitation of resistance magnitude for fault discrimination",
+        "primary_boundary": "Resistance magnitude is insufficient to distinguish over-discharge from low-temperature fault; DOD-dependence is the required discriminating feature",
+        "intended_error_modes": [
+          "Attributing the entire resistance increase to electrochemical overcharge alone without accounting for the thermal component",
+          "Concluding that the 0.1C experiment proves thermal degradation is absent in standard overcharge rather than dominant",
+          "Claiming resistance magnitude alone can distinguish all three fault types"
+        ]
+      }
+    }
+  ]
+}

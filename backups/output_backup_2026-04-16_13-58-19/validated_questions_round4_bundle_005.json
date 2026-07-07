@@ -1,0 +1,36 @@
+{
+  "mcqs": [],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A cell engineer is designing a graphite/NMC cell with EC/DMC/LiPF6 electrolyte and is considering using 0.4 vol% vinylene carbonate (VC) additive formed at a slow C/10 rate to improve SEI quality. A safety reviewer raises two concerns: (1) that this formulation may produce unusually high amounts of a specific fluorine-containing gas species during thermal abuse, and (2) that at temperatures near 130°C, the residual VC in this formulation creates a distinct venting risk not present in VC-free cells. The engineer responds that the gas onset temperature for this formulation will at least be higher than for VC-free cells, providing a safety margin. Evaluate the engineer's response and the reviewer's two concerns. For each of the three claims, state whether it is supported, unsupported, or contradicted by the described evidence, and identify the specific mechanism or threshold relevant to each judgment."
+      },
+      "ground_truth": {
+        "gold_answer": "The engineer's response is contradicted by the evidence. The onset temperature for CO2, POF3, and H2 evolution is near 70–80°C for all VC concentrations and formation rates tested, including the high-VC/slow-formation condition. There is no evidence that VC content raises the gas onset temperature; the threshold is invariant across conditions. The reviewer's first concern is supported: cells with 0.4 vol% VC and C/10 formation rate produce approximately three times more POF3 than other conditions, indicating that this specific combination amplifies fluorophosphate gas release during thermal abuse. The reviewer's second concern is also supported: at temperatures near 130°C, residual VC can trigger cross-polymerization of EC and VC under strong CO2 evolution, potentially causing rapid internal pressure increase and cell venting. This mechanism is specific to cells retaining residual VC and does not apply to VC-free formulations.",
+        "must_include": [
+          "Gas onset temperature (~70–80°C) is invariant across VC concentrations and formation rates, contradicting the engineer's claim of a higher onset temperature",
+          "High VC (0.4 vol%) with slow formation (C/10) produces approximately three times more POF3 than other conditions, supporting the reviewer's first concern",
+          "Residual VC at ~130°C can trigger cross-polymerization with EC under strong CO2 evolution causing rapid pressure increase and venting, supporting the reviewer's second concern",
+          "The POF3 amplification is specific to the combination of high VC content and low formation rate, not attributable to either factor alone"
+        ],
+        "disallowed_extrapolations": [
+          "VC suppresses all gas species during thermal abuse",
+          "The POF3 increase implies higher overall thermal runaway risk without further evidence",
+          "The venting risk at 130°C applies to all VC concentrations equally",
+          "Formation rate alone controls POF3 evolution magnitude"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility judgment on three simultaneous claims about a specific VC/formation-rate combination: gas onset temperature invariance, condition-specific POF3 amplification, and VC-specific venting mechanism at elevated temperature.",
+        "primary_boundary": "Gas onset temperature is invariant across all tested conditions (C002), making the engineer's claim inadmissible. POF3 amplification is specific to the high-VC/slow-formation combination (C003). The venting risk at ~130°C is specific to cells with residual VC (C005).",
+        "intended_error_modes": [
+          "Accepting the engineer's claim that VC raises gas onset temperature",
+          "Attributing POF3 amplification to VC content alone without requiring the slow formation rate condition",
+          "Generalizing the 130°C venting risk to all VC concentrations rather than specifically to cells with residual VC"
+        ]
+      }
+    }
+  ]
+}

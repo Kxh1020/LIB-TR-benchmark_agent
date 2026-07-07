@@ -1,0 +1,231 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A coupled electrochemical-thermal model simulates thermal runaway onset in a lithium-ion cell under external heating. The model includes SEI decomposition beginning around 90–120°C, cathode-electrolyte reaction triggering above 120°C, and electrolyte decomposition above 200°C. Separate simulations show that under 1C charging, thermal runaway occurs 33 s earlier than under uncharged conditions, and that the advancement in thermal runaway timing increases linearly with charge and discharge rate, with the discharge direction producing a more pronounced effect. At 3C discharge, electrochemical heat generation substantially exceeds that at 3C charge. A designer proposes that because the linear trend in timing advancement is consistent across rates, a cell operating at 5C discharge in an externally heated environment poses a predictable and proportionally manageable risk relative to 1C discharge. Which of the following assessments of this proposal are correct?",
+        "options": [
+          "A. The proposal is undermined because the 106 s reduction in thermal runaway trigger time between 1C and 5C discharge represents a large absolute compression of the available response window, even if the linear trend itself is consistent.",
+          "B. The proposal is supported because a linear relationship between discharge rate and timing advancement allows straightforward extrapolation of risk across the full rate range.",
+          "C. The asymmetry in electrochemical heat generation between charge and discharge at the same C-rate implies that the discharge direction accelerates approach to the SEI decomposition threshold more rapidly than charge at equal rates, which is mechanistically consistent with the more pronounced timing advancement under discharge.",
+          "D. Because SEI decomposition begins below 120°C and cathode-electrolyte reaction triggers above 120°C, a cell reaching 115°C under high-rate discharge has not yet entered the most dangerous reaction regime and can be considered to have a remaining thermal margin.",
+          "E. The linear trend in timing advancement is sufficient to conclude that the thermal runaway mechanism itself does not change between 1C and 5C discharge conditions.",
+          "F. The greater electrochemical heat at 3C discharge compared to 3C charge directly implies that discharge-induced thermal runaway is initiated by a different reaction sequence than charge-induced thermal runaway."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence states that the 5C discharge condition triggers thermal runaway 106 s earlier than 1C discharge. Even if the trend is linear and predictable in direction, a 106 s compression of the trigger window is a large absolute reduction in response time. The designer's framing of 'proportionally manageable' ignores that absolute time margin matters for safety intervention, not just proportional scaling.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+187+Applied_Thermal_Engineering:C004",
+              "TR_Modelling+187+Applied_Thermal_Engineering:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "A linear trend supports directional extrapolation but does not make risk 'proportionally manageable.' The absolute compression of trigger time at high rates has safety implications that a linear extrapolation of timing does not capture. This is a conservative-appearing but incorrect option that conflates predictability of trend with manageability of risk.",
+            "error_type": "causal_overclaim_from_trend",
+            "evidence_refs": [
+              "TR_Modelling+187+Applied_Thermal_Engineering:C002",
+              "TR_Modelling+187+Applied_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence shows discharge generates substantially more electrochemical heat than charge at the same rate (e.g., 3C), and that discharge produces more pronounced timing advancement. The mechanistic link—higher electrochemical heat accelerates approach to the SEI decomposition onset temperature, consistent with earlier thermal runaway—is a valid multi-step inference supported by the evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+187+Applied_Thermal_Engineering:C002",
+              "TR_Modelling+187+Applied_Thermal_Engineering:C003",
+              "TR_Modelling+187+Applied_Thermal_Engineering:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "While 115°C is below the 120°C cathode-electrolyte reaction trigger, SEI decomposition is already active in the 90–120°C range, meaning the cell is already in an exothermic reaction regime at 115°C. Describing this as 'not yet entered the most dangerous reaction regime' is misleading and ignores that SEI decomposition itself contributes to thermal escalation toward the 120°C threshold.",
+            "error_type": "ignoring_sequential_reaction_coupling",
+            "evidence_refs": [
+              "TR_Modelling+187+Applied_Thermal_Engineering:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "A linear trend in timing advancement is a macroscopic observation and does not confirm that the underlying reaction mechanism is unchanged across the rate range. The evidence does not support inferring mechanism invariance from behavioral linearity.",
+            "error_type": "causal_overclaim_from_correlation",
+            "evidence_refs": [
+              "TR_Modelling+187+Applied_Thermal_Engineering:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Greater electrochemical heat under discharge compared to charge at the same rate reflects quantitative differences in heat generation, not a different reaction sequence. The evidence does not state that the reaction sequence differs between charge and discharge; it only states that the magnitude of electrochemical heat differs.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Modelling+187+Applied_Thermal_Engineering:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of risk proportionality claim based on linear timing trend, given absolute time compression and mechanistic heat generation asymmetry",
+        "primary_boundary": "Linear trend in timing advancement supports directional prediction but does not imply proportional manageability of absolute safety margins",
+        "intended_error_modes": [
+          "Conflating trend predictability with risk proportionality (B)",
+          "Ignoring SEI decomposition activity below 120°C when assessing thermal margin (D)",
+          "Inferring mechanism invariance from behavioral linearity (E)",
+          "Attributing quantitative heat difference to a different reaction sequence (F)"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming linear trend implies unchanged mechanism across rate range",
+          "Treating 115°C as safe because cathode-electrolyte reaction threshold is 120°C while SEI decomposition is already active",
+          "Inferring different reaction pathways from different heat magnitudes"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A CNN-LSTM detection system monitors temperature contour images from a battery pack to identify abnormal heat generation. The system uses sequences of frames at a fixed time step; testing showed that increasing the time step from 8 s to 16 s per sequence reduced validation accuracy from approximately 97% to 89%, attributed to reduced contrast between risk and safe states and increased temperature change per step. The system achieves a recall of 100% and an inference time under 0.1 s per batch. A separate finding shows that when two cells undergo thermal runaway simultaneously rather than one, detection performance improves because the temperature contrast in the monitored domain becomes more prominent. An engineer proposes deploying this system as the primary safety response trigger for a pack, arguing that 100% recall and sub-0.1 s inference time together guarantee that no thermal runaway event will go undetected in time for intervention. Which of the following judgments about this proposal are correct?",
+        "options": [
+          "A. The 100% recall result is specific to the experimental conditions under which the model was trained and evaluated; applying it as a guarantee across all deployment configurations requires assuming that operational temperature contrast patterns remain within the training distribution.",
+          "B. The improvement in detection performance when two cells are in thermal runaway rather than one is counterintuitive from a safety perspective, because the condition that improves detection is itself a more severe failure state.",
+          "C. The sub-0.1 s inference time is sufficient to guarantee timely intervention because it is negligible compared to the timescales of thermal runaway propagation in typical battery modules.",
+          "D. The degradation in accuracy when the time step is doubled suggests that the model's performance is sensitive to the temporal resolution of the input, which means detection reliability could degrade if the monitoring system's sampling rate changes in deployment.",
+          "E. Because recall is 100%, the F1-score of 85.02 must imply a precision below 100%, meaning the system produces false positives; deploying it as the sole trigger without false-positive filtering could cause unnecessary safety activations.",
+          "F. The detection system's performance characteristics are sufficient to conclude that it can replace electrochemical state monitoring because temperature contour imaging captures all relevant precursors to thermal runaway."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "D",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The 100% recall was achieved under specific experimental conditions. Generalizing it as a deployment guarantee requires that the operational environment produces temperature contrast patterns similar to the training data. This is a standard admissibility boundary for ML-based detection systems and is not contradicted by any evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+186+Applied_Thermal_Engineering:C005",
+              "TR_Modelling+186+Applied_Thermal_Engineering:C001"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The evidence states that two TR cells produce better detection than one because the temperature contrast is more prominent. This is counterintuitive from a safety standpoint: the condition that makes detection easier (two cells in TR) is a more dangerous failure state than the single-cell case. This is a genuine counterintuitive but correct observation supported directly by the evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+186+Applied_Thermal_Engineering:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The inference time being under 0.1 s addresses computational latency only. Whether this is sufficient for timely intervention depends on the full response chain (detection → signal transmission → actuator response → physical intervention), none of which are addressed by inference time alone. The evidence does not support the claim that inference time alone guarantees timely intervention.",
+            "error_type": "scope_expansion_from_component_to_system",
+            "evidence_refs": [
+              "TR_Modelling+186+Applied_Thermal_Engineering:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The evidence directly shows that doubling the time step from 8 s to 16 s reduced validation accuracy from ~97% to ~89%. This demonstrates sensitivity to temporal resolution. If deployment sampling rate differs from training conditions, detection reliability could degrade by the same mechanism.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+186+Applied_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "F1-score is the harmonic mean of precision and recall. With recall at 100% and F1 at 85.02%, precision must be below 100% (approximately 73.9% by calculation from the harmonic mean formula). This means false positives exist. Deploying the system as a sole trigger without false-positive management would cause unnecessary activations. This is a correct multi-step inference from the reported metrics.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+186+Applied_Thermal_Engineering:C001",
+              "TR_Modelling+186+Applied_Thermal_Engineering:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Temperature contour imaging captures thermal signatures but does not capture electrochemical state variables such as voltage, impedance, or SOC. The evidence does not claim that temperature imaging captures all relevant precursors to thermal runaway. This is an unsupported scope expansion.",
+            "error_type": "scope_expansion_beyond_evidence",
+            "evidence_refs": [
+              "TR_Modelling+186+Applied_Thermal_Engineering:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of deployment guarantee claims for a CNN-LSTM detection system given known performance boundaries and metric relationships",
+        "primary_boundary": "100% recall under experimental conditions does not constitute a deployment guarantee; F1 below 100% with perfect recall implies false positives; inference time addresses only one component of intervention latency",
+        "intended_error_modes": [
+          "Treating experimental recall as a universal deployment guarantee (engineer's proposal)",
+          "Inferring that sub-0.1 s inference time alone guarantees timely intervention (C)",
+          "Scope expansion from temperature imaging to full electrochemical state monitoring (F)"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming temperature contour imaging captures all thermal runaway precursors",
+          "Treating inference time as equivalent to total intervention response time",
+          "Generalizing 100% recall from training conditions to all deployment configurations"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery module is subjected to an external heating abuse test. One cell enters thermal runaway. Post-test energy accounting shows that the vast majority of released energy heated the initiating cell, a substantial fraction drove material ejection, and a small fraction—less than 10%—was available to interact with neighboring cells. Separately, it has been established that as little as 12% of a cell's total released energy is sufficient to trigger thermal runaway in an adjacent cell. A thermal engineer reviewing these two findings concludes that, based on these numbers alone, propagation to adjacent cells in this module should be considered impossible. Identify the specific reasoning error in the engineer's conclusion, explain why the two numerical findings do not jointly support the impossibility claim, and describe what additional information would be needed to make a defensible admissibility judgment about propagation risk."
+      },
+      "ground_truth": {
+        "gold_answer": "The engineer's error is treating the average or representative energy fraction reaching neighbors (reported as less than 10%) as a hard universal upper bound that applies in all configurations, and then comparing it to the minimum sufficient trigger fraction (12%) to conclude impossibility. The two numbers do not jointly support impossibility for several reasons: (1) 'less than 10%' is a distributional or representative figure, not a guaranteed maximum under all geometric, spacing, and SOC conditions—actual energy transfer to a specific neighbor could vary depending on cell arrangement, spacing, and thermal pathway; (2) the 12% figure represents the minimum sufficient to trigger propagation under some conditions, not a universal threshold applicable to all cell chemistries, SOC levels, and configurations; (3) the near-overlap between the two figures (less than 10% available vs. 12% required) means the margin is narrow and condition-dependent rather than categorically safe. To make a defensible admissibility judgment, the engineer would need: (a) information about whether the less-than-10% figure is a worst-case bound or an average across configurations; (b) the SOC of the cells, since severity of thermal runaway and energy release increase with SOC; (c) the specific module geometry and cell spacing, since increasing spacing reduces propagation risk; and (d) whether the trigger temperature of adjacent cells is consistent with the 12% threshold or differs under the specific conditions tested.",
+        "must_include": [
+          "The less-than-10% figure is not a guaranteed hard upper bound applicable in all configurations",
+          "The 12% trigger threshold may vary with conditions such as SOC, chemistry, or geometry",
+          "The narrow numerical gap between the two figures means the margin is condition-dependent, not categorically safe",
+          "SOC dependence of thermal runaway severity affects the energy release and therefore the fraction available to neighbors",
+          "Cell spacing and module geometry affect how much energy actually reaches neighboring cells",
+          "Additional information about worst-case vs. average energy transfer and adjacent cell trigger conditions is needed"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming propagation is definitively possible based solely on these numbers",
+          "Introducing specific numerical thresholds not present in the evidence",
+          "Asserting that the 12% figure applies universally across all chemistries and configurations without qualification",
+          "Concluding that the engineer is correct because 10% is less than 12%"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility boundary between 'propagation is unlikely under these specific conditions' and 'propagation is impossible based on energy accounting alone'",
+        "primary_boundary": "The near-overlap of the two energy fractions (less than 10% available vs. 12% sufficient) creates a narrow margin that requires condition-specific qualification rather than a universal impossibility claim; treating representative averages as hard bounds is the core error",
+        "intended_error_modes": [
+          "Treating average energy fraction as a universal hard upper bound",
+          "Ignoring SOC dependence of energy release magnitude",
+          "Ignoring geometric and spacing effects on energy transfer to neighbors",
+          "Confusing 'less than threshold on average' with 'impossible in all configurations'"
+        ]
+      }
+    }
+  ]
+}

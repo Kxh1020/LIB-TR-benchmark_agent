@@ -1,0 +1,226 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Lithium-ion battery vent gases ignite inside a pipeline. The flame velocity peaks near 20.4 m/s during the spherical flame stage. The peak overpressure generated is approximately 0.595 MPa, which is lower than the overpressure produced by pure hydrogen or pure methane combustion in air under comparable conditions. A safety engineer assesses explosion hazard classification for these vent gases. Which conclusions are admissible?",
+        "options": [
+          "A. The reduced overpressure relative to pure hydrogen or methane is consistent with the diluting effect of inert gas components within the vent gas mixture.",
+          "B. Because peak overpressure is lower than that of pure hydrogen, the vent gas mixture presents a lower flame propagation velocity than pure hydrogen under all pipeline conditions.",
+          "C. The spherical flame stage produces the highest flame velocity, indicating that flame propagation is fastest when the flame front can expand freely without confinement.",
+          "D. The overpressure of 0.595 MPa, though below the pure-fuel benchmark, remains at a magnitude that cannot be dismissed as negligible for structural integrity assessment.",
+          "E. The presence of inert gas in the vent mixture guarantees that overpressure will always remain below the pure-fuel threshold regardless of mixture composition or ignition conditions.",
+          "F. The lower overpressure compared to pure fuels implies that the vent gases are non-flammable and pose no deflagration risk in confined spaces."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence directly attributes lower overpressure to inert gas presence in vent gases, supporting this mechanistic inference.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+130+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Overpressure comparison does not imply flame velocity ordering; velocity and overpressure are distinct parameters not directly linked here.",
+            "error_type": "mechanism_confusion",
+            "evidence_refs": [
+              "TR_Gasventing+130+Journal_of_Power_Sources:C001",
+              "TR_Gasventing+130+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence identifies peak velocity during spherical flame stage when flame propagates freely, supporting free-expansion as the velocity-maximizing condition.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+130+Journal_of_Power_Sources:C001"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "0.595 MPa is a substantial overpressure; dismissing it as negligible would be unsupported and unsafe given the magnitude relative to structural thresholds.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+130+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence identifies inert gas as the cause in this specific mixture; universalizing this as a guarantee across all compositions overclaims the evidence.",
+            "error_type": "overgeneralization",
+            "evidence_refs": [
+              "TR_Gasventing+130+Journal_of_Power_Sources:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Evidence documents active flame propagation and significant overpressure; the mixture is demonstrably flammable and hazardous.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+130+Journal_of_Power_Sources:C001",
+              "TR_Gasventing+130+Journal_of_Power_Sources:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism attribution for reduced overpressure and admissibility of hazard classification from comparative combustion data",
+        "primary_boundary": "Lower overpressure than pure fuels does not imply non-hazardous or universally bounded behavior; inert dilution is condition-specific",
+        "intended_error_modes": [
+          "conflating overpressure ranking with velocity ranking",
+          "overgeneralizing inert-gas effect as a universal guarantee",
+          "incorrectly inferring non-flammability from reduced overpressure"
+        ],
+        "disallowed_extrapolations": [
+          "Velocity ordering from overpressure ordering",
+          "Non-flammability inference from sub-benchmark overpressure"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An energy storage container explosion scenario is modeled. Overpressure measurements at multiple distances show that sensors on the door side record values near or above 4.8 kPa at approximately 10 m, while sensors on the pressure relief panel side record values below this threshold at comparable distances. The 4.8 kPa value is used as the minimum structural damage threshold. A risk engineer compares hazard zones on each side of the container. Which conclusions are admissible?",
+        "options": [
+          "A. The door side presents greater structural damage risk at equivalent distances than the pressure relief panel side, based on the differential overpressure distribution.",
+          "B. The asymmetric overpressure distribution implies that the pressure relief panels are more effective at directing explosive energy away from the panel side than the door mechanism.",
+          "C. A location 10 m from the container on the door side is within the minimum damage zone, while an equivalent location on the panel side is outside it.",
+          "D. Because the door opens at a higher pressure threshold than the relief panels, the door side accumulates more energy before venting, which is consistent with higher far-field overpressure on that side.",
+          "E. The 4.8 kPa damage threshold establishes that any overpressure below this value at any distance poses zero structural risk to personnel or equipment.",
+          "F. The spatial asymmetry in overpressure distribution means that a single symmetric safety exclusion zone around the container would underestimate risk on the door side."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence directly states door side risk is higher than relief panel side based on measured overpressure distribution.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+130+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence shows lower overpressure on panel side but does not establish that panels actively redirect energy; lower threshold venting is the supported mechanism.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+130+Journal_of_Power_Sources:C004",
+              "TR_Gasventing+130+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence shows door-side sensors near 4.8 kPa at ~10 m while panel-side sensors are below threshold, directly supporting this spatial distinction.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+130+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Door opens at 20 kPa vs. panels at 3 kPa; higher threshold means more energy accumulates before door vents, consistent with higher far-field overpressure on door side.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+130+Journal_of_Power_Sources:C004",
+              "TR_Gasventing+130+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "4.8 kPa is a minimum damage threshold, not a zero-risk boundary; sub-threshold values may still present risk and the evidence does not support a zero-risk claim.",
+            "error_type": "protective_mechanism_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+130+Journal_of_Power_Sources:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Asymmetric overpressure distribution means symmetric exclusion zones would underprotect on the door side, a direct safety implication of the spatial data.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+130+Journal_of_Power_Sources:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Asymmetric hazard zone derivation from differential venting threshold and overpressure distribution",
+        "primary_boundary": "Higher door threshold causes energy accumulation before venting, producing asymmetric far-field overpressure; symmetric exclusion zones are therefore inadmissible",
+        "intended_error_modes": [
+          "attributing panel-side safety to active energy redirection rather than earlier venting",
+          "treating minimum damage threshold as zero-risk boundary",
+          "applying symmetric safety zones to asymmetric hazard data"
+        ],
+        "disallowed_extrapolations": [
+          "Zero-risk inference below 4.8 kPa",
+          "Active directional energy control by relief panels without supporting mechanism evidence"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "An energy storage container filled with lithium-ion battery vent gases ignites. The container is equipped with pressure relief panels and an escape door. Measured peak internal overpressure reaches approximately 23 kPa. The door side of the container shows overpressures near the structural damage threshold at approximately 10 m distance, while the panel side shows overpressures below that threshold at the same distance. Separately, pipeline combustion tests of similar vent gases show peak overpressure near 0.595 MPa, which is lower than pure hydrogen or methane combustion, attributed to inert gas dilution in the vent mixture. A safety engineer must determine: (1) why the door side presents greater external hazard than the panel side despite both venting the same internal gas mixture, and (2) why the vent gas overpressure in the pipeline is lower than pure-fuel benchmarks despite containing hydrogen and methane components. Provide a mechanistic explanation for both observations and identify the key physical parameter controlling each."
+      },
+      "ground_truth": {
+        "gold_answer": "For observation (1): The door has a higher activation threshold (20 kPa) than the pressure relief panels (3 kPa). The panels open early during the pressure rise, releasing energy progressively at lower internal pressure. The door remains closed until 20 kPa is reached, meaning more energy accumulates inside before the door vents. When the door opens, it releases a higher-energy burst in a more directional manner, producing greater far-field overpressure on the door side. The controlling parameter is the differential activation threshold between the two venting mechanisms. For observation (2): The vent gas mixture contains inert gas components alongside the combustible species. Inert gases dilute the reactive mixture, reducing the effective flame temperature and reaction rate, which lowers the peak overpressure generated during combustion relative to a pure-fuel mixture. The controlling parameter is the inert gas fraction in the vent mixture.",
+        "must_include": [
+          "door threshold higher than panel threshold causing energy accumulation before door venting",
+          "panels open earlier reducing progressive energy release on panel side",
+          "inert gas in vent mixture reduces overpressure relative to pure fuels",
+          "differential activation threshold as controlling parameter for asymmetric hazard",
+          "inert gas dilution as controlling parameter for sub-benchmark overpressure"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming panels actively redirect explosion energy toward the door side",
+          "Claiming vent gas mixture is non-flammable or safe because overpressure is below pure-fuel benchmark",
+          "Asserting that the door side overpressure exceeds the pipeline combustion overpressure",
+          "Generalizing that inert gas presence always guarantees sub-benchmark overpressure regardless of mixture composition"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanistic attribution of asymmetric external hazard to differential venting thresholds, and of reduced pipeline overpressure to inert gas dilution",
+        "primary_boundary": "Asymmetric hazard arises from threshold difference, not from directional energy redirection; inert gas effect is mixture-specific, not a universal safety guarantee",
+        "intended_error_modes": [
+          "Attributing door-side hazard to panel-side active energy deflection",
+          "Confusing lower overpressure with non-flammability",
+          "Treating inert gas dilution as a universal overpressure limiter",
+          "Failing to connect door threshold to energy accumulation mechanism"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,315 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A vented enclosure contains a DMC/BVG gas mixture at 393 K and 0.1 MPa. An engineer compares the explosion hazard of pure DMC vapor against pure BVG under identical conditions and notes that BVG contains a significant fraction of inert gases. The engineer must select the correct mechanistic interpretation of the observed pressure difference and its implications for vent sizing. Which of the following statements are admissible conclusions?",
+        "options": [
+          "A. The higher peak overpressure of DMC relative to BVG is attributable to both the absence of inert diluents and the greater combustion energy density of DMC, making these two factors jointly responsible.",
+          "B. Because BVG contains inert gases that suppress combustion, its peak overpressure will always remain below that of any pure flammable vapor regardless of mixture composition.",
+          "C. The 31% difference in peak overpressure between DMC and BVG directly implies that vent areas sized for BVG will be inadequate by at least 31% when DMC is present at high fractions.",
+          "D. Inert gas content in BVG acts as a combustion suppressant, so increasing the BVG fraction in a DMC/BVG mixture would be expected to moderate peak overpressure relative to pure DMC.",
+          "E. The peak overpressure difference between DMC and BVG is sufficient to conclude that DMC poses a greater deflagration risk than BVG under all practical storage conditions.",
+          "F. The rate of pressure rise for pure DMC would be expected to exceed that of pure BVG under the same initial conditions, consistent with the higher combustion energy and absence of inert suppression."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence explicitly attributes the DMC–BVG pressure difference to both inert suppression in BVG and higher combustion heat of DMC.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+143+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Overgeneralization; the claim applies to BVG vs. pure DMC under specific conditions, not universally against any pure flammable vapor.",
+            "error_type": "Overgeneralization distractor",
+            "evidence_refs": [
+              "TR_Gasventing+143+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Vent area scales nonlinearly with overpressure; a 31% pressure difference does not translate directly to a 31% vent area deficit.",
+            "error_type": "Causal overclaim / numerical extrapolation",
+            "evidence_refs": [
+              "TR_Gasventing+143+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Mechanistically consistent: inert gases in BVG suppress combustion, so higher BVG fraction dilutes DMC and moderates peak overpressure.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+143+Journal_of_Loss_Prevention_in_the_Process_Industries:C001",
+              "TR_Gasventing+143+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Conclusion is condition-specific (393 K, 0.1 MPa, 8 L vessel); generalizing to all practical storage conditions exceeds evidence scope.",
+            "error_type": "Scope expansion beyond stated conditions",
+            "evidence_refs": [
+              "TR_Gasventing+143+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Higher combustion heat and absence of inert suppression both elevate rate of pressure rise; this is a minimal engineering implication consistent with the evidence mechanism.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+143+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanistic attribution of DMC vs. BVG pressure difference and its admissible engineering implications",
+        "primary_boundary": "The 31% overpressure difference is condition-specific and mechanistically dual-cause; it cannot be linearly transferred to vent sizing or universalized across all conditions.",
+        "intended_error_modes": [
+          "Numerical linear extrapolation to vent area",
+          "Overgeneralization of BVG suppression effect",
+          "Scope expansion to all storage conditions"
+        ],
+        "disallowed_extrapolations": [
+          "Vent area scales linearly with peak overpressure",
+          "BVG inert content suppresses all flammable vapors universally",
+          "Single-condition test generalizes to all practical conditions"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A process safety engineer is evaluating explosion risk for a DMC/BVG mixture system where the DMC mole fraction (xDMC) can vary between 0.1 and 0.9. Experimental data show that peak overpressure and maximum rate of pressure rise both increase as xDMC rises, but the rate of increase is substantially larger in the range xDMC = 0.1–0.5 than in xDMC = 0.6–0.9. The engineer must determine the correct interpretation of this trend for hazard classification and control strategy. Which statements are admissible?",
+        "options": [
+          "A. The diminishing rate of increase in peak overpressure at high xDMC values indicates that explosion severity saturates, so mixtures above xDMC = 0.6 can be treated as equivalent hazard for vent design purposes.",
+          "B. The non-linear response of peak overpressure to xDMC means that a single worst-case value derived at xDMC = 0.9 is conservative for the entire composition range.",
+          "C. The steeper increase in both peak overpressure and rate of pressure rise at lower xDMC fractions suggests that incremental addition of DMC to a predominantly BVG mixture produces a disproportionately larger hazard escalation than adding DMC to an already DMC-rich mixture.",
+          "D. Because both peak overpressure and rate of pressure rise increase monotonically with xDMC across the full range, the mixture at xDMC = 0.9 represents the maximum explosion hazard condition within the tested range.",
+          "E. The observed non-monotonic sensitivity implies that explosion suppression systems optimized for intermediate xDMC values will be inadequate at high xDMC values.",
+          "F. Designing explosion protection based solely on the low-xDMC regime response rate would underestimate cumulative hazard escalation across the full composition range."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "C",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "Diminishing rate of increase does not imply hazard equivalence; peak overpressure still increases at high xDMC, so treating them as equivalent is unsupported.",
+            "error_type": "Boundary violation — conflating diminishing sensitivity with plateau equivalence",
+            "evidence_refs": [
+              "TR_Gasventing+143+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Appears conservative but is incorrect: the steeper sensitivity at low xDMC means the worst-case at xDMC = 0.9 does not capture the disproportionate hazard escalation rate at intermediate fractions relevant to transient conditions.",
+            "error_type": "Conservative but wrong — ignores regime-dependent sensitivity for dynamic scenarios",
+            "evidence_refs": [
+              "TR_Gasventing+143+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Directly supported: 12.2% and 17.7% increases over xDMC 0.1–0.5 vs. 5.5% and 5.6% over 0.6–0.9 demonstrate disproportionate escalation at lower fractions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+143+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Monotonic increase is confirmed across the full range; xDMC = 0.9 represents the highest tested hazard condition for both metrics.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+143+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The trend is monotonic, not non-monotonic; the premise of the option is factually inconsistent with the evidence.",
+            "error_type": "Mechanism substitution — mischaracterizes monotonic trend as non-monotonic",
+            "evidence_refs": [
+              "TR_Gasventing+143+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Using only the low-xDMC response rate would miss the cumulative absolute increase; the total increase from 0.1 to 0.9 exceeds what the low-regime rate alone would project.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+143+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Interpretation of non-linear xDMC sensitivity for explosion hazard classification and protection design",
+        "primary_boundary": "Diminishing marginal sensitivity at high xDMC does not imply hazard equivalence or plateau; the trend remains monotonic and cumulative.",
+        "intended_error_modes": [
+          "Conflating diminishing rate with plateau",
+          "Treating worst-case single-point as universally conservative without considering transient regimes",
+          "Misidentifying monotonic trend as non-monotonic"
+        ],
+        "disallowed_extrapolations": [
+          "Hazard equivalence above xDMC = 0.6",
+          "Single worst-case point is always sufficient for dynamic composition scenarios"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery thermal runaway event releases a DMC/BVG gas mixture into a confined space. Safety engineers must determine the preferred control parameter—combustible gas concentration or oxygen concentration—to prevent ignition. The DMC mole fraction in the released gas is measured at xDMC = 0.25. Additionally, the ambient temperature in the space rises to 403 K during the event. Which of the following conclusions about control strategy and flammability boundary behavior are admissible?",
+        "options": [
+          "A. At xDMC = 0.25, monitoring and controlling combustible gas concentration is the primary safety-relevant parameter because the limiting oxygen concentration is below the lower flammability limit at this composition.",
+          "B. If the DMC fraction in the released gas increases to xDMC = 0.4 during the event, oxygen concentration control becomes the preferred parameter because the limiting oxygen concentration now exceeds the lower flammability limit.",
+          "C. The elevated ambient temperature of 403 K reduces the lower flammability limit of the mixture, which expands the flammable envelope and increases ignition risk relative to standard temperature conditions.",
+          "D. Because the limiting oxygen concentration increases linearly with xDMC, a mixture at xDMC = 0.25 requires less oxygen removal to render it non-flammable than a mixture at xDMC = 0.5.",
+          "E. The temperature-driven reduction in lower flammability limit is uniform across all DMC fractions, so the relative ranking of ignition risk between different xDMC values is preserved at elevated temperature.",
+          "F. Switching from combustible concentration control to oxygen concentration control as xDMC crosses 0.3 is justified because the governing flammability boundary parameter changes at that threshold."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "At xDMC < 0.3, LOC is below LFL; combustible concentration is the priority control parameter per the threshold evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+143+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "At xDMC > 0.3, LOC exceeds LFL; oxygen concentration becomes the preferred control parameter, directly supported by the threshold evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+143+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence confirms LFL decreases with increasing temperature (363–423 K range), expanding the flammable envelope at 403 K.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+143+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "LOC increases linearly with xDMC (R²=0.97); lower xDMC requires less oxygen removal, a direct mechanistic implication of the linear LOC relationship.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+143+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence shows larger xDMC values exhibit greater LFL reduction with temperature, so the relative ranking of ignition risk changes at elevated temperature.",
+            "error_type": "Overgeneralization — ignores differential temperature sensitivity across xDMC values",
+            "evidence_refs": [
+              "TR_Gasventing+143+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "The xDMC = 0.3 threshold marks where LOC crosses LFL; the change in governing parameter at this boundary directly justifies the control strategy switch.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+143+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-parameter safety control strategy selection based on composition-dependent LOC/LFL crossover and temperature effects on flammability",
+        "primary_boundary": "The xDMC = 0.3 threshold defines which parameter governs ignition risk; temperature effects on LFL are not uniform across compositions.",
+        "intended_error_modes": [
+          "Assuming uniform temperature sensitivity across all xDMC values",
+          "Ignoring the LOC/LFL crossover threshold for control parameter selection"
+        ],
+        "disallowed_extrapolations": [
+          "Temperature-driven LFL reduction is composition-independent",
+          "A single control parameter is universally optimal regardless of xDMC"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A gas mixture released during a battery thermal runaway event contains DMC and BVG components. As the DMC mole fraction increases from very low values toward 1.0, two flammability-related parameters—the lower flammability limit (LFL) and the limiting oxygen concentration (LOC)—respond differently to this compositional change. Explain the mechanistic basis for how each parameter changes with increasing DMC fraction, identify the compositional threshold at which the preferred safety control strategy shifts, and justify which parameter should be prioritized for monitoring above and below that threshold. Your answer should address the underlying chemical reason for the LOC behavior."
+      },
+      "ground_truth": {
+        "gold_answer": "As xDMC increases, the LFL of the mixture decreases (the mixture becomes flammable at lower fuel concentrations), while the LOC increases approximately linearly with xDMC. The mechanistic basis for the LOC increase is that DMC requires approximately 5.5 times more oxygen per mole for complete combustion than BVG; therefore, as DMC fraction rises, the mixture demands more oxygen to sustain combustion, raising the minimum oxygen concentration needed for ignition. At xDMC below 0.3, LOC is lower than LFL, meaning a mixture can reach its lower flammability limit before oxygen becomes limiting; combustible concentration is therefore the priority monitoring parameter in this regime. At xDMC above 0.3, LOC exceeds LFL, meaning oxygen availability becomes the binding constraint before the mixture reaches its flammability limit; oxygen concentration control is therefore the preferred parameter. The threshold at xDMC = 0.3 marks the crossover where the governing flammability boundary switches from fuel-side to oxygen-side control.",
+        "must_include": [
+          "LOC increases with xDMC due to higher oxygen demand of DMC combustion (approximately 5.5× per mole relative to BVG)",
+          "LFL decreases as xDMC increases",
+          "xDMC = 0.3 is the crossover threshold where LOC equals LFL",
+          "Below xDMC = 0.3: combustible concentration is the priority parameter",
+          "Above xDMC = 0.3: oxygen concentration is the priority parameter"
+        ],
+        "disallowed_extrapolations": [
+          "LOC and LFL crossover implies the mixture is non-flammable at xDMC = 0.3",
+          "The linear LOC–xDMC relationship holds beyond the tested composition range",
+          "Temperature effects on LFL are uniform across all xDMC values",
+          "The control strategy recommendation applies to all temperatures without qualification"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanistic basis of LOC increase with xDMC and composition-dependent control parameter selection at the LOC/LFL crossover threshold",
+        "primary_boundary": "The xDMC = 0.3 crossover defines regime-dependent control strategy; the LOC increase is mechanistically caused by differential oxygen stoichiometry, not a general flammability property.",
+        "intended_error_modes": [
+          "Attributing LOC increase to general flammability enhancement without citing oxygen stoichiometry",
+          "Failing to identify the xDMC = 0.3 threshold as a regime boundary",
+          "Treating the control parameter recommendation as composition-independent",
+          "Confusing LFL decrease with LOC decrease"
+        ]
+      }
+    }
+  ]
+}

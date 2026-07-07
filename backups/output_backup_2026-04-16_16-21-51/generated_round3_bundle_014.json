@@ -1,0 +1,336 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A lithium-ion battery module is housed in a partially enclosed equipment cabinet. During a thermal runaway event in one cell, an engineer must decide between deploying ultrafine water mist (droplet diameter ~10 µm) or a conventional fine water mist (droplet diameter ~120 µm) as the suppression agent. The cabinet interior reaches temperatures exceeding 800°C near the reacting cell within seconds. Which of the following conclusions about suppression effectiveness in this configuration are supported by engineering reasoning?",
+        "options": [
+          "A. The ultrafine mist will distribute more uniformly throughout the cabinet volume at moderate temperatures, but its low momentum limits penetration into the highest-temperature zone near the reacting cell.",
+          "B. The conventional fine mist, due to its higher droplet momentum, is more likely to physically reach and cool the high-temperature region directly surrounding the reacting cell than the ultrafine mist.",
+          "C. The confined cabinet environment reduces the severity of thermal runaway consequences relative to an open deployment scenario, making either mist type equally effective.",
+          "D. Because ultrafine droplets have approximately ten times smaller diameter than conventional fine mist droplets, their heat absorption per unit volume is ten times greater, guaranteeing faster suppression.",
+          "E. The restricted heat dissipation and enhanced gas-phase reactions in the confined cabinet make the thermal event more severe than in an open environment, which further disadvantages the low-momentum ultrafine droplets in reaching the fire core.",
+          "F. Ultrafine water mist is inadmissible as a suppression agent in any confined-space battery fire because its droplets evaporate before reaching the battery surface."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence states ultrafine droplets have restricted penetration and distribution in high-temperature regions due to low momentum. This supports the conclusion that distribution is acceptable at moderate temperatures but penetration into the hottest zone is limited.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+220+Combustion_Science_and_Technology:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Conventional fine mist droplets (~120 µm) have substantially higher momentum than ultrafine droplets (~10 µm). By the low-momentum limitation of ultrafine droplets, the inverse holds for conventional mist: higher momentum enables greater penetration into high-temperature regions. This is a minimal engineering implication from the stated momentum-penetration relationship.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+220+Combustion_Science_and_Technology:C004",
+              "TR_Protection+220+Combustion_Science_and_Technology:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Evidence explicitly states confined spaces produce significantly more severe thermal runaway consequences than open environments due to restricted heat dissipation and enhanced gas-phase reactions. This option directly contradicts that evidence.",
+            "error_type": "condition_violation_distractor",
+            "evidence_refs": [
+              "TR_Protection+220+Combustion_Science_and_Technology:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The ten-times diameter difference does not translate linearly to a ten-times heat absorption advantage, and the evidence does not support a proportional or guaranteed suppression speed claim. This is a numerical extrapolation and causal overclaim not supported by the evidence.",
+            "error_type": "numerical_exaggeration_and_causal_overclaim",
+            "evidence_refs": [
+              "TR_Protection+220+Combustion_Science_and_Technology:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The confined space amplifies thermal runaway severity through restricted heat dissipation and enhanced gas-phase reactions. This elevated severity increases the temperature gradient that low-momentum ultrafine droplets must overcome to reach the fire core, compounding their penetration limitation. This is a supported multi-step inference combining confinement severity and droplet momentum limitation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+220+Combustion_Science_and_Technology:C002",
+              "TR_Protection+220+Combustion_Science_and_Technology:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence identifies a penetration and distribution limitation for ultrafine droplets in high-temperature regions but does not state that ultrafine mist is inadmissible in all confined-space battery fires. This is an inadmissible overgeneralization from a stated limitation to a categorical prohibition.",
+            "error_type": "overgeneralization_from_limitation_to_prohibition",
+            "evidence_refs": [
+              "TR_Protection+220+Combustion_Science_and_Technology:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Interaction between droplet momentum limitation of ultrafine water mist and confinement-amplified thermal runaway severity on suppression admissibility",
+        "primary_boundary": "Ultrafine mist penetration limitation applies specifically in high-temperature regions; confinement increases severity but does not make ultrafine mist categorically inadmissible",
+        "intended_error_modes": [
+          "Ignoring that confinement increases severity rather than reducing it",
+          "Numerically extrapolating diameter ratio to heat absorption ratio",
+          "Overgeneralizing a limitation into a categorical prohibition",
+          "Treating both mist types as equivalent under confinement"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming ultrafine mist is always inferior in all metrics",
+          "Claiming conventional mist is universally superior",
+          "Quantifying suppression time difference from diameter ratio alone"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery management engineer is evaluating two liquid nitrogen (LN) injection strategies for suppressing thermal runaway in a lithium-ion battery pack. Strategy I uses continuous injection of 6.66 kg LN. Strategy II uses intermittent injection of the same 6.66 kg LN dose. The engineer also considers whether injection timing relative to the stage of thermal runaway affects the required LN dose. Based on the thermal-physical relationships governing LN suppression, which of the following statements are admissible conclusions?",
+        "options": [
+          "A. Intermittent injection of 6.66 kg LN achieves a lower maximum post-injection battery temperature than continuous injection of the same dose, despite the total heat absorbed by LN being only marginally higher under intermittent injection.",
+          "B. Initiating LN injection at the anomalous warming stage (~95°C) requires substantially less LN to prevent thermal runaway than injection initiated at the onset of full thermal runaway (~135°C), indicating that earlier intervention is thermally more efficient.",
+          "C. When the same LN dose is injected at progressively higher battery temperatures, the total heat absorbed by LN increases proportionally, which explains the observed reduction in maximum post-injection temperature.",
+          "D. Below a threshold LN dose of approximately 5 kg, the injection does not effectively suppress thermal runaway regardless of injection timing strategy, indicating a minimum dose requirement independent of delivery pattern.",
+          "E. Because intermittent injection achieves a lower post-injection temperature than continuous injection using the same dose, the difference must be attributable to a greater total heat absorbed by LN under the intermittent strategy.",
+          "F. Injecting LN at a higher battery temperature with the same dose results in a higher maximum post-injection temperature and a lower cooling rate, even though the total heat absorbed by LN remains nearly constant."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence states intermittent injection yields 69.7°C vs 81.6°C for continuous injection, while heat absorbed is 441.2 kJ vs 428.5 kJ respectively—only marginally different. The lower temperature is achieved with only a small difference in heat absorbed, making this a counterintuitive but evidence-supported conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+218+Fire_Technology:C001"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Evidence shows 1.76 kg LN suffices at 95°C to prevent thermal runaway (max 68.6°C), while 6.66 kg is required at 135°C (max 72.5°C). This directly supports that earlier injection is substantially more dose-efficient.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+218+Fire_Technology:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Evidence explicitly states that when the same LN dose is injected at higher battery temperatures, total heat absorbed by LN remains almost unchanged—not proportionally increased. This option inverts the actual relationship and provides an incorrect mechanistic explanation.",
+            "error_type": "mechanism_inversion_and_causal_overclaim",
+            "evidence_refs": [
+              "TR_Protection+218+Fire_Technology:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence states the ~5 kg threshold applies to the specific injection conditions tested. The evidence does not support the claim that this threshold is independent of delivery pattern; in fact, delivery pattern (intermittent vs continuous) affects outcomes at doses above the threshold. Generalizing the threshold as delivery-pattern-independent is an unsupported extrapolation.",
+            "error_type": "overgeneralization_of_threshold_across_conditions",
+            "evidence_refs": [
+              "TR_Protection+218+Fire_Technology:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "This option appears conservative and mechanistically plausible, but the evidence shows intermittent injection absorbs only marginally more heat (441.2 vs 428.5 kJ) while achieving a substantially lower temperature (69.7 vs 81.6°C). Attributing the temperature difference primarily to greater heat absorbed is not supported; the delivery pattern itself is the primary factor.",
+            "error_type": "conservative_but_incorrect_causal_attribution",
+            "evidence_refs": [
+              "TR_Protection+218+Fire_Technology:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Evidence directly states that injecting the same LN amount at higher battery temperatures results in higher maximum post-injection temperature and lower cooling rate, while total heat absorbed by LN remains nearly unchanged. This is a direct evidence-supported conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+218+Fire_Technology:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Relationship between LN injection timing, delivery pattern, dose, heat absorbed, and resulting post-injection battery temperature",
+        "primary_boundary": "Total heat absorbed by LN is nearly constant across injection temperatures for the same dose; temperature outcome is governed by delivery pattern and timing, not primarily by total heat absorbed",
+        "intended_error_modes": [
+          "Assuming lower post-injection temperature must correlate with greater total heat absorbed",
+          "Assuming total heat absorbed increases proportionally with injection temperature",
+          "Overgeneralizing the 5 kg threshold as delivery-pattern-independent"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming intermittent injection is superior at all dose levels including below 5 kg",
+          "Claiming the 5 kg threshold applies universally across all injection strategies",
+          "Quantifying the mechanism by which intermittent injection achieves lower temperatures beyond what the evidence states"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A safety engineer is analyzing the sequential failure mechanisms in a lithium-ion battery cell during a heating event. The cell uses a polyethylene (PE) separator and a lithium-transitional metal oxide cathode. The engineer observes that the cell begins showing anomalous behavior at approximately 90°C and tracks the progression through increasing temperatures. Which of the following statements about the sequencing and causal relationships of failure mechanisms are consistent with the described thermal progression?",
+        "options": [
+          "A. The first thermally triggered event is decomposition of the SEI layer on the anode surface, which exposes the lithiated anode to organic electrolyte solvents and generates flammable hydrocarbon gases.",
+          "B. Internal short circuit caused by separator melting occurs before SEI decomposition in the described thermal progression, because separator failure is the primary initiating event for thermal runaway.",
+          "C. Oxygen release from the cathode material occurs at a lower temperature than separator melting in a PE-separator cell, making cathode decomposition the earlier event in the thermal progression.",
+          "D. The PE separator begins to melt and shrink at approximately 130°C, which is above the SEI decomposition onset temperature but below the cathode decomposition temperature, placing separator failure as an intermediate event in the thermal sequence.",
+          "E. If thermal runaway reaches its most severe stage, the maximum cell temperature can approach or exceed 800°C, meaning the temperature at full runaway is orders of magnitude above the SEI decomposition onset temperature.",
+          "F. Flammable hydrocarbon gases generated by anode-electrolyte reactions after SEI decomposition can contribute to combustion hazards if the cell vents, but the generation of these gases does not itself constitute thermal runaway initiation.",
+          "G. Because cathode decomposition releases oxygen at approximately 180°C and the separator melts at approximately 130°C for PE, cathode oxygen release occurs after separator-induced internal short circuit in the thermal sequence, meaning oxygen becomes available to support combustion only after the internal short circuit has already formed."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence states SEI decomposition begins at roughly above 90°C, exposing the lithiated anode which then reacts with organic electrolyte solvents to generate flammable hydrocarbons. This is the first identified thermal event in the sequence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+219+Small:C001"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence places PE separator melting at approximately 130°C, which is above the SEI decomposition onset of ~90°C. Separator failure therefore occurs after SEI decomposition in the thermal progression, not before. This option reverses the established sequence.",
+            "error_type": "sequence_inversion",
+            "evidence_refs": [
+              "TR_Protection+219+Small:C001",
+              "TR_Protection+219+Small:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Evidence places cathode decomposition at approximately 180°C and PE separator melting at approximately 130°C. Cathode decomposition therefore occurs at a higher temperature than separator melting, not lower. This option inverts the temperature ordering.",
+            "error_type": "temperature_ordering_inversion",
+            "evidence_refs": [
+              "TR_Protection+219+Small:C002",
+              "TR_Protection+219+Small:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "PE separator melts at ~130°C, which is above the SEI decomposition onset (~90°C) and below cathode decomposition (~180°C). This correctly places separator failure as an intermediate event in the thermal sequence, supported directly by the evidence thresholds.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+219+Small:C001",
+              "TR_Protection+219+Small:C002",
+              "TR_Protection+219+Small:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The maximum cell temperature during severe thermal runaway can reach up to 1000°C per one evidence source, and over 800°C per another. SEI decomposition begins at ~90°C. The ratio is approximately 9–11 times, not 'orders of magnitude' (which implies at least 100x). This option overstates the magnitude using imprecise scaling language.",
+            "error_type": "numerical_exaggeration",
+            "evidence_refs": [
+              "TR_Protection+219+Small:C001",
+              "TR_Protection+219+Small:C004",
+              "TR_Protection+220+Combustion_Science_and_Technology:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "While technically plausible as a cautious statement, the evidence does not support a clean separation between flammable gas generation and thermal runaway initiation in this way. More importantly, this option is conservative but introduces an unsupported distinction that is not grounded in the evidence provided. The evidence describes SEI decomposition and subsequent reactions as part of the thermal runaway progression sequence, not as a pre-runaway isolated event.",
+            "error_type": "conservative_but_unsupported_distinction",
+            "evidence_refs": [
+              "TR_Protection+219+Small:C001"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "PE separator melts at ~130°C and cathode releases oxygen at ~180°C. Therefore, in the thermal sequence, internal short circuit from separator melting precedes cathode oxygen release. Oxygen from cathode decomposition becomes available to support combustion only after the internal short circuit has already formed. This is a multi-step sequential reasoning conclusion supported by the temperature thresholds.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Protection+219+Small:C002",
+              "TR_Protection+219+Small:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Correct thermal sequencing of SEI decomposition, separator melting, and cathode oxygen release in a PE-separator lithium-ion cell",
+        "primary_boundary": "Temperature thresholds define a strict ordering: SEI (~90°C) → PE separator (~130°C) → cathode decomposition (~180°C); conclusions must respect this ordering",
+        "intended_error_modes": [
+          "Reversing the order of separator failure and SEI decomposition",
+          "Inverting cathode and separator temperature thresholds",
+          "Using 'orders of magnitude' language when the ratio is approximately one order of magnitude",
+          "Accepting a cautious but unsupported mechanistic distinction"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming the sequence applies to PP separators without noting the different threshold (160°C)",
+          "Claiming cathode oxygen release triggers separator failure",
+          "Asserting that flammable gas generation is definitively separated from thermal runaway initiation based on this evidence"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery pack is installed in a confined equipment enclosure. During a thermal runaway event in one cell, an engineer considers two suppression options: (1) ultrafine water mist with droplet diameter approximately 10 µm, and (2) conventional fine water mist with droplet diameter approximately 120 µm. The thermal runaway event raises cell temperature to over 800°C within seconds. The engineer notes that the enclosure is partially sealed.\n\nExplain, using the relevant physical mechanisms, why the confined enclosure environment compounds the specific limitation of ultrafine water mist in this scenario. Your answer should identify: (a) how the confined environment changes the thermal event relative to an open environment, (b) the specific physical property of ultrafine droplets that limits their effectiveness in high-temperature regions, and (c) why the combination of (a) and (b) creates a greater challenge for ultrafine mist suppression in this scenario than either factor alone would suggest."
+      },
+      "ground_truth": {
+        "gold_answer": "(a) In a confined environment, thermal runaway consequences are significantly more severe than in open environments because restricted heat dissipation prevents thermal energy from dispersing and enhanced gas-phase reactions exacerbate flame propagation and pressure accumulation. This means the high-temperature zone near the reacting cell is hotter, more sustained, and more energetically intense than it would be in an open deployment. (b) Ultrafine water mist droplets (~10 µm) have comparatively low momentum, which restricts their penetration and distribution specifically in high-temperature regions. Despite their small size potentially enabling good vapor-phase distribution at moderate temperatures, they cannot physically reach the hottest zones where suppression is most needed. (c) The confinement-amplified severity increases both the peak temperature and the spatial extent of the high-temperature region that the droplets must penetrate. Because ultrafine droplets already have restricted penetration into high-temperature zones, the larger and more intense high-temperature region created by confinement means a greater fraction of the suppression agent fails to reach the fire core. The two factors interact multiplicatively: confinement expands the zone that ultrafine droplets cannot penetrate, while the droplet momentum limitation prevents compensation by increasing injection pressure alone. Neither factor alone would create the same degree of suppression gap.",
+        "must_include": [
+          "confined environment increases severity relative to open environment due to restricted heat dissipation and enhanced gas-phase reactions",
+          "ultrafine droplets have low momentum which restricts penetration into high-temperature regions",
+          "confinement expands or intensifies the high-temperature region that ultrafine droplets cannot penetrate",
+          "the two factors interact or compound each other rather than acting independently"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming ultrafine mist is completely ineffective or inadmissible in all confined-space scenarios",
+          "Claiming conventional fine mist is always superior in all metrics",
+          "Asserting that droplet evaporation before reaching the battery surface is the primary stated limitation",
+          "Quantifying suppression effectiveness differences numerically beyond what the evidence states",
+          "Claiming the low momentum limitation applies equally at all temperatures including moderate temperatures"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Interaction between confinement-amplified thermal runaway severity and ultrafine droplet momentum limitation on suppression effectiveness",
+        "primary_boundary": "The momentum limitation of ultrafine droplets is specific to high-temperature regions; confinement amplifies severity but does not make ultrafine mist categorically inadmissible; the compounding effect requires multi-step reasoning combining both evidence claims",
+        "intended_error_modes": [
+          "Treating the two factors as independent rather than interacting",
+          "Overstating the limitation as a complete prohibition",
+          "Ignoring that confinement increases severity rather than being neutral",
+          "Substituting evaporation as the primary limitation instead of momentum-based penetration restriction"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "boundary_patterns": {
+    "D1": {
+      "strong_signals": [
+        "Answerability from in-stem information plus broadly accepted domain principles (electro-thermal coupling, stress states, flammability screening), without requiring unstated experimental constants or obscure lookups.",
+        "Explicitly scoped context/assumptions that bound what counts as a correct inference (e.g., “based on general engineering reasoning,” fixed SOC/pressure, specified trigger method).",
+        "Uses defensible modal language (“supported/consistent/physically reasonable”) when the task is qualitative, reserving absolute claims for definitional/identity questions.",
+        "Avoids asking for values, figures, or paper-specific curves unless they are encoded in the options (keeps the epistemic load on reasoning, not recall).",
+        "Separates empirical claims (what was observed) from mechanistic claims (why), and asks only for what the prompt’s evidence type can support."
+      ],
+      "risk_signals": [
+        "Requires paper-specific numeric thresholds, rankings, or monotonic trends not provided (e.g., exact pressures/temperatures/activation energies) while still phrasing as answerable from ‘general principles’.",
+        "Overclaims determinism (“always,” “inevitably,” “must”) in domains with known variance (TR onset, gas composition, propagation).",
+        "Contradictory or incomplete scenario constraints (missing geometry, boundary conditions, SOC, ambient) that are necessary to judge statements.",
+        "Asks for causal direction when only correlation is described (or vice versa), without qualifying uncertainty.",
+        "Implicitly assumes measurement equivalence (surface temperature ≈ internal hotspot) when that equivalence is itself contested."
+      ],
+      "ambiguity_triggers": [
+        "Mixing ‘reported findings’ wording with ‘general reasoning’ wording in the same item, creating disagreement about whether recall is expected.",
+        "Statements whose truth depends on regime boundaries not stated (e.g., “low” vs “high” squeezing pressure; “sufficiently low heating rate”).",
+        "Options that hinge on definitions that vary across literature (TR onset vs trigger temperature vs self-heating criterion).",
+        "Use of comparative adjectives without reference baseline (“more dangerous,” “dominant,” “significant”)."
+      ]
+    }
+  },
+  "incorrect_patterns": {
+    "D2": {
+      "strong_signals": [
+        "Decoys are plausible because they mirror common misconceptions (surface vs internal temperature, ‘more PCM thickness always better’, ‘higher SOC always higher peak T’) yet are falsifiable within the given frame.",
+        "Decoys differ from correct options by a single mechanistic pivot (monotonic vs non-monotonic, correlation vs causation, necessary vs sufficient), increasing diagnostic value.",
+        "Uses realistic engineering distractors (measurement artifacts, competing heat-transfer paths, contact resistance effects) rather than obviously irrelevant content.",
+        "Maintains parallel structure across options so correctness is not guessable from phrasing.",
+        "Includes both ‘too-strong’ and ‘too-weak’ versions of a claim, enabling discrimination of calibrated reasoning."
+      ],
+      "risk_signals": [
+        "Decoys are ‘strawman’ incorrect (implausible extremes, irrelevant chemistry) and can be eliminated without domain knowledge.",
+        "Multiple options are near-duplicates or logically nested, enabling testwise elimination or forcing multiple correct answers unintentionally.",
+        "Correct option is uniquely specific (numbers, named methods) while decoys are vague, leaking the key.",
+        "Decoys require extra assumptions not mentioned (e.g., ventilation geometry) making them disputable rather than clearly wrong.",
+        "Use of absolute negatives (“no correlation,” “negligible influence”) as decoys too easily flagged."
+      ],
+      "ambiguity_triggers": [
+        "Decoys that are true in some subcase (e.g., forced convection sometimes small effect) but not universally, without regime qualification.",
+        "Quantifiers like ‘significantly’/‘meaningfully’ without implied effect size threshold.",
+        "Options that conflate different endpoints (TR onset temperature vs peak temperature vs heat release) leading to partial-credit disputes."
+      ]
+    }
+  },
+  "cognitive_patterns": {
+    "D3": {
+      "strong_signals": [
+        "Single dominant reasoning target per item (e.g., electro-thermal coupling, transport/adsorption in sensors, confinement/vent-gas flammability), not a scatter of unrelated facts.",
+        "All options are commensurate: same level of abstraction and same type of inference (mechanism, monotonicity, dependency).",
+        "Stem sets the decision rule (“select statements supported/consistent/physically reasonable”) and the options map cleanly onto it.",
+        "Multi-select items include multiple independent axes (e.g., heat transfer + resistance effects + measurement limitations) while still anchored to one scenario.",
+        "Avoids requiring specialized notation decoding as the primary challenge; symbols (SOC, RISC) are introduced or standard."
+      ],
+      "risk_signals": [
+        "Cognitive target drifts into ‘paper trivia’ (specific experimental outcomes) while still presented as general reasoning.",
+        "Options mix mechanistic, definitional, and empirical-result claims, forcing heterogeneous judgments.",
+        "Overlong stems with multiple scenario branches create working-memory burden unrelated to the target skill.",
+        "Ambiguous ‘wrong/correct’ framing in multi-select where one option embeds two claims (one true, one false).",
+        "Logical dependence between options (one option implies another) reduces independence and clarity of what’s being tested."
+      ],
+      "ambiguity_triggers": [
+        "Use of “dominant role”/“primary cause” when multiple mechanisms co-occur and dominance depends on conditions.",
+        "Items asking for “most consistent” but providing more than one defensible option at similar plausibility.",
+        "‘Physically reasonable’ invites debate unless the stem clearly limits to first-principles vs empirical typicality."
+      ]
+    }
+  },
+  "language_patterns": {
+    "D4": {
+      "strong_signals": [
+        "Neutral scientific tone; avoids emotive/hype wording and keeps claims technical and testable.",
+        "Consistent labeling and clean formatting for multi-select vs single-choice; clear directive verbs (“Select all…”, “Which statements are wrong?”).",
+        "Options are grammatically parallel and comparable in length, reducing stylistic cueing.",
+        "Terms are used consistently within an item (Tonset/TTR, SOC, TR) without swapping synonyms mid-item.",
+        "Scope qualifiers are explicit (“based solely on…”, “under identical conditions”) to prevent interpretation drift."
+      ],
+      "risk_signals": [
+        "Typos/encoding artifacts (duplicated equations, broken subscripts, repeated phrases) that distract or change meaning.",
+        "Inconsistent capitalization/units/symbols across options implying different source quality.",
+        "Stem-option mismatch (stem asks ‘wrong’ but options phrased as ‘correct’; or truncated stems/options).",
+        "Run-on sentences and missing punctuation that make logical structure unclear.",
+        "Nonstandard abbreviations introduced without definition (or defined after use)."
+      ],
+      "cue_leak_signals": [
+        "One option contains markedly more technical detail, citations, or specificity than the rest.",
+        "Correct options systematically avoid absolutes while decoys use ‘always/never’ (or vice versa), enabling pattern-guessing.",
+        "Unique hedging words (“defensible,” “supported”) appear only on correct options rather than uniformly across all.",
+        "Grammatical agreement/fluency differs: one option is polished while others are awkward, signaling answer key.",
+        "Numerical precision appears only in correct options (e.g., exact thresholds) without comparable precision in decoys."
+      ]
+    }
+  },
+  "diagnostic_patterns": {
+    "D5": {
+      "strong_signals": [
+        "Clear separation between expert reasoning and novice heuristics (monotonicity traps, correlation/causation traps, measurement proxy traps).",
+        "Options force the evaluator to apply constraints in the stem (fixed conditions, ‘general principles’, confinement) rather than rely on memorized slogans.",
+        "Multi-select keys are not guessable by count; include a mix of true/false with comparable plausibility.",
+        "Correct set typically reflects nuanced conditionality (threshold behavior, non-monotonic trends, competing mechanisms), rewarding calibrated thinking.",
+        "Distractors target specific misconceptions common in the domain (e.g., ‘higher conductivity always better’, ‘CO2 majority ⇒ nonflammable’)."
+      ],
+      "risk_signals": [
+        "Too many correct options or too few discriminators, making high scores achievable by broad selection strategies.",
+        "Items collapse to superficial lexical cues (absolutes, length) rather than content understanding.",
+        "Correctness depends on esoteric domain knowledge not indicated by the framing, reducing discriminative fairness.",
+        "Overly complex chemical equation lists become a transcription/recognition task rather than reasoning, reducing signal on the intended construct.",
+        "Key depends on a single ambiguous word (“significant,” “dominant”), producing noisy scoring."
+      ],
+      "ambiguity_triggers": [
+        "Boundary between ‘physically possible’ and ‘supported/likely’ not clearly stated, leading to different evaluator standards.",
+        "Statements about ‘warning signals’ or ‘early’ without defining relative time reference (pre-vent, pre-TR, pre-ISC).",
+        "Conflation of safety metrics (peak temperature, heat release, toxicity, explosion index) without specifying which metric defines ‘hazard’."
+      ]
+    }
+  }
+}

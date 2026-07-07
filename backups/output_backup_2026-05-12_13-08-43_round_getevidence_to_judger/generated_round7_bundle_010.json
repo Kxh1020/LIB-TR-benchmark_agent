@@ -1,0 +1,356 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery venting gas (BVG) explosion suppression system uses CO2 injection into a confined space. Under premixed conditions at equivalence ratio φ = 0.5, complete inhibition is achieved at CO2 concentrations above 30%. The same gas mixture is then released as a turbulent air jet into the same space. An engineer proposes that the existing CO2 system, calibrated for premixed conditions, remains adequate for the jet-release scenario. Which of the following conclusions about this proposal are supported by engineering reasoning?",
+        "options": [
+          "A. The proposal is inadequate because turbulent jet conditions increase explosion pressure rate and shorten ignition delay, requiring a higher CO2 threshold to achieve complete inhibition.",
+          "B. The proposal is adequate because CO2 inhibition thresholds are governed solely by stoichiometry and are independent of mixing dynamics.",
+          "C. The proposal is inadequate, but only because jet conditions reduce the equivalence ratio below the flammable range, making CO2 concentration irrelevant.",
+          "D. The proposal is inadequate because jet conditions enhance explosion hazard indicators such as peak pressure and pressure rise rate, and the CO2 concentration required for complete inhibition under jet conditions exceeds that required under premixed conditions.",
+          "E. The proposal would be adequate if the CO2 concentration were raised to exactly 35%, since this value completely inhibits BVG explosion under jet conditions at φ = 0.5.",
+          "F. The proposal is conservative and therefore safe, because premixed conditions represent the worst-case mixing scenario for explosion hazard.",
+          "G. The inhibition threshold shift from premixed to jet conditions is driven by the jet mechanically dispersing CO2 away from the reaction zone, reducing its effective local concentration."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Jet conditions increase dp/dt and Pex while decreasing tex; complete inhibition requires CO2 above 35% versus 30% premixed.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+144+Journal_of_Loss_Prevention_in_the_Process_Industries:C003",
+              "TR_Gasventing+144+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Mixing dynamics demonstrably shift the inhibition threshold; stoichiometry alone does not govern CO2 requirements.",
+            "error_type": "mechanism_confusion",
+            "evidence_refs": [
+              "TR_Gasventing+144+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Jet conditions increase rather than reduce explosion hazard at φ = 0.5; the mixture remains explosive under jet conditions.",
+            "error_type": "condition_violation",
+            "evidence_refs": [
+              "TR_Gasventing+144+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Jet conditions elevate Pex, dp/dt, and reduce tex; complete inhibition threshold rises from 30% to above 35% CO2.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+144+Journal_of_Loss_Prevention_in_the_Process_Industries:C003",
+              "TR_Gasventing+144+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Evidence states CO2 must exceed 35% for complete inhibition under jet conditions; exactly 35% is the boundary, not a confirmed sufficient value.",
+            "error_type": "numerical_boundary_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+144+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Premixed conditions are less hazardous than jet conditions; jet release is the more severe scenario, not premixed.",
+            "error_type": "conservative_but_wrong",
+            "evidence_refs": [
+              "TR_Gasventing+144+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "The evidence does not support mechanical CO2 dispersal as the mechanism; the threshold shift is observed but its precise mechanism is not attributed to CO2 dilution by the jet.",
+            "error_type": "unsupported_mechanism",
+            "evidence_refs": [
+              "TR_Gasventing+144+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of premixed-calibrated CO2 suppression system under jet-release conditions",
+        "primary_boundary": "Inhibition threshold shifts from >30% (premixed) to >35% (jet) at φ = 0.5; jet conditions increase rather than decrease explosion hazard",
+        "intended_error_modes": [
+          "mechanism_confusion (stoichiometry governs threshold)",
+          "condition_violation (jet reduces ER)",
+          "numerical_boundary_overclaim (exactly 35% is sufficient)",
+          "conservative_but_wrong (premixed is worst case)"
+        ],
+        "disallowed_extrapolations": [
+          "Attributing threshold shift to CO2 mechanical dispersal by jet",
+          "Treating exactly 35% as confirmed sufficient rather than boundary value"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is comparing the fire and explosion hazard of NMC and LFP pouch cells during thermal runaway (TR) triggered by thermal abuse at full charge. NMC cells reach peak temperatures of 505–548°C and NMC vent gas shows laminar burning velocity (Su) of 222.6 cm/s during the venting phase but only 77.2 cm/s during the TR phase. LFP cells reach only 278–286°C and do not ignite. The engineer concludes that NMC cells pose a greater combined thermal and combustion hazard in every respect. Which options correctly evaluate this conclusion?",
+        "options": [
+          "A. The conclusion is fully supported because NMC peak temperatures and Su values both exceed LFP values across all phases.",
+          "B. The conclusion overstates the case: LFP TR-phase Su (105.9 cm/s) exceeds NMC TR-phase Su (77.2 cm/s), meaning LFP vent gas is more reactive during the TR phase despite lower cell temperatures.",
+          "C. The conclusion is partially correct for thermal hazard but incorrect for combustion hazard ranking during the TR phase, since LFP TR-phase vent gas burns faster than NMC TR-phase vent gas.",
+          "D. LFP cells pose a lower explosion hazard than NMC cells in all phases because their lower peak temperature prevents H2 generation.",
+          "E. The phase-specific Su inversion between LFP and NMC during TR arises because H2 release timing differs: LFP releases H2 at TR onset driving higher TR-phase Su, while NMC venting-phase H2 dominates its Su profile.",
+          "F. Because LFP cells do not ignite during TR regardless of SOC, their vent gas Su values are irrelevant to practical hazard assessment.",
+          "G. Using only a global averaged BVG composition to compare NMC and LFP hazard would underestimate the peak Su for both chemistries relative to phase-specific analysis."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "C",
+          "E",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "LFP TR-phase Su (105.9 cm/s) exceeds NMC TR-phase Su (77.2 cm/s); the ranking reverses in the TR phase.",
+            "error_type": "overgeneralization",
+            "evidence_refs": [
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C006",
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C007"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "LFP TR-phase Su 105.9 cm/s exceeds NMC TR-phase Su 77.2 cm/s; the engineer's universal ranking is not supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C006",
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C007"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "NMC thermal hazard exceeds LFP, but LFP TR-phase vent gas Su exceeds NMC TR-phase Su; the conclusion is partially incorrect.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C004",
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C006",
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C007"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "LFP TR-phase Su exceeds NMC TR-phase Su; lower temperature does not eliminate H2-driven combustion hazard in the TR phase.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C007",
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C010"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "H2 release at TR onset drives LFP TR-phase Su; NMC venting-phase H2 dominance explains its Su profile inversion across phases.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C006",
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C007",
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C010"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Non-ignition of the cell does not preclude vent gas explosion hazard in the surrounding environment; Su remains a relevant hazard metric.",
+            "error_type": "scope_expansion_error",
+            "evidence_refs": [
+              "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C004",
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C007"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "Phase-specific Su maxima exceed global averaged values; using only global composition underestimates peak hazard for both chemistries.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C015"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Phase-specific Su ranking inversion between LFP and NMC and its mechanistic basis",
+        "primary_boundary": "LFP TR-phase Su exceeds NMC TR-phase Su despite lower LFP cell temperatures; H2 release timing governs the inversion",
+        "intended_error_modes": [
+          "overgeneralization of NMC superiority across all phases",
+          "causal overclaim that lower temperature eliminates LFP combustion hazard",
+          "scope error treating cell non-ignition as eliminating vent gas hazard"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding LFP is safer than NMC in all combustion hazard dimensions",
+          "Using global BVG composition as equivalent to phase-specific analysis"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A facility stores cylindrical 21700 NCA cells and LFP pouch cells. During an overcharge event at 1C, the cylindrical cells activate their current interrupt device (CID) at approximately 10 minutes, preventing thermal runaway. The LFP pouch cells, lacking a CID, reach thermal runaway in 14 minutes. A safety engineer proposes that the cylindrical cell design is inherently safer than the LFP pouch format for overcharge scenarios, and that LFP chemistry is more overcharge-hazardous than NMC chemistry. Evaluate which of these claims are admissible.",
+        "options": [
+          "A. The claim that cylindrical cells are safer under overcharge is supported for the tested 1C overcharge condition, but cannot be generalized to all overcharge rates or abuse modes without additional evidence.",
+          "B. The claim that LFP chemistry is more overcharge-hazardous than NMC chemistry is supported because LFP reaches TR three times faster than NMC under the same overcharge rate.",
+          "C. The faster TR onset for LFP compared to NMC under overcharge does not establish that LFP chemistry is inherently more hazardous, because the comparison conflates cell format differences with chemistry differences.",
+          "D. The CID protection in cylindrical cells is sufficient to classify those cells as safe for all electrical abuse scenarios in this facility.",
+          "E. LFP pouch cells reaching TR faster than NMC pouch cells under overcharge is consistent with LFP's lower thermal runaway temperature threshold, since less overcharge energy is needed to reach TR.",
+          "F. Because LFP cells do not ignite during TR regardless of SOC, the faster TR onset under overcharge represents a lower overall hazard than the NMC case.",
+          "G. The thermal severity during NMC TR under electrical abuse exceeds that under thermal abuse at the same SOC, which is relevant context when comparing overcharge hazard across chemistries."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "CID effectiveness is demonstrated only at 1C overcharge in tested cylindrical cells; generalization to all rates or modes is unsupported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "The time-to-TR comparison mixes format (pouch vs. cylindrical) and chemistry; the difference may reflect format, not chemistry alone.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C001",
+              "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "LFP vs. NMC time-to-TR comparison uses pouch cells for both; cylindrical vs. pouch format differences are not controlled, so chemistry attribution is inadmissible.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "CID prevents TR under tested overcharge; evidence does not support extension to all electrical abuse modes or rates.",
+            "error_type": "scope_expansion",
+            "evidence_refs": [
+              "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "LFP's lower TR temperature is consistent with faster TR onset, but the evidence does not establish this causal link for the overcharge scenario; it is an unsupported inference.",
+            "error_type": "unsupported_causal_inference",
+            "evidence_refs": [
+              "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C001",
+              "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Non-ignition reduces one hazard dimension but faster TR onset and vent gas explosion hazard remain; overall hazard cannot be dismissed.",
+            "error_type": "conservative_but_wrong",
+            "evidence_refs": [
+              "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C004",
+              "TR_Gasventing+145+Journal_of_Loss_Prevention_in_the_Process_Industries:C007"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "NMC electrical abuse TR temperatures (585–669°C) exceed thermal abuse TR temperatures (505–548°C); abuse mode affects severity and is relevant context.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+146+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of chemistry-level and format-level safety claims from mixed-variable overcharge comparison",
+        "primary_boundary": "LFP vs. NMC time-to-TR comparison uses same format (pouch); CID benefit is format-specific and rate-specific, not chemistry-general",
+        "intended_error_modes": [
+          "causal overclaim attributing time-to-TR difference to chemistry alone",
+          "scope expansion of CID protection to all abuse modes",
+          "dismissing LFP hazard based on non-ignition alone"
+        ],
+        "disallowed_extrapolations": [
+          "Generalizing CID effectiveness beyond tested 1C overcharge",
+          "Attributing pouch-format time-to-TR difference to chemistry without format-controlled comparison"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A safety engineer is designing a CO2-based explosion suppression system for a battery room where thermal runaway events may release vent gas containing graphite dust in addition to combustible gases. The engineer observes that in tests without graphite dust at φ = 0.6, a CO2 jet achieves a maximum explosion pressure reduction of 27.3% (0.12 MPa). In hybrid tests at the same equivalence ratio with 100 g/m³ graphite dust present, CO2 achieves a maximum pressure reduction of 46.7% (0.28 MPa). The engineer concludes that adding graphite dust to the fuel mixture paradoxically improves the effectiveness of CO2 suppression and therefore the suppression system requires less CO2 when graphite dust is present. Identify the mechanistic basis for the improved CO2 suppression effectiveness in the hybrid case, and explain whether the engineer's operational conclusion—that less CO2 is needed when graphite dust is present—is admissible based on the evidence."
+      },
+      "ground_truth": {
+        "gold_answer": "The improved suppression effectiveness in the hybrid case arises from two concurrent mechanisms: CO2 acts as an inert diluent reducing oxygen availability for both gas-phase BVG combustion and graphite dust combustion, and simultaneously, unburned graphite dust particles absorb heat from the BVG explosion, acting as a thermal sink that reduces the energy available to sustain combustion. These two mechanisms combine to produce a greater pressure reduction than CO2 acting on gas-phase combustion alone. However, the operational conclusion that less CO2 is needed is not admissible. The evidence shows that the hybrid mixture produces a higher absolute explosion pressure without suppression than BVG alone, meaning the baseline hazard is greater. A higher percentage reduction does not imply that the absolute residual pressure or hazard is lower, nor does it imply that the CO2 dose required to achieve safe conditions is reduced. The engineer conflates a higher inhibition ratio with a lower required suppression dose, which is not supported by the evidence.",
+        "must_include": [
+          "unburned graphite dust absorbs heat from the BVG explosion as a thermal sink mechanism",
+          "CO2 reduces oxygen availability for graphite combustion in addition to its inert effect on BVG",
+          "higher percentage reduction does not imply lower absolute residual pressure or lower required CO2 dose",
+          "the baseline explosion pressure in the hybrid case is higher, so the absolute hazard context differs",
+          "the operational conclusion that less CO2 is needed is not admissible from the evidence"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming that graphite dust always improves CO2 suppression regardless of dust concentration or equivalence ratio",
+          "Concluding that the hybrid mixture is less hazardous overall than BVG alone",
+          "Attributing the improved inhibition solely to CO2 without acknowledging the graphite heat absorption contribution",
+          "Recommending a specific reduced CO2 dose for hybrid conditions based on the percentage improvement alone"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanistic basis for enhanced CO2 suppression in hybrid gas-dust explosion and admissibility of dose-reduction inference",
+        "primary_boundary": "Higher inhibition percentage does not imply lower absolute hazard or reduced required suppression dose when baseline hazard differs between conditions",
+        "intended_error_modes": [
+          "Conflating inhibition ratio with absolute suppression adequacy",
+          "Attributing improved effectiveness solely to CO2 inert mechanism without graphite heat absorption",
+          "Generalizing the hybrid suppression improvement beyond the tested conditions",
+          "Accepting the operational conclusion without checking the absolute pressure baseline difference"
+        ]
+      }
+    }
+  ]
+}

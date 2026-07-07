@@ -1,0 +1,38 @@
+{
+  "mcqs": [],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A cylindrical lithium-ion cell at 100% SOC undergoes thermal runaway. Internal gas pressure reaches 4.25 bar, and the cell casing temperature rises above 600°C during the event. The casing material has a tensile strength that drops to 5% of its room-temperature value at 800°C, and the pressure required to split a typical mild steel casing of standard thickness falls below 2 bar at temperatures above 600°C. Separately, gas-phase reactions outside the cell contribute approximately 3 times more heat to the total than internal thermal abuse reactions within the cell components. An engineer argues that the primary heat generation hazard at 100% SOC is the internal cell chemistry, and that containing the cell in a rigid enclosure to prevent gas ejection would reduce total heat release by more than half. Identify the two specific errors in this engineer's argument, explaining the mechanism or evidence basis for each."
+      },
+      "ground_truth": {
+        "gold_answer": "Error 1: The engineer incorrectly identifies internal cell chemistry as the primary heat generation hazard. At 100% SOC, gas-phase reactions occurring outside the cell contribute approximately 3 times more heat than internal thermal abuse reactions within the cell components. This means internal reactions account for roughly 25% of total heat generation, while external gas-phase combustion accounts for approximately 75%. The primary hazard is therefore the combustion of ejected gases, not the internal chemistry. Error 2: The engineer's claim that containing the cell to prevent gas ejection would reduce total heat release by more than half is incorrect. Since internal reactions contribute only approximately 25% of total heat, preventing gas ejection and its associated combustion would eliminate approximately 75% of total heat—but the engineer's proposed mechanism (containing the cell to suppress internal chemistry) conflates the location of heat generation with the mechanism. Furthermore, a rigid enclosure that prevents gas ejection would trap the 4.25 bar internal pressure inside a casing whose burst strength has fallen below 2 bar above 600°C, making pressure-induced sidewall breach highly likely and potentially creating a more severe mechanical hazard. The containment strategy does not reduce internal pressure generation and may accelerate casing failure rather than mitigating it.",
+        "must_include": [
+          "Gas-phase reactions contribute approximately 3 times more heat than internal thermal abuse reactions, so internal reactions account for approximately 25% of total heat generation",
+          "The primary heat generation source at 100% SOC is external gas-phase combustion, not internal cell chemistry",
+          "Rigid containment to prevent gas ejection does not suppress internal pressure generation",
+          "At temperatures above 600°C, the casing burst pressure threshold falls below 2 bar, and 4.25 bar internal pressure makes pressure-induced sidewall breach highly likely if gas cannot vent",
+          "The engineer's containment strategy would likely increase mechanical failure risk rather than reduce total heat hazard as claimed"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming that rigid containment eliminates all thermal runaway hazard",
+          "Stating that internal reactions contribute zero heat",
+          "Asserting that gas-phase reaction suppression is achievable by any specific described method",
+          "Applying the 4.25 bar and casing failure data to cell formats or chemistries not described in the evidence"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Identification of the dominant heat generation pathway at 100% SOC and the mechanical consequences of suppressing gas ejection under thermally weakened casing conditions.",
+        "primary_boundary": "The 3:1 ratio of gas-phase to internal heat generation means internal reactions are the minor contributor. Containment strategy must be evaluated against both the heat generation pathway and the pressure-induced breach risk at elevated temperature.",
+        "intended_error_modes": [
+          "Assuming internal cell reactions dominate heat generation",
+          "Failing to account for pressure-induced casing failure when gas venting is suppressed",
+          "Treating containment as equivalent to heat suppression",
+          "Inverting the gas-phase to internal reaction heat ratio"
+        ]
+      }
+    }
+  ]
+}

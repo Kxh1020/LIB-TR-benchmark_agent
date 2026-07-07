@@ -1,0 +1,324 @@
+{
+  "TR_Modelling+191+Renewable_and_Sustainable_Energy_Reviews__TR_Modelling+20+Journal_of_Energy_Storage__TR_Modelling+21+Journal_of_Energy_Storage": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery safety engineer is evaluating early-warning detection strategies for a lithium-ion cell pack. Sensor data from thermal runaway events in NCM cells shows that flammable gas release precedes fire by approximately 1585 seconds, while temperature signals provide only about 30 seconds of warning before the thermal runaway peak. The engineer must decide which sensor modalities to prioritize and what conclusions are defensible about the relative timing of different warning signals. Which of the following conclusions are admissible based on this scenario?",
+          "options": [
+            "A. Gas detection provides a longer pre-fire warning window than temperature measurement in NCM cells, making it the earlier-acting indicator among the two.",
+            "B. Because gas signals precede fire by over 26 minutes in NCM cells, a gas-based detection system can be relied upon to provide sufficient evacuation time under all thermal runaway initiation modes.",
+            "C. Voltage-based warning signals fall between gas and temperature signals in terms of advance warning time before thermal runaway peaks, meaning a multi-modal system should not be ranked by signal type alone.",
+            "D. The earlier gas signal in NCM cells compared to LFP cells implies that NCM chemistry undergoes a fundamentally different decomposition sequence that eliminates the need for supplementary pressure monitoring.",
+            "E. Temperature-based detection alone is likely insufficient as a primary early-warning modality for NCM cells given its substantially shorter lead time relative to gas-based detection.",
+            "F. The longer gas warning window in NCM versus LFP cells means that LFP packs require more aggressive mechanical containment rather than gas detection."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence directly supports that gas release precedes fire by ~1585 s in NCM cells while temperature provides only ~0.5 min before the peak, establishing gas as the earlier indicator among the two.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+191+Renewable_and_Sustainable_Energy_Reviews:C004",
+                "TR_Modelling+191+Renewable_and_Sustainable_Energy_Reviews:C005"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The evidence establishes the timing advantage of gas signals under the tested conditions but does not support universalizing this to 'all thermal runaway initiation modes.' This is an inadmissible scope expansion.",
+              "error_type": "overgeneralization across initiation modes",
+              "evidence_refs": [
+                "TR_Modelling+191+Renewable_and_Sustainable_Energy_Reviews:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Evidence places voltage warning at 5.96 min before the peak, between gas (7.05 min) and temperature (0.5 min), which means ranking sensor types matters and a multi-modal system cannot treat all signals as equivalent in timing.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+191+Renewable_and_Sustainable_Energy_Reviews:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "The difference in gas warning lead time between NCM and LFP does not support inferring a fundamentally different decomposition sequence that eliminates the need for pressure monitoring. This is a causal overclaim and scope expansion beyond the evidence.",
+              "error_type": "causal overclaim and unsupported system-level recommendation",
+              "evidence_refs": [
+                "TR_Modelling+191+Renewable_and_Sustainable_Energy_Reviews:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "With only ~0.5 min of warning before the thermal runaway peak, temperature-based detection alone provides substantially less lead time than gas-based detection (~7.05 min), making it an insufficient primary modality. This is a minimal admissible engineering implication of the timing differential.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+191+Renewable_and_Sustainable_Energy_Reviews:C005"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The shorter gas warning window in LFP compared to NCM does not imply that mechanical containment should replace gas detection. This is a mechanism substitution distractor that extends a comparative timing result into an unsupported design recommendation.",
+              "error_type": "mechanism substitution and unsupported design recommendation",
+              "evidence_refs": [
+                "TR_Modelling+191+Renewable_and_Sustainable_Energy_Reviews:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of warning signal ranking and scope of conclusions from comparative timing data",
+          "primary_boundary": "Timing advantage of gas signals is chemistry-specific and condition-specific; it does not eliminate other sensor modalities or generalize to all initiation modes",
+          "intended_error_modes": [
+            "overgeneralization to all initiation modes",
+            "causal overclaim from timing difference",
+            "mechanism substitution in design recommendation"
+          ],
+          "disallowed_extrapolations": [
+            "Gas signal timing advantage implies universal sufficiency",
+            "NCM vs LFP timing difference implies different decomposition sequences requiring different containment strategies"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A 1\u00d75 NCM622 cell cluster is operated at varying states of charge. Experimental records show that reducing SOC from 100% to 50% decreases total gas generation from approximately 17.5 mol to 6.2 mol during thermal runaway propagation. At SOC below 25%, no thermal runaway propagation occurs within the cluster. A separate 1\u00d74 cluster test with composite phase-change insulating material between cells achieved complete inhibition of thermal diffusion between cells. An engineer is asked to evaluate design and operational strategies for a module that must operate between 30% and 80% SOC. Which of the following conclusions are admissible?",
+          "options": [
+            "A. Limiting operating SOC to below 25% would reliably prevent thermal runaway propagation in this cluster configuration, but this constraint falls outside the required 30\u201380% operating range and therefore cannot be applied here.",
+            "B. Within the 30\u201380% SOC operating range, reducing SOC toward the lower bound reduces gas generation during thermal runaway and therefore reduces propagation hazard, even though propagation cannot be fully eliminated by SOC control alone at these levels.",
+            "C. The complete inhibition of thermal diffusion achieved with composite phase-change insulating material in a 1\u00d74 cluster is directly transferable to the 1\u00d75 cluster at 80% SOC, eliminating the need for SOC-based operational limits.",
+            "D. Because gas generation decreases substantially between 100% and 50% SOC, the relationship between SOC and gas generation is confirmed to be linear across the full SOC range from 0% to 100%.",
+            "E. Composite phase-change insulating material represents a more reliable propagation barrier than SOC reduction alone for operation within the 30\u201380% SOC range, given that SOC reduction within this range cannot achieve the zero-propagation threshold.",
+            "F. The zero-propagation threshold at below 25% SOC applies specifically to the tested cluster geometry and chemistry; applying it as a universal design rule for all NCM module configurations is not supported by the evidence."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "E",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Evidence supports that below 25% SOC, no TR propagation occurs in this cluster. The stem defines a 30\u201380% operating range, placing the threshold outside the operational window. This is a direct admissible conclusion combining the threshold evidence with the stated constraint.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+21+Journal_of_Energy_Storage:C002"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "Gas generation decreases substantially from 100% to 50% SOC, indicating that lower SOC within the operating range reduces hazard even without eliminating propagation. This is an admissible directional inference that avoids overclaiming complete prevention.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+21+Journal_of_Energy_Storage:C003",
+                "TR_Modelling+21+Journal_of_Energy_Storage:C002"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "The complete inhibition result was demonstrated in a 1\u00d74 cluster. Directly transferring this to a 1\u00d75 cluster at 80% SOC and claiming it eliminates the need for SOC limits is an inadmissible scale and condition transfer without supporting evidence.",
+              "error_type": "scale transfer beyond evidence and unsupported elimination of operational constraint",
+              "evidence_refs": [
+                "TR_Modelling+21+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "The evidence provides two data points (100% and 50% SOC) showing a decrease in gas generation. Inferring a linear relationship across the full 0\u2013100% SOC range from two points is an inadmissible extrapolation of functional form.",
+              "error_type": "unjustified extrapolation of functional form from limited data points",
+              "evidence_refs": [
+                "TR_Modelling+21+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Since SOC reduction within 30\u201380% cannot reach the zero-propagation threshold, and composite phase-change material achieved complete thermal diffusion inhibition in a cluster test, the insulation material provides a more reliable propagation barrier within the constrained operating range. This is a multi-step admissible comparison.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+21+Journal_of_Energy_Storage:C002",
+                "TR_Modelling+21+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "The 25% SOC threshold was established for a 1\u00d75 NCM622 cluster under specific test conditions. Applying it as a universal design rule for all NCM module configurations exceeds the evidence scope. This is an admissible boundary-of-evidence conclusion.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+21+Journal_of_Energy_Storage:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Admissibility of SOC-based and insulation-based propagation control strategies under a defined operating range constraint",
+          "primary_boundary": "The zero-propagation SOC threshold is cluster- and chemistry-specific; composite insulation results from one cluster size cannot be directly transferred to another without additional evidence",
+          "intended_error_modes": [
+            "scale transfer of insulation result to different cluster size",
+            "linear extrapolation from two data points",
+            "universal application of a geometry-specific threshold"
+          ],
+          "disallowed_extrapolations": [
+            "Linear SOC\u2013gas generation relationship across full range",
+            "Direct transferability of 1\u00d74 insulation result to 1\u00d75 cluster at high SOC"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "During a thermal runaway simulation of a fully charged lithium-ion cell, internal pressure builds to a critical threshold of 1.5 MPa within 94 ms, at which point the safety valve opens. Following valve opening, internal pressure drops to near-atmospheric within 0.03 ms. The initial pyrolysis gas jet reaches peak velocities near 500 m/s and the jetting phase is complete in under 2 ms. A jet fire then develops, lagging behind the gas jet velocity, and lasts approximately 6 ms after valve rupture. CO2 reaches a peak mass fraction of 70% above the valve nozzle during the initial combustion phase. An engineer reviewing this sequence must assess which statements about the post-valve-opening dynamics are consistent with the described physical sequence. Which of the following are admissible conclusions?",
+          "options": [
+            "A. The pressure relief event is effectively complete on a sub-millisecond timescale after valve opening, meaning the pressure hazard window is far shorter than the subsequent combustion hazard window.",
+            "B. The jet fire ignition is driven primarily by the peak gas velocity at the nozzle, so reducing peak jet velocity would proportionally reduce fire duration.",
+            "C. The high CO2 mass fraction near the nozzle at the moment of peak combustion indicates that combustion reactions are consuming available fuel rapidly at that location, consistent with the subsequent decrease in combustible gas fractions.",
+            "D. Because the pyrolysis gas jetting is complete in under 2 ms and the jet fire lasts approximately 6 ms, the fire persists after the primary gas supply from jetting has been largely exhausted, implying combustion heat accumulation sustains the fire beyond the initial jet.",
+            "E. The 94 ms pressure buildup phase represents the dominant safety hazard window because it is the longest phase in the described sequence and therefore allows the most time for structural damage to accumulate.",
+            "F. The described sequence\u2014pressure buildup, valve opening, rapid pressure drop, gas jetting, then fire\u2014is consistent with a process where mechanical pressure relief precedes and enables the combustion event rather than following it."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "D",
+            "F"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Pressure drops to near-atmospheric within 0.03 ms after valve opening, while the jet fire lasts ~6 ms. The pressure hazard window is therefore orders of magnitude shorter than the combustion hazard window. This is a direct admissible comparison from the timing data.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+20+Journal_of_Energy_Storage:C002",
+                "TR_Modelling+20+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The evidence states the jet fire lags behind gas injection velocity and is attributed to accumulation of combustion heat, not directly to peak velocity. Claiming proportional reduction in fire duration from reduced peak velocity is an unsupported causal simplification that ignores the heat accumulation mechanism.",
+              "error_type": "causal overclaim ignoring heat accumulation mechanism",
+              "evidence_refs": [
+                "TR_Modelling+20+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "CO2 reaching 70% mass fraction at peak combustion followed by decreasing combustible gas fractions is consistent with rapid fuel consumption at that location during the combustion phase. This is an admissible mechanistic inference from the observed gas composition trend.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+20+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Correct",
+              "justification": "Jetting completes in under 2 ms but fire lasts ~6 ms; the fire therefore persists beyond the primary jetting phase. The evidence explicitly attributes the fire's lag and duration to combustion heat accumulation, supporting the inference that accumulated heat sustains combustion after the initial gas supply diminishes.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+20+Journal_of_Energy_Storage:C003",
+                "TR_Modelling+20+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "Although 94 ms is the longest single phase described, duration alone does not determine which phase poses the dominant safety hazard. The combustion and high-velocity jet phases involve fire and structural loading that may pose greater hazard despite shorter duration. This is a conservative-appearing but mechanistically incorrect distractor.",
+              "error_type": "conflating phase duration with hazard severity",
+              "evidence_refs": [
+                "TR_Modelling+20+Journal_of_Energy_Storage:C001",
+                "TR_Modelling+20+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Correct",
+              "justification": "The described sequence\u2014pressure buildup to 1.5 MPa, valve opening, rapid pressure drop, gas jetting, then fire development\u2014places mechanical pressure relief before combustion. This temporal ordering is directly supported by the evidence and is an admissible characterization of the sequence.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_Modelling+20+Journal_of_Energy_Storage:C001",
+                "TR_Modelling+20+Journal_of_Energy_Storage:C002",
+                "TR_Modelling+20+Journal_of_Energy_Storage:C003",
+                "TR_Modelling+20+Journal_of_Energy_Storage:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Causal sequence and hazard characterization of post-valve-opening dynamics including pressure relief, gas jetting, and jet fire",
+          "primary_boundary": "Phase duration does not determine hazard severity; combustion heat accumulation\u2014not peak jet velocity\u2014governs fire persistence beyond the jetting phase",
+          "intended_error_modes": [
+            "conflating duration with hazard magnitude",
+            "attributing fire duration to peak velocity rather than heat accumulation",
+            "ignoring the temporal lag between jetting and fire"
+          ],
+          "disallowed_extrapolations": [
+            "Proportional relationship between peak jet velocity and fire duration",
+            "Pressure buildup phase as dominant hazard based on duration alone"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "A module engineer is comparing two thermal runaway initiation pathways for the same NCM cell chemistry: (1) rapid mechanical abuse causing immediate thermal runaway, and (2) slight but repeated overcharge cycles causing gradual thermal runaway. The engineer notes that the overcharge-induced pathway has a longer incubation period with heat accumulation before thermal runaway onset. Once thermal runaway occurs via the overcharge pathway, it propagates faster and poses greater hazard than the mechanically induced case. Separately, insulation materials placed between cells in a cluster have been shown to increase average propagation time by factors between 5 and 7 compared to uninsulated cells, while composite phase-change insulating material in a different cluster configuration completely inhibited thermal diffusion. Explain why a detection and protection system designed primarily around the mechanical abuse scenario may be inadequate for the overcharge scenario, and identify the specific characteristic of overcharge-induced thermal runaway that most directly undermines the protective assumptions built into such a system."
+        },
+        "ground_truth": {
+          "gold_answer": "A system designed around mechanical abuse assumes that thermal runaway onset is rapid and externally triggered, allowing protection responses to be calibrated to a short, observable event. The overcharge pathway undermines this by introducing a long incubation period with gradual heat accumulation that may not trigger early detection thresholds calibrated for abrupt events. The critical characteristic is that once thermal runaway finally occurs after this prolonged incubation, it propagates faster and with greater hazard than the mechanical case\u2014meaning the system faces a more severe propagation event precisely when the detection system has had the most time to potentially miss or misclassify the slow buildup. Insulation-based propagation barriers that increase propagation time by factors of 5\u20137 may be insufficient for the overcharge scenario if the propagation rate is substantially higher, and even complete thermal diffusion inhibition demonstrated under one configuration cannot be assumed to hold under the higher-energy overcharge-induced event without additional evidence.",
+          "must_include": [
+            "Overcharge-induced thermal runaway has a longer incubation period with heat accumulation before onset",
+            "Once thermal runaway occurs via overcharge, it propagates faster and poses greater hazard than mechanical abuse",
+            "A detection system calibrated for rapid mechanical abuse onset may fail to trigger during the slow overcharge incubation phase",
+            "The combination of delayed onset and faster propagation means the system faces a more severe event with potentially less warning",
+            "Insulation propagation delay factors demonstrated for one initiation mode cannot be directly assumed sufficient for the higher-propagation-rate overcharge scenario"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming overcharge always causes thermal runaway regardless of overcharge magnitude",
+            "Claiming insulation materials are ineffective in general rather than potentially insufficient for the specific higher-hazard overcharge scenario",
+            "Asserting a specific numerical propagation rate for overcharge-induced events beyond what is stated",
+            "Claiming the zero-propagation result from composite phase-change material applies universally to all cluster configurations and initiation modes"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Mechanism mismatch between detection/protection system design assumptions and the specific characteristics of overcharge-induced thermal runaway",
+          "primary_boundary": "Propagation delay factors and detection thresholds demonstrated for one initiation mode cannot be directly transferred to a different initiation mode with different incubation and propagation characteristics",
+          "intended_error_modes": [
+            "Assuming insulation performance is initiation-mode-independent",
+            "Treating longer incubation as an advantage for detection without recognizing the higher post-onset hazard",
+            "Ignoring the interaction between slow buildup and faster propagation as a compounded risk"
+          ]
+        }
+      }
+    ]
+  }
+}

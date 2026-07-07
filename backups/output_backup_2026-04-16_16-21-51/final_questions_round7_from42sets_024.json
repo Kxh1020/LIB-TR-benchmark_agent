@@ -1,0 +1,331 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A 3×3 module of cylindrical lithium-ion cells undergoes impact-induced thermal runaway in the central cell. Thermography confirms the impacted cell's internal contents exceed 800°C and flame temperatures surpass 500°C. Thermocouples in interstitial spaces record a brief plateau near 34°C followed by a surge to 250°C, then decay. Post-event thermography shows all surrounding cells remain at room temperature. Which conclusions about heat transfer and propagation behavior are supported by these observations?",
+        "options": [
+          "A. The 250°C interstitial temperature surge confirms that neighbouring cells experienced internal exothermic reactions during the event.",
+          "B. The plateau period in the interstitial temperature profile is consistent with a transient thermal equilibration before the main gas and flame release reaches the surrounding space.",
+          "C. The fact that neighbouring cells remained at room temperature despite the central cell exceeding 800°C indicates that the geometry of cylindrical cell packing limits the conductive heat pathway between cells.",
+          "D. Because flame temperature exceeded 500°C, thermal runaway propagation to adjacent cells is thermodynamically guaranteed if contact time is sufficient.",
+          "E. The interstitial temperature reaching 250°C is sufficient evidence to conclude that neighbouring cells were brought to a state of imminent thermal runaway.",
+          "F. The absence of thermal runaway in neighbouring cells despite extreme local temperatures is consistent with restricted contact area reducing the effective heat flux into adjacent cells.",
+          "G. The thermography measurement of internal battery content temperature above 800°C directly quantifies the peak cathode decomposition temperature during the event."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "Neighbouring cells stayed at room temperature; the 250°C surge reflects interstitial gas/flame exposure, not internal cell reactions.",
+            "error_type": "Measurement scope distractor — surface/interstitial signal misattributed to internal cell state",
+            "evidence_refs": [
+              "TR_Gasventing+140+Journal_of_Loss_Prevention_in_the_Process_Industries:C003",
+              "TR_Gasventing+140+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "A 9-second plateau at 34°C before the surge is consistent with a delay before vented gases and flame reach interstitial sensors.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+140+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Cylindrical geometry produces limited cell-to-cell contact area; this geometric constraint is the stated mechanism retarding conductive heat transfer.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+140+Journal_of_Loss_Prevention_in_the_Process_Industries:C004",
+              "TR_Gasventing+140+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence shows no propagation occurred despite >500°C flames; thermodynamic possibility does not override the geometric heat-transfer barrier demonstrated.",
+            "error_type": "Causal overclaim — ignores contact-area constraint that evidence identifies as the controlling factor",
+            "evidence_refs": [
+              "TR_Gasventing+140+Journal_of_Loss_Prevention_in_the_Process_Industries:C002",
+              "TR_Gasventing+140+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Thermography confirmed neighbouring cells remained at room temperature; 250°C in the interstitial space does not indicate imminent cell-level thermal runaway.",
+            "error_type": "Scope expansion — interstitial measurement incorrectly extrapolated to internal cell state",
+            "evidence_refs": [
+              "TR_Gasventing+140+Journal_of_Loss_Prevention_in_the_Process_Industries:C003",
+              "TR_Gasventing+140+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "Evidence explicitly attributes non-propagation to limited contact surface area reducing heat transfer, consistent with the observed outcome.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+140+Journal_of_Loss_Prevention_in_the_Process_Industries:C004",
+              "TR_Gasventing+140+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "Thermography measures surface/emitted radiation; it records battery content temperature but cannot isolate cathode decomposition temperature specifically.",
+            "error_type": "Measurement scope distractor — thermography result overclaimed as component-specific calorimetry",
+            "evidence_refs": [
+              "TR_Gasventing+140+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of propagation and heat-transfer conclusions from interstitial temperature and thermography data in a cylindrical cell module",
+        "primary_boundary": "Interstitial and surface temperature signals cannot be directly mapped to internal cell state; non-propagation is attributable to geometric contact-area limitation, not thermodynamic impossibility",
+        "intended_error_modes": [
+          "Misattributing interstitial temperature rise to neighbouring cell internal reactions",
+          "Treating flame temperature as sufficient condition for propagation regardless of contact geometry",
+          "Overclaiming thermography resolution to identify component-specific temperatures"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding neighbouring cells were near thermal runaway from interstitial 250°C reading",
+          "Asserting propagation is guaranteed given sufficient contact time based solely on flame temperature"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is evaluating whether a cylindrical-cell battery module design provides inherent resistance to thermal runaway propagation. The module experienced a single-cell impact event where internal temperatures exceeded 800°C and flames above 500°C were observed, yet all adjacent cells remained at room temperature throughout. The engineer proposes that this non-propagation result justifies removing active thermal management from the module design. Which assessments of this proposal are most defensible?",
+        "options": [
+          "A. The non-propagation result is sufficient to justify removing active thermal management because the evidence demonstrates that the module geometry alone prevents propagation under any thermal abuse condition.",
+          "B. The non-propagation outcome is consistent with the geometric heat-transfer limitation of cylindrical cell packing, but this result was observed under a specific impact-induced scenario and may not generalize to all thermal abuse modes.",
+          "C. Because the interstitial temperature reached 250°C during the event, active thermal management would have been ineffective anyway, supporting its removal.",
+          "D. The evidence supports that limited cell-to-cell contact area is a contributing factor to non-propagation, but this does not establish that geometry alone is sufficient under conditions producing sustained or distributed heating.",
+          "E. Removing active thermal management is inadmissible because the evidence base covers only one test configuration and one abuse mode, making generalization to all operating conditions unsupported.",
+          "F. The result confirms that cylindrical cell modules are inherently safe from thermal runaway propagation regardless of module size or thermal load magnitude."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "D",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "Evidence covers one impact scenario; generalizing to 'any thermal abuse condition' extrapolates beyond the stated experimental scope.",
+            "error_type": "Overgeneralization — single-condition result applied universally",
+            "evidence_refs": [
+              "TR_Gasventing+140+Journal_of_Loss_Prevention_in_the_Process_Industries:C003",
+              "TR_Gasventing+140+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Non-propagation is mechanistically consistent with contact-area limitation but was observed under one specific abuse mode; scope restriction is appropriate.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+140+Journal_of_Loss_Prevention_in_the_Process_Industries:C003",
+              "TR_Gasventing+140+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Interstitial temperature reflects external gas/flame exposure, not cell internal state; this does not establish that active management would be ineffective.",
+            "error_type": "Measurement scope distractor combined with causal overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+140+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence identifies contact area as a contributing factor but does not establish sufficiency under sustained or distributed thermal loads beyond the tested scenario.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+140+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Removing a safety system based on a single test configuration and abuse mode is inadmissible; evidence scope does not cover all operating conditions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+140+Journal_of_Loss_Prevention_in_the_Process_Industries:C003",
+              "TR_Gasventing+140+Journal_of_Loss_Prevention_in_the_Process_Industries:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Evidence applies to a 3×3 module under one impact condition; scaling to arbitrary module sizes or thermal load magnitudes is not supported.",
+            "error_type": "Scale transfer beyond evidence and overgeneralization across conditions",
+            "evidence_refs": [
+              "TR_Gasventing+140+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of using a single-scenario non-propagation result to justify removal of active thermal management",
+        "primary_boundary": "Contact-area geometric limitation explains non-propagation in the tested configuration but does not generalize to all abuse modes or module scales",
+        "intended_error_modes": [
+          "Treating a single-condition result as universal safety guarantee",
+          "Misusing interstitial temperature data to argue active management is redundant",
+          "Scale transfer from 3×3 module result to arbitrary module configurations"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming cylindrical geometry prevents propagation under all thermal abuse modes",
+          "Inferring active thermal management ineffectiveness from interstitial temperature readings"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "During an impact test on a single cylindrical lithium-ion cell within a 3×3 module, the thermocouple in the interstitial space records the following sequence: a rise from ambient to 34°C, a 9-second plateau, then a rapid surge to 250°C, followed by a decay. Internal battery content temperature exceeds 800°C per thermography. A safety analyst claims the 9-second plateau indicates that the cell's internal thermal runaway reactions were temporarily arrested before resuming. Which options correctly evaluate this interpretation?",
+        "options": [
+          "A. The plateau interpretation is unsupported because thermocouples in the interstitial space measure the gas-space environment, not internal cell temperature, so the plateau more plausibly reflects a delay before vented products reach the sensor.",
+          "B. The plateau is consistent with the analyst's claim because a 9-second stabilization at 34°C indicates the internal reactions reached a temporary equilibrium before accelerating.",
+          "C. The 800°C thermography reading is consistent with the plateau representing a brief period before the main thermal runaway exotherm fully develops, but the thermocouple location prevents attributing the plateau directly to internal reaction kinetics.",
+          "D. Because the interstitial temperature eventually reached 250°C, the plateau phase must have corresponded to a period of internal short-circuit heating before electrolyte ignition.",
+          "E. The analyst's interpretation requires assuming the interstitial thermocouple accurately reflects internal cell temperature dynamics, which is not supported given the sensor's external location.",
+          "F. The surge to 250°C following the plateau confirms that a second, distinct exothermic reaction sequence was triggered inside the cell after the plateau period ended."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Interstitial thermocouples measure the space between cells; the plateau plausibly reflects transport delay of vented gases to the sensor, not internal reaction arrest.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+140+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Attributing a 34°C plateau to internal reaction equilibrium requires the thermocouple to reflect internal state, which the external sensor location does not support.",
+            "error_type": "Measurement scope distractor — external sensor reading attributed to internal reaction kinetics",
+            "evidence_refs": [
+              "TR_Gasventing+140+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The 800°C internal temperature is consistent with a developing exotherm, but the thermocouple's interstitial location prevents direct inference about internal reaction staging.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+140+Journal_of_Loss_Prevention_in_the_Process_Industries:C001",
+              "TR_Gasventing+140+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Assigning the plateau specifically to internal short-circuit heating introduces a mechanism not identified in the evidence and misuses the interstitial sensor as an internal diagnostic.",
+            "error_type": "Mechanism substitution and measurement scope overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+140+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The analyst's claim requires the interstitial thermocouple to track internal cell dynamics; the sensor's external placement makes this assumption unjustified.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+140+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The surge to 250°C reflects gases and flame reaching the interstitial space; inferring a second distinct internal exothermic sequence from this external reading is unsupported.",
+            "error_type": "Causal overclaim — external temperature event attributed to specific internal reaction sequence without basis",
+            "evidence_refs": [
+              "TR_Gasventing+140+Journal_of_Loss_Prevention_in_the_Process_Industries:C005",
+              "TR_Gasventing+140+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of inferring internal cell reaction dynamics from an interstitial thermocouple signal",
+        "primary_boundary": "Interstitial thermocouple placement limits inference to the gas-space environment; internal reaction staging cannot be directly attributed from this signal",
+        "intended_error_modes": [
+          "Treating interstitial temperature plateau as evidence of internal reaction arrest",
+          "Assigning specific internal mechanisms (short-circuit heating) to external sensor features",
+          "Inferring a second internal exothermic sequence from the post-plateau temperature surge"
+        ],
+        "disallowed_extrapolations": [
+          "Using interstitial thermocouple data to characterize internal reaction kinetics",
+          "Attributing the 250°C surge to a distinct second internal reaction without direct internal measurement"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A cylindrical lithium-ion cell within a 3×3 module undergoes impact-induced thermal runaway. Thermography records internal battery content temperatures above 800°C and flame temperatures above 500°C. Despite this, all neighbouring cells remain at room temperature throughout the event. A process safety engineer argues that this outcome demonstrates the module is inherently safe from propagation and that no additional inter-cell thermal barriers are needed. Critically evaluate this argument. Your answer should address: (1) what mechanism the evidence identifies as responsible for non-propagation, (2) what the evidence does and does not establish about the generality of this protection, and (3) whether the engineer's conclusion about removing additional thermal barriers is admissible based on the available evidence."
+      },
+      "ground_truth": {
+        "gold_answer": "The evidence identifies limited contact surface area between cylindrical cells as the mechanism that retards heat transfer and prevents propagation to neighbouring cells. This geometric factor restricted conductive heat flux sufficiently that even temperatures exceeding 800°C in the impacted cell did not raise adjacent cells above room temperature in this specific test. However, the evidence establishes this outcome for one impact-induced scenario in a 3×3 module configuration; it does not demonstrate that cylindrical geometry prevents propagation under all thermal abuse modes, sustained heating, or larger module configurations. The engineer's conclusion is inadmissible: the evidence supports that contact-area geometry is a contributing protective factor, not that it is universally sufficient to replace active or passive inter-cell thermal barriers across all conditions. Removing additional barriers based on a single test scenario constitutes an unsupported generalization beyond the evidence scope.",
+        "must_include": [
+          "Limited contact surface area between cylindrical cells identified as the mechanism retarding heat transfer",
+          "Non-propagation result is specific to the tested impact scenario and 3×3 configuration",
+          "Evidence does not generalize to all thermal abuse modes or module scales",
+          "Engineer's conclusion to remove thermal barriers is inadmissible given the restricted evidence scope",
+          "Contact-area geometry is a contributing factor, not a universally sufficient protection mechanism"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming cylindrical cell geometry prevents propagation under any abuse condition",
+          "Asserting the 800°C internal temperature proves cathode decomposition was the sole heat source",
+          "Concluding that interstitial temperature data alone characterizes internal cell thermal runaway staging",
+          "Recommending removal of thermal barriers based solely on this single-scenario result"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of generalizing a single-scenario non-propagation result to a universal module safety claim and design recommendation",
+        "primary_boundary": "Contact-area limitation explains non-propagation in the tested configuration but does not establish sufficiency across all abuse modes, sustained thermal loads, or module scales",
+        "intended_error_modes": [
+          "Overgeneralizing a single test result to a universal safety guarantee",
+          "Treating geometric contact-area limitation as a complete substitute for active or passive thermal management",
+          "Failing to distinguish between a contributing protective factor and a sufficient protective mechanism"
+        ]
+      }
+    }
+  ]
+}

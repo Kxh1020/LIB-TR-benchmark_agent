@@ -3,12 +3,23 @@ import json
 from modules.utils import call_stage_llm, extract_json
 
 
+def build_solver_item(item: dict) -> dict:
+    """将完整题目对象裁剪"""
+    return {
+        "qid": item.get("qid", ""),
+        "type": item.get("type", ""),
+        "solver_view": item.get("solver_view", {}),
+    }
+
+
 def solve_question(item: dict, prompt_text: str) -> dict:
     """调用模型进行作答"""
+    solver_item = build_solver_item(item)
+
     payload = (
         "SOLVER_TASK\n"
         f"{prompt_text}\n\n"
-        f"QUESTION_JSON:\n{json.dumps(item)}"
+        f"QUESTION_JSON:\n{json.dumps(solver_item)}"
     )
     return extract_json(call_stage_llm("judger", payload))
 

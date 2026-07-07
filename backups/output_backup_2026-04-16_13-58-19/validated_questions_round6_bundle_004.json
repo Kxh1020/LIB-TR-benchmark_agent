@@ -1,0 +1,226 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Two cylindrical lithium-ion cell chemistries, NCA and NMC811, are subjected to identical accelerating rate calorimetry tests in a nitrogen atmosphere at 100% SOC. NCA cells reach thermal runaway onset at a slightly lower average temperature than NMC811 cells. However, NMC811 cells reach a higher average maximum temperature during thermal runaway, release a higher fraction of CO2 relative to CO, and produce approximately 66% more hydrocarbons. Additionally, prior to thermal runaway, NMC811 cells show a progressive increase in CO and CO2 release, whereas NCA cells show no such progressive pre-runaway gas increase and instead exhibit more abrupt gas ejection once thermal runaway begins. A battery safety engineer must assess which chemistry presents a greater fire and toxicity hazard and which offers better pre-runaway diagnostic opportunity. Which of the following conclusions are admissible?",
+        "options": [
+          "A. NCA cells present a greater hazard than NMC811 cells because their lower onset temperature means thermal runaway is triggered under less extreme conditions.",
+          "B. The progressive pre-runaway gas increase in NMC811 cells provides a longer detection window compared to NCA cells, where the transition to thermal runaway is more abrupt.",
+          "C. NMC811 cells present a greater post-onset combustion and toxicity hazard than NCA cells, given their higher peak temperatures and substantially greater hydrocarbon release.",
+          "D. Because NMC811 cells produce more CO2 relative to CO, their gas emissions are less hazardous than NCA cells, since CO2 is non-flammable.",
+          "E. The difference in onset temperature between NCA and NMC811 is large enough to be the primary basis for selecting NMC811 as the safer chemistry for high-temperature environments.",
+          "F. NCA cells' abrupt gas ejection pattern at thermal runaway onset implies that mechanical venting designs relying on gradual pressure build-up for actuation may be less reliable for NCA than for NMC811."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "C",
+          "F"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "While NCA has a slightly lower onset temperature (128.9°C vs 130.6°C), the difference is marginal (~1.7°C). Declaring NCA the greater hazard based solely on this small onset temperature difference ignores the higher peak temperature and greater hydrocarbon release of NMC811, which represent more severe post-onset hazards.",
+            "error_type": "single-variable overclaim ignoring multi-factor interaction",
+            "evidence_refs": [
+              "TR_Gasventing+169+International_Journal_of_Heat_and_Mass_Transfer:C001",
+              "TR_Gasventing+169+International_Journal_of_Heat_and_Mass_Transfer:C002",
+              "TR_Gasventing+169+International_Journal_of_Heat_and_Mass_Transfer:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that NMC811 shows a progressive increase in CO and CO2 before thermal runaway, while NCA does not and instead ejects gases abruptly. A progressive pre-runaway signal provides a longer detection window, making B admissible.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+169+International_Journal_of_Heat_and_Mass_Transfer:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "NMC811 cells reach higher average maximum temperatures (670.3°C vs 654.3°C) and release 66% more hydrocarbons than NCA. Both factors directly indicate greater post-onset combustion severity and toxicity hazard, making this conclusion admissible.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+169+International_Journal_of_Heat_and_Mass_Transfer:C002",
+              "TR_Gasventing+169+International_Journal_of_Heat_and_Mass_Transfer:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "While CO2 is non-flammable, this reasoning ignores that NMC811 also releases 66% more hydrocarbons than NCA, which are flammable and toxic. Concluding lower hazard from CO2 fraction alone while ignoring the hydrocarbon data is a selective and unsupported claim.",
+            "error_type": "selective use of evidence / ignoring multi-factor interaction",
+            "evidence_refs": [
+              "TR_Gasventing+169+International_Journal_of_Heat_and_Mass_Transfer:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The onset temperature difference between NCA and NMC811 is approximately 1.7°C, which is a marginal difference. Treating this as the primary basis for chemistry selection in high-temperature environments overstates the significance of a small difference while ignoring the more severe post-onset behavior of NMC811.",
+            "error_type": "numerical exaggeration / single-variable overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+169+International_Journal_of_Heat_and_Mass_Transfer:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Correct",
+            "justification": "NCA cells show abrupt gas ejection at thermal runaway onset without progressive pre-runaway pressure build-up. A venting design that relies on gradual pressure accumulation to actuate would therefore have less time to respond for NCA cells, making this a supported engineering implication.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+169+International_Journal_of_Heat_and_Mass_Transfer:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-factor hazard comparison between NCA and NMC811 chemistries, distinguishing onset conditions from post-onset severity and detection opportunity.",
+        "primary_boundary": "The onset temperature difference is too small to be the primary safety discriminator; post-onset behavior (peak temperature, hydrocarbon release, gas ejection pattern) provides the dominant hazard distinction.",
+        "intended_error_modes": [
+          "Selecting chemistry based on onset temperature alone while ignoring post-onset severity",
+          "Concluding lower hazard from CO2 fraction while ignoring hydrocarbon data",
+          "Treating a ~1.7°C onset temperature difference as a practically significant design basis"
+        ],
+        "disallowed_extrapolations": [
+          "Generalizing hazard ranking to non-inert atmospheres",
+          "Applying ARC results directly to module or pack level without accounting for thermal coupling",
+          "Treating CO2/CO ratio as a complete toxicity index without considering hydrocarbon content"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A fleet operator is evaluating LiFePO4 batteries for a stationary energy storage application. Testing reveals that naturally aged batteries (approximately 5 years old) undergo thermal runaway earlier than new batteries under identical heating conditions, and produce greater amounts of smoke at both 0% and 100% SOC. At 100% SOC, thermal runaway produces multiple violent jet flames for both new and aged cells, while at 0% SOC only a weak flame is observed. Average mass loss during thermal runaway is approximately 110 g at 100% SOC and approximately 92 g at 0% SOC. Soot from thermal runaway contains F and P as corrosive components. In a late-stage fire scenario occurring indoors, C1–C4 gases accumulate in the enclosure. The operator is drafting safety protocols and asks which of the following statements are supported by this evidence.",
+        "options": [
+          "A. Storing batteries at 0% SOC eliminates the fire hazard during thermal runaway, since only a weak flame is produced at that state.",
+          "B. Aged batteries pose an elevated thermal runaway risk compared to new batteries under the same operating conditions, independent of SOC.",
+          "C. The greater mass loss at 100% SOC compared to 0% SOC is consistent with higher gas release at elevated SOC contributing to material ejection.",
+          "D. Soot exposure from LiFePO4 thermal runaway presents a respiratory and dermal hazard regardless of whether the battery is new or aged, due to the presence of F and P.",
+          "E. In an indoor thermal runaway event, ventilation management during the late fire stage is a relevant safety measure because accumulated C1–C4 gases can displace oxygen.",
+          "F. Because aged batteries produce more smoke, their soot is chemically distinct from new battery soot in all respects, and new battery soot can be considered non-hazardous by comparison."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "At 0% SOC a weak flame is produced, not no flame. The evidence does not state that fire hazard is eliminated at 0% SOC; it states the flame is weaker. This option overstates the protective effect of low SOC.",
+            "error_type": "absolute overclaim / boundary violation",
+            "evidence_refs": [
+              "TR_Gasventing+170+Applied_Thermal_Engineering:C001"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The evidence states aged batteries undergo thermal runaway earlier than new batteries under the same SOC conditions, indicating elevated risk from aging independent of SOC state.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+170+Applied_Thermal_Engineering:C002"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence attributes the higher mass loss at 100% SOC (~110 g vs ~92 g) to greater chemical reaction intensity and gas release at higher SOC. The reasoning chain from SOC to reaction intensity to gas release to mass loss is directly supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+170+Applied_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The evidence identifies F and P as corrosive components in LiFePO4 battery soot causing respiratory and dermal harm. This applies to soot composition generally; the evidence does not restrict this hazard to aged batteries only, and both new and aged batteries produce soot containing these elements.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+170+Applied_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that C1–C4 gas accumulation in indoor or confined settings can lower oxygen levels, increasing asphyxiation and hypoxia risk, and that ventilation during the late stage is crucial. This directly supports E.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+170+Applied_Thermal_Engineering:C009"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence shows that aged battery soot contains additional bond types (O–C=O and π bonds) compared to new battery soot, indicating chemical differences. However, new battery soot still contains C–C, C–O, and O–H bonds and the same corrosive F and P elements. Concluding new battery soot is non-hazardous is an unsupported overclaim that ignores shared hazardous components.",
+            "error_type": "scope expansion / unsupported safety conclusion from partial chemical difference",
+            "evidence_refs": [
+              "TR_Gasventing+170+Applied_Thermal_Engineering:C008",
+              "TR_Gasventing+170+Applied_Thermal_Engineering:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-factor safety assessment combining SOC effects, aging effects, soot hazard, and confined-space gas accumulation risk for LiFePO4 batteries.",
+        "primary_boundary": "Low SOC reduces but does not eliminate fire hazard; chemical differences between new and aged soot do not render new battery soot non-hazardous; corrosive element hazard applies regardless of battery age.",
+        "intended_error_modes": [
+          "Treating weak flame as no flame to conclude fire hazard elimination at 0% SOC",
+          "Inferring non-hazardous status for new battery soot from chemical differences with aged soot",
+          "Ignoring that shared F and P content makes both new and aged soot hazardous"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding that SOC management alone is sufficient to prevent fire hazard",
+          "Treating soot chemical composition differences as a complete hazard ranking",
+          "Extending indoor confinement gas accumulation risk to open outdoor environments without qualification"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "In overcharge testing of LiFePO4 prismatic batteries, normalized gas release (measured in L/Ah) increases substantially as battery capacity increases from 50 Ah to 280 Ah under the same 1C overcharge rate. Separately, for 100 Ah batteries under 1C overcharge, total gas generation increases and then plateaus once pre-load force exceeds approximately 2 kN, attributed to sufficient internal contact of active materials. A battery safety engineer is designing a venting system for a new 200 Ah LiFePO4 prismatic cell module. Explain why using the normalized gas release value measured from a 50 Ah cell of the same chemistry would lead to an unsafe venting system design for the 200 Ah cell, and identify what additional mechanical condition must be specified when characterizing gas generation for the 200 Ah cell to ensure the design basis is representative."
+      },
+      "ground_truth": {
+        "gold_answer": "Using the 50 Ah normalized gas release value (0.7 L/Ah) for a 200 Ah cell design would underestimate actual gas generation because normalized gas release increases with capacity — reaching 1.7 L/Ah at 280 Ah — meaning larger cells generate disproportionately more gas per unit capacity than smaller cells. Applying the lower value from the 50 Ah cell would result in a venting system sized for less gas than the 200 Ah cell will actually produce, creating a pressure accumulation hazard. The additional mechanical condition that must be specified is the pre-load force applied to the cell during testing: gas generation depends on whether internal active material contact is sufficient, which changes above a threshold force (approximately 2 kN for 100 Ah cells). If the 200 Ah cell characterization test is conducted at a pre-load force below the threshold that ensures sufficient internal contact, the measured gas generation will underrepresent the gas generation that occurs under representative module compression conditions, again leading to an under-designed venting system.",
+        "must_include": [
+          "Normalized gas release increases with battery capacity, so the 50 Ah value underestimates gas generation for a 200 Ah cell",
+          "Applying the 50 Ah normalized value leads to undersizing the venting system",
+          "Pre-load force must be specified because gas generation increases and plateaus above a threshold force due to sufficient internal active material contact",
+          "Testing at insufficient pre-load force would underrepresent actual gas generation under module compression"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming a specific normalized gas release value for the 200 Ah cell without evidence",
+          "Asserting that the force threshold for 100 Ah cells (2 kN) applies directly to 200 Ah cells",
+          "Concluding that pre-load force is the only relevant mechanical parameter without basis",
+          "Generalizing the capacity-normalized gas scaling relationship as linear or monotonic beyond the evidence range"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Scale-dependent gas generation and the role of mechanical pre-load force as a test condition that must be controlled to obtain a representative design basis for venting system sizing.",
+        "primary_boundary": "The capacity scaling of normalized gas release means smaller-cell data cannot be directly applied to larger cells. The force threshold effect means test conditions must match representative module mechanical loading; the specific force threshold value from 100 Ah cells cannot be directly transferred to 200 Ah cells.",
+        "intended_error_modes": [
+          "Assuming normalized gas release is capacity-independent and the 50 Ah value is portable",
+          "Ignoring mechanical pre-load as a test condition variable",
+          "Applying the 2 kN threshold from 100 Ah cells directly to 200 Ah cells without qualification"
+        ]
+      }
+    }
+  ]
+}

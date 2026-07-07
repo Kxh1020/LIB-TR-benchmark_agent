@@ -1,0 +1,351 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A lithium-ion battery warehouse uses flammable gas detectors calibrated to trigger alarms at a fixed fraction of the lower explosive limit (LEL) of vented gas. During a thermal runaway event, the heating power supplied to the batteries increases progressively. An engineer argues that the alarm threshold set at 60% SOC conditions will remain conservative for all higher-power heating scenarios. Which of the following conclusions about this argument are supported by the underlying gas venting behavior?",
+        "options": [
+          "A. The argument is flawed because increasing heating power drives the vented gas mixture toward a higher proportion of flammable components, reducing the LEL below the value used to calibrate the alarm threshold.",
+          "B. The argument is valid because the LEL of vented gas is primarily controlled by SOC, and heating power has negligible independent influence on gas flammability.",
+          "C. The argument is flawed because the non-monotonic SOC dependence of LEL means the 60% SOC condition does not represent the most hazardous gas composition under all heating scenarios.",
+          "D. The argument is valid because higher heating power increases the total volume of vented gas, which dilutes flammable species and raises the effective LEL.",
+          "E. The argument is flawed because the lowest LEL observed under high heating power conditions falls below the LEL at 60% SOC, meaning the alarm threshold based on 60% SOC may not trigger before a flammable mixture is reached.",
+          "F. The argument is valid provided the alarm is set at or below the absolute minimum LEL recorded across all tested conditions, regardless of SOC.",
+          "G. The 60% SOC condition represents the highest LEL, not the lowest, so using it as a calibration reference underestimates the flammability hazard at higher heating powers."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "E",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Increasing heating power raises the proportion of flammable gas and reduces LEL, invalidating a fixed alarm threshold set at lower-power conditions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+137+Journal_of_Loss_Prevention_in_the_Process_Industries:C004",
+              "TR_Gasventing+137+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence explicitly shows heating power independently and monotonically reduces LEL; power is not negligible relative to SOC effects.",
+            "error_type": "causal_overclaim_single_variable",
+            "evidence_refs": [
+              "TR_Gasventing+137+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "60% SOC yields the highest LEL, not a particularly hazardous low-LEL condition; the non-monotonicity concern here is misapplied to the alarm calibration argument.",
+            "error_type": "mechanism_confusion",
+            "evidence_refs": [
+              "TR_Gasventing+137+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "Evidence does not support that higher heating power dilutes flammable species; the observed direction is the opposite—LEL decreases with power.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+137+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The lowest LEL recorded occurs under high heating power, below the 60% SOC LEL value; calibrating to the latter leaves a gap where explosive mixtures form undetected.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+137+Journal_of_Loss_Prevention_in_the_Process_Industries:C005",
+              "TR_Gasventing+137+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "This would make the argument valid only by redefining the calibration basis; the original argument as stated uses 60% SOC as the reference, which is not the minimum LEL.",
+            "error_type": "scope_expansion",
+            "evidence_refs": [
+              "TR_Gasventing+137+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "60% SOC gives the highest LEL in the SOC sweep, meaning it is the least flammable condition tested; using it as a conservative lower bound for alarm setting is backwards.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+137+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of alarm calibration strategy given non-monotonic SOC dependence and monotonic heating power dependence of vented gas LEL.",
+        "primary_boundary": "60% SOC yields the highest LEL (least flammable), not the lowest; high heating power drives LEL to its minimum value, which is the true safety-critical reference.",
+        "intended_error_modes": [
+          "Assuming 60% SOC is the worst-case flammability condition because it is a named peak",
+          "Ignoring that the LEL peak at 60% SOC means maximum non-flammability, not maximum hazard",
+          "Treating SOC and heating power as independent non-interacting variables",
+          "Assuming higher gas volume from higher power dilutes flammable species"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming a specific numerical LEL threshold applies universally across all battery chemistries",
+          "Inferring that heating power and SOC effects are additive in a quantifiable way"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "Two lithium-ion battery packs of identical chemistry are subjected to thermal runaway under different conditions: Pack A at low SOC with moderate heating temperature, and Pack B at high SOC with the same moderate heating temperature. Post-event gas analysis shows Pack A's vented gas has a higher LEL than Pack B's. An investigator proposes that Pack A's higher LEL is evidence that its thermal runaway was less severe and therefore poses a lower explosion risk. Evaluate which statements about this interpretation are admissible.",
+        "options": [
+          "A. The interpretation is partially correct: higher LEL does indicate less violent thermal runaway in Pack A, but higher LEL means the mixture is less flammable, so the explosion risk from Pack A's vented gas is actually lower than Pack B's.",
+          "B. The interpretation is incorrect because LEL is independent of thermal runaway severity; the difference in LEL reflects only differences in electrolyte composition between the two packs.",
+          "C. The higher LEL in Pack A is consistent with more complete oxidation of vented species producing CO2, which as a non-flammable diluent raises the LEL of the mixture.",
+          "D. The higher LEL in Pack B's vented gas would be expected if CO2 dominated the mixture, but the evidence indicates high-SOC runaway favors CO production instead.",
+          "E. Pack B's lower LEL is attributable to incomplete reaction with air producing flammable CO rather than CO2, consistent with more violent thermal runaway at high SOC.",
+          "F. The investigator's conclusion about explosion risk is correct because any gas mixture with a higher LEL requires a greater concentration to ignite and is therefore inherently safer in confined spaces.",
+          "G. The LEL difference between the packs cannot be attributed to reaction completeness because both packs were tested at the same heating temperature."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Higher LEL at low SOC reflects less violent runaway and more complete combustion to CO2; higher LEL means less flammable mixture, so explosion risk is lower for Pack A.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+137+Journal_of_Loss_Prevention_in_the_Process_Industries:C002",
+              "TR_Gasventing+137+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence directly links LEL variation to SOC-dependent reaction completeness and thermal runaway violence, not to electrolyte composition differences.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Gasventing+137+Journal_of_Loss_Prevention_in_the_Process_Industries:C002",
+              "TR_Gasventing+137+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "At low SOC, adequate air reaction produces CO2, a non-flammable diluent that raises the LEL of the vented gas mixture—directly supported by evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+137+Journal_of_Loss_Prevention_in_the_Process_Industries:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "CO2 dominance is associated with low SOC (Pack A), not high SOC (Pack B); attributing high LEL to CO2 in Pack B inverts the SOC-dependent mechanism.",
+            "error_type": "condition_violation",
+            "evidence_refs": [
+              "TR_Gasventing+137+Journal_of_Loss_Prevention_in_the_Process_Industries:C002",
+              "TR_Gasventing+137+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "High-SOC violent runaway prevents timely air reaction, producing flammable CO rather than CO2, which lowers the LEL of Pack B's vented gas.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+137+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "While higher LEL reduces ignition risk at a given concentration, the investigator's conclusion ignores that Pack B's lower LEL means its gas is flammable over a wider range of concentrations—the risk comparison requires accounting for both LEL and gas volume.",
+            "error_type": "scope_expansion_distractor",
+            "evidence_refs": [
+              "TR_Gasventing+137+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "Same heating temperature does not preclude different reaction completeness; SOC independently controls how violently runaway proceeds and how completely materials react with air.",
+            "error_type": "ignoring_multi_factor_interaction",
+            "evidence_refs": [
+              "TR_Gasventing+137+Journal_of_Loss_Prevention_in_the_Process_Industries:C002",
+              "TR_Gasventing+137+Journal_of_Loss_Prevention_in_the_Process_Industries:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanistic interpretation of LEL differences between low-SOC and high-SOC thermal runaway events, and admissibility of explosion risk conclusions derived from LEL values.",
+        "primary_boundary": "Higher LEL indicates less flammable mixture (CO2-dominated, low SOC, less violent); lower LEL indicates more flammable mixture (CO-dominated, high SOC, more violent). The investigator's partial conclusion is correct about severity but the risk implication requires careful mechanistic reasoning.",
+        "intended_error_modes": [
+          "Attributing LEL differences to electrolyte composition rather than reaction completeness",
+          "Inverting the SOC-mechanism relationship by associating CO2 with high SOC",
+          "Treating same heating temperature as controlling for all runaway severity differences",
+          "Accepting the investigator's explosion risk conclusion without checking whether higher LEL always means lower risk in confined venting scenarios"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming CO2 production eliminates explosion risk entirely",
+          "Generalizing the SOC-LEL relationship to battery chemistries not mentioned in the evidence"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery safety engineer is designing explosion-proof enclosures and flammable gas alarm systems for a lithium-ion battery storage facility. The engineer has access to LEL measurements from thermal runaway tests conducted across a range of SOC levels and heating powers. The engineer proposes using the LEL value measured at 60% SOC under the lowest tested heating power as the design reference for both the enclosure rating and the alarm trigger concentration. Identify which design judgments are admissible given the evidence on how LEL varies with these parameters.",
+        "options": [
+          "A. Using the 60% SOC, lowest-power LEL as the enclosure design reference is non-conservative because higher heating powers produce vented gas with lower LEL values, meaning the enclosure must withstand a more flammable mixture than the reference assumes.",
+          "B. The 60% SOC condition is appropriate as the worst-case reference because it produces the highest LEL, which corresponds to the most energetic and therefore most dangerous gas mixture.",
+          "C. The alarm trigger concentration derived from the 60% SOC, lowest-power LEL will cause the alarm to activate too late under high-heating-power scenarios, where the actual LEL of the vented gas is lower.",
+          "D. The design reference should instead be the lowest LEL observed across all tested heating power levels, as this represents the condition under which the vented gas becomes flammable at the smallest concentration.",
+          "E. Since LEL decreases monotonically with both increasing SOC beyond 60% and increasing heating power, the worst-case design condition is the combination of maximum SOC and maximum heating power.",
+          "F. The 60% SOC condition is a valid worst-case reference for the alarm system because it represents a local maximum in LEL, implying that all other SOC conditions produce gas that is either equally or more flammable.",
+          "G. The proposed design reference is adequate for alarm calibration but not for enclosure rating, because enclosure structural integrity depends on peak pressure rather than gas flammability."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Higher heating power monotonically reduces LEL below the 60% SOC reference value; using that reference underestimates the flammability hazard at higher powers.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+137+Journal_of_Loss_Prevention_in_the_Process_Industries:C005",
+              "TR_Gasventing+137+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "60% SOC gives the highest LEL, meaning least flammable mixture, not the most energetic or dangerous; this inverts the hazard implication of LEL.",
+            "error_type": "mechanism_confusion",
+            "evidence_refs": [
+              "TR_Gasventing+137+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "If the alarm is set at a fraction of the 60% SOC LEL but actual LEL under high power is lower, the flammable mixture forms before the alarm concentration is reached.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+137+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The lowest observed LEL across all heating powers defines the condition where ignition risk is highest at the smallest gas concentration; this is the correct worst-case reference.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+137+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "LEL is non-monotonic with SOC (peaks at 60% then declines); the worst-case SOC is not necessarily maximum SOC. The claim of monotonic decrease beyond 60% is an unsupported extrapolation.",
+            "error_type": "unjustified_monotonicity",
+            "evidence_refs": [
+              "TR_Gasventing+137+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "60% SOC is a local maximum in LEL, meaning gas at other SOC levels is more flammable (lower LEL), not equally or less flammable—this statement inverts the correct implication.",
+            "error_type": "condition_violation",
+            "evidence_refs": [
+              "TR_Gasventing+137+Journal_of_Loss_Prevention_in_the_Process_Industries:C001"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Incorrect",
+            "justification": "The evidence does not support separating enclosure and alarm design on this basis; the primary concern addressed is flammability-based LEL for both applications.",
+            "error_type": "scope_expansion_beyond_evidence",
+            "evidence_refs": [
+              "TR_Gasventing+137+Journal_of_Loss_Prevention_in_the_Process_Industries:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of a specific design reference (60% SOC, lowest heating power LEL) for explosion-proof enclosure and alarm calibration, given non-monotonic SOC dependence and monotonic heating power dependence of LEL.",
+        "primary_boundary": "The 60% SOC LEL is a local maximum (least flammable), not a worst-case minimum; the true worst-case reference is the minimum LEL observed at maximum heating power.",
+        "intended_error_modes": [
+          "Confusing LEL maximum with maximum hazard",
+          "Assuming LEL decreases monotonically with SOC across the full range",
+          "Treating the 60% SOC peak as a conservative lower bound for alarm setting",
+          "Separating enclosure and alarm design criteria without evidence basis"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming the minimum LEL value applies to all battery chemistries",
+          "Inferring that maximum SOC always produces minimum LEL without accounting for non-monotonic behavior"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A lithium-ion battery facility operates at a fixed SOC of 40% during normal storage. During an uncontrolled heating event, the heating rate escalates from low to high power before thermal runaway is complete. An engineer claims that because 40% SOC is below the 60% SOC peak LEL condition, the vented gas at this SOC will always be more flammable than at 60% SOC, and therefore the facility is in a higher-risk state than a facility storing batteries at 60% SOC under the same heating escalation. Critically evaluate this claim, identifying which part is supported, which part is not, and what additional factor the engineer has failed to account for."
+      },
+      "ground_truth": {
+        "gold_answer": "The engineer's claim is partially supported but contains a significant error and omits a critical variable. The supported part: at 40% SOC, the LEL of vented gas is lower than at 60% SOC because 60% SOC represents the peak LEL condition. Lower LEL means the gas mixture becomes flammable at a smaller concentration, so the 40% SOC facility does face a more flammable vented gas composition than a 60% SOC facility under comparable heating conditions. The unsupported part: the claim that 40% SOC is 'always' more hazardous than 60% SOC regardless of heating power is not admissible. The LEL of vented gas also decreases monotonically with increasing heating power, independent of SOC. As the heating event escalates from low to high power, the LEL of the vented gas will decline further regardless of the SOC starting point. Therefore, the critical omission is that the engineer has failed to account for the heating power dependence of LEL. Under high heating power escalation, both the 40% and 60% SOC facilities will produce vented gas with LEL values lower than those measured at low heating power, and the relative hazard comparison between the two SOC conditions may shift depending on how each responds to the same power escalation. The engineer cannot conclude that the 40% SOC facility is in a higher-risk state without specifying the heating power level, because the heating power effect operates independently and can dominate the SOC effect at high power levels.",
+        "must_include": [
+          "40% SOC produces lower LEL than 60% SOC because 60% SOC is the LEL peak",
+          "Lower LEL means more flammable mixture, so the directional comparison is correct",
+          "Heating power independently and monotonically reduces LEL",
+          "The engineer omits the heating power variable",
+          "The claim of 'always' more hazardous is not admissible without specifying heating power"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming a specific numerical LEL value for 40% SOC without evidence",
+          "Asserting that heating power effect dominates SOC effect quantitatively",
+          "Generalizing the LEL-SOC relationship to chemistries not addressed in the evidence"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-factor admissibility judgment combining non-monotonic SOC dependence and monotonic heating power dependence of vented gas LEL to evaluate a comparative hazard claim.",
+        "primary_boundary": "The engineer's directional SOC comparison is correct but the 'always' qualifier fails because heating power is an independent variable that also reduces LEL; the comparison is only valid at a specified heating power level.",
+        "intended_error_modes": [
+          "Accepting the engineer's claim entirely because the SOC comparison direction is correct",
+          "Rejecting the claim entirely without recognizing the valid SOC-LEL comparison",
+          "Failing to identify heating power as the omitted variable",
+          "Treating the non-monotonic SOC relationship as monotonic across the full SOC range"
+        ]
+      }
+    }
+  ]
+}

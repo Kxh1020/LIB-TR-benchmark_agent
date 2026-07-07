@@ -1,0 +1,102 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "During a process safety review, an engineer compares the explosive hazard potential of three battery chemistries using TNT equivalent energy. The NTM sodium-ion cell and the LFP cell yield nearly identical TNT equivalent values, differing by less than 1%, while the NCM cell yields a value 2.2 times higher than NTM. Separately, the NTM cell exhibits the lowest activation energy among all three. A risk assessor must classify relative hazard tiers. Which of the following assessments are admissible?",
+        "options": [
+          "A. NTM and LFP cells can be placed in the same explosive hazard tier based on TNT equivalent energy, even though their thermal runaway peak temperatures differ.",
+          "B. The NCM cell's higher TNT equivalent energy, combined with its higher activation energy than NTM, implies that activation energy is the primary determinant of explosive energy release during thermal runaway.",
+          "C. The NTM cell's lower activation energy relative to NCM does not predict that NTM will release more explosive energy than NCM during thermal runaway.",
+          "D. Because NTM and LFP have nearly identical TNT equivalent values, their thermal runaway hazard profiles are interchangeable for all process safety purposes.",
+          "E. The explosive energy ranking NCM >> NTM ≈ LFP is consistent with a scenario where the dominant energy source differs between the high-nickel NCM chemistry and the other two chemistries.",
+          "F. The 2.2× higher TNT equivalent of NCM over NTM means that NCM cells require at least 2.2 times the separation distance in storage compared to NTM cells."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "TNT equivalent values for NTM and LFP differ by less than 1%; explosive hazard tier classification based on this metric places them together despite different peak temperatures.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+154+Process_Safety_and_Environmental_Protection:C004",
+              "TR_Gasventing+154+Process_Safety_and_Environmental_Protection:C001"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "NCM has higher Ea than NTM yet releases more explosive energy; this contradicts activation energy being the primary determinant of explosive energy.",
+            "error_type": "causal overclaim / mechanism substitution",
+            "evidence_refs": [
+              "TR_Gasventing+154+Process_Safety_and_Environmental_Protection:C003",
+              "TR_Gasventing+154+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "NTM has lower Ea than NCM yet releases far less explosive energy; activation energy governs initiation kinetics, not total energy content.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+154+Process_Safety_and_Environmental_Protection:C003",
+              "TR_Gasventing+154+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "TNT equivalent parity covers explosive energy only; ignition threshold, peak temperature, and activation energy differ, making full hazard profile interchangeability inadmissible.",
+            "error_type": "scope expansion / single-metric overgeneralization",
+            "evidence_refs": [
+              "TR_Gasventing+154+Process_Safety_and_Environmental_Protection:C001",
+              "TR_Gasventing+154+Process_Safety_and_Environmental_Protection:C002",
+              "TR_Gasventing+154+Process_Safety_and_Environmental_Protection:C003"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The large energy gap between NCM and the other two chemistries is consistent with NCM having a distinct dominant energy-releasing mechanism, a reasoning-based inference from the pattern.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+154+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Separation distance depends on blast overpressure models, geometry, and regulatory standards; TNT equivalent ratio alone does not directly set a proportional separation distance requirement.",
+            "error_type": "system-level recommendation from component-level metric without engineering basis",
+            "evidence_refs": [
+              "TR_Gasventing+154+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Decoupling activation energy from explosive energy release, and limits of single-metric hazard classification",
+        "primary_boundary": "Activation energy predicts initiation kinetics, not total explosive energy; TNT equivalent parity does not imply full hazard profile equivalence",
+        "intended_error_modes": [
+          "activation energy as determinant of explosive energy",
+          "single-metric full hazard equivalence",
+          "direct proportional scaling of separation distance from TNT ratio"
+        ],
+        "disallowed_extrapolations": [
+          "Activation energy determines explosive energy magnitude",
+          "TNT equivalent equality implies all hazard metrics are equal",
+          "TNT ratio directly sets engineering separation distances"
+        ]
+      }
+    }
+  ],
+  "short_answers": []
+}

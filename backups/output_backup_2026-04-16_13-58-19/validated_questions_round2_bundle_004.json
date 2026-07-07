@@ -1,0 +1,143 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery module contains cylindrical cells separated by air gaps with surface emissivity ε = 0.8. A single cell undergoes internal short circuit (ISC) and enters thermal runaway. Thermal monitoring of the nearest neighbor cell shows a temperature increase and measurable heat flux on its exposed surface. In a separate scenario, four cells simultaneously undergo ISC in the same module configuration. An engineer reviewing both scenarios concludes that: (i) radiation is the dominant heat transfer mode from the runaway cell to its neighbor in the air-gap configuration, and (ii) a single ISC event is sufficient to propagate thermal runaway to neighboring cells if the neighbor's temperature rises measurably. Evaluate which of the following statements are admissible.",
+        "options": [
+          "A. Conclusion (i) is admissible: in the air-gap configuration with ε = 0.8, radiation accounts for the majority of heat flux received by the nearest neighbor cell.",
+          "B. Conclusion (ii) is inadmissible: a measurable temperature rise in the neighbor cell does not confirm thermal runaway propagation, because propagation requires the neighbor to reach activation of cathode-electrolyte and electrolyte decomposition reactions, which a single ISC event may not provide sufficient energy to trigger.",
+          "C. Conclusion (ii) is admissible because any measurable temperature increase in a neighboring cell from an ISC event indicates that the exothermic reaction cascade has been initiated.",
+          "D. Reducing cell emissivity from 0.8 to 0.2 would be expected to reduce the peak temperature reached by the neighbor cell, since radiation dominates heat transfer in the air-gap configuration.",
+          "E. The four-cell simultaneous ISC scenario produces propagation to additional cells primarily because four sources provide cumulative radiative and conductive heat flux sufficient to activate the critical reactions in neighbors, whereas a single source does not.",
+          "F. Since radiation dominates in the air-gap configuration, replacing air gaps with a solid separator of lower emissivity but higher thermal conductivity would unambiguously reduce thermal runaway propagation risk.",
+          "G. The observation that single-cell ISC does not propagate thermal runaway, while four-cell simultaneous ISC does, implies that there is a threshold of total heat input required to activate the reactions governing the transition to propagating thermal runaway."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "D",
+          "G"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence directly states that radiation accounts for more than 80% of total heat flux on the exposed surface of the nearest neighbor cell in the air-gap configuration with ε = 0.8.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+173+International_Journal_of_Thermal_Sciences:C001"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Evidence states that in single-ISC scenarios, no thermal runaway temperature spike was observed in any neighbor because cathode-electrolyte and electrolyte decomposition reactions were not sufficiently activated, despite an initial temperature increase. A measurable temperature rise is therefore not sufficient to conclude propagation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+173+International_Journal_of_Thermal_Sciences:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Evidence explicitly shows that heat transfer from a single ISC cell provokes initial exothermic reaction effects in neighbors but does not activate the critical cathode-electrolyte and electrolyte decomposition reactions needed for propagating thermal runaway. A measurable temperature rise does not confirm the full cascade.",
+            "error_type": "measurement_scope_distractor",
+            "evidence_refs": [
+              "TR_Modelling+173+International_Journal_of_Thermal_Sciences:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence shows that the air interstice case with reduced emissivity ε = 0.2 achieved a lower peak neighbor temperature (124 °C) compared to ε = 0.8 (136 °C). Since radiation dominates in this configuration, reducing emissivity directly reduces the dominant heat transfer mode and lowers peak temperature.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+173+International_Journal_of_Thermal_Sciences:C001",
+              "TR_Modelling+173+International_Journal_of_Thermal_Sciences:C002"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "While the cumulative heat flux explanation is plausible, the evidence attributes the failure to propagate in the single-ISC case specifically to insufficient activation of cathode-electrolyte and electrolyte decomposition reactions. The option's framing as 'primarily radiative and conductive cumulative flux' is a partial mechanism description that omits the critical reaction-activation threshold, making it an inadmissible overclaim of the mechanism.",
+            "error_type": "mechanism_confusion",
+            "evidence_refs": [
+              "TR_Modelling+173+International_Journal_of_Thermal_Sciences:C004",
+              "TR_Modelling+173+International_Journal_of_Thermal_Sciences:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "This is inadmissible because replacing air with a solid separator of higher thermal conductivity would increase conductive heat transfer to the neighbor even while reducing radiative transfer. The net effect on propagation risk cannot be determined to be unambiguously reduced without accounting for the trade-off between reduced radiation and increased conduction.",
+            "error_type": "ignoring_multi_factor_interaction",
+            "evidence_refs": [
+              "TR_Modelling+173+International_Journal_of_Thermal_Sciences:C001",
+              "TR_Modelling+173+International_Journal_of_Thermal_Sciences:C002"
+            ]
+          },
+          {
+            "option_id": "G",
+            "label": "Correct",
+            "justification": "The contrast between single-ISC (no propagation) and four-cell ISC (propagation to multiple neighbors) is consistent with a threshold of total heat input required to activate the critical reactions. This is a minimal engineering implication supported by the evidence on reaction activation requirements.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Modelling+173+International_Journal_of_Thermal_Sciences:C004",
+              "TR_Modelling+173+International_Journal_of_Thermal_Sciences:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of propagation conclusions from temperature rise observations, and the role of reaction-activation thresholds in distinguishing partial thermal effects from full thermal runaway propagation",
+        "primary_boundary": "Temperature rise in neighbor ≠ thermal runaway propagation; propagation requires activation of specific exothermic reactions not triggered by single-cell ISC energy",
+        "intended_error_modes": [
+          "Equating measurable temperature rise with reaction cascade initiation (C)",
+          "Ignoring conduction-radiation trade-off when changing separator type (F)",
+          "Attributing four-cell propagation solely to cumulative flux without the reaction threshold mechanism (E)"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding that any thermal effect on a neighbor constitutes propagation",
+          "Concluding that reducing one heat transfer mode unambiguously reduces total risk when another mode may compensate"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery module uses an air-gap separator configuration with cell surface emissivity ε = 0.8. A thermal runaway event is initiated in a single cell. Thermal measurements show a clear temperature increase in the nearest neighbor cell, and the heat flux analysis confirms that the dominant mode of heat transfer to that neighbor is radiation. Despite this, no thermal runaway propagation spike is observed in any neighbor cell. In a redesigned module, the air gap is replaced with a ceramic paper fiber separator. The ceramic paper configuration is lighter than the alternative solid separator (G7) by 23%, and the neighbor cell reaches a lower peak temperature more slowly than in the air-gap case. An engineer proposes that the ceramic paper separator is the optimal choice because it both prevents thermal runaway propagation and maximizes energy density. Identify the specific mechanistic reason why single-cell ISC does not propagate thermal runaway to neighbors in the air-gap configuration despite dominant radiative heat transfer, and evaluate whether the engineer's claim that ceramic paper 'prevents' thermal runaway propagation is admissible based on the described evidence."
+      },
+      "ground_truth": {
+        "gold_answer": "Thermal runaway propagation requires the neighboring cell to reach sufficient temperature to activate the cathode-electrolyte and electrolyte decomposition reactions. In the single-cell ISC air-gap scenario, the heat transferred to the neighbor—even though radiation dominates—is insufficient to activate these critical exothermic reactions. The neighbor experiences an initial temperature rise and some internal energy release from lower-temperature reactions, but the reaction transition to the cathode-electrolyte and electrolyte decomposition regime does not occur. Therefore, the absence of propagation is not due to low heat transfer efficiency but due to insufficient total energy delivery to cross the reaction-activation threshold. Regarding the engineer's claim: the evidence shows that with ceramic paper, the neighbor cell reaches a peak temperature of 132 °C (lower than the 136 °C air-gap peak), but this is still a high temperature and the evidence base is from single-cell ISC scenarios where no configuration produced propagation. The claim that ceramic paper 'prevents' propagation is inadmissible as stated—the evidence only supports that it reduces peak neighbor temperature and slows the thermal response compared to the air-gap case. Whether it prevents propagation under multi-cell ISC conditions (where propagation was observed) cannot be concluded from the single-cell evidence. The weight and energy density advantage of ceramic paper over G7 is supported, but this does not bear on the propagation prevention claim.",
+        "must_include": [
+          "Propagation requires activation of cathode-electrolyte and electrolyte decomposition reactions",
+          "Single-cell ISC provides insufficient energy to trigger this reaction transition despite dominant radiation",
+          "Temperature rise in neighbor does not equal propagation",
+          "Ceramic paper reduces peak neighbor temperature but the evidence does not support claiming it prevents propagation",
+          "The prevention claim is inadmissible or not supported by the evidence scope"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming that ceramic paper prevents propagation under multi-cell ISC conditions based only on single-cell evidence",
+          "Concluding that radiation being dominant means heat transfer is the limiting factor for propagation (it is reaction activation, not heat flux magnitude)",
+          "Claiming that any separator configuration tested prevented propagation in the multi-cell scenario"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Distinction between heat transfer efficiency and reaction-activation threshold as the controlling factor for thermal runaway propagation; admissibility of prevention claims from single-cell test evidence",
+        "primary_boundary": "Propagation is governed by reaction-activation threshold, not by heat transfer mode dominance; single-cell evidence cannot support propagation-prevention claims for multi-cell scenarios",
+        "intended_error_modes": [
+          "Attributing non-propagation to low heat transfer rather than insufficient reaction activation",
+          "Accepting the prevention claim because ceramic paper reduces peak temperature",
+          "Conflating weight/energy density advantage with safety performance advantage"
+        ]
+      }
+    }
+  ]
+}

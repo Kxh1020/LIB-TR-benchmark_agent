@@ -1,0 +1,354 @@
+{
+  "TR_trigger+129+Energy__TR_trigger+158+Journal_of_Energy_Storage__TR_trigger+197+Journal_of_Energy_Storage": {
+    "mcqs": [
+      {
+        "qid": "Q1",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "An LFP battery module is subjected to a thermal environment where the surrounding oven temperature is held at 180\u00b0C. Engineers monitoring the module observe that the mechanical expansion force measured on the cell casing crosses an anomaly threshold, but no voltage drop or temperature spike associated with thermal runaway has yet occurred. The module is in a densely packed configuration with no active forced convection. Which of the following conclusions are admissible based on the described conditions?",
+          "options": [
+            "A. The time available from force anomaly detection to thermal runaway onset at this oven temperature is sufficient to issue an early warning several hours in advance.",
+            "B. If the same module were subjected to an oven temperature of 250\u00b0C instead, the warning lead time would be longer because higher temperatures accelerate cell expansion and provide more detectable signal.",
+            "C. Venting is expected to have already occurred or will occur at this oven temperature, and the venting force is within a range that imposes significant mechanical loading on the cell casing.",
+            "D. The force anomaly signal confirms that an internal short circuit has already been triggered at this moment.",
+            "E. If ambient pressure were raised to 3 bar with 0.5 m/s airflow, thermal runaway propagation to adjacent cells could be entirely suppressed even after onset.",
+            "F. The force anomaly threshold crossing is a necessary and sufficient condition for thermal runaway to occur in LFP cells under any thermal loading condition.",
+            "G. At the stated oven temperature, thermal runaway trigger temperature is expected to be substantially higher than the oven set point."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "C",
+            "E",
+            "G"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "At 180\u00b0C oven temperature, the interval from force anomaly detection to TR onset is approximately 10,318 s, which corresponds to roughly 3 hours of advance warning. This is directly supported by the evidence and represents an admissible conclusion.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+158+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Incorrect",
+              "justification": "The evidence states that lead time decreases with increasing oven temperature, reaching a minimum at 250\u00b0C. Higher oven temperature produces shorter, not longer, warning lead time. This option reverses the direction of the trend.",
+              "error_type": "Direction reversal of a condition-effect relationship",
+              "evidence_refs": [
+                "TR_trigger+158+Journal_of_Energy_Storage:C003",
+                "TR_trigger+158+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Correct",
+              "justification": "Venting invariably occurs across the 150\u00b0C to 250\u00b0C oven temperature range for LFP batteries, and 180\u00b0C falls within this range. The venting force range of 4000\u20136422 N constitutes substantial mechanical loading. Both claims are evidence-supported.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+158+Journal_of_Energy_Storage:C001"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "The evidence states that internal short circuit and thermal runaway events occur once oven temperature exceeds 180\u00b0C. At exactly 180\u00b0C, the force anomaly precedes TR onset by over 10,000 s. The force anomaly signal does not confirm that an internal short circuit has already been triggered at the moment of anomaly detection.",
+              "error_type": "Premature causal attribution; conflating a precursor signal with a downstream event",
+              "evidence_refs": [
+                "TR_trigger+158+Journal_of_Energy_Storage:C002",
+                "TR_trigger+158+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "Evidence shows that at 3 bar ambient pressure with 0.5 m/s airflow, thermal runaway propagation is completely inhibited. This conclusion is admissible under the stated conditions, even though it may appear counterintuitive that a pressure increase alone can fully suppress propagation.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+197+Journal_of_Energy_Storage:C002"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The evidence links force anomaly to a warning precursor under thermal loading conditions within a specific oven temperature range. It does not establish that force anomaly threshold crossing is a necessary and sufficient condition for TR under any thermal loading condition. This is an inadmissible universal generalization.",
+              "error_type": "Overgeneralization beyond stated conditions",
+              "evidence_refs": [
+                "TR_trigger+158+Journal_of_Energy_Storage:C001",
+                "TR_trigger+158+Journal_of_Energy_Storage:C002"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Correct",
+              "justification": "The evidence states that TR trigger temperature for LFP under these test conditions is approximately 232\u00b0C, which is substantially higher than the 180\u00b0C oven set point. This is admissible and counterintuitive to engineers who might assume the oven temperature and TR trigger temperature are similar.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+158+Journal_of_Energy_Storage:C002"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Distinguishing force anomaly as a precursor signal from TR onset, and reasoning about lead time directionality and pressure-based suppression thresholds.",
+          "primary_boundary": "Force anomaly detection does not confirm ISC has occurred; it precedes TR onset by a time interval that decreases\u2014not increases\u2014with higher oven temperature.",
+          "intended_error_modes": [
+            "Reversing the direction of lead time vs. oven temperature relationship",
+            "Conflating force anomaly with ISC confirmation",
+            "Overgeneralizing force anomaly as sufficient condition for TR under all conditions"
+          ],
+          "disallowed_extrapolations": [
+            "Assuming higher oven temperature increases warning lead time",
+            "Treating force anomaly as simultaneous with or confirmatory of ISC",
+            "Generalizing venting or TR behavior outside the 150\u2013250\u00b0C oven temperature range"
+          ]
+        }
+      },
+      {
+        "qid": "Q2",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery safety engineer is analyzing field data from two electric vehicles that experienced thermal runaway events. Vehicle A shows a battery cell with continuously low voltage readings over several months prior to the incident, with no other anomalies recorded. Vehicle B shows normal battery parameters throughout its service history until one week before the incident, after which only a brief temperature spike and an insulation resistance drop are recorded, but these two anomalies do not occur at the same time and no voltage anomaly is present during either event. The engineer must determine the most defensible causal inference for each vehicle and identify appropriate diagnostic approaches. Which of the following conclusions are admissible?",
+          "options": [
+            "A. For Vehicle A, the continuous low voltage history is consistent with a mechanism involving lithium deposition on the anode leading to internal short circuit, making an internal electrochemical failure the admissible cause inference.",
+            "B. For Vehicle B, the non-simultaneous occurrence of temperature spikes and insulation resistance drops, combined with the absence of voltage anomalies, is consistent with an external short circuit origin rather than an internal short circuit.",
+            "C. For Vehicle A, because the anomaly appears over an extended period, the ARFD indicator alone is sufficient to determine the root cause without reviewing additional operational data.",
+            "D. For Vehicle B, the insulation resistance drop is sufficient by itself to confirm that the battery cells experienced an internal electrochemical failure.",
+            "E. For Vehicle B, because the anomalies appear only within one week of the accident, a comprehensive review of temperature, voltage, and insulation resistance data from that week is necessary before any cause inference can be made.",
+            "F. The absence of voltage anomalies in Vehicle B during the temperature spike events eliminates internal short circuit as a contributing mechanism under any scenario.",
+            "G. Vehicle A qualifies as a latent-failure accidental vehicle, whereas Vehicle B does not meet that classification based on the described data patterns."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "E",
+            "G"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "Continuous low cell voltage is linked by evidence to lithium deposition on the anode, which can cause internal short circuits and trigger thermal runaway. This causal chain is evidence-supported and admissible as the cause inference for Vehicle A.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+129+Energy:C003"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "The evidence from Vehicle 26 (analogous to Vehicle B) shows non-simultaneous temperature spikes and insulation resistance drops with no voltage anomalies, leading to the conclusion of external short circuit from cable damage. This diagnostic pattern is admissible for Vehicle B.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+129+Energy:C004"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "This option appears conservative and reasonable but is incorrect. Vehicle A is a latent-failure vehicle where ARFD is applicable, but the claim that ARFD alone is sufficient for root cause determination is not supported. The evidence restricts ARFD sufficiency claims and does not state it alone determines root cause even for latent-failure vehicles.",
+              "error_type": "Conservative but incorrect: overstates sufficiency of a single diagnostic indicator",
+              "evidence_refs": [
+                "TR_trigger+129+Energy:C002",
+                "TR_trigger+129+Energy:C001"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "An insulation resistance drop alone, especially when not concurrent with voltage anomalies or temperature spikes, does not confirm internal electrochemical failure. The evidence pattern for Vehicle B points away from internal short circuit. This option commits a single-indicator diagnostic overclaim.",
+              "error_type": "Single-signal causal overclaim; ignores non-simultaneity constraint",
+              "evidence_refs": [
+                "TR_trigger+129+Energy:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Correct",
+              "justification": "For sudden-failure vehicles (like Vehicle B, which shows no prior anomalies until one week before the accident), the evidence explicitly states that ARFD alone is insufficient and that a comprehensive review of the week's data including temperature, voltage, and insulation resistance is required.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+129+Energy:C002"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The absence of voltage anomalies during temperature spikes supports an external short circuit interpretation under the described conditions, but it does not universally eliminate internal short circuit as a contributing mechanism under any scenario. This is an inadmissible universal elimination claim.",
+              "error_type": "Overgeneralization: converts a condition-specific diagnostic finding into a universal exclusion",
+              "evidence_refs": [
+                "TR_trigger+129+Energy:C004"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Correct",
+              "justification": "Vehicle A shows characteristic anomalies over an extended period from service start to more than one week before the accident, satisfying the latent-failure definition. Vehicle B shows anomalies only within one week of the accident, which by definition excludes it from the latent-failure classification.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+129+Energy:C001"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Applying diagnostic classification criteria to distinguish latent-failure from sudden-failure vehicles and inferring admissible causes from multi-signal patterns.",
+          "primary_boundary": "Non-simultaneous occurrence of temperature and insulation anomalies without voltage anomalies supports external rather than internal short circuit; ARFD sufficiency is not established even for latent-failure vehicles.",
+          "intended_error_modes": [
+            "Treating ARFD as sufficient for root cause determination",
+            "Using a single insulation resistance signal to confirm internal failure",
+            "Universally eliminating internal short circuit based on absence of voltage anomaly in one scenario"
+          ],
+          "disallowed_extrapolations": [
+            "Extending ARFD sufficiency to root cause determination",
+            "Using non-simultaneous signal pattern to universally exclude internal short circuit mechanisms"
+          ]
+        }
+      },
+      {
+        "qid": "Q3",
+        "type": "MCQ",
+        "solver_view": {
+          "stem": "A battery module designer is evaluating cooling gas selection and discharge rate conditions to prevent thermal runaway propagation (TRP) in a densely packed NCA-chemistry battery module. Simulation results show that SEI decomposition begins at 74\u00b0C, self-heating at 145\u00b0C, and thermal runaway is triggered at 166\u00b0C, with peak temperatures reaching 804\u00b0C. The designer considers three candidate gases\u2014air, nitrogen, and argon\u2014and two discharge rates: 2C and 3C. The designer also defines a propagation ratio metric (RTRP) and sets a target of RTRP below 50% for high-safety applications. Which of the following design conclusions are admissible?",
+          "options": [
+            "A. Nitrogen is preferable to argon as a cooling gas for suppressing TRP, even though argon has higher density, because heat capacity exerts a more dominant influence on cooling effectiveness than density alone.",
+            "B. At 2C discharge rate, achieving a convective heat transfer coefficient above 40 W/m\u00b2\u00b7K is sufficient to entirely suppress TRP, making further increases in cooling intensity unnecessary for propagation prevention at this rate.",
+            "C. Because the TR trigger temperature is only 21\u00b0C above the self-heating onset temperature, the thermal runaway sequence in this chemistry leaves negligible time for intervention between self-heating detection and TR onset.",
+            "D. Argon should be selected over air when the primary design constraint is minimizing gas density rather than maximizing heat removal, since argon's higher density provides structural advantages in pressurized cooling systems.",
+            "E. Achieving RTRP below 70% is sufficient to meet the high-safety design requirement of RTRP below 50%.",
+            "F. The 804\u00b0C peak temperature reached during TR in this chemistry indicates that any cooling system preventing TRP must be capable of continuously removing heat at rates corresponding to this peak, rather than the average heat release.",
+            "G. Selecting nitrogen over argon and operating at 2C rather than 3C discharge rate are both individually consistent with reducing TRP risk, and their combination would be expected to further reduce propagation risk relative to either alone."
+          ]
+        },
+        "ground_truth": {
+          "correct_options": [
+            "A",
+            "B",
+            "G"
+          ],
+          "option_judgments": [
+            {
+              "option_id": "A",
+              "label": "Correct",
+              "justification": "The evidence explicitly states that argon's lower heat capacity dominates over its higher density in determining cooling effectiveness, making nitrogen superior. This is a counterintuitive but evidence-supported conclusion that requires reasoning about which physical property governs the outcome.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+197+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "B",
+              "label": "Correct",
+              "justification": "The evidence states that under 2C discharge conditions, a convective heat transfer coefficient exceeding 40 W/m\u00b2\u00b7K can entirely suppress TRP. This is an admissible conclusion under the stated discharge rate condition, though it is rate-specific and should not be generalized to 3C.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+197+Journal_of_Energy_Storage:C001"
+              ]
+            },
+            {
+              "option_id": "C",
+              "label": "Incorrect",
+              "justification": "The 21\u00b0C gap between self-heating onset (145\u00b0C) and TR trigger (166\u00b0C) does not directly translate to a time interval. The time available depends on heating rate, which is not specified in the stem as negligible. This option incorrectly converts a temperature gap into a time-to-intervention claim without rate information.",
+              "error_type": "Unjustified conversion of temperature difference to time interval without heating rate information",
+              "evidence_refs": [
+                "TR_trigger+197+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "D",
+              "label": "Incorrect",
+              "justification": "The evidence establishes that argon's lower heat capacity makes it the least effective cooling gas. Recommending argon based on density for structural reasons ignores the primary functional requirement of heat removal and introduces a criterion not supported by the evidence as a valid design basis for cooling gas selection.",
+              "error_type": "Mechanism substitution: prioritizing density over heat capacity in a heat-removal context",
+              "evidence_refs": [
+                "TR_trigger+197+Journal_of_Energy_Storage:C004"
+              ]
+            },
+            {
+              "option_id": "E",
+              "label": "Incorrect",
+              "justification": "The evidence defines two thresholds: RTRP below 70% prevents propagation, and RTRP below 50% is required for high-safety design. These are distinct thresholds. Meeting the 70% threshold does not satisfy the 50% high-safety requirement. This option conflates two explicitly differentiated criteria.",
+              "error_type": "Threshold conflation: treating a lower-stringency criterion as meeting a higher-stringency requirement",
+              "evidence_refs": [
+                "TR_trigger+197+Journal_of_Energy_Storage:C003"
+              ]
+            },
+            {
+              "option_id": "F",
+              "label": "Incorrect",
+              "justification": "The 804\u00b0C peak temperature is a cell-level simulation output. The evidence does not state that a cooling system preventing TRP must be rated for continuous heat removal at peak temperature rates. TRP suppression operates by preventing propagation to adjacent cells, not by continuously absorbing peak heat from a single cell in runaway. This is a system-level overclaim from a component-level data point.",
+              "error_type": "Scale transfer overclaim: applying cell-level peak temperature to system-level cooling design requirement",
+              "evidence_refs": [
+                "TR_trigger+197+Journal_of_Energy_Storage:C005"
+              ]
+            },
+            {
+              "option_id": "G",
+              "label": "Correct",
+              "justification": "Nitrogen is superior to argon for TRP suppression, and lower discharge rates reduce heat generation that drives propagation. Both factors independently reduce TRP risk per the evidence. Their combination is a minimal engineering implication consistent with the evidence, and no evidence contradicts a compounding benefit.",
+              "error_type": null,
+              "evidence_refs": [
+                "TR_trigger+197+Journal_of_Energy_Storage:C001",
+                "TR_trigger+197+Journal_of_Energy_Storage:C004"
+              ]
+            }
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Reasoning about which physical properties of cooling gases govern TRP suppression, and correctly applying discharge-rate-specific thresholds and RTRP criteria.",
+          "primary_boundary": "Heat capacity dominates over density in determining cooling gas effectiveness; the 40 W/m\u00b2\u00b7K threshold is discharge-rate-specific; RTRP below 70% and below 50% are distinct thresholds with different safety implications.",
+          "intended_error_modes": [
+            "Prioritizing gas density over heat capacity for cooling effectiveness",
+            "Conflating the no-propagation threshold (70%) with the high-safety threshold (50%)",
+            "Converting a temperature gap to a time-to-intervention claim without heating rate",
+            "Applying cell-level peak temperature to system-level continuous cooling design"
+          ],
+          "disallowed_extrapolations": [
+            "Generalizing the 40 W/m\u00b2\u00b7K suppression threshold from 2C to 3C discharge rate",
+            "Inferring intervention time from temperature gap alone",
+            "Treating RTRP < 70% as equivalent to the high-safety RTRP < 50% requirement"
+          ]
+        }
+      }
+    ],
+    "short_answers": [
+      {
+        "qid": "S1",
+        "type": "SHORT_ANSWER",
+        "solver_view": {
+          "prompt": "An LFP battery pack is being monitored under a sustained thermal environment. At an oven temperature of 180\u00b0C, an expansion force anomaly is detected. At an oven temperature of 250\u00b0C, an expansion force anomaly is also detected. A safety engineer proposes using the force anomaly signal as an early warning indicator for thermal runaway in both scenarios. (1) Explain how the utility of the force anomaly warning signal differs between the 180\u00b0C and 250\u00b0C scenarios, including the mechanism responsible for this difference. (2) Identify one condition under which the force anomaly signal would provide no useful warning lead time, and explain why. (3) A colleague argues that because venting always occurs across the 150\u2013250\u00b0C oven temperature range, venting detection is a more reliable early warning than force anomaly detection. Evaluate whether this argument is admissible based on the available evidence."
+        },
+        "ground_truth": {
+          "gold_answer": "(1) At 180\u00b0C, the time interval from force anomaly detection to thermal runaway onset is approximately 10,318 seconds (roughly 3 hours), providing substantial warning lead time. At 250\u00b0C, this interval is reduced to approximately 3,758 seconds, providing significantly less lead time. The mechanism is that higher oven temperature accelerates the internal degradation processes driving the cell toward thermal runaway, compressing the time between the onset of detectable mechanical deformation and the thermal runaway trigger event. The force anomaly signal therefore provides earlier and more actionable warning at lower oven temperatures within this range. (2) A condition under which the force anomaly would provide no useful warning lead time would be if the oven temperature were sufficiently high that the interval from anomaly to TR onset approached zero, or if TR onset occurred simultaneously with or before detectable force anomaly. The evidence shows the minimum observed interval is 3,758 s at 250\u00b0C, but the trend of decreasing lead time with increasing temperature implies that at temperatures beyond the studied range, the lead time could become too short for practical intervention. Alternatively, if the force measurement system has a response time comparable to or longer than the warning interval, the signal would not provide actionable lead time. (3) The colleague's argument is not fully admissible. While venting does invariably occur across the 150\u2013250\u00b0C range, the evidence does not establish that venting detection provides earlier warning than force anomaly detection. The force anomaly evidence is specifically characterized in terms of its lead time relative to TR onset, whereas venting is characterized as an event that occurs within the temperature range but without a defined lead time relative to TR. Furthermore, venting represents a more advanced stage of cell degradation than mechanical expansion, so force anomaly detection may precede venting detection and thus provide earlier warning. The argument cannot be supported by the available evidence.",
+          "must_include": [
+            "Lead time at 180\u00b0C is substantially longer than at 250\u00b0C (approximately 10,318 s vs. 3,758 s)",
+            "Higher oven temperature reduces the warning lead time due to accelerated progression toward thermal runaway",
+            "The trend of decreasing lead time with increasing temperature implies a condition at which lead time becomes negligible or impractical",
+            "Venting is characterized as an event within the temperature range but not with a defined lead time relative to TR onset in the evidence",
+            "Force anomaly may precede venting as a mechanical expansion precedes venting, so force anomaly is not necessarily less reliable than venting as an early warning"
+          ],
+          "disallowed_extrapolations": [
+            "Claiming that force anomaly provides no warning at 250\u00b0C based on the evidence (the evidence shows 3,758 s, which is non-zero)",
+            "Claiming venting is definitively a better or worse early warning indicator than force anomaly without evidence comparing their relative timing",
+            "Asserting that the lead time trend is linear or that a specific oven temperature beyond 250\u00b0C produces zero lead time",
+            "Claiming that force anomaly detection and venting detection are equivalent in timing"
+          ]
+        },
+        "analysis": {
+          "target_cognitive_object": "Reasoning about how oven temperature affects the utility of a mechanical precursor warning signal, identifying boundary conditions for signal utility, and evaluating a comparative diagnostic claim against evidence scope.",
+          "primary_boundary": "Lead time decreases with increasing oven temperature; the minimum observed lead time is non-zero at 250\u00b0C; venting occurrence across the temperature range does not establish venting as a superior early warning indicator relative to force anomaly.",
+          "intended_error_modes": [
+            "Claiming force anomaly provides no warning at 250\u00b0C",
+            "Accepting the venting-as-better-warning argument without recognizing the absence of comparative timing evidence",
+            "Treating the lead time trend as implying zero lead time within the studied range",
+            "Confusing venting as an early-stage event rather than recognizing it may follow mechanical expansion"
+          ]
+        }
+      }
+    ]
+  }
+}

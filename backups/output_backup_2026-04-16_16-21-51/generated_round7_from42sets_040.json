@@ -1,0 +1,320 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A 314 Ah LiFePO4 battery undergoes thermal runaway under overheating conditions, releasing a gas mixture dominated by H2 (~53%), with CO2 (~22%) and CO (~14%) as secondary components. Explosion testing reveals that the maximum overpressure occurs at a gas-air concentration of approximately 15.86%, substantially below the theoretically expected stoichiometric concentration of 28.19%. Which of the following conclusions about this system are supported by engineering reasoning from these conditions?",
+        "options": [
+          "A. The shift of peak overpressure concentration below the stoichiometric value is consistent with CO2 and CO within the mixture interfering with the chain-branching radical reactions that sustain combustion.",
+          "B. Because H2 is the dominant species, the mixture behaves as a pure H2-air system for explosion overpressure prediction purposes, and deviations from stoichiometric peak are attributable solely to H2 dilution.",
+          "C. The presence of CO2 and CO as suppressants implies that the mixture cannot reach its theoretical maximum overpressure even when ignited under controlled conditions.",
+          "D. The lower-than-stoichiometric peak concentration indicates that the mixture's flammability limits are narrower than those of pure H2, making ignition less probable across all concentration ranges.",
+          "E. Predicting explosion overpressure using a single-component model for this gas mixture would overestimate the actual peak pressure, because the multi-component composition introduces suppressive interactions not captured by single-fuel kinetics.",
+          "F. The deviation between actual and stoichiometric peak concentration proves that CO2 and CO are present in quantities sufficient to completely prevent explosion under any ignition condition."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence directly attributes the below-stoichiometric peak to CO2 and CO suppressing chain reaction mechanisms underlying gas explosions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Treating the mixture as pure H2 ignores the documented suppressive role of CO2 and CO, which is the primary cause of the deviation.",
+            "error_type": "mechanism_substitution",
+            "evidence_refs": [
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Evidence shows the reaction fails to complete even under prescribed conditions due to CO2 and CO suppression, meaning theoretical maximum is not reached.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "The evidence addresses peak overpressure concentration, not flammability limits; inferring narrower limits from peak shift is an unsupported scope expansion.",
+            "error_type": "scope_expansion",
+            "evidence_refs": [
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C004",
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Multi-component suppressive interactions cause incomplete reaction; single-component kinetics cannot capture this, so single-fuel models would overestimate peak pressure.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C005",
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C008"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Evidence shows suppression shifts peak concentration and limits reaction completeness, but the mixture remains within flammability limits and explodes; complete prevention is not supported.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C004",
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism by which multi-component TR gas composition shifts peak explosion overpressure below stoichiometric concentration",
+        "primary_boundary": "Suppression shifts peak and limits reaction completeness but does not prevent explosion entirely; single-component models are inadequate",
+        "intended_error_modes": [
+          "mechanism_substitution treating mixture as pure H2",
+          "scope_expansion to flammability limits",
+          "causal_overclaim that suppression prevents all explosion"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring narrower flammability limits from peak shift",
+          "Claiming complete explosion prevention from partial suppression"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "After an initial explosion of overheated LiFePO4 thermal runaway gas at a mixture concentration of 22.21% (lean oxygen state), residual gas analysis shows CO content increased by approximately 281%, H2 content decreased by approximately 49%, and CH4 content decreased by approximately 80% relative to pre-explosion values. The pre-explosion lower explosion limit of the mixture was 6.32%, and the post-explosion residual gas lower explosion limit is determined to be 12.95%. A safety engineer must assess secondary explosion risk and gas consumption ordering. Which statements are admissible?",
+        "options": [
+          "A. The post-explosion residual gas retains flammability, because its lower explosion limit of 12.95% is still a finite positive value indicating an ignitable concentration range exists.",
+          "B. Under lean oxygen conditions, CH4 is consumed more completely than H2 during the explosion, consistent with CH4 having a higher reactivity ranking than H2 in this mixture under oxygen-limited conditions.",
+          "C. The large post-explosion increase in CO concentration is consistent with incomplete oxidation of carbon-containing species under oxygen-limited conditions, where CO is produced but not further oxidized to CO2.",
+          "D. Because the post-explosion LEL of 12.95% exceeds the pre-explosion LEL of 6.32%, the residual gas mixture poses no secondary explosion hazard at concentrations below 12.95%.",
+          "E. The consumption ordering of gases during explosion, with heavier hydrocarbons consumed preferentially over lighter species, is consistent with a negative correlation between consumption rate and the Mulliken charge on hydrogen atoms in each species.",
+          "F. The shift in gas composition after explosion at 22.21% proves that the mixture has fully transitioned outside all flammability limits and secondary ignition is physically impossible."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "A finite positive LEL of 12.95% confirms the residual gas remains flammable within a defined concentration range; secondary explosion risk persists.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C009"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence shows CH4 is consumed more than H2 (80% vs 49%), but the consumption ordering correlates with Mulliken charge, not a simple reactivity ranking under oxygen-limited conditions as stated.",
+            "error_type": "mechanism_confusion",
+            "evidence_refs": [
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C006",
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C007"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "Lean oxygen state prevents full oxidation of CO to CO2; CO accumulation is mechanistically consistent with incomplete combustion under oxygen-limited conditions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C007"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "A higher LEL means ignition requires higher concentration, but hazard below 12.95% is not eliminated; it is reduced. The statement misinterprets LEL as a safety threshold eliminating all risk.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C009"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Evidence explicitly states consumption order negatively correlates with Mulliken charge on hydrogen atoms, with heavier hydrocarbons consumed preferentially.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C006"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Evidence explicitly states secondary explosion risk must still be mitigated after initial explosion; the residual gas retains a finite LEL confirming continued flammability.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C009"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Post-explosion residual gas composition, secondary explosion risk, and gas consumption ordering under lean oxygen conditions",
+        "primary_boundary": "Elevated post-explosion LEL reduces but does not eliminate secondary explosion risk; consumption ordering is governed by Mulliken charge correlation, not generic reactivity",
+        "intended_error_modes": [
+          "misinterpreting higher LEL as eliminating hazard",
+          "claiming complete flammability elimination",
+          "misattributing consumption ordering to simple reactivity ranking"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding secondary explosion is impossible from elevated LEL",
+          "Generalizing consumption ordering to all oxygen conditions"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A safety engineer compares thermal runaway gas generation from 314 Ah LiFePO4 cells under two abuse modes: overheating and overcharging. Overcharging produces approximately 240 L of gas versus approximately 190 L under overheating. Gas composition proportions are similar across both modes, with H2 dominant in both cases. The engineer must assess explosion hazard differences between the two abuse scenarios and determine which conclusions about comparative risk are defensible.",
+        "options": [
+          "A. Because overcharging generates approximately 26% more gas volume than overheating, the absolute quantity of flammable H2 released under overcharging exceeds that under overheating, even though H2 constitutes a slightly lower proportion of the overcharging gas.",
+          "B. The similar compositional proportions of CO2 and CO across both abuse modes imply that the degree of chain-reaction suppression during explosion would be approximately equivalent for gases from either mode at the same mixture concentration.",
+          "C. Because overcharging produces more total gas, the explosion overpressure generated from overcharging gas at its stoichiometric concentration will necessarily exceed that generated from overheating gas at the same concentration.",
+          "D. The higher gas volume under overcharging means that in a confined space, overcharging presents a greater risk of reaching a flammable concentration than overheating, assuming equivalent ventilation conditions.",
+          "E. Since H2 proportion is slightly lower under overcharging (47.64%) than overheating (53.12%), overcharging gas is less hazardous than overheating gas on a per-liter-released basis.",
+          "F. The difference in total gas volume between the two abuse modes is sufficient to conclude that the electrochemical decomposition pathways activated during overcharging are more extensive than those activated during overheating."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "240.56 L × 47.64% = ~114.6 L H2 under overcharging vs 190.18 L × 53.12% = ~101 L H2 under overheating; absolute H2 volume is higher under overcharging despite lower proportion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C001",
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C002",
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "CO2 proportions are 22.07% vs 23.86% and CO proportions are 13.75% vs 16.86%; similar enough that suppressive effects on chain reactions would be approximately comparable at equal mixture concentrations.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C001",
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C002",
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Explosion overpressure at stoichiometric concentration depends on gas composition and reaction kinetics, not total volume produced; more gas volume does not imply higher peak overpressure per unit volume.",
+            "error_type": "causal_overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C004",
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Greater total gas volume released in a confined space with equivalent ventilation increases the probability of reaching flammable concentrations; this is a direct consequence of higher gas generation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C003",
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "Lower H2 proportion does not make overcharging gas less hazardous per liter; absolute H2 per liter is similar, and CO proportion is higher under overcharging, maintaining comparable or greater hazard.",
+            "error_type": "condition_violation",
+            "evidence_refs": [
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C001",
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C002"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Gas volume difference reflects overall generation magnitude but is insufficient evidence to conclude which specific electrochemical decomposition pathways are activated or their relative extent.",
+            "error_type": "scope_expansion",
+            "evidence_refs": [
+              "TR_Gasventing+156+Process_Safety_and_Environmental_Protection:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Comparative explosion hazard between overcharging and overheating TR gas, accounting for both volume and composition differences",
+        "primary_boundary": "Higher total volume increases absolute flammable gas release and confinement risk, but does not determine per-volume explosion overpressure; compositional similarity bounds suppression equivalence",
+        "intended_error_modes": [
+          "confusing proportion with absolute quantity",
+          "inferring peak overpressure from total volume",
+          "inferring decomposition pathway extent from volume alone"
+        ],
+        "disallowed_extrapolations": [
+          "Concluding overcharging is less hazardous from lower H2 proportion",
+          "Inferring electrochemical pathway details from gas volume alone"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "During an explosion of thermal runaway gas from an overheated LiFePO4 battery at a mixture concentration of 22.21% in air, the system is in a lean oxygen state. Post-explosion analysis shows CO content rises sharply while H2 and CH4 are substantially consumed. The post-explosion residual gas has a lower explosion limit of 12.95%, compared to the pre-explosion lower explosion limit of 6.32%. A process safety engineer argues that because the post-explosion LEL has nearly doubled, the secondary explosion hazard has been effectively eliminated and no further mitigation is needed. Evaluate this argument. In your answer, address: (1) what the elevated post-explosion LEL physically means for secondary explosion risk, (2) why the change in gas composition after the initial explosion does not eliminate the hazard, and (3) what the post-explosion CO accumulation implies for the chemical state of the residual gas."
+      },
+      "ground_truth": {
+        "gold_answer": "The engineer's argument is not defensible. (1) An elevated post-explosion LEL of 12.95% means that a higher concentration of residual gas is required to form an ignitable mixture compared to the pre-explosion state, but a finite positive LEL still defines a flammable range. The hazard is reduced in the sense that lower concentrations are no longer ignitable, but any accumulation above 12.95% remains capable of supporting ignition and secondary explosion. The LEL doubling does not eliminate the flammable range; it shifts its lower boundary upward. (2) The post-explosion gas composition still contains H2, CO, and residual hydrocarbons in quantities sufficient to sustain flammability above the new LEL. The evidence explicitly states that secondary explosion risk must still be mitigated after the initial event. The change in composition alters the mixture's flammability characteristics but does not remove all flammable species. (3) The large post-explosion increase in CO content is mechanistically consistent with incomplete oxidation under lean oxygen conditions: carbon-containing species such as CH4 are partially oxidized to CO rather than fully to CO2, because insufficient oxygen is available to complete the reaction. This means the residual gas contains a higher proportion of CO, which is itself a flammable and toxic species, indicating that the chemical energy content of the mixture has been partially redistributed rather than fully released. The residual gas therefore remains both flammable and chemically reactive.",
+        "must_include": [
+          "Elevated LEL reduces but does not eliminate the flammable concentration range",
+          "Secondary explosion risk explicitly remains after initial explosion",
+          "CO increase is consistent with incomplete oxidation under lean oxygen conditions",
+          "Residual gas retains flammable species above the new LEL"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming the doubled LEL proves secondary explosion is impossible",
+          "Inferring that CO accumulation indicates the mixture is inert",
+          "Concluding that post-explosion gas composition is safe without specifying concentration conditions"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Interpretation of post-explosion LEL elevation and residual gas composition in terms of secondary explosion hazard and incomplete combustion mechanism",
+        "primary_boundary": "Elevated LEL shifts but does not eliminate flammability; CO accumulation reflects incomplete oxidation, not inertness",
+        "intended_error_modes": [
+          "Misinterpreting higher LEL as hazard elimination",
+          "Ignoring that residual gas retains flammable species",
+          "Misattributing CO increase to inert dilution rather than incomplete oxidation"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "mcqs": [],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A battery module contains three cells arranged in a row inside an enclosure. The enclosure has a ceiling positioned 5 cm above the cell tops. When the first cell undergoes thermal runaway, the time interval before the second cell fails is measured, and then the time interval before the third cell fails is also measured. The ceiling is then raised to 10 cm and the experiment is repeated; the average time interval between successive cell failures increases by approximately 200%. The ceiling is raised further to 15 cm, and the propagation behavior is described as effectively weakened. An engineer proposes that simply doubling the ceiling height from 5 cm to 10 cm is sufficient to make the module safe from propagation in all enclosure configurations. Identify the specific physical mechanism by which ceiling height affects propagation rate, explain why the engineer's safety claim is not fully admissible, and describe what additional condition would need to be established to make a stronger safety claim about propagation prevention."
+      },
+      "ground_truth": {
+        "gold_answer": "Ceiling height affects propagation rate by controlling the extent to which ejected gases and jet fire radiation are redirected back toward adjacent cells. At lower ceiling heights, these heat transfer pathways are geometrically confined, increasing the thermal flux received by neighboring cells and shortening the time to their failure. As ceiling height increases, the confinement is reduced, the flame and gas convection are less effectively directed at adjacent cells, and the propagation time intervals lengthen. The engineer's claim is not fully admissible because: (1) the evidence shows that even at 15 cm ceiling height, propagation behavior is weakened but not eliminated—cells still fail sequentially, just more slowly; (2) the 200% increase in average interval at 10 cm and the further weakening at 15 cm demonstrate a trend of slowing, not stopping, propagation; and (3) the claim of safety 'in all enclosure configurations' extrapolates beyond the tested ceiling heights and does not account for other confinement variables such as lateral wall proximity or ventilation. To make a stronger safety claim, the engineer would need to establish either a ceiling height at which propagation is fully arrested (no subsequent cell failure), or demonstrate that at a specified height the time interval between failures exceeds a defined safe response time that allows intervention, under the full range of relevant enclosure geometries.",
+        "must_include": [
+          "ejected gas convection and flame radiation as the identified heat transfer mechanisms linking ceiling height to propagation rate",
+          "propagation is slowed but not eliminated at the tested ceiling heights",
+          "the 200% increase in interval represents deceleration, not prevention",
+          "the safety claim extrapolates beyond the evidence scope (all configurations)",
+          "a stronger claim requires evidence of full propagation arrest or a defined safe time threshold"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming that lateral conduction is the primary mechanism affected by ceiling height",
+          "Stating that a specific ceiling height value guarantees propagation prevention without evidence of full arrest",
+          "Concluding that open-air conditions prevent propagation",
+          "Attributing the propagation slowdown solely to reduced radiation without acknowledging convection from ejected gases"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanism of ceiling-height-dependent propagation rate, admissibility boundary of safety claims based on deceleration vs. prevention evidence, and conditions required for a stronger safety conclusion.",
+        "primary_boundary": "Evidence supports propagation deceleration with increasing ceiling height but not propagation elimination; safety claims of prevention require evidence of full arrest, not merely extended intervals.",
+        "intended_error_modes": [
+          "conflating deceleration with prevention",
+          "overgeneralizing from tested ceiling heights to all enclosure configurations",
+          "misidentifying conduction rather than convection/radiation as the ceiling-height-sensitive mechanism"
+        ]
+      }
+    }
+  ]
+}

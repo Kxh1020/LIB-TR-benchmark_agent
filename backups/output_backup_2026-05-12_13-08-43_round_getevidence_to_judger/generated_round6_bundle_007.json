@@ -1,0 +1,320 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery safety engineer is evaluating the explosion hazard of vented gases from NCM111 prismatic cells across a range of state-of-charge (SOC) conditions. The engineer knows that the gas mixture composition shifts with SOC, and that flammability limits (LEL and UEL) as well as explosion pressure parameters have been characterized experimentally. The engineer must determine which conclusions about explosion risk across SOC levels are defensible.\n\nWhich of the following statements about the explosion behavior of NCM111 cell vented gases are supported by the described experimental evidence?",
+        "options": [
+          "A. The SOC at which ignition is most likely to occur is not the same as the SOC at which the widest flammability window exists, because LEL and UEL do not reach their respective extremes at the same SOC.",
+          "B. Because maximum explosion pressure increases monotonically with SOC, the highest SOC condition presents the greatest explosion hazard in all respects.",
+          "C. The measured detonation events at all SOC conditions are consistent with quasi-detonation rather than overdriven detonation, as indicated by the relationship between measured peak pressures and Chapman-Jouguet detonation pressures.",
+          "D. The non-monotonic behavior of both LEL and UEL with increasing SOC implies that explosion risk cannot be characterized by a single SOC-dependent trend.",
+          "E. The threefold increase in CO proportion at 100% SOC relative to 30% SOC is the sole cause of the increase in maximum explosion pressure at higher SOC.",
+          "F. At 30% SOC, the vented gas mixture poses the greatest risk of sustaining a detonation because UEL is highest at that condition."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "LEL is lowest at 50% SOC (most likely ignition) while UEL is highest at 30% SOC (widest upper bound), confirming these extremes occur at different SOC values. This requires combining two separate observations about LEL and UEL behavior.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+178+Journal_of_Energy_Chemistry:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "While Pmax increases with SOC, explosion hazard is multi-dimensional. The lowest LEL occurs at 50% SOC, not 100%, meaning ignition likelihood is not simply determined by Pmax. Claiming 'greatest hazard in all respects' from a single parameter is an inadmissible overclaim.",
+            "error_type": "causal overclaim / scope expansion",
+            "evidence_refs": [
+              "TR_Gasventing+178+Journal_of_Energy_Chemistry:C003",
+              "TR_Gasventing+178+Journal_of_Energy_Chemistry:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that measured Pmax values at all SOCs were below corresponding CJ detonation pressures, confirming quasi-detonation rather than overdriven detonation across all tested conditions.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+178+Journal_of_Energy_Chemistry:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Both LEL and UEL first decrease then slightly increase with ascending SOC, establishing non-monotonic behavior for both parameters. This means neither a simple increasing nor decreasing risk characterization is admissible across the full SOC range.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+178+Journal_of_Energy_Chemistry:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "The CO proportion increase is an observed compositional change correlated with higher SOC, but attributing the entire Pmax increase solely to CO proportion change is an unsupported single-factor causal claim. Explosion pressure depends on the full mixture composition and energy content.",
+            "error_type": "single-variable causal overclaim",
+            "evidence_refs": [
+              "TR_Gasventing+178+Journal_of_Energy_Chemistry:C002",
+              "TR_Gasventing+178+Journal_of_Energy_Chemistry:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "A high UEL at 30% SOC means the gas can sustain combustion at higher concentrations, but it does not directly imply greatest detonation sustaining risk. Furthermore, detonation behavior is characterized by Pmax vs. Pcj relationships, not UEL alone. This option conflates flammability range with detonation propensity.",
+            "error_type": "mechanism confusion / scope expansion",
+            "evidence_refs": [
+              "TR_Gasventing+178+Journal_of_Energy_Chemistry:C004",
+              "TR_Gasventing+178+Journal_of_Energy_Chemistry:C005"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Multi-parameter explosion hazard characterization across SOC, distinguishing ignition likelihood, explosion severity, and detonation regime",
+        "primary_boundary": "Non-monotonic LEL/UEL behavior means no single SOC is worst in all hazard dimensions; Pmax/Pcj comparison defines detonation regime",
+        "intended_error_modes": [
+          "Selecting B by assuming monotonic Pmax increase implies universal worst-case at 100% SOC",
+          "Selecting F by conflating high UEL with high detonation risk",
+          "Selecting E by attributing Pmax increase to CO proportion alone"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring that highest Pmax SOC is worst in all explosion risk dimensions",
+          "Attributing explosion pressure changes to a single gas species",
+          "Equating UEL extremum with detonation sustaining capacity"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An engineer is designing an early-warning gas detection system for lithium battery thermal runaway using a CuO-decorated InSe monolayer sensor material. The system must distinguish between detecting the onset of thermal runaway and capturing gases for post-event analysis. The engineer also needs to select operating temperatures to differentiate among specific gases. The following constraints apply: the sensor operates near ambient temperature (approximately 298 K) under normal standby conditions, and the system may be heated to elevated temperatures during active interrogation.\n\nWhich of the following design conclusions are admissible given the described material behavior?",
+        "options": [
+          "A. At 298 K, CuO-InSe can serve as both a real-time CO2 sensor and a CO adsorbent simultaneously, because CO2 desorbs rapidly while CO remains bound for an extremely long duration.",
+          "B. Because CuO decoration reduces the band gap of the InSe monolayer, the material's electronic response to adsorbed gases is enhanced relative to pristine InSe, making it more suitable for resistive or conductometric sensing.",
+          "C. Pristine InSe without CuO decoration is an equally effective alternative for CO detection because the physical adsorption mechanism is the same for both materials.",
+          "D. Selective separation of CO, C2H2, and C2H4 from each other using CuO-InSe requires controlling ambient temperature, because their desorption times differ and decrease at different rates with increasing temperature.",
+          "E. The rapid desorption of CO2 from CuO-InSe at all tested temperatures means CO2 cannot be captured or concentrated by this material for offline analysis.",
+          "F. The improvement in CO adsorption on CuO-InSe relative to pristine InSe is smaller in percentage terms than the improvement for C2H2 or C2H4."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "B",
+          "D"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence states CO2 desorption time at 298 K is ~10^-9 s (rapid sensor response) while CO desorption time is ~6.6×10^12 s (effective adsorbent). These two functions are mechanistically compatible and simultaneous operation is admissible.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+179+Computational_and_Theoretical_Chemistry:C004"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "CuO decoration reduces band gap from 1.938 eV to 0.831 eV, which increases electronic sensitivity. A smaller band gap means greater conductance change upon gas adsorption, directly supporting conductometric sensing suitability. This is a minimal engineering implication from the band gap reduction evidence.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+179+Computational_and_Theoretical_Chemistry:C001"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "Pristine InSe exhibits only physical adsorption with minimal adsorption energy and charge transfer for CO. CuO-InSe improves CO adsorption by 130.1% over pristine InSe. The two materials are not equivalent; claiming equivalence ignores the documented performance difference.",
+            "error_type": "overgeneralization / ignoring comparative evidence",
+            "evidence_refs": [
+              "TR_Gasventing+179+Computational_and_Theoretical_Chemistry:C002",
+              "TR_Gasventing+179+Computational_and_Theoretical_Chemistry:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "Evidence states desorption times of CO, C2H2, and C2H4 decrease rapidly with increasing temperature and that different gases can be separated by managing ambient temperature. This directly supports temperature-controlled selective separation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+179+Computational_and_Theoretical_Chemistry:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Incorrect",
+            "justification": "This is a conservative-sounding but incorrect conclusion. While rapid desorption means CO2 does not accumulate on the surface under equilibrium conditions, the evidence characterizes CuO-InSe as a rapid-response sensor for CO2, not as incapable of any CO2 interaction. The option overclaims from desorption speed to impossibility of offline capture, which is not supported.",
+            "error_type": "scope expansion from rapid desorption to complete incapacity",
+            "evidence_refs": [
+              "TR_Gasventing+179+Computational_and_Theoretical_Chemistry:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Evidence states CO adsorption improves by 130.1% while C2H2 improves by 76.9% and C2H4 by 75.7%. CO shows the largest percentage improvement, directly contradicting this option.",
+            "error_type": "factual reversal of comparative evidence",
+            "evidence_refs": [
+              "TR_Gasventing+179+Computational_and_Theoretical_Chemistry:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Dual-function sensor/adsorbent design using CuO-InSe, temperature-controlled gas separation, and comparison with pristine InSe",
+        "primary_boundary": "CuO decoration creates qualitatively different behavior from pristine InSe; CO2 rapid desorption enables sensing not adsorption; CO shows largest improvement not smallest",
+        "intended_error_modes": [
+          "Selecting C by assuming physical adsorption mechanism equivalence ignores quantitative performance difference",
+          "Selecting E by inferring from rapid desorption that CO2 interaction is negligible for any purpose",
+          "Selecting F by misremembering the ordering of percentage improvements"
+        ],
+        "disallowed_extrapolations": [
+          "Equating pristine InSe with CuO-InSe for CO detection",
+          "Inferring complete CO2 capture incapacity from rapid desorption",
+          "Ranking adsorption improvements without checking evidence values"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "During thermal decomposition experiments on a carbonate-based electrolyte (1 M LiPF6 in EC/DMC 1:1 v/v), gas generation is monitored as a function of temperature and pyrolysis duration. The experiment reveals a sharp increase in gas generation rate above a specific temperature, and the relative concentrations of CO and CO2 in the released gas are characterized. In a separate set of experiments, the same electrolyte is decomposed in atmospheres with varying oxygen concentrations at a fixed temperature of 230°C for 60 minutes.\n\nAn engineer must assess the toxicity and composition hazard of vented gases under different thermal and atmospheric conditions. Which of the following conclusions are admissible?",
+        "options": [
+          "A. At temperatures below approximately 215°C, the rate of gas accumulation from this electrolyte is substantially lower than above that temperature, making the 215°C threshold a meaningful boundary for assessing venting rate hazard.",
+          "B. In an oxygen-enriched atmosphere at 230°C, CO concentration will continue to increase indefinitely as oxygen concentration rises, because oxygen promotes carbon oxidation reactions.",
+          "C. The dominance of CO2 over CO in the decomposition gas mixture by approximately two orders of magnitude suggests that CO toxicity hazard from this electrolyte under purely thermal decomposition conditions is secondary to CO2 asphyxiation hazard at equivalent volumes.",
+          "D. The non-monotonic response of CO concentration to increasing oxygen content, combined with the monotonic increase of CO2, is consistent with CO being an intermediate oxidation product that is further oxidized to CO2 at higher oxygen availability.",
+          "E. The decrease in C2H4O2 concentration with prolonged pyrolysis duration at fixed temperature indicates that this species is consumed or further decomposed over time, and the rate of this consumption slows between 40 and 60 minutes.",
+          "F. Because total gas volume at 300°C increases with pyrolysis duration, the gas generation rate at 300°C must be constant over the 20-to-60-minute range."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "Evidence explicitly identifies a knee point near 215°C above which decomposition rate abruptly increases and gas accumulates rapidly. This directly supports the 215°C threshold as a meaningful boundary for venting rate hazard assessment.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+177+Journal_of_Energy_Chemistry:C001"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "Evidence states CO concentration first increases then decreases sharply with increasing oxygen concentration. An indefinite monotonic increase with oxygen is directly contradicted by the non-monotonic behavior described.",
+            "error_type": "unjustified monotonicity / ignoring non-monotonic evidence",
+            "evidence_refs": [
+              "TR_Gasventing+177+Journal_of_Energy_Chemistry:C004"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "While CO2 concentration is approximately 400 times larger than CO by volume, CO is acutely toxic at much lower concentrations than CO2. The relative volume ratio cannot be directly converted into a comparative toxicity hazard without accounting for the vastly different toxic threshold concentrations of the two gases. This is a mechanism-scope violation.",
+            "error_type": "mechanism confusion / ignoring dose-response difference between gases",
+            "evidence_refs": [
+              "TR_Gasventing+177+Journal_of_Energy_Chemistry:C003"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "The pattern of CO rising then falling while CO2 rises monotonically with oxygen concentration is mechanistically consistent with CO being an intermediate oxidation product of carbon-containing species that is subsequently oxidized to CO2 when oxygen is sufficiently available. This is a minimal mechanistic inference supported by the described trend.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+177+Journal_of_Energy_Chemistry:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "Evidence states C2H4O2 decreases by 250-380 ppmv from 20 to 40 min but only by 15-90 ppmv from 40 to 60 min. This directly indicates the species is being consumed and that the consumption rate slows in the later interval, consistent with depletion of a reactant or approach to equilibrium.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Gasventing+177+Journal_of_Energy_Chemistry:C005"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "Total gas volume increases from 1397.9 mL at 20 min to 1755.7 mL at 40 min (+357.8 mL) and to 2402.2 mL at 60 min (+646.5 mL). The increment per 20-minute interval is not constant, meaning the generation rate is not constant over this range. The option incorrectly infers constant rate from monotonically increasing total volume.",
+            "error_type": "unjustified monotonicity / confusing cumulative total with rate constancy",
+            "evidence_refs": [
+              "TR_Gasventing+177+Journal_of_Energy_Chemistry:C002"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Threshold-dependent gas generation, non-monotonic oxygen effect on CO, C2H4O2 consumption kinetics, and admissibility of toxicity hazard comparisons",
+        "primary_boundary": "CO volume ratio to CO2 cannot be converted to relative toxicity without dose-response context; CO non-monotonicity with oxygen reflects intermediate oxidation chemistry; constant rate cannot be inferred from increasing total",
+        "intended_error_modes": [
+          "Selecting B by assuming oxygen monotonically promotes CO production",
+          "Selecting C by directly equating volume concentration ratio with toxicity hazard ratio",
+          "Selecting F by inferring constant rate from monotonically increasing cumulative volume"
+        ],
+        "disallowed_extrapolations": [
+          "Inferring relative toxicity hazard from volume concentration ratios alone",
+          "Assuming monotonic CO response to oxygen from partial evidence",
+          "Inferring constant generation rate from cumulative volume data"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "A CuO-decorated InSe monolayer material is being evaluated for detecting thermal runaway failure gases from lithium batteries. At 298 K, the material shows dramatically different desorption behavior for CO2 compared to CO, C2H2, and C2H4. An engineer proposes using a single CuO-InSe sensor module to simultaneously perform two distinct functions: (1) rapid real-time detection of CO2 as an early thermal runaway indicator, and (2) selective capture and retention of CO for subsequent offline quantification.\n\nExplain whether this dual-function proposal is physically admissible based on the described material behavior. Then identify one additional capability of the CuO-InSe material, related to the retained gases, that would be useful for assessing the stage of thermal runaway failure, and explain the physical basis for that capability."
+      },
+      "ground_truth": {
+        "gold_answer": "The dual-function proposal is admissible. At 298 K, CO2 desorbs from CuO-InSe on a timescale of approximately 10^-9 s, enabling rapid sensor response for real-time CO2 detection. In contrast, CO has a desorption time of approximately 6.6×10^12 s at 298 K, meaning CO remains effectively bound to the surface on any practical timescale, enabling its capture and retention for offline analysis. These two behaviors are mechanistically independent and can coexist in the same material at the same operating temperature.\n\nThe additional capability is temperature-controlled selective separation of CO, C2H2, and C2H4. Because the desorption times of these three gases decrease at different rates with increasing temperature, controlled heating of the CuO-InSe material can sequentially release each gas at a characteristic temperature, allowing them to be distinguished from one another. Since different gases are associated with different stages of thermal runaway progression, this selective release capability enables identification of which failure stage has occurred.",
+        "must_include": [
+          "CO2 desorption is rapid at 298 K enabling real-time sensing",
+          "CO desorption time is extremely long at 298 K enabling retention/adsorption",
+          "The two functions are compatible because they rely on opposite desorption behaviors of different gases",
+          "Temperature-controlled separation of CO, C2H2, and C2H4 is possible because their desorption times differ and decrease at different rates with temperature",
+          "This separation is useful for identifying thermal runaway stage"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming CO2 can also be retained or concentrated by CuO-InSe",
+          "Claiming pristine InSe has equivalent capability",
+          "Claiming the separation is based on chemical selectivity unrelated to desorption kinetics",
+          "Specifying exact desorption temperatures for each gas beyond what is stated in the evidence",
+          "Claiming the band gap change alone explains the dual sensing/adsorption function"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Dual-function admissibility judgment based on contrasting desorption kinetics, and temperature-programmed desorption as a stage-identification tool",
+        "primary_boundary": "Dual function is admissible only because CO2 and CO have opposite desorption regimes at 298 K; temperature separation capability is based on differential desorption rate dependence, not chemical identity alone",
+        "intended_error_modes": [
+          "Claiming the dual function is inadmissible because one material cannot serve two purposes",
+          "Confusing rapid CO2 desorption with inability to detect CO2",
+          "Attributing stage-identification capability to band gap changes rather than desorption kinetics",
+          "Overstating by claiming exact temperature thresholds for each gas separation"
+        ]
+      }
+    }
+  ]
+}

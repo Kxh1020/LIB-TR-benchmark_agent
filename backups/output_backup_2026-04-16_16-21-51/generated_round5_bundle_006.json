@@ -1,0 +1,321 @@
+{
+  "mcqs": [
+    {
+      "qid": "Q1",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "An NCM811 cell at 25% SOC is subjected to nail penetration under two separate conditions: once at room temperature and once at 100°C. At room temperature, no jet flame is produced. At 100°C, a jet flame is observed and the maximum cell temperature is elevated by approximately 18% relative to the room-temperature case. A second set of cells at 20% SOC is tested only at 100°C and produces no flame. An engineer is asked to evaluate which conclusions about the flame generation threshold and the role of elevated ambient temperature are supported by these observations. Which of the following statements are admissible?",
+        "options": [
+          "A. The 100°C ambient condition is sufficient by itself to produce a jet flame in NCM811 cells regardless of SOC, because the external heat source elevates the cell above its thermal runaway threshold.",
+          "B. The critical SOC for flame generation under the combined heat-penetration condition at 100°C lies between 20% and 25%, with cells at or above 25% SOC producing a jet flame under these conditions.",
+          "C. Elevated ambient temperature during nail penetration increases fire risk at 25% SOC by enabling flame generation that does not occur at the same SOC under room-temperature penetration alone.",
+          "D. Because no flame is observed at 20% SOC even at 100°C, the 100°C thermal condition contributes negligibly to flame generation and SOC is the sole controlling variable.",
+          "E. The 18% increase in maximum cell temperature at 25% SOC when ambient temperature is raised from room temperature to 100°C indicates that thermal-mechanical coupling amplifies the severity of the thermal runaway outcome at boundary SOC conditions.",
+          "F. The absence of flame at 20% SOC and its presence at 25% SOC under identical 100°C penetration conditions establishes that the flame threshold is a sharp SOC boundary rather than a gradual transition, applicable to all NCM chemistries."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "B",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Incorrect",
+            "justification": "The evidence shows that cells at 0%, 10%, 15%, and 20% SOC do not produce a flame even at 100°C. Therefore the 100°C condition alone is not sufficient to produce a jet flame regardless of SOC; SOC must also be at or above 25%.",
+            "error_type": "condition_violation_distractor",
+            "evidence_refs": [
+              "TR_Dynamics+169+Journal_of_Cleaner_Production:C003"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "The evidence establishes that 20% SOC produces no flame and 25% SOC produces a jet flame under 100°C nail penetration, placing the critical threshold between these two values. This is a direct admissible conclusion from the stated experimental boundary.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+169+Journal_of_Cleaner_Production:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that at room temperature the 25% SOC cell does not produce a jet flame, while at 100°C it does, confirming that elevated ambient temperature increases fire risk at this boundary SOC condition.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+169+Journal_of_Cleaner_Production:C004"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "This is a conservative-appearing but mechanistically incorrect conclusion. The absence of flame at 20% SOC does not eliminate the role of the 100°C condition; the evidence shows that the same 25% SOC cell behaves differently at room temperature versus 100°C, demonstrating that ambient temperature is a contributing variable, not negligible.",
+            "error_type": "causal_overclaim_single_variable",
+            "evidence_refs": [
+              "TR_Dynamics+169+Journal_of_Cleaner_Production:C003",
+              "TR_Dynamics+169+Journal_of_Cleaner_Production:C004"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The 18% elevation in maximum cell temperature at 25% SOC when ambient temperature is raised to 100°C is evidence-supported and reflects that the combined thermal and mechanical stimulation produces a more severe outcome than penetration alone at a boundary SOC. This is a minimal engineering implication of the stated quantitative comparison.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+169+Journal_of_Cleaner_Production:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "While the evidence supports a threshold between 20% and 25% SOC for NCM811 under these specific conditions, extrapolating this as a sharp boundary applicable to all NCM chemistries is an unsupported generalization beyond the stated experimental scope.",
+            "error_type": "overgeneralization_distractor",
+            "evidence_refs": [
+              "TR_Dynamics+169+Journal_of_Cleaner_Production:C003"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of conclusions about the SOC threshold for flame generation and the role of elevated ambient temperature under coupled heat-penetration conditions",
+        "primary_boundary": "The 100°C ambient condition modulates but does not solely determine flame generation; SOC must also exceed approximately 25% for flame to occur under these conditions",
+        "intended_error_modes": [
+          "Attributing flame generation solely to ambient temperature (A)",
+          "Attributing flame generation solely to SOC while dismissing thermal coupling (D)",
+          "Overgeneralizing the NCM811-specific threshold to all NCM chemistries (F)"
+        ],
+        "disallowed_extrapolations": [
+          "Applying the 25% SOC threshold to chemistries other than NCM811",
+          "Claiming 100°C alone causes flame regardless of SOC",
+          "Claiming SOC alone determines flame generation independent of ambient temperature"
+        ]
+      }
+    },
+    {
+      "qid": "Q2",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery thermal safety engineer compares pristine NMC and LFP cells under identical external heating tests. NMC cells exhibit self-sustaining exothermic reactions and reach maximum temperatures well above 315°C with a temperature rise rate near 3100°C/min and accumulated heat release near 28 kJ. LFP cells do not exhibit sufficient self-sustaining exothermic reactions to induce thermal runaway, with maximum temperature remaining below 315°C and accumulated heat release near 5.5 kJ. The engineer attributes the LFP thermal advantage primarily to cathode behavior during decomposition. Separately, both chemistries are aged at 50°C, after which the heat released during anode-electrolyte reactions decreases: by approximately 12% for NMC and approximately 69% for LFP relative to their respective pristine baselines. Aged NMC batteries trigger thermal runaway at a lower onset temperature than pristine NMC, despite showing a lower maximum temperature and lower temperature rise rate during the runaway event. Which of the following conclusions are supported by this evidence?",
+        "options": [
+          "A. The lower heat release from LFP cathode decomposition, due to reduced oxygen release compared to NMC, is a primary mechanistic contributor to LFP's resistance to self-sustaining thermal runaway under external heating.",
+          "B. Because aged NMC batteries trigger thermal runaway at a lower onset temperature than pristine NMC, aging unambiguously increases the overall thermal hazard of NMC batteries in all respects.",
+          "C. The 69% reduction in anode-electrolyte reaction heat for aged LFP cells is larger than the 12% reduction for aged NMC cells, which is consistent with the greater role of SEI growth in consuming lithium and electrolyte in LFP relative to NMC under the stated aging condition.",
+          "D. The fact that aged NMC batteries reach a lower maximum temperature and lower temperature rise rate than pristine NMC during thermal runaway indicates that aging reduces the thermal runaway severity in all measurable dimensions.",
+          "E. The pristine LFP cell's failure to sustain thermal runaway under external heating cannot be attributed solely to anode-side chemistry, because cathode decomposition behavior also contributes to the overall heat budget difference between LFP and NMC.",
+          "F. The lower onset temperature for thermal runaway in aged NMC compared to pristine NMC implies that the SEI decomposition threshold temperature itself is reduced by aging."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "C",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence explicitly states that LFP releases approximately half the oxygen of NMC during cathode decomposition, resulting in about 11.5 kJ less heat from electrolyte oxidation, and attributes LFP's thermal safety to the endothermic behavior of cathode decomposition and reduced oxygen release. This is a directly supported causal attribution.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+170+Applied_Thermal_Engineering:C006"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Incorrect",
+            "justification": "This is a conservative-appearing but incorrect overclaim. Aging lowers the onset temperature (increasing trigger sensitivity) but also lowers the maximum temperature and temperature rise rate during the event. The evidence does not support the claim that aging increases hazard in all respects; the outcome is mixed and dimension-dependent.",
+            "error_type": "causal_overclaim_ignoring_multidimensional_outcome",
+            "evidence_refs": [
+              "TR_Dynamics+170+Applied_Thermal_Engineering:C007"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Correct",
+            "justification": "The evidence states that SEI growth consumes lithium and electrolyte, reducing heat from the anode-electrolyte reaction, and that this reduction is 12.3% for NMC and 68.9% for LFP when aged at 50°C. The larger reduction for LFP is consistent with the stated mechanism of SEI growth consuming available reactants, and the differential magnitude is evidence-supported.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+170+Applied_Thermal_Engineering:C005"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Incorrect",
+            "justification": "While aged NMC shows lower maximum temperature and lower temperature rise rate, it also triggers at a lower onset temperature, meaning it is more easily triggered. Claiming aging reduces severity 'in all measurable dimensions' ignores the lower onset temperature dimension, which represents an increased vulnerability.",
+            "error_type": "ignoring_boundary_condition_multidimensional",
+            "evidence_refs": [
+              "TR_Dynamics+170+Applied_Thermal_Engineering:C007"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The evidence attributes LFP's thermal advantage to both cathode decomposition behavior (endothermic, less oxygen released) and the resulting lower heat from electrolyte oxidation. This multi-mechanism basis means anode-side chemistry alone cannot account for the full LFP advantage, making this conclusion admissible and counterintuitive to those who focus only on anode chemistry.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+170+Applied_Thermal_Engineering:C006",
+              "TR_Dynamics+170+Applied_Thermal_Engineering:C004"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence states that SEI decomposition generally occurs at about 100°C and that aging lowers the onset and crucial temperatures for thermal runaway. However, the evidence does not state that the SEI decomposition threshold temperature itself is reduced; the lower onset temperature could reflect other aging-induced changes. Attributing the lower onset specifically to a shift in SEI decomposition temperature is an unsupported mechanistic inference.",
+            "error_type": "unsupported_mechanistic_attribution",
+            "evidence_refs": [
+              "TR_Dynamics+170+Applied_Thermal_Engineering:C001",
+              "TR_Dynamics+170+Applied_Thermal_Engineering:C007"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of multi-dimensional aging effects on NMC thermal runaway and the mechanistic basis for LFP thermal stability relative to NMC",
+        "primary_boundary": "Aging produces mixed effects on thermal runaway: lower onset temperature (increased trigger sensitivity) but lower peak severity; the LFP advantage is multi-mechanism, not reducible to anode chemistry alone",
+        "intended_error_modes": [
+          "Treating mixed aging effects as uniformly hazard-increasing (B)",
+          "Treating mixed aging effects as uniformly hazard-decreasing (D)",
+          "Attributing LFP stability solely to anode chemistry while ignoring cathode contribution (implicit in F)",
+          "Inferring SEI threshold shift from onset temperature change without evidence (F)"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming aging increases or decreases all thermal runaway metrics in the same direction",
+          "Attributing LFP thermal resistance exclusively to anode-side mechanisms",
+          "Inferring a specific mechanistic temperature shift from aggregate onset temperature data"
+        ]
+      }
+    },
+    {
+      "qid": "Q3",
+      "type": "MCQ",
+      "solver_view": {
+        "stem": "A battery module thermal management system uses two phase-change material (PCM) layers. PCM1 (RT82) is placed directly adjacent to the battery cells, while PCM2 (RT27) is positioned farther from the cells. Under operating conditions, PCM1 exhibits an immediate increase in temperature and melting rate upon heat generation, and its average melting fraction is observed to be substantially higher than that of PCM2. In a design variant, single-walled carbon nanotube (SWCNT) nanoparticles are dispersed into the PCM at a 6% concentration, forming a nanoenhanced PCM (NEPCM). Compared to pure PCM, the NEPCM with 6% SWCNT increases the melting temperature distribution by up to approximately 15% and enhances the liquid fraction by up to approximately 67%. Separately, SWCNT is reported to provide superior thermal conductivity enhancement compared to alumina nanoparticles. An engineer must evaluate design conclusions for this system. Which of the following conclusions are admissible based on this evidence?",
+        "options": [
+          "A. PCM1's superior thermal regulation performance relative to PCM2 is primarily a consequence of its proximity to the heat source rather than a difference in the intrinsic thermal properties of the two PCM materials.",
+          "B. Replacing pure PCM with SWCNT-based NEPCM at 6% concentration will increase the rate at which heat is absorbed from the battery cells, because higher thermal conductivity accelerates heat transfer into the PCM layer.",
+          "C. Because SWCNT NEPCM increases the liquid fraction by up to 67% compared to pure PCM, it can be concluded that SWCNT NEPCM will prevent thermal runaway propagation in all battery module configurations.",
+          "D. The higher melting fraction of PCM1 compared to PCM2 under the same thermal load implies that PCM1 is consuming more latent heat per unit time, which is consistent with it providing more effective near-cell thermal buffering.",
+          "E. Since SWCNT provides greater thermal conductivity enhancement than alumina, substituting alumina-based NEPCM with SWCNT-based NEPCM at the same concentration would be expected to yield greater liquid fraction enhancement under comparable conditions.",
+          "F. The approximately 15% increase in melting temperature distribution from SWCNT NEPCM compared to pure PCM indicates that SWCNT NEPCM raises the phase-change temperature of the base PCM material itself."
+        ]
+      },
+      "ground_truth": {
+        "correct_options": [
+          "A",
+          "D",
+          "E"
+        ],
+        "option_judgments": [
+          {
+            "option_id": "A",
+            "label": "Correct",
+            "justification": "The evidence states that PCM1's higher melting fraction and superior thermal regulation are attributed to its proximity to the heat source. This is the stated mechanistic explanation, making the conclusion admissible. It is counterintuitive in the sense that one might expect material properties to dominate, but the evidence points to spatial positioning as the primary factor.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+171+Case_Studies_in_Thermal_Engineering:C004",
+              "TR_Dynamics+171+Case_Studies_in_Thermal_Engineering:C005"
+            ]
+          },
+          {
+            "option_id": "B",
+            "label": "Correct",
+            "justification": "Higher thermal conductivity from SWCNT addition accelerates heat transfer into the PCM, which is a minimal engineering implication of the stated superior thermal conductivity enhancement. The evidence supports that SWCNT leads to more effective heat absorption and dissipation, consistent with this conclusion.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+171+Case_Studies_in_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "C",
+            "label": "Incorrect",
+            "justification": "The evidence quantifies liquid fraction enhancement relative to pure PCM but does not support a claim that SWCNT NEPCM prevents thermal runaway propagation in all module configurations. This is a system-level safety claim extrapolated beyond the scope of the component-level thermal performance evidence.",
+            "error_type": "scope_expansion_system_level_from_component",
+            "evidence_refs": [
+              "TR_Dynamics+171+Case_Studies_in_Thermal_Engineering:C002"
+            ]
+          },
+          {
+            "option_id": "D",
+            "label": "Correct",
+            "justification": "A higher melting fraction for PCM1 under the same thermal load means more of the material has undergone phase change, implying greater latent heat consumption per unit time. This is a direct thermodynamic implication consistent with PCM1 providing more effective thermal buffering near the cells, supported by the evidence on PCM1's superior thermal regulation.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+171+Case_Studies_in_Thermal_Engineering:C004",
+              "TR_Dynamics+171+Case_Studies_in_Thermal_Engineering:C005"
+            ]
+          },
+          {
+            "option_id": "E",
+            "label": "Correct",
+            "justification": "The evidence states that SWCNT demonstrates superior thermal conductivity enhancement compared to alumina, and that higher thermal conductivity leads to more effective heat absorption. It is admissible to conclude that substituting alumina with SWCNT at the same concentration would yield greater liquid fraction enhancement, as this follows directly from the comparative thermal conductivity claim.",
+            "error_type": null,
+            "evidence_refs": [
+              "TR_Dynamics+171+Case_Studies_in_Thermal_Engineering:C003"
+            ]
+          },
+          {
+            "option_id": "F",
+            "label": "Incorrect",
+            "justification": "The evidence states that SWCNT NEPCM increases the melting temperature distribution by up to 15% compared to pure PCM setups. This refers to the spatial or temporal distribution of melting temperatures across the system, not to a shift in the intrinsic phase-change temperature of the base PCM material. Interpreting this as a change in the material's phase-change temperature is a measurement scope distractor.",
+            "error_type": "measurement_scope_misinterpretation",
+            "evidence_refs": [
+              "TR_Dynamics+171+Case_Studies_in_Thermal_Engineering:C001"
+            ]
+          }
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Admissibility of conclusions about PCM positioning effects, SWCNT NEPCM thermal performance, and the scope of system-level safety claims from component-level data",
+        "primary_boundary": "Component-level thermal performance improvements (liquid fraction, heat absorption) do not directly imply system-level thermal runaway prevention; PCM position dominates over material differences in the stated configuration",
+        "intended_error_modes": [
+          "Extrapolating liquid fraction improvement to thermal runaway prevention (C)",
+          "Misinterpreting melting temperature distribution increase as a shift in base PCM phase-change temperature (F)"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming NEPCM prevents thermal runaway propagation in all configurations",
+          "Interpreting melting temperature distribution metric as intrinsic material phase-change temperature",
+          "Inferring module-level safety guarantees from cell-adjacent PCM performance data"
+        ]
+      }
+    }
+  ],
+  "short_answers": [
+    {
+      "qid": "S1",
+      "type": "SHORT_ANSWER",
+      "solver_view": {
+        "prompt": "An NCM811 cell at 100% SOC subjected to nail penetration at 100°C reaches a maximum temperature of approximately 653°C and exhibits a temperature rise rate of approximately 93°C/s, while the same cell at 0% SOC under identical conditions reaches approximately 126°C with a rise rate of approximately 2°C/s. Separately, it is known that the polypropylene or polyethylene separator in lithium-ion cells melts at approximately 120–130°C, causing internal short circuit, and that SEI decomposition begins at approximately 100°C. Given these conditions, explain the mechanistic sequence by which the high-SOC cell reaches a substantially higher maximum temperature than the low-SOC cell under the same coupled thermal-mechanical abuse, identifying which thermally activated internal processes are relevant and why the stored electrochemical energy state of the cell governs the severity of the outcome."
+      },
+      "ground_truth": {
+        "gold_answer": "At 0% SOC, the cell contains minimal stored electrochemical energy. Nail penetration creates a local short circuit and the 100°C external heat initiates SEI decomposition, but the limited available lithium and electrolyte in the discharged state constrain the self-sustaining exothermic reactions. The maximum temperature of approximately 126°C is consistent with separator melting being approached but with insufficient internal heat generation to drive the cell into a high-temperature thermal runaway. At 100% SOC, the cell contains maximum stored electrochemical energy. The nail penetration creates a short circuit path and the 100°C external heating initiates SEI decomposition at approximately 100°C. The heat released by SEI decomposition raises the internal temperature toward the separator melting range of 120–130°C. Once the separator melts, a full internal short circuit occurs, generating additional Joule heating. The large reservoir of stored electrochemical energy available at 100% SOC sustains and amplifies these exothermic reactions, driving the temperature far above the separator melting point and into the regime where cathode decomposition and electrolyte oxidation reactions contribute additional heat. The result is a self-sustaining thermal runaway with a maximum temperature near 653°C and a rise rate near 93°C/s. The SOC governs severity because it determines the quantity of reactive lithium, electrolyte, and stored energy available to sustain the exothermic reaction cascade once thermally activated processes are initiated by the combined mechanical and thermal abuse.",
+        "must_include": [
+          "SEI decomposition initiates at approximately 100°C as an early thermally activated process",
+          "Separator melting at 120–130°C causes or amplifies internal short circuit",
+          "Higher SOC means greater stored electrochemical energy available to sustain exothermic reactions",
+          "The low-SOC cell lacks sufficient reactive material to sustain thermal runaway to high temperatures",
+          "The high-SOC cell undergoes a self-sustaining exothermic reaction cascade driven by available energy",
+          "The nail penetration provides the mechanical trigger for local short circuit under both conditions"
+        ],
+        "disallowed_extrapolations": [
+          "Claiming that 0% SOC cells are completely safe under all nail penetration conditions",
+          "Attributing the temperature difference solely to the external 100°C heating without referencing internal electrochemical energy",
+          "Claiming separator melting alone is sufficient to explain the 653°C maximum temperature without invoking the sustained exothermic reaction cascade",
+          "Generalizing the specific temperature values to other cell chemistries or formats"
+        ]
+      },
+      "analysis": {
+        "target_cognitive_object": "Mechanistic explanation of how SOC governs the severity of thermal runaway under coupled thermal-mechanical abuse by controlling the availability of energy and reactive species for thermally activated internal processes",
+        "primary_boundary": "The SOC-dependent severity is governed by the quantity of stored electrochemical energy and reactive species available to sustain exothermic reactions once SEI decomposition and separator melting are triggered; external thermal abuse alone does not determine the outcome",
+        "intended_error_modes": [
+          "Attributing the temperature difference solely to the external heating level rather than internal electrochemical energy state",
+          "Ignoring the sequential nature of SEI decomposition followed by separator melting followed by sustained exothermic cascade",
+          "Treating separator melting as the terminal event rather than as a step that enables further internal short circuit and heat generation",
+          "Failing to connect the SOC level to the quantity of available reactive lithium and electrolyte"
+        ]
+      }
+    }
+  ]
+}
